@@ -1277,7 +1277,7 @@
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>NumIssued(),<sp/>CarryOver(),<sp/>Bandwidth(),<sp/>LastWriteBackCycle()<sp/>{}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52" refid="classllvm_1_1mca_1_1_in_order_issue_stage_1aa2bc80562a7d93ee7b0503f737bd57ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1mca_1_1_in_order_issue_stage_1aa2bc80562a7d93ee7b0503f737bd57ab" kindref="member">InOrderIssueStage::getIssueWidth</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>STI.<ref refid="classllvm_1_1_m_c_subtarget_info_1af907ecc18c1f4f0bce8a9e2eb449ffb8" kindref="member">getSchedModel</ref>().<ref refid="structllvm_1_1_m_c_sched_model_1ac0f11354e854441ac5fefd72d91dd8ee" kindref="member">IssueWidth</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>STI.getSchedModel().IssueWidth;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56" refid="classllvm_1_1mca_1_1_in_order_issue_stage_1a1089fc00ab39688bad5f3d0ae77c25a8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1mca_1_1_in_order_issue_stage_1a1089fc00ab39688bad5f3d0ae77c25a8" kindref="member">InOrderIssueStage::hasWorkToComplete</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
@@ -1425,7 +1425,7 @@
 <codeline lineno="198" refid="classllvm_1_1mca_1_1_in_order_issue_stage_1a8de83f23b94fb81affc3528986eb9971" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_error" kindref="compound">llvm::Error</ref><sp/><ref refid="classllvm_1_1mca_1_1_in_order_issue_stage_1a8de83f23b94fb81affc3528986eb9971" kindref="member">InOrderIssueStage::execute</ref>(<ref refid="classllvm_1_1mca_1_1_inst_ref" kindref="compound">InstRef</ref><sp/>&amp;<ref refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" kindref="member">IR</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1mca_1_1_instruction" kindref="compound">Instruction</ref><sp/>&amp;IS<sp/>=<sp/>*<ref refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" kindref="member">IR</ref>.getInstruction();</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IS.<ref refid="classllvm_1_1mca_1_1_instruction_base_1a67c179f1b0e96ef53a03966e4ee831fe" kindref="member">isMemOp</ref>())</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>IS.<ref refid="classllvm_1_1mca_1_1_instruction_1abb66d9fd67e0ee7d09dec5b097683144" kindref="member">setLSUTokenID</ref>(LSU.<ref refid="classllvm_1_1mca_1_1_l_s_unit_base_1a15ee706711d88e4858baa2af17133ab6" kindref="member">dispatch</ref>(<ref refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" kindref="member">IR</ref>));</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>IS.<ref refid="classllvm_1_1mca_1_1_instruction_1abb66d9fd67e0ee7d09dec5b097683144" kindref="member">setLSUTokenID</ref>(LSU.dispatch(<ref refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" kindref="member">IR</ref>));</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classllvm_1_1_error" kindref="compound">llvm::Error</ref><sp/><ref refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a" kindref="member">E</ref><sp/>=<sp/>tryIssue(<ref refid="_legalizer_8cpp_1a05ab4853f7153e537774d02580e761ec" kindref="member">IR</ref>))</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_builtin_g_cs_8cpp_1abb2b3a60ccc38a28239e19a1646e0c8a" kindref="member">E</ref>;</highlight></codeline>
@@ -1625,8 +1625,8 @@
 <codeline lineno="398"><highlight class="normal"><sp/><sp/>NumIssued<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="399"><highlight class="normal"><sp/><sp/>Bandwidth<sp/>=<sp/><ref refid="classllvm_1_1mca_1_1_in_order_issue_stage_1aa2bc80562a7d93ee7b0503f737bd57ab" kindref="member">getIssueWidth</ref>();</highlight></codeline>
 <codeline lineno="400"><highlight class="normal"></highlight></codeline>
-<codeline lineno="401"><highlight class="normal"><sp/><sp/>PRF.<ref refid="classllvm_1_1mca_1_1_register_file_1a55d698cb7776a4b4a824bd6450662e94" kindref="member">cycleStart</ref>();</highlight></codeline>
-<codeline lineno="402"><highlight class="normal"><sp/><sp/>LSU.<ref refid="classllvm_1_1mca_1_1_l_s_unit_base_1a5efdb8e58c2a8c3c2ff6291ac2706c18" kindref="member">cycleEvent</ref>();</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/>PRF.cycleStart();</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/>LSU.cycleEvent();</highlight></codeline>
 <codeline lineno="403"><highlight class="normal"></highlight></codeline>
 <codeline lineno="404"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>consumed<sp/>resources.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><ref refid="classllvm_1_1_small_vector" kindref="compound">SmallVector&lt;ResourceRef, 4&gt;</ref><sp/>Freed;</highlight></codeline>
@@ -1664,7 +1664,7 @@
 <codeline lineno="437"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="438"><highlight class="normal"></highlight></codeline>
 <codeline lineno="439" refid="classllvm_1_1mca_1_1_in_order_issue_stage_1a1de1c3d02dec8939b72fe567b4c0b715" refkind="member"><highlight class="normal"><ref refid="classllvm_1_1_error" kindref="compound">llvm::Error</ref><sp/><ref refid="classllvm_1_1mca_1_1_in_order_issue_stage_1a1de1c3d02dec8939b72fe567b4c0b715" kindref="member">InOrderIssueStage::cycleEnd</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="440"><highlight class="normal"><sp/><sp/>PRF.<ref refid="classllvm_1_1mca_1_1_register_file_1aafea068bc9d5827e22895fab2ba376d4" kindref="member">cycleEnd</ref>();</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/>PRF.cycleEnd();</highlight></codeline>
 <codeline lineno="441"><highlight class="normal"><sp/><sp/>SI.cycleEnd();</highlight></codeline>
 <codeline lineno="442"><highlight class="normal"></highlight></codeline>
 <codeline lineno="443"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(LastWriteBackCycle<sp/>&gt;<sp/>0)</highlight></codeline>

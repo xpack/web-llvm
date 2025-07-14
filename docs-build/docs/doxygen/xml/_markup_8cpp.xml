@@ -550,7 +550,7 @@
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>buffer<sp/>is<sp/>empty,<sp/>so<sp/>parse<sp/>the<sp/>next<sp/>bit<sp/>of<sp/>the<sp/>line.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Line.<ref refid="classllvm_1_1_string_ref_1a2dc80c585ad5882da8cae7b5968f7e74" kindref="member">empty</ref>())</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Line.empty())</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::nullopt;</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!InProgressMultiline.empty())<sp/>{</highlight></codeline>
@@ -560,21 +560,21 @@
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;At<sp/>most<sp/>one<sp/>multi-line<sp/>element<sp/>can<sp/>be<sp/>finished<sp/>at<sp/>a<sp/>time.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>FinishedMultiline.swap(InProgressMultiline);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Parse<sp/>the<sp/>multi-line<sp/>element<sp/>as<sp/>if<sp/>it<sp/>were<sp/>contiguous.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1symbolize_1a4d5dd7fe2a8b87fc57e6a7c7af7291c7" kindref="member">advanceTo</ref>(Line,<sp/>MultilineEnd-&gt;<ref refid="classllvm_1_1_string_ref_1a996c7ca3dd6843ba5d55a7c217770270" kindref="member">end</ref>());</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1symbolize_1a4d5dd7fe2a8b87fc57e6a7c7af7291c7" kindref="member">advanceTo</ref>(Line,<sp/>MultilineEnd-&gt;end());</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*parseElement(FinishedMultiline);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>whole<sp/>line<sp/>is<sp/>part<sp/>of<sp/>the<sp/>multi-line<sp/>element.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" kindref="member">llvm::append_range</ref>(InProgressMultiline,<sp/>Line);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Line<sp/>=<sp/>Line.<ref refid="classllvm_1_1_string_ref_1a3fb2867a1e9fa36e135d9ee4dffb0167" kindref="member">drop_front</ref>(Line.<ref refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Line<sp/>=<sp/>Line.drop_front(Line.size());</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::nullopt;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>first<sp/>valid<sp/>markup<sp/>element,<sp/>if<sp/>any.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::optional&lt;MarkupNode&gt;<sp/>Element<sp/>=<sp/>parseElement(Line))<sp/>{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>parseTextOutsideMarkup(<ref refid="namespacellvm_1_1symbolize_1affc5c86ebe7a9a58c623b38370b90762" kindref="member">takeTo</ref>(Line,<sp/>Element-&gt;Text.<ref refid="classllvm_1_1_string_ref_1a46f643f1eb1939362c7dd79361bcbd0e" kindref="member">begin</ref>()));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>parseTextOutsideMarkup(<ref refid="namespacellvm_1_1symbolize_1affc5c86ebe7a9a58c623b38370b90762" kindref="member">takeTo</ref>(Line,<sp/>Element-&gt;Text.begin()));</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>Buffer.push_back(std::move(*Element));</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1symbolize_1a4d5dd7fe2a8b87fc57e6a7c7af7291c7" kindref="member">advanceTo</ref>(Line,<sp/>Element-&gt;Text.<ref refid="classllvm_1_1_string_ref_1a996c7ca3dd6843ba5d55a7c217770270" kindref="member">end</ref>());</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1_1symbolize_1a4d5dd7fe2a8b87fc57e6a7c7af7291c7" kindref="member">advanceTo</ref>(Line,<sp/>Element-&gt;Text.end());</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1symbolize_1_1_markup_parser_1a1eaa76c1f1e142ff478fe1ac0196cab9" kindref="member">nextNode</ref>();</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
@@ -582,17 +582,17 @@
 <codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>multi-line<sp/>element.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::optional&lt;StringRef&gt;<sp/>MultilineBegin<sp/>=<sp/>parseMultiLineBegin(Line))<sp/>{</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Emit<sp/>any<sp/>text<sp/>before<sp/>the<sp/>element.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>parseTextOutsideMarkup(<ref refid="namespacellvm_1_1symbolize_1affc5c86ebe7a9a58c623b38370b90762" kindref="member">takeTo</ref>(Line,<sp/>MultilineBegin-&gt;<ref refid="classllvm_1_1_string_ref_1a46f643f1eb1939362c7dd79361bcbd0e" kindref="member">begin</ref>()));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>parseTextOutsideMarkup(<ref refid="namespacellvm_1_1symbolize_1affc5c86ebe7a9a58c623b38370b90762" kindref="member">takeTo</ref>(Line,<sp/>MultilineBegin-&gt;begin()));</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Begin<sp/>recording<sp/>the<sp/>multi-line<sp/>element.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacellvm_1a39d3d23a084c4544ee5903203db10e8a" kindref="member">llvm::append_range</ref>(InProgressMultiline,<sp/>*MultilineBegin);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>Line<sp/>=<sp/>Line.<ref refid="classllvm_1_1_string_ref_1a3fb2867a1e9fa36e135d9ee4dffb0167" kindref="member">drop_front</ref>(Line.<ref refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>Line<sp/>=<sp/>Line.drop_front(Line.size());</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1symbolize_1_1_markup_parser_1a1eaa76c1f1e142ff478fe1ac0196cab9" kindref="member">nextNode</ref>();</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>line<sp/>doesn&apos;t<sp/>contain<sp/>any<sp/>more<sp/>markup<sp/>elements,<sp/>so<sp/>emit<sp/>it<sp/>as<sp/>text.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/>parseTextOutsideMarkup(Line);</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/>Line<sp/>=<sp/>Line.<ref refid="classllvm_1_1_string_ref_1a3fb2867a1e9fa36e135d9ee4dffb0167" kindref="member">drop_front</ref>(Line.<ref refid="classllvm_1_1_string_ref_1a5db9240c74644c67759dd0f901fc3c7d" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>Line<sp/>=<sp/>Line.drop_front(Line.size());</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1symbolize_1_1_markup_parser_1a1eaa76c1f1e142ff478fe1ac0196cab9" kindref="member">nextNode</ref>();</highlight></codeline>
 <codeline lineno="99"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>

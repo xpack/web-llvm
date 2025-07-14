@@ -1977,7 +1977,7 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Our<sp/>current<sp/>position<sp/>in<sp/>the<sp/>stream<sp/>is<sp/>all<sp/>the<sp/>contents<sp/>which<sp/>have<sp/>been</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>written<sp/>to<sp/>the<sp/>underlying<sp/>stream<sp/>(*not*<sp/>the<sp/>current<sp/>position<sp/>of<sp/>the</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>underlying<sp/>stream).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TheStream-&gt;<ref refid="classllvm_1_1raw__ostream_1a0f90ad570f71349466844ee9f2d06cd1" kindref="member">tell</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TheStream-&gt;tell();</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
 <codeline lineno="70"><highlight class="comment"><sp/><sp/>///<sp/>ComputePosition<sp/>-<sp/>Examine<sp/>the<sp/>given<sp/>output<sp/>buffer<sp/>and<sp/>figure<sp/>out<sp/>the<sp/>new</highlight></codeline>
@@ -2000,13 +2000,13 @@
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>own<sp/>buffering,<sp/>and<sp/>it<sp/>doesn&apos;t<sp/>need<sp/>or<sp/>want<sp/>TheStream<sp/>to<sp/>do<sp/>another</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>layer<sp/>of<sp/>buffering<sp/>underneath.<sp/>Resize<sp/>the<sp/>buffer<sp/>to<sp/>what<sp/>TheStream</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>had<sp/>been<sp/>using,<sp/>and<sp/>tell<sp/>TheStream<sp/>not<sp/>to<sp/>do<sp/>its<sp/>own<sp/>buffering.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>BufferSize<sp/>=<sp/>TheStream-&gt;<ref refid="classllvm_1_1raw__ostream_1a2d79232a41a2f24d43acb936c8522443" kindref="member">GetBufferSize</ref>())</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>BufferSize<sp/>=<sp/>TheStream-&gt;GetBufferSize())</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream_1a1a59a3dce2d7cde8c5e6ef0e3a30b375" kindref="member">SetBufferSize</ref>(BufferSize);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream_1a75860636a752bc2592f6e4185e63efdc" kindref="member">SetUnbuffered</ref>();</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>TheStream-&gt;<ref refid="classllvm_1_1raw__ostream_1a75860636a752bc2592f6e4185e63efdc" kindref="member">SetUnbuffered</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>TheStream-&gt;SetUnbuffered();</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream_1abb9477fc02ae36079df14aa77d8789c3" kindref="member">enable_colors</ref>(TheStream-&gt;<ref refid="classllvm_1_1raw__ostream_1aff9ac3b7e5094380eca385afd6023cd4" kindref="member">colors_enabled</ref>());</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classllvm_1_1raw__ostream_1abb9477fc02ae36079df14aa77d8789c3" kindref="member">enable_colors</ref>(TheStream-&gt;colors_enabled());</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>Scanned<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -2014,7 +2014,7 @@
 <codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PreDisableScan()<sp/>{</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(!DisableScan);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>ComputePosition(<ref refid="classllvm_1_1raw__ostream_1a980ad6112624b521eb2d831b39b346eb" kindref="member">getBufferStart</ref>(),<sp/><ref refid="classllvm_1_1raw__ostream_1ad6cd89674692383208613b1e4ee560fe" kindref="member">GetNumBytesInBuffer</ref>());</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(PartialUTF8Char.<ref refid="classllvm_1_1_small_vector_template_common_1ad9a3c7bc26b130377bbafc170b5f88a2" kindref="member">empty</ref>());</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0" kindref="member">assert</ref>(PartialUTF8Char.empty());</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>DisableScan<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight></codeline>
@@ -2101,7 +2101,7 @@
 <codeline lineno="188"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"></highlight></codeline>
 <codeline lineno="190" refid="classllvm_1_1formatted__raw__ostream_1a0af326688c69076ecde5af500a1a7d5f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1formatted__raw__ostream_1a0af326688c69076ecde5af500a1a7d5f" kindref="member">is_displayed</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TheStream-&gt;<ref refid="classllvm_1_1raw__ostream_1a8f6a957a67e05e7355ab616619ee2608" kindref="member">is_displayed</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TheStream-&gt;is_displayed();</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"></highlight></codeline>
 <codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
