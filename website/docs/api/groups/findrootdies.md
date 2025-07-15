@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Find DIEs corresponding to Address map entries. Reference
+# The Find DIEs corresponding to Address map entries Reference
 
 <p>Recursively walk the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/die">DIE</a></span> tree and look for DIEs to keep. <a href="#details">More...</a></p>
 

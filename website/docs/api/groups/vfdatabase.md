@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The query interface. Reference
+# The query interface Reference
 
 <p>Retrieve the <a href="/web-llvm/docs/api/classes/llvm/function">Function</a> with <a href="/web-llvm/docs/api/structs/llvm/vfshape">VFShape</a> <span class="doxyComputerOutput">Shape</span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The ARC Optimization. Reference
+# The ARC Optimization Reference
 
 
 

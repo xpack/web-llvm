@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Utility declarations/definitions specific to ARC. Reference
+# The Utility declarations/definitions specific to ARC Reference
 
 
 

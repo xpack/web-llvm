@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The of functions returning DIE info. Reference
+# The of functions returning DIE info Reference
 
 
 

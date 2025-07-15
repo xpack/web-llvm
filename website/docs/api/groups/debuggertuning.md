@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Predicates to tune DWARF for a given debugger. Reference
+# The Predicates to tune DWARF for a given debugger Reference
 
 <p>Returns whether we are "tuning" for a given debugger. <a href="#details">More...</a></p>
 
