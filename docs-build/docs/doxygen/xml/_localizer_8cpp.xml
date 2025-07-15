@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_localizer_8cpp" kind="file" language="C++">
     <compoundname>Localizer.cpp</compoundname>
     <includes refid="_localizer_8h" local="yes">llvm/CodeGen/GlobalISel/Localizer.h</includes>
@@ -3618,6 +3618,8 @@
         </inbodydescription>
         <location file="lib/CodeGen/GlobalISel/Localizer.cpp" line="33" column="71" bodyfile="lib/CodeGen/GlobalISel/Localizer.cpp" bodystart="33" bodyend="-1"/>
         <referencedby refid="classllvm_1_1_g_e_p_operator_1a57286aaebfc778a6c1215125ed8493ef" compoundref="_i_r_2_operator_8h" startline="517" endline="521">llvm::GEPOperator::countNonConstantIndices</referencedby>
+        <referencedby refid="classllvm_1_1mca_1_1_resource_manager_1a422417017bcd1f449e0fc7f64622ad42" compoundref="_resource_manager_8cpp" startline="428" endline="452">llvm::mca::ResourceManager::fastIssueInstruction</referencedby>
+        <referencedby refid="classllvm_1_1mca_1_1_resource_manager_1a94ebe004dfbba2e68530d0125ed16293" compoundref="_resource_manager_8cpp" startline="346" endline="426">llvm::mca::ResourceManager::issueInstructionImpl</referencedby>
       </memberdef>
       <memberdef kind="variable" id="_localizer_8cpp_1a837671103583eaf08a27da0c096c492c" prot="public" static="no" mutable="no">
         <type>Move duplicate certain <ref refid="_atomic_expand_pass_8cpp_1a1bcc06b1cb86bd0ea08f33323190bdaa" kindref="member">instructions</ref> close to their</type>
@@ -3748,7 +3750,7 @@
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Localizer::localizeInterBlock(<ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref><sp/>&amp;MF,</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LocalizedSetVecT<sp/>&amp;LocalizedInstrs)<sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Changed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/>DenseMap&lt;std::pair&lt;MachineBasicBlock<sp/>*,<sp/>unsigned&gt;,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">&gt;<sp/>MBBWithLocalDef;</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Since<sp/>the<sp/>IRTranslator<sp/>only<sp/>emits<sp/>constants<sp/>into<sp/>the<sp/>entry<sp/>block,<sp/>and<sp/>the</highlight><highlight class="normal"></highlight></codeline>
@@ -3791,13 +3793,13 @@
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_debug_8h_1a196897517069dda1bdb549e24468f7d7" kindref="member">LLVM_DEBUG</ref>(<ref refid="namespacellvm_1a7c46c742c31be54870e2038048e6b391" kindref="member">dbgs</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Fixing<sp/>non-local<sp/>use\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Changed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>MBBAndReg<sp/>=<sp/>std::make_pair(InsertMBB,<sp/><ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>NewVRegIt<sp/>=<sp/>MBBWithLocalDef.<ref refid="classllvm_1_1_dense_map_base_1a0c047f127ed4380a6f383d70bec4eb94" kindref="member">find</ref>(MBBAndReg);</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(NewVRegIt<sp/>==<sp/>MBBWithLocalDef.<ref refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" kindref="member">end</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>the<sp/>localized<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MachineInstr<sp/>*LocalizedMI<sp/>=<sp/>MF.CloneMachineInstr(&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LocalizedInstrs.<ref refid="classllvm_1_1_machine_function_1af4c0db6d503e0ba3b8e44067023ffbba" kindref="member">insert</ref>(LocalizedMI);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MachineInstr<sp/>*LocalizedMI<sp/>=<sp/>MF.<ref refid="classllvm_1_1_machine_function_1ac485421b5fcb9454ea64e74f6396a810" kindref="member">CloneMachineInstr</ref>(&amp;<ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LocalizedInstrs.<ref refid="classllvm_1_1_machine_instr_1a904f484cd7cfe20a0e7673399c88cc3c" kindref="member">insert</ref>(LocalizedMI);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MachineInstr<sp/>&amp;<ref refid="_a_arch64_expand_pseudo_insts_8cpp_1a6cf2f8996b1e9aaf2d7a435aaa62382f" kindref="member">UseMI</ref><sp/>=<sp/>*MOUse.<ref refid="classllvm_1_1_machine_operand_1a9719077fcba2cd439e84897257a47bb0" kindref="member">getParent</ref>();</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MRI-&gt;hasOneUse(<ref refid="_machine_sink_8cpp_1a359e1ff26f6d466d927a61aae45b05c3" kindref="member">Reg</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="_a_arch64_expand_pseudo_insts_8cpp_1a6cf2f8996b1e9aaf2d7a435aaa62382f" kindref="member">UseMI</ref>.isPHI())</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InsertMBB-&gt;<ref refid="classllvm_1_1_machine_basic_block_1a3435a2381e60e842e915f85c931b7dde" kindref="member">insert</ref>(<ref refid="_a_arch64_expand_pseudo_insts_8cpp_1a6cf2f8996b1e9aaf2d7a435aaa62382f" kindref="member">UseMI</ref>,<sp/>LocalizedMI);</highlight></codeline>
@@ -3818,11 +3820,11 @@
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>MOUse.<ref refid="classllvm_1_1_machine_operand_1a682ba82f42f7903d0000ffbb13ea3b57" kindref="member">setReg</ref>(NewVRegIt-&gt;second);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Changed;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Localizer::localizeIntraBlock(LocalizedSetVecT<sp/>&amp;LocalizedInstrs)<sp/>{</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Changed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>each<sp/>already-localized<sp/>instruction<sp/>which<sp/>has<sp/>multiple<sp/>users,<sp/>then<sp/>we</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>scan<sp/>the<sp/>block<sp/>top<sp/>down<sp/>from<sp/>the<sp/>current<sp/>position<sp/>until<sp/>we<sp/>hit<sp/>one<sp/>of<sp/>them.</highlight><highlight class="normal"></highlight></codeline>
@@ -3858,7 +3860,7 @@
 <codeline lineno="185"><highlight class="normal"></highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>-&gt;removeFromParent();</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_r_m_s_l_s_hardening_8cpp_1a5958512eae2979bd2eb383977996a600" kindref="member">MBB</ref>.<ref refid="classllvm_1_1_machine_basic_block_1a3435a2381e60e842e915f85c931b7dde" kindref="member">insert</ref>(<ref refid="_n_v_v_m_intr_range_8cpp_1ac5804672fc0850438d63caec770647f8" kindref="member">II</ref>,<sp/><ref refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" kindref="member">MI</ref>);</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>Changed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"></highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>instruction<sp/>(constant)<sp/>being<sp/>localized<sp/>has<sp/>single<sp/>user,<sp/>we<sp/>can</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>propagate<sp/>debug<sp/>location<sp/>from<sp/>user.</highlight><highlight class="normal"></highlight></codeline>
@@ -3871,7 +3873,7 @@
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Changed;</highlight></codeline>
 <codeline lineno="202"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"></highlight></codeline>
 <codeline lineno="204" refid="classllvm_1_1_localizer_1ac696e5096a6db4c18e884c119cb50446" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classllvm_1_1_localizer_1ac696e5096a6db4c18e884c119cb50446" kindref="member">Localizer::runOnMachineFunction</ref>(<ref refid="classllvm_1_1_machine_function" kindref="compound">MachineFunction</ref><sp/>&amp;MF)<sp/>{</highlight></codeline>
@@ -3892,9 +3894,9 @@
 <codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>intra-block<sp/>localization<sp/>to<sp/>further<sp/>reduce<sp/>live<sp/>ranges.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/>LocalizedSetVecT<sp/>LocalizedInstrs;</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/>localizeInterBlock(MF,<sp/>LocalizedInstrs);</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|=<sp/>localizeIntraBlock(LocalizedInstrs);</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Changed<sp/>=<sp/>localizeInterBlock(MF,<sp/>LocalizedInstrs);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/>Changed<sp/>|=<sp/>localizeIntraBlock(LocalizedInstrs);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Changed;</highlight></codeline>
 <codeline lineno="225"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="lib/CodeGen/GlobalISel/Localizer.cpp"/>

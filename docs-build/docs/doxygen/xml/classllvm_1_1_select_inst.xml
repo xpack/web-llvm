@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_select_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::SelectInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
@@ -32,13 +32,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -184,9 +179,12 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a069cade7de51978d60286551f6ff71e1" compoundref="_instruction_combining_8cpp" startline="1030" endline="1087">llvm::InstCombinerImpl::foldBinOpOfSelectAndCastOfSelectCondition</referencedby>
         <referencedby refid="_inst_combine_casts_8cpp_1a5d0fa3868fb321fcd4b5d632028db897" compoundref="_inst_combine_casts_8cpp" startline="2486" endline="2526">foldBitCastSelect</referencedby>
         <referencedby refid="_inst_combine_calls_8cpp_1a8362ad1cd10ec969ca55715f7fe5cfb0" compoundref="_inst_combine_calls_8cpp" startline="1238" endline="1274">foldClampRangeOfTwo</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1af9cc067afdf0e3c2ee4190e4a328c0db" compoundref="_inst_combine_select_8cpp" startline="3063" endline="3132">foldNestedSelects</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a039111728e11b1cdf25e60446ae17f2a" compoundref="_instruction_combining_8cpp" startline="1687" endline="1728">llvm::InstCombinerImpl::FoldOpIntoSelect</referencedby>
         <referencedby refid="_instruction_combining_8cpp_1a16a66955e366f83c6e35d99511a33167" compoundref="_instruction_combining_8cpp" startline="2385" endline="2407">foldSelectGEP</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1aaa55d4e19334af5b17eb03205a1bece3" compoundref="_inst_combine_compares_8cpp" startline="4297" endline="4357">llvm::InstCombinerImpl::foldSelectICmp</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1aebb0348d8efce5fbf0d73f96cfb1212e" compoundref="_inst_combine_select_8cpp" startline="3167" endline="3423">llvm::InstCombinerImpl::foldSelectOfBools</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1aeab405fbf9689bd6fb73a95e9c57d477" compoundref="_inst_combine_select_8cpp" startline="3035" endline="3054">foldSelectOfSymmetricSelect</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ad3f7f3eaea6d34ab9ade1af54174f5a2" compoundref="_inst_combine_shifts_8cpp" startline="783" endline="909">llvm::InstCombinerImpl::FoldShiftByConstant</referencedby>
         <referencedby refid="classllvm_1_1_x86_t_t_i_impl_1a47cb7185e35282131b486036ff7c45df" compoundref="_x86_inst_combine_intrinsic_8cpp" startline="2154" endline="3090">llvm::X86TTIImpl::instCombineIntrinsic</referencedby>
         <referencedby refid="structllvm_1_1gvn_1_1_available_value_1ac96558c87ecbcc96f020a0efcaade750" compoundref="_g_v_n_8cpp" startline="1090" endline="1153">llvm::gvn::AvailableValue::MaterializeAdjustedValue</referencedby>
@@ -205,6 +203,7 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a1e893463cbb4b5e2e3830b2e4c28cbdb" compoundref="_inst_combine_and_or_xor_8cpp" startline="3554" endline="4078">llvm::InstCombinerImpl::visitOr</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1af12904244ec179b265540ed1fb8c6615" compoundref="_inst_combine_mul_div_rem_8cpp" startline="1713" endline="1850">llvm::InstCombinerImpl::visitSDiv</referencedby>
         <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1a9be4d2e80df4ec6a7c44102c556ef479" compoundref="_data_flow_sanitizer_8cpp" startline="2861" endline="2913">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::visitSelectInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a90fcdfa591c9bd0cf511f2803198b355" compoundref="_inst_combine_shifts_8cpp" startline="1035" endline="1270">llvm::InstCombinerImpl::visitShl</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a606601489498c1ba41f25e77eb2dd0cf" compoundref="_inst_combine_add_sub_8cpp" startline="2186" endline="2793">llvm::InstCombinerImpl::visitSub</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a2f39b95e8efb44737439c323b18a55d7" compoundref="_inst_combine_mul_div_rem_8cpp" startline="2368" endline="2438">llvm::InstCombinerImpl::visitURem</referencedby>
@@ -302,9 +301,18 @@
         <inbodydescription>
         </inbodydescription>
         <location file="include/llvm/IR/Instructions.h" line="1693" column="15" bodyfile="include/llvm/IR/Instructions.h" bodystart="1693" bodyend="1693"/>
+        <referencedby refid="_inst_combine_select_8cpp_1a538217142aeebcd4a4e5cbc7428df9d1" compoundref="_inst_combine_select_8cpp" startline="2295" endline="2311">canonicalizeScalarSelectOfVecs</referencedby>
         <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_code_gen_prepare_8cpp_03_1_1_a_m_d_g_p_u_code_gen_prepare_impl_1a36b7410be1f86b52970bb1381904e282" compoundref="_a_m_d_g_p_u_code_gen_prepare_8cpp" startline="713" endline="772">anonymous_namespace{AMDGPUCodeGenPrepare.cpp}::AMDGPUCodeGenPrepareImpl::foldBinOpIntoSelect</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1af9cc067afdf0e3c2ee4190e4a328c0db" compoundref="_inst_combine_select_8cpp" startline="3063" endline="3132">foldNestedSelects</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a917f93b85c9b8cfe9ad68ba6d49966ba" compoundref="_inst_combine_select_8cpp" startline="55" endline="111">foldSelectBinOpIdentity</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a4d786d3323d2318fc16c6b157e2d44e7" compoundref="_inst_combine_select_8cpp" startline="2316" endline="2358">foldSelectCmpBitcasts</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1ab6b30eb5a835fd225bcd74248fa65693" compoundref="_inst_combine_select_8cpp" startline="2211" endline="2252">llvm::InstCombinerImpl::foldSelectExtConst</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1aa231edc47a3993eaf9c7aa2bb324e2f5" compoundref="_inst_combine_select_8cpp" startline="2436" endline="2505">foldSelectFunnelShift</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a1bf4aeb6f1b186d451eb7f2536b76c2e" compoundref="_inst_combine_select_8cpp" startline="2507" endline="2548">foldSelectToCopysign</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ab15c69cfc260f1de61bb644d88b1ed85" compoundref="_inst_combine_select_8cpp" startline="2635" endline="2694">foldSelectToPhiImpl</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a5e98f750eb743731f0e343f2b418a0ac" compoundref="_inst_combine_select_8cpp" startline="2766" endline="2790">foldSelectWithFrozenICmp</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a525ea3a09eef862d8b6480717cbe7901" compoundref="_inst_combine_select_8cpp" startline="837" endline="865">foldSetClearBits</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a777bef8b513df8776aec8f3cf9ce066b" compoundref="_inst_combine_select_8cpp" startline="2550" endline="2633">llvm::InstCombinerImpl::foldVectorSelect</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a39751def9a559b8358d39c551d25688d" compoundref="_value_tracking_8cpp" startline="3718" endline="3736">isNonEqualSelect</referencedby>
         <referencedby refid="structllvm_1_1gvn_1_1_available_value_1ac96558c87ecbcc96f020a0efcaade750" compoundref="_g_v_n_8cpp" startline="1090" endline="1153">llvm::gvn::AvailableValue::MaterializeAdjustedValue</referencedby>
         <referencedby refid="_correlated_value_propagation_8cpp_1a580f44370be222c0b2be5a2a7fa3f048" compoundref="_correlated_value_propagation_8cpp" startline="115" endline="142">processSelect</referencedby>
@@ -324,8 +332,16 @@
         </inbodydescription>
         <location file="include/llvm/IR/Instructions.h" line="1694" column="15" bodyfile="include/llvm/IR/Instructions.h" bodystart="1694" bodyend="1694"/>
         <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_code_gen_prepare_8cpp_03_1_1_a_m_d_g_p_u_code_gen_prepare_impl_1a36b7410be1f86b52970bb1381904e282" compoundref="_a_m_d_g_p_u_code_gen_prepare_8cpp" startline="713" endline="772">anonymous_namespace{AMDGPUCodeGenPrepare.cpp}::AMDGPUCodeGenPrepareImpl::foldBinOpIntoSelect</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a4d786d3323d2318fc16c6b157e2d44e7" compoundref="_inst_combine_select_8cpp" startline="2316" endline="2358">foldSelectCmpBitcasts</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1ab6b30eb5a835fd225bcd74248fa65693" compoundref="_inst_combine_select_8cpp" startline="2211" endline="2252">llvm::InstCombinerImpl::foldSelectExtConst</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1aa231edc47a3993eaf9c7aa2bb324e2f5" compoundref="_inst_combine_select_8cpp" startline="2436" endline="2505">foldSelectFunnelShift</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1afcb58333497c40468d7889705a5d0b03" compoundref="_inst_combine_select_8cpp" startline="122" endline="237">foldSelectICmpAnd</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a1bf4aeb6f1b186d451eb7f2536b76c2e" compoundref="_inst_combine_select_8cpp" startline="2507" endline="2548">foldSelectToCopysign</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ab15c69cfc260f1de61bb644d88b1ed85" compoundref="_inst_combine_select_8cpp" startline="2635" endline="2694">foldSelectToPhiImpl</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1addf615067cb73b374b5b008a6e51d43c" compoundref="_inst_combine_select_8cpp" startline="1329" endline="1419">llvm::InstCombinerImpl::foldSelectValueEquivalence</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a5e98f750eb743731f0e343f2b418a0ac" compoundref="_inst_combine_select_8cpp" startline="2766" endline="2790">foldSelectWithFrozenICmp</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a525ea3a09eef862d8b6480717cbe7901" compoundref="_inst_combine_select_8cpp" startline="837" endline="865">foldSetClearBits</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a777bef8b513df8776aec8f3cf9ce066b" compoundref="_inst_combine_select_8cpp" startline="2550" endline="2633">llvm::InstCombinerImpl::foldVectorSelect</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a39751def9a559b8358d39c551d25688d" compoundref="_value_tracking_8cpp" startline="3718" endline="3736">isNonEqualSelect</referencedby>
         <referencedby refid="_correlated_value_propagation_8cpp_1a580f44370be222c0b2be5a2a7fa3f048" compoundref="_correlated_value_propagation_8cpp" startline="115" endline="142">processSelect</referencedby>
       </memberdef>
@@ -343,8 +359,16 @@
         </inbodydescription>
         <location file="include/llvm/IR/Instructions.h" line="1695" column="15" bodyfile="include/llvm/IR/Instructions.h" bodystart="1695" bodyend="1695"/>
         <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_code_gen_prepare_8cpp_03_1_1_a_m_d_g_p_u_code_gen_prepare_impl_1a36b7410be1f86b52970bb1381904e282" compoundref="_a_m_d_g_p_u_code_gen_prepare_8cpp" startline="713" endline="772">anonymous_namespace{AMDGPUCodeGenPrepare.cpp}::AMDGPUCodeGenPrepareImpl::foldBinOpIntoSelect</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a4d786d3323d2318fc16c6b157e2d44e7" compoundref="_inst_combine_select_8cpp" startline="2316" endline="2358">foldSelectCmpBitcasts</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1ab6b30eb5a835fd225bcd74248fa65693" compoundref="_inst_combine_select_8cpp" startline="2211" endline="2252">llvm::InstCombinerImpl::foldSelectExtConst</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1aa231edc47a3993eaf9c7aa2bb324e2f5" compoundref="_inst_combine_select_8cpp" startline="2436" endline="2505">foldSelectFunnelShift</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1afcb58333497c40468d7889705a5d0b03" compoundref="_inst_combine_select_8cpp" startline="122" endline="237">foldSelectICmpAnd</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a1bf4aeb6f1b186d451eb7f2536b76c2e" compoundref="_inst_combine_select_8cpp" startline="2507" endline="2548">foldSelectToCopysign</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ab15c69cfc260f1de61bb644d88b1ed85" compoundref="_inst_combine_select_8cpp" startline="2635" endline="2694">foldSelectToPhiImpl</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1addf615067cb73b374b5b008a6e51d43c" compoundref="_inst_combine_select_8cpp" startline="1329" endline="1419">llvm::InstCombinerImpl::foldSelectValueEquivalence</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a5e98f750eb743731f0e343f2b418a0ac" compoundref="_inst_combine_select_8cpp" startline="2766" endline="2790">foldSelectWithFrozenICmp</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a525ea3a09eef862d8b6480717cbe7901" compoundref="_inst_combine_select_8cpp" startline="837" endline="865">foldSetClearBits</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a777bef8b513df8776aec8f3cf9ce066b" compoundref="_inst_combine_select_8cpp" startline="2550" endline="2633">llvm::InstCombinerImpl::foldVectorSelect</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a39751def9a559b8358d39c551d25688d" compoundref="_value_tracking_8cpp" startline="3718" endline="3736">isNonEqualSelect</referencedby>
         <referencedby refid="_correlated_value_propagation_8cpp_1a580f44370be222c0b2be5a2a7fa3f048" compoundref="_correlated_value_propagation_8cpp" startline="115" endline="142">processSelect</referencedby>
       </memberdef>

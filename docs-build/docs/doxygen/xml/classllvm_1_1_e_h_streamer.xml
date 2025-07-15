@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_e_h_streamer" kind="class" language="C++" prot="public">
     <compoundname>llvm::EHStreamer</compoundname>
     <basecompoundref refid="classllvm_1_1_asm_printer_handler" prot="public" virt="non-virtual">llvm::AsmPrinterHandler</basecompoundref>
@@ -9,10 +9,10 @@
     <derivedcompoundref refid="classllvm_1_1_wasm_exception" prot="public" virt="non-virtual">llvm::WasmException</derivedcompoundref>
     <derivedcompoundref refid="classllvm_1_1_win_exception" prot="public" virt="non-virtual">llvm::WinException</derivedcompoundref>
     <includes refid="_e_h_streamer_8h" local="yes">CodeGen/AsmPrinter/EHStreamer.h</includes>
+    <innerclass refid="structllvm_1_1_e_h_streamer_1_1_pad_range" prot="protected">llvm::EHStreamer::PadRange</innerclass>
     <innerclass refid="structllvm_1_1_e_h_streamer_1_1_action_entry" prot="protected">llvm::EHStreamer::ActionEntry</innerclass>
     <innerclass refid="structllvm_1_1_e_h_streamer_1_1_call_site_entry" prot="protected">llvm::EHStreamer::CallSiteEntry</innerclass>
     <innerclass refid="structllvm_1_1_e_h_streamer_1_1_call_site_range" prot="protected">llvm::EHStreamer::CallSiteRange</innerclass>
-    <innerclass refid="structllvm_1_1_e_h_streamer_1_1_pad_range" prot="protected">llvm::EHStreamer::PadRange</innerclass>
     <sectiondef kind="protected-type">
       <memberdef kind="typedef" id="classllvm_1_1_e_h_streamer_1a8263fed2d1a8589d4124ec53fdc8f26b" prot="protected" static="no">
         <type><ref refid="classllvm_1_1_dense_map" kindref="compound">DenseMap</ref>&lt; <ref refid="classllvm_1_1_m_c_symbol" kindref="compound">MCSymbol</ref> *, <ref refid="structllvm_1_1_e_h_streamer_1_1_pad_range" kindref="compound">PadRange</ref> &gt;</type>
@@ -286,7 +286,7 @@
         <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
         <references refid="classllvm_1_1_small_vector_template_common_1acd9e771a3296c6b24146955754620557" compoundref="_small_vector_8h" startline="308" endline="311">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::back</references>
         <references refid="structllvm_1_1_landing_pad_info_1af2a11ab96d84007873d7803f2df9e881" compoundref="_machine_function_8h" startline="257">llvm::LandingPadInfo::BeginLabels</references>
-        <references refid="classllvm_1_1_e_h_streamer_1a1ea22df61755266413f65ca7e970c4bc">callToNoUnwindFunction</references>
+        <references refid="classllvm_1_1_e_h_streamer_1add3aa627d6c1eb31f0b6563af39b8b64" compoundref="_e_h_streamer_8cpp" startline="157" endline="185">callToNoUnwindFunction</references>
         <references refid="classllvm_1_1_e_h_streamer_1a1f1ea57bc156f9e309b4049bc1d10e17" compoundref="_e_h_streamer_8cpp" startline="187" endline="208">computePadMap</references>
         <references refid="classllvm_1_1_dense_map_base_1a65520b9c67759099e313d0f4e7b5ff9e" compoundref="_dense_map_8h" startline="84" endline="86">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</references>
         <references refid="structllvm_1_1_e_h_streamer_1_1_call_site_entry_1ab4e49554456434e3732647a566d0d6fe" compoundref="_e_h_streamer_8h" startline="64">llvm::EHStreamer::CallSiteEntry::EndLabel</references>
@@ -447,12 +447,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/CodeGen/AsmPrinter/EHStreamer.h" line="151" column="3"/>
+        <references refid="classllvm_1_1_e_h_streamer_1add3aa627d6c1eb31f0b6563af39b8b64" compoundref="_e_h_streamer_8cpp" startline="157" endline="185">callToNoUnwindFunction</references>
+        <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classllvm_1_1_e_h_streamer_1a1ea22df61755266413f65ca7e970c4bc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classllvm_1_1_e_h_streamer_1add3aa627d6c1eb31f0b6563af39b8b64" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classbool" kindref="compound">bool</ref></type>
-        <definition>static bool llvm::EHStreamer::callToNoUnwindFunction</definition>
+        <definition>bool EHStreamer::callToNoUnwindFunction</definition>
         <argsstring>(const MachineInstr *MI)</argsstring>
         <name>callToNoUnwindFunction</name>
         <qualifiedname>llvm::EHStreamer::callToNoUnwindFunction</qualifiedname>
@@ -468,9 +470,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/CodeGen/AsmPrinter/EHStreamer.h" line="155" column="15"/>
+        <location file="lib/CodeGen/AsmPrinter/EHStreamer.h" line="155" column="15" bodyfile="lib/CodeGen/AsmPrinter/EHStreamer.cpp" bodystart="157" bodyend="185"/>
+        <references refid="_s_i_lower_control_flow_8cpp_1a4868c5d81c5ccc98c47aeab6244346a0">assert</references>
+        <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
+        <references refid="_m_d5_8cpp_1a96d73bbd7af15cb1fc38c3f4a3bd82e9" compoundref="_m_d5_8cpp" startline="55">F</references>
         <references refid="_i_r_translator_8cpp_1abe44dfdea65b4f7e11e0a608ab708b76" compoundref="_i_r_translator_8cpp" startline="112">MI</references>
         <referencedby refid="classllvm_1_1_e_h_streamer_1a49694eb08442bb35020b9d8dfad6d7e5" compoundref="_e_h_streamer_8cpp" startline="230" endline="356">computeCallSiteTable</referencedby>
+        <referencedby refid="classllvm_1_1_e_h_streamer_1a587c61624bc329ab1c8d2317f19e1c08">~EHStreamer</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -1615,7 +1621,7 @@
       <member refid="classllvm_1_1_asm_printer_handler_1a7196f09f1d2b5e57c15aa4c975b7a54b" prot="public" virt="pure-virtual"><scope>llvm::EHStreamer</scope><name>beginFunction</name></member>
       <member refid="classllvm_1_1_asm_printer_handler_1a29ed62395d60b9b32bdd23b100feeb4d" prot="public" virt="virtual"><scope>llvm::EHStreamer</scope><name>beginInstruction</name></member>
       <member refid="classllvm_1_1_asm_printer_handler_1a59aaea9a47c59d91c4494bb345f5bc0c" prot="public" virt="virtual"><scope>llvm::EHStreamer</scope><name>beginModule</name></member>
-      <member refid="classllvm_1_1_e_h_streamer_1a1ea22df61755266413f65ca7e970c4bc" prot="public" virt="non-virtual"><scope>llvm::EHStreamer</scope><name>callToNoUnwindFunction</name></member>
+      <member refid="classllvm_1_1_e_h_streamer_1add3aa627d6c1eb31f0b6563af39b8b64" prot="public" virt="non-virtual"><scope>llvm::EHStreamer</scope><name>callToNoUnwindFunction</name></member>
       <member refid="classllvm_1_1_e_h_streamer_1a093b0a333833131b3fb12fb62f915bf1" prot="protected" virt="non-virtual"><scope>llvm::EHStreamer</scope><name>computeActionsTable</name></member>
       <member refid="classllvm_1_1_e_h_streamer_1a49694eb08442bb35020b9d8dfad6d7e5" prot="protected" virt="virtual"><scope>llvm::EHStreamer</scope><name>computeCallSiteTable</name></member>
       <member refid="classllvm_1_1_e_h_streamer_1a1f1ea57bc156f9e309b4049bc1d10e17" prot="protected" virt="non-virtual"><scope>llvm::EHStreamer</scope><name>computePadMap</name></member>

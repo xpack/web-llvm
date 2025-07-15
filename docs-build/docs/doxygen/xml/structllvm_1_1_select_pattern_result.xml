@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structllvm_1_1_select_pattern_result" kind="struct" language="C++" prot="public">
     <compoundname>llvm::SelectPatternResult</compoundname>
     <includes refid="_value_tracking_8h" local="yes">llvm/Analysis/ValueTracking.h</includes>
@@ -20,6 +20,7 @@
         <referencedby refid="namespacellvm_1a323137971325611ddc1b899b00b8aaa0" compoundref="_value_tracking_8cpp" startline="9183" endline="9221">llvm::canConvertToMinOrMaxIntrinsic</referencedby>
         <referencedby refid="_inst_combine_calls_8cpp_1ac6169fee4cf2c33a0c3abb46628bfefc" compoundref="_inst_combine_calls_8cpp" startline="479" endline="641">foldCttzCtlz</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a8de411243dcb508d9d512006edaba1ec" compoundref="_inst_combine_compares_8cpp" startline="6645" endline="6855">llvm::InstCombinerImpl::foldICmpUsingKnownBits</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ac83b2f6d1a223c7b4ac9eb3783ee1465" compoundref="_inst_combine_select_8cpp" startline="1860" endline="1912">foldSelectWithConstOpToBinOp</referencedby>
         <referencedby refid="classllvm_1_1_a_r_m_t_t_i_impl_1ae83866ca1a903e74fd6b66c1fec0d528" compoundref="_a_r_m_target_transform_info_8cpp" startline="940" endline="1084">llvm::ARMTTIImpl::getCmpSelInstrCost</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a6a2d7b6d01962d7dff4c6e3e87f4575e" compoundref="_value_tracking_8cpp" startline="1118" endline="1145">isSignedMinMaxClamp</referencedby>
         <referencedby refid="_a_r_m_target_transform_info_8cpp_1a0deafca5c66f3b900139bcf024085e8f" compoundref="_a_r_m_target_transform_info_8cpp" startline="366" endline="396">isSSATMinMaxPattern</referencedby>
@@ -27,6 +28,7 @@
         <referencedby refid="_instruction_simplify_8cpp_1afa1ff3254ee225171cb55d46b0eab145" compoundref="_instruction_simplify_8cpp" startline="4655" endline="4774">simplifySelectWithICmpCond</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a86b0437dceb8e39c8185dc7def325011" compoundref="_inst_combine_compares_8cpp" startline="8299" endline="8612">llvm::InstCombinerImpl::visitFCmpInst</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ae31c50e938b95587c87aed0f133b1346" compoundref="_inst_combine_compares_8cpp" startline="7390" endline="7717">llvm::InstCombinerImpl::visitICmpInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structllvm_1_1_select_pattern_result_1ab0258a1ec39b9906e918a1a60fdfbc51" prot="public" static="no" mutable="no">
         <type><ref refid="namespacellvm_1ab1ec0705ee0a9265c1533bad94aae26f" kindref="member">SelectPatternNaNBehavior</ref></type>
@@ -56,6 +58,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="include/llvm/Analysis/ValueTracking.h" line="1140" column="8" bodyfile="include/llvm/Analysis/ValueTracking.h" bodystart="1140" bodyend="-1"/>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -83,9 +86,11 @@
         <references refid="namespacellvm_1a6bf471c1030973649c2e426afc212097aee3dafa9fac8f6fa1e1110ef463cc452" compoundref="_value_tracking_8h" startline="1114">llvm::SPF_UNKNOWN</references>
         <referencedby refid="namespacellvm_1a323137971325611ddc1b899b00b8aaa0" compoundref="_value_tracking_8cpp" startline="9183" endline="9221">llvm::canConvertToMinOrMaxIntrinsic</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a8de411243dcb508d9d512006edaba1ec" compoundref="_inst_combine_compares_8cpp" startline="6645" endline="6855">llvm::InstCombinerImpl::foldICmpUsingKnownBits</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a18ae85abc7c8af141f01734655f933ec" compoundref="_inst_combine_select_8cpp" startline="2000" endline="2017">llvm::InstCombinerImpl::foldSPFofSPF</referencedby>
         <referencedby refid="classllvm_1_1_recurrence_descriptor_1a6415fb68bc55f3a316aa414a5c2c0ab2" compoundref="_i_v_descriptors_8cpp" startline="1167" endline="1267">llvm::RecurrenceDescriptor::getReductionOpChain</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a77bc4c2ac5bdfea178b15627e282cc8c" compoundref="_value_tracking_8cpp" startline="8409" endline="8500">matchMinMaxOfMinMax</referencedby>
         <referencedby refid="_instruction_simplify_8cpp_1afa1ff3254ee225171cb55d46b0eab145" compoundref="_instruction_simplify_8cpp" startline="4655" endline="4774">simplifySelectWithICmpCond</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

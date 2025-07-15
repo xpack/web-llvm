@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1vfs_1_1_redirecting_file_system" kind="class" language="C++" prot="public">
     <compoundname>llvm::vfs::RedirectingFileSystem</compoundname>
     <basecompoundref refid="classllvm_1_1_r_t_t_i_extends" prot="public" virt="non-virtual">llvm::RTTIExtends&lt; RedirectingFileSystem, vfs::FileSystem &gt;</basecompoundref>
     <includes refid="_virtual_file_system_8h" local="yes">llvm/Support/VirtualFileSystem.h</includes>
-    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_entry" prot="public">llvm::vfs::RedirectingFileSystem::DirectoryEntry</innerclass>
-    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_remap_entry" prot="public">llvm::vfs::RedirectingFileSystem::DirectoryRemapEntry</innerclass>
     <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_entry" prot="public">llvm::vfs::RedirectingFileSystem::Entry</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_entry" prot="public">llvm::vfs::RedirectingFileSystem::DirectoryEntry</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_remap_entry" prot="public">llvm::vfs::RedirectingFileSystem::RemapEntry</innerclass>
+    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_directory_remap_entry" prot="public">llvm::vfs::RedirectingFileSystem::DirectoryRemapEntry</innerclass>
     <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_file_entry" prot="public">llvm::vfs::RedirectingFileSystem::FileEntry</innerclass>
     <innerclass refid="structllvm_1_1vfs_1_1_redirecting_file_system_1_1_lookup_result" prot="public">llvm::vfs::RedirectingFileSystem::LookupResult</innerclass>
-    <innerclass refid="classllvm_1_1vfs_1_1_redirecting_file_system_1_1_remap_entry" prot="public">llvm::vfs::RedirectingFileSystem::RemapEntry</innerclass>
     <sectiondef kind="user-defined">
       <header>Configuration</header>
       <memberdef kind="variable" id="classllvm_1_1vfs_1_1_redirecting_file_system_1a39656e314338ee73adb1149cd31a81fd" prot="private" static="no" mutable="no">
@@ -1182,39 +1182,39 @@
 <para>Currently, this class allows creating virtual files and directories. Virtual files map to existing external files in <computeroutput>ExternalFS</computeroutput>, and virtual directories may either map to existing directories in <computeroutput>ExternalFS</computeroutput> or list their contents in the form of other virtual directories and/or files.</para>
 <para>The basic structure of the parsed file is: <verbatim>/// {
 ///   &apos;version&apos;: &lt;version number&gt;,
-///   &lt;optional configuration&gt;
-///   &apos;roots&apos;: [
-///              &lt;directory entries&gt;
-///            ]
-/// }
-/// </verbatim> The roots may be absolute or relative. If relative they will be made absolute against either current working directory or the directory where the Overlay YAML file is located, depending on the &apos;root-relative&apos; configuration.</para>
+ *    &lt;optional configuration&gt;
+ *    &apos;roots&apos;: [
+ *               &lt;directory entries&gt;
+ *             ]
+ *  }
+ *  </verbatim> The roots may be absolute or relative. If relative they will be made absolute against either current working directory or the directory where the Overlay YAML file is located, depending on the &apos;root-relative&apos; configuration.</para>
 <para>All configuration options are optional. &apos;case-sensitive&apos;: &lt;boolean, default=(true for Posix, false for Windows)&gt; &apos;use-external-names&apos;: &lt;boolean, default=true&gt; &apos;root-relative&apos;: &lt;string, one of &apos;cwd&apos; or &apos;overlay-dir&apos;, default=&apos;cwd&apos;&gt; &apos;overlay-relative&apos;: &lt;boolean, default=false&gt; &apos;fallthrough&apos;: &lt;boolean, default=true, deprecated - use &apos;redirecting-with&apos; instead&gt; &apos;redirecting-with&apos;: &lt;string, one of &apos;fallthrough&apos;, &apos;fallback&apos;, or &apos;redirect-only&apos;, default=&apos;fallthrough&apos;&gt;</para>
 <para>To clarify, &apos;root-relative&apos; option will prepend the current working directory, or the overlay directory to the &apos;roots-&gt;name&apos; field only if &apos;roots-&gt;name&apos; is a relative path. On the other hand, when &apos;overlay-relative&apos; is set to &apos;true&apos;, external paths will always be prepended with the overlay directory, even if external paths are not relative paths. The &apos;root-relative&apos; option has no interaction with the &apos;overlay-relative&apos; option.</para>
 <para>Virtual directories that list their contents are represented as <verbatim>/// {
 ///   &apos;type&apos;: &apos;directory&apos;,
-///   &apos;name&apos;: &lt;string&gt;,
-///   &apos;contents&apos;: [ &lt;file or directory entries&gt; ]
-/// }
-/// </verbatim> The default attributes for such virtual directories are: <verbatim>/// MTime = now() when created
-/// Perms = 0777
-/// User = Group = 0
-/// Size = 0
-/// UniqueID = unspecified unique value
-/// </verbatim> When a path prefix matches such a directory, the next component in the path is matched against the entries in the &apos;contents&apos; array.</para>
+ *    &apos;name&apos;: &lt;string&gt;,
+ *    &apos;contents&apos;: [ &lt;file or directory entries&gt; ]
+ *  }
+ *  </verbatim> The default attributes for such virtual directories are: <verbatim>/// MTime = now() when created
+ *  Perms = 0777
+ *  User = Group = 0
+ *  Size = 0
+ *  UniqueID = unspecified unique value
+ *  </verbatim> When a path prefix matches such a directory, the next component in the path is matched against the entries in the &apos;contents&apos; array.</para>
 <para>Re-mapped directories, on the other hand, are represented as /// <verbatim>/// {
 ///   &apos;type&apos;: &apos;directory-remap&apos;,
-///   &apos;name&apos;: &lt;string&gt;,
-///   &apos;use-external-name&apos;: &lt;boolean&gt;, # Optional
-///   &apos;external-contents&apos;: &lt;path to external directory&gt;
-/// }
-/// </verbatim> and inherit their attributes from the external directory. When a path prefix matches such an entry, the unmatched components are appended to the &apos;external-contents&apos; path, and the resulting path is looked up in the external file system instead.</para>
+ *    &apos;name&apos;: &lt;string&gt;,
+ *    &apos;use-external-name&apos;: &lt;boolean&gt;, # Optional
+ *    &apos;external-contents&apos;: &lt;path to external directory&gt;
+ *  }
+ *  </verbatim> and inherit their attributes from the external directory. When a path prefix matches such an entry, the unmatched components are appended to the &apos;external-contents&apos; path, and the resulting path is looked up in the external file system instead.</para>
 <para>Re-mapped files are represented as <verbatim>/// {
 ///   &apos;type&apos;: &apos;file&apos;,
-///   &apos;name&apos;: &lt;string&gt;,
-///   &apos;use-external-name&apos;: &lt;boolean&gt;, # Optional
-///   &apos;external-contents&apos;: &lt;path to external file&gt;
-/// }
-/// </verbatim> Their attributes and file contents are determined by looking up the file at their &apos;external-contents&apos; path in the external file system.</para>
+ *    &apos;name&apos;: &lt;string&gt;,
+ *    &apos;use-external-name&apos;: &lt;boolean&gt;, # Optional
+ *    &apos;external-contents&apos;: &lt;path to external file&gt;
+ *  }
+ *  </verbatim> Their attributes and file contents are determined by looking up the file at their &apos;external-contents&apos; path in the external file system.</para>
 <para>For &apos;file&apos;, &apos;directory&apos; and &apos;directory-remap&apos; entries the &apos;name&apos; field may contain multiple path components (e.g. /path/to/file). However, any directory in such a path that contains more than one child must be uniquely represented by a &apos;directory&apos; entry.</para>
 <para>When the &apos;use-external-name&apos; field is set, calls to <emphasis><ref refid="classllvm_1_1vfs_1_1_file_1a42e50c531aa6b96228eed7c6b885fcaf" kindref="member">vfs::File::status()</ref></emphasis> give the external (remapped) filesystem name instead of the name the file was accessed by. This is an intentional leak through the <emphasis><ref refid="classllvm_1_1vfs_1_1_redirecting_file_system" kindref="compound">RedirectingFileSystem</ref></emphasis> abstraction layer. It enables clients to discover (and use) the external file location when communicating with users or tools that don&apos;t use the same VFS overlay.</para>
 <para>FIXME: &apos;use-external-name&apos; causes behaviour that&apos;s inconsistent with how &quot;real&quot; filesystems behave. Maybe there should be a separate channel for this information. </para>

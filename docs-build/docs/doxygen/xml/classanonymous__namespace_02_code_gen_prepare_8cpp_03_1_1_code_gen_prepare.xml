@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classanonymous__namespace_02_code_gen_prepare_8cpp_03_1_1_code_gen_prepare" kind="class" language="C++" prot="public">
     <compoundname>anonymous_namespace{CodeGenPrepare.cpp}::CodeGenPrepare</compoundname>
     <sectiondef kind="friend">
@@ -825,7 +825,7 @@
           <declname>Ptr</declname>
         </param>
         <briefdescription>
-<para>Rewrite GEP input to gather/scatter to enable <ref refid="classllvm_1_1_selection_d_a_g_builder" kindref="compound">SelectionDAGBuilder</ref> to find a uniform base to use for ISD::MGATHER/MSCATTER. </para>
+<para>Rewrite GEP input to gather/scatter to enable <ref refid="classllvm_1_1_selection_d_a_g_builder" kindref="compound">SelectionDAGBuilder</ref> to find a uniform base to use for <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab4685260a7e506fe51f17d9b600349c8" kindref="member">ISD::MGATHER</ref>/MSCATTER. </para>
         </briefdescription>
         <detaileddescription>
 <para><ref refid="classllvm_1_1_selection_d_a_g_builder" kindref="compound">SelectionDAGBuilder</ref> can only handle a 2 operand GEP in the same basic block or a splat constant vector. The 2 operands to the GEP must have a scalar pointer and a vector index.</para>
@@ -894,11 +894,10 @@
         </briefdescription>
         <detaileddescription>
 <para>This allows <ref refid="classllvm_1_1_selection_d_a_g" kindref="compound">SelectionDAG</ref> to fold the extend into the load.</para>
-<para>E.g., <programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>%ld<sp/>=<sp/><ref refid="_a_m_d_g_p_u_mark_last_scratch_load_8cpp_1a8a3fe89940744b94ffe5dacd6704c2be" kindref="member">load</ref><sp/>i32*<sp/>%addr</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>%<ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>=<sp/><ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>nuw<sp/>i32<sp/>%ld,<sp/>4</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>%zext<sp/>=<sp/>zext<sp/>i32<sp/>%<ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>to<sp/>i64</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight></codeline>
-</programlisting> =&gt; <programlisting><codeline><highlight class="normal">%ld<sp/>=<sp/><ref refid="_a_m_d_g_p_u_mark_last_scratch_load_8cpp_1a8a3fe89940744b94ffe5dacd6704c2be" kindref="member">load</ref><sp/>i32*<sp/>%addr</highlight></codeline>
+<para>E.g., <programlisting><codeline><highlight class="normal">%ld<sp/>=<sp/><ref refid="_a_m_d_g_p_u_mark_last_scratch_load_8cpp_1a8a3fe89940744b94ffe5dacd6704c2be" kindref="member">load</ref><sp/>i32*<sp/>%addr</highlight></codeline>
+<codeline><highlight class="normal">%<ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>=<sp/><ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>nuw<sp/>i32<sp/>%ld,<sp/>4</highlight></codeline>
+<codeline><highlight class="normal">%zext<sp/>=<sp/>zext<sp/>i32<sp/>%<ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>to<sp/>i64<sp/>*/</highlight></codeline>
+</programlisting> /** =&gt; <programlisting><codeline><highlight class="normal">%ld<sp/>=<sp/><ref refid="_a_m_d_g_p_u_mark_last_scratch_load_8cpp_1a8a3fe89940744b94ffe5dacd6704c2be" kindref="member">load</ref><sp/>i32*<sp/>%addr</highlight></codeline>
 <codeline><highlight class="normal">%zext<sp/>=<sp/>zext<sp/>i32<sp/>%ld<sp/>to<sp/>i64</highlight></codeline>
 <codeline><highlight class="normal">%<ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>=<sp/><ref refid="namespacellvm_1_1_a_r_m___a_m_1a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09" kindref="member">add</ref><sp/>nuw<sp/>i64<sp/>%zext,<sp/>4</highlight></codeline>
 <codeline><highlight class="normal">\<ref refid="namespacellvm_1a15ce86953ef9122361a5be3aba654272" kindref="member">encode</ref></highlight></codeline>

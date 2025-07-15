@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_load_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::LoadInst</compoundname>
     <basecompoundref refid="classllvm_1_1_unary_instruction" prot="public" virt="non-virtual">llvm::UnaryInstruction</basecompoundref>
@@ -59,13 +59,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -407,6 +402,7 @@
         <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_late_code_gen_prepare_8cpp_03_1_1_a_m_d_g_p_u_late_code_gen_prepare_1a92c9a1a2b05d0e6310b69180af44554a" compoundref="_a_m_d_g_p_u_late_code_gen_prepare_8cpp" startline="399" endline="421">anonymous_namespace{AMDGPULateCodeGenPrepare.cpp}::AMDGPULateCodeGenPrepare::canWidenScalarExtLoad</referencedby>
         <referencedby refid="classllvm_1_1_load_inst_1a8195fc57735a947a24bc9abee4a9c4d5" compoundref="_instructions_8cpp" startline="4296" endline="4299">cloneImpl</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ad7586c4efa39c8f9162c7608ff9a57cf" compoundref="_inst_combine_load_store_alloca_8cpp" startline="548" endline="559">llvm::InstCombinerImpl::combineLoadToNewType</referencedby>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1a388d5a62753f4e7ff4b72e54c1233fbc" compoundref="_o_m_p_i_r_builder_8cpp" startline="8489" endline="8541">llvm::OpenMPIRBuilder::createAtomicRead</referencedby>
         <referencedby refid="classanonymous__namespace_02_lower_matrix_intrinsics_8cpp_03_1_1_lower_matrix_intrinsics_1a133fc35b714b7fc4b5a0935c811ed37a" compoundref="_lower_matrix_intrinsics_8cpp" startline="1824" endline="1886">anonymous_namespace{LowerMatrixIntrinsics.cpp}::LowerMatrixIntrinsics::emitSIMDTiling</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1aa8a186c50cdf60ac11ae1d0b884d468d" compoundref="_inst_combine_p_h_i_8cpp" startline="697" endline="800">llvm::InstCombinerImpl::foldPHIArgLoadIntoPHI</referencedby>
         <referencedby refid="classllvm_1_1_target_lowering_base_1a76e90df9d2b35d9174077de99d909165" compoundref="_target_lowering_base_8cpp" startline="2253" endline="2273">llvm::TargetLoweringBase::getLoadMemOperandFlags</referencedby>
@@ -578,6 +574,7 @@
         <references refid="classllvm_1_1_load_inst_1a6406dc0bd5ecd638220d1f0d01f35d60" compoundref="_instructions_8h" startline="235" endline="237">setSyncScopeID</references>
         <references refid="namespacellvm_1_1_sync_scope_1a15caddcf5c9b41f2f15c2ec363589f6caf9706a2e196638078e8323bfd9ba17de" compoundref="_l_l_v_m_context_8h" startline="57">llvm::SyncScope::System</references>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ad7586c4efa39c8f9162c7608ff9a57cf" compoundref="_inst_combine_load_store_alloca_8cpp" startline="548" endline="559">llvm::InstCombinerImpl::combineLoadToNewType</referencedby>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1a388d5a62753f4e7ff4b72e54c1233fbc" compoundref="_o_m_p_i_r_builder_8cpp" startline="8489" endline="8541">llvm::OpenMPIRBuilder::createAtomicRead</referencedby>
         <referencedby refid="classllvm_1_1_load_inst_1ab8d13cc98fc2777a70c49a4e6ede971f" compoundref="_instructions_8cpp" startline="1276" endline="1285">LoadInst</referencedby>
         <referencedby refid="classllvm_1_1_s_i_target_lowering_1a818d0dbc281d144e0f02a0a75c7af1ee" compoundref="_s_i_i_sel_lowering_8cpp" startline="17419" endline="17438">llvm::SITargetLowering::lowerIdempotentRMWIntoFencedLoad</referencedby>
         <referencedby refid="_lower_atomic_pass_8cpp_1a533cef247257a2fdcfbf3caed9edded6" compoundref="_lower_atomic_pass_8cpp" startline="29" endline="32">LowerLoadInst</referencedby>
@@ -649,6 +646,7 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ad7586c4efa39c8f9162c7608ff9a57cf" compoundref="_inst_combine_load_store_alloca_8cpp" startline="548" endline="559">llvm::InstCombinerImpl::combineLoadToNewType</referencedby>
         <referencedby refid="structanonymous__namespace_02_interleaved_load_combine_pass_8cpp_03_1_1_vector_info_1a0cb38e302133457f235fdcc6723abeac" compoundref="_interleaved_load_combine_pass_8cpp" startline="868" endline="900">anonymous_namespace{InterleavedLoadCombinePass.cpp}::VectorInfo::computeFromLI</referencedby>
         <referencedby refid="namespacellvm_1ab057ca6ed74ccfa73d1a0d2cf15b2300" compoundref="_transforms_2_utils_2_local_8cpp" startline="3636" endline="3659">llvm::copyNonnullMetadata</referencedby>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1a388d5a62753f4e7ff4b72e54c1233fbc" compoundref="_o_m_p_i_r_builder_8cpp" startline="8489" endline="8541">llvm::OpenMPIRBuilder::createAtomicRead</referencedby>
         <referencedby refid="_s_l_p_vectorizer_8cpp_1a596e8b6e6b71f454b18f982f947e5e03" compoundref="_s_l_p_vectorizer_8cpp" startline="1100" endline="1126">doesInTreeUserNeedToExtract</referencedby>
         <referencedby refid="_aggressive_inst_combine_8cpp_1a8f64e8576d57bb362e730214c7e6fae9" compoundref="_aggressive_inst_combine_8cpp" startline="623" endline="766">foldLoadsRecursive</referencedby>
         <referencedby refid="_s_l_p_vectorizer_8cpp_1a9e4f7b81913ac2176cac1eaa2b66a0b7" compoundref="_s_l_p_vectorizer_8cpp" startline="6789" endline="6940">gatherPossiblyVectorizableLoads</referencedby>

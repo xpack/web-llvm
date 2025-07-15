@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_p_p_c_reduce_c_r_logicals_8cpp" kind="file" language="C++">
     <compoundname>PPCReduceCRLogicals.cpp</compoundname>
     <includes refid="_p_p_c_8h" local="yes">PPC.h</includes>
@@ -5589,12 +5589,12 @@
 <codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opc<sp/>==<sp/>PPC::CR6UNSET;</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>simplifyCode()<sp/>{</highlight></codeline>
-<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Changed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Not<sp/>using<sp/>a<sp/>range-based<sp/>for<sp/>loop<sp/>here<sp/>as<sp/>the<sp/>vector<sp/>may<sp/>grow<sp/>while<sp/>being</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>operated<sp/>on.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AllCRLogicalOps.<ref refid="classllvm_1_1_small_vector_template_common_1a1c479a8c434377c2b8cb056bdfdfc201" kindref="member">size</ref>();<sp/>i++)</highlight></codeline>
-<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>|=<sp/>handleCROp(i);</highlight></codeline>
-<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Changed<sp/>|=<sp/>handleCROp(i);</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Changed;</highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="406"><highlight class="normal"></highlight></codeline>
 <codeline lineno="407"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
@@ -5776,15 +5776,15 @@
 <codeline lineno="583"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>PPCReduceCRLogicals::handleCROp(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>Idx)<sp/>{</highlight></codeline>
 <codeline lineno="584"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>definitely<sp/>split<sp/>a<sp/>block<sp/>on<sp/>the<sp/>inputs<sp/>to<sp/>a<sp/>binary<sp/>CR<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="585"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>whose<sp/>defs<sp/>and<sp/>(single)<sp/>use<sp/>are<sp/>within<sp/>the<sp/>same<sp/>block.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Changed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="587"><highlight class="normal"><sp/><sp/>CRLogicalOpInfo<sp/>CRI<sp/>=<sp/>AllCRLogicalOps[Idx];</highlight></codeline>
 <codeline lineno="588"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(CRI.IsBinary<sp/>&amp;&amp;<sp/>CRI.ContainedInBlock<sp/>&amp;&amp;<sp/>CRI.SingleUse<sp/>&amp;&amp;<sp/>CRI.FeedsBR<sp/>&amp;&amp;</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>CRI.DefsSingleUse)<sp/>{</highlight></codeline>
-<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/>splitBlockOnBinaryCROp(CRI);</highlight></codeline>
-<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>)</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/>Changed<sp/>=<sp/>splitBlockOnBinaryCROp(CRI);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Changed)</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>NumBlocksSplitOnBinaryCROp++;</highlight></codeline>
 <codeline lineno="593"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="594"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Changed;</highlight></codeline>
 <codeline lineno="595"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="596"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
 <codeline lineno="597"><highlight class="comment">///<sp/>Splits<sp/>a<sp/>block<sp/>that<sp/>contains<sp/>a<sp/>CR-logical<sp/>operation<sp/>that<sp/>feeds<sp/>a<sp/>branch</highlight></codeline>
@@ -5886,10 +5886,10 @@
 <codeline lineno="693"><highlight class="normal"><sp/><sp/>BlockSplitInfo<sp/>BSI<sp/>{<sp/><ref refid="namespacellvm_1_1_m_c_i_d_1ab357441fcd1ea1f9b0d27c12700f6023a359237c780f7c8e40645575826da8a3c" kindref="member">Branch</ref>,<sp/>SplitBefore,<sp/>SplitCond,<sp/>InvertNewBranch,</highlight></codeline>
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/>InvertOrigBranch,<sp/>TargetIsFallThrough,<sp/>MBPI,<sp/>CRI.MI,</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/>UsingDef1<sp/>?<sp/>CRI.CopyDefs.first<sp/>:<sp/>CRI.CopyDefs.second<sp/>};</highlight></codeline>
-<codeline lineno="696"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref><sp/>=<sp/><ref refid="_p_p_c_reduce_c_r_logicals_8cpp_1a6268a1294b61555b575fbd131789aaf3" kindref="member">splitMBB</ref>(BSI);</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Changed<sp/>=<sp/><ref refid="_p_p_c_reduce_c_r_logicals_8cpp_1a6268a1294b61555b575fbd131789aaf3" kindref="member">splitMBB</ref>(BSI);</highlight></codeline>
 <codeline lineno="697"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>we&apos;ve<sp/>split<sp/>on<sp/>a<sp/>CR<sp/>logical<sp/>that<sp/>is<sp/>fed<sp/>by<sp/>a<sp/>CR<sp/>logical,</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="698"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>recompute<sp/>the<sp/>source<sp/>CR<sp/>logical<sp/>as<sp/>it<sp/>may<sp/>be<sp/>usable<sp/>for<sp/>splitting.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="699"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Changed)<sp/>{</highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Input1CRlogical<sp/>=</highlight></codeline>
 <codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>CRI.TrueDefs.first<sp/>&amp;&amp;<sp/>isCRLogical(*CRI.TrueDefs.first);</highlight></codeline>
 <codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Input2CRlogical<sp/>=</highlight></codeline>
@@ -5899,7 +5899,7 @@
 <codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Input2CRlogical)</highlight></codeline>
 <codeline lineno="707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>AllCRLogicalOps.push_back(<ref refid="classanonymous__namespace_02_p_p_c_reduce_c_r_logicals_8cpp_03_1_1_p_p_c_reduce_c_r_logicals_1ae5e50a6a8cb928fb34cd4fde19384381" kindref="member">createCRLogicalOpInfo</ref>(*CRI.TrueDefs.second));</highlight></codeline>
 <codeline lineno="708"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="709"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___a_r_c_opt_1gaa57b1a4e6a1c79233913139635169cf1" kindref="member">Changed</ref>;</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Changed;</highlight></codeline>
 <codeline lineno="710"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="711"><highlight class="normal"></highlight></codeline>
 <codeline lineno="712"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PPCReduceCRLogicals::collectCRLogicals()<sp/>{</highlight></codeline>

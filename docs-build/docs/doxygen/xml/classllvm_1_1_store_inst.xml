@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_store_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::StoreInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
@@ -76,13 +76,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -468,6 +463,7 @@
         </inbodydescription>
         <location file="include/llvm/IR/Instructions.h" line="337" column="8" bodyfile="include/llvm/IR/Instructions.h" bodystart="337" bodyend="339"/>
         <references refid="namespacellvm_1ad82de9da62635df78a534de0f16c1129" compoundref="_alignment_8h" startline="208" endline="208">llvm::Log2</references>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1a6e2bd6420d3d12339e32d4d1b3ba1394" compoundref="_o_m_p_i_r_builder_8cpp" startline="5812" endline="5856">llvm::OpenMPIRBuilder::createOrderedDepend</referencedby>
         <referencedby refid="structanonymous__namespace_02_expand_vector_predication_8cpp_03_1_1_caching_v_p_expander_1a1f1f1359a986d8e4d1b107ae4c524a32" compoundref="_expand_vector_predication_8cpp" startline="411" endline="473">anonymous_namespace{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationInMemoryIntrinsic</referencedby>
         <referencedby refid="classanonymous__namespace_02_l_i_c_m_8cpp_03_1_1_loop_promoter_1afdbe575a191d9f3b5b6cef8212745dc0" compoundref="_l_i_c_m_8cpp" startline="1864" endline="1912">anonymous_namespace{LICM.cpp}::LoopPromoter::insertStoresInLoopExitBlocks</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a557f3c41bf651bbd713f9220c59f0b1a" compoundref="_inst_combine_calls_8cpp" startline="217" endline="287">llvm::InstCombinerImpl::SimplifyAnyMemSet</referencedby>
@@ -582,6 +578,7 @@
         <references refid="classllvm_1_1_store_inst_1a9c42e225d0cd03573a24467a51bc0c05" compoundref="_instructions_8h" startline="358" endline="360">setSyncScopeID</references>
         <references refid="namespacellvm_1_1_sync_scope_1a15caddcf5c9b41f2f15c2ec363589f6caf9706a2e196638078e8323bfd9ba17de" compoundref="_l_l_v_m_context_8h" startline="57">llvm::SyncScope::System</references>
         <referencedby refid="_inst_combine_load_store_alloca_8cpp_1a00d35e1397cf2210fd30e1993c1eaab9" compoundref="_inst_combine_load_store_alloca_8cpp" startline="564" endline="615">combineStoreToNewValue</referencedby>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1a0e2de2c034e3083d006b92ddf14b8bcf" compoundref="_o_m_p_i_r_builder_8cpp" startline="8544" endline="8572">llvm::OpenMPIRBuilder::createAtomicWrite</referencedby>
         <referencedby refid="classllvm_1_1_store_inst_1aa2bc34e64d5998c42bde9be90ad5bad1" compoundref="_instructions_8cpp" startline="1311" endline="1322">StoreInst</referencedby>
         <referencedby refid="classanonymous__namespace_02_a_m_d_g_p_u_sw_lower_l_d_s_8cpp_03_1_1_a_m_d_g_p_u_sw_lower_l_d_s_1a132e2ed28fb57bfad40af5505d2db16a" compoundref="_a_m_d_g_p_u_sw_lower_l_d_s_8cpp" startline="674" endline="728">anonymous_namespace{AMDGPUSwLowerLDS.cpp}::AMDGPUSwLowerLDS::translateLDSMemoryOperationsToGlobalMemory</referencedby>
       </memberdef>

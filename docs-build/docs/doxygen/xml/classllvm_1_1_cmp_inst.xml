@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_cmp_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::CmpInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
@@ -562,6 +562,7 @@
         <referencedby refid="classanonymous__namespace_02_m_i_parser_8cpp_03_1_1_m_i_parser_1a4590f4e05f484028f3b4bf3387955427" compoundref="_m_i_parser_8cpp" startline="2686" endline="2742">anonymous_namespace{MIParser.cpp}::MIParser::parsePredicateOperand</referencedby>
         <referencedby refid="_instruction_simplify_8cpp_1a5a5e32c5d5b01554c4d171562427a2de" compoundref="_instruction_simplify_8cpp" startline="6132" endline="6137">simplifyCmpInst</referencedby>
         <referencedby refid="_instruction_simplify_8cpp_1a47a81cb5e93cfda95b1de100dd5b9919" compoundref="_instruction_simplify_8cpp" startline="3742" endline="4054">simplifyICmpInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_cmp_inst_1aa68a2d2c06a10b1e5a5bc778a107c0ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classllvm_1_1_string_ref" kindref="compound">StringRef</ref></type>
@@ -979,6 +980,7 @@
         <location file="include/llvm/IR/InstrTypes.h" line="921" column="15" bodyfile="include/llvm/IR/InstrTypes.h" bodystart="921" bodyend="921"/>
         <references refid="classllvm_1_1_cmp_inst_1a0c27987ab3db5ef2125fd178e0ff21b2" compoundref="_instr_types_8h" startline="913" endline="913">isEquality</references>
         <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="_inst_combine_select_8cpp_1aadd274cfa4ae19782aa85d9f162925c6" compoundref="_inst_combine_select_8cpp" startline="3704" endline="3762">foldSelectIntoAddConstant</referencedby>
         <referencedby refid="classllvm_1_1_constant_range_1a1ca4520a4894a14c70f390091ee8d05d" compoundref="_constant_range_8cpp" startline="188" endline="204">llvm::ConstantRange::getEquivalentPredWithFlippedSignedness</referencedby>
         <referencedby refid="classllvm_1_1_cmp_inst_1a23665a6553110e9303fff3ea76c21de1" compoundref="_instructions_8cpp" startline="3718" endline="3727">getFlippedStrictnessPredicate</referencedby>
       </memberdef>
@@ -1058,6 +1060,7 @@
         <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba8a80b27ca29fe2076b9bbdee02c65464" compoundref="_instr_types_8h" startline="681">FCMP_ONE</references>
         <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78baa3213b645e029aba8bb1b85213607d5e" compoundref="_instr_types_8h" startline="682">FCMP_ORD</references>
         <referencedby refid="namespacellvm_1a1539ae3ac4221909b26a57b4664e426a" compoundref="_value_tracking_8cpp" startline="4562" endline="4882">llvm::fcmpImpliesClass</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1afdc0c60200d744fe53a7f48e3f7e4bb0" compoundref="_inst_combine_select_8cpp" startline="2823" endline="2946">foldSelectWithFCmpToFabs</referencedby>
         <referencedby refid="classllvm_1_1_constant_f_p_range_1a84ec432d02febd1b518e9453b1a0eba9" compoundref="_constant_f_p_range_8cpp" startline="164" endline="219">llvm::ConstantFPRange::makeAllowedFCmpRegion</referencedby>
         <referencedby refid="classllvm_1_1_constant_f_p_range_1a4c7a26e0bf4a7880f0ba8c3aa2d74a89" compoundref="_constant_f_p_range_8cpp" startline="222" endline="266">llvm::ConstantFPRange::makeSatisfyingFCmpRegion</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a59d23c7a219bf242360a0b2ef67bc3c8" compoundref="_value_tracking_8cpp" startline="8754" endline="8925">matchSelectPattern</referencedby>
@@ -1091,12 +1094,14 @@
         <referencedby refid="namespacellvm_1a293a0cb64e182e693cdd406f8da7ced5" compoundref="_constant_fold_8cpp" startline="1101" endline="1313">llvm::ConstantFoldCompareInstruction</referencedby>
         <referencedby refid="namespacellvm_1aa56f37cb4a3ca6ae2017ac7c5e5b5d13" compoundref="_value_tracking_8cpp" startline="4885" endline="4932">llvm::fcmpImpliesClass</referencedby>
         <referencedby refid="namespacellvm_1a1539ae3ac4221909b26a57b4664e426a" compoundref="_value_tracking_8cpp" startline="4562" endline="4882">llvm::fcmpImpliesClass</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1afdc0c60200d744fe53a7f48e3f7e4bb0" compoundref="_inst_combine_select_8cpp" startline="2823" endline="2946">foldSelectWithFCmpToFabs</referencedby>
         <referencedby refid="classllvm_1_1_constant_f_p_range_1a84ec432d02febd1b518e9453b1a0eba9" compoundref="_constant_f_p_range_8cpp" startline="164" endline="219">llvm::ConstantFPRange::makeAllowedFCmpRegion</referencedby>
         <referencedby refid="classllvm_1_1_constant_f_p_range_1a4c7a26e0bf4a7880f0ba8c3aa2d74a89" compoundref="_constant_f_p_range_8cpp" startline="222" endline="266">llvm::ConstantFPRange::makeSatisfyingFCmpRegion</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a9977c80be67ea7e51bb37ee242d1cc4c" compoundref="_inst_combine_and_or_xor_8cpp" startline="1400" endline="1403">matchUnorderedInfCompare</referencedby>
         <referencedby refid="_constant_f_p_range_8cpp_1affe0a2d80588accff7111123a015df68" compoundref="_constant_f_p_range_8cpp" startline="156" endline="161">setNaNField</referencedby>
         <referencedby refid="_instruction_simplify_8cpp_1acb8e54b9f6be2fdb87b369c2218db1cc" compoundref="_instruction_simplify_8cpp" startline="1814" endline="1853">simplifyAndOrOfFCmps</referencedby>
         <referencedby refid="_instruction_simplify_8cpp_1a110a350e37f3cc2ed2c603c3efde0a30" compoundref="_instruction_simplify_8cpp" startline="4063" endline="4288">simplifyFCmpInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_cmp_inst_1a7ec811146e53bcf7e6c87b60ddef2827" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classbool" kindref="compound">bool</ref></type>
@@ -1388,7 +1393,9 @@
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a22b32bcfbb9aec8a8fcb9826f40a3955" compoundref="_inst_combine_and_or_xor_8cpp" startline="967" endline="1002">foldIsPowerOf2</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a7a3e32edb65b5b1c216d4454f14df21c" compoundref="_inst_combine_p_h_i_8cpp" startline="879" endline="990">llvm::InstCombinerImpl::foldPHIArgOpIntoPHI</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1ad51f65187d4c6b69d6bf8f71e027e4de" compoundref="_inst_combine_select_8cpp" startline="745" endline="833">foldSelectICmpAndBinOp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a6918e533fa9054323684d7e5d556c787" compoundref="_inst_combine_select_8cpp" startline="1837" endline="1856">foldSelectICmpEq</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1ad76042aae559769f4dc50ee2f9548789" compoundref="_inst_combine_select_8cpp" startline="690" endline="723">foldSelectICmpLshrAshr</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1ad2480247c6d76207d0f6c5a617534ab4" compoundref="_inst_combine_select_8cpp" startline="1915" endline="1996">llvm::InstCombinerImpl::foldSelectInstWithICmp</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a1f569ebf4402ad560d7c147f688ac05a" compoundref="_inst_combine_and_or_xor_8cpp" startline="835" endline="931">foldSignedTruncationCheck</referencedby>
         <referencedby refid="_p_g_o_instrumentation_8cpp_1af0e4d9315f1815020f42edec6a27ad1f" compoundref="_p_g_o_instrumentation_8cpp" startline="403" endline="431">getBranchCondString</referencedby>
         <referencedby refid="_simplify_c_f_g_8cpp_1ad3e63520dcd2b8f8aa1b2e66e734a575" compoundref="_simplify_c_f_g_8cpp" startline="1079" endline="1094">getBranchWeights</referencedby>
@@ -1543,6 +1550,7 @@
         <referencedby refid="_loop_idiom_recognize_8cpp_1ab329d363cb73927378483de592986282" compoundref="_loop_idiom_recognize_8cpp" startline="2774" endline="2886">detectShiftUntilZeroIdiom</referencedby>
         <referencedby refid="classllvm_1_1_inner_loop_vectorizer_1a72c491cdf8cf0283d87008831431f917" compoundref="_loop_vectorize_8cpp" startline="2472" endline="2555">llvm::InnerLoopVectorizer::emitIterationCountCheck</referencedby>
         <referencedby refid="classllvm_1_1_s_c_e_v_expander_1ab9d2c872efeb61279eb6cbe774b117d4" compoundref="_scalar_evolution_expander_8cpp" startline="2083" endline="2092">llvm::SCEVExpander::expandComparePredicate</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a5a46b94b8be40eba6d85169820f2a3a4" compoundref="_inst_combine_select_8cpp" startline="3521" endline="3566">foldBitCeil</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1acb575761ffbc75842def91257cc5168d" compoundref="_inst_combine_compares_8cpp" startline="5783" endline="6030">llvm::InstCombinerImpl::foldICmpEquality</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a47a83bda096455c177d40a2fbae13de1" compoundref="_inst_combine_compares_8cpp" startline="1043" endline="1078">llvm::InstCombinerImpl::foldICmpShlConstConst</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1af57017eaefdf5b514ffd801e9923bbca" compoundref="_inst_combine_compares_8cpp" startline="984" endline="1039">llvm::InstCombinerImpl::foldICmpShrConstConst</referencedby>
@@ -1550,6 +1558,7 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1af24dc3f2a89de0b400a681002927217d" compoundref="_inst_combine_compares_8cpp" startline="1356" endline="1429">llvm::InstCombinerImpl::foldICmpWithDominatingICmp</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1acff3d4c4feb8a1f71844fa1facae5670" compoundref="_inst_combine_compares_8cpp" startline="5585" endline="5728">llvm::InstCombinerImpl::foldICmpWithMinMax</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a0e3285faf503c1c0ab9615ef71bc7d96" compoundref="_inst_combine_and_or_xor_8cpp" startline="526" endline="705">foldLogOpOfMaskedICmps</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ac83b2f6d1a223c7b4ac9eb3783ee1465" compoundref="_inst_combine_select_8cpp" startline="1860" endline="1912">foldSelectWithConstOpToBinOp</referencedby>
         <referencedby refid="_s_l_p_vectorizer_8cpp_1a81425fa662eac9cc9cd5d21f1c66695e" compoundref="_s_l_p_vectorizer_8cpp" startline="7417" endline="7498">generateKeySubkey</referencedby>
         <referencedby refid="structllvm_1_1_loop_1_1_loop_bounds_1acfa250dd5ec97448681f9833e22d50cf" compoundref="_loop_info_8cpp" startline="233" endline="273">llvm::Loop::LoopBounds::getCanonicalPredicate</referencedby>
         <referencedby refid="classllvm_1_1_value_lattice_element_1a28425702df856e59142416e70fc6c43a" compoundref="_value_lattice_8cpp" startline="15" endline="54">llvm::ValueLatticeElement::getCompare</referencedby>
@@ -1571,6 +1580,7 @@
         <referencedby refid="namespacellvm_1a9298a379e311818b5244bcb6b386953b" compoundref="_value_tracking_8cpp" startline="8618" endline="8647">llvm::isKnownInversion</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a08c9c2fedd8f175884c88275c7987e03" compoundref="_value_tracking_8cpp" startline="2652" endline="2744">isKnownNonNullFromDominatingCondition</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a045a0a6379348da2235025355734b067" compoundref="_value_tracking_8cpp" startline="2942" endline="3397">isKnownNonZeroFromOperator</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ab9019ef5668e5a3c97fe9ee61a3a9336" compoundref="_inst_combine_select_8cpp" startline="3427" endline="3499">isSafeToRemoveBitCeilSelect</referencedby>
         <referencedby refid="_r_i_s_c_v_instruction_selector_8cpp_1ae5a410638118950b68cdb71cd984122b" compoundref="_r_i_s_c_v_instruction_selector_8cpp" startline="1182" endline="1212">legalizeFCmpPredicate</referencedby>
         <referencedby refid="classllvm_1_1_constant_range_1a6fbc74ae7d3a1a1423c26b9ce948f34c" compoundref="_constant_range_8cpp" startline="148" endline="156">llvm::ConstantRange::makeSatisfyingICmpRegion</referencedby>
         <referencedby refid="_value_tracking_8cpp_1a4aa6c86468a25ae6ef47ec9b300990e0" compoundref="_value_tracking_8cpp" startline="8323" endline="8369">matchFastFloatClamp</referencedby>
@@ -1661,6 +1671,8 @@
         <referencedby refid="_code_gen_prepare_8cpp_1a98c59bcf49cb7343886e8f425d6d877b" compoundref="_code_gen_prepare_8cpp" startline="1851" endline="1917">foldICmpWithDominatingICmp</referencedby>
         <referencedby refid="_inst_combine_compares_8cpp_1aaa96689aeea89281ebb2a702b34cd7f9" compoundref="_inst_combine_compares_8cpp" startline="4913" endline="4943">foldICmpXNegX</referencedby>
         <referencedby refid="_inst_combine_compares_8cpp_1a65be905e09162574d5634bcfcef7c4af" compoundref="_inst_combine_compares_8cpp" startline="5042" endline="5063">foldICmpXorXX</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a5f883a229d57832ae195c8d102445847" compoundref="_inst_combine_select_8cpp" startline="3575" endline="3648">llvm::InstCombinerImpl::foldSelectToCmp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1afdc0c60200d744fe53a7f48e3f7e4bb0" compoundref="_inst_combine_select_8cpp" startline="2823" endline="2946">foldSelectWithFCmpToFabs</referencedby>
         <referencedby refid="_s_l_p_vectorizer_8cpp_1a81425fa662eac9cc9cd5d21f1c66695e" compoundref="_s_l_p_vectorizer_8cpp" startline="7417" endline="7498">generateKeySubkey</referencedby>
         <referencedby refid="structllvm_1_1_loop_1_1_loop_bounds_1acfa250dd5ec97448681f9833e22d50cf" compoundref="_loop_info_8cpp" startline="233" endline="273">llvm::Loop::LoopBounds::getCanonicalPredicate</referencedby>
         <referencedby refid="classanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_info_1a085e72b5a3ed050deb15aa57090c54ba" compoundref="_constraint_elimination_8cpp" startline="647" endline="780">anonymous_namespace{ConstraintElimination.cpp}::ConstraintInfo::getConstraint</referencedby>
@@ -1978,6 +1990,8 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1acff3d4c4feb8a1f71844fa1facae5670" compoundref="_inst_combine_compares_8cpp" startline="5585" endline="5728">llvm::InstCombinerImpl::foldICmpWithMinMax</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a04d40b2885dcf7e80feed09ba6209e54" compoundref="_inst_combine_compares_8cpp" startline="6075" endline="6185">llvm::InstCombinerImpl::foldICmpWithZextOrSext</referencedby>
         <referencedby refid="_inst_combine_compares_8cpp_1aaa96689aeea89281ebb2a702b34cd7f9" compoundref="_inst_combine_compares_8cpp" startline="4913" endline="4943">foldICmpXNegX</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a5f883a229d57832ae195c8d102445847" compoundref="_inst_combine_select_8cpp" startline="3575" endline="3648">llvm::InstCombinerImpl::foldSelectToCmp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a6745cdf992554f558011c1768d4b5747" compoundref="_inst_combine_select_8cpp" startline="1799" endline="1835">foldSelectWithExtremeEqCond</referencedby>
         <referencedby refid="_constraint_elimination_8cpp_1a7ea4fb4d6b0198f2b6eac325a8d93031" compoundref="_constraint_elimination_8cpp" startline="1261" endline="1387">generateReproducer</referencedby>
         <referencedby refid="classanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_info_1a085e72b5a3ed050deb15aa57090c54ba" compoundref="_constraint_elimination_8cpp" startline="647" endline="780">anonymous_namespace{ConstraintElimination.cpp}::ConstraintInfo::getConstraint</referencedby>
         <referencedby refid="classanonymous__namespace_02_constraint_elimination_8cpp_03_1_1_constraint_info_1a8e787163c914dba0f28ef79e92c9768b" compoundref="_constraint_elimination_8cpp" startline="782" endline="809">anonymous_namespace{ConstraintElimination.cpp}::ConstraintInfo::getConstraintForSolving</referencedby>

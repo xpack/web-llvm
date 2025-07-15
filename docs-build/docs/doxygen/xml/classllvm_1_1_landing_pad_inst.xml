@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_landing_pad_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::LandingPadInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
@@ -94,13 +94,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

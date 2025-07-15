@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_accel_table_8h" kind="file" language="C++">
     <compoundname>AccelTable.h</compoundname>
     <includes refid="_array_ref_8h" local="yes">llvm/ADT/ArrayRef.h</includes>
@@ -1162,22 +1162,58 @@
 <entry thead="no"><para>DATA  </para>
 </entry></row>
 </table>
-<lsquo/>------------------<rsquo/> / / The header contains a magic number, version, type of hash function, / the number of buckets, total number of hashes, and room for a special struct / of data and the length of that struct. / / The buckets contain an index (e.g. 6) into the hashes array. The hashes / section contains all of the 32-bit hash values in contiguous memory, and the / offsets contain the offset into the data area for the particular hash. / / For a lookup example, we could hash a function name and take it modulo the / number of buckets giving us our bucket. From there we take the bucket value / as an index into the hashes table and look at each successive hash as long / as the hash value is still the same modulo result (bucket value) as earlier. / If we have a match we look at that same entry in the offsets table and grab / the offset in the data for our final match. / / The DWARF v5 accelerator table consists of zero or more name indices that / are output into an on-disk format that looks like this: / / .---------------<mdash/>. / | HEADER | / |---------------<mdash/>| / | <ref refid="namespace_c_u" kindref="compound">CU</ref> LIST | / |---------------<mdash/>| / | LOCAL TU LIST | / |---------------<mdash/>| / | FOREIGN TU LIST | / |---------------<mdash/>| / | HASH TABLE | / |---------------<mdash/>| / | NAME TABLE | / |---------------<mdash/>| / | ABBREV TABLE | / |---------------<mdash/>| / | ENTRY POOL | / <lsquo/>------------------<rsquo/> <verbatim>For the full documentation please refer to the DWARF 5 standard.
-
-
-This file defines the class template AccelTable, which is represents an
-abstract view of an Accelerator table, without any notion of an on-disk
-layout. This class is parameterized by an entry type, which should derive
-from AccelTableData. This is the type of individual entries in the table,
-and it should store the data necessary to emit them. AppleAccelTableData is
-the base class for Apple Accelerator Table entries, which have a uniform
-structure based on a sequence of Atoms. There are different sub-classes
-derived from AppleAccelTable, which differ in the set of Atoms and how they
-obtain their values.
-
-An Apple Accelerator Table can be serialized by calling emitAppleAccelTable
-function. 
-</verbatim> </para>
+<lsquo/>------------------<rsquo/></para>
+<para>The header contains a magic number, version, type of hash function, the number of buckets, total number of hashes, and room for a special struct of data and the length of that struct.</para>
+<para>The buckets contain an index (e.g. 6) into the hashes array. The hashes section contains all of the 32-bit hash values in contiguous memory, and the offsets contain the offset into the data area for the particular hash.</para>
+<para>For a lookup example, we could hash a function name and take it modulo the number of buckets giving us our bucket. From there we take the bucket value as an index into the hashes table and look at each successive hash as long as the hash value is still the same modulo result (bucket value) as earlier. If we have a match we look at that same entry in the offsets table and grab the offset in the data for our final match.</para>
+<para>The DWARF v5 accelerator table consists of zero or more name indices that are output into an on-disk format that looks like this:</para>
+<para>.---------------<mdash/>. <table rows="14" cols="1"><row>
+<entry thead="yes"><para>HEADER  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="namespace_c_u" kindref="compound">CU</ref> LIST  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>---------------<mdash/>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>LOCAL TU LIST  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>---------------<mdash/>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>FOREIGN TU LIST  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>---------------<mdash/>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>HASH TABLE  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>---------------<mdash/>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>NAME TABLE  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>---------------<mdash/>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>ABBREV TABLE  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>---------------<mdash/>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>ENTRY POOL  </para>
+</entry></row>
+</table>
+<lsquo/>------------------<rsquo/></para>
+<para>For the full documentation please refer to the DWARF 5 standard.</para>
+<para>This file defines the class template AccelTable, which is represents an abstract view of an Accelerator table, without any notion of an on-disk layout. This class is parameterized by an entry type, which should derive from AccelTableData. This is the type of individual entries in the table, and it should store the data necessary to emit them. AppleAccelTableData is the base class for Apple Accelerator Table entries, which have a uniform structure based on a sequence of Atoms. There are different sub-classes derived from AppleAccelTable, which differ in the set of Atoms and how they obtain their values.</para>
+<para>An Apple Accelerator Table can be serialized by calling emitAppleAccelTable function. </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//==-<sp/>include/llvm/CodeGen/AccelTable.h<sp/>-<sp/>Accelerator<sp/>Tables<sp/>-----*-<sp/>C++<sp/>-*-==//</highlight><highlight class="normal"></highlight></codeline>

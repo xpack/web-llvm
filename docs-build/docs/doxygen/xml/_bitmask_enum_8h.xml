@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_bitmask_enum_8h" kind="file" language="C++">
     <compoundname>BitmaskEnum.h</compoundname>
     <includes local="no">cassert</includes>
@@ -45935,14 +45935,15 @@
 <para>LLVM_MARK_AS_BITMASK_ENUM lets you opt in an individual enum type so you can perform bitwise operations on it without putting static_cast everywhere. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">enum<sp/>MyEnum<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>E1<sp/>=<sp/>1,<sp/>E2<sp/>=<sp/>2,<sp/>E3<sp/>=<sp/>4,<sp/>E4<sp/>=<sp/>8,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>LLVM_MARK_AS_BITMASK_ENUM(/*<sp/>LargestValue<sp/>=<sp/>*/<sp/>E4)</highlight></codeline>
-<codeline><highlight class="normal">};</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">void<sp/>Foo()<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>MyEnum<sp/>A<sp/>=<sp/>(E1<sp/>|<sp/>E2)<sp/>&amp;<sp/>E3<sp/>^<sp/>~E4;<sp/>//<sp/>Look,<sp/>ma:<sp/>No<sp/>static_cast!</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>enum<sp/>MyEnum<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>E1<sp/>=<sp/>1,<sp/>E2<sp/>=<sp/>2,<sp/>E3<sp/>=<sp/>4,<sp/>E4<sp/>=<sp/>8,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LLVM_MARK_AS_BITMASK_ENUM(/*<sp/>LargestValue<sp/>=<sp/>*&amp;zwj;/<sp/>E4)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/>void<sp/>Foo()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/>MyEnum<sp/>A<sp/>=<sp/>(E1<sp/>|<sp/>E2)<sp/>&amp;<sp/>E3<sp/>^<sp/>~E4;<sp/>//<sp/>Look,<sp/>ma:<sp/>No<sp/>static_cast!</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/></highlight></codeline>
 </programlisting></para>
 <para>Normally when you do a bitwise operation on an enum value, you get back an instance of the underlying type (e.g. int). But using this macro, bitwise ops on your enum will return you back instances of the enum. This is particularly useful for enums which represent a combination of flags.</para>
 <para>The parameter to LLVM_MARK_AS_BITMASK_ENUM should be the largest individual value in your enum.</para>

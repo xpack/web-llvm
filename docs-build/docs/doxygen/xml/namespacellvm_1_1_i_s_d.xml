@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="namespacellvm_1_1_i_s_d" kind="namespace" language="C++">
     <compoundname>llvm::ISD</compoundname>
     <innerclass refid="structllvm_1_1_i_s_d_1_1_arg_flags_ty" prot="public">llvm::ISD::ArgFlagsTy</innerclass>
@@ -1835,7 +1835,7 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
           </briefdescription>
           <detaileddescription>
 <para>TRUNC is a flag, which is always an integer that is zero or one. If TRUNC is 0, this is a normal rounding, if it is 1, this FP_ROUND is known to not change the value of Y.</para>
-<para>The TRUNC = 1 case is used in cases where we know that the value will not be modified by the node, because Y is not using any of the extra precision of source type. This allows certain transformations like FP_EXTEND(FP_ROUND(X,1)) -&gt; X which are not safe for FP_EXTEND(FP_ROUND(X,0)) because the extra bits aren&apos;t removed. </para>
+<para>The TRUNC = 1 case is used in cases where we know that the value will not be modified by the node, because Y is not using any of the extra precision of source type. This allows certain transformations like <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d" kindref="member">FP_EXTEND(FP_ROUND(X,1))</ref> -&gt; X which are not safe for <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d" kindref="member">FP_EXTEND(FP_ROUND(X,0))</ref> because the extra bits aren&apos;t removed. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a89f3afc3fa907ff83759c6c76d97a973" prot="public">
@@ -1847,91 +1847,1274 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
 <para>Result is rounding mode and chain. <ref refid="class_input" kindref="compound">Input</ref> is a chain. </para>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a041c4b27006496ee8d8bcdf72e248632" prot="public">
-          <name>CONVERGENCECTRL_ANCHOR</name>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4fe6c878350458de2c3182392f830988" prot="public">
+          <name>SET_ROUNDING</name>
           <briefdescription>
 <para>Set rounding mode. </para>
           </briefdescription>
           <detaileddescription>
-<para>The first operand is a chain pointer. The second specifies the required rounding mode, encoded in the same way as used in &apos;<computeroutput>GET_ROUNDING</computeroutput>&apos;. SET_ROUNDING,</para>
-<para>/ X = FP_EXTEND(Y) - Extend a smaller FP type into a larger FP type. FP_EXTEND,</para>
-<para>/ BITCAST - This operator converts between integer, vector and FP / values, as if the value was stored to memory with one type and loaded / from the same address with the other type (or equivalently for vector / format conversions, etc). The source and result are required to have / the same bit size (e.g. f32 &lt;-&gt; i32). This can also be used for / int-to-int or fp-to-fp conversions, but that is a noop, deleted by / <ref refid="_a_m_d_g_p_u_delayed_m_c_expr_8cpp_1a3b9e43a5529fa7d4adb2bad70198c9bd" kindref="member">getNode()</ref>. / / This operator is subtly different from the bitcast instruction from / LLVM-IR since this node may change the bits in the register. For / example, this occurs on big-endian NEON and big-endian MSA where the / layout of the bits in the register depends on the vector type and this / operator acts as a shuffle operation for some vector type combinations. BITCAST,</para>
-<para>/ ADDRSPACECAST - This operator converts between pointers of different / address spaces. ADDRSPACECAST,</para>
-<para>/ FP16_TO_FP, FP_TO_FP16 - These operators are used to perform promotions / and truncation for half-precision (16 bit) floating numbers. These nodes / form a semi-softened interface for dealing with f16 (as an i16), which / is often a storage-only type but has native conversions. FP16_TO_FP, FP_TO_FP16, STRICT_FP16_TO_FP, STRICT_FP_TO_FP16,</para>
-<para>/ BF16_TO_FP, FP_TO_BF16 - These operators are used to perform promotions / and truncation for bfloat16. These nodes form a semi-softened interface / for dealing with bf16 (as an i16), which is often a storage-only type but / has native conversions. BF16_TO_FP, FP_TO_BF16, STRICT_BF16_TO_FP, STRICT_FP_TO_BF16,</para>
-<para>/ Perform various unary floating-point operations inspired by libm. For / FPOWI, the result is undefined if the integer operand doesn&apos;t fit into / sizeof(int). FNEG, FABS, FSQRT, FCBRT, FSIN, FCOS, FTAN, FASIN, FACOS, FATAN, FSINH, FCOSH, FTANH, FPOW, FPOWI, / FLDEXP - ldexp, inspired by libm (op0 * 2**op1). FLDEXP, / FATAN2 - atan2, inspired by libm. FATAN2,</para>
-<para>/ FFREXP - frexp, extract fractional and exponent component of a / floating-point value. Returns the two components as separate return / values. FFREXP,</para>
-<para>FLOG, FLOG2, FLOG10, FEXP, FEXP2, FEXP10, FCEIL, FTRUNC, FRINT, FNEARBYINT, FROUND, FROUNDEVEN, FFLOOR, LROUND, LLROUND, LRINT, LLRINT,</para>
-<para>/ FMINNUM/FMAXNUM - Perform floating-point minimum or maximum on two / values. / / In the case where a single input is a NaN (either signaling or quiet), / the non-NaN input is returned. / / The return value of (FMINNUM 0.0, -0.0) could be either 0.0 or -0.0. FMINNUM, FMAXNUM,</para>
-<para>/ FMINNUM_IEEE/FMAXNUM_IEEE - Perform floating-point minimumNumber or / maximumNumber on two values, following IEEE-754 definitions. This differs / from FMINNUM/FMAXNUM in the handling of signaling NaNs, and signed zero. / / If one input is a signaling NaN, returns a quiet NaN. This matches / IEEE-754 2008&apos;s minnum/maxnum behavior for signaling NaNs (which differs / from 2019). / / These treat -0 as ordered less than +0, matching the behavior of IEEE-754 / 2019&apos;s minimumNumber/maximumNumber. FMINNUM_IEEE, FMAXNUM_IEEE,</para>
-<para>/ FMINIMUM/FMAXIMUM - NaN-propagating minimum/maximum that also treat -0.0 / as less than 0.0. While FMINNUM_IEEE/FMAXNUM_IEEE follow IEEE 754-2008 / semantics, FMINIMUM/FMAXIMUM follow IEEE 754-2019 semantics. FMINIMUM, FMAXIMUM,</para>
-<para>/ FMINIMUMNUM/FMAXIMUMNUM - minimumnum/maximumnum that is same with / FMINNUM_IEEE and FMAXNUM_IEEE besides if either operand is sNaN. FMINIMUMNUM, FMAXIMUMNUM,</para>
-<para>/ FSINCOS - Compute both fsin and fcos as a single operation. FSINCOS,</para>
-<para>/ Gets the current floating-point environment. The first operand is a token / chain. The results are FP environment, represented by an integer value, / and a token chain. GET_FPENV,</para>
-<para>/ Sets the current floating-point environment. The first operand is a token / chain, the second is FP environment, represented by an integer value. The / result is a token chain. SET_FPENV,</para>
-<para>/ Set floating-point environment to default state. The first operand and the / result are token chains. RESET_FPENV,</para>
-<para>/ Gets the current floating-point environment. The first operand is a token / chain, the second is a pointer to memory, where FP environment is stored / to. The result is a token chain. GET_FPENV_MEM,</para>
-<para>/ Sets the current floating point environment. The first operand is a token / chain, the second is a pointer to memory, where FP environment is loaded / from. The result is a token chain. SET_FPENV_MEM,</para>
-<para>/ Reads the current dynamic floating-point control modes. The operand is / a token chain. GET_FPMODE,</para>
-<para>/ Sets the current dynamic floating-point control modes. The first operand / is a token chain, the second is control modes set represented as integer / value. SET_FPMODE,</para>
-<para>/ Sets default dynamic floating-point control modes. The operand is a / token chain. RESET_FPMODE,</para>
-<para>/ LOAD and STORE have token chains as their first operand, then the same / operands as an LLVM load/store instruction, then an offset node that / is added / subtracted from the base pointer to form the address (for / indexed memory ops). LOAD, STORE,</para>
-<para>/ DYNAMIC_STACKALLOC - Allocate some number of bytes on the stack aligned / to a specified boundary. This node always has two return values: a new / stack pointer value and a chain. The first operand is the token chain, / the second is the number of bytes to allocate, and the third is the / alignment boundary. The size is guaranteed to be a multiple of the / stack alignment, and the alignment is guaranteed to be bigger than the / stack alignment (if required) or 0 to get standard stack alignment. DYNAMIC_STACKALLOC,</para>
-<para>/ Control flow instructions. These all have token chains.</para>
-<para>/ BR - Unconditional branch. The first operand is the chain / operand, the second is the MBB to branch to. BR,</para>
-<para>/ BRIND - Indirect branch. The first operand is the chain, the second / is the value to branch to, which must be of the same type as the / target&apos;s pointer type. BRIND,</para>
-<para>/ BR_JT - Jumptable branch. The first operand is the chain, the second / is the jumptable index, the last one is the jumptable entry index. BR_JT,</para>
-<para>/ JUMP_TABLE_DEBUG_INFO - Jumptable debug info. The first operand is the / chain, the second is the jumptable index. JUMP_TABLE_DEBUG_INFO,</para>
-<para>/ BRCOND - Conditional branch. The first operand is the chain, the / second is the condition, the third is the block to branch to if the / condition is true. If the type of the condition is not i1, then the / high bits must conform to getBooleanContents. If the condition is undef, / it nondeterministically jumps to the block. / TODO: Its semantics w.r.t undef requires further discussion; we need to / make it sure that it is consistent with optimizations in MIR &amp; the / meaning of IMPLICIT_DEF. See <ulink url="https://reviews.llvm.org/D92015">https://reviews.llvm.org/D92015</ulink> BRCOND,</para>
-<para>/ BR_CC - Conditional branch. The behavior is like that of SELECT_CC, in / that the condition is represented as condition code, and two nodes to / compare, rather than as a combined SetCC node. The operands in order / are chain, cc, lhs, rhs, block to branch to if condition is true. If / condition is undef, it nondeterministically jumps to the block. BR_CC,</para>
-<para>/ INLINEASM - Represents an inline asm block. This node always has two / return values: a chain and a flag result. The inputs are as follows: / Operand #0 : <ref refid="class_input" kindref="compound">Input</ref> chain. / Operand #1 : a <ref refid="classllvm_1_1_external_symbol_s_d_node" kindref="compound">ExternalSymbolSDNode</ref> with a pointer to the asm string. / Operand #2 : a <ref refid="classllvm_1_1_m_d_node_s_d_node" kindref="compound">MDNodeSDNode</ref> with the !srcloc metadata. / Operand #3 : HasSideEffect, IsAlignStack bits. / After this, it is followed by a list of operands with this format: / <ref refid="classllvm_1_1_constant_s_d_node" kindref="compound">ConstantSDNode</ref>: Flags that encode whether it is a mem or not, the / of operands that follow, etc. See <ref refid="_inline_asm_8h" kindref="compound">InlineAsm.h</ref>. / ... however many operands ... / Operand #last: Optional, an incoming flag. / / The variable width operands are required to represent target addressing / modes as a single &quot;operand&quot;, even though they may have multiple / SDOperands. INLINEASM,</para>
-<para>/ INLINEASM_BR - Branching version of inline asm. Used by asm-goto. INLINEASM_BR,</para>
-<para>/ EH_LABEL - Represents a label in mid basic block used to track / locations needed for debug and exception handling tables. These nodes / take a chain as input and return a chain. EH_LABEL,</para>
-<para>/ ANNOTATION_LABEL - Represents a mid basic block label used by / annotations. This should remain within the basic block and be ordered / with respect to other call instructions, but loads and stores may float / past it. ANNOTATION_LABEL,</para>
-<para>/ CATCHRET - Represents a return from a catch block funclet. Used for / MSVC compatible exception handling. Takes a chain operand and a / destination basic block operand. CATCHRET,</para>
-<para>/ CLEANUPRET - Represents a return from a cleanup block funclet. Used for / MSVC compatible exception handling. Takes only a chain operand. CLEANUPRET,</para>
-<para>/ STACKSAVE - STACKSAVE has one operand, an input chain. It produces a / value, the same type as the pointer type for the system, and an output / chain. STACKSAVE,</para>
-<para>/ STACKRESTORE has two operands, an input chain and a pointer to restore / to it returns an output chain. STACKRESTORE,</para>
-<para>/ CALLSEQ_START/CALLSEQ_END - These operators mark the beginning and end / of a call sequence, and carry arbitrary information that target might / want to know. The first operand is a chain, the rest are specified by / the target and not touched by the DAG optimizers. / Targets that may use stack to pass call arguments define additional / operands: / - size of the call frame part that must be set up within the / CALLSEQ_START..CALLSEQ_END pair, / - part of the call frame prepared prior to CALLSEQ_START. / Both these parameters must be constants, their sum is the total call / frame size. / CALLSEQ_START..CALLSEQ_END pairs may not be nested. CALLSEQ_START, // Beginning of a call sequence CALLSEQ_END, // End of a call sequence</para>
-<para>/ VAARG - VAARG has four operands: an input chain, a pointer, a SRCVALUE, / and the alignment. It returns a pair of values: the vaarg value and a / new chain. VAARG,</para>
-<para>/ VACOPY - VACOPY has 5 operands: an input chain, a destination pointer, / a source pointer, a SRCVALUE for the destination, and a SRCVALUE for the / source. VACOPY,</para>
-<para>/ VAEND, VASTART - VAEND and VASTART have three operands: an input chain, / pointer, and a SRCVALUE. VAEND, VASTART,</para>
-<para>/ PREALLOCATED_SETUP - This has 2 operands: an input chain and a SRCVALUE / with the preallocated call <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>. PREALLOCATED_SETUP, / PREALLOCATED_ARG - This has 3 operands: an input chain, a SRCVALUE / with the preallocated call <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>, and a constant int. PREALLOCATED_ARG,</para>
-<para>/ SRCVALUE - This is a node type that holds a Value* that is used to / make reference to a value in the LLVM IR. SRCVALUE,</para>
-<para>/ MDNODE_SDNODE - This is a node that holdes an MDNode*, which is used to / reference metadata in the IR. MDNODE_SDNODE,</para>
-<para>/ PCMARKER - This corresponds to the pcmarker intrinsic. PCMARKER,</para>
-<para>/ READCYCLECOUNTER - This corresponds to the readcyclecounter intrinsic. / It produces a chain and one i64 value. The only operand is a chain. / If i64 is not legal, the result will be expanded into smaller values. / Still, it returns an i64, so targets should set legality for i64. / The result is the content of the architecture-specific cycle / counter-like register (or other high accuracy low latency clock source). READCYCLECOUNTER,</para>
-<para>/ READSTEADYCOUNTER - This corresponds to the readfixedcounter intrinsic. / It has the same semantics as the READCYCLECOUNTER implementation except / that the result is the content of the architecture-specific fixed / frequency counter suitable for measuring elapsed time. READSTEADYCOUNTER,</para>
-<para>/ HANDLENODE node - Used as a handle for various purposes. HANDLENODE,</para>
-<para>/ INIT_TRAMPOLINE - This corresponds to the init_trampoline intrinsic. It / takes as input a token chain, the pointer to the trampoline, the pointer / to the nested function, the pointer to pass for the &apos;nest&apos; parameter, a / SRCVALUE for the trampoline and another for the nested function / (allowing targets to access the original Function*). / It produces a token chain as output. INIT_TRAMPOLINE,</para>
-<para>/ ADJUST_TRAMPOLINE - This corresponds to the adjust_trampoline intrinsic. / It takes a pointer to the trampoline and produces a (possibly) new / pointer to the same trampoline with platform-specific adjustments / applied. The pointer it returns points to an executable block of code. ADJUST_TRAMPOLINE,</para>
-<para>/ TRAP - Trapping instruction TRAP,</para>
-<para>/ DEBUGTRAP - Trap intended to get the attention of a debugger. DEBUGTRAP,</para>
-<para>/ UBSANTRAP - Trap with an immediate describing the kind of sanitizer / failure. UBSANTRAP,</para>
-<para>/ PREFETCH - This corresponds to a prefetch intrinsic. The first operand / is the chain. The other operands are the address to prefetch, / read / write specifier, locality specifier and instruction / data cache / specifier. PREFETCH,</para>
-<para>/ ARITH_FENCE - This corresponds to a arithmetic fence intrinsic. Both its / operand and output are the same floating type. ARITH_FENCE,</para>
-<para>/ MEMBARRIER - Compiler barrier only; generate a no-op. MEMBARRIER,</para>
-<para>/ OUTCHAIN = ATOMIC_FENCE(INCHAIN, ordering, scope) / This corresponds to the fence instruction. It takes an input chain, and / two integer constants: an <ref refid="namespacellvm_1a9bccbe67aaab722783ca4e7c504aaaa7" kindref="member">AtomicOrdering</ref> and a SynchronizationScope. ATOMIC_FENCE,</para>
-<para>/ Val, OUTCHAIN = ATOMIC_LOAD(INCHAIN, ptr) / This corresponds to &quot;load atomic&quot; instruction. ATOMIC_LOAD,</para>
-<para>/ OUTCHAIN = ATOMIC_STORE(INCHAIN, val, ptr) / This corresponds to &quot;store atomic&quot; instruction. ATOMIC_STORE,</para>
-<para>/ Val, OUTCHAIN = ATOMIC_CMP_SWAP(INCHAIN, ptr, cmp, swap) / For double-word atomic operations: / ValLo, ValHi, OUTCHAIN = ATOMIC_CMP_SWAP(INCHAIN, ptr, cmpLo, cmpHi, / swapLo, swapHi) / This corresponds to the cmpxchg instruction. ATOMIC_CMP_SWAP,</para>
-<para>/ Val, Success, OUTCHAIN / = ATOMIC_CMP_SWAP_WITH_SUCCESS(INCHAIN, ptr, cmp, swap) / N.b. this is still a strong cmpxchg operation, so / Success == &quot;Val == cmp&quot;. ATOMIC_CMP_SWAP_WITH_SUCCESS,</para>
-<para>/ Val, OUTCHAIN = ATOMIC_SWAP(INCHAIN, ptr, amt) / Val, OUTCHAIN = ATOMIC_LOAD_[<ref refid="namespace_op_name" kindref="compound">OpName</ref>](INCHAIN, ptr, amt) / For double-word atomic operations: / ValLo, ValHi, OUTCHAIN = ATOMIC_SWAP(INCHAIN, ptr, amtLo, amtHi) / ValLo, ValHi, OUTCHAIN = ATOMIC_LOAD_[<ref refid="namespace_op_name" kindref="compound">OpName</ref>](INCHAIN, ptr, amtLo, amtHi) / These correspond to the atomicrmw instruction. ATOMIC_SWAP, ATOMIC_LOAD_ADD, ATOMIC_LOAD_SUB, ATOMIC_LOAD_AND, ATOMIC_LOAD_CLR, ATOMIC_LOAD_OR, ATOMIC_LOAD_XOR, ATOMIC_LOAD_NAND, ATOMIC_LOAD_MIN, ATOMIC_LOAD_MAX, ATOMIC_LOAD_UMIN, ATOMIC_LOAD_UMAX, ATOMIC_LOAD_FADD, ATOMIC_LOAD_FSUB, ATOMIC_LOAD_FMAX, ATOMIC_LOAD_FMIN, ATOMIC_LOAD_UINC_WRAP, ATOMIC_LOAD_UDEC_WRAP, ATOMIC_LOAD_USUB_COND, ATOMIC_LOAD_USUB_SAT,</para>
-<para>/ Masked load and store - consecutive vector load and store operations / with additional mask operand that prevents memory accesses to the / masked-off lanes. / / Val, OutChain = MLOAD(BasePtr, Mask, PassThru) / OutChain = MSTORE(Value, BasePtr, Mask) MLOAD, MSTORE,</para>
-<para>/ Masked gather and scatter - load and store operations for a vector of / random addresses with additional mask operand that prevents memory / accesses to the masked-off lanes. / / Val, OutChain = <ref refid="namespacellvm_1ad98783229b874cc80970a2f3aa495caaaae7890e198f938a5cfe2ac4c528c4ac7" kindref="member">GATHER(InChain, PassThru, Mask, BasePtr, Index, Scale)</ref> / OutChain = <ref refid="namespacellvm_1ad98783229b874cc80970a2f3aa495caaa635984b0013f45af313b83be0011e523" kindref="member">SCATTER(InChain, Value, Mask, BasePtr, Index, Scale)</ref> / / The Index operand can have more vector elements than the other operands / due to type legalization. The extra elements are ignored. MGATHER, MSCATTER,</para>
-<para>/ This corresponds to the llvm.lifetime.* intrinsics. The first operand / is the chain and the second operand is the alloca pointer. LIFETIME_START, LIFETIME_END,</para>
-<para>/ FAKE_USE represents a use of the operand but does not do anything. / Its purpose is the extension of the operand&apos;s lifetime mainly for / debugging purposes. FAKE_USE,</para>
-<para>/ GC_TRANSITION_START/GC_TRANSITION_END - These operators mark the / beginning and end of GC transition sequence, and carry arbitrary / information that target might need for lowering. The first operand is / a chain, the rest are specified by the target and not touched by the DAG / optimizers. GC_TRANSITION_START..GC_TRANSITION_END pairs may not be / nested. GC_TRANSITION_START, GC_TRANSITION_END,</para>
-<para>/ GET_DYNAMIC_AREA_OFFSET - get offset from native SP to the address of / the most recent dynamic alloca. For most targets that would be 0, but / for some others (e.g. PowerPC, PowerPC64) that would be compile-time / known nonzero constant. The only operand here is the chain. GET_DYNAMIC_AREA_OFFSET,</para>
-<para>/ Pseudo probe for AutoFDO, as a place holder in a basic block to improve / the sample counts quality. PSEUDO_PROBE,</para>
-<para>/ VSCALE(IMM) - Returns the runtime scaling factor used to calculate the / number of elements within a scalable vector. IMM is a constant integer / multiplier that is applied to the runtime value. VSCALE,</para>
-<para>/ Generic reduction nodes. These nodes represent horizontal vector / reduction operations, producing a scalar result. / The SEQ variants perform reductions in sequential order. The first / operand is an initial scalar accumulator value, and the second operand / is the vector to reduce. / E.g. RES = VECREDUCE_SEQ_FADD f32 ACC, &lt;4 x f32&gt; SRC_VEC / ... is equivalent to / RES = (((ACC + SRC_VEC[0]) + SRC_VEC[1]) + SRC_VEC[2]) + SRC_VEC[3] VECREDUCE_SEQ_FADD, VECREDUCE_SEQ_FMUL,</para>
-<para>/ These reductions have relaxed evaluation order semantics, and have a / single vector operand. The order of evaluation is unspecified. For / pow-of-2 vectors, one valid legalizer expansion is to use a tree / reduction, i.e.: / For RES = VECREDUCE_FADD &lt;8 x f16&gt; SRC_VEC / / PART_RDX = FADD SRC_VEC[0:3], SRC_VEC[4:7] / PART_RDX2 = FADD PART_RDX[0:1], PART_RDX[2:3] / RES = FADD PART_RDX2[0], PART_RDX2[1] / / For non-pow-2 vectors, this can be computed by extracting each element / and performing the operation as if it were scalarized. VECREDUCE_FADD, VECREDUCE_FMUL, / FMIN/FMAX nodes can have flags, for NaN/NoNaN variants. VECREDUCE_FMAX, VECREDUCE_FMIN, / FMINIMUM/FMAXIMUM nodes propatate NaNs and signed zeroes using the / <ref refid="namespacellvm_1ae2f7e8a5325f48bbbdaec78e5d6c320c" kindref="member">llvm.minimum</ref> and <ref refid="namespacellvm_1a38dcdde63d81fbda1d22dffd1a27b343" kindref="member">llvm.maximum</ref> semantics. VECREDUCE_FMAXIMUM, VECREDUCE_FMINIMUM, / Integer reductions may have a result type larger than the vector element / type. However, the reduction is performed using the vector element type / and the value in the top bits is unspecified. VECREDUCE_ADD, VECREDUCE_MUL, VECREDUCE_AND, VECREDUCE_OR, VECREDUCE_XOR, VECREDUCE_SMAX, VECREDUCE_SMIN, VECREDUCE_UMAX, VECREDUCE_UMIN,</para>
-<para>The <computeroutput>llvm.experimental.stackmap</computeroutput> intrinsic. Operands: input chain, glue, &lt;id&gt;, &lt;numShadowBytes&gt;, [live0[, live1...]] Outputs: output chain, glue STACKMAP,</para>
-<para>The <computeroutput>llvm.experimental.patchpoint.*</computeroutput> intrinsic. Operands: input chain, [glue], reg-mask, &lt;id&gt;, &lt;numShadowBytes&gt;, callee, &lt;numArgs&gt;, cc, ... Outputs: [rv], output chain, glue PATCHPOINT,</para>
-<para>Vector Predication #define <ref refid="_i_s_d_opcodes_8h_1a702652b3014f083e39ba0426207678e6" kindref="member">BEGIN_REGISTER_VP_SDNODE(VPSDID, ...)</ref> <linebreak/>
+<para>The first operand is a chain pointer. The second specifies the required rounding mode, encoded in the same way as used in &apos;<computeroutput>GET_ROUNDING</computeroutput>&apos;. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d" prot="public">
+          <name>FP_EXTEND</name>
+          <briefdescription>
+<para>X = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d" kindref="member">FP_EXTEND(Y)</ref> - Extend a smaller FP type into a larger FP type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a412ddf522b53f07690a86bffba1278e7" prot="public">
+          <name>BITCAST</name>
+          <briefdescription>
+<para>BITCAST - This operator converts between integer, vector and FP values, as if the value was stored to memory with one type and loaded from the same address with the other type (or equivalently for vector format conversions, etc). </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The source and result are required to have the same bit size (e.g. f32 &lt;-&gt; i32). This can also be used for int-to-int or fp-to-fp conversions, but that is a noop, deleted by <ref refid="_a_m_d_g_p_u_delayed_m_c_expr_8cpp_1a3b9e43a5529fa7d4adb2bad70198c9bd" kindref="member">getNode()</ref>.</para>
+<para>This operator is subtly different from the bitcast instruction from LLVM-IR since this node may change the bits in the register. For example, this occurs on big-endian NEON and big-endian MSA where the layout of the bits in the register depends on the vector type and this operator acts as a shuffle operation for some vector type combinations. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae221016e72ad6632377ef55f9e0e4f61" prot="public">
+          <name>ADDRSPACECAST</name>
+          <briefdescription>
+<para>ADDRSPACECAST - This operator converts between pointers of different address spaces. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3e12fcc9960ef3bf0ae5876382d4c66f" prot="public">
+          <name>FP16_TO_FP</name>
+          <briefdescription>
+<para>FP16_TO_FP, FP_TO_FP16 - These operators are used to perform promotions and truncation for half-precision (16 bit) floating numbers. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>These nodes form a semi-softened interface for dealing with f16 (as an i16), which is often a storage-only type but has native conversions. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a38f379e4fddf750c36f1323a04d12171" prot="public">
+          <name>FP_TO_FP16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8be8417e323644ecd854ce67c362a850" prot="public">
+          <name>STRICT_FP16_TO_FP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8a54f717e10fab9c9821196fc882cc11" prot="public">
+          <name>STRICT_FP_TO_FP16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110abdae7178e801a788f47e55ad3db3ee6a" prot="public">
+          <name>BF16_TO_FP</name>
+          <briefdescription>
+<para>BF16_TO_FP, FP_TO_BF16 - These operators are used to perform promotions and truncation for bfloat16. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>These nodes form a semi-softened interface for dealing with bf16 (as an i16), which is often a storage-only type but has native conversions. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a0bb173b5a879225092abdeaba1394839" prot="public">
+          <name>FP_TO_BF16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab60b57f9ecb68fa5f4445ec18e835a64" prot="public">
+          <name>STRICT_BF16_TO_FP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac98e3abb765d6786634ba0656ae83e17" prot="public">
+          <name>STRICT_FP_TO_BF16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6d26c45c040d8f85d577a5f645261d1a" prot="public">
+          <name>FNEG</name>
+          <briefdescription>
+<para>Perform various unary floating-point operations inspired by libm. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For FPOWI, the result is undefined if the integer operand doesn&apos;t fit into sizeof(int). </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a2b4d07600495a563319d6a3dda8dc44d" prot="public">
+          <name>FABS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae1118ddac1ce0af8e9f7cc16c9e94fc0" prot="public">
+          <name>FSQRT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a85c9608f4afa54b644dc76228a8f7261" prot="public">
+          <name>FCBRT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad46ae9fdfe20cd04f7fda7ccbb937543" prot="public">
+          <name>FSIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9133d7cfb6a66404ff7757b699bc3941" prot="public">
+          <name>FCOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9edaaccfce9ddf3113d737686f0a019e" prot="public">
+          <name>FTAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a62bcf7e98c551eddfe028e6ad6565215" prot="public">
+          <name>FASIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3bd30fa450385ee74c9b275ba5f8d1c7" prot="public">
+          <name>FACOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3ec6f3b872819089911699ea156e6fc7" prot="public">
+          <name>FATAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad8c5012dcc326bb95fc45b1f2e80dbda" prot="public">
+          <name>FSINH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a30da9fef8027cdf8a719bdacb5300df8" prot="public">
+          <name>FCOSH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7d675a8da9b3fa2ee3a15b3932eef38a" prot="public">
+          <name>FTANH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1a6952b1572a4ce241cc3cf45a9ab071" prot="public">
+          <name>FPOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a66b7368b776f6aff492cf970db3df548" prot="public">
+          <name>FPOWI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a455f49e18d470b97cd293acd7fbdf169" prot="public">
+          <name>FLDEXP</name>
+          <briefdescription>
+<para>FLDEXP - ldexp, inspired by libm (op0 * 2**op1). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a2a69cbb602c143642c1fe014bce6d44d" prot="public">
+          <name>FATAN2</name>
+          <briefdescription>
+<para>FATAN2 - atan2, inspired by libm. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad9e6c8353bc9d023077590083cfce89c" prot="public">
+          <name>FFREXP</name>
+          <briefdescription>
+<para>FFREXP - frexp, extract fractional and exponent component of a floating-point value. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Returns the two components as separate return values. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac82d37f93ae4420659acdd03f79b15e0" prot="public">
+          <name>FLOG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a558dc710055f9d60cc3c0893bc29a72d" prot="public">
+          <name>FLOG2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a0d05d4a5cd10a46f69f9e62d49d275bb" prot="public">
+          <name>FLOG10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad49a46d391f73aa96002adbdd0cf03f5" prot="public">
+          <name>FEXP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af3542a99501ffb93cee4aae9d1ec2d05" prot="public">
+          <name>FEXP2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a37c80ce3312d3fc5b925e326a16fff20" prot="public">
+          <name>FEXP10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad56e9199ae3993a09af36ff41d327a11" prot="public">
+          <name>FCEIL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1e92ea554489509b0ad970901bcc715b" prot="public">
+          <name>FTRUNC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a68014623710f7a44c808cd412236d6a1" prot="public">
+          <name>FRINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a2dc876d6cc16ac04376483552292f9f4" prot="public">
+          <name>FNEARBYINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a87b7dd3d6a9b68d1558fc6b4706708b0" prot="public">
+          <name>FROUND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab3cb85375f983765b93341d57a2f3838" prot="public">
+          <name>FROUNDEVEN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4336c27826676e1ef61383cafa999219" prot="public">
+          <name>FFLOOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110adb1de74d602ef905e06785e0052b55bf" prot="public">
+          <name>LROUND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4e2fdf7d4dbc04469cf6a920262c82c8" prot="public">
+          <name>LLROUND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a05f23e2cd900dc8f1dbf6702ab12423b" prot="public">
+          <name>LRINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a25eed965b36ce43fc8b9daa2774dfad8" prot="public">
+          <name>LLRINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9f59cc264907eb86e29564d5f6a5b213" prot="public">
+          <name>FMINNUM</name>
+          <briefdescription>
+<para>FMINNUM/FMAXNUM - Perform floating-point minimum or maximum on two values. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>In the case where a single input is a NaN (either signaling or quiet), the non-NaN input is returned.</para>
+<para>The return value of (FMINNUM 0.0, -0.0) could be either 0.0 or -0.0. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a632dd4bb044d5cd11f671d176ef495f2" prot="public">
+          <name>FMAXNUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a907932b29f929b1827b1b93171dcaa3c" prot="public">
+          <name>FMINNUM_IEEE</name>
+          <briefdescription>
+<para>FMINNUM_IEEE/FMAXNUM_IEEE - Perform floating-point minimumNumber or maximumNumber on two values, following IEEE-754 definitions. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This differs from FMINNUM/FMAXNUM in the handling of signaling NaNs, and signed zero.</para>
+<para>If one input is a signaling NaN, returns a quiet NaN. This matches IEEE-754 2008&apos;s minnum/maxnum behavior for signaling NaNs (which differs from 2019).</para>
+<para>These treat -0 as ordered less than +0, matching the behavior of IEEE-754 2019&apos;s minimumNumber/maximumNumber. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a25e670389809910f59726e8a11fa82e0" prot="public">
+          <name>FMAXNUM_IEEE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac27a43f98abb2d1ee2f2ce99a0b34b36" prot="public">
+          <name>FMINIMUM</name>
+          <briefdescription>
+<para>FMINIMUM/FMAXIMUM - NaN-propagating minimum/maximum that also treat -0.0 as less than 0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>While FMINNUM_IEEE/FMAXNUM_IEEE follow IEEE 754-2008 semantics, FMINIMUM/FMAXIMUM follow IEEE 754-2019 semantics. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3dfd1b187d121c0e214698eef1c20f53" prot="public">
+          <name>FMAXIMUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af7691f41e448fefca844f687edabfb69" prot="public">
+          <name>FMINIMUMNUM</name>
+          <briefdescription>
+<para>FMINIMUMNUM/FMAXIMUMNUM - minimumnum/maximumnum that is same with FMINNUM_IEEE and FMAXNUM_IEEE besides if either operand is sNaN. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110add34b1738b7bb2c298f92f1b7b62ce0c" prot="public">
+          <name>FMAXIMUMNUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6ba8fc92ee5081d3e533cb5322f74f29" prot="public">
+          <name>FSINCOS</name>
+          <briefdescription>
+<para>FSINCOS - Compute both fsin and fcos as a single operation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8ca22b32a18bb7959b6f6f9b18d14ec0" prot="public">
+          <name>GET_FPENV</name>
+          <briefdescription>
+<para>Gets the current floating-point environment. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a token chain. The results are FP environment, represented by an integer value, and a token chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a07fcb2d341fc6f3db309618b30e358a8" prot="public">
+          <name>SET_FPENV</name>
+          <briefdescription>
+<para>Sets the current floating-point environment. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a token chain, the second is FP environment, represented by an integer value. The result is a token chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a23914569caa5dbe0d340c3fbfc277efc" prot="public">
+          <name>RESET_FPENV</name>
+          <briefdescription>
+<para>Set floating-point environment to default state. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand and the result are token chains. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac7e6de3a23c50c3f48e30e3a644a16aa" prot="public">
+          <name>GET_FPENV_MEM</name>
+          <briefdescription>
+<para>Gets the current floating-point environment. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a token chain, the second is a pointer to memory, where FP environment is stored to. The result is a token chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af695708f70bdd710c8fda5c4570711d7" prot="public">
+          <name>SET_FPENV_MEM</name>
+          <briefdescription>
+<para>Sets the current floating point environment. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a token chain, the second is a pointer to memory, where FP environment is loaded from. The result is a token chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8ba51b127e01a9e6412e7629c70ec4a1" prot="public">
+          <name>GET_FPMODE</name>
+          <briefdescription>
+<para>Reads the current dynamic floating-point control modes. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The operand is a token chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a26b34eddab8969a79fd3cda432471809" prot="public">
+          <name>SET_FPMODE</name>
+          <briefdescription>
+<para>Sets the current dynamic floating-point control modes. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a token chain, the second is control modes set represented as integer value. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a386314479bc7963a544ed142866e7ece" prot="public">
+          <name>RESET_FPMODE</name>
+          <briefdescription>
+<para>Sets default dynamic floating-point control modes. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The operand is a token chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a269b81f007000306e3e69d0d290c2159" prot="public">
+          <name>LOAD</name>
+          <briefdescription>
+<para>LOAD and STORE have token chains as their first operand, then the same operands as an LLVM load/store instruction, then an offset node that is added / subtracted from the base pointer to form the address (for indexed memory ops). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a047178c3b2c6a5df40ae22a407b8aca9" prot="public">
+          <name>STORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aa71ac22470bf853868fe6b39a25bac72" prot="public">
+          <name>DYNAMIC_STACKALLOC</name>
+          <briefdescription>
+<para>DYNAMIC_STACKALLOC - Allocate some number of bytes on the stack aligned to a specified boundary. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This node always has two return values: a new stack pointer value and a chain. The first operand is the token chain, the second is the number of bytes to allocate, and the third is the alignment boundary. The size is guaranteed to be a multiple of the stack alignment, and the alignment is guaranteed to be bigger than the stack alignment (if required) or 0 to get standard stack alignment. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a5be7fb35e0f523af6c939fba303403df" prot="public">
+          <name>BR</name>
+          <briefdescription>
+<para>Control flow instructions. These all have token chains. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>BR - Unconditional branch. The first operand is the chain operand, the second is the MBB to branch to. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a716765ad6ce5be71f987cd2097b1cdbf" prot="public">
+          <name>BRIND</name>
+          <briefdescription>
+<para>BRIND - Indirect branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is the chain, the second is the value to branch to, which must be of the same type as the target&apos;s pointer type. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a716d19ebad1927a2e8dd5fe3f951f882" prot="public">
+          <name>BR_JT</name>
+          <briefdescription>
+<para>BR_JT - Jumptable branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is the chain, the second is the jumptable index, the last one is the jumptable entry index. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a18e14419991d3b0ace7690a67c564192" prot="public">
+          <name>JUMP_TABLE_DEBUG_INFO</name>
+          <briefdescription>
+<para>JUMP_TABLE_DEBUG_INFO - Jumptable debug info. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is the chain, the second is the jumptable index. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae8167e4f6fa1bfb30f074ba620b81782" prot="public">
+          <name>BRCOND</name>
+          <briefdescription>
+<para>BRCOND - Conditional branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is the chain, the second is the condition, the third is the block to branch to if the condition is true. If the type of the condition is not i1, then the high bits must conform to getBooleanContents. If the condition is undef, it nondeterministically jumps to the block. TODO: Its semantics w.r.t undef requires further discussion; we need to make it sure that it is consistent with optimizations in MIR &amp; the meaning of IMPLICIT_DEF. See <ulink url="https://reviews.llvm.org/D92015">https://reviews.llvm.org/D92015</ulink> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6d5e322b263f0d5ea4204efafc1d78bb" prot="public">
+          <name>BR_CC</name>
+          <briefdescription>
+<para>BR_CC - Conditional branch. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The behavior is like that of SELECT_CC, in that the condition is represented as condition code, and two nodes to compare, rather than as a combined SetCC node. The operands in order are chain, cc, lhs, rhs, block to branch to if condition is true. If condition is undef, it nondeterministically jumps to the block. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae35d57f3c020672748fcc95607348986" prot="public">
+          <name>INLINEASM</name>
+          <briefdescription>
+<para>INLINEASM - Represents an inline asm block. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This node always has two return values: a chain and a flag result. The inputs are as follows: Operand #0 : <ref refid="class_input" kindref="compound">Input</ref> chain. Operand #1 : a <ref refid="classllvm_1_1_external_symbol_s_d_node" kindref="compound">ExternalSymbolSDNode</ref> with a pointer to the asm string. Operand #2 : a <ref refid="classllvm_1_1_m_d_node_s_d_node" kindref="compound">MDNodeSDNode</ref> with the !srcloc metadata. Operand #3 : HasSideEffect, IsAlignStack bits. After this, it is followed by a list of operands with this format: <ref refid="classllvm_1_1_constant_s_d_node" kindref="compound">ConstantSDNode</ref>: Flags that encode whether it is a mem or not, the of operands that follow, etc. See <ref refid="_inline_asm_8h" kindref="compound">InlineAsm.h</ref>. ... however many operands ... Operand #last: Optional, an incoming flag.</para>
+<para>The variable width operands are required to represent target addressing modes as a single &quot;operand&quot;, even though they may have multiple SDOperands. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab969e7d43eb37a0398b5ded23bccc136" prot="public">
+          <name>INLINEASM_BR</name>
+          <briefdescription>
+<para>INLINEASM_BR - Branching version of inline asm. Used by asm-goto. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4c1f7e0dc3af92b9cfd0d5d11231ddc1" prot="public">
+          <name>EH_LABEL</name>
+          <briefdescription>
+<para>EH_LABEL - Represents a label in mid basic block used to track locations needed for debug and exception handling tables. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>These nodes take a chain as input and return a chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4f51e138b5e660cb9cce3ae4352c5f16" prot="public">
+          <name>ANNOTATION_LABEL</name>
+          <briefdescription>
+<para>ANNOTATION_LABEL - Represents a mid basic block label used by annotations. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This should remain within the basic block and be ordered with respect to other call instructions, but loads and stores may float past it. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aec1078d911aabd272954b9125eaee6df" prot="public">
+          <name>CATCHRET</name>
+          <briefdescription>
+<para>CATCHRET - Represents a return from a catch block funclet. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Used for MSVC compatible exception handling. Takes a chain operand and a destination basic block operand. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8b3de6401453f275f010559d01834826" prot="public">
+          <name>CLEANUPRET</name>
+          <briefdescription>
+<para>CLEANUPRET - Represents a return from a cleanup block funclet. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Used for MSVC compatible exception handling. Takes only a chain operand. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a031ce694e40832d40a163d7254a8df14" prot="public">
+          <name>STACKSAVE</name>
+          <briefdescription>
+<para>STACKSAVE - STACKSAVE has one operand, an input chain. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It produces a value, the same type as the pointer type for the system, and an output chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a023a9de787026fe61b024476bf9c32cb" prot="public">
+          <name>STACKRESTORE</name>
+          <briefdescription>
+<para>STACKRESTORE has two operands, an input chain and a pointer to restore to it returns an output chain. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af423387cec5c9f7be16028b25a0dcfe7" prot="public">
+          <name>CALLSEQ_START</name>
+          <briefdescription>
+<para>CALLSEQ_START/CALLSEQ_END - These operators mark the beginning and end of a call sequence, and carry arbitrary information that target might want to know. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a chain, the rest are specified by the target and not touched by the DAG optimizers. Targets that may use stack to pass call arguments define additional operands:<itemizedlist>
+<listitem><para>size of the call frame part that must be set up within the CALLSEQ_START..CALLSEQ_END pair,</para>
+</listitem><listitem><para>part of the call frame prepared prior to CALLSEQ_START. Both these parameters must be constants, their sum is the total call frame size. CALLSEQ_START..CALLSEQ_END pairs may not be nested. </para>
+</listitem></itemizedlist>
 </para>
-<para>The <computeroutput>llvm.experimental.convergence.*</computeroutput> intrinsics. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6feb9a82882ea426db5b62f3f69f63a2" prot="public">
+          <name>CALLSEQ_END</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae77d03846b31c41c4860bcd96d780a78" prot="public">
+          <name>VAARG</name>
+          <briefdescription>
+<para>VAARG - VAARG has four operands: an input chain, a pointer, a SRCVALUE, and the alignment. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It returns a pair of values: the vaarg value and a new chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a804c1960ac64628cdd1f74d7de885284" prot="public">
+          <name>VACOPY</name>
+          <briefdescription>
+<para>VACOPY - VACOPY has 5 operands: an input chain, a destination pointer, a source pointer, a SRCVALUE for the destination, and a SRCVALUE for the source. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1aadbb14ab26b74d841ac003363e3a5d" prot="public">
+          <name>VAEND</name>
+          <briefdescription>
+<para>VAEND, VASTART - VAEND and VASTART have three operands: an input chain, pointer, and a SRCVALUE. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110adfe32beaa596a1512b17e66b46e773ed" prot="public">
+          <name>VASTART</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a57cfe3bac8296e41e04ea4d072f0f33f" prot="public">
+          <name>PREALLOCATED_SETUP</name>
+          <briefdescription>
+<para>PREALLOCATED_SETUP - This has 2 operands: an input chain and a SRCVALUE with the preallocated call <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a706221302cd12c7a44b7e122e57002a1" prot="public">
+          <name>PREALLOCATED_ARG</name>
+          <briefdescription>
+<para>PREALLOCATED_ARG - This has 3 operands: an input chain, a SRCVALUE with the preallocated call <ref refid="classllvm_1_1_value" kindref="compound">Value</ref>, and a constant int. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4ade56991bf359914e6d59693d9526cc" prot="public">
+          <name>SRCVALUE</name>
+          <briefdescription>
+<para>SRCVALUE - This is a node type that holds a Value* that is used to make reference to a value in the LLVM IR. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a0420c9663564b439d19509ff77eb6845" prot="public">
+          <name>MDNODE_SDNODE</name>
+          <briefdescription>
+<para>MDNODE_SDNODE - This is a node that holdes an MDNode*, which is used to reference metadata in the IR. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab69fa9bf3bc67ac80d433dff2765e415" prot="public">
+          <name>PCMARKER</name>
+          <briefdescription>
+<para>PCMARKER - This corresponds to the pcmarker intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac43f9bea13e29622bbf18c861b52144d" prot="public">
+          <name>READCYCLECOUNTER</name>
+          <briefdescription>
+<para>READCYCLECOUNTER - This corresponds to the readcyclecounter intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It produces a chain and one i64 value. The only operand is a chain. If i64 is not legal, the result will be expanded into smaller values. Still, it returns an i64, so targets should set legality for i64. The result is the content of the architecture-specific cycle counter-like register (or other high accuracy low latency clock source). </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a59117a4be6a5e335b41aecda777fd679" prot="public">
+          <name>READSTEADYCOUNTER</name>
+          <briefdescription>
+<para>READSTEADYCOUNTER - This corresponds to the readfixedcounter intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It has the same semantics as the READCYCLECOUNTER implementation except that the result is the content of the architecture-specific fixed frequency counter suitable for measuring elapsed time. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab508f11d38b4596451c6333f7510daa3" prot="public">
+          <name>HANDLENODE</name>
+          <briefdescription>
+<para>HANDLENODE node - Used as a handle for various purposes. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4534a6db2862a28324932a8ea1cb54d6" prot="public">
+          <name>INIT_TRAMPOLINE</name>
+          <briefdescription>
+<para>INIT_TRAMPOLINE - This corresponds to the init_trampoline intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It takes as input a token chain, the pointer to the trampoline, the pointer to the nested function, the pointer to pass for the &apos;nest&apos; parameter, a SRCVALUE for the trampoline and another for the nested function (allowing targets to access the original Function*). It produces a token chain as output. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af7bfad446dfd85837fe7ff904ebb1aff" prot="public">
+          <name>ADJUST_TRAMPOLINE</name>
+          <briefdescription>
+<para>ADJUST_TRAMPOLINE - This corresponds to the adjust_trampoline intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It takes a pointer to the trampoline and produces a (possibly) new pointer to the same trampoline with platform-specific adjustments applied. The pointer it returns points to an executable block of code. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac5fb8808f3dcb9f0a83f1fc2e7747485" prot="public">
+          <name>TRAP</name>
+          <briefdescription>
+<para>TRAP - Trapping instruction. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a967fcb624e84458e135a763d1c11346a" prot="public">
+          <name>DEBUGTRAP</name>
+          <briefdescription>
+<para>DEBUGTRAP - Trap intended to get the attention of a debugger. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aa110c932d4027fe4043cceb7a579e5ee" prot="public">
+          <name>UBSANTRAP</name>
+          <briefdescription>
+<para>UBSANTRAP - Trap with an immediate describing the kind of sanitizer failure. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a691a4c9004e9bd04d1c0bebc5df57443" prot="public">
+          <name>PREFETCH</name>
+          <briefdescription>
+<para>PREFETCH - This corresponds to a prefetch intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is the chain. The other operands are the address to prefetch, read / write specifier, locality specifier and instruction / data cache specifier. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a88ce5ee637738fa2a879acebc2d3794c" prot="public">
+          <name>ARITH_FENCE</name>
+          <briefdescription>
+<para>ARITH_FENCE - This corresponds to a arithmetic fence intrinsic. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Both its operand and output are the same floating type. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a369074e730a24fabb4216cd37e789e35" prot="public">
+          <name>MEMBARRIER</name>
+          <briefdescription>
+<para>MEMBARRIER - Compiler barrier only; generate a no-op. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a385d7f9c63f921a2b28e8426e4101de8" prot="public">
+          <name>ATOMIC_FENCE</name>
+          <briefdescription>
+<para>OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a385d7f9c63f921a2b28e8426e4101de8" kindref="member">ATOMIC_FENCE(INCHAIN, ordering, scope)</ref> This corresponds to the fence instruction. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It takes an input chain, and two integer constants: an <ref refid="namespacellvm_1a9bccbe67aaab722783ca4e7c504aaaa7" kindref="member">AtomicOrdering</ref> and a SynchronizationScope. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7c47226f266248f4b8c155b83601b109" prot="public">
+          <name>ATOMIC_LOAD</name>
+          <briefdescription>
+<para>Val, OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7c47226f266248f4b8c155b83601b109" kindref="member">ATOMIC_LOAD(INCHAIN, ptr)</ref> This corresponds to &quot;load atomic&quot; instruction. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1db943abc1bf78a911daeb7b03d81de8" prot="public">
+          <name>ATOMIC_STORE</name>
+          <briefdescription>
+<para>OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1db943abc1bf78a911daeb7b03d81de8" kindref="member">ATOMIC_STORE(INCHAIN, val, ptr)</ref> This corresponds to &quot;store atomic&quot; instruction. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9c91befeca2a25c8050d4c3dff8b6d67" prot="public">
+          <name>ATOMIC_CMP_SWAP</name>
+          <briefdescription>
+<para>Val, OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9c91befeca2a25c8050d4c3dff8b6d67" kindref="member">ATOMIC_CMP_SWAP(INCHAIN, ptr, cmp, swap)</ref> For double-word atomic operations: ValLo, ValHi, OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9c91befeca2a25c8050d4c3dff8b6d67" kindref="member">ATOMIC_CMP_SWAP(INCHAIN, ptr, cmpLo, cmpHi,
+                                         swapLo, swapHi)</ref> This corresponds to the cmpxchg instruction. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a30649569b517a279a32fb3b48cc154e0" prot="public">
+          <name>ATOMIC_CMP_SWAP_WITH_SUCCESS</name>
+          <briefdescription>
+<para>Val, Success, OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a30649569b517a279a32fb3b48cc154e0" kindref="member">ATOMIC_CMP_SWAP_WITH_SUCCESS(INCHAIN, ptr, cmp, swap)</ref> N.b. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>this is still a strong cmpxchg operation, so Success == &quot;Val == cmp&quot;. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad728a4b56d49f39375881511d8d3118d" prot="public">
+          <name>ATOMIC_SWAP</name>
+          <briefdescription>
+<para>Val, OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad728a4b56d49f39375881511d8d3118d" kindref="member">ATOMIC_SWAP(INCHAIN, ptr, amt)</ref> Val, OUTCHAIN = ATOMIC_LOAD_[<ref refid="namespace_op_name" kindref="compound">OpName</ref>](INCHAIN, ptr, amt) For double-word atomic operations: ValLo, ValHi, OUTCHAIN = <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad728a4b56d49f39375881511d8d3118d" kindref="member">ATOMIC_SWAP(INCHAIN, ptr, amtLo, amtHi)</ref> ValLo, ValHi, OUTCHAIN = ATOMIC_LOAD_[<ref refid="namespace_op_name" kindref="compound">OpName</ref>](INCHAIN, ptr, amtLo, amtHi) These correspond to the atomicrmw instruction. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110abf5f612de1a25451c9a0c33d77bf3e74" prot="public">
+          <name>ATOMIC_LOAD_ADD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac3d12dbff6e50803982d0e92768a1479" prot="public">
+          <name>ATOMIC_LOAD_SUB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a905925a49cdc6b4a6017d215820dad30" prot="public">
+          <name>ATOMIC_LOAD_AND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a8ceaa81a8088781e5efec0886ffe86be" prot="public">
+          <name>ATOMIC_LOAD_CLR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4112a866197a97a70bdc78ef92c79b4c" prot="public">
+          <name>ATOMIC_LOAD_OR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a428ec1341b34eafa63518914e7f5ddf0" prot="public">
+          <name>ATOMIC_LOAD_XOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a13a3e6402abf972278c6a7d5ee509f9d" prot="public">
+          <name>ATOMIC_LOAD_NAND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7049708cb0e0703a467b95a506293aec" prot="public">
+          <name>ATOMIC_LOAD_MIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1cf8547d612d954d34aab1d4f78e7fa1" prot="public">
+          <name>ATOMIC_LOAD_MAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a1ff6f20a9255f7a333f4c9d25393674c" prot="public">
+          <name>ATOMIC_LOAD_UMIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9ca44a643714809ef384e7494604db14" prot="public">
+          <name>ATOMIC_LOAD_UMAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a48287dae990aa9e29a458373ccd0eadb" prot="public">
+          <name>ATOMIC_LOAD_FADD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6d539343b461a07dde64956266ba808c" prot="public">
+          <name>ATOMIC_LOAD_FSUB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a05e4a09b0b7a2ec7e9f5e77c8e8153bc" prot="public">
+          <name>ATOMIC_LOAD_FMAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a830f68bd84f119afe6033acbe7223dfe" prot="public">
+          <name>ATOMIC_LOAD_FMIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aef57c4139e116c75edbe082d40423abc" prot="public">
+          <name>ATOMIC_LOAD_UINC_WRAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110abf2a0866e4c386567698502774972acd" prot="public">
+          <name>ATOMIC_LOAD_UDEC_WRAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a28a36ed3d71dc4a053f03a5ddb828cb1" prot="public">
+          <name>ATOMIC_LOAD_USUB_COND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a4d8796a5190b7ec09695c9769b2cd4be" prot="public">
+          <name>ATOMIC_LOAD_USUB_SAT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a112324db3910fea5895514851c387442" prot="public">
+          <name>MLOAD</name>
+          <briefdescription>
+<para>Masked load and store - consecutive vector load and store operations with additional mask operand that prevents memory accesses to the masked-off lanes. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>Val, OutChain = MLOAD(BasePtr, Mask, PassThru)
+OutChain = MSTORE(Value, BasePtr, Mask) 
+</verbatim> </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9add598de9e0a49cbb8fb19adf495051" prot="public">
+          <name>MSTORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab4685260a7e506fe51f17d9b600349c8" prot="public">
+          <name>MGATHER</name>
+          <briefdescription>
+<para>Masked gather and scatter - load and store operations for a vector of random addresses with additional mask operand that prevents memory accesses to the masked-off lanes. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><verbatim>Val, OutChain = GATHER(InChain, PassThru, Mask, BasePtr, Index, Scale)
+OutChain = SCATTER(InChain, Value, Mask, BasePtr, Index, Scale)
+</verbatim></para>
+<para>The Index operand can have more vector elements than the other operands due to type legalization. The extra elements are ignored. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab179d7f42562bbb315a6b0589a25f733" prot="public">
+          <name>MSCATTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aada0b926e7ebc2bc55d158d4c37bdcca" prot="public">
+          <name>LIFETIME_START</name>
+          <briefdescription>
+<para>This corresponds to the llvm.lifetime. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><itemizedlist>
+<listitem><para>intrinsics. The first operand is the chain and the second operand is the alloca pointer. </para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab49301b20458a7f312a0919e3c8abdb2" prot="public">
+          <name>LIFETIME_END</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a40c488fd3348cbcfd577368fe96d5c9b" prot="public">
+          <name>FAKE_USE</name>
+          <briefdescription>
+<para>FAKE_USE represents a use of the operand but does not do anything. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Its purpose is the extension of the operand&apos;s lifetime mainly for debugging purposes. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a71d133366c40437e06936626b32ba6d8" prot="public">
+          <name>GC_TRANSITION_START</name>
+          <briefdescription>
+<para>GC_TRANSITION_START/GC_TRANSITION_END - These operators mark the beginning and end of GC transition sequence, and carry arbitrary information that target might need for lowering. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The first operand is a chain, the rest are specified by the target and not touched by the DAG optimizers. GC_TRANSITION_START..GC_TRANSITION_END pairs may not be nested. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aee46c58568939eaeaa37ea6001bf432e" prot="public">
+          <name>GC_TRANSITION_END</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af5caa395d199fab7e52a63feb73dcb10" prot="public">
+          <name>GET_DYNAMIC_AREA_OFFSET</name>
+          <briefdescription>
+<para>GET_DYNAMIC_AREA_OFFSET - get offset from native SP to the address of the most recent dynamic alloca. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For most targets that would be 0, but for some others (e.g. PowerPC, PowerPC64) that would be compile-time known nonzero constant. The only operand here is the chain. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac89c00e941b666bc6ac4ba73713db047" prot="public">
+          <name>PSEUDO_PROBE</name>
+          <briefdescription>
+<para>Pseudo probe for AutoFDO, as a place holder in a basic block to improve the sample counts quality. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9b2378721f79f5b72a6398dce97b3a42" prot="public">
+          <name>VSCALE</name>
+          <briefdescription>
+<para><ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9b2378721f79f5b72a6398dce97b3a42" kindref="member">VSCALE(IMM)</ref> - Returns the runtime scaling factor used to calculate the number of elements within a scalable vector. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>IMM is a constant integer multiplier that is applied to the runtime value. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a0b3085a54414d7e8ae7c13f5aeadb9da" prot="public">
+          <name>VECREDUCE_SEQ_FADD</name>
+          <briefdescription>
+<para>Generic reduction nodes. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>These nodes represent horizontal vector reduction operations, producing a scalar result. The SEQ variants perform reductions in sequential order. The first operand is an initial scalar accumulator value, and the second operand is the vector to reduce. E.g. RES = VECREDUCE_SEQ_FADD f32 ACC, &lt;4 x f32&gt; SRC_VEC ... is equivalent to RES = (((ACC + SRC_VEC[0]) + SRC_VEC[1]) + SRC_VEC[2]) + SRC_VEC[3] </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aea5fa717771f0a710ecf267df41df98a" prot="public">
+          <name>VECREDUCE_SEQ_FMUL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a5e28372b4a60bf792da88d9bc8a8d0bf" prot="public">
+          <name>VECREDUCE_FADD</name>
+          <briefdescription>
+<para>These reductions have relaxed evaluation order semantics, and have a single vector operand. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The order of evaluation is unspecified. For pow-of-2 vectors, one valid legalizer expansion is to use a tree reduction, i.e.: For RES = VECREDUCE_FADD &lt;8 x f16&gt; SRC_VEC <verbatim>PART_RDX = FADD SRC_VEC[0:3], SRC_VEC[4:7]
+PART_RDX2 = FADD PART_RDX[0:1], PART_RDX[2:3]
+RES = FADD PART_RDX2[0], PART_RDX2[1]
+</verbatim></para>
+<para>For non-pow-2 vectors, this can be computed by extracting each element and performing the operation as if it were scalarized. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110acf12a2d8b57207c69f92973a1fad520a" prot="public">
+          <name>VECREDUCE_FMUL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a323856d66e2d8b1f74e528e3f9fe804d" prot="public">
+          <name>VECREDUCE_FMAX</name>
+          <briefdescription>
+<para>FMIN/FMAX nodes can have flags, for NaN/NoNaN variants. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6a8980cf09891ec57cbce010ba119f79" prot="public">
+          <name>VECREDUCE_FMIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a355892ae7349b089e0bd24b3087d9c75" prot="public">
+          <name>VECREDUCE_FMAXIMUM</name>
+          <briefdescription>
+<para>FMINIMUM/FMAXIMUM nodes propatate NaNs and signed zeroes using the <ref refid="namespacellvm_1ae2f7e8a5325f48bbbdaec78e5d6c320c" kindref="member">llvm.minimum</ref> and <ref refid="namespacellvm_1a38dcdde63d81fbda1d22dffd1a27b343" kindref="member">llvm.maximum</ref> semantics. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae526df97bcbda2419acf8cf105c95e8e" prot="public">
+          <name>VECREDUCE_FMINIMUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a89a8ec08f6908a989c2d0198ae8851f9" prot="public">
+          <name>VECREDUCE_ADD</name>
+          <briefdescription>
+<para>Integer reductions may have a result type larger than the vector element type. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>However, the reduction is performed using the vector element type and the value in the top bits is unspecified. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab4411563ed11f8df0c6ce7af48ee386f" prot="public">
+          <name>VECREDUCE_MUL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aa58fe501d4e4fa1b4d19e0ed6b8ee6bd" prot="public">
+          <name>VECREDUCE_AND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aafd45b465ac59a1a57b8b9862aef6bed" prot="public">
+          <name>VECREDUCE_OR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9b59fad28698a46c33285083818f6b87" prot="public">
+          <name>VECREDUCE_XOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3c057571f4591494880ec0bba023e0c2" prot="public">
+          <name>VECREDUCE_SMAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a11825b59a52b4f5a73c0b877e1ba0e70" prot="public">
+          <name>VECREDUCE_SMIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7ce9f75eaf17256deb960b11d1930040" prot="public">
+          <name>VECREDUCE_UMAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab67678c3310e505df1a3f7677b14cfb0" prot="public">
+          <name>VECREDUCE_UMIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad2904b2502547c3f3d390774f8f548c7" prot="public">
+          <name>STACKMAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aa31dda85603496c333a105d53ce62150" prot="public">
+          <name>PATCHPOINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a041c4b27006496ee8d8bcdf72e248632" prot="public">
+          <name>CONVERGENCECTRL_ANCHOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a5a787d44a3bcbc803d314896056d9569" prot="public">
@@ -2437,7 +3620,7 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
 <para>Get underlying scalar opcode for VECREDUCE opcode. </para>
         </briefdescription>
         <detaileddescription>
-<para>For example <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2" kindref="member">ISD::AND</ref> for ISD::VECREDUCE_AND. </para>
+<para>For example <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2" kindref="member">ISD::AND</ref> for <ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aa58fe501d4e4fa1b4d19e0ed6b8ee6bd" kindref="member">ISD::VECREDUCE_AND</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2445,6 +3628,10 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a269996b43a1f3e1d1f84a70fd4387535" compoundref="_i_s_d_opcodes_8h" startline="246">ADD</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2" compoundref="_i_s_d_opcodes_8h" startline="709">AND</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a32ec12017722f5b42a295fe5eb0b0bdf" compoundref="_i_s_d_opcodes_8h" startline="397">FADD</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3dfd1b187d121c0e214698eef1c20f53" compoundref="_i_s_d_opcodes_8h" startline="1051">FMAXIMUM</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a632dd4bb044d5cd11f671d176ef495f2" compoundref="_i_s_d_opcodes_8h" startline="1032">FMAXNUM</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ac27a43f98abb2d1ee2f2ce99a0b34b36" compoundref="_i_s_d_opcodes_8h" startline="1050">FMINIMUM</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9f59cc264907eb86e29564d5f6a5b213" compoundref="_i_s_d_opcodes_8h" startline="1031">FMINNUM</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9ab5860c97a00c4627a08cab7b0c8178" compoundref="_i_s_d_opcodes_8h" startline="399">FMUL</references>
         <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ad8aec9273962cf78d087090c11a1dd1c" compoundref="_i_s_d_opcodes_8h" startline="248">MUL</references>
@@ -2453,6 +3640,23 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aaac895215ecbb3c411c957c8beb39b70" compoundref="_i_s_d_opcodes_8h" startline="697">SMIN</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110af675e759c0ffff8d48ea14a60fe3517b" compoundref="_i_s_d_opcodes_8h" startline="700">UMAX</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a17126302da6199930e55e841ca1b082d" compoundref="_i_s_d_opcodes_8h" startline="699">UMIN</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a89a8ec08f6908a989c2d0198ae8851f9" compoundref="_i_s_d_opcodes_8h" startline="1444">VECREDUCE_ADD</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aa58fe501d4e4fa1b4d19e0ed6b8ee6bd" compoundref="_i_s_d_opcodes_8h" startline="1446">VECREDUCE_AND</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a5e28372b4a60bf792da88d9bc8a8d0bf" compoundref="_i_s_d_opcodes_8h" startline="1432">VECREDUCE_FADD</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a323856d66e2d8b1f74e528e3f9fe804d" compoundref="_i_s_d_opcodes_8h" startline="1435">VECREDUCE_FMAX</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a355892ae7349b089e0bd24b3087d9c75" compoundref="_i_s_d_opcodes_8h" startline="1439">VECREDUCE_FMAXIMUM</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a6a8980cf09891ec57cbce010ba119f79" compoundref="_i_s_d_opcodes_8h" startline="1436">VECREDUCE_FMIN</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ae526df97bcbda2419acf8cf105c95e8e" compoundref="_i_s_d_opcodes_8h" startline="1440">VECREDUCE_FMINIMUM</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110acf12a2d8b57207c69f92973a1fad520a" compoundref="_i_s_d_opcodes_8h" startline="1433">VECREDUCE_FMUL</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab4411563ed11f8df0c6ce7af48ee386f" compoundref="_i_s_d_opcodes_8h" startline="1445">VECREDUCE_MUL</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aafd45b465ac59a1a57b8b9862aef6bed" compoundref="_i_s_d_opcodes_8h" startline="1447">VECREDUCE_OR</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a0b3085a54414d7e8ae7c13f5aeadb9da" compoundref="_i_s_d_opcodes_8h" startline="1417">VECREDUCE_SEQ_FADD</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aea5fa717771f0a710ecf267df41df98a" compoundref="_i_s_d_opcodes_8h" startline="1418">VECREDUCE_SEQ_FMUL</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a3c057571f4591494880ec0bba023e0c2" compoundref="_i_s_d_opcodes_8h" startline="1449">VECREDUCE_SMAX</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a11825b59a52b4f5a73c0b877e1ba0e70" compoundref="_i_s_d_opcodes_8h" startline="1450">VECREDUCE_SMIN</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7ce9f75eaf17256deb960b11d1930040" compoundref="_i_s_d_opcodes_8h" startline="1451">VECREDUCE_UMAX</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110ab67678c3310e505df1a3f7677b14cfb0" compoundref="_i_s_d_opcodes_8h" startline="1452">VECREDUCE_UMIN</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a9b59fad28698a46c33285083818f6b87" compoundref="_i_s_d_opcodes_8h" startline="1448">VECREDUCE_XOR</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a92febb83e6ba116eb7aae8e7e3f70cc1" compoundref="_i_s_d_opcodes_8h" startline="711">XOR</references>
         <referencedby refid="_r_i_s_c_v_i_sel_lowering_8cpp_1aedc985b3a3cebc7be1d14b89265c3bce" compoundref="_r_i_s_c_v_i_sel_lowering_8cpp" startline="13643" endline="13734">combineBinOpOfExtractToReduceTree</referencedby>
       </memberdef>
@@ -2672,6 +3876,7 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
         <location file="include/llvm/CodeGen/ISDOpcodes.h" line="1594" column="10" bodyfile="lib/CodeGen/SelectionDAG/SelectionDAG.cpp" bodystart="601" bodyend="614" declfile="include/llvm/CodeGen/ISDOpcodes.h" declline="1594" declcolumn="10"/>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a27d5d8ef82302b739ba3ca8be1a5513d" compoundref="_i_s_d_opcodes_8h" startline="814">ANY_EXTEND</references>
         <references refid="namespacellvm_1_1_i_s_d_1ad4d48171b87ca51ff54c10a436bac4d7afab3fffd153f7d7770fed81272e4b78f" compoundref="_i_s_d_opcodes_8h" startline="1590">EXTLOAD</references>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d" compoundref="_i_s_d_opcodes_8h" startline="939">FP_EXTEND</references>
         <references refid="llvm_2_support_2_error_handling_8h_1ace243f5c25697a1107cce46626b3dc94" compoundref="llvm_2_support_2_error_handling_8h" startline="143" endline="144">llvm_unreachable</references>
         <references refid="namespacellvm_1_1_i_s_d_1ad4d48171b87ca51ff54c10a436bac4d7a6c61b6125c7901c549f90ee0e443a770" compoundref="_i_s_d_opcodes_8h" startline="1590">SEXTLOAD</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a5183f3d72924bc7c77ba8d3f5de9f602" compoundref="_i_s_d_opcodes_8h" startline="805">SIGN_EXTEND</references>
@@ -3099,6 +4304,7 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
         <inbodydescription>
         </inbodydescription>
         <location file="include/llvm/CodeGen/SelectionDAGNodes.h" line="96" column="6" bodyfile="lib/CodeGen/SelectionDAG/SelectionDAG.cpp" bodystart="188" bodyend="235" declfile="include/llvm/CodeGen/SelectionDAGNodes.h" declline="96" declcolumn="6"/>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a412ddf522b53f07690a86bffba1278e7" compoundref="_i_s_d_opcodes_8h" startline="954">BITCAST</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aff6f73b624fecca7dbe94259f9437e32" compoundref="_i_s_d_opcodes_8h" startline="530">BUILD_VECTOR</references>
         <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
         <references refid="classllvm_1_1_a_p_int_1a423e2c491de1408d54e35f0b47d076be" compoundref="_a_p_int_8h" startline="371" endline="377">llvm::APInt::isAllOnes</references>
@@ -3140,6 +4346,7 @@ fshr(X,Y,Z): (X &lt;&lt; (BW - (Z % BW))) | (Y &gt;&gt; (Z % BW))
         <inbodydescription>
         </inbodydescription>
         <location file="include/llvm/CodeGen/SelectionDAGNodes.h" line="102" column="6" bodyfile="lib/CodeGen/SelectionDAG/SelectionDAG.cpp" bodystart="237" bodyend="277" declfile="include/llvm/CodeGen/SelectionDAGNodes.h" declline="102" declcolumn="6"/>
+        <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a412ddf522b53f07690a86bffba1278e7" compoundref="_i_s_d_opcodes_8h" startline="954">BITCAST</references>
         <references refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110aff6f73b624fecca7dbe94259f9437e32" compoundref="_i_s_d_opcodes_8h" startline="530">BUILD_VECTOR</references>
         <references refid="namespacellvm_1a22eeee01734061ac1b31ccd994c49eef" compoundref="_casting_8h" startline="649" endline="652">llvm::dyn_cast</references>
         <references refid="namespacellvm_1_1_i_s_d_1aafb64237a88493be2c913b0a51630a0f" compoundref="_selection_d_a_g_8cpp" startline="153" endline="183">isConstantSplatVector</references>

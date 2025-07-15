@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structllvm_1_1_register_bank_info_1_1_value_mapping" kind="struct" language="C++" prot="public">
     <compoundname>llvm::RegisterBankInfo::ValueMapping</compoundname>
     <includes refid="_register_bank_info_8h" local="yes">llvm/CodeGen/RegisterBankInfo.h</includes>
@@ -268,36 +268,38 @@
 <para><simplesect kind="note"><para>: So far we do not have any users of the complex mappings (mappings with more than one partial mapping), but when we do, we would have needed to duplicate partial mappings. The alternative could be to use an array of pointers of partial mapping (i.e., <ref refid="structllvm_1_1_register_bank_info_1_1_partial_mapping" kindref="compound">PartialMapping</ref> **BreakDown) and duplicate the pointers instead.</para>
 </simplesect>
 E.g., Let say we have a 32-bit add and a &lt;2 x 32-bit&gt; vadd. We can expand the &lt;2 x 32-bit&gt; add into 2 x 32-bit add.</para>
-<para>Currently the TableGen-like file would look like: <programlisting><codeline><highlight class="normal">PartialMapping[]<sp/>=<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*32-bit<sp/>add*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{0,<sp/>32,<sp/>GPR},<sp/></highlight><highlight class="comment">//<sp/>Scalar<sp/>entry<sp/>repeated<sp/>for<sp/>first</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vec<sp/>elt.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*2x32-bit<sp/>add*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>{0,<sp/>32,<sp/>GPR},<sp/>{32,<sp/>32,<sp/>GPR},</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*&lt;2x32-bit&gt;<sp/>vadd*/</highlight><highlight class="normal"><sp/>{0,<sp/>64,<sp/>VPR}</highlight></codeline>
-<codeline><highlight class="normal">};<sp/></highlight><highlight class="comment">//<sp/>PartialMapping<sp/>duplicated.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="structllvm_1_1_register_bank_info_1_1_value_mapping_1a9d25c6b19f2506311abd2ea798250afb" kindref="member">ValueMapping</ref>[]<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*plain<sp/>32-bit<sp/>add*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{&amp;PartialMapping[0],<sp/>1},</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*expanded<sp/>vadd<sp/>on<sp/>2xadd*/</highlight><highlight class="normal"><sp/>{&amp;PartialMapping[1],<sp/>2},</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*plain<sp/>&lt;2x32-bit&gt;<sp/>vadd*/</highlight><highlight class="normal"><sp/><sp/>{&amp;PartialMapping[3],<sp/>1}</highlight></codeline>
-<codeline><highlight class="normal">};</highlight></codeline>
+<para>Currently the TableGen-like file would look like: <programlisting><codeline><highlight class="normal"><sp/><sp/><sp/>PartialMapping[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*32-bit<sp/>add*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{0,<sp/>32,<sp/>GPR},<sp/></highlight><highlight class="comment">//<sp/>Scalar<sp/>entry<sp/>repeated<sp/>for<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vec<sp/>elt.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*2x32-bit<sp/>add*&amp;zwj;/<sp/><sp/><sp/><sp/>{0,<sp/>32,<sp/>GPR},<sp/>{32,<sp/>32,<sp/>GPR},</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>/*&lt;2x32-bit&gt;<sp/>vadd*&amp;zwj;/<sp/>{0,<sp/>64,<sp/>VPR}</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>};<sp/>//<sp/>PartialMapping<sp/>duplicated.</highlight></codeline>
+<codeline><highlight class="comment">*<sp/></highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>ValueMapping[]<sp/>{</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/><sp/><sp/>/*plain<sp/>32-bit<sp/>add*&amp;zwj;/<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{&amp;PartialMapping[0],<sp/>1},</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/><sp/><sp/>/*expanded<sp/>vadd<sp/>on<sp/>2xadd*&amp;zwj;/<sp/>{&amp;PartialMapping[1],<sp/>2},</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/><sp/><sp/>/*plain<sp/>&lt;2x32-bit&gt;<sp/>vadd*&amp;zwj;/<sp/><sp/>{&amp;PartialMapping[3],<sp/>1}</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/></highlight></codeline>
 </programlisting></para>
-<para>With the array of pointer, we would have: <programlisting><codeline><highlight class="normal">PartialMapping[]<sp/>=<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*32-bit<sp/>add<sp/>lower<sp/>*/</highlight><highlight class="normal"><sp/>{<sp/>0,<sp/>32,<sp/>GPR},</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*32-bit<sp/>add<sp/>upper<sp/>*/</highlight><highlight class="normal"><sp/>{32,<sp/>32,<sp/>GPR},</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*&lt;2x32-bit&gt;<sp/>vadd<sp/>*/</highlight><highlight class="normal"><sp/><sp/>{<sp/>0,<sp/>64,<sp/>VPR}</highlight></codeline>
-<codeline><highlight class="normal">};<sp/></highlight><highlight class="comment">//<sp/>No<sp/>more<sp/>duplication.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">BreakDowns[]<sp/>=<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*AddBreakDown*/</highlight><highlight class="normal"><sp/><sp/><sp/>&amp;PartialMapping[0],</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*2xAddBreakDown*/</highlight><highlight class="normal"><sp/>&amp;PartialMapping[0],<sp/>&amp;PartialMapping[1],</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">/*VAddBreakDown*/</highlight><highlight class="normal"><sp/><sp/>&amp;PartialMapping[2]</highlight></codeline>
-<codeline><highlight class="normal">};<sp/></highlight><highlight class="comment">//<sp/>Addresses<sp/>of<sp/>PartialMapping<sp/>duplicated<sp/>(smaller).</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="structllvm_1_1_register_bank_info_1_1_value_mapping_1a9d25c6b19f2506311abd2ea798250afb" kindref="member">ValueMapping</ref>[]<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*plain<sp/>32-bit<sp/>add*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{&amp;BreakDowns[0],<sp/>1},</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*expanded<sp/>vadd<sp/>on<sp/>2xadd*/</highlight><highlight class="normal"><sp/>{&amp;BreakDowns[1],<sp/>2},</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*plain<sp/>&lt;2x32-bit&gt;<sp/>vadd*/</highlight><highlight class="normal"><sp/><sp/>{&amp;BreakDowns[3],<sp/>1}</highlight></codeline>
-<codeline><highlight class="normal">};</highlight></codeline>
+<para>With the array of pointer, we would have: <programlisting><codeline><highlight class="normal"><sp/><sp/><sp/>PartialMapping[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*32-bit<sp/>add<sp/>lower<sp/>*/</highlight><highlight class="normal"><sp/>{<sp/>0,<sp/>32,<sp/>GPR},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*32-bit<sp/>add<sp/>upper<sp/>*&amp;zwj;/<sp/>{32,<sp/>32,<sp/>GPR},</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>/*&lt;2x32-bit&gt;<sp/>vadd<sp/>*&amp;zwj;/<sp/><sp/>{<sp/>0,<sp/>64,<sp/>VPR}</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>};<sp/>//<sp/>No<sp/>more<sp/>duplication.</highlight></codeline>
+<codeline><highlight class="comment">*<sp/></highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>BreakDowns[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>/*AddBreakDown*&amp;zwj;/<sp/><sp/><sp/>&amp;PartialMapping[0],</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>/*2xAddBreakDown*&amp;zwj;/<sp/>&amp;PartialMapping[0],<sp/>&amp;PartialMapping[1],</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>/*VAddBreakDown*&amp;zwj;/<sp/><sp/>&amp;PartialMapping[2]</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>};<sp/>//<sp/>Addresses<sp/>of<sp/>PartialMapping<sp/>duplicated<sp/>(smaller).</highlight></codeline>
+<codeline><highlight class="comment">*<sp/></highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>ValueMapping[]<sp/>{</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/><sp/><sp/>/*plain<sp/>32-bit<sp/>add*&amp;zwj;/<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{&amp;BreakDowns[0],<sp/>1},</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/><sp/><sp/>/*expanded<sp/>vadd<sp/>on<sp/>2xadd*&amp;zwj;/<sp/>{&amp;BreakDowns[1],<sp/>2},</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/><sp/><sp/>/*plain<sp/>&lt;2x32-bit&gt;<sp/>vadd*&amp;zwj;/<sp/><sp/>{&amp;BreakDowns[3],<sp/>1}</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="comment">*<sp/><sp/></highlight></codeline>
 </programlisting></para>
 <para>Given that a <ref refid="structllvm_1_1_register_bank_info_1_1_partial_mapping" kindref="compound">PartialMapping</ref> is actually small, the code size impact is actually a degradation. Moreover the compile time will be hit by the additional indirection. If <ref refid="structllvm_1_1_register_bank_info_1_1_partial_mapping" kindref="compound">PartialMapping</ref> gets bigger we may reconsider. </para>
     </detaileddescription>

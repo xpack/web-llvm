@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_get_element_ptr_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::GetElementPtrInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
@@ -45,13 +45,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -224,6 +219,7 @@
         <referencedby refid="_b_p_f_preserve_static_offset_8cpp_1a993bbcce0f95684b4ec50194f4a498c5" compoundref="_b_p_f_preserve_static_offset_8cpp" startline="277" endline="287">reconstructGEP</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a71ef354bd1ea9e02d70146d7218a7d39" compoundref="_inst_combine_vector_ops_8cpp" startline="398" endline="617">llvm::InstCombinerImpl::visitExtractElementInst</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ae755d569b6e5c69a8abbc6de50cf3f6b" compoundref="_instruction_combining_8cpp" startline="2902" endline="3173">llvm::InstCombinerImpl::visitGetElementPtrInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_get_element_ptr_inst_1abbe450337ee726cf63054b5207c4d4c5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classllvm_1_1_get_element_ptr_inst" kindref="compound">GetElementPtrInst</ref> *</type>
@@ -572,6 +568,7 @@
         <referencedby refid="_inst_combine_load_store_alloca_8cpp_1a4380ad0de0940297354df2effeb021ad" compoundref="_inst_combine_load_store_alloca_8cpp" startline="869" endline="939">canReplaceGEPIdxWithZero</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1acc9feb478a72bb822133b6eec00bef9f" compoundref="_inst_combine_p_h_i_8cpp" startline="534" endline="644">llvm::InstCombinerImpl::foldPHIArgGEPIntoPHI</referencedby>
         <referencedby refid="classanonymous__namespace_02_scalarizer_8cpp_03_1_1_scalarizer_visitor_1ac6bed7ccafa0ac0022efe4b392497224" compoundref="_scalarizer_8cpp" startline="863" endline="909">anonymous_namespace{Scalarizer.cpp}::ScalarizerVisitor::visitGetElementPtrInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_get_element_ptr_inst_1a916c003c88c951a467a7ffd9b33aa0ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -757,6 +754,7 @@
         <referencedby refid="classllvm_1_1_function_comparator_1aa359aa2850f74fbc9dbdb4650c13f4cf" compoundref="_function_comparator_8cpp" startline="637" endline="808">llvm::FunctionComparator::cmpOperations</referencedby>
         <referencedby refid="classllvm_1_1_get_element_ptr_inst_1aae8254e868c5d6a9ebaff577e7fdb14b" compoundref="_instructions_8h" startline="1048" endline="1050">getPointerOperandType</referencedby>
         <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1aec99f3523a4f1acc5d138fdd1bdf8b41" compoundref="_data_flow_sanitizer_8cpp" startline="2789" endline="2803">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::visitGetElementPtrInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_get_element_ptr_inst_1aeefd341ed1a0ae73f89ec5add43a9b15" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
@@ -947,6 +945,7 @@
         <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1acc9feb478a72bb822133b6eec00bef9f" compoundref="_inst_combine_p_h_i_8cpp" startline="534" endline="644">llvm::InstCombinerImpl::foldPHIArgGEPIntoPHI</referencedby>
         <referencedby refid="class_data_scalarizer_visitor_1a32bd3fc6040488f54b8fb322216218a5" compoundref="_d_x_i_l_data_scalarization_8cpp" startline="133" endline="157">DataScalarizerVisitor::visitGetElementPtrInst</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a62e2ba967b974d6e68931532ab1aa4e8" compoundref="_inst_combine_select_8cpp" startline="3764" endline="4335">llvm::InstCombinerImpl::visitSelectInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_get_element_ptr_inst_1a01f11934ce1bac24a7c9190d14686844" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classbool" kindref="compound">bool</ref></type>

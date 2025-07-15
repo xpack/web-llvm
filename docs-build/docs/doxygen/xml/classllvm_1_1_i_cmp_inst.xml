@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_i_cmp_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::ICmpInst</compoundname>
     <basecompoundref refid="classllvm_1_1_cmp_inst" prot="public" virt="non-virtual">llvm::CmpInst</basecompoundref>
@@ -37,13 +37,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -449,6 +444,7 @@
         <references refid="classllvm_1_1_i_cmp_inst_1abe8988eef2e6fc2baba032cb22afedd7" compoundref="_instructions_8h" startline="1285" endline="1287">isEquality</references>
         <referencedby refid="namespacellvm_1aaf52bffe6dc4a6d5d5cf515aac2e4450" compoundref="_cmp_inst_analysis_8cpp" startline="77" endline="167">llvm::decomposeBitTestICmp</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a4bd29d381405675f36964e4a5382dae4" compoundref="_inst_combine_select_8cpp" startline="272" endline="513">llvm::InstCombinerImpl::foldSelectOpOp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ac83b2f6d1a223c7b4ac9eb3783ee1465" compoundref="_inst_combine_select_8cpp" startline="1860" endline="1912">foldSelectWithConstOpToBinOp</referencedby>
         <referencedby refid="namespacellvm_1acc4c2b42879015c8ee1d08fa7ff90d8f" compoundref="_value_tracking_8cpp" startline="8681" endline="8752">llvm::getFlippedStrictnessPredicateAndConstant</referencedby>
         <referencedby refid="classllvm_1_1_scalar_evolution_1a094d95c92490272d4b7a6bf4ab90009d" compoundref="_scalar_evolution_8cpp" startline="11275" endline="11336">llvm::ScalarEvolution::getLoopInvariantExitCondDuringFirstIterationsImpl</referencedby>
         <referencedby refid="_l_i_c_m_8cpp_1a1f669cc640bda295e6c2e2b3c90babb9" compoundref="_l_i_c_m_8cpp" startline="2422" endline="2495">hoistMinMax</referencedby>
@@ -502,6 +498,7 @@
         <referencedby refid="classllvm_1_1_scalar_evolution_1ad80020012061cb562a6f9c9f715c2cf0" compoundref="_scalar_evolution_8cpp" startline="11064" endline="11072">llvm::ScalarEvolution::evaluatePredicate</referencedby>
         <referencedby refid="classllvm_1_1_scalar_evolution_1a4bfb461a6adf8414747571a5f94a77fc" compoundref="_scalar_evolution_8cpp" startline="11083" endline="11095">llvm::ScalarEvolution::evaluatePredicateAt</referencedby>
         <referencedby refid="classllvm_1_1_i_cmp_inst_1a756b791b5d2db592f79607b0776caa8c" compoundref="_instructions_8h" startline="1219" endline="1221">getInverseCmpPredicate</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a8d91ca7ede308b821f546a33f6625115" compoundref="_inst_combine_select_8cpp" startline="3137" endline="3165">impliesPoisonOrCond</referencedby>
         <referencedby refid="_instructions_8cpp_1a237bdfe002251aaca2a9f2efd04d16de" compoundref="_instructions_8cpp" startline="3919" endline="3923">isImpliedFalseByMatchingCmp</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_i_cmp_inst_1a36966e3f5427e7aa08dbbf358cc4b921" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -692,9 +689,11 @@
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a2e02c18bf8cc049ce1589b8f95618a0b" compoundref="_inst_combine_and_or_xor_8cpp" startline="495" endline="522">foldLogOpOfMaskedICmpsAsymmetric</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a5532e05d5caa4fb5e2b8512aa3095f1e" compoundref="_inst_combine_and_or_xor_8cpp" startline="1009" endline="1066">foldNegativePower2AndShiftedMask</referencedby>
         <referencedby refid="_inst_combine_compares_8cpp_1a41baeb4167dc326182b3c281d69232ae" compoundref="_inst_combine_compares_8cpp" startline="7232" endline="7275">foldReductionIdiom</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ac4102cd12659f4a5344d443b40009893" compoundref="_inst_combine_select_8cpp" startline="2963" endline="3020">foldRoundUpIntegerWithPow2Alignment</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a917f93b85c9b8cfe9ad68ba6d49966ba" compoundref="_inst_combine_select_8cpp" startline="55" endline="111">foldSelectBinOpIdentity</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1afcb58333497c40468d7889705a5d0b03" compoundref="_inst_combine_select_8cpp" startline="122" endline="237">foldSelectICmpAnd</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1ad51f65187d4c6b69d6bf8f71e027e4de" compoundref="_inst_combine_select_8cpp" startline="745" endline="833">foldSelectICmpAndBinOp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a6918e533fa9054323684d7e5d556c787" compoundref="_inst_combine_select_8cpp" startline="1837" endline="1856">foldSelectICmpEq</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a4bd29d381405675f36964e4a5382dae4" compoundref="_inst_combine_select_8cpp" startline="272" endline="513">llvm::InstCombinerImpl::foldSelectOpOp</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a550ee33b5be6c859c443739649308721" compoundref="_inst_combine_select_8cpp" startline="877" endline="917">foldSelectZeroOrMul</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a24dce8fa354f0f1d52209e805f0ae6a3" compoundref="_inst_combine_and_or_xor_8cpp" startline="1107" endline="1144">foldUnsignedUnderflowCheck</referencedby>
@@ -788,6 +787,8 @@
         <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba607cecdc5172814382033e001ed11fad" compoundref="_instr_types_8h" startline="696">llvm::CmpInst::ICMP_UGT</references>
         <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
         <referencedby refid="namespacellvm_1aaf52bffe6dc4a6d5d5cf515aac2e4450" compoundref="_cmp_inst_analysis_8cpp" startline="77" endline="167">llvm::decomposeBitTestICmp</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a5f883a229d57832ae195c8d102445847" compoundref="_inst_combine_select_8cpp" startline="3575" endline="3648">llvm::InstCombinerImpl::foldSelectToCmp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a6745cdf992554f558011c1768d4b5747" compoundref="_inst_combine_select_8cpp" startline="1799" endline="1835">foldSelectWithExtremeEqCond</referencedby>
         <referencedby refid="_l_i_c_m_8cpp_1a1f669cc640bda295e6c2e2b3c90babb9" compoundref="_l_i_c_m_8cpp" startline="2422" endline="2495">hoistMinMax</referencedby>
         <referencedby refid="_b_p_f_check_and_adjust_i_r_8cpp_1a6e78c58ee832ea1775655021854401e6" compoundref="_b_p_f_check_and_adjust_i_r_8cpp" startline="185" endline="313">sinkMinMaxInBB</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a0a89a6b25b8a92fb896a994a36b74241" compoundref="_inst_combine_add_sub_8cpp" startline="1519" endline="1894">llvm::InstCombinerImpl::visitAdd</referencedby>
@@ -813,6 +814,8 @@
         <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba15ae464950ac676919c2f0c7aafc706c" compoundref="_instr_types_8h" startline="702">llvm::CmpInst::ICMP_SLT</references>
         <references refid="classllvm_1_1_cmp_inst_1a2be3583dac92a031fa1458d4d992c78ba91d86a4753c8bd7624e01bf565d87f8e" compoundref="_instr_types_8h" startline="698">llvm::CmpInst::ICMP_ULT</references>
         <references refid="_option_8cpp_1a04665169063c8ca1f2ea96c27fc7c2b2">P</references>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1a5f883a229d57832ae195c8d102445847" compoundref="_inst_combine_select_8cpp" startline="3575" endline="3648">llvm::InstCombinerImpl::foldSelectToCmp</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a6745cdf992554f558011c1768d4b5747" compoundref="_inst_combine_select_8cpp" startline="1799" endline="1835">foldSelectWithExtremeEqCond</referencedby>
         <referencedby refid="_l_i_c_m_8cpp_1a1f669cc640bda295e6c2e2b3c90babb9" compoundref="_l_i_c_m_8cpp" startline="2422" endline="2495">hoistMinMax</referencedby>
         <referencedby refid="_b_p_f_check_and_adjust_i_r_8cpp_1a6e78c58ee832ea1775655021854401e6" compoundref="_b_p_f_check_and_adjust_i_r_8cpp" startline="185" endline="313">sinkMinMaxInBB</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a0a89a6b25b8a92fb896a994a36b74241" compoundref="_inst_combine_add_sub_8cpp" startline="1519" endline="1894">llvm::InstCombinerImpl::visitAdd</referencedby>

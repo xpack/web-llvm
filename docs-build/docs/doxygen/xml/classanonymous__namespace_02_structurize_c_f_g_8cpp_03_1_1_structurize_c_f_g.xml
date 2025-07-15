@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classanonymous__namespace_02_structurize_c_f_g_8cpp_03_1_1_structurize_c_f_g" kind="class" language="C++" prot="public">
     <compoundname>anonymous_namespace{StructurizeCFG.cpp}::StructurizeCFG</compoundname>
     <sectiondef kind="private-attrib">
@@ -887,30 +887,30 @@
     <detaileddescription>
 <para>After the transform all &quot;If&quot;/&quot;Then&quot;/&quot;Else&quot; style control flow looks like this:</para>
 <para><verbatim>/// 1
-/// ||
-/// | |
-/// 2 |
-/// | /
-/// |/
-/// 3
-/// ||   Where:
-/// | |  1 = &quot;If&quot; block, calculates the condition
-/// 4 |  2 = &quot;Then&quot; subregion, runs if the condition is true
-/// | /  3 = &quot;Flow&quot; blocks, newly inserted flow blocks, rejoins the flow
-/// |/   4 = &quot;Else&quot; optional subregion, runs if the condition is false
-/// 5    5 = &quot;End&quot; block, also rejoins the control flow
-/// </verbatim></para>
+ *  ||
+ *  | |
+ *  2 |
+ *  | /
+ *  |/
+ *  3
+ *  ||   Where:
+ *  | |  1 = &quot;If&quot; block, calculates the condition
+ *  4 |  2 = &quot;Then&quot; subregion, runs if the condition is true
+ *  | /  3 = &quot;Flow&quot; blocks, newly inserted flow blocks, rejoins the flow
+ *  |/   4 = &quot;Else&quot; optional subregion, runs if the condition is false
+ *  5    5 = &quot;End&quot; block, also rejoins the control flow
+ *  </verbatim></para>
 <para>Control flow is expressed as a branch where the true exit goes into the &quot;Then&quot;/&quot;Else&quot; region, while the false exit skips the region The condition for the optional &quot;Else&quot; region is expressed as a PHI node. The incoming values of the PHI node are true for the &quot;If&quot; edge and false for the &quot;Then&quot; edge.</para>
 <para>Additionally to that even complicated loops look like this:</para>
 <para><verbatim>/// 1
-/// ||
-/// | |
-/// 2 ^  Where:
-/// | /  1 = &quot;Entry&quot; block
-/// |/   2 = &quot;Loop&quot; optional subregion, with all exits at &quot;Flow&quot; block
-/// 3    3 = &quot;Flow&quot; block, with back edge to entry block
-/// |
-/// </verbatim></para>
+ *  ||
+ *  | |
+ *  2 ^  Where:
+ *  | /  1 = &quot;Entry&quot; block
+ *  |/   2 = &quot;Loop&quot; optional subregion, with all exits at &quot;Flow&quot; block
+ *  3    3 = &quot;Flow&quot; block, with back edge to entry block
+ *  |
+ *  </verbatim></para>
 <para>The back edge of the &quot;Flow&quot; block is always on the false side of the branch while the true side continues the general flow. So the loop condition consist of a network of PHI nodes where the true incoming values expresses breaks and the false values expresses continue states. </para>
     </detaileddescription>
     <location file="lib/Transforms/Scalar/StructurizeCFG.cpp" line="279" column="1" bodyfile="lib/Transforms/Scalar/StructurizeCFG.cpp" bodystart="279" bodyend="368"/>

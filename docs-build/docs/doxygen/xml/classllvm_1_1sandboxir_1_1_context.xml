@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1sandboxir_1_1_context" kind="class" language="C++" prot="public">
     <compoundname>llvm::sandboxir::Context</compoundname>
     <includes refid="_sandbox_i_r_2_context_8h" local="yes">llvm/SandboxIR/Context.h</includes>
@@ -941,13 +941,8 @@
           <type><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; <ref refid="classllvm_1_1sandboxir_1_1_context" kindref="compound">Context</ref> *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1sandboxir_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class <ref refid="classllvm_1_1sandboxir_1_1_context" kindref="compound">Context</ref>; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1006,7 +1001,7 @@
         <name>BasicBlock</name>
         <qualifiedname>llvm::sandboxir::Context::BasicBlock</qualifiedname>
         <param>
-          <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref></type>
+          <type><ref refid="classllvm_1_1sandboxir_1_1_basic_block" kindref="compound">BasicBlock</ref></type>
         </param>
         <briefdescription>
 <para>Various leaf nodes. </para>
@@ -1280,6 +1275,7 @@
         <references refid="namespacellvm_1ac4fc845f5ed92de63cd4474f128f5fc5" compoundref="_casting_8h" startline="565" endline="568">llvm::cast</references>
         <references refid="classllvm_1_1sandboxir_1_1_context_1adad27d8740783e65067b7c2ad286aa38" compoundref="_sandbox_i_r_2_context_8cpp" startline="55" endline="405">getOrCreateValueInternal</references>
         <referencedby refid="classllvm_1_1sandboxir_1_1_shuffle_vector_inst_1a6224f807d740562c873c036926d0dfd9" compoundref="_sandbox_i_r_2_instruction_8cpp" startline="1516" endline="1521">llvm::sandboxir::ShuffleVectorInst::convertShuffleMaskForBitcode</referencedby>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_block_address_1ab92aa8e12ea15943c53deddbdea43eb7" compoundref="_constant_8cpp" startline="463" endline="466">llvm::sandboxir::BlockAddress::get</referencedby>
         <referencedby refid="classllvm_1_1sandboxir_1_1_no_c_f_i_value_1afa0e3ddd6a06a4f5de4142baad208a38" compoundref="_constant_8cpp" startline="409" endline="412">llvm::sandboxir::NoCFIValue::get</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_context_1a3bd7534254b9665d9a49781b169ba2f7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1351,7 +1347,7 @@
         <references refid="classllvm_1_1sandboxir_1_1_context_1aae8fca181738a0996766c6a1dec68c50" compoundref="_sandbox_i_r_2_context_8h" startline="100">MoveInstrCallbacks</references>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_context_1a008a32bf404093142fba745ed3ab0918" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
+        <type><ref refid="classllvm_1_1sandboxir_1_1_basic_block" kindref="compound">BasicBlock</ref> *</type>
         <definition>BasicBlock * llvm::sandboxir::Context::createBasicBlock</definition>
         <argsstring>(llvm::BasicBlock *BB)</argsstring>
         <name>createBasicBlock</name>
@@ -1361,7 +1357,7 @@
           <declname>BB</declname>
         </param>
         <briefdescription>
-<para>Create a <ref refid="namespacellvm_1_1sandboxir_1a60f87746e4945fda7ea3d5a983c9b62c" kindref="member">sandboxir::BasicBlock</ref> for an existing LLVM IR <computeroutput>BB</computeroutput>. </para>
+<para>Create a <ref refid="classllvm_1_1sandboxir_1_1_basic_block" kindref="compound">sandboxir::BasicBlock</ref> for an existing LLVM IR <computeroutput>BB</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para>This will also create all contents of the block. </para>
@@ -2308,6 +2304,7 @@
         <referencedby refid="classllvm_1_1sandboxir_1_1_d_s_o_local_equivalent_1a66f628a21e67b68d6ae93a9f80bb4067" compoundref="_constant_8cpp" startline="483" endline="486">llvm::sandboxir::DSOLocalEquivalent::get</referencedby>
         <referencedby refid="classllvm_1_1sandboxir_1_1_context_1adad27d8740783e65067b7c2ad286aa38" compoundref="_sandbox_i_r_2_context_8cpp" startline="55" endline="405">getOrCreateValueInternal</referencedby>
         <referencedby refid="classllvm_1_1sandboxir_1_1_context_1a67b2e6dc3f689b0f00dcf30f2e6a9c40" compoundref="_sandbox_i_r_2_context_8h" startline="233" endline="235">getValue</referencedby>
+        <referencedby refid="classllvm_1_1sandboxir_1_1_block_address_1a095a6dbd20e2611d899aa9f03380a573" compoundref="_constant_8cpp" startline="468" endline="471">llvm::sandboxir::BlockAddress::lookup</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1sandboxir_1_1_context_1a67b2e6dc3f689b0f00dcf30f2e6a9c40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1sandboxir_1_1_value" kindref="compound">sandboxir::Value</ref> *</type>

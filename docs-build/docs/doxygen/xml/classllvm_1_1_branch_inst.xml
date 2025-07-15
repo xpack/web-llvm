@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_branch_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::BranchInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
     <includes refid="_instructions_8h" local="yes">llvm/IR/Instructions.h</includes>
-    <innerclass refid="structllvm_1_1_branch_inst_1_1const__succ__op__iterator" prot="public">llvm::BranchInst::const_succ_op_iterator</innerclass>
     <innerclass refid="structllvm_1_1_branch_inst_1_1succ__op__iterator" prot="public">llvm::BranchInst::succ_op_iterator</innerclass>
+    <innerclass refid="structllvm_1_1_branch_inst_1_1const__succ__op__iterator" prot="public">llvm::BranchInst::const_succ_op_iterator</innerclass>
     <sectiondef kind="friend">
       <memberdef kind="friend" id="classllvm_1_1_branch_inst_1a87273cb892a8182f137567e6b631695e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class</type>
@@ -17,13 +17,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -368,7 +363,6 @@
         <referencedby refid="classllvm_1_1_loop_1a580a6361a2bad87e6071ecc795bdae96" compoundref="_loop_info_8cpp" startline="368" endline="410">llvm::Loop::getLoopGuardBranch</referencedby>
         <referencedby refid="_lower_expect_intrinsic_8cpp_1a390dfaf67ef6d58f12f5a19ee938c60f" compoundref="_lower_expect_intrinsic_8cpp" startline="357" endline="362">handleBranchExpect</referencedby>
         <referencedby refid="_lower_expect_intrinsic_8cpp_1aea5dd05a61257355d99f96d8d6dc9f94" compoundref="_lower_expect_intrinsic_8cpp" startline="116" endline="273">handlePhiDef</referencedby>
-        <referencedby refid="_partial_inlining_8cpp_1a8884a3765a9cdbc730400587d4a3192c" compoundref="_partial_inlining_8cpp" startline="663" endline="675">hasProfileData</referencedby>
         <referencedby refid="classllvm_1_1_scalar_evolution_1aefc772d1808d513abc142b59844cfe45" compoundref="_scalar_evolution_8cpp" startline="11621" endline="11718">llvm::ScalarEvolution::isBasicBlockEntryGuardedByCond</referencedby>
         <referencedby refid="structllvm_1_1_dense_map_info_3_01const_01_switch_succ_wrapper_01_5_01_4_1afd0535a9a9691fbeaf8a97077837bff9" compoundref="_simplify_c_f_g_8cpp" startline="7540" endline="7573">llvm::DenseMapInfo&lt; const SwitchSuccWrapper * &gt;::isEqual</referencedby>
         <referencedby refid="classllvm_1_1_jump_threading_pass_1a710878a88d68a9169313249bfd52862a" compoundref="_jump_threading_8cpp" startline="2116" endline="2255">llvm::JumpThreadingPass::maybethreadThroughTwoBasicBlocks</referencedby>
@@ -444,7 +438,6 @@
         <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
         <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
         <referencedby refid="_jump_threading_8cpp_1ae5a9dfd216e7560889e2366f34ddd9f1" compoundref="_jump_threading_8cpp" startline="147" endline="234">updatePredecessorProfileMetadata</referencedby>
-        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1adf082e94ccc4332efdb2faac54861040" compoundref="_data_flow_sanitizer_8cpp" startline="2955" endline="2960">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::visitBranchInst</referencedby>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_branch_inst_1aebd4af5642453ce3169094f08dd3d7b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classllvm_1_1_value" kindref="compound">Value</ref> *</type>
@@ -508,7 +501,6 @@
         <referencedby refid="classllvm_1_1_jump_threading_pass_1afed5e8a79fa550920f638708cc257bdf" compoundref="_jump_threading_8cpp" startline="3047" endline="3120">llvm::JumpThreadingPass::threadGuard</referencedby>
         <referencedby refid="_simple_loop_unswitch_8cpp_1aae4261fb86bc9023c3383785afa66b9a" compoundref="_simple_loop_unswitch_8cpp" startline="2175" endline="2652">unswitchNontrivialInvariants</referencedby>
         <referencedby refid="_simple_loop_unswitch_8cpp_1a6a082aa2e05f44f7dab89e2ff8c582ff" compoundref="_simple_loop_unswitch_8cpp" startline="509" endline="715">unswitchTrivialBranch</referencedby>
-        <referencedby refid="classanonymous__namespace_02_data_flow_sanitizer_8cpp_03_1_1_d_f_san_visitor_1adf082e94ccc4332efdb2faac54861040" compoundref="_data_flow_sanitizer_8cpp" startline="2955" endline="2960">anonymous_namespace{DataFlowSanitizer.cpp}::DFSanVisitor::visitBranchInst</referencedby>
         <referencedby refid="classanonymous__namespace_02_inline_cost_8cpp_03_1_1_call_analyzer_1a070509ca4afed69062174feb05ef7022" compoundref="_inline_cost_8cpp" startline="2395" endline="2403">anonymous_namespace{InlineCost.cpp}::CallAnalyzer::visitBranchInst</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1aea9ba5a362fb88bd97349a302133dd03" compoundref="_instruction_combining_8cpp" startline="3744" endline="3824">llvm::InstCombinerImpl::visitBranchInst</referencedby>
         <referencedby refid="namespacellvm_1a27f63a779f3bcae1f300371e33227bed" compoundref="_transforms_2_utils_2_guard_utils_8cpp" startline="82" endline="106">llvm::widenWidenableBranch</referencedby>

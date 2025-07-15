@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structllvm_1_1_control_flow_hub" kind="struct" language="C++" prot="public">
     <compoundname>llvm::ControlFlowHub</compoundname>
     <includes refid="_control_flow_utils_8h" local="yes">llvm/Transforms/Utils/ControlFlowUtils.h</includes>
@@ -112,7 +112,7 @@
 <para>The hub consists of a series of guard blocks, one for each outgoing block. Each guard block conditionally branches to the corresponding outgoing block, or the next guard block in the chain. These guard blocks are returned in the argument vector.</para>
 <para>This also updates any PHINodes in the successor. For each such <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref>, the operands corresponding to incoming blocks are moved to a new <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> in the hub, and the hub is made an operand of the original <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref>.</para>
 <para>Note that for some block BB with a conditional branch, it is not necessary that both successors are rerouted. The client specifies this by setting either Succ0 or Succ1 to nullptr, in which case, the corresponding successor is not rerouted.</para>
-<sect1 id="structllvm_1_1_control_flow_hub_1autotoc_md60_1s1"><sect2 id="structllvm_1_1_control_flow_hub_1autotoc_md60">
+<sect1 id="structllvm_1_1_control_flow_hub_1autotoc_md59_1s1"><sect2 id="structllvm_1_1_control_flow_hub_1autotoc_md59">
 <title>Input CFG:</title><para><verbatim>               Def
                 |
                 v
@@ -122,7 +122,7 @@
        v        v
 </verbatim> Foo ---&gt; Out1 Out2 | v <ref refid="classllvm_1_1_use" kindref="compound">Use</ref></para>
 </sect2></sect1>
-<sect1 id="structllvm_1_1_control_flow_hub_1autotoc_md61_1s1"><sect2 id="structllvm_1_1_control_flow_hub_1autotoc_md61">
+<sect1 id="structllvm_1_1_control_flow_hub_1autotoc_md60_1s1"><sect2 id="structllvm_1_1_control_flow_hub_1autotoc_md60">
 <title>Create hub: Incoming = {In1, In2}, Outgoing = {Out1, Out2}</title><para><verbatim>        Def
          |
          v
@@ -131,7 +131,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2></sect1>
-<sect1 id="structllvm_1_1_control_flow_hub_1autotoc_md62_1s1"><sect2 id="structllvm_1_1_control_flow_hub_1autotoc_md62">
+<sect1 id="structllvm_1_1_control_flow_hub_1autotoc_md61_1s1"><sect2 id="structllvm_1_1_control_flow_hub_1autotoc_md61">
 <title>Limitations:</title><para><orderedlist>
 <listitem><para>This assumes that all terminators in the CFG are direct branches (the &quot;br&quot; instruction). The presence of any other control flow such as indirectbr, switch or callbr will cause an assert.</para>
 </listitem><listitem><para>The updates to the PHINodes are not sufficient to restore SSA form. Consider a definition Def, its use <ref refid="classllvm_1_1_use" kindref="compound">Use</ref>, incoming block In2 and outgoing block Out2, such that: a. In2 is reachable from D or contains D. b. U is reachable from Out2 or is contained in Out2. c. U is not a <ref refid="classllvm_1_1_p_h_i_node" kindref="compound">PHINode</ref> if U is contained in Out2.</para>

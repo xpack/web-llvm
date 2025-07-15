@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_switch_inst" kind="class" language="C++" prot="public">
     <compoundname>llvm::SwitchInst</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
     <includes refid="_instructions_8h" local="yes">llvm/IR/Instructions.h</includes>
-    <innerclass refid="classllvm_1_1_switch_inst_1_1_case_handle" prot="public">llvm::SwitchInst::CaseHandle</innerclass>
-    <innerclass refid="classllvm_1_1_switch_inst_1_1_case_handle_impl" prot="public">llvm::SwitchInst::CaseHandleImpl</innerclass>
     <innerclass refid="classllvm_1_1_switch_inst_1_1_case_iterator_impl" prot="public">llvm::SwitchInst::CaseIteratorImpl</innerclass>
+    <innerclass refid="classllvm_1_1_switch_inst_1_1_case_handle_impl" prot="public">llvm::SwitchInst::CaseHandleImpl</innerclass>
+    <innerclass refid="classllvm_1_1_switch_inst_1_1_case_handle" prot="public">llvm::SwitchInst::CaseHandle</innerclass>
     <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classllvm_1_1_switch_inst_1a8176744ccd6a0ecd10728669e722b939" prot="public" static="no">
         <type><ref refid="classllvm_1_1_switch_inst_1_1_case_handle_impl" kindref="compound">CaseHandleImpl</ref>&lt; <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_switch_inst" kindref="compound">SwitchInst</ref>, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_constant_int" kindref="compound">ConstantInt</ref>, <ref refid="_a_arch64_promote_constant_8cpp_1a90f8350fecae261c25be85d38b451bff" kindref="member">const</ref> <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> &gt;</type>
@@ -96,13 +96,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -662,6 +657,7 @@
         <references refid="classllvm_1_1_user_1a715e8009737f71c4b3d2ea7d2abc33c4" compoundref="_i_r_2_user_8h" startline="261" endline="265">llvm::User::setNumHungOffUseOperands</references>
         <references refid="classllvm_1_1_switch_inst_1_1_case_handle_1ade327bd05bcf154647ea34eed5ddf354" compoundref="_instructions_8h" startline="3264" endline="3266">llvm::SwitchInst::CaseHandle::setSuccessor</references>
         <references refid="classllvm_1_1_switch_inst_1_1_case_handle_1ab20138a23cdfbc6a42f6341e55b78005" compoundref="_instructions_8h" startline="3257" endline="3261">llvm::SwitchInst::CaseHandle::setValue</references>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1af36172c1f538b7305b44760997d5a3c2" compoundref="_o_m_p_i_r_builder_8cpp" startline="2210" endline="2311">llvm::OpenMPIRBuilder::createSections</referencedby>
         <referencedby refid="_i_r_outliner_8cpp_1ae86fef7fc5831c2514bff95bdf784d09" compoundref="_i_r_outliner_8cpp" startline="2150" endline="2228">createSwitchStatement</referencedby>
         <referencedby refid="classllvm_1_1_s_p_i_r_v_merge_region_exit_targets_1ab6f626d7c6ac0566eb109ca95019549f" compoundref="_s_p_i_r_v_merge_region_exit_targets_8cpp" startline="142" endline="216">llvm::SPIRVMergeRegionExitTargets::runOnConvergenceRegionNoRecurse</referencedby>
       </memberdef>

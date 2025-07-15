@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_binary_operator" kind="class" language="C++" prot="public">
     <compoundname>llvm::BinaryOperator</compoundname>
     <basecompoundref refid="classllvm_1_1_instruction" prot="public" virt="non-virtual">llvm::Instruction</basecompoundref>
@@ -33,13 +33,8 @@
           <type><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></type>
         </param>
         <briefdescription>
-<para>Iterator for <computeroutput><ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref></computeroutput>s in a `BasicBlock. </para>
         </briefdescription>
         <detaileddescription>
-<para>/ \Returns an <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <ref refid="classllvm_1_1_instruction" kindref="compound">Instruction</ref>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</para>
-<para>private: <ref refid="classllvm_1_1_basic_block" kindref="compound">llvm::BasicBlock</ref> *BB; <ref refid="classllvm_1_1_basic_block_1a98c0a84a5dfa8bce341c829709f171e5" kindref="member">llvm::BasicBlock::iterator</ref> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</para>
-<para>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; <ndash/>*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; &quot;BBIterators in different context!&quot;); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> *getNodeParent() const; };</para>
-<para>/ Contains a list of <ref refid="classllvm_1_1sandboxir_1_1_instruction" kindref="compound">sandboxir::Instruction</ref>&apos;s. class <ref refid="classllvm_1_1_basic_block" kindref="compound">BasicBlock</ref> : public <ref refid="classllvm_1_1_value" kindref="compound">Value</ref> { / Builds a graph that contains all values in <computeroutput>BB</computeroutput> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <computeroutput>buildBasicBlockFromIR</computeroutput> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -256,7 +251,9 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a037006a1d44974a6840403beb4febd30" compoundref="_inst_combine_compares_8cpp" startline="2510" endline="2672">llvm::InstCombinerImpl::foldICmpShrConstant</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a45705c727d8388c014471504b4ab0c4e" compoundref="_inst_combine_and_or_xor_8cpp" startline="1750" endline="1782">foldLogicCastConstant</referencedby>
         <referencedby refid="_inst_combine_select_8cpp_1a917f93b85c9b8cfe9ad68ba6d49966ba" compoundref="_inst_combine_select_8cpp" startline="55" endline="111">foldSelectBinOpIdentity</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1aa231edc47a3993eaf9c7aa2bb324e2f5" compoundref="_inst_combine_select_8cpp" startline="2436" endline="2505">foldSelectFunnelShift</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a3b73df3a995af9ca26c9d024c957c45a" compoundref="_inst_combine_vector_ops_8cpp" startline="2313" endline="2447">llvm::InstCombinerImpl::foldSelectShuffle</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1ac83b2f6d1a223c7b4ac9eb3783ee1465" compoundref="_inst_combine_select_8cpp" startline="1860" endline="1912">foldSelectWithConstOpToBinOp</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ad3f7f3eaea6d34ab9ade1af54174f5a2" compoundref="_inst_combine_shifts_8cpp" startline="783" endline="909">llvm::InstCombinerImpl::FoldShiftByConstant</referencedby>
         <referencedby refid="_inst_combine_shifts_8cpp_1a04e846746dd1839f88b9a39847f5d643" compoundref="_inst_combine_shifts_8cpp" startline="641" endline="700">foldShiftedShift</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a2511e442d198696042ad2a39cad89059" compoundref="_instruction_combining_8cpp" startline="1132" endline="1222">llvm::InstCombinerImpl::foldUsingDistributiveLaws</referencedby>
@@ -378,6 +375,7 @@
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ab05ba39ce6e678149dabd939c9ad4c3e" compoundref="_inst_combine_casts_8cpp" startline="30" endline="123">llvm::InstCombinerImpl::EvaluateInDifferentType</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a295de4cfe04f8cf0dee3bc16c78e5f13" compoundref="_instruction_combining_8cpp" startline="884" endline="1018">llvm::InstCombinerImpl::foldBinOpShiftWithShift</referencedby>
         <referencedby refid="_inst_combine_casts_8cpp_1a6556e45ee27ad333bf33eda6b1f04b8a" compoundref="_inst_combine_casts_8cpp" startline="2414" endline="2483">foldBitCastBitwiseLogic</referencedby>
+        <referencedby refid="_inst_combine_select_8cpp_1a5a46b94b8be40eba6d85169820f2a3a4" compoundref="_inst_combine_select_8cpp" startline="3521" endline="3566">foldBitCeil</referencedby>
         <referencedby refid="_inst_combine_calls_8cpp_1a9bb2638252bcf281e82bfa7265d76c6e" compoundref="_inst_combine_calls_8cpp" startline="1451" endline="1484">foldBitOrderCrossLogicOp</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1ab01a210491dcbefc8db253f4dbaa6497" compoundref="_inst_combine_and_or_xor_8cpp" startline="1992" endline="2129">foldComplexAndOrPatterns</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1a78aa741a7874614a21b66826ffe6e5ce" compoundref="_inst_combine_compares_8cpp" startline="3575" endline="3728">llvm::InstCombinerImpl::foldICmpBinOpEqualityWithConstant</referencedby>
@@ -1248,6 +1246,7 @@
         <referencedby refid="_inst_combine_calls_8cpp_1ac6169fee4cf2c33a0c3abb46628bfefc" compoundref="_inst_combine_calls_8cpp" startline="479" endline="641">foldCttzCtlz</referencedby>
         <referencedby refid="classllvm_1_1_inst_combiner_impl_1ac457b78bde79027e427b9d2ca79bb2f1" compoundref="_inst_combine_compares_8cpp" startline="1907" endline="2026">llvm::InstCombinerImpl::foldICmpAndConstant</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a26257c73e483eab4b0e15d53340de986" compoundref="_inst_combine_and_or_xor_8cpp" startline="1908" endline="1940">foldOrToXor</referencedby>
+        <referencedby refid="classllvm_1_1_inst_combiner_impl_1aebb0348d8efce5fbf0d73f96cfb1212e" compoundref="_inst_combine_select_8cpp" startline="3167" endline="3423">llvm::InstCombinerImpl::foldSelectOfBools</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a3b3df3036740dfcdeb37c3ad977b039a" compoundref="_inst_combine_and_or_xor_8cpp" startline="4082" endline="4131">foldXorToXor</referencedby>
         <referencedby refid="namespacellvm_1add2fcd2292dd9e51480a2f43d41acfe2" compoundref="_transforms_2_utils_2_local_8cpp" startline="4271" endline="4303">llvm::invertCondition</referencedby>
         <referencedby refid="_inst_combine_and_or_xor_8cpp_1a2d3ce43f7795a8f4f6925bffbcc90279" compoundref="_inst_combine_and_or_xor_8cpp" startline="1697" endline="1731">matchDeMorgansLaws</referencedby>

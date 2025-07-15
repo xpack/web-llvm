@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="namespacellvm_1_1sys_1_1fs" kind="namespace" language="C++">
     <compoundname>llvm::sys::fs</compoundname>
+    <innerclass refid="structllvm_1_1sys_1_1fs_1_1space__info" prot="public">llvm::sys::fs::space_info</innerclass>
     <innerclass refid="classllvm_1_1sys_1_1fs_1_1basic__file__status" prot="public">llvm::sys::fs::basic_file_status</innerclass>
-    <innerclass refid="classllvm_1_1sys_1_1fs_1_1directory__entry" prot="public">llvm::sys::fs::directory_entry</innerclass>
-    <innerclass refid="classllvm_1_1sys_1_1fs_1_1directory__iterator" prot="public">llvm::sys::fs::directory_iterator</innerclass>
     <innerclass refid="classllvm_1_1sys_1_1fs_1_1file__status" prot="public">llvm::sys::fs::file_status</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1fs_1_1_temp_file" prot="public">llvm::sys::fs::TempFile</innerclass>
     <innerclass refid="classllvm_1_1sys_1_1fs_1_1_file_locker" prot="public">llvm::sys::fs::FileLocker</innerclass>
     <innerclass refid="classllvm_1_1sys_1_1fs_1_1mapped__file__region" prot="public">llvm::sys::fs::mapped_file_region</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1fs_1_1directory__entry" prot="public">llvm::sys::fs::directory_entry</innerclass>
+    <innerclass refid="classllvm_1_1sys_1_1fs_1_1directory__iterator" prot="public">llvm::sys::fs::directory_iterator</innerclass>
     <innerclass refid="classllvm_1_1sys_1_1fs_1_1recursive__directory__iterator" prot="public">llvm::sys::fs::recursive_directory_iterator</innerclass>
-    <innerclass refid="structllvm_1_1sys_1_1fs_1_1space__info" prot="public">llvm::sys::fs::space_info</innerclass>
-    <innerclass refid="classllvm_1_1sys_1_1fs_1_1_temp_file" prot="public">llvm::sys::fs::TempFile</innerclass>
     <innerclass refid="classllvm_1_1sys_1_1fs_1_1_unique_i_d" prot="public">llvm::sys::fs::UniqueID</innerclass>
     <innernamespace refid="namespacellvm_1_1sys_1_1fs_1_1detail">llvm::sys::fs::detail</innernamespace>
     <sectiondef kind="user-defined">
@@ -2254,10 +2254,27 @@ assert(status_known(A) || status_known(B));</para>
 <para>Reads <computeroutput>Buf.size()</computeroutput> bytes from <computeroutput>FileHandle</computeroutput> into <computeroutput>Buf</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns the number of bytes actually read. On Unix, this is equivalent to <computeroutput>return ::read(FD, / Buf.data(), Buf.size())</computeroutput>, with error reporting. Returns 0 when reaching EOF. <verbatim>@param FileHandle File to read from.
-@param Buf Buffer to read into.
-@returns The number of bytes read, or error. 
-</verbatim> </para>
+<para>Returns the number of bytes actually read. On Unix, this is equivalent to <computeroutput>return ::read(FD, Buf.data(), Buf.size())</computeroutput>, with error reporting. Returns 0 when reaching EOF.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>FileHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File to read from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to read into. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of bytes read, or error. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -3038,6 +3055,7 @@ assert(status_known(A) || status_known(B));</para>
         </inbodydescription>
         <location file="lib/Support/Path.cpp" line="787" column="17" bodyfile="lib/Support/Path.cpp" bodystart="787" bodyend="794" declfile="include/llvm/Support/FileSystem.h" declline="1247" declcolumn="17"/>
         <references refid="namespacellvm_1_1sys_1_1fs_1a5f126cc7b64d31cd709215b48656d83d">status</references>
+        <referencedby refid="classllvm_1_1_open_m_p_i_r_builder_1a12b066e3e9cc61240457d12df75df64b" compoundref="_o_m_p_i_r_builder_8cpp" startline="9424" endline="9437">llvm::OpenMPIRBuilder::getTargetEntryUniqueInfo</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacellvm_1_1sys_1_1fs_1aa6e76a61d9d7f11a082b6e8665c03dab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classllvm_1_1_error_or" kindref="compound">ErrorOr</ref>&lt; <ref refid="structllvm_1_1sys_1_1fs_1_1space__info" kindref="compound">space_info</ref> &gt;</type>
@@ -3439,7 +3457,6 @@ assert(status_known(A) || status_known(B));</para>
         </inbodydescription>
         <location file="include/llvm/Support/FileSystem.h" line="339" column="17" declfile="include/llvm/Support/FileSystem.h" declline="339" declcolumn="17"/>
         <references refid="namespacellvm_1_1sys_1_1fs_1a5545f335cfa8ce28433826a14730a3a2">expand_tilde</references>
-        <referencedby refid="classllvm_1_1dwarf__linker_1_1parallel_1_1_compile_unit_1affd8bc2fe0d879ef4ad2538a617e7629" compoundref="_parallel_2_d_w_a_r_f_linker_compile_unit_8cpp" startline="188" endline="237">llvm::dwarf_linker::parallel::CompileUnit::getFileName</referencedby>
         <referencedby refid="classanonymous__namespace_02_virtual_file_system_8cpp_03_1_1_real_file_system_1ae3a0f5abb9cf8b60c5e803db52eb14c3" compoundref="_virtual_file_system_8cpp" startline="382" endline="386">anonymous_namespace{VirtualFileSystem.cpp}::RealFileSystem::getRealPath</referencedby>
         <referencedby refid="_file_collector_8cpp_1a6f06f095d55bf5da7adfd285f8b0e6ff" compoundref="_file_collector_8cpp" startline="34" endline="50">isCaseSensitivePath</referencedby>
         <referencedby refid="classanonymous__namespace_02_virtual_file_system_8cpp_03_1_1_real_file_system_1a927d1b385cc13faacbcef9c23aec9ade" compoundref="_virtual_file_system_8cpp" startline="268" endline="278">anonymous_namespace{VirtualFileSystem.cpp}::RealFileSystem::RealFileSystem</referencedby>

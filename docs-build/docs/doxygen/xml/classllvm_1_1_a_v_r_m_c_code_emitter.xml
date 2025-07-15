@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classllvm_1_1_a_v_r_m_c_code_emitter" kind="class" language="C++" prot="public">
     <compoundname>llvm::AVRMCCodeEmitter</compoundname>
     <basecompoundref refid="classllvm_1_1_m_c_code_emitter" prot="public" virt="non-virtual">llvm::MCCodeEmitter</basecompoundref>
@@ -151,10 +151,34 @@
 <para>Encodes a <computeroutput>register+immediate</computeroutput> operand for <computeroutput>LDD</computeroutput>/<computeroutput>STD</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para>Performs a post-encoding step on a <computeroutput>LD</computeroutput> or <computeroutput>ST</computeroutput> instruction.</para>
+<para>The encoding of the LD/ST family of instructions is inconsistent w.r.t the pointer register and the addressing mode.</para>
+<para>The permutations of the format are as followed: ld Rd, X <computeroutput>1001 000d dddd 1100</computeroutput> ld Rd, X+ <computeroutput>1001 000d dddd 1101</computeroutput> ld Rd, -X <computeroutput>1001 000d dddd 1110</computeroutput></para>
+<para>ld Rd, Y <computeroutput>1000 000d dddd 1000</computeroutput> ld Rd, Y+ <computeroutput>1001 000d dddd 1001</computeroutput> ld Rd, -Y <computeroutput>1001 000d dddd 1010</computeroutput></para>
+<para>ld Rd, Z <computeroutput>1000 000d dddd 0000</computeroutput> ld Rd, Z+ <computeroutput>1001 000d dddd 0001</computeroutput> ld Rd, -Z <computeroutput>1001 000d dddd 0010</computeroutput> ^ | Note this one inconsistent bit - it is 1 sometimes and 0 at other times. There is no logical pattern. Looking at a truth table, the following formula can be derived to fit the pattern: <programlisting><codeline><highlight class="normal">inconsistent_bit<sp/>=<sp/>is_predec<sp/><ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7415ab9f2172c59a2ee7c7a02afa56a4" kindref="member">OR</ref><sp/>is_postinc<sp/><ref refid="namespacellvm_1_1_i_s_d_1a22ea9cec080dd5f4f47ba234c2f59110a7415ab9f2172c59a2ee7c7a02afa56a4" kindref="member">OR</ref><sp/>is_reg_x</highlight></codeline>
+</programlisting> // We manually set this bit in this post encoder method. */ unsigned AVRMCCodeEmitter::loadStorePostEncoder(const MCInst &amp;MI, unsigned EncodedValue,
+                                       const MCSubtargetInfo &amp;STI) const {</para>
+<para>assert(MI.getOperand(0).<ref refid="_mips_inst_printer_8cpp_1a85e8dc708ae90b1129b892cb8ae1500f" kindref="member">isReg()</ref> &amp;&amp; MI.getOperand(1).<ref refid="_mips_inst_printer_8cpp_1a85e8dc708ae90b1129b892cb8ae1500f" kindref="member">isReg()</ref> &amp;&amp; &quot;the load/store operands must be registers&quot;);</para>
+<para>unsigned Opcode = MI.getOpcode();</para>
+<para>Get the index of the pointer register operand. unsigned Idx = 0; if (Opcode == AVR::LDRdPtrPd || Opcode == AVR::LDRdPtrPi || Opcode == AVR::LDRdPtr) Idx = 1;</para>
+<para><ref refid="namespacellvm_1_1_check" kindref="compound">Check</ref> if we need to set the inconsistent bit bool IsPredec = Opcode == AVR::LDRdPtrPd || Opcode == AVR::STPtrPdRr; bool IsPostinc = Opcode == AVR::LDRdPtrPi || Opcode == AVR::STPtrPiRr; if (MI.getOperand(Idx).<ref refid="_mips_disassembler_8cpp_1a15b5b86944f6df97d2c3659d77f51f91" kindref="member">getReg()</ref> == AVR::R27R26 || IsPredec || IsPostinc) EncodedValue |= (1 &lt;&lt; 12);</para>
+<para>Encode the pointer register. switch (MI.getOperand(Idx).<ref refid="_mips_disassembler_8cpp_1a15b5b86944f6df97d2c3659d77f51f91" kindref="member">getReg()</ref>) { case AVR::R27R26: EncodedValue |= 0xc; break; case AVR::R29R28: EncodedValue |= 0x8; break; case AVR::R31R30: break; default: llvm_unreachable(&quot;invalid pointer register&quot;); break; }</para>
+<para>return EncodedValue; }</para>
+<para>template &lt;<ref refid="namespacellvm_1_1_a_v_r_1ae093893769f0a31accd70fbf3fd419b1" kindref="member">AVR::Fixups</ref> Fixup&gt; unsigned AVRMCCodeEmitter::encodeRelCondBrTarget(const MCInst &amp;MI, unsigned OpNo,
+                                        SmallVectorImpl&lt;MCFixup&gt; &amp;Fixups,
+                                        const MCSubtargetInfo &amp;STI) const { const <ref refid="classllvm_1_1_m_c_operand" kindref="compound">MCOperand</ref> &amp;MO = MI.getOperand(OpNo);</para>
+<para>if (MO.isExpr()) { Fixups.push_back( <ref refid="classllvm_1_1_m_c_fixup_1abdf37854fa6eb68017b96486df443a32" kindref="member">MCFixup::create</ref>(0, MO.getExpr(), <ref refid="namespacellvm_1a84cef097f15848752272d38769011f58" kindref="member">MCFixupKind(Fixup)</ref>, MI.getLoc())); return 0; }</para>
+<para>assert(MO.isImm());</para>
+<para>Take the size of the current instruction away. With labels, this is implicitly done. auto target = MO.getImm(); AVR::fixups::adjustBranchTarget(target); return target; }</para>
+<para>/** Encodes a <computeroutput>memri</computeroutput> operand. The operand is 7-bits.<itemizedlist>
+<listitem><para>The lower 6 bits is the immediate</para>
+</listitem><listitem><para>The upper bit is the pointer register bit (Z=0,Y=1) </para>
+</listitem></itemizedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="56" column="12"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="56" column="12" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="131" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1a2ea0db90bc4c3bde7483cd326cfce765" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
@@ -185,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="61" column="12"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="61" column="12" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="168" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1a0a2f1804a66aebb3fc50395a997bffbb" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -238,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="68" column="12"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="68" column="12" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="179" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1ae9862985de10a13d1c0f2887e3574df0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
@@ -269,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="73" column="12"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="73" column="12" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="204" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1a2b82aab04fc2fbaea3c0e0673836854a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classuint64__t" kindref="compound">uint64_t</ref></type>
@@ -322,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="82" column="12"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="82" column="12" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="222" bodyend="247"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1ac561c265a8eb5f9d734d0dfd964e7a34" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classunsigned" kindref="compound">unsigned</ref></type>
@@ -354,7 +378,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="89" column="12"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="89" column="12" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="249" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1ae1356decfcdbb99dd3cf79893b85d767" prot="private" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -386,7 +410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="93" column="8"/>
+        <location file="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.h" line="93" column="8" bodyfile="lib/Target/AVR/MCTargetDesc/AVRMCCodeEmitter.cpp" bodystart="267" bodyend="284"/>
       </memberdef>
       <memberdef kind="function" id="classllvm_1_1_a_v_r_m_c_code_emitter_1a783191e105aea8c841f2ae1491056d70" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
