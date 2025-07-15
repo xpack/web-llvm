@@ -35,9 +35,13 @@ After optimising the code to generate less components in the program
 listings, things improved, the memory consumption halved, but the build
 still used about 2 GB of swap memory.
 
-~~~
+---
 
 ## LLVM
+
+The original LLVM reference web is:
+
+- https://llvm.org/doxygen/
 
 The LLVM documentation is in the main LLVM repo. It can be downloaded either
 by cloning the Git, or by running the provided script:
@@ -58,6 +62,7 @@ especially `CASE_SENSE_NAMES=SYSTEM` if the build runs on macOS,
 and `EXTRACT_ANON_NSPACES=YES`, to avoid some issues with anonymous namespaces.
 
 ```sh
+cd web-llvm.git
 find llvm-project -name doxygen.cfg.in \
 -print \
 -exec sed -i.bak \
@@ -66,6 +71,7 @@ find llvm-project -name doxygen.cfg.in \
 -e 's|CASE_SENSE_NAMES       = YES|CASE_SENSE_NAMES       = SYSTEM|' \
 -e 's|HAVE_DOT               = YES|HAVE_DOT               = NO|' \
 -e 's|EXTRACT_ANON_NSPACES   = NO|EXTRACT_ANON_NSPACES   = YES|' \
+-e 's|LOOKUP_CACHE_SIZE      = 4|LOOKUP_CACHE_SIZE      = 5|' \
 '{}' ';'
 ```
 
@@ -73,6 +79,7 @@ The actual Doxygen build is performed by the same script.
 The prerequisites are: cmake, ninja, doxygen.
 
 ```sh
+cd web-llvm.git
 bash -x build-docs.sh -srcdir llvm-project/llvm -no-sphinx
 ```
 
@@ -97,39 +104,23 @@ The Docusaurus configuration is created with 3.8.1.
 npx create-docusaurus@3.8.1 website classic --typescript
 ```
 
-## Doxygen plugin
+## doxygen2docusaurus
 
 The MDX files were created with
-[`docusaurus-plugin-doxygen`](https://github.com/xpack/docusaurus-plugin-doxygen),
-a plugin to generate MDX docs from Doxygen XML files (currently
-under development).
+[`doxygen2docusaurus`](https://github.com/xpack/doxygen2docusaurus),
+a CLI tool to generate MDX docs from Doxygen XML files.
 
-To install it (and its react-markdown dependency), run:
+To install it, run:
 
 ```sh
-(cd website; npm install @xpack/docusaurus-plugin-doxygen@0.4.0 react-markdown --save-dev)
-```
-
-Add it to `website/docusaurus-config.ts` and make it point to the xml folder:
-
-```js
-  plugins: [
-    [
-      '@xpack/docusaurus-plugin-doxygen',
-      {
-        doxygenXmlInputFolderPath: '../docs-build/docs/doxygen/xml',
-        verbose: false,
-        debug: false
-      },
-    ],
-  ],
+(cd website; npm install @xpack/doxygen2docusaurus --save-dev)
 ```
 
 Add the new command to `website/package.json` npm scripts:
 
 ```json
   "scripts": {
-    "generate-doxygen": "node --max-old-space-size=8192 --stack-size=2048 ./node_modules/.bin/docusaurus generate-doxygen",
+    "convert-doxygen": "node --max-old-space-size=8192 --stack-size=2048 ./node_modules/.bin/doxygen2docusaurus",
   }
 ```
 
@@ -140,7 +131,7 @@ node will run out of memory,
 To run the conversion:
 
 ```sh
-(cd website; npm run generate-doxygen)
+(cd website; npm run convert-doxygen)
 ```
 
 On my Mac his step takes about 7 minutes; it reports some warnings and errors,
@@ -149,7 +140,7 @@ but they are not relevant for this test.
 The generated MDX files are in `website/docs/api`
 and the JSON files with the custom sidebar and menu are in `website`.
 
-More details in the project [README](https://github.com/xpack/docusaurus-plugin-doxygen).
+More details in the project [README](https://github.com/xpack/doxygen2docusaurus).
 
 ## docusaurus-faster
 
