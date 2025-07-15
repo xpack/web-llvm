@@ -1,0 +1,124 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via doxygen2docusaurus by Doxygen.
+
+slug: /api/structs/anonymous-settheory-cpp-/andop
+custom_edit_url: null
+toc_max_heading_level: 4
+keywords:
+  - doxygen
+  - reference
+  - struct
+
+---
+
+<div class="doxyPage">
+
+# The `AndOp` Struct Reference
+
+
+
+## Declaration
+
+<div class="doxyDeclaration">
+struct anonymous{SetTheory.cpp}::AndOp { ... }
+</div>
+
+## Base struct
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/settheory/operator">Operator</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p><a href="/web-llvm/docs/api/classes/llvm/settheory/operator">Operator</a> - A callback representing a DAG operator. <a href="/web-llvm/docs/api/classes/llvm/settheory/operator/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Public Member Functions Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2a95bd4196657729f481b17b7c457d6d">apply</a> (SetTheory &amp;ST, const DagInit *Expr, RecSet &amp;Elts, ArrayRef&lt; SMLoc &gt; Loc) override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>apply - Apply this operator to Expr's arguments and insert the result in Elts. <a href="#a2a95bd4196657729f481b17b7c457d6d">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+
+<p>Definition at line 63 of file <a href="/web-llvm/docs/api/files/lib/lib/tablegen/settheory-cpp">SetTheory.cpp</a>.</p>
+
+
+<div class="doxySectionDef">
+
+## Public Member Functions
+
+### apply() {#a2a95bd4196657729f481b17b7c457d6d}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void anonymous{SetTheory.cpp}::AndOp::apply (<a href="/web-llvm/docs/api/classes/llvm/settheory">SetTheory</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/daginit">DagInit</a> * Expr, <a href="/web-llvm/docs/api/namespaces/anonymous-settheory-cpp-/#a7bb4cdf28f18d7ab5d42f0ab3f7e32f4">RecSet</a> &amp; Elts, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/smloc">SMLoc</a> &gt; Loc)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel virtual">virtual</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>apply - Apply this operator to Expr's arguments and insert the result in Elts.</p>
+
+<p>Definition at line 64 of file <a href="/web-llvm/docs/api/files/lib/lib/tablegen/settheory-cpp">SetTheory.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/daginit/#a3d4a644883755522c1704e7723081dd3">llvm::DagInit::arg_begin</a>, <a href="/web-llvm/docs/api/classes/llvm/daginit/#aad7499a93d0fd38b9875c8bee6f44713">llvm::DagInit::arg_size</a>, <a href="/web-llvm/docs/api/classes/llvm/setvector/#abb03e3b6c4fd937936a13afe4f60d291">llvm::SetVector&lt; T, Vector, Set, N &gt;::count</a>, <a href="/web-llvm/docs/api/classes/llvm/daginit/#af2a7d55b296392d5ed5ae25c769503c6">llvm::DagInit::getAsString</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/classes/llvm/setvector/#af34eb71cc483e84d2eca80575cb9ccde">llvm::SetVector&lt; T, Vector, Set, N &gt;::insert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2d33cbf73d16f36bdf9d289cf01d0006">llvm::PrintFatalError</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulegalizerinfo-cpp/#a22eabd3566ae5f32cb6f594f4f343399">S1</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/web-llvm/docs/api/files/lib/lib/tablegen/settheory-cpp">SetTheory.cpp</a></li>
+</ul>
+
+<hr/>
+
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+
+</div>

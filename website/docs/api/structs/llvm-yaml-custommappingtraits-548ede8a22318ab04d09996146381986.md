@@ -1,0 +1,155 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via doxygen2docusaurus by Doxygen.
+
+slug: /api/structs/llvm/yaml/custommappingtraits-548ede8a22318ab04d09996146381986
+custom_edit_url: null
+toc_max_heading_level: 4
+keywords:
+  - doxygen
+  - reference
+  - struct
+
+---
+
+<div class="doxyPage">
+
+# The `CustomMappingTraits` Struct Template Reference
+
+
+
+## Declaration
+
+<div class="doxyDeclaration">
+struct llvm::yaml::CustomMappingTraits&lt;BBNumberMap&gt; { ... }
+</div>
+
+## Included Headers
+
+<div class="doxyIncludesList">#include "<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblymachinefunctioninfo-h">Target/WebAssembly/WebAssemblyMachineFunctionInfo.h</a>"
+</div>
+
+## Public Static Functions Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">static void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac381405048a902237a88a1b7fcfd60d2">inputOne</a> (IO &amp;YamlIO, StringRef Key, BBNumberMap &amp;SrcToUnwindDest)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">static void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a15f35e9a48f126008d1546522cbf0dcc">output</a> (IO &amp;YamlIO, BBNumberMap &amp;SrcToUnwindDest)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+
+<p>Definition at line 207 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblymachinefunctioninfo-h">WebAssemblyMachineFunctionInfo.h</a>.</p>
+
+
+<div class="doxySectionDef">
+
+## Public Static Functions
+
+### inputOne() {#ac381405048a902237a88a1b7fcfd60d2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void llvm::yaml::CustomMappingTraits&lt; BBNumberMap &gt;::inputOne (<a href="/web-llvm/docs/api/classes/llvm/yaml/io">IO</a> &amp; YamlIO, <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> Key, <a href="/web-llvm/docs/api/namespaces/llvm/yaml/#a4a8e844b724d6a47b530c32bc4eddbba">BBNumberMap</a> &amp; SrcToUnwindDest)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 208 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblymachinefunctioninfo-h">WebAssemblyMachineFunctionInfo.h</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">llvm::InnerAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt;::Key</a> and <a href="/web-llvm/docs/api/classes/llvm/yaml/io/#a76b59883a4b23c1cb5c5f55eac119f0d">llvm::yaml::IO::mapRequired</a>.</p>
+
+</div>
+</div>
+
+### output() {#a15f35e9a48f126008d1546522cbf0dcc}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void llvm::yaml::CustomMappingTraits&lt; BBNumberMap &gt;::output (<a href="/web-llvm/docs/api/classes/llvm/yaml/io">IO</a> &amp; YamlIO, <a href="/web-llvm/docs/api/namespaces/llvm/yaml/#a4a8e844b724d6a47b530c32bc4eddbba">BBNumberMap</a> &amp; SrcToUnwindDest)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 214 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblymachinefunctioninfo-h">WebAssemblyMachineFunctionInfo.h</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/yaml/io/#a76b59883a4b23c1cb5c5f55eac119f0d">llvm::yaml::IO::mapRequired</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblymachinefunctioninfo-h">WebAssemblyMachineFunctionInfo.h</a></li>
+</ul>
+
+<hr/>
+
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+
+</div>

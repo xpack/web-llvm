@@ -1,0 +1,132 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via doxygen2docusaurus by Doxygen.
+
+slug: /api/structs/llvm/stacklifetime/marker
+custom_edit_url: null
+toc_max_heading_level: 4
+keywords:
+  - doxygen
+  - reference
+  - struct
+
+---
+
+<div class="doxyPage">
+
+# The `Marker` Struct Reference
+
+
+
+## Declaration
+
+<div class="doxyDeclaration">
+struct llvm::StackLifetime::Marker { ... }
+</div>
+
+## Public Member Attributes Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">unsigned</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6c5d1af709ed06c2ade26d8790444586">AllocaNo</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0d513b191e5b0cc2d0e4308d4317e742">IsStart</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+
+<p>Definition at line 115 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/stacklifetime-h">StackLifetime.h</a>.</p>
+
+
+<div class="doxySectionDef">
+
+## Public Member Attributes
+
+### AllocaNo {#a6c5d1af709ed06c2ade26d8790444586}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">unsigned llvm::StackLifetime::Marker::AllocaNo</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 116 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/stacklifetime-h">StackLifetime.h</a>.</p>
+
+</div>
+</div>
+
+### IsStart {#a0d513b191e5b0cc2d0e4308d4317e742}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool llvm::StackLifetime::Marker::IsStart</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 117 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/stacklifetime-h">StackLifetime.h</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/stacklifetime-h">StackLifetime.h</a></li>
+</ul>
+
+<hr/>
+
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+
+</div>

@@ -1,0 +1,182 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via doxygen2docusaurus by Doxygen.
+
+slug: /api/classes/llvm/mipselfmcasminfo
+custom_edit_url: null
+toc_max_heading_level: 4
+keywords:
+  - doxygen
+  - reference
+  - class
+
+---
+
+<div class="doxyPage">
+
+# The `MipsELFMCAsmInfo` Class Reference
+
+
+
+## Declaration
+
+<div class="doxyDeclaration">
+class llvm::MipsELFMCAsmInfo { ... }
+</div>
+
+## Included Headers
+
+<div class="doxyIncludesList">#include "<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-h">Target/Mips/MCTargetDesc/MipsMCAsmInfo.h</a>"
+</div>
+
+## Base class
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/mcasminfoelf">MCAsmInfoELF</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Public Constructors Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8708ca800840e855dc74da7c335cae33">MipsELFMCAsmInfo</a> (const Triple &amp;TheTriple, const MCTargetOptions &amp;Options)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Private Member Functions Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac138cea9e8b87cb523cf2182a1daa52b">anchor</a> () override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+
+<p>Definition at line 22 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-h">MipsMCAsmInfo.h</a>.</p>
+
+
+<div class="doxySectionDef">
+
+## Public Constructors
+
+### MipsELFMCAsmInfo() {#a8708ca800840e855dc74da7c335cae33}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">MipsELFMCAsmInfo::MipsELFMCAsmInfo (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/triple">Triple</a> &amp; TheTriple, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/mctargetoptions">MCTargetOptions</a> &amp; Options)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel explicit">explicit</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 26 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-h">MipsMCAsmInfo.h</a>, definition at line 21 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-cpp">MipsMCAsmInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ac150f03927bf41531f945b3bc5b315e4">llvm::MCAsmInfo::AlignmentIsInBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#aeb608789bae103384e251c302a2215f9">llvm::MCAsmInfo::CalleeSaveStackSlotSize</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ae243a845fe9d46ed2cb7403700921e4a">llvm::MCAsmInfo::CodePointerSize</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#af30c385b021a371a04bacd22cef94c7b">llvm::MCAsmInfo::CommentString</a>, <a href="/web-llvm/docs/api/classes/llvm/mipsabiinfo/#a87e5ac48dc2d9e13a26e34521926876a">llvm::MipsABIInfo::computeTargetABI</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a035c98c0423e6dd21ec2ea039f762440">llvm::MCAsmInfo::Data16bitsDirective</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a620b2ebe9e68a34106b7bdcc4220c6b2">llvm::MCAsmInfo::Data32bitsDirective</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a3c136967a2fc9489724bcd8706a16fed">llvm::MCAsmInfo::Data64bitsDirective</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a12839d2b74f7ac4f011078a413401eaf">llvm::MCAsmInfo::DTPRel32Directive</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a3c6803b8cd8066ddc8fee367c8048d83">llvm::MCAsmInfo::DTPRel64Directive</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2ca3855108426698ff21517a7c884c84ab4fe87e4046ecd1f9f3d96bbf63822b3">llvm::DwarfCFI</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#adcdd548ad577bc7c4c2e43f2f38cb1b4">llvm::MCAsmInfo::DwarfRegNumForCFI</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a500ba2b2c0203d1d53b83a649551a6b5">llvm::MCAsmInfo::ExceptionsType</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ab09c23c3aab7b0aa249eda3d38026877">llvm::MCAsmInfo::GPRel32Directive</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#af701028ead58579bb8086740724a505f">llvm::MCAsmInfo::GPRel64Directive</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#aafe7bbda64e5e86e6f997986579a2fbb">llvm::MCAsmInfo::HasMipsExpressions</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#adfd724f11ba125f30c3bb516be0bb06f">llvm::MCAsmInfo::IsLittleEndian</a>, <a href="/web-llvm/docs/api/classes/llvm/triple/#a45678567c4d2b54e70800daa41897207">llvm::Triple::isLittleEndian</a>, <a href="/web-llvm/docs/api/classes/llvm/triple/#a52f9355613c6f3388d5761349926d835">llvm::Triple::isMIPS64</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a5384e7b6526e6d9c7744c07e1136b7b8">llvm::MCAsmInfo::PrivateGlobalPrefix</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a721901796262520ac70998c9323686cb">llvm::MCAsmInfo::PrivateLabelPrefix</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a98f40236cfff7278d4b57633fad2245d">llvm::MCAsmInfo::SupportsDebugInformation</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a8345f61b11b434cc33e20718494f7a2b">llvm::MCAsmInfo::TPRel32Directive</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a57fb8902ecb98a79853826a151015743">llvm::MCAsmInfo::TPRel64Directive</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a88ca1b4db49827fd02592cf4a8218e06">llvm::MCAsmInfo::UseAssignmentForEHBegin</a> and <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#acf84c6bd03a785a251784cad666d9ee1">llvm::MCAsmInfo::ZeroDirective</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
+## Private Member Functions
+
+### anchor() {#ac138cea9e8b87cb523cf2182a1daa52b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void MipsELFMCAsmInfo::anchor ()</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel virtual">virtual</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 23 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-h">MipsMCAsmInfo.h</a>, definition at line 19 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-cpp">MipsMCAsmInfo.cpp</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-cpp">MipsMCAsmInfo.cpp</a></li>
+<li><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmcasminfo-h">MipsMCAsmInfo.h</a></li>
+</ul>
+
+<hr/>
+
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+
+</div>

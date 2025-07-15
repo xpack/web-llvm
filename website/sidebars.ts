@@ -1,5 +1,5 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
-// import doxygenSidebarItems from './sidebar-category-doxygen.json';
+import doxygenSidebarItems from './sidebar-category-doxygen.json';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -30,9 +30,9 @@ const sidebars: SidebarsConfig = {
   ],
    */
 
-  // doxygenSidebar: [
-  //   doxygenSidebarItems,
-  // ],
+  doxygenSidebar: [
+    doxygenSidebarItems,
+  ],
 };
 
 export default sidebars;

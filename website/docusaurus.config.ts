@@ -1,33 +1,42 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-// import doxygenApiMenu from './docusaurus-config-doxygen-menu-dropdown.json'
+import doxygenApiMenu from './docusaurus-config-menu-doxygen.json'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'LLVM Reference',
+  tagline: 'The internal software that makes up LLVM',
   favicon: 'img/favicon.ico',
+
+  markdown: {
+    format: 'detect'
+  },
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true
+    },
+    experimental_faster: true,
   },
 
+  // https://llvm.org/doxygen/
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://xpack.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/web-llvm/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'xpack', // Usually your GitHub org/user name.
+  projectName: 'web-llvm', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: true,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -36,6 +45,21 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  plugins: [
+    function disableExpensiveBundlerOptimizationPlugin() {
+      return {
+        name: "disable-expensive-bundler-optimizations",
+        configureWebpack(_config, isServer) {
+          return {
+            optimization: {
+              concatenateModules: false,
+            },
+          };
+        },
+      };
+    },
+  ],
 
   presets: [
     [
@@ -64,40 +88,20 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/custom-doxygen2docusaurus.css'
+          ],
         },
       } satisfies Preset.Options,
     ],
-  ],
-
-  plugins: [
-    [
-      '@xpack/docusaurus-plugin-doxygen',
-      {
-        doxygenXmlInputFolderPath: '../docs-build/docs/doxygen/xml',
-        verbose: false,
-        debug: false
-      },
-    ],
-    function disableExpensiveBundlerOptimizationPlugin() {
-      return {
-        name: "disable-expensive-bundler-optimizations",
-        configureWebpack(_config, isServer) {
-          return {
-            optimization: {
-              concatenateModules: false,
-            },
-          };
-        },
-      };
-    },
   ],
 
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'LLVM Reference',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -110,9 +114,9 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-        // doxygenApiMenu,
+        doxygenApiMenu,
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/llvm/llvm-project',
           label: 'GitHub',
           position: 'right',
         },
@@ -156,12 +160,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/llvm/llvm-project',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} LLVM. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
