@@ -289,9 +289,6 @@ keywords:
 <p>Definition at line 314 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp">BPFAbstractMemberAccess.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
-
-
 <p>Referenced by <a href="#a36be37a99f7cf2fdd84b942e5dafba1b">replaceWithGEP</a>.</p>
 
 </div>
@@ -361,7 +358,7 @@ keywords:
 <p>Definition at line 409 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp">BPFAbstractMemberAccess.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/classes/llvm/getelementptrinst/#aa1d295f380f20e10c5554de9307b681a">llvm::GetElementPtrInst::CreateInBounds</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a790311f4fe7f3c498725a9a3035adea6">getBaseElementType</a>, <a href="#a4ec3b92527a1e1b7d1a24410cbaf4b59">getConstant</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a30dd396c5b40cd86c1591872e574ccdf">llvm::Type::getInt32Ty</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/getelementptrinst/#aa1d295f380f20e10c5554de9307b681a">llvm::GetElementPtrInst::CreateInBounds</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a790311f4fe7f3c498725a9a3035adea6">getBaseElementType</a>, <a href="#a4ec3b92527a1e1b7d1a24410cbaf4b59">getConstant</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a30dd396c5b40cd86c1591872e574ccdf">llvm::Type::getInt32Ty</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#a04e285b845fc80b08ac9de9ee165eba8">llvm::BPFCoreSharedInfo::removeArrayAccessCall</a> and <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#a2f48ea4e71fc12dd8df2cab7604733eb">llvm::BPFCoreSharedInfo::removeStructAccessCall</a>.</p>
@@ -503,6 +500,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

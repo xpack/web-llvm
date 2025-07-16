@@ -249,7 +249,7 @@ class llvm::object::Decompressor { ... }
 <p>Declaration at line 39 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/object/decompressor-h">Decompressor.h</a>, definition at line 66 of file <a href="/web-llvm/docs/api/files/lib/lib/object/decompressor-cpp">Decompressor.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm::arrayRefFromStringRef</a>, <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref/#a0bf5f8e45bfccb0805b5e12d44622271">llvm::MutableArrayRef&lt; T &gt;::data</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/#a4d8e395f255894e9332618a800ca175b">llvm::compression::decompress</a> and <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">llvm::ArrayRef&lt; T &gt;::size</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref/#a0bf5f8e45bfccb0805b5e12d44622271">llvm::MutableArrayRef&lt; T &gt;::data</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/#a4d8e395f255894e9332618a800ca175b">llvm::compression::decompress</a> and <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">llvm::ArrayRef&lt; T &gt;::size</a>.</p>
 
 
 <p>Referenced by <a href="#a9cc8aaa7210df58982fdd9ee394b0faf">resizeAndDecompress</a>.</p>
@@ -526,6 +526,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

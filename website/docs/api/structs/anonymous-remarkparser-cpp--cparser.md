@@ -229,7 +229,7 @@ struct anonymous{RemarkParser.cpp}::CParser { ... }
 <p>Definition at line 121 of file <a href="/web-llvm/docs/api/files/lib/lib/remarks/remarkparser-cpp">RemarkParser.cpp</a>.</p>
 
 
-<p>References <a href="#a8e28c77fd70bd8b14f27079600b80151">Err</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="#a8e28c77fd70bd8b14f27079600b80151">Err</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 </div>
 </div>
@@ -341,6 +341,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

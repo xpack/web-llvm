@@ -236,7 +236,7 @@ keywords:
 <p>ARC stands for Automatic Reference Counting and is a system for managing reference counts for objects in Objective C.</p>
 
 
-<p>This specific file mainly deals with `‘contracting`' multiple lower level operations into singular higher level operations through pattern matching.</p>
+<p>This specific file mainly deals with “contracting” multiple lower level operations into singular higher level operations through pattern matching.</p>
 
 
 <p>WARNING: This file knows about certain library functions. It recognizes them by name, and hardwires knowledge of their semantics.</p>
@@ -258,7 +258,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">Instruction * findRetainForStoreStrongContraction (<a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * New, <a href="/web-llvm/docs/api/classes/llvm/storeinst">StoreInst</a> * Store, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Release, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
+<td class="doxyMemberName">Instruction * findRetainForStoreStrongContraction (<a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * New, <a href="/web-llvm/docs/api/classes/llvm/storeinst">StoreInst</a> * Store, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Release, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
 </tr>
 </table>
 </td>
@@ -277,7 +277,7 @@ keywords:
 <p>Definition at line 287 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp">ObjCARCContract.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#abe87d9f746abfb2ed0b6d08434d57abf">llvm::objcarc::CanDecrementRefCount</a>, <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#aa76bc27e7a62bc63263463a83525948f">llvm::objcarc::GetArgRCIdentityRoot</a>, <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#a86cdbdf3773be3c67bc193b473b75708">llvm::objcarc::GetBasicARCInstKind</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">llvm::Release</a>, <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2aafece4245269582cb2f1009d4fb52047">llvm::objcarc::Retain</a> and <a href="/web-llvm/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#abe87d9f746abfb2ed0b6d08434d57abf">llvm::objcarc::CanDecrementRefCount</a>, <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#aa76bc27e7a62bc63263463a83525948f">llvm::objcarc::GetArgRCIdentityRoot</a>, <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#a86cdbdf3773be3c67bc193b473b75708">llvm::objcarc::GetBasicARCInstKind</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">llvm::Release</a> and <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2aafece4245269582cb2f1009d4fb52047">llvm::objcarc::Retain</a>.</p>
 
 </div>
 </div>
@@ -291,7 +291,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">StoreInst * findSafeStoreForStoreStrongContraction (<a href="/web-llvm/docs/api/classes/llvm/loadinst">LoadInst</a> * Load, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Release, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a> * AA)</td>
+<td class="doxyMemberName">StoreInst * findSafeStoreForStoreStrongContraction (<a href="/web-llvm/docs/api/classes/llvm/loadinst">LoadInst</a> * Load, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Release, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a> * AA)</td>
 </tr>
 </table>
 </td>
@@ -509,6 +509,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

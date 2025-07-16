@@ -427,7 +427,7 @@ struct anonymous{AArch64CleanupLocalDynamicTLSPass.cpp}::LDTLSCleanup { ... }
 <p>Definition at line 62 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64cleanuplocaldynamictlspass-cpp">AArch64CleanupLocalDynamicTLSPass.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ab2d91e7bec944efcbc39d8e30644f111">llvm::MachineBasicBlock::begin</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#acbc921830578e2741be6549db716c0ce">llvm::MachineBasicBlock::end</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, <a href="#aa83e2f2005213b888f0f3aa096ad086e">replaceTLSBaseAddrCall</a>, <a href="#ae3b597ed71cdeef406aed84ce2e04f52">setRegister</a> and <a href="#a047e1c70e1f34092b00f1c8b2d969778">VisitNode</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ab2d91e7bec944efcbc39d8e30644f111">llvm::MachineBasicBlock::begin</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#acbc921830578e2741be6549db716c0ce">llvm::MachineBasicBlock::end</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, <a href="#aa83e2f2005213b888f0f3aa096ad086e">replaceTLSBaseAddrCall</a>, <a href="#ae3b597ed71cdeef406aed84ce2e04f52">setRegister</a> and <a href="#a047e1c70e1f34092b00f1c8b2d969778">VisitNode</a>.</p>
 
 
 <p>Referenced by <a href="#ab7fe307733ec8e501f180b78fe879980">runOnMachineFunction</a> and <a href="#a047e1c70e1f34092b00f1c8b2d969778">VisitNode</a>.</p>
@@ -486,6 +486,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -302,9 +302,6 @@ class llvm::sandboxir::ScalableVectorType { ... }
 
 <p>Definition at line 401 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/type-h">Type.h</a>.</p>
 
-
-<p>Referenced by <a href="#acb562486f4088cacf7fff39b41932fca">get</a>.</p>
-
 </div>
 </div>
 
@@ -337,7 +334,7 @@ class llvm::sandboxir::ScalableVectorType { ... }
 <p>Definition at line 403 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/type-h">Type.h</a>.</p>
 
 
-<p>References <a href="#abd09e63057e199c5f4d85dcc0c3cd019">get</a> and <a href="#aa62f2685c4d8d61f8f6ea9f346af76e9">getMinNumElements</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af2cdf7082ff42d000af895d5e3e6335d">llvm::sandboxir::get</a> and <a href="#aa62f2685c4d8d61f8f6ea9f346af76e9">getMinNumElements</a>.</p>
 
 </div>
 </div>
@@ -558,6 +555,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

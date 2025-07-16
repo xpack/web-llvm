@@ -74,7 +74,7 @@ struct llvm::CoroConditionalWrapper { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a393e9909fb7adb8a1effe8ac4fe745d3">run</a> (Module &amp;M, ModuleAnalysisManager &amp;AM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -229,7 +229,7 @@ struct llvm::CoroConditionalWrapper { ... }
 <p>Declaration at line 22 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/coroutines/coroconditionalwrapper-h">CoroConditionalWrapper.h</a>, definition at line 18 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/coroutines/coroconditionalwrapper-cpp">CoroConditionalWrapper.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a> and <a href="/web-llvm/docs/api/namespaces/llvm/coro/#a54712266347f5cc2d33ad2c375426e45">llvm::coro::declaresAnyIntrinsic</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/coro/#a54712266347f5cc2d33ad2c375426e45">llvm::coro::declaresAnyIntrinsic</a>.</p>
 
 </div>
 </div>
@@ -315,6 +315,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

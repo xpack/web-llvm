@@ -327,6 +327,9 @@ class llvm::sys::path::const_iterator { ... }
 
 <p>Declaration at line 83 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/path-h">Path.h</a>, definition at line 235 of file <a href="/web-llvm/docs/api/files/lib/lib/support/path-cpp">Path.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a3bd8d910b6e225c350f6b9399dcbc0cb">llvm::detail::all_of_zip_predicate_first</a> and <a href="/web-llvm/docs/api/structs/llvm/sparcregisterinfo/#aa433f99693e51b79b0ed2d9209427aab">llvm::SparcRegisterInfo::getReservedRegs</a>.</p>
+
 </div>
 </div>
 
@@ -563,6 +566,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

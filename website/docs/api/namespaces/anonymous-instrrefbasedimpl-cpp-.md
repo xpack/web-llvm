@@ -31,12 +31,12 @@ namespace anonymous{InstrRefBasedImpl.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssablock">LDVSSABlock</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssaphi">LDVSSAPhi</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Thin wrapper around a block for SSA Updater interface. <a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssablock/#details">More...</a></p>
+<p>Represents an SSA PHI node for the SSA updater class. <a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssaphi/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -59,12 +59,12 @@ namespace anonymous{InstrRefBasedImpl.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssaphi">LDVSSAPhi</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssablock">LDVSSABlock</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Represents an SSA PHI node for the SSA updater class. <a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssaphi/#details">More...</a></p>
+<p>Thin wrapper around a block for SSA Updater interface. <a href="/web-llvm/docs/api/classes/anonymous-instrrefbasedimpl-cpp-/ldvssablock/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -201,6 +201,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

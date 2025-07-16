@@ -1025,11 +1025,13 @@ keywords:
 <li><b>AtomicMemMoveInst</b>: as class <a href="/web-llvm/docs/api/classes/llvm/atomicmemmoveinst">llvm::AtomicMemMoveInst</a></li>
 <li><b>AtomicMemSetInst</b>: as class <a href="/web-llvm/docs/api/classes/llvm/atomicmemsetinst">llvm::AtomicMemSetInst</a></li>
 <li><b>AtomicMemTransferInst</b>: as class <a href="/web-llvm/docs/api/classes/llvm/atomicmemtransferinst">llvm::AtomicMemTransferInst</a></li>
+<li><b>AtomicOpValue</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue">llvm::OpenMPIRBuilder::AtomicOpValue</a></li>
 <li><b>AtomicRMWInst</b>: as class <a href="/web-llvm/docs/api/classes/llvm/atomicrmwinst">llvm::AtomicRMWInst</a></li>
 <li><b>AtomicRMWInst</b>: as class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/atomicrmwinst">llvm::sandboxir::AtomicRMWInst</a></li>
 <li><b>AtomicSDNode</b>: as class <a href="/web-llvm/docs/api/classes/llvm/atomicsdnode">llvm::AtomicSDNode</a></li>
 <li><b>AtT&lt;T, I, E&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/tomp/clause/att">tomp::clause::AtT&lt;T, I, E&gt;</a></li>
 <li><b>Attachment</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/mdattachments/attachment">llvm::MDAttachments::Attachment</a></li>
+<li><b>AttrBuilder</b>: as class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">llvm::AttrBuilder</a></li>
 <li><b>Attribute</b>: as class <a href="/web-llvm/docs/api/classes/llvm/attribute">llvm::Attribute</a></li>
 <li><b>attribute_iterator</b>: as class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/attribute-iterator">llvm::DWARFDie::attribute_iterator</a></li>
 <li><b>AttributeAbbrev</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/attributeabbrev">llvm::DWARFYAML::AttributeAbbrev</a></li>
@@ -1042,6 +1044,7 @@ keywords:
 <li><b>AttributeItem</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/cskytargetelfstreamer/attributeitem">llvm::CSKYTargetELFStreamer::AttributeItem</a></li>
 <li><b>AttributeItem</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/mcelfstreamer/attributeitem">llvm::MCELFStreamer::AttributeItem</a></li>
 <li><b>AttributeLinkedOffsetFixup</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/attributelinkedoffsetfixup">llvm::AttributeLinkedOffsetFixup</a></li>
+<li><b>AttributeList</b>: as class <a href="/web-llvm/docs/api/classes/llvm/attributelist">llvm::AttributeList</a></li>
 <li><b>AttributeListImpl</b>: as class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl">llvm::AttributeListImpl</a></li>
 <li><b>AttributeMask</b>: as class <a href="/web-llvm/docs/api/classes/llvm/attributemask">llvm::AttributeMask</a></li>
 <li><b>Attributes</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-modulesummaryindex-cpp-/attributes">anonymous{ModuleSummaryIndex.cpp}::Attributes</a></li>
@@ -1112,7 +1115,7 @@ keywords:
 <li><b>AVRTargetObjectFile</b>: as class <a href="/web-llvm/docs/api/classes/llvm/avrtargetobjectfile">llvm::AVRTargetObjectFile</a></li>
 <li><b>AVRTargetStreamer</b>: as class <a href="/web-llvm/docs/api/classes/llvm/avrtargetstreamer">llvm::AVRTargetStreamer</a></li>
 </ul>
-<p>1075 entries</p>
+<p>1078 entries</p>
 
 ## - B -
 
@@ -1153,6 +1156,7 @@ keywords:
 <li><b>BasicAAResult</b>: as class <a href="/web-llvm/docs/api/classes/llvm/basicaaresult">llvm::BasicAAResult</a></li>
 <li><b>BasicAAWrapperPass</b>: as class <a href="/web-llvm/docs/api/classes/llvm/basicaawrapperpass">llvm::BasicAAWrapperPass</a></li>
 <li><b>BasicBlock</b>: as class <a href="/web-llvm/docs/api/classes/llvm/basicblock">llvm::BasicBlock</a></li>
+<li><b>BasicBlock</b>: as class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">llvm::sandboxir::BasicBlock</a></li>
 <li><b>BasicBlockBFIAdapter</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-sizeopts-cpp-/basicblockbfiadapter">anonymous{SizeOpts.cpp}::BasicBlockBFIAdapter</a></li>
 <li><b>BasicBlockBits</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/basicblock/basicblockbits">llvm::BasicBlock::BasicBlockBits</a></li>
 <li><b>BasicBlockCallbackVH</b>: as class <a href="/web-llvm/docs/api/classes/llvm/branchprobabilityinfo/basicblockcallbackvh">llvm::BranchProbabilityInfo::BasicBlockCallbackVH</a></li>
@@ -1585,7 +1589,7 @@ keywords:
 <li><b>ByteStreamer</b>: as class <a href="/web-llvm/docs/api/classes/llvm/bytestreamer">llvm::ByteStreamer</a></li>
 <li><b>ByValInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/ccstate/byvalinfo">llvm::CCState::ByValInfo</a></li>
 </ul>
-<p>467 entries</p>
+<p>468 entries</p>
 
 ## - C -
 
@@ -2053,7 +2057,7 @@ keywords:
 <li><b>CompileUnit</b>: as class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/compileunit">llvm::dwarf_linker::classic::CompileUnit</a></li>
 <li><b>CompileUnit</b>: as class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">llvm::dwarf_linker::parallel::CompileUnit</a></li>
 <li><b>CompileUnitIdentifiers</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/compileunitidentifiers">llvm::CompileUnitIdentifiers</a></li>
-<li><b>CompileUnitPointerTraits</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/compileunitpointertraits">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::CompileUnitPointerTraits</a></li>
+<li><b>CompileUnitPointerTraits</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits">llvm::dwarf_linker::parallel::DependencyTracker::CompileUnitPointerTraits</a></li>
 <li><b>CompleterConcept</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/lineeditor/completerconcept">llvm::LineEditor::CompleterConcept</a></li>
 <li><b>CompleterModel&lt;T&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/lineeditor/completermodel">llvm::LineEditor::CompleterModel&lt;T&gt;</a></li>
 <li><b>Completion</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/lineeditor/completion">llvm::LineEditor::Completion</a></li>
@@ -2256,6 +2260,7 @@ keywords:
 <li><b>CopyGeneration</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/copygeneration">anonymous{HexagonBitSimplify.cpp}::CopyGeneration</a></li>
 <li><b>CopyInfo</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-machinecopypropagation-cpp-/copytracker/copyinfo">anonymous{MachineCopyPropagation.cpp}::CopyTracker::CopyInfo</a></li>
 <li><b>CopyinT&lt;T, I, E&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/tomp/clause/copyint">tomp::clause::CopyinT&lt;T, I, E&gt;</a></li>
+<li><b>CopyOptionsTy</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/copyoptionsty">llvm::OpenMPIRBuilder::CopyOptionsTy</a></li>
 <li><b>CopyprivateT&lt;T, I, E&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/tomp/clause/copyprivatet">tomp::clause::CopyprivateT&lt;T, I, E&gt;</a></li>
 <li><b>CopyPropagation</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/copypropagation">anonymous{HexagonBitSimplify.cpp}::CopyPropagation</a></li>
 <li><b>CopyPropagation</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/rdf/copypropagation">llvm::rdf::CopyPropagation</a></li>
@@ -2495,7 +2500,7 @@ keywords:
 <li><b>Cycles</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-earlyifconversion-cpp-/cycles">anonymous{EarlyIfConversion.cpp}::Cycles</a></li>
 <li><b>CycleSegment</b>: as class <a href="/web-llvm/docs/api/classes/llvm/mca/cyclesegment">llvm::mca::CycleSegment</a></li>
 </ul>
-<p>904 entries</p>
+<p>905 entries</p>
 
 ## - D -
 
@@ -2706,6 +2711,7 @@ keywords:
 <li><b>DecompEntry</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decompentry">anonymous{ConstraintElimination.cpp}::DecompEntry</a></li>
 <li><b>DecomposedBitTest</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/decomposedbittest">llvm::DecomposedBitTest</a></li>
 <li><b>DecomposedGEP</b>: as struct <a href="/web-llvm/docs/api/structs/basicaaresult/decomposedgep">BasicAAResult::DecomposedGEP</a></li>
+<li><b>DecomposedSelect</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect">anonymous{InstCombineSelect.cpp}::DecomposedSelect</a></li>
 <li><b>Decomposition</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decomposition">anonymous{ConstraintElimination.cpp}::Decomposition</a></li>
 <li><b>DecompressedSection</b>: as class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/decompressedsection">llvm::objcopy::elf::DecompressedSection</a></li>
 <li><b>Decompressor</b>: as class <a href="/web-llvm/docs/api/classes/llvm/object/decompressor">llvm::object::Decompressor</a></li>
@@ -2824,6 +2830,7 @@ keywords:
 <li><b>DenseMapInfo&lt;AssertingVH&lt; T &gt;&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-9991f1503f02220ff60e93f014753ab7">llvm::DenseMapInfo&lt;AssertingVH&lt; T &gt;&gt;</a></li>
 <li><b>DenseMapInfo&lt;at::VarRecord&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0">llvm::DenseMapInfo&lt;at::VarRecord&gt;</a></li>
 <li><b>DenseMapInfo&lt;Attribute::AttrKind&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97">llvm::DenseMapInfo&lt;Attribute::AttrKind&gt;</a></li>
+<li><b>DenseMapInfo&lt;AttributeList, void&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70">llvm::DenseMapInfo&lt;AttributeList, void&gt;</a></li>
 <li><b>DenseMapInfo&lt;AttributeSet, void&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962">llvm::DenseMapInfo&lt;AttributeSet, void&gt;</a></li>
 <li><b>DenseMapInfo&lt;BasicBlock::iterator&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9">llvm::DenseMapInfo&lt;BasicBlock::iterator&gt;</a></li>
 <li><b>DenseMapInfo&lt;BasicBlockEdge&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6">llvm::DenseMapInfo&lt;BasicBlockEdge&gt;</a></li>
@@ -3440,7 +3447,7 @@ keywords:
 <li><b>DynSym&lt;ELFT&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/ifs/anonymous-elfobjhandler-cpp-/dynsym">llvm::ifs::anonymous{ELFObjHandler.cpp}::DynSym&lt;ELFT&gt;</a></li>
 <li><b>dysymtab_command</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/macho/dysymtab-command">llvm::MachO::dysymtab_command</a></li>
 </ul>
-<p>939 entries</p>
+<p>941 entries</p>
 
 ## - E -
 
@@ -4199,7 +4206,6 @@ keywords:
 <li><b>format_provider&lt;...&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-d4c6dcfa77293e610b110598fc7b9f83">llvm::format_provider&lt;codeview::LocallyHashedType&gt;</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-529796c169261fe2c884ec9b378a7ff5">llvm::format_provider&lt;Enum, std::enable_if_t&lt; dwarf::EnumTraits&lt; Enum &gt;::value &gt;&gt;</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/format-provider-5361e6bb4a56f61bc90e5b264ca769ca">llvm::format_provider&lt;llvm::iterator_range&lt; IterT &gt;&gt;</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-0fc70501588571ec0ff51d52fb9fddbf">llvm::format_provider&lt;sys::UtcTime&lt; std::chrono::seconds &gt;&gt;</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-a74b156048fbf039572976048a22c3b3">llvm::format_provider&lt;T, std::enable_if_t&lt; support::detail::use_char_formatter&lt; T &gt;::value &gt;&gt;</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-0f8c4dae2a93fb42cc485d5a034bb90a">llvm::format_provider&lt;T, std::enable_if_t&lt; support::detail::use_double_formatter&lt; T &gt;::value &gt;&gt;</a></li>
@@ -4414,7 +4420,7 @@ keywords:
 <li><b>FwdRegParamInfo</b>: as struct <a href="/web-llvm/docs/api/structs/fwdregparaminfo">FwdRegParamInfo</a></li>
 <li><b>FxpOp</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-hexagonvectorcombine-cpp-/hvxidioms/fxpop">anonymous{HexagonVectorCombine.cpp}::HvxIdioms::FxpOp</a></li>
 </ul>
-<p>476 entries</p>
+<p>475 entries</p>
 
 ## - G -
 
@@ -5241,6 +5247,7 @@ keywords:
 <li><b>IncomingWFRHandler</b>: as class <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol/incomingwfrhandler">llvm::orc::ExecutorProcessControl::IncomingWFRHandler</a></li>
 <li><b>IncrementalSourceMgr</b>: as class <a href="/web-llvm/docs/api/classes/llvm/mca/incrementalsourcemgr">llvm::mca::IncrementalSourceMgr</a></li>
 <li><b>indent</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/indent">llvm::indent</a></li>
+<li><b>index_iterator</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator">llvm::AttributeList::index_iterator</a></li>
 <li><b>index_iterator</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/detail/index-iterator">llvm::detail::index_iterator</a></li>
 <li><b>index_range</b>: as class <a href="/web-llvm/docs/api/classes/llvm/index-range">llvm::index_range</a></li>
 <li><b>index_stream</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/detail/index-stream">llvm::detail::index_stream</a></li>
@@ -5544,6 +5551,7 @@ keywords:
 <li><b>InstStreamPause</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/mca/inststreampause">llvm::mca::InstStreamPause</a></li>
 <li><b>InstVisitor&lt;SubClass, RetTy&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/instvisitor">llvm::InstVisitor&lt;SubClass, RetTy&gt;</a></li>
 <li><b>int_op_inserter</b>: as class <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/int-op-inserter">llvm::GVNExpression::int_op_inserter</a></li>
+<li><b>int_wrapper</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper">llvm::AttributeList::index_iterator::int_wrapper</a></li>
 <li><b>IntAttributeImpl</b>: as class <a href="/web-llvm/docs/api/classes/llvm/intattributeimpl">llvm::IntAttributeImpl</a></li>
 <li><b>IntegerCompareEliminator</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-ppciseldagtodag-cpp-/integercompareeliminator">anonymous{PPCISelDAGToDAG.cpp}::IntegerCompareEliminator</a></li>
 <li><b>IntegerLiteral</b>: as class <a href="/web-llvm/docs/api/classes/integerliteral">IntegerLiteral</a></li>
@@ -5887,7 +5895,7 @@ keywords:
 <li><b>IVUsersWrapperPass</b>: as class <a href="/web-llvm/docs/api/classes/llvm/ivuserswrapperpass">llvm::IVUsersWrapperPass</a></li>
 <li><b>IVVisitor</b>: as class <a href="/web-llvm/docs/api/classes/llvm/ivvisitor">llvm::IVVisitor</a></li>
 </ul>
-<p>809 entries</p>
+<p>811 entries</p>
 
 ## - J -
 
@@ -6206,7 +6214,6 @@ keywords:
 <li><b>ListInit</b>: as class <a href="/web-llvm/docs/api/classes/llvm/listinit">llvm::ListInit</a></li>
 <li><b>ListRecTy</b>: as class <a href="/web-llvm/docs/api/classes/llvm/listrecty">llvm::ListRecTy</a></li>
 <li><b>ListScope</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/listscope">llvm::ListScope</a></li>
-<li><b>ListSeparator</b>: as class <a href="/web-llvm/docs/api/classes/llvm/listseparator">llvm::ListSeparator</a></li>
 <li><b>ListStream&lt;EntryT&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/minidumpyaml/detail/liststream">llvm::MinidumpYAML::detail::ListStream&lt;EntryT&gt;</a></li>
 <li><b>ListTable&lt;EntryType&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/listtable">llvm::DWARFYAML::ListTable&lt;EntryType&gt;</a></li>
 <li><b>LiteralOperator</b>: as class <a href="/web-llvm/docs/api/classes/literaloperator">LiteralOperator</a></li>
@@ -6248,7 +6255,6 @@ keywords:
 <li><b>LiveRegSet</b>: as class <a href="/web-llvm/docs/api/classes/llvm/liveregset">llvm::LiveRegSet</a></li>
 <li><b>LiveRegUnit</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/liveregunit">llvm::LiveRegUnit</a></li>
 <li><b>LiveRegUnits</b>: as class <a href="/web-llvm/docs/api/classes/llvm/liveregunits">llvm::LiveRegUnits</a></li>
-<li><b>LiveRootWorklistItemTy</b>: as class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>LiveStacks</b>: as class <a href="/web-llvm/docs/api/classes/llvm/livestacks">llvm::LiveStacks</a></li>
 <li><b>LiveStacksAnalysis</b>: as class <a href="/web-llvm/docs/api/classes/llvm/livestacksanalysis">llvm::LiveStacksAnalysis</a></li>
 <li><b>LiveStacksPrinterPass</b>: as class <a href="/web-llvm/docs/api/classes/llvm/livestacksprinterpass">llvm::LiveStacksPrinterPass</a></li>
@@ -6666,7 +6672,7 @@ keywords:
 <li><b>LVTypeVisitor</b>: as class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypevisitor">llvm::logicalview::LVTypeVisitor</a></li>
 <li><b>LVWarning</b>: as class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvoptions/lvwarning">llvm::logicalview::LVOptions::LVWarning</a></li>
 </ul>
-<p>689 entries</p>
+<p>687 entries</p>
 
 ## - M -
 
@@ -6927,6 +6933,7 @@ keywords:
 <li><b>MapHNode</b>: as class <a href="/web-llvm/docs/api/classes/input/maphnode">Input::MapHNode</a></li>
 <li><b>MapHNode</b>: as class <a href="/web-llvm/docs/api/classes/llvm/yaml/input/maphnode">llvm::yaml::Input::MapHNode</a></li>
 <li><b>MapInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/constantuniquemap/mapinfo">llvm::ConstantUniqueMap::MapInfo</a></li>
+<li><b>MapInfosTy</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>MapOneMethodRecord</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-typerecordmapping-cpp-/maponemethodrecord">anonymous{TypeRecordMapping.cpp}::MapOneMethodRecord</a></li>
 <li><b>mapped_file_region</b>: as class <a href="/web-llvm/docs/api/classes/llvm/sys/fs/mapped-file-region">llvm::sys::fs::mapped_file_region</a></li>
 <li><b>mapped_iterator_base&lt;...&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/mapped-iterator-base">llvm::mapped_iterator_base&lt;DerivedT, ItTy, ReferenceTy&gt;</a></li>
@@ -6935,6 +6942,7 @@ keywords:
 <li><b>MappedBlockStreamImpl&lt;Base&gt;</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-mappedblockstream-cpp-/mappedblockstreamimpl">anonymous{MappedBlockStream.cpp}::MappedBlockStreamImpl&lt;Base&gt;</a></li>
 <li><b>MappedValue</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/mapresolver/mappedvalue">llvm::MapResolver::MappedValue</a></li>
 <li><b>Mapper</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-valuemapper-cpp-/mapper">anonymous{ValueMapper.cpp}::Mapper</a></li>
+<li><b>MapperAllocas</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapperallocas">llvm::OpenMPIRBuilder::MapperAllocas</a></li>
 <li><b>MapperJITLinkMemoryManager</b>: as class <a href="/web-llvm/docs/api/classes/llvm/orc/mapperjitlinkmemorymanager">llvm::orc::MapperJITLinkMemoryManager</a></li>
 <li><b>MapperT&lt;I, E&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/tomp/type/mappert">tomp::type::MapperT&lt;I, E&gt;</a></li>
 <li><b>MappingConfig</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-numericalstabilitysanitizer-cpp-/mappingconfig">anonymous{NumericalStabilitySanitizer.cpp}::MappingConfig</a></li>
@@ -7865,7 +7873,7 @@ keywords:
 <li><b>MVEVPTBlock</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-mvevptblockpass-cpp-/mvevptblock">anonymous{MVEVPTBlockPass.cpp}::MVEVPTBlock</a></li>
 <li><b>MVT</b>: as class <a href="/web-llvm/docs/api/classes/llvm/mvt">llvm::MVT</a></li>
 </ul>
-<p>1193 entries</p>
+<p>1195 entries</p>
 
 ## - N -
 
@@ -8446,6 +8454,7 @@ keywords:
 <li><b>OutlinedFunction</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/outliner/outlinedfunction">llvm::outliner::OutlinedFunction</a></li>
 <li><b>OutlinedHashTree</b>: as class <a href="/web-llvm/docs/api/classes/llvm/outlinedhashtree">llvm::OutlinedHashTree</a></li>
 <li><b>OutlinedHashTreeRecord</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/outlinedhashtreerecord">llvm::OutlinedHashTreeRecord</a></li>
+<li><b>OutlineInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>OutlinerCosts</b>: as struct <a href="/web-llvm/docs/api/structs/outlinercosts">OutlinerCosts</a></li>
 <li><b>OutlineRegionInfo</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-partialinlining-cpp-/functionoutliningmultiregioninfo/outlineregioninfo">anonymous{PartialInlining.cpp}::FunctionOutliningMultiRegionInfo::OutlineRegionInfo</a></li>
 <li><b>OutliningRegion</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-hotcoldsplitting-cpp-/outliningregion">anonymous{HotColdSplitting.cpp}::OutliningRegion</a></li>
@@ -8477,7 +8486,7 @@ keywords:
 <li><b>OwningMemoryBlock</b>: as class <a href="/web-llvm/docs/api/classes/llvm/sys/owningmemoryblock">llvm::sys::OwningMemoryBlock</a></li>
 <li><b>OwningModuleContainer</b>: as class <a href="/web-llvm/docs/api/classes/llvm/mcjit/owningmodulecontainer">llvm::MCJIT::OwningModuleContainer</a></li>
 </ul>
-<p>320 entries</p>
+<p>321 entries</p>
 
 ## - P -
 
@@ -9015,8 +9024,7 @@ keywords:
 <li><b>PreprocessorDir</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-tglexer-cpp-/preprocessordir">anonymous{TGLexer.cpp}::PreprocessorDir</a></li>
 <li><b>PreRARematStage</b>: as class <a href="/web-llvm/docs/api/classes/llvm/prerarematstage">llvm::PreRARematStage</a></li>
 <li><b>PreserveAPIList</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-internalize-cpp-/preserveapilist">anonymous{Internalize.cpp}::PreserveAPIList</a></li>
-<li><b>PreservedAnalyses</b>: as class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">llvm::PreservedAnalyses</a></li>
-<li><b>PreservedAnalysisChecker</b>: as class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
+<li><b>PreservedAnalysisChecker</b>: as class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">llvm::PreservedAnalysisChecker</a></li>
 <li><b>PreservedCFGCheckerAnalysis</b>: as struct <a href="/web-llvm/docs/api/structs/preservedcfgcheckeranalysis">PreservedCFGCheckerAnalysis</a></li>
 <li><b>PreservedCFGCheckerInstrumentation</b>: as class <a href="/web-llvm/docs/api/classes/llvm/preservedcfgcheckerinstrumentation">llvm::PreservedCFGCheckerInstrumentation</a></li>
 <li><b>PreservedFunctionHashAnalysis</b>: as struct <a href="/web-llvm/docs/api/structs/preservedfunctionhashanalysis">PreservedFunctionHashAnalysis</a></li>
@@ -9133,7 +9141,7 @@ keywords:
 <li><b>PromotePass</b>: as class <a href="/web-llvm/docs/api/classes/llvm/promotepass">llvm::PromotePass</a></li>
 <li><b>PromotionCandidate</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-indirectcallpromotion-cpp-/indirectcallpromoter/promotioncandidate">anonymous{IndirectCallPromotion.cpp}::IndirectCallPromoter::PromotionCandidate</a></li>
 <li><b>Properties</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dxil/properties">llvm::dxil::Properties</a></li>
-<li><b>ProvenanceAnalysis</b>: as class <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a></li>
+<li><b>ProvenanceAnalysis</b>: as class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>provider_format_adapter&lt;T&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/support/detail/provider-format-adapter">llvm::support::detail::provider_format_adapter&lt;T&gt;</a></li>
 <li><b>ProxyFileSystem</b>: as class <a href="/web-llvm/docs/api/classes/llvm/vfs/proxyfilesystem">llvm::vfs::ProxyFileSystem</a></li>
 <li><b>PruningFunctionCloner</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-clonefunction-cpp-/pruningfunctioncloner">anonymous{CloneFunction.cpp}::PruningFunctionCloner</a></li>
@@ -9184,7 +9192,7 @@ keywords:
 <li><b>PubSection</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/pubsection">llvm::DWARFYAML::PubSection</a></li>
 <li><b>PunnedPointer&lt;Ptr&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/detail/punnedpointer">llvm::detail::PunnedPointer&lt;Ptr&gt;</a></li>
 </ul>
-<p>701 entries</p>
+<p>700 entries</p>
 
 ## - Q -
 
@@ -9368,6 +9376,7 @@ keywords:
 <li><b>Reduction</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-armparalleldsp-cpp-/reduction">anonymous{ARMParallelDSP.cpp}::Reduction</a></li>
 <li><b>ReductionFlags</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/reductionflags">llvm::TargetTransformInfo::ReductionFlags</a></li>
 <li><b>ReductionIdentifierT&lt;I, E&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/tomp/type/reductionidentifiert">tomp::type::ReductionIdentifierT&lt;I, E&gt;</a></li>
+<li><b>ReductionInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>ReductionT&lt;T, I, E&gt;</b>: as struct <a href="/web-llvm/docs/api/structs/tomp/clause/reductiont">tomp::clause::ReductionT&lt;T, I, E&gt;</a></li>
 <li><b>RedundantDbgInstEliminationPass</b>: as class <a href="/web-llvm/docs/api/classes/llvm/redundantdbginsteliminationpass">llvm::RedundantDbgInstEliminationPass</a></li>
 <li><b>RedundantInstrElimination</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/redundantinstrelimination">anonymous{HexagonBitSimplify.cpp}::RedundantInstrElimination</a></li>
@@ -9674,6 +9683,7 @@ keywords:
 <li><b>ResourceBindingInfo</b>: as class <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcebindinginfo">llvm::dxil::ResourceBindingInfo</a></li>
 <li><b>ResourceEntryRef</b>: as class <a href="/web-llvm/docs/api/classes/llvm/object/resourceentryref">llvm::object::ResourceEntryRef</a></li>
 <li><b>ResourceFlags</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/resourceflags">llvm::dxbc::PSV::ResourceFlags</a></li>
+<li><b>ResourceManager</b>: as class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">llvm::mca::ResourceManager</a></li>
 <li><b>ResourceManager</b>: as class <a href="/web-llvm/docs/api/classes/llvm/orc/resourcemanager">llvm::orc::ResourceManager</a></li>
 <li><b>ResourceManager</b>: as class <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">llvm::ResourceManager</a></li>
 <li><b>ResourcePriorityQueue</b>: as class <a href="/web-llvm/docs/api/classes/llvm/resourcepriorityqueue">llvm::ResourcePriorityQueue</a></li>
@@ -9910,7 +9920,7 @@ keywords:
 <li><b>RVVRegisterRegAlloc</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-riscvtargetmachine-cpp-/rvvregisterregalloc">anonymous{RISCVTargetMachine.cpp}::RVVRegisterRegAlloc</a></li>
 <li><b>RxSBGOperands</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-systemziseldagtodag-cpp-/rxsbgoperands">anonymous{SystemZISelDAGToDAG.cpp}::RxSBGOperands</a></li>
 </ul>
-<p>707 entries</p>
+<p>709 entries</p>
 
 ## - S -
 
@@ -10888,7 +10898,6 @@ keywords:
 <li><b>SplitProposal</b>: as class <a href="/web-llvm/docs/api/classes/llvm/anonymous-amdgpusplitmodule-cpp-/splitproposal">llvm::anonymous{AMDGPUSplitModule.cpp}::SplitProposal</a></li>
 <li><b>SplitPtrStructs</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-amdgpulowerbufferfatpointers-cpp-/splitptrstructs">anonymous{AMDGPULowerBufferFatPointers.cpp}::SplitPtrStructs</a></li>
 <li><b>Splitter</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/spirvstructurizer/splitter">llvm::SPIRVStructurizer::Splitter</a></li>
-<li><b>SplittingIterator</b>: as class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator">llvm::SplittingIterator</a></li>
 <li><b>SplitWorkItemInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/switchcg/switchlowering/splitworkiteminfo">llvm::SwitchCG::SwitchLowering::SplitWorkItemInfo</a></li>
 <li><b>SPSArgList&lt;&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist-38559c871fba28d992ead51549367f83">llvm::orc::shared::SPSArgList&lt;&gt;</a></li>
 <li><b>SPSArgList&lt;ArgTs&gt;</b>: as class <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist">llvm::orc::shared::SPSArgList&lt;ArgTs&gt;</a></li>
@@ -11152,6 +11161,7 @@ keywords:
 <li><b>StructInitializer</b>: as struct <a href="/web-llvm/docs/api/structs/anonymous-masmparser-cpp-/structinitializer">anonymous{MasmParser.cpp}::StructInitializer</a></li>
 <li><b>StructLayout</b>: as class <a href="/web-llvm/docs/api/classes/llvm/structlayout">llvm::StructLayout</a></li>
 <li><b>StructLayoutMap</b>: as class <a href="/web-llvm/docs/api/classes/anonymous-datalayout-cpp-/structlayoutmap">anonymous{DataLayout.cpp}::StructLayoutMap</a></li>
+<li><b>StructNonContiguousInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo">llvm::OpenMPIRBuilder::MapInfosTy::StructNonContiguousInfo</a></li>
 <li><b>Structor</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/asmprinter/structor">llvm::AsmPrinter::Structor</a></li>
 <li><b>StructorIdentifierNode</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/structoridentifiernode">llvm::ms_demangle::StructorIdentifierNode</a></li>
 <li><b>StructType</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/btf/structtype">llvm::BTF::StructType</a></li>
@@ -11444,6 +11454,8 @@ keywords:
 <li><b>TapiUniversal</b>: as class <a href="/web-llvm/docs/api/classes/llvm/object/tapiuniversal">llvm::object::TapiUniversal</a></li>
 <li><b>Target</b>: as class <a href="/web-llvm/docs/api/classes/llvm/macho/target">llvm::MachO::Target</a></li>
 <li><b>Target</b>: as class <a href="/web-llvm/docs/api/classes/llvm/target">llvm::Target</a></li>
+<li><b>TargetDataInfo</b>: as class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
+<li><b>TargetDataRTArgs</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>TargetExtType</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetexttype">llvm::TargetExtType</a></li>
 <li><b>TargetExtTypeKeyInfo</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/targetexttypekeyinfo">llvm::TargetExtTypeKeyInfo</a></li>
 <li><b>TargetFeaturesSection</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/wasmyaml/targetfeaturessection">llvm::WasmYAML::TargetFeaturesSection</a></li>
@@ -11455,6 +11467,9 @@ keywords:
 <li><b>TargetInstrInfo</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">llvm::TargetInstrInfo</a></li>
 <li><b>TargetIntrinsicInfo</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetintrinsicinfo">llvm::TargetIntrinsicInfo</a></li>
 <li><b>TargetIRAnalysis</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetiranalysis">llvm::TargetIRAnalysis</a></li>
+<li><b>TargetKernelArgs</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
+<li><b>TargetKernelDefaultAttrs</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs">llvm::OpenMPIRBuilder::TargetKernelDefaultAttrs</a></li>
+<li><b>TargetKernelRuntimeAttrs</b>: as struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
 <li><b>TargetLibraryAnalysis</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryanalysis">llvm::TargetLibraryAnalysis</a></li>
 <li><b>TargetLibraryInfo</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfo">llvm::TargetLibraryInfo</a></li>
 <li><b>TargetLibraryInfoImpl</b>: as class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfoimpl">llvm::TargetLibraryInfoImpl</a></li>
@@ -11800,7 +11815,7 @@ keywords:
 <li><b>TypeVisitorCallbackPipeline</b>: as class <a href="/web-llvm/docs/api/classes/llvm/codeview/typevisitorcallbackpipeline">llvm::codeview::TypeVisitorCallbackPipeline</a></li>
 <li><b>TypeVisitorCallbacks</b>: as class <a href="/web-llvm/docs/api/classes/llvm/codeview/typevisitorcallbacks">llvm::codeview::TypeVisitorCallbacks</a></li>
 </ul>
-<p>385 entries</p>
+<p>390 entries</p>
 
 ## - U -
 
@@ -12898,10 +12913,10 @@ keywords:
 </ul>
 <p>18 entries</p>
 <br/>
-<p>Total: 12719 entries.</p>
+<p>Total: 12734 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

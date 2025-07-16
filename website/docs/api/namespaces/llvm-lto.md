@@ -44,27 +44,12 @@ namespace llvm::lto { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/lto/inputfile">InputFile</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/lto/ltollvmdiagnostichandler">LTOLLVMDiagnosticHandler</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>An input file. <a href="/web-llvm/docs/api/classes/llvm/lto/inputfile/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>This class implements a resolution-based interface to LLVM's <a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a> functionality. <a href="/web-llvm/docs/api/classes/llvm/lto/lto/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -86,12 +71,13 @@ namespace llvm::lto { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/lto/ltollvmdiagnostichandler">LTOLLVMDiagnosticHandler</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/lto/inputfile">InputFile</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
+<p>An input file. <a href="/web-llvm/docs/api/classes/llvm/lto/inputfile/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -99,13 +85,13 @@ namespace llvm::lto { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/lto/symbolresolution">SymbolResolution</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/lto/thinbackendproc">ThinBackendProc</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The resolution for a symbol. <a href="/web-llvm/docs/api/structs/llvm/lto/symbolresolution/#details">More...</a></p>
+<p>This class defines the interface to the ThinLTO backend. <a href="/web-llvm/docs/api/classes/llvm/lto/thinbackendproc/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -128,12 +114,26 @@ namespace llvm::lto { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/lto/thinbackendproc">ThinBackendProc</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This class defines the interface to the ThinLTO backend. <a href="/web-llvm/docs/api/classes/llvm/lto/thinbackendproc/#details">More...</a></p>
+<p>This class implements a resolution-based interface to LLVM's <a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a> functionality. <a href="/web-llvm/docs/api/classes/llvm/lto/lto/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/lto/symbolresolution">SymbolResolution</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>The resolution for a symbol. <a href="/web-llvm/docs/api/structs/llvm/lto/symbolresolution/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -827,7 +827,7 @@ namespace llvm::lto { ... }
 <p>Declaration at line 92 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/lto/lto-h">LTO.h</a>, definition at line 2091 of file <a href="/web-llvm/docs/api/files/lib/lib/lto/lto-cpp">LTO.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">llvm::Count</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a8dbf0a7ff527022e0bc9313961d098d9">llvm::RemarksFilename</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a0a00aed2787bd3f818d745a1ef171bf3">llvm::RemarksFormat</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac2f0e273d7dfee8425f06bc1959a6e36">llvm::RemarksHotnessThreshold</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a29a674af5908403fd9aa59aa8194241f">llvm::RemarksPasses</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a8b19e8926f03fc73e087818aa81bcb37">llvm::RemarksWithHotness</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a861311f8fc18e2eb0035cccb0b1acaac">llvm::setupLLVMOptimizationRemarks</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">llvm::Count</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a8dbf0a7ff527022e0bc9313961d098d9">llvm::RemarksFilename</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a0a00aed2787bd3f818d745a1ef171bf3">llvm::RemarksFormat</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac2f0e273d7dfee8425f06bc1959a6e36">llvm::RemarksHotnessThreshold</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a29a674af5908403fd9aa59aa8194241f">llvm::RemarksPasses</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a8b19e8926f03fc73e087818aa81bcb37">llvm::RemarksWithHotness</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a861311f8fc18e2eb0035cccb0b1acaac">llvm::setupLLVMOptimizationRemarks</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/ltocodegenerator/#a0662a37baac76f3ec5c6ca268ae277ac">llvm::LTOCodeGenerator::optimize</a>, <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#a8f109c8e5687e9ee05ee86648c229398">llvm::ThinLTOCodeGenerator::run</a> and <a href="#ae6ff75e89240b2f2c01d3be088ca6014">thinBackend</a>.</p>
@@ -893,7 +893,7 @@ namespace llvm::lto { ... }
 <p>Declaration at line 57 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/lto/ltobackend-h">LTOBackend.h</a>, definition at line 587 of file <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp">LTOBackend.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#abfc7ebfffc7baaf23279854fec1412ac">createTargetMachine</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/pielevel/#ae01fe422624f3a5afd84d14146f9112ca0b4e3e20dca8947e14cee3d5fe0e4fa8">llvm::PIELevel::Default</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a330a18768ffaafb198c726071dcfcb29">dropDeadSymbols</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a49c487a9395a6c384be8544cfb2cfccf">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/mapvector/#a0881334358ff6ff7ff8cea5562c7988e">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::end</a>, <a href="#abf9cf61a64ab2f14496104cc59a28d22">finalizeOptimizationRemarks</a>, <a href="/web-llvm/docs/api/classes/llvm/mapvector/#a6b0c3e15c351ba9682837c29b0a141b6">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::find</a>, <a href="#a85cf54f25bd787c7983fe72e15233000">findThinLTOModule</a>, <a href="/web-llvm/docs/api/classes/llvm/erroror/#a8300c72908f1845c931951ed4b2a2375">llvm::ErrorOr&lt; T &gt;::getError</a>, <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#aa98611beefe78f907beeee7305cc8174">llvm::MemoryBuffer::getFile</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/classes/llvm/functionimporter/#a293aab6abe312ff6dbe227a3bcde838c">llvm::FunctionImporter::importFunctions</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">llvm::inconvertibleErrorCode</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a388c19dd51467226753e433499a85e44">initAndLookupTarget</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make_error</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea7aeb0277500c86e4aa6bd23f9a737942">llvm::Mod</a>, <a href="#ae3dc87f8d2d7b79aa7da2d3224f3f63d">opt</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ad5f3c0f8fbd4bf85381e96cc672beb13">llvm::lto::Config::PostImportModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ace0039edf4791c66d2eb99dab50fe8f9">llvm::lto::Config::PostInternalizeModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a929cce8a073bdcefff79d854deedb7ed">llvm::lto::Config::PostPromoteModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a496d67358c7f1e3a328e3ba2cda26268">llvm::lto::Config::PreOptModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a7f5add25ae56d0b0c8c3486115a6f825">llvm::lto::Config::RemarksFilename</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#afdc99ed0043add37ba2764446dbe225e">llvm::lto::Config::RemarksFormat</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a3fb18e2c1449a48f3ce809e398c8496c">llvm::lto::Config::RemarksHotnessThreshold</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ab6be094bc919f0a88daf638a87f35ed2">llvm::lto::Config::RemarksPasses</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ad722bd2d07c784bdf48e98d88a25b214">llvm::lto::Config::RemarksWithHotness</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a46122434c47e17760d4c6709878a0dd6">llvm::renameModuleForThinLTO</a>, <a href="/web-llvm/docs/api/namespaces/llvm/cgdata/#aa073bf33e4e66824238bc510dcdf0f4e">llvm::cgdata::saveModuleForTwoRounds</a>, <a href="#adf0da31fd6ca90efb2819d0f6061bd74">setupLLVMOptimizationRemarks</a>, <a href="/web-llvm/docs/api/namespaces/llvm/reloc/#af59f6dc86e80aaf56f1afd155eebf568a2102fa713297236bf4339c5f0bf0f39d">llvm::Reloc::Static</a>, <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a0046b3c8795f231a43ff155b23bbb36e">ThinLTOAssumeMerged</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aff4d1b90a120cf50deb15494c801d589">llvm::thinLTOFinalizeInModule</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aac69630533101ec5ba74953a63082148">llvm::thinLTOInternalizeModule</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>, <a href="#afe9c751bcb415f1be4994bce1ef6288e">updateMemProfAttributes</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a714c6f3608e37d0dba17cdc086dc16d2">llvm::updatePublicTypeTestCalls</a> and <a href="/web-llvm/docs/api/classes/llvm/modulesummaryindex/#a32f52ba98a64695d078f21e4c14865b9">llvm::ModuleSummaryIndex::withWholeProgramVisibility</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#abfc7ebfffc7baaf23279854fec1412ac">createTargetMachine</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/pielevel/#ae01fe422624f3a5afd84d14146f9112ca0b4e3e20dca8947e14cee3d5fe0e4fa8">llvm::PIELevel::Default</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a330a18768ffaafb198c726071dcfcb29">dropDeadSymbols</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a49c487a9395a6c384be8544cfb2cfccf">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/mapvector/#a0881334358ff6ff7ff8cea5562c7988e">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::end</a>, <a href="#abf9cf61a64ab2f14496104cc59a28d22">finalizeOptimizationRemarks</a>, <a href="/web-llvm/docs/api/classes/llvm/mapvector/#a6b0c3e15c351ba9682837c29b0a141b6">llvm::MapVector&lt; KeyT, ValueT, MapType, VectorType &gt;::find</a>, <a href="#a85cf54f25bd787c7983fe72e15233000">findThinLTOModule</a>, <a href="/web-llvm/docs/api/classes/llvm/erroror/#a8300c72908f1845c931951ed4b2a2375">llvm::ErrorOr&lt; T &gt;::getError</a>, <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#aa98611beefe78f907beeee7305cc8174">llvm::MemoryBuffer::getFile</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/classes/llvm/functionimporter/#a293aab6abe312ff6dbe227a3bcde838c">llvm::FunctionImporter::importFunctions</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">llvm::inconvertibleErrorCode</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a388c19dd51467226753e433499a85e44">initAndLookupTarget</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make_error</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea7aeb0277500c86e4aa6bd23f9a737942">llvm::Mod</a>, <a href="#ae3dc87f8d2d7b79aa7da2d3224f3f63d">opt</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ad5f3c0f8fbd4bf85381e96cc672beb13">llvm::lto::Config::PostImportModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ace0039edf4791c66d2eb99dab50fe8f9">llvm::lto::Config::PostInternalizeModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a929cce8a073bdcefff79d854deedb7ed">llvm::lto::Config::PostPromoteModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a496d67358c7f1e3a328e3ba2cda26268">llvm::lto::Config::PreOptModuleHook</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a7f5add25ae56d0b0c8c3486115a6f825">llvm::lto::Config::RemarksFilename</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#afdc99ed0043add37ba2764446dbe225e">llvm::lto::Config::RemarksFormat</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a3fb18e2c1449a48f3ce809e398c8496c">llvm::lto::Config::RemarksHotnessThreshold</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ab6be094bc919f0a88daf638a87f35ed2">llvm::lto::Config::RemarksPasses</a>, <a href="/web-llvm/docs/api/structs/llvm/lto/config/#ad722bd2d07c784bdf48e98d88a25b214">llvm::lto::Config::RemarksWithHotness</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a46122434c47e17760d4c6709878a0dd6">llvm::renameModuleForThinLTO</a>, <a href="/web-llvm/docs/api/namespaces/llvm/cgdata/#aa073bf33e4e66824238bc510dcdf0f4e">llvm::cgdata::saveModuleForTwoRounds</a>, <a href="#adf0da31fd6ca90efb2819d0f6061bd74">setupLLVMOptimizationRemarks</a>, <a href="/web-llvm/docs/api/namespaces/llvm/reloc/#af59f6dc86e80aaf56f1afd155eebf568a2102fa713297236bf4339c5f0bf0f39d">llvm::Reloc::Static</a>, <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a0046b3c8795f231a43ff155b23bbb36e">ThinLTOAssumeMerged</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aff4d1b90a120cf50deb15494c801d589">llvm::thinLTOFinalizeInModule</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aac69630533101ec5ba74953a63082148">llvm::thinLTOInternalizeModule</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>, <a href="#afe9c751bcb415f1be4994bce1ef6288e">updateMemProfAttributes</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a714c6f3608e37d0dba17cdc086dc16d2">llvm::updatePublicTypeTestCalls</a> and <a href="/web-llvm/docs/api/classes/llvm/modulesummaryindex/#a32f52ba98a64695d078f21e4c14865b9">llvm::ModuleSummaryIndex::withWholeProgramVisibility</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-lto-cpp-/firstroundthinbackend/#a2c2b73979dafe07afd42a1d790f7ed8c">anonymous{LTO.cpp}::FirstRoundThinBackend::runThinLTOBackendThread</a>, <a href="/web-llvm/docs/api/classes/anonymous-lto-cpp-/inprocessthinbackend/#af0f9c1c44f600c3385ef076febf8c440">anonymous{LTO.cpp}::InProcessThinBackend::runThinLTOBackendThread</a> and <a href="/web-llvm/docs/api/classes/anonymous-lto-cpp-/secondroundthinbackend/#ad3c878292daedae87b12a69a4a05c046">anonymous{LTO.cpp}::SecondRoundThinBackend::runThinLTOBackendThread</a>.</p>
@@ -947,6 +947,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

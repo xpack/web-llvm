@@ -1904,7 +1904,7 @@ struct anonymous{LanaiAsmParser.cpp}::LanaiOperand { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a512faf94f3d9e5327ca9e170fb1d2863">isToken</a> and <a href="#a9538df811284f3dc3d73e1208635e5c0">Tok</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lib/target/lanai/asmparser/lanaiasmparser-cpp/#aa381725d28ae64fbe2941e262ad59353">MaybePredicatedInst</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lib/target/lanai/asmparser/lanaiasmparser-cpp/#aa381725d28ae64fbe2941e262ad59353">MaybePredicatedInst</a> and <a href="#a5538a23d0746dd37b532dbaade0fbe9f">print</a>.</p>
 
 </div>
 </div>
@@ -2623,7 +2623,7 @@ struct anonymous{LanaiAsmParser.cpp}::LanaiOperand { ... }
 <p>Definition at line 556 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lib/target/lanai/asmparser/lanaiasmparser-cpp">LanaiAsmParser.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a39f9673926289aecff3b7f94bdc3c0bb">getImm</a>, <a href="#a5dd8eb345a392a179f6ae817c52a6a47">getMemBaseReg</a>, <a href="#ac360a86c8897a5769f817b4b2117bca4">getMemOffset</a>, <a href="#a43ff5a61c7d69362c123a763e1abcc89">getMemOffsetReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a20237283e8b9e354abec8dc5ab16bd16">llvm::getToken</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a2a3bd4906d93cc674c70d3317ccb3152">IMMEDIATE</a>, <a href="#af9936c1b05850142b1cfbccdfd89faf4">Kind</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a5293f86b07afd549ecdea7e613e2c41a">MEMORY_IMM</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a89f3bca72298342d1b9bcb7c0c19600c">MEMORY_REG_IMM</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a1446ff028bd8d7e46b629547c41e0091">MEMORY_REG_REG</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a2749eb8ba67660dff3452bd18290db40">REGISTER</a> and <a href="#aa8ff80a3592fd38f2712f96eb51ea144a36dac1f8c77839337a68f8cd0c653864">TOKEN</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a39f9673926289aecff3b7f94bdc3c0bb">getImm</a>, <a href="#a5dd8eb345a392a179f6ae817c52a6a47">getMemBaseReg</a>, <a href="#ac360a86c8897a5769f817b4b2117bca4">getMemOffset</a>, <a href="#a43ff5a61c7d69362c123a763e1abcc89">getMemOffsetReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a>, <a href="#a63a7cb8e8bdf283aa515d839190811d7">getToken</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a2a3bd4906d93cc674c70d3317ccb3152">IMMEDIATE</a>, <a href="#af9936c1b05850142b1cfbccdfd89faf4">Kind</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a5293f86b07afd549ecdea7e613e2c41a">MEMORY_IMM</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a89f3bca72298342d1b9bcb7c0c19600c">MEMORY_REG_IMM</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a1446ff028bd8d7e46b629547c41e0091">MEMORY_REG_REG</a>, <a href="#aa8ff80a3592fd38f2712f96eb51ea144a2749eb8ba67660dff3452bd18290db40">REGISTER</a> and <a href="#aa8ff80a3592fd38f2712f96eb51ea144a36dac1f8c77839337a68f8cd0c653864">TOKEN</a>.</p>
 
 </div>
 </div>
@@ -3077,6 +3077,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

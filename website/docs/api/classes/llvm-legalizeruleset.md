@@ -3992,7 +3992,7 @@ class llvm::LegalizeRuleSet { ... }
 <p>Definition at line 1009 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/include/llvm/codegen/globalisel/legalizerinfo-h">LegalizerInfo.h</a>.</p>
 
 
-<p>Reference <a href="#a39bfb415182d98d5ac687986a2f7a52f">LegalizeRuleSet</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a873403a2506ac332f62ad4c2d7dc1835">llvm::all</a> and <a href="#a39bfb415182d98d5ac687986a2f7a52f">LegalizeRuleSet</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64legalizerinfo/#ae27667d7c3fbd41b18fd5838fc4f0553">llvm::AArch64LegalizerInfo::AArch64LegalizerInfo</a>.</p>
@@ -4278,7 +4278,7 @@ class llvm::LegalizeRuleSet { ... }
 <p>Definition at line 992 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/include/llvm/codegen/globalisel/legalizerinfo-h">LegalizerInfo.h</a>.</p>
 
 
-<p>References <a href="#a39bfb415182d98d5ac687986a2f7a52f">LegalizeRuleSet</a> and <a href="/web-llvm/docs/api/namespaces/llvm/legalizemutations/#a5574ba0db2a42fa195db009f06f1d731">llvm::LegalizeMutations::scalarize</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a873403a2506ac332f62ad4c2d7dc1835">llvm::all</a>, <a href="#a39bfb415182d98d5ac687986a2f7a52f">LegalizeRuleSet</a> and <a href="/web-llvm/docs/api/namespaces/llvm/legalizemutations/#a5574ba0db2a42fa195db009f06f1d731">llvm::LegalizeMutations::scalarize</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64legalizerinfo/#ae27667d7c3fbd41b18fd5838fc4f0553">llvm::AArch64LegalizerInfo::AArch64LegalizerInfo</a>.</p>
@@ -5500,6 +5500,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

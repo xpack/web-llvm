@@ -50,7 +50,7 @@ class anonymous{PassBuilder.cpp}::TriggerVerifierErrorPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ada1d133949e3d808f4e13f5cadf21495">run</a> (Module &amp;M, ModuleAnalysisManager &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -63,7 +63,7 @@ class anonymous{PassBuilder.cpp}::TriggerVerifierErrorPass { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa6e4c71c550683bb7d117491b717e2d1">run</a> (Function &amp;F, FunctionAnalysisManager &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -76,7 +76,7 @@ class anonymous{PassBuilder.cpp}::TriggerVerifierErrorPass { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a477b123c7ac80e57d0c8ac4abb0ff293">run</a> (MachineFunction &amp;MF, MachineFunctionAnalysisManager &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -145,7 +145,7 @@ class anonymous{PassBuilder.cpp}::TriggerVerifierErrorPass { ... }
 <p>Definition at line 393 of file <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilder-cpp">PassBuilder.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/globalalias/#a8a638534b520f72ab7f2c886da739a6c">llvm::GlobalAlias::create</a>, <a href="/web-llvm/docs/api/classes/llvm/pointertype/#af8a1dbdbfd89aa4899b3c0d39495d0dd">llvm::PointerType::getUnqual</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#aedfa75f0c85c4aa85b257f066fbea57ca1511edd03e02d1f3dd277a3c6abf6ad5">llvm::GlobalValue::InternalLinkage</a> and <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/globalalias/#a8a638534b520f72ab7f2c886da739a6c">llvm::GlobalAlias::create</a>, <a href="/web-llvm/docs/api/classes/llvm/pointertype/#af8a1dbdbfd89aa4899b3c0d39495d0dd">llvm::PointerType::getUnqual</a> and <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#aedfa75f0c85c4aa85b257f066fbea57ca1511edd03e02d1f3dd277a3c6abf6ad5">llvm::GlobalValue::InternalLinkage</a>.</p>
 
 </div>
 </div>
@@ -178,7 +178,7 @@ class anonymous{PassBuilder.cpp}::TriggerVerifierErrorPass { ... }
 <p>Definition at line 403 of file <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilder-cpp">PassBuilder.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aef9e9fcf4c5dfce90276ca16d91b8e46">llvm::BasicBlock::getTerminator</a> and <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#acf3c3aa4880eb60d00963ba93082c298">llvm::BasicBlock::getTerminator</a>.</p>
 
 </div>
 </div>
@@ -211,7 +211,7 @@ class anonymous{PassBuilder.cpp}::TriggerVerifierErrorPass { ... }
 <p>Definition at line 411 of file <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilder-cpp">PassBuilder.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ac1f888bba00f32cb4f9a0010c958f397">llvm::MachineFunction::getProperties</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a810234b6b3d223b7c74a4253fcc5ea5e">llvm::MachineFunction::getRegInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunctionproperties/#ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3">llvm::MachineFunctionProperties::NoVRegs</a>, <a href="/web-llvm/docs/api/classes/llvm/llt/#a67021459c7ef8f9a634b4eac7ffd0f96">llvm::LLT::scalar</a> and <a href="/web-llvm/docs/api/classes/llvm/machinefunctionproperties/#aa7780563d7ca260d0ae67d957b56427f">llvm::MachineFunctionProperties::set</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ac1f888bba00f32cb4f9a0010c958f397">llvm::MachineFunction::getProperties</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a810234b6b3d223b7c74a4253fcc5ea5e">llvm::MachineFunction::getRegInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunctionproperties/#ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3">llvm::MachineFunctionProperties::NoVRegs</a>, <a href="/web-llvm/docs/api/classes/llvm/llt/#a67021459c7ef8f9a634b4eac7ffd0f96">llvm::LLT::scalar</a> and <a href="/web-llvm/docs/api/classes/llvm/machinefunctionproperties/#aa7780563d7ca260d0ae67d957b56427f">llvm::MachineFunctionProperties::set</a>.</p>
 
 </div>
 </div>
@@ -265,6 +265,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

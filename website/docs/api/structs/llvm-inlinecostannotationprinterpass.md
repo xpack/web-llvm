@@ -74,7 +74,7 @@ struct llvm::InlineCostAnnotationPrinterPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa0abf6fac51bc051d817b1f71c921098">run</a> (Function &amp;F, FunctionAnalysisManager &amp;FAM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -197,7 +197,7 @@ struct llvm::InlineCostAnnotationPrinterPass { ... }
 <p>Declaration at line 347 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/inlinecost-h">InlineCost.h</a>, definition at line 3273 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlinecost-cpp">InlineCost.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aba7063dea024346c7b70099c63703f50">llvm::getInlineParams</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#adb5c319f5905c1d3ca9eb5df546388c5">llvm::Value::getName</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#a32e606ac4c88f71f14212e42b808e7f4">llvm::GlobalValue::isDeclaration</a>, <a href="#a18a45967121f9b770eb8a2dad250d9d6">OS</a> and <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlinecost-cpp/#a4759abeba02cb7646272d5253f36343d">PrintInstructionComments</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aba7063dea024346c7b70099c63703f50">llvm::getInlineParams</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#adb5c319f5905c1d3ca9eb5df546388c5">llvm::Value::getName</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#a32e606ac4c88f71f14212e42b808e7f4">llvm::GlobalValue::isDeclaration</a>, <a href="#a18a45967121f9b770eb8a2dad250d9d6">OS</a> and <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlinecost-cpp/#a4759abeba02cb7646272d5253f36343d">PrintInstructionComments</a>.</p>
 
 </div>
 </div>
@@ -286,6 +286,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

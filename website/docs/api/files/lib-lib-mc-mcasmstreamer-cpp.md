@@ -365,7 +365,7 @@ keywords:
 <p>Definition at line 1179 of file <a href="/web-llvm/docs/api/files/lib/lib/mc/mcasmstreamer-cpp">MCAsmStreamer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make_range</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make_range</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-mcasmstreamer-cpp-/mcasmstreamer/#a807369cf0e8ddbe75c8c4a671bfc4258">anonymous{MCAsmStreamer.cpp}::MCAsmStreamer::emitBytes</a>.</p>
@@ -401,7 +401,7 @@ keywords:
 <p>Definition at line 1190 of file <a href="/web-llvm/docs/api/files/lib/lib/mc/mcasmstreamer-cpp">MCAsmStreamer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ae0a2d87aa9c2d59f6c38b3d55f530fd9ad1ecc712b2ab5b0f004b0935208910f5">llvm::MCAsmInfo::ACLS_SingleQuotePrefix</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ae0a2d87aa9c2d59f6c38b3d55f530fd9a86253400608583c262a2539ece4b5e50">llvm::MCAsmInfo::ACLS_Unknown</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make_range</a> and <a href="#a6b2ce12e7db9e5e52f0b6f4e1d6df56a">toOctal</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ae0a2d87aa9c2d59f6c38b3d55f530fd9ad1ecc712b2ab5b0f004b0935208910f5">llvm::MCAsmInfo::ACLS_SingleQuotePrefix</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ae0a2d87aa9c2d59f6c38b3d55f530fd9a86253400608583c262a2539ece4b5e50">llvm::MCAsmInfo::ACLS_Unknown</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make_range</a> and <a href="#a6b2ce12e7db9e5e52f0b6f4e1d6df56a">toOctal</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-mcasmstreamer-cpp-/mcasmstreamer/#a807369cf0e8ddbe75c8c4a671bfc4258">anonymous{MCAsmStreamer.cpp}::MCAsmStreamer::emitBytes</a>.</p>
@@ -563,6 +563,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

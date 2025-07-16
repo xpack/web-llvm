@@ -74,7 +74,7 @@ class llvm::ProfileSummaryPrinterPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aff1db3108eff5862498fecfa0d419d72">run</a> (Module &amp;M, ModuleAnalysisManager &amp;AM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -197,7 +197,7 @@ class llvm::ProfileSummaryPrinterPass { ... }
 <p>Declaration at line 390 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/profilesummaryinfo-h">ProfileSummaryInfo.h</a>, definition at line 247 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/profilesummaryinfo-cpp">ProfileSummaryInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>, <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#af813576f394d690d9d51ca46810eaf87">llvm::ProfileSummaryInfo::isFunctionEntryCold</a> and <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#a55d31db902636df919d451f2b5859f50">llvm::ProfileSummaryInfo::isFunctionEntryHot</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>, <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#af813576f394d690d9d51ca46810eaf87">llvm::ProfileSummaryInfo::isFunctionEntryCold</a> and <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#a55d31db902636df919d451f2b5859f50">llvm::ProfileSummaryInfo::isFunctionEntryHot</a>.</p>
 
 </div>
 </div>
@@ -283,6 +283,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

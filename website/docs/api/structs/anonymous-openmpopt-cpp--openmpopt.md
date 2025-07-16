@@ -712,7 +712,7 @@ struct anonymous{OpenMPOpt.cpp}::OpenMPOpt { ... }
 <p>Definition at line 1004 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp">OpenMPOpt.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/hwaddresssanitizer-cpp/#af9c57b6a103aa3fdadcb6948dedcf255">emitRemark</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a91921ada405fd6ba65dff028df047cb6">llvm::Remark</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/hwaddresssanitizer-cpp/#af9c57b6a103aa3fdadcb6948dedcf255">emitRemark</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a91921ada405fd6ba65dff028df047cb6">llvm::Remark</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 
 <p>Referenced by <a href="#a3715ff76248cd11064f4eac13cd4a36a">run</a>.</p>
@@ -820,7 +820,7 @@ struct anonymous{OpenMPOpt.cpp}::OpenMPOpt { ... }
 <p>Definition at line 952 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp">OpenMPOpt.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a131ec2397cbcfd7ee30953b80007aff1">EnableParallelRegionMerging</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a065da0cf2ac5bad0d6e263f369387776">HideMemoryTransferLatency</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="#a19a12f36a46bbf598b5b63fa9ddbbab8">printICVs</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#aa641955935d8378b0744b30a166276cb">PrintICVValues</a>, <a href="#a555390458cd46cf273eeea30447a86dc">printKernels</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a45aaae44beb2fb291285b35f51d2795a">PrintOpenMPKernels</a>, <a href="#a9bd4c8075314a215a067cb84ad8f9c30">remarksEnabled</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a01dcc1d7b3fe71c031ab52a3ee7e02f0">TAG</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a131ec2397cbcfd7ee30953b80007aff1">EnableParallelRegionMerging</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a065da0cf2ac5bad0d6e263f369387776">HideMemoryTransferLatency</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="#a19a12f36a46bbf598b5b63fa9ddbbab8">printICVs</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#aa641955935d8378b0744b30a166276cb">PrintICVValues</a>, <a href="#a555390458cd46cf273eeea30447a86dc">printKernels</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a45aaae44beb2fb291285b35f51d2795a">PrintOpenMPKernels</a>, <a href="#a9bd4c8075314a215a067cb84ad8f9c30">remarksEnabled</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/openmpopt-cpp/#a01dcc1d7b3fe71c031ab52a3ee7e02f0">TAG</a>.</p>
 
 </div>
 </div>
@@ -1830,6 +1830,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

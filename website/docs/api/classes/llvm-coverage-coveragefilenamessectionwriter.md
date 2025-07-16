@@ -160,7 +160,7 @@ class llvm::coverage::CoverageFilenamesSectionWriter { ... }
 <p>Declaration at line 37 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemappingwriter-h">CoverageMappingWriter.h</a>, definition at line 39 of file <a href="/web-llvm/docs/api/files/lib/lib/profiledata/lib/profiledata/coverage/coveragemappingwriter-cpp">CoverageMappingWriter.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm::arrayRefFromStringRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib/#aca36e81333c6bff75084ce9df5c1baaf">llvm::compression::zlib::BestSizeCompression</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib/#a0cde98f89d9b23b493dc0c7c0f054eb5">llvm::compression::zlib::compress</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2e4a8930fb1939c46c38cad11d16536d">llvm::DoInstrProfNameCompression</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad0f8c0e82cde3bb0849fc59e3510f05a">llvm::encodeULEB128</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib/#a369da242fd5c0d70a31ffcd3374a0909">llvm::compression::zlib::isAvailable</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aeeb5973ff74c4c4d279e275b34b7ef54">llvm::toStringRef</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib/#aca36e81333c6bff75084ce9df5c1baaf">llvm::compression::zlib::BestSizeCompression</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib/#a0cde98f89d9b23b493dc0c7c0f054eb5">llvm::compression::zlib::compress</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2e4a8930fb1939c46c38cad11d16536d">llvm::DoInstrProfNameCompression</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad0f8c0e82cde3bb0849fc59e3510f05a">llvm::encodeULEB128</a>, <a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib/#a369da242fd5c0d70a31ffcd3374a0909">llvm::compression::zlib::isAvailable</a> and <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</a>.</p>
 
 </div>
 </div>
@@ -209,6 +209,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

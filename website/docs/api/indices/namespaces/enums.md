@@ -91,6 +91,7 @@ keywords:
 <li><b>attributeBits</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/x86disassembler/#a6417cabaf5514433877aa0592985e761">llvm::X86Disassembler</a></li>
 <li><b>AttributeCodes</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#ac2c80c9b0f575d0333db3cd06da1e51e">llvm::bitc</a></li>
 <li><b>AttributeKindCodes</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a53da1c4a4f1ae171b53bae755abab1a3">llvm::bitc</a></li>
+<li><b>AttributeSafetyKind</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#aa01ebfb5122911f6d17fb843d617a953">llvm::AttributeFuncs</a></li>
 <li><b>AttributorRunOption</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a51e547c2283920aa77da2650a8ee3a7a">llvm</a></li>
 <li><b>AttrMagic</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/elfattrs/#a98edb75fed695278964e1ea77f18859e">llvm::ELFAttrs</a></li>
 <li><b>AttrType</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/armbuildattrs/#aea10ca6bf098a425d51ac7fe65d30ed6">llvm::ARMBuildAttrs</a></li>
@@ -99,7 +100,6 @@ keywords:
 <li><b>AttrType</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/hexagonattrs/#a9273648ff11b0cd9cc6c1fca21757b0a">llvm::HexagonAttrs</a></li>
 <li><b>AttrType</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/msp430attrs/#a25e36607b32e2fa00c5a41e8733acad2">llvm::MSP430Attrs</a></li>
 <li><b>AttrType</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/riscvattrs/#ac0e6d65dbd5acd98356e49a2ea9c4e72">llvm::RISCVAttrs</a></li>
-<li><b>AuthCheckMethod</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#abf78b4a589091577668be8331dbf3e10">llvm::AArch64PAuth</a></li>
 <li><b>AuxHeaderFlags64</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/xcoff/#a05c6b1f3be855ab23f376f499c51e720">llvm::XCOFF</a></li>
 <li><b>AuxiliaryType</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-wincoffobjectwriter-cpp-/#a0d0cd82d6f91b09d8fe9f97d51f8bf4e">anonymous{WinCOFFObjectWriter.cpp}</a></li>
 <li><b>AuxSymbolType</b>: as enum in namespace <a href="/web-llvm/docs/api/namespaces/llvm/coff/#a1ac41f12e78c867767cbec2bdc3a0d7f">llvm::COFF</a></li>
@@ -1262,6 +1262,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

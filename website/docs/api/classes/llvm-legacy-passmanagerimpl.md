@@ -652,7 +652,7 @@ class llvm::legacy::PassManagerImpl { ... }
 <p>Definition at line 490 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/legacypassmanager-cpp">LegacyPassManager.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#a9bcf6682702cbde1eeeb006b7e49cf62">llvm::PMTopLevelManager::dumpArguments</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#aa58716ef5ab4c044f1f90f257bf91e6a">llvm::PMTopLevelManager::dumpPasses</a>, <a href="#aa361fb3ab0c9da9975f3df18f57e2d5a">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager::getImmutablePasses</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad54000cb15d4de5f1cccee55f29e6ab1">llvm::PMTopLevelManager::initializeAllAnalysisInfo</a> and <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#a926189935285d6e5df83fc0f45bf9b36">UseNewDbgInfoFormat</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#a9bcf6682702cbde1eeeb006b7e49cf62">llvm::PMTopLevelManager::dumpArguments</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#aa58716ef5ab4c044f1f90f257bf91e6a">llvm::PMTopLevelManager::dumpPasses</a>, <a href="#aa361fb3ab0c9da9975f3df18f57e2d5a">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager::getImmutablePasses</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad54000cb15d4de5f1cccee55f29e6ab1">llvm::PMTopLevelManager::initializeAllAnalysisInfo</a> and <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#a926189935285d6e5df83fc0f45bf9b36">UseNewDbgInfoFormat</a>.</p>
 
 </div>
 </div>
@@ -745,6 +745,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

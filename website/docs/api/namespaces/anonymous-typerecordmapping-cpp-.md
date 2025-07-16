@@ -251,7 +251,7 @@ namespace anonymous{TypeRecordMapping.cpp} { ... }
 <p>Definition at line 67 of file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/typerecordmapping-cpp">TypeRecordMapping.cpp</a>.</p>
 
 
-<p>References <a href="#aab0a3b77b4bc8f281c4055901b7601c6">compEnumNames</a>, <a href="/web-llvm/docs/api/classes/llvm/codeview/codeviewrecordio/#a2f8c96256f7e5bebf44bea43479cc33a">llvm::codeview::CodeViewRecordIO::isStreaming</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a74cdbd1e4f731e7d7cd83461b8b1de0b">llvm::sort</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3beda524b0772ca36035db4399a6a571">llvm::utohexstr</a>.</p>
+<p>References <a href="#aab0a3b77b4bc8f281c4055901b7601c6">compEnumNames</a>, <a href="/web-llvm/docs/api/classes/llvm/codeview/codeviewrecordio/#a2f8c96256f7e5bebf44bea43479cc33a">llvm::codeview::CodeViewRecordIO::isStreaming</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a74cdbd1e4f731e7d7cd83461b8b1de0b">llvm::sort</a>.</p>
 
 
 <p>Referenced by <a href="#a6e24199be7ad39f6ae05ce0b9ee14f31">getMemberAttributes</a>.</p>
@@ -383,6 +383,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

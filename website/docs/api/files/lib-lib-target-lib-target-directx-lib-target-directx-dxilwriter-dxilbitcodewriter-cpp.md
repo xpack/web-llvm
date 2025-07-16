@@ -155,7 +155,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;unsigned CLASS##Abbrev = 0;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab32240e87649f32aceeda23ea6499c4c">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;unsigned CLASS##Abbrev = 0;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -168,7 +168,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1f378efe7b9888496956feb63c04314f">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -250,7 +250,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#ab32240e87649f32aceeda23ea6499c4c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -275,7 +275,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#a1f378efe7b9888496956feb63c04314f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -318,6 +318,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

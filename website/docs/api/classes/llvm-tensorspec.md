@@ -753,7 +753,7 @@ class llvm::TensorSpec { ... }
 <p>Declaration at line 98 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/tensorspec-h">TensorSpec.h</a>, definition at line 50 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/tensorspec-cpp">TensorSpec.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a4754bca88e59468dba45df18b849920a">llvm::json::OStream::attribute</a>, <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a7ff67320cc541a438d8fc170124af74f">llvm::json::OStream::attributeArray</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a6a9f043784cf87001c84980afa76da82">D</a>, <a href="#a0a8d71123d2154368bafb1c1e735ec4f">name</a>, <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a06d556674c46c15e5906f2f645f4fbe5">llvm::json::OStream::object</a>, <a href="#a8407a2c7d47d9507fc98f5d97fe986fb">port</a>, <a href="#a568e8175449e55ebd01ff02c9903c332">shape</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>, <a href="#a37eb59e5bbef46aa507c422a53104530">type</a> and <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#ad132dccf457f071b5854a8c94135e7c2">llvm::json::OStream::value</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a4754bca88e59468dba45df18b849920a">llvm::json::OStream::attribute</a>, <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a7ff67320cc541a438d8fc170124af74f">llvm::json::OStream::attributeArray</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a6a9f043784cf87001c84980afa76da82">D</a>, <a href="#a0a8d71123d2154368bafb1c1e735ec4f">name</a>, <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a06d556674c46c15e5906f2f645f4fbe5">llvm::json::OStream::object</a>, <a href="#a8407a2c7d47d9507fc98f5d97fe986fb">port</a>, <a href="#a568e8175449e55ebd01ff02c9903c332">shape</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>, <a href="#a37eb59e5bbef46aa507c422a53104530">type</a> and <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#ad132dccf457f071b5854a8c94135e7c2">llvm::json::OStream::value</a>.</p>
 
 </div>
 </div>
@@ -1041,6 +1041,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

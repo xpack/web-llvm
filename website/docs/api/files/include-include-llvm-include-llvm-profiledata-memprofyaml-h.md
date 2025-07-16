@@ -215,7 +215,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a87ae01b600b09ae28a47643c0ff6ea69">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -272,7 +272,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a87ae01b600b09ae28a47643c0ff6ea69}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -312,6 +312,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

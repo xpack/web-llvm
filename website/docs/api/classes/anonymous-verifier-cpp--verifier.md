@@ -2539,7 +2539,7 @@ class anonymous{Verifier.cpp}::Verifier { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void Verifier::checkUnsignedBaseTenFuncAttr (AttributeList Attrs, <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> Attr, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * V)</td>
+<td class="doxyMemberName">void Verifier::checkUnsignedBaseTenFuncAttr (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> Attrs, <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> Attr, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * V)</td>
 </tr>
 </table>
 </td>
@@ -2615,7 +2615,7 @@ class anonymous{Verifier.cpp}::Verifier { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool Verifier::verifyAttributeCount (AttributeList Attrs, unsigned Params)</td>
+<td class="doxyMemberName">bool Verifier::verifyAttributeCount (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> Attrs, unsigned Params)</td>
 </tr>
 </table>
 </td>
@@ -2891,7 +2891,7 @@ class anonymous{Verifier.cpp}::Verifier { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void Verifier::verifyFunctionAttrs (<a href="/web-llvm/docs/api/classes/llvm/functiontype">FunctionType</a> * FT, AttributeList Attrs, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * V, bool IsIntrinsic, bool IsInlineAsm)</td>
+<td class="doxyMemberName">void Verifier::verifyFunctionAttrs (<a href="/web-llvm/docs/api/classes/llvm/functiontype">FunctionType</a> * FT, <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> Attrs, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * V, bool IsIntrinsic, bool IsInlineAsm)</td>
 </tr>
 </table>
 </td>
@@ -3220,7 +3220,7 @@ class anonymous{Verifier.cpp}::Verifier { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void Verifier::verifyTailCCMustTailAttrs (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AttrBuilder &amp; Attrs, <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> Context)</td>
+<td class="doxyMemberName">void Verifier::verifyTailCCMustTailAttrs (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; Attrs, <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> Context)</td>
 </tr>
 </table>
 </td>
@@ -6297,6 +6297,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

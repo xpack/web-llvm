@@ -173,7 +173,7 @@ class llvm::sandboxir::SingleLLVMInstructionImpl&lt;LLVMT&gt; { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a>. <a href="#afa53e9f580e933d74db578d6f567e7b5">More...</a></p>
+<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a>. <a href="#afa53e9f580e933d74db578d6f567e7b5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -489,7 +489,7 @@ class llvm::sandboxir::SingleLLVMInstructionImpl&lt;LLVMT&gt; { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a>.</p>
+<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a>.</p>
 
 <p>Definition at line 401 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>.</p>
 
@@ -655,6 +655,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

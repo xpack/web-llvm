@@ -315,13 +315,13 @@ keywords:
 
 
 <pre><code>///                    ┬ "Unknown"
-///                          |
-///                          v
-///                         True
-///                          |
-///                          v
-///                      ⊥ False
-///
+ *                           |
+ *                           v
+ *                          True
+ *                           |
+ *                           v
+ *                       ⊥ False
+ *
 </code></pre>
 
 
@@ -477,6 +477,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -253,7 +253,7 @@ class llvm::IRBuilderBase::InsertPoint { ... }
 <p>Definition at line 291 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h">IRBuilder.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a4f81b9940e1869e146636dc533455929">llvm::OpenMPIRBuilder::createParallel</a>, <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a9702d30c99a5459e9565631adf1fdf1b">emitTaskDependencies</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ac8778dcbd35e8ae5902050117feb57a0">llvm::IRBuilderBase::restoreIP</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a78e14f66d8a8405c6882b5ff6a3b7617">llvm::spliceBB</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a85ee70791795fa2ddb07694182f783b2">llvm::splitBB</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a70356a38271d388e7c4b477cef0d7b2c">llvm::OpenMPIRBuilder::createCopyinClauseBlocks</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a4f81b9940e1869e146636dc533455929">llvm::OpenMPIRBuilder::createParallel</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab0996924f219129d8de3cc1b8830f768">llvm::OpenMPIRBuilder::createReductions</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0af3c7a02c1325c04c59f857604bd4f3">llvm::OpenMPIRBuilder::createTask</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2841680b34ec9c2c7185a877f8f8b4c8">llvm::OpenMPIRBuilder::emitTargetTask</a>, <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a9702d30c99a5459e9565631adf1fdf1b">emitTaskDependencies</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ac8778dcbd35e8ae5902050117feb57a0">llvm::IRBuilderBase::restoreIP</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a78e14f66d8a8405c6882b5ff6a3b7617">llvm::spliceBB</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a85ee70791795fa2ddb07694182f783b2">llvm::splitBB</a>.</p>
 
 </div>
 </div>
@@ -319,7 +319,7 @@ class llvm::IRBuilderBase::InsertPoint { ... }
 <p>Definition at line 289 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h">IRBuilder.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a08610118e213de1b759470f0eafb9b18">llvm::OpenMPIRBuilder::collapseLoops</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ac669acbd0f638c6ef32977575362052e">llvm::OpenMPIRBuilder::createCanonicalLoop</a> and <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ac8778dcbd35e8ae5902050117feb57a0">llvm::IRBuilderBase::restoreIP</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a08610118e213de1b759470f0eafb9b18">llvm::OpenMPIRBuilder::collapseLoops</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ac669acbd0f638c6ef32977575362052e">llvm::OpenMPIRBuilder::createCanonicalLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a70356a38271d388e7c4b477cef0d7b2c">llvm::OpenMPIRBuilder::createCopyinClauseBlocks</a> and <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ac8778dcbd35e8ae5902050117feb57a0">llvm::IRBuilderBase::restoreIP</a>.</p>
 
 </div>
 </div>
@@ -392,6 +392,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

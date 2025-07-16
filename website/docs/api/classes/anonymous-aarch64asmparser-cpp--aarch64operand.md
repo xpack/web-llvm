@@ -6929,7 +6929,7 @@ class anonymous{AArch64AsmParser.cpp}::AArch64Operand { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="#a60bb6fba3a328904a2c49fca0fff3908">Tok</a>.</p>
 
 
-<p>Referenced by <a href="#a763e5d73a932a30d95c888b81f45a0c3">print</a>.</p>
+<p>Referenced by <a href="#a7240770a4389825ad34599244815758d">isTokenEqual</a> and <a href="#a763e5d73a932a30d95c888b81f45a0c3">print</a>.</p>
 
 </div>
 </div>
@@ -10069,7 +10069,7 @@ class anonymous{AArch64AsmParser.cpp}::AArch64Operand { ... }
 <p>Definition at line 1513 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/asmparser/aarch64asmparser-cpp">AArch64AsmParser.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a20237283e8b9e354abec8dc5ab16bd16">llvm::getToken</a>.</p>
+<p>Reference <a href="#a69c86c3f6d0cb218cb21fdff76b52061">getToken</a>.</p>
 
 </div>
 </div>
@@ -11918,6 +11918,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

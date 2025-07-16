@@ -198,7 +198,7 @@ class llvm::sandboxir::PHINode { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acd1070a3eee499375b94cf02540339dc">getIncomingBlock</a> (unsigned Idx) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -211,7 +211,7 @@ class llvm::sandboxir::PHINode { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad0d853291c96744ba3dfc2378ee79beb">getIncomingBlock</a> (const Use &amp;U) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -531,7 +531,7 @@ class llvm::sandboxir::PHINode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::PHINode::addIncoming (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * V, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">void llvm::sandboxir::PHINode::addIncoming (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * V, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -545,7 +545,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2433 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 868 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/tracker/#ae78b97b8ea9885d09219a569caff84b7">llvm::sandboxir::Tracker::emplaceIfTracking</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/tracker/#ae78b97b8ea9885d09219a569caff84b7">llvm::sandboxir::Tracker::emplaceIfTracking</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -664,7 +664,7 @@ class llvm::sandboxir::PHINode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int llvm::sandboxir::PHINode::getBasicBlockIndex (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">int llvm::sandboxir::PHINode::getBasicBlockIndex (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -678,7 +678,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2438 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 893 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#a0b2bc62c021fac7a3b7cb98ba3654ff3">removeIncomingValue</a>.</p>
@@ -709,7 +709,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2428 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 848 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#adb65b7728328242af02bba662ee8e7d7">replaceIncomingBlockWith</a> and <a href="#a8fd48c955a259895ca147ea9f2cd6d64">setIncomingBlock</a>.</p>
@@ -740,7 +740,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2429 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 852 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -785,7 +785,7 @@ class llvm::sandboxir::PHINode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">Value * llvm::sandboxir::PHINode::getIncomingValueForBlock (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">Value * llvm::sandboxir::PHINode::getIncomingValueForBlock (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -799,7 +799,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2439 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 897 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -1034,7 +1034,7 @@ class llvm::sandboxir::PHINode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">Value * llvm::sandboxir::PHINode::removeIncomingValue (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">Value * llvm::sandboxir::PHINode::removeIncomingValue (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -1048,7 +1048,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2436 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 883 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/tracker/#ae78b97b8ea9885d09219a569caff84b7">llvm::sandboxir::Tracker::emplaceIfTracking</a>, <a href="#a0bd218c8383719a7f1239ba4311df02a">getBasicBlockIndex</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/tracker/#ae78b97b8ea9885d09219a569caff84b7">llvm::sandboxir::Tracker::emplaceIfTracking</a>, <a href="#a0bd218c8383719a7f1239ba4311df02a">getBasicBlockIndex</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -1087,7 +1087,7 @@ class llvm::sandboxir::PHINode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::PHINode::replaceIncomingBlockWith (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * Old, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * New)</td>
+<td class="doxyMemberName">void llvm::sandboxir::PHINode::replaceIncomingBlockWith (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * Old, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * New)</td>
 </tr>
 </table>
 </td>
@@ -1101,7 +1101,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2447 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 907 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/demangle/itaniumdemangle-h/#a536e22898d28a9340a4204407a75ad5d">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="#acd1070a3eee499375b94cf02540339dc">getIncomingBlock</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#ac600a3ffce54e05ca28e586af7a04831">llvm::sandboxir::User::getNumOperands</a>, <a href="#a8fd48c955a259895ca147ea9f2cd6d64">setIncomingBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/demangle/itaniumdemangle-h/#a536e22898d28a9340a4204407a75ad5d">AbstractManglingParser&lt; Derived, Alloc &gt;::NumOps</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="#acd1070a3eee499375b94cf02540339dc">getIncomingBlock</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#ac600a3ffce54e05ca28e586af7a04831">llvm::sandboxir::User::getNumOperands</a>, <a href="#a8fd48c955a259895ca147ea9f2cd6d64">setIncomingBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1115,7 @@ class llvm::sandboxir::PHINode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::PHINode::setIncomingBlock (unsigned Idx, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">void llvm::sandboxir::PHINode::setIncomingBlock (unsigned Idx, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -1129,7 +1129,7 @@ class llvm::sandboxir::PHINode { ... }
 <p>Declaration at line 2431 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 857 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="#acd1070a3eee499375b94cf02540339dc">getIncomingBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="#acd1070a3eee499375b94cf02540339dc">getIncomingBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#adb65b7728328242af02bba662ee8e7d7">replaceIncomingBlockWith</a>.</p>
@@ -1352,6 +1352,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

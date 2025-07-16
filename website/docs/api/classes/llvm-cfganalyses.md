@@ -73,7 +73,7 @@ class llvm::CFGAnalyses { ... }
 <p>Represents analyses that only rely on functions' control flow.</p>
 
 
-<p>This can be used with <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></span> to mark the CFG as preserved and to query whether it has been preserved.</p>
+<p>This can be used with <span class="doxyComputerOutput">PreservedAnalyses</span> to mark the CFG as preserved and to query whether it has been preserved.</p>
 
 
 <p>The CFG of a function is defined as the set of basic blocks and the edges between them. Changing the set of basic blocks in a function is enough to mutate the CFG. Mutating the condition of a branch or argument of an invoked function does not mutate the CFG, but changing the successor labels of those instructions does.</p>
@@ -165,6 +165,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

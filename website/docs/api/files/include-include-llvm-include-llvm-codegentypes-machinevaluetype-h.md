@@ -102,7 +102,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a441ffb07fbce8bc0e1dcd6a5eb31b220">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acf1cd0bba75ee946c5a7042577739ee9">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -115,7 +115,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a73ccbbe919d9feba8bafd0e71e58ce90">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;    EltTy,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad141ef60de24dcf05ecec0abd6b38b41">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;    EltTy,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -128,7 +128,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a73ccbbe919d9feba8bafd0e71e58ce90">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;    NElem,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a570fab73bcd1543429d842da0ffdd29f">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;    NElem,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -141,7 +141,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a73ccbbe919d9feba8bafd0e71e58ce90">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a176e6c36edf03e04528fbfec6164de1c">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -154,7 +154,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a441ffb07fbce8bc0e1dcd6a5eb31b220">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adbcc54c542b322bb102bfed77c02a812">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -167,20 +167,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a441ffb07fbce8bc0e1dcd6a5eb31b220">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afe15807ff685eccfff8b6d67f6ef191f">GET_VT_VECATTR</a>(Ty, Sc, Tup, nElem, ElTy)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a34e6d54c86828fe4d0d84532137b0cc3">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -206,7 +193,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aea21bead249e6ca78fb7328b3f26bca0">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, nElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a57a0c51fceecc4fc7d3bf96f7a32df5a">GET_VT_VECATTR</a>(Ty, Sc, Tup, nElem, ElTy)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -219,7 +206,20 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a73ccbbe919d9feba8bafd0e71e58ce90">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;    NF,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a94df055af733fe394fa07b2a7ae0924d">GET_VT_ATTR</a>(Ty, n, sz, Any, Int, FP, Vec, Sc, Tup, NF, nElem, EltTy)&nbsp;&nbsp;&nbsp;...</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a448090e6e7f7b887afb3de03dd5bf9d8">GET_VT_ATTR</a>(Ty, N, Sz, Any, Int, FP, Vec, Sc, Tup, NF, NElem, EltTy)&nbsp;&nbsp;&nbsp;    NF,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -262,7 +262,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a441ffb07fbce8bc0e1dcd6a5eb31b220}
+### GET\_VT\_ATTR {#acf1cd0bba75ee946c5a7042577739ee9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -296,7 +296,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a73ccbbe919d9feba8bafd0e71e58ce90}
+### GET\_VT\_ATTR {#ad141ef60de24dcf05ecec0abd6b38b41}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -321,7 +321,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a73ccbbe919d9feba8bafd0e71e58ce90}
+### GET\_VT\_ATTR {#a570fab73bcd1543429d842da0ffdd29f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -346,7 +346,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a73ccbbe919d9feba8bafd0e71e58ce90}
+### GET\_VT\_ATTR {#a176e6c36edf03e04528fbfec6164de1c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -380,7 +380,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a441ffb07fbce8bc0e1dcd6a5eb31b220}
+### GET\_VT\_ATTR {#adbcc54c542b322bb102bfed77c02a812}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -414,7 +414,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a441ffb07fbce8bc0e1dcd6a5eb31b220}
+### GET\_VT\_ATTR {#a34e6d54c86828fe4d0d84532137b0cc3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -448,7 +448,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#aea21bead249e6ca78fb7328b3f26bca0}
+### GET\_VT\_ATTR {#a94df055af733fe394fa07b2a7ae0924d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -482,7 +482,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_ATTR {#a73ccbbe919d9feba8bafd0e71e58ce90}
+### GET\_VT\_ATTR {#a448090e6e7f7b887afb3de03dd5bf9d8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -566,7 +566,7 @@ keywords:
 </div>
 </div>
 
-### GET\_VT\_VECATTR {#afe15807ff685eccfff8b6d67f6ef191f}
+### GET\_VT\_VECATTR {#a57a0c51fceecc4fc7d3bf96f7a32df5a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -604,6 +604,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

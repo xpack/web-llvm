@@ -285,9 +285,6 @@ struct llvm::RTLIB::RuntimeLibcallsInfo { ... }
 
 <p>Definition at line 66 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/runtimelibcalls-h">RuntimeLibcalls.h</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
-
 </div>
 </div>
 
@@ -317,9 +314,6 @@ struct llvm::RTLIB::RuntimeLibcallsInfo { ... }
 <p>Get the libcall routine name for the specified libcall.</p>
 
 <p>Definition at line 56 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/runtimelibcalls-h">RuntimeLibcalls.h</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
 
 </div>
 </div>
@@ -388,7 +382,7 @@ struct llvm::RTLIB::RuntimeLibcallsInfo { ... }
 <p>Definition at line 61 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/runtimelibcalls-h">RuntimeLibcalls.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a77c69067ae8279bc00ab8757731e90d7">CC</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a77c69067ae8279bc00ab8757731e90d7">CC</a>.</p>
 
 </div>
 </div>
@@ -419,9 +413,6 @@ struct llvm::RTLIB::RuntimeLibcallsInfo { ... }
 <p>Rename the default libcall routine name for the specified libcall.</p>
 
 <p>Definition at line 46 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/runtimelibcalls-h">RuntimeLibcalls.h</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
 
 
 <p>Referenced by <a href="#af63e145c581904f2010d6c652d085b11">setLibcallName</a>.</p>
@@ -457,7 +448,7 @@ struct llvm::RTLIB::RuntimeLibcallsInfo { ... }
 <p>Definition at line 50 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/runtimelibcalls-h">RuntimeLibcalls.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="#a697008e4ddec587cede17d61986e2938">setLibcallName</a>.</p>
+<p>Reference <a href="#a697008e4ddec587cede17d61986e2938">setLibcallName</a>.</p>
 
 </div>
 </div>
@@ -603,6 +594,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

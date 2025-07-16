@@ -127,7 +127,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8eb5679394eeccdeab4e82702cca8e25">FUSION_FEATURE</a>(KIND, HAS_FEATURE, DEP_OP_IDX, OPSET1, OPSET2)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a22589e188dfff77ff75c4d92b8ca79af">FUSION_FEATURE</a>(KIND, HAS_FEATURE, DEP_OP_IDX, OPSET1, OPSET2)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -140,7 +140,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aede192e6a381e3bedcf0889e25f33058">FUSION_OP_SET</a>(...)&nbsp;&nbsp;&nbsp;__VA_ARGS__</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad6da3575a0d56367f4e788b3ae23e091">FUSION_OP_SET</a>(...)&nbsp;&nbsp;&nbsp;__VA_ARGS__</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -183,7 +183,7 @@ keywords:
 </div>
 </div>
 
-### FUSION\_FEATURE {#a8eb5679394eeccdeab4e82702cca8e25}
+### FUSION\_FEATURE {#a22589e188dfff77ff75c4d92b8ca79af}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -265,7 +265,7 @@ keywords:
 </div>
 </div>
 
-### FUSION\_OP\_SET {#aede192e6a381e3bedcf0889e25f33058}
+### FUSION\_OP\_SET {#ad6da3575a0d56367f4e788b3ae23e091}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -291,6 +291,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

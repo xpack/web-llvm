@@ -175,7 +175,7 @@ class llvm::PluginInlineAdvisorAnalysis { ... }
 <p>} // namespace</p>
 
 
-<p>extern "C" LLVM_ATTRIBUTE_WEAK <a href="/web-llvm/docs/api/structs/llvm/passpluginlibraryinfo">llvm::PassPluginLibraryInfo</a> <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/passplugin-h/#a2d26765d5eb741ed4b6f72c7fef51c99">llvmGetPassPluginInfo()</a> { return {LLVM_PLUGIN_API_VERSION, "DynamicDefaultAdvisor", LLVM_VERSION_STRING, [](<a href="/web-llvm/docs/api/classes/llvm/passbuilder">PassBuilder</a> &amp;PB) { PB.registerAnalysisRegistrationCallback( [](<a href="/web-llvm/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;MAM) { <a href="/web-llvm/docs/api/classes/llvm/plugininlineadvisoranalysis">PluginInlineAdvisorAnalysis</a> PA(defaultAdvisorFactory); MAM.registerPass([&amp;] { return PA; }); }); }}; }</p>
+<p>extern "C" LLVM_ATTRIBUTE_WEAK <a href="/web-llvm/docs/api/structs/llvm/passpluginlibraryinfo">llvm::PassPluginLibraryInfo</a> <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/passplugin-h/#aedb30b5365f0c854e71a27da0db8e172">llvmGetPassPluginInfo()</a> { return {LLVM_PLUGIN_API_VERSION, "DynamicDefaultAdvisor", LLVM_VERSION_STRING, [](<a href="/web-llvm/docs/api/classes/llvm/passbuilder">PassBuilder</a> &amp;PB) { PB.registerAnalysisRegistrationCallback( [](<a href="/web-llvm/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;MAM) { <a href="/web-llvm/docs/api/classes/llvm/plugininlineadvisoranalysis">PluginInlineAdvisorAnalysis</a> PA(defaultAdvisorFactory); MAM.registerPass([&amp;] { return PA; }); }); }}; }</p>
 
 
 <p>A plugin must implement an <a href="#a93eea258d63139c33eb8c616cbf874d0">AdvisorFactory</a> and register it with a PluginInlineAdvisorAnlysis to the provided <a href="/web-llvm/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a>.</p>
@@ -403,6 +403,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

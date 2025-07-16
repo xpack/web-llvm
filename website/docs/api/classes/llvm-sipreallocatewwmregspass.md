@@ -55,7 +55,7 @@ class llvm::SIPreAllocateWWMRegsPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0b2123e3a8afffcdfc0e364d088f39a">run</a> (MachineFunction &amp;MF, MachineFunctionAnalysisManager &amp;MFAM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -100,7 +100,7 @@ class llvm::SIPreAllocateWWMRegsPass { ... }
 <p>Declaration at line 19 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/sipreallocatewwmregs-h">SIPreAllocateWWMRegs.h</a>, definition at line 263 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/sipreallocatewwmregs-cpp">SIPreAllocateWWMRegs.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/liveregmatrix-cpp/#a8989acb71bd355e02bcf3a930b5e54ea">Matrix</a> and <a href="/web-llvm/docs/api/classes/llvm/virtregmapanalysis/#a01f5f291c2aa5b0c076173adeb2dbd3a">llvm::VirtRegMapAnalysis::run</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/liveregmatrix-cpp/#a8989acb71bd355e02bcf3a930b5e54ea">Matrix</a> and <a href="/web-llvm/docs/api/classes/llvm/virtregmapanalysis/#a01f5f291c2aa5b0c076173adeb2dbd3a">llvm::VirtRegMapAnalysis::run</a>.</p>
 
 </div>
 </div>
@@ -118,6 +118,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -583,7 +583,7 @@ struct anonymous{DelaySlotFiller.cpp}::Filler { ... }
 <p>Declaration at line 46 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/delayslotfiller-cpp">DelaySlotFiller.cpp</a>, definition at line 90 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lanaidelayslotfiller-cpp">LanaiDelaySlotFiller.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a">llvm::dwarf_linker::DebugLoc</a>, <a href="/web-llvm/docs/api/structs/anonymous-lanaidelayslotfiller-cpp-/filler/#a887f26859fdf1fa3f8360bef4fe1252a">anonymous{LanaiDelaySlotFiller.cpp}::Filler::findDelayInstr</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lanaidelayslotfiller-cpp/#a52f251c1cb1fe495fb473128c54970cd">NopDelaySlotFiller</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a">llvm::dwarf_linker::DebugLoc</a>, <a href="/web-llvm/docs/api/structs/anonymous-lanaidelayslotfiller-cpp-/filler/#a887f26859fdf1fa3f8360bef4fe1252a">anonymous{LanaiDelaySlotFiller.cpp}::Filler::findDelayInstr</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lanaidelayslotfiller-cpp/#a52f251c1cb1fe495fb473128c54970cd">NopDelaySlotFiller</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a>.</p>
 
 
 <p>Referenced by <a href="#adcf21c9a0930af2da038e3d506d2aa17">runOnMachineFunction</a>.</p>
@@ -620,7 +620,7 @@ struct anonymous{DelaySlotFiller.cpp}::Filler { ... }
 <p>Definition at line 47 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/delayslotfiller-cpp">DelaySlotFiller.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="#a9baf04614027589b987401d1e952826d">runOnMachineBasicBlock</a> and <a href="#aed8c37de67c715ae6adb76353ebe5dcb">Subtarget</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="#a9baf04614027589b987401d1e952826d">runOnMachineBasicBlock</a> and <a href="#aed8c37de67c715ae6adb76353ebe5dcb">Subtarget</a>.</p>
 
 </div>
 </div>
@@ -742,6 +742,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

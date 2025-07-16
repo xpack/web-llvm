@@ -364,7 +364,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&nbsp;&nbsp;&nbsp;"early-<a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a>-predicator"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1dc5a9959c79afbfc6e358611074c153">DEBUG_TYPE</a>&nbsp;&nbsp;&nbsp;"early-<a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a>-predicator"</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -811,7 +811,7 @@ keywords:
 </div>
 </div>
 
-### DEBUG\_TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+### DEBUG\_TYPE {#a1dc5a9959c79afbfc6e358611074c153}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -840,6 +840,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

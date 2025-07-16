@@ -17,7 +17,7 @@ keywords:
 
 # The `ProvenanceAnalysis.h` File Reference
 
-<p>This file declares a special form of Alias Analysis called <span class="doxyComputerOutput">Provenance / Analysis''. </span> <a href="#details">More...</a></p>
+<p>This file declares a special form of Alias Analysis called “Provenance Analysis”. <a href="#details">More...</a></p>
 
 ## Included Headers
 
@@ -27,13 +27,27 @@ keywords:
 #include &lt;utility&gt;
 </div>
 
-## Classes Index
+## Namespaces Index
 
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm">llvm</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>This is an optimization pass for GlobalISel generic memory operations. <a href="/web-llvm/docs/api/namespaces/llvm/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/objcarc">objcarc</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -46,31 +60,42 @@ keywords:
 
 </table>
 
+## Classes Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>This is similar to BasicAliasAnalysis, and it uses many of the same techniques, except it uses special ObjC-specific reasoning about pointer relationships. <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
 ## Description {#details}
 
-<p>This file declares a special form of Alias Analysis called <span class="doxyComputerOutput">Provenance / Analysis''. </span></p>
+<p>This file declares a special form of Alias Analysis called “Provenance Analysis”.</p>
 
 
-<p>The word provenance'' refers to the history of the ownership / of an object. Thus `‘Provenance Analysis`' is an analysis which attempts to / use various techniques to determine if locally / / WARNING: This file knows about certain library functions. It recognizes them / by name, and hardwires knowledge of their semantics. / / WARNING: This file knows about how certain Objective-C library functions are / used. Naive LLVM IR transformations which would otherwise be / behavior-preserving may break these assumptions.</p>
+<p>The word “provenance” refers to the history of the ownership of an object. Thus “Provenance Analysis” is an analysis which attempts to use various techniques to determine if locally</p>
 
 
-<p>===-------------------------------------------------------------------—===//</p>
+<p>WARNING: This file knows about certain library functions. It recognizes them by name, and hardwires knowledge of their semantics.</p>
 
 
-<p>namespace llvm {</p>
-
-
-<p>class AAResults; class PHINode; class SelectInst; class Value;</p>
-
-
-<p>namespace objcarc {</p>
-
-
-<p>/ This is similar to BasicAliasAnalysis, and it uses many of the same / techniques, except it uses special ObjC-specific reasoning about pointer / relationships. / / In this context <span class="doxyComputerOutput">Provenance'' is defined as the history of an object's / ownership. Thus </span>Provenance Analysis'' is defined by using the notion of / an `‘independent provenance source`' of a pointer to determine whether or not two pointers have the same provenance source and thus could potentially be related.</p>
+<p>WARNING: This file knows about how certain Objective-C library functions are used. Naive LLVM IR transformations which would otherwise be behavior-preserving may break these assumptions.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -74,7 +74,7 @@ class llvm::SIShrinkInstructionsPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aef43f9ae6fbd079affe6f0f2a07d034e">run</a> (MachineFunction &amp;MF, MachineFunctionAnalysisManager &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -155,7 +155,7 @@ class llvm::SIShrinkInstructionsPass { ... }
 <p>Declaration at line 20 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/sishrinkinstructions-h">SIShrinkInstructions.h</a>, definition at line 1096 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/sishrinkinstructions-cpp">SIShrinkInstructions.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a596ca6eb2e24883789eb3b1596974d83">llvm::getMachineFunctionPassPreservedAnalyses</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a9c38a8cc0a38636c95bd2826de9d72d4">llvm::Function::hasOptNone</a> and <a href="#aef43f9ae6fbd079affe6f0f2a07d034e">run</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a596ca6eb2e24883789eb3b1596974d83">llvm::getMachineFunctionPassPreservedAnalyses</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a9c38a8cc0a38636c95bd2826de9d72d4">llvm::Function::hasOptNone</a> and <a href="#aef43f9ae6fbd079affe6f0f2a07d034e">run</a>.</p>
 
 
 <p>Referenced by <a href="#aef43f9ae6fbd079affe6f0f2a07d034e">run</a>.</p>
@@ -176,6 +176,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

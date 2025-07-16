@@ -87,7 +87,7 @@ struct llvm::GlobalMergeFuncPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a51a440937b3f08b15f896d0c11777a78">run</a> (Module &amp;M, AnalysisManager&lt; Module &gt; &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -223,7 +223,7 @@ struct llvm::GlobalMergeFuncPass { ... }
 <p>Declaration at line 85 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/globalmergefunctions-h">GlobalMergeFunctions.h</a>, definition at line 645 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/globalmergefunctions-cpp">GlobalMergeFunctions.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a8ada82b0acc3fb5724a23ba79534619c">ImportSummary</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a> and <a href="/web-llvm/docs/api/classes/llvm/globalmergefunc/#ac34d5c990cef52524ce44f37d869664f">llvm::GlobalMergeFunc::run</a>.</p>
+<p>References <a href="#a8ada82b0acc3fb5724a23ba79534619c">ImportSummary</a> and <a href="/web-llvm/docs/api/classes/llvm/globalmergefunc/#ac34d5c990cef52524ce44f37d869664f">llvm::GlobalMergeFunc::run</a>.</p>
 
 </div>
 </div>
@@ -275,6 +275,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

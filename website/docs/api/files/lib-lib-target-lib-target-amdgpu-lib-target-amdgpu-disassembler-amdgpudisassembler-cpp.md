@@ -899,7 +899,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7b14fc850e8e58263a51cd89e7d6c838">PRINT_DIRECTIVE</a>(DIRECTIVE, MASK)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a674d2e9303a1f09156c06c1320a4a096">PRINT_DIRECTIVE</a>(DIRECTIVE, MASK)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2895,7 +2895,7 @@ keywords:
 </div>
 </div>
 
-### PRINT\_DIRECTIVE {#a7b14fc850e8e58263a51cd89e7d6c838}
+### PRINT\_DIRECTIVE {#a674d2e9303a1f09156c06c1320a4a096}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3011,6 +3011,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -428,7 +428,7 @@ struct anonymous{AssumeBundleBuilder.cpp}::AssumeBuilderState { ... }
 <p>Definition at line 206 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/assumebundlebuilder-cpp">AssumeBundleBuilder.cpp</a>.</p>
 
 
-<p>References <a href="#aa411f806557fdaf4af309b7c541757d2">addAttribute</a> and <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
+<p>References <a href="#aa411f806557fdaf4af309b7c541757d2">addAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a1cf553641e8527095ae4c8ec88a2cd92">llvm::AttributeList::getFnAttrs</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ada7a173c40ca7ac048a4b7099ceb71c0">llvm::AttributeList::getParamAttrs</a>.</p>
 
 
 <p>Referenced by <a href="#a5b26cb5a9ef4ba045eb41d823d5452fd">addInstruction</a>.</p>
@@ -464,7 +464,7 @@ struct anonymous{AssumeBundleBuilder.cpp}::AssumeBuilderState { ... }
 <p>Definition at line 268 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/assumebundlebuilder-cpp">AssumeBundleBuilder.cpp</a>.</p>
 
 
-<p>References <a href="#a65edce9c8505e3d3b9c0d90794458288">addAccessedPtr</a>, <a href="#a80f30a0c0c861405e3eeb6f37c364256">addCall</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="#a65edce9c8505e3d3b9c0d90794458288">addAccessedPtr</a>, <a href="#a80f30a0c0c861405e3eeb6f37c364256">addCall</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 </div>
 </div>
@@ -771,6 +771,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

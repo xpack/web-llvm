@@ -424,7 +424,7 @@ struct anonymous{X86InstrInfo.cpp}::LDTLSCleanup { ... }
 <p>Definition at line 10415 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86instrinfo-cpp">X86InstrInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ab2d91e7bec944efcbc39d8e30644f111">llvm::MachineBasicBlock::begin</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#acbc921830578e2741be6549db716c0ce">llvm::MachineBasicBlock::end</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#aeb9ef6c06b2069f01ba55e3fd2af7b0f">ReplaceTLSBaseAddrCall</a>, <a href="#a3c575506b0048149beea9d1f222fdc32">SetRegister</a> and <a href="#a96815d10911f05b2612864c5ee82f5d4">VisitNode</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ab2d91e7bec944efcbc39d8e30644f111">llvm::MachineBasicBlock::begin</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#acbc921830578e2741be6549db716c0ce">llvm::MachineBasicBlock::end</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#aeb9ef6c06b2069f01ba55e3fd2af7b0f">ReplaceTLSBaseAddrCall</a>, <a href="#a3c575506b0048149beea9d1f222fdc32">SetRegister</a> and <a href="#a96815d10911f05b2612864c5ee82f5d4">VisitNode</a>.</p>
 
 
 <p>Referenced by <a href="#a0f3b4e5e968c5ab89944989495e68799">runOnMachineFunction</a> and <a href="#a96815d10911f05b2612864c5ee82f5d4">VisitNode</a>.</p>
@@ -483,6 +483,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

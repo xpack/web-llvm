@@ -87,16 +87,16 @@ struct llvm::format_provider&lt;T, std::enable_if_t&lt; support::detail::use_poi
 
 
 
-### | S | Meaning | Example | {#autotoc_md45}
+### | S | Meaning | Example | {#autotoc_md44}
 
 
-## | | | Input | Output | {#autotoc_md46}
+## | | | Input | Output | {#autotoc_md45}
 
 
 <p>| x- | Hex no prefix, lower | 0xDEADBEEF | deadbeef | | X- | Hex no prefix, upper | 0xDEADBEEF | DEADBEEF | | x+ / x | Hex + prefix, lower | 0xDEADBEEF | 0xdeadbeef | | X+ / X | Hex + prefix, upper | 0xDEADBEEF | 0xDEADBEEF |</p>
 
 
-## | (empty) | Same as X+ / X | | | {#autotoc_md47}
+## | (empty) | Same as X+ / X | | | {#autotoc_md46}
 
 
 <p>The default precision is the number of nibbles in a machine word, and in all cases indicates the minimum number of nibbles to print.</p>
@@ -156,6 +156,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

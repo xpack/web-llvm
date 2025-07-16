@@ -624,7 +624,7 @@ keywords:
 <p>Definition at line 786 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/registercoalescer-cpp">RegisterCoalescer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/structs/llvm/liverange/segment/#afe8e59ffc86cb1736116e4dc8b86e26f">llvm::LiveRange::Segment::end</a>, <a href="/web-llvm/docs/api/classes/llvm/slotindex/#af7b521cd03cfcb1115186e877d0e820d">llvm::SlotIndex::isDead</a>, <a href="/web-llvm/docs/api/structs/llvm/liverange/segment/#a85f7bf79596d84273b5b3b9b490bc2ec">llvm::LiveRange::Segment::start</a> and <a href="/web-llvm/docs/api/structs/llvm/liverange/segment/#ac3d1b43d371bc68742232ec51d4a6321">llvm::LiveRange::Segment::valno</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/llvm/liverange/segment/#afe8e59ffc86cb1736116e4dc8b86e26f">llvm::LiveRange::Segment::end</a>, <a href="/web-llvm/docs/api/classes/llvm/slotindex/#af7b521cd03cfcb1115186e877d0e820d">llvm::SlotIndex::isDead</a>, <a href="/web-llvm/docs/api/structs/llvm/liverange/segment/#a85f7bf79596d84273b5b3b9b490bc2ec">llvm::LiveRange::Segment::start</a> and <a href="/web-llvm/docs/api/structs/llvm/liverange/segment/#ac3d1b43d371bc68742232ec51d4a6321">llvm::LiveRange::Segment::valno</a>.</p>
 
 </div>
 </div>
@@ -1543,6 +1543,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

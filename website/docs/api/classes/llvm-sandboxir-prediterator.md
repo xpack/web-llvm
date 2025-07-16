@@ -267,7 +267,7 @@ class llvm::sandboxir::PredIterator { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/memdgnode">MemDGNode</a> * &gt;<a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a7f5af8c1ba2e11773efdbf7b6bc0d4e8">::iterator</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/memdgnode">MemDGNode</a> * &gt;::iterator</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab84b3ac1fdcf4ddc454514cb53ffba6b">MemIt</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -524,7 +524,7 @@ class llvm::sandboxir::PredIterator { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::sandboxir::PredIterator::PredIterator (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#a899e62d7db86984354bbdaa96067f91e">User::op_iterator</a> &amp; OpIt, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#a899e62d7db86984354bbdaa96067f91e">User::op_iterator</a> &amp; OpItE, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/memdgnode">MemDGNode</a> * &gt;<a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a7f5af8c1ba2e11773efdbf7b6bc0d4e8">::iterator</a> &amp; MemIt, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> * N, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dependencygraph">DependencyGraph</a> &amp; DAG)</td>
+<td class="doxyMemberName">llvm::sandboxir::PredIterator::PredIterator (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#a899e62d7db86984354bbdaa96067f91e">User::op_iterator</a> &amp; OpIt, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#a899e62d7db86984354bbdaa96067f91e">User::op_iterator</a> &amp; OpItE, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/memdgnode">MemDGNode</a> * &gt;::iterator &amp; MemIt, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> * N, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dependencygraph">DependencyGraph</a> &amp; DAG)</td>
 </tr>
 </table>
 </td>
@@ -872,6 +872,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

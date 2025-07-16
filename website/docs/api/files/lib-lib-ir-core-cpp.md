@@ -9524,7 +9524,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a042db2f2048815e3a82990590c7952da">HANDLE_INST</a>(num, opc, clas)&nbsp;&nbsp;&nbsp;case LLVM##opc: return num;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aafa71bd07b6a55fcc38e2062d54f27b4">HANDLE_INST</a>(num, opc, clas)&nbsp;&nbsp;&nbsp;case LLVM##opc: return num;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -10475,7 +10475,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_INST {#a042db2f2048815e3a82990590c7952da}
+### HANDLE\_INST {#aafa71bd07b6a55fcc38e2062d54f27b4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -10598,6 +10598,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

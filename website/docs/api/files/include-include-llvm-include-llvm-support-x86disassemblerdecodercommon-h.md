@@ -486,7 +486,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad2207c7f28ca203e34ffc9b73aba8a93">ENUM_ENTRY</a>(n)&nbsp;&nbsp;&nbsp;n,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a86f2a86d6e853bb297bc32ba3085bcea">ENUM_ENTRY</a>(n)&nbsp;&nbsp;&nbsp;n,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -538,7 +538,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6a48755c217e4c9d0e2105e0d2affcf8">ENUM_ENTRY</a>(n, d)&nbsp;&nbsp;&nbsp;n,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae8978b44e045a2606fae8089e314d610">ENUM_ENTRY</a>(n, d)&nbsp;&nbsp;&nbsp;n,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -564,7 +564,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6a48755c217e4c9d0e2105e0d2affcf8">ENUM_ENTRY</a>(n, d)&nbsp;&nbsp;&nbsp;n,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae7397ec807bf36eb3fe3ef24b18dd9c2">ENUM_ENTRY</a>(n, d)&nbsp;&nbsp;&nbsp;n,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -766,7 +766,7 @@ keywords:
 </div>
 </div>
 
-### ENUM\_ENTRY {#ad2207c7f28ca203e34ffc9b73aba8a93}
+### ENUM\_ENTRY {#a86f2a86d6e853bb297bc32ba3085bcea}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -791,7 +791,7 @@ keywords:
 </div>
 </div>
 
-### ENUM\_ENTRY {#a6a48755c217e4c9d0e2105e0d2affcf8}
+### ENUM\_ENTRY {#ae8978b44e045a2606fae8089e314d610}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -816,7 +816,7 @@ keywords:
 </div>
 </div>
 
-### ENUM\_ENTRY {#a6a48755c217e4c9d0e2105e0d2affcf8}
+### ENUM\_ENTRY {#ae7397ec807bf36eb3fe3ef24b18dd9c2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1624,6 +1624,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -30,13 +30,13 @@ namespace llvm::dwarf { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/cfiprogram">CFIProgram</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/formparams">FormParams</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Represent a sequence of Call Frame Information instructions that, when read in order, construct a table mapping PC to frame state. <a href="/web-llvm/docs/api/classes/llvm/dwarf/cfiprogram/#details">More...</a></p>
+<p>A helper struct providing information about the byte size of DW_FORM values that vary in size depending on the DWARF version, address byte size, or DWARF32/DWARF64. <a href="/web-llvm/docs/api/structs/llvm/dwarf/formparams/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -44,13 +44,13 @@ namespace llvm::dwarf { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/pubindexentrydescriptor">PubIndexEntryDescriptor</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>DWARF Common Information Entry (<a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a>) <a href="/web-llvm/docs/api/classes/llvm/dwarf/cie/#details">More...</a></p>
+<p>Describes an entry of the various gnu_pub* debug sections. <a href="/web-llvm/docs/api/structs/llvm/dwarf/pubindexentrydescriptor/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -111,6 +111,19 @@ namespace llvm::dwarf { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/enumtraits-5d1d22f040f78a7ad8ecb8f8946b65a0">EnumTraits&lt;Tag&gt;</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/enumtraits-feb21a03e20e06ccf11956b44c5f839a">EnumTraits&lt;LineNumberOps&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -136,68 +149,13 @@ namespace llvm::dwarf { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/enumtraits-5d1d22f040f78a7ad8ecb8f8946b65a0">EnumTraits&lt;Tag&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation">UnwindLocation</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>DWARF Frame Description Entry (<a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a>) <a href="/web-llvm/docs/api/classes/llvm/dwarf/fde/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/formparams">FormParams</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>A helper struct providing information about the byte size of DW_FORM values that vary in size depending on the DWARF version, address byte size, or DWARF32/DWARF64. <a href="/web-llvm/docs/api/structs/llvm/dwarf/formparams/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/frameentry">FrameEntry</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>An entry in either debug_frame or eh_frame. <a href="/web-llvm/docs/api/classes/llvm/dwarf/frameentry/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/dwarf/pubindexentrydescriptor">PubIndexEntryDescriptor</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Describes an entry of the various gnu_pub* debug sections. <a href="/web-llvm/docs/api/structs/llvm/dwarf/pubindexentrydescriptor/#details">More...</a></p>
+<p>A class that represents a location for the Call Frame Address (CFA) or a register. <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -212,20 +170,6 @@ namespace llvm::dwarf { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>A class that can track all registers with locations in a <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindrow">UnwindRow</a> object. <a href="/web-llvm/docs/api/classes/llvm/dwarf/registerlocations/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation">UnwindLocation</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>A class that represents a location for the Call Frame Address (CFA) or a register. <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -254,6 +198,62 @@ namespace llvm::dwarf { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>A class that contains all <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindrow">UnwindRow</a> objects for an <a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a> or a single unwind row for a <a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a>. <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindtable/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/cfiprogram">CFIProgram</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Represent a sequence of Call Frame Information instructions that, when read in order, construct a table mapping PC to frame state. <a href="/web-llvm/docs/api/classes/llvm/dwarf/cfiprogram/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/frameentry">FrameEntry</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>An entry in either debug_frame or eh_frame. <a href="/web-llvm/docs/api/classes/llvm/dwarf/frameentry/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>DWARF Common Information Entry (<a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a>) <a href="/web-llvm/docs/api/classes/llvm/dwarf/cie/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>DWARF Frame Description Entry (<a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a>) <a href="/web-llvm/docs/api/classes/llvm/dwarf/fde/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -5795,7 +5795,7 @@ namespace llvm::dwarf { ... }
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a> and <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#ac7f4306c508478ca81791cbccef212fb">llvm::analyzeContextInfo</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad1a874181e3007dcd2735f381c3db6d8">llvm::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a188e713b7044fc7477fa27c6f4efc662">llvm::dwarf_linker::parallel::CompileUnit::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dieattributecloner/#a77e10b3b8f2ee1990c6ea01fb817526c">llvm::dwarf_linker::parallel::DIEAttributeCloner::cloneStringAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/gsym/dwarftransformer/#ab014307b03ade42770de6ed2f827630b">llvm::gsym::DwarfTransformer::convert</a>, <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvdwarfreader/#abf565023d8f6916f29adcd9ac264400e">llvm::logicalview::LVDWARFReader::createScopes</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfunit/#a610e091c42196cd8bdddce77b7a407e4">llvm::DWARFUnit::getCompilationDir</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#a1bc4df37ed6fd36a653da7966308f0f5">llvm::DWARFDebugLine::LineTable::getDirectoryForEntry</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#aa47cad32e9eb34704f1ce2ead863e518">llvm::DWARFDebugLine::Prologue::getFileNameByIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#ac0e347575bcc3e0fd9caa27e1edfadef">llvm::DWARFDie::getLinkageName</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkerimpl-cpp/#aa348ebfb62b7adcd56d333e15c064e9a">getPCMFile</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a58c8277a8af9d4c7d299c82c95b39668">llvm::getPCMFile</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a183b9a712f7e4beb9b21671ce343c960">llvm::DWARFDie::getShortName</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dwarflinkerimpl/linkcontext/#a62ed34db5672583fcefb9c152e2dad01">llvm::dwarf_linker::parallel::DWARFLinkerImpl::LinkContext::isClangModuleRef</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dwarflinkerimpl/linkcontext/#a21dc5ae67ffaf38250ef5b5d377b5358">llvm::dwarf_linker::parallel::DWARFLinkerImpl::LinkContext::loadClangModule</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a5a44455c55b4b88c16930cd31cf4d20b">llvm::prettyPrintBaseTypeRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a562e5e47a3837612432809e480b901e3">llvm::resolveRelativeObjectPath</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkerimpl-cpp/#afe898cf0f66a7d6fe7193b5d7d70ac8e">resolveRelativeObjectPath</a>, <a href="/web-llvm/docs/api/classes/anonymous-debuggersupportplugin-cpp-/machodebugobjectsynthesizer/#a59a5eeccde7b8eef0833cee7b914443b">anonymous{DebuggerSupportPlugin.cpp}::MachODebugObjectSynthesizer&lt; MachOTraits &gt;::startSynthesis</a> and <a href="#a9f8d81677123a0aa62b32263cef3f808">toString</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#ac7f4306c508478ca81791cbccef212fb">llvm::analyzeContextInfo</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad1a874181e3007dcd2735f381c3db6d8">llvm::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a188e713b7044fc7477fa27c6f4efc662">llvm::dwarf_linker::parallel::CompileUnit::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dieattributecloner/#a77e10b3b8f2ee1990c6ea01fb817526c">llvm::dwarf_linker::parallel::DIEAttributeCloner::cloneStringAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/gsym/dwarftransformer/#ab014307b03ade42770de6ed2f827630b">llvm::gsym::DwarfTransformer::convert</a>, <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvdwarfreader/#abf565023d8f6916f29adcd9ac264400e">llvm::logicalview::LVDWARFReader::createScopes</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/dwarf/dwarfdie-cpp/#a0acd4c91ee5645013bd3ac2e45e90dba">dumpAttribute</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/dwarf/dwarfcontext-cpp/#abbad376da1ca0cfd01c2e5effa9fad42">fixupIndexV4</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/dwarf/dwarfcontext-cpp/#aec2829b5961eb9e3db39ab8340a361dd">fixupIndexV5</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfunit/#a610e091c42196cd8bdddce77b7a407e4">llvm::DWARFUnit::getCompilationDir</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#a1bc4df37ed6fd36a653da7966308f0f5">llvm::DWARFDebugLine::LineTable::getDirectoryForEntry</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#aa47cad32e9eb34704f1ce2ead863e518">llvm::DWARFDebugLine::Prologue::getFileNameByIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#ac0e347575bcc3e0fd9caa27e1edfadef">llvm::DWARFDie::getLinkageName</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkerimpl-cpp/#aa348ebfb62b7adcd56d333e15c064e9a">getPCMFile</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a58c8277a8af9d4c7d299c82c95b39668">llvm::getPCMFile</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a183b9a712f7e4beb9b21671ce343c960">llvm::DWARFDie::getShortName</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dwarflinkerimpl/linkcontext/#a62ed34db5672583fcefb9c152e2dad01">llvm::dwarf_linker::parallel::DWARFLinkerImpl::LinkContext::isClangModuleRef</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dwarflinkerimpl/linkcontext/#a21dc5ae67ffaf38250ef5b5d377b5358">llvm::dwarf_linker::parallel::DWARFLinkerImpl::LinkContext::loadClangModule</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a5a44455c55b4b88c16930cd31cf4d20b">llvm::prettyPrintBaseTypeRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a562e5e47a3837612432809e480b901e3">llvm::resolveRelativeObjectPath</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkerimpl-cpp/#afe898cf0f66a7d6fe7193b5d7d70ac8e">resolveRelativeObjectPath</a>, <a href="/web-llvm/docs/api/classes/anonymous-debuggersupportplugin-cpp-/machodebugobjectsynthesizer/#a59a5eeccde7b8eef0833cee7b914443b">anonymous{DebuggerSupportPlugin.cpp}::MachODebugObjectSynthesizer&lt; MachOTraits &gt;::startSynthesis</a> and <a href="#a9f8d81677123a0aa62b32263cef3f808">toString</a>.</p>
 
 </div>
 </div>
@@ -5906,7 +5906,7 @@ namespace llvm::dwarf { ... }
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ae58c751054b01f206f9b9e34e461d25fa7a1920d61156abc05a60135aefe8bc67">llvm::Default</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/synthetictypenamebuilder/#ae03fdc522b86805416485b83c76a27a3">llvm::dwarf_linker::parallel::SyntheticTypeNameBuilder::addTypeName</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad1a874181e3007dcd2735f381c3db6d8">llvm::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a188e713b7044fc7477fa27c6f4efc662">llvm::dwarf_linker::parallel::CompileUnit::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a26a4de20c065ba21d3af3b8f2fc2bb50">llvm::dwarf_linker::parallel::CompileUnit::CompileUnit</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#aa47cad32e9eb34704f1ce2ead863e518">llvm::DWARFDebugLine::Prologue::getFileNameByIndex</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/compileunit/#a6d3d35230825470499dc48f866facb9a">llvm::dwarf_linker::classic::CompileUnit::getSysRoot</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/synthetictypenamebuilder/#ae03fdc522b86805416485b83c76a27a3">llvm::dwarf_linker::parallel::SyntheticTypeNameBuilder::addTypeName</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad1a874181e3007dcd2735f381c3db6d8">llvm::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a188e713b7044fc7477fa27c6f4efc662">llvm::dwarf_linker::parallel::CompileUnit::analyzeImportedModule</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a26a4de20c065ba21d3af3b8f2fc2bb50">llvm::dwarf_linker::parallel::CompileUnit::CompileUnit</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#aa47cad32e9eb34704f1ce2ead863e518">llvm::DWARFDebugLine::Prologue::getFileNameByIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/compileunit/#a6d3d35230825470499dc48f866facb9a">llvm::dwarf_linker::classic::CompileUnit::getSysRoot</a> and <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/dwarf/dwarfverifier-cpp/#a53ce6032d5574922c161935e73014e18">isVariableIndexable</a>.</p>
 
 </div>
 </div>
@@ -6307,6 +6307,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

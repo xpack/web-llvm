@@ -266,7 +266,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a12978c1b87569c406b81c0ff721d418a">AMDGPUSubtarget</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget">GCNSubtarget</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1379f60e951bd7d34b7656010106dac7">AMDGPUSubtarget</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget">GCNSubtarget</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -437,7 +437,7 @@ keywords:
 </div>
 </div>
 
-### AMDGPUSubtarget {#a12978c1b87569c406b81c0ff721d418a}
+### AMDGPUSubtarget {#a1379f60e951bd7d34b7656010106dac7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -616,6 +616,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

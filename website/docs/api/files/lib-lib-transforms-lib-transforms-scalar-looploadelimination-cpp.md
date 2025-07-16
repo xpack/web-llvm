@@ -308,7 +308,7 @@ keywords:
 <p>Definition at line 642 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/looploadelimination-cpp">LoopLoadElimination.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/loopaccessinfomanager/#ad97a5f903c4da15770aedf502ea501d6">llvm::LoopAccessInfoManager::clear</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad6e19a09aeed4c56617c284e099c81de">llvm::depth_first</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/loopaccessinfomanager/#a628110f56ef933981e2fecb45c4b0d63">llvm::LoopAccessInfoManager::getInfo</a>, <a href="/web-llvm/docs/api/classes/anonymous-looploadelimination-cpp-/loadeliminationforloop/#a10f662ef3fb315e615c323a6b8174422">anonymous{LoopLoadElimination.cpp}::LoadEliminationForLoop::LoadEliminationForLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a0083a69883e0f97e111dbff064c60f42">llvm::simplifyLoop</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/loopaccessinfomanager/#ad97a5f903c4da15770aedf502ea501d6">llvm::LoopAccessInfoManager::clear</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad6e19a09aeed4c56617c284e099c81de">llvm::depth_first</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/loopaccessinfomanager/#a628110f56ef933981e2fecb45c4b0d63">llvm::LoopAccessInfoManager::getInfo</a>, <a href="/web-llvm/docs/api/classes/anonymous-looploadelimination-cpp-/loadeliminationforloop/#a10f662ef3fb315e615c323a6b8174422">anonymous{LoopLoadElimination.cpp}::LoadEliminationForLoop::LoadEliminationForLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a0083a69883e0f97e111dbff064c60f42">llvm::simplifyLoop</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/looploadeliminationpass/#af81bad0018d7e67a1c92d785305426b0">llvm::LoopLoadEliminationPass::run</a>.</p>
@@ -506,6 +506,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

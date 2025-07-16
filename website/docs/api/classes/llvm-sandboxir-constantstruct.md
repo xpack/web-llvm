@@ -395,9 +395,6 @@ class llvm::sandboxir::ConstantStruct { ... }
 
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/constantstruct/#a54fcfa620deb80373f489ba2fdad7643">llvm::ConstantStruct::get</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a499ea32ca1b8d16cedfe01d1e5b08f29">llvm::SmallVectorImpl&lt; T &gt;::reserve</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>.</p>
 
-
-<p>Referenced by <a href="#a1a4cb5c6ce9012cce21de66b330b02b0">get</a>, <a href="#ab57a381e521c55fb86c46e5becde1ac0">getAnon</a> and <a href="#a1ce940845363db412b77da9cc3a7ec02">getAnon</a>.</p>
-
 </div>
 </div>
 
@@ -431,7 +428,7 @@ class llvm::sandboxir::ConstantStruct { ... }
 <p>Definition at line 386 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>.</p>
 
 
-<p>References <a href="#a00fe72b32bd949660ddf5975a54231ac">get</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af2cdf7082ff42d000af895d5e3e6335d">llvm::sandboxir::get</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>.</p>
 
 </div>
 </div>
@@ -469,7 +466,7 @@ class llvm::sandboxir::ConstantStruct { ... }
 <p>Definition at line 391 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>.</p>
 
 
-<p>References <a href="#a00fe72b32bd949660ddf5975a54231ac">get</a> and <a href="#ad3de023aeaed4f2c7173566c0031997a">getTypeForElements</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af2cdf7082ff42d000af895d5e3e6335d">llvm::sandboxir::get</a> and <a href="#ad3de023aeaed4f2c7173566c0031997a">getTypeForElements</a>.</p>
 
 </div>
 </div>
@@ -503,7 +500,7 @@ class llvm::sandboxir::ConstantStruct { ... }
 <p>Definition at line 394 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>.</p>
 
 
-<p>References <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="#a00fe72b32bd949660ddf5975a54231ac">get</a> and <a href="#ad3de023aeaed4f2c7173566c0031997a">getTypeForElements</a>.</p>
+<p>References <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af2cdf7082ff42d000af895d5e3e6335d">llvm::sandboxir::get</a> and <a href="#ad3de023aeaed4f2c7173566c0031997a">getTypeForElements</a>.</p>
 
 </div>
 </div>
@@ -577,7 +574,7 @@ class llvm::sandboxir::ConstantStruct { ... }
 <p>Definition at line 403 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a16ef7ef1c4bb934e4d6f5dbd6e5fef6f">llvm::sandboxir::getContext</a> and <a href="#ad3de023aeaed4f2c7173566c0031997a">getTypeForElements</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a85254176569bc8ee70fff75a9ff59f11">llvm::sandboxir::Value::getContext</a> and <a href="#ad3de023aeaed4f2c7173566c0031997a">getTypeForElements</a>.</p>
 
 </div>
 </div>
@@ -595,6 +592,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

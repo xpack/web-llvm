@@ -172,7 +172,7 @@ class llvm::sandboxir::BranchInst { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0893355ef22a27d5fb8ff606e1725818">getSuccessor</a> (unsigned SuccIdx) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -496,7 +496,7 @@ class llvm::sandboxir::BranchInst { ... }
 <p>Declaration at line 1042 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 376 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a> and <a href="#a23eee4678c2f2a89c0a1b31e0ca6864e">getNumSuccessors</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="#a23eee4678c2f2a89c0a1b31e0ca6864e">getNumSuccessors</a>.</p>
 
 </div>
 </div>
@@ -612,7 +612,7 @@ class llvm::sandboxir::BranchInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::BranchInst::setSuccessor (unsigned Idx, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * NewSucc)</td>
+<td class="doxyMemberName">void llvm::sandboxir::BranchInst::setSuccessor (unsigned Idx, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * NewSucc)</td>
 </tr>
 </table>
 </td>
@@ -626,7 +626,7 @@ class llvm::sandboxir::BranchInst { ... }
 <p>Declaration at line 1043 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 383 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#a54abb07f9d20e6d5344ce647621f85a8">llvm::sandboxir::User::setOperand</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user/#a54abb07f9d20e6d5344ce647621f85a8">llvm::sandboxir::User::setOperand</a>.</p>
 
 </div>
 </div>
@@ -812,7 +812,7 @@ class llvm::sandboxir::BranchInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">BranchInst * llvm::sandboxir::BranchInst::create (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * IfTrue, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx)</td>
+<td class="doxyMemberName">BranchInst * llvm::sandboxir::BranchInst::create (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * IfTrue, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx)</td>
 </tr>
 </table>
 </td>
@@ -831,7 +831,7 @@ class llvm::sandboxir::BranchInst { ... }
 <p>Declaration at line 1027 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 350 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/cmpinst/#a781d2ab0a52d398b5f6c1a76d8c979ae">llvm::sandboxir::CmpInst::createWithCopiedFlags</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/unaryoperator/#a6e8a2edd1df04ac5d65c762443eb20f5">llvm::sandboxir::UnaryOperator::createWithCopiedFlags</a> and <a href="/web-llvm/docs/api/classes/llvm/instruction/#a00fe6a3df205f2bb5b21ac4ef7a2dca1">llvm::Instruction::getStableDebugLoc</a>.</p>
@@ -848,7 +848,7 @@ class llvm::sandboxir::BranchInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">BranchInst * llvm::sandboxir::BranchInst::create (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * IfTrue, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * IfFalse, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * Cond, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx)</td>
+<td class="doxyMemberName">BranchInst * llvm::sandboxir::BranchInst::create (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * IfTrue, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * IfFalse, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * Cond, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx)</td>
 </tr>
 </table>
 </td>
@@ -867,7 +867,7 @@ class llvm::sandboxir::BranchInst { ... }
 <p>Declaration at line 1029 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 358 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -885,6 +885,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

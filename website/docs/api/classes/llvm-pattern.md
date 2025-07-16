@@ -1399,7 +1399,7 @@ class llvm::Pattern { ... }
 <p>Declaration at line 647 of file <a href="/web-llvm/docs/api/files/lib/lib/filecheck/filecheckimpl-h">FileCheckImpl.h</a>, definition at line 286 of file <a href="/web-llvm/docs/api/files/lib/lib/filecheck/filecheck-cpp">FileCheck.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a66ccf722f4d0e4e08522420fb43849ff">llvm::isAlpha</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>.</p>
 
 
 <p>Referenced by <a href="#a21cf4e03d53e49c96bf3f26cafdf7e82">parseVariable</a>.</p>
@@ -1488,7 +1488,7 @@ class llvm::Pattern { ... }
 <p>Declaration at line 660 of file <a href="/web-llvm/docs/api/files/lib/lib/filecheck/filecheckimpl-h">FileCheckImpl.h</a>, definition at line 289 of file <a href="/web-llvm/docs/api/files/lib/lib/filecheck/filecheck-cpp">FileCheck.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/errordiagnostic/#afd2d10db0e8822de9860636d612a13af">llvm::ErrorDiagnostic::get</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a8a0d39a17f2152e31271da7e7491d60e">llvm::isAlnum</a> and <a href="#aa0710447b6816c22e98d213c789f30ca">isValidVarNameStart</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/errordiagnostic/#afd2d10db0e8822de9860636d612a13af">llvm::ErrorDiagnostic::get</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="#aa0710447b6816c22e98d213c789f30ca">isValidVarNameStart</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/filecheckpatterncontext/#a7137a381bae270178ff79807b1d096d3">llvm::FileCheckPatternContext::defineCmdlineVariables</a> and <a href="#ae173fad50624dec05877e86be7b7e429">parsePattern</a>.</p>
@@ -1792,6 +1792,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

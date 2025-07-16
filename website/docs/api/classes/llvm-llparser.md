@@ -3728,7 +3728,7 @@ class llvm::LLParser { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::map&lt; unsigned, AttrBuilder &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::map&lt; unsigned, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6057124d00bff7c0940be3fba72903b6">NumberedAttrBuilders</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -5602,7 +5602,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseCapturesAttr (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">bool LLParser::parseCapturesAttr (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -6085,7 +6085,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseEnumAttribute (<a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> Attr, AttrBuilder &amp; B, bool InAttrGroup)</td>
+<td class="doxyMemberName">bool LLParser::parseEnumAttribute (<a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> Attr, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B, bool InAttrGroup)</td>
 </tr>
 </table>
 </td>
@@ -6239,7 +6239,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseFnAttributeValuePairs (AttrBuilder &amp; B, std::vector&lt; unsigned &gt; &amp; FwdRefAttrGrps, bool inAttrGrp, <a href="#a41214230e1d2e66a2b675eeaa0ee2c7f">LocTy</a> &amp; BuiltinLoc)</td>
+<td class="doxyMemberName">bool LLParser::parseFnAttributeValuePairs (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B, std::vector&lt; unsigned &gt; &amp; FwdRefAttrGrps, bool inAttrGrp, <a href="#a41214230e1d2e66a2b675eeaa0ee2c7f">LocTy</a> &amp; BuiltinLoc)</td>
 </tr>
 </table>
 </td>
@@ -6792,7 +6792,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseInitializesAttr (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">bool LLParser::parseInitializesAttr (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -8097,7 +8097,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::LLParser::parseOptionalParamAttrs (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">bool llvm::LLParser::parseOptionalParamAttrs (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -8127,7 +8127,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseOptionalParamOrReturnAttrs (AttrBuilder &amp; B, bool IsParam)</td>
+<td class="doxyMemberName">bool LLParser::parseOptionalParamOrReturnAttrs (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B, bool IsParam)</td>
 </tr>
 </table>
 </td>
@@ -8236,7 +8236,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::LLParser::parseOptionalReturnAttrs (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">bool llvm::LLParser::parseOptionalReturnAttrs (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -8683,7 +8683,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseRangeAttr (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">bool LLParser::parseRangeAttr (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -8708,7 +8708,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseRequiredTypeAttr (AttrBuilder &amp; B, <a href="/web-llvm/docs/api/namespaces/llvm/lltok/#af353621f14cb4b4b3af5ffaff84076b1">lltok::Kind</a> AttrToken, <a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> AttrKind)</td>
+<td class="doxyMemberName">bool LLParser::parseRequiredTypeAttr (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B, <a href="/web-llvm/docs/api/namespaces/llvm/lltok/#af353621f14cb4b4b3af5ffaff84076b1">lltok::Kind</a> AttrToken, <a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> AttrKind)</td>
 </tr>
 </table>
 </td>
@@ -9031,7 +9031,7 @@ class llvm::LLParser { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LLParser::parseStringAttribute (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">bool LLParser::parseStringAttribute (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -11314,6 +11314,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

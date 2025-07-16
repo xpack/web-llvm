@@ -584,7 +584,7 @@ keywords:
 <p>Checks the given mask, and determines whether said mask is interleaving.</p>
 
 
-<p>To be interleaving, a mask must alternate between <span class="doxyComputerOutput">i</span> and <span class="doxyComputerOutput">i + (Length / / 2)</span>, and must contain all numbers within the range of <span class="doxyComputerOutput">[0..Length)</span> (e.g. a 4x vector interleaving mask would be &lt;0, 2, 1, 3&gt;).</p>
+<p>To be interleaving, a mask must alternate between <span class="doxyComputerOutput">i</span> and <span class="doxyComputerOutput">i + (Length / 2)</span>, and must contain all numbers within the range of <span class="doxyComputerOutput">[0..Length)</span> (e.g. a 4x vector interleaving mask would be &lt;0, 2, 1, 3&gt;).</p>
 
 
 <p>Definition at line 508 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/complexdeinterleavingpass-cpp">ComplexDeinterleavingPass.cpp</a>.</p>
@@ -623,7 +623,7 @@ keywords:
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/patternmatch/#aba7473bfa862dd9eadf04a6fefc6aa69">llvm::PatternMatch::m_FNeg</a>, <a href="/web-llvm/docs/api/namespaces/llvm/patternmatch/#a5d295dcffba83c3c5a17d2fb3273b434">llvm::PatternMatch::m_Neg</a>, <a href="/web-llvm/docs/api/namespaces/llvm/patternmatch/#aaf522908fe903018eb9b087dd6e49296">llvm::PatternMatch::m_Value</a> and <a href="/web-llvm/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">llvm::PatternMatch::match</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/lib/target/arm/disassembler/armdisassembler-cpp/#ae32cf891f9f15262436c301330233bad">DecodeBFLabelOperand</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandimm-cpp/#a2edf9e8f09bfb0cc4949aa1813872322">expandMOVImmSimple</a>, <a href="/web-llvm/docs/api/classes/anonymous-armmccodeemitter-cpp-/armmccodeemitter/#a6907255946f4ff4272c99a27e46ed759">anonymous{ARMMCCodeEmitter.cpp}::ARMMCCodeEmitter::getBFTargetOpValue</a>, <a href="#a2680b1e7541985e52e6f02450be715b5">getNegOperand</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/apint-cpp/#af4b80b2d90bc4614ea242503aa88df37">KnuthDiv</a>, <a href="/web-llvm/docs/api/namespaces/llvm/apintops/#a9f1937c6b659f3758dae8adca513fcd2">llvm::APIntOps::RoundDoubleToAPInt</a>, <a href="/web-llvm/docs/api/classes/llvm/apint/#ae5dfa02c3403baa3d057b6264eed687d">llvm::APInt::roundToDouble</a>, <a href="/web-llvm/docs/api/namespaces/llvm/detail/anonymous-apfloat-cpp-/#a67a4cef5addbdc43c571874df4ea020d">llvm::detail::anonymous{APFloat.cpp}::toStringImpl</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/lib/target/arm/disassembler/armdisassembler-cpp/#ae32cf891f9f15262436c301330233bad">DecodeBFLabelOperand</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandimm-cpp/#a2edf9e8f09bfb0cc4949aa1813872322">expandMOVImmSimple</a>, <a href="/web-llvm/docs/api/classes/anonymous-armmccodeemitter-cpp-/armmccodeemitter/#a6907255946f4ff4272c99a27e46ed759">anonymous{ARMMCCodeEmitter.cpp}::ARMMCCodeEmitter::getBFTargetOpValue</a>, <a href="#a2680b1e7541985e52e6f02450be715b5">getNegOperand</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/apint-cpp/#af4b80b2d90bc4614ea242503aa88df37">KnuthDiv</a>, <a href="/web-llvm/docs/api/namespaces/llvm/apintops/#a9f1937c6b659f3758dae8adca513fcd2">llvm::APIntOps::RoundDoubleToAPInt</a>, <a href="/web-llvm/docs/api/classes/llvm/apint/#ae5dfa02c3403baa3d057b6264eed687d">llvm::APInt::roundToDouble</a> and <a href="/web-llvm/docs/api/namespaces/llvm/detail/anonymous-apfloat-cpp-/#a67a4cef5addbdc43c571874df4ea020d">llvm::detail::anonymous{APFloat.cpp}::toStringImpl</a>.</p>
 
 </div>
 </div>
@@ -835,6 +835,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

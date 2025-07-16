@@ -17,7 +17,7 @@ keywords:
 
 # The `AttributeMask` Class Reference
 
-<p>This class stores enough information to efficiently remove some attributes from an existing AttrBuilder, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or AttributeList. <a href="#details">More...</a></p>
+<p>This class stores enough information to efficiently remove some attributes from an existing <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a>, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>. <a href="#details">More...</a></p>
 
 ## Declaration
 
@@ -212,7 +212,7 @@ class llvm::AttributeMask { ... }
 
 ## Description {#details}
 
-<p>This class stores enough information to efficiently remove some attributes from an existing AttrBuilder, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or AttributeList.</p>
+<p>This class stores enough information to efficiently remove some attributes from an existing <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a>, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>.</p>
 
 <p>Definition at line 29 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributemask-h">AttributeMask.h</a>.</p>
 
@@ -390,7 +390,7 @@ class llvm::AttributeMask { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#aa4688a151549c9f8b86425855f329ba1">AttributeMask</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60eadf64174102f26dd4fd9d79cc93ddee1b">llvm::Attribute::EndAttrKinds</a>.</p>
 
 
-<p>Referenced by <a href="#ac8718c125d72fe1673865494b72d7154">addAttribute</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp/#a68a3391f6fe564a33343e43587478592">adjustCallerSSPLevel</a>, <a href="#a0ca47e710738eb3a6474b1b7a3ca355a">AttributeMask</a>, <a href="/web-llvm/docs/api/namespaces/anonymous-dxilprepare-cpp-/#a75bc124efcc80e995bd054f75dc5452a">anonymous{DXILPrepare.cpp}::collectDeadStringAttrs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aff0740c9bf15ca5da583421c97137b42">llvm::getUBImplyingAttributes</a>, <a href="/web-llvm/docs/api/classes/anonymous-amdgpurewriteoutarguments-cpp-/amdgpurewriteoutarguments/#af9d46a08167454a31f6a9157eb65a44a">anonymous{AMDGPURewriteOutArguments.cpp}::AMDGPURewriteOutArguments::runOnFunction</a>, <a href="/web-llvm/docs/api/classes/anonymous-dxilprepare-cpp-/dxilpreparemodule/#a6bcc20d3d2e7ec05e259efe87ba8fd0c">anonymous{DXILPrepare.cpp}::DXILPrepareModule::runOnModule</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3e175904cc80dad69e662dd284175091">llvm::typeIncompatible</a>.</p>
+<p>Referenced by <a href="#ac8718c125d72fe1673865494b72d7154">addAttribute</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp/#a68a3391f6fe564a33343e43587478592">adjustCallerSSPLevel</a>, <a href="#a0ca47e710738eb3a6474b1b7a3ca355a">AttributeMask</a>, <a href="/web-llvm/docs/api/namespaces/anonymous-dxilprepare-cpp-/#a75bc124efcc80e995bd054f75dc5452a">anonymous{DXILPrepare.cpp}::collectDeadStringAttrs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a67d569e12c844558c447c1d8c1476f10">llvm::AttributeFuncs::getUBImplyingAttributes</a>, <a href="/web-llvm/docs/api/classes/anonymous-amdgpurewriteoutarguments-cpp-/amdgpurewriteoutarguments/#af9d46a08167454a31f6a9157eb65a44a">anonymous{AMDGPURewriteOutArguments.cpp}::AMDGPURewriteOutArguments::runOnFunction</a>, <a href="/web-llvm/docs/api/classes/anonymous-dxilprepare-cpp-/dxilpreparemodule/#a6bcc20d3d2e7ec05e259efe87ba8fd0c">anonymous{DXILPrepare.cpp}::DXILPrepareModule::runOnModule</a> and <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#ab2dcaa046e6a38983e74ce28a120ce79">llvm::AttributeFuncs::typeIncompatible</a>.</p>
 
 </div>
 </div>
@@ -492,7 +492,7 @@ class llvm::AttributeMask { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60eadf64174102f26dd4fd9d79cc93ddee1b">llvm::Attribute::EndAttrKinds</a>.</p>
 
 
-<p>Referenced by <a href="#aebb66fe68085ef9390340f538851f64b">contains</a>.</p>
+<p>Referenced by <a href="#aebb66fe68085ef9390340f538851f64b">contains</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a39fc1d3fa5b22ffc2dc48e94b40409e2">llvm::AttrBuilder::overlaps</a> and <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#abf8bb6f24f26021a4ea1b6486bc983db">llvm::AttrBuilder::remove</a>.</p>
 
 </div>
 </div>
@@ -631,6 +631,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

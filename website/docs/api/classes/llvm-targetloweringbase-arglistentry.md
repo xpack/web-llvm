@@ -405,7 +405,7 @@ class llvm::TargetLoweringBase::ArgListEntry { ... }
 <p>Declaration at line 327 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>, definition at line 112 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/targetlowering-cpp">TargetLowering.cpp</a>.</p>
 
 
-<p>References <a href="#a6057564ee6302f901f383e5811fb0ec0">Alignment</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#a55f8cc1b1837a33a225a76116fae2bf7">IndirectType</a>, <a href="#af13178a29af7ffd19f78abcdf6f5be50">IsByVal</a>, <a href="#a45c4a1254d0282fe537c4c3e3d5c95e7">IsInAlloca</a>, <a href="#ab3dd98c54113e246837a884db6281c89">IsInReg</a>, <a href="#a502a6587d506fc454cd0dea3493c8233">IsNest</a>, <a href="#a1b7b6eedd166d5a9dce023f4caf3744d">IsNoExt</a>, <a href="#a94c07537049909255aa5481832383ea8">IsPreallocated</a>, <a href="#a6211cdb7031b6d72a4f9db2b73d4ff14">IsReturned</a>, <a href="#a5c1b1d84bde13caeff8e555ead3e6d9d">IsSExt</a>, <a href="#a3a13938353e01eb66fd02918029d7471">IsSRet</a>, <a href="#a2bbde6375c87630d6da3bc5d8c302d69">IsSwiftAsync</a>, <a href="#af228c1ab50d777eb5b70bad47c3061af">IsSwiftError</a>, <a href="#a9c5c55349d97e80ea41acf500118ffc7">IsSwiftSelf</a> and <a href="#a85eb2b7ee5e85704da2b36df39830417">IsZExt</a>.</p>
+<p>References <a href="#a6057564ee6302f901f383e5811fb0ec0">Alignment</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a55f8cc1b1837a33a225a76116fae2bf7">IndirectType</a>, <a href="#af13178a29af7ffd19f78abcdf6f5be50">IsByVal</a>, <a href="#a45c4a1254d0282fe537c4c3e3d5c95e7">IsInAlloca</a>, <a href="#ab3dd98c54113e246837a884db6281c89">IsInReg</a>, <a href="#a502a6587d506fc454cd0dea3493c8233">IsNest</a>, <a href="#a1b7b6eedd166d5a9dce023f4caf3744d">IsNoExt</a>, <a href="#a94c07537049909255aa5481832383ea8">IsPreallocated</a>, <a href="#a6211cdb7031b6d72a4f9db2b73d4ff14">IsReturned</a>, <a href="#a5c1b1d84bde13caeff8e555ead3e6d9d">IsSExt</a>, <a href="#a3a13938353e01eb66fd02918029d7471">IsSRet</a>, <a href="#a2bbde6375c87630d6da3bc5d8c302d69">IsSwiftAsync</a>, <a href="#af228c1ab50d777eb5b70bad47c3061af">IsSwiftError</a>, <a href="#a9c5c55349d97e80ea41acf500118ffc7">IsSwiftSelf</a> and <a href="#a85eb2b7ee5e85704da2b36df39830417">IsZExt</a>.</p>
 
 </div>
 </div>
@@ -986,6 +986,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

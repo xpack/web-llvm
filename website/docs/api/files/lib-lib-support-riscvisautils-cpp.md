@@ -205,7 +205,7 @@ keywords:
 <p>Definition at line 40 of file <a href="/web-llvm/docs/api/files/lib/lib/support/riscvisautils-cpp">RISCVISAUtils.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/riscvisautils/#a065d642864b925bfe666f5faf6020165">llvm::RISCVISAUtils::AllStdExts</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a29d963f204d5c763f085c427876edfa7">llvm::isLower</a> and <a href="/web-llvm/docs/api/classes/anonymous-path-cpp-/stringref/#ad0f54a163ac500b144590640c6f1eb6b">anonymous{Path.cpp}::StringRef::npos</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/riscvisautils/#a065d642864b925bfe666f5faf6020165">llvm::RISCVISAUtils::AllStdExts</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#aa1dadba0c2f6f1598969e8a239f7f6dd">isLower</a> and <a href="/web-llvm/docs/api/classes/anonymous-path-cpp-/stringref/#ad0f54a163ac500b144590640c6f1eb6b">anonymous{Path.cpp}::StringRef::npos</a>.</p>
 
 
 <p>Referenced by <a href="#adf45c1638338f84c631d8f5a361fbf86">getExtensionRank</a>.</p>
@@ -217,6 +217,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -572,7 +572,7 @@ struct anonymous{AsmWriter.cpp}::MDFieldPrinter { ... }
 <p>Definition at line 1863 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/asmwriter-cpp">AsmWriter.cpp</a>.</p>
 
 
-<p>References <a href="#a3e68548b639b11a055a7b6b9138430b8">printEmissionKind</a>, <a href="#a73fbe10c61d14e300d2aecd1ba27cf40">printNameTableKind</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="#a3e68548b639b11a055a7b6b9138430b8">printEmissionKind</a>, <a href="#a73fbe10c61d14e300d2aecd1ba27cf40">printNameTableKind</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 </div>
 </div>
@@ -601,7 +601,7 @@ struct anonymous{AsmWriter.cpp}::MDFieldPrinter { ... }
 <p>Definition at line 2005 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/asmwriter-cpp">AsmWriter.cpp</a>.</p>
 
 
-<p>References <a href="#a2bab54f9570c4249a9980ddc0a33a30e">FS</a>, <a href="#a354e4ed611d7e8733ea1535197f3940b">Out</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="#a2bab54f9570c4249a9980ddc0a33a30e">FS</a>, <a href="#a354e4ed611d7e8733ea1535197f3940b">Out</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 </div>
 </div>
@@ -805,7 +805,7 @@ struct anonymous{AsmWriter.cpp}::MDFieldPrinter { ... }
 <p>Definition at line 1850 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/asmwriter-cpp">AsmWriter.cpp</a>.</p>
 
 
-<p>References <a href="#a2bab54f9570c4249a9980ddc0a33a30e">FS</a>, <a href="#a354e4ed611d7e8733ea1535197f3940b">Out</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a4c77325e8379b866ece46236154547fd">llvm::printEscapedString</a>.</p>
+<p>References <a href="#a2bab54f9570c4249a9980ddc0a33a30e">FS</a> and <a href="#a354e4ed611d7e8733ea1535197f3940b">Out</a>.</p>
 
 
 <p>Referenced by <a href="#a33ca524a2627e241c8d818322dff9584">printChecksum</a>.</p>
@@ -943,6 +943,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

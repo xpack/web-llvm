@@ -119,7 +119,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a41660d810e3c9d23c360f2f39394d080">getSuccessor</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -234,7 +234,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 <p>Definition at line 1619 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>.</p>
+<p>References <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>.</p>
 
 
 <p>Referenced by <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a> and <a href="#af24319ada8f3c7c23b7df713ba0e2a87">create</a>.</p>
@@ -402,7 +402,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 <p>Declaration at line 1626 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 730 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#a4f52d7a4f188d9c95c14e8da6b3f18d2">setSuccessor</a>.</p>
@@ -450,7 +450,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::CatchReturnInst::setSuccessor (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * NewSucc)</td>
+<td class="doxyMemberName">void llvm::sandboxir::CatchReturnInst::setSuccessor (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * NewSucc)</td>
 </tr>
 </table>
 </td>
@@ -464,7 +464,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 <p>Declaration at line 1627 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 735 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="#a41660d810e3c9d23c360f2f39394d080">getSuccessor</a>, <a href="#a4f52d7a4f188d9c95c14e8da6b3f18d2">setSuccessor</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="#a41660d810e3c9d23c360f2f39394d080">getSuccessor</a>, <a href="#a4f52d7a4f188d9c95c14e8da6b3f18d2">setSuccessor</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#a4f52d7a4f188d9c95c14e8da6b3f18d2">setSuccessor</a>.</p>
@@ -521,7 +521,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">CatchReturnInst * llvm::sandboxir::CatchReturnInst::create (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/catchpadinst">CatchPadInst</a> * CatchPad, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx)</td>
+<td class="doxyMemberName">CatchReturnInst * llvm::sandboxir::CatchReturnInst::create (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/catchpadinst">CatchPadInst</a> * CatchPad, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx)</td>
 </tr>
 </table>
 </td>
@@ -540,7 +540,7 @@ class llvm::sandboxir::CatchReturnInst { ... }
 <p>Declaration at line 1622 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 709 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a5c05d0363d3e8c1efc015440644bd7c4">llvm::IRBuilderBase::CreateCatchRet</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a5c05d0363d3e8c1efc015440644bd7c4">llvm::IRBuilderBase::CreateCatchRet</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -558,6 +558,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -294,7 +294,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a582c86fdb6a64efb8ec4a59327aa6793">MODULE_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0b0ff03a6bb4a70e73fd5083c3679e52">MODULE_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -307,7 +307,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a97a1c5adfbad7cfb551750d9dec6b013">MODULE_PASS_WITH_PARAMS</a>(NAME, CLASS, CREATE_PASS, PARSER, PARAMS)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a60cfccc5fc706d773a18ba77db9c807f">ADD_PASS_WITH_PARAMS</a>(NAME, CREATE_PASS, PARSER)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7500ad7948c3ddde5d682816f775f4e1">MODULE_PASS_WITH_PARAMS</a>(NAME, CLASS, CREATE_PASS, PARSER, PARAMS)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a60cfccc5fc706d773a18ba77db9c807f">ADD_PASS_WITH_PARAMS</a>(NAME, CREATE_PASS, PARSER)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -320,7 +320,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6263fb21d44822c311d528df14c7d1d3">FUNCTION_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2fe799143be34291491c183ed9c0eea7">FUNCTION_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -333,7 +333,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a39f2a031848ee3c43432d32ba6d42300">FUNCTION_PASS_WITH_PARAMS</a>(NAME, CLASS, CREATE_PASS, PARSER, PARAMS)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a60cfccc5fc706d773a18ba77db9c807f">ADD_PASS_WITH_PARAMS</a>(NAME, CREATE_PASS, PARSER)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a311ebbf608e96c2cf18b6720168da442">FUNCTION_PASS_WITH_PARAMS</a>(NAME, CLASS, CREATE_PASS, PARSER, PARAMS)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a60cfccc5fc706d773a18ba77db9c807f">ADD_PASS_WITH_PARAMS</a>(NAME, CREATE_PASS, PARSER)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -346,7 +346,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54aaec23a0af37818d0b521b9c7cd10d">LOOP_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a23c129b1a117c00315516028a20df042">LOOP_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -359,7 +359,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a70051016d8672632182efe9799c4c083">MACHINE_FUNCTION_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac6116ae7b86d8db66ba2cf3f1f061ce1">MACHINE_FUNCTION_PASS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a7e81816a66f7a306d304777ce3b1d3dc">ADD_PASS</a>(NAME, CREATE_PASS)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -372,7 +372,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a41d7c2793b719b960a6cf9b5fe2aa4e8">MACHINE_FUNCTION_PASS_WITH_PARAMS</a>(NAME, CLASS, CREATE_PASS, PARSER, PARAMS)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a60cfccc5fc706d773a18ba77db9c807f">ADD_PASS_WITH_PARAMS</a>(NAME, CREATE_PASS, PARSER)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0e7b7a2c70f63ae1138cb04e1479bf2e">MACHINE_FUNCTION_PASS_WITH_PARAMS</a>(NAME, CLASS, CREATE_PASS, PARSER, PARAMS)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#a60cfccc5fc706d773a18ba77db9c807f">ADD_PASS_WITH_PARAMS</a>(NAME, CREATE_PASS, PARSER)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -385,7 +385,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae630e66bd51cb0c84874bd406b12f4a3">MODULE_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0dec599234592c714174fee76a88c710">MODULE_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -398,7 +398,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a67c895b5207a31e73cf972bb58ab5aa9">FUNCTION_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2873b9291c09bb8bac44be66f5f79b0c">FUNCTION_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -411,7 +411,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a613be0a47ad4283b033171c7d91ebce9">FUNCTION_ALIAS_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a53b4a11b77c533a402e27bd36033e5f5">FUNCTION_ALIAS_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -424,7 +424,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a153ed55c08dcea6b7bee890741e2465f">LOOP_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4c6fd949900e2be4f909ae96a018bef9">LOOP_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -437,7 +437,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae8bee684ed42fc73cd9184c6c924b57c">MACHINE_FUNCTION_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a304fa0b7b45d6b32d5742c05f852b1f2">MACHINE_FUNCTION_ANALYSIS</a>(NAME, CREATE_PASS)&nbsp;&nbsp;&nbsp;  AM.registerPass([&amp;] { return CREATE_PASS; });</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -614,7 +614,7 @@ keywords:
 </div>
 </div>
 
-### FUNCTION\_ALIAS\_ANALYSIS {#a613be0a47ad4283b033171c7d91ebce9}
+### FUNCTION\_ALIAS\_ANALYSIS {#a53b4a11b77c533a402e27bd36033e5f5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -676,7 +676,7 @@ keywords:
 </div>
 </div>
 
-### FUNCTION\_ANALYSIS {#a67c895b5207a31e73cf972bb58ab5aa9}
+### FUNCTION\_ANALYSIS {#a2873b9291c09bb8bac44be66f5f79b0c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -726,7 +726,7 @@ keywords:
 </div>
 </div>
 
-### FUNCTION\_PASS {#a6263fb21d44822c311d528df14c7d1d3}
+### FUNCTION\_PASS {#a2fe799143be34291491c183ed9c0eea7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -776,7 +776,7 @@ keywords:
 </div>
 </div>
 
-### FUNCTION\_PASS\_WITH\_PARAMS {#a39f2a031848ee3c43432d32ba6d42300}
+### FUNCTION\_PASS\_WITH\_PARAMS {#a311ebbf608e96c2cf18b6720168da442}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -851,7 +851,7 @@ keywords:
 </div>
 </div>
 
-### LOOP\_ANALYSIS {#a153ed55c08dcea6b7bee890741e2465f}
+### LOOP\_ANALYSIS {#a4c6fd949900e2be4f909ae96a018bef9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -901,7 +901,7 @@ keywords:
 </div>
 </div>
 
-### LOOP\_PASS {#a54aaec23a0af37818d0b521b9c7cd10d}
+### LOOP\_PASS {#a23c129b1a117c00315516028a20df042}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -951,7 +951,7 @@ keywords:
 </div>
 </div>
 
-### MACHINE\_FUNCTION\_ANALYSIS {#ae8bee684ed42fc73cd9184c6c924b57c}
+### MACHINE\_FUNCTION\_ANALYSIS {#a304fa0b7b45d6b32d5742c05f852b1f2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1001,7 +1001,7 @@ keywords:
 </div>
 </div>
 
-### MACHINE\_FUNCTION\_PASS {#a70051016d8672632182efe9799c4c083}
+### MACHINE\_FUNCTION\_PASS {#ac6116ae7b86d8db66ba2cf3f1f061ce1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1051,7 +1051,7 @@ keywords:
 </div>
 </div>
 
-### MACHINE\_FUNCTION\_PASS\_WITH\_PARAMS {#a41d7c2793b719b960a6cf9b5fe2aa4e8}
+### MACHINE\_FUNCTION\_PASS\_WITH\_PARAMS {#a0e7b7a2c70f63ae1138cb04e1479bf2e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1101,7 +1101,7 @@ keywords:
 </div>
 </div>
 
-### MODULE\_ANALYSIS {#ae630e66bd51cb0c84874bd406b12f4a3}
+### MODULE\_ANALYSIS {#a0dec599234592c714174fee76a88c710}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1151,7 +1151,7 @@ keywords:
 </div>
 </div>
 
-### MODULE\_PASS {#a582c86fdb6a64efb8ec4a59327aa6793}
+### MODULE\_PASS {#a0b0ff03a6bb4a70e73fd5083c3679e52}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1201,7 +1201,7 @@ keywords:
 </div>
 </div>
 
-### MODULE\_PASS\_WITH\_PARAMS {#a97a1c5adfbad7cfb551750d9dec6b013}
+### MODULE\_PASS\_WITH\_PARAMS {#a7500ad7948c3ddde5d682816f775f4e1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1230,6 +1230,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

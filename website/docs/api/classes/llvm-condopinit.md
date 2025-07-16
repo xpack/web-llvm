@@ -1339,7 +1339,7 @@ class llvm::CondOpInit { ... }
 <p>Declaration at line 1068 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/tablegen/record-h">Record.h</a>, definition at line 2557 of file <a href="/web-llvm/docs/api/files/lib/lib/tablegen/record-cpp">Record.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a181dad1cdd60a83a181108d90acd4738">get</a>, <a href="#af11ef11d4adc7848164ed0e49094f08a">getConds</a>, <a href="#a5229790812fea06f2810bb2bc492ff06">getVals</a>, <a href="#ad1fce1ca60a2b2aa599ac4d6d8dd3331">getValType</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/classes/llvm/init/#a00581957c4bb1587a458c3fbf4326f7a">llvm::Init::resolveReferences</a>.</p>
+<p>References <a href="#a181dad1cdd60a83a181108d90acd4738">get</a>, <a href="#af11ef11d4adc7848164ed0e49094f08a">getConds</a>, <a href="#a5229790812fea06f2810bb2bc492ff06">getVals</a>, <a href="#ad1fce1ca60a2b2aa599ac4d6d8dd3331">getValType</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/classes/llvm/init/#a00581957c4bb1587a458c3fbf4326f7a">llvm::Init::resolveReferences</a>.</p>
 
 </div>
 </div>
@@ -1585,6 +1585,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

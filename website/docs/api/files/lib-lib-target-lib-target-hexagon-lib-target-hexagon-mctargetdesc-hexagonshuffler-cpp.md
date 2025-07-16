@@ -393,7 +393,7 @@ keywords:
 <p>Definition at line 442 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonshuffler-cpp">HexagonShuffler.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-h/#a8f76c0f5e34856920717e06ebc5f4dc3">HEXAGON_PACKET_SIZE</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa1fd1719afe5b07ebe55f1d105c98916">llvm::join</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-h/#a8f76c0f5e34856920717e06ebc5f4dc3">HEXAGON_PACKET_SIZE</a> and <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/hexagonshuffler/#aafe1b52718a5cd8afd0dbb15e45b5c17">llvm::HexagonShuffler::GetPacketSummary</a> and <a href="/web-llvm/docs/api/classes/llvm/hexagonshuffler/#ac7d91a59f353ae38556450341aea270d">llvm::HexagonShuffler::reportResourceUsage</a>.</p>
@@ -607,6 +607,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

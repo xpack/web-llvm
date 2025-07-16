@@ -661,7 +661,7 @@ struct anonymous{HexagonLoadStoreWidening.cpp}::HexagonLoadStoreWidening { ... }
 <p>Definition at line 103 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonloadstorewidening-cpp">HexagonLoadStoreWidening.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> and <a href="#a77d72c9918596fe7775dda5c0cfb5356">MF</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a> and <a href="#a77d72c9918596fe7775dda5c0cfb5356">MF</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/anonymous-hexagonloadstorewidening-cpp-/hexagonloadwidening/#a9e42da81e4f2dc0432ee7d615420d07f">anonymous{HexagonLoadStoreWidening.cpp}::HexagonLoadWidening::runOnMachineFunction</a> and <a href="/web-llvm/docs/api/structs/anonymous-hexagonloadstorewidening-cpp-/hexagonstorewidening/#a70e2faddefd0484ebf9d2dfa47007678">anonymous{HexagonLoadStoreWidening.cpp}::HexagonStoreWidening::runOnMachineFunction</a>.</p>
@@ -1336,6 +1336,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -3,7 +3,7 @@
 # DO NOT EDIT!
 # Automatically generated via doxygen2docusaurus by Doxygen.
 
-slug: /api/classes/llvm/preservedanalyses/preservedanalysischecker
+slug: /api/classes/llvm/preservedanalysischecker
 custom_edit_url: null
 toc_max_heading_level: 4
 keywords:
@@ -22,7 +22,7 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
+class llvm::PreservedAnalysisChecker { ... }
 </div>
 
 ## Included Headers
@@ -55,12 +55,12 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4a23e26ba9eb94d4f75bc75bb459a6fa">PreservedAnalysisChecker</a> (const PreservedAnalyses &amp;PA, AnalysisKey *ID)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad78527a465153f3d7cc889f34582d255">PreservedAnalysisChecker</a> (const PreservedAnalyses &amp;PA, AnalysisKey *ID)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker">PreservedAnalysisChecker</a> is tied to a particular Analysis because <span class="doxyComputerOutput"><a href="#a2f84945a09787006fe8e0c94e1de89f1">preserved()</a></span> and <span class="doxyComputerOutput"><a href="#abaaa2690a96aed712836f8f292d8128c">preservedSet()</a></span> both return false if the Analysis was abandoned. <a href="#a4a23e26ba9eb94d4f75bc75bb459a6fa">More...</a></p>
+<p>A <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">PreservedAnalysisChecker</a> is tied to a particular Analysis because <span class="doxyComputerOutput"><a href="#a96eee8e68a03f258b63510d47436a9f7">preserved()</a></span> and <span class="doxyComputerOutput"><a href="#ad5c5895ea2f2d754cb17aa57faa20836">preservedSet()</a></span> both return false if the Analysis was abandoned. <a href="#ad78527a465153f3d7cc889f34582d255">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -75,12 +75,12 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2f84945a09787006fe8e0c94e1de89f1">preserved</a> ()</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a96eee8e68a03f258b63510d47436a9f7">preserved</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Returns true if the checker's analysis was not abandoned and either. <a href="#a2f84945a09787006fe8e0c94e1de89f1">More...</a></p>
+<p>Returns true if the checker's analysis was not abandoned and either. <a href="#a96eee8e68a03f258b63510d47436a9f7">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -89,12 +89,12 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a48ecc8b3108b550239565f675adfd6f8">preservedWhenStateless</a> ()</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad51961e5eef7b750b19a4107498ab0f6">preservedWhenStateless</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Return true if the checker's analysis was not abandoned, i.e. <a href="#a48ecc8b3108b550239565f675adfd6f8">More...</a></p>
+<p>Return true if the checker's analysis was not abandoned, i.e. <a href="#ad51961e5eef7b750b19a4107498ab0f6">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -106,12 +106,12 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#abaaa2690a96aed712836f8f292d8128c">preservedSet</a> ()</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ad5c5895ea2f2d754cb17aa57faa20836">preservedSet</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Returns true if the checker's analysis was not abandoned and either. <a href="#abaaa2690a96aed712836f8f292d8128c">More...</a></p>
+<p>Returns true if the checker's analysis was not abandoned and either. <a href="#ad5c5895ea2f2d754cb17aa57faa20836">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -125,8 +125,8 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a90c91b1d13ea50f6f8d5aa54f7bff22e">PA</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a95bf63b09676aa0018e54d1592c7d912">PreservedAnalyses</a> &amp;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ada0cd761cb1a9c556126040064e36184">PA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -139,7 +139,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/analysiskey">AnalysisKey</a> *<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8403791c6f149578573745f42da4585e">ID</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5eaaa70882c0dffce850cb5855107fbb">ID</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -152,7 +152,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> bool</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9cd4ed40f8a35fa001f31ca2c42d701f">IsAbandoned</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0dbebb5c085cca678ed87c5046958add">IsAbandoned</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -185,7 +185,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberName">friend class PreservedAnalyses</td>
 </tr>
 </table>
 </td>
@@ -212,7 +212,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 ## Private Constructors
 
-### PreservedAnalysisChecker() {#a4a23e26ba9eb94d4f75bc75bb459a6fa}
+### PreservedAnalysisChecker() {#ad78527a465153f3d7cc889f34582d255}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -221,7 +221,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::PreservedAnalyses::PreservedAnalysisChecker::PreservedAnalysisChecker (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, <a href="/web-llvm/docs/api/structs/llvm/analysiskey">AnalysisKey</a> * ID)</td>
+<td class="doxyMemberName">llvm::PreservedAnalysisChecker::PreservedAnalysisChecker (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a95bf63b09676aa0018e54d1592c7d912">PreservedAnalyses</a> &amp; PA, <a href="/web-llvm/docs/api/structs/llvm/analysiskey">AnalysisKey</a> * ID)</td>
 </tr>
 </table>
 </td>
@@ -235,7 +235,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>A <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker">PreservedAnalysisChecker</a> is tied to a particular Analysis because <span class="doxyComputerOutput"><a href="#a2f84945a09787006fe8e0c94e1de89f1">preserved()</a></span> and <span class="doxyComputerOutput"><a href="#abaaa2690a96aed712836f8f292d8128c">preservedSet()</a></span> both return false if the Analysis was abandoned.</p>
+<p>A <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">PreservedAnalysisChecker</a> is tied to a particular Analysis because <span class="doxyComputerOutput"><a href="#a96eee8e68a03f258b63510d47436a9f7">preserved()</a></span> and <span class="doxyComputerOutput"><a href="#ad5c5895ea2f2d754cb17aa57faa20836">preservedSet()</a></span> both return false if the Analysis was abandoned.</p>
 
 <p>Definition at line 232 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/analysis-h">Analysis.h</a>.</p>
 
@@ -248,7 +248,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 ## Public Member Functions
 
-### preserved() {#a2f84945a09787006fe8e0c94e1de89f1}
+### preserved() {#a96eee8e68a03f258b63510d47436a9f7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -257,7 +257,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::PreservedAnalyses::PreservedAnalysisChecker::preserved ()</td>
+<td class="doxyMemberName">bool llvm::PreservedAnalysisChecker::preserved ()</td>
 </tr>
 </table>
 </td>
@@ -284,7 +284,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 </div>
 </div>
 
-### preservedSet() {#abaaa2690a96aed712836f8f292d8128c}
+### preservedSet() {#ad5c5895ea2f2d754cb17aa57faa20836}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -294,7 +294,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::PreservedAnalyses::PreservedAnalysisChecker::preservedSet ()</td>
+<td class="doxyMemberName">bool llvm::PreservedAnalysisChecker::preservedSet ()</td>
 </tr>
 </table>
 </td>
@@ -321,7 +321,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 </div>
 </div>
 
-### preservedWhenStateless() {#a48ecc8b3108b550239565f675adfd6f8}
+### preservedWhenStateless() {#ad51961e5eef7b750b19a4107498ab0f6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -330,7 +330,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::PreservedAnalyses::PreservedAnalysisChecker::preservedWhenStateless ()</td>
+<td class="doxyMemberName">bool llvm::PreservedAnalysisChecker::preservedWhenStateless ()</td>
 </tr>
 </table>
 </td>
@@ -352,9 +352,6 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 <p>Definition at line 247 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/analysis-h">Analysis.h</a>.</p>
 
-
-<p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/shouldrunextrapasses/result/#afb0d98d85d8f59895de32dd450f0f0ef">llvm::ShouldRunExtraPasses&lt; MarkerTy &gt;::Result::invalidate</a> and <a href="/web-llvm/docs/api/structs/llvm/shouldrunextrapasses/result/#aa7d7720f8274811cf36bc0bfae1ec0fe">llvm::ShouldRunExtraPasses&lt; MarkerTy &gt;::Result::invalidate</a>.</p>
-
 </div>
 </div>
 
@@ -364,7 +361,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 
 ## Private Member Attributes
 
-### ID {#a8403791c6f149578573745f42da4585e}
+### ID {#a5eaaa70882c0dffce850cb5855107fbb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -373,7 +370,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AnalysisKey* const llvm::PreservedAnalyses::PreservedAnalysisChecker::ID</td>
+<td class="doxyMemberName">AnalysisKey* const llvm::PreservedAnalysisChecker::ID</td>
 </tr>
 </table>
 </td>
@@ -389,7 +386,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 </div>
 </div>
 
-### IsAbandoned {#a9cd4ed40f8a35fa001f31ca2c42d701f}
+### IsAbandoned {#a0dbebb5c085cca678ed87c5046958add}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -398,7 +395,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">const bool llvm::PreservedAnalyses::PreservedAnalysisChecker::IsAbandoned</td>
+<td class="doxyMemberName">const bool llvm::PreservedAnalysisChecker::IsAbandoned</td>
 </tr>
 </table>
 </td>
@@ -414,7 +411,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 </div>
 </div>
 
-### PA {#a90c91b1d13ea50f6f8d5aa54f7bff22e}
+### PA {#ada0cd761cb1a9c556126040064e36184}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -423,7 +420,7 @@ class llvm::PreservedAnalyses::PreservedAnalysisChecker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">const PreservedAnalyses&amp; llvm::PreservedAnalyses::PreservedAnalysisChecker::PA</td>
+<td class="doxyMemberName">const PreservedAnalyses&amp; llvm::PreservedAnalysisChecker::PA</td>
 </tr>
 </table>
 </td>
@@ -451,6 +448,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

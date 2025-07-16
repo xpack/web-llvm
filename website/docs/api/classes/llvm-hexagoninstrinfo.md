@@ -4045,7 +4045,7 @@ class llvm::HexagonInstrInfo { ... }
 <p>Declaration at line 258 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoninstrinfo-h">HexagonInstrInfo.h</a>, definition at line 1844 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoninstrinfo-cpp">HexagonInstrInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/stringref/#ac2c31b7b3c778d12aa176f9253511f37">llvm::StringRef::count</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">llvm::StringRef::data</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a83dadee742338c79e561e3efff6ee00a">llvm::MCAsmInfo::getCommentString</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a2b7e615b4225eacdea39c80b2babfcf0">llvm::MCAsmInfo::getMaxInstLength</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#aa37738ea69f4a3dc986397be99c66f24">llvm::MCAsmInfo::getSeparatorString</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#acea2ac67f3ff35107bcf1693416da8e7">llvm::isSpace</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">llvm::Length</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">llvm::StringRef::size</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/stringref/#ac2c31b7b3c778d12aa176f9253511f37">llvm::StringRef::count</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">llvm::StringRef::data</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a83dadee742338c79e561e3efff6ee00a">llvm::MCAsmInfo::getCommentString</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a2b7e615b4225eacdea39c80b2babfcf0">llvm::MCAsmInfo::getMaxInstLength</a>, <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#aa37738ea69f4a3dc986397be99c66f24">llvm::MCAsmInfo::getSeparatorString</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">llvm::Length</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">llvm::StringRef::size</a>.</p>
 
 
 <p>Referenced by <a href="#aab2e617786f0429ea73422f70fdb0606">getSize</a>.</p>
@@ -7764,6 +7764,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

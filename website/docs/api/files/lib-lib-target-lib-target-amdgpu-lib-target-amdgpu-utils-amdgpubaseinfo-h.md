@@ -574,7 +574,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a66f40f2033d0d8260eabc2d178192006">GET_MAIInstInfoTable_DECL</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a161fad125647b9580cf5fff88137c79b">GET_MAIInstInfoTable_DECL</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -693,7 +693,7 @@ keywords:
 </div>
 </div>
 
-### GET\_MAIInstInfoTable\_DECL {#a66f40f2033d0d8260eabc2d178192006}
+### GET\_MAIInstInfoTable\_DECL {#a161fad125647b9580cf5fff88137c79b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -872,6 +872,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

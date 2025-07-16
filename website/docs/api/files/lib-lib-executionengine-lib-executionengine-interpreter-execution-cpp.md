@@ -745,7 +745,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab17082b5668396b9c47660397a72c0e6">IMPLEMENT_VAARG</a>(TY)&nbsp;&nbsp;&nbsp;   case Type::TY##TyID: Dest.TY##Val = Src.TY##Val; <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab17082b5668396b9c47660397a72c0e6">IMPLEMENT_VAARG</a>(TY)&nbsp;&nbsp;&nbsp;   case Type::TY##TyID: Dest.TY##Val = Src.TY##Val; break</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2186,7 +2186,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">   case Type::TY##TyID: \
      Dest.TY##Val = Src1.TY##Val <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h/#a0b0cd724f4b7f8589a602b17d6caa1fb">OP</a> Src2.TY##Val; \
-     <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>
+     break
 </div>
 </dd>
 </dl>
@@ -2224,7 +2224,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">   case Type::TY##TyID: \
      Dest.IntVal = <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>(1,Src1.TY##Val <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h/#a0b0cd724f4b7f8589a602b17d6caa1fb">OP</a> Src2.TY##Val); \
-     <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>
+     break
 </div>
 </dd>
 </dl>
@@ -2262,7 +2262,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">   case Type::IntegerTyID:  \
       Dest.IntVal = <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>(1,<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h/#a0b0cd724f4b7f8589a602b17d6caa1fb">Src1.IntVal.OP</a>(Src2.IntVal)); \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+      break;
 </div>
 </dd>
 </dl>
@@ -2301,7 +2301,7 @@ keywords:
 <div class="doxyVerbatim">   case Type::PointerTyID: \
       Dest.IntVal = <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>(1,(void*)(intptr_t)Src1.PointerVal <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h/#a0b0cd724f4b7f8589a602b17d6caa1fb">OP</a> \
                             (void*)(intptr_t)Src2.PointerVal); \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+      break;
 </div>
 </dd>
 </dl>
@@ -2413,7 +2413,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define IMPLEMENT_VAARG(TY)&nbsp;&nbsp;&nbsp;   case Type::TY##TyID: Dest.TY##Val = Src.TY##Val; <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td>
+<td class="doxyMemberName">#define IMPLEMENT_VAARG(TY)&nbsp;&nbsp;&nbsp;   case Type::TY##TyID: Dest.TY##Val = Src.TY##Val; break</td>
 </tr>
 </table>
 </td>
@@ -2502,7 +2502,7 @@ keywords:
   <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#a4cfc8b177e8521a4b496ae2edff6244f">for</a>( uint32_t _i=0;_i&lt;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">Src1.AggregateVal.size</a>();_i++)              \
     Dest.AggregateVal[_i].IntVal = <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>(1,                         \
     Src1.AggregateVal[_i].TY##Val <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h/#a0b0cd724f4b7f8589a602b17d6caa1fb">OP</a> Src2.AggregateVal[_i].TY##Val);\
-  <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+  break;
 </div>
 </dd>
 </dl>
@@ -2542,7 +2542,7 @@ keywords:
     <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#a4cfc8b177e8521a4b496ae2edff6244f">for</a> (uint32_t _i = 0; _i &lt; <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">Src1.AggregateVal.size</a>(); _i++)                 \
       Dest.AggregateVal[_i].IntVal = <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>(                                    \
           1, Src1.AggregateVal[_i].<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h/#a0b0cd724f4b7f8589a602b17d6caa1fb">IntVal.OP</a>(Src2.AggregateVal[_i].IntVal));   \
-  } <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+  } break;
 </div>
 </dd>
 </dl>
@@ -2762,6 +2762,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

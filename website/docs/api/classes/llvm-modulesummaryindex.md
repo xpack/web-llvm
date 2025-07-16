@@ -2328,7 +2328,7 @@ class llvm::ModuleSummaryIndex { ... }
 <p>Declaration at line 1908 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/modulesummaryindex-h">ModuleSummaryIndex.h</a>, definition at line 378 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/modulesummaryindex-cpp">ModuleSummaryIndex.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3c1a67796e24a843db8a6766baa54c21">llvm::scc_begin</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3c1a67796e24a843db8a6766baa54c21">llvm::scc_begin</a>.</p>
 
 </div>
 </div>
@@ -5105,7 +5105,7 @@ class llvm::ModuleSummaryIndex { ... }
 <p>Definition at line 1774 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/modulesummaryindex-h">ModuleSummaryIndex.h</a>.</p>
 
 
-<p>References <a href="#ab2a95e6bf06c717c20fc64f6c1e5a2fa">getGlobalNameForLocal</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>Reference <a href="#ab2a95e6bf06c717c20fc64f6c1e5a2fa">getGlobalNameForLocal</a>.</p>
 
 
 <p>Referenced by <a href="#ab2a95e6bf06c717c20fc64f6c1e5a2fa">getGlobalNameForLocal</a>, <a href="/web-llvm/docs/api/structs/anonymous-wholeprogramdevirt-cpp-/devirtindex/#a0e99a7c09395086976fe39e08dbe36a6">anonymous{WholeProgramDevirt.cpp}::DevirtIndex::trySingleImplDevirt</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8ec46c5d3e8bc9ca6f20307b0316a0d7">llvm::updateIndexWPDForExports</a>.</p>
@@ -5271,6 +5271,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

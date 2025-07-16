@@ -282,7 +282,7 @@ class anonymous{AMDGPUReserveWWMRegs.cpp}::AMDGPUReserveWWMRegs { ... }
 <p>Definition at line 38 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpureservewwmregs-cpp">AMDGPUReserveWWMRegs.cpp</a>.</p>
 
 
-<p>References <a href="#a627b2220409f49021df723c12cf9396c">AMDGPUReserveWWMRegs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#a54e2218c9791adfd88317908de38d837">llvm::SIMachineFunctionInfo::clearNonWWMRegAllocMask</a>, <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#ac90363de2bb9275d5c5939845d1cd5f6">llvm::SIMachineFunctionInfo::getWWMReservedRegs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#afaed20eb9e5f290239aa67ce0e8d7a0c">llvm::SIMachineFunctionInfo::reserveWWMRegister</a> and <a href="#a268c9c1db6e3f8265fbc67f6e2aaa939">runOnMachineFunction</a>.</p>
+<p>References <a href="#a627b2220409f49021df723c12cf9396c">AMDGPUReserveWWMRegs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#a54e2218c9791adfd88317908de38d837">llvm::SIMachineFunctionInfo::clearNonWWMRegAllocMask</a>, <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#ac90363de2bb9275d5c5939845d1cd5f6">llvm::SIMachineFunctionInfo::getWWMReservedRegs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#afaed20eb9e5f290239aa67ce0e8d7a0c">llvm::SIMachineFunctionInfo::reserveWWMRegister</a> and <a href="#a268c9c1db6e3f8265fbc67f6e2aaa939">runOnMachineFunction</a>.</p>
 
 
 <p>Referenced by <a href="#a268c9c1db6e3f8265fbc67f6e2aaa939">runOnMachineFunction</a>.</p>
@@ -341,6 +341,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

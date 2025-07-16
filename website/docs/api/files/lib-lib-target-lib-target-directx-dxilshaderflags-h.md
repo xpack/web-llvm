@@ -170,7 +170,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e38ea73354f45314918203c6026d26f">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FlagName = false;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aaaadb445b91546ac0292943433d4da13">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FlagName = false;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -183,7 +183,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af60f5cbcff2b96a8f20525f7a264206e">DXIL_MODULE_FLAG</a>(DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;FlagName = false;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad5ece22361f94fbc6c80bd4b80b2913e">DXIL_MODULE_FLAG</a>(DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;FlagName = false;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -196,7 +196,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af60f5cbcff2b96a8f20525f7a264206e">DXIL_MODULE_FLAG</a>(DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  ModuleFlags |= FlagName ? getMask(DxilModuleBit) : 0ull;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad10c8b813cb9cd3047bb77a9487106c5">DXIL_MODULE_FLAG</a>(DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  ModuleFlags |= FlagName ? getMask(DxilModuleBit) : 0ull;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -209,7 +209,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e38ea73354f45314918203c6026d26f">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FlagValue |= FlagName ? getMask(DxilModuleBit) : 0ull;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4e9e4bc72373d950400d02e51ec61f66">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FlagValue |= FlagName ? getMask(DxilModuleBit) : 0ull;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -222,7 +222,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e38ea73354f45314918203c6026d26f">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FeatureFlags |= FlagName ? getMask(FeatureBit) : 0ull;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4c7dfab8224211ce5a00636d56df9af4">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FeatureFlags |= FlagName ? getMask(FeatureBit) : 0ull;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -235,7 +235,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e38ea73354f45314918203c6026d26f">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FlagName |= CSF.FlagName;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a68b7cbf21023970b3ee2ca0696cef64c">SHADER_FEATURE_FLAG</a>(FeatureBit, DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;  FlagName |= CSF.FlagName;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -248,7 +248,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af60f5cbcff2b96a8f20525f7a264206e">DXIL_MODULE_FLAG</a>(DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;FlagName |= CSF.FlagName;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa20ea92b0f35acdb142f6159396c025">DXIL_MODULE_FLAG</a>(DxilModuleBit, FlagName, Str)&nbsp;&nbsp;&nbsp;FlagName |= CSF.FlagName;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -291,7 +291,7 @@ keywords:
 </div>
 </div>
 
-### DXIL\_MODULE\_FLAG {#af60f5cbcff2b96a8f20525f7a264206e}
+### DXIL\_MODULE\_FLAG {#ad5ece22361f94fbc6c80bd4b80b2913e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -316,7 +316,7 @@ keywords:
 </div>
 </div>
 
-### DXIL\_MODULE\_FLAG {#af60f5cbcff2b96a8f20525f7a264206e}
+### DXIL\_MODULE\_FLAG {#ad10c8b813cb9cd3047bb77a9487106c5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -341,7 +341,7 @@ keywords:
 </div>
 </div>
 
-### DXIL\_MODULE\_FLAG {#af60f5cbcff2b96a8f20525f7a264206e}
+### DXIL\_MODULE\_FLAG {#afa20ea92b0f35acdb142f6159396c025}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -391,7 +391,7 @@ keywords:
 </div>
 </div>
 
-### SHADER\_FEATURE\_FLAG {#a1e38ea73354f45314918203c6026d26f}
+### SHADER\_FEATURE\_FLAG {#aaaadb445b91546ac0292943433d4da13}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -416,7 +416,7 @@ keywords:
 </div>
 </div>
 
-### SHADER\_FEATURE\_FLAG {#a1e38ea73354f45314918203c6026d26f}
+### SHADER\_FEATURE\_FLAG {#a4e9e4bc72373d950400d02e51ec61f66}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -441,7 +441,7 @@ keywords:
 </div>
 </div>
 
-### SHADER\_FEATURE\_FLAG {#a1e38ea73354f45314918203c6026d26f}
+### SHADER\_FEATURE\_FLAG {#a4c7dfab8224211ce5a00636d56df9af4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -466,7 +466,7 @@ keywords:
 </div>
 </div>
 
-### SHADER\_FEATURE\_FLAG {#a1e38ea73354f45314918203c6026d26f}
+### SHADER\_FEATURE\_FLAG {#a68b7cbf21023970b3ee2ca0696cef64c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -495,6 +495,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

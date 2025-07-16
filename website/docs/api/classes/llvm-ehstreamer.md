@@ -292,12 +292,12 @@ class llvm::EHStreamer { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">static bool</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1ea22df61755266413f65ca7e970c4bc">callToNoUnwindFunction</a> (const MachineInstr *MI)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#add3aa627d6c1eb31f0b6563af39b8b64">callToNoUnwindFunction</a> (const MachineInstr *MI)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Return ‘true` if this is a call to a function marked ‘nounwind`. <a href="#a1ea22df61755266413f65ca7e970c4bc">More...</a></p>
+<p>Return ‘true` if this is a call to a function marked ‘nounwind`. <a href="#add3aa627d6c1eb31f0b6563af39b8b64">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -471,6 +471,9 @@ class llvm::EHStreamer { ... }
 
 <p>Definition at line 151 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-h">EHStreamer.h</a>.</p>
 
+
+<p>References <a href="#add3aa627d6c1eb31f0b6563af39b8b64">callToNoUnwindFunction</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
 </div>
 </div>
 
@@ -563,7 +566,7 @@ class llvm::EHStreamer { ... }
 <p>Declaration at line 111 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-h">EHStreamer.h</a>, definition at line 230 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp">EHStreamer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/structs/llvm/ehstreamer/callsiteentry/#aa6505d626d005463a5a85492da38cc28">llvm::EHStreamer::CallSiteEntry::Action</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2ca3855108426698ff21517a7c884c84a7e6bb0931a72759d39514aa924b420bc">llvm::AIX</a>, <a href="#a346d40526a13ec03f632cd9fd1b51ca9">Asm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#acd9e771a3296c6b24146955754620557">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::back</a>, <a href="/web-llvm/docs/api/structs/llvm/landingpadinfo/#af2a11ab96d84007873d7803f2df9e881">llvm::LandingPadInfo::BeginLabels</a>, <a href="#a1ea22df61755266413f65ca7e970c4bc">callToNoUnwindFunction</a>, <a href="#a1f1ea57bc156f9e309b4049bc1d10e17">computePadMap</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a65520b9c67759099e313d0f4e7b5ff9e">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</a>, <a href="/web-llvm/docs/api/structs/llvm/ehstreamer/callsiteentry/#ab4e49554456434e3732647a566d0d6fe">llvm::EHStreamer::CallSiteEntry::EndLabel</a>, <a href="/web-llvm/docs/api/structs/llvm/landingpadinfo/#a0c7386f43dd7813531d1c0498bc0194e">llvm::LandingPadInfo::EndLabels</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a0c047f127ed4380a6f383d70bec4eb94">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</a>, <a href="/web-llvm/docs/api/structs/llvm/landingpadinfo/#a1197e6ef704b54459dcb2586cf4d5ba2">llvm::LandingPadInfo::LandingPadLabel</a>, <a href="/web-llvm/docs/api/structs/llvm/ehstreamer/callsiteentry/#a4f438afdc653ceeb2fcd6ade380a5fff">llvm::EHStreamer::CallSiteEntry::LPad</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#ad0b3d8447f88377b62d9c019f3c4e118">llvm::SmallVectorImpl&lt; T &gt;::resize</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a2ca3855108426698ff21517a7c884c84a0f60fd9b862dff366e18e32c6d98d96b">llvm::SjLj</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/llvm/ehstreamer/callsiteentry/#aa6505d626d005463a5a85492da38cc28">llvm::EHStreamer::CallSiteEntry::Action</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a2ca3855108426698ff21517a7c884c84a7e6bb0931a72759d39514aa924b420bc">llvm::AIX</a>, <a href="#a346d40526a13ec03f632cd9fd1b51ca9">Asm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#acd9e771a3296c6b24146955754620557">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::back</a>, <a href="/web-llvm/docs/api/structs/llvm/landingpadinfo/#af2a11ab96d84007873d7803f2df9e881">llvm::LandingPadInfo::BeginLabels</a>, <a href="#add3aa627d6c1eb31f0b6563af39b8b64">callToNoUnwindFunction</a>, <a href="#a1f1ea57bc156f9e309b4049bc1d10e17">computePadMap</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a65520b9c67759099e313d0f4e7b5ff9e">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end</a>, <a href="/web-llvm/docs/api/structs/llvm/ehstreamer/callsiteentry/#ab4e49554456434e3732647a566d0d6fe">llvm::EHStreamer::CallSiteEntry::EndLabel</a>, <a href="/web-llvm/docs/api/structs/llvm/landingpadinfo/#a0c7386f43dd7813531d1c0498bc0194e">llvm::LandingPadInfo::EndLabels</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a0c047f127ed4380a6f383d70bec4eb94">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find</a>, <a href="/web-llvm/docs/api/structs/llvm/landingpadinfo/#a1197e6ef704b54459dcb2586cf4d5ba2">llvm::LandingPadInfo::LandingPadLabel</a>, <a href="/web-llvm/docs/api/structs/llvm/ehstreamer/callsiteentry/#a4f438afdc653ceeb2fcd6ade380a5fff">llvm::EHStreamer::CallSiteEntry::LPad</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#ad0b3d8447f88377b62d9c019f3c4e118">llvm::SmallVectorImpl&lt; T &gt;::resize</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::size</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a2ca3855108426698ff21517a7c884c84a0f60fd9b862dff366e18e32c6d98d96b">llvm::SjLj</a>.</p>
 
 
 <p>Referenced by <a href="#a420cc4a7a63b33a52659768b133b5f1b">emitExceptionTable</a>.</p>
@@ -783,7 +786,7 @@ class llvm::EHStreamer { ... }
 
 ## Public Static Functions
 
-### callToNoUnwindFunction() {#a1ea22df61755266413f65ca7e970c4bc}
+### callToNoUnwindFunction() {#add3aa627d6c1eb31f0b6563af39b8b64}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -792,7 +795,7 @@ class llvm::EHStreamer { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::EHStreamer::callToNoUnwindFunction (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> * MI)</td>
+<td class="doxyMemberName">bool EHStreamer::callToNoUnwindFunction (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> * MI)</td>
 </tr>
 </table>
 </td>
@@ -812,13 +815,13 @@ class llvm::EHStreamer { ... }
 <p>Return ‘false` otherwise.</p>
 
 
-<p>Definition at line 155 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-h">EHStreamer.h</a>.</p>
+<p>Declaration at line 155 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-h">EHStreamer.h</a>, definition at line 157 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp">EHStreamer.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
 
 
-<p>Referenced by <a href="#a49694eb08442bb35020b9d8dfad6d7e5">computeCallSiteTable</a>.</p>
+<p>Referenced by <a href="#a49694eb08442bb35020b9d8dfad6d7e5">computeCallSiteTable</a> and <a href="#a587c61624bc329ab1c8d2317f19e1c08">~EHStreamer</a>.</p>
 
 </div>
 </div>
@@ -975,6 +978,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

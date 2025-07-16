@@ -337,7 +337,7 @@ keywords:
 <p>Definition at line 140 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/callbrprepare-cpp">CallBrPrepare.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/ssaupdater/#af0d1a82b4e629e834c2ed53e5cbe22ef">llvm::SSAUpdater::AddAvailableValue</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a80eec4efbded89b11092babf42a65b82">llvm::IRBuilderBase::CreateIntrinsic</a>, <a href="/web-llvm/docs/api/classes/llvm/ssaupdater/#a4fe3279aae4f726813a672d4a9b26cb1">llvm::SSAUpdater::Initialize</a>, <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#a9d834ae3da8c62c2b668dada51335eb0">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ace45cae6925c65e9d6916e09dd5b17cc">llvm::IRBuilderBase::SetInsertPoint</a> and <a href="#a5109075f25d18bf4127922f2ab403dca">UpdateSSA</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/ssaupdater/#af0d1a82b4e629e834c2ed53e5cbe22ef">llvm::SSAUpdater::AddAvailableValue</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a80eec4efbded89b11092babf42a65b82">llvm::IRBuilderBase::CreateIntrinsic</a>, <a href="/web-llvm/docs/api/classes/llvm/ssaupdater/#a4fe3279aae4f726813a672d4a9b26cb1">llvm::SSAUpdater::Initialize</a>, <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#a9d834ae3da8c62c2b668dada51335eb0">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</a>, <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ace45cae6925c65e9d6916e09dd5b17cc">llvm::IRBuilderBase::SetInsertPoint</a> and <a href="#a5109075f25d18bf4127922f2ab403dca">UpdateSSA</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/callbrpreparepass/#a9281dc805301bc24be1f5401e30a878f">llvm::CallBrPreparePass::run</a> and <a href="/web-llvm/docs/api/classes/anonymous-callbrprepare-cpp-/callbrprepare/#a059a9f67e58a405134e69baa176e4ee1">anonymous{CallBrPrepare.cpp}::CallBrPrepare::runOnFunction</a>.</p>
@@ -445,7 +445,7 @@ keywords:
 <p>Definition at line 118 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/callbrprepare-cpp">CallBrPrepare.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ababcf5a1223c36cb7c547c5b34c6416c">llvm::isCriticalEdge</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a4ab89e1812569bb89edf9e25c3582913">llvm::SplitKnownCriticalEdge</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ababcf5a1223c36cb7c547c5b34c6416c">llvm::isCriticalEdge</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a4ab89e1812569bb89edf9e25c3582913">llvm::SplitKnownCriticalEdge</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/callbrpreparepass/#a9281dc805301bc24be1f5401e30a878f">llvm::CallBrPreparePass::run</a> and <a href="/web-llvm/docs/api/classes/anonymous-callbrprepare-cpp-/callbrprepare/#a059a9f67e58a405134e69baa176e4ee1">anonymous{CallBrPrepare.cpp}::CallBrPrepare::runOnFunction</a>.</p>
@@ -605,6 +605,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

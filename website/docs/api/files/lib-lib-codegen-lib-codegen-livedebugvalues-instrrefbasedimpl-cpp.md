@@ -345,7 +345,7 @@ keywords:
 
 
 
-#### Terminology {#autotoc_md63}
+#### Terminology {#autotoc_md62}
 
 
 <p>A machine location is a register or spill slot, a value is something that's defined by an instruction or PHI node, while a variable value is the value assigned to a variable. A variable location is a machine location, that must contain the appropriate variable value. A value that is a PHI node is occasionally called an mphi.</p>
@@ -466,6 +466,6 @@ problem", because it's determining what values a variable has, rather than what 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

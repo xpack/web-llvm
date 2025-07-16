@@ -470,7 +470,7 @@ class anonymous{IndirectCallPromotion.cpp}::IndirectCallPromoter { ... }
 <p>Definition at line 417 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/indirectcallpromotion-cpp">IndirectCallPromotion.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a176c662ef638785a96bf45d8c269b471">llvm::findIndirectCalls</a>, <a href="/web-llvm/docs/api/classes/llvm/icallpromotionanalysis/#ad7143519efbd492ef7ced88c6198e1ca">llvm::ICallPromotionAnalysis::getPromotionCandidatesForInstruction</a>, <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#a11d1c1af51bf81a6a9f8f5191b5e3cf2">llvm::ProfileSummaryInfo::hasProfileSummary</a> and <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#ac46d4d55dd867977ba88d57a170e31de">llvm::ProfileSummaryInfo::isHotCount</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a176c662ef638785a96bf45d8c269b471">llvm::findIndirectCalls</a>, <a href="/web-llvm/docs/api/classes/llvm/icallpromotionanalysis/#ad7143519efbd492ef7ced88c6198e1ca">llvm::ICallPromotionAnalysis::getPromotionCandidatesForInstruction</a>, <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#a11d1c1af51bf81a6a9f8f5191b5e3cf2">llvm::ProfileSummaryInfo::hasProfileSummary</a> and <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo/#ac46d4d55dd867977ba88d57a170e31de">llvm::ProfileSummaryInfo::isHotCount</a>.</p>
 
 
 <p>Referenced by <a href="#a584a68e6833e3e6a53a0de81630a5dbd">operator=</a>.</p>
@@ -927,6 +927,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

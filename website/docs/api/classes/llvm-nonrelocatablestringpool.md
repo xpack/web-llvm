@@ -435,7 +435,7 @@ class llvm::NonRelocatableStringpool { ... }
 <p>Definition at line 39 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/nonrelocatablestringpool-h">NonRelocatableStringpool.h</a>.</p>
 
 
-<p>References <a href="#a3f09cd502a02a7f167d302f5bdde88e8">getEntry</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a74ed912ccb6cd7a7c5cc2a8543da9d89">llvm::DwarfStringPoolEntryRef::getOffset</a>.</p>
+<p>Reference <a href="#a3f09cd502a02a7f167d302f5bdde88e8">getEntry</a>.</p>
 
 </div>
 </div>
@@ -572,6 +572,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

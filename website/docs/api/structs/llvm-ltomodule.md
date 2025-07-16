@@ -2192,7 +2192,7 @@ struct llvm::LTOModule { ... }
 <p>Declaration at line 159 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/ltomodule-h">LTOModule.h</a>, definition at line 665 of file <a href="/web-llvm/docs/api/files/lib/lib/lto/ltomodule-cpp">LTOModule.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/lto/inputfile/#a1aa10be5e2a432c4ca74d5f70c0cd77c">llvm::lto::InputFile::create</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/lto/inputfile/#a1aa10be5e2a432c4ca74d5f70c0cd77c">llvm::lto::InputFile::create</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 </div>
 </div>
@@ -2481,6 +2481,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

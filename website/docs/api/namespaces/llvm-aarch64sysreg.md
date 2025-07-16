@@ -104,7 +104,7 @@ namespace llvm::AArch64SysReg { ... }
 <p>Declaration at line 767 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/utils/aarch64baseinfo-h">AArch64BaseInfo.h</a>, definition at line 169 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/utils/aarch64baseinfo-cpp">AArch64BaseInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instprinter/#a017d0b710aa7bd3857503280ff335aa1">llvm::AArch64InstPrinter::printMRSSystemRegister</a> and <a href="/web-llvm/docs/api/classes/llvm/aarch64instprinter/#a6560d3f8f03ccb748d136a7e65fe8701">llvm::AArch64InstPrinter::printMSRSystemRegister</a>.</p>
@@ -156,6 +156,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -303,7 +303,7 @@ class llvm::sandboxir::FixedVectorType { ... }
 <p>Definition at line 357 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/type-h">Type.h</a>.</p>
 
 
-<p>Referenced by <a href="#a98f08256437c6abf5b9e51ae15c5f90a">get</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/vecutils/#a77936f3aa272a4d31b547919e87b85d6">llvm::sandboxir::VecUtils::getWideType</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/vecutils/#a77936f3aa272a4d31b547919e87b85d6">llvm::sandboxir::VecUtils::getWideType</a>.</p>
 
 </div>
 </div>
@@ -337,7 +337,7 @@ class llvm::sandboxir::FixedVectorType { ... }
 <p>Definition at line 359 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/type-h">Type.h</a>.</p>
 
 
-<p>References <a href="#a57efbbb713b15812ad4fa3770e8a9ead">get</a> and <a href="#a3540d9ee4c3637633a1d7adb50a0cde1">getNumElements</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af2cdf7082ff42d000af895d5e3e6335d">llvm::sandboxir::get</a> and <a href="#a3540d9ee4c3637633a1d7adb50a0cde1">getNumElements</a>.</p>
 
 </div>
 </div>
@@ -558,6 +558,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

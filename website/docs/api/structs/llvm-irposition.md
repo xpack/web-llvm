@@ -404,7 +404,7 @@ struct llvm::IRPosition { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4081fd08df96363717c46a40ea774794">getAttrList</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1604,7 +1604,7 @@ struct llvm::IRPosition { ... }
 <p>Definition at line 818 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.</p>
 
 
-<p>References <a href="#a4930f70e8a125f3d0a45a777adc3b305">getCalleeArgNo</a>, <a href="#ac74aa0fe9252fce4caabf80617085afa">getCallSiteArgNo</a>, <a href="#aea16db681aa18f4eded0015e284fdfe5">getPositionKind</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a212200718d90163dbf9fc504df5ff62f">IRP_ARGUMENT</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a4b033e6b489e8f06fe2819955eb8011b">IRP_CALL_SITE</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0af5dba641c6a961375aee403f7cde7b31">IRP_CALL_SITE_ARGUMENT</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a8bd94921b59d24f031ef7e64525e14f8">IRP_CALL_SITE_RETURNED</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0ae11f9a858d0a751bf2f9ea534be9457e">IRP_FLOAT</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0aa823f70d88660d88196943a3f09301da">IRP_FUNCTION</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0afd1465681c30be50be67dcf938d73f5f">IRP_INVALID</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a440e55ee67b08379ca74b24eb623789b">IRP_RETURNED</a> and <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68a503c0b646ea0b3868c0c8380fdc688b8">llvm::AttributeList::FirstArgIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68a895001b186ed51e1cb7a256dbd3545f8">llvm::AttributeList::FunctionIndex</a>, <a href="#a4930f70e8a125f3d0a45a777adc3b305">getCalleeArgNo</a>, <a href="#ac74aa0fe9252fce4caabf80617085afa">getCallSiteArgNo</a>, <a href="#aea16db681aa18f4eded0015e284fdfe5">getPositionKind</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a212200718d90163dbf9fc504df5ff62f">IRP_ARGUMENT</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a4b033e6b489e8f06fe2819955eb8011b">IRP_CALL_SITE</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0af5dba641c6a961375aee403f7cde7b31">IRP_CALL_SITE_ARGUMENT</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a8bd94921b59d24f031ef7e64525e14f8">IRP_CALL_SITE_RETURNED</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0ae11f9a858d0a751bf2f9ea534be9457e">IRP_FLOAT</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0aa823f70d88660d88196943a3f09301da">IRP_FUNCTION</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0afd1465681c30be50be67dcf938d73f5f">IRP_INVALID</a>, <a href="#a53f576f97e0dfa8314afb16bd74a76d0a440e55ee67b08379ca74b24eb623789b">IRP_RETURNED</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68a167699508089d6cf7e6afe448d82e6df">llvm::AttributeList::ReturnIndex</a>.</p>
 
 </div>
 </div>
@@ -1637,7 +1637,7 @@ struct llvm::IRPosition { ... }
 <p>Definition at line 846 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a9f40f87a556db81bd2403007b83acce7">getAnchorValue</a>, <a href="#a054de50dbf11b87063f6a32f3bccee80">getAssociatedFunction</a> and <a href="/web-llvm/docs/api/classes/llvm/function/#a7477aafbbe989ad35b96fac186d8e9fd">llvm::Function::getAttributes</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a9f40f87a556db81bd2403007b83acce7">getAnchorValue</a>, <a href="#a054de50dbf11b87063f6a32f3bccee80">getAssociatedFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac8d6f220fcf8f327c6c739813df8c4c9">llvm::AttributeList::getAttributes</a> and <a href="/web-llvm/docs/api/classes/llvm/function/#a7477aafbbe989ad35b96fac186d8e9fd">llvm::Function::getAttributes</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/attributor/#adab9b2e1a33cfbe6f0fa6443046dcaf8">llvm::Attributor::identifyDefaultAbstractAttributes</a>.</p>
@@ -2076,7 +2076,7 @@ struct llvm::IRPosition { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::IRPosition::setAttrList (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AttributeList &amp; AttrList)</td>
+<td class="doxyMemberName">void llvm::IRPosition::setAttrList (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &amp; AttrList)</td>
 </tr>
 </table>
 </td>
@@ -2946,6 +2946,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

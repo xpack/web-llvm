@@ -132,7 +132,7 @@ class llvm::sandboxir::CallBrInst { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5d0032ec292a7ce49c40429f25169ab4">getDefaultDest</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -145,7 +145,7 @@ class llvm::sandboxir::CallBrInst { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac31ddbf08d7b91e02a3c1e1174e375ba">getIndirectDest</a> (unsigned Idx) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -158,7 +158,7 @@ class llvm::sandboxir::CallBrInst { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *, 16 &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *, 16 &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acf7ddcb05ac186b8103046cdfc33c92d">getIndirectDests</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -197,7 +197,7 @@ class llvm::sandboxir::CallBrInst { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2bc461b29a52f3892c820753f2ca408a">getSuccessor</a> (unsigned Idx) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -286,7 +286,7 @@ class llvm::sandboxir::CallBrInst { ... }
 <p>Definition at line 1480 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>.</p>
+<p>References <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>.</p>
 
 
 <p>Referenced by <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>.</p>
@@ -362,9 +362,6 @@ class llvm::sandboxir::CallBrInst { ... }
 
 <p>Declaration at line 1497 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 600 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>.</p>
-
 </div>
 </div>
 
@@ -391,7 +388,7 @@ class llvm::sandboxir::CallBrInst { ... }
 <p>Declaration at line 1498 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 604 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>.</p>
 
 </div>
 </div>
@@ -572,7 +569,7 @@ class llvm::sandboxir::CallBrInst { ... }
 <p>Declaration at line 1502 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 629 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>.</p>
 
 </div>
 </div>
@@ -586,7 +583,7 @@ class llvm::sandboxir::CallBrInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::CallBrInst::setDefaultDest (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">void llvm::sandboxir::CallBrInst::setDefaultDest (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -598,9 +595,6 @@ class llvm::sandboxir::CallBrInst { ... }
 
 
 <p>Declaration at line 1500 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 615 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>.</p>
 
 </div>
 </div>
@@ -614,7 +608,7 @@ class llvm::sandboxir::CallBrInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::CallBrInst::setIndirectDest (unsigned Idx, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">void llvm::sandboxir::CallBrInst::setIndirectDest (unsigned Idx, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -679,7 +673,7 @@ class llvm::sandboxir::CallBrInst { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">CallBrInst * llvm::sandboxir::CallBrInst::create (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/functiontype">FunctionType</a> * FTy, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * Func, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * DefaultDest, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * &gt; IndirectDests, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * &gt; Args, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/twine">Twine</a> &amp; NameStr="")</td>
+<td class="doxyMemberName">CallBrInst * llvm::sandboxir::CallBrInst::create (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/functiontype">FunctionType</a> * FTy, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * Func, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * DefaultDest, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * &gt; IndirectDests, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * &gt; Args, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/insertposition">InsertPosition</a> Pos, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> &amp; Ctx, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/twine">Twine</a> &amp; NameStr="")</td>
 </tr>
 </table>
 </td>
@@ -713,6 +707,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

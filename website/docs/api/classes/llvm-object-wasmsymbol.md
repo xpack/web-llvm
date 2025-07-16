@@ -911,7 +911,7 @@ class llvm::object::WasmSymbol { ... }
 <p>Declaration at line 101 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/object/wasm-h">Wasm.h</a>, definition at line 37 of file <a href="/web-llvm/docs/api/files/lib/lib/object/wasmobjectfile-cpp">WasmObjectFile.cpp</a>.</p>
 
 
-<p>References <a href="#a26b3068ba1c573a699fbc597428b4fae">getBinding</a>, <a href="#a98e191e206c3b67a7d846f2a524debda">Info</a>, <a href="#ae576177c42a184ad8f6f494270982b16">isDefined</a>, <a href="#a8abb5a62bf89aff00e93fc2431a9e316">isHidden</a>, <a href="#a52ede2afce98daf76e64fd288d950379">isTypeData</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>, <a href="/web-llvm/docs/api/classes/llvm/twine/#acaa1b3e2d07a6c9d2d7030c7dc7ec6a7">llvm::Twine::utohexstr</a>, <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a3a46d26a9a9412217ce62b8154629ff6">llvm::wasm::WASM_SYMBOL_BINDING_GLOBAL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a52bbcd525e04e81b8ae65758bf73463d">llvm::wasm::WASM_SYMBOL_BINDING_LOCAL</a> and <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a4acc7b0e22b2ec8231322d927cf9d562">llvm::wasm::WASM_SYMBOL_BINDING_WEAK</a>.</p>
+<p>References <a href="#a26b3068ba1c573a699fbc597428b4fae">getBinding</a>, <a href="#a98e191e206c3b67a7d846f2a524debda">Info</a>, <a href="#ae576177c42a184ad8f6f494270982b16">isDefined</a>, <a href="#a8abb5a62bf89aff00e93fc2431a9e316">isHidden</a>, <a href="#a52ede2afce98daf76e64fd288d950379">isTypeData</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>, <a href="/web-llvm/docs/api/classes/llvm/twine/#acaa1b3e2d07a6c9d2d7030c7dc7ec6a7">llvm::Twine::utohexstr</a>, <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a3a46d26a9a9412217ce62b8154629ff6">llvm::wasm::WASM_SYMBOL_BINDING_GLOBAL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a52bbcd525e04e81b8ae65758bf73463d">llvm::wasm::WASM_SYMBOL_BINDING_LOCAL</a> and <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a4acc7b0e22b2ec8231322d927cf9d562">llvm::wasm::WASM_SYMBOL_BINDING_WEAK</a>.</p>
 
 
 <p>Referenced by <a href="#a3412ba697c4c2976a8b1fca317eea863">dump</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8487cec5d339c2d1de29d34869fab29b">llvm::operator&lt;&lt;</a>.</p>
@@ -1050,6 +1050,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

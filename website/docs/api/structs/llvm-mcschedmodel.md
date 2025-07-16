@@ -820,7 +820,7 @@ struct llvm::MCSchedModel { ... }
 <p>Reference <a href="#aec103d6812b2bfd0489d48ecb3148e3d">NumProcResourceKinds</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a0a98238e0b4ad204e6bf241ab4cefe47">llvm::mca::computeBlockRThroughput</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#ae1d3c5a1f43dcec43774a3767b41e447">llvm::mca::computeProcResourceMasks</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a65c7a8ebc9a13366a19e1573563cbe0c">llvm::mca::initializeUsedResources</a> and <a href="/web-llvm/docs/api/classes/llvm/mca/instrbuilder/#a54e306500b1968dcb5c02cb0570675bf">llvm::mca::InstrBuilder::InstrBuilder</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a0a98238e0b4ad204e6bf241ab4cefe47">llvm::mca::computeBlockRThroughput</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#ae1d3c5a1f43dcec43774a3767b41e447">llvm::mca::computeProcResourceMasks</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a65c7a8ebc9a13366a19e1573563cbe0c">llvm::mca::initializeUsedResources</a>, <a href="/web-llvm/docs/api/classes/llvm/mca/instrbuilder/#a54e306500b1968dcb5c02cb0570675bf">llvm::mca::InstrBuilder::InstrBuilder</a> and <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a7d000778dc6adcdb34b656a83939800a">llvm::mca::ResourceManager::ResourceManager</a>.</p>
 
 </div>
 </div>
@@ -892,7 +892,7 @@ struct llvm::MCSchedModel { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a68fa67076e0244cf21e80f2c43b6fa02">hasInstrSchedModel</a>, <a href="#aec103d6812b2bfd0489d48ecb3148e3d">NumProcResourceKinds</a> and <a href="#aa0ee2bb9fa1d41b69c587580e157f6fa">ProcResourceTable</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a0a98238e0b4ad204e6bf241ab4cefe47">llvm::mca::computeBlockRThroughput</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#ae1d3c5a1f43dcec43774a3767b41e447">llvm::mca::computeProcResourceMasks</a>, <a href="#ae119a8f604442c5d6b0abb586d6aa03e">getReciprocalThroughput</a> and <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a65c7a8ebc9a13366a19e1573563cbe0c">llvm::mca::initializeUsedResources</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a0a98238e0b4ad204e6bf241ab4cefe47">llvm::mca::computeBlockRThroughput</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#ae1d3c5a1f43dcec43774a3767b41e447">llvm::mca::computeProcResourceMasks</a>, <a href="#ae119a8f604442c5d6b0abb586d6aa03e">getReciprocalThroughput</a>, <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a65c7a8ebc9a13366a19e1573563cbe0c">llvm::mca::initializeUsedResources</a> and <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a7d000778dc6adcdb34b656a83939800a">llvm::mca::ResourceManager::ResourceManager</a>.</p>
 
 </div>
 </div>
@@ -1949,6 +1949,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

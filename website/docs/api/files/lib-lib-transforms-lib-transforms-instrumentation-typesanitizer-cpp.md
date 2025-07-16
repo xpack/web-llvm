@@ -670,7 +670,7 @@ keywords:
 <p>Definition at line 199 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/typesanitizer-cpp">TypeSanitizer.cpp</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/structs/anonymous-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment/#abd851ad0d07e3d593c4e43426466d0fa">anonymous{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Assignment::dump</a>, <a href="#af98302f5cb13ca9d3eaad5f6279f3c8d">encodeName</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7e4ad7349e8727c7d296afe9db1a09a2">llvm::hexdigit</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a208da05312aa4e96229cebd3c49a9581">llvm::hexDigitValue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#aff70f9196e6aa57ec4aeedad1b845056">LowerCTPOP</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a5b1dfb57da0320c661933ff2d6d7cde7">LowerShift</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a18b1fa269a5cff8ff05a92e60a39427b">LowerVectorCTLZInRegLUT</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a2e64ed34d142c2680648d09c25ee51e4">LowerVectorCTPOPInRegLUT</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/structs/anonymous-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment/#abd851ad0d07e3d593c4e43426466d0fa">anonymous{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::Assignment::dump</a>, <a href="#af98302f5cb13ca9d3eaad5f6279f3c8d">encodeName</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#aff70f9196e6aa57ec4aeedad1b845056">LowerCTPOP</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a5b1dfb57da0320c661933ff2d6d7cde7">LowerShift</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a18b1fa269a5cff8ff05a92e60a39427b">LowerVectorCTLZInRegLUT</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a2e64ed34d142c2680648d09c25ee51e4">LowerVectorCTPOPInRegLUT</a>.</p>
 
 </div>
 </div>
@@ -710,6 +710,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

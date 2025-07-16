@@ -611,7 +611,7 @@ struct llvm::outliner::OutlinedFunction { ... }
 <p>Definition at line 235 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/machineoutliner-h">MachineOutliner.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#aee485429210d9273f05a2ffc2d1f38d6">llvm::ARMBaseInstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#aa0ee8a29120b044f4c4668626e264393">llvm::RISCVInstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/x86instrinfo/#aecce6c4ade64d8c1cda4d66a35f74aa4">llvm::X86InstrInfo::buildOutlinedFrame</a> and <a href="#ac2f1c35acd04b812afdb550964c2eab2">OutlinedFunction</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9b0a622dbae74cb8a4b9b87a8b559b25">llvm::AArch64InstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#aee485429210d9273f05a2ffc2d1f38d6">llvm::ARMBaseInstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#aa0ee8a29120b044f4c4668626e264393">llvm::RISCVInstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/x86instrinfo/#aecce6c4ade64d8c1cda4d66a35f74aa4">llvm::X86InstrInfo::buildOutlinedFrame</a> and <a href="#ac2f1c35acd04b812afdb550964c2eab2">OutlinedFunction</a>.</p>
 
 </div>
 </div>
@@ -720,6 +720,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

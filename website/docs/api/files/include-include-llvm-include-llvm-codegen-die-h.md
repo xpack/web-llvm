@@ -496,7 +496,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae75985b8868145ce3e5b625818cc618f">HANDLE_DIEVALUE_SMALL</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a831c72175732d85601792f06f922aa1d">HANDLE_DIEVALUE_SMALL</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -509,7 +509,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7e3e8f229c72ebe8d82cbaa77e1a2aef">HANDLE_DIEVALUE_LARGE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9aad6846a55cc861ba73737482a69712">HANDLE_DIEVALUE_LARGE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -522,7 +522,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae75985b8868145ce3e5b625818cc618f">HANDLE_DIEVALUE_SMALL</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aaf76a03956417da6cbe624d1b9c19bea">HANDLE_DIEVALUE_SMALL</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -535,7 +535,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7e3e8f229c72ebe8d82cbaa77e1a2aef">HANDLE_DIEVALUE_LARGE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a21871440a9976b1e1e72c99e73397771">HANDLE_DIEVALUE_LARGE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -548,7 +548,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae75985b8868145ce3e5b625818cc618f">HANDLE_DIEVALUE_SMALL</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a585596fb5831770bdc8fb6394f438750">HANDLE_DIEVALUE_SMALL</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -561,7 +561,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7e3e8f229c72ebe8d82cbaa77e1a2aef">HANDLE_DIEVALUE_LARGE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6c2d4e1f8c3e785a56eed3691af47534">HANDLE_DIEVALUE_LARGE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -639,7 +639,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE\_LARGE {#a7e3e8f229c72ebe8d82cbaa77e1a2aef}
+### HANDLE\_DIEVALUE\_LARGE {#a9aad6846a55cc861ba73737482a69712}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -674,7 +674,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE\_LARGE {#a7e3e8f229c72ebe8d82cbaa77e1a2aef}
+### HANDLE\_DIEVALUE\_LARGE {#a21871440a9976b1e1e72c99e73397771}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -711,7 +711,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE\_LARGE {#a7e3e8f229c72ebe8d82cbaa77e1a2aef}
+### HANDLE\_DIEVALUE\_LARGE {#a6c2d4e1f8c3e785a56eed3691af47534}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -782,7 +782,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE\_SMALL {#ae75985b8868145ce3e5b625818cc618f}
+### HANDLE\_DIEVALUE\_SMALL {#a831c72175732d85601792f06f922aa1d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -817,7 +817,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE\_SMALL {#ae75985b8868145ce3e5b625818cc618f}
+### HANDLE\_DIEVALUE\_SMALL {#aaf76a03956417da6cbe624d1b9c19bea}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -853,7 +853,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE\_SMALL {#ae75985b8868145ce3e5b625818cc618f}
+### HANDLE\_DIEVALUE\_SMALL {#a585596fb5831770bdc8fb6394f438750}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -893,6 +893,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

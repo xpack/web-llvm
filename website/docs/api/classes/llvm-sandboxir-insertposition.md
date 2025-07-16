@@ -112,7 +112,7 @@ class llvm::sandboxir::InsertPosition { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afb22f6bc3ccf4c2bb4fa2ad5d2a414da">getBasicBlock</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -162,7 +162,7 @@ class llvm::sandboxir::InsertPosition { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::sandboxir::InsertPosition::InsertPosition (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * InsertAtEnd)</td>
+<td class="doxyMemberName">llvm::sandboxir::InsertPosition::InsertPosition (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * InsertAtEnd)</td>
 </tr>
 </table>
 </td>
@@ -181,7 +181,7 @@ class llvm::sandboxir::InsertPosition { ... }
 <p>Definition at line 29 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a0b4e7bee9b8575cc7db73329f1a561bd">llvm::BasicBlock::end</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aca8f458e659a38da0d7e75907e1917e3">llvm::sandboxir::BasicBlock::end</a>.</p>
 
 </div>
 </div>
@@ -316,9 +316,6 @@ class llvm::sandboxir::InsertPosition { ... }
 <p>Definition at line 37 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>.</p>
-
-
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a034571bc982742eb2cb2d135dee93eb2">llvm::sandboxir::Instruction::setInsertPos</a>.</p>
 
 </div>
@@ -400,6 +397,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

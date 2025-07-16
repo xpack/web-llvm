@@ -283,7 +283,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static AttrBuilder</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acbf6c3d92e9a2387568dfb1fc9997eda">getParameterABIAttributes</a> (LLVMContext &amp;C, unsigned I, AttributeList Attrs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -442,7 +442,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4395a6e9b387da7779af9d12538b0fc9">HANDLE_SPECIALIZED_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5a4a9b6125fc68c1c51081accace089f">HANDLE_SPECIALIZED_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -580,7 +580,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AttrBuilder getParameterABIAttributes (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, unsigned I, AttributeList Attrs)</td>
+<td class="doxyMemberName">AttrBuilder getParameterABIAttributes (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, unsigned I, <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> Attrs)</td>
 </tr>
 </table>
 </td>
@@ -1316,7 +1316,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_SPECIALIZED\_MDNODE\_LEAF {#a4395a6e9b387da7779af9d12538b0fc9}
+### HANDLE\_SPECIALIZED\_MDNODE\_LEAF {#a5a4a9b6125fc68c1c51081accace089f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1341,7 +1341,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Metadata::CLASS##Kind:                                                  \
     <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/spirv/spirvpostlegalizer-cpp/#a090736355958192cac4db32336c48bbd">visit</a>##CLASS(cast&lt;CLASS&gt;(MD));                                             \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -1380,6 +1380,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

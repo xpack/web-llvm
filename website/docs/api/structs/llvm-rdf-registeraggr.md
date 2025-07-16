@@ -910,7 +910,7 @@ struct llvm::rdf::RegisterAggr { ... }
 <p>Declaration at line 227 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/rdfregisters-h">RDFRegisters.h</a>, definition at line 326 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/rdfregisters-cpp">RDFRegisters.cpp</a>.</p>
 
 
-<p>References <a href="#a23019059b3e22c404f87ee4fd36f7fae">insert</a>, <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/msf/mappedblockstream-cpp/#a7261340c665e487c72121c8611858e16">intersect</a>, <a href="#a9e1f73246f7efd5f109751eba770e896">intersect</a> and <a href="#a2f83d9bf6a4b4021b35a4a680a0ebbcf">RegisterAggr</a>.</p>
+<p>References <a href="#a23019059b3e22c404f87ee4fd36f7fae">insert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ae085940412a44fb6c730f254a17c9820">llvm::intersect</a>, <a href="#a9e1f73246f7efd5f109751eba770e896">intersect</a> and <a href="#a2f83d9bf6a4b4021b35a4a680a0ebbcf">RegisterAggr</a>.</p>
 
 
 <p>Referenced by <a href="#a0f8d18996fd693bd08fc10b7e5588d0f">intersect</a> and <a href="#a9e1f73246f7efd5f109751eba770e896">intersect</a>.</p>
@@ -1351,6 +1351,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

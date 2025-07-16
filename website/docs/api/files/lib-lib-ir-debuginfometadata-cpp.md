@@ -127,7 +127,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a70bd608451baab0ed3d6ded36c53f9da">HANDLE_DI_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3a1e399ecf7896fe3526c37a8546b506">HANDLE_DI_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -140,7 +140,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a70bd608451baab0ed3d6ded36c53f9da">HANDLE_DI_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab285e0a09ac3f5d57741c221c68acb49">HANDLE_DI_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -257,7 +257,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e9363977ea45c24b27f280cb3031535">HANDLE_DISP_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9242c5754db1ccbb19399b5dd7ced281">HANDLE_DISP_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -270,7 +270,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e9363977ea45c24b27f280cb3031535">HANDLE_DISP_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a487e1de63f5b3ff081b53f53d5369709">HANDLE_DISP_FLAG</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -616,7 +616,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DI\_FLAG {#a70bd608451baab0ed3d6ded36c53f9da}
+### HANDLE\_DI\_FLAG {#a3a1e399ecf7896fe3526c37a8546b506}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -650,7 +650,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DI\_FLAG {#a70bd608451baab0ed3d6ded36c53f9da}
+### HANDLE\_DI\_FLAG {#ab285e0a09ac3f5d57741c221c68acb49}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -711,7 +711,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DISP\_FLAG {#a1e9363977ea45c24b27f280cb3031535}
+### HANDLE\_DISP\_FLAG {#a9242c5754db1ccbb19399b5dd7ced281}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -745,7 +745,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DISP\_FLAG {#a1e9363977ea45c24b27f280cb3031535}
+### HANDLE\_DISP\_FLAG {#a487e1de63f5b3ff081b53f53d5369709}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -835,6 +835,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

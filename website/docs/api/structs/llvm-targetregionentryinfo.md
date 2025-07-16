@@ -451,7 +451,7 @@ struct llvm::TargetRegionEntryInfo { ... }
 <p>Definition at line 207 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/ompirbuilder-h">OMPIRBuilder.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#a6827980ed8b61f42e680949ff4511b03">llvm::OffloadEntriesInfoManager::getTargetRegionEntryFnName</a>, <a href="#a0a267f191642077971aa8eeba25ea6f5">getTargetRegionEntryFnName</a>, <a href="#a6c21df54ad219fb4f87a3532f89b090e">operator&lt;</a> and <a href="#a7eac93a2c21595cafb4c8e4a816acf7b">TargetRegionEntryInfo</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#acc290ce16055813d4ee68af4c8023a09">llvm::OpenMPIRBuilder::createOffloadEntriesAndInfoMetadata</a>, <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#a6827980ed8b61f42e680949ff4511b03">llvm::OffloadEntriesInfoManager::getTargetRegionEntryFnName</a>, <a href="#a0a267f191642077971aa8eeba25ea6f5">getTargetRegionEntryFnName</a>, <a href="#a6c21df54ad219fb4f87a3532f89b090e">operator&lt;</a> and <a href="#a7eac93a2c21595cafb4c8e4a816acf7b">TargetRegionEntryInfo</a>.</p>
 
 </div>
 </div>
@@ -551,6 +551,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

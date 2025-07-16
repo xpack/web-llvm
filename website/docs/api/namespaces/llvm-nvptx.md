@@ -31,12 +31,11 @@ namespace llvm::NVPTX { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxldstinstcode">PTXLdStInstCode</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a> - Comparison mode enumeration. <a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -59,11 +58,12 @@ namespace llvm::NVPTX { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxldstinstcode">PTXLdStInstCode</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
+<p><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a> - Comparison mode enumeration. <a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1028,7 +1028,7 @@ namespace llvm::NVPTX { ... }
 <p>Definition at line 88 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvptxutilities-h">NVPTXUtilities.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8a0d39a17f2152e31271da7e7491d60e">llvm::isAlnum</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetstreamer/#ad3e4f5bb59058be7d568e2505d04b830">llvm::NVPTXTargetStreamer::emitValue</a>.</p>
@@ -1121,6 +1121,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

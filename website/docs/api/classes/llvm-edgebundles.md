@@ -473,7 +473,7 @@ class llvm::EdgeBundles { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool EdgeBundles::invalidate (<a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, MachineFunctionAnalysisManager::Invalidator &amp; Inv)</td>
+<td class="doxyMemberName">bool EdgeBundles::invalidate (<a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp; PA, MachineFunctionAnalysisManager::Invalidator &amp; Inv)</td>
 </tr>
 </table>
 </td>
@@ -487,7 +487,7 @@ class llvm::EdgeBundles { ... }
 <p>Declaration at line 62 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/edgebundles-h">EdgeBundles.h</a>, definition at line 117 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/edgebundles-cpp">EdgeBundles.cpp</a>.</p>
 
 
-<p>References <a href="#af134d2edb87e8cdee7e9747c3250c809">EdgeBundlesAnalysis</a> and <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aa7a1b769f9c57010cc41d9c3bb9d39c6">llvm::PreservedAnalyses::getChecker</a>.</p>
+<p>Reference <a href="#af134d2edb87e8cdee7e9747c3250c809">EdgeBundlesAnalysis</a>.</p>
 
 </div>
 </div>
@@ -649,6 +649,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

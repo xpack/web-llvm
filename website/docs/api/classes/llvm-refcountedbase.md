@@ -191,7 +191,7 @@ class llvm::RefCountedBase&lt;Derived&gt; { ... }
 <p>A CRTP mixin class that adds reference counting to a type.</p>
 
 
-<p>The lifetime of an object which inherits from <a href="/web-llvm/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> is managed by calls to <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> and <a href="/web-llvm/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain()</a>, which increment and decrement the object's refcount, respectively. When a <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> call decrements the refcount to 0, the object deletes itself.</p>
+<p>The lifetime of an object which inherits from <a href="/web-llvm/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> is managed by calls to <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> and <a href="#a2b442286ce7181d7a1fafbbbd9849202">Retain()</a>, which increment and decrement the object's refcount, respectively. When a <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> call decrements the refcount to 0, the object deletes itself.</p>
 
 
 <p>Definition at line 76 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h">IntrusiveRefCntPtr.h</a>.</p>
@@ -504,6 +504,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

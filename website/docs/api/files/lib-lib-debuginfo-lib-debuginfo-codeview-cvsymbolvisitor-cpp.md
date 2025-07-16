@@ -203,7 +203,7 @@ keywords:
 <div class="doxyVerbatim">  case EnumName: {                                                             \
     <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a> (auto EC = <a href="#ad5efdd36be98503f918fde701e83b28b">visitKnownRecord</a>&lt;Name&gt;(Record, Callbacks))                   \
       return EC;                                                               \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                     \
+    break;                                                                     \
   }
 </div>
 </dd>
@@ -243,6 +243,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

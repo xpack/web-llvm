@@ -1068,7 +1068,7 @@ class anonymous{X86AsmBackend.cpp}::X86AsmBackend { ... }
 <p>Definition at line 199 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/lib/target/x86/mctargetdesc/x86asmbackend-cpp">X86AsmBackend.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxcontainerglobals-cpp/#a4e37c99d7f846fd82966c68def83c4fc">Emitter</a>, <a href="#aec5e1563ca339dbf7905cf069c364e39">padInstructionViaPrefix</a> and <a href="#a112639954fd036a8748791f74d0db6fb">padInstructionViaRelaxation</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxcontainerglobals-cpp/#a4e37c99d7f846fd82966c68def83c4fc">Emitter</a>, <a href="#aec5e1563ca339dbf7905cf069c364e39">padInstructionViaPrefix</a> and <a href="#a112639954fd036a8748791f74d0db6fb">padInstructionViaRelaxation</a>.</p>
 
 
 <p>Referenced by <a href="#a4b45cdd0366bfaa446ebdb3f00d80496">finishLayout</a>.</p>
@@ -1675,6 +1675,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

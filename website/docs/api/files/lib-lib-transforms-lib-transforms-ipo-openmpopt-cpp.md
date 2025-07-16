@@ -2096,16 +2096,16 @@ keywords:
     switch (ICV.InitKind) {                                                    \
     case ICV_IMPLEMENTATION_DEFINED:                                           \
       ICV.InitValue = nullptr;                                                 \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                   \
+      break;                                                                   \
     case ICV_ZERO:                                                             \
       ICV.InitValue = ConstantInt::get(                                        \
           Type::getInt32Ty(<a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a788a72ddbf1bd572b3fcd7a5e7ec8cff">OMPBuilder.Int32</a>-&gt;getContext()), 0);                \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                   \
+      break;                                                                   \
     case ICV_FALSE:                                                            \
       ICV.InitValue = <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#a774f686ad651b962a54ad231e2212f64">ConstantInt::getFalse</a>(<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64iseldagtodag-cpp/#a2098a5fa6ada61b6c4a1f210ad84e4a1a3cc05cd6e06dd1976f88ed7d808ac0a1">OMPBuilder.Int1</a>-&gt;getContext());    \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                   \
+      break;                                                                   \
     case ICV_LAST:                                                             \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                   \
+      break;                                                                   \
     }                                                                          \
   }
 </div>
@@ -2555,6 +2555,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

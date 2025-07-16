@@ -704,7 +704,7 @@ class llvm::AMDGPUTargetELFStreamer { ... }
 <p>Declaration at line 210 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mctargetdesc/amdgputargetstreamer-h">AMDGPUTargetStreamer.h</a>, definition at line 883 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mctargetdesc/amdgputargetstreamer-cpp">AMDGPUTargetStreamer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/mcsymbolrefexpr/#a9914b597552aa4b4bcbb8acaa04d632a">llvm::MCSymbolRefExpr::create</a>, <a href="/web-llvm/docs/api/classes/llvm/mcbinaryexpr/#af766134165065939f49fb0662c246f66">llvm::MCBinaryExpr::createSub</a>, <a href="/web-llvm/docs/api/classes/llvm/mcobjectstreamer/#a66d51c3585e4733b99bb8d3e3eb2bb81">llvm::MCObjectStreamer::emitBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/mcelfstreamer/#ac725449b95138e5297b8af02df828882">llvm::MCELFStreamer::emitLabel</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgputargetstreamer/#ab41c2681decc5965bf6fc06b6adf5665">llvm::AMDGPUTargetStreamer::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgputargetstreamer/#abc72867c22a31b29cea037ca2de5b024">llvm::AMDGPUTargetStreamer::getTargetID</a>, <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/elfnote/#a9c117e2bdb138b1a81a4d318f0eae388">llvm::AMDGPU::ElfNote::NoteNameV2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a5298f27e75d05e13c7a4f2da4b0d9be3a24a15604bd169280ce7ee0821b8647ff">llvm::ELF::NT_AMD_HSA_ISA_NAME</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mcsymbolrefexpr/#a9914b597552aa4b4bcbb8acaa04d632a">llvm::MCSymbolRefExpr::create</a>, <a href="/web-llvm/docs/api/classes/llvm/mcbinaryexpr/#af766134165065939f49fb0662c246f66">llvm::MCBinaryExpr::createSub</a>, <a href="/web-llvm/docs/api/classes/llvm/mcobjectstreamer/#a66d51c3585e4733b99bb8d3e3eb2bb81">llvm::MCObjectStreamer::emitBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/mcelfstreamer/#ac725449b95138e5297b8af02df828882">llvm::MCELFStreamer::emitLabel</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgputargetstreamer/#ab41c2681decc5965bf6fc06b6adf5665">llvm::AMDGPUTargetStreamer::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgputargetstreamer/#abc72867c22a31b29cea037ca2de5b024">llvm::AMDGPUTargetStreamer::getTargetID</a>, <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/elfnote/#a9c117e2bdb138b1a81a4d318f0eae388">llvm::AMDGPU::ElfNote::NoteNameV2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a5298f27e75d05e13c7a4f2da4b0d9be3a24a15604bd169280ce7ee0821b8647ff">llvm::ELF::NT_AMD_HSA_ISA_NAME</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 </div>
 </div>
@@ -1120,6 +1120,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

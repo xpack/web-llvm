@@ -352,30 +352,83 @@ keywords:
 </tr>
 </table>
 
-<p>‘------------------` / / The header contains a magic number, version, type of hash function, / the number of buckets, total number of hashes, and room for a special struct / of data and the length of that struct. / / The buckets contain an index (e.g. 6) into the hashes array. The hashes / section contains all of the 32-bit hash values in contiguous memory, and the / offsets contain the offset into the data area for the particular hash. / / For a lookup example, we could hash a function name and take it modulo the / number of buckets giving us our bucket. From there we take the bucket value / as an index into the hashes table and look at each successive hash as long / as the hash value is still the same modulo result (bucket value) as earlier. / If we have a match we look at that same entry in the offsets table and grab / the offset in the data for our final match. / / The DWARF v5 accelerator table consists of zero or more name indices that / are output into an on-disk format that looks like this: / / .---------------—. / | HEADER | / |---------------—| / | <a href="/web-llvm/docs/api/namespaces/cu">CU</a> LIST | / |---------------—| / | LOCAL TU LIST | / |---------------—| / | FOREIGN TU LIST | / |---------------—| / | HASH TABLE | / |---------------—| / | NAME TABLE | / |---------------—| / | ABBREV TABLE | / |---------------—| / | ENTRY POOL | / ‘------------------`</p>
+<p>‘------------------`</p>
 
 
+<p>The header contains a magic number, version, type of hash function, the number of buckets, total number of hashes, and room for a special struct of data and the length of that struct.</p>
 
-<pre><code>For the full documentation please refer to the DWARF 5 standard.
+
+<p>The buckets contain an index (e.g. 6) into the hashes array. The hashes section contains all of the 32-bit hash values in contiguous memory, and the offsets contain the offset into the data area for the particular hash.</p>
 
 
-This file defines the class template AccelTable, which is represents an
-abstract view of an Accelerator table, without any notion of an on-disk
-layout. This class is parameterized by an entry type, which should derive
-from AccelTableData. This is the type of individual entries in the table,
-and it should store the data necessary to emit them. AppleAccelTableData is
-the base class for Apple Accelerator Table entries, which have a uniform
-structure based on a sequence of Atoms. There are different sub-classes
-derived from AppleAccelTable, which differ in the set of Atoms and how they
-obtain their values.
+<p>For a lookup example, we could hash a function name and take it modulo the number of buckets giving us our bucket. From there we take the bucket value as an index into the hashes table and look at each successive hash as long as the hash value is still the same modulo result (bucket value) as earlier. If we have a match we look at that same entry in the offsets table and grab the offset in the data for our final match.</p>
 
-An Apple Accelerator Table can be serialized by calling emitAppleAccelTable
-function.
-</code></pre>
+
+<p>The DWARF v5 accelerator table consists of zero or more name indices that are output into an on-disk format that looks like this:</p>
+
+
+<p>.---------------—.</p>
+
+
+<table class="doxyTable">
+<tr>
+<th>HEADER</th>
+</tr>
+<tr>
+<td><a href="/web-llvm/docs/api/namespaces/cu">CU</a> LIST</td>
+</tr>
+<tr>
+<td>---------------—</td>
+</tr>
+<tr>
+<td>LOCAL TU LIST</td>
+</tr>
+<tr>
+<td>---------------—</td>
+</tr>
+<tr>
+<td>FOREIGN TU LIST</td>
+</tr>
+<tr>
+<td>---------------—</td>
+</tr>
+<tr>
+<td>HASH TABLE</td>
+</tr>
+<tr>
+<td>---------------—</td>
+</tr>
+<tr>
+<td>NAME TABLE</td>
+</tr>
+<tr>
+<td>---------------—</td>
+</tr>
+<tr>
+<td>ABBREV TABLE</td>
+</tr>
+<tr>
+<td>---------------—</td>
+</tr>
+<tr>
+<td>ENTRY POOL</td>
+</tr>
+</table>
+
+<p>‘------------------`</p>
+
+
+<p>For the full documentation please refer to the DWARF 5 standard.</p>
+
+
+<p>This file defines the class template AccelTable, which is represents an abstract view of an Accelerator table, without any notion of an on-disk layout. This class is parameterized by an entry type, which should derive from AccelTableData. This is the type of individual entries in the table, and it should store the data necessary to emit them. AppleAccelTableData is the base class for Apple Accelerator Table entries, which have a uniform structure based on a sequence of Atoms. There are different sub-classes derived from AppleAccelTable, which differ in the set of Atoms and how they obtain their values.</p>
+
+
+<p>An Apple Accelerator Table can be serialized by calling emitAppleAccelTable function.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

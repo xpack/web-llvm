@@ -146,7 +146,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abf72c4cc7b3c53cbf1f02dd1f6c3c46b">DAG_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;  case ISD::STRICT_##DAGN:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acbee85f1c80b41e621dfa753574b4bd4">DAG_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;  case ISD::STRICT_##DAGN:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -233,16 +233,16 @@ keywords:
       ISD::CondCode CCCode = cast&lt;CondCodeSDNode&gt;(<a href="/web-llvm/docs/api/classes/node">Node</a>-&gt;getOperand(2))-&gt;get(); \
       Action = TLI.getCondCodeAction(CCCode, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondagisel-cpp/#a4ee68bef4d94f4873f75267990914ac6">LegalizeVT.getSimpleVT</a>());        \
       <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a> (Action != TargetLowering::Legal)                                     \
-        <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                 \
+        break;                                                                 \
     }                                                                          \
     /* Defer non-<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpupromotealloca-cpp/#ac760e37eba1d852d0a28011a1a0ce05f">vector</a> results to LegalizeDAG. */                             \
     <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a> (!<a href="/web-llvm/docs/api/classes/node">Node</a>-&gt;<a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#a9df55d50aee24118cfdc34ecb32db484">getValueType</a>(0).isVector() &amp;&amp;                                   \
         <a href="/web-llvm/docs/api/classes/node">Node</a>-&gt;<a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#a9df55d50aee24118cfdc34ecb32db484">getValueType</a>(0) != MVT::Other) {                                 \
       Action = TargetLowering::Legal;                                          \
-      <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                   \
+      break;                                                                   \
     }                                                                          \
     Action = TLI.getOperationAction(<a href="/web-llvm/docs/api/classes/node">Node</a>-&gt;<a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanslp-cpp/#a06b4f19004df11b338ccc7e73bf47ab4">getOpcode</a>(), LegalizeVT);            \
-  } <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+  } break;
 </div>
 </dd>
 </dl>
@@ -277,7 +277,7 @@ keywords:
 </div>
 </div>
 
-### DAG\_INSTRUCTION {#abf72c4cc7b3c53cbf1f02dd1f6c3c46b}
+### DAG\_INSTRUCTION {#acbee85f1c80b41e621dfa753574b4bd4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -331,6 +331,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

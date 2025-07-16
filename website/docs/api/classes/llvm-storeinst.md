@@ -105,7 +105,6 @@ class llvm::StoreInst { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Iterator for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a></span>s in a `BasicBlock. <a href="#a87273cb892a8182f137567e6b631695e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -705,20 +704,6 @@ class llvm::StoreInst { ... }
 </table>
 </div>
 <div class="doxyMemberDoc">
-
-<p>Iterator for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a></span>s in a `BasicBlock.</p>
-
-
-<p>/ \Returns an <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">sandboxir::Instruction</a> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</p>
-
-
-<p>private: <a href="/web-llvm/docs/api/classes/llvm/basicblock">llvm::BasicBlock</a> *BB; <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">llvm::BasicBlock::iterator</a> It; Context *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</p>
-
-
-<p>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; –*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; "BBIterators in different context!"); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *getNodeParent() const; };</p>
-
-
-<p>/ Contains a list of <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">sandboxir::Instruction</a>'s. class <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> : public <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> { / Builds a graph that contains all values in <span class="doxyComputerOutput">BB</span> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class Context; // For <span class="doxyComputerOutput">buildBasicBlockFromIR</span></p>
 
 
 <p>Definition at line 306 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h">Instructions.h</a>.</p>
@@ -1404,7 +1389,7 @@ class llvm::StoreInst { ... }
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ad82de9da62635df78a534de0f16c1129">llvm::Log2</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/structs/anonymous-expandvectorpredication-cpp-/cachingvpexpander/#a1f1f1359a986d8e4d1b107ae4c524a32">anonymous{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationInMemoryIntrinsic</a>, <a href="/web-llvm/docs/api/classes/anonymous-licm-cpp-/looppromoter/#afdbe575a191d9f3b5b6cef8212745dc0">anonymous{LICM.cpp}::LoopPromoter::insertStoresInLoopExitBlocks</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a557f3c41bf651bbd713f9220c59f0b1a">llvm::InstCombinerImpl::SimplifyAnyMemSet</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ae3e39244e3fac45ac81d2096353f2b38">llvm::InstCombinerImpl::SimplifyAnyMemTransfer</a>, <a href="#aa2bc34e64d5998c42bde9be90ad5bad1">StoreInst</a>, <a href="/web-llvm/docs/api/classes/anonymous-dxilflattenarrays-cpp-/dxilflattenarraysvisitor/#ab71463de9bdf222f2f8fab162151e5c5">anonymous{DXILFlattenArrays.cpp}::DXILFlattenArraysVisitor::visitStoreInst</a> and <a href="/web-llvm/docs/api/classes/datascalarizervisitor/#a42a4cfbd5d57ef0af5a3f332d4fba28b">DataScalarizerVisitor::visitStoreInst</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6e2bd6420d3d12339e32d4d1b3ba1394">llvm::OpenMPIRBuilder::createOrderedDepend</a>, <a href="/web-llvm/docs/api/structs/anonymous-expandvectorpredication-cpp-/cachingvpexpander/#a1f1f1359a986d8e4d1b107ae4c524a32">anonymous{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationInMemoryIntrinsic</a>, <a href="/web-llvm/docs/api/classes/anonymous-licm-cpp-/looppromoter/#afdbe575a191d9f3b5b6cef8212745dc0">anonymous{LICM.cpp}::LoopPromoter::insertStoresInLoopExitBlocks</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a557f3c41bf651bbd713f9220c59f0b1a">llvm::InstCombinerImpl::SimplifyAnyMemSet</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ae3e39244e3fac45ac81d2096353f2b38">llvm::InstCombinerImpl::SimplifyAnyMemTransfer</a>, <a href="#aa2bc34e64d5998c42bde9be90ad5bad1">StoreInst</a>, <a href="/web-llvm/docs/api/classes/anonymous-dxilflattenarrays-cpp-/dxilflattenarraysvisitor/#ab71463de9bdf222f2f8fab162151e5c5">anonymous{DXILFlattenArrays.cpp}::DXILFlattenArraysVisitor::visitStoreInst</a> and <a href="/web-llvm/docs/api/classes/datascalarizervisitor/#a42a4cfbd5d57ef0af5a3f332d4fba28b">DataScalarizerVisitor::visitStoreInst</a>.</p>
 
 </div>
 </div>
@@ -1440,7 +1425,7 @@ class llvm::StoreInst { ... }
 <p>References <a href="#a731befae7b8a9a1a2efda559c5420a7f">setOrdering</a>, <a href="#a9c42e225d0cd03573a24467a51bc0c05">setSyncScopeID</a> and <a href="/web-llvm/docs/api/namespaces/llvm/syncscope/#a15caddcf5c9b41f2f15c2ec363589f6caf9706a2e196638078e8323bfd9ba17de">llvm::SyncScope::System</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineloadstorealloca-cpp/#a00d35e1397cf2210fd30e1993c1eaab9">combineStoreToNewValue</a>, <a href="#aa2bc34e64d5998c42bde9be90ad5bad1">StoreInst</a> and <a href="/web-llvm/docs/api/classes/anonymous-amdgpuswlowerlds-cpp-/amdgpuswlowerlds/#a132e2ed28fb57bfad40af5505d2db16a">anonymous{AMDGPUSwLowerLDS.cpp}::AMDGPUSwLowerLDS::translateLDSMemoryOperationsToGlobalMemory</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineloadstorealloca-cpp/#a00d35e1397cf2210fd30e1993c1eaab9">combineStoreToNewValue</a>, <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0e2de2c034e3083d006b92ddf14b8bcf">llvm::OpenMPIRBuilder::createAtomicWrite</a>, <a href="#aa2bc34e64d5998c42bde9be90ad5bad1">StoreInst</a> and <a href="/web-llvm/docs/api/classes/anonymous-amdgpuswlowerlds-cpp-/amdgpuswlowerlds/#a132e2ed28fb57bfad40af5505d2db16a">anonymous{AMDGPUSwLowerLDS.cpp}::AMDGPUSwLowerLDS::translateLDSMemoryOperationsToGlobalMemory</a>.</p>
 
 </div>
 </div>
@@ -1845,6 +1830,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -318,7 +318,7 @@ struct anonymous{MaterializationUtils.cpp}::RematGraph { ... }
 <p>Definition at line 118 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/coroutines/materializationutils-cpp">MaterializationUtils.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3fa67a76e6081ca187d962c197c6445d">llvm::dumpBasicBlockLabel</a>, <a href="#a47399873c3ed4a9a29b5773b4eb6604d">EntryNode</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/moduleslottracker/#ace93d877ff9298d25a15e2a32f765653">llvm::ModuleSlotTracker::incorporateFunction</a>, <a href="/web-llvm/docs/api/structs/anonymous-materializationutils-cpp-/rematgraph/rematnode/#a2ffe3edae93cbc80045c0dcfe884b509">anonymous{MaterializationUtils.cpp}::RematGraph::RematNode::Operands</a> and <a href="#a48f1809d5a0490419b0a3996574bf7a0">Remats</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3fa67a76e6081ca187d962c197c6445d">llvm::dumpBasicBlockLabel</a>, <a href="#a47399873c3ed4a9a29b5773b4eb6604d">EntryNode</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/moduleslottracker/#ace93d877ff9298d25a15e2a32f765653">llvm::ModuleSlotTracker::incorporateFunction</a>, <a href="/web-llvm/docs/api/structs/anonymous-materializationutils-cpp-/rematgraph/rematnode/#a2ffe3edae93cbc80045c0dcfe884b509">anonymous{MaterializationUtils.cpp}::RematGraph::RematNode::Operands</a> and <a href="#a48f1809d5a0490419b0a3996574bf7a0">Remats</a>.</p>
 
 </div>
 </div>
@@ -493,6 +493,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

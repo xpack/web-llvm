@@ -286,7 +286,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab32240e87649f32aceeda23ea6499c4c">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -312,7 +312,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1f378efe7b9888496956feb63c04314f">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -325,7 +325,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae3fc0a93a6ad6199a5233b12cdbd698c">HANDLE_MDNODE_LEAF_UNIQUABLE</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0057888c89226a49584a86580b6df71e">HANDLE_MDNODE_LEAF_UNIQUABLE</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -338,7 +338,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae3fc0a93a6ad6199a5233b12cdbd698c">HANDLE_MDNODE_LEAF_UNIQUABLE</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac6401eff6c555b3d35bf01ce29e96050">HANDLE_MDNODE_LEAF_UNIQUABLE</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -351,7 +351,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5cda3ffec5632eadca09d9febaecb345">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -812,7 +812,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#ab32240e87649f32aceeda23ea6499c4c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -846,7 +846,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#a1f378efe7b9888496956feb63c04314f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -871,7 +871,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case CLASS##Kind:                                                            \
     delete cast&lt;CLASS&gt;(this);                                                  \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -881,7 +881,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#a5cda3ffec5632eadca09d9febaecb345}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -907,7 +907,7 @@ keywords:
 <div class="doxyVerbatim">  case CLASS##Kind: {                                                          \
     std::integral_constant&lt;bool, HasCachedHash&lt;CLASS&gt;::value&gt; ShouldResetHash; \
     dispatchResetHash(cast&lt;CLASS&gt;(this), ShouldResetHash);                     \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;                                                                     \
+    break;                                                                     \
   }
 </div>
 </dd>
@@ -942,7 +942,7 @@ keywords:
 <dt>Value</dt>
 <dd>
 <div class="doxyVerbatim">  case CLASS##Kind:                                                            \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -952,7 +952,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF\_UNIQUABLE {#ae3fc0a93a6ad6199a5233b12cdbd698c}
+### HANDLE\_MDNODE\_LEAF\_UNIQUABLE {#a0057888c89226a49584a86580b6df71e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -991,7 +991,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF\_UNIQUABLE {#ae3fc0a93a6ad6199a5233b12cdbd698c}
+### HANDLE\_MDNODE\_LEAF\_UNIQUABLE {#ac6401eff6c555b3d35bf01ce29e96050}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1016,7 +1016,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case CLASS##Kind:                                                            \
     getContext().pImpl-&gt;CLASS##<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#a272de407838df85f0919b0640aa79f9d">s.erase</a>(cast&lt;CLASS&gt;(this));                     \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -1065,6 +1065,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

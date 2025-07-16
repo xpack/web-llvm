@@ -257,7 +257,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab65954a0e788904ec4e9dd7d2f758cf3">BRKIND</a>(NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab811a944980000cbc6abcced8f9357d1">BRKIND</a>(NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -270,7 +270,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab65954a0e788904ec4e9dd7d2f758cf3">BRKIND</a>(NAME)&nbsp;&nbsp;&nbsp;  (Opc == NAME##ari || Opc == NAME##ari_nt || Opc == NAME##ari_t)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a43a5e62c4b22595cf6ccbb08fbcd0b25">BRKIND</a>(NAME)&nbsp;&nbsp;&nbsp;  (Opc == NAME##ari || Opc == NAME##ari_nt || Opc == NAME##ari_t)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -798,7 +798,7 @@ keywords:
 </div>
 </div>
 
-### BRKIND {#ab65954a0e788904ec4e9dd7d2f758cf3}
+### BRKIND {#ab811a944980000cbc6abcced8f9357d1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -832,7 +832,7 @@ keywords:
 </div>
 </div>
 
-### BRKIND {#ab65954a0e788904ec4e9dd7d2f758cf3}
+### BRKIND {#a43a5e62c4b22595cf6ccbb08fbcd0b25}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -934,7 +934,7 @@ keywords:
     NewUseOpcSImm7 = NAME##ri;                                                 \
     NewUseOpcMImm = NAME##rm;                                                  \
     InstType = rr2ri_rm;                                                       \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>
+    break
 </div>
 </dd>
 </dl>
@@ -974,7 +974,7 @@ keywords:
     NewUseOpcSImm7 = NAME##<a href="/web-llvm/docs/api/files/lib/lib/ir/safepointirverifier-cpp/#a3d3459f5796b9b9f0253f71d5620e958">ir</a>;                                                 \
     NewUseOpcMImm = NAME##rm;                                                  \
     InstType = rr2ir_rm;                                                       \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>
+    break
 </div>
 </dd>
 </dl>
@@ -991,6 +991,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

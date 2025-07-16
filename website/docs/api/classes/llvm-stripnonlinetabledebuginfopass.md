@@ -55,7 +55,7 @@ class llvm::StripNonLineTableDebugInfoPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9bb911c9d4a523b04904bd44da4e8204">run</a> (Module &amp;M, ModuleAnalysisManager &amp;AM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -100,7 +100,7 @@ class llvm::StripNonLineTableDebugInfoPass { ... }
 <p>Declaration at line 21 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/stripnonlinetabledebuginfo-h">StripNonLineTableDebugInfo.h</a>, definition at line 15 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/stripnonlinetabledebuginfo-cpp">StripNonLineTableDebugInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a937c42f77e161349ce0f999e448c7027">llvm::PreservedAnalyses::preserveSet</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8564d7984f31fb685c319f454cc4f372">llvm::stripNonLineTableDebugInfo</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a8564d7984f31fb685c319f454cc4f372">llvm::stripNonLineTableDebugInfo</a>.</p>
 
 </div>
 </div>
@@ -118,6 +118,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

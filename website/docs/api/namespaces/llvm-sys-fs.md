@@ -49,6 +49,20 @@ namespace llvm::sys::fs { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info">space_info</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p><a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info">space_info</a> - Self explanatory. <a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/basic-file-status">basic_file_status</a></td>
 </tr>
@@ -64,40 +78,26 @@ namespace llvm::sys::fs { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry">directory_entry</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry">directory_entry</a> - A single entry in a directory. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a> - Iterates through the entries in path. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/file-status">file_status</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Represents the result of a call to <a href="#a5f126cc7b64d31cd709215b48656d83d">sys::fs::status()</a>. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/file-status/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/tempfile">TempFile</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Represents a temporary file. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/tempfile/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -134,26 +134,12 @@ namespace llvm::sys::fs { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator">recursive_directory_iterator</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry">directory_entry</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator">recursive_directory_iterator</a> - Same as <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a> except for it recurses down into child directories. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info">space_info</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info">space_info</a> - Self explanatory. <a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info/#details">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry">directory_entry</a> - A single entry in a directory. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -162,12 +148,26 @@ namespace llvm::sys::fs { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/tempfile">TempFile</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Represents a temporary file. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/tempfile/#details">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a> - Iterates through the entries in path. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator">recursive_directory_iterator</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator">recursive_directory_iterator</a> - Same as <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a> except for it recurses down into child directories. <a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -3740,6 +3740,9 @@ namespace llvm::sys::fs { ... }
 
 <p>Reference <a href="#a5f126cc7b64d31cd709215b48656d83d">status</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a12b066e3e9cc61240457d12df75df64b">llvm::OpenMPIRBuilder::getTargetEntryUniqueInfo</a>.</p>
+
 </div>
 </div>
 
@@ -5195,14 +5198,29 @@ The file should be opened in text mode and use a carriage linefeed '\r
 <p>Reads <span class="doxyComputerOutput">Buf.size()</span> bytes from <span class="doxyComputerOutput">FileHandle</span> into <span class="doxyComputerOutput">Buf</span>.</p>
 
 
-<p>Returns the number of bytes actually read. On Unix, this is equivalent to <span class="doxyComputerOutput">return ::read(FD, / Buf.data(), Buf.size())</span>, with error reporting. Returns 0 when reaching EOF.</p>
+<p>Returns the number of bytes actually read. On Unix, this is equivalent to <span class="doxyComputerOutput">return ::read(FD, Buf.data(), Buf.size())</span>, with error reporting. Returns 0 when reaching EOF.</p>
 
 
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">FileHandle</td>
+<td class="doxyParamItemDescription"><p>File to read from.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Buf</td>
+<td class="doxyParamItemDescription"><p>Buffer to read into.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
 
-<pre><code>@param FileHandle File to read from.
-@param Buf Buffer to read into.
-@returns The number of bytes read, or error.
-</code></pre>
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>The number of bytes read, or error.</p></dd>
+</dl>
 
 
 <p>Definition at line 1008 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">FileSystem.h</a>.</p>
@@ -6403,7 +6421,7 @@ The file should be opened in text mode and use a carriage linefeed '\r
 <p>Reference <a href="#a5545f335cfa8ce28433826a14730a3a2">expand_tilde</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#affd8bc2fe0d879ef4ad2538a617e7629">llvm::dwarf_linker::parallel::CompileUnit::getFileName</a>, <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/realfilesystem/#ae3a0f5abb9cf8b60c5e803db52eb14c3">anonymous{VirtualFileSystem.cpp}::RealFileSystem::getRealPath</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/filecollector-cpp/#a6f06f095d55bf5da7adfd285f8b0e6ff">isCaseSensitivePath</a>, <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/realfilesystem/#a927d1b385cc13faacbcef9c23aec9ade">anonymous{VirtualFileSystem.cpp}::RealFileSystem::RealFileSystem</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/cachedpathresolver/#a83dd2ec674ed050c3d4dd6f9541f8fd4">llvm::dwarf_linker::classic::CachedPathResolver::resolve</a>, <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/realfilesystem/#afb0f6e94a1ddabea59b90081cbf7639a">anonymous{VirtualFileSystem.cpp}::RealFileSystem::setCurrentWorkingDirectory</a> and <a href="/web-llvm/docs/api/classes/llvm/unittest/tempdir/#a3f25fef2d2bb1b2135cb46bc4d2611eb">llvm::unittest::TempDir::TempDir</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/realfilesystem/#ae3a0f5abb9cf8b60c5e803db52eb14c3">anonymous{VirtualFileSystem.cpp}::RealFileSystem::getRealPath</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/filecollector-cpp/#a6f06f095d55bf5da7adfd285f8b0e6ff">isCaseSensitivePath</a>, <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/realfilesystem/#a927d1b385cc13faacbcef9c23aec9ade">anonymous{VirtualFileSystem.cpp}::RealFileSystem::RealFileSystem</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/cachedpathresolver/#a83dd2ec674ed050c3d4dd6f9541f8fd4">llvm::dwarf_linker::classic::CachedPathResolver::resolve</a>, <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/realfilesystem/#afb0f6e94a1ddabea59b90081cbf7639a">anonymous{VirtualFileSystem.cpp}::RealFileSystem::setCurrentWorkingDirectory</a> and <a href="/web-llvm/docs/api/classes/llvm/unittest/tempdir/#a3f25fef2d2bb1b2135cb46bc4d2611eb">llvm::unittest::TempDir::TempDir</a>.</p>
 
 </div>
 </div>
@@ -6710,6 +6728,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

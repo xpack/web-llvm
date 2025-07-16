@@ -80,7 +80,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3fb6a2206fc661ac451b3bfa5052a14c">ICV_DATA_ENV</a>(Enum, ...)&nbsp;&nbsp;&nbsp;  constexpr auto Enum = omp::InternalControlVar::Enum;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa4c546263c64179a7e055dfef43c0ee1">ICV_DATA_ENV</a>(Enum, ...)&nbsp;&nbsp;&nbsp;  constexpr auto Enum = omp::InternalControlVar::Enum;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -106,7 +106,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a27fe7489780ad53d7de4c0202bfd08c2">ICV_INIT_VALUE</a>(Enum, Name)&nbsp;&nbsp;&nbsp;  constexpr auto Enum = omp::ICVInitValue::Enum;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5ba626d382fef053644be4274b0acd0c">ICV_INIT_VALUE</a>(Enum, Name)&nbsp;&nbsp;&nbsp;  constexpr auto Enum = omp::ICVInitValue::Enum;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -132,7 +132,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3f6ada3b827de07f8b43177111784cb3">OMP_RTL</a>(Enum, ...)&nbsp;&nbsp;&nbsp;constexpr auto Enum = omp::RuntimeFunction::Enum;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a38fd1db1dfc65387ca2b031436da0f28">OMP_RTL</a>(Enum, ...)&nbsp;&nbsp;&nbsp;constexpr auto Enum = omp::RuntimeFunction::Enum;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -158,7 +158,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54c1c5c9b4ad560934650dd898c68d47">OMP_DEFAULT_KIND</a>(Enum, ...)&nbsp;&nbsp;&nbsp;  constexpr auto Enum = omp::DefaultKind::Enum;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a05aec516e572aef3114948b5f11531a0">OMP_DEFAULT_KIND</a>(Enum, ...)&nbsp;&nbsp;&nbsp;  constexpr auto Enum = omp::DefaultKind::Enum;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -184,7 +184,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a61e8779e97cc1277f0b6a4e9e5562006">OMP_IDENT_FLAG</a>(Enum, ...)&nbsp;&nbsp;&nbsp;constexpr auto Enum = omp::IdentFlag::Enum;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a70f447555d508759f804473ee9cf85ac">OMP_IDENT_FLAG</a>(Enum, ...)&nbsp;&nbsp;&nbsp;constexpr auto Enum = omp::IdentFlag::Enum;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -256,7 +256,7 @@ keywords:
 </div>
 </div>
 
-### ICV\_DATA\_ENV {#a3fb6a2206fc661ac451b3bfa5052a14c}
+### ICV\_DATA\_ENV {#aa4c546263c64179a7e055dfef43c0ee1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -306,7 +306,7 @@ keywords:
 </div>
 </div>
 
-### ICV\_INIT\_VALUE {#a27fe7489780ad53d7de4c0202bfd08c2}
+### ICV\_INIT\_VALUE {#a5ba626d382fef053644be4274b0acd0c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -356,7 +356,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_DEFAULT\_KIND {#a54c1c5c9b4ad560934650dd898c68d47}
+### OMP\_DEFAULT\_KIND {#a05aec516e572aef3114948b5f11531a0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -406,7 +406,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_IDENT\_FLAG {#a61e8779e97cc1277f0b6a4e9e5562006}
+### OMP\_IDENT\_FLAG {#a70f447555d508759f804473ee9cf85ac}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -478,6 +478,9 @@ keywords:
 
 <p>Definition at line 75 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/ompconstants-h">OMPConstants.h</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a49e1f0512e7d7b37dfcecc0b25dd875b">llvm::OpenMPIRBuilder::getKernelArgsVector</a>.</p>
+
 </div>
 </div>
 
@@ -506,7 +509,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_RTL {#a3f6ada3b827de07f8b43177111784cb3}
+### OMP\_RTL {#a38fd1db1dfc65387ca2b031436da0f28}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -535,6 +538,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

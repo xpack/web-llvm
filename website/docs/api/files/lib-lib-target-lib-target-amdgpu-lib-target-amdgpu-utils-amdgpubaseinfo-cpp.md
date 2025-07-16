@@ -1085,7 +1085,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7f824f6ccc78b34ec1988744023e2f41">CASE_CI_VI</a>(node)&nbsp;&nbsp;&nbsp;case node##_ci: case node##_vi:   return node;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae10d4b0714e1e2421947c232fda2fb10">CASE_CI_VI</a>(node)&nbsp;&nbsp;&nbsp;case node##_ci: case node##_vi:   return node;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1098,7 +1098,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a18e12ebf0b3721cd9b17fcb17acef697">CASE_VI_GFX9PLUS</a>(node)&nbsp;&nbsp;&nbsp;case node##_vi: case node##_gfx9plus: return node;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afad2251e0ec7f905e487f9e1e55637a7">CASE_VI_GFX9PLUS</a>(node)&nbsp;&nbsp;&nbsp;case node##_vi: case node##_gfx9plus: return node;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1111,7 +1111,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abc6c8903b526ff3199311e99df234d03">CASE_GFXPRE11_GFX11PLUS</a>(node)&nbsp;&nbsp;&nbsp;case node##_gfx11plus: case node##_gfxpre11: return node;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa95a5e92b1f8973b3bb8793221354358">CASE_GFXPRE11_GFX11PLUS</a>(node)&nbsp;&nbsp;&nbsp;case node##_gfx11plus: case node##_gfxpre11: return node;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1124,7 +1124,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a45b1c342ff48c34e198f391961b82dfa">CASE_GFXPRE11_GFX11PLUS_TO</a>(node, result)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad9e270af0d75d303fd05c97a3f71faeb">CASE_GFXPRE11_GFX11PLUS_TO</a>(node, result)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1280,7 +1280,7 @@ keywords:
 </div>
 </div>
 
-### CASE\_CI\_VI {#a7f824f6ccc78b34ec1988744023e2f41}
+### CASE\_CI\_VI {#ae10d4b0714e1e2421947c232fda2fb10}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1330,7 +1330,7 @@ keywords:
 </div>
 </div>
 
-### CASE\_GFXPRE11\_GFX11PLUS {#abc6c8903b526ff3199311e99df234d03}
+### CASE\_GFXPRE11\_GFX11PLUS {#aa95a5e92b1f8973b3bb8793221354358}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1380,7 +1380,7 @@ keywords:
 </div>
 </div>
 
-### CASE\_GFXPRE11\_GFX11PLUS\_TO {#a45b1c342ff48c34e198f391961b82dfa}
+### CASE\_GFXPRE11\_GFX11PLUS\_TO {#ad9e270af0d75d303fd05c97a3f71faeb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1430,7 +1430,7 @@ keywords:
 </div>
 </div>
 
-### CASE\_VI\_GFX9PLUS {#a18e12ebf0b3721cd9b17fcb17acef697}
+### CASE\_VI\_GFX9PLUS {#afad2251e0ec7f905e487f9e1e55637a7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2787,6 +2787,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

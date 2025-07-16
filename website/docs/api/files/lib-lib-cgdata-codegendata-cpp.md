@@ -338,7 +338,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a63b97a1d3b66aae039e7fa8516f5dcf8">CG_DATA_SECT_ENTRY</a>(Kind, SectNameCommon, SectNameCoff, Prefix)&nbsp;&nbsp;&nbsp;  SectNameCoff,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a07b22a8683c1fbb322cec3f5b62aab24">CG_DATA_SECT_ENTRY</a>(Kind, SectNameCommon, SectNameCoff, Prefix)&nbsp;&nbsp;&nbsp;  SectNameCoff,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -351,7 +351,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5afeb7e80292c5659c959a76c690a516">CG_DATA_SIMPLE_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;#x</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3cd0957428f97844ca9998faaf048f50">CG_DATA_SIMPLE_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;#x</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -364,7 +364,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a5afeb7e80292c5659c959a76c690a516">CG_DATA_SIMPLE_QUOTE</a>(x)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a96c059f3bc28296b2214d017a72b0b94">CG_DATA_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a5afeb7e80292c5659c959a76c690a516">CG_DATA_SIMPLE_QUOTE</a>(x)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -377,7 +377,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a484a5e8d454838ed60c22cb6f5612fad">CG_DATA_DEFINED</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a20b97bb254e362d7e73d12734e778516">CG_DATA_DEFINED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -390,7 +390,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a895a7cd01d120f313080055b9ba67e09">CG_DATA_OUTLINE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_outline</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3655b73d93cb40beb940cac945ccd132">CG_DATA_OUTLINE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_outline</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -403,7 +403,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9194077710db2d0b68bc9f1ec299c7fb">CG_DATA_MERGE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_merge</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa1784a54b9744352d33bd217afb4847f">CG_DATA_MERGE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_merge</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -416,7 +416,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a55dc8171a7674baeadcb3a4736cdbbae">CG_DATA_OUTLINE_COFF</a>&nbsp;&nbsp;&nbsp;".loutline"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6b2b88551b7326787b2c4da8ed175ec6">CG_DATA_OUTLINE_COFF</a>&nbsp;&nbsp;&nbsp;".loutline"</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -429,7 +429,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#add273b3d8474ec87c05db2cea27be460">CG_DATA_MERGE_COFF</a>&nbsp;&nbsp;&nbsp;".lmerge"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4a48b9573477752cf6436b3fbd08ca76">CG_DATA_MERGE_COFF</a>&nbsp;&nbsp;&nbsp;".lmerge"</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -442,7 +442,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad07502d4c25b7a4f01918b9ca167fc96">CG_DATA_OUTLINE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a895a7cd01d120f313080055b9ba67e09">CG_DATA_OUTLINE_COMMON</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7b76bb2ab5d7542697f21386cfb250f9">CG_DATA_OUTLINE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a895a7cd01d120f313080055b9ba67e09">CG_DATA_OUTLINE_COMMON</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -455,7 +455,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a01254ac1c006af0d72af52ad629c797b">CG_DATA_MERGE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9194077710db2d0b68bc9f1ec299c7fb">CG_DATA_MERGE_COMMON</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3c58e8d24daacdaa94affa4f48c5a854">CG_DATA_MERGE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9194077710db2d0b68bc9f1ec299c7fb">CG_DATA_MERGE_COMMON</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -468,7 +468,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8bd6594c5dfa62b6b3b239efc0de3d01">CG_DATA_INDEX_VERSION</a>&nbsp;&nbsp;&nbsp;2</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a24a6a20ca5474eeb301558224978ee3e">CG_DATA_INDEX_VERSION</a>&nbsp;&nbsp;&nbsp;2</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -481,7 +481,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a63b97a1d3b66aae039e7fa8516f5dcf8">CG_DATA_SECT_ENTRY</a>(Kind, SectNameCommon, SectNameCoff, Prefix)&nbsp;&nbsp;&nbsp;Prefix,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a003e82c4d72462b86c230e6b2250b8ff">CG_DATA_SECT_ENTRY</a>(Kind, SectNameCommon, SectNameCoff, Prefix)&nbsp;&nbsp;&nbsp;Prefix,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -494,7 +494,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5afeb7e80292c5659c959a76c690a516">CG_DATA_SIMPLE_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;#x</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d2e2d794c59ae60f81d7d127c95f649">CG_DATA_SIMPLE_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;#x</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -507,7 +507,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a5afeb7e80292c5659c959a76c690a516">CG_DATA_SIMPLE_QUOTE</a>(x)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a280582bf165f44edcf400b5bcdc8fec3">CG_DATA_QUOTE</a>(x)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a5afeb7e80292c5659c959a76c690a516">CG_DATA_SIMPLE_QUOTE</a>(x)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -520,7 +520,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a484a5e8d454838ed60c22cb6f5612fad">CG_DATA_DEFINED</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8d90849c2d27efae239f80ef465d150b">CG_DATA_DEFINED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -533,7 +533,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a895a7cd01d120f313080055b9ba67e09">CG_DATA_OUTLINE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_outline</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a87735314ed49adc5e25061d092622f70">CG_DATA_OUTLINE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_outline</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -546,7 +546,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9194077710db2d0b68bc9f1ec299c7fb">CG_DATA_MERGE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_merge</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a36cea4185a74a612ec4ace1ba5cb476c">CG_DATA_MERGE_COMMON</a>&nbsp;&nbsp;&nbsp;__llvm_merge</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -559,7 +559,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a55dc8171a7674baeadcb3a4736cdbbae">CG_DATA_OUTLINE_COFF</a>&nbsp;&nbsp;&nbsp;".loutline"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6b5fd99e3f7425c798f6a96a86d8feb3">CG_DATA_OUTLINE_COFF</a>&nbsp;&nbsp;&nbsp;".loutline"</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -572,7 +572,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#add273b3d8474ec87c05db2cea27be460">CG_DATA_MERGE_COFF</a>&nbsp;&nbsp;&nbsp;".lmerge"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab21048b15c87265314504df0decb4789">CG_DATA_MERGE_COFF</a>&nbsp;&nbsp;&nbsp;".lmerge"</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -585,7 +585,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad07502d4c25b7a4f01918b9ca167fc96">CG_DATA_OUTLINE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a895a7cd01d120f313080055b9ba67e09">CG_DATA_OUTLINE_COMMON</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a29fc7fe1934cb9f78a99c973999ff3db">CG_DATA_OUTLINE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a895a7cd01d120f313080055b9ba67e09">CG_DATA_OUTLINE_COMMON</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -598,7 +598,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a01254ac1c006af0d72af52ad629c797b">CG_DATA_MERGE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9194077710db2d0b68bc9f1ec299c7fb">CG_DATA_MERGE_COMMON</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae5e5781e1482738402133e5d640f73de">CG_DATA_MERGE_SECT_NAME</a>&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9e44402ece363a1354b3452084e62c30">CG_DATA_QUOTE</a>(<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendata-h/#a9194077710db2d0b68bc9f1ec299c7fb">CG_DATA_MERGE_COMMON</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -611,7 +611,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8bd6594c5dfa62b6b3b239efc0de3d01">CG_DATA_INDEX_VERSION</a>&nbsp;&nbsp;&nbsp;2</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6fd13881a7ad5d221cc5a048ca7e31b3">CG_DATA_INDEX_VERSION</a>&nbsp;&nbsp;&nbsp;2</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -786,7 +786,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_DEFINED {#a484a5e8d454838ed60c22cb6f5612fad}
+### CG\_DATA\_DEFINED {#a20b97bb254e362d7e73d12734e778516}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -811,7 +811,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_DEFINED {#a484a5e8d454838ed60c22cb6f5612fad}
+### CG\_DATA\_DEFINED {#a8d90849c2d27efae239f80ef465d150b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -861,7 +861,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_INDEX\_VERSION {#a8bd6594c5dfa62b6b3b239efc0de3d01}
+### CG\_DATA\_INDEX\_VERSION {#a24a6a20ca5474eeb301558224978ee3e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -886,7 +886,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_INDEX\_VERSION {#a8bd6594c5dfa62b6b3b239efc0de3d01}
+### CG\_DATA\_INDEX\_VERSION {#a6fd13881a7ad5d221cc5a048ca7e31b3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -936,7 +936,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_MERGE\_COFF {#add273b3d8474ec87c05db2cea27be460}
+### CG\_DATA\_MERGE\_COFF {#a4a48b9573477752cf6436b3fbd08ca76}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -961,7 +961,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_MERGE\_COFF {#add273b3d8474ec87c05db2cea27be460}
+### CG\_DATA\_MERGE\_COFF {#ab21048b15c87265314504df0decb4789}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1011,7 +1011,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_MERGE\_COMMON {#a9194077710db2d0b68bc9f1ec299c7fb}
+### CG\_DATA\_MERGE\_COMMON {#aa1784a54b9744352d33bd217afb4847f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1036,7 +1036,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_MERGE\_COMMON {#a9194077710db2d0b68bc9f1ec299c7fb}
+### CG\_DATA\_MERGE\_COMMON {#a36cea4185a74a612ec4ace1ba5cb476c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1086,7 +1086,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_MERGE\_SECT\_NAME {#a01254ac1c006af0d72af52ad629c797b}
+### CG\_DATA\_MERGE\_SECT\_NAME {#a3c58e8d24daacdaa94affa4f48c5a854}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1111,7 +1111,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_MERGE\_SECT\_NAME {#a01254ac1c006af0d72af52ad629c797b}
+### CG\_DATA\_MERGE\_SECT\_NAME {#ae5e5781e1482738402133e5d640f73de}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1161,7 +1161,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_OUTLINE\_COFF {#a55dc8171a7674baeadcb3a4736cdbbae}
+### CG\_DATA\_OUTLINE\_COFF {#a6b2b88551b7326787b2c4da8ed175ec6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1186,7 +1186,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_OUTLINE\_COFF {#a55dc8171a7674baeadcb3a4736cdbbae}
+### CG\_DATA\_OUTLINE\_COFF {#a6b5fd99e3f7425c798f6a96a86d8feb3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1236,7 +1236,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_OUTLINE\_COMMON {#a895a7cd01d120f313080055b9ba67e09}
+### CG\_DATA\_OUTLINE\_COMMON {#a3655b73d93cb40beb940cac945ccd132}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1261,7 +1261,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_OUTLINE\_COMMON {#a895a7cd01d120f313080055b9ba67e09}
+### CG\_DATA\_OUTLINE\_COMMON {#a87735314ed49adc5e25061d092622f70}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1311,7 +1311,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_OUTLINE\_SECT\_NAME {#ad07502d4c25b7a4f01918b9ca167fc96}
+### CG\_DATA\_OUTLINE\_SECT\_NAME {#a7b76bb2ab5d7542697f21386cfb250f9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1336,7 +1336,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_OUTLINE\_SECT\_NAME {#ad07502d4c25b7a4f01918b9ca167fc96}
+### CG\_DATA\_OUTLINE\_SECT\_NAME {#a29fc7fe1934cb9f78a99c973999ff3db}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1386,7 +1386,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_QUOTE {#a9e44402ece363a1354b3452084e62c30}
+### CG\_DATA\_QUOTE {#a96c059f3bc28296b2214d017a72b0b94}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1411,7 +1411,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_QUOTE {#a9e44402ece363a1354b3452084e62c30}
+### CG\_DATA\_QUOTE {#a280582bf165f44edcf400b5bcdc8fec3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1461,7 +1461,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_SECT\_ENTRY {#a63b97a1d3b66aae039e7fa8516f5dcf8}
+### CG\_DATA\_SECT\_ENTRY {#a07b22a8683c1fbb322cec3f5b62aab24}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1486,7 +1486,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_SECT\_ENTRY {#a63b97a1d3b66aae039e7fa8516f5dcf8}
+### CG\_DATA\_SECT\_ENTRY {#a003e82c4d72462b86c230e6b2250b8ff}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1536,7 +1536,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_SIMPLE\_QUOTE {#a5afeb7e80292c5659c959a76c690a516}
+### CG\_DATA\_SIMPLE\_QUOTE {#a3cd0957428f97844ca9998faaf048f50}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1561,7 +1561,7 @@ keywords:
 </div>
 </div>
 
-### CG\_DATA\_SIMPLE\_QUOTE {#a5afeb7e80292c5659c959a76c690a516}
+### CG\_DATA\_SIMPLE\_QUOTE {#a7d2e2d794c59ae60f81d7d127c95f649}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1615,6 +1615,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -277,7 +277,7 @@ keywords:
 <p>Definition at line 642 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopsimplifycfg-cpp">LoopSimplifyCFG.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/anonymous-loopsimplifycfg-cpp-/constantterminatorfoldingimpl/#a13b60422fa4f190649589e12d3443f61">anonymous{LoopSimplifyCFG.cpp}::ConstantTerminatorFoldingImpl::ConstantTerminatorFoldingImpl</a> and <a href="#ac10fa79813a1d81253703f127bff6b2e">EnableTermFolding</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/anonymous-loopsimplifycfg-cpp-/constantterminatorfoldingimpl/#a13b60422fa4f190649589e12d3443f61">anonymous{LoopSimplifyCFG.cpp}::ConstantTerminatorFoldingImpl::ConstantTerminatorFoldingImpl</a> and <a href="#ac10fa79813a1d81253703f127bff6b2e">EnableTermFolding</a>.</p>
 
 
 <p>Referenced by <a href="#a60e230d8627166d20b465abb6820fa80">simplifyLoopCFG</a>.</p>
@@ -350,7 +350,7 @@ keywords:
 <p>Definition at line 50 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopsimplifycfg-cpp">LoopSimplifyCFG.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aef9e9fcf4c5dfce90276ca16d91b8e46">llvm::BasicBlock::getTerminator</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#acf3c3aa4880eb60d00963ba93082c298">llvm::BasicBlock::getTerminator</a>.</p>
 
 </div>
 </div>
@@ -383,7 +383,7 @@ keywords:
 <p>Definition at line 660 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopsimplifycfg-cpp">LoopSimplifyCFG.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">llvm::Block</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3e627c32543ca70720c4270a8b11da3f">llvm::cast_or_null</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a830ba09d5969cd66878b05c17fdf66b6">llvm::ScalarEvolution::forgetBlockAndLoopDispositions</a>, <a href="/web-llvm/docs/api/classes/llvm/loopinfobase/#ad61bd84d4988c90bf6c5cd62d8e7fb00">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::getLoopFor</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryssaupdater/#a01a350909e784d6fa43181a72de61529">llvm::MemorySSAUpdater::getMemorySSA</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a59fb91d1691350f7d1b8e8a114e3f2a4">llvm::BasicBlock::getSinglePredecessor</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa76a2cf19b821f320ab439d5659ef4b9">llvm::MergeBlockIntoPredecessor</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa29fe161c408879ada30c90ebbf55dcf">llvm::VerifyMemorySSA</a> and <a href="/web-llvm/docs/api/classes/llvm/memoryssa/#a88b10d37f671e58cf138ac84a8257c17">llvm::MemorySSA::verifyMemorySSA</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">llvm::Block</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3e627c32543ca70720c4270a8b11da3f">llvm::cast_or_null</a>, <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a830ba09d5969cd66878b05c17fdf66b6">llvm::ScalarEvolution::forgetBlockAndLoopDispositions</a>, <a href="/web-llvm/docs/api/classes/llvm/loopinfobase/#ad61bd84d4988c90bf6c5cd62d8e7fb00">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::getLoopFor</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryssaupdater/#a01a350909e784d6fa43181a72de61529">llvm::MemorySSAUpdater::getMemorySSA</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a59fb91d1691350f7d1b8e8a114e3f2a4">llvm::BasicBlock::getSinglePredecessor</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa76a2cf19b821f320ab439d5659ef4b9">llvm::MergeBlockIntoPredecessor</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa29fe161c408879ada30c90ebbf55dcf">llvm::VerifyMemorySSA</a> and <a href="/web-llvm/docs/api/classes/llvm/memoryssa/#a88b10d37f671e58cf138ac84a8257c17">llvm::MemorySSA::verifyMemorySSA</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/vplantransforms/#a42d43068c576be2a1cd514f620246004">llvm::VPlanTransforms::createAndOptimizeReplicateRegions</a>, <a href="/web-llvm/docs/api/structs/llvm/vplantransforms/#ae3449b993cd1c459995c2fe13ef50892">llvm::VPlanTransforms::optimize</a> and <a href="#a60e230d8627166d20b465abb6820fa80">simplifyLoopCFG</a>.</p>
@@ -452,7 +452,7 @@ keywords:
 <p>Definition at line 695 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopsimplifycfg-cpp">LoopSimplifyCFG.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a34cae16e160c5bb0c5a8b7d4b98f879d">constantFoldTerminators</a>, <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a7d5bfa1ac3c7c096af6b26fb95cd699d">llvm::ScalarEvolution::forgetTopmostLoop</a> and <a href="#a5a5d8a7a6d46886bfb6350ed47c0f225">mergeBlocksIntoPredecessors</a>.</p>
+<p>References <a href="#a34cae16e160c5bb0c5a8b7d4b98f879d">constantFoldTerminators</a>, <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a7d5bfa1ac3c7c096af6b26fb95cd699d">llvm::ScalarEvolution::forgetTopmostLoop</a> and <a href="#a5a5d8a7a6d46886bfb6350ed47c0f225">mergeBlocksIntoPredecessors</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/loopsimplifycfgpass/#a6080bbb0e8e74dbaf955a64f844978a4">llvm::LoopSimplifyCFGPass::run</a>.</p>
@@ -609,6 +609,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

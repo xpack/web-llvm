@@ -209,7 +209,7 @@ class anonymous{AddressSanitizer.cpp}::RuntimeCallInserter { ... }
 <p>Definition at line 667 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/addresssanitizer-cpp">AddressSanitizer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/callbase/#a70d8ffa4f0ffa07bd736cb74d178d917">llvm::CallBase::addOperandBundle</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3a3a97fed79c86bf242b0f090e1cb2e6">llvm::colorEHFunclets</a>, <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector/#a9dc659b723e6725130ad354ed821d400">llvm::TinyPtrVector&lt; EltTy &gt;::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector/#a3a26404d33061e8aaeab39c490181389">llvm::TinyPtrVector&lt; EltTy &gt;::front</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/llvmcontext/#a44d727ac5fccf852bfb2bae3e06adc9ca8997c6b0930e2c05209e95e7172c6cf3">llvm::LLVMContext::OB_funclet</a> and <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector/#aac784c7664f3f6b8076756c6fb0eed74">llvm::TinyPtrVector&lt; EltTy &gt;::size</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/callbase/#a70d8ffa4f0ffa07bd736cb74d178d917">llvm::CallBase::addOperandBundle</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3a3a97fed79c86bf242b0f090e1cb2e6">llvm::colorEHFunclets</a>, <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector/#a9dc659b723e6725130ad354ed821d400">llvm::TinyPtrVector&lt; EltTy &gt;::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector/#a3a26404d33061e8aaeab39c490181389">llvm::TinyPtrVector&lt; EltTy &gt;::front</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/llvmcontext/#a44d727ac5fccf852bfb2bae3e06adc9ca8997c6b0930e2c05209e95e7172c6cf3">llvm::LLVMContext::OB_funclet</a> and <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector/#aac784c7664f3f6b8076756c6fb0eed74">llvm::TinyPtrVector&lt; EltTy &gt;::size</a>.</p>
 
 </div>
 </div>
@@ -346,6 +346,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

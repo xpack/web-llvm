@@ -1357,7 +1357,7 @@ class llvm::DbgRecord { ... }
 <p>Declaration at line 177 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/debugprograminstruction-h">DebugProgramInstruction.h</a>, definition at line 517 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/debugprograminstruction-cpp">DebugProgramInstruction.cpp</a>.</p>
 
 
-<p>References <a href="#a156a00684afeefad469213a81874265e">getBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>.</p>
+<p>References <a href="#a156a00684afeefad469213a81874265e">getBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>.</p>
 
 
 <p>Referenced by <a href="#a7f3d614408430191567752182cc78bf5">getModule</a>, <a href="#a0834f7a463c1bfa666cc9af2d8c80d8a">getModule</a> and <a href="/web-llvm/docs/api/namespaces/llvm/coro/#afa1f83e099867326b23c359030bbb103">llvm::coro::salvageDebugInfo</a>.</p>
@@ -1388,7 +1388,7 @@ class llvm::DbgRecord { ... }
 <p>Declaration at line 178 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/debugprograminstruction-h">DebugProgramInstruction.h</a>, definition at line 519 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/debugprograminstruction-cpp">DebugProgramInstruction.cpp</a>.</p>
 
 
-<p>References <a href="#a156a00684afeefad469213a81874265e">getBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>.</p>
+<p>References <a href="#a156a00684afeefad469213a81874265e">getBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>.</p>
 
 </div>
 </div>
@@ -2188,6 +2188,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -872,6 +872,9 @@ class llvm::OpenMPIRBuilderConfig { ... }
 
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="#a22e985ea690b791910dc19186b63cc37">IsTargetDevice</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a3ea33750ee7de55492a5083c347e2ddb">createOutlinedFunction</a>.</p>
+
 </div>
 </div>
 
@@ -1503,7 +1506,7 @@ class llvm::OpenMPIRBuilderConfig { ... }
 <p>When compilation is being done for the OpenMP host (i.e.</p>
 
 
-<p><span class="doxyComputerOutput">IsTargetDevice = / false</span>), this contains the list of offloading triples associated, if any.</p>
+<p><span class="doxyComputerOutput">IsTargetDevice = false</span>), this contains the list of offloading triples associated, if any.</p>
 
 
 <p>Definition at line 121 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/ompirbuilder-h">OMPIRBuilder.h</a>.</p>
@@ -1555,6 +1558,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

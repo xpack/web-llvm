@@ -91,7 +91,7 @@ namespace llvm::pdb::anonymous{NativeEnumInjectedSources.cpp} { ... }
 <p>Definition at line 22 of file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/pdb/lib/debuginfo/pdb/native/nativeenuminjectedsources-cpp">NativeEnumInjectedSources.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee">llvm::pdb::Data</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>, <a href="/web-llvm/docs/api/classes/llvm/binarystream/#a2dde414ac3eb762ffcab71c96af04922">llvm::BinaryStream::getLength</a>, <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23cadfd0a82c4bf37b1e90b690a22a20692e">llvm::pdb::Offset</a>, <a href="/web-llvm/docs/api/classes/llvm/binarystream/#ad8fe39e341ca7c7b08a620877d548fcb">llvm::BinaryStream::readLongestContiguousChunk</a>, <a href="#a07dc8e4dc3f58faff0b8c71baca5cbe8">readStreamData</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aeeb5973ff74c4c4d279e275b34b7ef54">llvm::toStringRef</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee">llvm::pdb::Data</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>, <a href="/web-llvm/docs/api/classes/llvm/binarystream/#a2dde414ac3eb762ffcab71c96af04922">llvm::BinaryStream::getLength</a>, <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23cadfd0a82c4bf37b1e90b690a22a20692e">llvm::pdb::Offset</a>, <a href="/web-llvm/docs/api/classes/llvm/binarystream/#ad8fe39e341ca7c7b08a620877d548fcb">llvm::BinaryStream::readLongestContiguousChunk</a> and <a href="#a07dc8e4dc3f58faff0b8c71baca5cbe8">readStreamData</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/pdb/anonymous-nativeenuminjectedsources-cpp-/nativeinjectedsource/#ab53702cf30bfc15c3c49dd3ab63b1549">llvm::pdb::anonymous{NativeEnumInjectedSources.cpp}::NativeInjectedSource::getCode</a> and <a href="#a07dc8e4dc3f58faff0b8c71baca5cbe8">readStreamData</a>.</p>
@@ -111,6 +111,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

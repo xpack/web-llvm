@@ -87,7 +87,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4d9bbafb5550c98593c6100ca4c43416">rtsanPreservedCFGAnalyses</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -100,7 +100,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4524f9f3a01f5c6ea32b417422dd56ca">runSanitizeRealtime</a> (Function &amp;Fn)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -113,7 +113,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a63ce604ca599913727c7c8c7fbe4ca13">runSanitizeRealtimeBlocking</a> (Function &amp;Fn)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -264,7 +264,7 @@ keywords:
 <p>Definition at line 49 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/realtimesanitizer-cpp">RealtimeSanitizer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a63cfb2a0dae69153fd961eb335949caa">llvm::BasicBlock::front</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a3ec0b920bf30d0e15bace383192691da">llvm::Function::front</a> and <a href="#aaf5c6a95e57ae41b1bb74e87476d3dcc">insertCallBeforeInstruction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a4848d1a141ddc7cf0068460fba53ba37">llvm::BasicBlock::front</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a3ec0b920bf30d0e15bace383192691da">llvm::Function::front</a> and <a href="#aaf5c6a95e57ae41b1bb74e87476d3dcc">insertCallBeforeInstruction</a>.</p>
 
 
 <p>Referenced by <a href="#a4524f9f3a01f5c6ea32b417422dd56ca">runSanitizeRealtime</a> and <a href="#a63ce604ca599913727c7c8c7fbe4ca13">runSanitizeRealtimeBlocking</a>.</p>
@@ -336,9 +336,6 @@ keywords:
 <p>Definition at line 64 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/realtimesanitizer-cpp">RealtimeSanitizer.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a937c42f77e161349ce0f999e448c7027">llvm::PreservedAnalyses::preserveSet</a>.</p>
-
-
 <p>Referenced by <a href="#a4524f9f3a01f5c6ea32b417422dd56ca">runSanitizeRealtime</a> and <a href="#a63ce604ca599913727c7c8c7fbe4ca13">runSanitizeRealtimeBlocking</a>.</p>
 
 </div>
@@ -408,7 +405,7 @@ keywords:
 <p>Definition at line 76 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/realtimesanitizer-cpp">RealtimeSanitizer.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#af377188a476a2d71184b0498a136fd1d">llvm::IRBuilderBase::CreateGlobalString</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ab996639d406a5466d5c8a1586fb4a9d8">llvm::demangle</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a63cfb2a0dae69153fd961eb335949caa">llvm::BasicBlock::front</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a3ec0b920bf30d0e15bace383192691da">llvm::Function::front</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#adb5c319f5905c1d3ca9eb5df546388c5">llvm::Value::getName</a>, <a href="#aeab32388541e65c42e97d2ca8c7867d1">insertCallAtFunctionEntryPoint</a> and <a href="#a4d9bbafb5550c98593c6100ca4c43416">rtsanPreservedCFGAnalyses</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#af377188a476a2d71184b0498a136fd1d">llvm::IRBuilderBase::CreateGlobalString</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ab996639d406a5466d5c8a1586fb4a9d8">llvm::demangle</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a4848d1a141ddc7cf0068460fba53ba37">llvm::BasicBlock::front</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a3ec0b920bf30d0e15bace383192691da">llvm::Function::front</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#adb5c319f5905c1d3ca9eb5df546388c5">llvm::Value::getName</a>, <a href="#aeab32388541e65c42e97d2ca8c7867d1">insertCallAtFunctionEntryPoint</a> and <a href="#a4d9bbafb5550c98593c6100ca4c43416">rtsanPreservedCFGAnalyses</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/realtimesanitizerpass/#a6ef2f34cb129c3b7d3a996e88f3e2c9e">llvm::RealtimeSanitizerPass::run</a>.</p>
@@ -482,6 +479,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

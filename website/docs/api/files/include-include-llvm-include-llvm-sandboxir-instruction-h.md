@@ -928,7 +928,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af015699da1164dadc6edefa13333fd94">DEF_INSTR</a>(ID, OPC, CLASS)&nbsp;&nbsp;&nbsp;friend class CLASS;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a705e5d773ed30b87b5e06667ce2fa394">DEF_INSTR</a>(ID, OPC, CLASS)&nbsp;&nbsp;&nbsp;friend class CLASS;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1010,7 +1010,7 @@ keywords:
 </div>
 </div>
 
-### DEF\_INSTR {#af015699da1164dadc6edefa13333fd94}
+### DEF\_INSTR {#a705e5d773ed30b87b5e06667ce2fa394}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1176,6 +1176,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

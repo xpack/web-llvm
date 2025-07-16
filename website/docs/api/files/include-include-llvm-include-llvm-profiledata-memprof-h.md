@@ -409,7 +409,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;Name = Block.Name;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a87ae01b600b09ae28a47643c0ff6ea69">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;Name = Block.Name;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -422,7 +422,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a699ab8aeea2504d48bb0496c01cb3406">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -435,7 +435,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad3df96bbd5ef027e5d04bce71eb7e6b2">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -448,7 +448,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;  OS &lt;&lt; "        " &lt;&lt; #Name &lt;&lt; ": " &lt;&lt; Name &lt;&lt; "\n";</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a16eb4ab0ce99aba45c70504d02437212">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;  OS &lt;&lt; "        " &lt;&lt; #Name &lt;&lt; ": " &lt;&lt; Name &lt;&lt; "\n";</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -461,7 +461,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0fa59e291929131e3572dd6e41f1f0cd">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -474,7 +474,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa8466fa6223afef308238362924547c9">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -487,7 +487,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5be7409694f1414424b7f7b726d31bb1">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -500,7 +500,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0326738163ce097198c177ed063e75c8">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -513,7 +513,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848ca4f3b50082063696bf21f7b5ef11">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;Type Name = Type();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a30717c362323e517b055c30ae420f622">MIBEntryDef</a>(NameTag, Name, Type)&nbsp;&nbsp;&nbsp;Type Name = Type();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -556,7 +556,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a87ae01b600b09ae28a47643c0ff6ea69}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -581,7 +581,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a699ab8aeea2504d48bb0496c01cb3406}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -606,7 +606,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Meta::Name: {                                                           \
     Name = endian::readNext&lt;Type, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114">llvm::endianness::little</a>&gt;(<a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);              \
-  } <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+  } break;
 </div>
 </dd>
 </dl>
@@ -616,7 +616,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#ad3df96bbd5ef027e5d04bce71eb7e6b2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -641,7 +641,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Meta::Name: {                                                           \
     <a href="/web-llvm/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyldelf-cpp/#a79ab15165c16fbf94d6fd33bd890ea7e">LE.write</a>&lt;Type&gt;(Name);                                                      \
-  } <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+  } break;
 </div>
 </dd>
 </dl>
@@ -651,7 +651,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a16eb4ab0ce99aba45c70504d02437212}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -676,7 +676,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a0fa59e291929131e3572dd6e41f1f0cd}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -712,7 +712,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#aa8466fa6223afef308238362924547c9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -748,7 +748,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a5be7409694f1414424b7f7b726d31bb1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -783,7 +783,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a0326738163ce097198c177ed063e75c8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -808,7 +808,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Meta::Name: {                                                           \
     Result += sizeof(Type);                                                    \
-  } <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+  } break;
 </div>
 </dd>
 </dl>
@@ -818,7 +818,7 @@ keywords:
 </div>
 </div>
 
-### MIBEntryDef {#a848ca4f3b50082063696bf21f7b5ef11}
+### MIBEntryDef {#a30717c362323e517b055c30ae420f622}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -847,6 +847,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

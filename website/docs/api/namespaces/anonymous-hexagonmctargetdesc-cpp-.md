@@ -31,19 +31,6 @@ namespace anonymous{HexagonMCTargetDesc.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-hexagonmctargetdesc-cpp-/hexagonmcinstranalysis">HexagonMCInstrAnalysis</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-hexagonmctargetdesc-cpp-/hexagontargetasmstreamer">HexagonTargetAsmStreamer</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -58,6 +45,19 @@ namespace anonymous{HexagonMCTargetDesc.cpp} { ... }
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-hexagonmctargetdesc-cpp-/hexagontargetelfstreamer">HexagonTargetELFStreamer</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-hexagonmctargetdesc-cpp-/hexagonmcinstranalysis">HexagonMCInstrAnalysis</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -388,7 +388,7 @@ namespace anonymous{HexagonMCTargetDesc.cpp} { ... }
 <p>Definition at line 421 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp">HexagonMCTargetDesc.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp/#a0ee3b68a28f3eeaacdf7b3a02478d659">EnableHexagonCabac</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp/#ab608a076dacb8c61a1135ac0a79af239">EnableHVX</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp/#acc5b01fc331da58853522cafa33dab7f">EnableHvxIeeeFp</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a8045a0a6c688b0635e3caccc408a1446">llvm::Hexagon::Generic</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa1fd1719afe5b07ebe55f1d105c98916">llvm::join</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a31ca3cae0b846c9a58d52c656d28b5e0">llvm::Hexagon::NoArch</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a8cff5423006469332e8ae5e3a8c8559c">llvm::Hexagon::V5</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a7e2f25174ce09de028190095cc693a5e">llvm::Hexagon::V55</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a8336608773c499fd7e37000fac2f9cfd">llvm::Hexagon::V60</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a113b0d77002193057e4a99b66ceb8264">llvm::Hexagon::V62</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436aa7903c0ef33fd8000b9fded2bd20f6cb">llvm::Hexagon::V65</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a2267b8c0f3b8c12c5bbbf66978544a0d">llvm::Hexagon::V66</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a0db1fd5100de9dcbc5f2949df2a2dbf7">llvm::Hexagon::V67</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a52cd6998d793235c390b570fba7d206c">llvm::Hexagon::V68</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a08c198530a951b0d1adc8c0f38967bb1">llvm::Hexagon::V69</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a21f8c41b215c6879bfc46b10e506d2d4">llvm::Hexagon::V71</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a4084fbfbf7c3d3e99fcda5f126a1e494">llvm::Hexagon::V73</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436ab1cab2dc211faa7bcebb331fd40454fb">llvm::Hexagon::V75</a> and <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a98a8f93c2a6e174b45fc01e59ccf8ffe">llvm::Hexagon::V79</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp/#a0ee3b68a28f3eeaacdf7b3a02478d659">EnableHexagonCabac</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp/#ab608a076dacb8c61a1135ac0a79af239">EnableHVX</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmctargetdesc-cpp/#acc5b01fc331da58853522cafa33dab7f">EnableHvxIeeeFp</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a8045a0a6c688b0635e3caccc408a1446">llvm::Hexagon::Generic</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a31ca3cae0b846c9a58d52c656d28b5e0">llvm::Hexagon::NoArch</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a8cff5423006469332e8ae5e3a8c8559c">llvm::Hexagon::V5</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a7e2f25174ce09de028190095cc693a5e">llvm::Hexagon::V55</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a8336608773c499fd7e37000fac2f9cfd">llvm::Hexagon::V60</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a113b0d77002193057e4a99b66ceb8264">llvm::Hexagon::V62</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436aa7903c0ef33fd8000b9fded2bd20f6cb">llvm::Hexagon::V65</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a2267b8c0f3b8c12c5bbbf66978544a0d">llvm::Hexagon::V66</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a0db1fd5100de9dcbc5f2949df2a2dbf7">llvm::Hexagon::V67</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a52cd6998d793235c390b570fba7d206c">llvm::Hexagon::V68</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a08c198530a951b0d1adc8c0f38967bb1">llvm::Hexagon::V69</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a21f8c41b215c6879bfc46b10e506d2d4">llvm::Hexagon::V71</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a4084fbfbf7c3d3e99fcda5f126a1e494">llvm::Hexagon::V73</a>, <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436ab1cab2dc211faa7bcebb331fd40454fb">llvm::Hexagon::V75</a> and <a href="/web-llvm/docs/api/namespaces/llvm/hexagon/#ac51913459c748e1d7176ab02946c4436a98a8f93c2a6e174b45fc01e59ccf8ffe">llvm::Hexagon::V79</a>.</p>
 
 
 <p>Referenced by <a href="#a0f981e76fa8f3adc086087882cb8d783">selectCPUAndFS</a>.</p>
@@ -890,6 +890,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

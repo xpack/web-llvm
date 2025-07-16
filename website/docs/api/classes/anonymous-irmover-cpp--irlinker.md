@@ -303,13 +303,13 @@ class anonymous{IRMover.cpp}::IRLinker { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a77ac9253effd7339d526a9a02c1ce2c7">mapAttributeTypes</a> (LLVMContext &amp;C, AttributeList Attrs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Replace all types in the source AttributeList with the corresponding destination type. <a href="#a77ac9253effd7339d526a9a02c1ce2c7">More...</a></p>
+<p>Replace all types in the source <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> with the corresponding destination type. <a href="#a77ac9253effd7339d526a9a02c1ce2c7">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1272,7 +1272,7 @@ class anonymous{IRMover.cpp}::IRLinker { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AttributeList IRLinker::mapAttributeTypes (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, AttributeList Attrs)</td>
+<td class="doxyMemberName">AttributeList IRLinker::mapAttributeTypes (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> Attrs)</td>
 </tr>
 </table>
 </td>
@@ -1281,7 +1281,7 @@ class anonymous{IRMover.cpp}::IRLinker { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Replace all types in the source AttributeList with the corresponding destination type.</p>
+<p>Replace all types in the source <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> with the corresponding destination type.</p>
 
 <p>Definition at line 498 of file <a href="/web-llvm/docs/api/files/lib/lib/linker/irmover-cpp">IRMover.cpp</a>.</p>
 
@@ -1915,6 +1915,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

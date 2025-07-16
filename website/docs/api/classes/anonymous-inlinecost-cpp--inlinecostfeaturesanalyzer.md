@@ -503,7 +503,7 @@ class anonymous{InlineCost.cpp}::InlineCostFeaturesAnalyzer { ... }
 <p>Definition at line 1371 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlinecost-cpp">InlineCost.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#afe415d5ca807552e9ab9180b7821f04d">anonymous{InlineCost.cpp}::CallAnalyzer::CallAnalyzer</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#acbdd4c0e06dc866ad2e68d57e194743e">anonymous{InlineCost.cpp}::CallAnalyzer::GetAssumptionCache</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#a9d83f245e02c2d598444b73ea9a05459">anonymous{InlineCost.cpp}::CallAnalyzer::GetBFI</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#abef6e3800bbcc3d80dca77ce58b0eaa8">anonymous{InlineCost.cpp}::CallAnalyzer::GetTLI</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#aeee19cfe3d54e41a640e29f36056ecfb">anonymous{InlineCost.cpp}::CallAnalyzer::ORE</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#a8c79183f67d088e0c9cd34511c3f848d">anonymous{InlineCost.cpp}::CallAnalyzer::PSI</a> and <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#a453497ae3e6c0033f5609b932d472b11">anonymous{InlineCost.cpp}::CallAnalyzer::TTI</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#afe415d5ca807552e9ab9180b7821f04d">anonymous{InlineCost.cpp}::CallAnalyzer::CallAnalyzer</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#acbdd4c0e06dc866ad2e68d57e194743e">anonymous{InlineCost.cpp}::CallAnalyzer::GetAssumptionCache</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#a9d83f245e02c2d598444b73ea9a05459">anonymous{InlineCost.cpp}::CallAnalyzer::GetBFI</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#abef6e3800bbcc3d80dca77ce58b0eaa8">anonymous{InlineCost.cpp}::CallAnalyzer::GetTLI</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#aeee19cfe3d54e41a640e29f36056ecfb">anonymous{InlineCost.cpp}::CallAnalyzer::ORE</a>, <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#a8c79183f67d088e0c9cd34511c3f848d">anonymous{InlineCost.cpp}::CallAnalyzer::PSI</a> and <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/callanalyzer/#a453497ae3e6c0033f5609b932d472b11">anonymous{InlineCost.cpp}::CallAnalyzer::TTI</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a8bc682ff4e05f8bbb181be693c717dd8">llvm::getInliningCostFeatures</a>.</p>
@@ -1388,6 +1388,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

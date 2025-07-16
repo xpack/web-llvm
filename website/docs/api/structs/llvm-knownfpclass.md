@@ -960,7 +960,7 @@ struct llvm::KnownFPClass { ... }
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a76921eddf6329af860916f3278ef1d1da00a4419741933f5cb7ec001aaa6e6bb5">llvm::fcInf</a> and <a href="#aa0fbe688ffb115395a2665499c0639a2">isKnownNever</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#aff704e68e1a7f944f4a81ce9ef713ba4">computeKnownFPClass</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a24b69550d2c0e2d57f3886757ac41567">llvm::isKnownNeverInfinity</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a42c8f0b3d870c96030032b8ed8a2a1e3">llvm::isKnownNeverInfOrNaN</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#aff704e68e1a7f944f4a81ce9ef713ba4">computeKnownFPClass</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a982e49c60a2c0180bce8a7f0914c9ce3">llvm::InstCombinerImpl::fmulByZeroIsZero</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a24b69550d2c0e2d57f3886757ac41567">llvm::isKnownNeverInfinity</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a42c8f0b3d870c96030032b8ed8a2a1e3">llvm::isKnownNeverInfOrNaN</a>.</p>
 
 </div>
 </div>
@@ -1093,7 +1093,7 @@ struct llvm::KnownFPClass { ... }
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a76921eddf6329af860916f3278ef1d1dafe1646e5477c571f7791c524b54b11fe">llvm::fcNan</a> and <a href="#aa0fbe688ffb115395a2665499c0639a2">isKnownNever</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#aff704e68e1a7f944f4a81ce9ef713ba4">computeKnownFPClass</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a42c8f0b3d870c96030032b8ed8a2a1e3">llvm::isKnownNeverInfOrNaN</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#adb004c066abda7e0738004a08bc1827f">llvm::isKnownNeverNaN</a> and <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#a110a350e37f3cc2ed2c603c3efde0a30">simplifyFCmpInst</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#aff704e68e1a7f944f4a81ce9ef713ba4">computeKnownFPClass</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a982e49c60a2c0180bce8a7f0914c9ce3">llvm::InstCombinerImpl::fmulByZeroIsZero</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a42c8f0b3d870c96030032b8ed8a2a1e3">llvm::isKnownNeverInfOrNaN</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#adb004c066abda7e0738004a08bc1827f">llvm::isKnownNeverNaN</a> and <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#a110a350e37f3cc2ed2c603c3efde0a30">simplifyFCmpInst</a>.</p>
 
 </div>
 </div>
@@ -1641,6 +1641,9 @@ struct llvm::KnownFPClass { ... }
 
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a76921eddf6329af860916f3278ef1d1dabd5ff30619fc341f566f44037f42587e">llvm::fcNegative</a> and <a href="#aa0fbe688ffb115395a2665499c0639a2">isKnownNever</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a982e49c60a2c0180bce8a7f0914c9ce3">llvm::InstCombinerImpl::fmulByZeroIsZero</a>.</p>
+
 </div>
 </div>
 
@@ -1883,6 +1886,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -304,13 +304,13 @@ class llvm::SpecialCaseList { ... }
 
 
 
-### Full special case list file example: {#autotoc_md55}
+### Full special case list file example: {#autotoc_md54}
 
 
 <p>[address]</p>
 
 
-## Excluded items: {#autotoc_md56}
+## Excluded items: {#autotoc_md55}
 
 
 <p>fun:<em>_ZN4base6subtle</em> global:<em>global_with_bad_access_or_initialization</em> global:<em>global_with_initialization_issues</em>=init type:<em>Namespace::ClassName</em>=init src:file_with_tricky_code.cc src:ignore-global-initializers-issues.cc=init mainfile:main_file.cc</p>
@@ -319,13 +319,13 @@ class llvm::SpecialCaseList { ... }
 <p>[dataflow]</p>
 
 
-## Functions with pure functional semantics: {#autotoc_md57}
+## Functions with pure functional semantics: {#autotoc_md56}
 
 
 <p>fun:cos=functional</p>
 
 
-### fun:sin=functional {#autotoc_md58}
+### fun:sin=functional {#autotoc_md57}
 
 
 <p>Definition at line 69 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/specialcaselist-h">SpecialCaseList.h</a>.</p>
@@ -631,7 +631,7 @@ class llvm::SpecialCaseList { ... }
 <p>Declaration at line 141 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/specialcaselist-h">SpecialCaseList.h</a>, definition at line 133 of file <a href="/web-llvm/docs/api/files/lib/lib/support/specialcaselist-cpp">SpecialCaseList.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">llvm::createStringError</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">llvm::invalid_argument</a>, <a href="/web-llvm/docs/api/structs/llvm/specialcaselist/section/#a91cff40f296053ff15e49819d7675df6">llvm::SpecialCaseList::Section::SectionMatcher</a>, <a href="#a87a37a162a6f093f0ba2fed20f7c6a04">Sections</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">llvm::createStringError</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">llvm::invalid_argument</a>, <a href="/web-llvm/docs/api/structs/llvm/specialcaselist/section/#a91cff40f296053ff15e49819d7675df6">llvm::SpecialCaseList::Section::SectionMatcher</a>, <a href="#a87a37a162a6f093f0ba2fed20f7c6a04">Sections</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 
 <p>Referenced by <a href="#afd812a66cf342fb3cd2e392ec9c7a0b0">parse</a>.</p>
@@ -766,7 +766,7 @@ class llvm::SpecialCaseList { ... }
 <p>Declaration at line 145 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/specialcaselist-h">SpecialCaseList.h</a>, definition at line 146 of file <a href="/web-llvm/docs/api/files/lib/lib/support/specialcaselist-cpp">SpecialCaseList.cpp</a>.</p>
 
 
-<p>References <a href="#acddee90812e74127ce6b0d59780166f0">addSection</a>, <a href="/web-llvm/docs/api/structs/llvm/specialcaselist/section/#a873ad17053480f9b05bb351a90cfeef5">llvm::SpecialCaseList::Section::Entries</a>, <a href="/web-llvm/docs/api/classes/llvm/line-iterator/#a617941704a472090ba3304c9daf1c37f">llvm::line_iterator::is_at_eof</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm::toString</a>.</p>
+<p>References <a href="#acddee90812e74127ce6b0d59780166f0">addSection</a>, <a href="/web-llvm/docs/api/structs/llvm/specialcaselist/section/#a873ad17053480f9b05bb351a90cfeef5">llvm::SpecialCaseList::Section::Entries</a>, <a href="/web-llvm/docs/api/classes/llvm/line-iterator/#a617941704a472090ba3304c9daf1c37f">llvm::line_iterator::is_at_eof</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm::toString</a>.</p>
 
 
 <p>Referenced by <a href="#acb50180bcc2a385ee38e2f7400c1c983">createInternal</a> and <a href="#a5e125454a7bbe1568bddd90a3045bade">createInternal</a>.</p>
@@ -949,6 +949,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

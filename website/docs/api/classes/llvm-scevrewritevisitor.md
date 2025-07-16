@@ -525,7 +525,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 802 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 </div>
 </div>
@@ -559,7 +559,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 829 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/scevaddrecexpr/#a99ab4a82c6d7373e2e367986b9527bf0">llvm::SCEVAddRecExpr::getLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#a7275347a4dce174f4fecd548fd3255dc">llvm::SCEVNAryExpr::getNoWrapFlags</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/scevaddrecexpr/#a99ab4a82c6d7373e2e367986b9527bf0">llvm::SCEVAddRecExpr::getLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#a7275347a4dce174f4fecd548fd3255dc">llvm::SCEVNAryExpr::getNoWrapFlags</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 </div>
 </div>
@@ -655,7 +655,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 812 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 </div>
 </div>
@@ -723,7 +723,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 881 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 </div>
 </div>
@@ -794,7 +794,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 841 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 </div>
 </div>
@@ -828,7 +828,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 861 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/loopguards/#afc980d8379c6a1d12d091ba6b33aa05f">llvm::ScalarEvolution::LoopGuards::rewrite</a>.</p>
@@ -899,7 +899,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 822 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/scevudivexpr/#a64f39bbc1130d1a36d3824633863dc51">llvm::SCEVUDivExpr::getLHS</a>, <a href="/web-llvm/docs/api/classes/llvm/scevudivexpr/#ad0fdc55c45a39b722f3d990505b55dd7">llvm::SCEVUDivExpr::getRHS</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a> and <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/scevudivexpr/#a64f39bbc1130d1a36d3824633863dc51">llvm::SCEVUDivExpr::getLHS</a>, <a href="/web-llvm/docs/api/classes/llvm/scevudivexpr/#ad0fdc55c45a39b722f3d990505b55dd7">llvm::SCEVUDivExpr::getRHS</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a> and <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a>.</p>
 
 </div>
 </div>
@@ -933,7 +933,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 851 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 </div>
 </div>
@@ -967,7 +967,7 @@ class llvm::SCEVRewriteVisitor&lt;SC&gt; { ... }
 <p>Definition at line 871 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/scalarevolutionexpressions-h">ScalarEvolutionExpressions.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>, <a href="/web-llvm/docs/api/classes/llvm/scevnaryexpr/#ae77d0f7b81cbde08d5fd75fcf2fcf36b">llvm::SCEVNAryExpr::operands</a>, <a href="#a1f75cac3a0eec736a85d996723c70e64">llvm::SCEVRewriteVisitor&lt; SC &gt;::SE</a> and <a href="#a242a71a1c3d798925fbaa9faba8bb5a8">llvm::SCEVRewriteVisitor&lt; SC &gt;::visit</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/loopguards/#afc980d8379c6a1d12d091ba6b33aa05f">llvm::ScalarEvolution::LoopGuards::rewrite</a>.</p>
@@ -1160,6 +1160,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

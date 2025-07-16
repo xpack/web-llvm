@@ -122,7 +122,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/cl/opt">cl::opt</a>&lt; <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#abf78b4a589091577668be8331dbf3e10">AArch64PAuth::AuthCheckMethod</a> &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/cl/opt">cl::opt</a>&lt; AArch64PAuth::AuthCheckMethod &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a702a1c7df390854ca66dd8b7607c3844">AuthenticatedLRCheckMethod</a>("aarch64-authenticated-lr-check-method", cl::Hidden, cl::desc("Override the variant of check applied " "to authenticated LR during tail call"), cl::values(AUTH_CHECK_METHOD_CL_VALUES_LR))</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -772,6 +772,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

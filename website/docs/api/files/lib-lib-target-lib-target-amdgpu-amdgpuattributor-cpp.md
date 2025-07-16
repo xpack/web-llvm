@@ -413,7 +413,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abcda5d6b0123c14be8c65cc06d157ce8">AMDGPU_ATTRIBUTE</a>(Name, Str)&nbsp;&nbsp;&nbsp;Name = 1 &lt;&lt; Name##_POS,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adf5cff654adb6e5d755d4687b14e9d98">AMDGPU_ATTRIBUTE</a>(Name, Str)&nbsp;&nbsp;&nbsp;Name = 1 &lt;&lt; Name##_POS,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -426,7 +426,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abcda5d6b0123c14be8c65cc06d157ce8">AMDGPU_ATTRIBUTE</a>(Name, Str)&nbsp;&nbsp;&nbsp;{Name, Str},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a65bb2e6fd62bb6e7de9b1fefef6c08e2">AMDGPU_ATTRIBUTE</a>(Name, Str)&nbsp;&nbsp;&nbsp;{Name, Str},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -831,7 +831,7 @@ keywords:
 </div>
 </div>
 
-### AMDGPU\_ATTRIBUTE {#abcda5d6b0123c14be8c65cc06d157ce8}
+### AMDGPU\_ATTRIBUTE {#adf5cff654adb6e5d755d4687b14e9d98}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -856,7 +856,7 @@ keywords:
 </div>
 </div>
 
-### AMDGPU\_ATTRIBUTE {#abcda5d6b0123c14be8c65cc06d157ce8}
+### AMDGPU\_ATTRIBUTE {#a65bb2e6fd62bb6e7de9b1fefef6c08e2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -910,6 +910,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

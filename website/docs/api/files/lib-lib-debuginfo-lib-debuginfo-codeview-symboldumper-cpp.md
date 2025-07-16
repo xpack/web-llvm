@@ -128,12 +128,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab6b7c796b66e8f676b7405babeac39cc">SYMBOL_RECORD</a>(EnumName, EnumVal, Name)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a62e34730e42b815aff4728aabed1135e">SYMBOL_RECORD</a>(EnumName, EnumVal, Name)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/codeview/cvsymbolvisitor">CVSymbolVisitor</a> overrides. <a href="#ab6b7c796b66e8f676b7405babeac39cc">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/llvm/codeview/cvsymbolvisitor">CVSymbolVisitor</a> overrides. <a href="#a62e34730e42b815aff4728aabed1135e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -211,7 +211,7 @@ keywords:
 </div>
 </div>
 
-### SYMBOL\_RECORD {#ab6b7c796b66e8f676b7405babeac39cc}
+### SYMBOL\_RECORD {#a62e34730e42b815aff4728aabed1135e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -274,6 +274,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -59,7 +59,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This class stores enough information to efficiently remove some attributes from an existing AttrBuilder, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or AttributeList. <a href="/web-llvm/docs/api/classes/llvm/attributemask/#details">More...</a></p>
+<p>This class stores enough information to efficiently remove some attributes from an existing <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a>, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>. <a href="/web-llvm/docs/api/classes/llvm/attributemask/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -71,6 +71,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

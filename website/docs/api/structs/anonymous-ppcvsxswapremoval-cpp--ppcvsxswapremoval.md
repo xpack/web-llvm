@@ -467,7 +467,7 @@ struct anonymous{PPCVSXSwapRemoval.cpp}::PPCVSXSwapRemoval { ... }
 <p>Definition at line 188 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/powerpc/ppcvsxswapremoval-cpp">PPCVSXSwapRemoval.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a56b048e488219b16dd103ef00a8e5294">EC</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a19d27915595e7f0a0ef271448bcdac6f">initialize</a>, <a href="#a0827abd104534c8821cf78b983bbe312">MF</a>, <a href="/web-llvm/docs/api/classes/llvm/ppcsubtarget/#a57d5b9bb6de332cb318e7ee0acf8c213">llvm::PPCSubtarget::needsSwapsForVSXMemOps</a> and <a href="/web-llvm/docs/api/classes/llvm/functionpass/#af9f5f511d75e16f09a5520cb9444cfa8">llvm::FunctionPass::skipFunction</a>.</p>
+<p>References <a href="#a56b048e488219b16dd103ef00a8e5294">EC</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a19d27915595e7f0a0ef271448bcdac6f">initialize</a>, <a href="#a0827abd104534c8821cf78b983bbe312">MF</a>, <a href="/web-llvm/docs/api/classes/llvm/ppcsubtarget/#a57d5b9bb6de332cb318e7ee0acf8c213">llvm::PPCSubtarget::needsSwapsForVSXMemOps</a> and <a href="/web-llvm/docs/api/classes/llvm/functionpass/#af9f5f511d75e16f09a5520cb9444cfa8">llvm::FunctionPass::skipFunction</a>.</p>
 
 </div>
 </div>
@@ -1086,6 +1086,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

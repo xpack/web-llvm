@@ -1012,11 +1012,13 @@ keywords:
 <li><b>AtomicMemMoveInst</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/atomicmemmoveinst">include/include/llvm/include/llvm/IR/IntrinsicInst.h</a></li>
 <li><b>AtomicMemSetInst</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/atomicmemsetinst">include/include/llvm/include/llvm/IR/IntrinsicInst.h</a></li>
 <li><b>AtomicMemTransferInst</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/atomicmemtransferinst">include/include/llvm/include/llvm/IR/IntrinsicInst.h</a></li>
+<li><b>AtomicOpValue</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>AtomicRMWInst</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/atomicrmwinst">include/include/llvm/include/llvm/IR/Instructions.h</a></li>
 <li><b>AtomicRMWInst</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/sandboxir/atomicrmwinst">include/include/llvm/include/llvm/SandboxIR/Instruction.h</a></li>
 <li><b>AtomicSDNode</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/atomicsdnode">include/include/llvm/include/llvm/CodeGen/SelectionDAGNodes.h</a></li>
 <li><b>AtT&lt;T, I, E&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/tomp/clause/att">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/ClauseT.h</a></li>
 <li><b>Attachment</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/mdattachments/attachment">lib/lib/IR/LLVMContextImpl.h</a></li>
+<li><b>AttrBuilder</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>Attribute</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/attribute">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>attribute_iterator</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/attribute-iterator">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/DWARF/DWARFDie.h</a></li>
 <li><b>AttributeAbbrev</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/attributeabbrev">include/include/llvm/include/llvm/ObjectYAML/DWARFYAML.h</a></li>
@@ -1029,6 +1031,7 @@ keywords:
 <li><b>AttributeItem</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/cskytargetelfstreamer/attributeitem">lib/lib/Target/lib/Target/CSKY/lib/Target/CSKY/MCTargetDesc/CSKYELFStreamer.h</a></li>
 <li><b>AttributeItem</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/mcelfstreamer/attributeitem">include/include/llvm/include/llvm/MC/MCELFStreamer.h</a></li>
 <li><b>AttributeLinkedOffsetFixup</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/attributelinkedoffsetfixup">lib/lib/DWARFLinker/lib/DWARFLinker/Classic/DWARFLinker.cpp</a></li>
+<li><b>AttributeList</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/attributelist">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>AttributeListImpl</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl">lib/lib/IR/AttributeImpl.h</a></li>
 <li><b>AttributeMask</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/attributemask">include/include/llvm/include/llvm/IR/AttributeMask.h</a></li>
 <li><b>Attributes</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-modulesummaryindex-cpp-/attributes">lib/lib/IR/ModuleSummaryIndex.cpp</a></li>
@@ -1096,7 +1099,7 @@ keywords:
 <li><b>AVRTargetObjectFile</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/avrtargetobjectfile">lib/lib/Target/lib/Target/AVR/AVRTargetObjectFile.h</a></li>
 <li><b>AVRTargetStreamer</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/avrtargetstreamer">lib/lib/Target/lib/Target/AVR/lib/Target/AVR/MCTargetDesc/AVRTargetStreamer.h</a></li>
 </ul>
-<p>1059 entries</p>
+<p>1062 entries</p>
 
 ## - B -
 
@@ -1134,6 +1137,7 @@ keywords:
 <li><b>BasicAAResult</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/basicaaresult">include/include/llvm/include/llvm/Analysis/BasicAliasAnalysis.h</a></li>
 <li><b>BasicAAWrapperPass</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/basicaawrapperpass">include/include/llvm/include/llvm/Analysis/BasicAliasAnalysis.h</a></li>
 <li><b>BasicBlock</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/basicblock">include/include/llvm/include/llvm/IR/BasicBlock.h</a></li>
+<li><b>BasicBlock</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">include/include/llvm/include/llvm/SandboxIR/BasicBlock.h</a></li>
 <li><b>BasicBlockBFIAdapter</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-sizeopts-cpp-/basicblockbfiadapter">lib/lib/Transforms/lib/Transforms/Utils/SizeOpts.cpp</a></li>
 <li><b>BasicBlockBits</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/basicblock/basicblockbits">include/include/llvm/include/llvm/IR/BasicBlock.h</a></li>
 <li><b>BasicBlockCallbackVH</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/branchprobabilityinfo/basicblockcallbackvh">include/include/llvm/include/llvm/Analysis/BranchProbabilityInfo.h</a></li>
@@ -1561,7 +1565,7 @@ keywords:
 <li><b>ByteStreamer</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/bytestreamer">lib/lib/CodeGen/lib/CodeGen/AsmPrinter/ByteStreamer.h</a></li>
 <li><b>ByValInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/ccstate/byvalinfo">include/include/llvm/include/llvm/CodeGen/CallingConvLower.h</a></li>
 </ul>
-<p>459 entries</p>
+<p>460 entries</p>
 
 ## - C -
 
@@ -2028,7 +2032,7 @@ keywords:
 <li><b>CompileUnit</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/compileunit">include/include/llvm/include/llvm/DWARFLinker/include/llvm/DWARFLinker/Classic/DWARFLinkerCompileUnit.h</a></li>
 <li><b>CompileUnit</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">lib/lib/DWARFLinker/lib/DWARFLinker/Parallel/DWARFLinkerCompileUnit.h</a></li>
 <li><b>CompileUnitIdentifiers</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/compileunitidentifiers">include/include/llvm/include/llvm/DWP/DWP.h</a></li>
-<li><b>CompileUnitPointerTraits</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/compileunitpointertraits">lib/lib/DWARFLinker/lib/DWARFLinker/Parallel/DependencyTracker.h</a></li>
+<li><b>CompileUnitPointerTraits</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits">lib/lib/DWARFLinker/lib/DWARFLinker/Parallel/DependencyTracker.h</a></li>
 <li><b>CompleterConcept</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/lineeditor/completerconcept">include/include/llvm/include/llvm/LineEditor/LineEditor.h</a></li>
 <li><b>CompleterModel&lt;T&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/lineeditor/completermodel">include/include/llvm/include/llvm/LineEditor/LineEditor.h</a></li>
 <li><b>Completion</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/lineeditor/completion">include/include/llvm/include/llvm/LineEditor/LineEditor.h</a></li>
@@ -2230,6 +2234,7 @@ keywords:
 <li><b>CopyGeneration</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/copygeneration">lib/lib/Target/lib/Target/Hexagon/HexagonBitSimplify.cpp</a></li>
 <li><b>CopyInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-machinecopypropagation-cpp-/copytracker/copyinfo">lib/lib/CodeGen/MachineCopyPropagation.cpp</a></li>
 <li><b>CopyinT&lt;T, I, E&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/tomp/clause/copyint">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/ClauseT.h</a></li>
+<li><b>CopyOptionsTy</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/copyoptionsty">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>CopyprivateT&lt;T, I, E&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/tomp/clause/copyprivatet">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/ClauseT.h</a></li>
 <li><b>CopyPropagation</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/copypropagation">lib/lib/Target/lib/Target/Hexagon/HexagonBitSimplify.cpp</a></li>
 <li><b>CopyPropagation</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/rdf/copypropagation">lib/lib/Target/lib/Target/Hexagon/RDFCopy.h</a></li>
@@ -2466,7 +2471,7 @@ keywords:
 <li><b>Cycles</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-earlyifconversion-cpp-/cycles">lib/lib/CodeGen/EarlyIfConversion.cpp</a></li>
 <li><b>CycleSegment</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/mca/cyclesegment">include/include/llvm/include/llvm/MCA/Instruction.h</a></li>
 </ul>
-<p>899 entries</p>
+<p>900 entries</p>
 
 ## - D -
 
@@ -2677,6 +2682,7 @@ keywords:
 <li><b>DecompEntry</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decompentry">lib/lib/Transforms/lib/Transforms/Scalar/ConstraintElimination.cpp</a></li>
 <li><b>DecomposedBitTest</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/decomposedbittest">include/include/llvm/include/llvm/Analysis/CmpInstAnalysis.h</a></li>
 <li><b>DecomposedGEP</b>: as struct in file <a href="/web-llvm/docs/api/structs/basicaaresult/decomposedgep">lib/lib/Analysis/BasicAliasAnalysis.cpp</a></li>
+<li><b>DecomposedSelect</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>Decomposition</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decomposition">lib/lib/Transforms/lib/Transforms/Scalar/ConstraintElimination.cpp</a></li>
 <li><b>DecompressedSection</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/decompressedsection">lib/lib/ObjCopy/lib/ObjCopy/ELF/ELFObject.h</a></li>
 <li><b>Decompressor</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/object/decompressor">include/include/llvm/include/llvm/Object/Decompressor.h</a></li>
@@ -2795,6 +2801,7 @@ keywords:
 <li><b>DenseMapInfo&lt;AssertingVH&lt; T &gt;&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-9991f1503f02220ff60e93f014753ab7">include/include/llvm/include/llvm/IR/ValueHandle.h</a></li>
 <li><b>DenseMapInfo&lt;at::VarRecord&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0">include/include/llvm/include/llvm/IR/DebugInfo.h</a></li>
 <li><b>DenseMapInfo&lt;Attribute::AttrKind&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97">include/include/llvm/include/llvm/Analysis/AssumeBundleQueries.h</a></li>
+<li><b>DenseMapInfo&lt;AttributeList, void&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>DenseMapInfo&lt;AttributeSet, void&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>DenseMapInfo&lt;BasicBlock::iterator&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9">include/include/llvm/include/llvm/IR/BasicBlock.h</a></li>
 <li><b>DenseMapInfo&lt;BasicBlockEdge&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6">include/include/llvm/include/llvm/IR/Dominators.h</a></li>
@@ -3408,7 +3415,7 @@ keywords:
 <li><b>DynSym&lt;ELFT&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/ifs/anonymous-elfobjhandler-cpp-/dynsym">lib/lib/InterfaceStub/ELFObjHandler.cpp</a></li>
 <li><b>dysymtab_command</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/macho/dysymtab-command">include/include/llvm/include/llvm/BinaryFormat/MachO.h</a></li>
 </ul>
-<p>936 entries</p>
+<p>938 entries</p>
 
 ## - E -
 
@@ -4152,7 +4159,6 @@ keywords:
 <li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-d4c6dcfa77293e610b110598fc7b9f83">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/CodeView/TypeHashing.h</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-faf352d6e414689b835e290211af46e2">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/CodeView/TypeHashing.h</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-0fc70501588571ec0ff51d52fb9fddbf">include/include/llvm/include/llvm/Support/Chrono.h</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6">include/include/llvm/include/llvm/Support/Chrono.h</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-bb2727522f9037c807f0f90a70a7b85d">include/include/llvm/include/llvm/Support/FormatProviders.h</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-15a9d9c43fc1c54a3bb168a7dc27cbd1">include/include/llvm/include/llvm/Support/FormatProviders.h</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/format-provider-ecaa20ba3297bf1600b082fe1fca61e7">include/include/llvm/include/llvm/Support/FormatProviders.h</a></li>
@@ -4366,7 +4372,7 @@ keywords:
 <li><b>FwdRegParamInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/fwdregparaminfo">lib/lib/CodeGen/lib/CodeGen/AsmPrinter/DwarfDebug.cpp</a></li>
 <li><b>FxpOp</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-hexagonvectorcombine-cpp-/hvxidioms/fxpop">lib/lib/Target/lib/Target/Hexagon/HexagonVectorCombine.cpp</a></li>
 </ul>
-<p>473 entries</p>
+<p>472 entries</p>
 
 ## - G -
 
@@ -5184,6 +5190,7 @@ keywords:
 <li><b>IncomingWFRHandler</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol/incomingwfrhandler">include/include/llvm/include/llvm/ExecutionEngine/include/llvm/ExecutionEngine/Orc/ExecutorProcessControl.h</a></li>
 <li><b>IncrementalSourceMgr</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/mca/incrementalsourcemgr">include/include/llvm/include/llvm/MCA/IncrementalSourceMgr.h</a></li>
 <li><b>indent</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/indent">include/include/llvm/include/llvm/Support/raw_ostream.h</a></li>
+<li><b>index_iterator</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>index_iterator</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/detail/index-iterator">include/include/llvm/include/llvm/ADT/STLExtras.h</a></li>
 <li><b>index_range</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/index-range">include/include/llvm/include/llvm/ADT/STLExtras.h</a></li>
 <li><b>index_stream</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/detail/index-stream">include/include/llvm/include/llvm/ADT/STLExtras.h</a></li>
@@ -5487,6 +5494,7 @@ keywords:
 <li><b>InstStreamPause</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/mca/inststreampause">include/include/llvm/include/llvm/MCA/include/llvm/MCA/Stages/Stage.h</a></li>
 <li><b>InstVisitor&lt;SubClass, RetTy&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/instvisitor">include/include/llvm/include/llvm/IR/InstVisitor.h</a></li>
 <li><b>int_op_inserter</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/int-op-inserter">include/include/llvm/include/llvm/Transforms/include/llvm/Transforms/Scalar/GVNExpression.h</a></li>
+<li><b>int_wrapper</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>IntAttributeImpl</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/intattributeimpl">lib/lib/IR/AttributeImpl.h</a></li>
 <li><b>IntegerCompareEliminator</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-ppciseldagtodag-cpp-/integercompareeliminator">lib/lib/Target/lib/Target/PowerPC/PPCISelDAGToDAG.cpp</a></li>
 <li><b>IntegerLiteral</b>: as class in file <a href="/web-llvm/docs/api/classes/integerliteral">include/include/llvm/include/llvm/Demangle/ItaniumDemangle.h</a></li>
@@ -5825,7 +5833,7 @@ keywords:
 <li><b>IVUsersWrapperPass</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/ivuserswrapperpass">include/include/llvm/include/llvm/Analysis/IVUsers.h</a></li>
 <li><b>IVVisitor</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/ivvisitor">include/include/llvm/include/llvm/Transforms/include/llvm/Transforms/Utils/SimplifyIndVar.h</a></li>
 </ul>
-<p>803 entries</p>
+<p>805 entries</p>
 
 ## - J -
 
@@ -6139,7 +6147,6 @@ keywords:
 <li><b>ListInit</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/listinit">include/include/llvm/include/llvm/TableGen/Record.h</a></li>
 <li><b>ListRecTy</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/listrecty">include/include/llvm/include/llvm/TableGen/Record.h</a></li>
 <li><b>ListScope</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/listscope">include/include/llvm/include/llvm/Support/ScopedPrinter.h</a></li>
-<li><b>ListSeparator</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/listseparator">include/include/llvm/include/llvm/ADT/StringExtras.h</a></li>
 <li><b>ListStream&lt;EntryT&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/minidumpyaml/detail/liststream">include/include/llvm/include/llvm/ObjectYAML/MinidumpYAML.h</a></li>
 <li><b>ListTable&lt;EntryType&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/listtable">include/include/llvm/include/llvm/ObjectYAML/DWARFYAML.h</a></li>
 <li><b>LiteralOperator</b>: as class in file <a href="/web-llvm/docs/api/classes/literaloperator">include/include/llvm/include/llvm/Demangle/ItaniumDemangle.h</a></li>
@@ -6181,7 +6188,6 @@ keywords:
 <li><b>LiveRegSet</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/liveregset">include/include/llvm/include/llvm/CodeGen/RegisterPressure.h</a></li>
 <li><b>LiveRegUnit</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/liveregunit">include/include/llvm/include/llvm/CodeGen/MachineTraceMetrics.h</a></li>
 <li><b>LiveRegUnits</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/liveregunits">include/include/llvm/include/llvm/CodeGen/LiveRegUnits.h</a></li>
-<li><b>LiveRootWorklistItemTy</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty">lib/lib/DWARFLinker/lib/DWARFLinker/Parallel/DependencyTracker.h</a></li>
 <li><b>LiveStacks</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/livestacks">include/include/llvm/include/llvm/CodeGen/LiveStacks.h</a></li>
 <li><b>LiveStacksAnalysis</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/livestacksanalysis">include/include/llvm/include/llvm/CodeGen/LiveStacks.h</a></li>
 <li><b>LiveStacksPrinterPass</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/livestacksprinterpass">include/include/llvm/include/llvm/CodeGen/LiveStacks.h</a></li>
@@ -6595,7 +6601,7 @@ keywords:
 <li><b>LVTypeVisitor</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypevisitor">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/LogicalView/include/llvm/DebugInfo/LogicalView/Readers/LVCodeViewVisitor.h</a></li>
 <li><b>LVWarning</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvoptions/lvwarning">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/LogicalView/include/llvm/DebugInfo/LogicalView/Core/LVOptions.h</a></li>
 </ul>
-<p>680 entries</p>
+<p>678 entries</p>
 
 ## - M -
 
@@ -6848,6 +6854,7 @@ keywords:
 <li><b>MapGap</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-symbolrecordmapping-cpp-/mapgap">lib/lib/DebugInfo/lib/DebugInfo/CodeView/SymbolRecordMapping.cpp</a></li>
 <li><b>MapHNode</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/yaml/input/maphnode">include/include/llvm/include/llvm/Support/YAMLTraits.h</a></li>
 <li><b>MapInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/constantuniquemap/mapinfo">lib/lib/IR/ConstantsContext.h</a></li>
+<li><b>MapInfosTy</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>MapOneMethodRecord</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-typerecordmapping-cpp-/maponemethodrecord">lib/lib/DebugInfo/lib/DebugInfo/CodeView/TypeRecordMapping.cpp</a></li>
 <li><b>mapped_file_region</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/sys/fs/mapped-file-region">include/include/llvm/include/llvm/Support/FileSystem.h</a></li>
 <li><b>mapped_iterator_base&lt;...&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/mapped-iterator-base">include/include/llvm/include/llvm/ADT/STLExtras.h</a></li>
@@ -6856,6 +6863,7 @@ keywords:
 <li><b>MappedBlockStreamImpl&lt;Base&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-mappedblockstream-cpp-/mappedblockstreamimpl">lib/lib/DebugInfo/lib/DebugInfo/MSF/MappedBlockStream.cpp</a></li>
 <li><b>MappedValue</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/mapresolver/mappedvalue">include/include/llvm/include/llvm/TableGen/Record.h</a></li>
 <li><b>Mapper</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-valuemapper-cpp-/mapper">lib/lib/Transforms/lib/Transforms/Utils/ValueMapper.cpp</a></li>
+<li><b>MapperAllocas</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapperallocas">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>MapperJITLinkMemoryManager</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/orc/mapperjitlinkmemorymanager">include/include/llvm/include/llvm/ExecutionEngine/include/llvm/ExecutionEngine/Orc/MapperJITLinkMemoryManager.h</a></li>
 <li><b>MapperT&lt;I, E&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/tomp/type/mappert">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/ClauseT.h</a></li>
 <li><b>MappingConfig</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-numericalstabilitysanitizer-cpp-/mappingconfig">lib/lib/Transforms/lib/Transforms/Instrumentation/NumericalStabilitySanitizer.cpp</a></li>
@@ -7775,7 +7783,7 @@ keywords:
 <li><b>MVEVPTBlock</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-mvevptblockpass-cpp-/mvevptblock">lib/lib/Target/lib/Target/ARM/MVEVPTBlockPass.cpp</a></li>
 <li><b>MVT</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/mvt">include/include/llvm/include/llvm/CodeGenTypes/MachineValueType.h</a></li>
 </ul>
-<p>1174 entries</p>
+<p>1176 entries</p>
 
 ## - N -
 
@@ -8349,6 +8357,7 @@ keywords:
 <li><b>OutlinedFunction</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/outliner/outlinedfunction">include/include/llvm/include/llvm/CodeGen/MachineOutliner.h</a></li>
 <li><b>OutlinedHashTree</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/outlinedhashtree">include/include/llvm/include/llvm/CGData/OutlinedHashTree.h</a></li>
 <li><b>OutlinedHashTreeRecord</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/outlinedhashtreerecord">include/include/llvm/include/llvm/CGData/OutlinedHashTreeRecord.h</a></li>
+<li><b>OutlineInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>OutlinerCosts</b>: as struct in file <a href="/web-llvm/docs/api/structs/outlinercosts">lib/lib/Target/lib/Target/ARM/ARMBaseInstrInfo.cpp</a></li>
 <li><b>OutlineRegionInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-partialinlining-cpp-/functionoutliningmultiregioninfo/outlineregioninfo">lib/lib/Transforms/lib/Transforms/IPO/PartialInlining.cpp</a></li>
 <li><b>OutliningRegion</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-hotcoldsplitting-cpp-/outliningregion">lib/lib/Transforms/lib/Transforms/IPO/HotColdSplitting.cpp</a></li>
@@ -8380,7 +8389,7 @@ keywords:
 <li><b>OwningMemoryBlock</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/sys/owningmemoryblock">include/include/llvm/include/llvm/Support/Memory.h</a></li>
 <li><b>OwningModuleContainer</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/mcjit/owningmodulecontainer">lib/lib/ExecutionEngine/lib/ExecutionEngine/MCJIT/MCJIT.h</a></li>
 </ul>
-<p>318 entries</p>
+<p>319 entries</p>
 
 ## - P -
 
@@ -8908,8 +8917,7 @@ keywords:
 <li><b>PreprocessorDir</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-tglexer-cpp-/preprocessordir">lib/lib/TableGen/TGLexer.cpp</a></li>
 <li><b>PreRARematStage</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/prerarematstage">lib/lib/Target/lib/Target/AMDGPU/GCNSchedStrategy.h</a></li>
 <li><b>PreserveAPIList</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-internalize-cpp-/preserveapilist">lib/lib/Transforms/lib/Transforms/IPO/Internalize.cpp</a></li>
-<li><b>PreservedAnalyses</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">include/include/llvm/include/llvm/IR/Analysis.h</a></li>
-<li><b>PreservedAnalysisChecker</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker">include/include/llvm/include/llvm/IR/Analysis.h</a></li>
+<li><b>PreservedAnalysisChecker</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">include/include/llvm/include/llvm/IR/Analysis.h</a></li>
 <li><b>PreservedCFGCheckerAnalysis</b>: as struct in file <a href="/web-llvm/docs/api/structs/preservedcfgcheckeranalysis">lib/lib/Passes/StandardInstrumentations.cpp</a></li>
 <li><b>PreservedCFGCheckerInstrumentation</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/preservedcfgcheckerinstrumentation">include/include/llvm/include/llvm/Passes/StandardInstrumentations.h</a></li>
 <li><b>PreservedFunctionHashAnalysis</b>: as struct in file <a href="/web-llvm/docs/api/structs/preservedfunctionhashanalysis">lib/lib/Passes/StandardInstrumentations.cpp</a></li>
@@ -9026,7 +9034,7 @@ keywords:
 <li><b>PromotePass</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/promotepass">include/include/llvm/include/llvm/Transforms/include/llvm/Transforms/Utils/Mem2Reg.h</a></li>
 <li><b>PromotionCandidate</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-indirectcallpromotion-cpp-/indirectcallpromoter/promotioncandidate">lib/lib/Transforms/lib/Transforms/Instrumentation/IndirectCallPromotion.cpp</a></li>
 <li><b>Properties</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dxil/properties">lib/lib/Target/lib/Target/DirectX/DXILConstants.h</a></li>
-<li><b>ProvenanceAnalysis</b>: as class in file <a href="/web-llvm/docs/api/classes/provenanceanalysis">lib/lib/Transforms/lib/Transforms/ObjCARC/ProvenanceAnalysis.h</a></li>
+<li><b>ProvenanceAnalysis</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">lib/lib/Transforms/lib/Transforms/ObjCARC/ProvenanceAnalysis.h</a></li>
 <li><b>provider_format_adapter&lt;T&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/support/detail/provider-format-adapter">include/include/llvm/include/llvm/Support/FormatVariadicDetails.h</a></li>
 <li><b>ProxyFileSystem</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/vfs/proxyfilesystem">include/include/llvm/include/llvm/Support/VirtualFileSystem.h</a></li>
 <li><b>PruningFunctionCloner</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-clonefunction-cpp-/pruningfunctioncloner">lib/lib/Transforms/lib/Transforms/Utils/CloneFunction.cpp</a></li>
@@ -9077,7 +9085,7 @@ keywords:
 <li><b>PubSection</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/pubsection">include/include/llvm/include/llvm/ObjectYAML/DWARFYAML.h</a></li>
 <li><b>PunnedPointer&lt;Ptr&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/detail/punnedpointer">include/include/llvm/include/llvm/ADT/PointerIntPair.h</a></li>
 </ul>
-<p>691 entries</p>
+<p>690 entries</p>
 
 ## - Q -
 
@@ -9258,6 +9266,7 @@ keywords:
 <li><b>Reduction</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-armparalleldsp-cpp-/reduction">lib/lib/Target/lib/Target/ARM/ARMParallelDSP.cpp</a></li>
 <li><b>ReductionFlags</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/reductionflags">include/include/llvm/include/llvm/Analysis/TargetTransformInfo.h</a></li>
 <li><b>ReductionIdentifierT&lt;I, E&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/tomp/type/reductionidentifiert">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/ClauseT.h</a></li>
+<li><b>ReductionInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>ReductionT&lt;T, I, E&gt;</b>: as struct in file <a href="/web-llvm/docs/api/structs/tomp/clause/reductiont">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/ClauseT.h</a></li>
 <li><b>RedundantDbgInstEliminationPass</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/redundantdbginsteliminationpass">include/include/llvm/include/llvm/Transforms/include/llvm/Transforms/Scalar/DCE.h</a></li>
 <li><b>RedundantInstrElimination</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/redundantinstrelimination">lib/lib/Target/lib/Target/Hexagon/HexagonBitSimplify.cpp</a></li>
@@ -9563,6 +9572,7 @@ keywords:
 <li><b>ResourceBindingInfo</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcebindinginfo">include/include/llvm/include/llvm/Analysis/DXILResource.h</a></li>
 <li><b>ResourceEntryRef</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/object/resourceentryref">include/include/llvm/include/llvm/Object/WindowsResource.h</a></li>
 <li><b>ResourceFlags</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/resourceflags">include/include/llvm/include/llvm/BinaryFormat/DXContainer.h</a></li>
+<li><b>ResourceManager</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">include/include/llvm/include/llvm/MCA/include/llvm/MCA/HardwareUnits/ResourceManager.h</a></li>
 <li><b>ResourceManager</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/orc/resourcemanager">include/include/llvm/include/llvm/ExecutionEngine/include/llvm/ExecutionEngine/Orc/Core.h</a></li>
 <li><b>ResourceManager</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">include/include/llvm/include/llvm/CodeGen/MachinePipeliner.h</a></li>
 <li><b>ResourcePriorityQueue</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/resourcepriorityqueue">include/include/llvm/include/llvm/CodeGen/ResourcePriorityQueue.h</a></li>
@@ -9796,7 +9806,7 @@ keywords:
 <li><b>RVVRegisterRegAlloc</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-riscvtargetmachine-cpp-/rvvregisterregalloc">lib/lib/Target/lib/Target/RISCV/RISCVTargetMachine.cpp</a></li>
 <li><b>RxSBGOperands</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-systemziseldagtodag-cpp-/rxsbgoperands">lib/lib/Target/lib/Target/SystemZ/SystemZISelDAGToDAG.cpp</a></li>
 </ul>
-<p>700 entries</p>
+<p>702 entries</p>
 
 ## - S -
 
@@ -10764,7 +10774,6 @@ keywords:
 <li><b>SplitProposal</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/anonymous-amdgpusplitmodule-cpp-/splitproposal">lib/lib/Target/lib/Target/AMDGPU/AMDGPUSplitModule.cpp</a></li>
 <li><b>SplitPtrStructs</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-amdgpulowerbufferfatpointers-cpp-/splitptrstructs">lib/lib/Target/lib/Target/AMDGPU/AMDGPULowerBufferFatPointers.cpp</a></li>
 <li><b>Splitter</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/spirvstructurizer/splitter">lib/lib/Target/lib/Target/SPIRV/SPIRVStructurizer.cpp</a></li>
-<li><b>SplittingIterator</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/splittingiterator">include/include/llvm/include/llvm/ADT/StringExtras.h</a></li>
 <li><b>SplitWorkItemInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/switchcg/switchlowering/splitworkiteminfo">include/include/llvm/include/llvm/CodeGen/SwitchLoweringUtils.h</a></li>
 <li><b>SPSArgList&lt;&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist-38559c871fba28d992ead51549367f83">include/include/llvm/include/llvm/ExecutionEngine/include/llvm/ExecutionEngine/Orc/include/llvm/ExecutionEngine/Orc/Shared/SimplePackedSerialization.h</a></li>
 <li><b>SPSArgList&lt;SPSTagT, SPSTagTs...&gt;</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist-ade063f27d7f7f49fb540da6dccad5db">include/include/llvm/include/llvm/ExecutionEngine/include/llvm/ExecutionEngine/Orc/include/llvm/ExecutionEngine/Orc/Shared/SimplePackedSerialization.h</a></li>
@@ -11022,6 +11031,7 @@ keywords:
 <li><b>StructInitializer</b>: as struct in file <a href="/web-llvm/docs/api/structs/anonymous-masmparser-cpp-/structinitializer">lib/lib/MC/lib/MC/MCParser/MasmParser.cpp</a></li>
 <li><b>StructLayout</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/structlayout">include/include/llvm/include/llvm/IR/DataLayout.h</a></li>
 <li><b>StructLayoutMap</b>: as class in file <a href="/web-llvm/docs/api/classes/anonymous-datalayout-cpp-/structlayoutmap">lib/lib/IR/DataLayout.cpp</a></li>
+<li><b>StructNonContiguousInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>Structor</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/asmprinter/structor">include/include/llvm/include/llvm/CodeGen/AsmPrinter.h</a></li>
 <li><b>StructorIdentifierNode</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/structoridentifiernode">include/include/llvm/include/llvm/Demangle/MicrosoftDemangleNodes.h</a></li>
 <li><b>StructType</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/btf/structtype">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/BTF/BTF.h</a></li>
@@ -11309,6 +11319,8 @@ keywords:
 <li><b>TapiUniversal</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/object/tapiuniversal">include/include/llvm/include/llvm/Object/TapiUniversal.h</a></li>
 <li><b>Target</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/macho/target">include/include/llvm/include/llvm/TextAPI/Target.h</a></li>
 <li><b>Target</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/target">include/include/llvm/include/llvm/MC/TargetRegistry.h</a></li>
+<li><b>TargetDataInfo</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
+<li><b>TargetDataRTArgs</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>TargetExtType</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetexttype">include/include/llvm/include/llvm/IR/DerivedTypes.h</a></li>
 <li><b>TargetExtTypeKeyInfo</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/targetexttypekeyinfo">lib/lib/IR/LLVMContextImpl.h</a></li>
 <li><b>TargetFeaturesSection</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/wasmyaml/targetfeaturessection">include/include/llvm/include/llvm/ObjectYAML/WasmYAML.h</a></li>
@@ -11320,6 +11332,9 @@ keywords:
 <li><b>TargetInstrInfo</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">include/include/llvm/include/llvm/CodeGen/TargetInstrInfo.h</a></li>
 <li><b>TargetIntrinsicInfo</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetintrinsicinfo">include/include/llvm/include/llvm/Target/TargetIntrinsicInfo.h</a></li>
 <li><b>TargetIRAnalysis</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetiranalysis">include/include/llvm/include/llvm/Analysis/TargetTransformInfo.h</a></li>
+<li><b>TargetKernelArgs</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
+<li><b>TargetKernelDefaultAttrs</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
+<li><b>TargetKernelRuntimeAttrs</b>: as struct in file <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs">include/include/llvm/include/llvm/Frontend/include/llvm/Frontend/OpenMP/OMPIRBuilder.h</a></li>
 <li><b>TargetLibraryAnalysis</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetlibraryanalysis">include/include/llvm/include/llvm/Analysis/TargetLibraryInfo.h</a></li>
 <li><b>TargetLibraryInfo</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfo">include/include/llvm/include/llvm/Analysis/TargetLibraryInfo.h</a></li>
 <li><b>TargetLibraryInfoImpl</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfoimpl">include/include/llvm/include/llvm/Analysis/TargetLibraryInfo.h</a></li>
@@ -11664,7 +11679,7 @@ keywords:
 <li><b>TypeVisitorCallbackPipeline</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/codeview/typevisitorcallbackpipeline">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/CodeView/TypeVisitorCallbackPipeline.h</a></li>
 <li><b>TypeVisitorCallbacks</b>: as class in file <a href="/web-llvm/docs/api/classes/llvm/codeview/typevisitorcallbacks">include/include/llvm/include/llvm/DebugInfo/include/llvm/DebugInfo/CodeView/TypeVisitorCallbacks.h</a></li>
 </ul>
-<p>384 entries</p>
+<p>389 entries</p>
 
 ## - U -
 
@@ -12739,10 +12754,10 @@ keywords:
 </ul>
 <p>17 entries</p>
 <br/>
-<p>Total: 12560 entries.</p>
+<p>Total: 12575 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -253,7 +253,7 @@ struct anonymous{LoopExtractor.cpp}::LoopExtractorLegacyPass { ... }
 <p>Definition at line 46 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/loopextractor-cpp">LoopExtractor.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">llvm::Pass::getAnalysis</a>, <a href="/web-llvm/docs/api/classes/llvm/pass/#af94c014e968489e96c7d4353a84ad7f5">llvm::Pass::getAnalysisIfAvailable</a>, <a href="#a5ae3cadcbbbacf6f3d425dd74ddda1bf">NumLoops</a>, <a href="/web-llvm/docs/api/structs/anonymous-loopextractor-cpp-/loopextractor/#a9d062bd5715f142ba7b0f20cb278fc4d">anonymous{LoopExtractor.cpp}::LoopExtractor::runOnModule</a> and <a href="/web-llvm/docs/api/classes/llvm/modulepass/#ab0f92e1d06aa28c44dc236c73460ba7a">llvm::ModulePass::skipModule</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">llvm::Pass::getAnalysis</a>, <a href="/web-llvm/docs/api/classes/llvm/pass/#af94c014e968489e96c7d4353a84ad7f5">llvm::Pass::getAnalysisIfAvailable</a>, <a href="#a5ae3cadcbbbacf6f3d425dd74ddda1bf">NumLoops</a>, <a href="/web-llvm/docs/api/structs/anonymous-loopextractor-cpp-/loopextractor/#a9d062bd5715f142ba7b0f20cb278fc4d">anonymous{LoopExtractor.cpp}::LoopExtractor::runOnModule</a> and <a href="/web-llvm/docs/api/classes/llvm/modulepass/#ab0f92e1d06aa28c44dc236c73460ba7a">llvm::ModulePass::skipModule</a>.</p>
 
 </div>
 </div>
@@ -343,6 +343,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

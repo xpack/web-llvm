@@ -535,7 +535,7 @@ class llvm::TargetIRAnalysis { ... }
 <p>Reference <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a946282957319b8c23ab9f169abb504c4">computeHeuristicUnrollFactor</a> and <a href="/web-llvm/docs/api/classes/llvm/amdgpuunifydivergentexitnodespass/#a3e73b9a5c7212271285ef6c38d1cd26d">llvm::AMDGPUUnifyDivergentExitNodesPass::run</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a946282957319b8c23ab9f169abb504c4">computeHeuristicUnrollFactor</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgpuunifydivergentexitnodespass/#a3e73b9a5c7212271285ef6c38d1cd26d">llvm::AMDGPUUnifyDivergentExitNodesPass::run</a> and <a href="/web-llvm/docs/api/classes/llvm/interleavedloadcombinepass/#abd04f9ee840b4323bdb0bffe6a02a5f6">llvm::InterleavedLoadCombinePass::run</a>.</p>
 
 </div>
 </div>
@@ -688,6 +688,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

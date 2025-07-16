@@ -1201,7 +1201,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#abf78b4a589091577668be8331dbf3e10">AArch64PAuth::AuthCheckMethod</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">AArch64PAuth::AuthCheckMethod</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af11871b65a6cfc7ce8fc20403e18ab40">getAuthenticatedLRCheckMethod</a> (const MachineFunction &amp;MF) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -2180,7 +2180,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 <p>Declaration at line 447 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64subtarget-h">AArch64Subtarget.h</a>, definition at line 632 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64subtarget-cpp">AArch64Subtarget.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64subtarget-cpp/#a702a1c7df390854ca66dd8b7607c3844">AuthenticatedLRCheckMethod</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#afb28a4deafe2954b0534cc6399ce518b">llvm::Function::hasFnAttribute</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#abf78b4a589091577668be8331dbf3e10a47343d56dc562d3a8366d3854eb64161">llvm::AArch64PAuth::HighBitsNoTBI</a> and <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#abf78b4a589091577668be8331dbf3e10a6adf97f83acf6453d4a6a4b1070f3754">llvm::AArch64PAuth::None</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64subtarget-cpp/#a702a1c7df390854ca66dd8b7607c3844">AuthenticatedLRCheckMethod</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a> and <a href="/web-llvm/docs/api/classes/llvm/function/#afb28a4deafe2954b0534cc6399ce518b">llvm::Function::hasFnAttribute</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a1bf38b3bbe867377cde6e530a0256b29">llvm::AArch64InstrInfo::getInstSizeInBytes</a>.</p>
@@ -2734,7 +2734,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a97be195ccbb061fd0e4170a81e066108">isSVEorStreamingSVEAvailable</a> and <a href="#adbf5d5f04e136fcc8888ff37491c264a">MaxSVEVectorSizeInBits</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a64348c468485ac9fa8aaf382307061fb">findMoreOptimalIndexType</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a293fb71d9772916004e2e65674d0bed0">GenerateFixedLengthSVETBL</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a68a18462f9529b0e75812794eeedbb5f">getPredicateForFixedLengthVector</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a64348c468485ac9fa8aaf382307061fb">findMoreOptimalIndexType</a>.</p>
 
 </div>
 </div>
@@ -2836,7 +2836,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a97be195ccbb061fd0e4170a81e066108">isSVEorStreamingSVEAvailable</a> and <a href="#ab773b1501fea6965ed8f896ba2e71468">MinSVEVectorSizeInBits</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a293fb71d9772916004e2e65674d0bed0">GenerateFixedLengthSVETBL</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a68a18462f9529b0e75812794eeedbb5f">getPredicateForFixedLengthVector</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a33354bc388aab299f6dca5b75bbe2238">isAllActivePredicate</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a758290c5743d18768a64d96539070fd1">optimizeIncrementingWhile</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8b803a5cecda412b4f4984ad8db7201e">performFPExtendCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a47e64a2f9eb3ade81edd0d1e20034ec1">performUnpackCombine</a> and <a href="#aa24d6e3c045459131ced627a0ed30dcc">useSVEForFixedLengthVectors</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a68a18462f9529b0e75812794eeedbb5f">getPredicateForFixedLengthVector</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a33354bc388aab299f6dca5b75bbe2238">isAllActivePredicate</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a758290c5743d18768a64d96539070fd1">optimizeIncrementingWhile</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8b803a5cecda412b4f4984ad8db7201e">performFPExtendCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ac1e566876b6ec934e149faae1a9b6f74">performMSTORECombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ad19eb01bd287efda27e7bc5ba67cd144">performSTORECombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a47e64a2f9eb3ade81edd0d1e20034ec1">performUnpackCombine</a> and <a href="#aa24d6e3c045459131ced627a0ed30dcc">useSVEForFixedLengthVectors</a>.</p>
 
 </div>
 </div>
@@ -3143,7 +3143,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 <p>References <a href="#a36aaf68c65aa593a22066976ee02810a">getInstrInfo</a> and <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a616fc69908b11c1c62addae537191ad4">llvm::AArch64InstrInfo::getRegisterInfo</a>.</p>
 
 
-<p>Referenced by <a href="#a033ed3ccb4d48ca276a60b87127b344d">AArch64Subtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a2be9d35aaace9716441da5714f048af9">llvm::AArch64FrameLowering::canUseAsPrologue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a1886741049357a9b7cea7f8e8784a818">emitDefineCFAWithFP</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a566df1a4bd19d5e175f1d38c4a487f91">llvm::AArch64FrameLowering::emitPrologue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a8705d5d3c895b6ddc6502220cbe3a965">findScratchNonCalleeSaveRegister</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a7f43397146b3eee4bcd4ff73ec27335f">InsertSEH</a> and <a href="/web-llvm/docs/api/classes/llvm/aarch64calllowering/#ad995047f82b555a8ceee0fba2af41899">llvm::AArch64CallLowering::lowerCall</a>.</p>
+<p>Referenced by <a href="#a033ed3ccb4d48ca276a60b87127b344d">AArch64Subtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9a7f5712e4a4603a0bdd87cc08e9b1d6">llvm::AArch64InstrInfo::buildClearRegister</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a2be9d35aaace9716441da5714f048af9">llvm::AArch64FrameLowering::canUseAsPrologue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a1886741049357a9b7cea7f8e8784a818">emitDefineCFAWithFP</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a566df1a4bd19d5e175f1d38c4a487f91">llvm::AArch64FrameLowering::emitPrologue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a8705d5d3c895b6ddc6502220cbe3a965">findScratchNonCalleeSaveRegister</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a7f43397146b3eee4bcd4ff73ec27335f">InsertSEH</a> and <a href="/web-llvm/docs/api/classes/llvm/aarch64calllowering/#ad995047f82b555a8ceee0fba2af41899">llvm::AArch64CallLowering::lowerCall</a>.</p>
 
 </div>
 </div>
@@ -3582,6 +3582,9 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 
 <p>Reference <a href="#a2110152d7d81909a815bc64687c3b3f2">IsLittle</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#abee0476f2cd1449e29bfca26702bd865">combineI8TruncStore</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ae60f4de0d1e0dac32141edcacb8d20c3">performLOADCombine</a>.</p>
+
 </div>
 </div>
 
@@ -3653,7 +3656,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 <p>References <a href="#ab6b858c387cda4e1e520889efd26b0f6">isStreaming</a> and <a href="#a8a85664508522995fb677504d8571feb">isStreamingCompatible</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a81242a6cd5fbec123c8ed582bab0f26c">llvm::AArch64FrameLowering::canUseRedZone</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a293fb71d9772916004e2e65674d0bed0">GenerateFixedLengthSVETBL</a>, <a href="#aad3af6253d4e150e55f987eadad56627">getMinVectorRegisterBitWidth</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ad6bb7ee72f79badd15b563bf112de6e5">performBuildVectorCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aa7054eb07a4962c7516115555800c017">performFpToIntCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a03b14e6aca1277bdee37639aec700ba7">performIntToFpCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a3cce50ef77513b8bd1cbeb48b4d9339d">tryAdvSIMDModImm16</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aed120dd6850080b309b6054efd2b142b">tryAdvSIMDModImm32</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af27372c25a294d5d3b8ba864de3419b7">tryLowerPartialReductionToDot</a>, <a href="#aa24d6e3c045459131ced627a0ed30dcc">useSVEForFixedLengthVectors</a> and <a href="#a2f7ac4b96278419769d4bd3caa6fcf26">useSVEForFixedLengthVectors</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9a7f5712e4a4603a0bdd87cc08e9b1d6">llvm::AArch64InstrInfo::buildClearRegister</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a81242a6cd5fbec123c8ed582bab0f26c">llvm::AArch64FrameLowering::canUseRedZone</a>, <a href="#aad3af6253d4e150e55f987eadad56627">getMinVectorRegisterBitWidth</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ad6bb7ee72f79badd15b563bf112de6e5">performBuildVectorCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aa7054eb07a4962c7516115555800c017">performFpToIntCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a03b14e6aca1277bdee37639aec700ba7">performIntToFpCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a3cce50ef77513b8bd1cbeb48b4d9339d">tryAdvSIMDModImm16</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aed120dd6850080b309b6054efd2b142b">tryAdvSIMDModImm32</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af27372c25a294d5d3b8ba864de3419b7">tryLowerPartialReductionToDot</a>, <a href="#aa24d6e3c045459131ced627a0ed30dcc">useSVEForFixedLengthVectors</a>, <a href="#a2f7ac4b96278419769d4bd3caa6fcf26">useSVEForFixedLengthVectors</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a1fad5ec2eef05d1c11eec0ee147eabab">vectorToScalarBitmask</a>.</p>
 
 </div>
 </div>
@@ -3833,7 +3836,7 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 <p>Reference <a href="#a660a50ad59da76566ff9f0ab83de6cb3">isStreamingSVEAvailable</a>.</p>
 
 
-<p>Referenced by <a href="#ae3c0b17cadd04099c074dadd7bf3349b">getMaxSVEVectorSizeInBits</a>, <a href="#af011282932f20754ceb5a48038f4f5a6">getMinSVEVectorSizeInBits</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af27372c25a294d5d3b8ba864de3419b7">tryLowerPartialReductionToDot</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aaca8ed79bbc4fe36c9285bea57d72906">tryToReplaceScalarFPConversionWithSVE</a> and <a href="#aa24d6e3c045459131ced627a0ed30dcc">useSVEForFixedLengthVectors</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9a7f5712e4a4603a0bdd87cc08e9b1d6">llvm::AArch64InstrInfo::buildClearRegister</a>, <a href="#ae3c0b17cadd04099c074dadd7bf3349b">getMaxSVEVectorSizeInBits</a>, <a href="#af011282932f20754ceb5a48038f4f5a6">getMinSVEVectorSizeInBits</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af27372c25a294d5d3b8ba864de3419b7">tryLowerPartialReductionToDot</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aaca8ed79bbc4fe36c9285bea57d72906">tryToReplaceScalarFPConversionWithSVE</a> and <a href="#aa24d6e3c045459131ced627a0ed30dcc">useSVEForFixedLengthVectors</a>.</p>
 
 </div>
 </div>
@@ -4467,6 +4470,9 @@ present" bit in FP, or set it based on a symbol in the runtime. <a href="#afe7a4
 
 <p>References <a href="#a934ad41b9b85827a52c2d7995f2f1bb1">TargetTriple</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64subtarget-cpp/#a14e78c6fbaa1fcab5d5fa0ad8f7c46d8">UseAddressTopByteIgnored</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ae60f4de0d1e0dac32141edcacb8d20c3">performLOADCombine</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ad19eb01bd287efda27e7bc5ba67cd144">performSTORECombine</a>.</p>
+
 </div>
 </div>
 
@@ -4663,7 +4669,7 @@ present" bit in FP, or set it based on a symbol in the runtime.</p>
 <p>References <a href="#af011282932f20754ceb5a48038f4f5a6">getMinSVEVectorSizeInBits</a>, <a href="#a170e8cc4496759d9540c7a66a72a1696">isNeonAvailable</a> and <a href="#a97be195ccbb061fd0e4170a81e066108">isSVEorStreamingSVEAvailable</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8b803a5cecda412b4f4984ad8db7201e">performFPExtendCombine</a> and <a href="#a2f7ac4b96278419769d4bd3caa6fcf26">useSVEForFixedLengthVectors</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8b803a5cecda412b4f4984ad8db7201e">performFPExtendCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ad19eb01bd287efda27e7bc5ba67cd144">performSTORECombine</a> and <a href="#a2f7ac4b96278419769d4bd3caa6fcf26">useSVEForFixedLengthVectors</a>.</p>
 
 </div>
 </div>
@@ -6030,6 +6036,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

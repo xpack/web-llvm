@@ -432,7 +432,7 @@ keywords:
 <p>Definition at line 730 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/aliasanalysis-cpp">AliasAnalysis.cpp</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/selectiondagbuilder/#aadd87a22e72622eccf46ce5525d1976c">llvm::SelectionDAGBuilder::init</a>, <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a76191600b1c369e6eb0b9176719cc87f">ProvenanceAnalysis::setAA</a> and <a href="/web-llvm/docs/api/classes/llvm/vliwpacketizerlist/#a1535a24a0c1b6049bba8cce276f8033f">llvm::VLIWPacketizerList::VLIWPacketizerList</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/selectiondagbuilder/#aadd87a22e72622eccf46ce5525d1976c">llvm::SelectionDAGBuilder::init</a>, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a746f7f7833928dfd2e5dec71aad6d240">llvm::objcarc::ProvenanceAnalysis::setAA</a> and <a href="/web-llvm/docs/api/classes/llvm/vliwpacketizerlist/#a1535a24a0c1b6049bba8cce276f8033f">llvm::VLIWPacketizerList::VLIWPacketizerList</a>.</p>
 
 </div>
 </div>
@@ -558,6 +558,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

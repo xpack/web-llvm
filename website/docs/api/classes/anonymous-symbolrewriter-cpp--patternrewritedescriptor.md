@@ -223,7 +223,7 @@ class anonymous{SymbolRewriter.cpp}::PatternRewriteDescriptor&lt;DT, ValueType, 
 <p>Definition at line 163 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/symbolrewriter-cpp">SymbolRewriter.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a2d0dd9a10e7c8e6d05d6c9c0daba1eed">anonymous{SymbolRewriter.cpp}::PatternRewriteDescriptor&lt; DT, ValueType, Get, Iterator &gt;::Pattern</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/symbolrewriter-cpp/#aabf6669a0eeb25780619fa043d4c945a">rewriteComdat</a>, <a href="/web-llvm/docs/api/classes/llvm/regex/#a603517a82c194cc3daa912831dff244a">llvm::Regex::sub</a> and <a href="#a011c0e662ff0f7763f776fb52da73ac7">anonymous{SymbolRewriter.cpp}::PatternRewriteDescriptor&lt; DT, ValueType, Get, Iterator &gt;::Transform</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a2d0dd9a10e7c8e6d05d6c9c0daba1eed">anonymous{SymbolRewriter.cpp}::PatternRewriteDescriptor&lt; DT, ValueType, Get, Iterator &gt;::Pattern</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/symbolrewriter-cpp/#aabf6669a0eeb25780619fa043d4c945a">rewriteComdat</a>, <a href="/web-llvm/docs/api/classes/llvm/regex/#a603517a82c194cc3daa912831dff244a">llvm::Regex::sub</a> and <a href="#a011c0e662ff0f7763f776fb52da73ac7">anonymous{SymbolRewriter.cpp}::PatternRewriteDescriptor&lt; DT, ValueType, Get, Iterator &gt;::Transform</a>.</p>
 
 </div>
 </div>
@@ -342,6 +342,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -557,7 +557,7 @@ class llvm::GlobalVariable { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7f97c03389898566620894f7ba674df7">getAttributesAsList</a> (unsigned index) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1409,7 +1409,7 @@ class llvm::GlobalVariable { ... }
 <p>Definition at line 250 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/globalvariable-h">GlobalVariable.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/value/#ab3fc0225d8aaf8434026c3573f961f2c">llvm::Value::getContext</a> and <a href="#a24a42a0e1c35c9b83aaae9e6cbd367d2">hasAttributes</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4ac0d01bf5ca24e679de53067c8f6a44">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#ab3fc0225d8aaf8434026c3573f961f2c">llvm::Value::getContext</a> and <a href="#a24a42a0e1c35c9b83aaae9e6cbd367d2">hasAttributes</a>.</p>
 
 </div>
 </div>
@@ -2447,6 +2447,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

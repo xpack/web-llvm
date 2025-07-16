@@ -1134,7 +1134,7 @@ class llvm::Pass { ... }
 <p>Declaration at line 225 of file <a href="/web-llvm/docs/api/files/include/include/llvm/pass-h">Pass.h</a>, definition at line 260 of file <a href="/web-llvm/docs/api/files/include/include/llvm/passanalysissupport-h">PassAnalysisSupport.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="#a6613f29d3e54ce175ac33fb9ba264fae">getAnalysisID</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="#a6613f29d3e54ce175ac33fb9ba264fae">getAnalysisID</a>.</p>
 
 </div>
 </div>
@@ -1195,7 +1195,7 @@ class llvm::Pass { ... }
 <p>Declaration at line 232 of file <a href="/web-llvm/docs/api/files/include/include/llvm/pass-h">Pass.h</a>, definition at line 267 of file <a href="/web-llvm/docs/api/files/include/include/llvm/passanalysissupport-h">PassAnalysisSupport.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a03d3a81b1c46aff7c38ef3a6750ba225">getAdjustedAnalysisPointer</a> and <a href="#a16baa169d062524be5a6b67609266174">Pass</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a03d3a81b1c46aff7c38ef3a6750ba225">getAdjustedAnalysisPointer</a> and <a href="#a16baa169d062524be5a6b67609266174">Pass</a>.</p>
 
 </div>
 </div>
@@ -1887,6 +1887,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

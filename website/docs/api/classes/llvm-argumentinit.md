@@ -693,7 +693,7 @@ class llvm::ArgumentInit { ... }
 <p>Definition at line 533 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/tablegen/record-h">Record.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/init/#a481b80008264e452153378421ebad249">llvm::Init::getAsString</a>, <a href="#adcf6751525e47718a149141ca4b92855">getIndex</a>, <a href="#a8f463cf291b1b2c5b76384f4db565480">getName</a>, <a href="#a39ef6f6342c434e743ce8bf45fea222d">isNamed</a>, <a href="#a61253a675effabc4a7363b45258d6636">isPositional</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/init/#a481b80008264e452153378421ebad249">llvm::Init::getAsString</a>, <a href="#adcf6751525e47718a149141ca4b92855">getIndex</a>, <a href="#a8f463cf291b1b2c5b76384f4db565480">getName</a>, <a href="#a39ef6f6342c434e743ce8bf45fea222d">isNamed</a>, <a href="#a61253a675effabc4a7363b45258d6636">isPositional</a> and <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>.</p>
 
 </div>
 </div>
@@ -1253,6 +1253,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -1041,7 +1041,7 @@ class llvm::CallGraph { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool CallGraph::invalidate (<a href="/web-llvm/docs/api/classes/llvm/module">Module</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, ModuleAnalysisManager::Invalidator &amp;)</td>
+<td class="doxyMemberName">bool CallGraph::invalidate (<a href="/web-llvm/docs/api/classes/llvm/module">Module</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp; PA, ModuleAnalysisManager::Invalidator &amp;)</td>
 </tr>
 </table>
 </td>
@@ -1053,9 +1053,6 @@ class llvm::CallGraph { ... }
 
 
 <p>Declaration at line 102 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/callgraph-h">CallGraph.h</a>, definition at line 67 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/callgraph-cpp">CallGraph.cpp</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aa7a1b769f9c57010cc41d9c3bb9d39c6">llvm::PreservedAnalyses::getChecker</a>.</p>
 
 </div>
 </div>
@@ -1083,7 +1080,7 @@ class llvm::CallGraph { ... }
 <p>Declaration at line 154 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/callgraph-h">CallGraph.h</a>, definition at line 89 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/callgraph-cpp">CallGraph.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa273a7c3463d96e7f545c205ff3b50e3">llvm::forEachCallbackFunction</a>, <a href="#a91eed9199c5b0e56a1fc1f3487431c9c">getOrInsertFunction</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a73d11a138c9386cfbf4cc6ae5368e001">llvm::isDbgInfoIntrinsic</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa273a7c3463d96e7f545c205ff3b50e3">llvm::forEachCallbackFunction</a>, <a href="#a91eed9199c5b0e56a1fc1f3487431c9c">getOrInsertFunction</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a73d11a138c9386cfbf4cc6ae5368e001">llvm::isDbgInfoIntrinsic</a>.</p>
 
 
 <p>Referenced by <a href="#a87c8c41cb23ce1fd4f890daea132235e">addToCallGraph</a>.</p>
@@ -1298,6 +1295,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

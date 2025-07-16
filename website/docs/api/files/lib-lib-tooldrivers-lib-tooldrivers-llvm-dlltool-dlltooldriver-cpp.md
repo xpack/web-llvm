@@ -121,7 +121,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a26639166f028acca9a3cd659453ad2e1">OPTION</a>(...)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/option/opttable-h/#a7d464550af0bb466b5a22350251776d4">LLVM_CONSTRUCT_OPT_INFO</a>(__VA_ARGS__),</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afd62869150672e1913ed0ff23a194599">OPTION</a>(...)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/option/opttable-h/#a7d464550af0bb466b5a22350251776d4">LLVM_CONSTRUCT_OPT_INFO</a>(__VA_ARGS__),</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -164,7 +164,7 @@ keywords:
 </div>
 </div>
 
-### OPTION {#a26639166f028acca9a3cd659453ad2e1}
+### OPTION {#afd62869150672e1913ed0ff23a194599}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -243,6 +243,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

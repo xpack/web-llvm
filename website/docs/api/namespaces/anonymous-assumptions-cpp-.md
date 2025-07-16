@@ -102,7 +102,7 @@ namespace anonymous{Assumptions.cpp} { ... }
 <p>Definition at line 51 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/assumptions-cpp">Assumptions.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#af04a6618686f8a097d7786f1880985de">llvm::AssumptionAttrKey</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#ad7dc7318244359268414719e0959346e">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::begin</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#a9a3c9d867ff6bde97841c2b7983f5c70">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#a8cd802dcaed35e1f28ea3cbe4af4eff5">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::end</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad17551c306e37b6d30d47c03b9022a22">llvm::getAssumptions</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa1fd1719afe5b07ebe55f1d105c98916">llvm::join</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8b4f88b1fadc8f51a643e5faaa13afa6">llvm::set_union</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#af04a6618686f8a097d7786f1880985de">llvm::AssumptionAttrKey</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#ad7dc7318244359268414719e0959346e">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::begin</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#a9a3c9d867ff6bde97841c2b7983f5c70">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#a8cd802dcaed35e1f28ea3cbe4af4eff5">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::end</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad17551c306e37b6d30d47c03b9022a22">llvm::getAssumptions</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8b4f88b1fadc8f51a643e5faaa13afa6">llvm::set_union</a>.</p>
 
 </div>
 </div>
@@ -175,6 +175,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -88,13 +88,13 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/passpluginlibraryinfo">::llvm::PassPluginLibraryInfo</a> <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa874be876d9bf6f48931e94c251734ce">LLVM_ATTRIBUTE_WEAK</a></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2d26765d5eb741ed4b6f72c7fef51c99">llvmGetPassPluginInfo</a> ()</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aedb30b5365f0c854e71a27da0db8e172">llvmGetPassPluginInfo</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The public entry point for a pass plugin. <a href="#a2d26765d5eb741ed4b6f72c7fef51c99">More...</a></p>
+<p>The public entry point for a pass plugin. <a href="#aedb30b5365f0c854e71a27da0db8e172">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -128,7 +128,7 @@ keywords:
 
 ## Functions
 
-### llvmGetPassPluginInfo() {#a2d26765d5eb741ed4b6f72c7fef51c99}
+### llvmGetPassPluginInfo() {#aedb30b5365f0c854e71a27da0db8e172}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -137,7 +137,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">::llvm::PassPluginLibraryInfo LLVM_ATTRIBUTE_WEAK llvmGetPassPluginInfo ()</td>
+<td class="doxyMemberName">llvmGetPassPluginInfo ()</td>
 </tr>
 </table>
 </td>
@@ -152,16 +152,7 @@ keywords:
 <p>When a plugin is loaded by the driver, it will call this entry point to obtain information about this plugin and about how to register its passes. This function needs to be implemented by the plugin, see the example below:</p>
 
 
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">extern "C" ::llvm::PassPluginLibraryInfo LLVM_ATTRIBUTE_WEAK</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">llvmGetPassPluginInfo() {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  return {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    LLVM_PLUGIN_API_VERSION, "MyPlugin", "v0.1", [](PassBuilder &amp;PB) { ... }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">}</span></span></div>
-
-</div>
+<p><span class="doxyComputerOutput"> extern "C" <a href="/web-llvm/docs/api/structs/llvm/passpluginlibraryinfo">llvm::PassPluginLibraryInfo</a> LLVM_ATTRIBUTE_WEAK <a href="#aedb30b5365f0c854e71a27da0db8e172">llvmGetPassPluginInfo()</a> { return { LLVM_PLUGIN_API_VERSION, "MyPlugin", "v0.1", [](PassBuilder &amp;PB) { ... } }; } </span> extern "C" <a href="/web-llvm/docs/api/structs/llvm/passpluginlibraryinfo">llvm::PassPluginLibraryInfo</a> LLVM_ATTRIBUTE_WEAK</p>
 
 
 <p>Definition at line 111 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/passplugin-h">PassPlugin.h</a>.</p>
@@ -214,6 +205,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

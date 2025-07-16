@@ -322,7 +322,7 @@ class anonymous{MachineScheduler.cpp}::ILPScheduler { ... }
 
 
 
-### Implement MachineSchedStrategy interface {#autotoc_md64}
+### Implement MachineSchedStrategy interface {#autotoc_md63}
 
 
 <p>Definition at line 4232 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinescheduler-cpp">MachineScheduler.cpp</a>.</p>
@@ -588,6 +588,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

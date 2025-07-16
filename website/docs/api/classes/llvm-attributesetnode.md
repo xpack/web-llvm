@@ -164,7 +164,7 @@ class llvm::AttributeSetNode { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Return the number of attributes this AttributeList contains. <a href="#aa3ed0d055fb6045180f20db84abc23de">More...</a></p>
+<p>Return the number of attributes this <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> contains. <a href="#aa3ed0d055fb6045180f20db84abc23de">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1205,7 +1205,7 @@ class llvm::AttributeSetNode { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Return the number of attributes this AttributeList contains.</p>
+<p>Return the number of attributes this <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> contains.</p>
 
 <p>Definition at line 327 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributeimpl-h">AttributeImpl.h</a>.</p>
 
@@ -1594,7 +1594,7 @@ class llvm::AttributeSetNode { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AttributeSetNode * AttributeSetNode::get (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">AttributeSetNode * AttributeSetNode::get (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -1734,6 +1734,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

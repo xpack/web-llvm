@@ -55,7 +55,7 @@ struct llvm::NoOpLoopNestPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af81517f704a2597a770a891160cb4e7d">run</a> (LoopNest &amp;L, LoopAnalysisManager &amp;, LoopStandardAnalysisResults &amp;, LPMUpdater &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -107,9 +107,6 @@ struct llvm::NoOpLoopNestPass { ... }
 
 <p>Definition at line 928 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/passbuilder-h">PassBuilder.h</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>.</p>
-
 </div>
 </div>
 
@@ -125,6 +122,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

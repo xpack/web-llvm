@@ -31,6 +31,34 @@ namespace llvm::objcarc { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult">ObjCARCAAResult</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>This is a simple alias analysis implementation that uses knowledge of ARC constructs to answer queries. <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaa">ObjCARCAA</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Analysis pass providing a never-invalidated alias analysis result. <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaa/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/arcmdkindcache">ARCMDKindCache</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -58,19 +86,6 @@ namespace llvm::objcarc { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/objcarc/bottomupptrstate">BottomUpPtrState</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/bundledretainclaimrvs">BundledRetainClaimRVs</a></td>
 </tr>
@@ -85,12 +100,12 @@ namespace llvm::objcarc { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaa">ObjCARCAA</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Analysis pass providing a never-invalidated alias analysis result. <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaa/#details">More...</a></p>
+<p>This is similar to BasicAliasAnalysis, and it uses many of the same techniques, except it uses special ObjC-specific reasoning about pointer relationships. <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -98,13 +113,13 @@ namespace llvm::objcarc { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult">ObjCARCAAResult</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/objcarc/rrinfo">RRInfo</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This is a simple alias analysis implementation that uses knowledge of ARC constructs to answer queries. <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult/#details">More...</a></p>
+<p>Unidirectional information about either a retain-decrement-use-release sequence or release-use-decrement-retain reverse sequence. <a href="/web-llvm/docs/api/structs/llvm/objcarc/rrinfo/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -127,12 +142,11 @@ namespace llvm::objcarc { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/objcarc/rrinfo">RRInfo</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/objcarc/bottomupptrstate">BottomUpPtrState</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Unidirectional information about either a retain-decrement-use-release sequence or release-use-decrement-retain reverse sequence. <a href="/web-llvm/docs/api/structs/llvm/objcarc/rrinfo/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1391,7 +1405,7 @@ namespace llvm::objcarc { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::objcarc::CanAlterRefCount (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="#a494b44abeacdfac8bb26d3203571d1c2">ARCInstKind</a> Class)</td>
+<td class="doxyMemberName">bool llvm::objcarc::CanAlterRefCount (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="#a494b44abeacdfac8bb26d3203571d1c2">ARCInstKind</a> Class)</td>
 </tr>
 </table>
 </td>
@@ -1405,7 +1419,7 @@ namespace llvm::objcarc { ... }
 <p>Declaration at line 69 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/dependencyanalysis-h">DependencyAnalysis.h</a>, definition at line 35 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/dependencyanalysis-cpp">DependencyAnalysis.cpp</a>.</p>
 
 
-<p>References <a href="#a494b44abeacdfac8bb26d3203571d1c2a61710f61a521b1544f5f7ab5abac843d">Autorelease</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ac1dbc9b59747323224171927c310917d">AutoreleaseRV</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/provenanceanalysis/#ac411cb78ae7d4c44bcbb46e665054a3a">ProvenanceAnalysis::getAA</a>, <a href="/web-llvm/docs/api/classes/llvm/aaresults/#a98f54e18da022cdb497fbbeed4488276">llvm::AAResults::getMemoryEffects</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2af635fed4a9fb967d38c264ed1106844f">IntrinsicUser</a>, <a href="#a10a73dc24c3b6d92fb9d444bd3d1b012">IsPotentialRetainableObjPtr</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a8bc927c80d7734e7e0baef13efd08bc5">llvm::MemoryEffectsBase&lt; LocationEnum &gt;::onlyAccessesArgPointees</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a8c57cabc627d282678d407f79da2b6e7">llvm::MemoryEffectsBase&lt; LocationEnum &gt;::onlyReadsMemory</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">ProvenanceAnalysis::related</a> and <a href="#a494b44abeacdfac8bb26d3203571d1c2a8f9bfe9d1345237cb3b2b205864da075">User</a>.</p>
+<p>References <a href="#a494b44abeacdfac8bb26d3203571d1c2a61710f61a521b1544f5f7ab5abac843d">Autorelease</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ac1dbc9b59747323224171927c310917d">AutoreleaseRV</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a186a005768089d004c0048c6efb6ed63">llvm::objcarc::ProvenanceAnalysis::getAA</a>, <a href="/web-llvm/docs/api/classes/llvm/aaresults/#a98f54e18da022cdb497fbbeed4488276">llvm::AAResults::getMemoryEffects</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2af635fed4a9fb967d38c264ed1106844f">IntrinsicUser</a>, <a href="#a10a73dc24c3b6d92fb9d444bd3d1b012">IsPotentialRetainableObjPtr</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a8bc927c80d7734e7e0baef13efd08bc5">llvm::MemoryEffectsBase&lt; LocationEnum &gt;::onlyAccessesArgPointees</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a8c57cabc627d282678d407f79da2b6e7">llvm::MemoryEffectsBase&lt; LocationEnum &gt;::onlyReadsMemory</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">llvm::objcarc::ProvenanceAnalysis::related</a> and <a href="#a494b44abeacdfac8bb26d3203571d1c2a8f9bfe9d1345237cb3b2b205864da075">User</a>.</p>
 
 
 <p>Referenced by <a href="#a77a7635215a8ce771ed3b64473113fcb">CanDecrementRefCount</a> and <a href="#a99b69f379b7d91b3b67b557c58e82bdc">Depends</a>.</p>
@@ -1457,7 +1471,7 @@ namespace llvm::objcarc { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::objcarc::CanDecrementRefCount (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="#a494b44abeacdfac8bb26d3203571d1c2">ARCInstKind</a> Class)</td>
+<td class="doxyMemberName">bool llvm::objcarc::CanDecrementRefCount (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="#a494b44abeacdfac8bb26d3203571d1c2">ARCInstKind</a> Class)</td>
 </tr>
 </table>
 </td>
@@ -1489,7 +1503,7 @@ namespace llvm::objcarc { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::objcarc::CanDecrementRefCount (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
+<td class="doxyMemberName">bool llvm::objcarc::CanDecrementRefCount (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
 </tr>
 </table>
 </td>
@@ -1558,7 +1572,7 @@ namespace llvm::objcarc { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::objcarc::CanUse (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="#a494b44abeacdfac8bb26d3203571d1c2">ARCInstKind</a> Class)</td>
+<td class="doxyMemberName">bool llvm::objcarc::CanUse (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Ptr, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA, <a href="#a494b44abeacdfac8bb26d3203571d1c2">ARCInstKind</a> Class)</td>
 </tr>
 </table>
 </td>
@@ -1572,7 +1586,7 @@ namespace llvm::objcarc { ... }
 <p>Declaration at line 64 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/dependencyanalysis-h">DependencyAnalysis.h</a>, definition at line 80 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/dependencyanalysis-cpp">DependencyAnalysis.cpp</a>.</p>
 
 
-<p>References <a href="#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/provenanceanalysis/#ac411cb78ae7d4c44bcbb46e665054a3a">ProvenanceAnalysis::getAA</a>, <a href="#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>, <a href="#a10a73dc24c3b6d92fb9d444bd3d1b012">IsPotentialRetainableObjPtr</a>, <a href="/web-llvm/docs/api/classes/llvm/user/#a0b931781aa589c6ebe64a76c1447e5b2">llvm::User::operands</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> and <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">ProvenanceAnalysis::related</a>.</p>
+<p>References <a href="#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a186a005768089d004c0048c6efb6ed63">llvm::objcarc::ProvenanceAnalysis::getAA</a>, <a href="#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>, <a href="#a10a73dc24c3b6d92fb9d444bd3d1b012">IsPotentialRetainableObjPtr</a>, <a href="/web-llvm/docs/api/classes/llvm/user/#a0b931781aa589c6ebe64a76c1447e5b2">llvm::User::operands</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> and <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">llvm::objcarc::ProvenanceAnalysis::related</a>.</p>
 
 
 <p>Referenced by <a href="#a99b69f379b7d91b3b67b557c58e82bdc">Depends</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a088f7a420ed4bf2ec2e1119af23ad6b4">findSafeStoreForStoreStrongContraction</a>, <a href="/web-llvm/docs/api/structs/llvm/objcarc/bottomupptrstate/#a92756d26ffe5c46811ee48f629857ba2">llvm::objcarc::BottomUpPtrState::HandlePotentialUse</a> and <a href="/web-llvm/docs/api/structs/llvm/objcarc/topdownptrstate/#ad0da3c507a530abd23de4894502b3199">llvm::objcarc::TopDownPtrState::HandlePotentialUse</a>.</p>
@@ -1624,7 +1638,7 @@ namespace llvm::objcarc { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::objcarc::Depends (<a href="#a353f4c1f85416c596ecaa9c4d5afca75">DependenceKind</a> Flavor, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Arg, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
+<td class="doxyMemberName">bool llvm::objcarc::Depends (<a href="#a353f4c1f85416c596ecaa9c4d5afca75">DependenceKind</a> Flavor, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * Inst, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Arg, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
 </tr>
 </table>
 </td>
@@ -1700,7 +1714,7 @@ namespace llvm::objcarc { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::Instruction * llvm::objcarc::findSingleDependency (<a href="#a353f4c1f85416c596ecaa9c4d5afca75">DependenceKind</a> Flavor, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Arg, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * StartBB, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * StartInst, <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
+<td class="doxyMemberName">llvm::Instruction * llvm::objcarc::findSingleDependency (<a href="#a353f4c1f85416c596ecaa9c4d5afca75">DependenceKind</a> Flavor, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * Arg, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * StartBB, <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> * StartInst, <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp; PA)</td>
 </tr>
 </table>
 </td>
@@ -1721,7 +1735,7 @@ namespace llvm::objcarc { ... }
 <p>References <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#abf73a826b5d6f739eb4af48ddf14c5b4">llvm::SmallPtrSetImpl&lt; PtrType &gt;::begin</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/dependencyanalysis-cpp/#aab3179ea6d16c5998772f644a2a205ac">findDependencies</a> and <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimplbase/#a0e1c3175b0ac22fe3853651c28e1ecb8">llvm::SmallPtrSetImplBase::size</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/groups/arcopt/#gadc60e99c9f1a1290990a039851b33df4">FindPredecessorRetainWithSafePath</a> and <a href="/web-llvm/docs/api/groups/arcopt/#gafda5d85d74da7b8294f1385aa8ab1b7c">HasSafePathToPredecessorCall</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/groups/arcopt/#ga8cad41d2d068e2b0bc918a3f558cba9c">FindPredecessorAutoreleaseWithSafePath</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gadc60e99c9f1a1290990a039851b33df4">FindPredecessorRetainWithSafePath</a> and <a href="/web-llvm/docs/api/groups/arcopt/#gafda5d85d74da7b8294f1385aa8ab1b7c">HasSafePathToPredecessorCall</a>.</p>
 
 </div>
 </div>
@@ -1792,7 +1806,7 @@ namespace llvm::objcarc { ... }
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a> and <a href="#ac5d623f0353e96c824196d6f6abc2dca">GetRCIdentityRoot</a>.</p>
 
 
-<p>Referenced by <a href="#a99b69f379b7d91b3b67b557c58e82bdc">Depends</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gadc60e99c9f1a1290990a039851b33df4">FindPredecessorRetainWithSafePath</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a5f912d20226bdc029d5280df1202616b">findRetainForStoreStrongContraction</a>.</p>
+<p>Referenced by <a href="#a99b69f379b7d91b3b67b557c58e82bdc">Depends</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga8cad41d2d068e2b0bc918a3f558cba9c">FindPredecessorAutoreleaseWithSafePath</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gadc60e99c9f1a1290990a039851b33df4">FindPredecessorRetainWithSafePath</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a5f912d20226bdc029d5280df1202616b">findRetainForStoreStrongContraction</a>.</p>
 
 </div>
 </div>
@@ -1908,7 +1922,7 @@ namespace llvm::objcarc { ... }
 <p>References <a href="#a494b44abeacdfac8bb26d3203571d1c2a216b693ce70a5639bd2e33cdbb0d82d8">CallOrUser</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a4e557a8b99ad5d09e3018b1f3e02a08f">GetFunctionClass</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a> and <a href="#a494b44abeacdfac8bb26d3203571d1c2a8f9bfe9d1345237cb3b2b205864da075">User</a>.</p>
 
 
-<p>Referenced by <a href="#a99b69f379b7d91b3b67b557c58e82bdc">Depends</a>, <a href="#af4e05bf48a81b884e707efa650560fbf">EraseInstruction</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gadc60e99c9f1a1290990a039851b33df4">FindPredecessorRetainWithSafePath</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a5f912d20226bdc029d5280df1202616b">findRetainForStoreStrongContraction</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a088f7a420ed4bf2ec2e1119af23ad6b4">findSafeStoreForStoreStrongContraction</a>, <a href="/web-llvm/docs/api/groups/arcutilities/#gaf231df4dd6fb738c1f548aedb34ca81e">FindSingleUseIdentifiedObject</a>, <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult/#ab37ef2f706e7e7f64d0d3cd8e76d91bd">llvm::objcarc::ObjCARCAAResult::getModRefInfo</a>, <a href="#ac5d623f0353e96c824196d6f6abc2dca">GetRCIdentityRoot</a>, <a href="#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>, <a href="/web-llvm/docs/api/structs/llvm/objcarc/bottomupptrstate/#a92756d26ffe5c46811ee48f629857ba2">llvm::objcarc::BottomUpPtrState::HandlePotentialUse</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gafda5d85d74da7b8294f1385aa8ab1b7c">HasSafePathToPredecessorCall</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gabd5cfc217e8144536565097965fe05ab">if</a>, <a href="/web-llvm/docs/api/namespaces/anonymous-objcarcapelim-cpp-/#a50b0a789cfd1294b6998186af696abf1">anonymous{ObjCARCAPElim.cpp}::OptimizeBB</a> and <a href="/web-llvm/docs/api/namespaces/anonymous-objcarcexpand-cpp-/#a709dbe85480f7e0e85807121725c1485">anonymous{ObjCARCExpand.cpp}::runImpl</a>.</p>
+<p>Referenced by <a href="#a99b69f379b7d91b3b67b557c58e82bdc">Depends</a>, <a href="#af4e05bf48a81b884e707efa650560fbf">EraseInstruction</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga8cad41d2d068e2b0bc918a3f558cba9c">FindPredecessorAutoreleaseWithSafePath</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gadc60e99c9f1a1290990a039851b33df4">FindPredecessorRetainWithSafePath</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a5f912d20226bdc029d5280df1202616b">findRetainForStoreStrongContraction</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarccontract-cpp/#a088f7a420ed4bf2ec2e1119af23ad6b4">findSafeStoreForStoreStrongContraction</a>, <a href="/web-llvm/docs/api/groups/arcutilities/#gaf231df4dd6fb738c1f548aedb34ca81e">FindSingleUseIdentifiedObject</a>, <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult/#ab37ef2f706e7e7f64d0d3cd8e76d91bd">llvm::objcarc::ObjCARCAAResult::getModRefInfo</a>, <a href="#ac5d623f0353e96c824196d6f6abc2dca">GetRCIdentityRoot</a>, <a href="#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>, <a href="/web-llvm/docs/api/structs/llvm/objcarc/bottomupptrstate/#a92756d26ffe5c46811ee48f629857ba2">llvm::objcarc::BottomUpPtrState::HandlePotentialUse</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gafda5d85d74da7b8294f1385aa8ab1b7c">HasSafePathToPredecessorCall</a>, <a href="/web-llvm/docs/api/namespaces/anonymous-objcarcapelim-cpp-/#a50b0a789cfd1294b6998186af696abf1">anonymous{ObjCARCAPElim.cpp}::OptimizeBB</a> and <a href="/web-llvm/docs/api/namespaces/anonymous-objcarcexpand-cpp-/#a709dbe85480f7e0e85807121725c1485">anonymous{ObjCARCExpand.cpp}::runImpl</a>.</p>
 
 </div>
 </div>
@@ -2289,7 +2303,7 @@ namespace llvm::objcarc { ... }
 <p>Reference <a href="#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">ProvenanceAnalysis::related</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">llvm::objcarc::ProvenanceAnalysis::related</a>.</p>
 
 </div>
 </div>
@@ -2385,6 +2399,9 @@ namespace llvm::objcarc { ... }
 
 
 <p>References <a href="#a494b44abeacdfac8bb26d3203571d1c2a61710f61a521b1544f5f7ab5abac843d">Autorelease</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a4ee466dcf60bef3376060be50d45cdda">AutoreleasepoolPop</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a56a1f8ca583bf2a38d53b7e7825bd269">AutoreleasepoolPush</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ac1dbc9b59747323224171927c310917d">AutoreleaseRV</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a216b693ce70a5639bd2e33cdbb0d82d8">CallOrUser</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2acd9d38bb7cd5940d441b3325fd7bb607">CopyWeak</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a03973369165e1763744e9f56672dddad">DestroyWeak</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a044369e2f723153babfab4e7ba65dda4">FusedRetainAutorelease</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2aae83ce7464791df134eac666ac62c9cd">FusedRetainAutoreleaseRV</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a60d8a1ea9604d54c2d3ea2c9cc065980">InitWeak</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2af635fed4a9fb967d38c264ed1106844f">IntrinsicUser</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a63bc8a0dc53d47fec308f2a7a9b99562">LoadWeak</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a373746ca100ea4fff46f2b4046984e94">LoadWeakRetained</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a6e6325433672a751336dfd07c9a2cf54">MoveWeak</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ad20eb2456d446869820a1e7e385fe99f">NoopCast</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ab8e7b465df7c5979dc731d06e84ce2cf">Release</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2aafece4245269582cb2f1009d4fb52047">Retain</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2aa5c9c22c7dedc1f8dd1d75b7c04460a9">RetainBlock</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2aa1226b5450384ce6ea5ed47c317303ee">RetainRV</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a36fbf2cae591a406af658623583b0dba">StoreStrong</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2a4b72e11620e2360a97726a1554da02d2">StoreWeak</a>, <a href="#a494b44abeacdfac8bb26d3203571d1c2ae490705e8a3fd75e76afa1108289c24a">UnsafeClaimRV</a> and <a href="#a494b44abeacdfac8bb26d3203571d1c2a8f9bfe9d1345237cb3b2b205864da075">User</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/groups/arcopt/#ga8cad41d2d068e2b0bc918a3f558cba9c">FindPredecessorAutoreleaseWithSafePath</a>.</p>
 
 </div>
 </div>
@@ -2896,6 +2913,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

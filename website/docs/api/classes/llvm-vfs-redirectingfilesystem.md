@@ -779,12 +779,12 @@ class llvm::vfs::RedirectingFileSystem { ... }
 
 <pre><code>/// {
 ///   'version': &lt;version number&gt;,
-///   &lt;optional configuration&gt;
-///   'roots': [
-///              &lt;directory entries&gt;
-///            ]
-/// }
-///
+ *    &lt;optional configuration&gt;
+ *    'roots': [
+ *               &lt;directory entries&gt;
+ *             ]
+ *  }
+ *
 </code></pre>
 
 
@@ -803,10 +803,10 @@ class llvm::vfs::RedirectingFileSystem { ... }
 
 <pre><code>/// {
 ///   'type': 'directory',
-///   'name': &lt;string&gt;,
-///   'contents': [ &lt;file or directory entries&gt; ]
-/// }
-///
+ *    'name': &lt;string&gt;,
+ *    'contents': [ &lt;file or directory entries&gt; ]
+ *  }
+ *
 </code></pre>
 
 
@@ -815,11 +815,11 @@ class llvm::vfs::RedirectingFileSystem { ... }
 
 
 <pre><code>/// MTime = now() when created
-/// Perms = 0777
-/// User = Group = 0
-/// Size = 0
-/// UniqueID = unspecified unique value
-///
+ *  Perms = 0777
+ *  User = Group = 0
+ *  Size = 0
+ *  UniqueID = unspecified unique value
+ *
 </code></pre>
 
 
@@ -832,11 +832,11 @@ class llvm::vfs::RedirectingFileSystem { ... }
 
 <pre><code>/// {
 ///   'type': 'directory-remap',
-///   'name': &lt;string&gt;,
-///   'use-external-name': &lt;boolean&gt;, # Optional
-///   'external-contents': &lt;path to external directory&gt;
-/// }
-///
+ *    'name': &lt;string&gt;,
+ *    'use-external-name': &lt;boolean&gt;, # Optional
+ *    'external-contents': &lt;path to external directory&gt;
+ *  }
+ *
 </code></pre>
 
 
@@ -849,11 +849,11 @@ class llvm::vfs::RedirectingFileSystem { ... }
 
 <pre><code>/// {
 ///   'type': 'file',
-///   'name': &lt;string&gt;,
-///   'use-external-name': &lt;boolean&gt;, # Optional
-///   'external-contents': &lt;path to external file&gt;
-/// }
-///
+ *    'name': &lt;string&gt;,
+ *    'use-external-name': &lt;boolean&gt;, # Optional
+ *    'external-contents': &lt;path to external file&gt;
+ *  }
+ *
 </code></pre>
 
 
@@ -2519,6 +2519,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

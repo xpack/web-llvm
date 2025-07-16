@@ -431,7 +431,7 @@ class llvm::mca::LSUnit { ... }
 <p><a href="/web-llvm/docs/api/classes/llvm/mca/lsunit">LSUnit</a> doesn't attempt to predict whether a load or store hits or misses the L1 cache. To be more specific, <a href="/web-llvm/docs/api/classes/llvm/mca/lsunit">LSUnit</a> doesn't know anything about cache hierarchy and memory types. It only knows if an instruction "mayLoad" and/or "mayStore". For loads, the scheduling model provides an "optimistic" load-to-use latency (which usually matches the load-to-use latency for when there is a hit in the L1D). Derived classes may expand this knowledge.</p>
 
 
-<p>Class <a href="/web-llvm/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> in LLVM doesn't know about serializing operations, nor memory-barrier like instructions. <a href="/web-llvm/docs/api/classes/llvm/mca/lsunit">LSUnit</a> conservatively assumes that an instruction which <span class="doxyComputerOutput">mayLoad</span> and has <span class="doxyComputerOutput">unmodeled side effects</span> behave like a "soft" load-barrier. That means, it serializes loads without forcing a flush of the load queue. Similarly, instructions that both <span class="doxyComputerOutput">mayStore</span> and have <span class="doxyComputerOutput">unmodeled side / effects</span> are treated like store barriers. A full memory barrier is a 'mayLoad' and 'mayStore' instruction with unmodeled side effects. This is obviously inaccurate, but this is the best that we can do at the moment.</p>
+<p>Class <a href="/web-llvm/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> in LLVM doesn't know about serializing operations, nor memory-barrier like instructions. <a href="/web-llvm/docs/api/classes/llvm/mca/lsunit">LSUnit</a> conservatively assumes that an instruction which <span class="doxyComputerOutput">mayLoad</span> and has <span class="doxyComputerOutput">unmodeled side effects</span> behave like a "soft" load-barrier. That means, it serializes loads without forcing a flush of the load queue. Similarly, instructions that both <span class="doxyComputerOutput">mayStore</span> and have <span class="doxyComputerOutput">unmodeled side effects</span> are treated like store barriers. A full memory barrier is a 'mayLoad' and 'mayStore' instruction with unmodeled side effects. This is obviously inaccurate, but this is the best that we can do at the moment.</p>
 
 
 <p>Each load/store barrier consumes one entry in the load/store queue. A load/store barrier enforces ordering of loads/stores:</p>
@@ -1336,6 +1336,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

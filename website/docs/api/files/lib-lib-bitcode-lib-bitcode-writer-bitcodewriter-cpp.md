@@ -862,7 +862,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;unsigned CLASS##Abbrev = 0;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab32240e87649f32aceeda23ea6499c4c">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;unsigned CLASS##Abbrev = 0;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -875,7 +875,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1f378efe7b9888496956feb63c04314f">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2056,7 +2056,7 @@ keywords:
 <p>Definition at line 4049 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp">BitcodeWriter.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a39d3d23a084c4544ee5903203db10e8a">llvm::append_range</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/classes/llvm/bitstreamwriter/#a2a492ce167a19107e75ec372f68e8d7a">llvm::BitstreamWriter::EmitRecord</a>, <a href="#a2706d140844a6517f06fd552269a7aba">emitSignedInt64</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba59c59629c5fe384b7c23381d6bb44b14">llvm::bitc::FS_PARAM_ACCESS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001bafbca7a60ed87076dcc60f196385f0f84">llvm::bitc::FS_TYPE_CHECKED_LOAD_CONST_VCALL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba504e48194f2217cbe18f1513474ee0fd">llvm::bitc::FS_TYPE_CHECKED_LOAD_VCALLS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba70ca6811ccd6f4269cd2b835bcaa91a6">llvm::bitc::FS_TYPE_TEST_ASSUME_CONST_VCALL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba88548f8be84646655fdcf04c9d07bb93">llvm::bitc::FS_TYPE_TEST_ASSUME_VCALLS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001baa2b70896e3139d999510f2727813fc96">llvm::bitc::FS_TYPE_TESTS</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a> and <a href="/web-llvm/docs/api/structs/llvm/functionsummary/paramaccess/#ad7b7723aa791b53f4fe0a4f88613a8bd">llvm::FunctionSummary::ParamAccess::RangeWidth</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a39d3d23a084c4544ee5903203db10e8a">llvm::append_range</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/bitstreamwriter/#a2a492ce167a19107e75ec372f68e8d7a">llvm::BitstreamWriter::EmitRecord</a>, <a href="#a2706d140844a6517f06fd552269a7aba">emitSignedInt64</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba59c59629c5fe384b7c23381d6bb44b14">llvm::bitc::FS_PARAM_ACCESS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001bafbca7a60ed87076dcc60f196385f0f84">llvm::bitc::FS_TYPE_CHECKED_LOAD_CONST_VCALL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba504e48194f2217cbe18f1513474ee0fd">llvm::bitc::FS_TYPE_CHECKED_LOAD_VCALLS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba70ca6811ccd6f4269cd2b835bcaa91a6">llvm::bitc::FS_TYPE_TEST_ASSUME_CONST_VCALL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001ba88548f8be84646655fdcf04c9d07bb93">llvm::bitc::FS_TYPE_TEST_ASSUME_VCALLS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/bitc/#a2889cf6772f22a2e9c802b6c4cb5001baa2b70896e3139d999510f2727813fc96">llvm::bitc::FS_TYPE_TESTS</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a> and <a href="/web-llvm/docs/api/structs/llvm/functionsummary/paramaccess/#ad7b7723aa791b53f4fe0a4f88613a8bd">llvm::FunctionSummary::ParamAccess::RangeWidth</a>.</p>
 
 </div>
 </div>
@@ -2526,7 +2526,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#ab32240e87649f32aceeda23ea6499c4c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2551,7 +2551,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#a1f378efe7b9888496956feb63c04314f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2594,6 +2594,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

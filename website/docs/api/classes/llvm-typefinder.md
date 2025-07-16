@@ -329,7 +329,7 @@ class llvm::TypeFinder { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a>&lt; AttributeList &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ada150c820a6994ad280e0d67a275ed90">VisitedAttributes</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -838,7 +838,7 @@ class llvm::TypeFinder { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void TypeFinder::incorporateAttributes (AttributeList AL)</td>
+<td class="doxyMemberName">void TypeFinder::incorporateAttributes (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> AL)</td>
 </tr>
 </table>
 </td>
@@ -1102,6 +1102,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

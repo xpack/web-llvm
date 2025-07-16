@@ -191,7 +191,7 @@ class llvm::MachineDominatorTreeAnalysis { ... }
 <p>Declaration at line 115 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/machinedominators-h">MachineDominators.h</a>, definition at line 74 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinedominators-cpp">MachineDominators.cpp</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/silowersgprspillspass/#acc251fdad2ff98bf8f116ecbd8e93b14">llvm::SILowerSGPRSpillsPass::run</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/silowercontrolflowpass/#a8b4643be70785c8f090659b3ab19d73e">llvm::SILowerControlFlowPass::run</a> and <a href="/web-llvm/docs/api/classes/llvm/silowersgprspillspass/#acc251fdad2ff98bf8f116ecbd8e93b14">llvm::SILowerSGPRSpillsPass::run</a>.</p>
 
 </div>
 </div>
@@ -276,6 +276,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

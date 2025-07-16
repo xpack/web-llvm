@@ -281,9 +281,6 @@ keywords:
 
 <p>Definition at line 126 of file <a href="/web-llvm/docs/api/files/lib/lib/asmparser/lllexer-cpp">LLLexer.cpp</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a208da05312aa4e96229cebd3c49a9581">llvm::hexDigitValue</a>.</p>
-
 </div>
 </div>
 
@@ -535,6 +532,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

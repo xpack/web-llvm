@@ -34,6 +34,8 @@ keywords:
 <li><b>AArch64StringToPACKeyID()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a02a3647d9ab989b1a2470b81edc9ac66">llvm</a></li>
 <li><b>AArch64StringToVectorLayout()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1fb527457523d460b8cc9380c21e3487">llvm</a></li>
 <li><b>AArch64VectorLayoutToString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a263a55ddc5470a3b87cd3ff7bed54d6a">llvm</a></li>
+<li><b>abandon()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af5c527135f5ab3e6d953d5c8a63c4113">llvm</a></li>
+<li><b>abandon()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2e5a6f93cdf798e826111a3790026b60">llvm</a></li>
 <li><b>abbreviate()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/json/#a3251137d4e13982c711221d45fff9a09">llvm::json</a></li>
 <li><b>abbreviateChildren()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/json/#a0cff3f49083a4dfc91368979f818f297">llvm::json</a></li>
 <li><b>abds()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/apintops/#a384af1ef73bb4f447b69e40c5f523361">llvm::APIntOps</a></li>
@@ -151,8 +153,12 @@ keywords:
 <li><b>all_of_zip_predicate_last()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a74c1d066ac44bb7e47f657490ac0ca1c">llvm::detail</a></li>
 <li><b>all_of_zip()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aed5987136ead6f39e3c6c090996a95c7">llvm</a></li>
 <li><b>all_of()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm</a></li>
+<li><b>all()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a873403a2506ac332f62ad4c2d7dc1835">llvm</a></li>
 <li><b>all()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#ad7ac7032baa62cc00002886633b9f281">llvm::LegalityPredicates</a></li>
 <li><b>all()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#a28a65210b9f6b07e94db8b70271b14a8">llvm::LegalityPredicates</a></li>
+<li><b>allAnalysesInSetPreserved()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0482e33212bec6ff01f4f65224d3c436">llvm</a></li>
+<li><b>allAnalysesInSetPreserved()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac1bf7d732e303e58e37e19804cc6f6b7">llvm</a></li>
+<li><b>allInSet()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af2fa567615c89e9e7fcd16b7c02def36">llvm</a></li>
 <li><b>allocate_buffer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a69fae8413f8fd4cea02237fe8b0c00ed">llvm</a></li>
 <li><b>allocPointer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/aarch32/#ad1c4e23621c8e46179f0fda5fc58b25c">llvm::jitlink::aarch32</a></li>
 <li><b>allocStub()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/aarch32/#a7a1ac23b74c74606a067297342490175">llvm::jitlink::aarch32</a></li>
@@ -296,10 +302,11 @@ keywords:
 <li><b>archToWindowsSDKArch()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a051d4c63744860fd69753642b3e04507">llvm</a></li>
 <li><b>areAllBBsReachable()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-pgoctxprofflattening-cpp-/#a1d1a012c6e6975567125e16a0e788cbd">anonymous{PGOCtxProfFlattening.cpp}</a></li>
 <li><b>areAllOperandsNonInsts()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aaf26535d65109ed3d13a21f1b66665a0">llvm</a></li>
+<li><b>areAllPreserved()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1dde0e84a6965268af82838f4fefc864">llvm</a></li>
 <li><b>areCompatibleVTYPEs()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-riscvinsertvsetvli-cpp-/#aa4bfcbb7dbb18b0413a59da72b0d4a89">anonymous{RISCVInsertVSETVLI.cpp}</a></li>
 <li><b>areContiguous()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mergeicmps-cpp-/#a0618470fa0f71f42d8d104317644e4de">anonymous{MergeICmps.cpp}</a></li>
-<li><b>areInlineCompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a282e777f3eed1578f279aa2b2d23d66a">llvm</a></li>
-<li><b>areOutlineCompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aeb3f5118314d5ed843992ece5b8f2379">llvm</a></li>
+<li><b>areInlineCompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a32fe04d73013c7bede32a1e2279cf9e5">llvm::AttributeFuncs</a></li>
+<li><b>areOutlineCompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a86c5bed00c85990ce80390e8db10b20b">llvm::AttributeFuncs</a></li>
 <li><b>AreStatisticsEnabled()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a846137dc22b3b399b62f606698f3ed59">llvm</a></li>
 <li><b>areTargetsCompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/object/#a6f9993c2fbffcfc2fcfc3a14ea4c25de">llvm::object</a></li>
 <li><b>argHasNVVMAnnotation()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aaf9d8be1cefd49d5a1915e1978a6f425">llvm</a></li>
@@ -320,7 +327,6 @@ keywords:
 <li><b>ArrayRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a409142fedce06cc2af71b7a2bcafc60a">llvm</a></li>
 <li><b>ArrayRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3d402062f40a50b2134e69eb2871d8a8">llvm</a></li>
 <li><b>ArrayRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a77e01dbeb9a5c12c3ac69ee1717d338a">llvm</a></li>
-<li><b>arrayRefFromStringRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm</a></li>
 <li><b>AsmMacroMaxNestingDepth()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab4cdc747ff3adaa0f187fb37fae38874">llvm</a></li>
 <li><b>assignBlockCosts()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-sampleprofileinference-cpp-/#ad129e295efcd7c789b6c5d67124adef8">anonymous{SampleProfileInference.cpp}</a></li>
 <li><b>assignJumpCosts()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-sampleprofileinference-cpp-/#a1ce5cbe1af8289db9c7121774c7ea192">anonymous{SampleProfileInference.cpp}</a></li>
@@ -411,19 +417,15 @@ keywords:
 <li><b>AVRExpandPseudo::expand< AVR::SUBWRdRr >()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-avrexpandpseudoinsts-cpp-/#a0a018e9821284c07d0083974e6925176">anonymous{AVRExpandPseudoInsts.cpp}</a></li>
 <li><b>AVRExpandPseudo::expand< AVR::ZEXT >()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-avrexpandpseudoinsts-cpp-/#a8559eca80e3e9fe988aa76b26f668bfa">anonymous{AVRExpandPseudoInsts.cpp}</a></li>
 </ul>
-<p>380 entries</p>
+<p>386 entries</p>
 
 ## - B -
 
 <ul>
-<li><b>back()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#ac987c71f858c58eb41d44f0288e6d544">llvm::sandboxir</a></li>
 <li><b>backend()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/lto/#a89ef034c1f3a70da2446c1af1d656dab">llvm::lto</a></li>
 <li><b>backpropagate()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/pbqp/#aca4beb871fa19efbf46dbb8487d05ae9">llvm::PBQP</a></li>
 <li><b>baseRegNeedsLoadStoreMask()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9e6c1e1834f81c5647f7605177b93587">llvm</a></li>
-<li><b>~BasicBlock()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a4fa2e264b8b61aea5f867af5a448fd7d">llvm::sandboxir</a></li>
-<li><b>BasicBlock()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir</a></li>
 <li><b>begin_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/adl-detail/#acfebf7208b3778b12ee1042187202d98">llvm::adl_detail</a></li>
-<li><b>begin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a2fdb10193ae65fe59b4d8df288044864">llvm::sandboxir</a></li>
 <li><b>begin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#a2798f80ce7d64ebc7049d1231e675137">llvm::sys::path</a></li>
 <li><b>begin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/yaml/#acf3240e230e3dacea7826794a4e2f84b">llvm::yaml</a></li>
 <li><b>bf_begin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aece7f82877c2160e21fda5c5106da025">llvm</a></li>
@@ -533,7 +535,7 @@ keywords:
 <li><b>bytesToBlocks()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/msf/#abe111677aa4b3df2bb68f54d4351a72d">llvm::msf</a></li>
 <li><b>byteswap()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2a584ab307c8e962527df226089a7470">llvm</a></li>
 </ul>
-<p>116 entries</p>
+<p>112 entries</p>
 
 ## - C -
 
@@ -774,7 +776,6 @@ keywords:
 <li><b>classifyFunctionType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-pointertypeanalysis-cpp-/#ac10c52fc6c6c8328779f3175fce68067">anonymous{PointerTypeAnalysis.cpp}</a></li>
 <li><b>classifyPointerType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-pointertypeanalysis-cpp-/#aba29b35909e39c48517e7475412c776a">anonymous{PointerTypeAnalysis.cpp}</a></li>
 <li><b>classifySecondCondCodeInMacroFusion()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/x86/#aca38f4b2343c6b84e1eb8b91fbc8d5c0">llvm::X86</a></li>
-<li><b>classof()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a6fbc33daa780beb81b1ec2326cb716dc">llvm::sandboxir</a></li>
 <li><b>cleanModuleFlags()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-dxilprepare-cpp-/#aefd807d7db1488ed65a2ecb5e857349d">anonymous{DXILPrepare.cpp}</a></li>
 <li><b>CleanupOnSignal()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/#ad01be72a9c0cb2dc4c676aa0057a9b31">llvm::sys</a></li>
 <li><b>cleanUpTempFiles()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9826d594303bc76fe0df7ab9face2d1a">llvm</a></li>
@@ -1068,13 +1069,11 @@ keywords:
 <li><b>convertSMRDOffsetUnits()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#a0fa106b93c4ca352414b24967b385e27">llvm::AMDGPU</a></li>
 <li><b>convertStrToExceptionBehavior()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aab775fc8630b56ff01ffc4624fed3a87">llvm</a></li>
 <li><b>convertStrToRoundingMode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac8070537f4f31ef2b969d570ee70d6fa">llvm</a></li>
-<li><b>convertToCamelFromSnakeCase()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aba9c7a61ab2767e77f9ada22f54441c0">llvm</a></li>
 <li><b>convertToDeclaration()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3e9604d679f4806943544dceaeb68149">llvm</a></li>
 <li><b>convertToEBCDIC()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/converterebcdic/#a34c08910f7780b62c6d00c56b2411eeb">llvm::ConverterEBCDIC</a></li>
 <li><b>convertToInterfaceFile()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/macho/#a8a59001c151594d4ff93a12b10c8368f">llvm::MachO</a></li>
 <li><b>convertToNonDenormSingle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6f470dbe853f135f9dc2cf67d6f2e8fe">llvm</a></li>
 <li><b>convertToNonDenormSingle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3a3b07116192b9d8ea90fb67b9bf755b">llvm</a></li>
-<li><b>convertToSnakeFromCamelCase()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a694be13ec7a118397b5d1a4325d052e5">llvm</a></li>
 <li><b>convertToUTF8()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/converterebcdic/#aa3d82925c434fafbf2644164f117458d">llvm::ConverterEBCDIC</a></li>
 <li><b>convertUsersOfConstantsToInstructions()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a60cf4cd57355563164d053dd470ac00f">llvm</a></li>
 <li><b>convertUTF16LEToUTF8String()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/object/#ad367577ea33bb6c474e53aee35df3b37">llvm::object</a></li>
@@ -2089,7 +2088,7 @@ keywords:
 <li><b>current_path()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#aec50dfe28ae22b8ff45f02ca193b7bf7">llvm::sys::fs</a></li>
 <li><b>CVErrorCategory()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/codeview/#a481272652360a7a6d42d0034b8730496">llvm::codeview</a></li>
 </ul>
-<p>1550 entries</p>
+<p>1547 entries</p>
 
 ## - D -
 
@@ -2341,7 +2340,6 @@ keywords:
 <li><b>dumpDWARFContext()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-debuginfosupport-cpp-/#a6d57a0bd16d4bddf7ab304a3b529bd0b">anonymous{DebugInfoSupport.cpp}</a></li>
 <li><b>dumpImpl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a7f6b25229a7e3078033a78f5c7411779">llvm::sandboxir</a></li>
 <li><b>dumpMessage()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac39bba28adee8aa88e4c64e3bc0e3b4c">llvm</a></li>
-<li><b>dumpOS()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#aaf8e099af367077208606316ecceb9db">llvm::sandboxir</a></li>
 <li><b>dumpPDBSourceCompression()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#ab1a71866c0d31546354a1ea154ce9706">llvm::pdb</a></li>
 <li><b>dumpRegSetPressure()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adb6fca77863850136760be488d6ea345">llvm</a></li>
 <li><b>dumpSection()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/objcopy/coff/#a81e88ae7d3e872ba0cdc367330b2974d">llvm::objcopy::coff</a></li>
@@ -2369,7 +2367,7 @@ keywords:
 <li><b>DynCastToDbgAssign()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/memtag/#a1a729b270e892027cebc9ef12939ec7a">llvm::memtag</a></li>
 <li><b>DynCastToDbgAssign()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/memtag/#ab21716bf3b4914d7319e0316c95baa20">llvm::memtag</a></li>
 </ul>
-<p>274 entries</p>
+<p>273 entries</p>
 
 ## - E -
 
@@ -2484,7 +2482,6 @@ keywords:
 <li><b>emitUnaryFloatFnCall()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa6c86e6bdfc79d09b48a72903685b6e9">llvm</a></li>
 <li><b>emitVSNPrintf()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5d61091498dd892d586e250c8d29fe3a">llvm</a></li>
 <li><b>emitVSPrintf()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9310a89abda7116ac06bf226544daadd">llvm</a></li>
-<li><b>empty()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a0e9cf49b789ff0825ffea99d23afd013">llvm::sandboxir</a></li>
 <li><b>emptyString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a6a2797528e8279aa6a07de8f556466b3">llvm::logicalview</a></li>
 <li><b>enableDebuggerSupport()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#ad059d61cab7f6bc8ee555ae23acd7b52">llvm::orc</a></li>
 <li><b>EnableExtTspBlockPlacement()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a633bd883b6cae8c48670260c87d8afbf">llvm</a></li>
@@ -2563,7 +2560,6 @@ keywords:
 <li><b>encodeWaitcnt()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#a538a5f491696e8b8ef0987e3aaedbb37">llvm::AMDGPU</a></li>
 <li><b>encodeWaitcnt()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#a5f14260fd47f5c55b3d473291b81a302">llvm::AMDGPU</a></li>
 <li><b>end_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/adl-detail/#a17b954680dffe330c40bb6eb5e2cafae">llvm::adl_detail</a></li>
-<li><b>end()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a64ac61287490361f2183faf1d7639ee9">llvm::sandboxir</a></li>
 <li><b>end()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#ae6199e07e1f06cdaf0ad59b959045035">llvm::sys::path</a></li>
 <li><b>enqueueBlock()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mergeicmps-cpp-/#a31aca09aa25a26dccff0bdaebcbfbcb7">anonymous{MergeICmps.cpp}</a></li>
 <li><b>enum_seq_inclusive()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1007cb97b7cec9a75cfa17e031c62432">llvm</a></li>
@@ -2704,7 +2700,7 @@ keywords:
 <li><b>extractWidenableCondition()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3ad3ae2984b7253781a642194234bcdb">llvm</a></li>
 <li><b>extTSPScore()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-codelayout-cpp-/#a70ace5af72b93aedcb782ef65032c4de">anonymous{CodeLayout.cpp}</a></li>
 </ul>
-<p>329 entries</p>
+<p>327 entries</p>
 
 ## - F -
 
@@ -2922,7 +2918,6 @@ keywords:
 <li><b>fromDebugS()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml/#ae58982dc6f589fa99671f5f76adfc8d3">llvm::CodeViewYAML</a></li>
 <li><b>fromDebugT()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml/#abeca1104e840a7079510842fcb583505">llvm::CodeViewYAML</a></li>
 <li><b>fromExecutorSymbolDef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvmorclazycallthroughmanagerref/#a25ef4ea37fd470785124fe531d34dd08">LLVMOrcLazyCallThroughManagerRef</a></li>
-<li><b>fromHex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1239d6292e7aa8c403abab633ebd7dd1">llvm</a></li>
 <li><b>fromJITDylibLookupFlags()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvmorclazycallthroughmanagerref/#a9a6606817f03c87a83601214ac8d81e3">LLVMOrcLazyCallThroughManagerRef</a></li>
 <li><b>fromJITSymbolFlags()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvmorclazycallthroughmanagerref/#afda88d4895989e55b1d4617274bcb1d0">LLVMOrcLazyCallThroughManagerRef</a></li>
 <li><b>fromJSON()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/json/#a46df0e111acfe74d856f9946d05faa4a">llvm::json</a></li>
@@ -2941,7 +2936,6 @@ keywords:
 <li><b>fromString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/#a3a88349f84d4691e26a0a7f9c26be0a9">llvm::AMDGPU::HSAMD</a></li>
 <li><b>fromSymbolLookupFlags()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvmorclazycallthroughmanagerref/#a4fe6f13a87e5f14e53cfc451ce653775">LLVMOrcLazyCallThroughManagerRef</a></li>
 <li><b>fromSysMemoryProtectionFlags()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a39f2d763c2f3d774cbdd130648855a29">llvm::orc</a></li>
-<li><b>front()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a64f3c8ba33de2ea77b1e18b9adec3735">llvm::sandboxir</a></li>
 <li><b>ftValueTypeFromType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-numericalstabilitysanitizer-cpp-/#aa1e8b1f5460f1a0df33e86adb69e934c">anonymous{NumericalStabilitySanitizer.cpp}</a></li>
 <li><b>FTZPreserveSign()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-constantfolding-cpp-/#acc6b975e547fa1ea148c5fb2aa0b93fd">anonymous{ConstantFolding.cpp}</a></li>
 <li><b>fullValue()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-hexagondisassembler-cpp-/#a2e0e4ab18e7fb56c7dbd46fe864243e6">anonymous{HexagonDisassembler.cpp}</a></li>
@@ -2950,7 +2944,7 @@ keywords:
 <li><b>FunctionDescToIntelJITFormat()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-inteljiteventlistener-cpp-/#a6914f5f9e02468ebb7278d069dc68129">anonymous{IntelJITEventListener.cpp}</a></li>
 <li><b>fuseInstructionPair()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a632225d89acaea2e95ea6f71b19d3ecf">llvm</a></li>
 </ul>
-<p>240 entries</p>
+<p>238 entries</p>
 
 ## - G -
 
@@ -3038,6 +3032,7 @@ keywords:
 <li><b>get()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7f0cb2395c75c824abafcabff6df6bf7">llvm</a></li>
 <li><b>get()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#acc758187b18a458124304e1309676dbd">llvm</a></li>
 <li><b>get()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/macho/dylibreader/#afb5091148492d06e7d5728aa5f827063">llvm::MachO::DylibReader</a></li>
+<li><b>get()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af2cdf7082ff42d000af895d5e3e6335d">llvm::sandboxir</a></li>
 <li><b>getAArch64VectorSplat()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64giselutils/#a1c5d42864ce1e65a6adc088512f68b51">llvm::AArch64GISelUtils</a></li>
 <li><b>getAArch64VectorSplatScalar()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64giselutils/#afbd23de302bae474849243a215cb910c">llvm::AArch64GISelUtils</a></li>
 <li><b>getABIName()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mc/#aefbeb412ef240786142330f93534f7c4">llvm::mc</a></li>
@@ -3243,7 +3238,9 @@ keywords:
 <li><b>getCCMPCondFlagsFromCondCode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/x86/#aaddbb5e92a9b873f175fff89399245d1">llvm::X86</a></li>
 <li><b>getCCValues()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/systemzii/#a21615af2ea84ae260c991219b85347c7">llvm::SystemZII</a></li>
 <li><b>getCGPassBuilderOption()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aff30786f1ea13c3ea475acce504571e4">llvm</a></li>
-<li><b>getCheckerSizeInBytes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#a89f9d58f53aa5fefd75ce86659f52f71">llvm::AArch64PAuth</a></li>
+<li><b>getChecker()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a08b3a015e75a41de9144da6e15f5ea2d">llvm</a></li>
+<li><b>getChecker()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a49e8df6d4706c815e017b8f6744847d6">llvm</a></li>
+<li><b>getCheckerSizeInBytes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a89f9d58f53aa5fefd75ce86659f52f71">llvm</a></li>
 <li><b>getCheckFunctionType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-jmcinstrumenter-cpp-/#a7704ada0af8cb169e6cf9dd2dec6171c">anonymous{JMCInstrumenter.cpp}</a></li>
 <li><b>getCImmAsAPInt()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-utils-cpp-/#a0acd5ca4d907a57e5dc5ee9129dbbbc8">anonymous{Utils.cpp}</a></li>
 <li><b>getCImmOrFPImmAsAPInt()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-utils-cpp-/#a21c5d1a680afc10bd790c931150ac04f">anonymous{Utils.cpp}</a></li>
@@ -3300,7 +3297,6 @@ keywords:
 <li><b>getConstructors()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a6adedd536b7b792d25531709a5f39f8f">llvm::orc</a></li>
 <li><b>getContainedTypes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ad481eeaefb613122480457f521fa42a8">llvm</a></li>
 <li><b>getContainingCsect()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-xcoffobjectwriter-cpp-/#a99b84e083c8b17e6af277efb72bc6fa0">anonymous{XCOFFObjectWriter.cpp}</a></li>
-<li><b>getContext()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a16ef7ef1c4bb934e4d6f5dbd6e5fef6f">llvm::sandboxir</a></li>
 <li><b>getContinueBlocks()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/anonymous-spirvstructurizer-cpp-/#ab5b751320b45e06092edf458c82ffa35">llvm::anonymous{SPIRVStructurizer.cpp}</a></li>
 <li><b>getContributionIndex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac546605a0c1b2ad42417a4d21c4857d6">llvm</a></li>
 <li><b>getConvergenceRegions()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/spirv/#a0df6696bc7790d9510b220963d5c688c">llvm::SPIRV</a></li>
@@ -4051,6 +4047,7 @@ keywords:
 <li><b>getNodeAVL()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a79438cba679d9bd714fcf1ac660aa9dd">llvm</a></li>
 <li><b>getNodeChain()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5cbf0daafe0fb49944e73ac1a968b9f9">llvm</a></li>
 <li><b>getNodeMask()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aea6f240eaff69e5a5f5dc5108abecfc5">llvm</a></li>
+<li><b>getNodeParent()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#ab9ea9169d1846d0efd0cfeb81a7ce08d">llvm::sandboxir</a></li>
 <li><b>getNodePassthru()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a99ae9f9b511cb5dc402e9fcee10be7d8">llvm</a></li>
 <li><b>getNoDeprecatedWarn()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mc/#a4d70551507790f15ccdf0dd48e227672">llvm::mc</a></li>
 <li><b>getNonNDVariant()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/x86/#a7f5a82ba9421c1c89257282ca65b4c23">llvm::X86</a></li>
@@ -4150,7 +4147,6 @@ keywords:
 <li><b>getOrCreateVPValueForSCEVExpr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/vputils/#a064976a6c7458b10c24021b7334cec2a">llvm::vputils</a></li>
 <li><b>getOrderedBlocks()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mergeicmps-cpp-/#a5b2e625679f6ef442bd50c46920e6048">anonymous{MergeICmps.cpp}</a></li>
 <li><b>getOrderedReduction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af5734ee7e33749096f394ea392b8524c">llvm</a></li>
-<li><b>getOrdinalSuffix()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab1c9ec787b76e9f84df9711eb1ff19b6">llvm</a></li>
 <li><b>getOrEnforceKnownAlignment()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6e7b79b3933def717c2a0f2fc6fa38e0">llvm</a></li>
 <li><b>getOrInsertDeclaration()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/intrinsic/#a0cff8be0190d8e20b7cf13646f34afa2">llvm::Intrinsic</a></li>
 <li><b>getOrInsertLibFunc()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a87cba3c4c88ab5df01a7f7dece1e0266">llvm</a></li>
@@ -4170,7 +4166,6 @@ keywords:
 <li><b>getPaddedLen()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adabcb01c4bdbc7f7df5d0d7cc390e29d">llvm</a></li>
 <li><b>getPageOffset12Shift()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/aarch64/#aea82948d63bc3b330d72ad903f0d41a3">llvm::jitlink::aarch64</a></li>
 <li><b>getParams()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/coverage/mcdc/#a664abf9526909f1ea77ab40a4da231b9">llvm::coverage::mcdc</a></li>
-<li><b>getParent()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a58a3e00f38db391e38a165784cbdd252">llvm::sandboxir</a></li>
 <li><b>getParsedIRPGOName()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a47f269ecf274794f7bc6d65cc50979b9">llvm</a></li>
 <li><b>getParseErrorMsg()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-textstubv5-cpp-/#abdd39ea41cffb0041ffe6685c7033ce2">anonymous{TextStubV5.cpp}</a></li>
 <li><b>getPassTimer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a67d0285e03a80731db23ba77d291942d">llvm</a></li>
@@ -4508,7 +4503,6 @@ keywords:
 <li><b>gettBLXrOpcode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adc5e50c2ee450039b87a6e1b382f414d">llvm</a></li>
 <li><b>getTCPUString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/xcoff/#ae15aa2110724f82f56c6f702c0d3f80f">llvm::XCOFF</a></li>
 <li><b>getTensorSpecFromJSON()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a41d8f43db23dac7e866bba97c9ab171d">llvm</a></li>
-<li><b>getTerminator()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#aeb5c43906a2888b20c99f839b985e4b9">llvm::sandboxir</a></li>
 <li><b>getTextureName()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a99daea5443ee92584e873602f2e9ce76">llvm</a></li>
 <li><b>getTgtId()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/exp/#ac236558198da971873e571fa38d2b58a">llvm::AMDGPU::Exp</a></li>
 <li><b>getTgtName()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/exp/#ab0fcd9e7a60a23a941500f531dcc0379">llvm::AMDGPU::Exp</a></li>
@@ -4574,7 +4568,6 @@ keywords:
 <li><b>getTimeTraceProfilerInstance()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5989ded64c534859a29ac7591af344de">llvm</a></li>
 <li><b>getTimeTraceProfilerInstances()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-timeprofiler-cpp-/#a048edad8755272f15e96d3962372918d">anonymous{TimeProfiler.cpp}</a></li>
 <li><b>getTLSSize()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/codegen/#a4a54ccc28ad7c9cd0fb9e05c9d7ae945">llvm::codegen</a></li>
-<li><b>getToken()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a20237283e8b9e354abec8dc5ab16bd16">llvm</a></li>
 <li><b>getTotalArgumentsSizeInBytes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aaf3a34e481e99124e251288ae497d041">llvm</a></li>
 <li><b>getTotalNumSGPRs()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/isainfo/#afeb7e0bccf88c9d23d02454609eb431a">llvm::AMDGPU::IsaInfo</a></li>
 <li><b>getTotalNumVGPRs()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#a27a0662e34c1a46f250ec687a1e6f07e">llvm::AMDGPU</a></li>
@@ -4596,7 +4589,7 @@ keywords:
 <li><b>getTypeNameImpl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a7bcc5393fb38f7a3fbe2c156abc4e92a">llvm::detail</a></li>
 <li><b>getTypePacking()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ad1b6d700f803718300ba21413283f7eb">llvm</a></li>
 <li><b>getTypeStr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64buildattrs/#ada0cf263c4a3d8d60d8b72035000f62b">llvm::AArch64BuildAttrs</a></li>
-<li><b>getUBImplyingAttributes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aff0740c9bf15ca5da583421c97137b42">llvm</a></li>
+<li><b>getUBImplyingAttributes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a67d569e12c844558c447c1d8c1476f10">llvm::AttributeFuncs</a></li>
 <li><b>getUINTTOFP()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/rtlib/#a3c139798e0933ade84b12ac860b593de">llvm::RTLIB</a></li>
 <li><b>getULEB128Size()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa02a1d8fb0f561ab81f4a2570db7dc28">llvm</a></li>
 <li><b>getUmask()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#ada473c08fad5cfd4efb132d2821f4a9b">llvm::sys::fs</a></li>
@@ -4745,7 +4738,7 @@ keywords:
 <li><b>guessSuccessors()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5247dc29909dbdf0e1e7b26aa0b3451d">llvm</a></li>
 <li><b>GVTOP()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac3ff7c50d6ac50925243afaa521aa36a">llvm</a></li>
 </ul>
-<p>1789 entries</p>
+<p>1788 entries</p>
 
 ## - H -
 
@@ -4943,9 +4936,6 @@ keywords:
 <li><b>HexagonMCShuffle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2e62b46a3eb52ccf356ac99f8ebb3c06">llvm</a></li>
 <li><b>HexagonMCShuffle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a59e0da5b8f32f10d8fd69cb090730ecb">llvm</a></li>
 <li><b>HexagonMCShuffle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7e6dfe0eaf6d1b1720be0390c764cdbd">llvm</a></li>
-<li><b>hexdigit()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7e4ad7349e8727c7d296afe9db1a09a2">llvm</a></li>
-<li><b>hexDigitValue()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a208da05312aa4e96229cebd3c49a9581">llvm</a></li>
-<li><b>hexFromNibbles()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7685b3cc60a46c3765e51cfb1f2a0cb3">llvm</a></li>
 <li><b>hexSquareString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a820f6df585d9c37a5904dd9703b0e356">llvm::logicalview</a></li>
 <li><b>hexString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a137595816b1740295e63cec4b3d2ff7c">llvm::logicalview</a></li>
 <li><b>hexValue()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a0b853e87e0efcb31ad9f0381e7db7673">llvm::logicalview</a></li>
@@ -4969,7 +4959,7 @@ keywords:
 <li><b>home_directory()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#a1286bcdea03c97a18eb1f41af524f3d3">llvm::sys::path</a></li>
 <li><b>HUerrBound()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1ec16506dcc033dcd69fd3a5109ec355">llvm</a></li>
 </ul>
-<p>218 entries</p>
+<p>215 entries</p>
 
 ## - I -
 
@@ -5775,6 +5765,8 @@ keywords:
 <li><b>interleaveComma()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a65c3a0594ff96ff6d3dcef270a3f4a60">llvm</a></li>
 <li><b>internalizeModule()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1c8c9c765979d25f194cc0cc9052a546">llvm</a></li>
 <li><b>interpretDecimal()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6d6b4d712de56406cf2eb0387e61d380">llvm</a></li>
+<li><b>intersect()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae085940412a44fb6c730f254a17c9820">llvm</a></li>
+<li><b>intersect()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac3e3bc118e8d0899b8122f1420c83407">llvm</a></li>
 <li><b>intersectAccessGroups()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a51d22a1ed809d7cb1c1eb46c820c8226">llvm</a></li>
 <li><b>invalidateParentIListOrdering()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa74c0880c7c80108690977b53f514252">llvm</a></li>
 <li><b>invalidateParentIListOrdering()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a17f03aa5510966f642c073f1bafd5ef6">llvm</a></li>
@@ -5876,8 +5868,6 @@ keywords:
 <li><b>isAllOnesOrAllOnesSplat()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1c01bab26241e422526ad42b90397e89">llvm</a></li>
 <li><b>isAllOnesOrAllOnesSplat()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8bc22108991ddb3f5bf2411c7b1f2149">llvm</a></li>
 <li><b>isAlmostDeadIV()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aca57f75a6554ba9ed3bc72ef7b7540de">llvm</a></li>
-<li><b>isAlnum()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8a0d39a17f2152e31271da7e7491d60e">llvm</a></li>
-<li><b>isAlpha()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a66ccf722f4d0e4e08522420fb43849ff">llvm</a></li>
 <li><b>IsAlwaysTail()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#a392f31f4801522bd6062e369302d83a1">llvm::objcarc</a></li>
 <li><b>isAMCAS()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/loongarchii/#a030c30e0c488cbb774391a37978bc024">llvm::LoongArchII</a></li>
 <li><b>isAMDGPU()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/object/#a7f36a486f8a444764d130f7136e3fce4">llvm::object</a></li>
@@ -5893,8 +5883,6 @@ keywords:
 <li><b>isArm64EC()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/coff/#ad2af2071a60723ea6dd73bb28f238631">llvm::COFF</a></li>
 <li><b>isArm64ECMangledFunctionName()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a38c590804b713ea0d02a8fb5b8fb6f30">llvm</a></li>
 <li><b>isARMLowRegister()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a23937faaecd6b00acda39f636f62a986">llvm</a></li>
-<li><b>isASCII()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac16e0f83231b9500e324afbe69c23420">llvm</a></li>
-<li><b>isASCII()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6b997621e93149327b77427827ed47d4">llvm</a></li>
 <li><b>isAssignmentTrackingEnabled()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa9ef2dbd1b7ce921093f7d4a7bd4cc5c">llvm</a></li>
 <li><b>isAssumedReadNone()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aa/#a1496d1d7b408ea24a3c4d3c6d9a2d08c">llvm::AA</a></li>
 <li><b>isAssumedReadOnly()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aa/#a17d95a36815f9b2bb3441fd61ee328be">llvm::AA</a></li>
@@ -6023,7 +6011,6 @@ keywords:
 <li><b>isDereferenceablePointer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abf1028e2af158aae1e00d3288ca013bb">llvm</a></li>
 <li><b>isDereferenceableReadOnlyLoop()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a52f62ee9a011e12d197314433c41bcc5">llvm</a></li>
 <li><b>isDestBBSuitableForSink()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-indirectcallpromotion-cpp-/#a29da820d4c19ac64f750762012fd13ca">anonymous{IndirectCallPromotion.cpp}</a></li>
-<li><b>isDigit()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a82c27bc751f7669f9c2a79de96e2d0fd">llvm</a></li>
 <li><b>isDirectGlobalReference()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/m68kii/#aebce1e4db21e2bb2dd9afbd715e46cf8">llvm::M68kII</a></li>
 <li><b>isDoLoopStart()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a022cded702d737077e735b1eb79f8a28">llvm</a></li>
 <li><b>isDoublePrecision()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/arm/#abc2e47b2a23fc692a1a7bffc76bc34e4">llvm::ARM</a></li>
@@ -6131,7 +6118,6 @@ keywords:
 <li><b>isHeader()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2db677513c23141ea0ec08b46e2b975d">llvm</a></li>
 <li><b>isHeaderMask()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/vputils/#a96c706ef30193e00ac057bf24cf5719d">llvm::vputils</a></li>
 <li><b>isHeuristicInlineCostFeature()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5da77a8b9f2da0065995d505aff64e5d">llvm</a></li>
-<li><b>isHexDigit()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adc291d90d07ce3566a7874fceddc3675">llvm</a></li>
 <li><b>isHForm()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-mc/#a2c9f1af8bf17bc904beacda32a1d16cb">llvm::AArch64_MC</a></li>
 <li><b>isHi16Reg()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#a266833fddf153d13701fb723996d3155">llvm::AMDGPU</a></li>
 <li><b>isHighReg()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/systemz/#ade9944e1adfb7c602c387d072a76d174">llvm::SystemZ</a></li>
@@ -6278,7 +6264,6 @@ keywords:
 <li><b>isLocalTee()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/webassembly/#a1124cde121d57efe04ea42bc165eb583">llvm::WebAssembly</a></li>
 <li><b>isLogicalImmediate()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a262431cccd14e6063eacc180130a5882">llvm::AArch64_AM</a></li>
 <li><b>isLoopStart()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a853bcbeb54ba762a07c1ae1a0e16ccad">llvm</a></li>
-<li><b>isLower()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a29d963f204d5c763f085c427876edfa7">llvm</a></li>
 <li><b>isLTOPreLink()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-amdgputargetmachine-cpp-/#ac7be802fe94f088ede887edfb8a30085">anonymous{AMDGPUTargetMachine.cpp}</a></li>
 <li><b>isMAC()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#addb7ac73684b6266c9a9c177c602d603">llvm::AMDGPU</a></li>
 <li><b>isMachOInitializerSection()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a7f32ad05bf9ae4235bfb4f4e78159294">llvm::orc</a></li>
@@ -6331,6 +6316,7 @@ keywords:
 <li><b>isNewValue()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo/#a41c2639831016e233df65de1a6ec6bd3">llvm::HexagonMCInstrInfo</a></li>
 <li><b>isNewValueStore()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo/#a5cc023a236173fcdb81a1820c1745eb9">llvm::HexagonMCInstrInfo</a></li>
 <li><b>isNoAliasCall()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a433468826ef20b5ddb53704fc38363fc">llvm</a></li>
+<li><b>isNoFPClassCompatibleType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a682611c4ec5c544fb17317b40e903a52">llvm::AttributeFuncs</a></li>
 <li><b>isNoModRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae96dbd1485a431400525ca17896ec48e">llvm</a></li>
 <li><b>isNON_EXTLoad()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a15623094a1ed0cd7163dc786e44c87c9">llvm::ISD</a></li>
 <li><b>isNonArtificial()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mca/#aba7ae9832c7e376c2629b52643cdd28a">llvm::mca</a></li>
@@ -6436,7 +6422,6 @@ keywords:
 <li><b>isPreOp()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/lpac/#a0cbb5fce8a0eddbb1a2c3e1e1de932d3">llvm::LPAC</a></li>
 <li><b>isPresent()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a4d29b9fc506d2c4711e795ae794de4e0">llvm::detail</a></li>
 <li><b>isPresplitCoroSuspendExitEdge()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac4603b4fac07d9342d2ea27067c81057">llvm</a></li>
-<li><b>isPrint()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm</a></li>
 <li><b>isPrint()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/locale/#ad17f6a9a55a75115ee7099f6c615b336">llvm::sys::locale</a></li>
 <li><b>isPrintable()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/unicode/#abdd3e84c33222ee387cf6a03d1a77400">llvm::sys::unicode</a></li>
 <li><b>isprintableascii()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/unicode/#a469fba4df824222417d066bbec9a1fb5">llvm::sys::unicode</a></li>
@@ -6448,7 +6433,6 @@ keywords:
 <li><b>isProgramMemoryAddress()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/avr/#aaef9228fcde19f54da2a08e85cbb25af">llvm::AVR</a></li>
 <li><b>isPseudo()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/x86ii/#a8da88ee0688eaec097d62d33fff86992">llvm::X86II</a></li>
 <li><b>isPTrueOpcode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a133ece1ebe8f30b0e292213ab8c16753">llvm</a></li>
-<li><b>isPunct()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae1d487c7265ba77e767cb39476328732">llvm</a></li>
 <li><b>isPushOpcode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a139d94c9f05d52dab00ed111ce058523">llvm</a></li>
 <li><b>isQForm()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-mc/#a982052fe86f23ea001b0fc4a544dd983">llvm::AArch64_MC</a></li>
 <li><b>isRawBitcode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a585f7962eb9ceeacf6dac007d78e5189">llvm</a></li>
@@ -6501,7 +6485,7 @@ keywords:
 <li><b>isScatter()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abcfcb8c3574cfb61fab17cc7218cea51">llvm</a></li>
 <li><b>isScopedEHPersonality()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5309dbf19ec5ccffe3072c6087e106d3">llvm</a></li>
 <li><b>isSectionInSegment()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/object/#a12ab0ff0677aca5d908c54d650fd72d4">llvm::object</a></li>
-<li><b>isSEHInstruction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a52619cc1f9c5c3029a03a6c956b32595">llvm</a></li>
+<li><b>isSEHInstruction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a4dc83e9c9fd235321d84666f4e9b6990">llvm</a></li>
 <li><b>isSentinelProbe()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a192529d3a199cfe369f7428545340e76">llvm</a></li>
 <li><b>IsSETCC()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/m68k/#a00afcb12e9f6d7c5a926191b6eb31fbf">llvm::M68k</a></li>
 <li><b>isSEXT_W()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/loongarch/#a53f1e18da798927bb536af39e1239530">llvm::LoongArch</a></li>
@@ -6531,7 +6515,6 @@ keywords:
 <li><b>isSoleCallToLocalFunction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-inlinecost-cpp-/#aaa4a24113a96ba45e9dc3e45a42a5b57">anonymous{InlineCost.cpp}</a></li>
 <li><b>isSolo()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo/#a11e74a6ead98c7237e37c532e411295d">llvm::HexagonMCInstrInfo</a></li>
 <li><b>isSoloAX()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo/#a4157ec35dc2d6457245b8772cc3c0602">llvm::HexagonMCInstrInfo</a></li>
-<li><b>isSpace()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#acea2ac67f3ff35107bcf1693416da8e7">llvm</a></li>
 <li><b>isSpecialOpaqueType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7c2bc1b1bb26faf847a721e6eea38f97">llvm</a></li>
 <li><b>isSpecialPass()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a88d6a2d221777b8376bde5d860a219d1">llvm</a></li>
 <li><b>isSpeculationBarrierEndBBOpcode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae6b9dfcdbf3d90bda7eaa08f199297fc">llvm</a></li>
@@ -6614,7 +6597,6 @@ keywords:
 <li><b>isUnsignedIntSetCC()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/isd/#adb237925346ec53b00d3c82a42311318">llvm::ISD</a></li>
 <li><b>isUntypedEquivalentToTyExt()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6469b3ca28c7c2752a9370a1f6ff4fd5">llvm</a></li>
 <li><b>isUntypedPointerTy()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aed8d0406be2132424f2c8e74decde75e">llvm</a></li>
-<li><b>isUpper()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a69a5ffbfb0b78f051285c48361a325ed">llvm</a></li>
 <li><b>isUsedOutsideBlock()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3097c66d0a4a009897e2ea77298a37f1">llvm</a></li>
 <li><b>isUsefullToPreserve()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-assumebundlebuilder-cpp-/#ab3399afc79b7612b8471c010d3f3638e">anonymous{AssumeBundleBuilder.cpp}</a></li>
 <li><b>IsUser()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/objcarc/#a2b4438068b1237fb0319d216d473d00b">llvm::objcarc</a></li>
@@ -6741,9 +6723,8 @@ keywords:
 <li><b>IterativeBFIPrecision()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a61379d0789aa2e50b327a2c59ca465fb">llvm</a></li>
 <li><b>iterativelyFlattenCFG()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-flattencfgpass-cpp-/#a8a6a7fca2c60d32d0a6326c29e1ec861">anonymous{FlattenCFGPass.cpp}</a></li>
 <li><b>iterator_range()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9b5301a03dc90d7ac00440e2de4d9149">llvm</a></li>
-<li><b>itostr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af6295cac2790cf237a57525d3d74b4a6">llvm</a></li>
 </ul>
-<p>1768 entries</p>
+<p>1759 entries</p>
 
 ## - J -
 
@@ -6753,22 +6734,10 @@ keywords:
 <li><b>jitLinkForORC()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a497e3b0265fea4f3a0d137a8884c71ff">llvm</a></li>
 <li><b>jitTargetAddressToFunction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3ac2e2aaec28b3d20d239a16f9864d3e">llvm</a></li>
 <li><b>jitTargetAddressToPointer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3dd74509e9765b061d847992450e51a4">llvm</a></li>
-<li><b>join_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a5ae7639f1774c359c2403158128baac4">llvm::detail</a></li>
-<li><b>join_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a26c79180d6c36cbf5ad2b1b1b329dd74">llvm::detail</a></li>
-<li><b>join_items_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#aedebd9896eae2eef2fb4aa98e21743d7">llvm::detail</a></li>
-<li><b>join_items_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a3621541f7a36292a0601048e6d1a2827">llvm::detail</a></li>
-<li><b>join_items_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a0193aeb1654baac077e25750ff81c73f">llvm::detail</a></li>
-<li><b>join_items_size()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#aafc6638653b433620db9b50227cb0924">llvm::detail</a></li>
-<li><b>join_items()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abf26c3fbc66c62b574dd56f58155a8ab">llvm</a></li>
-<li><b>join_one_item_size()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a9f603103a831a2866a667f158a4193bd">llvm::detail</a></li>
-<li><b>join_one_item_size()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#ac8b541c7744e7f373c01dcb0fc4e449e">llvm::detail</a></li>
-<li><b>join_one_item_size()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#ac4a1875b1479fe3d8e971d27eb02b725">llvm::detail</a></li>
-<li><b>join()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa1fd1719afe5b07ebe55f1d105c98916">llvm</a></li>
-<li><b>join()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a24c9dc9e8dfd26e224449117802cc97b">llvm</a></li>
 <li><b>joinErrors()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">llvm</a></li>
 <li><b>jumpExtTSPScore()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-codelayout-cpp-/#acc82cef9cbd4dab51921209f2a1ac14b">anonymous{CodeLayout.cpp}</a></li>
 </ul>
-<p>19 entries</p>
+<p>7 entries</p>
 
 ## - L -
 
@@ -7659,8 +7628,8 @@ keywords:
 <li><b>memSizeInBytesNotPow2()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#a1581af0215e33dd0bc26f84d67aa610a">llvm::LegalityPredicates</a></li>
 <li><b>memSizeNotByteSizePow2()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#a66c37e901bc47ad309a6f13c2edeecd4">llvm::LegalityPredicates</a></li>
 <li><b>memToShadow()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/#a0a998528afe6e6bb9a747a0e6358fff1">llvm::AMDGPU</a></li>
-<li><b>mergeAttributesForInlining()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aeb22511e47b1bafbfe7d73a16e7949f4">llvm</a></li>
-<li><b>mergeAttributesForOutlining()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aaeb422df68a9b7df533f627425d9553f">llvm</a></li>
+<li><b>mergeAttributesForInlining()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#ae05b3471aef6ffe376ceef99af9b4709">llvm::AttributeFuncs</a></li>
+<li><b>mergeAttributesForOutlining()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#aab96d8eec2287f142354ff6d8f3bba27">llvm::AttributeFuncs</a></li>
 <li><b>MergeBasicBlockIntoOnlyPred()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa16cddaa1497dc3248fc105467671e82">llvm</a></li>
 <li><b>MergeBlockIntoPredecessor()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa76a2cf19b821f320ab439d5659ef4b9">llvm</a></li>
 <li><b>mergeBlocks()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mergeicmps-cpp-/#ab6e0643cf044a7eab7bf5f9ed1d0816e">anonymous{MergeICmps.cpp}</a></li>
@@ -7766,6 +7735,7 @@ keywords:
 <li><b>NextPowerOf2()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#afb65eef479f0473d0fe1666b80155237">llvm</a></li>
 <li><b>nodes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1f108d77e1ecf5e30bbd3c7d8818af84">llvm</a></li>
 <li><b>none_of()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7dc3069afa2ce5ea62ac2eb183e51c00">llvm</a></li>
+<li><b>none()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a25e1f327ac41c8df2bcf4215b100f516">llvm</a></li>
 <li><b>nonMicrosoftDemangle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a08b5f002009fefdfceb3a1ce19c9cd74">llvm</a></li>
 <li><b>nonStrictlyPostDominate()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a90896a5c2c14e27297f4fdb0196e24b3">llvm</a></li>
 <li><b>NoopCallback()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-value-cpp-/#aa30382230919e54e40bb9f260e3188fb">anonymous{Value.cpp}</a></li>
@@ -7786,7 +7756,7 @@ keywords:
 <li><b>NumDigits()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#a5ba9d5e5ed1d1ed47cfab7f4eddb45de">llvm::pdb</a></li>
 <li><b>numElementsNotPow2()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#a18f92b98415f16ce9abea7570e4f4df0">llvm::LegalityPredicates</a></li>
 </ul>
-<p>45 entries</p>
+<p>46 entries</p>
 
 ## - O -
 
@@ -8754,8 +8724,12 @@ keywords:
 <li><b>prepareTempFiles()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0fa39647aed67bc62e126a8d8812900f">llvm</a></li>
 <li><b>PrepareToSplitEntryBlock()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ad7f49d3dc767d0f0789ffd9e332e7a49">llvm</a></li>
 <li><b>PreRADirection()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ad862bfb705d5dd126e0e49bfcb6f9e62">llvm</a></li>
+<li><b>preserve()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0ce10e654dbe2160451ec06fb9bbaaea">llvm</a></li>
+<li><b>preserve()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#acc598d7616b20426ef26a91856ab21b7">llvm</a></li>
 <li><b>preserveDebugSections()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a25efabd51a9526153bfc75c408671231">llvm::orc</a></li>
 <li><b>preserveDWARFSection()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-debuginfosupport-cpp-/#adc133c809379e8aa10637ba0a26f861c">anonymous{DebugInfoSupport.cpp}</a></li>
+<li><b>preserveSet()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a081e07bb5b4f775e03db8a74a6b1b902">llvm</a></li>
+<li><b>preserveSet()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aeab4e4b98de572614b61f91ebff87db3">llvm</a></li>
 <li><b>prettifyFunctionName()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/omp/#ad7e099354c93867323bca88df83c40b2">llvm::omp</a></li>
 <li><b>pretty_print_tensor_value()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/log-reader/#a14b90855a54de6f662b45732cb262314">log_reader</a></li>
 <li><b>prettyPrintBaseTypeRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5a44455c55b4b88c16930cd31cf4d20b">llvm</a></li>
@@ -8787,7 +8761,6 @@ keywords:
 <li><b>PrintError()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a36921ed4710269eb17cd26f11e51a97f">llvm</a></li>
 <li><b>PrintError()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ace933d6d43b3e9495210b3ea497b2bd0">llvm</a></li>
 <li><b>PrintError()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af3fe7e3ecc8f1076f8ae5efbc56edeb9">llvm</a></li>
-<li><b>printEscapedString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a4c77325e8379b866ece46236154547fd">llvm</a></li>
 <li><b>PrintFatalError()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2d33cbf73d16f36bdf9d289cf01d0006">llvm</a></li>
 <li><b>PrintFatalError()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5d5f0b374342da5b055ef7cb931c51c8">llvm</a></li>
 <li><b>PrintFatalError()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a49dd57beeae60b394dc3c257fc49a8bd">llvm</a></li>
@@ -8800,7 +8773,6 @@ keywords:
 <li><b>printFusionCandidates()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-loopfuse-cpp-/#a994216a333a1422e927cbb273707237d">anonymous{LoopFuse.cpp}</a></li>
 <li><b>printGraphForFunction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9dcf1b0fa5c6aaf08fa0700990ac067a">llvm</a></li>
 <li><b>PrintHelpMessage()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/cl/#af6c58129ea2fde5a453070dc10abf3fc">llvm::cl</a></li>
-<li><b>printHTMLEscaped()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a16b730970232c1d5fc831b71bd20ba0b">llvm</a></li>
 <li><b>printIR()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-standardinstrumentations-cpp-/#afcb69df2b0227d117d0843f5331945d6">anonymous{StandardInstrumentations.cpp}</a></li>
 <li><b>printIR()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-standardinstrumentations-cpp-/#a02568e96fc0b109a2e99e1b4113d1f5d">anonymous{StandardInstrumentations.cpp}</a></li>
 <li><b>printIR()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-standardinstrumentations-cpp-/#a16cf3c3c02a9781f1cbe27968506f81b">anonymous{StandardInstrumentations.cpp}</a></li>
@@ -8814,7 +8786,6 @@ keywords:
 <li><b>printLLVMNameWithoutPrefix()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aef01c7734472703b7f3d76c5af23e1d3">llvm</a></li>
 <li><b>printLoop()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af74d55b9091c302365e3af53f446a2a2">llvm</a></li>
 <li><b>printLoopVector()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-loopfuse-cpp-/#a8186e787c97d26329af95c09c8a14949">anonymous{LoopFuse.cpp}</a></li>
-<li><b>printLowerCase()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1cc216d3be54d320e0cd37ec53e0ac32">llvm</a></li>
 <li><b>printMBBReference()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af7881286e3ea4d7f1c4a63c87c132dac">llvm</a></li>
 <li><b>PrintMessage()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6fbb0f04208840cc02fdcfec56e338d9">llvm</a></li>
 <li><b>printMIR()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a47e52319ebd640bd762b84740e850e9d">llvm</a></li>
@@ -8902,7 +8873,7 @@ keywords:
 <li><b>publishOutlinedHashTree()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/cgdata/#a2868ab61a4ce104901a8f12be4dbbf40">llvm::cgdata</a></li>
 <li><b>publishStableFunctionMap()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/cgdata/#a816930fb508497c770b4fe53b5757541">llvm::cgdata</a></li>
 </ul>
-<p>365 entries</p>
+<p>366 entries</p>
 
 ## - Q -
 
@@ -8917,7 +8888,6 @@ keywords:
 <li><b>RAUW()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/at/#aea377383f26585e0da2e86da8e4dfe53">llvm::at</a></li>
 <li><b>RawErrCategory()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/pdb/#af2d32088536402892af559f5d03c46fe">llvm::pdb</a></li>
 <li><b>rbegin_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/adl-detail/#a9ed22cee9e2238a05e98cdfbebfa9728">llvm::adl_detail</a></li>
-<li><b>rbegin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a4488d662ff2d89f6e26e128569eb818a">llvm::sandboxir</a></li>
 <li><b>rbegin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#a728fc9f9b2d1a3a32b6fd2e785eb7b67">llvm::sys::path</a></li>
 <li><b>rbegin()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#ae116bcdf5fac57d6da943935fb6c547a">llvm::sys::path</a></li>
 <li><b>read_header()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/log-reader/#ab40242c357e077a78fbfb8fd4a61cf90">log_reader</a></li>
@@ -9054,7 +9024,6 @@ keywords:
 <li><b>rename()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#a4d0e197f8a614f1a6a60a1ef636a3e0d">llvm::sys::fs</a></li>
 <li><b>renameModuleForThinLTO()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a46122434c47e17760d4c6709878a0dd6">llvm</a></li>
 <li><b>rend_impl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/adl-detail/#a879c73cfa3e98585afc387c36588733f">llvm::adl_detail</a></li>
-<li><b>rend()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#aa486e62b94b010c0338242cc29abe831">llvm::sandboxir</a></li>
 <li><b>rend()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#aeec6efa9f64fb65e63600ebe128c2ebb">llvm::sys::path</a></li>
 <li><b>rend()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#a2bc70cc8c5a83b940ed7c948b28dc512">llvm::sys::path</a></li>
 <li><b>renderBoolStringAttr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/codegen/#a369cd19a81f5a9fee165657340331984">llvm::codegen</a></li>
@@ -9228,7 +9197,7 @@ keywords:
 <li><b>runWholeProgramDevirtOnIndex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aaacad3a6c1410763ede8cd4777304816">llvm</a></li>
 <li><b>rustDemangle()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9ba12f62b7c7aac2fe0d725965b597ec">llvm</a></li>
 </ul>
-<p>314 entries</p>
+<p>312 entries</p>
 
 ## - S -
 
@@ -9593,8 +9562,6 @@ keywords:
 <li><b>SPIRVTranslateModule()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab3e1cccbbbb64f0a0ae8546c703e9b81">llvm</a></li>
 <li><b>spliceBB()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a78e14f66d8a8405c6882b5ff6a3b7617">llvm</a></li>
 <li><b>spliceBB()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#afae3b747fc0c20f869df931130c534fa">llvm</a></li>
-<li><b>split()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8e3001fd5d1324d1e63ddcf56a45e955">llvm</a></li>
-<li><b>split()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9ad4c56cdb6fc0d6e203013c1b07f113">llvm</a></li>
 <li><b>SplitAllCriticalEdges()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abcdf593678862fd49e4ece5829b1bb00">llvm</a></li>
 <li><b>splitAMDGPUModule()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#a0706966ac4f391854346bebfcda816fa">llvm::anonymous{AMDGPUSplitModule.cpp}</a></li>
 <li><b>splitAndWriteThinLTOBitcode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-thinltobitcodewriter-cpp-/#a27558ac85c5bc3b45f39b3a46d2d858e">anonymous{ThinLTOBitcodeWriter.cpp}</a></li>
@@ -9634,7 +9601,6 @@ keywords:
 <li><b>SplitLandingPadPredecessors()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a949b0428c89b8ccf62d469bd325244ed">llvm</a></li>
 <li><b>splitLoopBound()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2776b4c8cd41fd60781f7b9e18af9edb">llvm</a></li>
 <li><b>SplitModule()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a61553b705fc9be3d8d0a18a8af1bc152">llvm</a></li>
-<li><b>SplitString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a544056717f2471026a27c31adb99df74">llvm</a></li>
 <li><b>splitVectorType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8efbddafefbb593b9fdc564bbe6e71fb">llvm</a></li>
 <li><b>SPMagic()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sampleprof/#a197283c05a4797bf186135efd511ceaf">llvm::sampleprof</a></li>
 <li><b>SPVersion()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sampleprof/#aec06640e3197b264c40e6f84e9a7ad6a">llvm::sampleprof</a></li>
@@ -9716,7 +9682,6 @@ keywords:
 <li><b>stringToVEFCondCode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a75573c9f0abf07d17e3cd1c8eaf3311b">llvm</a></li>
 <li><b>stringToVEICondCode()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af535846bcbb6c6df0b0a3a81b51bcbf4">llvm</a></li>
 <li><b>stringToVERD()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae6f47e902e2365c054ea9388993ec497">llvm</a></li>
-<li><b>StrInStrNoCase()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0616450add79ad4687b744e23ae74023">llvm</a></li>
 <li><b>stripBitcast()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-amdgpuiseldagtodag-cpp-/#ab8350db798dcf5939550ad69066f93dc">anonymous{AMDGPUISelDAGToDAG.cpp}</a></li>
 <li><b>stripDebugifyMetadata()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a484621a748732e2f39e7a2a0058b3b07">llvm</a></li>
 <li><b>stripDebugInfo()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a21fc2a53fec95633917f4135b7ab645e">llvm</a></li>
@@ -9883,7 +9848,7 @@ keywords:
 <li><b>symbolOpensScope()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/codeview/#a921f65a0abb128eb4e94c61eb85a1748">llvm::codeview</a></li>
 <li><b>system_temp_directory()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#aa676374c59d0f44d25f9eab4bb824e5a">llvm::sys::path</a></li>
 </ul>
-<p>649 entries</p>
+<p>645 entries</p>
 
 ## - T -
 
@@ -9923,11 +9888,6 @@ keywords:
 <li><b>TLI_pred_match()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sdpatternmatch/#a1611da8e56eb99ae96aa9895e1b46e66">llvm::SDPatternMatch</a></li>
 <li><b>to_address()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abb2f9c935d4fc983512ebb5bd6c57c7f">llvm</a></li>
 <li><b>to_address()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a628cf8baacb86dac2bf705c25800f661">llvm</a></li>
-<li><b>to_float()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a3e84550c4883a228340ec729c703a17b">llvm::detail</a></li>
-<li><b>to_float()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a55601fba8a44698d545bac51ab0c53b7">llvm</a></li>
-<li><b>to_float()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a41d4f8bab7d4bb31eec51d855e224116">llvm</a></li>
-<li><b>to_float()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac34ccc79f46f4cc5e40bf3043538079b">llvm</a></li>
-<li><b>to_integer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae03f2b6a02fc9092755ba3a6cf6d2446">llvm</a></li>
 <li><b>to_string()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a13c1b5a253da5da49ce33d03dc1efc07">llvm</a></li>
 <li><b>to_underlying()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a842e49a58fb3eba4e42a8dadad77745b">llvm</a></li>
 <li><b>to_vector_of()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aed8ffdd89cc4bd74503afa599b3afb14">llvm</a></li>
@@ -9950,9 +9910,6 @@ keywords:
 <li><b>ToDwarfOpIter()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-loopstrengthreduce-cpp-/#a391c5efa7f6eb049718971aeeb9b71d5">anonymous{LoopStrengthReduce.cpp}</a></li>
 <li><b>toFILETIME()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/#a3923e2871fd70f698ac2ea4317346593">llvm::sys</a></li>
 <li><b>toHex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/symbolize/#a85f505b1020d2df805bc40316a26e73b">llvm::symbolize</a></li>
-<li><b>toHex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abec19670f96ed423c2e4d4f10a4c6975">llvm</a></li>
-<li><b>toHex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8089287e12f50847b7f47a4986030f2d">llvm</a></li>
-<li><b>toHex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a85bbd91f8b98e95c235737cb39f15e72">llvm</a></li>
 <li><b>toHWStallEventType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a4e0584cf8ec1e7f29ca720acc8916308">llvm::mca</a></li>
 <li><b>toIRString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a5a473a7928f2af5c01022800db638773">llvm</a></li>
 <li><b>toJITDylibLookupFlags()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvmorclazycallthroughmanagerref/#a4a251f1879b77cc5601dfdbd16fa0d1b">LLVMOrcLazyCallThroughManagerRef</a></li>
@@ -9966,7 +9923,6 @@ keywords:
 <li><b>TokenizeWindowsCommandLineFull()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/cl/#af896b229210e1e59c2d9f66112fc48d3">llvm::cl</a></li>
 <li><b>TokenizeWindowsCommandLineNoCopy()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/cl/#a8d80076c6887cc447e544881292a3ad0">llvm::cl</a></li>
 <li><b>toLookupKind()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvmorclazycallthroughmanagerref/#acbcd030527b5870272d6f28828693980">LLVMOrcLazyCallThroughManagerRef</a></li>
-<li><b>toLower()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a06e572920023c66cb411c98e0e9ca8e4">llvm</a></li>
 <li><b>toRelativeReference()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#ab8854ab880cfff0871d8018396260bcc">llvm::dwarf</a></li>
 <li><b>toRelativeReference()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#a6d079e438ded3c54696974ea4992ea04">llvm::dwarf</a></li>
 <li><b>toScalarizedStructTy()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af3d7a362fea3dd362c790529f2afcbfa">llvm</a></li>
@@ -9984,18 +9940,12 @@ keywords:
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a4427489f872210c554e05e29c220bdb2">llvm::detail</a></li>
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#a39a67e6dc97585d609932dc2fb04a377">llvm::dwarf</a></li>
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#a9f8d81677123a0aa62b32263cef3f808">llvm::dwarf</a></li>
-<li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">llvm</a></li>
-<li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab0252bfbc097143883556e9987b2e9e9">llvm</a></li>
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ad06d74e24faba91639ef782ef7291c3d">llvm</a></li>
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#abf268a1885585020415ba707112a5bd6">llvm</a></li>
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0bc41efaef1ab7432a30c96da4145d91">llvm</a></li>
 <li><b>toString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/wasm/#a61af8a41f827682a5fd0eb6280a30327">llvm::wasm</a></li>
 <li><b>toStringImpl()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/anonymous-apfloat-cpp-/#a67a4cef5addbdc43c571874df4ea020d">llvm::detail::anonymous{APFloat.cpp}</a></li>
 <li><b>toStringRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#aa10731e4d6c303386a70337b0e0668d0">llvm::dwarf</a></li>
-<li><b>toStringRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aeeb5973ff74c4c4d279e275b34b7ef54">llvm</a></li>
-<li><b>toStringRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8ad2f4133e3e33a8249d839e9d287119">llvm</a></li>
-<li><b>toStringRef()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adcbe063b2b06b47ad507d95c1052180b">llvm</a></li>
-<li><b>toStringRefArray()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab9b82ba909542d7cef037b1539cc08c0">llvm</a></li>
 <li><b>toStringWithoutConsuming()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a647d81069a894db84416668a61b6ee09">llvm</a></li>
 <li><b>toSupplementaryReference()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#ae0657d513b3387408e71adb0310d7c48">llvm::dwarf</a></li>
 <li><b>toSupplementaryReference()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#a32aec13a17dab22be7cb76b29c0d5254">llvm::dwarf</a></li>
@@ -10016,7 +9966,6 @@ keywords:
 <li><b>toTypedPointer()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a79a682a8e3ef1ba361fb668ce902b6c3">llvm</a></li>
 <li><b>toUnsigned()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#ae150cb3561ce0a2979ed60d29301eef7">llvm::dwarf</a></li>
 <li><b>toUnsigned()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#ab7e32f9caae39a0d0c64b546a34b883f">llvm::dwarf</a></li>
-<li><b>toUpper()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aadcb10384f6f67a800d81e4312cabc46">llvm</a></li>
 <li><b>toUtcTime()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/#afb25f6b54f4b773fead4c4bacc1b8ab1">llvm::sys</a></li>
 <li><b>toValType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/webassembly/#a623013f677a44a584a4fad200887a4a0">llvm::WebAssembly</a></li>
 <li><b>toVectorizedStructTy()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a77e211e8fb596ed21bb29f80aeacc211">llvm</a></li>
@@ -10045,8 +9994,6 @@ keywords:
 <li><b>tryEmitBZero()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64giselutils/#a9922ec95e157a3432c8ccd4a8a6a2653">llvm::AArch64GISelUtils</a></li>
 <li><b>tryEnforceAlignment()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab6ecbefe009dc2c88d6bca99eba421b9">llvm</a></li>
 <li><b>tryFoldSPUpdateIntoPushPop()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a66436eae766ca32356bb075ec31ac449">llvm</a></li>
-<li><b>tryGetFromHex()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3699262c2b17521102856cf077a70189">llvm</a></li>
-<li><b>tryGetHexFromNibbles()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a6881cba3b0cf6423c4fa4fb895a4114c">llvm</a></li>
 <li><b>tryGreater()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sisched/#a0fc548582a68bc6e9519f88a7484ab71">llvm::SISched</a></li>
 <li><b>tryGreater()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ab618de2b7dea1e1859018a1a7e8b3ee5">llvm</a></li>
 <li><b>tryLatency()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a8c9a83bf7b5f6e85f215ff07a31e0fbe">llvm</a></li>
@@ -10072,7 +10019,7 @@ keywords:
 <li><b>tryToSinkInstruction()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-indirectcallpromotion-cpp-/#a0e01a9709ce029147b721bdfe476fbbe">anonymous{IndirectCallPromotion.cpp}</a></li>
 <li><b>tryToSinkInstructions()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-indirectcallpromotion-cpp-/#ae710dafa20ae793ef9dcab6a5ea4ca5c">anonymous{IndirectCallPromotion.cpp}</a></li>
 <li><b>typeFromFTValueType()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-numericalstabilitysanitizer-cpp-/#a1f97ca5ebffacffa92c87ce782a56708">anonymous{NumericalStabilitySanitizer.cpp}</a></li>
-<li><b>typeIncompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3e175904cc80dad69e662dd284175091">llvm</a></li>
+<li><b>typeIncompatible()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#ab2dcaa046e6a38983e74ce28a120ce79">llvm::AttributeFuncs</a></li>
 <li><b>typeInSet()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#a3b65801c5b31890a1d1cd8a0038aee87">llvm::LegalityPredicates</a></li>
 <li><b>typeInt()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#ad1c531a0699aebb488abde5cbf977c50">llvm::logicalview</a></li>
 <li><b>typeIs()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates/#ae56d6ae68f8659cfaa29fb7cb601f111">llvm::LegalityPredicates</a></li>
@@ -10091,7 +10038,7 @@ keywords:
 <li><b>typeUnknown()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a60922260b893f6f8628b73c88c1fc5c6">llvm::logicalview</a></li>
 <li><b>typeVoid()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#ae02e5f410984a4ef397d06c42e44ff7a">llvm::logicalview</a></li>
 </ul>
-<p>202 entries</p>
+<p>184 entries</p>
 
 ## - U -
 
@@ -10157,7 +10104,7 @@ keywords:
 <li><b>updateLoopMetadataDebugLocations()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aecd4ed57fa6a20d048310d43f5c96da9">llvm</a></li>
 <li><b>updateLoops()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-earlyifconversion-cpp-/#ad0832c20aba1c911bff1ec3780124fc7">anonymous{EarlyIfConversion.cpp}</a></li>
 <li><b>updateMemProfAttributes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/lto/#afe9c751bcb415f1be4994bce1ef6288e">llvm::lto</a></li>
-<li><b>updateMinLegalVectorWidthAttr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ad944e40dbc606e1494923b581c9732f3">llvm</a></li>
+<li><b>updateMinLegalVectorWidthAttr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a8b02ace8c1f9abda69c009da0432e901">llvm::AttributeFuncs</a></li>
 <li><b>updateMissingOrAdded()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-lvcompare-cpp-/#aff30765db1c6fa27e15c0be798c3af4c">anonymous{LVCompare.cpp}</a></li>
 <li><b>updatePhiNodes()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac1ced98ffeb2b6991821751661b136d6">llvm</a></li>
 <li><b>updateProfileCallee()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa7cd2cc36098475563ad0fd3371df2a6">llvm</a></li>
@@ -10200,10 +10147,8 @@ keywords:
 <li><b>usesMaskPolicy()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/riscvii/#a20ff72740ddcb82d56986c52be173b39">llvm::RISCVII</a></li>
 <li><b>usesVXRM()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/riscvii/#ade62e974fc6f22836f2358cc1bfb3ba6">llvm::RISCVII</a></li>
 <li><b>useUniversalCRT()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a407d3b5b3a2a0c0a80e87d7b03b4b2e2">llvm</a></li>
-<li><b>utohexstr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a3beda524b0772ca36035db4399a6a571">llvm</a></li>
-<li><b>utostr()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm</a></li>
 </ul>
-<p>106 entries</p>
+<p>104 entries</p>
 
 ## - V -
 
@@ -10231,7 +10176,6 @@ keywords:
 <li><b>VERDToString()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adf8918ebe7dec72f2d54d7e0f5916fc8">llvm</a></li>
 <li><b>VERDToVal()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a90e6d3515ec827a559e975fcea128926">llvm</a></li>
 <li><b>Verify()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/domtreebuilder/#a1348bf219185f1a9896e890ab4c2061d">llvm::DomTreeBuilder</a></li>
-<li><b>verify()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#ab39f6204e12520524b61f0b8df84360e">llvm::sandboxir</a></li>
 <li><b>Verify< BBDomTree >()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/domtreebuilder/#a576a71437577117b396471810b312f37">llvm::DomTreeBuilder</a></li>
 <li><b>Verify< BBPostDomTree >()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/domtreebuilder/#af21812b908ed1568213b0cb027e77c99">llvm::DomTreeBuilder</a></li>
 <li><b>Verify< MBBDomTree >()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/llvm/domtreebuilder/#a659b7948ad350618063f0f32ae32a48c">llvm::DomTreeBuilder</a></li>
@@ -10292,7 +10236,7 @@ keywords:
 <li><b>vshuff()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/shuffles/#a91e69e6f05e66ead5fa0622d7e113642">shuffles</a></li>
 <li><b>vshuffvdd()</b>: as function in namespace <a href="/web-llvm/docs/api/namespaces/shuffles/#a05231a6703f721a7938ce95de41743f1">shuffles</a></li>
 </ul>
-<p>83 entries</p>
+<p>82 entries</p>
 
 ## - W -
 
@@ -10483,10 +10427,10 @@ keywords:
 </ul>
 <p>7 entries</p>
 <br/>
-<p>Total: 10311 entries.</p>
+<p>Total: 10255 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

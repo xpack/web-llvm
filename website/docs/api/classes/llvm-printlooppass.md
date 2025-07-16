@@ -87,7 +87,7 @@ class llvm::PrintLoopPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adbcefe621f9a4ceda788c648c59581cf">run</a> (Loop &amp;L, LoopAnalysisManager &amp;, LoopStandardAnalysisResults &amp;, LPMUpdater &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -226,7 +226,7 @@ class llvm::PrintLoopPass { ... }
 <p>Declaration at line 514 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/looppassmanager-h">LoopPassManager.h</a>, definition at line 366 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/looppassmanager-cpp">LoopPassManager.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#af74d55b9091c302365e3af53f446a2a2">llvm::printLoop</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#af74d55b9091c302365e3af53f446a2a2">llvm::printLoop</a>.</p>
 
 </div>
 </div>
@@ -300,6 +300,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

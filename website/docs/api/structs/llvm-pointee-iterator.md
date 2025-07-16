@@ -119,7 +119,7 @@ struct llvm::pointee_iterator&lt;WrappedIteratorT, T&gt; { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a7f5af8c1ba2e11773efdbf7b6bc0d4e8">iterator</a> = <a href="#adf01b96db9ddeda9a3edfc4bd6b392b8">pointee_iterator&lt;SmallVectorImpl&lt;T *&gt;::iterator</a>&gt;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">iterator = <a href="#adf01b96db9ddeda9a3edfc4bd6b392b8">pointee_iterator&lt;SmallVectorImpl&lt;T *&gt;::iterator</a>&gt;;</span></span></div>
 
 </div>
 
@@ -242,6 +242,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

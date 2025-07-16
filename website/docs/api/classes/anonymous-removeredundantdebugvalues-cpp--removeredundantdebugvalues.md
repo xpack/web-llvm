@@ -233,7 +233,7 @@ class anonymous{RemoveRedundantDebugValues.cpp}::RemoveRedundantDebugValues { ..
 <p>Definition at line 42 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/removeredundantdebugvalues-cpp">RemoveRedundantDebugValues.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/removeredundantdebugvalues-cpp/#ab500564693e7d4da8ba1c02c723a057a">reduceDbgValsBackwardScan</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/removeredundantdebugvalues-cpp/#a0cb9f41d03e7efefe10150f7941cdd16">reduceDbgValsForwardScan</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/removeredundantdebugvalues-cpp/#ab500564693e7d4da8ba1c02c723a057a">reduceDbgValsBackwardScan</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/removeredundantdebugvalues-cpp/#a0cb9f41d03e7efefe10150f7941cdd16">reduceDbgValsForwardScan</a>.</p>
 
 
 <p>Referenced by <a href="#a3ca874fa8597db6ca2d4f46ab75c5eff">RemoveRedundantDebugValues</a> and <a href="#af87a39c456cb631fbfe819b58d183598">runOnMachineFunction</a>.</p>
@@ -269,7 +269,7 @@ class anonymous{RemoveRedundantDebugValues.cpp}::RemoveRedundantDebugValues { ..
 <p>Definition at line 45 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/removeredundantdebugvalues-cpp">RemoveRedundantDebugValues.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a4d834f9897d15e3a6349063b5d637cd8">llvm::Function::getSubprogram</a>, <a href="/web-llvm/docs/api/classes/llvm/dicompileunit/#abbc2b566b9aa870d5b7131017b7ba66dadb74da0a389a2704e8e01c66ace2913e">llvm::DICompileUnit::NoDebug</a> and <a href="#aa4d9d359c91998620f9d9cd8367ada7b">reduceDbgValues</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a4d834f9897d15e3a6349063b5d637cd8">llvm::Function::getSubprogram</a>, <a href="/web-llvm/docs/api/classes/llvm/dicompileunit/#abbc2b566b9aa870d5b7131017b7ba66dadb74da0a389a2704e8e01c66ace2913e">llvm::DICompileUnit::NoDebug</a> and <a href="#aa4d9d359c91998620f9d9cd8367ada7b">reduceDbgValues</a>.</p>
 
 
 <p>Referenced by <a href="#a3ca874fa8597db6ca2d4f46ab75c5eff">RemoveRedundantDebugValues</a>.</p>
@@ -325,6 +325,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

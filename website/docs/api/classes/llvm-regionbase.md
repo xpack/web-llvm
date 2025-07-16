@@ -1574,18 +1574,18 @@ class llvm::RegionBase&lt;Tr&gt; { ... }
 
 
 <pre><code>/// A simple control flow graph, that contains two regions.
-///
-///        1
-///       / |
-///      2   |
-///     / \   3
-///    4   5  |
-///    |   |  |
-///    6   7  8
-///     \  | /
-///      \ |/       Region A: 1 -&gt; 9 {1,2,3,4,5,6,7,8}
-///        9        Region B: 2 -&gt; 9 {2,4,5,6,7}
-///
+ * 
+ *         1
+ *        / |
+ *       2   |
+ *      / \   3
+ *     4   5  |
+ *     |   |  |
+ *     6   7  8
+ *      \  | /
+ *       \ |/       Region A: 1 -&gt; 9 {1,2,3,4,5,6,7,8}
+ *         9        Region B: 2 -&gt; 9 {2,4,5,6,7}
+ *
 </code></pre>
 
 
@@ -4686,6 +4686,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

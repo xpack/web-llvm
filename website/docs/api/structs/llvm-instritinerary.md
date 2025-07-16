@@ -241,7 +241,7 @@ struct llvm::InstrItinerary { ... }
 
 
 
-## of micro-ops, -1 means it's variable {#autotoc_md36}
+## of micro-ops, -1 means it's variable {#autotoc_md38}
 
 
 <p>Definition at line 100 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.</p>
@@ -264,6 +264,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

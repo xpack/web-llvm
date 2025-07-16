@@ -120,7 +120,7 @@ struct llvm::DOTGraphTraitsViewer&lt;AnalysisT, IsSimple, GraphT, AnalysisGraphT
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a785d4e2677b22a4dc41713c1e82c492f">run</a> (Function &amp;F, FunctionAnalysisManager &amp;FAM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -327,7 +327,7 @@ struct llvm::DOTGraphTraitsViewer&lt;AnalysisT, IsSimple, GraphT, AnalysisGraphT
 <p>Definition at line 62 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/dotgraphtraitspass-h">DOTGraphTraitsPass.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="#af4e6c4871a90af42bfab2f6f9bc6ad16">llvm::DOTGraphTraitsViewer&lt; AnalysisT, IsSimple, GraphT, AnalysisGraphTraitsT &gt;::processFunction</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a430d86ec8e1580b56c1e87a5109c5cb6">llvm::viewGraphForFunction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="#af4e6c4871a90af42bfab2f6f9bc6ad16">llvm::DOTGraphTraitsViewer&lt; AnalysisT, IsSimple, GraphT, AnalysisGraphTraitsT &gt;::processFunction</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a430d86ec8e1580b56c1e87a5109c5cb6">llvm::viewGraphForFunction</a>.</p>
 
 </div>
 </div>
@@ -376,6 +376,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

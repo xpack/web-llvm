@@ -354,7 +354,7 @@ namespace anonymous{NVPTXCtorDtorLowering.cpp} { ... }
 <p>Definition at line 45 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvptxctordtorlowering-cpp">NVPTXCtorDtorLowering.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/md5/#a5138672d89124f45e2217d8484a59a40">llvm::MD5::final</a>, <a href="/web-llvm/docs/api/structs/llvm/md5/md5result/#a0c78a5721bb5677678f80f9d0589f028">llvm::MD5::MD5Result::low</a>, <a href="/web-llvm/docs/api/classes/llvm/md5/#a3f41856aade4440631544e50238f75f5">llvm::MD5::update</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3beda524b0772ca36035db4399a6a571">llvm::utohexstr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/md5/#a5138672d89124f45e2217d8484a59a40">llvm::MD5::final</a>, <a href="/web-llvm/docs/api/structs/llvm/md5/md5result/#a0c78a5721bb5677678f80f9d0589f028">llvm::MD5::MD5Result::low</a> and <a href="/web-llvm/docs/api/classes/llvm/md5/#a3f41856aade4440631544e50238f75f5">llvm::MD5::update</a>.</p>
 
 
 <p>Referenced by <a href="#aab0bb9923065afc9aca06aec133ff91e">createInitOrFiniGlobals</a>.</p>
@@ -410,6 +410,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

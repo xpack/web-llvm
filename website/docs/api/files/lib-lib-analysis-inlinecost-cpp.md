@@ -630,7 +630,7 @@ keywords:
 <p>Definition at line 2912 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlinecost-cpp">InlineCost.cpp</a>.</p>
 
 
-<p>References <a href="#a94cba06a633881068835d763f3ae3dee">IgnoreTTIInlineCompatible</a> and <a href="#a57032bf75155bd7c0b9e53e9f0c96f04">InlineCallerSupersetNoBuiltin</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#a32fe04d73013c7bede32a1e2279cf9e5">llvm::AttributeFuncs::areInlineCompatible</a>, <a href="#a94cba06a633881068835d763f3ae3dee">IgnoreTTIInlineCompatible</a> and <a href="#a57032bf75155bd7c0b9e53e9f0c96f04">InlineCallerSupersetNoBuiltin</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#aa41f9508130468035e0087f7cbdffa14">llvm::getAttributeBasedInliningDecision</a>.</p>
@@ -1470,6 +1470,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -641,7 +641,7 @@ class anonymous{HexagonConstPropagation.cpp}::LatticeCell { ... }
 <p>Definition at line 134 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonconstpropagation-cpp">HexagonConstPropagation.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a20de6d9990b04af0f23b770474a9fe37">Properties</a> and <a href="#ab13878421737db422070f682fda17077">properties</a>.</p>
+<p>References <a href="#a20de6d9990b04af0f23b770474a9fe37">Properties</a> and <a href="#ab13878421737db422070f682fda17077">properties</a>.</p>
 
 </div>
 </div>
@@ -801,7 +801,7 @@ class anonymous{HexagonConstPropagation.cpp}::LatticeCell { ... }
 <p>Definition at line 132 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonconstpropagation-cpp">HexagonConstPropagation.cpp</a>.</p>
 
 
-<p>References <a href="#a81f86d4f90d1b1e59de098544dc38763">add</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a1ee72f5324a484622701610ac0d2615f">isBottom</a>, <a href="#a07f4d98471c54708c845ff49a432453c">isTop</a>, <a href="#a6238ade1a95481ba63e66e3e8d6b4739">LatticeCell</a> and <a href="#a1c66847c0cd7f7ca251965815594827b">setBottom</a>.</p>
+<p>References <a href="#a81f86d4f90d1b1e59de098544dc38763">add</a>, <a href="#a1ee72f5324a484622701610ac0d2615f">isBottom</a>, <a href="#a07f4d98471c54708c845ff49a432453c">isTop</a>, <a href="#a6238ade1a95481ba63e66e3e8d6b4739">LatticeCell</a> and <a href="#a1c66847c0cd7f7ca251965815594827b">setBottom</a>.</p>
 
 </div>
 </div>
@@ -891,9 +891,6 @@ class anonymous{HexagonConstPropagation.cpp}::LatticeCell { ... }
 
 
 <p>Definition at line 166 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonconstpropagation-cpp">HexagonConstPropagation.cpp</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>.</p>
 
 
 <p>Referenced by <a href="#a54465027bb71781de0604e52c1fd3a69">meet</a>.</p>
@@ -1264,6 +1261,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

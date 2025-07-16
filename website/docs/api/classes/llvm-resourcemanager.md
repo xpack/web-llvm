@@ -36,7 +36,7 @@ class llvm::ResourceManager { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ce4c61ea2bb484a1fe208881f1ad52d">ResourceManager</a> (const TargetSubtargetInfo *ST, ScheduleDAGInstrs *DAG)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6b881604ed6d1c9eafbbd61e14dea2cf">ResourceManager</a> (const TargetSubtargetInfo *ST, ScheduleDAGInstrs *DAG)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -386,7 +386,7 @@ class llvm::ResourceManager { ... }
 
 ## Public Constructors
 
-### ResourceManager() {#a9ce4c61ea2bb484a1fe208881f1ad52d}
+### ResourceManager() {#a6b881604ed6d1c9eafbbd61e14dea2cf}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -395,7 +395,7 @@ class llvm::ResourceManager { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::mca::ResourceManager::ResourceManager (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo">TargetSubtargetInfo</a> * ST, <a href="/web-llvm/docs/api/classes/llvm/scheduledaginstrs">ScheduleDAGInstrs</a> * DAG)</td>
+<td class="doxyMemberName">llvm::ResourceManager::ResourceManager (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo">TargetSubtargetInfo</a> * ST, <a href="/web-llvm/docs/api/classes/llvm/scheduledaginstrs">ScheduleDAGInstrs</a> * DAG)</td>
 </tr>
 </table>
 </td>
@@ -535,7 +535,7 @@ class llvm::ResourceManager { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a939bc2108d47080767f0c06ba56caec7">llvm::format</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/structs/llvm/mcprocresourcedesc/#a51dc4747a7d39650884bcf19daaf5f54">llvm::MCProcResourceDesc::Name</a>, <a href="/web-llvm/docs/api/structs/llvm/mcprocresourcedesc/#a9d4d0cc34fcce4779dc4445d8265fffc">llvm::MCProcResourceDesc::NumUnits</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#ad0b3d8447f88377b62d9c019f3c4e118">llvm::SmallVectorImpl&lt; T &gt;::resize</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinepipeliner-cpp/#abf554e5ebe4ee5fa894e8842904376d0">SwpShowResMask</a>.</p>
 
 
-<p>Referenced by <a href="#a9ce4c61ea2bb484a1fe208881f1ad52d">ResourceManager</a>.</p>
+<p>Referenced by <a href="#a6b881604ed6d1c9eafbbd61e14dea2cf">ResourceManager</a>.</p>
 
 </div>
 </div>
@@ -1065,6 +1065,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

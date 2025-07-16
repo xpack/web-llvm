@@ -920,12 +920,14 @@ keywords:
 <li><b>AtomicRMWInst</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/sandboxir/atomicrmwinst">llvm::sandboxir</a></li>
 <li><b>AtomicSDNode</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/atomicsdnode">llvm</a></li>
 <li><b>AtT&lt;T, I, E&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/tomp/clause/att">tomp::clause</a></li>
+<li><b>AttrBuilder</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">llvm</a></li>
 <li><b>Attribute</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attribute">llvm</a></li>
 <li><b>AttributeAbbrev</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/attributeabbrev">llvm::DWARFYAML</a></li>
 <li><b>AttributeBitSet</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attributebitset">llvm</a></li>
 <li><b>AttributeImpl</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attributeimpl">llvm</a></li>
 <li><b>AttributeInferer</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-functionattrs-cpp-/attributeinferer">anonymous{FunctionAttrs.cpp}</a></li>
 <li><b>AttributeLinkedOffsetFixup</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/attributelinkedoffsetfixup">llvm</a></li>
+<li><b>AttributeList</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attributelist">llvm</a></li>
 <li><b>AttributeListImpl</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl">llvm</a></li>
 <li><b>AttributeMask</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/attributemask">llvm</a></li>
 <li><b>Attributes</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-modulesummaryindex-cpp-/attributes">anonymous{ModuleSummaryIndex.cpp}</a></li>
@@ -986,7 +988,7 @@ keywords:
 <li><b>AVRTargetObjectFile</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/avrtargetobjectfile">llvm</a></li>
 <li><b>AVRTargetStreamer</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/avrtargetstreamer">llvm</a></li>
 </ul>
-<p>959 entries</p>
+<p>961 entries</p>
 
 ## - B -
 
@@ -1015,6 +1017,7 @@ keywords:
 <li><b>BasicAAResult</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/basicaaresult">llvm</a></li>
 <li><b>BasicAAWrapperPass</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/basicaawrapperpass">llvm</a></li>
 <li><b>BasicBlock</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/basicblock">llvm</a></li>
+<li><b>BasicBlock</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">llvm::sandboxir</a></li>
 <li><b>BasicBlockBFIAdapter</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-sizeopts-cpp-/basicblockbfiadapter">anonymous{SizeOpts.cpp}</a></li>
 <li><b>BasicBlockEdge</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/basicblockedge">llvm</a></li>
 <li><b>BasicBlockInfo</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/basicblockinfo">llvm</a></li>
@@ -1361,7 +1364,7 @@ keywords:
 <li><b>ByteProvider&lt;ISelOp&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/byteprovider">llvm</a></li>
 <li><b>ByteStreamer</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/bytestreamer">llvm</a></li>
 </ul>
-<p>369 entries</p>
+<p>370 entries</p>
 
 ## - C -
 
@@ -1958,9 +1961,9 @@ keywords:
 <li><b>CovMapFunctionRecordV2</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmapfunctionrecordv2">llvm::coverage</a></li>
 <li><b>CovMapFunctionRecordV3</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmapfunctionrecordv3">llvm::coverage</a></li>
 <li><b>CovMapHeader</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmapheader">llvm::coverage</a></li>
-<li><b>CovMapTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmaptraits-cb3f0fbbeacd6dee43d1f1776c943b33">llvm::coverage</a></li>
-<li><b>CovMapTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmaptraits-c6b86964f3c356e164533299802a3abf">llvm::coverage</a></li>
 <li><b>CovMapTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmaptraits-a237e01007dc6857e514b25a870b0a15">llvm::coverage</a></li>
+<li><b>CovMapTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmaptraits-c6b86964f3c356e164533299802a3abf">llvm::coverage</a></li>
+<li><b>CovMapTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmaptraits-cb3f0fbbeacd6dee43d1f1776c943b33">llvm::coverage</a></li>
 <li><b>CovMapTraits&lt;CovMapVersion, IntPtrT&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/coverage/covmaptraits">llvm::coverage</a></li>
 <li><b>CParser</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-remarkparser-cpp-/cparser">anonymous{RemarkParser.cpp}</a></li>
 <li><b>CpuInfo</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/aarch64/cpuinfo">llvm::AArch64</a></li>
@@ -2056,11 +2059,11 @@ keywords:
 <li><b>CustomBehaviour</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/mca/custombehaviour">llvm::mca</a></li>
 <li><b>CustomEventRecord</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/xray/customeventrecord">llvm::xray</a></li>
 <li><b>CustomEventRecordV5</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/xray/customeventrecordv5">llvm::xray</a></li>
-<li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-5afad16d6df5c47889a55ee752aaf37b">llvm::yaml</a></li>
-<li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-401b2ef41e753181da578a4bc695ba1b">llvm::yaml</a></li>
-<li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-2c5234ca03a917e6445ab40c7b8c2ed0">llvm::yaml</a></li>
 <li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-3b1424a9b3a8aa6ce5718fd632001add">llvm::yaml</a></li>
 <li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-e6cd0f782800ff452527a9711839c949">llvm::yaml</a></li>
+<li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-5afad16d6df5c47889a55ee752aaf37b">llvm::yaml</a></li>
+<li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-2c5234ca03a917e6445ab40c7b8c2ed0">llvm::yaml</a></li>
+<li><b>CustomMappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-401b2ef41e753181da578a4bc695ba1b">llvm::yaml</a></li>
 <li><b>CustomMappingTraits&lt;BBNumberMap&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-548ede8a22318ab04d09996146381986">llvm::yaml</a></li>
 <li><b>CustomMappingTraits&lt;MapDocNode&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits-1891178988d22eff531bcad89e9cff02">llvm::yaml</a></li>
 <li><b>CustomMappingTraits&lt;T&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits">llvm::yaml</a></li>
@@ -2276,6 +2279,7 @@ keywords:
 <li><b>DecoderUInt128</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/decoderuint128">llvm</a></li>
 <li><b>DecompEntry</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decompentry">anonymous{ConstraintElimination.cpp}</a></li>
 <li><b>DecomposedBitTest</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/decomposedbittest">llvm</a></li>
+<li><b>DecomposedSelect</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect">anonymous{InstCombineSelect.cpp}</a></li>
 <li><b>Decomposition</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decomposition">anonymous{ConstraintElimination.cpp}</a></li>
 <li><b>DecompressedSection</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/decompressedsection">llvm::objcopy::elf</a></li>
 <li><b>Decompressor</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/object/decompressor">llvm::object</a></li>
@@ -2346,21 +2350,21 @@ keywords:
 <li><b>DenormalMode</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/denormalmode">llvm</a></li>
 <li><b>DenseMap&lt;KeyT, ValueT, KeyInfoT, BucketT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/densemap">llvm</a></li>
 <li><b>DenseMapBase&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/densemapbase">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-faf352d6e414689b835e290211af46e2">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-d9260256454227ba56509068a639c749">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-dd5e463e93c02390a11f6c27792d02f9">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-843f73de6d663f0acc866ab9031a620b">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-1815c9a78f2d12e75277c3404e867e33">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-bf8488e649e092188a07e41a842f72b6">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-a17385aa8d3c6043ea3a40efa42f76e0">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-1f70f14c582cbbbb4c4580fe510d45f9">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-6d820381112462a5bb6b93e4ae7ccfa6">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-faf352d6e414689b835e290211af46e2">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-843f73de6d663f0acc866ab9031a620b">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-cf976c6008d17910e6e4c099545e7635">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-9d88b1da97f443eb327dce9e3460d07c">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-2b21aa0e271c00dbffe1ec6f1c30a6e8">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-d9260256454227ba56509068a639c749">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-5241fa1fbb6a12b3cf49bd28ddb26e8e">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-6d820381112462a5bb6b93e4ae7ccfa6">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-20e59342efe220375a2b0d2a0c0492aa">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-1f70f14c582cbbbb4c4580fe510d45f9">llvm</a></li>
 <li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-a0bd662518daa47d6945fbfbf3d14c2c">llvm</a></li>
-<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-cf976c6008d17910e6e4c099545e7635">llvm</a></li>
+<li><b>DenseMapInfo&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-20e59342efe220375a2b0d2a0c0492aa">llvm</a></li>
 <li><b>DenseMapInfo&lt;AA::RangeTy&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-a2c94f3689753f814562b13d0c7f926b">llvm</a></li>
 <li><b>DenseMapInfo&lt;AA::ValueAndContext&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-a476c8f982db5df589abf63e5884e2ac">llvm</a></li>
 <li><b>DenseMapInfo&lt;AA::ValueScope&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-7d3bcafc46d82ae4113aa2c8b1cf728e">llvm</a></li>
@@ -2375,6 +2379,7 @@ keywords:
 <li><b>DenseMapInfo&lt;AssertingVH&lt; T &gt;&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-9991f1503f02220ff60e93f014753ab7">llvm</a></li>
 <li><b>DenseMapInfo&lt;at::VarRecord&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0">llvm</a></li>
 <li><b>DenseMapInfo&lt;Attribute::AttrKind&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97">llvm</a></li>
+<li><b>DenseMapInfo&lt;AttributeList, void&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70">llvm</a></li>
 <li><b>DenseMapInfo&lt;AttributeSet, void&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962">llvm</a></li>
 <li><b>DenseMapInfo&lt;BasicBlock::iterator&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9">llvm</a></li>
 <li><b>DenseMapInfo&lt;BasicBlockEdge&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6">llvm</a></li>
@@ -2934,7 +2939,7 @@ keywords:
 <li><b>DynSym&lt;ELFT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ifs/anonymous-elfobjhandler-cpp-/dynsym">llvm::ifs::anonymous{ELFObjHandler.cpp}</a></li>
 <li><b>dysymtab_command</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/macho/dysymtab-command">llvm::MachO</a></li>
 </ul>
-<p>838 entries</p>
+<p>840 entries</p>
 
 ## - E -
 
@@ -3178,12 +3183,12 @@ keywords:
 <li><b>ErrorDiagnostic</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errordiagnostic">llvm</a></li>
 <li><b>ErrorErrorCategory</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-error-cpp-/errorerrorcategory">anonymous{Error.cpp}</a></li>
 <li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-9c9cc8dac1b38c19a590b999e0b76eb0">llvm</a></li>
-<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-31ec231ce696214756217b77b84ec9f6">llvm</a></li>
-<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-2ce06436bd4b8ea139e34935de4bd81e">llvm</a></li>
-<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-c605dd59c67a013812cd40705de06549">llvm</a></li>
-<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-375dc44fce494a39abe57132682d49cb">llvm</a></li>
-<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-2e9520e00105ce2881a0aa7bbf4d6007">llvm</a></li>
 <li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-7d948b2e862b83e2e5f4752fd75d3082">llvm</a></li>
+<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-c605dd59c67a013812cd40705de06549">llvm</a></li>
+<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-2ce06436bd4b8ea139e34935de4bd81e">llvm</a></li>
+<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-31ec231ce696214756217b77b84ec9f6">llvm</a></li>
+<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-2e9520e00105ce2881a0aa7bbf4d6007">llvm</a></li>
+<li><b>ErrorHandlerTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-375dc44fce494a39abe57132682d49cb">llvm</a></li>
 <li><b>ErrorHandlerTraits&lt;Error(&amp;)(ErrT &amp;)&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-ac048562058e8644c2b114ba512090d9">llvm</a></li>
 <li><b>ErrorHandlerTraits&lt;HandlerT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits">llvm</a></li>
 <li><b>ErrorHandlerTraits&lt;RetT(C::*)(ErrT &amp;)&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/errorhandlertraits-2fce8e2ded93ee5e8df807d210bb207c">llvm</a></li>
@@ -3539,17 +3544,16 @@ keywords:
 <li><b>format_adapter</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/support/detail/format-adapter">llvm::support::detail</a></li>
 <li><b>format_object_base</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/format-object-base">llvm</a></li>
 <li><b>format_object&lt;Ts&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/format-object">llvm</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-faf352d6e414689b835e290211af46e2">llvm</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-d4c6dcfa77293e610b110598fc7b9f83">llvm</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-529796c169261fe2c884ec9b378a7ff5">llvm</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/format-provider-5361e6bb4a56f61bc90e5b264ca769ca">llvm</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6">llvm</a></li>
+<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-d4c6dcfa77293e610b110598fc7b9f83">llvm</a></li>
+<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-faf352d6e414689b835e290211af46e2">llvm</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-0fc70501588571ec0ff51d52fb9fddbf">llvm</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-a74b156048fbf039572976048a22c3b3">llvm</a></li>
-<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-0f8c4dae2a93fb42cc485d5a034bb90a">llvm</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-bb2727522f9037c807f0f90a70a7b85d">llvm</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-15a9d9c43fc1c54a3bb168a7dc27cbd1">llvm</a></li>
 <li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-ecaa20ba3297bf1600b082fe1fca61e7">llvm</a></li>
+<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-a74b156048fbf039572976048a22c3b3">llvm</a></li>
+<li><b>format_provider&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-0f8c4dae2a93fb42cc485d5a034bb90a">llvm</a></li>
+<li><b>format_provider&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/format-provider-5361e6bb4a56f61bc90e5b264ca769ca">llvm</a></li>
 <li><b>format_provider&lt;bool&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-a4ce78f10642531236c337ef3ce2df5b">llvm</a></li>
 <li><b>format_provider&lt;codeview::GUID&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-5d658c17eeb4484a0c0fcfabcb2f4655">llvm</a></li>
 <li><b>format_provider&lt;codeview::TypeIndex&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/format-provider-c8d484646dba98501f9b84f048d66ace">llvm</a></li>
@@ -3644,11 +3648,11 @@ keywords:
 <li><b>Function</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/wasmyaml/function">llvm::WasmYAML</a></li>
 <li><b>function_ref&lt;Fn&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/function-ref">llvm</a></li>
 <li><b>function_ref&lt;Ret(Params...)&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/function-ref-129e1794ead5f330174da20533428dd4">llvm</a></li>
-<li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-425dddbcb79bd84f1ed3ae6f0a41c1f9">llvm</a></li>
-<li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-489ca681ecd5b99d01be119ba676c15f">llvm</a></li>
-<li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-6ae7bd4c3786d6162a2e713a22145809">llvm</a></li>
 <li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-2ac73b26837e7c32fdff42f9bb3bd06e">llvm</a></li>
 <li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-49247da9026522d51dbb5ef565e9b78e">llvm</a></li>
+<li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-489ca681ecd5b99d01be119ba676c15f">llvm</a></li>
+<li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-6ae7bd4c3786d6162a2e713a22145809">llvm</a></li>
+<li><b>function_traits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits-425dddbcb79bd84f1ed3ae6f0a41c1f9">llvm</a></li>
 <li><b>function_traits&lt;T, isClass&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/function-traits">llvm</a></li>
 <li><b>FunctionAnalysisManagerCGSCCProxy</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/functionanalysismanagercgsccproxy">llvm</a></li>
 <li><b>FunctionAnalysisManagerMachineFunctionProxy&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/functionanalysismanagermachinefunctionproxy">llvm</a></li>
@@ -3718,7 +3722,7 @@ keywords:
 <li><b>fwd_or_bidi_tag_impl&lt;true&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/fwd-or-bidi-tag-impl-d4cc09ec8cf7793e85cd7a9c044686e1">llvm::detail</a></li>
 <li><b>fwd_or_bidi_tag&lt;IterT&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/fwd-or-bidi-tag">llvm::detail</a></li>
 </ul>
-<p>388 entries</p>
+<p>387 entries</p>
 
 ## - G -
 
@@ -3967,14 +3971,14 @@ keywords:
 <li><b>GraphMetadata</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/pbqp/regalloc/graphmetadata">llvm::PBQP::RegAlloc</a></li>
 <li><b>GraphSession</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-graphwriter-cpp-/graphsession">anonymous{GraphWriter.cpp}</a></li>
 <li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-89f1b1114100cd400fb79bf4630875fe">llvm</a></li>
-<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-d27a12f208359493deb55564e5902b74">llvm</a></li>
+<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-343d0630a0e99b15bc453d3b888245d8">llvm</a></li>
 <li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-8dab79ad0cf15ea502cd9eb4bb116b20">llvm</a></li>
 <li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-dd50ffcb37d893fddf56654ba8885b52">llvm</a></li>
-<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-343d0630a0e99b15bc453d3b888245d8">llvm</a></li>
-<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-d394e565666085640be20f1e64fdd72b">llvm</a></li>
+<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-d27a12f208359493deb55564e5902b74">llvm</a></li>
 <li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-9ac678cba1b93dbde91361363a8c8a8e">llvm</a></li>
-<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-363fa89642305612e9e0e66792192abb">llvm</a></li>
+<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-d394e565666085640be20f1e64fdd72b">llvm</a></li>
 <li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-0bf1ef93d28481823f2981c5bb514c9c">llvm</a></li>
+<li><b>GraphTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-363fa89642305612e9e0e66792192abb">llvm</a></li>
 <li><b>GraphTraits&lt;AACallGraphNode *&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-bf11972af964a8bbb406475d9b146322">llvm</a></li>
 <li><b>GraphTraits&lt;AADepGraph *&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-5ae0d92f2ba2f935f855d4f6b5815c67">llvm</a></li>
 <li><b>GraphTraits&lt;AADepGraphNode *&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/graphtraits-a8d72c603246819e5ff8fe2b8d743d3d">llvm</a></li>
@@ -4843,10 +4847,10 @@ keywords:
 <li><b>is_cstring&lt;T&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/support/detail/is-cstring">llvm::support::detail</a></li>
 <li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-b56fc103ff6a436476683730faa2628d">std</a></li>
 <li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-445cb03b3ec9202e61db46c7d59f3aa0">std</a></li>
-<li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-7de9ff7690540677154b6dccf83026a8">std</a></li>
 <li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-580a556ac04ef8fe7c153d4184141468">std</a></li>
 <li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-beb6a6e146cf472e4581382b2f0b4f45">std</a></li>
 <li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-2b6c7729b3a6a56f4803eee3f422e686">std</a></li>
+<li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-7de9ff7690540677154b6dccf83026a8">std</a></li>
 <li><b>is_error_code_enum&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-920950f190dc3b99c1e22ce317963795">std</a></li>
 <li><b>is_error_code_enum&lt;llvm::BitcodeError&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-ea5649302b7fdd90295abacdc414ae1a">std</a></li>
 <li><b>is_error_code_enum&lt;llvm::errc&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/is-error-code-enum-9df44fc8c7d46046206cddcaeca1e6d4">std</a></li>
@@ -4885,8 +4889,8 @@ keywords:
 <li><b>is_sign_mask</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/patternmatch/is-sign-mask">llvm::PatternMatch</a></li>
 <li><b>is_simple_type&lt;X&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/is-simple-type">llvm</a></li>
 <li><b>is_strictlypositive</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/patternmatch/is-strictlypositive">llvm::PatternMatch</a></li>
-<li><b>is_valid_option&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/is-valid-option-ab6da5f2610730fbee69782082180e4f">llvm::ilist_detail</a></li>
 <li><b>is_valid_option&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/is-valid-option-1806cf2bb1adeba58a9e9e92b57b2899">llvm::ilist_detail</a></li>
+<li><b>is_valid_option&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/is-valid-option-ab6da5f2610730fbee69782082180e4f">llvm::ilist_detail</a></li>
 <li><b>is_valid_option&lt;ilist_parent&lt; ParentTy &gt;&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/is-valid-option-70c1c3778af5860b5cf275dd1801c4d1">llvm::ilist_detail</a></li>
 <li><b>is_valid_option&lt;ilist_tag&lt; Tag &gt;&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/is-valid-option-d8e384254477ea05f4d8c452e5cb6c9c">llvm::ilist_detail</a></li>
 <li><b>is_valid_option&lt;Option&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/is-valid-option">llvm::ilist_detail</a></li>
@@ -4949,10 +4953,10 @@ keywords:
 <li><b>iterator_adaptor_base&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/iterator-adaptor-base">llvm</a></li>
 <li><b>iterator_facade_base&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/iterator-facade-base">llvm</a></li>
 <li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access">llvm::ilist_detail</a></li>
-<li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access-8de101d1136b3cde120d39032541b3bc">llvm::ilist_detail</a></li>
 <li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access-ce7741f62492b1e3f307b2bbb194e265">llvm::ilist_detail</a></li>
-<li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access-f27e2a750067e47cf15a8426e703ed33">llvm::ilist_detail</a></li>
+<li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access-8de101d1136b3cde120d39032541b3bc">llvm::ilist_detail</a></li>
 <li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access-8ea29241b99029ec55810664bec5e736">llvm::ilist_detail</a></li>
+<li><b>iterator_parent_access&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/iterator-parent-access-f27e2a750067e47cf15a8426e703ed33">llvm::ilist_detail</a></li>
 <li><b>iterator_range&lt;IteratorT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/iterator-range">llvm</a></li>
 <li><b>IteratorHelper&lt;false&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/iteratorhelper-b0fedc964c748238de2c085ed61f691c">llvm::ilist_detail</a></li>
 <li><b>IteratorHelper&lt;IsReverse&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ilist-detail/iteratorhelper">llvm::ilist_detail</a></li>
@@ -5241,7 +5245,6 @@ keywords:
 <li><b>ListInit</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/listinit">llvm</a></li>
 <li><b>ListRecTy</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/listrecty">llvm</a></li>
 <li><b>ListScope</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/listscope">llvm</a></li>
-<li><b>ListSeparator</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/listseparator">llvm</a></li>
 <li><b>ListStream&lt;EntryT&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/minidumpyaml/detail/liststream">llvm::MinidumpYAML::detail</a></li>
 <li><b>ListTable&lt;EntryType&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/listtable">llvm::DWARFYAML</a></li>
 <li><b>LiteralOperatorIdentifierNode</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/literaloperatoridentifiernode">llvm::ms_demangle</a></li>
@@ -5609,7 +5612,7 @@ keywords:
 <li><b>LVTypeSubrange</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypesubrange">llvm::logicalview</a></li>
 <li><b>LVTypeVisitor</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypevisitor">llvm::logicalview</a></li>
 </ul>
-<p>560 entries</p>
+<p>559 entries</p>
 
 ## - M -
 
@@ -5720,9 +5723,9 @@ keywords:
 <li><b>MachineInstrBundleIteratorHelper&lt;false&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratorhelper-b0fedc964c748238de2c085ed61f691c">llvm</a></li>
 <li><b>MachineInstrBundleIteratorHelper&lt;true&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratorhelper-d4cc09ec8cf7793e85cd7a9c044686e1">llvm</a></li>
 <li><b>MachineInstrBundleIteratorTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratortraits">llvm</a></li>
+<li><b>MachineInstrBundleIteratorTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratortraits-1894ccc07fdcdbf1d7beb00bbf18f805">llvm</a></li>
 <li><b>MachineInstrBundleIteratorTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratortraits-88200eaeaaf0b3c4f49947069ae1e4fd">llvm</a></li>
 <li><b>MachineInstrBundleIteratorTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratortraits-35a5638069f0fc83b2d4d4479fb03ed2">llvm</a></li>
-<li><b>MachineInstrBundleIteratorTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratortraits-1894ccc07fdcdbf1d7beb00bbf18f805">llvm</a></li>
 <li><b>MachineInstrBundleIteratorTraits&lt;T, true&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrbundleiteratortraits-d7d249fb8bb1e1b13d21e8212052041a">llvm</a></li>
 <li><b>MachineInstrExpressionTrait</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/machineinstrexpressiontrait">llvm</a></li>
 <li><b>MachineInstrLoc</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/machineinstrloc">llvm::yaml</a></li>
@@ -5857,41 +5860,41 @@ keywords:
 <li><b>MapperT&lt;I, E&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/tomp/type/mappert">tomp::type</a></li>
 <li><b>MappingConfig</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-numericalstabilitysanitizer-cpp-/mappingconfig">anonymous{NumericalStabilitySanitizer.cpp}</a></li>
 <li><b>MappingContext</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-valuemapper-cpp-/mappingcontext">anonymous{ValueMapper.cpp}</a></li>
-<li><b>MappingContextTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingcontexttraits-cff0e97a7da12ad5e5aa4c1c9cc38a63">llvm::yaml</a></li>
 <li><b>MappingContextTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingcontexttraits-9ba0839e605124bc6cd0c3d9bd6c738f">llvm::yaml</a></li>
 <li><b>MappingContextTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingcontexttraits-119008bb2afee2794a7f41530cce971c">llvm::yaml</a></li>
+<li><b>MappingContextTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingcontexttraits-cff0e97a7da12ad5e5aa4c1c9cc38a63">llvm::yaml</a></li>
 <li><b>MappingContextTraits&lt;T, Context&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingcontexttraits">llvm::yaml</a></li>
 <li><b>MappingNode</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/yaml/mappingnode">llvm::yaml</a></li>
 <li><b>MappingNormalization&lt;TNorm, TFinal&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingnormalization">llvm::yaml</a></li>
 <li><b>MappingNormalizationHeap&lt;TNorm, TFinal&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingnormalizationheap">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-68af909a89305de89be7696ed8bb3b43">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-577ae9e7be84a071123f7ad493f8d89a">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-7055c0c2640173b3724e9c62224256c1">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-c52f8fe6306fcb09416770618415092d">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-885f5efd8aec28c006a70140ab038f65">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-f99cb68cf622192289c6bc988cc0aab5">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-5cb422d9af45ce1249f0a09b1805d16a">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-81507eea1ba7069e92879555ecbdb941">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-ee9e7dbfed470df7c2053fa69c6e8f1b">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-61405dbaf80cbfeb9b35252e15b74075">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-5846170c20e5db658888cb79e6c9ffc2">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-4e87224926d2f0c7ee72b6ac900e6c3c">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-de5da78e04e86953291cd676869ba5cb">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-018cd314b30f2e1d301f5d051b02d3c7">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-7ad99ec350487a043ea3bd282a0833a8">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-2365973b01ec74a29165da4ca33e275f">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-53ae3e3da76d4a953c54bf91fcf8ff03">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-11a2b6dfa7f757480b342e43e05a8606">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-4e22e69130e105506350a3b6540489e4">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-ea7d45673a77363a3aeaba941797ff7e">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-aac8086185ecf2f698d67f8b9a28de32">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-577ae9e7be84a071123f7ad493f8d89a">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-68af909a89305de89be7696ed8bb3b43">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-c52f8fe6306fcb09416770618415092d">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-7055c0c2640173b3724e9c62224256c1">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-c183dff82fe11b7535f9c113b4162f36">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-bfa0cfa2409dfe10c120d7d887e914ae">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-959faf53a4be9dd561f02b273168cbb5">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-5fee2f384a38ab733b31562b8d41f672">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-018cd314b30f2e1d301f5d051b02d3c7">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-aac8086185ecf2f698d67f8b9a28de32">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-de5da78e04e86953291cd676869ba5cb">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-f99cb68cf622192289c6bc988cc0aab5">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-885f5efd8aec28c006a70140ab038f65">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-ee9e7dbfed470df7c2053fa69c6e8f1b">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-61405dbaf80cbfeb9b35252e15b74075">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-81507eea1ba7069e92879555ecbdb941">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-5cb422d9af45ce1249f0a09b1805d16a">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-5846170c20e5db658888cb79e6c9ffc2">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-4e87224926d2f0c7ee72b6ac900e6c3c">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-89133fe030bc131ffa908108faf698bb">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-5fee2f384a38ab733b31562b8d41f672">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-959faf53a4be9dd561f02b273168cbb5">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-3c2e817e9c1f87ea483f1b3fe8f114e6">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-31f56d02e9ae3cab7c6017d1111afe46">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-2365973b01ec74a29165da4ca33e275f">llvm::yaml</a></li>
-<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-7ad99ec350487a043ea3bd282a0833a8">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-ea7d45673a77363a3aeaba941797ff7e">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-11a2b6dfa7f757480b342e43e05a8606">llvm::yaml</a></li>
+<li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-4e22e69130e105506350a3b6540489e4">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/yaml/mappingtraits-9adf2879f180c85a6b2884cc05556860">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/yaml/mappingtraits-c80c041ffea20cc7706c9989a8e15935">llvm::yaml</a></li>
 <li><b>MappingTraits&lt;AArch64FunctionInfo&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits-b5c3ea6f2c54b3efe3a201fbbefc911f">llvm::yaml</a></li>
@@ -7601,7 +7604,7 @@ keywords:
 <li><b>PreprocessorDir</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-tglexer-cpp-/preprocessordir">anonymous{TGLexer.cpp}</a></li>
 <li><b>PreRARematStage</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/prerarematstage">llvm</a></li>
 <li><b>PreserveAPIList</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-internalize-cpp-/preserveapilist">anonymous{Internalize.cpp}</a></li>
-<li><b>PreservedAnalyses</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">llvm</a></li>
+<li><b>PreservedAnalysisChecker</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">llvm</a></li>
 <li><b>PreservedCFGCheckerInstrumentation</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/preservedcfgcheckerinstrumentation">llvm</a></li>
 <li><b>PreserveLibCallsAndAsmUsed</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-updatecompilerused-cpp-/preservelibcallsandasmused">anonymous{UpdateCompilerUsed.cpp}</a></li>
 <li><b>PressureChange</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/pressurechange">llvm</a></li>
@@ -7702,6 +7705,7 @@ keywords:
 <li><b>PromoteMem2Reg</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-promotememorytoregister-cpp-/promotemem2reg">anonymous{PromoteMemoryToRegister.cpp}</a></li>
 <li><b>PromotePass</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/promotepass">llvm</a></li>
 <li><b>Properties</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/dxil/properties">llvm::dxil</a></li>
+<li><b>ProvenanceAnalysis</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">llvm::objcarc</a></li>
 <li><b>provider_format_adapter&lt;T&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/support/detail/provider-format-adapter">llvm::support::detail</a></li>
 <li><b>ProxyFileSystem</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/vfs/proxyfilesystem">llvm::vfs</a></li>
 <li><b>PruningFunctionCloner</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-clonefunction-cpp-/pruningfunctioncloner">anonymous{CloneFunction.cpp}</a></li>
@@ -7747,7 +7751,7 @@ keywords:
 <li><b>PubSection</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/pubsection">llvm::DWARFYAML</a></li>
 <li><b>PunnedPointer&lt;Ptr&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/punnedpointer">llvm::detail</a></li>
 </ul>
-<p>582 entries</p>
+<p>583 entries</p>
 
 ## - Q -
 
@@ -8101,8 +8105,8 @@ keywords:
 <li><b>ReproducerEntry</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/reproducerentry">anonymous{ConstraintElimination.cpp}</a></li>
 <li><b>Request</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/symbolize/request">llvm::symbolize</a></li>
 <li><b>RequireAllMachineFunctionPropertiesPass</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-passbuilder-cpp-/requireallmachinefunctionpropertiespass">anonymous{PassBuilder.cpp}</a></li>
-<li><b>RequireAnalysisPass&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/requireanalysispass">llvm</a></li>
 <li><b>RequireAnalysisPass&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/requireanalysispass-498ca4f351a1bdb57b4c30b5c00bae4c">llvm</a></li>
+<li><b>RequireAnalysisPass&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/requireanalysispass">llvm</a></li>
 <li><b>RequirementHandler</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/spirv/requirementhandler">llvm::SPIRV</a></li>
 <li><b>Requirements</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/spirv/requirements">llvm::SPIRV</a></li>
 <li><b>ReservoirSampler&lt;T, GenT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/reservoirsampler">llvm</a></li>
@@ -8120,6 +8124,7 @@ keywords:
 <li><b>ResourceBindingInfo</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcebindinginfo">llvm::dxil</a></li>
 <li><b>ResourceEntryRef</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/object/resourceentryref">llvm::object</a></li>
 <li><b>ResourceFlags</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/resourceflags">llvm::dxbc::PSV</a></li>
+<li><b>ResourceManager</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">llvm::mca</a></li>
 <li><b>ResourceManager</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/resourcemanager">llvm::orc</a></li>
 <li><b>ResourceManager</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">llvm</a></li>
 <li><b>ResourcePriorityQueue</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/resourcepriorityqueue">llvm</a></li>
@@ -8310,7 +8315,7 @@ keywords:
 <li><b>RVVRegisterRegAlloc</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-riscvtargetmachine-cpp-/rvvregisterregalloc">anonymous{RISCVTargetMachine.cpp}</a></li>
 <li><b>RxSBGOperands</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-systemziseldagtodag-cpp-/rxsbgoperands">anonymous{SystemZISelDAGToDAG.cpp}</a></li>
 </ul>
-<p>547 entries</p>
+<p>548 entries</p>
 
 ## - S -
 
@@ -8369,62 +8374,62 @@ keywords:
 <li><b>SaveAndRestore&lt;T&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/saveandrestore">llvm</a></li>
 <li><b>ScalableVectorType</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/sandboxir/scalablevectortype">llvm::sandboxir</a></li>
 <li><b>ScalableVectorType</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/scalablevectortype">llvm</a></li>
-<li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-9539efd07e8c0fa4136733c5b5a34508">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-58f056edf840ba6b223b71c3a04f9ca2">llvm::yaml</a></li>
-<li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-04988320f342af758cda98202f8d8f73">llvm::yaml</a></li>
-<li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-a5e46a59e7de684403379404f1cdad73">llvm::yaml</a></li>
+<li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-9539efd07e8c0fa4136733c5b5a34508">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-2af817b8c5b0211efd6c988345d5db90">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-5fd0c59f5fca4e85d5ae4ba594ef2b3d">llvm::yaml</a></li>
+<li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-a5e46a59e7de684403379404f1cdad73">llvm::yaml</a></li>
+<li><b>ScalarBitSetTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-04988320f342af758cda98202f8d8f73">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;COFF::Characteristics&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-1dd768e1954d2a69655b2e6bb2daacdd">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;T, Enable&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;TBDFlags&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-993672d22acaaab6ee27cb233dd69975">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;WasmYAML::LimitFlags&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-8e54aafdf932b5507aacf79bb6b2a00c">llvm::yaml</a></li>
 <li><b>ScalarBitSetTraits&lt;WasmYAML::SymbolFlags&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarbitsettraits-a51563d7941203bed8d21d721434a5e9">llvm::yaml</a></li>
 <li><b>ScalarDocNode</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-msgpackdocumentyaml-cpp-/scalardocnode">anonymous{MsgPackDocumentYAML.cpp}</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-c3f0627b2d0b2102223da86415647a5e">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-006575936be097bb885ff90c1dcd6e8a">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-407dfccc3a54e558cb6d2f0641260726">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-80ac6fb399619e44635431fc90c3b8e2">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-b23f7b3f29084f08500d9d8bef9cfb0d">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-42cf97a13c3285028d12fa367baaf265">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-19005e0af95e4a1b514fef7e792ef3ca">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-36a80b6903185c75bdd91924e1c0821e">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-702e46cd8859bdcfc006b352096660d7">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-b4bc88540ccce709cb120b575aab5fb8">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-8dcb368b4bfc706aaf2e5b9d79dcea8b">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-4b3a928dbbaa0e1ae27f743a35f58bcc">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-f153b28368f6ef8adf9af0478c703e5e">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-563ea2a03de3562c3bbf4300620f3cb7">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-8fb8b57592e4588457ac6f7bdf4d36ab">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-6c436b1618a02cc24d12fe47a209589a">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-01feb6d5da899885ae2848d0d62efe34">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-94e8e447f390dd6b82d280bca04ba962">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-c8c492424b6b376facd083c58ff62739">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-a1bbd3464ebeba06a80e78387f0b16e7">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-535fd44a5daab6c6897d34135e2af96b">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-83c78b24ee4d0d13494c64d4d4cade21">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-52748f3f5fc9dcda07f1b515b337b87f">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-e6133ca6cdd63c13ca4ecab8af374354">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-8fb8b57592e4588457ac6f7bdf4d36ab">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-94c7e519dd2a8039d05ccfd3fb97e482">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-cb982a4278d633df1fa7e595287fbea4">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-811ae43c28cafd3ad6d10512390e7b83">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-31797686350f02d80165f80902559b21">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-06963dc1db55db23c3d9537dc5d4322a">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-17eba4c8aa8e438ae8d3e218f98c9403">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-4d3b57d02aa31561a81549422cec002a">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-69628323fc5d4466075199eb0e0fa69d">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-d53c04017074ad1bd3ff46f36bc5ca1a">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-1c3bd737691f36eaba9501ef794ab207">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-85e7c71b9d2f031a9eccdddedc4edff0">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-ab2365c220ee82b5427b4643d8d93868">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-e48699e567747de9603c61d475bdb3ac">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-563ea2a03de3562c3bbf4300620f3cb7">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-4b3a928dbbaa0e1ae27f743a35f58bcc">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-f153b28368f6ef8adf9af0478c703e5e">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-006575936be097bb885ff90c1dcd6e8a">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-36a80b6903185c75bdd91924e1c0821e">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-b4bc88540ccce709cb120b575aab5fb8">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-702e46cd8859bdcfc006b352096660d7">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-80ac6fb399619e44635431fc90c3b8e2">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-407dfccc3a54e558cb6d2f0641260726">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-19005e0af95e4a1b514fef7e792ef3ca">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-b23f7b3f29084f08500d9d8bef9cfb0d">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-42cf97a13c3285028d12fa367baaf265">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-8dcb368b4bfc706aaf2e5b9d79dcea8b">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-c8c492424b6b376facd083c58ff62739">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-535fd44a5daab6c6897d34135e2af96b">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-94e8e447f390dd6b82d280bca04ba962">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-83c78b24ee4d0d13494c64d4d4cade21">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-52748f3f5fc9dcda07f1b515b337b87f">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-69628323fc5d4466075199eb0e0fa69d">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-4d3b57d02aa31561a81549422cec002a">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-06963dc1db55db23c3d9537dc5d4322a">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-811ae43c28cafd3ad6d10512390e7b83">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-1c3bd737691f36eaba9501ef794ab207">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-31797686350f02d80165f80902559b21">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-d53c04017074ad1bd3ff46f36bc5ca1a">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-17eba4c8aa8e438ae8d3e218f98c9403">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-f198651d9f0383590aef569382e0fdcb">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-8cc7235347601acf9846d5310a030613">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-d893dcf7bebdaa281a0012a1b110b432">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-50ae04bf469790ba6dee903817607680">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-e48699e567747de9603c61d475bdb3ac">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-a660d6b1d3cff609101ae359df061565">llvm::yaml</a></li>
-<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-1aaa53c6453c4dbce93aac46dbbc846f">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-e6133ca6cdd63c13ca4ecab8af374354">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-bcfc4ec6a379303ccd103c5ceab89b03">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-1aaa53c6453c4dbce93aac46dbbc846f">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-c3f0627b2d0b2102223da86415647a5e">llvm::yaml</a></li>
+<li><b>ScalarEnumerationTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-a1bbd3464ebeba06a80e78387f0b16e7">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;AccessQualifier&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-69929af6cb0f628c9906d0c2676a45ca">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;AMXProgModelEnum&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-10ef208f3d63d089cbcc9d4b50f9af34">llvm::yaml</a></li>
 <li><b>ScalarEnumerationTraits&lt;IFSSymbolType&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/scalarenumerationtraits-7b9e6a6903edfdcf1f6beb970b564541">llvm::yaml</a></li>
@@ -8718,9 +8723,9 @@ keywords:
 <li><b>SeparateConstOffsetFromGEPPass</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/separateconstoffsetfromgeppass">llvm</a></li>
 <li><b>SeqCstT&lt;T, I, E&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/tomp/clause/seqcstt">tomp::clause</a></li>
 <li><b>SequenceBBQuery</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/sequencebbquery">llvm::orc</a></li>
-<li><b>SequenceElementTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-a27f6485255fbe9eec392790c4efb2ee">llvm::yaml</a></li>
-<li><b>SequenceElementTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-0b139b84172b479e4ee242f09f5e0eb2">llvm::yaml</a></li>
 <li><b>SequenceElementTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-2db376932edbcc437f62fd86641792a3">llvm::yaml</a></li>
+<li><b>SequenceElementTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-0b139b84172b479e4ee242f09f5e0eb2">llvm::yaml</a></li>
+<li><b>SequenceElementTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-a27f6485255fbe9eec392790c4efb2ee">llvm::yaml</a></li>
 <li><b>SequenceElementTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/yaml/sequenceelementtraits-d0a21960fd2ccf1b3e3800d718552a33">llvm::yaml</a></li>
 <li><b>SequenceElementTraits&lt;std::string&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-edddfc8ac2fbd3b9f3586735cc3422d2">llvm::yaml</a></li>
 <li><b>SequenceElementTraits&lt;StOtherPiece&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequenceelementtraits-180d9a8dd5c62d895fa49eee2fbd9ef0">llvm::yaml</a></li>
@@ -8729,11 +8734,11 @@ keywords:
 <li><b>SequenceNode</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/yaml/sequencenode">llvm::yaml</a></li>
 <li><b>SequenceOp</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-settheory-cpp-/sequenceop">anonymous{SetTheory.cpp}</a></li>
 <li><b>SequencePrinter&lt;Sequence, Pred&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-debugutils-cpp-/sequenceprinter">anonymous{DebugUtils.cpp}</a></li>
-<li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-58d6b36a72179a8e32c770a52400e65a">llvm::yaml</a></li>
+<li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-67abeb9249aa17a8a9bd5a81e33e1a23">llvm::yaml</a></li>
+<li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-becb4e396f55964fd58dcb9d5845a170">llvm::yaml</a></li>
 <li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-ed1c3023b4e9db5f948bf5d1a1c3c13a">llvm::yaml</a></li>
 <li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-0306530f8e02de19f20ba4ece0dd221a">llvm::yaml</a></li>
-<li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-becb4e396f55964fd58dcb9d5845a170">llvm::yaml</a></li>
-<li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-67abeb9249aa17a8a9bd5a81e33e1a23">llvm::yaml</a></li>
+<li><b>SequenceTraits&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-58d6b36a72179a8e32c770a52400e65a">llvm::yaml</a></li>
 <li><b>SequenceTraits&lt;ArrayDocNode&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-fe518aca6c76ffe9e4e2ef67d6c33454">llvm::yaml</a></li>
 <li><b>SequenceTraits&lt;ArrayRef&lt; T &gt;&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits-86907747ebbd2cfef93622e3f0326e4e">llvm::yaml</a></li>
 <li><b>SequenceTraits&lt;T, EnableIf&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/yaml/sequencetraits">llvm::yaml</a></li>
@@ -8891,14 +8896,14 @@ keywords:
 <li><b>SimpleValue</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-earlycse-cpp-/simplevalue">anonymous{EarlyCSE.cpp}</a></li>
 <li><b>SimplificationTracker</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-codegenprepare-cpp-/simplificationtracker">anonymous{CodeGenPrepare.cpp}</a></li>
 <li><b>Simplifier</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-hexagonloopidiomrecognition-cpp-/simplifier">anonymous{HexagonLoopIdiomRecognition.cpp}</a></li>
-<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-36d66ed5c94c5ed03b4a997c4f640f9a">llvm</a></li>
-<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-702233feaed539db34b42d79d6e0acb5">llvm</a></li>
+<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-1344af883dea50bdabb6ad1b3b890ba6">llvm</a></li>
 <li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-708ebce9eaa7b4ee286c2e96f8e96b4f">llvm</a></li>
+<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-89822b4174c9b69b816edf1f8b191e46">llvm</a></li>
 <li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-18045952f8b7fc169e7b37fd38be5495">llvm</a></li>
 <li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0">llvm</a></li>
+<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-36d66ed5c94c5ed03b4a997c4f640f9a">llvm</a></li>
+<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-702233feaed539db34b42d79d6e0acb5">llvm</a></li>
 <li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-ee7faae2f2e259ef5622c4e868c58aea">llvm</a></li>
-<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-1344af883dea50bdabb6ad1b3b890ba6">llvm</a></li>
-<li><b>simplify_type&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-89822b4174c9b69b816edf1f8b191e46">llvm</a></li>
 <li><b>simplify_type&lt;const From&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-fc3732c49716d3bb65042e46c5412ed1">llvm</a></li>
 <li><b>simplify_type&lt;const IndexCall&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-78c41d1bd2798cf9ecb1e07f520879d0">llvm</a></li>
 <li><b>simplify_type&lt;const MDOperand&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/simplify-type-653ccaeb786e442d738db2090372caf8">llvm</a></li>
@@ -9172,7 +9177,6 @@ keywords:
 <li><b>SplitModuleTimer</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/anonymous-amdgpusplitmodule-cpp-/splitmoduletimer">llvm::anonymous{AMDGPUSplitModule.cpp}</a></li>
 <li><b>SplitProposal</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/anonymous-amdgpusplitmodule-cpp-/splitproposal">llvm::anonymous{AMDGPUSplitModule.cpp}</a></li>
 <li><b>SplitPtrStructs</b>: as class in namespace <a href="/web-llvm/docs/api/classes/anonymous-amdgpulowerbufferfatpointers-cpp-/splitptrstructs">anonymous{AMDGPULowerBufferFatPointers.cpp}</a></li>
-<li><b>SplittingIterator</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/splittingiterator">llvm</a></li>
 <li><b>SPSArgList&lt;&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist-38559c871fba28d992ead51549367f83">llvm::orc::shared</a></li>
 <li><b>SPSArgList&lt;ArgTs&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist">llvm::orc::shared</a></li>
 <li><b>SPSArgList&lt;SPSTagT, SPSTagTs...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsarglist-ade063f27d7f7f49fb540da6dccad5db">llvm::orc::shared</a></li>
@@ -9185,51 +9189,51 @@ keywords:
 <li><b>SPSSequence&lt;SPSElementTagT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spssequence">llvm::orc::shared</a></li>
 <li><b>SPSSerializableError</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/orc/shared/detail/spsserializableerror">llvm::orc::shared::detail</a></li>
 <li><b>SPSSerializableExpected&lt;T&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/orc/shared/detail/spsserializableexpected">llvm::orc::shared::detail</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-7dec749f93c51446f39c26c3bd42b2d1">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-4a4349e84cb76fa6e4b87af0bdf8dcce">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-73102b3c945f4ce3037e4a3b7cc9f4a3">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-cd852d5f6a36d9b68f841465fc6ad92c">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-7c663d3ebf566f53b426b05f6555c600">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e47496333f3a7195e94b23690cdd7152">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-7dec749f93c51446f39c26c3bd42b2d1">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-7c663d3ebf566f53b426b05f6555c600">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-31e3dd6c5fee9a97ecd2d80646929061">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e321987a18985455c442c402cefd370c">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-37cbb09f9b4be473884ff41b97f4a7e3">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-6eb1037f48906ccf4a6754355361971f">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-fc4016c8d8c4495f46b412168ce23a39">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-8d961f7519b494fe7911b7456b62b5bc">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-0da1f70d1d92c2b66afc8dda54004bbc">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-14905d9a94849ef22778e38054ef6b35">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-c6d176ad220170898e4bb610fa876dea">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-71687e8a474d10567aa469b563addeee">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e7f248266248024b510ebd5ea3836f79">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-ae65730cc6de186b086a4e60fc396e11">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-75f93f7f70cbe45c06a0f848750912ee">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e321987a18985455c442c402cefd370c">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-b23e5a852f3aefd3a94c5f626e3e85e7">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-20c3e8fe0b43675dcae9552f5a6e6381">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-53f5c500ef1915486eadd6d8e0a449ba">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-bf8924ae7d79c09d623eda7a9bca91c9">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-f42140d4aead7dc95bdc42c5e21e5ae9">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-53f5c500ef1915486eadd6d8e0a449ba">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-46145372e1312ab0db588d8e712df78b">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-b23e5a852f3aefd3a94c5f626e3e85e7">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-aeebb0825631f820a39ab3fb25c6ed72">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e6f3407606c96b1e4e04d36265010f97">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-8bb0c38405e731770fcc164a0efbfc82">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-784a1bef17190e6ab41c561ff2b7a7b9">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-bc8864bc9177988c0f61b4692cfcd36c">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-73102b3c945f4ce3037e4a3b7cc9f4a3">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-f019840641ef1438dc73ca66a5e8c819">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-b4773a76f675f907803c035578129f5e">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-ad3c6a75d874eeba0dc8345a233b4dcc">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-93eecca8a87e5b74adad0ef6c46c4f97">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-c4c9d06010351644bf0ec9c5d491d476">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-ea18de0a5e2ee726f163169765325d87">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-df914a78aa74437406828e15b40ba1b2">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-bc8864bc9177988c0f61b4692cfcd36c">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-f01540c9a4b553bdf4fa0df9a2b9cf36">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-278ceb76ae7482b6d9279b9275c5dc4a">llvm::orc::shared</a></li>
-<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-9c3017e558e10a785f4f9859d2b0ac2e">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-f01540c9a4b553bdf4fa0df9a2b9cf36">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-75f93f7f70cbe45c06a0f848750912ee">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-df914a78aa74437406828e15b40ba1b2">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-ad3c6a75d874eeba0dc8345a233b4dcc">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-cd852d5f6a36d9b68f841465fc6ad92c">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-6eb1037f48906ccf4a6754355361971f">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-37cbb09f9b4be473884ff41b97f4a7e3">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-fc4016c8d8c4495f46b412168ce23a39">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-8bb0c38405e731770fcc164a0efbfc82">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e6f3407606c96b1e4e04d36265010f97">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-ea18de0a5e2ee726f163169765325d87">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-aeebb0825631f820a39ab3fb25c6ed72">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-784a1bef17190e6ab41c561ff2b7a7b9">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-8d961f7519b494fe7911b7456b62b5bc">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-c4c9d06010351644bf0ec9c5d491d476">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-93eecca8a87e5b74adad0ef6c46c4f97">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-ae65730cc6de186b086a4e60fc396e11">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-71687e8a474d10567aa469b563addeee">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-e7f248266248024b510ebd5ea3836f79">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-0febf1ed687686d6570ddae389b2a20f">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-9c3017e558e10a785f4f9859d2b0ac2e">llvm::orc::shared</a></li>
 <li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-6f403f5489d3025cbee03c70dd5dff03">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-c6d176ad220170898e4bb610fa876dea">llvm::orc::shared</a></li>
+<li><b>SPSSerializationTraits&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsserializationtraits-14905d9a94849ef22778e38054ef6b35">llvm::orc::shared</a></li>
 <li><b>SPSTuple&lt;SPSTagTs&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spstuple">llvm::orc::shared</a></li>
 <li><b>src_ls_rr_sort</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-scheduledagrrlist-cpp-/src-ls-rr-sort">anonymous{ScheduleDAGRRList.cpp}</a></li>
 <li><b>SrcHeaderBlockEntry</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/pdb/srcheaderblockentry">llvm::pdb</a></li>
@@ -9597,7 +9601,7 @@ keywords:
 <li><b>SystemZXPLINKFrameLowering</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/systemzxplinkframelowering">llvm</a></li>
 <li><b>SZFrameSortingObj</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-systemzframelowering-cpp-/szframesortingobj">anonymous{SystemZFrameLowering.cpp}</a></li>
 </ul>
-<p>1281 entries</p>
+<p>1280 entries</p>
 
 ## - T -
 
@@ -9803,8 +9807,8 @@ keywords:
 <li><b>TrailingObjects&lt;BaseTy, TrailingTys&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/trailingobjects">llvm</a></li>
 <li><b>TrailingObjectsBase</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/trailing-objects-internal/trailingobjectsbase">llvm::trailing_objects_internal</a></li>
 <li><b>TrailingObjectsImpl&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/trailing-objects-internal/trailingobjectsimpl">llvm::trailing_objects_internal</a></li>
-<li><b>TrailingObjectsImpl&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/trailing-objects-internal/trailingobjectsimpl-f152aa7dffaf4bdddb30d999871bbd91">llvm::trailing_objects_internal</a></li>
 <li><b>TrailingObjectsImpl&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/trailing-objects-internal/trailingobjectsimpl-d5dc5f9bc1738bd42d17ac7472482035">llvm::trailing_objects_internal</a></li>
+<li><b>TrailingObjectsImpl&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/trailing-objects-internal/trailingobjectsimpl-f152aa7dffaf4bdddb30d999871bbd91">llvm::trailing_objects_internal</a></li>
 <li><b>TrailingZerosCounter&lt;T, SizeOfT&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/trailingzeroscounter">llvm::detail</a></li>
 <li><b>TrampolinePool</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/trampolinepool">llvm::orc</a></li>
 <li><b>TrampolineSym</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/codeview/trampolinesym">llvm::codeview</a></li>
@@ -9824,15 +9828,15 @@ keywords:
 <li><b>trivial_helper&lt;T&gt;</b>: as union in namespace <a href="/web-llvm/docs/api/unions/llvm/detail/trivial-helper">llvm::detail</a></li>
 <li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization">llvm::orc::shared</a></li>
 <li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-6551f236402cb4450ad318ef3746f88b">llvm::orc::shared</a></li>
-<li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-f85231e1e53bc289879e23cdc9c8d11b">llvm::orc::shared</a></li>
-<li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-50e0d7f1c41e4df8199f0418331b4143">llvm::orc::shared</a></li>
 <li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-b2f13945b68f255caec04fc7bacaccc5">llvm::orc::shared</a></li>
+<li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-50e0d7f1c41e4df8199f0418331b4143">llvm::orc::shared</a></li>
+<li><b>TrivialSPSSequenceDeserialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-f85231e1e53bc289879e23cdc9c8d11b">llvm::orc::shared</a></li>
 <li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization">llvm::orc::shared</a></li>
 <li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-6551f236402cb4450ad318ef3746f88b">llvm::orc::shared</a></li>
-<li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-259352f25699e374ee62b5725f593f1c">llvm::orc::shared</a></li>
-<li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-f85231e1e53bc289879e23cdc9c8d11b">llvm::orc::shared</a></li>
-<li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-50e0d7f1c41e4df8199f0418331b4143">llvm::orc::shared</a></li>
 <li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-b2f13945b68f255caec04fc7bacaccc5">llvm::orc::shared</a></li>
+<li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-50e0d7f1c41e4df8199f0418331b4143">llvm::orc::shared</a></li>
+<li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-f85231e1e53bc289879e23cdc9c8d11b">llvm::orc::shared</a></li>
+<li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-259352f25699e374ee62b5725f593f1c">llvm::orc::shared</a></li>
 <li><b>TrivialSPSSequenceSerialization&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-efda56c1d7ea865b9efb0454f9c681e8">llvm::orc::shared</a></li>
 <li><b>TruncatedBLAKE3&lt;NumBytes&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/truncatedblake3">llvm</a></li>
 <li><b>TruncInst</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/sandboxir/truncinst">llvm::sandboxir</a></li>
@@ -9841,12 +9845,12 @@ keywords:
 <li><b>TruncOp</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-settheory-cpp-/truncop">anonymous{SetTheory.cpp}</a></li>
 <li><b>TSB</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/aarch64tsb/tsb">llvm::AArch64TSB</a></li>
 <li><b>TSCWrapRecord</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/xray/tscwraprecord">llvm::xray</a></li>
-<li><b>tuple_element&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-element-fcd341c7b4757b55d0514d7f1adebb9b">std</a></li>
-<li><b>tuple_element&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-element-34c9563a99e13b560ddbfa8a2d6f8e67">std</a></li>
 <li><b>tuple_element&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-element-a1ec70ffba3c7e2e44d4f1263debb0a1">std</a></li>
+<li><b>tuple_element&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-element-34c9563a99e13b560ddbfa8a2d6f8e67">std</a></li>
+<li><b>tuple_element&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-element-fcd341c7b4757b55d0514d7f1adebb9b">std</a></li>
 <li><b>tuple_element&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-element-b418cdfa06b70be633545cf4aa410d5a">std</a></li>
-<li><b>tuple_size&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-size-2d6c31c26b9485cf663fbfda1a5457b0">std</a></li>
 <li><b>tuple_size&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-size-1df11a3e36c23d58c1796bb1b0ecc238">std</a></li>
+<li><b>tuple_size&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-size-2d6c31c26b9485cf663fbfda1a5457b0">std</a></li>
 <li><b>tuple_size&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/std/tuple-size-23c0d7a68efa0de581b9090bea6ef922">std</a></li>
 <li><b>TupleDecIntegerRangeState</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/anonymous-amdgpuattributor-cpp-/tupledecintegerrangestate">anonymous{AMDGPUAttributor.cpp}</a></li>
 <li><b>TVIdxBuilder</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/coverage/mcdc/tvidxbuilder">llvm::coverage::mcdc</a></li>
@@ -10166,11 +10170,11 @@ keywords:
 <li><b>VarLocInfo</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varlocinfo">llvm</a></li>
 <li><b>VarRecord</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/at/varrecord">llvm::at</a></li>
 <li><b>VarStreamArray&lt;ValueType, Extractor&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/varstreamarray">llvm</a></li>
-<li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-770d85c100b5ada1d2f8cc4a57b9be8b">llvm</a></li>
 <li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-587952ed1570bd373449cde4c653eb60">llvm</a></li>
-<li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-aa4cf4a73737d16d115dea80ff681a08">llvm</a></li>
 <li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-a4393fd70d05557152d44467d974212d">llvm</a></li>
+<li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-770d85c100b5ada1d2f8cc4a57b9be8b">llvm</a></li>
 <li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-9b4de5093dad8cc2d1cfc74899935088">llvm</a></li>
+<li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-aa4cf4a73737d16d115dea80ff681a08">llvm</a></li>
 <li><b>VarStreamArrayExtractor&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor-4459a4f1e1f6940150dfae71388b4626">llvm</a></li>
 <li><b>VarStreamArrayExtractor&lt;T&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor">llvm</a></li>
 <li><b>VarStreamArrayIterator&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/varstreamarrayiterator">llvm</a></li>
@@ -10581,18 +10585,18 @@ keywords:
 <li><b>WrapperFunction&lt;SPSSignature&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/wrapperfunction">llvm::orc::shared</a></li>
 <li><b>WrapperFunction&lt;void(SPSTagTs...)&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/wrapperfunction-57c216e8d05a1a3276d5aed69aadeffc">llvm::orc::shared</a></li>
 <li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper">llvm::orc::shared::detail</a></li>
-<li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-f451fc7537a691bd25ddab4c2ea4d1ad">llvm::orc::shared::detail</a></li>
-<li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-b5f79378f3af1dc0c3946def18cf5bb1">llvm::orc::shared::detail</a></li>
-<li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-d0a0d87aaeae4d79538f40ec220fcd95">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-c0c21e5fa9ce288af7dec07050afc01a">llvm::orc::shared::detail</a></li>
+<li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-f451fc7537a691bd25ddab4c2ea4d1ad">llvm::orc::shared::detail</a></li>
+<li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-d0a0d87aaeae4d79538f40ec220fcd95">llvm::orc::shared::detail</a></li>
+<li><b>WrapperFunctionAsyncHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionasynchandlerhelper-b5f79378f3af1dc0c3946def18cf5bb1">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionCall</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/wrapperfunctioncall">llvm::orc::shared</a></li>
 <li><b>WrapperFunctionHandlerCaller&lt;RetT&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlercaller">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionHandlerCaller&lt;void&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlercaller-3f63415e4669117ff49f73960a4719d0">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper">llvm::orc::shared::detail</a></li>
-<li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper-f451fc7537a691bd25ddab4c2ea4d1ad">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper-7c3af4493e13c390f8fe71bfe3aa2569">llvm::orc::shared::detail</a></li>
-<li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper-b5f79378f3af1dc0c3946def18cf5bb1">llvm::orc::shared::detail</a></li>
+<li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper-f451fc7537a691bd25ddab4c2ea4d1ad">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper-d0a0d87aaeae4d79538f40ec220fcd95">llvm::orc::shared::detail</a></li>
+<li><b>WrapperFunctionHandlerHelper&lt;...&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/detail/wrapperfunctionhandlerhelper-b5f79378f3af1dc0c3946def18cf5bb1">llvm::orc::shared::detail</a></li>
 <li><b>WrapperFunctionResult</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/orc/shared/wrapperfunctionresult">llvm::orc::shared</a></li>
 <li><b>WritableArmRelocation</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/jitlink/aarch32/anonymous-aarch32-cpp-/writablearmrelocation">llvm::jitlink::aarch32::anonymous{aarch32.cpp}</a></li>
 <li><b>WritableBinaryStream</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/writablebinarystream">llvm</a></li>
@@ -10880,16 +10884,16 @@ keywords:
 <li><b>ZipLongestTupleType&lt;Iters&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/ziplongesttupletype">llvm::detail</a></li>
 <li><b>zippy&lt;ItType, Args&gt;</b>: as class in namespace <a href="/web-llvm/docs/api/classes/llvm/detail/zippy">llvm::detail</a></li>
 <li><b>ZippyIteratorTuple&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/zippyiteratortuple">llvm::detail</a></li>
-<li><b>ZippyIteratorTuple&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/zippyiteratortuple-26c12d21bd0dd4c620fcf1972921f77f">llvm::detail</a></li>
 <li><b>ZippyIteratorTuple&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/zippyiteratortuple-26f96a9bcbd257079f9ede477d9c64fc">llvm::detail</a></li>
+<li><b>ZippyIteratorTuple&lt;...&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/zippyiteratortuple-26c12d21bd0dd4c620fcf1972921f77f">llvm::detail</a></li>
 <li><b>ZipTupleType&lt;Iters&gt;</b>: as struct in namespace <a href="/web-llvm/docs/api/structs/llvm/detail/ziptupletype">llvm::detail</a></li>
 </ul>
 <p>16 entries</p>
 <br/>
-<p>Total: 10708 entries.</p>
+<p>Total: 10712 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

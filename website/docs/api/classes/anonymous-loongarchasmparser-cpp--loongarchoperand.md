@@ -1387,6 +1387,9 @@ class anonymous{LoongArchAsmParser.cpp}::LoongArchOperand { ... }
 
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="#a6e56db9a2433c4cfc7600da1d5ca31c0">Tok</a>.</p>
 
+
+<p>Referenced by <a href="#af7a7958d8950902186c344eb8162e3ff">print</a>.</p>
+
 </div>
 </div>
 
@@ -3003,7 +3006,7 @@ class anonymous{LoongArchAsmParser.cpp}::LoongArchOperand { ... }
 <p>Definition at line 576 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/loongarch/lib/target/loongarch/asmparser/loongarchasmparser-cpp">LoongArchAsmParser.cpp</a>.</p>
 
 
-<p>References <a href="#a9cba83e98f78cf16c41e600cee91f3ca">getImm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a>, <a href="/web-llvm/docs/api/classes/llvm/loongarchinstprinter/#aaafed19006fc584bf51288b747681986">llvm::LoongArchInstPrinter::getRegisterName</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a20237283e8b9e354abec8dc5ab16bd16">llvm::getToken</a>, <a href="#a85a7a01cd10c43332fe1237042d35385">Reg</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/ve/lvlgen-cpp/#a0a198e38a5def54ba58bebc655eda8e7">RegName</a>.</p>
+<p>References <a href="#a9cba83e98f78cf16c41e600cee91f3ca">getImm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a>, <a href="/web-llvm/docs/api/classes/llvm/loongarchinstprinter/#aaafed19006fc584bf51288b747681986">llvm::LoongArchInstPrinter::getRegisterName</a>, <a href="#a1cb24d144c7394b0ca7ae26c4afe3a5e">getToken</a>, <a href="#a85a7a01cd10c43332fe1237042d35385">Reg</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/ve/lvlgen-cpp/#a0a198e38a5def54ba58bebc655eda8e7">RegName</a>.</p>
 
 </div>
 </div>
@@ -3388,6 +3391,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -20,7 +20,7 @@ keywords:
 
 
 
-<p><a id="autotoc_md86"></a></p>
+<p><a id="autotoc_md85"></a></p>
 
 
 <p>rpmalloc has a thread cache of free memory blocks which can be used in allocations without interfering with other threads or going to system to map more memory, as well as a global cache shared by all threads to let spans of memory pages flow between threads. Configuring the size of these caches can be crucial to obtaining good performance while minimizing memory overhead blowup. Below is a simple case study using the benchmark tool to compare different thread cache configurations for rpmalloc.</p>
@@ -58,6 +58,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

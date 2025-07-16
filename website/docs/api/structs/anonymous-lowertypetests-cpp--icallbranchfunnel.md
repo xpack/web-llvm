@@ -303,7 +303,7 @@ struct anonymous{LowerTypeTests.cpp}::ICallBranchFunnel { ... }
 <p>Definition at line 324 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp">LowerTypeTests.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#ac5f41609d4f06bc9b2ac027467a0dbb0">CI</a>, <a href="/web-llvm/docs/api/classes/llvm/trailingobjects/#a5b733cf2a7d7206c2d2601cc5b024488">llvm::TrailingObjects&lt; ICallBranchFunnel, GlobalTypeMember * &gt;::totalSizeToAlloc</a> and <a href="#a28a681b85ff61a1b164a453f3705d73b">UniqueId</a>.</p>
+<p>References <a href="#ac5f41609d4f06bc9b2ac027467a0dbb0">CI</a>, <a href="/web-llvm/docs/api/classes/llvm/trailingobjects/#a5b733cf2a7d7206c2d2601cc5b024488">llvm::TrailingObjects&lt; ICallBranchFunnel, GlobalTypeMember * &gt;::totalSizeToAlloc</a> and <a href="#a28a681b85ff61a1b164a453f3705d73b">UniqueId</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-lowertypetests-cpp-/lowertypetestsmodule/#a7c206887f3f0887f2c6ac58910c09c41">anonymous{LowerTypeTests.cpp}::LowerTypeTestsModule::lower</a>.</p>
@@ -323,6 +323,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

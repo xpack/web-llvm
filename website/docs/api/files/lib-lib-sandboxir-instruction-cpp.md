@@ -133,7 +133,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abcc227a59880d564199c0e4e38c56e6d">HANDLE_TERM_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac1a7b58712dbad149de1d5811e1457c3">HANDLE_TERM_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -146,7 +146,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abcc227a59880d564199c0e4e38c56e6d">HANDLE_TERM_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6b57cf9689c76ffbfdd8addaf2f66fc9">HANDLE_TERM_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -211,7 +211,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af015699da1164dadc6edefa13333fd94">DEF_INSTR</a>(ID, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a705e5d773ed30b87b5e06667ce2fa394">DEF_INSTR</a>(ID, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -321,7 +321,7 @@ keywords:
 </div>
 </div>
 
-### DEF\_INSTR {#af015699da1164dadc6edefa13333fd94}
+### DEF\_INSTR {#a705e5d773ed30b87b5e06667ce2fa394}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -380,7 +380,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Instruction::opc:                                                       \
     New = cast&lt;clas&gt;(this)-&gt;cloneImpl();                                       \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -424,7 +424,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_TERM\_INST {#abcc227a59880d564199c0e4e38c56e6d}
+### HANDLE\_TERM\_INST {#ac1a7b58712dbad149de1d5811e1457c3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -458,7 +458,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_TERM\_INST {#abcc227a59880d564199c0e4e38c56e6d}
+### HANDLE\_TERM\_INST {#a6b57cf9689c76ffbfdd8addaf2f66fc9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -555,6 +555,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

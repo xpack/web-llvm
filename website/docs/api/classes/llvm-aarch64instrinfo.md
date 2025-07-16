@@ -616,13 +616,383 @@ class llvm::AArch64InstrInfo { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2b3b6bff91628c24b2539a2733b3c292">getMachineCombinerPatterns</a> (MachineInstr &amp;Root, SmallVectorImpl&lt; unsigned &gt; &amp;Patterns, bool DoRegPressureReduce) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Return true when there is potentially a faster code sequence for an instruction chain ending in <span class="doxyComputerOutput">Root</span>. <a href="#a2b3b6bff91628c24b2539a2733b3c292">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aab3d65d6e0daa1da2c564a3803f207b2">isAssociativeAndCommutative</a> (const MachineInstr &amp;Inst, bool Invert) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Return true when Inst is associative and commutative so that it can be reassociated. <a href="#aab3d65d6e0daa1da2c564a3803f207b2">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a605515c2c4d676bb83888309fdaf1af0">genAlternativeCodeSequence</a> (MachineInstr &amp;Root, unsigned Pattern, SmallVectorImpl&lt; MachineInstr * &gt; &amp;InsInstrs, SmallVectorImpl&lt; MachineInstr * &gt; &amp;DelInstrs, DenseMap&lt; unsigned, unsigned &gt; &amp;InstrIdxForVirtReg) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>When <a href="#a2b3b6bff91628c24b2539a2733b3c292">getMachineCombinerPatterns()</a> finds patterns, this function generates the instructions that could replace the original code sequence. <a href="#a605515c2c4d676bb83888309fdaf1af0">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a74804e3c6e291fe90c0cb697632dcf0e">useMachineCombiner</a> () const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p><a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> supports MachineCombiner. <a href="#a74804e3c6e291fe90c0cb697632dcf0e">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8997d907b1de0e1b433c59102335b06a">expandPostRAPseudo</a> (MachineInstr &amp;MI) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::pair&lt; unsigned, unsigned &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acb8985e96f5a8a270fc9d57fc8c99920">decomposeMachineOperandsTargetFlags</a> (unsigned TF) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; std::pair&lt; unsigned, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> char * &gt; &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9e7195b691e065ac34568c1b3340a3f8">getSerializableDirectMachineOperandTargetFlags</a> () const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; std::pair&lt; unsigned, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> char * &gt; &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aedb4c96bbe231a3c622b06e15fdb05cb">getSerializableBitmaskMachineOperandTargetFlags</a> () const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; std::pair&lt; <a href="/web-llvm/docs/api/classes/llvm/machinememoperand/#aaa2020e47e35179234b9ea27d555b2dd">MachineMemOperand::Flags</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> char * &gt; &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a74f4174a5d158b611050cdf7abd04b58">getSerializableMachineMemOperandTargetFlags</a> () const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8e7ea4a37a21caeb8c336ef3e95f8ee0">isFunctionSafeToOutlineFrom</a> (MachineFunction &amp;MF, bool OutlineFromLinkOnceODRs) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; std::unique_ptr&lt; <a href="/web-llvm/docs/api/structs/llvm/outliner/outlinedfunction">outliner::OutlinedFunction</a> &gt; &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0385b9c4d9ad37aeb63e7dd01093c63">getOutliningCandidateInfo</a> (const MachineModuleInfo &amp;MMI, std::vector&lt; outliner::Candidate &gt; &amp;RepeatedSequenceLocs, unsigned MinRepeats) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afb2faf0aba253c62b8f0e7b8a829f228">mergeOutliningCandidateAttributes</a> (Function &amp;F, std::vector&lt; outliner::Candidate &gt; &amp;Candidates) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/outliner/#a0765e098fe7aae0f01b60ec890ac1b52">outliner::InstrType</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a72a70493afafbf4374226300289c04b9">getOutliningTypeImpl</a> (const MachineModuleInfo &amp;MMI, MachineBasicBlock::iterator &amp;MIT, unsigned Flags) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; std::pair&lt; <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> &gt; &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a57639f2f066637e2f3571662526f213d">getOutlinableRanges</a> (MachineBasicBlock &amp;MBB, unsigned &amp;Flags) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9b0a622dbae74cb8a4b9b87a8b559b25">buildOutlinedFrame</a> (MachineBasicBlock &amp;MBB, MachineFunction &amp;MF, const outliner::OutlinedFunction &amp;OF) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4c5be0dce0caceff8b457e09b8a998fc">insertOutlinedCall</a> (Module &amp;M, MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator &amp;It, MachineFunction &amp;MF, outliner::Candidate &amp;C) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a944bf3cc625b6bf05e52bc6daa2cc47f">shouldOutlineFromFunctionByDefault</a> (MachineFunction &amp;MF) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9a7f5712e4a4603a0bdd87cc08e9b1d6">buildClearRegister</a> (Register Reg, MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator Iter, DebugLoc &amp;DL, bool AllowSideEffects=true) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">uint64_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a225bf56c837056189e19a6d525e9a93a">getElementSizeForOpcode</a> (unsigned Opc) const</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Returns the vector element size (B, H, S or D) of an SVE opcode. <a href="#a225bf56c837056189e19a6d525e9a93a">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af93867ed83dede2b0063fbaa26a3086d">isPTestLikeOpcode</a> (unsigned Opc) const</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Returns true if the opcode is for an SVE instruction that sets the condition codes as if it's results had been fed to a PTEST instruction along with the same general predicate. <a href="#af93867ed83dede2b0063fbaa26a3086d">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a38f8066c29c8c7afd3906d08e8407282">isWhileOpcode</a> (unsigned Opc) const</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Returns true if the opcode is for an SVE WHILE## instruction. <a href="#a38f8066c29c8c7afd3906d08e8407282">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; <a href="/web-llvm/docs/api/structs/llvm/regimmpair">RegImmPair</a> &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a195a0fee60fb5a1164767ec13d9729dd">isAddImmediate</a> (const MachineInstr &amp;MI, Register Reg) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aab2bb29af5f95ecde069091fc13e0dd9">isFunctionSafeToSplit</a> (const MachineFunction &amp;MF) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad43fedc407890aa868187b433c768f66">isMBBSafeToSplitToCold</a> (const MachineBasicBlock &amp;MBB) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; <a href="/web-llvm/docs/api/namespaces/llvm/#ad81cebfbef0742380b0227ae7000e0a3">ParamLoadedValue</a> &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7a1bb4352b705901de9836f44ad326f4">describeLoadedValue</a> (const MachineInstr &amp;MI, Register Reg) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">unsigned int</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8d7964e592c77513d96717c18c422d54">getTailDuplicateSize</a> (CodeGenOptLevel OptLevel) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a791f9b87aba84585f9777360bb26d84b">isExtendLikelyToBeFolded</a> (MachineInstr &amp;ExtMI, MachineRegisterInfo &amp;MRI) const override</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adf6a27b8c3cbc89e6a94e6e144f52452">isLegalAddressingMode</a> (unsigned NumBytes, int64_t Offset, unsigned Scale) const</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab9deb47df6ac29c81422ae6b4bfd924d">probedStackAlloc</a> (MachineBasicBlock::iterator MBBI, Register TargetReg, bool FrameSetup) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Return true when there is potentially a faster code sequence for an instruction chain ending in <span class="doxyComputerOutput">Root</span>. <a href="#ab9deb47df6ac29c81422ae6b4bfd924d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1233,6 +1603,61 @@ class llvm::AArch64InstrInfo { ... }
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">static bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a796a2f531a01a5d72a58920fa8ec61b9">isFalkorShiftExtFast</a> (const MachineInstr &amp;MI)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Returns true if the instruction has a shift by immediate that can be executed in one cycle less. <a href="#a796a2f531a01a5d72a58920fa8ec61b9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">static bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a52619cc1f9c5c3029a03a6c956b32595">isSEHInstruction</a> (const MachineInstr &amp;MI)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Return true if the instructions is a SEH instruciton used for unwinding on Windows. <a href="#a52619cc1f9c5c3029a03a6c956b32595">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">static void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a06abc64620fa2741d4756f05c337c9aa">decomposeStackOffsetForFrameOffsets</a> (const StackOffset &amp;Offset, int64_t &amp;NumBytes, int64_t &amp;NumPredicateVectors, int64_t &amp;NumDataVectors)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Returns the offset in parts to which this frame offset can be decomposed for the purpose of describing a frame offset. <a href="#a06abc64620fa2741d4756f05c337c9aa">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">static void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aff8cfe59027e5ffa1af1ff646a2da516">decomposeStackOffsetForDwarfOffsets</a> (const StackOffset &amp;Offset, int64_t &amp;ByteSized, int64_t &amp;VGSized)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
 </table>
 
 
@@ -1396,7 +1821,7 @@ class llvm::AArch64InstrInfo { ... }
 <p>Declaration at line 401 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 10407 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
 
 
-<p>References <a href="#aa61674464afddf4b2a24ab65f3833233">analyzeBranch</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#a7f0521fa2de44271fd4b909ea7351ef3">llvm::MachineBasicBlock::getFirstTerminator</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a339e0ad5e938860dcbd0c510ce212c4b">getIndVarInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a>, <a href="#a616fc69908b11c1c62addae537191ad4">getRegisterInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ad6838072f35cd662ae8704973ccfc407">isDefinedOutside</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6b0ac1fa4f05de76413c5e0ca6334035">llvm::reverse</a>, <a href="#a7cca5afbdfdcb468161ffe0b888668d0">reverseBranchCondition</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a1441f79530bc7f3a89118bb8067eac69">TBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
+<p>References <a href="#aa61674464afddf4b2a24ab65f3833233">analyzeBranch</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#a7f0521fa2de44271fd4b909ea7351ef3">llvm::MachineBasicBlock::getFirstTerminator</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a339e0ad5e938860dcbd0c510ce212c4b">getIndVarInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a>, <a href="#a616fc69908b11c1c62addae537191ad4">getRegisterInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ad6838072f35cd662ae8704973ccfc407">isDefinedOutside</a>, <a href="#a38f8066c29c8c7afd3906d08e8407282">isWhileOpcode</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6b0ac1fa4f05de76413c5e0ca6334035">llvm::reverse</a>, <a href="#a7cca5afbdfdcb468161ffe0b888668d0">reverseBranchCondition</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a1441f79530bc7f3a89118bb8067eac69">TBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
 
 </div>
 </div>
@@ -1429,6 +1854,62 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### buildClearRegister() {#a9a7f5712e4a4603a0bdd87cc08e9b1d6}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void AArch64InstrInfo::buildClearRegister (<a href="/web-llvm/docs/api/classes/llvm/register">Register</a> Reg, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Iter, <a href="/web-llvm/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp; DL, bool AllowSideEffects=<a href="/web-llvm/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 495 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9726 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a6c1f959947905135c7dd215b64957654">llvm::MachineInstrBuilder::addImm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a0c3ed7e8a5fa2d4df05bf0fdf51a6550">llvm::AArch64Subtarget::getRegisterInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a170e8cc4496759d9540c7a66a72a1696">llvm::AArch64Subtarget::isNeonAvailable</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a97be195ccbb061fd0e4170a81e066108">llvm::AArch64Subtarget::isSVEorStreamingSVEAvailable</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
+
+</div>
+</div>
+
+### buildOutlinedFrame() {#a9b0a622dbae74cb8a4b9b87a8b559b25}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void AArch64InstrInfo::buildOutlinedFrame (<a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/structs/llvm/outliner/outlinedfunction">outliner::OutlinedFunction</a> &amp; OF)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 487 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9516 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a713eab58694282971c413a0d6de5975c">llvm::MachineInstrBuilder::add</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a3e4e67777edb24fac492ef4ae15e69ba">llvm::MachineInstrBuilder::addCFIIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a247230f547064b27022d70c0aeb86682">llvm::MachineFunction::addFrameInst</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a6c1f959947905135c7dd215b64957654">llvm::MachineInstrBuilder::addImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a927857fc69e4b4f0cde307f86f180df5">llvm::MachineInstrBuilder::addReg</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a61d13d6824ec46c31260a4fd0997eda0">llvm::any_of</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/classes/llvm/mccfiinstruction/#abbe481ab35db0dcfa03f9f5bbabb9def">llvm::MCCFIInstruction::cfiDefCfaOffset</a>, <a href="/web-llvm/docs/api/classes/llvm/mccfiinstruction/#a6a60a82f8cb445e9e7029e38733b2d30">llvm::MCCFIInstruction::createOffset</a>, <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a">llvm::dwarf_linker::DebugLoc</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a72c17e2ff2d5af62a30e56ac152aa8d5">llvm::RegState::Define</a>, <a href="/web-llvm/docs/api/structs/llvm/outliner/outlinedfunction/#a83ee605247fd32b2a6981444fd996825">llvm::outliner::OutlinedFunction::FrameConstructionID</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#aafacf84de1cb994a92dc045f4aa1d518a78f1067d270179dff7915b90a03ce237">llvm::MachineInstr::FrameSetup</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ab7feae1932b436c8630e247166ec42b7">llvm::MachineFunction::getInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo/#a43c530c830206ecf5ad3359364634c75">llvm::TargetSubtargetInfo::getRegisterInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4ae6d079724e013e1fd057cf6fcb57675a">MachineOutlinerDefault</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4a0f5f89e2a0973bd42b48aa3ab23bc4a7">MachineOutlinerTailCall</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4ae4ec11c9120413385aef372aaa2a390c">MachineOutlinerThunk</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#aaa6625e357c6806a89b36759ae16b630">llvm::AArch64FunctionInfo::needsDwarfUnwindInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#adf25b569ca308aacc819a2331626ed5d">llvm::MachineInstrBuilder::setMIFlags</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#a648d29a4010d7cc1be7785eab399d5fa">llvm::AArch64FunctionInfo::setOutliningStyle</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#a606dce8fc572cecd6eab6f419f11aa6d">llvm::AArch64FunctionInfo::shouldSignReturnAddress</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#af41a5f8ba3c70858915a0d6e9ab66400">signOutlinedFunction</a>.</p>
+
+</div>
+</div>
+
 ### canFoldIntoAddrMode() {#aa9430ae4ad548095743aa0a26b235d82}
 
 <div class="doxyMemberItem">
@@ -1452,7 +1933,7 @@ class llvm::AArch64InstrInfo { ... }
 <p>Declaration at line 295 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 2888 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a2404b5dd8b0a6746487c699291c54927">llvm::ExtAddrMode::BaseReg</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9a972e73b7a882d0802a4e3a16946a2f94">llvm::ExtAddrMode::Basic</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#ad3ece0ac2421637044624c9b01c42466">DefMI</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a6a401a868b47dfbf62f962c746579675">llvm::ExtAddrMode::Displacement</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a264484b5504b59804cf5b2589388a747">llvm::ExtAddrMode::Form</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#ad45de36bc238edb61ed6b9375030f62f">llvm::AArch64_AM::getArithExtendType</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a529c6b94f32165c3d420316bcb6e0d9e">llvm::AArch64_AM::getArithShiftValue</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a38b28a85f818b49d8806c150b8a5b4f7">llvm::MachineOperand::getImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ab05719438bdf4b46871e5ecd9730caeb">llvm::MachineInstr::getMF</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a810234b6b3d223b7c74a4253fcc5ea5e">llvm::MachineFunction::getRegInfo</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#adff7aee2baba9b9691304bee7e76f574">llvm::AArch64_AM::getShiftType</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a22f623563f43de6d1aabcdfa9d341031">llvm::AArch64_AM::getShiftValue</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a1c455e007178a24dfb18ac0e200ea02c">llvm::Function::hasOptSize</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a4c9594c955fec80c73ddd964b5efd554">llvm::MachineOperand::isReg</a>, <a href="/web-llvm/docs/api/classes/llvm/register/#ab203bbcbc320180b1da9e9a92ee0c784">llvm::Register::isVirtual</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a1d97e13eb9923037fe733eda83b7f938">llvm::AArch64_AM::LSL</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#ae20bc007be03337ee451abb60d74260b">llvm::ExtAddrMode::Scale</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a243a500ecf43f8be3648cd935b943165">llvm::ExtAddrMode::ScaledReg</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9af6dcb4ded13e5a77a3ceafb0e1f844e8">llvm::ExtAddrMode::SExtScaledReg</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a13ed9069b0840f7eb3a47fce0878a5ad">llvm::AArch64_AM::SXTW</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a2620d8167a503c9942cc4afded7f830d">llvm::AArch64_AM::UXTW</a> and <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9ac58efd56ac0f1b362477a5609004f78d">llvm::ExtAddrMode::ZExtScaledReg</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a2404b5dd8b0a6746487c699291c54927">llvm::ExtAddrMode::BaseReg</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9a972e73b7a882d0802a4e3a16946a2f94">llvm::ExtAddrMode::Basic</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#ad3ece0ac2421637044624c9b01c42466">DefMI</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a6a401a868b47dfbf62f962c746579675">llvm::ExtAddrMode::Displacement</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a264484b5504b59804cf5b2589388a747">llvm::ExtAddrMode::Form</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#ad45de36bc238edb61ed6b9375030f62f">llvm::AArch64_AM::getArithExtendType</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a529c6b94f32165c3d420316bcb6e0d9e">llvm::AArch64_AM::getArithShiftValue</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a38b28a85f818b49d8806c150b8a5b4f7">llvm::MachineOperand::getImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ab05719438bdf4b46871e5ecd9730caeb">llvm::MachineInstr::getMF</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a810234b6b3d223b7c74a4253fcc5ea5e">llvm::MachineFunction::getRegInfo</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#adff7aee2baba9b9691304bee7e76f574">llvm::AArch64_AM::getShiftType</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a22f623563f43de6d1aabcdfa9d341031">llvm::AArch64_AM::getShiftValue</a>, <a href="/web-llvm/docs/api/classes/llvm/function/#a1c455e007178a24dfb18ac0e200ea02c">llvm::Function::hasOptSize</a>, <a href="#adf6a27b8c3cbc89e6a94e6e144f52452">isLegalAddressingMode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a4c9594c955fec80c73ddd964b5efd554">llvm::MachineOperand::isReg</a>, <a href="/web-llvm/docs/api/classes/llvm/register/#ab203bbcbc320180b1da9e9a92ee0c784">llvm::Register::isVirtual</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a1d97e13eb9923037fe733eda83b7f938">llvm::AArch64_AM::LSL</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#ae20bc007be03337ee451abb60d74260b">llvm::ExtAddrMode::Scale</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a243a500ecf43f8be3648cd935b943165">llvm::ExtAddrMode::ScaledReg</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9af6dcb4ded13e5a77a3ceafb0e1f844e8">llvm::ExtAddrMode::SExtScaledReg</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a13ed9069b0840f7eb3a47fce0878a5ad">llvm::AArch64_AM::SXTW</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a2620d8167a503c9942cc4afded7f830d">llvm::AArch64_AM::UXTW</a> and <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9ac58efd56ac0f1b362477a5609004f78d">llvm::ExtAddrMode::ZExtScaledReg</a>.</p>
 
 </div>
 </div>
@@ -1575,6 +2056,62 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### decomposeMachineOperandsTargetFlags() {#acb8985e96f5a8a270fc9d57fc8c99920}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">std::pair&lt; unsigned, unsigned &gt; AArch64InstrInfo::decomposeMachineOperandsTargetFlags (unsigned TF)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 464 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 8560 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a431b2e3ea036a96be92385e07bfbb0ad">llvm::AArch64II::MO_FRAGMENT</a>.</p>
+
+</div>
+</div>
+
+### describeLoadedValue() {#a7a1bb4352b705901de9836f44ad326f4}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">std::optional&lt; ParamLoadedValue &gt; AArch64InstrInfo::describeLoadedValue (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/web-llvm/docs/api/classes/llvm/register">Register</a> Reg)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 522 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9915 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ab09679b541a6ba1219b3602569847364">llvm::MachineOperand::CreateImm</a>, <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a6885e40448874565521daac98e11f50d">llvm::TargetInstrInfo::describeLoadedValue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a562f6e6e1f13537b17f177e13161a1b6">describeORRLoadedValue</a>, <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo/#a43c530c830206ecf5ad3359364634c75">llvm::TargetSubtargetInfo::getRegisterInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
+
+</div>
+</div>
+
 ### emitLdStWithAddr() {#a10b62cdcfa9a6e59de1c621f7aae8747}
 
 <div class="doxyMemberItem">
@@ -1599,6 +2136,34 @@ class llvm::AArch64InstrInfo { ... }
 
 
 <p>References <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a6c1f959947905135c7dd215b64957654">llvm::MachineInstrBuilder::addImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a927857fc69e4b4f0cde307f86f180df5">llvm::MachineInstrBuilder::addReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a2404b5dd8b0a6746487c699291c54927">llvm::ExtAddrMode::BaseReg</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9a972e73b7a882d0802a4e3a16946a2f94">llvm::ExtAddrMode::Basic</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a72c17e2ff2d5af62a30e56ac152aa8d5">llvm::RegState::Define</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a6a401a868b47dfbf62f962c746579675">llvm::ExtAddrMode::Displacement</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a264484b5504b59804cf5b2589388a747">llvm::ExtAddrMode::Form</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#abb10ef030fba4ea901518a0c8dbef3e2">llvm::MachineInstr::getDebugLoc</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad73e18478cd951f76d35a88c4d43ef5a">llvm::MachineInstr::getFlags</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ab05719438bdf4b46871e5ecd9730caeb">llvm::MachineInstr::getMF</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a1e855100f407ca4be098d0050be403b0">llvm::MachineInstr::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a810234b6b3d223b7c74a4253fcc5ea5e">llvm::MachineFunction::getRegInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/targetregisterclass/#abee1c3236731101b249f6eeffd8cd7ba">llvm::TargetRegisterClass::hasSuperClassEq</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a1a1e51a5952c3afa00875df90e7ae6f8">llvm::isInt</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a682028ac4a06c9e3550fa8e6e1909fa9">llvm::MachineInstr::mayLoad</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ab37075d621acbbfc96ef2662f2e29883">llvm::MachineInstr::memoperands</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#aae78f3719748afbb53a7c421d74542a8">offsetExtendOpcode</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae0fc1fd2aae7d85e868758b68696f7ef">regOffsetOpcode</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#ae20bc007be03337ee451abb60d74260b">llvm::ExtAddrMode::Scale</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a6e03a63c8ab81d68df1011a5ad7bd791">scaledOffsetOpcode</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#a243a500ecf43f8be3648cd935b943165">llvm::ExtAddrMode::ScaledReg</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a1dfb0ae952397bf4c6d5cbcaff4c4b6d">llvm::MachineInstrBuilder::setMemRefs</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#adf25b569ca308aacc819a2331626ed5d">llvm::MachineInstrBuilder::setMIFlags</a>, <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9af6dcb4ded13e5a77a3ceafb0e1f844e8">llvm::ExtAddrMode::SExtScaledReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a7e0db991d010d620899eeb404fd50359">unscaledOffsetOpcode</a> and <a href="/web-llvm/docs/api/structs/llvm/extaddrmode/#af4e263f5ba20144fc8b9e5b8d9097ce9ac58efd56ac0f1b362477a5609004f78d">llvm::ExtAddrMode::ZExtScaledReg</a>.</p>
+
+</div>
+</div>
+
+### expandPostRAPseudo() {#a8997d907b1de0e1b433c59102335b06a}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::expandPostRAPseudo (<a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 461 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 1979 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#af584d2eb0342e655d6ec597c0f7958db">llvm::MachineInstrBuilder::addDef</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a9117be19af857a7bdcee7bdf0279024c">llvm::MachineInstrBuilder::addGlobalAddress</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a6c1f959947905135c7dd215b64957654">llvm::MachineInstrBuilder::addImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#abf1febf2a98f588146548a3a485d3838">llvm::MachineInstrBuilder::addMBB</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#ae565d45627e1678a3e37bd6a016c561c">llvm::MachineInstrBuilder::addMemOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a927857fc69e4b4f0cde307f86f180df5">llvm::MachineInstrBuilder::addReg</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#ad88e27102395957e457fed8e73a085cf">llvm::MachineInstrBuilder::addUse</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a2fee1a7db4e84247a193a9af1f907013">llvm::RegState::Dead</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a72c17e2ff2d5af62a30e56ac152aa8d5">llvm::RegState::Define</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>, <a href="/web-llvm/docs/api/structs/llvm/aarch64sysreg/sysreg/#a1453415c05ff6815cd3f98c7d529e4f8">llvm::AArch64SysReg::SysReg::Encoding</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#aafacf84de1cb994a92dc045f4aa1d518a4e4e6764dc61dbf0e8f330644880480f">llvm::MachineInstr::FrameDestroy</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a0fec8ba6f4a4dc758b725205985eee99">llvm::RegState::Implicit</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a9ddde91ef09476d28a088fe57f8e2921">llvm::RegState::Kill</a>, <a href="/web-llvm/docs/api/namespaces/llvm/codemodel/#afc59396a9e5809fc92938e203d91a8dfa5208f558fccf9f63423fb5385bb3e75c">llvm::CodeModel::Large</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad5f691fdc1a09aaf6df5fef958b35a3d">MBBI</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a6d9cfbe4ea54a3ce9d5308efab7200b9">llvm::AArch64II::MO_G0</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a30eefa1143a0a238486ada4ff95bc34b">llvm::AArch64II::MO_G1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71ae048a7c85d8a27195ad9ce1e1282bda9">llvm::AArch64II::MO_G2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71af2217d25138eade76a256c4c3dc131bd">llvm::AArch64II::MO_G3</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a4144c2ee93286fba09bd8f14fb11f27a">llvm::AArch64II::MO_GOT</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a028a4adc46c746ba1501e1e6fefb54cc">llvm::AArch64II::MO_NC</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a7f04634c15a04a59d5f234002e613b5b">llvm::AArch64II::MO_PAGE</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii/#ae22a65863fdb02ce99abf9ee08bcbb71a3a5053185998bdf24f3167c234915785">llvm::AArch64II::MO_PAGEOFF</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a4c5b26e761294db59c1ad1cc6fc1d0ba">llvm::RegState::Renamable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#af4236a9c3c028303d301f49c7ee9a868">llvm::MachineBasicBlock::setMachineBlockAddressTaken</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a>, <a href="/web-llvm/docs/api/namespaces/llvm/codemodel/#afc59396a9e5809fc92938e203d91a8dfa686bcdfaefdfe3f49acbfe6f680bc22d">llvm::CodeModel::Tiny</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
 
 </div>
 </div>
@@ -1661,6 +2226,38 @@ class llvm::AArch64InstrInfo { ... }
 
 
 <p>Declaration at line 366 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 1381 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetinstrinfo-h">TargetInstrInfo.h</a>.</p>
+
+</div>
+</div>
+
+### genAlternativeCodeSequence() {#a605515c2c4d676bb83888309fdaf1af0}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void AArch64InstrInfo::genAlternativeCodeSequence (<a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Root, unsigned Pattern, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> * &gt; &amp; InsInstrs, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> * &gt; &amp; DelInstrs, <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; unsigned, unsigned &gt; &amp; InstrIdxForVirtReg)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>When <a href="#a2b3b6bff91628c24b2539a2733b3c292">getMachineCombinerPatterns()</a> finds patterns, this function generates the instructions that could replace the original code sequence.</p>
+
+
+<p>When <a href="#a2b3b6bff91628c24b2539a2733b3c292">getMachineCombinerPatterns()</a> finds potential patterns, this function generates the instructions that could replace the original code sequence.</p>
+
+
+<p>Declaration at line 453 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 7442 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#abb0a82cf9ab3cf0c256918c17512f987aa66d3974b6f2e3a542f896da144cd297">Accumulator</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a713eab58694282971c413a0d6de5975c">llvm::MachineInstrBuilder::add</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a6c1f959947905135c7dd215b64957654">llvm::MachineInstrBuilder::addImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a927857fc69e4b4f0cde307f86f180df5">llvm::MachineInstrBuilder::addReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-imm/#a77a4e6615fbc6c2bbcf179370dbd0fa9">llvm::AArch64_IMM::expandMOVImm</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a29da0b711c806f3e110ef4be00840f5d">llvm::FMLAv1i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a64a724a4e4e907f10318a826f4b860dd">llvm::FMLAv1i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a14c9352a879669d52fb40425fd7f1ec1">llvm::FMLAv1i64_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a254939223be79847ea842531f7dbeb93">llvm::FMLAv1i64_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081acc4b54336476469db4e2bebd229e0825">llvm::FMLAv2f32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ac41d721ea5ce1a2111d5b8928f408f24">llvm::FMLAv2f32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2def6435ef8399688ebfca4b0c64880e">llvm::FMLAv2f64_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a05bc63d873a1c8a1c9a4c83236938d29">llvm::FMLAv2f64_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a9f803e9611c7dc8463a245d00791c559">llvm::FMLAv2i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a0c64efbc0cb7271651277f176fa4d21e">llvm::FMLAv2i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a63a034ee40df6f873506cb087289b0f6">llvm::FMLAv2i64_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2d1b8082b8a641778274bc55c171ba47">llvm::FMLAv2i64_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081adbf5b6fc6d9f153968f9464133fce7a6">llvm::FMLAv4f16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a6609a41ed10bdc4908ba0ec186e952df">llvm::FMLAv4f16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af7fdb9d7a607aef418ce841de04236f6">llvm::FMLAv4f32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af25eba0d7bb7f03d7e7bf572bdac52c5">llvm::FMLAv4f32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081add6083823694329041b5b8f41e72296c">llvm::FMLAv4i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a824335a2f06b62c5a0a7523bd548aa14">llvm::FMLAv4i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a42935be91301488d5630f754a7b7a673">llvm::FMLAv4i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ad3044849d8545f97060f56ea80fa196f">llvm::FMLAv4i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a43fac15e41468e271fd3a8e9ba5ba10a">llvm::FMLAv8f16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a8329ce85350ad0d6a42bb948a2eb6d13">llvm::FMLAv8f16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aaa6146d75c9d45914aa145a28701b19f">llvm::FMLAv8i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a164af88f2db901ac755f5515f3a2b08c">llvm::FMLAv8i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a0843550622fe6dda3034259ea62dc986">llvm::FMLSv1i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081afb5e9be653baddce8c394a34e93753c7">llvm::FMLSv1i64_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a1d0397aa241d5b7171a07f3d4dce0223">llvm::FMLSv2f32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a273637896b58938e79c2c22bead07b72">llvm::FMLSv2f32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a85845bacf9b763b22d3ec71ae8c17ef9">llvm::FMLSv2f64_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a4876197ede6027b668b905ba9c30f00d">llvm::FMLSv2f64_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aa50bc3dba90ebfd632d93db67b03e8f1">llvm::FMLSv2i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a8cc4984799cb0d30032b56ec47b6e68f">llvm::FMLSv2i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081abf773f75b734a04493ac02608cac4212">llvm::FMLSv2i64_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a667423dbeddfccb051503042cd2f25b3">llvm::FMLSv2i64_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a714249f500e9569927c20953056b3513">llvm::FMLSv4f16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a1cfa80c2a7bc3ab93307eddca9f3b697">llvm::FMLSv4f16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7d8e9301a297aa48bfd213e1fd0a2e3f">llvm::FMLSv4f32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a74b17f278cf0590c8e135d79db715df3">llvm::FMLSv4f32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a5eea07d234b0baa44a25a37bc333cf88">llvm::FMLSv4i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a9a65290e45e52435fb6e38843858182d">llvm::FMLSv4i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a93257695eff10a14a3f237c627b2916f">llvm::FMLSv4i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aae50b06370bcbb91d7c93cfa19aaf1d1">llvm::FMLSv4i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ab83befd458ba245c59c0b48fd2d20182">llvm::FMLSv8f16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7173a759f649820224bf5737160215c6">llvm::FMLSv8f16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2e3a103b14b4d513c84a02b7360b380f">llvm::FMLSv8i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af0ee08da6cdf1c922e2fa28602e711ab">llvm::FMLSv8i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a4b5616e470ba55bf574745527d41f4d0">llvm::FMULADDD_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7a8573dbc3eef167b70dd1d04f94bc2c">llvm::FMULADDD_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a173ee85364fc1eb108938c8372827ff7">llvm::FMULADDH_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aabc53997d7894be5eb40810745549073">llvm::FMULADDH_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a4939e86ef4510ceb729ae2a595a7ade1">llvm::FMULADDS_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aacf7b664d029c90786c2e53006c8c12c">llvm::FMULADDS_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a470de5f4b5e67204b6f9774eb7508adf">llvm::FMULSUBD_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a404af9657e59e385b2510c0ea9c4389b">llvm::FMULSUBD_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a5d86ab23b51cb137de8debb33a03e113">llvm::FMULSUBH_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a455f5434d37ab1ecef5d82aa8b7e291b">llvm::FMULSUBH_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a9052c5e8a47baa23436afc9fd2f4ddc2">llvm::FMULSUBS_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a0ab58a2095e4bb3abccae77e85c53121">llvm::FMULSUBS_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a19a131bf91b8e77378a5621201b6acfa">llvm::FMULv2i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a84a58388d0b4436a034836e56a0daa5b">llvm::FMULv2i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a93a582c110273ffba55e6e60abb55981">llvm::FMULv2i64_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a3b392d5a83c74984a34d3e8424d71317">llvm::FMULv2i64_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a070f3b0aae9f763fbb021baab89e15be">llvm::FMULv4i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2efbd5c27fc48ce7a1899b8d9aa1581f">llvm::FMULv4i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081adc0f0177744cd3d76da670a6c71fc368">llvm::FMULv4i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081abf0aedc997dfe9dff0845aaa9d266129">llvm::FMULv4i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ae0b39e885769b4f4bab9b709d7f40359">llvm::FMULv8i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a456140411ed09fd65e9791d87ff58dc7">llvm::FMULv8i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a3fa37ac5f5d303429c55b37d11a86190">llvm::FNMADD</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aa810aa575f0528701808312255989cc0">llvm::FNMULSUBD_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2128b33f53a413a7263e48cab14edb11">llvm::FNMULSUBH_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a0dc534ead99070b3ef367081718f58eb">llvm::FNMULSUBS_OP1</a>, <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a6875e5a149ffdf299b10e8f969d379d4">llvm::TargetInstrInfo::genAlternativeCodeSequence</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#af64fc386f3fc81f753830641399254b9">genFNegatedMAD</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ad7dacfdd99d94fce20ccc2450bf5eb76">genFusedMultiply</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a0a1712e282cbfafff3baca648d3b6b95">genFusedMultiplyAcc</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a5b2eed8938acd05a075f47edc554da5b">genFusedMultiplyAccNeg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a6fe86e1d2b6146e4146a5c201f061517">genFusedMultiplyIdx</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a2cb21e60b9e8365204be20407b81d78a">genFusedMultiplyIdxNeg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a731ca5cdf4cb5c12baa91590b3923d51">genIndexedMultiply</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a6893512d8a2c2aaf9d6758440d1bc583">genMaddR</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a012040151268735433380829e4ef0dcd">genSubAdd2SubSub</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad73e18478cd951f76d35a88c4d43ef5a">llvm::MachineInstr::getFlags</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a38b28a85f818b49d8806c150b8a5b4f7">llvm::MachineOperand::getImm</a>, <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo/#acd858ed72f11db9444617740c3622608">llvm::TargetSubtargetInfo::getInstrInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a1e855100f407ca4be098d0050be403b0">llvm::MachineInstr::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#abb0a82cf9ab3cf0c256918c17512f987acccd5fd8c8f59fe9373c56b1b951780c">Indexed</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#adb33f3ede2f5bfc9b3ee658aaf648492">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::insert</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#a96d5dc120196819fbfbc257cba09b2aa">Insn</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a76f61c6784df6dc8402a8b9011041926">llvm::MachineOperand::isImm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a36538e83424d5c406c294a6c365f9fe9">llvm::MachineInstr::mergeFlagsWith</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a61a16544eb6feeac711f2f679ff43947">llvm::MULADDv16i8_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a5c6b6f16c959ba70ad982391c4f28979">llvm::MULADDv16i8_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a77cbec9de2221d33e905c505ff100dc1">llvm::MULADDv2i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7fb97a564d6c84b58c7f83e7778c7785">llvm::MULADDv2i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a66d11af038a94fa2db0f3dc57bcb2e1f">llvm::MULADDv2i32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a58f90b4095f6de0cb29d100f9a98111f">llvm::MULADDv2i32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081afd5a9d70890814eab0b364a47c911cb5">llvm::MULADDv4i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a1244c7b6e96e47476f0f2b20ae4758a7">llvm::MULADDv4i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ad0779448a48cf7f0ae369e4acfa6b432">llvm::MULADDv4i16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a450de5c53a682d9c0711087857e66e56">llvm::MULADDv4i16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7ee53383fa82a4fa8a927d51378d944c">llvm::MULADDv4i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aaf08ec9798b8d10d5d8230822a2358b4">llvm::MULADDv4i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a6e68e02afdd837853410842a554f7915">llvm::MULADDv4i32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a489c3f3316335b1cfa6e7174b61b94d6">llvm::MULADDv4i32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ad3fb6b45af08b4e248015bf7e6e5839f">llvm::MULADDv8i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af4f298a3a23bd860f54fcb3c8a3c87f1">llvm::MULADDv8i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ae85ed809edea767ac9b3f6a83e68306c">llvm::MULADDv8i16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ab3efd87cedaa1376a11800ae66a8af9d">llvm::MULADDv8i16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a49d7aeec4d46eceb096be4ad6d45c259">llvm::MULADDv8i8_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a5c8c19baccaa3ba3dbacca5ce011ee27">llvm::MULADDv8i8_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081abbcaf554b2aeaef80cb61c1a9bfa4fb8">llvm::MULADDW_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aaabfd1c646edf729d24f415a03232cd8">llvm::MULADDW_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a441912041899752296b49cbdf01ebe96">llvm::MULADDWI_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2fdbbb7605c0641fd680f2b6f4654843">llvm::MULADDX_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7d7d1ae75b0c61c4fd859fb754ca87da">llvm::MULADDX_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a091819871a7996a5178037f90a973af8">llvm::MULADDXI_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a151d4ba2c8e79faec23b895da8a4b5e3">llvm::MULSUBv16i8_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a7ab0c1c56e6201f0fb54c736a5cb59c1">llvm::MULSUBv16i8_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a0895802cc0c36bca09ecc98712c8053e">llvm::MULSUBv2i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ab51c4c41785b05718e432d9674f47f55">llvm::MULSUBv2i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2ecb9a17e63d5940114e3370ea314054">llvm::MULSUBv2i32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af93f6ad2aedd6f2e9135722eb5e10ac2">llvm::MULSUBv2i32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aaaa836ebb5d687ad69f07888f4490d0a">llvm::MULSUBv4i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a2659c1d63a5330f78aed8f5e3bc153a6">llvm::MULSUBv4i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a45caafd2d036833623a9a3e7d75eadf9">llvm::MULSUBv4i16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a960d20d24cece9595d68238f8388b345">llvm::MULSUBv4i16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aeee9f4a161bc13aab345f1734f20f6f0">llvm::MULSUBv4i32_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a3499c6340b695808558550fb019a9ca8">llvm::MULSUBv4i32_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081aef032d1c33a5cf258c915f37e0a319cb">llvm::MULSUBv4i32_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ab32477ba81c86eda0b9b435adc59c5d9">llvm::MULSUBv4i32_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ab379db876e9fff0d468eca802aff1d15">llvm::MULSUBv8i16_indexed_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a1c05703c1b56bbeaada423e094e1a5b4">llvm::MULSUBv8i16_indexed_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a82d4d9ad96413032a77fdecb8750f163">llvm::MULSUBv8i16_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a03c2d2c131a8ef6342b09a0524f0136b">llvm::MULSUBv8i16_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ae2ce23a92b21ad38bf6626419b72fb98">llvm::MULSUBv8i8_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081afef7979e02e75de7dd163e05e60a350e">llvm::MULSUBv8i8_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a04fd1978a4f7c94cc370d9a3940ab9b9">llvm::MULSUBW_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081ae3f5ac151986cbaa0cb9a66bda8ae620">llvm::MULSUBW_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af58e9da167498449818b46d834fb8b44">llvm::MULSUBWI_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081af80f1b5b6dfd46363064a46fe026aa18">llvm::MULSUBX_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a587e584f072ba0aebacc244e6ffeab48">llvm::MULSUBX_OP2</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a3feaa03038d4172ebcedbaa6cb98e468">llvm::MULSUBXI_OP1</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ad12a58d7f81a304e0c568ad2210bc4fe">llvm::SignExtend64</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081a32c16136ae0351dcda14d0f4c6707ded">llvm::SUBADD_OP1</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a788ace9bfafe2db73b33d1f4301ce081accff5e3d00d208ac5eac3038b45a68e1">llvm::SUBADD_OP2</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a>.</p>
 
 </div>
 </div>
@@ -1752,6 +2349,34 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### getElementSizeForOpcode() {#a225bf56c837056189e19a6d525e9a93a}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">uint64_t AArch64InstrInfo::getElementSizeForOpcode (unsigned Opc)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Returns the vector element size (B, H, S or D) of an SVE opcode.</p>
+
+<p>Declaration at line 500 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9962 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/aarch64/#a2a41a022b24374a579418d7d2476e6daabba4d0fbf16c6ed6a4a264351f1441e8">llvm::AArch64::ElementSizeMask</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a>.</p>
+
+</div>
+</div>
+
 ### getInstSizeInBytes() {#a1bf38b3bbe867377cde6e530a0256b29}
 
 <div class="doxyMemberItem">
@@ -1779,7 +2404,48 @@ class llvm::AArch64InstrInfo { ... }
 <p>Declaration at line 188 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 88 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#af11871b65a6cfc7ce8fc20403e18ab40">llvm::AArch64Subtarget::getAuthenticatedLRCheckMethod</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#a89f9d58f53aa5fefd75ce86659f52f71">llvm::AArch64PAuth::getCheckerSizeInBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ab7feae1932b436c8630e247166ec42b7">llvm::MachineFunction::getInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#afb72c5626afbc815284e2b26bb0663f8">llvm::TargetMachine::getMCAsmInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/patchpointopers/#aa319bb1da5a106c84bfa9a1fdca084bc">llvm::PatchPointOpers::getNumPatchBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/stackmapopers/#a4330cae153bbaadcf79bb4917a6c3924">llvm::StackMapOpers::getNumPatchBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/statepointopers/#a0eeee60ca2931edc9e1f653fbc66373c">llvm::StatepointOpers::getNumPatchBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#af777ff93c9e07a6ff5ffe3226deb3e76">llvm::MachineFunction::getTarget</a>, <a href="#a0b4cc9aee6e5aaf329ecd8e3856833e8">isTailCallReturnInst</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#af11871b65a6cfc7ce8fc20403e18ab40">llvm::AArch64Subtarget::getAuthenticatedLRCheckMethod</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ab7feae1932b436c8630e247166ec42b7">llvm::MachineFunction::getInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#afb72c5626afbc815284e2b26bb0663f8">llvm::TargetMachine::getMCAsmInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/patchpointopers/#aa319bb1da5a106c84bfa9a1fdca084bc">llvm::PatchPointOpers::getNumPatchBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/stackmapopers/#a4330cae153bbaadcf79bb4917a6c3924">llvm::StackMapOpers::getNumPatchBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/statepointopers/#a0eeee60ca2931edc9e1f653fbc66373c">llvm::StatepointOpers::getNumPatchBytes</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#af777ff93c9e07a6ff5ffe3226deb3e76">llvm::MachineFunction::getTarget</a>, <a href="#a0b4cc9aee6e5aaf329ecd8e3856833e8">isTailCallReturnInst</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+
+<p>Referenced by <a href="#ae0385b9c4d9ad37aeb63e7dd01093c63">getOutliningCandidateInfo</a>.</p>
+
+</div>
+</div>
+
+### getMachineCombinerPatterns() {#a2b3b6bff91628c24b2539a2733b3c292}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::getMachineCombinerPatterns (<a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Root, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; unsigned &gt; &amp; Patterns, bool DoRegPressureReduce)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Return true when there is potentially a faster code sequence for an instruction chain ending in <span class="doxyComputerOutput">Root</span>.</p>
+
+
+<p>Return true when there is potentially a faster code sequence for an instruction chain ending in <span class="doxyComputerOutput">Root</span>.</p>
+
+
+<p>All potential patterns are listed in the <span class="doxyComputerOutput">Patterns</span> array.</p>
+
+
+<p>All potential patterns are listed in the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/pattern">Pattern</a></span> vector. <a href="/web-llvm/docs/api/classes/llvm/pattern">Pattern</a> should be sorted in priority order since the pattern evaluator stops checking as soon as it finds a faster sequence.</p>
+
+
+<p>Declaration at line 443 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 7075 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a1f24abade2ffdb0e55559d552552692c">getFMAPatterns</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a56884e76d8fbf3b9f59ed904d50ba245">getFMULPatterns</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a337903856769965870a905f37f63790d">getFNEGPatterns</a>, <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a861381cad67866e249c6330631ac0742">llvm::TargetInstrInfo::getMachineCombinerPatterns</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#a054d573171c2fcf38b33a60e412dba7b">getMaddPatterns</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ab6a37e8549580d302c7c98852a4ddc11">getMiscPatterns</a>.</p>
 
 </div>
 </div>
@@ -1903,6 +2569,90 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### getOutlinableRanges() {#a57639f2f066637e2f3571662526f213d}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">SmallVector&lt; std::pair&lt; MachineBasicBlock::iterator, MachineBasicBlock::iterator &gt; &gt; AArch64InstrInfo::getOutlinableRanges (<a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, unsigned &amp; Flags)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 486 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9212 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/liveregunits/#ab4fff7ad3de452b1b1d20de5afd986a3">llvm::LiveRegUnits::addLiveOuts</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/liveregunits/#a3996f7c3774880bfe32422602fe34f9c">llvm::LiveRegUnits::available</a>, <a href="#a616fc69908b11c1c62addae537191ad4">getRegisterInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ab0b0a572164f8fccd5474cb6babed129a4f2a846b62b36aa105ec3ddfd151a482">HasCalls</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ab0b0a572164f8fccd5474cb6babed129a4833a7f75545b7500185a9ececd92b08">LRUnavailableSomewhere</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make_range</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> and <a href="/web-llvm/docs/api/classes/llvm/liveregunits/#aa5fb273566c37fdc7da88a0fec5a554c">llvm::LiveRegUnits::stepBackward</a>.</p>
+
+</div>
+</div>
+
+### getOutliningCandidateInfo() {#ae0385b9c4d9ad37aeb63e7dd01093c63}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">std::optional&lt; std::unique_ptr&lt; outliner::OutlinedFunction &gt; &gt; AArch64InstrInfo::getOutliningCandidateInfo (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp; MMI, std::vector&lt; <a href="/web-llvm/docs/api/structs/llvm/outliner/candidate">outliner::Candidate</a> &gt; &amp; RepeatedSequenceLocs, unsigned MinRepeats)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 475 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 8746 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="#a1bf38b3bbe867377cde6e530a0256b29">getInstSizeInBytes</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+</div>
+</div>
+
+### getOutliningTypeImpl() {#a72a70493afafbf4374226300289c04b9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">outliner::InstrType AArch64InstrInfo::getOutliningTypeImpl (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp; MMI, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> &amp; MIT, unsigned Flags)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 481 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9325 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a54f334a9c8ca6d105eae383ae87e4524">llvm::MachineFunction::getFrameInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ab7feae1932b436c8630e247166ec42b7">llvm::MachineFunction::getInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfo/#ac1a4ac2dc30f53dff05d2c7b2d8ebaef">llvm::MachineModuleInfo::getMachineFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/machineframeinfo/#ab4b44bc5aa744df4f8b70f971e8dcbf1">llvm::MachineFrameInfo::getNumObjects</a>, <a href="#a616fc69908b11c1c62addae537191ad4">getRegisterInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machineframeinfo/#a14c39a24bf6ebbe339ae8a453c7fdd11">llvm::MachineFrameInfo::getStackSize</a>, <a href="#a0629dcc604a715cec2e2eb41896df3e1">hasBTISemantics</a>, <a href="/web-llvm/docs/api/namespaces/llvm/outliner/#a0765e098fe7aae0f01b60ec890ac1b52a795f5ad85ed392b65a70b46dacaeef34">llvm::outliner::Illegal</a>, <a href="/web-llvm/docs/api/classes/llvm/machineframeinfo/#a81504f733d0491a446a16ef1ba0a5c2a">llvm::MachineFrameInfo::isCalleeSavedInfoValid</a>, <a href="/web-llvm/docs/api/namespaces/llvm/outliner/#a0765e098fe7aae0f01b60ec890ac1b52a5b2760b5bb9cc62190d2ddfe563776b9">llvm::outliner::Legal</a>, <a href="/web-llvm/docs/api/namespaces/llvm/outliner/#a0765e098fe7aae0f01b60ec890ac1b52a6adc06fdab039cdbfaaeda00060c5e63">llvm::outliner::LegalTerminator</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+</div>
+</div>
+
 ### getRegisterInfo() {#a616fc69908b11c1c62addae537191ad4}
 
 <div class="doxyMemberItem">
@@ -1935,7 +2685,119 @@ class llvm::AArch64InstrInfo { ... }
 <p>Definition at line 186 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>.</p>
 
 
-<p>Referenced by <a href="#ab359f8ff91954b23a1e8366666e59cbb">analyzeLoopForPipelining</a>, <a href="#a23fc03605ab508eb40a5fb968a78e139">areMemAccessesTriviallyDisjoint</a>, <a href="#acd4e3782462bd215bc07bd1f9b2b01b5">copyGPRRegTuple</a>, <a href="#ade00a4708e793e75a00a3030325cbf84">copyPhysReg</a>, <a href="#af01e300c1d03a13eb9edabea4ed9aef5">copyPhysRegTuple</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a0c3ed7e8a5fa2d4df05bf0fdf51a6550">llvm::AArch64Subtarget::getRegisterInfo</a>, <a href="#af28ada2e1e13faab18ee3746c01e684c">isCandidateToMergeOrPair</a>, <a href="#aef098c9f09dc6ea1e32e64d79091a237">loadRegFromStackSlot</a>, <a href="#af0bbac5dd9f698f2c73477c4e5f36b60">optimizeCondBranch</a> and <a href="#aeba4e73d60d1b4cedc120d06114c0620">storeRegToStackSlot</a>.</p>
+<p>Referenced by <a href="#ab359f8ff91954b23a1e8366666e59cbb">analyzeLoopForPipelining</a>, <a href="#a23fc03605ab508eb40a5fb968a78e139">areMemAccessesTriviallyDisjoint</a>, <a href="#acd4e3782462bd215bc07bd1f9b2b01b5">copyGPRRegTuple</a>, <a href="#ade00a4708e793e75a00a3030325cbf84">copyPhysReg</a>, <a href="#af01e300c1d03a13eb9edabea4ed9aef5">copyPhysRegTuple</a>, <a href="#a57639f2f066637e2f3571662526f213d">getOutlinableRanges</a>, <a href="#a72a70493afafbf4374226300289c04b9">getOutliningTypeImpl</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a0c3ed7e8a5fa2d4df05bf0fdf51a6550">llvm::AArch64Subtarget::getRegisterInfo</a>, <a href="#af28ada2e1e13faab18ee3746c01e684c">isCandidateToMergeOrPair</a>, <a href="#aef098c9f09dc6ea1e32e64d79091a237">loadRegFromStackSlot</a>, <a href="#af0bbac5dd9f698f2c73477c4e5f36b60">optimizeCondBranch</a> and <a href="#aeba4e73d60d1b4cedc120d06114c0620">storeRegToStackSlot</a>.</p>
+
+</div>
+</div>
+
+### getSerializableBitmaskMachineOperandTargetFlags() {#aedb4c96bbe231a3c622b06e15fdb05cb}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">ArrayRef&lt; std::pair&lt; unsigned, const char * &gt; &gt; AArch64InstrInfo::getSerializableBitmaskMachineOperandTargetFlags ()</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 468 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 8578 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</a>.</p>
+
+</div>
+</div>
+
+### getSerializableDirectMachineOperandTargetFlags() {#a9e7195b691e065ac34568c1b3340a3f8}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">ArrayRef&lt; std::pair&lt; unsigned, const char * &gt; &gt; AArch64InstrInfo::getSerializableDirectMachineOperandTargetFlags ()</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 466 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 8566 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</a>.</p>
+
+</div>
+</div>
+
+### getSerializableMachineMemOperandTargetFlags() {#a74f4174a5d158b611050cdf7abd04b58}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">ArrayRef&lt; std::pair&lt; MachineMemOperand::Flags, const char * &gt; &gt; AArch64InstrInfo::getSerializableMachineMemOperandTargetFlags ()</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 470 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 8596 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#adcbbc11398a037540fd4fbab96e6f6a4">llvm::MOStridedAccess</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#acecb758d131c550fcdf82d6211884138">llvm::MOSuppressPair</a>.</p>
+
+</div>
+</div>
+
+### getTailDuplicateSize() {#a8d7964e592c77513d96717c18c422d54}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">unsigned int AArch64InstrInfo::getTailDuplicateSize (<a href="/web-llvm/docs/api/namespaces/llvm/#a8ec1bf8d7b792ca9fac56f8514db18d2">CodeGenOptLevel</a> OptLevel)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 524 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9975 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a8ec1bf8d7b792ca9fac56f8514db18d2a389a96d0d9b3feb46b8c9d941566a4ae">llvm::Aggressive</a>.</p>
 
 </div>
 </div>
@@ -2024,6 +2886,34 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### insertOutlinedCall() {#a4c5be0dce0caceff8b457e09b8a998fc}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">MachineBasicBlock::iterator AArch64InstrInfo::insertOutlinedCall (<a href="/web-llvm/docs/api/classes/llvm/module">Module</a> &amp; M, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> &amp; It, <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/web-llvm/docs/api/structs/llvm/outliner/candidate">outliner::Candidate</a> &amp; C)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 490 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9645 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a6c1f959947905135c7dd215b64957654">llvm::MachineInstrBuilder::addImm</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a927857fc69e4b4f0cde307f86f180df5">llvm::MachineInstrBuilder::addReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">llvm::BuildMI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24ac2e06fc138163b7095fa483616a0a47a">llvm::dwarf_linker::DebugLoc</a>, <a href="/web-llvm/docs/api/namespaces/llvm/regstate/#ade26fe5c9b3fe6948def36f7ca12dfc5a72c17e2ff2d5af62a30e56ac152aa8d5">llvm::RegState::Define</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3d142c9e7c066059e15232c56dec9e2e">llvm::MachineFunction::getName</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4a91f63a4449fb0a4504497465cc2f4c9a">MachineOutlinerNoLRSave</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4a428eb3c2a256781b5e0589b47427e585">MachineOutlinerRegSave</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4a0f5f89e2a0973bd42b48aa3ab23bc4a7">MachineOutlinerTailCall</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ae25253bd68535ed8bdcb98a751098fe4ae4ec11c9120413385aef372aaa2a390c">MachineOutlinerThunk</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>.</p>
+
+</div>
+</div>
+
 ### insertSelect() {#a029c7ad54d8731492ed559aa860e3395}
 
 <div class="doxyMemberItem">
@@ -2052,6 +2942,34 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### isAddImmediate() {#a195a0fee60fb5a1164767ec13d9729dd}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">std::optional&lt; RegImmPair &gt; AArch64InstrInfo::isAddImmediate (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/web-llvm/docs/api/classes/llvm/register">Register</a> Reg)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 514 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9792 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a4c9594c955fec80c73ddd964b5efd554">llvm::MachineOperand::isReg</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>.</p>
+
+</div>
+</div>
+
 ### isAsCheapAsAMove() {#ade267f03d50e04004e9ef2019ce25738}
 
 <div class="doxyMemberItem">
@@ -2076,6 +2994,38 @@ class llvm::AArch64InstrInfo { ... }
 
 
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#aec461d6b4eaa16935dd0b7691b39ec4a">isCheapImmediate</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+</div>
+</div>
+
+### isAssociativeAndCommutative() {#aab3d65d6e0daa1da2c564a3803f207b2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isAssociativeAndCommutative (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Inst, bool Invert)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Return true when Inst is associative and commutative so that it can be reassociated.</p>
+
+
+<p>If Invert is true, then the inverse of Inst operation must be checked.</p>
+
+
+<p>Declaration at line 449 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 6433 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#aafacf84de1cb994a92dc045f4aa1d518adc42a7d40f8bd9c7f1a9c2beb0135fdc">llvm::MachineInstr::FmNsz</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#aafacf84de1cb994a92dc045f4aa1d518a7e452f6e23b696b4701cb18790b32992">llvm::MachineInstr::FmReassoc</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a33365204be9cb132de322e3713253b57">llvm::MachineInstr::getFlag</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#acf6442108e21e7e5379feb8962de65b7">llvm::MachineBasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a1e855100f407ca4be098d0050be403b0">llvm::MachineInstr::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#af777ff93c9e07a6ff5ffe3226deb3e76">llvm::MachineFunction::getTarget</a>, <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#ab1fb67187fc37e569cc5171cbebba873">llvm::TargetMachine::Options</a> and <a href="/web-llvm/docs/api/classes/llvm/targetoptions/#a0544e2966374684ff74255e5a4290fa7">llvm::TargetOptions::UnsafeFPMath</a>.</p>
 
 </div>
 </div>
@@ -2174,6 +3124,121 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### isExtendLikelyToBeFolded() {#a791f9b87aba84585f9777360bb26d84b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isExtendLikelyToBeFolded (<a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; ExtMI, <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &amp; MRI)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 526 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9942 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a0363204b5fbab08a46f5a7cd7f376f78">llvm::MachineInstr::getOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad67c9230577a0b640c52852c75c93939">llvm::MachineInstr::getOperand</a>, <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#ac0035d7c1c860501c877c20e6e93297b">llvm::MachineOperand::getReg</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>.</p>
+
+</div>
+</div>
+
+### isFunctionSafeToOutlineFrom() {#a8e7ea4a37a21caeb8c336ef3e95f8ee0}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isFunctionSafeToOutlineFrom (<a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, bool OutlineFromLinkOnceODRs)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 472 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9174 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ab7feae1932b436c8630e247166ec42b7">llvm::MachineFunction::getInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#afb72c5626afbc815284e2b26bb0663f8">llvm::TargetMachine::getMCAsmInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#af777ff93c9e07a6ff5ffe3226deb3e76">llvm::MachineFunction::getTarget</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#ac81232e8ac34e95d748e2e31e43482b5">llvm::AArch64FunctionInfo::hasRedZone</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#a5f85995f165e15b5c4ce247e5580fefe">llvm::AArch64FunctionInfo::hasStreamingModeChanges</a> and <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ac158349781823fe8ff9e02d3a3533d55">llvm::MCAsmInfo::usesWindowsCFI</a>.</p>
+
+</div>
+</div>
+
+### isFunctionSafeToSplit() {#aab2bb29af5f95ecde069091fc13e0dd9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isFunctionSafeToSplit (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 517 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9865 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ab7feae1932b436c8630e247166ec42b7">llvm::MachineFunction::getInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#ac81232e8ac34e95d748e2e31e43482b5">llvm::AArch64FunctionInfo::hasRedZone</a> and <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#ae0b0cbf92a3dd0f5cab9d5d3067c2003">llvm::TargetInstrInfo::isFunctionSafeToSplit</a>.</p>
+
+</div>
+</div>
+
+### isLegalAddressingMode() {#adf6a27b8c3cbc89e6a94e6e144f52452}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isLegalAddressingMode (unsigned NumBytes, int64_t Offset, unsigned Scale)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 540 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9979 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1a1e51a5952c3afa00875df90e7ae6f8">llvm::isInt</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a4f42ed6fd2569fa43f03814a17f9d94a">llvm::Log2_64</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>.</p>
+
+
+<p>Referenced by <a href="#aa9430ae4ad548095743aa0a26b235d82">canFoldIntoAddrMode</a>.</p>
+
+</div>
+</div>
+
 ### isLoadFromStackSlot() {#a7cc5396346a84254535290f2ed779d05}
 
 <div class="doxyMemberItem">
@@ -2202,6 +3267,62 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### isMBBSafeToSplitToCold() {#ad43fedc407890aa868187b433c768f66}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isMBBSafeToSplitToCold (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 519 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9876 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a61d13d6824ec46c31260a4fd0997eda0">llvm::any_of</a>, <a href="/web-llvm/docs/api/classes/llvm/machinejumptableinfo/#af9c60f4a0193375a5dd205fb945107a8">llvm::MachineJumpTableInfo::getJumpTables</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#acd1cd968cb420c82d70926920fcdc7d7">llvm::is_contained</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+</div>
+</div>
+
+### isPTestLikeOpcode() {#af93867ed83dede2b0063fbaa26a3086d}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isPTestLikeOpcode (unsigned Opc)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Returns true if the opcode is for an SVE instruction that sets the condition codes as if it's results had been fed to a PTEST instruction along with the same general predicate.</p>
+
+<p>Declaration at line 504 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9966 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a> and <a href="/web-llvm/docs/api/namespaces/llvm/aarch64/#a6d80df9ebba012ae0264f1a6bfefb887">llvm::AArch64::InstrFlagIsPTestLike</a>.</p>
+
+</div>
+</div>
+
 ### isSchedulingBoundary() {#ab46fe6f7eb24fe0268c273a28452ecba}
 
 <div class="doxyMemberItem">
@@ -2225,7 +3346,7 @@ class llvm::AArch64InstrInfo { ... }
 <p>Declaration at line 418 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 1152 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
 
 
-<p>References <a href="#a0629dcc604a715cec2e2eb41896df3e1">hasBTISemantics</a>, <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#ad071e937f4986e51fd3fd54b10888894">llvm::TargetInstrInfo::isSchedulingBoundary</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a52619cc1f9c5c3029a03a6c956b32595">llvm::isSEHInstruction</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">llvm::Next</a>.</p>
+<p>References <a href="#a0629dcc604a715cec2e2eb41896df3e1">hasBTISemantics</a>, <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#ad071e937f4986e51fd3fd54b10888894">llvm::TargetInstrInfo::isSchedulingBoundary</a>, <a href="#a52619cc1f9c5c3029a03a6c956b32595">isSEHInstruction</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">llvm::Next</a>.</p>
 
 </div>
 </div>
@@ -2332,6 +3453,37 @@ class llvm::AArch64InstrInfo { ... }
 </div>
 </div>
 
+### isWhileOpcode() {#a38f8066c29c8c7afd3906d08e8407282}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isWhileOpcode (unsigned Opc)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Returns true if the opcode is for an SVE WHILE## instruction.</p>
+
+<p>Declaration at line 506 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9970 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a73257f51950d9ea50955e3fb9c724a25">llvm::get</a> and <a href="/web-llvm/docs/api/namespaces/llvm/aarch64/#a55a90256e857e185aeaac9aabf606133">llvm::AArch64::InstrFlagIsWhile</a>.</p>
+
+
+<p>Referenced by <a href="#ab359f8ff91954b23a1e8366666e59cbb">analyzeLoopForPipelining</a>.</p>
+
+</div>
+</div>
+
 ### loadRegFromStackSlot() {#aef098c9f09dc6ea1e32e64d79091a237}
 
 <div class="doxyMemberItem">
@@ -2359,6 +3511,34 @@ class llvm::AArch64InstrInfo { ... }
 
 
 <p>Referenced by <a href="#a64505b70265bcadc4993631d532a5fd5">foldMemoryOperandImpl</a>.</p>
+
+</div>
+</div>
+
+### mergeOutliningCandidateAttributes() {#afb2faf0aba253c62b8f0e7b8a829f228}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void AArch64InstrInfo::mergeOutliningCandidateAttributes (<a href="/web-llvm/docs/api/classes/llvm/function">Function</a> &amp; F, std::vector&lt; <a href="/web-llvm/docs/api/structs/llvm/outliner/candidate">outliner::Candidate</a> &gt; &amp; Candidates)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 479 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9153 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.</p>
 
 </div>
 </div>
@@ -2531,77 +3711,6 @@ to
 </div>
 <div class="doxyMemberDoc">
 
-<p>Return true when there is potentially a faster code sequence for an instruction chain ending in <span class="doxyComputerOutput">Root</span>.</p>
-
-
-<p>All potential patterns are / listed in the <span class="doxyComputerOutput">Patterns</span> array. bool getMachineCombinerPatterns(MachineInstr &amp;Root,
-                                  SmallVectorImpl&lt;unsigned&gt; &amp;Patterns,
-                                  bool DoRegPressureReduce) const override; / Return true when Inst is associative and commutative so that it can be / reassociated. If Invert is true, then the inverse of Inst operation must / be checked. bool isAssociativeAndCommutative(const MachineInstr &amp;Inst,
-                                   bool Invert) const override; / When getMachineCombinerPatterns() finds patterns, this function generates / the instructions that could replace the original code sequence void genAlternativeCodeSequence(
-      MachineInstr &amp;Root, unsigned Pattern,
-      SmallVectorImpl&lt;MachineInstr *&gt; &amp;InsInstrs,
-      SmallVectorImpl&lt;MachineInstr *&gt; &amp;DelInstrs,
-      DenseMap&lt;unsigned, unsigned&gt; &amp;InstrIdxForVirtReg) const override; / <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> supports MachineCombiner. bool useMachineCombiner() const override;</p>
-
-
-<p>bool expandPostRAPseudo(MachineInstr &amp;MI) const override;</p>
-
-
-<p>std::pair&lt;unsigned, unsigned&gt; decomposeMachineOperandsTargetFlags(unsigned TF) const override; <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef&lt;std::pair&lt;unsigned, const char *&gt;&gt;</a> getSerializableDirectMachineOperandTargetFlags() const override; <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef&lt;std::pair&lt;unsigned, const char *&gt;&gt;</a> getSerializableBitmaskMachineOperandTargetFlags() const override; <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef&lt;std::pair&lt;MachineMemOperand::Flags, const char *&gt;&gt;</a> getSerializableMachineMemOperandTargetFlags() const override;</p>
-
-
-<p>bool isFunctionSafeToOutlineFrom(MachineFunction &amp;MF,
-                                   bool OutlineFromLinkOnceODRs) const override; std::optional&lt;std::unique_ptr&lt;outliner::OutlinedFunction&gt;&gt; getOutliningCandidateInfo(
-      const MachineModuleInfo &amp;MMI,
-      std::vector&lt;outliner::Candidate&gt; &amp;RepeatedSequenceLocs,
-      unsigned MinRepeats) const override; void mergeOutliningCandidateAttributes(
-      Function &amp;F, std::vector&lt;outliner::Candidate&gt; &amp;Candidates) const override; <a href="/web-llvm/docs/api/namespaces/llvm/outliner/#a0765e098fe7aae0f01b60ec890ac1b52">outliner::InstrType</a> getOutliningTypeImpl(const MachineModuleInfo &amp;MMI,
-                                           MachineBasicBlock::iterator &amp;MIT,
-                                           unsigned Flags) const override; <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; std::pair&lt;MachineBasicBlock::iterator, MachineBasicBlock::iterator&gt;&gt; getOutlinableRanges(MachineBasicBlock &amp;MBB, unsigned &amp;Flags) const override; void buildOutlinedFrame(MachineBasicBlock &amp;MBB, MachineFunction &amp;MF,
-                          const outliner::OutlinedFunction &amp;OF) const override; <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> insertOutlinedCall(Module &amp;M, MachineBasicBlock &amp;MBB,
-                     MachineBasicBlock::iterator &amp;It, MachineFunction &amp;MF,
-                     outliner::Candidate &amp;C) const override; bool shouldOutlineFromFunctionByDefault(MachineFunction &amp;MF) const override;</p>
-
-
-<p>void buildClearRegister(<a href="/web-llvm/docs/api/classes/llvm/register">Register</a> Reg, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;MBB, <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Iter, <a href="/web-llvm/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp;DL, bool AllowSideEffects = true) const override;</p>
-
-
-<p>/ Returns the vector element size (B, H, S or D) of an SVE opcode. uint64_t getElementSizeForOpcode(unsigned Opc) const; / Returns true if the opcode is for an SVE instruction that sets the / condition codes as if it's results had been fed to a PTEST instruction / along with the same general predicate. bool isPTestLikeOpcode(unsigned Opc) const; / Returns true if the opcode is for an SVE WHILE## instruction. bool isWhileOpcode(unsigned Opc) const; / Returns true if the instruction has a shift by immediate that can be / executed in one cycle less. static bool isFalkorShiftExtFast(const MachineInstr &amp;MI); / Return true if the instructions is a SEH instruciton used for unwinding / on Windows. static bool <a href="/web-llvm/docs/api/namespaces/llvm/#a52619cc1f9c5c3029a03a6c956b32595">isSEHInstruction(const MachineInstr &amp;MI)</a>;</p>
-
-
-<p>std::optional&lt;RegImmPair&gt; isAddImmediate(const MachineInstr &amp;MI,
-                                           Register Reg) const override;</p>
-
-
-<p>bool isFunctionSafeToSplit(const MachineFunction &amp;MF) const override;</p>
-
-
-<p>bool isMBBSafeToSplitToCold(const MachineBasicBlock &amp;MBB) const override;</p>
-
-
-<p>std::optional&lt;ParamLoadedValue&gt; describeLoadedValue(const MachineInstr &amp;MI, Register Reg) const override;</p>
-
-
-<p>unsigned int getTailDuplicateSize(CodeGenOptLevel OptLevel) const override;</p>
-
-
-<p>bool isExtendLikelyToBeFolded(MachineInstr &amp;ExtMI,
-                                MachineRegisterInfo &amp;MRI) const override;</p>
-
-
-<p>static void decomposeStackOffsetForFrameOffsets(const StackOffset &amp;Offset,
-                                                  int64_t &amp;NumBytes,
-                                                  int64_t &amp;NumPredicateVectors,
-                                                  int64_t &amp;NumDataVectors); static void decomposeStackOffsetForDwarfOffsets(const StackOffset &amp;Offset,
-                                                  int64_t &amp;ByteSized,
-                                                  int64_t &amp;VGSized);</p>
-
-
-<p>Return true if address of the form BaseReg + Scale * ScaledReg + Offset can be used for a load/store of NumBytes. BaseReg is always present and implicit. bool isLegalAddressingMode(unsigned NumBytes, int64_t Offset,
-                             unsigned Scale) const;</p>
-
-
-<p>Decrement the SP, issuing probes along the way. <span class="doxyComputerOutput">TargetReg</span> is the new top of the stack. <span class="doxyComputerOutput">FrameSetup</span> is passed as true, if the allocation is a part</p>
 
 
 <p>Declaration at line 546 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 10011 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
@@ -2703,6 +3812,34 @@ to
 </div>
 </div>
 
+### shouldOutlineFromFunctionByDefault() {#a944bf3cc625b6bf05e52bc6daa2cc47f}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::shouldOutlineFromFunctionByDefault (<a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 493 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 9721 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a977ddce262de45c645be23d951066351">llvm::MachineFunction::getFunction</a> and <a href="/web-llvm/docs/api/classes/llvm/function/#a548cfb9440f36ba67fc5566b8e967fc6">llvm::Function::hasMinSize</a>.</p>
+
+</div>
+</div>
+
 ### storeRegToStackSlot() {#aeba4e73d60d1b4cedc120d06114c0620}
 
 <div class="doxyMemberItem">
@@ -2730,6 +3867,31 @@ to
 
 
 <p>Referenced by <a href="#a64505b70265bcadc4993631d532a5fd5">foldMemoryOperandImpl</a>.</p>
+
+</div>
+</div>
+
+### useMachineCombiner() {#a74804e3c6e291fe90c0cb697632dcf0e}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::useMachineCombiner ()</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p><a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> supports MachineCombiner.</p>
+
+<p>Declaration at line 459 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 6273 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
 
 </div>
 </div>
@@ -3220,6 +4382,82 @@ to
 </div>
 </div>
 
+### decomposeStackOffsetForDwarfOffsets() {#aff8cfe59027e5ffa1af1ff646a2da516}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void AArch64InstrInfo::decomposeStackOffsetForDwarfOffsets (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/stackoffset">StackOffset</a> &amp; Offset, int64_t &amp; ByteSized, int64_t &amp; VGSized)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Declaration at line 533 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 5621 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a2cd95c4fd57b9c1804bc70a37ac24574">llvm::createCFAOffset</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ad301df8bf0c11d0c17113d3c221025d8">createDefCFAExpression</a>.</p>
+
+</div>
+</div>
+
+### decomposeStackOffsetForFrameOffsets() {#a06abc64620fa2741d4756f05c337c9aa}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void AArch64InstrInfo::decomposeStackOffsetForFrameOffsets (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/stackoffset">StackOffset</a> &amp; Offset, int64_t &amp; NumBytes, int64_t &amp; NumPredicateVectors, int64_t &amp; NumDataVectors)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Returns the offset in parts to which this frame offset can be decomposed for the purpose of describing a frame offset.</p>
+
+
+<p>For non-scalable offsets this is simply its byte size.</p>
+
+
+<p>Declaration at line 529 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 5640 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a7c6206e8d8fd98ecca8ac2c785ee9491">llvm::emitFrameOffset</a>.</p>
+
+</div>
+</div>
+
 ### getLdStAmountOp() {#a412579416d151a39f4f5351de565542c}
 
 <div class="doxyMemberItem">
@@ -3541,7 +4779,7 @@ to
 <p>Reference <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
 
 
-<p>Referenced by <a href="#ab46fe6f7eb24fe0268c273a28452ecba">isSchedulingBoundary</a>.</p>
+<p>Referenced by <a href="#a72a70493afafbf4374226300289c04b9">getOutliningTypeImpl</a> and <a href="#ab46fe6f7eb24fe0268c273a28452ecba">isSchedulingBoundary</a>.</p>
 
 </div>
 </div>
@@ -3609,6 +4847,39 @@ to
 
 
 <p>References <a href="#a402d07e412b1466bf04c19cfde24de49">hasUnscaledLdStOffset</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+</div>
+</div>
+
+### isFalkorShiftExtFast() {#a796a2f531a01a5d72a58920fa8ec61b9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isFalkorShiftExtFast (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Returns true if the instruction has a shift by immediate that can be executed in one cycle less.</p>
+
+<p>Declaration at line 509 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 942 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a2f11475361161d9ce95a2f7be74de342">llvm::AArch64_AM::ASR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#ad45de36bc238edb61ed6b9375030f62f">llvm::AArch64_AM::getArithExtendType</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a529c6b94f32165c3d420316bcb6e0d9e">llvm::AArch64_AM::getArithShiftValue</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#adff7aee2baba9b9691304bee7e76f574">llvm::AArch64_AM::getShiftType</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a22f623563f43de6d1aabcdfa9d341031">llvm::AArch64_AM::getShiftValue</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a1d97e13eb9923037fe733eda83b7f938">llvm::AArch64_AM::LSL</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a59dcdcd32661c3deea19d0b4c00aeb09">llvm::AArch64_AM::UXTB</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a822b65b0f419881e5f0352e2f4f33d29">llvm::AArch64_AM::UXTH</a>, <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1a2620d8167a503c9942cc4afded7f830d">llvm::AArch64_AM::UXTW</a> and <a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am/#a7e75394a33f6a5897d7a14c0ba5d44f1ad2f6771d4027a09ba1d0de2e5ea54470">llvm::AArch64_AM::UXTX</a>.</p>
 
 </div>
 </div>
@@ -4067,6 +5338,42 @@ to
 </div>
 </div>
 
+### isSEHInstruction() {#a52619cc1f9c5c3029a03a6c956b32595}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">bool AArch64InstrInfo::isSEHInstruction (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Return true if the instructions is a SEH instruciton used for unwinding on Windows.</p>
+
+<p>Declaration at line 512 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-h">AArch64InstrInfo.h</a>, definition at line 1064 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp">AArch64InstrInfo.cpp</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a73f427af3525340f74d7e85b984b82d6">convertCalleeSaveRestoreToSPPrePostIncDec</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#aa3348fc65e993db75e0c3c050c561018">llvm::AArch64FrameLowering::emitEpilogue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a69a17a573c98c5ac8ff9fedcc9099807">fixupCalleeSaveRestoreStackOffset</a> and <a href="#ab46fe6f7eb24fe0268c273a28452ecba">isSchedulingBoundary</a>.</p>
+
+</div>
+</div>
+
 ### isStridedAccess() {#a801e90197138f0d232f8efcf2426dd81}
 
 <div class="doxyMemberItem">
@@ -4191,6 +5498,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -674,7 +674,7 @@ class llvm::ListInit { ... }
 <p>Declaration at line 793 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/tablegen/record-h">Record.h</a>, definition at line 725 of file <a href="/web-llvm/docs/api/files/lib/lib/tablegen/record-cpp">Record.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a43379a4cffc2ed53c7bf95fe72e60454">get</a>, <a href="/web-llvm/docs/api/classes/llvm/typedinit/#acdd9719e6d661022e6d5b1da9548c36e">llvm::TypedInit::getType</a>, <a href="#aa5bcf791a9da7d2346ec1246dfd958be">getValues</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="#a85ab7975d0433ca55941f95773217ad5">size</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a43379a4cffc2ed53c7bf95fe72e60454">get</a>, <a href="/web-llvm/docs/api/classes/llvm/typedinit/#acdd9719e6d661022e6d5b1da9548c36e">llvm::TypedInit::getType</a>, <a href="#aa5bcf791a9da7d2346ec1246dfd958be">getValues</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="#a85ab7975d0433ca55941f95773217ad5">size</a>.</p>
 
 </div>
 </div>
@@ -1075,7 +1075,7 @@ class llvm::ListInit { ... }
 <p>Declaration at line 800 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/tablegen/record-h">Record.h</a>, definition at line 761 of file <a href="/web-llvm/docs/api/files/lib/lib/tablegen/record-cpp">Record.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a43379a4cffc2ed53c7bf95fe72e60454">get</a>, <a href="#a1df971a09013eb33976bce9eaa86b044">getElementType</a>, <a href="#aa5bcf791a9da7d2346ec1246dfd958be">getValues</a>, <a href="/web-llvm/docs/api/classes/llvm/init/#a00581957c4bb1587a458c3fbf4326f7a">llvm::Init::resolveReferences</a> and <a href="#a85ab7975d0433ca55941f95773217ad5">size</a>.</p>
+<p>References <a href="#a43379a4cffc2ed53c7bf95fe72e60454">get</a>, <a href="#a1df971a09013eb33976bce9eaa86b044">getElementType</a>, <a href="#aa5bcf791a9da7d2346ec1246dfd958be">getValues</a>, <a href="/web-llvm/docs/api/classes/llvm/init/#a00581957c4bb1587a458c3fbf4326f7a">llvm::Init::resolveReferences</a> and <a href="#a85ab7975d0433ca55941f95773217ad5">size</a>.</p>
 
 </div>
 </div>
@@ -1233,6 +1233,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -30,13 +30,13 @@ namespace anonymous{CodeLayout.cpp} { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/cdsortimpl">CDSortImpl</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergegaint">MergeGainT</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The implementation of the Cache-Directed Sort (CDSort) algorithm for ordering functions represented by a call graph. <a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/cdsortimpl/#details">More...</a></p>
+<p>The gain of merging two chains, that is, the Ext-TSP score of the merge together with the corresponding merge 'type' and 'offset'. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergegaint/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -45,40 +45,12 @@ namespace anonymous{CodeLayout.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chainedge">ChainEdge</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/nodet">NodeT</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>An edge in the graph representing jumps between two chains. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chainedge/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chaint">ChainT</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>A chain (ordered sequence) of nodes in the graph. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chaint/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/exttspimpl">ExtTSPImpl</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>The implementation of the ExtTSP algorithm. <a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/exttspimpl/#details">More...</a></p>
+<p>A node in the graph, typically corresponding to a basic block in the CFG or a function in the call graph. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/nodet/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -101,12 +73,26 @@ namespace anonymous{CodeLayout.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergedjumpst">MergedJumpsT</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chaint">ChainT</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A wrapper around two concatenated vectors (chains) of jumps. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergedjumpst/#details">More...</a></p>
+<p>A chain (ordered sequence) of nodes in the graph. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chaint/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chainedge">ChainEdge</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>An edge in the graph representing jumps between two chains. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/chainedge/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -129,12 +115,12 @@ namespace anonymous{CodeLayout.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergegaint">MergeGainT</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergedjumpst">MergedJumpsT</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The gain of merging two chains, that is, the Ext-TSP score of the merge together with the corresponding merge 'type' and 'offset'. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergegaint/#details">More...</a></p>
+<p>A wrapper around two concatenated vectors (chains) of jumps. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/mergedjumpst/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -142,13 +128,27 @@ namespace anonymous{CodeLayout.cpp} { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/nodet">NodeT</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/exttspimpl">ExtTSPImpl</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A node in the graph, typically corresponding to a basic block in the CFG or a function in the call graph. <a href="/web-llvm/docs/api/structs/anonymous-codelayout-cpp-/nodet/#details">More...</a></p>
+<p>The implementation of the ExtTSP algorithm. <a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/exttspimpl/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/cdsortimpl">CDSortImpl</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>The implementation of the Cache-Directed Sort (CDSort) algorithm for ordering functions represented by a call graph. <a href="/web-llvm/docs/api/classes/anonymous-codelayout-cpp-/cdsortimpl/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -562,6 +562,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

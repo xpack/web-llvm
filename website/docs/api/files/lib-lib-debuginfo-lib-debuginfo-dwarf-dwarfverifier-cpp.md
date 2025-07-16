@@ -174,7 +174,7 @@ keywords:
 <p>Definition at line 1823 of file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/dwarf/dwarfverifier-cpp">DWARFVerifier.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a61d13d6824ec46c31260a4fd0997eda0">llvm::any_of</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a4030d97efbcfaf77b80c112cd27c4214">llvm::DWARFDie::getDwarfUnit</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#ac17a520cef18422636f0fbdd13061acf">llvm::DWARFDie::getLocations</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfcontext/#a6810400ced4f9fd81a2a0f16a6d71de7">llvm::DWARFContext::isLittleEndian</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aeeb5973ff74c4c4d279e275b34b7ef54">llvm::toStringRef</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a61d13d6824ec46c31260a4fd0997eda0">llvm::any_of</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a4030d97efbcfaf77b80c112cd27c4214">llvm::DWARFDie::getDwarfUnit</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#ac17a520cef18422636f0fbdd13061acf">llvm::DWARFDie::getLocations</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfcontext/#a6810400ced4f9fd81a2a0f16a6d71de7">llvm::DWARFContext::isLittleEndian</a> and <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#aa10731e4d6c303386a70337b0e0668d0">llvm::dwarf::toStringRef</a>.</p>
 
 </div>
 </div>
@@ -183,6 +183,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

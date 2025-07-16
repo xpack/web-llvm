@@ -713,19 +713,19 @@ class anonymous{StructurizeCFG.cpp}::StructurizeCFG { ... }
 
 
 <pre><code>/// 1
-/// ||
-/// | |
-/// 2 |
-/// | /
-/// |/
-/// 3
-/// ||   Where:
-/// | |  1 = "If" block, calculates the condition
-/// 4 |  2 = "Then" subregion, runs if the condition is true
-/// | /  3 = "Flow" blocks, newly inserted flow blocks, rejoins the flow
-/// |/   4 = "Else" optional subregion, runs if the condition is false
-/// 5    5 = "End" block, also rejoins the control flow
-///
+ *  ||
+ *  | |
+ *  2 |
+ *  | /
+ *  |/
+ *  3
+ *  ||   Where:
+ *  | |  1 = "If" block, calculates the condition
+ *  4 |  2 = "Then" subregion, runs if the condition is true
+ *  | /  3 = "Flow" blocks, newly inserted flow blocks, rejoins the flow
+ *  |/   4 = "Else" optional subregion, runs if the condition is false
+ *  5    5 = "End" block, also rejoins the control flow
+ *
 </code></pre>
 
 
@@ -737,14 +737,14 @@ class anonymous{StructurizeCFG.cpp}::StructurizeCFG { ... }
 
 
 <pre><code>/// 1
-/// ||
-/// | |
-/// 2 ^  Where:
-/// | /  1 = "Entry" block
-/// |/   2 = "Loop" optional subregion, with all exits at "Flow" block
-/// 3    3 = "Flow" block, with back edge to entry block
-/// |
-///
+ *  ||
+ *  | |
+ *  2 ^  Where:
+ *  | /  1 = "Entry" block
+ *  |/   2 = "Loop" optional subregion, with all exits at "Flow" block
+ *  3    3 = "Flow" block, with back edge to entry block
+ *  |
+ *
 </code></pre>
 
 
@@ -2033,6 +2033,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

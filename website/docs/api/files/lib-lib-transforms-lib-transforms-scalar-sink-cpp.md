@@ -257,7 +257,7 @@ keywords:
 <p>Definition at line 30 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/sink-cpp">Sink.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/memorylocation/#a18e5a3f1d71ba10a624f2a8e5121cf1f">llvm::MemoryLocation::get</a>, <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#a9d834ae3da8c62c2b668dada51335eb0">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a5d3d315f678bc76e43b27d18e5d72829">llvm::Instruction::isEHPad</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a728f79528ca8659e15d00c1e6818b316">llvm::isModSet</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a7653277511df1034148a37520a585bb5">llvm::Instruction::isTerminator</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a0501e3b4084693092efc0be8b02c1b6b">llvm::Instruction::mayThrow</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a383175f96316074965ad115706bd49d7">llvm::Instruction::mayWriteToMemory</a> and <a href="/web-llvm/docs/api/classes/llvm/instruction/#aa03e017ef451ba2f6f504b0d40c2da2e">llvm::Instruction::willReturn</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/memorylocation/#a18e5a3f1d71ba10a624f2a8e5121cf1f">llvm::MemoryLocation::get</a>, <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#a9d834ae3da8c62c2b668dada51335eb0">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a5d3d315f678bc76e43b27d18e5d72829">llvm::Instruction::isEHPad</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a728f79528ca8659e15d00c1e6818b316">llvm::isModSet</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a7653277511df1034148a37520a585bb5">llvm::Instruction::isTerminator</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a0501e3b4084693092efc0be8b02c1b6b">llvm::Instruction::mayThrow</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a383175f96316074965ad115706bd49d7">llvm::Instruction::mayWriteToMemory</a> and <a href="/web-llvm/docs/api/classes/llvm/instruction/#aa03e017ef451ba2f6f504b0d40c2da2e">llvm::Instruction::willReturn</a>.</p>
 
 
 <p>Referenced by <a href="#afa4c018bf923954bfd4ce5b6bf15b68b">SinkInstruction</a>.</p>
@@ -458,6 +458,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

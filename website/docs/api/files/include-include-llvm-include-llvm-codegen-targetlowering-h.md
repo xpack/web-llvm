@@ -297,7 +297,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abf72c4cc7b3c53cbf1f02dd1f6c3c46b">DAG_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::DAGN; <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abf72c4cc7b3c53cbf1f02dd1f6c3c46b">DAG_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::DAGN; break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -310,7 +310,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a21d38d06e4cf1a698c0a1d0d60811d34">CMP_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::SETCC; <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a21d38d06e4cf1a698c0a1d0d60811d34">CMP_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::SETCC; break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -353,7 +353,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define CMP_INSTRUCTION(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::SETCC; <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define CMP_INSTRUCTION(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::SETCC; break;</td>
 </tr>
 </table>
 </td>
@@ -378,7 +378,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define DAG_INSTRUCTION(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::DAGN; <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define DAG_INSTRUCTION(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)&nbsp;&nbsp;&nbsp;      case ISD::STRICT_##DAGN: EqOpc = ISD::DAGN; break;</td>
 </tr>
 </table>
 </td>
@@ -398,6 +398,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

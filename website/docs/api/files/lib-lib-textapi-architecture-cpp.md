@@ -82,7 +82,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aadcb40e5edda9a8fcbe65139439194f9">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;.Case(#Arch, AK_##Arch)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a78e1a3c680b523b3cf2872aa0ce1cbb3">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;.Case(#Arch, AK_##Arch)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -95,7 +95,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aadcb40e5edda9a8fcbe65139439194f9">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abdf49c9334af73ad5df226d6580c68ec">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -108,7 +108,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aadcb40e5edda9a8fcbe65139439194f9">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aedf6d7eda3863d7dd5466d05a1265c8f">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -121,7 +121,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aadcb40e5edda9a8fcbe65139439194f9">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab93e6fc2477276f2070b85dc47a40f06">ARCHINFO</a>(Arch, Type, Subtype, NumBits)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -174,7 +174,7 @@ keywords:
 </div>
 </div>
 
-### ARCHINFO {#aadcb40e5edda9a8fcbe65139439194f9}
+### ARCHINFO {#a78e1a3c680b523b3cf2872aa0ce1cbb3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -199,7 +199,7 @@ keywords:
 </div>
 </div>
 
-### ARCHINFO {#aadcb40e5edda9a8fcbe65139439194f9}
+### ARCHINFO {#abdf49c9334af73ad5df226d6580c68ec}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -233,7 +233,7 @@ keywords:
 </div>
 </div>
 
-### ARCHINFO {#aadcb40e5edda9a8fcbe65139439194f9}
+### ARCHINFO {#aedf6d7eda3863d7dd5466d05a1265c8f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -267,7 +267,7 @@ keywords:
 </div>
 </div>
 
-### ARCHINFO {#aadcb40e5edda9a8fcbe65139439194f9}
+### ARCHINFO {#ab93e6fc2477276f2070b85dc47a40f06}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -305,6 +305,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

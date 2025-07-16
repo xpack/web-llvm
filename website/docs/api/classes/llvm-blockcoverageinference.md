@@ -453,7 +453,7 @@ class llvm::BlockCoverageInference { ... }
 <p>Declaration at line 42 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/instrumentation/blockcoverageinference-h">BlockCoverageInference.h</a>, definition at line 65 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/blockcoverageinference-cpp">BlockCoverageInference.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a> and <a href="/web-llvm/docs/api/classes/llvm/setvector/#a66af03d5b92dcc21371703b525509956">llvm::SetVector&lt; T, Vector, Set, N &gt;::set_union</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a> and <a href="/web-llvm/docs/api/classes/llvm/setvector/#a66af03d5b92dcc21371703b525509956">llvm::SetVector&lt; T, Vector, Set, N &gt;::set_union</a>.</p>
 
 </div>
 </div>
@@ -526,7 +526,7 @@ class llvm::BlockCoverageInference { ... }
 <p>Declaration at line 38 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/instrumentation/blockcoverageinference-h">BlockCoverageInference.h</a>, definition at line 91 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/blockcoverageinference-cpp">BlockCoverageInference.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>.</p>
 
 
 <p>Referenced by <a href="#a7ec2012966b48e628d0afe7fb3a01f8b">BlockCoverageInference</a>, <a href="#a0091b4d3d6e228e4b82c8cdb56363754">dump</a> and <a href="#a09b2833329e8e77c280ce50d1f6f560e">getInstrumentedBlocksHash</a>.</p>
@@ -808,6 +808,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -924,7 +924,7 @@ class llvm::sandboxir::Interval&lt;T&gt; { ... }
 <p>Declaration at line 139 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/interval-h">Interval.h</a>, definition at line 16 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/interval-cpp">Interval.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a0e9cf49b789ff0825ffea99d23afd013">llvm::sandboxir::empty</a>, <a href="#af9a97e5d9ab0fa2a28ce4315873d3742">llvm::sandboxir::Interval&lt; T &gt;::Interval</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">llvm::Other</a>.</p>
+<p>References <a href="#aa00dd97592c93e24f76a6619cb158eb2">llvm::sandboxir::Interval&lt; T &gt;::empty</a>, <a href="#af9a97e5d9ab0fa2a28ce4315873d3742">llvm::sandboxir::Interval&lt; T &gt;::Interval</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">llvm::Other</a>.</p>
 
 
 <p>Referenced by <a href="#ad9ea96110527d1b92cd02a689d63232a">llvm::sandboxir::Interval&lt; T &gt;::comesBefore</a> and <a href="#a2d2b5ffb04fc281e93fe67c3d569369a">llvm::sandboxir::Interval&lt; T &gt;::operator-</a>.</p>
@@ -993,7 +993,7 @@ class llvm::sandboxir::Interval&lt;T&gt; { ... }
 <p>Reference <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>.</p>
 
 
-<p>Referenced by <a href="#a568051c1365a6b1e01347efcbd6289a9">llvm::sandboxir::Interval&lt; T &gt;::contains</a>, <a href="#a43503fee0b0bfd0be8c83b26f5d4a8d2">llvm::sandboxir::Interval&lt; T &gt;::getUnionInterval</a> and <a href="#aeb0993d4d746ef0238908f3e6655ac2e">llvm::sandboxir::Interval&lt; T &gt;::intersection</a>.</p>
+<p>Referenced by <a href="#a568051c1365a6b1e01347efcbd6289a9">llvm::sandboxir::Interval&lt; T &gt;::contains</a>, <a href="#ab15c1efdc5ca71375a50ecbd423f7fa7">llvm::sandboxir::Interval&lt; T &gt;::disjoint</a>, <a href="#a43503fee0b0bfd0be8c83b26f5d4a8d2">llvm::sandboxir::Interval&lt; T &gt;::getUnionInterval</a> and <a href="#aeb0993d4d746ef0238908f3e6655ac2e">llvm::sandboxir::Interval&lt; T &gt;::intersection</a>.</p>
 
 </div>
 </div>
@@ -1343,6 +1343,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

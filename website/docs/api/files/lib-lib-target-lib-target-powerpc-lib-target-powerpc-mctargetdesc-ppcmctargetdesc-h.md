@@ -247,7 +247,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a793ffe119be4139eb647c06f6f4ac917">PPC_REGS0_7</a>(X)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5731a2c3c7b6ced3b08be7865e9f725d">PPC_REGS0_7</a>(X)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -770,7 +770,7 @@ keywords:
 </div>
 </div>
 
-### PPC\_REGS0\_7 {#a793ffe119be4139eb647c06f6f4ac917}
+### PPC\_REGS0\_7 {#a5731a2c3c7b6ced3b08be7865e9f725d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -809,6 +809,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

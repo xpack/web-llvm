@@ -2633,7 +2633,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a482044799740d49b115b6738053950c7">X86_FEATURE</a>(ENUM, STR)&nbsp;&nbsp;&nbsp;{{"+" STR}, ImpliedFeatures##<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/clauset-h/#a9f45f010de76e982a57b1b875fcb44e3">ENUM</a>},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af267f7aaeca177bbec2ff4a7e0ac76f4">X86_FEATURE</a>(ENUM, STR)&nbsp;&nbsp;&nbsp;{{"+" STR}, ImpliedFeatures##<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/clauset-h/#a9f45f010de76e982a57b1b875fcb44e3">ENUM</a>},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2672,7 +2672,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aaaae8780c49415ddea8ebeab59c14b24">X86_FEATURE_COMPAT</a>(ENUM, STR, PRIORITY)&nbsp;&nbsp;&nbsp;PRIORITY,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6dc0c5cbfbe36800d30b43e43db4cb48">X86_FEATURE_COMPAT</a>(ENUM, STR, PRIORITY)&nbsp;&nbsp;&nbsp;PRIORITY,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2685,7 +2685,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aaaae8780c49415ddea8ebeab59c14b24">X86_FEATURE_COMPAT</a>(ENUM, STR, PRIORITY)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa298b17f9673e0efd6357941bb409c4">X86_FEATURE_COMPAT</a>(ENUM, STR, PRIORITY)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -9147,7 +9147,7 @@ keywords:
 </div>
 </div>
 
-### X86\_FEATURE {#a482044799740d49b115b6738053950c7}
+### X86\_FEATURE {#af267f7aaeca177bbec2ff4a7e0ac76f4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -9197,7 +9197,7 @@ keywords:
 </div>
 </div>
 
-### X86\_FEATURE\_COMPAT {#aaaae8780c49415ddea8ebeab59c14b24}
+### X86\_FEATURE\_COMPAT {#a6dc0c5cbfbe36800d30b43e43db4cb48}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -9222,7 +9222,7 @@ keywords:
 </div>
 </div>
 
-### X86\_FEATURE\_COMPAT {#aaaae8780c49415ddea8ebeab59c14b24}
+### X86\_FEATURE\_COMPAT {#afa298b17f9673e0efd6357941bb409c4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -9285,6 +9285,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -1106,7 +1106,7 @@ class llvm::Trace { ... }
 <p>Declaration at line 50 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/trace-h">Trace.h</a>, definition at line 27 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/trace-cpp">Trace.cpp</a>.</p>
 
 
-<p>References <a href="#a97940885bb5e96dae01a2518addefba9">getEntryBasicBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>.</p>
+<p>References <a href="#a97940885bb5e96dae01a2518addefba9">getEntryBasicBlock</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>.</p>
 
 
 <p>Referenced by <a href="#af6a78a14ed8d5159ce626b046933b468">getModule</a> and <a href="#ad4fa67705b5b6d8eddce4b715c530a69">print</a>.</p>
@@ -1373,6 +1373,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

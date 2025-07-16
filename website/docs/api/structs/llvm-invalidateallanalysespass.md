@@ -58,7 +58,7 @@ struct llvm::InvalidateAllAnalysesPass { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a26d46f86f73f5ec55ce9e332c1969e14">run</a> (IRUnitT &amp;, AnalysisManagerT &amp;, ExtraArgTs &amp;&amp;...)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -116,9 +116,6 @@ struct llvm::InvalidateAllAnalysesPass { ... }
 
 <p>Definition at line 933 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a>.</p>
-
 </div>
 </div>
 
@@ -134,6 +131,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

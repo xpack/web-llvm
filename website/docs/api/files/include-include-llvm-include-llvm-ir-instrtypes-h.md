@@ -336,12 +336,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a27e1be526590c342b05ad73c05f6455b">HANDLE_UNARY_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acbc229066f6a4ec243361cfa0a0c3d87">HANDLE_UNARY_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>These methods just forward to Create, and are useful when you statically know what type of instruction you're going to create. <a href="#a27e1be526590c342b05ad73c05f6455b">More...</a></p>
+<p>These methods just forward to Create, and are useful when you statically know what type of instruction you're going to create. <a href="#acbc229066f6a4ec243361cfa0a0c3d87">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -364,12 +364,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a775c73e59af0b55df367cde0e0e89762">HANDLE_BINARY_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a19594a85801e70ebc42ad73c2e6d7d20">HANDLE_BINARY_INST</a>(N, OPC, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>These methods just forward to Create, and are useful when you statically know what type of instruction you're going to create. <a href="#a775c73e59af0b55df367cde0e0e89762">More...</a></p>
+<p>These methods just forward to Create, and are useful when you statically know what type of instruction you're going to create. <a href="#a19594a85801e70ebc42ad73c2e6d7d20">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -477,7 +477,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_BINARY\_INST {#a775c73e59af0b55df367cde0e0e89762}
+### HANDLE\_BINARY\_INST {#a19594a85801e70ebc42ad73c2e6d7d20}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -556,7 +556,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_UNARY\_INST {#a27e1be526590c342b05ad73c05f6455b}
+### HANDLE\_UNARY\_INST {#acbc229066f6a4ec243361cfa0a0c3d87}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -600,6 +600,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

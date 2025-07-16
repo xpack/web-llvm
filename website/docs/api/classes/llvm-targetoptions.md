@@ -3072,7 +3072,7 @@ class llvm::TargetOptions { ... }
 <p>Definition at line 176 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/target/targetoptions-h">TargetOptions.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetlowering/#aed1455dbc1ee69a6b745c72fdecac52f">llvm::NVPTXTargetLowering::allowUnsafeFPMath</a>, <a href="#a32054a115837c426986d56d382030345">HonorSignDependentRoundingFPMath</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgpulegalizerinfo/#aa71647a93d5e73c28332b6e52407979c">llvm::AMDGPULegalizerInfo::legalizeFastUnsafeFDIV</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgpulegalizerinfo/#ac0184339c875630ffed0e19b55899b82">llvm::AMDGPULegalizerInfo::legalizeFastUnsafeFDIV64</a>, <a href="#af0f3705b7e516b390c0e162bac07f31c">TargetOptions</a> and <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetlowering/#ae520d99d1f2920afdc21bdd7346ba561">llvm::NVPTXTargetLowering::usePrecSqrtF32</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetlowering/#aed1455dbc1ee69a6b745c72fdecac52f">llvm::NVPTXTargetLowering::allowUnsafeFPMath</a>, <a href="#a32054a115837c426986d56d382030345">HonorSignDependentRoundingFPMath</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#aab3d65d6e0daa1da2c564a3803f207b2">llvm::AArch64InstrInfo::isAssociativeAndCommutative</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgpulegalizerinfo/#aa71647a93d5e73c28332b6e52407979c">llvm::AMDGPULegalizerInfo::legalizeFastUnsafeFDIV</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgpulegalizerinfo/#ac0184339c875630ffed0e19b55899b82">llvm::AMDGPULegalizerInfo::legalizeFastUnsafeFDIV64</a>, <a href="#af0f3705b7e516b390c0e162bac07f31c">TargetOptions</a> and <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetlowering/#ae520d99d1f2920afdc21bdd7346ba561">llvm::NVPTXTargetLowering::usePrecSqrtF32</a>.</p>
 
 </div>
 </div>
@@ -3318,6 +3318,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

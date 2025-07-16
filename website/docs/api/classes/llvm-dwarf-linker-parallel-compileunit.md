@@ -210,41 +210,13 @@ class llvm::dwarf_linker::parallel::CompileUnit { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a0b0094f2370abd91cc57b6d5476a599b">StringEntry</a> *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#affd8bc2fe0d879ef4ad2538a617e7629">getFileName</a> (unsigned FileIdx, StringPool &amp;GlobalStrings)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Returns name of the file for the <span class="doxyComputerOutput">FileIdx</span> from the unit`s line table. <a href="#affd8bc2fe0d879ef4ad2538a617e7629">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/dwarffile">DWARFFile</a> &amp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a78764e87199f5b89827a6ba760bfcd7c">getContaingFile</a> () const</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Returns <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/dwarffile">DWARFFile</a> containing this compile unit. <a href="#a78764e87199f5b89827a6ba760bfcd7c">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a91509cfc9da285731d483b1373c8584d">loadInputDIEs</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Load DIEs of input compilation unit. <a href="#a91509cfc9da285731d483b1373c8584d">More...</a></p>
+<p>Returns name of the file for the <span class="doxyComputerOutput">FileIdx</span> from the unit`s line table. <a href="#a91509cfc9da285731d483b1373c8584d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -2115,7 +2087,7 @@ discovered, type names are assigned if ODR is requested)
 <p>Declaration at line 415 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-h">DWARFLinkerCompileUnit.h</a>, definition at line 894 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-cpp">DWARFLinkerCompileUnit.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7af5fd6eac5e3429291e19a0bc6fd51fabc5183644c3cfe8d28e144b1518446d9">llvm::Dwarf</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a315f90678bfa85d85d71a9dd12d5457a">llvm::DWARFDie::find</a>, <a href="#a78764e87199f5b89827a6ba760bfcd7c">getContaingFile</a>, <a href="/web-llvm/docs/api/groups/helper/#ga4a7a4b7dd835a0d0791b13322e3b5679">getOrigUnit</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarfunit/#afbcc691dc3aee7912fd0e6f49fb1bb8a">llvm::dwarf_linker::parallel::DwarfUnit::getOutUnitDIE</a>, <a href="/web-llvm/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">llvm::Error::success</a> and <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#a966c7097853fffeaf2746f5d58861f36">llvm::dwarf::toSectionOffset</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7af5fd6eac5e3429291e19a0bc6fd51fabc5183644c3cfe8d28e144b1518446d9">llvm::Dwarf</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a315f90678bfa85d85d71a9dd12d5457a">llvm::DWARFDie::find</a>, <a href="/web-llvm/docs/api/groups/helper/#ga4a7a4b7dd835a0d0791b13322e3b5679">getOrigUnit</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarfunit/#afbcc691dc3aee7912fd0e6f49fb1bb8a">llvm::dwarf_linker::parallel::DwarfUnit::getOutUnitDIE</a>, <a href="/web-llvm/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">llvm::Error::success</a> and <a href="/web-llvm/docs/api/namespaces/llvm/dwarf/#a966c7097853fffeaf2746f5d58861f36">llvm::dwarf::toSectionOffset</a>.</p>
 
 
 <p>Referenced by <a href="#ab33a7e6fdc362895e1b739081c1286ba">cloneAndEmit</a>.</p>
@@ -2146,7 +2118,7 @@ discovered, type names are assigned if ODR is requested)
 <p>Declaration at line 426 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-h">DWARFLinkerCompileUnit.h</a>, definition at line 1516 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-cpp">DWARFLinkerCompileUnit.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/structs/llvm/dwarf/formparams/#a6892519cfb3ec739ebd611d7bd82ea2e">llvm::dwarf::FormParams::AddrSize</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/dwarffile/#afd324456c487528eeb69587a4e3aa2cb">llvm::dwarf_linker::DWARFFile::Dwarf</a>, <a href="/web-llvm/docs/api/groups/methods/#gaf5ad0e93c4f3b97d0e8d192675945746">llvm::dwarf_linker::parallel::DwarfUnit::emitDebugLine</a>, <a href="/web-llvm/docs/api/groups/helper/#gaed7fe8d7d740751efb3cd56d309a63e9">find</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#ad1a98ac8bd44a05c862c20b5963957d4">llvm::DWARFDebugLine::Prologue::FormParams</a>, <a href="#a78764e87199f5b89827a6ba760bfcd7c">getContaingFile</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/outputsections/#a33ecefa9aec7bce5d08e92138ae1be08">llvm::dwarf_linker::parallel::OutputSections::getFormParams</a>, <a href="#a93cea00bbe10a959098b13fdc7bee00f">getFunctionRanges</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarfunit/#a461c26c602014baed9de7d2c019f4f8a">llvm::dwarf_linker::parallel::DwarfUnit::getGlobalData</a>, <a href="/web-llvm/docs/api/groups/helper/#ga4a7a4b7dd835a0d0791b13322e3b5679">getOrigUnit</a>, <a href="/web-llvm/docs/api/groups/helper/#ga619b3ce46249265bdc72744dec7e953a">getUnitDIE</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#aec306fc919df207db6e700f491872d71">llvm::DWARFDebugLine::LineTable::Prologue</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#a08f2df6a1aaacec42c6ded0585a11e4d">llvm::DWARFDebugLine::LineTable::Rows</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#ada29eb4559f13bb34130942122c76ec7">llvm::DWARFDebugLine::LineTable::Sequences</a>, <a href="/web-llvm/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">llvm::Error::success</a> and <a href="/web-llvm/docs/api/groups/methods/#ga8b2f2eefb63daf2e6f322e1e90228a2e">warn</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/llvm/dwarf/formparams/#a6892519cfb3ec739ebd611d7bd82ea2e">llvm::dwarf::FormParams::AddrSize</a>, <a href="/web-llvm/docs/api/groups/methods/#gaf5ad0e93c4f3b97d0e8d192675945746">llvm::dwarf_linker::parallel::DwarfUnit::emitDebugLine</a>, <a href="/web-llvm/docs/api/groups/helper/#gaed7fe8d7d740751efb3cd56d309a63e9">find</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#ad1a98ac8bd44a05c862c20b5963957d4">llvm::DWARFDebugLine::Prologue::FormParams</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/outputsections/#a33ecefa9aec7bce5d08e92138ae1be08">llvm::dwarf_linker::parallel::OutputSections::getFormParams</a>, <a href="#a93cea00bbe10a959098b13fdc7bee00f">getFunctionRanges</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarfunit/#a461c26c602014baed9de7d2c019f4f8a">llvm::dwarf_linker::parallel::DwarfUnit::getGlobalData</a>, <a href="/web-llvm/docs/api/groups/helper/#ga4a7a4b7dd835a0d0791b13322e3b5679">getOrigUnit</a>, <a href="/web-llvm/docs/api/groups/helper/#ga619b3ce46249265bdc72744dec7e953a">getUnitDIE</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#aec306fc919df207db6e700f491872d71">llvm::DWARFDebugLine::LineTable::Prologue</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#a08f2df6a1aaacec42c6ded0585a11e4d">llvm::DWARFDebugLine::LineTable::Rows</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/linetable/#ada29eb4559f13bb34130942122c76ec7">llvm::DWARFDebugLine::LineTable::Sequences</a>, <a href="/web-llvm/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">llvm::Error::success</a> and <a href="/web-llvm/docs/api/groups/methods/#ga8b2f2eefb63daf2e6f322e1e90228a2e">warn</a>.</p>
 
 
 <p>Referenced by <a href="#ab33a7e6fdc362895e1b739081c1286ba">cloneAndEmit</a>.</p>
@@ -2275,39 +2247,6 @@ discovered, type names are assigned if ODR is requested)
 </div>
 </div>
 
-### getContaingFile() {#a78764e87199f5b89827a6ba760bfcd7c}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">const DWARFFile &amp; llvm::dwarf_linker::parallel::CompileUnit::getContaingFile ()</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Returns <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/dwarffile">DWARFFile</a> containing this compile unit.</p>
-
-<p>Definition at line 111 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-h">DWARFLinkerCompileUnit.h</a>.</p>
-
-
-<p>Referenced by <a href="#aab5e3c8afd376c7fedfcd02a86d31540">cloneAndEmitDebugMacro</a> and <a href="#a5d779ebf8d97beda3616fa4d7997e355">cloneAndEmitLineTable</a>.</p>
-
-</div>
-</div>
-
 ### getDebugAddrIndex() {#a743f8099b5d1857b748d9be592ab0692}
 
 <div class="doxyMemberItem">
@@ -2393,34 +2332,6 @@ discovered, type names are assigned if ODR is requested)
 
 
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#acb80894344c78dacf8d5ff8c23be697d">llvm::sys::path::append</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a2dc80c585ad5882da8cae7b5968f7e74">llvm::StringRef::empty</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarfunit/#a16cbefbd2f62758e696d04e82fc6fd1a">llvm::dwarf_linker::parallel::DwarfUnit::FileNames</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfunit/#a610e091c42196cd8bdddce77b7a407e4">llvm::DWARFUnit::getCompilationDir</a>, <a href="/web-llvm/docs/api/groups/helper/#ga4a7a4b7dd835a0d0791b13322e3b5679">getOrigUnit</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/outputsections/#a72e4600f7a22981307da5b2a2b5acb68">llvm::dwarf_linker::parallel::OutputSections::getVersion</a>, <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#aba60ebbb0330f9e5e713c887d90a40ea">llvm::dwarf_linker::isPathAbsoluteOnWindowsOrPosix</a>, <a href="/web-llvm/docs/api/groups/methods/#gga2c708209e1c0939d50f9e70bc5708491a49ee3087348e8d44e1feda1917443987">llvm::dwarf_linker::parallel::DwarfUnit::Name</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#a58cfd8a47c0ef96db27b451c2d6ec49fa8e5f3adee38c8fccc13c1f3be0143796">llvm::sys::path::native</a>, <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a> and <a href="/web-llvm/docs/api/groups/methods/#ga8b2f2eefb63daf2e6f322e1e90228a2e">warn</a>.</p>
-
-</div>
-</div>
-
-### getFileName() {#affd8bc2fe0d879ef4ad2538a617e7629}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">StringEntry * CompileUnit::getFileName (unsigned FileIdx, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/stringpool">StringPool</a> &amp; GlobalStrings)</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Returns name of the file for the <span class="doxyComputerOutput">FileIdx</span> from the unit`s line table.</p>
-
-<p>Declaration at line 108 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-h">DWARFLinkerCompileUnit.h</a>, definition at line 188 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dwarflinkercompileunit-cpp">DWARFLinkerCompileUnit.cpp</a>.</p>
-
-
-<p>References <a href="/web-llvm/docs/api/structs/llvm/dilineinfospecifier/#a4d01b170267924ab4225e3c93ad666c3a7e2c85add6bbb98ae5b91471b11fd9a2">llvm::DILineInfoSpecifier::AbsoluteFilePath</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#acb80894344c78dacf8d5ff8c23be697d">llvm::sys::path::append</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#aa56d25bb5127dd7a5831c25764f76cbe">llvm::sys::path::filename</a>, <a href="/web-llvm/docs/api/groups/helper/#ga4a7a4b7dd835a0d0791b13322e3b5679">getOrigUnit</a>, <a href="/web-llvm/docs/api/classes/llvm/concurrenthashtablebyptr/#a05f04083a96d1718f46e8f875425e636">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::insert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#a5326427c87607b2364a1fcdf13fa0eea">llvm::sys::path::parent_path</a> and <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#a2363fbfbd0a348f5d81fc3d3223ecae3">llvm::sys::fs::real_path</a>.</p>
 
 </div>
 </div>
@@ -2599,7 +2510,16 @@ discovered, type names are assigned if ODR is requested)
 </div>
 <div class="doxyMemberDoc">
 
-<p>Load DIEs of input compilation unit.</p>
+<p>Returns name of the file for the <span class="doxyComputerOutput">FileIdx</span> from the unit`s line table.</p>
+
+
+<p>*/ <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a0b0094f2370abd91cc57b6d5476a599b">StringEntry</a> *getFileName(unsigned FileIdx, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/stringpool">StringPool</a> &amp;GlobalStrings);</p>
+
+
+<p>/ Returns <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/dwarffile">DWARFFile</a> containing this compile unit. const <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/dwarffile">DWARFFile</a> &amp;getContaingFile() const { return File; }</p>
+
+
+<p>/** Load DIEs of input compilation unit.</p>
 
 
 <dl class="doxySectionUser">
@@ -3544,6 +3464,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

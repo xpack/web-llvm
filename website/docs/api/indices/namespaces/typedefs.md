@@ -120,6 +120,7 @@ keywords:
 <li><b>BranchDebugLocMap</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-structurizecfg-cpp-/#a3ba1b4064479d872e2fae5f5aa35e9ac">anonymous{StructurizeCFG.cpp}</a></li>
 <li><b>BranchVector</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-structurizecfg-cpp-/#ab8635f13889d2429aa82bfc3e6264651">anonymous{StructurizeCFG.cpp}</a></li>
 <li><b>BufferType</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/unicode/#a71a6fc64f3d617a205c8f34db2ff2c1a">llvm::sys::unicode</a></li>
+<li><b>BufferUsageEntry</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mca/#aba3b7ebb67f4b3f1f75f79892f9be84b">llvm::mca</a></li>
 <li><b>BuildFnTy</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a24b7d179366307f01deb88ddf796eb82">llvm</a></li>
 <li><b>BuildID</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/object/#a4304894bcf353bce5ba4d3dd7ff534d7">llvm::object</a></li>
 <li><b>BuildIDRef</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac1078293d640738282058eba178e9472">llvm</a></li>
@@ -129,7 +130,7 @@ keywords:
 <li><b>BURegReductionPriorityQueue</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-scheduledagrrlist-cpp-/#a62950c3c1be0602b920c20260716d4a0">anonymous{ScheduleDAGRRList.cpp}</a></li>
 <li><b>BypassWidthsTy</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-bypassslowdivision-cpp-/#af59a5e0e43be3e24b0a48311ea4f3b0d">anonymous{BypassSlowDivision.cpp}</a></li>
 </ul>
-<p>60 entries</p>
+<p>61 entries</p>
 
 ## - C -
 
@@ -507,13 +508,12 @@ keywords:
 <li><b>Iter</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mipsbranchexpansion-cpp-/#ac34e799fd29fd86fe9713599ed72a596">anonymous{MipsBranchExpansion.cpp}</a></li>
 <li><b>Iter</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mipsconstantislandpass-cpp-/#a848d0a7ce2287ccaa4997eb6f02b48cf">anonymous{MipsConstantIslandPass.cpp}</a></li>
 <li><b>Iter</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-mipsdelayslotfiller-cpp-/#afb20d49071e674b831046b73d9208bbd">anonymous{MipsDelaySlotFiller.cpp}</a></li>
-<li><b>iterator</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a7f5af8c1ba2e11773efdbf7b6bc0d4e8">llvm::sandboxir</a></li>
 <li><b>IteratorT</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/tomp/#a9f6a562d46b6d2d18da1d9e772af332a">tomp</a></li>
 <li><b>IteratorT</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/tomp/type/#a2e47116f4b68cff5dd929f1af486d558">tomp::type</a></li>
 <li><b>IterOfRange</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/detail/#a8dc2ebf50e1ee02591c783794cdb879c">llvm::detail</a></li>
 <li><b>IterValue</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/support/detail/#a14d1fa7d1d8270e8a7dc4527af144160">llvm::support::detail</a></li>
 </ul>
-<p>73 entries</p>
+<p>72 entries</p>
 
 ## - J -
 
@@ -883,7 +883,7 @@ keywords:
 <li><b>ResourceBindInfo</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dxcontaineryaml/#ac30535c881142b6321377959bd222fa9">llvm::DXContainerYAML</a></li>
 <li><b>ResourceFlags</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/dxcontaineryaml/#a6ab6a865fb4f22b5aca1d1382ae60030">llvm::DXContainerYAML</a></li>
 <li><b>ResourceKey</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a48eb648e96394270c69273c29bfad24e">llvm::orc</a></li>
-<li><b>ResourceRef</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">llvm::mca</a></li>
+<li><b>ResourceRef</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mca/#aa013ffaca9bcaadec118afaede71ab29">llvm::mca</a></li>
 <li><b>ResourceTrackerSP</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a25b487d71ccd2a8f38131e2b21c5d612">llvm::orc</a></li>
 <li><b>ResourceUse</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mca/#ab534e0b15e46245fd0eb31e7e7c2e863">llvm::mca</a></li>
 <li><b>RetainedKnowledgeKey</b>: as typedef in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9888552f3123d4dc7fc12875d9f17d3c">llvm</a></li>
@@ -1216,6 +1216,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

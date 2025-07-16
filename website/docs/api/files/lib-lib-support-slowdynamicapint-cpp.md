@@ -126,7 +126,7 @@ keywords:
 
 
 
-### Arithmetic operators {#autotoc_md109}
+### Arithmetic operators {#autotoc_md108}
 
 
 <p>If the overflow bit becomes set, resize a and b to double the width and call <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op(a, b, overflow)</a>, returning its result. The operation with double widths should not also overflow.</p>
@@ -147,6 +147,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

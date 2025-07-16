@@ -147,7 +147,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a461fa94d8876d10c58827bd483af2a43">DXIL_ATTRIBUTE</a>(Name)&nbsp;&nbsp;&nbsp;c.Name = a.Name | b.Name;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1c4d39f374c5d75a2e0dc7802fcc56b2">DXIL_ATTRIBUTE</a>(Name)&nbsp;&nbsp;&nbsp;c.Name = a.Name | b.Name;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -203,7 +203,7 @@ keywords:
 </div>
 </div>
 
-### DXIL\_ATTRIBUTE {#a461fa94d8876d10c58827bd483af2a43}
+### DXIL\_ATTRIBUTE {#a1c4d39f374c5d75a2e0dc7802fcc56b2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -332,6 +332,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

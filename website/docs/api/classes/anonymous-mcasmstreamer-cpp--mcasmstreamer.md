@@ -5567,7 +5567,7 @@ class anonymous{MCAsmStreamer.cpp}::MCAsmStreamer { ... }
 <p>Definition at line 313 of file <a href="/web-llvm/docs/api/files/lib/lib/mc/mcasmstreamer-cpp">MCAsmStreamer.cpp</a>.</p>
 
 
-<p>References <a href="#a7064b16a5706077633ab420138948ae9">EmitEOL</a>, <a href="/web-llvm/docs/api/classes/llvm/mcstreamer/#a61c979932b890df773ce75013b76708b">llvm::MCStreamer::getContext</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#abec19670f96ed423c2e4d4f10a4c6975">llvm::toHex</a>.</p>
+<p>References <a href="#a7064b16a5706077633ab420138948ae9">EmitEOL</a> and <a href="/web-llvm/docs/api/classes/llvm/mcstreamer/#a61c979932b890df773ce75013b76708b">llvm::MCStreamer::getContext</a>.</p>
 
 </div>
 </div>
@@ -8767,6 +8767,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

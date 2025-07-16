@@ -2416,8 +2416,806 @@ namespace llvm::ISD { ... }
 </tr>
 
 <tr class="doxyEnumItem">
-<td class="doxyEnumItemName">CONVERGENCECTRL_ANCHOR<a id="a22ea9cec080dd5f4f47ba234c2f59110a041c4b27006496ee8d8bcdf72e248632"></a></td>
+<td class="doxyEnumItemName">SET_ROUNDING<a id="a22ea9cec080dd5f4f47ba234c2f59110a4fe6c878350458de2c3182392f830988"></a></td>
 <td class="doxyEnumItemDescription">Set rounding mode</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FP_EXTEND<a id="a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d"></a></td>
+<td class="doxyEnumItemDescription">X = <a href="#a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d">FP_EXTEND(Y)</a> - Extend a smaller FP type into a larger FP type</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BITCAST<a id="a22ea9cec080dd5f4f47ba234c2f59110a412ddf522b53f07690a86bffba1278e7"></a></td>
+<td class="doxyEnumItemDescription">BITCAST - This operator converts between integer, vector and FP values, as if the value was stored to memory with one type and loaded from the same address with the other type (or equivalently for vector format conversions, etc)</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ADDRSPACECAST<a id="a22ea9cec080dd5f4f47ba234c2f59110ae221016e72ad6632377ef55f9e0e4f61"></a></td>
+<td class="doxyEnumItemDescription">ADDRSPACECAST - This operator converts between pointers of different address spaces</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FP16_TO_FP<a id="a22ea9cec080dd5f4f47ba234c2f59110a3e12fcc9960ef3bf0ae5876382d4c66f"></a></td>
+<td class="doxyEnumItemDescription">FP16_TO_FP, FP_TO_FP16 - These operators are used to perform promotions and truncation for half-precision (16 bit) floating numbers</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FP_TO_FP16<a id="a22ea9cec080dd5f4f47ba234c2f59110a38f379e4fddf750c36f1323a04d12171"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STRICT_FP16_TO_FP<a id="a22ea9cec080dd5f4f47ba234c2f59110a8be8417e323644ecd854ce67c362a850"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STRICT_FP_TO_FP16<a id="a22ea9cec080dd5f4f47ba234c2f59110a8a54f717e10fab9c9821196fc882cc11"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BF16_TO_FP<a id="a22ea9cec080dd5f4f47ba234c2f59110abdae7178e801a788f47e55ad3db3ee6a"></a></td>
+<td class="doxyEnumItemDescription">BF16_TO_FP, FP_TO_BF16 - These operators are used to perform promotions and truncation for bfloat16</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FP_TO_BF16<a id="a22ea9cec080dd5f4f47ba234c2f59110a0bb173b5a879225092abdeaba1394839"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STRICT_BF16_TO_FP<a id="a22ea9cec080dd5f4f47ba234c2f59110ab60b57f9ecb68fa5f4445ec18e835a64"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STRICT_FP_TO_BF16<a id="a22ea9cec080dd5f4f47ba234c2f59110ac98e3abb765d6786634ba0656ae83e17"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FNEG<a id="a22ea9cec080dd5f4f47ba234c2f59110a6d26c45c040d8f85d577a5f645261d1a"></a></td>
+<td class="doxyEnumItemDescription">Perform various unary floating-point operations inspired by libm</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FABS<a id="a22ea9cec080dd5f4f47ba234c2f59110a2b4d07600495a563319d6a3dda8dc44d"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FSQRT<a id="a22ea9cec080dd5f4f47ba234c2f59110ae1118ddac1ce0af8e9f7cc16c9e94fc0"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FCBRT<a id="a22ea9cec080dd5f4f47ba234c2f59110a85c9608f4afa54b644dc76228a8f7261"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FSIN<a id="a22ea9cec080dd5f4f47ba234c2f59110ad46ae9fdfe20cd04f7fda7ccbb937543"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FCOS<a id="a22ea9cec080dd5f4f47ba234c2f59110a9133d7cfb6a66404ff7757b699bc3941"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FTAN<a id="a22ea9cec080dd5f4f47ba234c2f59110a9edaaccfce9ddf3113d737686f0a019e"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FASIN<a id="a22ea9cec080dd5f4f47ba234c2f59110a62bcf7e98c551eddfe028e6ad6565215"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FACOS<a id="a22ea9cec080dd5f4f47ba234c2f59110a3bd30fa450385ee74c9b275ba5f8d1c7"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FATAN<a id="a22ea9cec080dd5f4f47ba234c2f59110a3ec6f3b872819089911699ea156e6fc7"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FSINH<a id="a22ea9cec080dd5f4f47ba234c2f59110ad8c5012dcc326bb95fc45b1f2e80dbda"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FCOSH<a id="a22ea9cec080dd5f4f47ba234c2f59110a30da9fef8027cdf8a719bdacb5300df8"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FTANH<a id="a22ea9cec080dd5f4f47ba234c2f59110a7d675a8da9b3fa2ee3a15b3932eef38a"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FPOW<a id="a22ea9cec080dd5f4f47ba234c2f59110a1a6952b1572a4ce241cc3cf45a9ab071"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FPOWI<a id="a22ea9cec080dd5f4f47ba234c2f59110a66b7368b776f6aff492cf970db3df548"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FLDEXP<a id="a22ea9cec080dd5f4f47ba234c2f59110a455f49e18d470b97cd293acd7fbdf169"></a></td>
+<td class="doxyEnumItemDescription">FLDEXP - ldexp, inspired by libm (op0 * 2**op1)</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FATAN2<a id="a22ea9cec080dd5f4f47ba234c2f59110a2a69cbb602c143642c1fe014bce6d44d"></a></td>
+<td class="doxyEnumItemDescription">FATAN2 - atan2, inspired by libm</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FFREXP<a id="a22ea9cec080dd5f4f47ba234c2f59110ad9e6c8353bc9d023077590083cfce89c"></a></td>
+<td class="doxyEnumItemDescription">FFREXP - frexp, extract fractional and exponent component of a floating-point value</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FLOG<a id="a22ea9cec080dd5f4f47ba234c2f59110ac82d37f93ae4420659acdd03f79b15e0"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FLOG2<a id="a22ea9cec080dd5f4f47ba234c2f59110a558dc710055f9d60cc3c0893bc29a72d"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FLOG10<a id="a22ea9cec080dd5f4f47ba234c2f59110a0d05d4a5cd10a46f69f9e62d49d275bb"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FEXP<a id="a22ea9cec080dd5f4f47ba234c2f59110ad49a46d391f73aa96002adbdd0cf03f5"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FEXP2<a id="a22ea9cec080dd5f4f47ba234c2f59110af3542a99501ffb93cee4aae9d1ec2d05"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FEXP10<a id="a22ea9cec080dd5f4f47ba234c2f59110a37c80ce3312d3fc5b925e326a16fff20"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FCEIL<a id="a22ea9cec080dd5f4f47ba234c2f59110ad56e9199ae3993a09af36ff41d327a11"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FTRUNC<a id="a22ea9cec080dd5f4f47ba234c2f59110a1e92ea554489509b0ad970901bcc715b"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FRINT<a id="a22ea9cec080dd5f4f47ba234c2f59110a68014623710f7a44c808cd412236d6a1"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FNEARBYINT<a id="a22ea9cec080dd5f4f47ba234c2f59110a2dc876d6cc16ac04376483552292f9f4"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FROUND<a id="a22ea9cec080dd5f4f47ba234c2f59110a87b7dd3d6a9b68d1558fc6b4706708b0"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FROUNDEVEN<a id="a22ea9cec080dd5f4f47ba234c2f59110ab3cb85375f983765b93341d57a2f3838"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FFLOOR<a id="a22ea9cec080dd5f4f47ba234c2f59110a4336c27826676e1ef61383cafa999219"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LROUND<a id="a22ea9cec080dd5f4f47ba234c2f59110adb1de74d602ef905e06785e0052b55bf"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LLROUND<a id="a22ea9cec080dd5f4f47ba234c2f59110a4e2fdf7d4dbc04469cf6a920262c82c8"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LRINT<a id="a22ea9cec080dd5f4f47ba234c2f59110a05f23e2cd900dc8f1dbf6702ab12423b"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LLRINT<a id="a22ea9cec080dd5f4f47ba234c2f59110a25eed965b36ce43fc8b9daa2774dfad8"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMINNUM<a id="a22ea9cec080dd5f4f47ba234c2f59110a9f59cc264907eb86e29564d5f6a5b213"></a></td>
+<td class="doxyEnumItemDescription">FMINNUM/FMAXNUM - Perform floating-point minimum or maximum on two values</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMAXNUM<a id="a22ea9cec080dd5f4f47ba234c2f59110a632dd4bb044d5cd11f671d176ef495f2"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMINNUM_IEEE<a id="a22ea9cec080dd5f4f47ba234c2f59110a907932b29f929b1827b1b93171dcaa3c"></a></td>
+<td class="doxyEnumItemDescription">FMINNUM_IEEE/FMAXNUM_IEEE - Perform floating-point minimumNumber or maximumNumber on two values, following IEEE-754 definitions</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMAXNUM_IEEE<a id="a22ea9cec080dd5f4f47ba234c2f59110a25e670389809910f59726e8a11fa82e0"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMINIMUM<a id="a22ea9cec080dd5f4f47ba234c2f59110ac27a43f98abb2d1ee2f2ce99a0b34b36"></a></td>
+<td class="doxyEnumItemDescription">FMINIMUM/FMAXIMUM - NaN-propagating minimum/maximum that also treat -0.0 as less than 0.0</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMAXIMUM<a id="a22ea9cec080dd5f4f47ba234c2f59110a3dfd1b187d121c0e214698eef1c20f53"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMINIMUMNUM<a id="a22ea9cec080dd5f4f47ba234c2f59110af7691f41e448fefca844f687edabfb69"></a></td>
+<td class="doxyEnumItemDescription">FMINIMUMNUM/FMAXIMUMNUM - minimumnum/maximumnum that is same with FMINNUM_IEEE and FMAXNUM_IEEE besides if either operand is sNaN</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FMAXIMUMNUM<a id="a22ea9cec080dd5f4f47ba234c2f59110add34b1738b7bb2c298f92f1b7b62ce0c"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FSINCOS<a id="a22ea9cec080dd5f4f47ba234c2f59110a6ba8fc92ee5081d3e533cb5322f74f29"></a></td>
+<td class="doxyEnumItemDescription">FSINCOS - Compute both fsin and fcos as a single operation</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">GET_FPENV<a id="a22ea9cec080dd5f4f47ba234c2f59110a8ca22b32a18bb7959b6f6f9b18d14ec0"></a></td>
+<td class="doxyEnumItemDescription">Gets the current floating-point environment</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">SET_FPENV<a id="a22ea9cec080dd5f4f47ba234c2f59110a07fcb2d341fc6f3db309618b30e358a8"></a></td>
+<td class="doxyEnumItemDescription">Sets the current floating-point environment</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">RESET_FPENV<a id="a22ea9cec080dd5f4f47ba234c2f59110a23914569caa5dbe0d340c3fbfc277efc"></a></td>
+<td class="doxyEnumItemDescription">Set floating-point environment to default state</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">GET_FPENV_MEM<a id="a22ea9cec080dd5f4f47ba234c2f59110ac7e6de3a23c50c3f48e30e3a644a16aa"></a></td>
+<td class="doxyEnumItemDescription">Gets the current floating-point environment</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">SET_FPENV_MEM<a id="a22ea9cec080dd5f4f47ba234c2f59110af695708f70bdd710c8fda5c4570711d7"></a></td>
+<td class="doxyEnumItemDescription">Sets the current floating point environment</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">GET_FPMODE<a id="a22ea9cec080dd5f4f47ba234c2f59110a8ba51b127e01a9e6412e7629c70ec4a1"></a></td>
+<td class="doxyEnumItemDescription">Reads the current dynamic floating-point control modes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">SET_FPMODE<a id="a22ea9cec080dd5f4f47ba234c2f59110a26b34eddab8969a79fd3cda432471809"></a></td>
+<td class="doxyEnumItemDescription">Sets the current dynamic floating-point control modes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">RESET_FPMODE<a id="a22ea9cec080dd5f4f47ba234c2f59110a386314479bc7963a544ed142866e7ece"></a></td>
+<td class="doxyEnumItemDescription">Sets default dynamic floating-point control modes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LOAD<a id="a22ea9cec080dd5f4f47ba234c2f59110a269b81f007000306e3e69d0d290c2159"></a></td>
+<td class="doxyEnumItemDescription">LOAD and STORE have token chains as their first operand, then the same operands as an LLVM load/store instruction, then an offset node that is added / subtracted from the base pointer to form the address (for indexed memory ops)</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STORE<a id="a22ea9cec080dd5f4f47ba234c2f59110a047178c3b2c6a5df40ae22a407b8aca9"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">DYNAMIC_STACKALLOC<a id="a22ea9cec080dd5f4f47ba234c2f59110aa71ac22470bf853868fe6b39a25bac72"></a></td>
+<td class="doxyEnumItemDescription">DYNAMIC_STACKALLOC - Allocate some number of bytes on the stack aligned to a specified boundary</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BR<a id="a22ea9cec080dd5f4f47ba234c2f59110a5be7fb35e0f523af6c939fba303403df"></a></td>
+<td class="doxyEnumItemDescription">Control flow instructions. These all have token chains</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BRIND<a id="a22ea9cec080dd5f4f47ba234c2f59110a716765ad6ce5be71f987cd2097b1cdbf"></a></td>
+<td class="doxyEnumItemDescription">BRIND - Indirect branch</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BR_JT<a id="a22ea9cec080dd5f4f47ba234c2f59110a716d19ebad1927a2e8dd5fe3f951f882"></a></td>
+<td class="doxyEnumItemDescription">BR_JT - Jumptable branch</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">JUMP_TABLE_DEBUG_INFO<a id="a22ea9cec080dd5f4f47ba234c2f59110a18e14419991d3b0ace7690a67c564192"></a></td>
+<td class="doxyEnumItemDescription">JUMP_TABLE_DEBUG_INFO - Jumptable debug info</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BRCOND<a id="a22ea9cec080dd5f4f47ba234c2f59110ae8167e4f6fa1bfb30f074ba620b81782"></a></td>
+<td class="doxyEnumItemDescription">BRCOND - Conditional branch</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">BR_CC<a id="a22ea9cec080dd5f4f47ba234c2f59110a6d5e322b263f0d5ea4204efafc1d78bb"></a></td>
+<td class="doxyEnumItemDescription">BR_CC - Conditional branch</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">INLINEASM<a id="a22ea9cec080dd5f4f47ba234c2f59110ae35d57f3c020672748fcc95607348986"></a></td>
+<td class="doxyEnumItemDescription">INLINEASM - Represents an inline asm block</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">INLINEASM_BR<a id="a22ea9cec080dd5f4f47ba234c2f59110ab969e7d43eb37a0398b5ded23bccc136"></a></td>
+<td class="doxyEnumItemDescription">INLINEASM_BR - Branching version of inline asm. Used by asm-goto</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">EH_LABEL<a id="a22ea9cec080dd5f4f47ba234c2f59110a4c1f7e0dc3af92b9cfd0d5d11231ddc1"></a></td>
+<td class="doxyEnumItemDescription">EH_LABEL - Represents a label in mid basic block used to track locations needed for debug and exception handling tables</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ANNOTATION_LABEL<a id="a22ea9cec080dd5f4f47ba234c2f59110a4f51e138b5e660cb9cce3ae4352c5f16"></a></td>
+<td class="doxyEnumItemDescription">ANNOTATION_LABEL - Represents a mid basic block label used by annotations</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">CATCHRET<a id="a22ea9cec080dd5f4f47ba234c2f59110aec1078d911aabd272954b9125eaee6df"></a></td>
+<td class="doxyEnumItemDescription">CATCHRET - Represents a return from a catch block funclet</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">CLEANUPRET<a id="a22ea9cec080dd5f4f47ba234c2f59110a8b3de6401453f275f010559d01834826"></a></td>
+<td class="doxyEnumItemDescription">CLEANUPRET - Represents a return from a cleanup block funclet</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STACKSAVE<a id="a22ea9cec080dd5f4f47ba234c2f59110a031ce694e40832d40a163d7254a8df14"></a></td>
+<td class="doxyEnumItemDescription">STACKSAVE - STACKSAVE has one operand, an input chain</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STACKRESTORE<a id="a22ea9cec080dd5f4f47ba234c2f59110a023a9de787026fe61b024476bf9c32cb"></a></td>
+<td class="doxyEnumItemDescription">STACKRESTORE has two operands, an input chain and a pointer to restore to it returns an output chain</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">CALLSEQ_START<a id="a22ea9cec080dd5f4f47ba234c2f59110af423387cec5c9f7be16028b25a0dcfe7"></a></td>
+<td class="doxyEnumItemDescription">CALLSEQ_START/CALLSEQ_END - These operators mark the beginning and end of a call sequence, and carry arbitrary information that target might want to know</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">CALLSEQ_END<a id="a22ea9cec080dd5f4f47ba234c2f59110a6feb9a82882ea426db5b62f3f69f63a2"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VAARG<a id="a22ea9cec080dd5f4f47ba234c2f59110ae77d03846b31c41c4860bcd96d780a78"></a></td>
+<td class="doxyEnumItemDescription">VAARG - VAARG has four operands: an input chain, a pointer, a SRCVALUE, and the alignment</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VACOPY<a id="a22ea9cec080dd5f4f47ba234c2f59110a804c1960ac64628cdd1f74d7de885284"></a></td>
+<td class="doxyEnumItemDescription">VACOPY - VACOPY has 5 operands: an input chain, a destination pointer, a source pointer, a SRCVALUE for the destination, and a SRCVALUE for the source</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VAEND<a id="a22ea9cec080dd5f4f47ba234c2f59110a1aadbb14ab26b74d841ac003363e3a5d"></a></td>
+<td class="doxyEnumItemDescription">VAEND, VASTART - VAEND and VASTART have three operands: an input chain, pointer, and a SRCVALUE</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VASTART<a id="a22ea9cec080dd5f4f47ba234c2f59110adfe32beaa596a1512b17e66b46e773ed"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">PREALLOCATED_SETUP<a id="a22ea9cec080dd5f4f47ba234c2f59110a57cfe3bac8296e41e04ea4d072f0f33f"></a></td>
+<td class="doxyEnumItemDescription">PREALLOCATED_SETUP - This has 2 operands: an input chain and a SRCVALUE with the preallocated call <a href="/web-llvm/docs/api/classes/llvm/value">Value</a></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">PREALLOCATED_ARG<a id="a22ea9cec080dd5f4f47ba234c2f59110a706221302cd12c7a44b7e122e57002a1"></a></td>
+<td class="doxyEnumItemDescription">PREALLOCATED_ARG - This has 3 operands: an input chain, a SRCVALUE with the preallocated call <a href="/web-llvm/docs/api/classes/llvm/value">Value</a>, and a constant int</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">SRCVALUE<a id="a22ea9cec080dd5f4f47ba234c2f59110a4ade56991bf359914e6d59693d9526cc"></a></td>
+<td class="doxyEnumItemDescription">SRCVALUE - This is a node type that holds a Value* that is used to make reference to a value in the LLVM IR</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">MDNODE_SDNODE<a id="a22ea9cec080dd5f4f47ba234c2f59110a0420c9663564b439d19509ff77eb6845"></a></td>
+<td class="doxyEnumItemDescription">MDNODE_SDNODE - This is a node that holdes an MDNode*, which is used to reference metadata in the IR</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">PCMARKER<a id="a22ea9cec080dd5f4f47ba234c2f59110ab69fa9bf3bc67ac80d433dff2765e415"></a></td>
+<td class="doxyEnumItemDescription">PCMARKER - This corresponds to the pcmarker intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">READCYCLECOUNTER<a id="a22ea9cec080dd5f4f47ba234c2f59110ac43f9bea13e29622bbf18c861b52144d"></a></td>
+<td class="doxyEnumItemDescription">READCYCLECOUNTER - This corresponds to the readcyclecounter intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">READSTEADYCOUNTER<a id="a22ea9cec080dd5f4f47ba234c2f59110a59117a4be6a5e335b41aecda777fd679"></a></td>
+<td class="doxyEnumItemDescription">READSTEADYCOUNTER - This corresponds to the readfixedcounter intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">HANDLENODE<a id="a22ea9cec080dd5f4f47ba234c2f59110ab508f11d38b4596451c6333f7510daa3"></a></td>
+<td class="doxyEnumItemDescription">HANDLENODE node - Used as a handle for various purposes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">INIT_TRAMPOLINE<a id="a22ea9cec080dd5f4f47ba234c2f59110a4534a6db2862a28324932a8ea1cb54d6"></a></td>
+<td class="doxyEnumItemDescription">INIT_TRAMPOLINE - This corresponds to the init_trampoline intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ADJUST_TRAMPOLINE<a id="a22ea9cec080dd5f4f47ba234c2f59110af7bfad446dfd85837fe7ff904ebb1aff"></a></td>
+<td class="doxyEnumItemDescription">ADJUST_TRAMPOLINE - This corresponds to the adjust_trampoline intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">TRAP<a id="a22ea9cec080dd5f4f47ba234c2f59110ac5fb8808f3dcb9f0a83f1fc2e7747485"></a></td>
+<td class="doxyEnumItemDescription">TRAP - Trapping instruction</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">DEBUGTRAP<a id="a22ea9cec080dd5f4f47ba234c2f59110a967fcb624e84458e135a763d1c11346a"></a></td>
+<td class="doxyEnumItemDescription">DEBUGTRAP - Trap intended to get the attention of a debugger</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">UBSANTRAP<a id="a22ea9cec080dd5f4f47ba234c2f59110aa110c932d4027fe4043cceb7a579e5ee"></a></td>
+<td class="doxyEnumItemDescription">UBSANTRAP - Trap with an immediate describing the kind of sanitizer failure</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">PREFETCH<a id="a22ea9cec080dd5f4f47ba234c2f59110a691a4c9004e9bd04d1c0bebc5df57443"></a></td>
+<td class="doxyEnumItemDescription">PREFETCH - This corresponds to a prefetch intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ARITH_FENCE<a id="a22ea9cec080dd5f4f47ba234c2f59110a88ce5ee637738fa2a879acebc2d3794c"></a></td>
+<td class="doxyEnumItemDescription">ARITH_FENCE - This corresponds to a arithmetic fence intrinsic</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">MEMBARRIER<a id="a22ea9cec080dd5f4f47ba234c2f59110a369074e730a24fabb4216cd37e789e35"></a></td>
+<td class="doxyEnumItemDescription">MEMBARRIER - Compiler barrier only; generate a no-op</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_FENCE<a id="a22ea9cec080dd5f4f47ba234c2f59110a385d7f9c63f921a2b28e8426e4101de8"></a></td>
+<td class="doxyEnumItemDescription">OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110a385d7f9c63f921a2b28e8426e4101de8">ATOMIC_FENCE(INCHAIN, ordering, scope)</a> This corresponds to the fence instruction</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD<a id="a22ea9cec080dd5f4f47ba234c2f59110a7c47226f266248f4b8c155b83601b109"></a></td>
+<td class="doxyEnumItemDescription">Val, OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7c47226f266248f4b8c155b83601b109">ATOMIC_LOAD(INCHAIN, ptr)</a> This corresponds to "load atomic" instruction</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_STORE<a id="a22ea9cec080dd5f4f47ba234c2f59110a1db943abc1bf78a911daeb7b03d81de8"></a></td>
+<td class="doxyEnumItemDescription">OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110a1db943abc1bf78a911daeb7b03d81de8">ATOMIC_STORE(INCHAIN, val, ptr)</a> This corresponds to "store atomic" instruction</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_CMP_SWAP<a id="a22ea9cec080dd5f4f47ba234c2f59110a9c91befeca2a25c8050d4c3dff8b6d67"></a></td>
+<td class="doxyEnumItemDescription">
+Val, OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110a9c91befeca2a25c8050d4c3dff8b6d67">ATOMIC_CMP_SWAP(INCHAIN, ptr, cmp, swap)</a> For double-word atomic operations: ValLo, ValHi, OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110a9c91befeca2a25c8050d4c3dff8b6d67">ATOMIC_CMP_SWAP(INCHAIN, ptr, cmpLo, cmpHi,
+                                         swapLo, swapHi)</a> This corresponds to the cmpxchg instruction
+</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_CMP_SWAP_WITH_SUCCESS<a id="a22ea9cec080dd5f4f47ba234c2f59110a30649569b517a279a32fb3b48cc154e0"></a></td>
+<td class="doxyEnumItemDescription">Val, Success, OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110a30649569b517a279a32fb3b48cc154e0">ATOMIC_CMP_SWAP_WITH_SUCCESS(INCHAIN, ptr, cmp, swap)</a> N.b</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_SWAP<a id="a22ea9cec080dd5f4f47ba234c2f59110ad728a4b56d49f39375881511d8d3118d"></a></td>
+<td class="doxyEnumItemDescription">Val, OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110ad728a4b56d49f39375881511d8d3118d">ATOMIC_SWAP(INCHAIN, ptr, amt)</a> Val, OUTCHAIN = ATOMIC_LOAD_[<a href="/web-llvm/docs/api/namespaces/opname">OpName</a>](INCHAIN, ptr, amt) For double-word atomic operations: ValLo, ValHi, OUTCHAIN = <a href="#a22ea9cec080dd5f4f47ba234c2f59110ad728a4b56d49f39375881511d8d3118d">ATOMIC_SWAP(INCHAIN, ptr, amtLo, amtHi)</a> ValLo, ValHi, OUTCHAIN = ATOMIC_LOAD_[<a href="/web-llvm/docs/api/namespaces/opname">OpName</a>](INCHAIN, ptr, amtLo, amtHi) These correspond to the atomicrmw instruction</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_ADD<a id="a22ea9cec080dd5f4f47ba234c2f59110abf5f612de1a25451c9a0c33d77bf3e74"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_SUB<a id="a22ea9cec080dd5f4f47ba234c2f59110ac3d12dbff6e50803982d0e92768a1479"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_AND<a id="a22ea9cec080dd5f4f47ba234c2f59110a905925a49cdc6b4a6017d215820dad30"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_CLR<a id="a22ea9cec080dd5f4f47ba234c2f59110a8ceaa81a8088781e5efec0886ffe86be"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_OR<a id="a22ea9cec080dd5f4f47ba234c2f59110a4112a866197a97a70bdc78ef92c79b4c"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_XOR<a id="a22ea9cec080dd5f4f47ba234c2f59110a428ec1341b34eafa63518914e7f5ddf0"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_NAND<a id="a22ea9cec080dd5f4f47ba234c2f59110a13a3e6402abf972278c6a7d5ee509f9d"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_MIN<a id="a22ea9cec080dd5f4f47ba234c2f59110a7049708cb0e0703a467b95a506293aec"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_MAX<a id="a22ea9cec080dd5f4f47ba234c2f59110a1cf8547d612d954d34aab1d4f78e7fa1"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_UMIN<a id="a22ea9cec080dd5f4f47ba234c2f59110a1ff6f20a9255f7a333f4c9d25393674c"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_UMAX<a id="a22ea9cec080dd5f4f47ba234c2f59110a9ca44a643714809ef384e7494604db14"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_FADD<a id="a22ea9cec080dd5f4f47ba234c2f59110a48287dae990aa9e29a458373ccd0eadb"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_FSUB<a id="a22ea9cec080dd5f4f47ba234c2f59110a6d539343b461a07dde64956266ba808c"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_FMAX<a id="a22ea9cec080dd5f4f47ba234c2f59110a05e4a09b0b7a2ec7e9f5e77c8e8153bc"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_FMIN<a id="a22ea9cec080dd5f4f47ba234c2f59110a830f68bd84f119afe6033acbe7223dfe"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_UINC_WRAP<a id="a22ea9cec080dd5f4f47ba234c2f59110aef57c4139e116c75edbe082d40423abc"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_UDEC_WRAP<a id="a22ea9cec080dd5f4f47ba234c2f59110abf2a0866e4c386567698502774972acd"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_USUB_COND<a id="a22ea9cec080dd5f4f47ba234c2f59110a28a36ed3d71dc4a053f03a5ddb828cb1"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">ATOMIC_LOAD_USUB_SAT<a id="a22ea9cec080dd5f4f47ba234c2f59110a4d8796a5190b7ec09695c9769b2cd4be"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">MLOAD<a id="a22ea9cec080dd5f4f47ba234c2f59110a112324db3910fea5895514851c387442"></a></td>
+<td class="doxyEnumItemDescription">Masked load and store - consecutive vector load and store operations with additional mask operand that prevents memory accesses to the masked-off lanes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">MSTORE<a id="a22ea9cec080dd5f4f47ba234c2f59110a9add598de9e0a49cbb8fb19adf495051"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">MGATHER<a id="a22ea9cec080dd5f4f47ba234c2f59110ab4685260a7e506fe51f17d9b600349c8"></a></td>
+<td class="doxyEnumItemDescription">Masked gather and scatter - load and store operations for a vector of random addresses with additional mask operand that prevents memory accesses to the masked-off lanes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">MSCATTER<a id="a22ea9cec080dd5f4f47ba234c2f59110ab179d7f42562bbb315a6b0589a25f733"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LIFETIME_START<a id="a22ea9cec080dd5f4f47ba234c2f59110aada0b926e7ebc2bc55d158d4c37bdcca"></a></td>
+<td class="doxyEnumItemDescription">This corresponds to the llvm.lifetime</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">LIFETIME_END<a id="a22ea9cec080dd5f4f47ba234c2f59110ab49301b20458a7f312a0919e3c8abdb2"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">FAKE_USE<a id="a22ea9cec080dd5f4f47ba234c2f59110a40c488fd3348cbcfd577368fe96d5c9b"></a></td>
+<td class="doxyEnumItemDescription">FAKE_USE represents a use of the operand but does not do anything</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">GC_TRANSITION_START<a id="a22ea9cec080dd5f4f47ba234c2f59110a71d133366c40437e06936626b32ba6d8"></a></td>
+<td class="doxyEnumItemDescription">GC_TRANSITION_START/GC_TRANSITION_END - These operators mark the beginning and end of GC transition sequence, and carry arbitrary information that target might need for lowering</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">GC_TRANSITION_END<a id="a22ea9cec080dd5f4f47ba234c2f59110aee46c58568939eaeaa37ea6001bf432e"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">GET_DYNAMIC_AREA_OFFSET<a id="a22ea9cec080dd5f4f47ba234c2f59110af5caa395d199fab7e52a63feb73dcb10"></a></td>
+<td class="doxyEnumItemDescription">GET_DYNAMIC_AREA_OFFSET - get offset from native SP to the address of the most recent dynamic alloca</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">PSEUDO_PROBE<a id="a22ea9cec080dd5f4f47ba234c2f59110ac89c00e941b666bc6ac4ba73713db047"></a></td>
+<td class="doxyEnumItemDescription">Pseudo probe for AutoFDO, as a place holder in a basic block to improve the sample counts quality</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VSCALE<a id="a22ea9cec080dd5f4f47ba234c2f59110a9b2378721f79f5b72a6398dce97b3a42"></a></td>
+<td class="doxyEnumItemDescription"><a href="#a22ea9cec080dd5f4f47ba234c2f59110a9b2378721f79f5b72a6398dce97b3a42">VSCALE(IMM)</a> - Returns the runtime scaling factor used to calculate the number of elements within a scalable vector</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_SEQ_FADD<a id="a22ea9cec080dd5f4f47ba234c2f59110a0b3085a54414d7e8ae7c13f5aeadb9da"></a></td>
+<td class="doxyEnumItemDescription">Generic reduction nodes</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_SEQ_FMUL<a id="a22ea9cec080dd5f4f47ba234c2f59110aea5fa717771f0a710ecf267df41df98a"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_FADD<a id="a22ea9cec080dd5f4f47ba234c2f59110a5e28372b4a60bf792da88d9bc8a8d0bf"></a></td>
+<td class="doxyEnumItemDescription">These reductions have relaxed evaluation order semantics, and have a single vector operand</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_FMUL<a id="a22ea9cec080dd5f4f47ba234c2f59110acf12a2d8b57207c69f92973a1fad520a"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_FMAX<a id="a22ea9cec080dd5f4f47ba234c2f59110a323856d66e2d8b1f74e528e3f9fe804d"></a></td>
+<td class="doxyEnumItemDescription">FMIN/FMAX nodes can have flags, for NaN/NoNaN variants</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_FMIN<a id="a22ea9cec080dd5f4f47ba234c2f59110a6a8980cf09891ec57cbce010ba119f79"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_FMAXIMUM<a id="a22ea9cec080dd5f4f47ba234c2f59110a355892ae7349b089e0bd24b3087d9c75"></a></td>
+<td class="doxyEnumItemDescription">FMINIMUM/FMAXIMUM nodes propatate NaNs and signed zeroes using the <a href="/web-llvm/docs/api/namespaces/llvm/#ae2f7e8a5325f48bbbdaec78e5d6c320c">llvm.minimum</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a38dcdde63d81fbda1d22dffd1a27b343">llvm.maximum</a> semantics</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_FMINIMUM<a id="a22ea9cec080dd5f4f47ba234c2f59110ae526df97bcbda2419acf8cf105c95e8e"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_ADD<a id="a22ea9cec080dd5f4f47ba234c2f59110a89a8ec08f6908a989c2d0198ae8851f9"></a></td>
+<td class="doxyEnumItemDescription">Integer reductions may have a result type larger than the vector element type</td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_MUL<a id="a22ea9cec080dd5f4f47ba234c2f59110ab4411563ed11f8df0c6ce7af48ee386f"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_AND<a id="a22ea9cec080dd5f4f47ba234c2f59110aa58fe501d4e4fa1b4d19e0ed6b8ee6bd"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_OR<a id="a22ea9cec080dd5f4f47ba234c2f59110aafd45b465ac59a1a57b8b9862aef6bed"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_XOR<a id="a22ea9cec080dd5f4f47ba234c2f59110a9b59fad28698a46c33285083818f6b87"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_SMAX<a id="a22ea9cec080dd5f4f47ba234c2f59110a3c057571f4591494880ec0bba023e0c2"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_SMIN<a id="a22ea9cec080dd5f4f47ba234c2f59110a11825b59a52b4f5a73c0b877e1ba0e70"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_UMAX<a id="a22ea9cec080dd5f4f47ba234c2f59110a7ce9f75eaf17256deb960b11d1930040"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">VECREDUCE_UMIN<a id="a22ea9cec080dd5f4f47ba234c2f59110ab67678c3310e505df1a3f7677b14cfb0"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">STACKMAP<a id="a22ea9cec080dd5f4f47ba234c2f59110ad2904b2502547c3f3d390774f8f548c7"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">PATCHPOINT<a id="a22ea9cec080dd5f4f47ba234c2f59110aa31dda85603496c333a105d53ce62150"></a></td>
+<td class="doxyEnumItemDescription"></td>
+</tr>
+
+<tr class="doxyEnumItem">
+<td class="doxyEnumItemName">CONVERGENCECTRL_ANCHOR<a id="a22ea9cec080dd5f4f47ba234c2f59110a041c4b27006496ee8d8bcdf72e248632"></a></td>
+<td class="doxyEnumItemDescription"></td>
 </tr>
 
 <tr class="doxyEnumItem">
@@ -2559,7 +3357,7 @@ namespace llvm::ISD { ... }
 <p>Declaration at line 1594 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/isdopcodes-h">ISDOpcodes.h</a>, definition at line 601 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondag-cpp">SelectionDAG.cpp</a>.</p>
 
 
-<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110a27d5d8ef82302b739ba3ca8be1a5513d">ANY_EXTEND</a>, <a href="#ad4d48171b87ca51ff54c10a436bac4d7afab3fffd153f7d7770fed81272e4b78f">EXTLOAD</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="#ad4d48171b87ca51ff54c10a436bac4d7a6c61b6125c7901c549f90ee0e443a770">SEXTLOAD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a5183f3d72924bc7c77ba8d3f5de9f602">SIGN_EXTEND</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a93fdf85eff945f1a668b4915a051453e">ZERO_EXTEND</a> and <a href="#ad4d48171b87ca51ff54c10a436bac4d7a8d89c7da4444d9ec11667aa369abc5f7">ZEXTLOAD</a>.</p>
+<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110a27d5d8ef82302b739ba3ca8be1a5513d">ANY_EXTEND</a>, <a href="#ad4d48171b87ca51ff54c10a436bac4d7afab3fffd153f7d7770fed81272e4b78f">EXTLOAD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aadfdefcb133a7f0262a05934aba8ce5d">FP_EXTEND</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="#ad4d48171b87ca51ff54c10a436bac4d7a6c61b6125c7901c549f90ee0e443a770">SEXTLOAD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a5183f3d72924bc7c77ba8d3f5de9f602">SIGN_EXTEND</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a93fdf85eff945f1a668b4915a051453e">ZERO_EXTEND</a> and <a href="#ad4d48171b87ca51ff54c10a436bac4d7a8d89c7da4444d9ec11667aa369abc5f7">ZEXTLOAD</a>.</p>
 
 </div>
 </div>
@@ -2775,13 +3573,13 @@ namespace llvm::ISD { ... }
 <p>Get underlying scalar opcode for VECREDUCE opcode.</p>
 
 
-<p>For example <a href="#a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2">ISD::AND</a> for ISD::VECREDUCE_AND.</p>
+<p>For example <a href="#a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2">ISD::AND</a> for <a href="#a22ea9cec080dd5f4f47ba234c2f59110aa58fe501d4e4fa1b4d19e0ed6b8ee6bd">ISD::VECREDUCE_AND</a>.</p>
 
 
 <p>Declaration at line 1508 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/isdopcodes-h">ISDOpcodes.h</a>, definition at line 448 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondag-cpp">SelectionDAG.cpp</a>.</p>
 
 
-<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110a269996b43a1f3e1d1f84a70fd4387535">ADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2">AND</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a32ec12017722f5b42a295fe5eb0b0bdf">FADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a9ab5860c97a00c4627a08cab7b0c8178">FMUL</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ad8aec9273962cf78d087090c11a1dd1c">MUL</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7415ab9f2172c59a2ee7c7a02afa56a4">OR</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110af3b59179b6fcbc89463181015ace8e9b">SMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aaac895215ecbb3c411c957c8beb39b70">SMIN</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110af675e759c0ffff8d48ea14a60fe3517b">UMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a17126302da6199930e55e841ca1b082d">UMIN</a> and <a href="#a22ea9cec080dd5f4f47ba234c2f59110a92febb83e6ba116eb7aae8e7e3f70cc1">XOR</a>.</p>
+<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110a269996b43a1f3e1d1f84a70fd4387535">ADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ac513a7da1bf74fb3e3c594da8534f2d2">AND</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a32ec12017722f5b42a295fe5eb0b0bdf">FADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a3dfd1b187d121c0e214698eef1c20f53">FMAXIMUM</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a632dd4bb044d5cd11f671d176ef495f2">FMAXNUM</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ac27a43f98abb2d1ee2f2ce99a0b34b36">FMINIMUM</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a9f59cc264907eb86e29564d5f6a5b213">FMINNUM</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a9ab5860c97a00c4627a08cab7b0c8178">FMUL</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ad8aec9273962cf78d087090c11a1dd1c">MUL</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7415ab9f2172c59a2ee7c7a02afa56a4">OR</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110af3b59179b6fcbc89463181015ace8e9b">SMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aaac895215ecbb3c411c957c8beb39b70">SMIN</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110af675e759c0ffff8d48ea14a60fe3517b">UMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a17126302da6199930e55e841ca1b082d">UMIN</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a89a8ec08f6908a989c2d0198ae8851f9">VECREDUCE_ADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aa58fe501d4e4fa1b4d19e0ed6b8ee6bd">VECREDUCE_AND</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a5e28372b4a60bf792da88d9bc8a8d0bf">VECREDUCE_FADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a323856d66e2d8b1f74e528e3f9fe804d">VECREDUCE_FMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a355892ae7349b089e0bd24b3087d9c75">VECREDUCE_FMAXIMUM</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a6a8980cf09891ec57cbce010ba119f79">VECREDUCE_FMIN</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ae526df97bcbda2419acf8cf105c95e8e">VECREDUCE_FMINIMUM</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110acf12a2d8b57207c69f92973a1fad520a">VECREDUCE_FMUL</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ab4411563ed11f8df0c6ce7af48ee386f">VECREDUCE_MUL</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aafd45b465ac59a1a57b8b9862aef6bed">VECREDUCE_OR</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a0b3085a54414d7e8ae7c13f5aeadb9da">VECREDUCE_SEQ_FADD</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aea5fa717771f0a710ecf267df41df98a">VECREDUCE_SEQ_FMUL</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a3c057571f4591494880ec0bba023e0c2">VECREDUCE_SMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a11825b59a52b4f5a73c0b877e1ba0e70">VECREDUCE_SMIN</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7ce9f75eaf17256deb960b11d1930040">VECREDUCE_UMAX</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110ab67678c3310e505df1a3f7677b14cfb0">VECREDUCE_UMIN</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110a9b59fad28698a46c33285083818f6b87">VECREDUCE_XOR</a> and <a href="#a22ea9cec080dd5f4f47ba234c2f59110a92febb83e6ba116eb7aae8e7e3f70cc1">XOR</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#aedc985b3a3cebc7be1d14b89265c3bce">combineBinOpOfExtractToReduceTree</a>.</p>
@@ -3095,7 +3893,7 @@ namespace llvm::ISD { ... }
 <p>Declaration at line 96 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/selectiondagnodes-h">SelectionDAGNodes.h</a>, definition at line 188 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondag-cpp">SelectionDAG.cpp</a>.</p>
 
 
-<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110aff6f73b624fecca7dbe94259f9437e32">BUILD_VECTOR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/apint/#a423e2c491de1408d54e35f0b47d076be">llvm::APInt::isAllOnes</a>, <a href="#aafb64237a88493be2c913b0a51630a0f">isConstantSplatVector</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7f864031b6fb691b1525cbea92542ef1">SPLAT_VECTOR</a>.</p>
+<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110a412ddf522b53f07690a86bffba1278e7">BITCAST</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aff6f73b624fecca7dbe94259f9437e32">BUILD_VECTOR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/apint/#a423e2c491de1408d54e35f0b47d076be">llvm::APInt::isAllOnes</a>, <a href="#aafb64237a88493be2c913b0a51630a0f">isConstantSplatVector</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7f864031b6fb691b1525cbea92542ef1">SPLAT_VECTOR</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a67003b5b5e4881cd871c87e65a58e3aa">combineSetCC</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a33354bc388aab299f6dca5b75bbe2238">isAllActivePredicate</a>, <a href="#ac78d4df51ca05e4fb1630a01e07de434">isBuildVectorAllOnes</a>, <a href="/web-llvm/docs/api/classes/llvm/vpmatchcontext/#aa5e728389b60e4210dc8e60dc114ee56">llvm::VPMatchContext::match</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#ab97e7bb67059e0b2b6b66c4a784b5106">matchIndexAsShuffle</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#a3de24662ee719e2c772575317d208116">matchIndexAsWiderOp</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8d4e8ce89b104f162a8900ab94461e95">performConcatVectorsCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#abc2faab09dd74a706e426de046a3f4a0">performVSelectCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/selectiondagisel/#a624f21782a600e972eacbae3e4818fcc">llvm::SelectionDAGISel::SelectCodeCommon</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#adb90031fb3d067969f3951a7a65c3db9">tryCombineToBSL</a>.</p>
@@ -3130,7 +3928,7 @@ namespace llvm::ISD { ... }
 <p>Declaration at line 102 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/selectiondagnodes-h">SelectionDAGNodes.h</a>, definition at line 237 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondag-cpp">SelectionDAG.cpp</a>.</p>
 
 
-<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110aff6f73b624fecca7dbe94259f9437e32">BUILD_VECTOR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#aafb64237a88493be2c913b0a51630a0f">isConstantSplatVector</a>, <a href="/web-llvm/docs/api/classes/llvm/apint/#a49cd5939942c6665aba4cae8c220dff1">llvm::APInt::isZero</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7f864031b6fb691b1525cbea92542ef1">SPLAT_VECTOR</a>.</p>
+<p>References <a href="#a22ea9cec080dd5f4f47ba234c2f59110a412ddf522b53f07690a86bffba1278e7">BITCAST</a>, <a href="#a22ea9cec080dd5f4f47ba234c2f59110aff6f73b624fecca7dbe94259f9437e32">BUILD_VECTOR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#aafb64237a88493be2c913b0a51630a0f">isConstantSplatVector</a>, <a href="/web-llvm/docs/api/classes/llvm/apint/#a49cd5939942c6665aba4cae8c220dff1">llvm::APInt::isZero</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a22ea9cec080dd5f4f47ba234c2f59110a7f864031b6fb691b1525cbea92542ef1">SPLAT_VECTOR</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a1f89a7382459e34a2d36ad281210e6c3">combineSelect</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a7324b1333eec1b04ee358d58c42834ef">combineShiftLeft</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a0b92776e41d73c3b5d4f1c5712f212c7">combineShiftRightLogical</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#a491cbf5a685bf7c4455335bc9606ac49">combineVWADDSUBWSelect</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af615c2897e116be598ef60e4bbdbdd52">isAllInactivePredicate</a>, <a href="#aaac3e239cbdfe15a8e9bad4f8e1e3a95">isBuildVectorAllZeros</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a3633803da2c1e9246eae907b238a0beb">isCheapToExtend</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a1ed5232dabde8c9cc04bfc41f179213a">isZerosVector</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a72e2201d5e251af1abbfb6fde00df1cb">removeRedundantInsertVectorElt</a>, <a href="/web-llvm/docs/api/classes/llvm/selectiondagisel/#a624f21782a600e972eacbae3e4818fcc">llvm::SelectionDAGISel::SelectCodeCommon</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#adb90031fb3d067969f3951a7a65c3db9">tryCombineToBSL</a>.</p>
@@ -4147,6 +4945,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

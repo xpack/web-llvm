@@ -87,7 +87,7 @@ class llvm::PrintFunctionPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5d4b836698202124122a0ee03d37b3e8">run</a> (Function &amp;F, AnalysisManager&lt; Function &gt; &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -245,7 +245,7 @@ class llvm::PrintFunctionPass { ... }
 <p>Declaration at line 58 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/irprinter/irprintingpasses-h">IRPrintingPasses.h</a>, definition at line 78 of file <a href="/web-llvm/docs/api/files/lib/lib/irprinter/irprintingpasses-cpp">IRPrintingPasses.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a14de763ca0235935ff458accc41d94d7">llvm::forcePrintModuleIR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7d104c3a6510178d34b2d3f0ae67b4d5">llvm::isFunctionInPrintList</a> and <a href="/web-llvm/docs/api/files/lib/lib/asmparser/llparser-cpp/#a71ef03caf2222804098e7c78eb0e39dc">WriteNewDbgInfoFormat</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a14de763ca0235935ff458accc41d94d7">llvm::forcePrintModuleIR</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7d104c3a6510178d34b2d3f0ae67b4d5">llvm::isFunctionInPrintList</a> and <a href="/web-llvm/docs/api/files/lib/lib/asmparser/llparser-cpp/#a71ef03caf2222804098e7c78eb0e39dc">WriteNewDbgInfoFormat</a>.</p>
 
 </div>
 </div>
@@ -356,6 +356,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

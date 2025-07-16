@@ -74,7 +74,7 @@ struct llvm::PGOForceFunctionAttrsPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5a7425ff46058c5adf7da1d9a58c4000">run</a> (Module &amp;M, ModuleAnalysisManager &amp;AM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -174,7 +174,7 @@ struct llvm::PGOForceFunctionAttrsPass { ... }
 <p>Declaration at line 21 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/instrumentation/pgoforcefunctionattrs-h">PGOForceFunctionAttrs.h</a>, definition at line 33 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/pgoforcefunctionattrs-cpp">PGOForceFunctionAttrs.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2a7a1920d61156abc05a60135aefe8bc67">llvm::PGOOptions::Default</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2a4ec7376ba0b26f029ef85de800c42c43">llvm::PGOOptions::MinSize</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2af826f7065d147888b6ff27476ed52c40">llvm::PGOOptions::OptNone</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2a3976101903526c8f3dc93e91fb094f7e">llvm::PGOOptions::OptSize</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/pgoforcefunctionattrs-cpp/#a644a080a4331977e6930434b8eedb1d5">shouldRunOnFunction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2a7a1920d61156abc05a60135aefe8bc67">llvm::PGOOptions::Default</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2a4ec7376ba0b26f029ef85de800c42c43">llvm::PGOOptions::MinSize</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2af826f7065d147888b6ff27476ed52c40">llvm::PGOOptions::OptNone</a>, <a href="/web-llvm/docs/api/structs/llvm/pgooptions/#af4530e1e6451953635146d6119977bb2a3976101903526c8f3dc93e91fb094f7e">llvm::PGOOptions::OptSize</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/pgoforcefunctionattrs-cpp/#a644a080a4331977e6930434b8eedb1d5">shouldRunOnFunction</a>.</p>
 
 </div>
 </div>
@@ -223,6 +223,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

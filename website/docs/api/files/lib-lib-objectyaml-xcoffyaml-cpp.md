@@ -110,7 +110,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5e666a6894b18808026a5a176cbe0fff">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -123,7 +123,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3d86bd20f39f18c6e71a161e8b1c4a29">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -136,7 +136,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8baf02b8850c50818a248b02975c8043">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -149,7 +149,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a31b2dd86815a9912211d0367ecaff6d3">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -162,7 +162,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Type, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFFYAML::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a612ffa68f1cf81c2102688520cf0e8bb">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Type, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFFYAML::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -175,7 +175,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Type, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a15ef857061b6f171fe30cb2776ff0639">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Type, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">XCOFF::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -218,7 +218,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a5e666a6894b18808026a5a176cbe0fff}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -243,7 +243,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a3d86bd20f39f18c6e71a161e8b1c4a29}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -268,7 +268,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a8baf02b8850c50818a248b02975c8043}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -293,7 +293,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a31b2dd86815a9912211d0367ecaff6d3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -318,7 +318,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a612ffa68f1cf81c2102688520cf0e8bb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -343,7 +343,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a15ef857061b6f171fe30cb2776ff0639}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -372,6 +372,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

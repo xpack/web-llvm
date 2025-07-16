@@ -387,7 +387,7 @@ class llvm::TargetLibraryInfo { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a08ab82ef887ca585ab51c676c55b7a66">getAttrList</a> (LLVMContext *C, ArrayRef&lt; unsigned &gt; ArgNos, bool Signed, bool Ret=false, AttributeList AL=AttributeList()) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1020,7 +1020,7 @@ class llvm::TargetLibraryInfo { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AttributeList llvm::TargetLibraryInfo::getAttrList (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> * C, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; unsigned &gt; ArgNos, bool Signed, bool Ret=false, AttributeList AL=AttributeList())</td>
+<td class="doxyMemberName">AttributeList llvm::TargetLibraryInfo::getAttrList (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> * C, <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; unsigned &gt; ArgNos, bool Signed, bool Ret=false, <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> AL=<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>())</td>
 </tr>
 </table>
 </td>
@@ -1644,7 +1644,7 @@ class llvm::TargetLibraryInfo { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::TargetLibraryInfo::invalidate (<a href="/web-llvm/docs/api/classes/llvm/module">Module</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp;, ModuleAnalysisManager::Invalidator &amp;)</td>
+<td class="doxyMemberName">bool llvm::TargetLibraryInfo::invalidate (<a href="/web-llvm/docs/api/classes/llvm/module">Module</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp;, ModuleAnalysisManager::Invalidator &amp;)</td>
 </tr>
 </table>
 </td>
@@ -1678,7 +1678,7 @@ class llvm::TargetLibraryInfo { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::TargetLibraryInfo::invalidate (<a href="/web-llvm/docs/api/classes/llvm/function">Function</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp;, FunctionAnalysisManager::Invalidator &amp;)</td>
+<td class="doxyMemberName">bool llvm::TargetLibraryInfo::invalidate (<a href="/web-llvm/docs/api/classes/llvm/function">Function</a> &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp;, FunctionAnalysisManager::Invalidator &amp;)</td>
 </tr>
 </table>
 </td>
@@ -2131,6 +2131,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

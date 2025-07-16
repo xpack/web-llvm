@@ -310,7 +310,7 @@ class llvm::ConstantDataVector { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="#acc193957138fece590fe07417912f018">getFP()</a> constructors - Return a constant of vector type with a float element type taken from argument ‘ElementType`, and count taken from / argument ‘Elts`. <a href="#acc193957138fece590fe07417912f018">More...</a></p>
+<p><a href="#acc193957138fece590fe07417912f018">getFP()</a> constructors - Return a constant of vector type with a float element type taken from argument ‘ElementType`, and count taken from argument ‘Elts`. <a href="#acc193957138fece590fe07417912f018">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -955,7 +955,7 @@ class llvm::ConstantDataVector { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p><a href="#acc193957138fece590fe07417912f018">getFP()</a> constructors - Return a constant of vector type with a float element type taken from argument ‘ElementType`, and count taken from / argument ‘Elts`.</p>
+<p><a href="#acc193957138fece590fe07417912f018">getFP()</a> constructors - Return a constant of vector type with a float element type taken from argument ‘ElementType`, and count taken from argument ‘Elts`.</p>
 
 
 <p>The amount of bits of the contained type must match the number of bits of the type contained in the passed in <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>. (i.e. half or bfloat for 16bits, float for 32bits, double for 64bits) Note that this can return a <a href="/web-llvm/docs/api/classes/llvm/constantaggregatezero">ConstantAggregateZero</a> object.</p>
@@ -1129,6 +1129,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

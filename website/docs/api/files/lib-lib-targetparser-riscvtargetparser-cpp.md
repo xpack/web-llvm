@@ -151,7 +151,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a716c74bdef7ee2c80c6b16f8346c0c57">PROC</a>(ENUM, NAME, DEFAULT_MARCH, FAST_SCALAR_UNALIGN, FAST_VECTOR_UNALIGN, MVENDORID, MARCHID, MIMPID)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae34a1f3f94cca8852e73c3ccc272a172">PROC</a>(ENUM, NAME, DEFAULT_MARCH, FAST_SCALAR_UNALIGN, FAST_VECTOR_UNALIGN, MVENDORID, MARCHID, MIMPID)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -164,7 +164,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae85dbef05bd06b7518dbe1e6a1a72e77">TUNE_PROC</a>(ENUM, NAME)&nbsp;&nbsp;&nbsp;.Case(NAME, CK_##<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/clauset-h/#a9f45f010de76e982a57b1b875fcb44e3">ENUM</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a06dab9cb5ed7e88e4f24f9315b823e0f">TUNE_PROC</a>(ENUM, NAME)&nbsp;&nbsp;&nbsp;.Case(NAME, CK_##<a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/frontend/include/llvm/frontend/openmp/clauset-h/#a9f45f010de76e982a57b1b875fcb44e3">ENUM</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -177,7 +177,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae85dbef05bd06b7518dbe1e6a1a72e77">TUNE_PROC</a>(ENUM, NAME)&nbsp;&nbsp;&nbsp;Values.emplace_back(StringRef(NAME));</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a41d4724b4e35e9b1c7cabe27da6c5b92">TUNE_PROC</a>(ENUM, NAME)&nbsp;&nbsp;&nbsp;Values.emplace_back(StringRef(NAME));</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -258,7 +258,7 @@ keywords:
 </div>
 </div>
 
-### PROC {#a716c74bdef7ee2c80c6b16f8346c0c57}
+### PROC {#ae34a1f3f94cca8852e73c3ccc272a172}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -325,7 +325,7 @@ keywords:
 </div>
 </div>
 
-### TUNE\_PROC {#ae85dbef05bd06b7518dbe1e6a1a72e77}
+### TUNE\_PROC {#a06dab9cb5ed7e88e4f24f9315b823e0f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -350,7 +350,7 @@ keywords:
 </div>
 </div>
 
-### TUNE\_PROC {#ae85dbef05bd06b7518dbe1e6a1a72e77}
+### TUNE\_PROC {#a41d4724b4e35e9b1c7cabe27da6c5b92}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -379,6 +379,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

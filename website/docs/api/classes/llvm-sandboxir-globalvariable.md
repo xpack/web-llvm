@@ -300,7 +300,7 @@ class llvm::sandboxir::GlobalVariable { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1be64f21e2c5ee02a173131b7ec7f1d1">getAttributesAsList</a> (unsigned Index) const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1266,6 +1266,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

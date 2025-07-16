@@ -231,7 +231,7 @@ keywords:
 <p>Definition at line 59 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loweratomicpass-cpp">LowerAtomicPass.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="#a759f3cb86e19ef2f5125333912b44c86">runOnBasicBlock</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="#a759f3cb86e19ef2f5125333912b44c86">runOnBasicBlock</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/loweratomicpass/#aa6367f2b0be097467a383973068b444e">llvm::LowerAtomicPass::run</a>.</p>
@@ -375,7 +375,7 @@ keywords:
 <p>Definition at line 39 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loweratomicpass-cpp">LowerAtomicPass.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac306f2130698421f64f8a139faf38675">llvm::lowerAtomicCmpXchgInst</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac963dddf8453fc717992d3ce36a27d8b">llvm::lowerAtomicRMWInst</a>, <a href="#a71a9a2cc77be9409f284b570894f16d2">LowerFenceInst</a>, <a href="#a533cef247257a2fdcfbf3caed9edded6">LowerLoadInst</a>, <a href="#a23409a4a384c75050e75b5e947f91a61">LowerStoreInst</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3d2cdc4a0db233678e7141c9d6ea3419">llvm::make_early_inc_range</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac306f2130698421f64f8a139faf38675">llvm::lowerAtomicCmpXchgInst</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac963dddf8453fc717992d3ce36a27d8b">llvm::lowerAtomicRMWInst</a>, <a href="#a71a9a2cc77be9409f284b570894f16d2">LowerFenceInst</a>, <a href="#a533cef247257a2fdcfbf3caed9edded6">LowerLoadInst</a>, <a href="#a23409a4a384c75050e75b5e947f91a61">LowerStoreInst</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3d2cdc4a0db233678e7141c9d6ea3419">llvm::make_early_inc_range</a>.</p>
 
 
 <p>Referenced by <a href="#a9befb5dcd86ec6c00305c12900c29df1">lowerAtomics</a>.</p>
@@ -418,6 +418,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

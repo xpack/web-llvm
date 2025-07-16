@@ -80,7 +80,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af6fe6c7765cda797476c1ce86165ae93">PLATFORM</a>(platform, id, name, build_name, target, tapi_target, marketing)&nbsp;&nbsp;&nbsp;  .Case(#target, PLATFORM_##platform)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa6a633fe16edf0565d14c2140f2160e2">PLATFORM</a>(platform, id, name, build_name, target, tapi_target, marketing)&nbsp;&nbsp;&nbsp;  .Case(#target, PLATFORM_##platform)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -132,7 +132,7 @@ keywords:
 </div>
 </div>
 
-### PLATFORM {#af6fe6c7765cda797476c1ce86165ae93}
+### PLATFORM {#aa6a633fe16edf0565d14c2140f2160e2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -161,6 +161,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

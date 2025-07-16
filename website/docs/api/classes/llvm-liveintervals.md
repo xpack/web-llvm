@@ -2768,7 +2768,7 @@ class llvm::LiveIntervals { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool LiveIntervals::invalidate (<a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, MachineFunctionAnalysisManager::Invalidator &amp; Inv)</td>
+<td class="doxyMemberName">bool LiveIntervals::invalidate (<a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp; PA, MachineFunctionAnalysisManager::Invalidator &amp; Inv)</td>
 </tr>
 </table>
 </td>
@@ -2782,7 +2782,7 @@ class llvm::LiveIntervals { ... }
 <p>Declaration at line 116 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/liveintervals-h">LiveIntervals.h</a>, definition at line 130 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/liveintervals-cpp">LiveIntervals.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aa7a1b769f9c57010cc41d9c3bb9d39c6">llvm::PreservedAnalyses::getChecker</a> and <a href="#a8b3787dc94544cbab03e18b792bb9483">LiveIntervalsAnalysis</a>.</p>
+<p>Reference <a href="#a8b3787dc94544cbab03e18b792bb9483">LiveIntervalsAnalysis</a>.</p>
 
 </div>
 </div>
@@ -4217,6 +4217,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -518,7 +518,7 @@ struct llvm::DOTGraphTraits&lt;SelectionDAG *&gt; { ... }
 <p>Definition at line 45 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondagprinter-cpp">SelectionDAGPrinter.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/sdnodeiterator/#af14c003d9f4913dbc8b7daed0807183d">llvm::SDNodeIterator::begin</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#af6295cac2790cf237a57525d3d74b4a6">llvm::itostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/sdnodeiterator/#af14c003d9f4913dbc8b7daed0807183d">llvm::SDNodeIterator::begin</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 </div>
 </div>
@@ -796,6 +796,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -800,7 +800,7 @@ keywords:
 <p>Definition at line 267 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a637b69dea56f804278aa50e975337e01">Int</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a637b69dea56f804278aa50e975337e01">Int</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>.</p>
 
 
 <p>Referenced by <a href="#abff89c097ca3eb3d820b684175b4008f">reconstructCommon</a> and <a href="#a993bbcce0f95684b4ec50194f4a498c5">reconstructGEP</a>.</p>
@@ -908,7 +908,7 @@ keywords:
 <p>Definition at line 449 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>.</p>
 
 
 <p>Referenced by <a href="#a732f3ff01555ec522134bf060270c1ae">rewriteAccessChain</a> and <a href="#a4a1ded9f22bc97a6e916c9836ea967b8">rewriteUses</a>.</p>
@@ -944,7 +944,7 @@ keywords:
 <p>Definition at line 129 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 
 <p>Referenced by <a href="#a0ac2a238357eca4f1b17e34db2f62954">isGEPAndLoad</a>, <a href="#ad3a7e0339a186f2b89ee3f41a15b469e">isGEPAndStore</a> and <a href="#a114d4ebb92d152a0735657f7931cea37">isPreserveStaticOffsetCall</a>.</p>
@@ -980,7 +980,7 @@ keywords:
 <p>Definition at line 435 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a0ac2a238357eca4f1b17e34db2f62954">isGEPAndLoad</a> and <a href="#ad3a7e0339a186f2b89ee3f41a15b469e">isGEPAndStore</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a0ac2a238357eca4f1b17e34db2f62954">isGEPAndLoad</a> and <a href="#ad3a7e0339a186f2b89ee3f41a15b469e">isGEPAndStore</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/addresssanitizer-cpp/#a8d829e3f1a798c5c559b716ba05a4d7d">isInterestingPointerComparison</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/addresssanitizer-cpp/#a1e0c09290631b1be732e7387c75aca09">isInterestingPointerSubtraction</a> and <a href="#a4a1ded9f22bc97a6e916c9836ea967b8">rewriteUses</a>.</p>
@@ -1178,7 +1178,7 @@ keywords:
 <p>Definition at line 223 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#a35c9927607481d33c2093c2b7d643e80">fillCommonArgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a87972f38ad214c0ba8ff13a9768814ac">GepAndLoadFirstIdxArg</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a9ca08b7ff5754740b223ca4b90e7041f">makeIntrinsicCall</a>, <a href="#a7fae42d42333d13848fe4d545dc50049">mergeDILocations</a>, <a href="#a199f0b21470b0b5224b2347603d43a94">setParamElementType</a> and <a href="#a70d15119886ee33e9a6e0a5990213a9c">setParamReadOnly</a>.</p>
+<p>References <a href="#a35c9927607481d33c2093c2b7d643e80">fillCommonArgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a87972f38ad214c0ba8ff13a9768814ac">GepAndLoadFirstIdxArg</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a9ca08b7ff5754740b223ca4b90e7041f">makeIntrinsicCall</a>, <a href="#a7fae42d42333d13848fe4d545dc50049">mergeDILocations</a>, <a href="#a199f0b21470b0b5224b2347603d43a94">setParamElementType</a> and <a href="#a70d15119886ee33e9a6e0a5990213a9c">setParamReadOnly</a>.</p>
 
 
 <p>Referenced by <a href="#aadcf41a9f704494210a217eb089678b3">tryToReplaceWithGEPBuiltin</a>.</p>
@@ -1214,7 +1214,7 @@ keywords:
 <p>Definition at line 243 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#a35c9927607481d33c2093c2b7d643e80">fillCommonArgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a424c0595f1ea50a1d8bdaff9e6e228c9">GepAndStoreFirstIdxArg</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a9ca08b7ff5754740b223ca4b90e7041f">makeIntrinsicCall</a>, <a href="#a7fae42d42333d13848fe4d545dc50049">mergeDILocations</a>, <a href="#a199f0b21470b0b5224b2347603d43a94">setParamElementType</a>, <a href="#a4ab42d331e885c91e9eec5eaf9b82647">setParamReadNone</a> and <a href="#adac3163394efa3963f6ae6c395cd077e">setParamWriteOnly</a>.</p>
+<p>References <a href="#a35c9927607481d33c2093c2b7d643e80">fillCommonArgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a424c0595f1ea50a1d8bdaff9e6e228c9">GepAndStoreFirstIdxArg</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a9ca08b7ff5754740b223ca4b90e7041f">makeIntrinsicCall</a>, <a href="#a7fae42d42333d13848fe4d545dc50049">mergeDILocations</a>, <a href="#a199f0b21470b0b5224b2347603d43a94">setParamElementType</a>, <a href="#a4ab42d331e885c91e9eec5eaf9b82647">setParamReadNone</a> and <a href="#adac3163394efa3963f6ae6c395cd077e">setParamWriteOnly</a>.</p>
 
 
 <p>Referenced by <a href="#aadcf41a9f704494210a217eb089678b3">tryToReplaceWithGEPBuiltin</a>.</p>
@@ -1324,7 +1324,7 @@ keywords:
 <p>Definition at line 290 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a57164b4f384076b29116ce3e35f2d154">getOperandAsUnsigned</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#a96d5dc120196819fbfbc257cba09b2aa">Insn</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a57164b4f384076b29116ce3e35f2d154">getOperandAsUnsigned</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#a96d5dc120196819fbfbc257cba09b2aa">Insn</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/bpfpreservestaticoffsetpass/#ad8b5905523204667cdaf17629a69a82e">llvm::BPFPreserveStaticOffsetPass::reconstructLoad</a> and <a href="/web-llvm/docs/api/classes/llvm/bpfpreservestaticoffsetpass/#a509bd79859ed851dc0a1aa4c437b97b8">llvm::BPFPreserveStaticOffsetPass::reconstructStore</a>.</p>
@@ -1360,7 +1360,7 @@ keywords:
 <p>Definition at line 277 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a7efd1f0c1206d95e4fe01a9b49a57b82">llvm::SmallVectorImpl&lt; T &gt;::append</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/classes/llvm/getelementptrinst/#a7e5d474f9fda4b2b2e5de3dcfefcc472">llvm::GetElementPtrInst::Create</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a> and <a href="#a57164b4f384076b29116ce3e35f2d154">getOperandAsUnsigned</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a7efd1f0c1206d95e4fe01a9b49a57b82">llvm::SmallVectorImpl&lt; T &gt;::append</a>, <a href="/web-llvm/docs/api/classes/llvm/getelementptrinst/#a7e5d474f9fda4b2b2e5de3dcfefcc472">llvm::GetElementPtrInst::Create</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a> and <a href="#a57164b4f384076b29116ce3e35f2d154">getOperandAsUnsigned</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/bpfpreservestaticoffsetpass/#ad8b5905523204667cdaf17629a69a82e">llvm::BPFPreserveStaticOffsetPass::reconstructLoad</a> and <a href="/web-llvm/docs/api/classes/llvm/bpfpreservestaticoffsetpass/#a509bd79859ed851dc0a1aa4c437b97b8">llvm::BPFPreserveStaticOffsetPass::reconstructStore</a>.</p>
@@ -1432,7 +1432,7 @@ keywords:
 <p>Definition at line 613 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#ad9a3c7bc26b130377bbafc170b5f88a2">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a108729701911f7eb27a9416311f7d9f4">isPreserveArrayIndex</a>, <a href="#a114d4ebb92d152a0735657f7931cea37">isPreserveStaticOffsetCall</a>, <a href="#a6ea70179d4841714f066deb7f391884b">isPreserveStructIndex</a>, <a href="#a0b67e279289d23c13f9a32e82a3b7816">isPreserveUnionIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a0c8ffe664a36e30d49c84d0aded2fe08">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>, <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#a04e285b845fc80b08ac9de9ee165eba8">llvm::BPFCoreSharedInfo::removeArrayAccessCall</a>, <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#a2f48ea4e71fc12dd8df2cab7604733eb">llvm::BPFCoreSharedInfo::removeStructAccessCall</a>, <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#ab4130d48cbde089a67670a64e0b96172">llvm::BPFCoreSharedInfo::removeUnionAccessCall</a> and <a href="/web-llvm/docs/api/classes/llvm/value/#a411cf3e3932f209ce3374cb31adc1da6">llvm::Value::users</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#ad9a3c7bc26b130377bbafc170b5f88a2">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::empty</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="#a108729701911f7eb27a9416311f7d9f4">isPreserveArrayIndex</a>, <a href="#a114d4ebb92d152a0735657f7931cea37">isPreserveStaticOffsetCall</a>, <a href="#a6ea70179d4841714f066deb7f391884b">isPreserveStructIndex</a>, <a href="#a0b67e279289d23c13f9a32e82a3b7816">isPreserveUnionIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a0c8ffe664a36e30d49c84d0aded2fe08">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a>, <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#a04e285b845fc80b08ac9de9ee165eba8">llvm::BPFCoreSharedInfo::removeArrayAccessCall</a>, <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#a2f48ea4e71fc12dd8df2cab7604733eb">llvm::BPFCoreSharedInfo::removeStructAccessCall</a>, <a href="/web-llvm/docs/api/classes/llvm/bpfcoresharedinfo/#ab4130d48cbde089a67670a64e0b96172">llvm::BPFCoreSharedInfo::removeUnionAccessCall</a> and <a href="/web-llvm/docs/api/classes/llvm/value/#a411cf3e3932f209ce3374cb31adc1da6">llvm::Value::users</a>.</p>
 
 
 <p>Referenced by <a href="#aab7ec552f65dd9e6da497d4718b7e23c">rewriteFunction</a>.</p>
@@ -1573,7 +1573,7 @@ keywords:
 <p>Definition at line 648 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#aa9145488452fa21d947ebb7f908f344b">collectPreserveStaticOffsetCalls</a>, <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#af74676a3c7447be34bd2c1da76ec0c48">llvm::SmallPtrSetImpl&lt; PtrType &gt;::contains</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="#a4601f3a29dbb6d4ea9da7f4dd26e2ae7">removeMarkerCall</a>, <a href="#a36fe1ed1682023b7fb3c4699f9009d31">removePAICalls</a> and <a href="#a732f3ff01555ec522134bf060270c1ae">rewriteAccessChain</a>.</p>
+<p>References <a href="#aa9145488452fa21d947ebb7f908f344b">collectPreserveStaticOffsetCalls</a>, <a href="/web-llvm/docs/api/classes/llvm/smallptrsetimpl/#af74676a3c7447be34bd2c1da76ec0c48">llvm::SmallPtrSetImpl&lt; PtrType &gt;::contains</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="#a4601f3a29dbb6d4ea9da7f4dd26e2ae7">removeMarkerCall</a>, <a href="#a36fe1ed1682023b7fb3c4699f9009d31">removePAICalls</a> and <a href="#a732f3ff01555ec522134bf060270c1ae">rewriteAccessChain</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/bpfpreservestaticoffsetpass/#aef25d4cdefd91999a61e1854ea64b148">llvm::BPFPreserveStaticOffsetPass::run</a>.</p>
@@ -1645,7 +1645,7 @@ keywords:
 <p>Definition at line 169 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
 
 
 <p>Referenced by <a href="#a4cb889cf1f4cfbef0ae51eb6ee0e300f">makeGEPAndLoad</a> and <a href="#a49ff1486c1f55a643e7b59e7ea3a3ad5">makeGEPAndStore</a>.</p>
@@ -1681,7 +1681,7 @@ keywords:
 <p>Definition at line 174 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
 
 
 <p>Referenced by <a href="#a49ff1486c1f55a643e7b59e7ea3a3ad5">makeGEPAndStore</a>.</p>
@@ -1717,7 +1717,7 @@ keywords:
 <p>Definition at line 179 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
 
 
 <p>Referenced by <a href="#a4cb889cf1f4cfbef0ae51eb6ee0e300f">makeGEPAndLoad</a>.</p>
@@ -1753,7 +1753,7 @@ keywords:
 <p>Definition at line 184 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp">BPFPreserveStaticOffset.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">llvm::Attribute::get</a>.</p>
 
 
 <p>Referenced by <a href="#a49ff1486c1f55a643e7b59e7ea3a3ad5">makeGEPAndStore</a>.</p>
@@ -1904,6 +1904,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

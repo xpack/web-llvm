@@ -94,7 +94,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6a8d687e9f767e52d65802a4a267c893">FUNCTION_PASS_WITH_PARAMS</a>(NAME, CLASS_NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa005f8a2507a851a25dae4520ed60b40">FUNCTION_PASS_WITH_PARAMS</a>(NAME, CLASS_NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -107,7 +107,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a60d08c7f1bb7f59981a7b412c7a84a37">REGION_PASS</a>(NAME, CLASS_NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a27e8ed48187894718bd6c5531230c235">REGION_PASS</a>(NAME, CLASS_NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -147,7 +147,7 @@ keywords:
 </div>
 </div>
 
-### FUNCTION\_PASS\_WITH\_PARAMS {#a6a8d687e9f767e52d65802a4a267c893}
+### FUNCTION\_PASS\_WITH\_PARAMS {#aa005f8a2507a851a25dae4520ed60b40}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -217,7 +217,7 @@ keywords:
 </div>
 </div>
 
-### REGION\_PASS {#a60d08c7f1bb7f59981a7b412c7a84a37}
+### REGION\_PASS {#a27e8ed48187894718bd6c5531230c235}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -243,6 +243,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

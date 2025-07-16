@@ -854,7 +854,7 @@ class llvm::MachineModuleInfo { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/namespaces/anonymous-machinedebugify-cpp-/#aa828309ad55f30355cd07c12017a2263">anonymous{MachineDebugify.cpp}::applyDebugifyMetadataToMachineFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#abffddc65a79eca0830b7dd232ff74dc5">llvm::ARMBaseInstrInfo::getOutliningTypeImpl</a>, <a href="/web-llvm/docs/api/classes/llvm/mirparserimpl/#afbccb941c0215a918667f3a574b976b9">llvm::MIRParserImpl::parseMachineFunction</a>, <a href="/web-llvm/docs/api/structs/anonymous-machinecheckdebugify-cpp-/checkdebugmachinemodule/#a326b0f33afafa16b37d37f736e52bf5e">anonymous{MachineCheckDebugify.cpp}::CheckDebugMachineModule::runOnModule</a> and <a href="/web-llvm/docs/api/structs/anonymous-machinestripdebug-cpp-/stripdebugmachinemodule/#af68a3711fb7b940ff150244b5892be4e">anonymous{MachineStripDebug.cpp}::StripDebugMachineModule::runOnModule</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/anonymous-machinedebugify-cpp-/#aa828309ad55f30355cd07c12017a2263">anonymous{MachineDebugify.cpp}::applyDebugifyMetadataToMachineFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a72a70493afafbf4374226300289c04b9">llvm::AArch64InstrInfo::getOutliningTypeImpl</a>, <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#abffddc65a79eca0830b7dd232ff74dc5">llvm::ARMBaseInstrInfo::getOutliningTypeImpl</a>, <a href="/web-llvm/docs/api/classes/llvm/mirparserimpl/#afbccb941c0215a918667f3a574b976b9">llvm::MIRParserImpl::parseMachineFunction</a>, <a href="/web-llvm/docs/api/structs/anonymous-machinecheckdebugify-cpp-/checkdebugmachinemodule/#a326b0f33afafa16b37d37f736e52bf5e">anonymous{MachineCheckDebugify.cpp}::CheckDebugMachineModule::runOnModule</a> and <a href="/web-llvm/docs/api/structs/anonymous-machinestripdebug-cpp-/stripdebugmachinemodule/#af68a3711fb7b940ff150244b5892be4e">anonymous{MachineStripDebug.cpp}::StripDebugMachineModule::runOnModule</a>.</p>
 
 </div>
 </div>
@@ -1328,6 +1328,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

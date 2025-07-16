@@ -87,16 +87,16 @@ struct llvm::format_provider&lt;T, std::enable_if_t&lt; support::detail::use_int
 
 
 
-### | style | Meaning | Example | Digits Meaning | {#autotoc_md41}
+### | style | Meaning | Example | Digits Meaning | {#autotoc_md40}
 
 
-## | | | Input | Output | | {#autotoc_md42}
+## | | | Input | Output | | {#autotoc_md41}
 
 
 <p>| x- | Hex no prefix, lower | 42 | 2a | Minimum # digits | | X- | Hex no prefix, upper | 42 | 2A | Minimum # digits | | x+ / x | Hex + prefix, lower | 42 | 0x2a | Minimum # digits | | X+ / X | Hex + prefix, upper | 42 | 0x2A | Minimum # digits | | N / n | Digit grouped number | 123456 | 123,456 | Ignored | | D / d | Integer | 100000 | 100000 | Ignored |</p>
 
 
-## | (empty) | Same as D / d | | | | {#autotoc_md43}
+## | (empty) | Same as D / d | | | | {#autotoc_md42}
 
 
 <p>Definition at line 129 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/formatproviders-h">FormatProviders.h</a>.</p>
@@ -153,6 +153,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

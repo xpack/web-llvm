@@ -540,9 +540,6 @@ keywords:
 <p>Definition at line 1470 of file <a href="/web-llvm/docs/api/files/lib/lib/filecheck/filecheck-cpp">FileCheck.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a8a0d39a17f2152e31271da7e7491d60e">llvm::isAlnum</a>.</p>
-
-
 <p>Referenced by <a href="#a02aebfa7014b1bf9a52445a58163adb8">FindFirstMatchingPrefix</a> and <a href="#a17ae1981d9821c8ea405bb2d9c785cd8">SkipWord</a>.</p>
 
 </div>
@@ -981,6 +978,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

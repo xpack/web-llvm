@@ -402,7 +402,7 @@ namespace llvm::coro::anonymous{SpillUtils.cpp} { ... }
 <p>Definition at line 107 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/coroutines/spillutils-cpp">SpillUtils.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/cleanuppadinst/#afa8a6a49b80d4ca3bd0881fe4383c511">llvm::CleanupPadInst::Create</a>, <a href="/web-llvm/docs/api/classes/llvm/cleanupreturninst/#a7e19664720f1c4693b788b018d08758c">llvm::CleanupReturnInst::Create</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a601ee49a4c4e0babf29bd1cf09036570">llvm::Instruction::eraseFromParent</a>, <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/node-parent-access/#a7e19e7508415378ad9523e0339b23e22">llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/catchswitchinst/#a74d56dd1a8531d108c9b4883bfff61a6">llvm::CatchSwitchInst::getParentPad</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aef9e9fcf4c5dfce90276ca16d91b8e46">llvm::BasicBlock::getTerminator</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a52c990590792c91dd20b6d45acebe359">llvm::BasicBlock::splitBasicBlock</a> and <a href="#aedc5ca2a4ef6009dc69a410d60c7eeaf">splitBeforeCatchSwitch</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/cleanuppadinst/#afa8a6a49b80d4ca3bd0881fe4383c511">llvm::CleanupPadInst::Create</a>, <a href="/web-llvm/docs/api/classes/llvm/cleanupreturninst/#a7e19664720f1c4693b788b018d08758c">llvm::CleanupReturnInst::Create</a>, <a href="/web-llvm/docs/api/classes/llvm/instruction/#a601ee49a4c4e0babf29bd1cf09036570">llvm::Instruction::eraseFromParent</a>, <a href="/web-llvm/docs/api/classes/llvm/ilist-detail/node-parent-access/#a7e19e7508415378ad9523e0339b23e22">llvm::ilist_detail::node_parent_access&lt; NodeTy, ParentTy &gt;::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/catchswitchinst/#a74d56dd1a8531d108c9b4883bfff61a6">llvm::CatchSwitchInst::getParentPad</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#acf3c3aa4880eb60d00963ba93082c298">llvm::BasicBlock::getTerminator</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a52c990590792c91dd20b6d45acebe359">llvm::BasicBlock::splitBasicBlock</a> and <a href="#aedc5ca2a4ef6009dc69a410d60c7eeaf">splitBeforeCatchSwitch</a>.</p>
 
 
 <p>Referenced by <a href="#aedc5ca2a4ef6009dc69a410d60c7eeaf">splitBeforeCatchSwitch</a>.</p>
@@ -422,6 +422,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -738,7 +738,7 @@ class llvm::sandboxir::SchedBundle { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::SchedBundle::cluster (<a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> Where)</td>
+<td class="doxyMemberName">void llvm::sandboxir::SchedBundle::cluster (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a> Where)</td>
 </tr>
 </table>
 </td>
@@ -1067,6 +1067,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

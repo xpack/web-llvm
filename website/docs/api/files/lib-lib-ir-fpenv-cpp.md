@@ -95,7 +95,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af03a9549e7632dcca1a384646da10642">FUNCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad383934ba665f875dec52d4066a8b587">FUNCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -108,7 +108,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acb1562b4fc2af28e0902580ce98800fd">INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac76c80c50f8ec1335d0a5a5ae26ab3da">INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -121,7 +121,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a21d38d06e4cf1a698c0a1d0d60811d34">CMP_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a78000d72d57a644d003d08015b8a6c5b">CMP_INSTRUCTION</a>(NAME, NARG, ROUND_MODE, INTRINSIC, DAGN)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -167,7 +167,7 @@ keywords:
 </div>
 </div>
 
-### CMP\_INSTRUCTION {#a21d38d06e4cf1a698c0a1d0d60811d34}
+### CMP\_INSTRUCTION {#a78000d72d57a644d003d08015b8a6c5b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -220,7 +220,7 @@ keywords:
 </div>
 </div>
 
-### FUNCTION {#af03a9549e7632dcca1a384646da10642}
+### FUNCTION {#ad383934ba665f875dec52d4066a8b587}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -245,7 +245,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Intrinsic::NAME:                                                        \
     IID = Intrinsic::INTRINSIC;                                                \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -280,7 +280,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Instruction::NAME:                                                      \
     IID = Intrinsic::INTRINSIC;                                                \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -290,7 +290,7 @@ keywords:
 </div>
 </div>
 
-### INSTRUCTION {#acb1562b4fc2af28e0902580ce98800fd}
+### INSTRUCTION {#ac76c80c50f8ec1335d0a5a5ae26ab3da}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -319,6 +319,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

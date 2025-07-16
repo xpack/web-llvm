@@ -854,6 +854,8 @@ keywords:
 <li><b>canonicalizeRange()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/constantfprange-cpp/#aa6e7cbf32894b4feb398e5ff39919ca1">lib/lib/IR/ConstantFPRange.cpp</a></li>
 <li><b>canonicalizeSaturatedAdd()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a3c4424f4bbcee5f3dd484c2822221812">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>canonicalizeSaturatedSubtract()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a65c587ebfe84f7c55b3d2266ff0500f9">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>canonicalizeScalarSelectOfVecs()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a538217142aeebcd4a4e5cbc7428df9d1">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>canonicalizeSelectToShuffle()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a3820b5c838d651c38b2d3dec86f2354f">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>canonicalizeShuffleMaskWithCommute()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a6dd85fc336a77111219214bf7e779d1f">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>canonicalizeShuffleMaskWithHorizOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ac1639f9e80414a665a5826e6e4ca6095">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>canonicalizeShuffleVectorByLane()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/loongarch/loongarchisellowering-cpp/#a1b0f49dbc998f0ec2c25592fb72e3be9">lib/lib/Target/lib/Target/LoongArch/LoongArchISelLowering.cpp</a></li>
@@ -1319,6 +1321,7 @@ keywords:
 <li><b>combineBITREVERSE()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#acb27133587f777e5b89572d1c62aeac9">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineBlendOfPermutes()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ad00ef9b94ff672e7a3ef2a0cae24b757">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineBMILogicOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a1d33df2c00851a783858052d263c2546">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
+<li><b>combineBoolVectorAndTruncateStore()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ae63d3420be279c225fb7bad70c0b8046">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>combineBrCond()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#afd512b724e2c19c51591ff52531f8659">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineBROADCAST_LOAD()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#aba1b64f17c84bc615a735f48746a0740">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineBT()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#afab7e380356e4b22d23f87fa2f45daf9">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
@@ -1372,6 +1375,7 @@ keywords:
 <li><b>combineFPFusedMultiply()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvinstrinfo-cpp/#a35be28e9754ada1081edc62f6efc0878">lib/lib/Target/lib/Target/RISCV/RISCVInstrInfo.cpp</a></li>
 <li><b>combineGatherScatter()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a250b1e0899d6d01c60cb7af31cd2a2fd">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineHorizOpWithShuffle()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#af366ca9511826f13c9d2e4494be70cd9">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
+<li><b>combineI8TruncStore()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#abee0476f2cd1449e29bfca26702bd865">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>combineINSERT_SUBVECTOR()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ace3516d005e59a05c7b3ff975d063f23">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineInstructionsOverFunction()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instructioncombining-cpp/#a45a945c85468ec7d17b48b0d4f612b7e">lib/lib/Transforms/lib/Transforms/InstCombine/InstructionCombining.cpp</a></li>
 <li><b>combineINTRINSIC_VOID()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a7ed3d44a545e6f543e76cf58245d1f19">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
@@ -1487,6 +1491,7 @@ keywords:
 <li><b>combineTruncToVnclip()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#a143e143f8ee315e712138f13f3343cd5">lib/lib/Target/lib/Target/RISCV/RISCVISelLowering.cpp</a></li>
 <li><b>combineUADDO_CARRYDiamond()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#a77515f2a50929db00636724e30ef3190">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>combineUIntToFP()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a2e17548b90a1c18c6199a8f99c544dfc">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
+<li><b>combineV3I8LoadExt()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ab2361f33fc2b1c3908ad60fd0e437b6a">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>combineVectorCompare()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#aca03795fe4ea383d28dcf4433f994485">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineVectorCompareAndMaskUnaryOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a54b7a43507d8f339f806b8d1c9f12f29">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>combineVectorHADDSUB()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ae65b165a9908b7b67d1bb6d3b93e8fd4">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
@@ -2340,7 +2345,7 @@ keywords:
 <li><b>CustomNonLegalBITCASTResults()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a01509c23581fb688a399381319f6b1a3">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>cvtVOP3DstOpSelOnly()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/asmparser/amdgpuasmparser-cpp/#ad3bff1e1b8f6b45aeb994f8ba063dd4e">lib/lib/Target/lib/Target/AMDGPU/lib/Target/AMDGPU/AsmParser/AMDGPUAsmParser.cpp</a></li>
 </ul>
-<p>1652 entries</p>
+<p>1657 entries</p>
 
 ## - D -
 
@@ -4050,6 +4055,7 @@ keywords:
 <li><b>foldAddSubBoolOfMaskedVal()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#ae200e029e03b0fdac2427ee3811e24c5">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>foldAddSubMasked1()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#a2d63c559640ebacf58b26c51ffa5b358">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>foldAddSubOfSignBit()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#a6ff9876b9195d71118f24729147be47a">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
+<li><b>foldAddSubSelect()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#af5dffe23851d819cc3ed8126fdf8a42f">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldAddToAshr()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineaddsub-cpp/#a069a4c1f69273f1402ccb7a407e9ee4c">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAddSub.cpp</a></li>
 <li><b>foldAndOrOfICmpEqConstantAndICmp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#a45ec897890074179e7de73b934798976">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>foldAndOrOfICmpsWithConstEq()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#afce22397c3eff1d8c0dc8e3d8c464829">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
@@ -4062,6 +4068,7 @@ keywords:
 <li><b>FoldBitCast()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/constantfold-cpp/#a79061cbffefa2eccfe0d30d1c07eed78">lib/lib/IR/ConstantFold.cpp</a></li>
 <li><b>foldBitCastBitwiseLogic()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecasts-cpp/#a6556e45ee27ad333bf33eda6b1f04b8a">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineCasts.cpp</a></li>
 <li><b>foldBitCastSelect()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecasts-cpp/#a5d0fa3868fb321fcd4b5d632028db897">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineCasts.cpp</a></li>
+<li><b>foldBitCeil()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a5a46b94b8be40eba6d85169820f2a3a4">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldBitOrderCrossLogicOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#a14b615dc096b20886abef65f8491e1ed">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>foldBitOrderCrossLogicOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecalls-cpp/#a9bb2638252bcf281e82bfa7265d76c6e">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineCalls.cpp</a></li>
 <li><b>foldBitwiseLogicWithIntrinsics()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#ae3ba7f841807b297e7c28874c285f538">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
@@ -4160,6 +4167,7 @@ keywords:
 <li><b>foldMulSelectToNegate()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinemuldivrem-cpp/#a4ca1d6271eac06394a93790929242261">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineMulDivRem.cpp</a></li>
 <li><b>foldMulShl1()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinemuldivrem-cpp/#a991fdcb0635a1c2dd11f56d504d18bad">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineMulDivRem.cpp</a></li>
 <li><b>foldNegativePower2AndShiftedMask()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#a5532e05d5caa4fb5e2b8512aa3095f1e">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
+<li><b>foldNestedSelects()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#af9cc067afdf0e3c2ee4190e4a328c0db">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldNotXor()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#a0e07326546257c169a5aff0d8b822a00">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>foldNoWrapAdd()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineaddsub-cpp/#a8b324b9fcea4493d60035273d9b8e085">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAddSub.cpp</a></li>
 <li><b>foldOperationIfPossible()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/diexpressionoptimizer-cpp/#a4ececfb2077d72244a3884b39b28256e">lib/lib/IR/DIExpressionOptimizer.cpp</a></li>
@@ -4168,24 +4176,40 @@ keywords:
 <li><b>foldOrOfInversions()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#abcce404670629549d0278e1641807377">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>foldOrToXor()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#a26257c73e483eab4b0e15d53340de986">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>foldOverflowCheck()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8648786e9af485e27d907ecd2f2a2a08">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
+<li><b>foldOverflowingAddSubSelect()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a5bdf52f90e0c8cf28eff0caf18654e0f">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldPatchpoint()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/targetinstrinfo-cpp/#af18310512508f6a0ace33730b2f9de83">lib/lib/CodeGen/TargetInstrInfo.cpp</a></li>
 <li><b>foldPatternedLoads()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/aggressiveinstcombine/aggressiveinstcombine-cpp/#ace794781892b542579c58d6eade3dba3">lib/lib/Transforms/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp</a></li>
 <li><b>foldPHINodeOrSelectInst()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/sroa-cpp/#a62ada829b4d3487b24df63322b26bfca">lib/lib/Transforms/lib/Transforms/Scalar/SROA.cpp</a></li>
 <li><b>foldPowerOf2AndShiftedMask()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#a609a05f40709dea74bb5cd248c5816fd">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>foldReductionIdiom()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecompares-cpp/#a41baeb4167dc326182b3c281d69232ae">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineCompares.cpp</a></li>
+<li><b>foldRoundUpIntegerWithPow2Alignment()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ac4102cd12659f4a5344d443b40009893">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectBinOpIdentity()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a917f93b85c9b8cfe9ad68ba6d49966ba">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectCmpBitcasts()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a4d786d3323d2318fc16c6b157e2d44e7">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectCmpXchg()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#aa51c5fb5e986aa53dd89f9f775bc7e81">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectFunnelShift()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#aa231edc47a3993eaf9c7aa2bb324e2f5">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectGEP()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instructioncombining-cpp/#a16a66955e366f83c6e35d99511a33167">lib/lib/Transforms/lib/Transforms/InstCombine/InstructionCombining.cpp</a></li>
 <li><b>foldSelectICmpAnd()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#afcb58333497c40468d7889705a5d0b03">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectICmpAndAnd()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a53cf44ef1c7130fc18add1138c045484">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectICmpAndBinOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ad51f65187d4c6b69d6bf8f71e027e4de">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectICmpAndZeroShl()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ab8efede7dd68d6d28fa1cfd032f9ba3b">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectICmpEq()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a6918e533fa9054323684d7e5d556c787">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectICmpLshrAshr()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ad76042aae559769f4dc50ee2f9548789">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectInst()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/sroa-cpp/#a6fc7e359a229f391d15a7a84a31e096a">lib/lib/Transforms/lib/Transforms/Scalar/SROA.cpp</a></li>
+<li><b>foldSelectIntoAddConstant()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#aadd274cfa4ae19782aa85d9f162925c6">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectOfConstantsUsingSra()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#aebf90edce984948502ad1606b3013417">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>foldSelectOfCTTZOrCTLZ()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#a6aa5a20ccba4eafeded8c21562b71918">lib/lib/Target/lib/Target/RISCV/RISCVISelLowering.cpp</a></li>
+<li><b>foldSelectOfSymmetricSelect()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#aeab405fbf9689bd6fb73a95e9c57d477">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectShuffleOfSelectShuffle()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinevectorops-cpp/#a98282716af42c878d4638603c6efb350">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineVectorOps.cpp</a></li>
 <li><b>foldSelectShuffleWith1Binop()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinevectorops-cpp/#a2c05df65ce7ce7ec1d78348be2452e8d">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineVectorOps.cpp</a></li>
+<li><b>foldSelectToCopysign()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a1bf4aeb6f1b186d451eb7f2536b76c2e">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectToPhi()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a9facdf0af7c72aed72e4f59f5980093d">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectToPhiImpl()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ab15c69cfc260f1de61bb644d88b1ed85">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectWithConstOpToBinOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ac83b2f6d1a223c7b4ac9eb3783ee1465">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectWithExtremeEqCond()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a6745cdf992554f558011c1768d4b5747">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectWithFCmpToFabs()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#afdc0c60200d744fe53a7f48e3f7e4bb0">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
+<li><b>foldSelectWithFrozenICmp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a5e98f750eb743731f0e343f2b418a0ac">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectWithIdentityConstant()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#a5471819ce50cdde6d7ebc70977179250">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
+<li><b>foldSelectWithSRem()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#abe947a3e8f9f7a7f897f62ae3afd7d58">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSelectZeroOrMul()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a550ee33b5be6c859c443739649308721">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>foldSetCCWithFunnelShift()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/targetlowering-cpp/#a07df6b2f8ad8ae0dd165bdedc3c97da6">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/TargetLowering.cpp</a></li>
 <li><b>foldSetCCWithRotate()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/targetlowering-cpp/#ad061307c0dae639c75d944338bd7b15d">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/TargetLowering.cpp</a></li>
@@ -4208,6 +4232,7 @@ keywords:
 <li><b>foldToUnsignedSaturatedAdd()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineaddsub-cpp/#ae1dbc1b5659db932b873f4e0c0e72422">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAddSub.cpp</a></li>
 <li><b>foldTruncInsEltPair()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinevectorops-cpp/#a1f6c8af64ed18f5f5810f78abf9b4f33">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineVectorOps.cpp</a></li>
 <li><b>foldTruncShuffle()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinevectorops-cpp/#a747cca8cf8e4c4e41b81bb1cbf146a11">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineVectorOps.cpp</a></li>
+<li><b>foldTruncStoreOfExt()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af28deaf5887a7f186a2012df2bf82752">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>foldTwoEntryPHINode()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp/#a92fe4b2aa97a12f4a947e5ce99f05b15">lib/lib/Transforms/lib/Transforms/Utils/SimplifyCFG.cpp</a></li>
 <li><b>foldUnsignedUnderflowCheck()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#a24dce8fa354f0f1d52209e805f0ae6a3">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>foldUnusualPatterns()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/aggressiveinstcombine/aggressiveinstcombine-cpp/#aff79915252b3641f62311a35a060f054">lib/lib/Transforms/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp</a></li>
@@ -4291,7 +4316,7 @@ keywords:
 <li><b>fuseInst()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86instrinfo-cpp/#aa8a34f3a734cc8a58ab08ce66250b1e1">lib/lib/Target/lib/Target/X86/X86InstrInfo.cpp</a></li>
 <li><b>fuseTwoAddrInst()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86instrinfo-cpp/#a38268e602b0a8770e7e8ce3412b2b6e8">lib/lib/Target/lib/Target/X86/X86InstrInfo.cpp</a></li>
 </ul>
-<p>545 entries</p>
+<p>565 entries</p>
 
 ## - G -
 
@@ -6259,6 +6284,7 @@ keywords:
 <li><b>handleYAMLDiag()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/mirparser/mirparser-cpp/#a967e6f2ef0e74965cf044671367967bb">lib/lib/CodeGen/lib/CodeGen/MIRParser/MIRParser.cpp</a></li>
 <li><b>HasAddressTaken()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/stackprotector-cpp/#a0ea8063abb874faff99f39c4e849f8de">lib/lib/CodeGen/StackProtector.cpp</a></li>
 <li><b>hasAddressTakenAndUsed()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/jumpthreading-cpp/#ae6fa18c5b7272e2bdd00c26da8041358">lib/lib/Transforms/lib/Transforms/Scalar/JumpThreading.cpp</a></li>
+<li><b>hasAffectedValue()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a7912f3e8b88ba4f5c6166caad941baf2">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>hasAIXSmallTLSAttr()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/powerpc/ppciseldagtodag-cpp/#ae3e6a4b9b2b84bde38d3c79a9f33858f">lib/lib/Target/lib/Target/PowerPC/PPCISelDAGToDAG.cpp</a></li>
 <li><b>hasAllGatScatUsers()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/mvegatherscatterlowering-cpp/#a620b2298522bcf8811498aeb4a8201d0">lib/lib/Target/lib/Target/ARM/MVEGatherScatterLowering.cpp</a></li>
 <li><b>hasAllNBitUsers()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/loongarch/loongarchoptwinstrs-cpp/#acc4b9161e5bdda1e0f5482ad8b9a64ba">lib/lib/Target/lib/Target/LoongArch/LoongArchOptWInstrs.cpp</a></li>
@@ -6458,7 +6484,7 @@ keywords:
 <li><b>hoistValue()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/controlheightreduction-cpp/#a64bba3cf05c8cb1baa848483e7150830">lib/lib/Transforms/lib/Transforms/Instrumentation/ControlHeightReduction.cpp</a></li>
 <li><b>hostParallelCallback()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#afffa0ff2e1527ab545cef33be915c656">lib/lib/Frontend/lib/Frontend/OpenMP/OMPIRBuilder.cpp</a></li>
 </ul>
-<p>254 entries</p>
+<p>255 entries</p>
 
 ## - I -
 
@@ -6469,7 +6495,6 @@ keywords:
 <li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#ac80362d592aa56ce616f030fbc3a0bd0">lib/lib/Passes/PassBuilderBindings.cpp</a></li>
 <li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#aabda80e998791549194f388227fc4481">lib/lib/Passes/PassBuilderBindings.cpp</a></li>
 <li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#afb944a33b354e4709fb99864f82b9c16">lib/lib/Target/lib/Target/AArch64/AArch64AdvSIMDScalarPass.cpp</a></li>
-<li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a61fb4a306390ea68d7d7252a081464fb">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#a44820ac394a8f8fc10cdfa8e832fe1ce">lib/lib/Target/lib/Target/AArch64/AArch64MIPeepholeOpt.cpp</a></li>
 <li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#aa6e5d6085bba2ab9a686dbf4e88a8b07">lib/lib/Target/lib/Target/AArch64/AArch64MIPeepholeOpt.cpp</a></li>
 <li><b>if()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#ab34dcac5bf06a03d57cd29ba812c13ee">lib/lib/Target/lib/Target/AArch64/AArch64MIPeepholeOpt.cpp</a></li>
@@ -6497,6 +6522,7 @@ keywords:
 <li><b>ImmInRange()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/micromipssizereduction-cpp/#a70004457a8a3172fea2d7b79c6b07aee">lib/lib/Target/lib/Target/Mips/MicroMipsSizeReduction.cpp</a></li>
 <li><b>impliesPoison()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/scalarevolution-cpp/#a0520335783c6025037d671dc6025f450">lib/lib/Analysis/ScalarEvolution.cpp</a></li>
 <li><b>impliesPoison()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#ab1b3acd9e4e79274a5b08843fa773d15">lib/lib/Analysis/ValueTracking.cpp</a></li>
+<li><b>impliesPoisonOrCond()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a8d91ca7ede308b821f546a33f6625115">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>importedSymbolBegin()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/object/coffobjectfile-cpp/#a9389f7e83518f306171975602dd36259">lib/lib/Object/COFFObjectFile.cpp</a></li>
 <li><b>importedSymbolEnd()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/object/coffobjectfile-cpp/#a0ad423e9a66f67b2ccde58ed647dc8c0">lib/lib/Object/COFFObjectFile.cpp</a></li>
 <li><b>imposeStackOrdering()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblyregstackify-cpp/#a9999cb33dafa808ba440465867d26ac0">lib/lib/Target/lib/Target/WebAssembly/WebAssemblyRegStackify.cpp</a></li>
@@ -7685,6 +7711,7 @@ keywords:
 <li><b>isGuaranteedNotToBeUndefOrPoison()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#a90fd91f67bf9f4e198964e4e93aaf168">lib/lib/Analysis/ValueTracking.cpp</a></li>
 <li><b>isGuaranteedNotToBeUndefOrPoison()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/utils-cpp/#a3b0f315e261e572d6f0b357e4404ca42">lib/lib/CodeGen/lib/CodeGen/GlobalISel/Utils.cpp</a></li>
 <li><b>isHalvingTruncateAndConcatOfLegalIntScalableType()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#adfaf056ced72346fabb19629cb51ead0">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
+<li><b>isHalvingTruncateOfLegalScalableType()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ac653daa489db43d11d30b56c6a529a4a">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>isHandledGCPointerType()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/rewritestatepointsforgc-cpp/#aa24dcfb77b1890aaa6d1f687eeffe665">lib/lib/Transforms/lib/Transforms/Scalar/RewriteStatepointsForGC.cpp</a></li>
 <li><b>isHardwareLoop()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonfixuphwloops-cpp/#ad491afa0adbcfeea47472bc9d86e11cc">lib/lib/Target/lib/Target/Hexagon/HexagonFixupHwLoops.cpp</a></li>
 <li><b>isHazard()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/macrofusion-cpp/#a3e7cb00140c9de8721cfb8313b58d9ac">lib/lib/CodeGen/MacroFusion.cpp</a></li>
@@ -8236,6 +8263,7 @@ keywords:
 <li><b>isSafeToMove()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvvectorpeephole-cpp/#ad1ace11555e6a74661cd750915d2c2f4">lib/lib/Target/lib/Target/RISCV/RISCVVectorPeephole.cpp</a></li>
 <li><b>isSafeToMove()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/webassembly/webassemblyregstackify-cpp/#a915d3a27fc972595a451b8f2b092bec9">lib/lib/Target/lib/Target/WebAssembly/WebAssemblyRegStackify.cpp</a></li>
 <li><b>isSafeToMove()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/sink-cpp/#a5e126bad06b6fa7c75f524f304deb7b0">lib/lib/Transforms/lib/Transforms/Scalar/Sink.cpp</a></li>
+<li><b>isSafeToRemoveBitCeilSelect()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ab9019ef5668e5a3c97fe9ee61a3a9336">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>isSafeToSinkLoad()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/selectoptimize-cpp/#a011daeefef283046fe04a47f46d857ef">lib/lib/CodeGen/SelectOptimize.cpp</a></li>
 <li><b>isSafeToSpeculateStore()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp/#a8bb9afd23da56f99f3bcdb52e9c74320">lib/lib/Transforms/lib/Transforms/Utils/SimplifyCFG.cpp</a></li>
 <li><b>isSafeToTruncateWideIVType()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/looppredication-cpp/#aad4139f2ea3959f2e9b10ea746e1265e">lib/lib/Transforms/lib/Transforms/Scalar/LoopPredication.cpp</a></li>
@@ -8643,7 +8671,7 @@ keywords:
 <li><b>iterativelySinkInstructions()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/sink-cpp/#a248a7ba1c3756fc499f8d9d4d321f865">lib/lib/Transforms/lib/Transforms/Scalar/Sink.cpp</a></li>
 <li><b>IVUseShouldUsePostIncValue()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/ivusers-cpp/#acd81badac05008b8ec9f327167344baa">lib/lib/Analysis/IVUsers.cpp</a></li>
 </ul>
-<p>2179 entries</p>
+<p>2181 entries</p>
 
 ## - J -
 
@@ -8794,7 +8822,7 @@ keywords:
 <li><b>LLVMConstNUWNeg()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/core-cpp/#ae1b98efb66da3730086aeca7efe4de79">lib/lib/IR/Core.cpp</a></li>
 <li><b>LLVMConstRealOfStringAndSize()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/core-cpp/#aa6d0257c92d1d87e91d520c3ca3536e5">lib/lib/IR/Core.cpp</a></li>
 <li><b>LLVMGetElementAsConstant()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/core-cpp/#a092c64b6529db0491af2a8a336cbacf5">lib/lib/IR/Core.cpp</a></li>
-<li><b>llvmGetPassPluginInfo()</b>: as function in file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/passplugin-h/#a2d26765d5eb741ed4b6f72c7fef51c99">include/include/llvm/include/llvm/Passes/PassPlugin.h</a></li>
+<li><b>llvmGetPassPluginInfo()</b>: as function in file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/passplugin-h/#aedb30b5365f0c854e71a27da0db8e172">include/include/llvm/include/llvm/Passes/PassPlugin.h</a></li>
 <li><b>LLVMInitializeAArch64AsmParser()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/asmparser/aarch64asmparser-cpp/#a7effa39ec7a59bd77a4a7ff830b9e507">lib/lib/Target/lib/Target/AArch64/lib/Target/AArch64/AsmParser/AArch64AsmParser.cpp</a></li>
 <li><b>LLVMInitializeAArch64AsmPrinter()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64asmprinter-cpp/#a7b0658b9527a4f9381a4ffe0d7a2f0f4">lib/lib/Target/lib/Target/AArch64/AArch64AsmPrinter.cpp</a></li>
 <li><b>LLVMInitializeAArch64Disassembler()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/disassembler/aarch64disassembler-cpp/#a937116e9c4a0863979038e9be05d1604">lib/lib/Target/lib/Target/AArch64/lib/Target/AArch64/Disassembler/AArch64Disassembler.cpp</a></li>
@@ -9549,6 +9577,7 @@ keywords:
 <li><b>matchesSquareSum()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineaddsub-cpp/#a9f1bb888c577581bd4dd5391d3488b7f">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAddSub.cpp</a></li>
 <li><b>matchExpandedRem()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/divrempairs-cpp/#ad762896b80c211f6d9cacfe6f8438732">lib/lib/Transforms/lib/Transforms/Scalar/DivRemPairs.cpp</a></li>
 <li><b>matchFastFloatClamp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#a4aa6c86468a25ae6ef47ec9b300990e0">lib/lib/Analysis/ValueTracking.cpp</a></li>
+<li><b>matchFMulByZeroIfResultEqZero()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ac8365a0b8aaec9be1cfb749a4a9526d6">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>matchFPExtFromF16()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuinstcombineintrinsic-cpp/#ae04610310004450abde7293643734104">lib/lib/Target/lib/Target/AMDGPU/AMDGPUInstCombineIntrinsic.cpp</a></li>
 <li><b>matchFunnelShift()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineandorxor-cpp/#ac800cc10159d350923dc27446b9123f0">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp</a></li>
 <li><b>matchICmpOperand()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/lazyvalueinfo-cpp/#adef8cd15931effa7104867a65c0fd5ea">lib/lib/Analysis/LazyValueInfo.cpp</a></li>
@@ -9788,7 +9817,7 @@ keywords:
 <li><b>mutateCopyOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/sifoldoperands-cpp/#aaeadcc450219215781c8481960357aef">lib/lib/Target/lib/Target/AMDGPU/SIFoldOperands.cpp</a></li>
 <li><b>mutationIsSane()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/legalizerinfo-cpp/#ace2b635ecd7fc6de3eb1f8a95530d08d">lib/lib/CodeGen/lib/CodeGen/GlobalISel/LegalizerInfo.cpp</a></li>
 </ul>
-<p>361 entries</p>
+<p>362 entries</p>
 
 ## - N -
 
@@ -10267,6 +10296,7 @@ keywords:
 <li><b>performLD1Combine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a7b49e80a5c71aff0a4a6d6a637cafe3f">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performLD1ReplicateCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aae814004d3aa90fb312b7ac62cedb284">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performLDNT1Combine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aed80d9ad70fe74f3136dd25a2eee1c47">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
+<li><b>performLOADCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ae60f4de0d1e0dac32141edcacb8d20c3">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>PerformLOADCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a4118089abb4cbadaf4b698cbbe05154f">lib/lib/Target/lib/Target/ARM/ARMISelLowering.cpp</a></li>
 <li><b>PerformLongShiftCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a375638c9ba231abce7be8b8130079499">lib/lib/Target/lib/Target/ARM/ARMISelLowering.cpp</a></li>
 <li><b>performMADD_MSUBCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mipsisellowering-cpp/#a313d642b3a7b838825ec80b84909b9ce">lib/lib/Target/lib/Target/Mips/MipsISelLowering.cpp</a></li>
@@ -10276,6 +10306,7 @@ keywords:
 <li><b>PerformMinMaxCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#afe3fc9a96e843f0a30a80d4af77c1b26">lib/lib/Target/lib/Target/ARM/ARMISelLowering.cpp</a></li>
 <li><b>PerformMinMaxFpToSatCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#abf0bc161f51dbc01add0270eb00b2f77">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>PerformMinMaxToSatCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#ac0d7b6ab8ce9dce97d728aef673b1eed">lib/lib/Target/lib/Target/ARM/ARMISelLowering.cpp</a></li>
+<li><b>performMSTORECombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ac1e566876b6ec934e149faae1a9b6f74">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performMulCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a08ab6672869d33da27a1fb4f09602dd7">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>PerformMULCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#ae57c77c91d8ca534534565c26afee2da">lib/lib/Target/lib/Target/ARM/ARMISelLowering.cpp</a></li>
 <li><b>performMULCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mipsseisellowering-cpp/#a11579efb56ca3f28a43e11ddf6011a1d">lib/lib/Target/lib/Target/Mips/MipsSEISelLowering.cpp</a></li>
@@ -10343,6 +10374,7 @@ keywords:
 <li><b>performSRLCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mipsseisellowering-cpp/#ab2fc845ce9d296eb2a7532f49d236b0c">lib/lib/Target/lib/Target/Mips/MipsSEISelLowering.cpp</a></li>
 <li><b>performST1Combine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a6d287a92051d679a9eb264a553c64ffd">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performSTNT1Combine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a13534e47159f35c97e261aac72664214">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
+<li><b>performSTORECombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ad19eb01bd287efda27e7bc5ba67cd144">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>PerformSTORECombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a1ea4fa7098d682c8f0c1d00e09a2b40c">lib/lib/Target/lib/Target/ARM/ARMISelLowering.cpp</a></li>
 <li><b>PerformStoreCombineHelper()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvptxisellowering-cpp/#aa47f5523ced3ce0315f8d8ae63c22b18">lib/lib/Target/lib/Target/NVPTX/NVPTXISelLowering.cpp</a></li>
 <li><b>PerformStoreParamCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvptxisellowering-cpp/#a16b3daa8441d682b96ba0986fb162ed4">lib/lib/Target/lib/Target/NVPTX/NVPTXISelLowering.cpp</a></li>
@@ -10357,6 +10389,7 @@ keywords:
 <li><b>performSunpkloCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#ab5aa3058a584e6bc0e5b94db121422eb">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performSVEAndCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a267cdbd87c30830568cb74844b0e489c">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performSVEMulAddSubCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a8d8e109ce3c796c31524f5a06dd745ac">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
+<li><b>performTBISimplification()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af4aeb38e252532a5362ac68998d0af93">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performTBZCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af246e1e2988325698821d504157ed804">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performTruncateCombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a48a325f68cd666c7ee8808c5e224192c">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>performTRUNCATECombine()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#aef2ca69d18797d6709fade0d00b0a286">lib/lib/Target/lib/Target/RISCV/RISCVISelLowering.cpp</a></li>
@@ -10715,7 +10748,7 @@ keywords:
 <li><b>pushRegsToStack()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/thumb1framelowering-cpp/#a24366f8644cf1d6492c2abf2999311a1">lib/lib/Target/lib/Target/ARM/Thumb1FrameLowering.cpp</a></li>
 <li><b>pushStackMapConstant()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/statepointlowering-cpp/#a720a77a05d768dabfa739d154c11ddfd">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/StatepointLowering.cpp</a></li>
 </ul>
-<p>693 entries</p>
+<p>697 entries</p>
 
 ## - Q -
 
@@ -11283,7 +11316,6 @@ keywords:
 <li><b>scavengeVReg()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/registerscavenging-cpp/#a176bfede6f24b05b428c0f42f9d95390">lib/lib/CodeGen/RegisterScavenging.cpp</a></li>
 <li><b>SCEVMinMaxExprContains()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/scalarevolution-cpp/#a02c3cff4baf0eb36d46fd37369a0bb88">lib/lib/Analysis/ScalarEvolution.cpp</a></li>
 <li><b>scevUnconditionallyPropagatesPoisonFromOperands()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/scalarevolution-cpp/#af515b92b636744fd878c931e2642afe3">lib/lib/Analysis/ScalarEvolution.cpp</a></li>
-<li><b>SDValue()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>SDValueToConstBool()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armiseldagtodag-cpp/#afe345a54f843bde9e90095b1474084d6">lib/lib/Target/lib/Target/ARM/ARMISelDAGToDAG.cpp</a></li>
 <li><b>searchForExe()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lvreaderhandler-cpp/#af7b4a495780ab66e37af8b9881e7ad93">lib/lib/DebugInfo/lib/DebugInfo/LogicalView/LVReaderHandler.cpp</a></li>
 <li><b>searchForObj()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lvreaderhandler-cpp/#ad69a1886cef737f69d223f2ffa24d35f">lib/lib/DebugInfo/lib/DebugInfo/LogicalView/LVReaderHandler.cpp</a></li>
@@ -11620,6 +11652,7 @@ keywords:
 <li><b>simplifyMulInst()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#a7f2df18bfd941b2e8d1cd78db5beb6f7">lib/lib/Analysis/InstructionSimplify.cpp</a></li>
 <li><b>simplifyNeonTbl1()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecalls-cpp/#a797843f28a2e7df40385c514530778ca">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineCalls.cpp</a></li>
 <li><b>simplifyNeonVld1()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armtargettransforminfo-cpp/#a2516d0ee3e1032608dd3c3ab86cd0b14">lib/lib/Target/lib/Target/ARM/ARMTargetTransformInfo.cpp</a></li>
+<li><b>simplifyNestedSelectsUsingImpliedCond()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#a7676aabf5d46f06708e588d6c7cd6ea7">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>simplifyOneLoop()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/loopsimplify-cpp/#ad54a3c6c671e583284ff935bfde3368c">lib/lib/Transforms/lib/Transforms/Utils/LoopSimplify.cpp</a></li>
 <li><b>simplifyOperationIntoSelectOperand()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instructioncombining-cpp/#a89d0a81f215ecb18fe5e589fbe66dc1e">lib/lib/Transforms/lib/Transforms/InstCombine/InstructionCombining.cpp</a></li>
 <li><b>simplifyOrInst()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#a845e93029e92776841aaf5e0ec4c812f">lib/lib/Analysis/InstructionSimplify.cpp</a></li>
@@ -13326,6 +13359,7 @@ keywords:
 <li><b>tryFoldSelectIntoOp()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvisellowering-cpp/#ab6ff0707de4c45e3574f85baf38f1b1f">lib/lib/Target/lib/Target/RISCV/RISCVISelLowering.cpp</a></li>
 <li><b>tryFoldToZero()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#af4956a6ceaf1627102278355b386f44e">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>tryFormConcatFromShuffle()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a95b61f0543f51a5dca686a9f9f258240">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
+<li><b>tryGetOriginalBoolVectorType()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a1efa0c093d9b13546c2b2dc1d699c517">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>tryGetSecondaryReductionRoot()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#ad25cdf8e7c874eae6f692b4319c6afe4">lib/lib/Transforms/lib/Transforms/Vectorize/SLPVectorizer.cpp</a></li>
 <li><b>tryInsertCastToCommonAddrSpace()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/lowermemintrinsics-cpp/#a19caca7bafe1b8a5f67802ce62431282">lib/lib/Transforms/lib/Transforms/Utils/LowerMemIntrinsics.cpp</a></li>
 <li><b>tryInterleave()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/mvelaneinterleavingpass-cpp/#a9268090caaf5e5a96fa54337cb50f47b">lib/lib/Target/lib/Target/ARM/MVELaneInterleavingPass.cpp</a></li>
@@ -13401,7 +13435,7 @@ keywords:
 <li><b>TypeStoreSizeToSizeIndex()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/addresssanitizer-cpp/#adcdff5e32d9b4d801f187d48b106e579">lib/lib/Transforms/lib/Transforms/Instrumentation/AddressSanitizer.cpp</a></li>
 <li><b>typeToAddressSpace()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/spirv/spirvglobalregistry-cpp/#af3bdf39332eb22f67b968fd688417964">lib/lib/Target/lib/Target/SPIRV/SPIRVGlobalRegistry.cpp</a></li>
 </ul>
-<p>226 entries</p>
+<p>227 entries</p>
 
 ## - U -
 
@@ -13636,6 +13670,7 @@ keywords:
 <li><b>vectorPseudoHasAllNBitUsers()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscviseldagtodag-cpp/#aadd8c5bb4ccd3134cdde19afc01eb291">lib/lib/Target/lib/Target/RISCV/RISCVISelDAGToDAG.cpp</a></li>
 <li><b>vectorPseudoHasAllNBitUsers()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvoptwinstrs-cpp/#abc6f852e8fc908af6cd1f502743a0b28">lib/lib/Target/lib/Target/RISCV/RISCVOptWInstrs.cpp</a></li>
 <li><b>vectorSmallerThan()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulegalizerinfo-cpp/#a144b2ed41ce4f22842225b0b1b117a58">lib/lib/Target/lib/Target/AMDGPU/AMDGPULegalizerInfo.cpp</a></li>
+<li><b>vectorToScalarBitmask()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a1fad5ec2eef05d1c11eec0ee147eabab">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>vectorWiderThan()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulegalizerinfo-cpp/#a2d0beabfcf00e6fd23c97eff8ee516a6">lib/lib/Target/lib/Target/AMDGPU/AMDGPULegalizerInfo.cpp</a></li>
 <li><b>Verify()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/ir/safepointirverifier-cpp/#ae3cddd13e523553c3411ddd9b91486b9">lib/lib/IR/SafepointIRVerifier.cpp</a></li>
 <li><b>verifyAddrSpace()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/mirparser/miparser-cpp/#ae11bc08fe8d4e564a486f41d54fd1a3c">lib/lib/CodeGen/lib/CodeGen/MIRParser/MIParser.cpp</a></li>
@@ -13676,7 +13711,7 @@ keywords:
 <li><b>visitORCommutative()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#ac3077960f12b940e1085e66a3eca06b4">lib/lib/CodeGen/lib/CodeGen/SelectionDAG/DAGCombiner.cpp</a></li>
 <li><b>visitPointers()</b>: as function in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/loopaccessanalysis-cpp/#a99bbdbd6641e69bcad8fda4bf1726525">lib/lib/Analysis/LoopAccessAnalysis.cpp</a></li>
 </ul>
-<p>73 entries</p>
+<p>74 entries</p>
 
 ## - W -
 
@@ -13902,10 +13937,10 @@ keywords:
 </ul>
 <p>6 entries</p>
 <br/>
-<p>Total: 13724 entries.</p>
+<p>Total: 13759 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

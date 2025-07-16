@@ -871,7 +871,7 @@ class llvm::BitCodeAbbrevOp { ... }
 <p>Definition at line 82 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/bitstream/bitcodes-h">BitCodes.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8a0d39a17f2152e31271da7e7491d60e">llvm::isAlnum</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/bcchar6/#a9cbe2ed97afb0069d6b245d5cfa1ab89">llvm::BCChar6::assertValid</a>, <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#aa1bea7f5f828e03912c962c96e4e5e35">getStringEncoding</a>, <a href="/web-llvm/docs/api/classes/llvm/dxil/dxilbitcodewriter/#a56bf1b8486ba52a5e85a2613e8e10c52">llvm::dxil::DXILBitcodeWriter::writeStringRecord</a> and <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#ad375d674219d643fe0ba85db2b7f172a">writeStringRecord</a>.</p>
@@ -928,6 +928,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

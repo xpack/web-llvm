@@ -24,16 +24,16 @@ To run the build, the only required steps are the usual
 in the `website` folder.
 
 The steps below are for completeness, and document how to generate the
-Doxygen documentation and convert it to Docusaurus MDX.
+Doxygen documentation and convert it to Docusaurus MD.
 
 ## Preliminary results
 
-The issue is related to the very large size of some files, and to the
-extreme large number of components in the MDX files in the `files` folder.
+The issue seems related to the very large number of files, some of them very large.
 
-After optimising the code to generate less components in the program
-listings, things improved, the memory consumption halved, but the build
-still used about 2 GB of swap memory.
+After changing the converter to generate MD files instead of MDX, and adding
+a configuration option to disable the program listing, it was possible
+to build the site locally, but the memory usage is not reasonable, it
+peeked more than 74 GB, going deep into swap, which slowed things considerably.
 
 ---
 
@@ -47,6 +47,9 @@ The LLVM documentation is in the main LLVM repo. It can be downloaded either
 by cloning the Git, or by running the provided script:
 
 ```sh
+mkdir web-llvm.git
+cd web-llvm.git
+
 curl -L https://raw.githubusercontent.com/llvm/llvm-project/refs/heads/main/llvm/utils/release/build-docs.sh -o build-docs.sh
 
 bash build-docs.sh -release 20.1.6 -no-sphinx -no-doxygen
@@ -101,14 +104,14 @@ The xml files are used to generate the Docusaurus MDX files.
 The Docusaurus configuration is created with 3.8.1.
 
 ```sh
-npx create-docusaurus@3.8.1 website classic --typescript
+npx create-docusaurus@3.8.1-canary-6366 website classic --typescript
 ```
 
 ## doxygen2docusaurus
 
-The MDX files were created with
+The MD files were created with
 [`doxygen2docusaurus`](https://github.com/xpack/doxygen2docusaurus),
-a CLI tool to generate MDX docs from Doxygen XML files.
+a CLI tool to generate MD docs from Doxygen XML files.
 
 To install it, run:
 
@@ -134,10 +137,10 @@ To run the conversion:
 (cd website; npm run convert-doxygen)
 ```
 
-On my Mac his step takes about 7 minutes; it reports some warnings and errors,
+On my Mac this step takes about 7 minutes; it reports some warnings and errors,
 but they are not relevant for this test.
 
-The generated MDX files are in `website/docs/api`
+The generated MD files are in `website/docs/api`
 and the JSON files with the custom sidebar and menu are in `website`.
 
 More details in the project [README](https://github.com/xpack/doxygen2docusaurus).
@@ -190,5 +193,5 @@ The build apparently went farther, but it also failed.
 
 - To conserve considerable space, the original LLVM files and the generated
 documentation are not included in this project.
-- The generated MDX files are not final and may require further
+- The generated MD files are not final and may require further
 refinement (suggestions are welcome!).

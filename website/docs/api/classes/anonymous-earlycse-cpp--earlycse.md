@@ -869,7 +869,7 @@ class anonymous{EarlyCSE.cpp}::EarlyCSE { ... }
 <p>Definition at line 739 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/earlycse-cpp">EarlyCSE.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#aed16834803abfd7e250361e3d2e8be9f">AvailableCalls</a>, <a href="#a1d3d81d3228db9e73432f64b5cb7b6df">AvailableGEPs</a>, <a href="#a1694b8d4b00fb8fccc3d4d074653c73c">AvailableInvariants</a>, <a href="#a768219fcbf1df87b43489be86b71b183">AvailableLoads</a>, <a href="#a1fdc6655978cda56c76b557d6d4d81e7">AvailableValues</a>, <a href="/web-llvm/docs/api/classes/llvm/domtreenodebase/#a40b8345d54ada5dab71ae11d71e89d2f">llvm::DomTreeNodeBase&lt; NodeT &gt;::begin</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a6f14e671f8f46a7afc8d6bc6e67bb802">CurrentGeneration</a>, <a href="#a6cbe256d9112bd806aacb7812242b948">DT</a> and <a href="/web-llvm/docs/api/classes/llvm/domtreenodebase/#a74111c67a831eb30b020ecf063bce406">llvm::DomTreeNodeBase&lt; NodeT &gt;::end</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#aed16834803abfd7e250361e3d2e8be9f">AvailableCalls</a>, <a href="#a1d3d81d3228db9e73432f64b5cb7b6df">AvailableGEPs</a>, <a href="#a1694b8d4b00fb8fccc3d4d074653c73c">AvailableInvariants</a>, <a href="#a768219fcbf1df87b43489be86b71b183">AvailableLoads</a>, <a href="#a1fdc6655978cda56c76b557d6d4d81e7">AvailableValues</a>, <a href="/web-llvm/docs/api/classes/llvm/domtreenodebase/#a40b8345d54ada5dab71ae11d71e89d2f">llvm::DomTreeNodeBase&lt; NodeT &gt;::begin</a>, <a href="#a6f14e671f8f46a7afc8d6bc6e67bb802">CurrentGeneration</a>, <a href="#a6cbe256d9112bd806aacb7812242b948">DT</a> and <a href="/web-llvm/docs/api/classes/llvm/domtreenodebase/#a74111c67a831eb30b020ecf063bce406">llvm::DomTreeNodeBase&lt; NodeT &gt;::end</a>.</p>
 
 </div>
 </div>
@@ -1621,6 +1621,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

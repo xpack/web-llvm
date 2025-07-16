@@ -527,6 +527,7 @@ keywords:
 <li><b>anonymous{InstCombineAtomicRMW.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instcombineatomicrmw-cpp-">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineAtomicRMW.cpp</a></li>
 <li><b>anonymous{InstCombineLoadStoreAlloca.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instcombineloadstorealloca-cpp-">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineLoadStoreAlloca.cpp</a></li>
 <li><b>anonymous{InstCombinePHI.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instcombinephi-cpp-">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombinePHI.cpp</a></li>
+<li><b>anonymous{InstCombineSelect.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instcombineselect-cpp-">lib/lib/Transforms/lib/Transforms/InstCombine/InstCombineSelect.cpp</a></li>
 <li><b>anonymous{InstCount.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instcount-cpp-">lib/lib/Analysis/InstCount.cpp</a></li>
 <li><b>anonymous{InstrOrderFile.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instrorderfile-cpp-">lib/lib/Transforms/lib/Transforms/Instrumentation/InstrOrderFile.cpp</a></li>
 <li><b>anonymous{InstrProf.cpp}</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/anonymous-instrprof-cpp-">lib/lib/ProfileData/InstrProf.cpp</a></li>
@@ -1304,13 +1305,14 @@ keywords:
 <li><b>ARMSysReg</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/armsysreg">lib/lib/Target/lib/Target/ARM/lib/Target/ARM/Utils/ARMBaseInfo.h</a></li>
 <li><b>ARMVCC</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/armvcc">lib/lib/Target/lib/Target/ARM/lib/Target/ARM/Utils/ARMBaseInfo.h</a></li>
 <li><b>at</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/at">include/include/llvm/include/llvm/IR/DebugInfo.h</a></li>
+<li><b>AttributeFuncs</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs">include/include/llvm/include/llvm/IR/Attributes.h</a></li>
 <li><b>Attrs</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/attrs">include/include/llvm/include/llvm/Support/AMDGPUMetadata.h</a></li>
 <li><b>AVR</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/avr">lib/lib/Target/lib/Target/AVR/lib/Target/AVR/MCTargetDesc/AVRFixupKinds.h</a></li>
 <li><b>AVRCC</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/avrcc">lib/lib/Target/lib/Target/AVR/AVRInstrInfo.h</a></li>
 <li><b>AVRII</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/avrii">lib/lib/Target/lib/Target/AVR/AVRInstrInfo.h</a></li>
 <li><b>AVRISD</b>: as namespace in file <a href="/web-llvm/docs/api/namespaces/llvm/avrisd">lib/lib/Target/lib/Target/AVR/AVRISelLowering.h</a></li>
 </ul>
-<p>1289 entries</p>
+<p>1291 entries</p>
 
 ## - B -
 
@@ -1939,10 +1941,10 @@ keywords:
 </ul>
 <p>3 entries</p>
 <br/>
-<p>Total: 1773 entries.</p>
+<p>Total: 1775 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

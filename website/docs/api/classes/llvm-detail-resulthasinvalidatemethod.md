@@ -84,7 +84,7 @@ class llvm::detail::ResultHasInvalidateMethod&lt;IRUnitT, ResultT&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">static auto </td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a79253eaec37ca9e2765fbc095ed9ef0e">check</a> (rank&lt; 2 &gt;) -&gt; Nonce&lt; decltype(std::declval&lt; T &gt;().invalidate(std::declval&lt; IRUnitT &amp; &gt;(), std::declval&lt; <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &gt;()))&gt;::Type</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a79253eaec37ca9e2765fbc095ed9ef0e">check</a> (rank&lt; 2 &gt;) -&gt; Nonce&lt; decltype(std::declval&lt; T &gt;().invalidate(std::declval&lt; IRUnitT &amp; &gt;(), std::declval&lt; PreservedAnalyses &gt;()))&gt;::Type</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -368,6 +368,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

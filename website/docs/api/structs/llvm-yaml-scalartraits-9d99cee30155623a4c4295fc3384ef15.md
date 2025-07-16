@@ -118,7 +118,7 @@ struct llvm::yaml::ScalarTraits&lt;FixedSizeHex&lt; N &gt;&gt; { ... }
 <p>Definition at line 187 of file <a href="/web-llvm/docs/api/files/lib/lib/objectyaml/minidumpyaml-cpp">MinidumpYAML.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all_of</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#abb650e853db0ddbb60411b885c499737">llvm::copy</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a403260df3a211e47e65f35fbfd9bee8fa4457d440870ad6d42bab9082d9bf9b61">llvm::Fixed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a1239d6292e7aa8c403abab633ebd7dd1">llvm::fromHex</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#adc291d90d07ce3566a7874fceddc3675">llvm::isHexDigit</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="/web-llvm/docs/api/namespaces/llvm/yaml/#a388c981224806a01d8de4172d5322d3daf60357a8d17e45793298323f1b372a74">llvm::yaml::Scalar</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all_of</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#abb650e853db0ddbb60411b885c499737">llvm::copy</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a403260df3a211e47e65f35fbfd9bee8fa4457d440870ad6d42bab9082d9bf9b61">llvm::Fixed</a>, <a href="/web-llvm/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#aa05944bb87057627a566963c526f1ca5">isHexDigit</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="/web-llvm/docs/api/namespaces/llvm/yaml/#a388c981224806a01d8de4172d5322d3daf60357a8d17e45793298323f1b372a74">llvm::yaml::Scalar</a>.</p>
 
 </div>
 </div>
@@ -188,7 +188,7 @@ struct llvm::yaml::ScalarTraits&lt;FixedSizeHex&lt; N &gt;&gt; { ... }
 <p>Definition at line 183 of file <a href="/web-llvm/docs/api/files/lib/lib/objectyaml/minidumpyaml-cpp">MinidumpYAML.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a403260df3a211e47e65f35fbfd9bee8fa4457d440870ad6d42bab9082d9bf9b61">llvm::Fixed</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#abec19670f96ed423c2e4d4f10a4c6975">llvm::toHex</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">llvm::ArrayRef</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a403260df3a211e47e65f35fbfd9bee8fa4457d440870ad6d42bab9082d9bf9b61">llvm::Fixed</a>.</p>
 
 </div>
 </div>
@@ -205,6 +205,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

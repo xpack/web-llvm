@@ -163,7 +163,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4112c34d12beefd99e1759d16b92acf8">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, MASKPOS, VLENPOS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0eea8496cb3a09213984ef05beea7157">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, MASKPOS, VLENPOS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -176,7 +176,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4112c34d12beefd99e1759d16b92acf8">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, MASKPOS, VLENPOS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8df2810dab0e9e35ba02b86fc1e413b0">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, MASKPOS, VLENPOS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -189,7 +189,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7fdeed75ce66fef13322f484067f08f2">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -215,7 +215,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -228,7 +228,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af4daf895f1c9bd7c8fa34b0405cda7e4">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -254,7 +254,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a73bf53710912f7dd6631ff53dba55268">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -267,7 +267,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad273f1ad9f3d9728b9a82de63d64c441">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -293,7 +293,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a11e2b597df3d9b78c900f95ffb21e833">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -306,7 +306,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a194fbad8419f34242fb28540e17245e3">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -319,7 +319,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1b8444b81165f7dd140d093a1772c87f">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -345,7 +345,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a968d9c9fd37b0dee9a36d1794354012e">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -358,7 +358,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2981f1519ccbc950d220451928c1df01">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -371,7 +371,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa765d15c2a7c28c701b1fd12f628f7e0">VP_PROPERTY_FUNCTIONAL_OPC</a>(OPC)&nbsp;&nbsp;&nbsp;case Instruction::OPC:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a14add632552936d6ac3d2243d3a2c46e">VP_PROPERTY_FUNCTIONAL_OPC</a>(OPC)&nbsp;&nbsp;&nbsp;case Instruction::OPC:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -384,7 +384,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;return Intrinsic::VPID;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad33efaa5d2f1b22a1c7386d4887892b2">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;return Intrinsic::VPID;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -397,7 +397,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab51d013cda642d10b8e357c08d4a964a">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -410,7 +410,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7eca7b4de939ea04a2eb97bdacf5f14e">VP_PROPERTY_FUNCTIONAL_INTRINSIC</a>(INTRIN)&nbsp;&nbsp;&nbsp;case Intrinsic::INTRIN:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a19cfee1989d367f4c89b75f0e0c4af75">VP_PROPERTY_FUNCTIONAL_INTRINSIC</a>(INTRIN)&nbsp;&nbsp;&nbsp;case Intrinsic::INTRIN:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -423,7 +423,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;return Intrinsic::VPID;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a860604e6f03ea03070a4695dd1645906">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;return Intrinsic::VPID;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -436,7 +436,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d460b662047133f939d24d6a2f2fd0d">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3f8ba0544297f1a3f48d80183c6ce7fc">BEGIN_REGISTER_VP_INTRINSIC</a>(VPID, ...)&nbsp;&nbsp;&nbsp;case Intrinsic::VPID:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -462,7 +462,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5410d296c7188001d805b9944409ec">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a848c7099834a4ae3b05b6b2f0cbef9a7">END_REGISTER_VP_INTRINSIC</a>(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -785,7 +785,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a4112c34d12beefd99e1759d16b92acf8}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a0eea8496cb3a09213984ef05beea7157}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -819,7 +819,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a4112c34d12beefd99e1759d16b92acf8}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a8df2810dab0e9e35ba02b86fc1e413b0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -853,7 +853,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7fdeed75ce66fef13322f484067f08f2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -878,7 +878,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#af4daf895f1c9bd7c8fa34b0405cda7e4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -903,7 +903,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#ad273f1ad9f3d9728b9a82de63d64c441}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -928,7 +928,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a194fbad8419f34242fb28540e17245e3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -963,7 +963,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a1b8444b81165f7dd140d093a1772c87f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -988,7 +988,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a2981f1519ccbc950d220451928c1df01}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -997,7 +997,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define BEGIN_REGISTER_VP_INTRINSIC(VPID, ...)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define BEGIN_REGISTER_VP_INTRINSIC(VPID, ...)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1013,7 +1013,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#ab51d013cda642d10b8e357c08d4a964a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1022,7 +1022,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define BEGIN_REGISTER_VP_INTRINSIC(VPID, ...)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define BEGIN_REGISTER_VP_INTRINSIC(VPID, ...)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1038,7 +1038,7 @@ keywords:
 </div>
 </div>
 
-### BEGIN\_REGISTER\_VP\_INTRINSIC {#a7d460b662047133f939d24d6a2f2fd0d}
+### BEGIN\_REGISTER\_VP\_INTRINSIC {#a3f8ba0544297f1a3f48d80183c6ce7fc}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1072,7 +1072,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1088,7 +1088,7 @@ keywords:
 </div>
 </div>
 
-### END\_REGISTER\_VP\_INTRINSIC {#afa5410d296c7188001d805b9944409ec}
+### END\_REGISTER\_VP\_INTRINSIC {#a73bf53710912f7dd6631ff53dba55268}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1097,7 +1097,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1113,7 +1113,7 @@ keywords:
 </div>
 </div>
 
-### END\_REGISTER\_VP\_INTRINSIC {#afa5410d296c7188001d805b9944409ec}
+### END\_REGISTER\_VP\_INTRINSIC {#a11e2b597df3d9b78c900f95ffb21e833}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1122,7 +1122,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1138,7 +1138,7 @@ keywords:
 </div>
 </div>
 
-### END\_REGISTER\_VP\_INTRINSIC {#afa5410d296c7188001d805b9944409ec}
+### END\_REGISTER\_VP\_INTRINSIC {#a968d9c9fd37b0dee9a36d1794354012e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1147,7 +1147,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1163,7 +1163,7 @@ keywords:
 </div>
 </div>
 
-### END\_REGISTER\_VP\_INTRINSIC {#afa5410d296c7188001d805b9944409ec}
+### END\_REGISTER\_VP\_INTRINSIC {#ad33efaa5d2f1b22a1c7386d4887892b2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1188,7 +1188,7 @@ keywords:
 </div>
 </div>
 
-### END\_REGISTER\_VP\_INTRINSIC {#afa5410d296c7188001d805b9944409ec}
+### END\_REGISTER\_VP\_INTRINSIC {#a860604e6f03ea03070a4695dd1645906}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1213,7 +1213,7 @@ keywords:
 </div>
 </div>
 
-### END\_REGISTER\_VP\_INTRINSIC {#afa5410d296c7188001d805b9944409ec}
+### END\_REGISTER\_VP\_INTRINSIC {#a848c7099834a4ae3b05b6b2f0cbef9a7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1222,7 +1222,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;</td>
+<td class="doxyMemberName">#define END_REGISTER_VP_INTRINSIC(VPID)&nbsp;&nbsp;&nbsp;break;</td>
 </tr>
 </table>
 </td>
@@ -1313,7 +1313,7 @@ keywords:
 </div>
 </div>
 
-### VP\_PROPERTY\_FUNCTIONAL\_INTRINSIC {#a7eca7b4de939ea04a2eb97bdacf5f14e}
+### VP\_PROPERTY\_FUNCTIONAL\_INTRINSIC {#a19cfee1989d367f4c89b75f0e0c4af75}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1363,7 +1363,7 @@ keywords:
 </div>
 </div>
 
-### VP\_PROPERTY\_FUNCTIONAL\_OPC {#aa765d15c2a7c28c701b1fd12f628f7e0}
+### VP\_PROPERTY\_FUNCTIONAL\_OPC {#a14add632552936d6ac3d2243d3a2c46e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1417,6 +1417,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

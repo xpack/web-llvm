@@ -67,7 +67,7 @@ class llvm::ValueEnumerator { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the AttributeList index, so we have to track that in our map. <a href="#af5fc71f83729ad4bf795aa0ef06b2e11">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> index, so we have to track that in our map. <a href="#af5fc71f83729ad4bf795aa0ef06b2e11">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -147,7 +147,7 @@ class llvm::ValueEnumerator { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a852c4c689a6350e0d99e6d7f36638dc6">AttributeListMapType</a> = <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; AttributeList, unsigned &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a852c4c689a6350e0d99e6d7f36638dc6">AttributeListMapType</a> = <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>, unsigned &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -493,7 +493,7 @@ class llvm::ValueEnumerator { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; AttributeList &gt; &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &gt; &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acde174184274dbc2a497e51a22c6172e">getAttributeLists</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1057,7 +1057,7 @@ class llvm::ValueEnumerator { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; AttributeList &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a77105779fce13170a12cf6bb7c324354">AttributeLists</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1218,7 +1218,7 @@ class llvm::ValueEnumerator { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the AttributeList index, so we have to track that in our map.</p>
+<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> index, so we have to track that in our map.</p>
 
 <p>Definition at line 52 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-h">ValueEnumerator.h</a>.</p>
 
@@ -1485,7 +1485,7 @@ class llvm::ValueEnumerator { ... }
 <p>Declaration at line 141 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-h">ValueEnumerator.h</a>, definition at line 336 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp">ValueEnumerator.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#a4cfc8b177e8521a4b496ae2edff6244f">for</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#afa6b67c30dd439d0c3a04af3e81252e6">llvm::DbgVariableRecord::getAddressExpression</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#a4df534a195fe4df5fc7c2eaf2a96bd97">llvm::DbgVariableRecord::getAssignID</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgrecord/#a3a0f4e00c3f6345c52c6acd178b3fca3">llvm::DbgRecord::getDebugLoc</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#a8ec5a479378113fc24b647afa2f06ee5">llvm::DbgVariableRecord::getExpression</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a28fdf240b8220065bc60d6d1b1a2f174">llvm::Type::getMetadataTy</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#ad76c901f38759f560144bafef2c598be">llvm::DbgVariableRecord::getRawAddress</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#ab9edb568c54e87f08484a5f46e399bee">llvm::DbgVariableRecord::getRawLocation</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#aa774c62045e74bb457b32713c0670696">llvm::DbgVariableRecord::getVariable</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#a8e44c4d5de5d1134497e3ca3b922c535">llvm::DbgVariableRecord::isDbgAssign</a>, <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp/#a9e9ff0c61346a6511c2f5eef7704c99e">predictUseListOrder</a> and <a href="#a27e5f9f24424e3eb4c56c3531f51dad4">UseListOrders</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#a4cfc8b177e8521a4b496ae2edff6244f">for</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#afa6b67c30dd439d0c3a04af3e81252e6">llvm::DbgVariableRecord::getAddressExpression</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#a4df534a195fe4df5fc7c2eaf2a96bd97">llvm::DbgVariableRecord::getAssignID</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgrecord/#a3a0f4e00c3f6345c52c6acd178b3fca3">llvm::DbgRecord::getDebugLoc</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#a8ec5a479378113fc24b647afa2f06ee5">llvm::DbgVariableRecord::getExpression</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a28fdf240b8220065bc60d6d1b1a2f174">llvm::Type::getMetadataTy</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#ad76c901f38759f560144bafef2c598be">llvm::DbgVariableRecord::getRawAddress</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#ab9edb568c54e87f08484a5f46e399bee">llvm::DbgVariableRecord::getRawLocation</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#aa774c62045e74bb457b32713c0670696">llvm::DbgVariableRecord::getVariable</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/#a8e44c4d5de5d1134497e3ca3b922c535">llvm::DbgVariableRecord::isDbgAssign</a>, <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp/#a9e9ff0c61346a6511c2f5eef7704c99e">predictUseListOrder</a> and <a href="#a27e5f9f24424e3eb4c56c3531f51dad4">UseListOrders</a>.</p>
 
 
 <p>Referenced by <a href="#add3a39b068cffb1efce95ed3be2ca002">operator=</a> and <a href="#aa788a79a456b2782b6eb28355e60ed20">ValueEnumerator</a>.</p>
@@ -1699,7 +1699,7 @@ class llvm::ValueEnumerator { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">unsigned llvm::ValueEnumerator::getAttributeListID (AttributeList PAL)</td>
+<td class="doxyMemberName">unsigned llvm::ValueEnumerator::getAttributeListID (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> PAL)</td>
 </tr>
 </table>
 </td>
@@ -1718,7 +1718,7 @@ class llvm::ValueEnumerator { ... }
 <p>Definition at line 175 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-h">ValueEnumerator.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a5269e6b95f5007a652d53ca847cca6f3">llvm::AttributeList::isEmpty</a>.</p>
 
 </div>
 </div>
@@ -1898,7 +1898,7 @@ class llvm::ValueEnumerator { ... }
 <p>Declaration at line 230 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-h">ValueEnumerator.h</a>, definition at line 1184 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp">ValueEnumerator.cpp</a>.</p>
 
 
-<p>References <a href="#ac26f6dabdd4fbb3288de35fce6b62422">getGlobalBasicBlockID</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a> and <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp/#aa87138f9cc6039f404d5515371aac79a">IncorporateFunctionInfoGlobalBBIDs</a>.</p>
+<p>References <a href="#ac26f6dabdd4fbb3288de35fce6b62422">getGlobalBasicBlockID</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a> and <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp/#aa87138f9cc6039f404d5515371aac79a">IncorporateFunctionInfoGlobalBBIDs</a>.</p>
 
 
 <p>Referenced by <a href="#ac26f6dabdd4fbb3288de35fce6b62422">getGlobalBasicBlockID</a>.</p>
@@ -2466,7 +2466,7 @@ class llvm::ValueEnumerator { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void ValueEnumerator::EnumerateAttributes (AttributeList PAL)</td>
+<td class="doxyMemberName">void ValueEnumerator::EnumerateAttributes (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> PAL)</td>
 </tr>
 </table>
 </td>
@@ -3572,6 +3572,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

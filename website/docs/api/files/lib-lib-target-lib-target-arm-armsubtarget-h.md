@@ -144,7 +144,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aad8a05e9eefeb828f657e2604829ffdb">GET_SUBTARGETINFO_MACRO</a>(ATTRIBUTE, DEFAULT, GETTER)&nbsp;&nbsp;&nbsp;  bool GETTER() <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> { return ATTRIBUTE; }</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a318c103ae50970941c6524837d667e25">GET_SUBTARGETINFO_MACRO</a>(ATTRIBUTE, DEFAULT, GETTER)&nbsp;&nbsp;&nbsp;  bool GETTER() <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> { return ATTRIBUTE; }</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -262,7 +262,7 @@ keywords:
 </div>
 </div>
 
-### GET\_SUBTARGETINFO\_MACRO {#aad8a05e9eefeb828f657e2604829ffdb}
+### GET\_SUBTARGETINFO\_MACRO {#a318c103ae50970941c6524837d667e25}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -291,6 +291,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

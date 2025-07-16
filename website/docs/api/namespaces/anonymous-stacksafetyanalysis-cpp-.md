@@ -45,11 +45,12 @@ namespace anonymous{StackSafetyAnalysis.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-stacksafetyanalysis-cpp-/functioninfo">FunctionInfo&lt;CalleeTy&gt;</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-stacksafetyanalysis-cpp-/useinfo">UseInfo&lt;CalleeTy&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
+<p>Describe uses of address (alloca or parameter) inside of the function. <a href="/web-llvm/docs/api/structs/anonymous-stacksafetyanalysis-cpp-/useinfo/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -57,8 +58,8 @@ namespace anonymous{StackSafetyAnalysis.cpp} { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-stacksafetyanalysis-cpp-/stacksafetydataflowanalysis">StackSafetyDataFlowAnalysis&lt;CalleeTy&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-stacksafetyanalysis-cpp-/functioninfo">FunctionInfo&lt;CalleeTy&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -83,13 +84,12 @@ namespace anonymous{StackSafetyAnalysis.cpp} { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-stacksafetyanalysis-cpp-/useinfo">UseInfo&lt;CalleeTy&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-stacksafetyanalysis-cpp-/stacksafetydataflowanalysis">StackSafetyDataFlowAnalysis&lt;CalleeTy&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Describe uses of address (alloca or parameter) inside of the function. <a href="/web-llvm/docs/api/structs/anonymous-stacksafetyanalysis-cpp-/useinfo/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -321,9 +321,6 @@ namespace anonymous{StackSafetyAnalysis.cpp} { ... }
 
 
 <p>Definition at line 143 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/stacksafetyanalysis-cpp">StackSafetyAnalysis.cpp</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
 
 </div>
 </div>
@@ -619,6 +616,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

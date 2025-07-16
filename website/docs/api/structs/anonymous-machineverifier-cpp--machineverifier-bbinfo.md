@@ -320,7 +320,7 @@ struct anonymous{MachineVerifier.cpp}::MachineVerifier::BBInfo { ... }
 <p>Definition at line 205 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineverifier-cpp">MachineVerifier.cpp</a>.</p>
 
 
-<p>References <a href="#ae1eedfc9b0913658a7d008d918ffebcb">addRequired</a> and <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>.</p>
+<p>Reference <a href="#ae1eedfc9b0913658a7d008d918ffebcb">addRequired</a>.</p>
 
 </div>
 </div>
@@ -353,7 +353,7 @@ struct anonymous{MachineVerifier.cpp}::MachineVerifier::BBInfo { ... }
 <p>Definition at line 213 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineverifier-cpp">MachineVerifier.cpp</a>.</p>
 
 
-<p>References <a href="#ae1eedfc9b0913658a7d008d918ffebcb">addRequired</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="#ae1eedfc9b0913658a7d008d918ffebcb">addRequired</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 </div>
 </div>
@@ -636,6 +636,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

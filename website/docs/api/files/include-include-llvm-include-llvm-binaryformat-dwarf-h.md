@@ -223,7 +223,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a52cbb26ec5bb928e366fe1965e8bf60e">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d57fedfe3914b8e5a96d4538bb2b10c">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1097,7 +1097,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_TAG {#a52cbb26ec5bb928e366fe1965e8bf60e}
+### HANDLE\_DW\_TAG {#a7d57fedfe3914b8e5a96d4538bb2b10c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1185,6 +1185,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

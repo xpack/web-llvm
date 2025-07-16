@@ -2002,7 +2002,7 @@ class llvm::MachineIRBuilder { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt;, SuccessRes&lt;def&gt; = / G_ATOMIC_CMPXCHG_WITH_SUCCESS Addr, CmpVal, NewVal, MMO</span>. <a href="#acc22ffc46525708d66c036f878572523">More...</a></p>
+<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt;, SuccessRes&lt;def&gt; = G_ATOMIC_CMPXCHG_WITH_SUCCESS Addr, CmpVal, NewVal, MMO</span>. <a href="#acc22ffc46525708d66c036f878572523">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -2016,7 +2016,7 @@ class llvm::MachineIRBuilder { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt; = G_ATOMIC_CMPXCHG Addr, CmpVal, NewVal, / MMO</span>. <a href="#adbf5d6125fa84e067907320d93e9fab5">More...</a></p>
+<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt; = G_ATOMIC_CMPXCHG Addr, CmpVal, NewVal, MMO</span>. <a href="#adbf5d6125fa84e067907320d93e9fab5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -4647,22 +4647,40 @@ class llvm::MachineIRBuilder { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt; = G_ATOMIC_CMPXCHG Addr, CmpVal, NewVal, / MMO</span>.</p>
+<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt; = G_ATOMIC_CMPXCHG Addr, CmpVal, NewVal, MMO</span>.</p>
 
 
+<p>Atomically replace the value at <span class="doxyComputerOutput">Addr</span> with <span class="doxyComputerOutput">NewVal</span> if it is currently <span class="doxyComputerOutput">CmpVal</span> otherwise leaves it unchanged. Puts the original value from <span class="doxyComputerOutput">Addr</span> in <span class="doxyComputerOutput">Res</span>.</p>
 
-<pre><code>  Atomically replace the value at \p Addr with \p NewVal if it is currently
-  \p CmpVal otherwise leaves it unchanged. Puts the original value from \p
-  Addr in \p Res.
 
-  \pre setBasicBlock or setMI must have been called.
-  \pre \p OldValRes must be a generic virtual register of scalar type.
-  \pre \p Addr must be a generic virtual register with pointer type.
-  \pre \p OldValRes, \p CmpVal, and \p NewVal must be generic virtual
-       registers of the same type.
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p>setBasicBlock or setMI must have been called.</p></dd>
+</dl>
 
-  \return a MachineInstrBuilder for the newly created instruction.
-</code></pre>
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">OldValRes</span> must be a generic virtual register of scalar type.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">Addr</span> must be a generic virtual register with pointer type.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">OldValRes</span>, <span class="doxyComputerOutput">CmpVal</span>, and <span class="doxyComputerOutput">NewVal</span> must be generic virtual registers of the same type.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>a <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder">MachineInstrBuilder</a> for the newly created instruction.</p></dd>
+</dl>
 
 
 <p>Declaration at line 1431 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/include/llvm/codegen/globalisel/machineirbuilder-h">MachineIRBuilder.h</a>, definition at line 1013 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/machineirbuilder-cpp">MachineIRBuilder.cpp</a>.</p>
@@ -4691,24 +4709,46 @@ class llvm::MachineIRBuilder { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt;, SuccessRes&lt;def&gt; = / G_ATOMIC_CMPXCHG_WITH_SUCCESS Addr, CmpVal, NewVal, MMO</span>.</p>
+<p>Build and insert <span class="doxyComputerOutput">OldValRes&lt;def&gt;, SuccessRes&lt;def&gt; = G_ATOMIC_CMPXCHG_WITH_SUCCESS Addr, CmpVal, NewVal, MMO</span>.</p>
 
 
+<p>Atomically replace the value at <span class="doxyComputerOutput">Addr</span> with <span class="doxyComputerOutput">NewVal</span> if it is currently <span class="doxyComputerOutput">CmpVal</span> otherwise leaves it unchanged. Puts the original value from <span class="doxyComputerOutput">Addr</span> in <span class="doxyComputerOutput">Res</span>, along with an s1 indicating whether it was replaced.</p>
 
-<pre><code>  Atomically replace the value at \p Addr with \p NewVal if it is currently
-  \p CmpVal otherwise leaves it unchanged. Puts the original value from \p
-  Addr in \p Res, along with an s1 indicating whether it was replaced.
 
-  \pre setBasicBlock or setMI must have been called.
-  \pre \p OldValRes must be a generic virtual register of scalar type.
-  \pre \p SuccessRes must be a generic virtual register of scalar type. It
-       will be assigned 0 on failure and 1 on success.
-  \pre \p Addr must be a generic virtual register with pointer type.
-  \pre \p OldValRes, \p CmpVal, and \p NewVal must be generic virtual
-       registers of the same type.
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p>setBasicBlock or setMI must have been called.</p></dd>
+</dl>
 
-  \return a MachineInstrBuilder for the newly created instruction.
-</code></pre>
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">OldValRes</span> must be a generic virtual register of scalar type.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">SuccessRes</span> must be a generic virtual register of scalar type. It will be assigned 0 on failure and 1 on success.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">Addr</span> must be a generic virtual register with pointer type.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Precondition</dt>
+<dd><p><span class="doxyComputerOutput">OldValRes</span>, <span class="doxyComputerOutput">CmpVal</span>, and <span class="doxyComputerOutput">NewVal</span> must be generic virtual registers of the same type.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>a <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder">MachineInstrBuilder</a> for the newly created instruction.</p></dd>
+</dl>
 
 
 <p>Declaration at line 1413 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/include/llvm/codegen/globalisel/machineirbuilder-h">MachineIRBuilder.h</a>, definition at line 984 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/machineirbuilder-cpp">MachineIRBuilder.cpp</a>.</p>
@@ -14605,6 +14645,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -975,7 +975,7 @@ Stores the mapping of the value to the number assigned to it in the <a href="/we
 <p>Declaration at line 848 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/irsimilarityidentifier-h">IRSimilarityIdentifier.h</a>, definition at line 1005 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/irsimilarityidentifier-cpp">IRSimilarityIdentifier.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a836d9cba6deced0bb1fa7333ce5afd3a">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::contains</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#ad409c2de8502b94c8a0b1193307c63b6">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::contains</a>, <a href="#ae9c1194a6f6117d8fb7c77e42b70f048">fromCanonicalNum</a>, <a href="#a9fbaf4d24ed4249c75741662ebfa1f43">fromGVN</a>, <a href="#aa77784ba0d88967a5cf2d657accb01c5">frontInstruction</a>, <a href="#a93f165686cbc3ed0554ec8431f9c9b21">getBasicBlocks</a>, <a href="#ae6b404a6e77e0349378afa8ae7ce0e4a">getCanonicalNum</a>, <a href="#a3ffe65f27fa3355ffd96fbcd0bb1cbb9">getGVN</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>, <a href="#ae22d915fa9ab51e40345773c663ebdeb">getStartBB</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#a1b0f3ebdced8fce4b22c6a63b25d9525">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert</a>, <a href="#ae35aff2dc6fcdec60f53cdcfabea59f7">IRSimilarityCandidate</a> and <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a3d95cc2d359b8d9ed5bd9504b44930b5">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::size</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a836d9cba6deced0bb1fa7333ce5afd3a">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::contains</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#ad409c2de8502b94c8a0b1193307c63b6">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::contains</a>, <a href="#ae9c1194a6f6117d8fb7c77e42b70f048">fromCanonicalNum</a>, <a href="#a9fbaf4d24ed4249c75741662ebfa1f43">fromGVN</a>, <a href="#aa77784ba0d88967a5cf2d657accb01c5">frontInstruction</a>, <a href="#a93f165686cbc3ed0554ec8431f9c9b21">getBasicBlocks</a>, <a href="#ae6b404a6e77e0349378afa8ae7ce0e4a">getCanonicalNum</a>, <a href="#a3ffe65f27fa3355ffd96fbcd0bb1cbb9">getGVN</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>, <a href="#ae22d915fa9ab51e40345773c663ebdeb">getStartBB</a>, <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/#a1b0f3ebdced8fce4b22c6a63b25d9525">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert</a>, <a href="#ae35aff2dc6fcdec60f53cdcfabea59f7">IRSimilarityCandidate</a> and <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a3d95cc2d359b8d9ed5bd9504b44930b5">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::size</a>.</p>
 
 </div>
 </div>
@@ -1503,7 +1503,7 @@ Stores the mapping of the value to the number assigned to it in the <a href="/we
 <p>Definition at line 948 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/irsimilarityidentifier-h">IRSimilarityIdentifier.h</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>.</p>
 
 </div>
 </div>
@@ -1583,7 +1583,7 @@ Stores the mapping of the value to the number assigned to it in the <a href="/we
 <p>Definition at line 951 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/irsimilarityidentifier-h">IRSimilarityIdentifier.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a> and <a href="#ae22d915fa9ab51e40345773c663ebdeb">getStartBB</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a> and <a href="#ae22d915fa9ab51e40345773c663ebdeb">getStartBB</a>.</p>
 
 </div>
 </div>
@@ -1721,7 +1721,7 @@ Stores the mapping of the value to the number assigned to it in the <a href="/we
 <p>Definition at line 946 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/irsimilarityidentifier-h">IRSimilarityIdentifier.h</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>.</p>
 
 
 <p>Referenced by <a href="#a21a84e5cc221f28b26321adf56f0bb05">createCanonicalRelationFrom</a>, <a href="#abfc4581d38f96e5833319a3d1ad24c1c">getFunction</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#a1c7b2c4c8824cfb8d35c97f6923c3fe2">getGVNForPHINode</a>.</p>
@@ -2551,6 +2551,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -63,13 +63,13 @@ struct llvm::format_provider&lt;bool&gt; { ... }
 <hr/>
 
 
-## | C | Meaning | {#autotoc_md49}
+## | C | Meaning | {#autotoc_md48}
 
 
 <p>| Y | YES / NO | | y | yes / no | | D / d | Integer 0 or 1 | | T | TRUE / FALSE | | t | true / false |</p>
 
 
-## | (empty) | Equivalent to 't' | {#autotoc_md50}
+## | (empty) | Equivalent to 't' | {#autotoc_md49}
 
 
 <p>Definition at line 265 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/formatproviders-h">FormatProviders.h</a>.</p>
@@ -125,6 +125,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

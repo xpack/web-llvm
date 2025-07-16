@@ -79,7 +79,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a52cbb26ec5bb928e366fe1965e8bf60e">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;  .Case("DW_TAG_" #NAME, DW_TAG_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d57fedfe3914b8e5a96d4538bb2b10c">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;  .Case("DW_TAG_" #NAME, DW_TAG_##NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -92,7 +92,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a52cbb26ec5bb928e366fe1965e8bf60e">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a785882b403a247f28125e59bfdc7ad2e">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -105,20 +105,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a52cbb26ec5bb928e366fe1965e8bf60e">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;...</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af8443b65087704cc597bc033cce391b2">HANDLE_DW_AT</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2de1f57ad11f9fa2f98f88184564f6a8">HANDLE_DW_TAG</a>(ID, NAME, VERSION, VENDOR, KIND)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -144,7 +131,20 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af8443b65087704cc597bc033cce391b2">HANDLE_DW_AT</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a449044036ab88466c3eb49c3710028e6">HANDLE_DW_AT</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a079ad233f8dbab59643ee035b4fa60f7">HANDLE_DW_AT</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -170,7 +170,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1356ad6053f0b2b4dbf9b8b7ed993dba">HANDLE_DW_FORM</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a032f4601a8d3e6aa806012bdabbef311">HANDLE_DW_FORM</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -183,7 +183,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1356ad6053f0b2b4dbf9b8b7ed993dba">HANDLE_DW_FORM</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a20cc2c2c7d7f7f2e4494f487aaa52aee">HANDLE_DW_FORM</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -209,7 +209,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa4b25d988cef67fbdaf17dad3a9f471a">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;  .Case("DW_OP_" #NAME, DW_OP_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad122873d9dbf4cd0d4c74356fb71d3b0">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;  .Case("DW_OP_" #NAME, DW_OP_##NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -235,7 +235,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab928ceddc69409abf3bd25dda56b9965">HANDLE_DW_OP_LLVM_USEROP</a>(ID, NAME)&nbsp;&nbsp;&nbsp;.Case(#NAME, DW_OP_LLVM_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abaf593e36a87908fda806256e222ac77">HANDLE_DW_OP_LLVM_USEROP</a>(ID, NAME)&nbsp;&nbsp;&nbsp;.Case(#NAME, DW_OP_LLVM_##NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -248,7 +248,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa4b25d988cef67fbdaf17dad3a9f471a">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a525f33dfb48b1f49b007789ff4fb3867">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -261,7 +261,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa4b25d988cef67fbdaf17dad3a9f471a">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa6ac3f1099cf151f5803a4428f1b8a13">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -274,7 +274,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa4b25d988cef67fbdaf17dad3a9f471a">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3dde6ced67c7e78e7e79b749d7ef6141">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -287,33 +287,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa4b25d988cef67fbdaf17dad3a9f471a">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e48abbcebbe0b2df64297889172b34a">HANDLE_DW_ATE</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e48abbcebbe0b2df64297889172b34a">HANDLE_DW_ATE</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;  .Case("DW_ATE_" #NAME, DW_ATE_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aef0c23307ca40b131eaf8784e9086acf">HANDLE_DW_OP</a>(ID, NAME, OPERANDS, ARITY, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -339,7 +313,33 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e48abbcebbe0b2df64297889172b34a">HANDLE_DW_ATE</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0df3801923ab480f3a77a754d0eb976c">HANDLE_DW_ATE</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;  .Case("DW_ATE_" #NAME, DW_ATE_##NAME)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abecef955802718741f43259a1a3a14b0">HANDLE_DW_ATE</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2930eee009a2e506268be719938b84d9">HANDLE_DW_ATE</a>(ID, NAME, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -365,7 +365,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1433ab8c00b9e94cdd1cba68b9d15e52">HANDLE_DW_VIRTUALITY</a>(ID, NAME)&nbsp;&nbsp;&nbsp;  .Case("DW_VIRTUALITY_" #NAME, DW_VIRTUALITY_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7b6c3be33c955031aa4b30004d4b7d27">HANDLE_DW_VIRTUALITY</a>(ID, NAME)&nbsp;&nbsp;&nbsp;  .Case("DW_VIRTUALITY_" #NAME, DW_VIRTUALITY_##NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -391,7 +391,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa70cb3c0d314e41944b65f1bfdaa6457">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;  .Case("DW_LANG_" #NAME, DW_LANG_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae9bde42f9e025684d465104636dff585">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;  .Case("DW_LANG_" #NAME, DW_LANG_##NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -404,7 +404,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa70cb3c0d314e41944b65f1bfdaa6457">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adb4455362a9b3535452f07740f8a26e9">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -417,7 +417,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa70cb3c0d314e41944b65f1bfdaa6457">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2e88d649e5d49df2fca6c2abcfc24e6d">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -430,7 +430,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa70cb3c0d314e41944b65f1bfdaa6457">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae79c6bb67656cc6eebafd3ca9591adf4">HANDLE_DW_LANG</a>(ID, NAME, LOWER_BOUND, VERSION, VENDOR)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -469,7 +469,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54fbd19a6c99fad8fd577abc1d577357">HANDLE_DW_CC</a>(ID, NAME)&nbsp;&nbsp;&nbsp;.Case("DW_CC_" #NAME, DW_CC_##NAME)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#affc27bcc105b429518acd31c4d797ce0">HANDLE_DW_CC</a>(ID, NAME)&nbsp;&nbsp;&nbsp;.Case("DW_CC_" #NAME, DW_CC_##NAME)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -534,7 +534,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aab39ee1f10fa10ef003531061b92e243">HANDLE_DW_MACRO</a>(ID, NAME)&nbsp;&nbsp;&nbsp;.Case("DW_MACRO_" #NAME, ID)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac09375db4d0510e2826556d10f4592f3">HANDLE_DW_MACRO</a>(ID, NAME)&nbsp;&nbsp;&nbsp;.Case("DW_MACRO_" #NAME, ID)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -651,7 +651,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab46cfacf8dd96b117a3a522f77a694fd">HANDLE_DW_CFA_PRED</a>(ID, NAME, PRED)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af8a690af458b878e3e9f969884e60139">HANDLE_DW_CFA_PRED</a>(ID, NAME, PRED)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -664,7 +664,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a13955c31cd62b8fbe21d29d1327da74e">HANDLE_DW_CFA</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a98a6420fadb12688d9f12ddb186d1db0">HANDLE_DW_CFA</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -716,7 +716,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3b831e2d4801073660714550d8831b38">HANDLE_DW_RLE</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aee18baf47f2a4df665dd9c224079ca86">HANDLE_DW_RLE</a>(ID, NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -880,7 +880,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_AT {#af8443b65087704cc597bc033cce391b2}
+### HANDLE\_DW\_AT {#a449044036ab88466c3eb49c3710028e6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -914,7 +914,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_AT {#af8443b65087704cc597bc033cce391b2}
+### HANDLE\_DW\_AT {#a079ad233f8dbab59643ee035b4fa60f7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -982,7 +982,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_ATE {#a1e48abbcebbe0b2df64297889172b34a}
+### HANDLE\_DW\_ATE {#a0df3801923ab480f3a77a754d0eb976c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1007,7 +1007,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_ATE {#a1e48abbcebbe0b2df64297889172b34a}
+### HANDLE\_DW\_ATE {#abecef955802718741f43259a1a3a14b0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1041,7 +1041,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_ATE {#a1e48abbcebbe0b2df64297889172b34a}
+### HANDLE\_DW\_ATE {#a2930eee009a2e506268be719938b84d9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1109,7 +1109,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_CC {#a54fbd19a6c99fad8fd577abc1d577357}
+### HANDLE\_DW\_CC {#affc27bcc105b429518acd31c4d797ce0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1159,7 +1159,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_CFA {#a13955c31cd62b8fbe21d29d1327da74e}
+### HANDLE\_DW\_CFA {#a98a6420fadb12688d9f12ddb186d1db0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1227,7 +1227,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_CFA\_PRED {#ab46cfacf8dd96b117a3a522f77a694fd}
+### HANDLE\_DW\_CFA\_PRED {#af8a690af458b878e3e9f969884e60139}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1286,7 +1286,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_FORM {#a1356ad6053f0b2b4dbf9b8b7ed993dba}
+### HANDLE\_DW\_FORM {#a032f4601a8d3e6aa806012bdabbef311}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1320,7 +1320,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_FORM {#a1356ad6053f0b2b4dbf9b8b7ed993dba}
+### HANDLE\_DW\_FORM {#a20cc2c2c7d7f7f2e4494f487aaa52aee}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1422,7 +1422,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_LANG {#aa70cb3c0d314e41944b65f1bfdaa6457}
+### HANDLE\_DW\_LANG {#ae9bde42f9e025684d465104636dff585}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1447,7 +1447,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_LANG {#aa70cb3c0d314e41944b65f1bfdaa6457}
+### HANDLE\_DW\_LANG {#adb4455362a9b3535452f07740f8a26e9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1481,7 +1481,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_LANG {#aa70cb3c0d314e41944b65f1bfdaa6457}
+### HANDLE\_DW\_LANG {#a2e88d649e5d49df2fca6c2abcfc24e6d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1515,7 +1515,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_LANG {#aa70cb3c0d314e41944b65f1bfdaa6457}
+### HANDLE\_DW\_LANG {#ae79c6bb67656cc6eebafd3ca9591adf4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1719,7 +1719,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_MACRO {#aab39ee1f10fa10ef003531061b92e243}
+### HANDLE\_DW\_MACRO {#ac09375db4d0510e2826556d10f4592f3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1812,7 +1812,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_OP {#aa4b25d988cef67fbdaf17dad3a9f471a}
+### HANDLE\_DW\_OP {#ad122873d9dbf4cd0d4c74356fb71d3b0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1837,7 +1837,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_OP {#aa4b25d988cef67fbdaf17dad3a9f471a}
+### HANDLE\_DW\_OP {#a525f33dfb48b1f49b007789ff4fb3867}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1871,7 +1871,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_OP {#aa4b25d988cef67fbdaf17dad3a9f471a}
+### HANDLE\_DW\_OP {#aa6ac3f1099cf151f5803a4428f1b8a13}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1907,7 +1907,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_OP {#aa4b25d988cef67fbdaf17dad3a9f471a}
+### HANDLE\_DW\_OP {#a3dde6ced67c7e78e7e79b749d7ef6141}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1943,7 +1943,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_OP {#aa4b25d988cef67fbdaf17dad3a9f471a}
+### HANDLE\_DW\_OP {#aef0c23307ca40b131eaf8784e9086acf}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2011,7 +2011,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_OP\_LLVM\_USEROP {#ab928ceddc69409abf3bd25dda56b9965}
+### HANDLE\_DW\_OP\_LLVM\_USEROP {#abaf593e36a87908fda806256e222ac77}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2070,7 +2070,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_RLE {#a3b831e2d4801073660714550d8831b38}
+### HANDLE\_DW\_RLE {#aee18baf47f2a4df665dd9c224079ca86}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2138,7 +2138,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_TAG {#a52cbb26ec5bb928e366fe1965e8bf60e}
+### HANDLE\_DW\_TAG {#a7d57fedfe3914b8e5a96d4538bb2b10c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2163,7 +2163,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_TAG {#a52cbb26ec5bb928e366fe1965e8bf60e}
+### HANDLE\_DW\_TAG {#a785882b403a247f28125e59bfdc7ad2e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2197,7 +2197,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_TAG {#a52cbb26ec5bb928e366fe1965e8bf60e}
+### HANDLE\_DW\_TAG {#a2de1f57ad11f9fa2f98f88184564f6a8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2299,7 +2299,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DW\_VIRTUALITY {#a1433ab8c00b9e94cdd1cba68b9d15e52}
+### HANDLE\_DW\_VIRTUALITY {#a7b6c3be33c955031aa4b30004d4b7d27}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2428,6 +2428,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

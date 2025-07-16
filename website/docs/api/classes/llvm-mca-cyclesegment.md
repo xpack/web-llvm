@@ -467,6 +467,9 @@ class llvm::mca::CycleSegment { ... }
 
 <p>Definition at line 424 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/mca/instruction-h">Instruction.h</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a422417017bcd1f449e0fc7f64622ad42">llvm::mca::ResourceManager::fastIssueInstruction</a> and <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a94ebe004dfbba2e68530d0125ed16293">llvm::mca::ResourceManager::issueInstructionImpl</a>.</p>
+
 </div>
 </div>
 
@@ -806,6 +809,9 @@ class llvm::mca::CycleSegment { ... }
 
 <p>Definition at line 418 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/mca/instruction-h">Instruction.h</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a422417017bcd1f449e0fc7f64622ad42">llvm::mca::ResourceManager::fastIssueInstruction</a> and <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a94ebe004dfbba2e68530d0125ed16293">llvm::mca::ResourceManager::issueInstructionImpl</a>.</p>
+
 </div>
 </div>
 
@@ -971,6 +977,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -480,7 +480,7 @@ class llvm::objcopy::elf::ELFBuilder&lt;ELFT&gt; { ... }
 <p>Declaration at line 1112 of file <a href="/web-llvm/docs/api/files/lib/lib/objcopy/lib/objcopy/elf/elfobject-h">ELFObject.h</a>, definition at line 1920 of file <a href="/web-llvm/docs/api/files/lib/lib/objcopy/lib/objcopy/elf/elfobject-cpp">ELFObject.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/elffile/#a0c43c56d0ce8c5e87d92506d7b567a5b">llvm::objcopy::elf::ELFFile&lt; ELFT &gt;::create</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a4848e3ad29a6f6a8216e031204f636e9ab54026aa6391d97c62b4d249ee2bcf8d">llvm::ELF::EI_ABIVERSION</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a4848e3ad29a6f6a8216e031204f636e9ac8ef31dee034e9fa40e690a4cdd360de">llvm::ELF::EI_CLASS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a4848e3ad29a6f6a8216e031204f636e9ad43f8c1b4c159b3097c2004a8efea579">llvm::ELF::EI_OSABI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#aa87228a0d135b2b897952fa11ff023c5a54b4da97cdda07031363b240c26c9794">llvm::ELF::ELFCLASS64</a>, <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#aeeb5973ff74c4c4d279e275b34b7ef54">llvm::toStringRef</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/elffile/#a0c43c56d0ce8c5e87d92506d7b567a5b">llvm::objcopy::elf::ELFFile&lt; ELFT &gt;::create</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a4848e3ad29a6f6a8216e031204f636e9ab54026aa6391d97c62b4d249ee2bcf8d">llvm::ELF::EI_ABIVERSION</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a4848e3ad29a6f6a8216e031204f636e9ac8ef31dee034e9fa40e690a4cdd360de">llvm::ELF::EI_CLASS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#a4848e3ad29a6f6a8216e031204f636e9ad43f8c1b4c159b3097c2004a8efea579">llvm::ELF::EI_OSABI</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elf/#aa87228a0d135b2b897952fa11ff023c5a54b4da97cdda07031363b240c26c9794">llvm::ELF::ELFCLASS64</a> and <a href="/web-llvm/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">llvm::Expected&lt; T &gt;::takeError</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/elfreader/#aa582bccb42bed88d3ac9757dca3cc4b0">llvm::objcopy::elf::ELFReader::create</a>.</p>
@@ -825,6 +825,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

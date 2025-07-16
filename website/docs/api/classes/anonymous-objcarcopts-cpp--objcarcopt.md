@@ -76,19 +76,6 @@ class anonymous{ObjCARCOpts.cpp}::ObjCARCOpt { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a76700840dd8760932f9a40f4f1dedfa0">OptimizeReturns</a> (Function &amp;F)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a362019b54e8e6b3ebc579afb2d63cd94">addOpBundleForFunclet</a> (BasicBlock *BB, SmallVectorImpl&lt; OperandBundleDef &gt; &amp;OpBundles)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -320,6 +307,20 @@ class anonymous{ObjCARCOpts.cpp}::ObjCARCOpt { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/groups/arcopt/#ga5cc373beaa944f9c5e2d97ba0afd9eee">OptimizeReturns</a> (Function &amp;F)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Look for this pattern: <a href="/web-llvm/docs/api/groups/arcopt/#ga5cc373beaa944f9c5e2d97ba0afd9eee">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/groups/arcopt/#gac805062560f638e214410a27e94c4398">GatherStatistics</a> (Function &amp;F, bool AfterOptimization=false)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -364,7 +365,7 @@ class anonymous{ObjCARCOpts.cpp}::ObjCARCOpt { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a567ad30d7e9cd356f717dc87256acd8e">PA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -555,31 +556,6 @@ class anonymous{ObjCARCOpts.cpp}::ObjCARCOpt { ... }
 
 
 <p>Definition at line 580 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarcopts-cpp">ObjCARCOpts.cpp</a>.</p>
-
-</div>
-</div>
-
-### OptimizeReturns() {#a76700840dd8760932f9a40f4f1dedfa0}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">void anonymous{ObjCARCOpts.cpp}::ObjCARCOpt::OptimizeReturns (<a href="/web-llvm/docs/api/classes/llvm/function">Function</a> &amp; F)</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-
-
-<p>Definition at line 567 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/objcarcopts-cpp">ObjCARCOpts.cpp</a>.</p>
 
 </div>
 </div>
@@ -865,6 +841,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

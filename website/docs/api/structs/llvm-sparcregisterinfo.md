@@ -375,7 +375,7 @@ struct llvm::SparcRegisterInfo { ... }
 <p>Declaration at line 32 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/sparcregisterinfo-h">SparcRegisterInfo.h</a>, definition at line 52 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/sparcregisterinfo-cpp">SparcRegisterInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/sparcsubtarget/#aa8302f5e3165c69b082f18b56abf8a6b">llvm::SparcSubtarget::is64Bit</a>, <a href="/web-llvm/docs/api/classes/llvm/sparcsubtarget/#ad568f7f47221378a1a8a49372b89b981">llvm::SparcSubtarget::isRegisterReserved</a>, <a href="/web-llvm/docs/api/classes/llvm/mcregaliasiterator/#ac336c049c12ead7be5b86e6d046f8ab0">llvm::MCRegAliasIterator::isValid</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/sparcregisterinfo-cpp/#a61c2c4a4025e008094ae3ffeed3b28e1">ReserveAppRegisters</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15a942d4e37dd5607ab68e54755540d4a47">llvm::Reserved</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/sys/path/const-iterator/#a4bf37b7ebfd0c667c941ffed8cc8b1b3">llvm::sys::path::const_iterator::end</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/classes/llvm/sparcsubtarget/#aa8302f5e3165c69b082f18b56abf8a6b">llvm::SparcSubtarget::is64Bit</a>, <a href="/web-llvm/docs/api/classes/llvm/sparcsubtarget/#ad568f7f47221378a1a8a49372b89b981">llvm::SparcSubtarget::isRegisterReserved</a>, <a href="/web-llvm/docs/api/classes/llvm/mcregaliasiterator/#ac336c049c12ead7be5b86e6d046f8ab0">llvm::MCRegAliasIterator::isValid</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/sparcregisterinfo-cpp/#a61c2c4a4025e008094ae3ffeed3b28e1">ReserveAppRegisters</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15a942d4e37dd5607ab68e54755540d4a47">llvm::Reserved</a>.</p>
 
 
 <p>Referenced by <a href="#ab326e431929d42fa4debda9affacf693">isReservedReg</a>.</p>
@@ -452,6 +452,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

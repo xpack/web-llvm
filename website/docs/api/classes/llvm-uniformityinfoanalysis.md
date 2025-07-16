@@ -195,6 +195,9 @@ class llvm::UniformityInfoAnalysis { ... }
 
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/amdgpulatecodegenpreparepass/#a5a4ff24504b852091b900d036f556885">llvm::AMDGPULateCodeGenPreparePass::run</a>.</p>
+
 </div>
 </div>
 
@@ -278,6 +281,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

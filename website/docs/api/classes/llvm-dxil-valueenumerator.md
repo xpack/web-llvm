@@ -67,7 +67,7 @@ class llvm::dxil::ValueEnumerator { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the AttributeList index, so we have to track that in our map. <a href="#a1c29858ac94eeebd2c97ff010566b499">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> index, so we have to track that in our map. <a href="#a1c29858ac94eeebd2c97ff010566b499">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -147,7 +147,7 @@ class llvm::dxil::ValueEnumerator { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a34602da0061905308e3d0292104b1221">AttributeListMapType</a> = <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; AttributeList, unsigned &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a34602da0061905308e3d0292104b1221">AttributeListMapType</a> = <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>, unsigned &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -480,7 +480,7 @@ class llvm::dxil::ValueEnumerator { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; AttributeList &gt; &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &gt; &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a98fba8001a4d494b6adfad724ddb4cc5">getAttributeLists</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1013,7 +1013,7 @@ class llvm::dxil::ValueEnumerator { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; AttributeList &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae1d78c137c9aa1ba43d89c00298b65bc">AttributeLists</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1174,7 +1174,7 @@ class llvm::dxil::ValueEnumerator { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the AttributeList index, so we have to track that in our map.</p>
+<p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> groups as encoded in bitcode are almost AttributeSets, but they include the <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> index, so we have to track that in our map.</p>
 
 <p>Definition at line 55 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/lib/target/directx/dxilwriter/dxilvalueenumerator-h">DXILValueEnumerator.h</a>.</p>
 
@@ -1441,7 +1441,7 @@ class llvm::dxil::ValueEnumerator { ... }
 <p>Declaration at line 142 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/lib/target/directx/dxilwriter/dxilvalueenumerator-h">DXILValueEnumerator.h</a>, definition at line 360 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/lib/target/directx/dxilwriter/dxilvalueenumerator-cpp">DXILValueEnumerator.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a39c988da721efd4abb84036ea0bb750e">EnumerateType</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="/web-llvm/docs/api/classes/llvm/typedpointertype/#ad0b317acb44e242226165a34d550702d">llvm::TypedPointerType::get</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a28fdf240b8220065bc60d6d1b1a2f174">llvm::Type::getMetadataTy</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp/#a9e9ff0c61346a6511c2f5eef7704c99e">predictUseListOrder</a> and <a href="#ad850361c30d839e4d4dac76559042bbd">UseListOrders</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="#a39c988da721efd4abb84036ea0bb750e">EnumerateType</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68a895001b186ed51e1cb7a256dbd3545f8">llvm::AttributeList::FunctionIndex</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncommongep-cpp/#ad532e8710e50302e0a376b61c91fa91d">GEP</a>, <a href="/web-llvm/docs/api/classes/llvm/typedpointertype/#ad0b317acb44e242226165a34d550702d">llvm::TypedPointerType::get</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a28fdf240b8220065bc60d6d1b1a2f174">llvm::Type::getMetadataTy</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/valueenumerator-cpp/#a9e9ff0c61346a6511c2f5eef7704c99e">predictUseListOrder</a> and <a href="#ad850361c30d839e4d4dac76559042bbd">UseListOrders</a>.</p>
 
 
 <p>Referenced by <a href="#a795992be3f5d887ec3be8b296686b6b5">operator=</a> and <a href="#ad277f8b054dba63761c3d9129533f6bf">ValueEnumerator</a>.</p>
@@ -1680,7 +1680,7 @@ class llvm::dxil::ValueEnumerator { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">unsigned llvm::dxil::ValueEnumerator::getAttributeListID (AttributeList PAL)</td>
+<td class="doxyMemberName">unsigned llvm::dxil::ValueEnumerator::getAttributeListID (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> PAL)</td>
 </tr>
 </table>
 </td>
@@ -1699,7 +1699,7 @@ class llvm::dxil::ValueEnumerator { ... }
 <p>Definition at line 174 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/lib/target/directx/dxilwriter/dxilvalueenumerator-h">DXILValueEnumerator.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a5269e6b95f5007a652d53ca847cca6f3">llvm::AttributeList::isEmpty</a>.</p>
 
 </div>
 </div>
@@ -2390,7 +2390,7 @@ class llvm::dxil::ValueEnumerator { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::dxil::ValueEnumerator::EnumerateAttributes (AttributeList PAL)</td>
+<td class="doxyMemberName">void llvm::dxil::ValueEnumerator::EnumerateAttributes (<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> PAL)</td>
 </tr>
 </table>
 </td>
@@ -3421,6 +3421,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -86,7 +86,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab369becd0cf9e8152b856141d9529238">HANDLE_DIE_HASH_ATTR</a>(NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b56d972a4302f76218213728be753d3">HANDLE_DIE_HASH_ATTR</a>(NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -193,7 +193,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case dwarf::NAME:                                                            \
     Attrs.NAME = V;                                                            \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -203,7 +203,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIE\_HASH\_ATTR {#ab369becd0cf9e8152b856141d9529238}
+### HANDLE\_DIE\_HASH\_ATTR {#a4b56d972a4302f76218213728be753d3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -243,6 +243,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

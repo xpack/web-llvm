@@ -181,16 +181,16 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename T&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename HasherT, llvm::endianness Endianness&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto </td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a10e1cde5bdf37faed1fafd171aa33619">add</a> (const T &amp;Value) -&gt; std::enable_if_t&lt; <a href="/web-llvm/docs/api/namespaces/llvm/#abf1ad174f29a434886594433ce8a787f">is_detected</a>&lt; <a href="#a770b706b2dcfbb64c717a1cbe9418874">HasAddHashT</a>, T &gt;::value &amp;&amp;!<a href="/web-llvm/docs/api/structs/llvm/hashbuilder-detail/ishashabledata">hashbuilder_detail::IsHashableData</a>&lt; T &gt;::value, <a href="/web-llvm/docs/api/classes/llvm/hashbuilder">HashBuilder</a> &amp; &gt;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a59fdc8314566fde04327675653093798">add</a> (const T &amp;Value) -&gt; std::enable_if_t&lt; <a href="/web-llvm/docs/api/namespaces/llvm/#abf1ad174f29a434886594433ce8a787f">is_detected</a>&lt; <a href="#a770b706b2dcfbb64c717a1cbe9418874">HasAddHashT</a>, T &gt;::value &amp;&amp;!<a href="/web-llvm/docs/api/structs/llvm/hashbuilder-detail/ishashabledata">hashbuilder_detail::IsHashableData</a>&lt; T &gt;::value, <a href="/web-llvm/docs/api/classes/llvm/hashbuilder">HashBuilder</a> &amp; &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Implement hashing for user-defined <span class="doxyComputerOutput">struct</span>s. <a href="#a10e1cde5bdf37faed1fafd171aa33619">More...</a></p>
+<p>Implement hashing for user-defined <span class="doxyComputerOutput">struct</span>s. <a href="#a59fdc8314566fde04327675653093798">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -230,16 +230,16 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename... Ts&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename HasherT, llvm::endianness Endianness&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto </td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a3a94d5635dcb6728b77fc7ae9157abb4">add</a> (const Ts &amp;...Args) -&gt; std::enable_if_t&lt;(sizeof...(Ts) &gt; 1), <a href="/web-llvm/docs/api/classes/llvm/hashbuilder">HashBuilder</a> &amp; &gt;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aec1c59c35109f73b2f1293524a7eaa47">add</a> (const Ts &amp;...Args) -&gt; std::enable_if_t&lt;(sizeof...(Ts) &gt; 1), <a href="/web-llvm/docs/api/classes/llvm/hashbuilder">HashBuilder</a> &amp; &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A convenenience variadic helper. <a href="#a3a94d5635dcb6728b77fc7ae9157abb4">More...</a></p>
+<p>A convenenience variadic helper. <a href="#aec1c59c35109f73b2f1293524a7eaa47">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -596,7 +596,7 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 <p>Definition at line 149 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h">HashBuilder.h</a>.</p>
 
 
-<p>Referenced by <a href="#a8e8f681c61a2745facd1cb55855fe402">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#ab4c3f8c5c42740075dea32797798473f">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#a7d71f0c32204f6a2f72915b7ad28d215">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#a3a94d5635dcb6728b77fc7ae9157abb4">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#a1815b02e7fafbe2f603c7893bd131666">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="/web-llvm/docs/api/classes/llvm/versiontuple/#af825651dbfebd80aeaca895edd9629a5">llvm::VersionTuple::addHash</a>, <a href="#aac10ca9284dac49b244037588df79ca2">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::addRange</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memprofiler-cpp/#a22834e90a038045330c1385f188104f5">computeFullStackId</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memprofiler-cpp/#a59956a56d1a2c15842922d6c2ba8de18">computeStackId</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a6a4b5ed3aee26b7c67700b5e0fbc4d2f">llvm::hash_value</a>.</p>
+<p>Referenced by <a href="#a8e8f681c61a2745facd1cb55855fe402">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#ab4c3f8c5c42740075dea32797798473f">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#a7d71f0c32204f6a2f72915b7ad28d215">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#aec1c59c35109f73b2f1293524a7eaa47">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="#a1815b02e7fafbe2f603c7893bd131666">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::add</a>, <a href="/web-llvm/docs/api/classes/llvm/versiontuple/#af825651dbfebd80aeaca895edd9629a5">llvm::VersionTuple::addHash</a>, <a href="#aac10ca9284dac49b244037588df79ca2">llvm::HashBuilder&lt; hashbuilder_detail::HashCodeHasher, llvm::endianness::native &gt;::addRange</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memprofiler-cpp/#a22834e90a038045330c1385f188104f5">computeFullStackId</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memprofiler-cpp/#a59956a56d1a2c15842922d6c2ba8de18">computeStackId</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a6a4b5ed3aee26b7c67700b5e0fbc4d2f">llvm::hash_value</a>.</p>
 
 </div>
 </div>
@@ -715,11 +715,11 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 </div>
 </div>
 
-### add() {#a10e1cde5bdf37faed1fafd171aa33619}
+### add() {#a59fdc8314566fde04327675653093798}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;typename T&gt;</div>
+<div class="doxyMemberTemplate">template &lt;typename HasherT, llvm::endianness Endianness&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
@@ -745,97 +745,34 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 <p><a href="/web-llvm/docs/api/classes/llvm/any">Any</a> user-define <span class="doxyComputerOutput">struct</span> can participate in hashing via <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/hashbuilder">HashBuilder</a></span> by providing a <span class="doxyComputerOutput">addHash</span> templated function.</p>
 
 
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(<a href="#a3790ea10d4f6d2364d6b1fb2bddfbf4e">HashBuilder&lt;HasherT, Endianness&gt;</a> &amp;HBuilder,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">             </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> UserDefinedStruct &amp;<a href="/web-llvm/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>);</span></span></div>
-
-</div>
+<p><span class="doxyComputerOutput"> template &lt;typename HasherT, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> Endianness&gt; void addHash(<a href="/web-llvm/docs/api/classes/llvm/hashbuilder">HashBuilder</a>&lt;HasherT, Endianness&gt; &amp;HBuilder, const UserDefinedStruct &amp;<a href="/web-llvm/docs/api/classes/llvm/value">Value</a>); </span></p>
 
 
-<p>For example:</p>
+<p>For example: ``` struct SimpleStruct { char c; int i; };</p>
 
 
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">SimpleStruct {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> c;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> i;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(<a href="#a3790ea10d4f6d2364d6b1fb2bddfbf4e">HashBuilder&lt;HasherT, Endianness&gt;</a> &amp;HBuilder,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">             </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> SimpleStruct &amp;<a href="/web-llvm/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  HBuilder.add(<a href="/web-llvm/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>.c);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  HBuilder.add(<a href="/web-llvm/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>.i);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">}</span></span></div>
-
-</div>
+<p>template &lt;typename HasherT, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> Endianness&gt; void addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,
+                   const SimpleStruct &amp;Value) { HBuilder.add(Value.c); HBuilder.add(Value.i); } ```</p>
 
 
 <p>To avoid endianness issues, specializations of <span class="doxyComputerOutput">addHash</span> should generally rely on exising <span class="doxyComputerOutput">add</span>, <span class="doxyComputerOutput">addRange</span>, and <span class="doxyComputerOutput">addRangeElements</span> functions. If directly using <span class="doxyComputerOutput">update</span>, an implementation must correctly handle endianness.</p>
 
 
-<div class="doxyProgramListing">
+<p>``` struct <b>attribute</b> ((packed)) StructWithFastHash { int I; char C;</p>
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">__attribute__ ((packed)) StructWithFastHash {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#a1960c14773241d6a238d2db593abe552">C</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// If possible, we want to hash both `I` and `C` in a single</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// `update` call for performance concerns.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">                      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> StructWithFastHash &amp;Value) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Endianness == <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      HBuilder.update(<a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlight">uint8_t *</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(&amp;Value), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Value)));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    } </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Rely on existing `add` methods to handle endianness.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      HBuilder.add(<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.I);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      HBuilder.add(<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.C);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">};</span></span></div>
 
-</div>
+<p>// If possible, we want to hash both <span class="doxyComputerOutput">I</span> and <span class="doxyComputerOutput">C</span> in a single // <span class="doxyComputerOutput">update</span> call for performance concerns. template &lt;typename HasherT, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> Endianness&gt; friend void addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,
+                            const StructWithFastHash &amp;Value) { if (Endianness == <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) { HBuilder.update(<a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>( reinterpret_cast&lt;const uint8_t *&gt;(&amp;Value), sizeof(Value))); } else { // Rely on existing <span class="doxyComputerOutput">add</span> methods to handle endianness. HBuilder.add(Value.I); HBuilder.add(Value.C); } } }; ```</p>
 
 
 <p>To avoid collisions, specialization of <span class="doxyComputerOutput">addHash</span> for variable-size types must take the size into account.</p>
 
 
-<p>For example:</p>
+<p>For example: ``` struct CustomContainer { private: size_t Size; int Elements[100];</p>
 
 
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">CustomContainer {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a8d87e69e124542d3338b631934cdbea9aaa56a2e65d8106aef3c61e4f6bf94fdb">Elements</a>[100];</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  CustomContainer(</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) : <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>(<a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>; ++<a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/web-llvm/docs/api/namespaces/llvm/logicalview/#a8d87e69e124542d3338b631934cdbea9aaa56a2e65d8106aef3c61e4f6bf94fdb">Elements</a>[<a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>] = <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">                      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> CustomContainer &amp;Value) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Endianness == <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      HBuilder.update(<a href="/web-llvm/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlight">uint8_t *</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(&amp;<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size) + <a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size * </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements[0])));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    } </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// `addRange` will take care of encoding the size.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      HBuilder.addRange(&amp;<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements[0], &amp;<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements[0] +</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/web-llvm/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">};</span></span></div>
-
-</div>
+<p>public: CustomContainer(size_t Size) : <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size(Size)</a> { for (size_t I = 0; I != Size; ++I) Elements[I] = I; } template &lt;typename HasherT, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> Endianness&gt; friend void addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,
+                            const CustomContainer &amp;Value) { if (Endianness == <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) { HBuilder.update(<a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>( reinterpret_cast&lt;const uint8_t *&gt;(&amp;Value.Size), sizeof(Value.Size) + Value.Size * sizeof(Value.Elements[0]))); } else { // <span class="doxyComputerOutput">addRange</span> will take care of encoding the size. HBuilder.addRange(&amp;Value.Elements[0], &amp;Value.Elements[0] + Value.Size); } } }; ``` template &lt;typename T&gt;</p>
 
 
 <p>Definition at line 297 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h">HashBuilder.h</a>.</p>
@@ -905,11 +842,11 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 </div>
 </div>
 
-### add() {#a3a94d5635dcb6728b77fc7ae9157abb4}
+### add() {#aec1c59c35109f73b2f1293524a7eaa47}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;typename... Ts&gt;</div>
+<div class="doxyMemberTemplate">template &lt;typename HasherT, llvm::endianness Endianness&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
@@ -932,25 +869,7 @@ class llvm::HashBuilder&lt;HasherT, Endianness&gt; { ... }
 <p>A convenenience variadic helper.</p>
 
 
-<p>It simply iterates over its arguments, in order.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1, Arg2);</span></span></div>
-
-</div>
-
-
-<p>is equivalent to</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg2)</span></span></div>
-
-</div>
+<p>It simply iterates over its arguments, in order. <span class="doxyComputerOutput"> add(Arg1, Arg2); </span> is equivalent to <span class="doxyComputerOutput"> add(Arg1) add(Arg2) </span> template &lt;typename... Ts&gt;</p>
 
 
 <p>Definition at line 323 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h">HashBuilder.h</a>.</p>
@@ -1202,6 +1121,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

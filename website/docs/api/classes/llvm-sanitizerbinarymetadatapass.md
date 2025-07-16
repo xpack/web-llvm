@@ -74,7 +74,7 @@ class llvm::SanitizerBinaryMetadataPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4c4b3aea1ab9cc4a61033672c29e3c69">run</a> (Module &amp;M, ModuleAnalysisManager &amp;AM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -216,7 +216,7 @@ class llvm::SanitizerBinaryMetadataPass { ... }
 <p>Declaration at line 56 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/instrumentation/sanitizerbinarymetadata-h">SanitizerBinaryMetadata.h</a>, definition at line 489 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/sanitizerbinarymetadata-cpp">SanitizerBinaryMetadata.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/classes/llvm/specialcaselist/#a6c0343ae2b29d3a9882c0cfc4bee8c03">llvm::SpecialCaseList::createOrDie</a>, <a href="/web-llvm/docs/api/namespaces/llvm/vfs/#a9878c6a5a53d24e17c7c1002be31364c">llvm::vfs::getRealFileSystem</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64conditionalcompares-cpp/#ab15af716dfa3d6f1fa7978be4639bd8e">Pass</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/specialcaselist/#a6c0343ae2b29d3a9882c0cfc4bee8c03">llvm::SpecialCaseList::createOrDie</a>, <a href="/web-llvm/docs/api/namespaces/llvm/vfs/#a9878c6a5a53d24e17c7c1002be31364c">llvm::vfs::getRealFileSystem</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64conditionalcompares-cpp/#ab15af716dfa3d6f1fa7978be4639bd8e">Pass</a>.</p>
 
 </div>
 </div>
@@ -327,6 +327,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

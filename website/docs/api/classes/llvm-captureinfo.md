@@ -597,6 +597,9 @@ class llvm::CaptureInfo { ... }
 
 <p>Definition at line 370 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/modref-h">ModRef.h</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a39b827eb3d46a1c7c9c66905b46c2a48">llvm::AttrBuilder::addCapturesAttr</a>.</p>
+
 </div>
 </div>
 
@@ -748,6 +751,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

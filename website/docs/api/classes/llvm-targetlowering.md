@@ -4420,7 +4420,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4547,7 +4547,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4601,7 +4601,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4680,7 +4680,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4713,7 +4713,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Expand BITREVERSE nodes.</p>
 
 
-<p>Expands scalar/vector BITREVERSE nodes. Returns <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if expand fails.</p>
+<p>Expands scalar/vector BITREVERSE nodes. Returns SDValue() if expand fails.</p>
 
 
 <dl class="doxyParamsList">
@@ -4730,7 +4730,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4763,7 +4763,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Expand BSWAP nodes.</p>
 
 
-<p>Expands scalar/vector BSWAP nodes with i16/i32/i64 scalar types. Returns <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if expand fails.</p>
+<p>Expands scalar/vector BSWAP nodes with i16/i32/i64 scalar types. Returns SDValue() if expand fails.</p>
 
 
 <dl class="doxyParamsList">
@@ -4780,7 +4780,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4859,7 +4859,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4909,7 +4909,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -4959,7 +4959,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -5420,7 +5420,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion if successful, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> otherwise</p></dd>
+<dd><p>The expansion if successful, SDValue() otherwise</p></dd>
 </dl>
 
 
@@ -5576,7 +5576,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -5814,7 +5814,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion if successful, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> otherwise</p></dd>
+<dd><p>The expansion if successful, SDValue() otherwise</p></dd>
 </dl>
 
 
@@ -6244,7 +6244,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6351,7 +6351,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6384,7 +6384,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Expand VP_BSWAP nodes.</p>
 
 
-<p>Expands VP_BSWAP nodes with i16/i32/i64 scalar types. Returns <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if expand fails.</p>
+<p>Expands VP_BSWAP nodes with i16/i32/i64 scalar types. Returns SDValue() if expand fails.</p>
 
 
 <dl class="doxyParamsList">
@@ -6401,7 +6401,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6448,7 +6448,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6483,7 +6483,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6530,7 +6530,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6577,7 +6577,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The expansion result or <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a> if it fails.</p></dd>
+<dd><p>The expansion result or SDValue() if it fails.</p></dd>
 </dl>
 
 
@@ -6598,7 +6598,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">virtual bool llvm::TargetLowering::findOptimalMemOpLowering (std::vector&lt; <a href="/web-llvm/docs/api/structs/llvm/evt">EVT</a> &gt; &amp; MemOps, unsigned Limit, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/structs/llvm/memop">MemOp</a> &amp; Op, unsigned DstAS, unsigned SrcAS, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AttributeList &amp; FuncAttributes)</td>
+<td class="doxyMemberName">virtual bool llvm::TargetLowering::findOptimalMemOpLowering (std::vector&lt; <a href="/web-llvm/docs/api/structs/llvm/evt">EVT</a> &gt; &amp; MemOps, unsigned Limit, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/structs/llvm/memop">MemOp</a> &amp; Op, unsigned DstAS, unsigned SrcAS, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> &amp; FuncAttributes)</td>
 </tr>
 </table>
 </td>
@@ -6788,7 +6788,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Definition at line 4431 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/dfajumpthreading-cpp/#aa7c006860d37cf6192a6339a35743888">CostThreshold</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639">llvm::Depth</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#ad717707a2df4226d0388460e87c8cd84a920c5f62b372ce8ed1056422a02c356a">llvm::TargetLoweringBase::Expensive</a>, <a href="#aea3e575b3cff4eb444567d50959b929c">getNegatedExpression</a>, <a href="/web-llvm/docs/api/classes/llvm/sdvalue/#a2b08aa629a6326d1a0444ee6d477c39d">llvm::SDValue::getNode</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#ad717707a2df4226d0388460e87c8cd84ae9bb5320b3890b6747c91b5a71ae5a01">llvm::TargetLoweringBase::Neutral</a>, <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a935ace76cef67c6da10cf0633371efe1">llvm::SelectionDAG::RemoveDeadNode</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</a> and <a href="/web-llvm/docs/api/classes/llvm/sdnode/#a7d150e94e3cd7f6681fa07ea2b72da14">llvm::SDNode::use_empty</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/dfajumpthreading-cpp/#aa7c006860d37cf6192a6339a35743888">CostThreshold</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639">llvm::Depth</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#ad717707a2df4226d0388460e87c8cd84a920c5f62b372ce8ed1056422a02c356a">llvm::TargetLoweringBase::Expensive</a>, <a href="#aea3e575b3cff4eb444567d50959b929c">getNegatedExpression</a>, <a href="/web-llvm/docs/api/classes/llvm/sdvalue/#a2b08aa629a6326d1a0444ee6d477c39d">llvm::SDValue::getNode</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#ad717707a2df4226d0388460e87c8cd84ae9bb5320b3890b6747c91b5a71ae5a01">llvm::TargetLoweringBase::Neutral</a>, <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a935ace76cef67c6da10cf0633371efe1">llvm::SelectionDAG::RemoveDeadNode</a> and <a href="/web-llvm/docs/api/classes/llvm/sdnode/#a7d150e94e3cd7f6681fa07ea2b72da14">llvm::SDNode::use_empty</a>.</p>
 
 
 <p>Referenced by <a href="#a48fe15bdf777438d3ff912a613650642">getCheaperNegatedExpression</a>.</p>
@@ -7242,7 +7242,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Definition at line 5177 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a0cbb26a6b04c9a328e0e0966881da33fa8e243db2e3806dcf4997c408a355ddfc">llvm::TargetLoweringBase::Enabled</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a0cbb26a6b04c9a328e0e0966881da33fa8e243db2e3806dcf4997c408a355ddfc">llvm::TargetLoweringBase::Enabled</a>.</p>
 
 </div>
 </div>
@@ -7472,7 +7472,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Definition at line 5154 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a0cbb26a6b04c9a328e0e0966881da33fa8e243db2e3806dcf4997c408a355ddfc">llvm::TargetLoweringBase::Enabled</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a0cbb26a6b04c9a328e0e0966881da33fa8e243db2e3806dcf4997c408a355ddfc">llvm::TargetLoweringBase::Enabled</a>.</p>
 
 </div>
 </div>
@@ -8857,7 +8857,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Definition at line 4499 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a77c69067ae8279bc00ab8757731e90d7">CC</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a77c69067ae8279bc00ab8757731e90d7">CC</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondagbuilder-cpp/#acb8cf9e50c3979193572ea36f327d0a4">getCopyFromParts</a>.</p>
@@ -8886,10 +8886,10 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Legalize a SETCC or VP_SETCC with given LHS and RHS and condition code CC on the current target.</p>
 
 
-<p>A VP_SETCC will additionally be given a Mask and/or EVL not equal to <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a>.</p>
+<p>A VP_SETCC will additionally be given a Mask and/or EVL not equal to SDValue().</p>
 
 
-<p>If the SETCC has been legalized using AND / OR, then the legalized node will be stored in LHS. RHS and CC will be set to <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue()</a>. NeedInvert will be set to false. This will also hold if the VP_SETCC has been legalized using VP_AND / VP_OR.</p>
+<p>If the SETCC has been legalized using AND / OR, then the legalized node will be stored in LHS. RHS and CC will be set to SDValue(). NeedInvert will be set to false. This will also hold if the VP_SETCC has been legalized using VP_AND / VP_OR.</p>
 
 
 <p>If the SETCC / VP_SETCC has been legalized by using getSetCCSwappedOperands(), then the values of LHS and RHS will be swapped, CC will be set to the new condition, and NeedInvert will be set to false.</p>
@@ -9477,7 +9477,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Definition at line 5014 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a> and <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/codegen/codegenprepare-cpp/#a86026627b644e50527898aad0747b3e5">IsOperandAMemoryOperand</a> and <a href="/web-llvm/docs/api/classes/llvm/sitargetlowering/#a10799c8833054017c6ab052c8b9c1aa2">llvm::SITargetLowering::requiresUniformRegister</a>.</p>
@@ -9889,7 +9889,7 @@ through" ops that don't contribute to the DemandedBits/DemandedElts - bitwise op
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639">llvm::Depth</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a61e686ca7b81dbf342b3af2d4e23149e">combineAnd</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a0285b9eb9c4a75abb42c7cf0ef0154f1">combineAndnp</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#af0e0d5fc4a01d9f412064a5448052330">combineBEXTR</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#afab7e380356e4b22d23f87fa2f45daf9">combineBT</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a767fefc1593899bc23f0b03007b0bd76">combineExtractVectorElt</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a250b1e0899d6d01c60cb7af31cd2a2fd">combineGatherScatter</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a4a6a2af7640ee8f9e66287e024d0f6b8">combineMaskedLoad</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a44f727169247a0359f485216a83265ac">combineMaskedStore</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ab6a2c45af55afc1bf183cbafc577fd03">combineMOVMSK</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ad27c58fe609558af3d02f6eb59c0d075">combinePDEP</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a92cb7f91737deedc3c70fb0ec0b70807">combinePMULDQ</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a619d32c3e94bf8ee0348f9611590dd90">combineTESTP</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a611e5eca9f470030689ec3f7d71c8e20">combineVectorInsert</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#afb154334e7a7daa07012c210ddd77bc4">combineVectorShiftImm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a54771fa408498557a71b99ded55f13bf">combineVSelectToBLENDV</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a45f59ac6b0a55fb1b92f4b3bfd5ce327">combineVTRUNC</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ae6535f37686895d8ab294ce06ffe2f15">combineX86GatherScatter</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#a960012b61a9977dc7c2d3af3943da953">llvm::AArch64TargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgputargetlowering/#ae8ade4269715b02714b67bdf1a0b9ba5">llvm::AMDGPUTargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#a8e96878324f2ca0f847e369f839cfd23">llvm::ARMTargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvtargetlowering/#a2d89f95e0a2a13c2a42e9ef5805e6e11">llvm::RISCVTargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#a42aa092f2811f72cad69b42cc2e4bb64">llvm::ARMTargetLowering::PerformIntrinsicCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a1d0f22bfc290fd2cb53c9486286359df">PerformPREDICATE_CASTCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a7e495837f173dea1e6919b589d315f67">performVectorShiftCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a19d36e331487399aaac4f18bac0c7956">PerformVMOVhrCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/x86targetlowering/#a6fafb0a04f81d44e034566f1a758ea39">llvm::X86TargetLowering::SimplifyDemandedBitsForTargetNode</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuisellowering-cpp/#abbdb66ef7655ebae91e2bbfab4320f23">simplifyMul24</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a61e686ca7b81dbf342b3af2d4e23149e">combineAnd</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a0285b9eb9c4a75abb42c7cf0ef0154f1">combineAndnp</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#af0e0d5fc4a01d9f412064a5448052330">combineBEXTR</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#afab7e380356e4b22d23f87fa2f45daf9">combineBT</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a767fefc1593899bc23f0b03007b0bd76">combineExtractVectorElt</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a250b1e0899d6d01c60cb7af31cd2a2fd">combineGatherScatter</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a4a6a2af7640ee8f9e66287e024d0f6b8">combineMaskedLoad</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a44f727169247a0359f485216a83265ac">combineMaskedStore</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ab6a2c45af55afc1bf183cbafc577fd03">combineMOVMSK</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ad27c58fe609558af3d02f6eb59c0d075">combinePDEP</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a92cb7f91737deedc3c70fb0ec0b70807">combinePMULDQ</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a619d32c3e94bf8ee0348f9611590dd90">combineTESTP</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a611e5eca9f470030689ec3f7d71c8e20">combineVectorInsert</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#afb154334e7a7daa07012c210ddd77bc4">combineVectorShiftImm</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a54771fa408498557a71b99ded55f13bf">combineVSelectToBLENDV</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a45f59ac6b0a55fb1b92f4b3bfd5ce327">combineVTRUNC</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#ae6535f37686895d8ab294ce06ffe2f15">combineX86GatherScatter</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#a960012b61a9977dc7c2d3af3943da953">llvm::AArch64TargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/amdgputargetlowering/#ae8ade4269715b02714b67bdf1a0b9ba5">llvm::AMDGPUTargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#a8e96878324f2ca0f847e369f839cfd23">llvm::ARMTargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvtargetlowering/#a2d89f95e0a2a13c2a42e9ef5805e6e11">llvm::RISCVTargetLowering::PerformDAGCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#a42aa092f2811f72cad69b42cc2e4bb64">llvm::ARMTargetLowering::PerformIntrinsicCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a1d0f22bfc290fd2cb53c9486286359df">PerformPREDICATE_CASTCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#af4aeb38e252532a5362ac68998d0af93">performTBISimplification</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a7e495837f173dea1e6919b589d315f67">performVectorShiftCombine</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armisellowering-cpp/#a19d36e331487399aaac4f18bac0c7956">PerformVMOVhrCombine</a>, <a href="/web-llvm/docs/api/classes/llvm/x86targetlowering/#a6fafb0a04f81d44e034566f1a758ea39">llvm::X86TargetLowering::SimplifyDemandedBitsForTargetNode</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuisellowering-cpp/#abbdb66ef7655ebae91e2bbfab4320f23">simplifyMul24</a>.</p>
 
 </div>
 </div>
@@ -10968,6 +10968,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

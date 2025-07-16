@@ -1943,6 +1943,9 @@ class anonymous{SparcAsmParser.cpp}::SparcOperand { ... }
 
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="#aaa0adfa8ae42f41444c78b91aaee21a6">Tok</a>.</p>
 
+
+<p>Referenced by <a href="#af7a2f4f8b7a08cdd1f1f4a355ae77fb9">print</a>.</p>
+
 </div>
 </div>
 
@@ -2519,7 +2522,7 @@ class anonymous{SparcAsmParser.cpp}::SparcOperand { ... }
 <p>Definition at line 372 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/lib/target/sparc/asmparser/sparcasmparser-cpp">SparcAsmParser.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#aed1141ffde14e1b5684729e5d490e11a">getASITag</a>, <a href="#a9e6a6b64b7b272e972c0ce099bf3e758">getImm</a>, <a href="#ac50d6854c934a14703c7a3314704fa95">getMemBase</a>, <a href="#a62638a308aee852b4f64754c44bbb4eb">getMemOff</a>, <a href="#ad69f6fd54cc235fc24dbc5571d8e58cb">getMemOffsetReg</a>, <a href="#a59200c531c5dad418a6a6fac9dda84b7">getPrefetchTag</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a>, <a href="#a8e4b8dd1ed1eb4a6b012b71e3df511ef">getTailRelocSym</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a20237283e8b9e354abec8dc5ab16bd16">llvm::getToken</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#aed1141ffde14e1b5684729e5d490e11a">getASITag</a>, <a href="#a9e6a6b64b7b272e972c0ce099bf3e758">getImm</a>, <a href="#ac50d6854c934a14703c7a3314704fa95">getMemBase</a>, <a href="#a62638a308aee852b4f64754c44bbb4eb">getMemOff</a>, <a href="#ad69f6fd54cc235fc24dbc5571d8e58cb">getMemOffsetReg</a>, <a href="#a59200c531c5dad418a6a6fac9dda84b7">getPrefetchTag</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a>, <a href="#a8e4b8dd1ed1eb4a6b012b71e3df511ef">getTailRelocSym</a> and <a href="#a76941e373e6d68f9520c458aec62141a">getToken</a>.</p>
 
 </div>
 </div>
@@ -3252,6 +3255,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

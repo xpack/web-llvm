@@ -179,7 +179,7 @@ class llvm::FPStateAccessSDNode { ... }
 <p>Definition at line 3040 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/selectiondagnodes-h">SelectionDAGNodes.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/memsdnode/#a00a2cd9501aed5f7e8746c0458990503">llvm::MemSDNode::MemSDNode</a> and <a href="/web-llvm/docs/api/classes/llvm/memsdnode/#a22cf4b7941bcfec9f5f5fe04d55627df">llvm::MemSDNode::MMO</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110ac7e6de3a23c50c3f48e30e3a644a16aa">llvm::ISD::GET_FPENV_MEM</a>, <a href="/web-llvm/docs/api/classes/llvm/memsdnode/#a00a2cd9501aed5f7e8746c0458990503">llvm::MemSDNode::MemSDNode</a>, <a href="/web-llvm/docs/api/classes/llvm/memsdnode/#a22cf4b7941bcfec9f5f5fe04d55627df">llvm::MemSDNode::MMO</a> and <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110af695708f70bdd710c8fda5c4570711d7">llvm::ISD::SET_FPENV_MEM</a>.</p>
 
 </div>
 </div>
@@ -219,7 +219,7 @@ class llvm::FPStateAccessSDNode { ... }
 <p>Definition at line 3047 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/selectiondagnodes-h">SelectionDAGNodes.h</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110ac7e6de3a23c50c3f48e30e3a644a16aa">llvm::ISD::GET_FPENV_MEM</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110af695708f70bdd710c8fda5c4570711d7">llvm::ISD::SET_FPENV_MEM</a>.</p>
 
 </div>
 </div>
@@ -236,6 +236,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

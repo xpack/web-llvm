@@ -58557,7 +58557,7 @@ This file defines ObjC ARC optimizations
 <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysis-cpp"><span class="doxyIconFile">ProvenanceAnalysis.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This file defines a special form of Alias Analysis called <span class="doxyComputerOutput">Provenance / Analysis''. </span>
+This file defines a special form of Alias Analysis called “Provenance Analysis”
 </td>
 </tr>
 
@@ -58567,7 +58567,7 @@ This file defines a special form of Alias Analysis called <span class="doxyCompu
 <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysis-h"><span class="doxyIconFile">ProvenanceAnalysis.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This file declares a special form of Alias Analysis called <span class="doxyComputerOutput">Provenance / Analysis''. </span>
+This file declares a special form of Alias Analysis called “Provenance Analysis”
 </td>
 </tr>
 
@@ -60935,6 +60935,6 @@ This file declares the class VPlanVerifier, which contains utility functions to 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

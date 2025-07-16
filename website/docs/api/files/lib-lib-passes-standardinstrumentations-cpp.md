@@ -828,7 +828,7 @@ keywords:
 <p>Definition at line 1196 of file <a href="/web-llvm/docs/api/files/lib/lib/passes/standardinstrumentations-cpp">StandardInstrumentations.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/value/#adb5c319f5905c1d3ca9eb5df546388c5">llvm::Value::getName</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#ad9d88ae321b98d8a3b7f394977ae6d7f">llvm::Value::hasName</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a4ec05121d4b54b3691ad6203e78ff54e">llvm::BasicBlock::isEntryBlock</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/value/#adb5c319f5905c1d3ca9eb5df546388c5">llvm::Value::getName</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock::getParent</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#ad9d88ae321b98d8a3b7f394977ae6d7f">llvm::Value::hasName</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a4ec05121d4b54b3691ad6203e78ff54e">llvm::BasicBlock::isEntryBlock</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/preservedcfgcheckerinstrumentation/cfg/#a51fedb4b2c989828bae8f709b9c2c900">llvm::PreservedCFGCheckerInstrumentation::CFG::printDiff</a>.</p>
@@ -1435,6 +1435,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

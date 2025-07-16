@@ -577,7 +577,7 @@ keywords:
 <p>Definition at line 167 of file <a href="/web-llvm/docs/api/files/lib/lib/targetparser/riscvisainfo-cpp">RISCVISAInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a82c27bc751f7669f9c2a79de96e2d0fd">llvm::isDigit</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#a12d4f37888b638bcbd9fc0201492c776">isDigit</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#a24074750f6a79cbc564c654612b773ec">llvm::RISCVISAInfo::getTargetFeatureForExtension</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#afcd8b4904b4e18e880c419386dfe4d85">llvm::RISCVISAInfo::isSupportedExtensionWithVersion</a> and <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#aa18f12a3fd9c95854df97891e6d2c338">llvm::RISCVISAInfo::parseArchString</a>.</p>
@@ -784,7 +784,7 @@ keywords:
 <p>Definition at line 338 of file <a href="/web-llvm/docs/api/files/lib/lib/targetparser/riscvisainfo-cpp">RISCVISAInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/stringref/#a2dc80c585ad5882da8cae7b5968f7e74">llvm::StringRef::empty</a>, <a href="#a3ca5acfa0e6648c73a5143bfc0aa2ee1">findDefaultVersion</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a1881146f2dcc2ca57c9c5f77f938db9d">llvm::StringRef::getAsInteger</a>, <a href="#ad73113c3c3a7bfb64703238645f6fc1e">getError</a>, <a href="#a85dc884f90867e8bd3fc2f4839de6fdc">getErrorForInvalidExt</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a82c27bc751f7669f9c2a79de96e2d0fd">llvm::isDigit</a>, <a href="#a9a744bc5d762669b40be5e20a99ea60b">isExperimentalExtension</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#aafe02ccc1e3c410eac85a36f70878f18">llvm::RISCVISAInfo::isSupportedExtension</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">llvm::StringRef::size</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a223dd14e7d12bc5cea01889b972a98b2">llvm::StringRef::str</a>, <a href="/web-llvm/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">llvm::Error::success</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/stringref/#a2dc80c585ad5882da8cae7b5968f7e74">llvm::StringRef::empty</a>, <a href="#a3ca5acfa0e6648c73a5143bfc0aa2ee1">findDefaultVersion</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a1881146f2dcc2ca57c9c5f77f938db9d">llvm::StringRef::getAsInteger</a>, <a href="#ad73113c3c3a7bfb64703238645f6fc1e">getError</a>, <a href="#a85dc884f90867e8bd3fc2f4839de6fdc">getErrorForInvalidExt</a>, <a href="/web-llvm/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#a12d4f37888b638bcbd9fc0201492c776">isDigit</a>, <a href="#a9a744bc5d762669b40be5e20a99ea60b">isExperimentalExtension</a>, <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#aafe02ccc1e3c410eac85a36f70878f18">llvm::RISCVISAInfo::isSupportedExtension</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">llvm::StringRef::size</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a223dd14e7d12bc5cea01889b972a98b2">llvm::StringRef::str</a> and <a href="/web-llvm/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">llvm::Error::success</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#afcd8b4904b4e18e880c419386dfe4d85">llvm::RISCVISAInfo::isSupportedExtensionWithVersion</a> and <a href="/web-llvm/docs/api/classes/llvm/riscvisainfo/#aa18f12a3fd9c95854df97891e6d2c338">llvm::RISCVISAInfo::parseArchString</a>.</p>
@@ -1231,6 +1231,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

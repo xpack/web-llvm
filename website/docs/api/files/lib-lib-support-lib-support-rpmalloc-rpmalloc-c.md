@@ -2196,12 +2196,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afc6937f23f518f51f693f7d034100f9c">ENABLE_UNLIMITED_CACHE</a>&nbsp;&nbsp;&nbsp;0</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a332c120a308f14d816279e491337fe62">ENABLE_UNLIMITED_CACHE</a>&nbsp;&nbsp;&nbsp;0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Enable unlimited global cache (no unmapping until finalization) <a href="#afc6937f23f518f51f693f7d034100f9c">More...</a></p>
+<p>Enable unlimited global cache (no unmapping until finalization) <a href="#a332c120a308f14d816279e491337fe62">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -2210,12 +2210,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a74abd212deb430c20e3bbf5cadbe075c">ENABLE_ADAPTIVE_THREAD_CACHE</a>&nbsp;&nbsp;&nbsp;0</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aadaeb305f7ba36c74ea617427892d967">ENABLE_ADAPTIVE_THREAD_CACHE</a>&nbsp;&nbsp;&nbsp;0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Enable adaptive thread cache size based on use heuristics. <a href="#a74abd212deb430c20e3bbf5cadbe075c">More...</a></p>
+<p>Enable adaptive thread cache size based on use heuristics. <a href="#aadaeb305f7ba36c74ea617427892d967">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -8003,7 +8003,7 @@ keywords:
 </div>
 </div>
 
-### ENABLE\_ADAPTIVE\_THREAD\_CACHE {#a74abd212deb430c20e3bbf5cadbe075c}
+### ENABLE\_ADAPTIVE\_THREAD\_CACHE {#aadaeb305f7ba36c74ea617427892d967}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -8203,7 +8203,7 @@ keywords:
 </div>
 </div>
 
-### ENABLE\_UNLIMITED\_CACHE {#afc6937f23f518f51f693f7d034100f9c}
+### ENABLE\_UNLIMITED\_CACHE {#a332c120a308f14d816279e491337fe62}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -9242,6 +9242,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

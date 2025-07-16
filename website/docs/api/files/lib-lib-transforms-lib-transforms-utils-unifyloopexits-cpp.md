@@ -318,7 +318,7 @@ keywords:
 <p>Definition at line 200 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/unifyloopexits-cpp">UnifyLoopExits.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/classes/llvm/loopinfobase/#a8a10d542acf3418b2a5bfefb351829c0">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::getLoopsInPreorder</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonhardwareloops-cpp/#ada7c1594a393ede3ce32602d64d7ddb2">Loops</a> and <a href="#a91d961bc77edfba4fb721c6637c0c6ed">unifyLoopExits</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/classes/llvm/loopinfobase/#a8a10d542acf3418b2a5bfefb351829c0">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::getLoopsInPreorder</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonhardwareloops-cpp/#ada7c1594a393ede3ce32602d64d7ddb2">Loops</a> and <a href="#a91d961bc77edfba4fb721c6637c0c6ed">unifyLoopExits</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/anonymous-unifyloopexits-cpp-/unifyloopexitslegacypass/#a414a4f7334ec69f73a1b1cbe9de8f52a">anonymous{UnifyLoopExits.cpp}::UnifyLoopExitsLegacyPass::runOnFunction</a>.</p>
@@ -514,6 +514,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

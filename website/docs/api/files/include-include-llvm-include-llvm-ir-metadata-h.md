@@ -526,7 +526,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59a8031b78f28120baafcfc27852d8bb">HANDLE_METADATA_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a104729ab58048fa14b41c06fb568a8c8">HANDLE_METADATA_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -565,7 +565,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4060cc153ca27a61adf713615161fba3">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab32240e87649f32aceeda23ea6499c4c">HANDLE_MDNODE_LEAF</a>(CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -578,7 +578,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0c4fd3d01b7852acde81aefeb633385d">HANDLE_METADATA</a>(CLASS)&nbsp;&nbsp;&nbsp;  using CLASS##Array = MDTupleTypedArrayWrapper&lt;CLASS&gt;;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa9f9bab2cb04be19c33e1ea0c5efe7ff">HANDLE_METADATA</a>(CLASS)&nbsp;&nbsp;&nbsp;  using CLASS##Array = MDTupleTypedArrayWrapper&lt;CLASS&gt;;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -653,7 +653,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_MDNODE\_LEAF {#a4060cc153ca27a61adf713615161fba3}
+### HANDLE\_MDNODE\_LEAF {#ab32240e87649f32aceeda23ea6499c4c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -712,7 +712,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_METADATA {#a0c4fd3d01b7852acde81aefeb633385d}
+### HANDLE\_METADATA {#aa9f9bab2cb04be19c33e1ea0c5efe7ff}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -762,7 +762,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_METADATA\_LEAF {#a59a8031b78f28120baafcfc27852d8bb}
+### HANDLE\_METADATA\_LEAF {#a104729ab58048fa14b41c06fb568a8c8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -803,6 +803,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -79,7 +79,7 @@ struct llvm::ShouldRunExtraPasses::Result { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::ShouldRunExtraPasses&lt; MarkerTy &gt;::Result::invalidate (<a href="/web-llvm/docs/api/classes/llvm/function">Function</a> &amp; F, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, FunctionAnalysisManager::Invalidator &amp;)</td>
+<td class="doxyMemberName">bool llvm::ShouldRunExtraPasses&lt; MarkerTy &gt;::Result::invalidate (<a href="/web-llvm/docs/api/classes/llvm/function">Function</a> &amp; F, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp; PA, FunctionAnalysisManager::Invalidator &amp;)</td>
 </tr>
 </table>
 </td>
@@ -98,7 +98,7 @@ struct llvm::ShouldRunExtraPasses::Result { ... }
 <p>Definition at line 28 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/extrapassmanager-h">ExtraPassManager.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aa7a1b769f9c57010cc41d9c3bb9d39c6">llvm::PreservedAnalyses::getChecker</a> and <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a48ecc8b3108b550239565f675adfd6f8">llvm::PreservedAnalyses::PreservedAnalysisChecker::preservedWhenStateless</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.</p>
 
 </div>
 </div>
@@ -112,7 +112,7 @@ struct llvm::ShouldRunExtraPasses::Result { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::ShouldRunExtraPasses&lt; MarkerTy &gt;::Result::invalidate (<a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> &amp; L, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, LoopAnalysisManager::Invalidator &amp;)</td>
+<td class="doxyMemberName">bool llvm::ShouldRunExtraPasses&lt; MarkerTy &gt;::Result::invalidate (<a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> &amp; L, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp; PA, LoopAnalysisManager::Invalidator &amp;)</td>
 </tr>
 </table>
 </td>
@@ -130,9 +130,6 @@ struct llvm::ShouldRunExtraPasses::Result { ... }
 
 <p>Definition at line 36 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/extrapassmanager-h">ExtraPassManager.h</a>.</p>
 
-
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aa7a1b769f9c57010cc41d9c3bb9d39c6">llvm::PreservedAnalyses::getChecker</a> and <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a48ecc8b3108b550239565f675adfd6f8">llvm::PreservedAnalyses::PreservedAnalysisChecker::preservedWhenStateless</a>.</p>
-
 </div>
 </div>
 
@@ -148,6 +145,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

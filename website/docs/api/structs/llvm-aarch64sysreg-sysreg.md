@@ -189,6 +189,9 @@ struct llvm::AArch64SysReg::SysReg { ... }
 
 <p>Definition at line 751 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/utils/aarch64baseinfo-h">AArch64BaseInfo.h</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a8997d907b1de0e1b433c59102335b06a">llvm::AArch64InstrInfo::expandPostRAPseudo</a>.</p>
+
 </div>
 </div>
 
@@ -307,6 +310,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

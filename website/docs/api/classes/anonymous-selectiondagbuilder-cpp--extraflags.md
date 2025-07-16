@@ -132,7 +132,7 @@ class anonymous{SelectionDAGBuilder.cpp}::ExtraFlags { ... }
 <p>Definition at line 9891 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/selectiondagbuilder-cpp">SelectionDAGBuilder.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370abff974c258dde829c1c6b6f32667be3a">llvm::InlineAsm::Extra_AsmDialect</a>, <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370a68a61079919e61d3af1002124c2f1ff9">llvm::InlineAsm::Extra_HasSideEffects</a>, <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370ada6152484586a08fa711d4b0d44c87e5">llvm::InlineAsm::Extra_IsAlignStack</a> and <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370a9921f5d5868939f49675e7fe34d1be70">llvm::InlineAsm::Extra_IsConvergent</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370abff974c258dde829c1c6b6f32667be3a">llvm::InlineAsm::Extra_AsmDialect</a>, <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370a68a61079919e61d3af1002124c2f1ff9">llvm::InlineAsm::Extra_HasSideEffects</a>, <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370ada6152484586a08fa711d4b0d44c87e5">llvm::InlineAsm::Extra_IsAlignStack</a> and <a href="/web-llvm/docs/api/classes/llvm/inlineasm/#af263df97504e0800bba5e552246b7370a9921f5d5868939f49675e7fe34d1be70">llvm::InlineAsm::Extra_IsConvergent</a>.</p>
 
 </div>
 </div>
@@ -249,6 +249,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

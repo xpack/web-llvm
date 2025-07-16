@@ -672,7 +672,7 @@ class llvm::ELFAttributeParser { ... }
 <p>Declaration at line 60 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/elfattributeparser-h">ELFAttributeParser.h</a>, definition at line 191 of file <a href="/web-llvm/docs/api/files/lib/lib/support/elfattributeparser-cpp">ELFAttributeParser.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">llvm::createStringError</a>, <a href="#a450168715df2bd34e4977ecff04bde9c">cursor</a>, <a href="#aa099e08a0997abcb0f937dffb3957418">de</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elfattrs/#a98edb75fed695278964e1ea77f18859eae7742b85dba4e5f75602e8141161f3aa">llvm::ELFAttrs::Format_Version</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">llvm::invalid_argument</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114">llvm::little</a>, <a href="#a02d8a789e50e085fa66aac9180bb03f3">parseSubsection</a>, <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">llvm::ArrayRef&lt; T &gt;::size</a>, <a href="#a967d07f3cace8ee5af66bff6585e03e7">sw</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3beda524b0772ca36035db4399a6a571">llvm::utohexstr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">llvm::createStringError</a>, <a href="#a450168715df2bd34e4977ecff04bde9c">cursor</a>, <a href="#aa099e08a0997abcb0f937dffb3957418">de</a>, <a href="/web-llvm/docs/api/namespaces/llvm/elfattrs/#a98edb75fed695278964e1ea77f18859eae7742b85dba4e5f75602e8141161f3aa">llvm::ELFAttrs::Format_Version</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">llvm::invalid_argument</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114">llvm::little</a>, <a href="#a02d8a789e50e085fa66aac9180bb03f3">parseSubsection</a>, <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">llvm::ArrayRef&lt; T &gt;::size</a> and <a href="#a967d07f3cace8ee5af66bff6585e03e7">sw</a>.</p>
 
 </div>
 </div>
@@ -1188,6 +1188,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

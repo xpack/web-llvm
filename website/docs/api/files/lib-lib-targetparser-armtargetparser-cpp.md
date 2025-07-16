@@ -121,7 +121,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aabe89a04d653c539596c27503e9f25e6">ARM_CPU_NAME</a>(NAME, ID, DEFAULT_FPU, IS_DEFAULT, DEFAULT_EXT)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad1f9e19ecc658ace8903ded36a6c4077">ARM_CPU_NAME</a>(NAME, ID, DEFAULT_FPU, IS_DEFAULT, DEFAULT_EXT)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -347,7 +347,7 @@ keywords:
 </div>
 </div>
 
-### ARM\_CPU\_NAME {#aabe89a04d653c539596c27503e9f25e6}
+### ARM\_CPU\_NAME {#ad1f9e19ecc658ace8903ded36a6c4077}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -386,6 +386,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

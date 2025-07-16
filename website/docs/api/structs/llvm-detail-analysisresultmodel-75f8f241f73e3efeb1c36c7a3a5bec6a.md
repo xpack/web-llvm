@@ -405,7 +405,7 @@ struct llvm::detail::AnalysisResultModel&lt;IRUnitT, PassT, ResultT, Invalidator
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool llvm::detail::AnalysisResultModel&lt; IRUnitT, PassT, ResultT, InvalidatorT, false &gt;::invalidate (IRUnitT &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, InvalidatorT &amp;)</td>
+<td class="doxyMemberName">bool llvm::detail::AnalysisResultModel&lt; IRUnitT, PassT, ResultT, InvalidatorT, false &gt;::invalidate (IRUnitT &amp;, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PreservedAnalyses &amp; PA, InvalidatorT &amp;)</td>
 </tr>
 </table>
 </td>
@@ -423,6 +423,9 @@ struct llvm::detail::AnalysisResultModel&lt;IRUnitT, PassT, ResultT, Invalidator
 <p>The model bases invalidation solely on being in the preserved set.</p>
 
 <p>Definition at line 224 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerinternal-h">PassManagerInternal.h</a>.</p>
+
+
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a08b3a015e75a41de9144da6e15f5ea2d">llvm::getChecker</a>.</p>
 
 </div>
 </div>
@@ -474,6 +477,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

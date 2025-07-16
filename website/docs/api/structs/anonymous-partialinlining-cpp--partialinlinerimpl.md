@@ -411,7 +411,7 @@ struct anonymous{PartialInlining.cpp}::PartialInlinerImpl { ... }
 <p>Definition at line 198 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/partialinlining-cpp">PartialInlining.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/partialinlining-cpp/#a79492acd4f1ced92a00d5cc08ede4955">DisablePartialInlining</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a1fa6fb3707c37fd9468795bc04580f5d">unswitchFunction</a> and <a href="/web-llvm/docs/api/classes/llvm/value/#a9d7de807ebdfe1819df3ff6cb0f16158">llvm::Value::use_empty</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/partialinlining-cpp/#a79492acd4f1ced92a00d5cc08ede4955">DisablePartialInlining</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a1fa6fb3707c37fd9468795bc04580f5d">unswitchFunction</a> and <a href="/web-llvm/docs/api/classes/llvm/value/#a9d7de807ebdfe1819df3ff6cb0f16158">llvm::Value::use_empty</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/partialinlinerpass/#a022b0aa595cef197b5b0c655cd18ad9c">llvm::PartialInlinerPass::run</a>.</p>
@@ -982,6 +982,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

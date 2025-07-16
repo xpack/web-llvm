@@ -325,7 +325,7 @@ class llvm::dwarf_linker::DWARFFile { ... }
 <p>Definition at line 39 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/dwarflinker/dwarffile-h">DWARFFile.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a5d779ebf8d97beda3616fa4d7997e355">llvm::dwarf_linker::parallel::CompileUnit::cloneAndEmitLineTable</a>, <a href="#ad7d429f936c45567b926e289bfc8c9b5">DWARFFile</a> and <a href="#a8a558003f2fe3f9ae866f84c04b70d1d">unload</a>.</p>
+<p>Referenced by <a href="#ad7d429f936c45567b926e289bfc8c9b5">DWARFFile</a> and <a href="#a8a558003f2fe3f9ae866f84c04b70d1d">unload</a>.</p>
 
 </div>
 </div>
@@ -398,6 +398,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -108,7 +108,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">PowerPC TLS Dynamic <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PowerPC TLS Dynamic Call</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -121,7 +121,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">PowerPC TLS Dynamic <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PowerPC TLS Dynamic Call</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac65a7c2f24a6388f7a72b630b6510c73">false</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -168,7 +168,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">INITIALIZE_PASS_BEGIN (PPCTLSDynamicCall, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/genericcycleimpl-h/#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>, "PowerPC TLS Dynamic <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> Fixup", false, false)</td>
+<td class="doxyMemberName">INITIALIZE_PASS_BEGIN (PPCTLSDynamicCall, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/genericcycleimpl-h/#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>, "PowerPC TLS Dynamic Call Fixup", false, false)</td>
 </tr>
 </table>
 </td>
@@ -306,6 +306,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

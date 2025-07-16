@@ -244,7 +244,7 @@ class llvm::object::BuildIDFetcher { ... }
 <p>Declaration at line 46 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/object/buildid-h">BuildID.h</a>, definition at line 68 of file <a href="/web-llvm/docs/api/files/lib/lib/object/buildid-cpp">BuildID.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#acb80894344c78dacf8d5ff8c23be697d">llvm::sys::path::append</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#a645a607ffcccb12f16a5736db991e7d9">llvm::sys::fs::exists</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#abec19670f96ed423c2e4d4f10a4c6975">llvm::toHex</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sys/path/#acb80894344c78dacf8d5ff8c23be697d">llvm::sys::path::append</a> and <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#a645a607ffcccb12f16a5736db991e7d9">llvm::sys::fs::exists</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelator/#ad3a7b88fce11b12853e7b60a06a033ec">llvm::InstrProfCorrelator::get</a> and <a href="/web-llvm/docs/api/classes/llvm/coverage/coveragemapping/#a91d6d8d5af0b8ba44a006860ef830113">llvm::coverage::CoverageMapping::load</a>.</p>
@@ -296,6 +296,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

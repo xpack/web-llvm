@@ -173,7 +173,7 @@ keywords:
 <p>Definition at line 499 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/libcallsshrinkwrap-cpp">LibCallsShrinkWrap.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/genericdomtreeupdater/#a0ec32b69ca3c12883ee03ad1c2bd92d9">llvm::GenericDomTreeUpdater&lt; DerivedT, DomTreeT, PostDomTreeT &gt;::getDomTree</a>, <a href="/web-llvm/docs/api/classes/anonymous-libcallsshrinkwrap-cpp-/libcallsshrinkwrap/#a0a1c51a56cee64fc091500aec86ccc23">anonymous{LibCallsShrinkWrap.cpp}::LibCallsShrinkWrap::LibCallsShrinkWrap</a> and <a href="/web-llvm/docs/api/classes/llvm/dominatortreebase/#a1f08f2925fec05b265e540d29066b9c8">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::verify</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/genericdomtreeupdater/#a0ec32b69ca3c12883ee03ad1c2bd92d9">llvm::GenericDomTreeUpdater&lt; DerivedT, DomTreeT, PostDomTreeT &gt;::getDomTree</a>, <a href="/web-llvm/docs/api/classes/anonymous-libcallsshrinkwrap-cpp-/libcallsshrinkwrap/#a0a1c51a56cee64fc091500aec86ccc23">anonymous{LibCallsShrinkWrap.cpp}::LibCallsShrinkWrap::LibCallsShrinkWrap</a> and <a href="/web-llvm/docs/api/classes/llvm/dominatortreebase/#a1f08f2925fec05b265e540d29066b9c8">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::verify</a>.</p>
 
 </div>
 </div>
@@ -263,6 +263,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

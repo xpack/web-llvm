@@ -303,7 +303,7 @@ struct llvm::PGOIndirectCallVisitor { ... }
 <p>Definition at line 63 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/indirectcallvisitor-h">IndirectCallVisitor.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#a4667486e007a0f20654f5e8e23d4dcc1">IndirectCalls</a>, <a href="#a1b01617366e39095f86210b17a1a8424a75f1d873688b0e72f4f4bde8e96ec560">kVTableVal</a>, <a href="#aaea7a9b8cbd43a3307b49df4662ba59f">ProfiledAddresses</a> and <a href="#aba025734aa83b5cacf35c35bd572ee0e">tryGetVTableInstruction</a>.</p>
+<p>References <a href="#a4667486e007a0f20654f5e8e23d4dcc1">IndirectCalls</a>, <a href="#a1b01617366e39095f86210b17a1a8424a75f1d873688b0e72f4f4bde8e96ec560">kVTableVal</a>, <a href="#aaea7a9b8cbd43a3307b49df4662ba59f">ProfiledAddresses</a> and <a href="#aba025734aa83b5cacf35c35bd572ee0e">tryGetVTableInstruction</a>.</p>
 
 </div>
 </div>
@@ -456,6 +456,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -162,13 +162,13 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae7c1fa2a94f420cac743955c3db73b28">getReturnAttrs</a> (FastISel::CallLoweringInfo &amp;CLI)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Returns an AttributeList representing the attributes applied to the return value of the given call. <a href="#ae7c1fa2a94f420cac743955c3db73b28">More...</a></p>
+<p>Returns an <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> representing the attributes applied to the return value of the given call. <a href="#ae7c1fa2a94f420cac743955c3db73b28">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -261,12 +261,12 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Returns an AttributeList representing the attributes applied to the return value of the given call.</p>
+<p>Returns an <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> representing the attributes applied to the return value of the given call.</p>
 
 <p>Definition at line 943 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/fastisel-cpp">FastISel.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/type/#a909eca4ba9e5eefc203c8e3770bdab25">llvm::Type::getContext</a>, <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#aa83a71e99909a3ee88f1d987985768d3">llvm::FastISel::CallLoweringInfo::IsInReg</a>, <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#a1e3d7941faeb1a9d4d95829e6639af2b">llvm::FastISel::CallLoweringInfo::RetSExt</a>, <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#a35d74a4f3f503bb98e00ece4a618b2cf">llvm::FastISel::CallLoweringInfo::RetTy</a> and <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#a01c98b4c7e3e37427d5ec2726a0c3f4c">llvm::FastISel::CallLoweringInfo::RetZExt</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4ac0d01bf5ca24e679de53067c8f6a44">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/type/#a909eca4ba9e5eefc203c8e3770bdab25">llvm::Type::getContext</a>, <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#aa83a71e99909a3ee88f1d987985768d3">llvm::FastISel::CallLoweringInfo::IsInReg</a>, <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#a1e3d7941faeb1a9d4d95829e6639af2b">llvm::FastISel::CallLoweringInfo::RetSExt</a>, <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#a35d74a4f3f503bb98e00ece4a618b2cf">llvm::FastISel::CallLoweringInfo::RetTy</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68a167699508089d6cf7e6afe448d82e6df">llvm::AttributeList::ReturnIndex</a> and <a href="/web-llvm/docs/api/structs/llvm/fastisel/callloweringinfo/#a01c98b4c7e3e37427d5ec2726a0c3f4c">llvm::FastISel::CallLoweringInfo::RetZExt</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/fastisel/#a284bf291d22c5fe81d9cae4b4f1a4fea">llvm::FastISel::lowerCallTo</a>.</p>
@@ -417,6 +417,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

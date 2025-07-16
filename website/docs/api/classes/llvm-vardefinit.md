@@ -964,7 +964,7 @@ class llvm::VarDefInit { ... }
 <p>Declaration at line 1328 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/tablegen/record-h">Record.h</a>, definition at line 2418 of file <a href="/web-llvm/docs/api/files/lib/lib/tablegen/record-cpp">Record.cpp</a>.</p>
 
 
-<p>References <a href="#a1869ebd6bb6c2ff3113639bf28f3a8c7">args</a>, <a href="#a05df2bce48cf44626f7f148c82d44a67">args_size</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/trackunresolvedresolver/#a4b6e32fbe30fb57084bb9d05895a27bd">llvm::TrackUnresolvedResolver::foundUnresolved</a>, <a href="#a79b06bf58989430bbbad88e098ce32b6">get</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a499ea32ca1b8d16cedfe01d1e5b08f29">llvm::SmallVectorImpl&lt; T &gt;::reserve</a>.</p>
+<p>References <a href="#a1869ebd6bb6c2ff3113639bf28f3a8c7">args</a>, <a href="#a05df2bce48cf44626f7f148c82d44a67">args_size</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/trackunresolvedresolver/#a4b6e32fbe30fb57084bb9d05895a27bd">llvm::TrackUnresolvedResolver::foundUnresolved</a>, <a href="#a79b06bf58989430bbbad88e098ce32b6">get</a>, <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back</a> and <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#a499ea32ca1b8d16cedfe01d1e5b08f29">llvm::SmallVectorImpl&lt; T &gt;::reserve</a>.</p>
 
 </div>
 </div>
@@ -1195,6 +1195,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

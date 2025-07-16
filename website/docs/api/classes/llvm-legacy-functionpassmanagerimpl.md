@@ -465,7 +465,7 @@ class llvm::legacy::FunctionPassManagerImpl { ... }
 <p>Definition at line 282 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/legacypassmanager-cpp">LegacyPassManager.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#a5d3dbe08c733714a84c9f79714007327">llvm::FPPassManager::doFinalization</a>, <a href="#a257ad4665a2a3c1c521dbbdc5f9c5882">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager::getImmutablePasses</a> and <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#a5d3dbe08c733714a84c9f79714007327">llvm::FPPassManager::doFinalization</a>, <a href="#a257ad4665a2a3c1c521dbbdc5f9c5882">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager::getImmutablePasses</a> and <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-legacypassmanager-cpp-/mppassmanager/#a15f0d5cca56f2c4cc4f59bc85803233a">anonymous{LegacyPassManager.cpp}::MPPassManager::runOnModule</a>.</p>
@@ -501,7 +501,7 @@ class llvm::legacy::FunctionPassManagerImpl { ... }
 <p>Definition at line 278 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/legacypassmanager-cpp">LegacyPassManager.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#a1ea063b9aef63a724f2f14b2e8d2be0e">llvm::FPPassManager::doInitialization</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#a9bcf6682702cbde1eeeb006b7e49cf62">llvm::PMTopLevelManager::dumpArguments</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#aa58716ef5ab4c044f1f90f257bf91e6a">llvm::PMTopLevelManager::dumpPasses</a>, <a href="#a257ad4665a2a3c1c521dbbdc5f9c5882">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager::getImmutablePasses</a> and <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#a1ea063b9aef63a724f2f14b2e8d2be0e">llvm::FPPassManager::doInitialization</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#a9bcf6682702cbde1eeeb006b7e49cf62">llvm::PMTopLevelManager::dumpArguments</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#aa58716ef5ab4c044f1f90f257bf91e6a">llvm::PMTopLevelManager::dumpPasses</a>, <a href="#a257ad4665a2a3c1c521dbbdc5f9c5882">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager::getImmutablePasses</a> and <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-legacypassmanager-cpp-/mppassmanager/#a15f0d5cca56f2c4cc4f59bc85803233a">anonymous{LegacyPassManager.cpp}::MPPassManager::runOnModule</a>.</p>
@@ -770,7 +770,7 @@ class llvm::legacy::FunctionPassManagerImpl { ... }
 <p>Definition at line 274 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/legacypassmanager-cpp">LegacyPassManager.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#af50df32b0a6280a411aaadd15ee8932d">llvm::FPPassManager::cleanup</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a257ad4665a2a3c1c521dbbdc5f9c5882">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad54000cb15d4de5f1cccee55f29e6ab1">llvm::PMTopLevelManager::initializeAllAnalysisInfo</a> and <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#a0dec4e6b40dec12d8c6a17040ee73021">llvm::FPPassManager::runOnFunction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#af50df32b0a6280a411aaadd15ee8932d">llvm::FPPassManager::cleanup</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#a257ad4665a2a3c1c521dbbdc5f9c5882">getContainedManager</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad3b4cd4b801ce3601afffa97acc8991d">llvm::PMTopLevelManager::getNumContainedManagers</a>, <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad54000cb15d4de5f1cccee55f29e6ab1">llvm::PMTopLevelManager::initializeAllAnalysisInfo</a> and <a href="/web-llvm/docs/api/classes/llvm/fppassmanager/#a0dec4e6b40dec12d8c6a17040ee73021">llvm::FPPassManager::runOnFunction</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-legacypassmanager-cpp-/mppassmanager/#a887a8078ca0523b9494da138a800bb65">anonymous{LegacyPassManager.cpp}::MPPassManager::getOnTheFlyPass</a>.</p>
@@ -896,6 +896,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

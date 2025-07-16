@@ -431,7 +431,7 @@ class llvm::TargetLoweringObjectFileWasm { ... }
 <p>Declaration at line 237 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetloweringobjectfileimpl-h">TargetLoweringObjectFileImpl.h</a>, definition at line 2293 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/targetloweringobjectfileimpl-cpp">TargetLoweringObjectFileImpl.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#afcda39b4059eca86c10397b7a938a729">llvm::MCObjectFileInfo::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/sectionkind/#a587678b6051996e25d2bd6ebce323c9c">llvm::SectionKind::getData</a>, <a href="/web-llvm/docs/api/classes/llvm/mccontext/#a354ee5b1baec10051b0d9da350bfe027">llvm::MCContext::getWasmSection</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile/#a6dce7140ff1418f0f4e2efbe2f474f1c">llvm::TargetLoweringObjectFile::StaticCtorSection</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#afcda39b4059eca86c10397b7a938a729">llvm::MCObjectFileInfo::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/sectionkind/#a587678b6051996e25d2bd6ebce323c9c">llvm::SectionKind::getData</a>, <a href="/web-llvm/docs/api/classes/llvm/mccontext/#a354ee5b1baec10051b0d9da350bfe027">llvm::MCContext::getWasmSection</a> and <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile/#a6dce7140ff1418f0f4e2efbe2f474f1c">llvm::TargetLoweringObjectFile::StaticCtorSection</a>.</p>
 
 </div>
 </div>
@@ -561,7 +561,7 @@ class llvm::TargetLoweringObjectFileWasm { ... }
 <p>Declaration at line 230 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetloweringobjectfileimpl-h">TargetLoweringObjectFileImpl.h</a>, definition at line 2236 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/targetloweringobjectfileimpl-cpp">TargetLoweringObjectFileImpl.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#afcda39b4059eca86c10397b7a938a729">llvm::MCObjectFileInfo::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile/#a2156a9e22505242a9118da71e8054269">llvm::TargetLoweringObjectFile::getMangler</a>, <a href="/web-llvm/docs/api/classes/llvm/globalobject/#a8dade004a4e4da60bc0f49eb51176ef4">llvm::GlobalObject::hasComdat</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/targetloweringobjectfileimpl-cpp/#a5bfdd88bac067b42c86732805b14788b">selectWasmSectionForGlobal</a> and <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile/#a4ef15b6d500629e31fb3787b7a0d7bb0">llvm::TargetLoweringObjectFile::TM</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#afcda39b4059eca86c10397b7a938a729">llvm::MCObjectFileInfo::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile/#a2156a9e22505242a9118da71e8054269">llvm::TargetLoweringObjectFile::getMangler</a>, <a href="/web-llvm/docs/api/classes/llvm/globalobject/#a8dade004a4e4da60bc0f49eb51176ef4">llvm::GlobalObject::hasComdat</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report_fatal_error</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/targetloweringobjectfileimpl-cpp/#a5bfdd88bac067b42c86732805b14788b">selectWasmSectionForGlobal</a> and <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile/#a4ef15b6d500629e31fb3787b7a0d7bb0">llvm::TargetLoweringObjectFile::TM</a>.</p>
 
 
 <p>Referenced by <a href="#ad7fddd197449964ffb791c5a7e1900ec">getExplicitSectionGlobal</a>.</p>
@@ -676,6 +676,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

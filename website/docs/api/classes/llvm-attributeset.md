@@ -1243,6 +1243,9 @@ class llvm::AttributeSet { ... }
 
 <p>Declaration at line 425 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1123 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a704aa0a94c0e6bf8fd60e6e4e463e93d">llvm::AttributeList::getParamAlignment</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a9bb1595f5c255bb9ec836172ad5537e9">llvm::AttributeList::getRetAlignment</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/scalarizemaskedmemintrin-cpp/#a5c59325f9c3c1526f4439392c892fd41">optimizeCallInst</a>.</p>
+
 </div>
 </div>
 
@@ -1271,6 +1274,9 @@ class llvm::AttributeSet { ... }
 
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a264176188c0aadccd3ca5b6929b5a2e1a88183b946cc5f0e8c96b2e66e1c74a7e">llvm::Unknown</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a50abfb2dceb5d84bcbf1cf263e33d7d9">llvm::AttributeList::getAllocKind</a>.</p>
+
 </div>
 </div>
 
@@ -1295,6 +1301,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Declaration at line 435 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1164 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/argumentpromotion-cpp/#a48b0c9b087f506b1c0071e7da6054e0f">doPromotion</a>.</p>
 
 </div>
 </div>
@@ -1322,7 +1331,7 @@ class llvm::AttributeSet { ... }
 <p>Declaration at line 444 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1198 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
 
-<p>Referenced by <a href="#af6ce36dbf14e9ac50946fb22b1c2bca2">dump</a>.</p>
+<p>Referenced by <a href="#af6ce36dbf14e9ac50946fb22b1c2bca2">dump</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a917739f8f62442b8fea20bbe72cab891">llvm::AttributeList::getAsString</a>.</p>
 
 </div>
 </div>
@@ -1353,7 +1362,7 @@ class llvm::AttributeSet { ... }
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343af2bbdf9f72c085adc4d0404e370f0f4c">llvm::Attribute</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#a819df2aa3d544e7dd0d23b7504d5cbe6">addIfNotExistent</a>, <a href="#a63d9b863a7b6781a87890f1474b55150">intersectWith</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3e175904cc80dad69e662dd284175091">llvm::typeIncompatible</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#a819df2aa3d544e7dd0d23b7504d5cbe6">addIfNotExistent</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa13d8e07ad2d8a1e2cbc5e8baa5d4c60">llvm::AttributeList::getAttributeAtIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab6b2a026f921a5c932f3320ede3e19ac">llvm::AttributeList::getAttributeAtIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae6559a2babd0e7bd0f96d7116fb49940">llvm::AttributeList::getParamRange</a>, <a href="#a63d9b863a7b6781a87890f1474b55150">intersectWith</a> and <a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs/#ab2dcaa046e6a38983e74ce28a120ce79">llvm::AttributeFuncs::typeIncompatible</a>.</p>
 
 </div>
 </div>
@@ -1408,6 +1417,9 @@ class llvm::AttributeSet { ... }
 
 <p>Declaration at line 431 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1139 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ada3107abfa5601f959a5403190d230f8">llvm::AttributeList::getParamByRefType</a>.</p>
+
 </div>
 </div>
 
@@ -1432,6 +1444,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Declaration at line 429 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1143 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab58adac46c3ade432914ab977a69e17e">llvm::AttributeList::getParamByValType</a>.</p>
 
 </div>
 </div>
@@ -1486,6 +1501,9 @@ class llvm::AttributeSet { ... }
 
 <p>Declaration at line 427 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1131 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a62f9460daf3f10c40cbeae0fd222cbd9">llvm::AttributeList::getParamDereferenceableBytes</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#abda2f1696e90762ee9b7b64065c64969">llvm::AttributeList::getRetDereferenceableBytes</a>.</p>
+
 </div>
 </div>
 
@@ -1510,6 +1528,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Declaration at line 428 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1135 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac2ac94e810bcb4e307b82617c2d1f22d">llvm::AttributeList::getParamDereferenceableOrNullBytes</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae6b7413239e3f901328769ef2b5a23b0">llvm::AttributeList::getRetDereferenceableOrNullBytes</a>.</p>
 
 </div>
 </div>
@@ -1536,6 +1557,9 @@ class llvm::AttributeSet { ... }
 
 <p>Declaration at line 434 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1159 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a9d429f5f04915251440ffdafeb462616">llvm::AttributeList::getParamElementType</a>.</p>
+
 </div>
 </div>
 
@@ -1560,6 +1584,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Declaration at line 433 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1155 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a7b3b0b8961a38c7735a4b9660c42be7b">llvm::AttributeList::getParamInAllocaType</a>.</p>
 
 </div>
 </div>
@@ -1590,7 +1617,7 @@ class llvm::AttributeSet { ... }
 <p>Reference <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#aff771abf487136aeebb6862871d5e715">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::unknown</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#a819df2aa3d544e7dd0d23b7504d5cbe6">addIfNotExistent</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#a819df2aa3d544e7dd0d23b7504d5cbe6">addIfNotExistent</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#afb984e3fb006d09d90fcc934789cfbd8">llvm::AttributeList::getMemoryEffects</a>.</p>
 
 </div>
 </div>
@@ -1619,6 +1646,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a76921eddf6329af860916f3278ef1d1da4759a508982cd525d9f17024f09aea22">llvm::fcNone</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#acc215f164f494921945f7cb648056c56">llvm::AttributeList::getParamNoFPClass</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a7d05f2b6b9067ce92dc32f2f6443df5d">llvm::AttributeList::getRetNoFPClass</a>.</p>
 
 </div>
 </div>
@@ -1670,6 +1700,9 @@ class llvm::AttributeSet { ... }
 
 <p>Declaration at line 432 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1151 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa27e1eb608ff6d7e99bbba7d7aaf5b71">llvm::AttributeList::getParamPreallocatedType</a>.</p>
+
 </div>
 </div>
 
@@ -1695,6 +1728,9 @@ class llvm::AttributeSet { ... }
 
 <p>Declaration at line 426 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1127 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab0eaea88fb8f6bc99c7547113ec906bc">llvm::AttributeList::getFnStackAlignment</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab9095b759fb33104bdcafec14e2b15c1">llvm::AttributeList::getParamStackAlignment</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3a5a24c43e105c203f779ca9a0ae0093">llvm::AttributeList::getRetStackAlignment</a>.</p>
+
 </div>
 </div>
 
@@ -1719,6 +1755,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Declaration at line 430 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1147 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a0e3b1e69f26a3784d71f161942e31829">llvm::AttributeList::getParamStructRetType</a>.</p>
 
 </div>
 </div>
@@ -1747,6 +1786,9 @@ class llvm::AttributeSet { ... }
 
 
 <p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a6cdf47ba1fa5831d7c2897bc3aed77b8a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a98312c308907b87211168eda9c6b605b">llvm::AttributeList::getUWTableKind</a>.</p>
 
 </div>
 </div>
@@ -1824,7 +1866,7 @@ class llvm::AttributeSet { ... }
 <p>Declaration at line 414 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 1107 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
 
-<p>Referenced by <a href="#af2b9418751d1f1f1b99e5b05d0ed7efa">addAttribute</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#a819df2aa3d544e7dd0d23b7504d5cbe6">addIfNotExistent</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#a794d6b65a466293b4ce971189b2e9ab1">llvm::GlobalVariable::hasImplicitSection</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/systemz/systemzisellowering-cpp/#a09453ddb2ea4103fd552fed3db38f794">printFunctionArgExts</a>, <a href="#a1247d3316a7816eaee459556671caab5">removeAttribute</a> and <a href="#aac0004bd4937c1de995d7fd1ef010efd">removeAttribute</a>.</p>
+<p>Referenced by <a href="#af2b9418751d1f1f1b99e5b05d0ed7efa">addAttribute</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#a819df2aa3d544e7dd0d23b7504d5cbe6">addIfNotExistent</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a09a57939ead526bbae148522e31f198d">llvm::AttributeList::hasAttributeAtIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a6590789e70f40b3d72d525bb7327dcbc">llvm::AttributeList::hasAttributeAtIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#a794d6b65a466293b4ce971189b2e9ab1">llvm::GlobalVariable::hasImplicitSection</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/systemz/systemzisellowering-cpp/#a09453ddb2ea4103fd552fed3db38f794">printFunctionArgExts</a>, <a href="#a1247d3316a7816eaee459556671caab5">removeAttribute</a> and <a href="#aac0004bd4937c1de995d7fd1ef010efd">removeAttribute</a>.</p>
 
 </div>
 </div>
@@ -1882,7 +1924,7 @@ class llvm::AttributeSet { ... }
 <p>Definition at line 411 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>.</p>
 
 
-<p>Referenced by <a href="#a46f189c4026ace551d70a16566e641b1">addAttributes</a>, <a href="#a8984085edcf095d697764f03314c7ae6">hasParentContext</a> and <a href="/web-llvm/docs/api/classes/anonymous-asmwriter-cpp-/assemblywriter/#ace495e41b614e9f54d0ae8c8ea318fcd">anonymous{AsmWriter.cpp}::AssemblyWriter::printFunction</a>.</p>
+<p>Referenced by <a href="#a46f189c4026ace551d70a16566e641b1">addAttributes</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad544515efb693b15ac9855c6be03189b">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a180523993bcaffcbbb7cca7a3fc0d51c">llvm::AttributeList::hasAttributesAtIndex</a>, <a href="#a8984085edcf095d697764f03314c7ae6">hasParentContext</a> and <a href="/web-llvm/docs/api/classes/anonymous-asmwriter-cpp-/assemblywriter/#ace495e41b614e9f54d0ae8c8ea318fcd">anonymous{AsmWriter.cpp}::AssemblyWriter::printFunction</a>.</p>
 
 </div>
 </div>
@@ -1947,7 +1989,10 @@ class llvm::AttributeSet { ... }
 <p>Declaration at line 405 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/attributes-h">Attributes.h</a>, definition at line 974 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a8cb72099c01f493de3b1b4768cddf770">begin</a>, <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="#a8d6284eaaa73040ae5829d51dbeacfe3">end</a>, <a href="#ae8ed437b15a7ca943716e5284a9cb9a6">get</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#af1c88577e9470957be5ad4e4d401146a">llvm::Attribute::getAlignment</a>, <a href="#ab50af3bf5ee8727df07c79065d61c204">getAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#af356410c6b277e5a12369be877371edb">llvm::Attribute::getCaptureInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a6fea074fd9120ff82abd8f9e0036a12a">llvm::Attribute::getKindAsEnum</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a7c68b48aeb5f2440cf65d5e8b2e16040">llvm::Attribute::getMemoryEffects</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a6b18d31b344ea210a82c4028b7684946">llvm::Attribute::getNoFPClass</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a10eb642c38648a5edb4a6bc7ce217a17">llvm::Attribute::getRange</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a1db9b109e0e28e38eb43086b679dc271">llvm::Attribute::getValueAsInt</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a9e7776eef7d7515a9288bbc4e4654388">llvm::Attribute::hasKindAsEnum</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#af3b008eee2735671b4bfdabd4df07b35">llvm::Attribute::intersectMustPreserve</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#aa586fffdd286955ca876838f11a5f6d3">llvm::Attribute::intersectWithAnd</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a11f48b3f20c58e11564df402e02a1592">llvm::Attribute::intersectWithCustom</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a3d708ef8b38a269452e88f7c0fcfa5f8">llvm::Attribute::intersectWithMin</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#ad343d2ea041d596a04db3252e3017cad">llvm::Attribute::isEnumAttrKind</a>, <a href="/web-llvm/docs/api/classes/llvm/constantrange/#a4f6242fab5145c424cee29230fefe746">llvm::ConstantRange::isFullSet</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#ac2d5f8ba4215304f89a401248abed393">llvm::Attribute::isIntAttrKind</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#adf4d22686e85732b2fef71e3c45531c6">llvm::Attribute::isValid</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">llvm::Other</a>, <a href="/web-llvm/docs/api/classes/llvm/constantrange/#aa81521f99442a5c30f9061b8c6ce795e">llvm::ConstantRange::unionWith</a> and <a href="/web-llvm/docs/api/structs/llvm/maybealign/#a06846474be3ab85f8d30c388faf3b116">llvm::MaybeAlign::valueOrOne</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a062f49b866f0e49c0dd872c2a904b5db">llvm::AttrBuilder::addAlignmentAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a59d23ba2e7eac46cbc6cd3086e013b49">llvm::AttrBuilder::addAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a39b827eb3d46a1c7c9c66905b46c2a48">llvm::AttrBuilder::addCapturesAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a6ac29dd4821e6321d0987b951582a85d">llvm::AttrBuilder::addMemoryAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a2eaea5837bb95874261fd1bca760e137">llvm::AttrBuilder::addNoFPClassAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ae84514c1d131430da5f249455d15041f">llvm::AttrBuilder::addRangeAttr</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a57bb5ff1076799c12e720e248f40a791">llvm::AttrBuilder::addRawIntAttr</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a8cb72099c01f493de3b1b4768cddf770">begin</a>, <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a>, <a href="#a8d6284eaaa73040ae5829d51dbeacfe3">end</a>, <a href="#ae8ed437b15a7ca943716e5284a9cb9a6">get</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#af1c88577e9470957be5ad4e4d401146a">llvm::Attribute::getAlignment</a>, <a href="#ab50af3bf5ee8727df07c79065d61c204">getAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#af356410c6b277e5a12369be877371edb">llvm::Attribute::getCaptureInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a6fea074fd9120ff82abd8f9e0036a12a">llvm::Attribute::getKindAsEnum</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a7c68b48aeb5f2440cf65d5e8b2e16040">llvm::Attribute::getMemoryEffects</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a6b18d31b344ea210a82c4028b7684946">llvm::Attribute::getNoFPClass</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a10eb642c38648a5edb4a6bc7ce217a17">llvm::Attribute::getRange</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a1db9b109e0e28e38eb43086b679dc271">llvm::Attribute::getValueAsInt</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a9e7776eef7d7515a9288bbc4e4654388">llvm::Attribute::hasKindAsEnum</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#af3b008eee2735671b4bfdabd4df07b35">llvm::Attribute::intersectMustPreserve</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#aa586fffdd286955ca876838f11a5f6d3">llvm::Attribute::intersectWithAnd</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a11f48b3f20c58e11564df402e02a1592">llvm::Attribute::intersectWithCustom</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#a3d708ef8b38a269452e88f7c0fcfa5f8">llvm::Attribute::intersectWithMin</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#ad343d2ea041d596a04db3252e3017cad">llvm::Attribute::isEnumAttrKind</a>, <a href="/web-llvm/docs/api/classes/llvm/constantrange/#a4f6242fab5145c424cee29230fefe746">llvm::ConstantRange::isFullSet</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#ac2d5f8ba4215304f89a401248abed393">llvm::Attribute::isIntAttrKind</a>, <a href="/web-llvm/docs/api/classes/llvm/attribute/#adf4d22686e85732b2fef71e3c45531c6">llvm::Attribute::isValid</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">llvm::Other</a>, <a href="/web-llvm/docs/api/classes/llvm/constantrange/#aa81521f99442a5c30f9061b8c6ce795e">llvm::ConstantRange::unionWith</a> and <a href="/web-llvm/docs/api/structs/llvm/maybealign/#a06846474be3ab85f8d30c388faf3b116">llvm::MaybeAlign::valueOrOne</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad67533111413cc397100c48c82291ec7">llvm::AttributeList::intersectWith</a>.</p>
 
 </div>
 </div>
@@ -2137,7 +2182,7 @@ class llvm::AttributeSet { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AttributeSet AttributeSet::get (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">AttributeSet AttributeSet::get (<a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; C, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -2159,7 +2204,7 @@ class llvm::AttributeSet { ... }
 <p>References <a href="#ae89691953facd45503846331c71859f7">AttributeSet</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">llvm::CallingConv::C</a> and <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#aea231e8710d7b9a61e424c3f0ad22e85">llvm::AttributeSetNode::get</a>.</p>
 
 
-<p>Referenced by <a href="#af2b9418751d1f1f1b99e5b05d0ed7efa">addAttribute</a>, <a href="#a415b8a189bf60e9f7f743c59408e3b95">addAttribute</a>, <a href="#a46f189c4026ace551d70a16566e641b1">addAttributes</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/inlinefunction-cpp/#af1986bc1d2d700807f4c8ef167bf6fdd">AddParamAndFnBasicAttributes</a>, <a href="/web-llvm/docs/api/structs/anonymous-wholeprogramdevirt-cpp-/devirtmodule/#a8f2e0d9db7a457156c4377449c2e0606">anonymous{WholeProgramDevirt.cpp}::DevirtModule::applyICallBranchFunnel</a>, <a href="#a63d9b863a7b6781a87890f1474b55150">intersectWith</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a90c1755a8480ebc1dcc4f05d56271b00">llvm::promoteCall</a>, <a href="#a1247d3316a7816eaee459556671caab5">removeAttribute</a>, <a href="#aac0004bd4937c1de995d7fd1ef010efd">removeAttribute</a> and <a href="#aa3392828dc2b425dbafab7dd81fae786">removeAttributes</a>.</p>
+<p>Referenced by <a href="#af2b9418751d1f1f1b99e5b05d0ed7efa">addAttribute</a>, <a href="#a415b8a189bf60e9f7f743c59408e3b95">addAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ada583c27bb2634195f2964c7e695a0b3">llvm::AttributeList::addAttributeAtIndex</a>, <a href="#a46f189c4026ace551d70a16566e641b1">addAttributes</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab58814a61429a0b976eae58a0695c206">llvm::AttributeList::addAttributesAtIndex</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/inlinefunction-cpp/#af1986bc1d2d700807f4c8ef167bf6fdd">AddParamAndFnBasicAttributes</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3f1e8df5d1ec58e81979760331f7808e">llvm::AttributeList::addParamAttribute</a>, <a href="/web-llvm/docs/api/structs/anonymous-wholeprogramdevirt-cpp-/devirtmodule/#a8f2e0d9db7a457156c4377449c2e0606">anonymous{WholeProgramDevirt.cpp}::DevirtModule::applyICallBranchFunnel</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac0b476a2ef81faca335499a5cafb9241">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4ac0d01bf5ca24e679de53067c8f6a44">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa3e752c843b2d32061a0dfbb3b784eb9">llvm::AttributeList::get</a>, <a href="#a63d9b863a7b6781a87890f1474b55150">intersectWith</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a90c1755a8480ebc1dcc4f05d56271b00">llvm::promoteCall</a>, <a href="#a1247d3316a7816eaee459556671caab5">removeAttribute</a>, <a href="#aac0004bd4937c1de995d7fd1ef010efd">removeAttribute</a> and <a href="#aa3392828dc2b425dbafab7dd81fae786">removeAttributes</a>.</p>
 
 </div>
 </div>
@@ -2210,6 +2255,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

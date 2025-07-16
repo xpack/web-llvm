@@ -250,9 +250,6 @@ keywords:
 <p>Definition at line 499 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/coroutines/coroutines-cpp">Coroutines.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
-
-
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#a78fa8f84df72aa178f82c9421b0cf387">llvm::coro::Shape::emitAlloc</a> and <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#acad2aaa7f484c978bb790533eec90ac4">llvm::coro::Shape::emitDealloc</a>.</p>
 
 </div>
@@ -612,9 +609,6 @@ keywords:
 <p>Definition at line 494 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/coroutines/coroutines-cpp">Coroutines.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
-
-
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#a78fa8f84df72aa178f82c9421b0cf387">llvm::coro::Shape::emitAlloc</a> and <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#acad2aaa7f484c978bb790533eec90ac4">llvm::coro::Shape::emitDealloc</a>.</p>
 
 </div>
@@ -663,6 +657,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -194,7 +194,7 @@ class llvm::LoopAnalysis { ... }
 <p>References <a href="/web-llvm/docs/api/classes/llvm/loopinfobase/#a280d02be3ec3eb6527c1ea944d902775">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::analyze</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#acd1fbb2df257f945afda92919be322f3">llvm::OpenMPIRBuilder::applySimd</a> and <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a946282957319b8c23ab9f169abb504c4">computeHeuristicUnrollFactor</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#acd1fbb2df257f945afda92919be322f3">llvm::OpenMPIRBuilder::applySimd</a>, <a href="/web-llvm/docs/api/files/lib/lib/frontend/lib/frontend/openmp/ompirbuilder-cpp/#a946282957319b8c23ab9f169abb504c4">computeHeuristicUnrollFactor</a>, <a href="/web-llvm/docs/api/structs/llvm/amdgpupromoteallocapass/#a620e8ec3e3017fcb099b9410cc0056d5">llvm::AMDGPUPromoteAllocaPass::run</a>, <a href="/web-llvm/docs/api/structs/llvm/amdgpupromoteallocatovectorpass/#a4d58a8f51935070c2ec517b3becde405">llvm::AMDGPUPromoteAllocaToVectorPass::run</a> and <a href="/web-llvm/docs/api/classes/llvm/typepromotionpass/#addcc6ab5729a0a8e495cdc585f02234c">llvm::TypePromotionPass::run</a>.</p>
 
 </div>
 </div>
@@ -279,6 +279,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

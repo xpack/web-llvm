@@ -37,6 +37,7 @@ keywords:
 <li><b>AddrSpaceQual</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg/key/#a1dba364423c8c79013144776443a07bb">llvm::AMDGPU::HSAMD::Kernel::Arg::Key</a></li>
 <li><b>AIXSystemAssemblerPath</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a62a7abc05fda047e57c3b831cae56e09">llvm</a></li>
 <li><b>Align</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg/key/#a6b334a5f83504ebc99cc59f4f333ff98">llvm::AMDGPU::HSAMD::Kernel::Arg::Key</a></li>
+<li><b>AllAnalysesKey</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#adff624f8bb356741634ae566379c463f">llvm</a></li>
 <li><b>AllAnalysesOn< IRUnitT >::SetKey</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a0d8f0e397cbbea7b02dbd516f8f5098e">llvm</a></li>
 <li><b>AllocRegNo</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/xcoff/#ae25ae36fd61e9127012f65bc4a4fe652">llvm::XCOFF</a></li>
 <li><b>AllocUnit</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/ms-demangle/#a9024de5a690e75130c917fcf883e3c27">llvm::ms_demangle</a></li>
@@ -115,7 +116,7 @@ keywords:
 <li><b>AuxFileHeaderSizeShort</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/xcoff/#ab54ecf9a406b1567b73e4eeb73732c30">llvm::XCOFF</a></li>
 <li><b>AVRDataLayout</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a9664376271339ff625199eec6ecc3fe5">llvm</a></li>
 </ul>
-<p>85 entries</p>
+<p>86 entries</p>
 
 ## - B -
 
@@ -306,6 +307,7 @@ keywords:
 <li><b>DSWCount</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-amdgpuigrouplp-cpp-/#ab94792180e18c6902c5fe46bd3e59555">anonymous{AMDGPUIGroupLP.cpp}</a></li>
 <li><b>DSWWithPermCount</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-amdgpuigrouplp-cpp-/#a9207d782b07bb5fb9218efbf8cd7a655">anonymous{AMDGPUIGroupLP.cpp}</a></li>
 <li><b>DSWWithSharedVMEMCount</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-amdgpuigrouplp-cpp-/#ae5595bdd5cfa571b472a6695ae1f09f1">anonymous{AMDGPUIGroupLP.cpp}</a></li>
+<li><b>DummyLoad</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#a84f299c794c2b52d77fce8c7f7e3b0ea">llvm::AArch64PAuth</a></li>
 <li><b>DumpCriticalPathLength</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a82ab0315644106de03b36f143328179f">llvm</a></li>
 <li><b>DumpHSAMetadata</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2cacb70bba6afdd01831243076fa5930">llvm</a></li>
 <li><b>DumpModule</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-hexagonvectorcombine-cpp-/#a358bfa5c6863de5aaa1484cfb6e79d6f">anonymous{HexagonVectorCombine.cpp}</a></li>
@@ -317,7 +319,7 @@ keywords:
 <li><b>DwarfSectionNames</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a26a4156c8f2d7978737d4a11b534a2cf">llvm::orc</a></li>
 <li><b>DynFixupInfos</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/aarch32/anonymous-aarch32-cpp-/#a9cd1fc5d3e9a370608df1bbcea5fe9c8">llvm::jitlink::aarch32::anonymous{aarch32.cpp}</a></li>
 </ul>
-<p>57 entries</p>
+<p>58 entries</p>
 
 ## - E -
 
@@ -623,8 +625,8 @@ keywords:
 <li><b>is_incomplete_v</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a18455b3b42cf7b66c5c4dc6e258e2589">llvm</a></li>
 <li><b>is_uint_64_bit_v</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/json/#a03041d200886efaf9203b536e55472c8">llvm::json</a></li>
 <li><b>is_variant_v</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/detail/#a5132afeff8a40ea8bd0ea78f0a1cc3bd">detail</a></li>
-<li><b>IsaAndPresentPred</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a48f99479d17c4dc2363a90754021189c">llvm</a></li>
-<li><b>IsaPred</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#af462c722ac0144c995057a2f6e616507">llvm</a></li>
+<li><b>IsaAndPresentPred</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa3993f11b0edaa035b3d1d3dba6705ad">llvm</a></li>
+<li><b>IsaPred</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a445c0cf40cd4a28c8b53579dfab9a193">llvm</a></li>
 <li><b>IsBigEndianHost</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/sys/#ab9f705441a3a825d4b8a93ca4476d4e7">llvm::sys</a></li>
 <li><b>IsConst</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg/key/#aa25f7e1207f9595348bab62b54a3821d">llvm::AMDGPU::HSAMD::Kernel::Arg::Key</a></li>
 <li><b>IsDynamicCallStack</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/codeprops/key/#a840a4bd37c3cd2b75794f34d3499cb9a">llvm::AMDGPU::HSAMD::Kernel::CodeProps::Key</a></li>
@@ -982,6 +984,7 @@ keywords:
 <li><b>NoExternalizeGlobals</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#a49e00f99e0c57b7f9e62bc578fa85bf4">llvm::anonymous{AMDGPUSplitModule.cpp}</a></li>
 <li><b>NoExternalizeOnAddrTaken</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#aa08ecbf5df71f6c94b76cf8d745df92d">llvm::anonymous{AMDGPUSplitModule.cpp}</a></li>
 <li><b>NOMORE_ICP_MAGICNUM</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aee20e86d3817849199a21d19bcc273c5">llvm</a></li>
+<li><b>None</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth/#ad4ee5c509a18d1b04fd6be73f6d0d9b1">llvm::AArch64PAuth</a></li>
 <li><b>Nop</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/webassembly/#a8252c3c3e2c889ea98eea628b81d2999">llvm::WebAssembly</a></li>
 <li><b>NoPGOWarnMismatch</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a971321e9917182d182097c2f3ffc475c">llvm</a></li>
 <li><b>NoPGOWarnMismatchComdatWeak</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#afe556935b0564c025fc1cbe53c987eab">llvm</a></li>
@@ -990,6 +993,7 @@ keywords:
 <li><b>noShuffleOffset</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo/#a689cd0d0b6cf69804c1877fc9ba3aae4">llvm::HexagonMCInstrInfo</a></li>
 <li><b>NoteNameV2</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/elfnote/#a9c117e2bdb138b1a81a4d318f0eae388">llvm::AMDGPU::ElfNote</a></li>
 <li><b>NoteNameV3</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/elfnote/#aefb41dbb5c30115f2597db8083cfcb0a">llvm::AMDGPU::ElfNote</a></li>
+<li><b>NotPreservedAnalysisIDs</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aaa06174fa67a1c30ecd7904e5c18cfa4">llvm</a></li>
 <li><b>NoWarnSampleUnused</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a921b74c15d3400979374dec5abb8ea31">llvm</a></li>
 <li><b>NRecords</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ae3d5e0ec9e672d782ec89ff9296efc69">llvm</a></li>
 <li><b>NullImportDescriptorSymbolName</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/object/#a102830d484cf8e6029c7103410e702b1">llvm::object</a></li>
@@ -1017,7 +1021,7 @@ keywords:
 <li><b>NVPTXCtorDtorLoweringLegacyPassID</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a7f6bf1befecc9a4a2d053e44d3dccf23">llvm</a></li>
 <li><b>NVPTXGridValues</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/omp/#a82196e4d5e3224c1cdd60f16e40af476">llvm::omp</a></li>
 </ul>
-<p>51 entries</p>
+<p>53 entries</p>
 
 ## - O -
 
@@ -1140,6 +1144,7 @@ keywords:
 <li><b>PPCVSXFMAMutateID</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#ac357bebafc9658ed032eb521152ce3e9">llvm</a></li>
 <li><b>PredefinedFuncs</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/mips16hardfloatinfo/#a1a17ce96c65b223071f9bd4adae70786">llvm::Mips16HardFloatInfo</a></li>
 <li><b>PreRADirection</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#aa9ff814049edfef549accbca1a8e9eff">llvm</a></li>
+<li><b>PreservedIDs</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a131a3e543fd4cfdb24c0039deb1bcb0c">llvm</a></li>
 <li><b>PrintBFI</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a2989956d53d56f7227c7d36891c73f4f">llvm</a></li>
 <li><b>PrintBFIFuncName</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a12ed6cda79362a16ba48b0849cf00df2">llvm</a></li>
 <li><b>PrintCallable</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/anonymous-debugutils-cpp-/#a0f0c6ad7f14e63d3506f5d6937d38311">anonymous{DebugUtils.cpp}</a></li>
@@ -1170,7 +1175,7 @@ keywords:
 <li><b>PseudoProbeFullDistributionFactor</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/#a1ce962011ea04398cdee484ce3f89468">llvm</a></li>
 <li><b>PTVPrefix</b>: as variable in namespace <a href="/web-llvm/docs/api/namespaces/llvm/goff/#a866b62ea4915725aed3f51f6769be8f4">llvm::GOFF</a></li>
 </ul>
-<p>101 entries</p>
+<p>102 entries</p>
 
 ## - Q -
 
@@ -1636,10 +1641,10 @@ keywords:
 </ul>
 <p>24 entries</p>
 <br/>
-<p>Total: 1470 entries.</p>
+<p>Total: 1475 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

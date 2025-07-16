@@ -696,7 +696,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a168a41dfc8e956c6180862aeca885db1">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;case EA_BASE_##x:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4dbab080ad769a5f716ded6e9f272748">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;case EA_BASE_##x:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -709,7 +709,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a168a41dfc8e956c6180862aeca885db1">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab7afd582f1c8713d60dbff8569cb6f0b">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -722,7 +722,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a168a41dfc8e956c6180862aeca885db1">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2201f841c4c6a1aec7f1e04fb00b0cab">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -735,7 +735,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a168a41dfc8e956c6180862aeca885db1">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9f201612cb32816265e25b6101b1f1e7">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -748,7 +748,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a168a41dfc8e956c6180862aeca885db1">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aef1fa1f9600408331f991a35c71e628d">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -761,7 +761,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a168a41dfc8e956c6180862aeca885db1">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;case EA_REG_##x:</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aec82111a7fbe4a315c1177a90ccc5a3e">ENTRY</a>(x)&nbsp;&nbsp;&nbsp;case EA_REG_##x:</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2408,7 +2408,7 @@ keywords:
 </div>
 </div>
 
-### ENTRY {#a168a41dfc8e956c6180862aeca885db1}
+### ENTRY {#a4dbab080ad769a5f716ded6e9f272748}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2433,7 +2433,7 @@ keywords:
 </div>
 </div>
 
-### ENTRY {#a168a41dfc8e956c6180862aeca885db1}
+### ENTRY {#ab7afd582f1c8713d60dbff8569cb6f0b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2457,7 +2457,7 @@ keywords:
 <dt>Value</dt>
 <dd>
 <div class="doxyVerbatim">  case EA_REG_##x:                                                    \
-    <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/disassembler/amdgpudisassembler-cpp/#a9fafc367cabbdce17ed971f70373c7c9">mcInst.addOperand</a>(MCOperand::createReg(X86::x)); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/disassembler/amdgpudisassembler-cpp/#a9fafc367cabbdce17ed971f70373c7c9">mcInst.addOperand</a>(MCOperand::createReg(X86::x)); break;
 </div>
 </dd>
 </dl>
@@ -2467,7 +2467,7 @@ keywords:
 </div>
 </div>
 
-### ENTRY {#a168a41dfc8e956c6180862aeca885db1}
+### ENTRY {#a2201f841c4c6a1aec7f1e04fb00b0cab}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2491,7 +2491,7 @@ keywords:
 <dt>Value</dt>
 <dd>
 <div class="doxyVerbatim">      case SIB_BASE_##x:                                  \
-        baseReg = MCOperand::createReg(X86::x); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+        baseReg = MCOperand::createReg(X86::x); break;
 </div>
 </dd>
 </dl>
@@ -2501,7 +2501,7 @@ keywords:
 </div>
 </div>
 
-### ENTRY {#a168a41dfc8e956c6180862aeca885db1}
+### ENTRY {#a9f201612cb32816265e25b6101b1f1e7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2525,7 +2525,7 @@ keywords:
 <dt>Value</dt>
 <dd>
 <div class="doxyVerbatim">      case SIB_INDEX_##x:                                 \
-        indexReg = MCOperand::createReg(X86::x); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+        indexReg = MCOperand::createReg(X86::x); break;
 </div>
 </dd>
 </dl>
@@ -2535,7 +2535,7 @@ keywords:
 </div>
 </div>
 
-### ENTRY {#a168a41dfc8e956c6180862aeca885db1}
+### ENTRY {#aef1fa1f9600408331f991a35c71e628d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2559,7 +2559,7 @@ keywords:
 <dt>Value</dt>
 <dd>
 <div class="doxyVerbatim">      case EA_BASE_##x:                                 \
-        baseReg = MCOperand::createReg(X86::x); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+        baseReg = MCOperand::createReg(X86::x); break;
 </div>
 </dd>
 </dl>
@@ -2569,7 +2569,7 @@ keywords:
 </div>
 </div>
 
-### ENTRY {#a168a41dfc8e956c6180862aeca885db1}
+### ENTRY {#aec82111a7fbe4a315c1177a90ccc5a3e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2623,6 +2623,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

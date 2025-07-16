@@ -62,14 +62,16 @@ keywords:
 <li><b>AssignmentKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-asmparser-cpp-/asmparser/#a1bbf8ed2a7170a885f4f5162736abc0c">anonymous{AsmParser.cpp}::AsmParser</a></li>
 <li><b>AssignmentKind</b>: as enum in struct <a href="/web-llvm/docs/api/structs/anonymous-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/blockinfo/#a18dd7c40cb2aa433af76616e735090b8">anonymous{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering::BlockInfo</a></li>
 <li><b>AtomicExpansionKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#aba40628328a660c78a9d73cc209f5e84">llvm::TargetLoweringBase</a></li>
+<li><b>AtomicKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aa014f633c701cbd3313b654114f15d09">llvm::OpenMPIRBuilder</a></li>
 <li><b>AttrEntryKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/attributeimpl/#ad687fe589b8c087f908d4e41bcf66166">llvm::AttributeImpl</a></li>
 <li><b>AttributeType</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/cskytargetelfstreamer/#ab9cbd6f8364252b78b8874c59bdd22a9">llvm::CSKYTargetELFStreamer</a></li>
 <li><b>AttributorPhase</b>: as enum in struct <a href="/web-llvm/docs/api/structs/llvm/attributor/#a97ebf3ac7509b87322902eae364d2fce">llvm::Attributor</a></li>
+<li><b>AttrIndex</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68">llvm::AttributeList</a></li>
 <li><b>AttrKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">llvm::Attribute</a></li>
 <li><b>AvailabilityState</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfoimpl/#a63024b6bdc28b05ace65a47c88f3f32c">llvm::TargetLibraryInfoImpl</a></li>
 <li><b>AVRMatchResultTy</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-avrasmparser-cpp-/avrasmparser/#a6feac74563cfc7358fa61ced912290a3">anonymous{AVRAsmParser.cpp}::AVRAsmParser</a></li>
 </ul>
-<p>48 entries</p>
+<p>50 entries</p>
 
 ## - B -
 
@@ -83,6 +85,7 @@ keywords:
 <li><b>BinOpToken</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldcheckerexpreval/#ad86a41d86fe12a9d9c3744b9f5c9df3b">llvm::RuntimeDyldCheckerExprEval</a></li>
 <li><b>BlockDisposition</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#aae7c3ec1a0344306acbdc2dcb113995e">llvm::ScalarEvolution</a></li>
 <li><b>BndlSchedState</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/scheduler/#a70441fbb9460ff5697b574062f4a85b4">llvm::sandboxir::Scheduler</a></li>
+<li><b>BodyGenTy</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ae620d2ad309b2b4959c64edd1e040fdf">llvm::OpenMPIRBuilder</a></li>
 <li><b>BooleanContent</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#aa61af767c51a95e2dd0dff2001168755">llvm::TargetLoweringBase</a></li>
 <li><b>BOps</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-interleavedloadcombinepass-cpp-/polynomial/#aea7c49ab31138f7e07d54d8e954949d2">anonymous{InterleavedLoadCombinePass.cpp}::Polynomial</a></li>
 <li><b>BorderConstraint</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/spillplacement/#ab09623fee8a653165a7cc624b8eaaa8c">llvm::SpillPlacement</a></li>
@@ -102,7 +105,7 @@ keywords:
 <li><b>BundleLockStateType</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/mcsection/#ab9c1a8452d93b2ffca2f794f1affd929">llvm::MCSection</a></li>
 <li><b>ByValCopyKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#a13d08bccbe19ea45b7318cdb0ba1f673">llvm::ARMTargetLowering</a></li>
 </ul>
-<p>27 entries</p>
+<p>28 entries</p>
 
 ## - C -
 
@@ -145,6 +148,7 @@ keywords:
 <li><b>Context</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#ae4b2f9a526f86b52da896e665428cfce">llvm::json::OStream</a></li>
 <li><b>ControlFlowInstruction</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-r600controlflowfinalizer-cpp-/r600controlflowfinalizer/#a310370a3f7efd004f358e76eaf3389a8">anonymous{R600ControlFlowFinalizer.cpp}::R600ControlFlowFinalizer</a></li>
 <li><b>ConvOpKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/genericconvergenceverifier/#a0b33d76bf83cb1ca255d302d7038a63f">llvm::GenericConvergenceVerifier&lt;ContextT&gt;</a></li>
+<li><b>CopyAction</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a204d79d34d33ba7563337995bb481318">llvm::OpenMPIRBuilder</a></li>
 <li><b>CostState</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/instructioncost/#a964cfda478e11c52ec46d73eb3185029">llvm::InstructionCost</a></li>
 <li><b>CounterKind</b>: as enum in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/counter/#a5e36bdc59afb1fa1af1e70a3f89a3cec">llvm::coverage::Counter</a></li>
 <li><b>CountPseudoKind</b>: as enum in struct <a href="/web-llvm/docs/api/structs/llvm/instrprofrecord/#a69bdbaedb4ae6b233e5eccac5ebc2d77">llvm::InstrProfRecord</a></li>
@@ -158,7 +162,7 @@ keywords:
 <li><b>CVDefRangeType</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-masmparser-cpp-/masmparser/#ae3cede150e95aa800f01c276994eb1e5">anonymous{MasmParser.cpp}::MasmParser</a></li>
 <li><b>CVPLatticeStateTy</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-calledvaluepropagation-cpp-/cvplatticeval/#a047b15b8d63ce6fef09a75567338eb78">anonymous{CalledValuePropagation.cpp}::CVPLatticeVal</a></li>
 </ul>
-<p>50 entries</p>
+<p>51 entries</p>
 
 ## - D -
 
@@ -173,6 +177,7 @@ keywords:
 <li><b>DependencyType</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dependencygraph/#af4c4ae4efd379d5909425bcde3a895c0">llvm::sandboxir::DependencyGraph</a></li>
 <li><b>DepType</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/memdepresult/#ab9298a0662bef8856087aae491e84790">llvm::MemDepResult</a></li>
 <li><b>DepType</b>: as enum in struct <a href="/web-llvm/docs/api/structs/llvm/memorydepchecker/dependence/#ae336b0e8514b99a44e73c3e2494c3cea">llvm::MemoryDepChecker::Dependence</a></li>
+<li><b>DeviceInfoTy</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a5fd26a28fedc9044dd6939648d55c429">llvm::OpenMPIRBuilder</a></li>
 <li><b>DiagKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/sourcemgr/#a346262ff27e71aff626fe6548ef8a777">llvm::SourceMgr</a></li>
 <li><b>DIContextKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/dicontext/#a9f7a11b0c15fffd9a627ae4ab42063de">llvm::DIContext</a></li>
 <li><b>DieOutputPlacement</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a5270021419d157f502aba678e1ee8549">llvm::dwarf_linker::parallel::CompileUnit</a></li>
@@ -196,7 +201,7 @@ keywords:
 <li><b>DwoMode</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-wasmobjectwriter-cpp-/wasmobjectwriter/#a739b8fc83743fc0bc2e273a947c43704">anonymous{WasmObjectWriter.cpp}::WasmObjectWriter</a></li>
 <li><b>DwoMode</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/wincoffwriter/#adb7920f406fa5aedf5f43f8e5ea74c6b">llvm::WinCOFFWriter</a></li>
 </ul>
-<p>32 entries</p>
+<p>33 entries</p>
 
 ## - E -
 
@@ -210,6 +215,7 @@ keywords:
 <li><b>ElfMappingSymbol</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armelfstreamer/#a88ebd183ec49a32b0d7c575ad90c7dfd">anonymous{ARMELFStreamer.cpp}::ARMELFStreamer</a></li>
 <li><b>ElfMappingSymbol</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/cskyelfstreamer/#ad7b5ab7ee50971170ade6aaf1347d9ae">llvm::CSKYELFStreamer</a></li>
 <li><b>ElfMappingSymbol</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/riscvelfstreamer/#aa84f7ec2989929206ea752cb16e4483f">llvm::RISCVELFStreamer</a></li>
+<li><b>EmitMetadataErrorKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#affb389ba6facf4b5854565f9db5bc90b">llvm::OpenMPIRBuilder</a></li>
 <li><b>ENamePrefix</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/amdgpulibfuncbase/#a5f1a1a785d3bea7522fda8651035c2f6">llvm::AMDGPULibFuncBase</a></li>
 <li><b>Encoding</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672">llvm::BitCodeAbbrevOp</a></li>
 <li><b>Encoding</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/dwarfexpression/operation/#a8f965a4aa6c5f05ac1b790daf7835212">llvm::DWARFExpression::Operation</a></li>
@@ -227,6 +233,7 @@ keywords:
 <li><b>EquivalenceError</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/itaniummanglingcanonicalizer/#aafe55e9568e103b706b17e200b60255b">llvm::ItaniumManglingCanonicalizer</a></li>
 <li><b>ErrorPriority</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/lllexer/#a00063c626777d5b1b7669999ed01a82e">llvm::LLLexer</a></li>
 <li><b>EType</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/amdgpulibfuncbase/#a858436a6ac3e32480363df7ec66765a8">llvm::AMDGPULibFuncBase</a></li>
+<li><b>EvalKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0f3b3f2ce3e462711213b2ecb34e904c">llvm::OpenMPIRBuilder</a></li>
 <li><b>ExitCountKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#ace535ba3b8cc110f49b5db48a945ecef">llvm::ScalarEvolution</a></li>
 <li><b>ExpandKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-masmparser-cpp-/masmparser/#a9246043f1e0c2b0855ae7dd69b8308b2">anonymous{MasmParser.cpp}::MasmParser</a></li>
 <li><b>ExprKind</b>: as enum in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/counterexpression/#ae5156429537263d93d5d165c7501e49c">llvm::coverage::CounterExpression</a></li>
@@ -237,7 +244,7 @@ keywords:
 <li><b>ExtractState</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/dwarfabbreviationdeclaration/#a45f09c6803dbfb2f9d93c99695f96c4f">llvm::DWARFAbbreviationDeclaration</a></li>
 <li><b>ExtraInfoInlineKinds</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a3bcea80716879e989df4147a48b0bd29">llvm::MachineInstr</a></li>
 </ul>
-<p>35 entries</p>
+<p>37 entries</p>
 
 ## - F -
 
@@ -613,6 +620,7 @@ keywords:
 <li><b>RecTyKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/recty/#a49953f670acd87339563c3ea7716f07d">llvm::RecTy</a></li>
 <li><b>RedefinableKind</b>: as enum in struct <a href="/web-llvm/docs/api/structs/anonymous-masmparser-cpp-/masmparser/variable/#add0e44ed551097a83cf798d2e4767e0a">anonymous{MasmParser.cpp}::MasmParser::Variable</a></li>
 <li><b>RedirectKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfilesystem/#a63bec507dd571ea0302cd27827af81c0">llvm::vfs::RedirectingFileSystem</a></li>
+<li><b>ReductionGenCBKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a07f00f83b415baecc1af353eed43d123">llvm::OpenMPIRBuilder</a></li>
 <li><b>ReductionShuffle</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo/#a0692c75c1b45226b6afb90ad609eb86a">llvm::TargetTransformInfo</a></li>
 <li><b>RegexFlags</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/regex/#a1cc1c3ad43ad382ef8d864fe9c16e25c">llvm::Regex</a></li>
 <li><b>RegionKind</b>: as enum in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/countermappingregion/#aef1b165905dc77f7b575797c890e9493">llvm::coverage::CounterMappingRegion</a></li>
@@ -641,7 +649,7 @@ keywords:
 <li><b>RootRelativeKind</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfilesystem/#a09f22a5612ee3a09f13d4641d5017f2d">llvm::vfs::RedirectingFileSystem</a></li>
 <li><b>Rounding</b>: as enum in class <a href="/web-llvm/docs/api/classes/llvm/apint/#a3a0519ef55bfe3d07f8fb2eafb5cdbbd">llvm::APInt</a></li>
 </ul>
-<p>36 entries</p>
+<p>37 entries</p>
 
 ## - S -
 
@@ -836,10 +844,10 @@ keywords:
 <li><b>ZeroCompare</b>: as enum in class <a href="/web-llvm/docs/api/classes/anonymous-ppciseldagtodag-cpp-/integercompareeliminator/#acf51a1855781a5537af6359dfbade8fe">anonymous{PPCISelDAGToDAG.cpp}::IntegerCompareEliminator</a></li>
 </ul>
 <br/>
-<p>Total: 671 entries.</p>
+<p>Total: 679 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

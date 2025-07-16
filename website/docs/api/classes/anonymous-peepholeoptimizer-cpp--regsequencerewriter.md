@@ -176,7 +176,7 @@ class anonymous{PeepholeOptimizer.cpp}::RegSequenceRewriter { ... }
 
 <dl class="doxySectionUser">
 <dt>See Also</dt>
-<dd><p><a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/rewriter/#a3fa829354b3f8b782d40175469540cab">Rewriter::getNextRewritableSource()</a> Here <a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/rewriter/#a1ab74e93e550820b697e99a0dc9fdbbd">CopyLike</a> has the following form: dst = REG_SEQUENCE Src1.src1SubIdx, subIdx1, Src2.src2SubIdx, subIdx2. Each call will return a different source, walking all the <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a40cc6a0e0895fa564ee013923209aa85">available</a> source.</p></dd>
+<dd><p><a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/rewriter/#a3fa829354b3f8b782d40175469540cab">Rewriter::getNextRewritableSource()</a> Here <a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/rewriter/#a1ab74e93e550820b697e99a0dc9fdbbd">CopyLike</a> has the following form: dst = REG_SEQUENCE Src1.src1SubIdx, subIdx1, Src2.src2SubIdx, subIdx2. Each call will return a different source, walking <a href="/web-llvm/docs/api/namespaces/llvm/#a873403a2506ac332f62ad4c2d7dc1835">all</a> the <a href="/web-llvm/docs/api/files/lib/lib/codegen/machinesink-cpp/#a40cc6a0e0895fa564ee013923209aa85">available</a> source.</p></dd>
 </dl>
 
 
@@ -250,6 +250,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

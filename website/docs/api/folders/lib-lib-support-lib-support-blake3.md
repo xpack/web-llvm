@@ -162,7 +162,7 @@ keywords:
 <p>Implementation of BLAKE3, originating from <a href="https://github.com/BLAKE3-team/BLAKE3/tree/1.3.1/c">https://github.com/BLAKE3-team/BLAKE3/tree/1.3.1/c</a></p>
 
 
-## Example {#autotoc_md70}
+## Example {#autotoc_md69}
 
 
 <p>An example program that hashes bytes from standard input and prints the result:</p>
@@ -258,10 +258,10 @@ keywords:
 </div>
 
 
-## API {#autotoc_md71}
+## API {#autotoc_md70}
 
 
-### The Class/Struct {#autotoc_md72}
+### The Class/Struct {#autotoc_md71}
 
 
 <div class="doxyProgramListing">
@@ -287,7 +287,7 @@ keywords:
 <p>An incremental BLAKE3 hashing state, which can accept any number of updates. This implementation doesn't allocate any heap memory, but <span class="doxyComputerOutput">sizeof(llvm_blake3_hasher)</span> itself is relatively large, currently 1912 bytes on x86-64. This size can be reduced by restricting the maximum input length, as described in Section 5.4 of <a href="https://github.com/BLAKE3-team/BLAKE3-specs/blob/master/blake3.pdf">the BLAKE3 spec</a>, but this implementation doesn't currently support that strategy.</p>
 
 
-### Common API Functions {#autotoc_md73}
+### Common API Functions {#autotoc_md72}
 
 
 <div class="doxyProgramListing">
@@ -371,7 +371,7 @@ keywords:
 <p>Shorter BLAKE3 outputs are prefixes of longer ones. Explicitly requesting a short output is equivalent to truncating the default-length output. (Note that this is different between BLAKE2 and BLAKE3.)</p>
 
 
-### Less Common API Functions {#autotoc_md76}
+### Less Common API Functions {#autotoc_md75}
 
 
 <div class="doxyProgramListing">
@@ -455,13 +455,13 @@ keywords:
 <p>Reset the hasher to its initial state, prior to any calls to <span class="doxyComputerOutput">llvm_blake3_hasher_update</span>. Currently this is no different from calling <span class="doxyComputerOutput">llvm_blake3_hasher_init</span> or similar again. However, if this implementation gains multithreading support in the future, and if <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm-blake3-hasher">llvm_blake3_hasher</a></span> holds (optional) threading resources, this function will reuse those resources.</p>
 
 
-## Building {#autotoc_md81}
+## Building {#autotoc_md80}
 
 
 <p>This implementation is just C and assembly files.</p>
 
 
-### x86 {#autotoc_md82}
+### x86 {#autotoc_md81}
 
 
 <p>Dynamic dispatch is enabled by default on x86. The implementation will query the CPU at runtime to detect SIMD support, and it will use the widest instruction set available. By default, <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-dispatch-c">blake3_dispatch.c</a></span> expects to be linked with code for five different instruction sets: portable C, SSE2, SSE4.1, AVX2, and AVX-512.</p>
@@ -470,7 +470,7 @@ keywords:
 <p>For each of the x86 SIMD instruction sets, four versions are available: three flavors of assembly (Unix, Windows MSVC, and Windows GNU) and one version using C intrinsics. The assembly versions are generally preferred. They perform better, they perform more consistently across different compilers, and they build more quickly. On the other hand, the assembly versions are x86_64-only, and you need to select the right flavor for your target platform.</p>
 
 
-### ARM NEON {#autotoc_md83}
+### ARM NEON {#autotoc_md82}
 
 
 <p>The NEON implementation is enabled by default on AArch64, but not on other ARM targets, since not all of them support it. To enable it, set <span class="doxyComputerOutput">BLAKE3_USE_NEON=1</span>.</p>
@@ -479,13 +479,13 @@ keywords:
 <p>To explicitiy disable using NEON instructions on AArch64, set <span class="doxyComputerOutput">BLAKE3_USE_NEON=0</span>.</p>
 
 
-### Other Platforms {#autotoc_md84}
+### Other Platforms {#autotoc_md83}
 
 
 <p>The portable implementation should work on most other architectures.</p>
 
 
-## Multithreading {#autotoc_md85}
+## Multithreading {#autotoc_md84}
 
 
 <p>The implementation doesn't currently support multithreading.</p>
@@ -493,6 +493,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

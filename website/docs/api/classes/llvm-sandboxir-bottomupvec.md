@@ -434,7 +434,7 @@ class llvm::sandboxir::BottomUpVec { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">Value * llvm::sandboxir::BottomUpVec::createPack (<a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * &gt; ToPack, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * UserBB)</td>
+<td class="doxyMemberName">Value * llvm::sandboxir::BottomUpVec::createPack (<a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * &gt; ToPack, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * UserBB)</td>
 </tr>
 </table>
 </td>
@@ -463,7 +463,7 @@ class llvm::sandboxir::BottomUpVec { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">Value * llvm::sandboxir::BottomUpVec::createShuffle (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * VecOp, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/shufflemask">ShuffleMask</a> &amp; Mask, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * UserBB)</td>
+<td class="doxyMemberName">Value * llvm::sandboxir::BottomUpVec::createShuffle (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> * VecOp, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/shufflemask">ShuffleMask</a> &amp; Mask, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * UserBB)</td>
 </tr>
 </table>
 </td>
@@ -731,6 +731,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

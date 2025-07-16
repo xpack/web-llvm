@@ -203,7 +203,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af9b8cfa4d5bfeb2c7104b4be5b597d27">HANDLE_DWARF_SECTION</a>(ENUM_NAME, ELF_NAME, CMDLINE_NAME, OPTION)&nbsp;&nbsp;&nbsp;  DIDT_##ENUM_NAME = 1U &lt;&lt; DIDT_ID_##ENUM_NAME,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1bd08399b9c26c8d4996a88d07885504">HANDLE_DWARF_SECTION</a>(ENUM_NAME, ELF_NAME, CMDLINE_NAME, OPTION)&nbsp;&nbsp;&nbsp;  DIDT_##ENUM_NAME = 1U &lt;&lt; DIDT_ID_##ENUM_NAME,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -246,7 +246,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DWARF\_SECTION {#af9b8cfa4d5bfeb2c7104b4be5b597d27}
+### HANDLE\_DWARF\_SECTION {#a1bd08399b9c26c8d4996a88d07885504}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -275,6 +275,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

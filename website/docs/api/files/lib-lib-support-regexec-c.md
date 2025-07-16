@@ -318,7 +318,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aed6ba9caf2dd761b586d2a4556b18a46">states</a>&nbsp;&nbsp;&nbsp;char *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abbd8038db44ed17d974e4f03c8b707bb">states</a>&nbsp;&nbsp;&nbsp;char *</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -331,7 +331,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a37ead5efaf13316dc2b72c35a310fccf">CLEAR</a>(v)&nbsp;&nbsp;&nbsp;memset(v, 0, m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae414c630a3eaa48e694eed2dfd97752f">CLEAR</a>(v)&nbsp;&nbsp;&nbsp;memset(v, 0, m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -344,7 +344,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acdacc044d43a471b7e99219445f838c1">SET0</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[n] = 0)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad2d2ed21b6496c6cd8d78e8f9645c980">SET0</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[n] = 0)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -357,7 +357,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a78b8419959220045f4f26f813506ef84">SET1</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[n] = 1)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abface7468f749a56ed17db1dc9335e90">SET1</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[n] = 1)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -370,7 +370,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afd0ec3820b3e40560b07fc954082b93f">ISSET</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[n])</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8e48de72ceb69dda38fc7e48d823b455">ISSET</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[n])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -383,7 +383,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a08cbbed4826d8ea1e614454dfebda354">ASSIGN</a>(d, s)&nbsp;&nbsp;&nbsp;memmove(d, s, m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af1d71202b6760544daa654f069339950">ASSIGN</a>(d, s)&nbsp;&nbsp;&nbsp;memmove(d, s, m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -396,7 +396,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac07acfbb082b04f5bea72998c8976b3c">EQ</a>(a, b)&nbsp;&nbsp;&nbsp;(<a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/mergeicmps-cpp/#affd23ab4a2fbb796128b383986b7286f">memcmp</a>(a, b, m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates) == 0)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acb972a27c6f1598c41506d53d1320846">EQ</a>(a, b)&nbsp;&nbsp;&nbsp;(<a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/mergeicmps-cpp/#affd23ab4a2fbb796128b383986b7286f">memcmp</a>(a, b, m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates) == 0)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -409,7 +409,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab817eef95b34c417b50a0ab99eb669d8">STATEVARS</a>&nbsp;&nbsp;&nbsp;long vn; char *space</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a80a7c6fc38e2bf78a9af06827e76b20b">STATEVARS</a>&nbsp;&nbsp;&nbsp;long vn; char *space</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -422,7 +422,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa19b2cdfdfb9f7f05c12bf676a48a560">STATESETUP</a>(m, nv)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a392330873a59da7b0d1c5fd29e291ec6">STATESETUP</a>(m, nv)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -435,7 +435,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aea3d1f3e02f26f7104a27b3111df5caf">STATETEARDOWN</a>(m)&nbsp;&nbsp;&nbsp;{ free((m)-&gt;space); }</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad2af78efbffed26c544dd31897af4bcd">STATETEARDOWN</a>(m)&nbsp;&nbsp;&nbsp;{ free((m)-&gt;space); }</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -448,7 +448,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b5f5ae43eead0baeb0751bd0efa8003">SETUP</a>(v)&nbsp;&nbsp;&nbsp;((v) = &amp;m-&gt;space[m-&gt;vn++ * m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates])</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9a82cc4b015eda1ca07ee2496977ebe6">SETUP</a>(v)&nbsp;&nbsp;&nbsp;((v) = &amp;m-&gt;space[m-&gt;vn++ * m-&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/blake3/blake3-portable-c/#ab5958fad499ed692422c66bb20000a39">g</a>-&gt;nstates])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -461,7 +461,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a27e2b05318b406a5662fb3078a338d3a">onestate</a>&nbsp;&nbsp;&nbsp;long</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac4a3825cbd942967bed8e6a373f05831">onestate</a>&nbsp;&nbsp;&nbsp;long</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -474,7 +474,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af319751162595d897c085e511c7e7d4a">INIT</a>(o, n)&nbsp;&nbsp;&nbsp;((o) = (n))</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a772e5498d8f21a5b83268cae73512098">INIT</a>(o, n)&nbsp;&nbsp;&nbsp;((o) = (n))</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -487,7 +487,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a68c0da74d68cdce62e77fd6ae2684729">INC</a>(o)&nbsp;&nbsp;&nbsp;((o)++)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad44e8050e347b2baca42d9d9deaa71c1">INC</a>(o)&nbsp;&nbsp;&nbsp;((o)++)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -500,7 +500,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a44fd2e8ff7759e602fb9c691fd3ed2e7">ISSTATEIN</a>(v, o)&nbsp;&nbsp;&nbsp;((v)[o])</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af3413d5f57f76b906336ff751dda43eb">ISSTATEIN</a>(v, o)&nbsp;&nbsp;&nbsp;((v)[o])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -513,7 +513,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6858ab421e69248b9222432dbac4f18a">FWD</a>(dst, src, n)&nbsp;&nbsp;&nbsp;((dst)[here+(n)] |= (src)[here])</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7b2f3853ae0712ff71b983a9f5ad6ecb">FWD</a>(dst, src, n)&nbsp;&nbsp;&nbsp;((dst)[here+(n)] |= (src)[here])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -526,7 +526,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a53668b16673a2c2e25c9bcb7ffd9903a">BACK</a>(dst, src, n)&nbsp;&nbsp;&nbsp;((dst)[here-(n)] |= (src)[here])</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af7d4e2c5223d6cfe536d91e8155abdc6">BACK</a>(dst, src, n)&nbsp;&nbsp;&nbsp;((dst)[here-(n)] |= (src)[here])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -539,7 +539,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a82ac2430962b07ea93c0d0080839d7b4">ISSETBACK</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[here - (n)])</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3fb7c1a218ae4dcf4c0fb4808dfc5732">ISSETBACK</a>(v, n)&nbsp;&nbsp;&nbsp;((v)[here - (n)])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -645,7 +645,7 @@ keywords:
 </div>
 </div>
 
-### ASSIGN {#a08cbbed4826d8ea1e614454dfebda354}
+### ASSIGN {#af1d71202b6760544daa654f069339950}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -695,7 +695,7 @@ keywords:
 </div>
 </div>
 
-### BACK {#a53668b16673a2c2e25c9bcb7ffd9903a}
+### BACK {#af7d4e2c5223d6cfe536d91e8155abdc6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -745,7 +745,7 @@ keywords:
 </div>
 </div>
 
-### CLEAR {#a37ead5efaf13316dc2b72c35a310fccf}
+### CLEAR {#ae414c630a3eaa48e694eed2dfd97752f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -798,7 +798,7 @@ keywords:
 </div>
 </div>
 
-### EQ {#ac07acfbb082b04f5bea72998c8976b3c}
+### EQ {#acb972a27c6f1598c41506d53d1320846}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -848,7 +848,7 @@ keywords:
 </div>
 </div>
 
-### FWD {#a6858ab421e69248b9222432dbac4f18a}
+### FWD {#a7b2f3853ae0712ff71b983a9f5ad6ecb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -926,7 +926,7 @@ keywords:
 </div>
 </div>
 
-### INC {#a68c0da74d68cdce62e77fd6ae2684729}
+### INC {#ad44e8050e347b2baca42d9d9deaa71c1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -979,7 +979,7 @@ keywords:
 </div>
 </div>
 
-### INIT {#af319751162595d897c085e511c7e7d4a}
+### INIT {#a772e5498d8f21a5b83268cae73512098}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1029,7 +1029,7 @@ keywords:
 </div>
 </div>
 
-### ISSET {#afd0ec3820b3e40560b07fc954082b93f}
+### ISSET {#a8e48de72ceb69dda38fc7e48d823b455}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1079,7 +1079,7 @@ keywords:
 </div>
 </div>
 
-### ISSETBACK {#a82ac2430962b07ea93c0d0080839d7b4}
+### ISSETBACK {#a3fb7c1a218ae4dcf4c0fb4808dfc5732}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1129,7 +1129,7 @@ keywords:
 </div>
 </div>
 
-### ISSTATEIN {#a44fd2e8ff7759e602fb9c691fd3ed2e7}
+### ISSTATEIN {#af3413d5f57f76b906336ff751dda43eb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1204,7 +1204,7 @@ keywords:
 </div>
 </div>
 
-### onestate {#a27e2b05318b406a5662fb3078a338d3a}
+### onestate {#ac4a3825cbd942967bed8e6a373f05831}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1254,7 +1254,7 @@ keywords:
 </div>
 </div>
 
-### SET0 {#acdacc044d43a471b7e99219445f838c1}
+### SET0 {#ad2d2ed21b6496c6cd8d78e8f9645c980}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1304,7 +1304,7 @@ keywords:
 </div>
 </div>
 
-### SET1 {#a78b8419959220045f4f26f813506ef84}
+### SET1 {#abface7468f749a56ed17db1dc9335e90}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1354,7 +1354,7 @@ keywords:
 </div>
 </div>
 
-### SETUP {#a4b5f5ae43eead0baeb0751bd0efa8003}
+### SETUP {#a9a82cc4b015eda1ca07ee2496977ebe6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1429,7 +1429,7 @@ keywords:
 </div>
 </div>
 
-### states {#aed6ba9caf2dd761b586d2a4556b18a46}
+### states {#abbd8038db44ed17d974e4f03c8b707bb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1507,7 +1507,7 @@ keywords:
 </div>
 </div>
 
-### STATESETUP {#aa19b2cdfdfb9f7f05c12bf676a48a560}
+### STATESETUP {#a392330873a59da7b0d1c5fd29e291ec6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1567,7 +1567,7 @@ keywords:
 </div>
 </div>
 
-### STATETEARDOWN {#aea3d1f3e02f26f7104a27b3111df5caf}
+### STATETEARDOWN {#ad2af78efbffed26c544dd31897af4bcd}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1617,7 +1617,7 @@ keywords:
 </div>
 </div>
 
-### STATEVARS {#ab817eef95b34c417b50a0ab99eb669d8}
+### STATEVARS {#a80a7c6fc38e2bf78a9af06827e76b20b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1646,6 +1646,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

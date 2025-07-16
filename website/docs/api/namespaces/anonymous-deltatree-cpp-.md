@@ -30,13 +30,13 @@ namespace anonymous{DeltaTree.cpp} { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta">SourceDelta</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a> - When isLeaf = false, a node has child pointers. <a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode/#details">More...</a></p>
+<p><a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta">SourceDelta</a> - As code in the original input buffer is added and deleted, <a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta">SourceDelta</a> records are used to keep track of how the input SourceLocation object is mapped into the output buffer. <a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,13 +58,13 @@ namespace anonymous{DeltaTree.cpp} { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta">SourceDelta</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta">SourceDelta</a> - As code in the original input buffer is added and deleted, <a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta">SourceDelta</a> records are used to keep track of how the input SourceLocation object is mapped into the output buffer. <a href="/web-llvm/docs/api/structs/anonymous-deltatree-cpp-/sourcedelta/#details">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a> - When isLeaf = false, a node has child pointers. <a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -89,6 +89,6 @@ namespace anonymous{DeltaTree.cpp} { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -298,7 +298,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a28137538038fc11e76a6c7909c904b6c">VPINTERNAL_CASE</a>(X)&nbsp;&nbsp;&nbsp;.Case(#<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">VPLegalization::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59e2bcd3406179dd592c583c4a9a711a">VPINTERNAL_CASE</a>(X)&nbsp;&nbsp;&nbsp;.Case(#<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">VPLegalization::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -535,7 +535,7 @@ keywords:
 <p>Definition at line 118 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/expandvectorpredication-cpp">ExpandVectorPredication.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/intrinsic/#a89cda2218259523c41863fc1175d6907">llvm::Intrinsic::getAttributes</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#ab3fc0225d8aaf8434026c3573f961f2c">llvm::Value::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/vpintrinsic/#a0041f4dfa269c9da654f0e1d020da6ef">llvm::VPIntrinsic::getFunctionalIntrinsicID</a>, <a href="/web-llvm/docs/api/classes/llvm/vpintrinsic/#afdf77acc5c4eeed0da64226ffeb5389f">llvm::VPIntrinsic::getFunctionalOpcode</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a5e36553611d3def8cf698c722239718f">llvm::isSafeToSpeculativelyExecuteWithOpcode</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/intrinsic/#a89cda2218259523c41863fc1175d6907">llvm::Intrinsic::getAttributes</a>, <a href="/web-llvm/docs/api/classes/llvm/value/#ab3fc0225d8aaf8434026c3573f961f2c">llvm::Value::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/vpintrinsic/#a0041f4dfa269c9da654f0e1d020da6ef">llvm::VPIntrinsic::getFunctionalIntrinsicID</a>, <a href="/web-llvm/docs/api/classes/llvm/vpintrinsic/#afdf77acc5c4eeed0da64226ffeb5389f">llvm::VPIntrinsic::getFunctionalOpcode</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a61054ea97168f709c1e46345f80c16a3">llvm::AttributeList::hasFnAttr</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a5e36553611d3def8cf698c722239718f">llvm::isSafeToSpeculativelyExecuteWithOpcode</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/anonymous-expandvectorpredication-cpp-/cachingvpexpander/#a3eba8b3e2e38c997d14bc2ee850be29a">anonymous{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationInBinaryOperator</a>, <a href="/web-llvm/docs/api/structs/anonymous-expandvectorpredication-cpp-/cachingvpexpander/#a5afd2ab39f4d739286d175f8babb8e6b">anonymous{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationInComparison</a>, <a href="/web-llvm/docs/api/structs/anonymous-expandvectorpredication-cpp-/cachingvpexpander/#a2153c46ea6d560ce96b6ad7e822d2c70">anonymous{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationInReduction</a>, <a href="/web-llvm/docs/api/structs/anonymous-expandvectorpredication-cpp-/cachingvpexpander/#a62f9944dba24143c8954964d7dff45b8">anonymous{ExpandVectorPredication.cpp}::CachingVPExpander::expandPredicationToFPCall</a> and <a href="/web-llvm/docs/api/namespaces/anonymous-expandvectorpredication-cpp-/#aedba47828740c9315142ae92e6e901ae">anonymous{ExpandVectorPredication.cpp}::sanitizeStrategy</a>.</p>
@@ -833,7 +833,7 @@ keywords:
 </div>
 </div>
 
-### VPINTERNAL\_CASE {#a28137538038fc11e76a6c7909c904b6c}
+### VPINTERNAL\_CASE {#a59e2bcd3406179dd592c583c4a9a711a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -900,6 +900,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

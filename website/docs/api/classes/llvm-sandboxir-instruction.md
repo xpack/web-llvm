@@ -943,7 +943,7 @@ class llvm::sandboxir::Instruction { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a>. <a href="#a1c9f957d8de78d411dd6dd784cadc753">More...</a></p>
+<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a>. <a href="#a1c9f957d8de78d411dd6dd784cadc753">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -957,7 +957,7 @@ class llvm::sandboxir::Instruction { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>\Returns a <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> for this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>. <a href="#a591b79aa413daec436776f4f7b5d566c">More...</a></p>
+<p>\Returns a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a> for this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>. <a href="#a591b79aa413daec436776f4f7b5d566c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1211,7 +1211,7 @@ class llvm::sandboxir::Instruction { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Detach this from its parent <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> without deleting it. <a href="#adff189c114a625d2837de30bcabe8099">More...</a></p>
+<p>Detach this from its parent <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> without deleting it. <a href="#adff189c114a625d2837de30bcabe8099">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1331,13 +1331,13 @@ class llvm::sandboxir::Instruction { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afba1279eafd7cf7b6ef9681b6f28283f">getParent</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>\Returns the <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> containing this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>, or null if it is detached. <a href="#afba1279eafd7cf7b6ef9681b6f28283f">More...</a></p>
+<p>\Returns the <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> containing this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>, or null if it is detached. <a href="#afba1279eafd7cf7b6ef9681b6f28283f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -3454,7 +3454,7 @@ class llvm::sandboxir::Instruction { ... }
 <p>Declaration at line 193 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 74 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a0e9cf49b789ff0825ffea99d23afd013">llvm::sandboxir::empty</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#aa5ba4e46404a59391af05ca6f0c9ce75">llvm::sandboxir::Value::users</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#aa5ba4e46404a59391af05ca6f0c9ce75">llvm::sandboxir::Value::users</a>.</p>
 
 </div>
 </div>
@@ -3581,7 +3581,7 @@ class llvm::sandboxir::Instruction { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>\Returns a <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> for this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>.</p>
+<p>\Returns a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a> for this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>.</p>
 
 <p>Declaration at line 120 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 38 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
@@ -3617,7 +3617,7 @@ class llvm::sandboxir::Instruction { ... }
 <p>Declaration at line 123 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 43 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a64ac61287490361f2183faf1d7639ee9">llvm::sandboxir::end</a>, <a href="#a591b79aa413daec436776f4f7b5d566c">getIterator</a>, <a href="#afba1279eafd7cf7b6ef9681b6f28283f">getParent</a> and <a href="#ac1049fd9695f66ca0bcd91e542f0ed8d">Instruction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a591b79aa413daec436776f4f7b5d566c">getIterator</a>, <a href="#afba1279eafd7cf7b6ef9681b6f28283f">getParent</a> and <a href="#ac1049fd9695f66ca0bcd91e542f0ed8d">Instruction</a>.</p>
 
 </div>
 </div>
@@ -3640,7 +3640,7 @@ class llvm::sandboxir::Instruction { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a>.</p>
+<p>This is used by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">BasicBlock::iterator</a>.</p>
 
 <p>Definition at line 118 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>.</p>
 
@@ -3744,12 +3744,12 @@ class llvm::sandboxir::Instruction { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>\Returns the <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> containing this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>, or null if it is detached.</p>
+<p>\Returns the <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> containing this <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>, or null if it is detached.</p>
 
 <p>Declaration at line 220 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 161 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock::getParent</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::sandboxir::BasicBlock::getParent</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#ad69378d28b3c25123e6607b1517d0868">getNextNode</a>, <a href="#ae2b50761af79263d3357f497def25909">getPrevNode</a>, <a href="#a938f7ce5df695f21d8654960074acae5">getTopmostLLVMInstruction</a> and <a href="#a30c015ee4860a6365aee2fb59a5c19b8">insertAfter</a>.</p>
@@ -3780,7 +3780,7 @@ class llvm::sandboxir::Instruction { ... }
 <p>Declaration at line 126 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 58 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a2fdb10193ae65fe59b4d8df288044864">llvm::sandboxir::begin</a>, <a href="#a591b79aa413daec436776f4f7b5d566c">getIterator</a>, <a href="#afba1279eafd7cf7b6ef9681b6f28283f">getParent</a> and <a href="#ac1049fd9695f66ca0bcd91e542f0ed8d">Instruction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a591b79aa413daec436776f4f7b5d566c">getIterator</a>, <a href="#afba1279eafd7cf7b6ef9681b6f28283f">getParent</a> and <a href="#ac1049fd9695f66ca0bcd91e542f0ed8d">Instruction</a>.</p>
 
 
 <p>Referenced by <a href="#a938f7ce5df695f21d8654960074acae5">getTopmostLLVMInstruction</a>.</p>
@@ -4324,7 +4324,7 @@ class llvm::sandboxir::Instruction { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::Instruction::insertInto (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> BBIterator &amp; WhereIt)</td>
+<td class="doxyMemberName">void llvm::sandboxir::Instruction::insertInto (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> BBIterator &amp; WhereIt)</td>
 </tr>
 </table>
 </td>
@@ -4338,7 +4338,7 @@ class llvm::sandboxir::Instruction { ... }
 <p>Declaration at line 199 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 139 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a0b4e7bee9b8575cc7db73329f1a561bd">llvm::BasicBlock::end</a>, <a href="/web-llvm/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</a>, <a href="#aa5aece08f5504d4019b7bc4c5961a40e">getLLVMInstrs</a>, <a href="#a938f7ce5df695f21d8654960074acae5">getTopmostLLVMInstruction</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> and <a href="#ac1049fd9695f66ca0bcd91e542f0ed8d">Instruction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a0b4e7bee9b8575cc7db73329f1a561bd">llvm::BasicBlock::end</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aca8f458e659a38da0d7e75907e1917e3">llvm::sandboxir::BasicBlock::end</a>, <a href="/web-llvm/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator</a>, <a href="#aa5aece08f5504d4019b7bc4c5961a40e">getLLVMInstrs</a>, <a href="#a938f7ce5df695f21d8654960074acae5">getTopmostLLVMInstruction</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#ac1049fd9695f66ca0bcd91e542f0ed8d">Instruction</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 
 <p>Referenced by <a href="#a30c015ee4860a6365aee2fb59a5c19b8">insertAfter</a>.</p>
@@ -5183,7 +5183,7 @@ class llvm::sandboxir::Instruction { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::sandboxir::Instruction::moveBefore (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> BBIterator &amp; WhereIt)</td>
+<td class="doxyMemberName">void llvm::sandboxir::Instruction::moveBefore (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> &amp; BB, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> BBIterator &amp; WhereIt)</td>
 </tr>
 </table>
 </td>
@@ -5197,7 +5197,7 @@ class llvm::sandboxir::Instruction { ... }
 <p>Declaration at line 201 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 100 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a> and <a href="#a591b79aa413daec436776f4f7b5d566c">getIterator</a>.</p>
+<p>Reference <a href="#a591b79aa413daec436776f4f7b5d566c">getIterator</a>.</p>
 
 
 <p>Referenced by <a href="#a388090590178cdede44158f3fcf0e1ec">moveAfter</a> and <a href="#aab95d4c8d64d83f385563198335d040d">moveBefore</a>.</p>
@@ -5256,7 +5256,7 @@ class llvm::sandboxir::Instruction { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Detach this from its parent <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> without deleting it.</p>
+<p>Detach this from its parent <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> without deleting it.</p>
 
 <p>Declaration at line 191 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">Instruction.h</a>, definition at line 66 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/instruction-cpp">Instruction.cpp</a>.</p>
 
@@ -5907,6 +5907,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

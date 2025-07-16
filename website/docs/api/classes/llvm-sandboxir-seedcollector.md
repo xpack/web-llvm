@@ -221,7 +221,7 @@ class llvm::sandboxir::SeedCollector { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::sandboxir::SeedCollector::SeedCollector (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB, <a href="/web-llvm/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp; SE)</td>
+<td class="doxyMemberName">llvm::sandboxir::SeedCollector::SeedCollector (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB, <a href="/web-llvm/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp; SE)</td>
 </tr>
 </table>
 </td>
@@ -235,7 +235,7 @@ class llvm::sandboxir::SeedCollector { ... }
 <p>Declaration at line 303 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/seedcollector-h">SeedCollector.h</a>, definition at line 163 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/seedcollector-cpp">SeedCollector.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af1b11c35cb962ef32e3423fe567b4495">llvm::sandboxir::CollectSeeds</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a16ef7ef1c4bb934e4d6f5dbd6e5fef6f">llvm::sandboxir::getContext</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a3019002eb2b04987eae4158ac938245e">llvm::sandboxir::isValidMemSeed</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/seedcollector-cpp/#ae6ccfae54f1893444a1f212f837f6884">LoadSeedsDef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a89201844d1c5cc37bbab4c1179f18b9e">llvm::sandboxir::SeedGroupsLimit</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/seedcollector-cpp/#a325636d60b5bbf6f40ac646f0fd82db8">StoreSeedsDef</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#af1b11c35cb962ef32e3423fe567b4495">llvm::sandboxir::CollectSeeds</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a3019002eb2b04987eae4158ac938245e">llvm::sandboxir::isValidMemSeed</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/seedcollector-cpp/#ae6ccfae54f1893444a1f212f837f6884">LoadSeedsDef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a89201844d1c5cc37bbab4c1179f18b9e">llvm::sandboxir::SeedGroupsLimit</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/seedcollector-cpp/#a325636d60b5bbf6f40ac646f0fd82db8">StoreSeedsDef</a>.</p>
 
 </div>
 </div>
@@ -552,6 +552,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

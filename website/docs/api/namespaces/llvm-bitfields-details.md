@@ -100,7 +100,7 @@ namespace llvm::bitfields_details { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/resolveunderlyingtype-f0800806bb2b027d53758f20ee230aed">ResolveUnderlyingType&lt;bool, false&gt;</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/resolveunderlyingtype-1894ccc07fdcdbf1d7beb00bbf18f805">ResolveUnderlyingType&lt;T, false&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -113,7 +113,7 @@ namespace llvm::bitfields_details { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/resolveunderlyingtype-1894ccc07fdcdbf1d7beb00bbf18f805">ResolveUnderlyingType&lt;T, false&gt;</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/resolveunderlyingtype-f0800806bb2b027d53758f20ee230aed">ResolveUnderlyingType&lt;bool, false&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -129,6 +129,6 @@ namespace llvm::bitfields_details { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

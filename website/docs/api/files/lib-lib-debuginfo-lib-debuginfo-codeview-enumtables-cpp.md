@@ -581,7 +581,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1a1cb1ef009501bd19178fbb688059eb">CV_REGISTER</a>(name, val)&nbsp;&nbsp;&nbsp;<a href="#afb0dffdc79965c4e7f5983006ba65202">CV_ENUM_CLASS_ENT</a>(RegisterId, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#a8f8f80d37794cde9472343e4487ba3eb">name</a>),</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af355f45cd619cefa3fe593733d729067">CV_REGISTER</a>(name, val)&nbsp;&nbsp;&nbsp;<a href="#afb0dffdc79965c4e7f5983006ba65202">CV_ENUM_CLASS_ENT</a>(RegisterId, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#a8f8f80d37794cde9472343e4487ba3eb">name</a>),</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -607,7 +607,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1a1cb1ef009501bd19178fbb688059eb">CV_REGISTER</a>(name, val)&nbsp;&nbsp;&nbsp;<a href="#afb0dffdc79965c4e7f5983006ba65202">CV_ENUM_CLASS_ENT</a>(RegisterId, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#a8f8f80d37794cde9472343e4487ba3eb">name</a>),</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a262f56481a9f97eb34dbf85556ee6375">CV_REGISTER</a>(name, val)&nbsp;&nbsp;&nbsp;<a href="#afb0dffdc79965c4e7f5983006ba65202">CV_ENUM_CLASS_ENT</a>(RegisterId, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#a8f8f80d37794cde9472343e4487ba3eb">name</a>),</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2256,7 +2256,7 @@ keywords:
 </div>
 </div>
 
-### CV\_REGISTER {#a1a1cb1ef009501bd19178fbb688059eb}
+### CV\_REGISTER {#af355f45cd619cefa3fe593733d729067}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2281,7 +2281,7 @@ keywords:
 </div>
 </div>
 
-### CV\_REGISTER {#a1a1cb1ef009501bd19178fbb688059eb}
+### CV\_REGISTER {#a262f56481a9f97eb34dbf85556ee6375}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2435,6 +2435,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

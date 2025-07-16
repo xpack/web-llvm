@@ -3515,7 +3515,7 @@ class llvm::DwarfDebug { ... }
 <p>Declaration at line 929 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/dwarfdebug-h">DwarfDebug.h</a>, definition at line 3919 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/dwarfdebug-cpp">DwarfDebug.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/difile/#a9da65c9c7c45937ab7da70348f7fb75aacdbc9e47dd59830cf2507147e7b732b6">llvm::DIFile::CSK_MD5</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a1239d6292e7aa8c403abab633ebd7dd1">llvm::fromHex</a> and <a href="#a3ace4bbb6f50507e82b0fbec1ee7ea74">getDwarfVersion</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/difile/#a9da65c9c7c45937ab7da70348f7fb75aacdbc9e47dd59830cf2507147e7b732b6">llvm::DIFile::CSK_MD5</a> and <a href="#a3ace4bbb6f50507e82b0fbec1ee7ea74">getDwarfVersion</a>.</p>
 
 </div>
 </div>
@@ -7181,6 +7181,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

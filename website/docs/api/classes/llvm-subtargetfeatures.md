@@ -461,9 +461,6 @@ class llvm::SubtargetFeatures { ... }
 <p>Declaration at line 181 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/targetparser/subtargetfeature-h">SubtargetFeature.h</a>, definition at line 54 of file <a href="/web-llvm/docs/api/files/lib/lib/targetparser/subtargetfeature-cpp">SubtargetFeature.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#aa1fd1719afe5b07ebe55f1d105c98916">llvm::join</a>.</p>
-
-
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/thinltocodegeneratorimpl/targetmachinebuilder/#a057a55d2ecdfd54087c9d8ffbe9f9c2a">llvm::ThinLTOCodeGeneratorImpl::TargetMachineBuilder::create</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#a020a49618af317a9da7a8193a54338e5">createTargetMachine</a>, <a href="/web-llvm/docs/api/namespaces/llvm/codegen/#a1b18aa9e75372c814e4d5207dce6b933">llvm::codegen::getFeaturesStr</a>, <a href="/web-llvm/docs/api/classes/llvm/hexagonsubtarget/#ac33e274ca277cfe840f699acc1b8a814">llvm::HexagonSubtarget::initializeSubtargetDependencies</a>, <a href="/web-llvm/docs/api/groups/llvmctarget/#ga1186db08841661c3349d23a4344edd38">LLVMGetHostCPUFeatures</a> and <a href="/web-llvm/docs/api/classes/llvm/enginebuilder/#a7ef5bb146eb2c0e3a609a6a169ac4f44">llvm::EngineBuilder::selectTarget</a>.</p>
 
 </div>
@@ -697,6 +694,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

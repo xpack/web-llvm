@@ -68,7 +68,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59ebd56af9d9a81e25690bfb8f503bd5">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;void LLVMInitialize##TargetName##Target();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1de0387eb53605e1052ac1bcb626cdcf">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;void LLVMInitialize##TargetName##Target();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -81,7 +81,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59ebd56af9d9a81e25690bfb8f503bd5">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;void LLVMInitialize##TargetName##TargetMC();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2cc27018eb70489bb3b43c3fdcefd9c3">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;void LLVMInitialize##TargetName##TargetMC();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -146,7 +146,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59ebd56af9d9a81e25690bfb8f503bd5">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##TargetInfo();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3d7be98af2b886dc6d207dd4d6762b84">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##TargetInfo();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -159,7 +159,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59ebd56af9d9a81e25690bfb8f503bd5">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##Target();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac9146c0c56e5bc711f516707403f212f">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##Target();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -172,7 +172,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a59ebd56af9d9a81e25690bfb8f503bd5">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##TargetMC();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa11659625d0ab517c9b62232b2800977">LLVM_TARGET</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##TargetMC();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -185,7 +185,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad1184b0ccd804ec381a8740ff580103b">LLVM_ASM_PRINTER</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##AsmPrinter();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a99b4afe22867ba61e4698768c7db68f5">LLVM_ASM_PRINTER</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##AsmPrinter();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -198,7 +198,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9b8ec1332a57ea67e49ca9475785d829">LLVM_ASM_PARSER</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##AsmParser();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4ba11ec1fed6f535a618118dfc4d929d">LLVM_ASM_PARSER</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##AsmParser();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -211,7 +211,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abc2ca2130e75e7cf2a0bb5884505fa39">LLVM_DISASSEMBLER</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##Disassembler();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad8d8ed18edf413a96aca4416779f970b">LLVM_DISASSEMBLER</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##Disassembler();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -224,7 +224,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab17838ffb753b1c97dfb412e10fa2036">LLVM_TARGETMCA</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##TargetMCA();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4832727e13e99bcd7cf4ae6222add144">LLVM_TARGETMCA</a>(TargetName)&nbsp;&nbsp;&nbsp;LLVMInitialize##TargetName##TargetMCA();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -267,7 +267,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_ASM\_PARSER {#a9b8ec1332a57ea67e49ca9475785d829}
+### LLVM\_ASM\_PARSER {#a4ba11ec1fed6f535a618118dfc4d929d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -317,7 +317,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_ASM\_PRINTER {#ad1184b0ccd804ec381a8740ff580103b}
+### LLVM\_ASM\_PRINTER {#a99b4afe22867ba61e4698768c7db68f5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -367,7 +367,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_DISASSEMBLER {#abc2ca2130e75e7cf2a0bb5884505fa39}
+### LLVM\_DISASSEMBLER {#ad8d8ed18edf413a96aca4416779f970b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -417,7 +417,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_TARGET {#a59ebd56af9d9a81e25690bfb8f503bd5}
+### LLVM\_TARGET {#a1de0387eb53605e1052ac1bcb626cdcf}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -442,7 +442,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_TARGET {#a59ebd56af9d9a81e25690bfb8f503bd5}
+### LLVM\_TARGET {#a2cc27018eb70489bb3b43c3fdcefd9c3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -467,7 +467,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_TARGET {#a59ebd56af9d9a81e25690bfb8f503bd5}
+### LLVM\_TARGET {#a3d7be98af2b886dc6d207dd4d6762b84}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -492,7 +492,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_TARGET {#a59ebd56af9d9a81e25690bfb8f503bd5}
+### LLVM\_TARGET {#ac9146c0c56e5bc711f516707403f212f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -517,7 +517,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_TARGET {#a59ebd56af9d9a81e25690bfb8f503bd5}
+### LLVM\_TARGET {#aa11659625d0ab517c9b62232b2800977}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -567,7 +567,7 @@ keywords:
 </div>
 </div>
 
-### LLVM\_TARGETMCA {#ab17838ffb753b1c97dfb412e10fa2036}
+### LLVM\_TARGETMCA {#a4832727e13e99bcd7cf4ae6222add144}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -596,6 +596,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

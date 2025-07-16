@@ -74,7 +74,7 @@ class llvm::dxil::ShaderFlagsAnalysisPrinter { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0784c57dc0671927404b56c94ec983c8">run</a> (Module &amp;M, ModuleAnalysisManager &amp;AM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -178,7 +178,7 @@ class llvm::dxil::ShaderFlagsAnalysisPrinter { ... }
 <p>Declaration at line 120 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxilshaderflags-h">DXILShaderFlags.h</a>, definition at line 190 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxilshaderflags-cpp">DXILShaderFlags.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a653cce37b80c03eebe7a00520a8eabb6">llvm::formatv</a>, <a href="/web-llvm/docs/api/structs/llvm/dxil/moduleshaderflags/#adf4f101b30074a95c86be6991752c5c3">llvm::dxil::ModuleShaderFlags::getCombinedFlags</a>, <a href="/web-llvm/docs/api/structs/llvm/dxil/moduleshaderflags/#a3c8c288b42e10147c8d6a7b007cbffd7">llvm::dxil::ModuleShaderFlags::getFunctionFlags</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a> and <a href="/web-llvm/docs/api/structs/llvm/dxil/computedshaderflags/#af46bece2453f737f74e57ce647d7ae94">llvm::dxil::ComputedShaderFlags::print</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a653cce37b80c03eebe7a00520a8eabb6">llvm::formatv</a>, <a href="/web-llvm/docs/api/structs/llvm/dxil/moduleshaderflags/#adf4f101b30074a95c86be6991752c5c3">llvm::dxil::ModuleShaderFlags::getCombinedFlags</a>, <a href="/web-llvm/docs/api/structs/llvm/dxil/moduleshaderflags/#a3c8c288b42e10147c8d6a7b007cbffd7">llvm::dxil::ModuleShaderFlags::getFunctionFlags</a>, <a href="/web-llvm/docs/api/classes/llvm/analysismanager/#aaab1fad63e4f3b8679469720a873fedd">llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult</a> and <a href="/web-llvm/docs/api/structs/llvm/dxil/computedshaderflags/#af46bece2453f737f74e57ce647d7ae94">llvm::dxil::ComputedShaderFlags::print</a>.</p>
 
 </div>
 </div>
@@ -227,6 +227,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

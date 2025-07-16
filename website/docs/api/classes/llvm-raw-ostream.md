@@ -729,7 +729,7 @@ class llvm::raw_ostream { ... }
 <td class="doxyMemberIndexDescriptionRight">
 <p>Output <span class="doxyComputerOutput">Str</span>, turning '\', '\t', '
 <br/>
-', '"', and anything that doesn't satisfy <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a> into an escape sequence. <a href="#a5ba2ece4b959bae02752c34b784ba087">More...</a></p>
+', '"', and anything that doesn't satisfy llvm::isPrint into an escape sequence. <a href="#a5ba2ece4b959bae02752c34b784ba087">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -2429,7 +2429,7 @@ class llvm::raw_ostream { ... }
 <p>Declaration at line 319 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">raw_ostream.h</a>, definition at line 402 of file <a href="/web-llvm/docs/api/files/lib/lib/support/raw-ostream-cpp">raw_ostream.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">llvm::alignTo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/arrayref/#ac835b8735b1b2faec0efdca236e37d94">llvm::ArrayRef&lt; T &gt;::empty</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a8fdf5cdf041c8aded7e3308c1c3efacc">indent</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a238ef12f09938dac4efe5ca56dc125d9">llvm::Log2_64_Ceil</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6893db19648a2dba0912d181aaa57ec0ab75fcdd2d72d9e000beab48622402d93">llvm::Lower</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>, <a href="#a0f4b64a0f7aec0a02e7f2ff5a6552723">raw_ostream</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6893db19648a2dba0912d181aaa57ec0a19de5b94f7b83900d4b296d9fa491aec">llvm::Upper</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ab1aedb7c876c118bfb3b40eb756db6f9">llvm::write_hex</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">llvm::alignTo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/classes/llvm/arrayref/#ac835b8735b1b2faec0efdca236e37d94">llvm::ArrayRef&lt; T &gt;::empty</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="#a8fdf5cdf041c8aded7e3308c1c3efacc">indent</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a238ef12f09938dac4efe5ca56dc125d9">llvm::Log2_64_Ceil</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6893db19648a2dba0912d181aaa57ec0ab75fcdd2d72d9e000beab48622402d93">llvm::Lower</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>, <a href="#a0f4b64a0f7aec0a02e7f2ff5a6552723">raw_ostream</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6893db19648a2dba0912d181aaa57ec0a19de5b94f7b83900d4b296d9fa491aec">llvm::Upper</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#ab1aedb7c876c118bfb3b40eb756db6f9">llvm::write_hex</a>.</p>
 
 </div>
 </div>
@@ -3178,12 +3178,12 @@ class llvm::raw_ostream { ... }
 
 <p>Output <span class="doxyComputerOutput">Str</span>, turning '\', '\t', '
 <br/>
-', '"', and anything that doesn't satisfy <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a> into an escape sequence.</p>
+', '"', and anything that doesn't satisfy llvm::isPrint into an escape sequence.</p>
 
 <p>Declaration at line 301 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">raw_ostream.h</a>, definition at line 168 of file <a href="/web-llvm/docs/api/files/lib/lib/support/raw-ostream-cpp">raw_ostream.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7e4ad7349e8727c7d296afe9db1a09a2">llvm::hexdigit</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a> and <a href="#a0f4b64a0f7aec0a02e7f2ff5a6552723">raw_ostream</a>.</p>
+<p>Reference <a href="#a0f4b64a0f7aec0a02e7f2ff5a6552723">raw_ostream</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/object/archivememberheader/#a0906254a905f4d1c0a68dd54c3eb65e8">llvm::object::ArchiveMemberHeader::ArchiveMemberHeader</a>, <a href="/web-llvm/docs/api/classes/llvm/asmtoken/#a9e8e74c88aca8715d0c131ce35b75387">llvm::AsmToken::dump</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfcontext/#a872194924baf250829ba1b42a0b14105">llvm::DWARFContext::dump</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfformvalue/#abccb4aa356ed1bf8bae692df185a885a">llvm::DWARFFormValue::dump</a>, <a href="/web-llvm/docs/api/classes/llvm/stringtooffsettable/#a1878d931b7c5cb9a938690f5a73d75a2">llvm::StringToOffsetTable::EmitStringTableDef</a>, <a href="/web-llvm/docs/api/classes/llvm/object/archivememberheader/#a940c0b94e9bb9dfdb69961d456b47b60">llvm::object::ArchiveMemberHeader::getName</a>, <a href="/web-llvm/docs/api/classes/llvm/prettystacktraceprogram/#a837a5955004fdc8af71f6d30fbdfa862">llvm::PrettyStackTraceProgram::print</a>, <a href="/web-llvm/docs/api/classes/llvm/pattern/#a3a4e8a88439506522a2a0f3850802d3f">llvm::Pattern::printSubstitutions</a>, <a href="/web-llvm/docs/api/classes/anonymous-machinecfgprinter-cpp-/machinecfgprinter/#acaeae56f20830134ab1bcad4eda8ec16">anonymous{MachineCFGPrinter.cpp}::MachineCFGPrinter::runOnMachineFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/mcexternalsymbolizer/#a932da00ce99b1018afdbc02579239ff1">llvm::MCExternalSymbolizer::tryAddingPcLoadReferenceComment</a> and <a href="/web-llvm/docs/api/classes/llvm/aarch64externalsymbolizer/#aadc518cf2b179163c8eca58f17e333b2">llvm::AArch64ExternalSymbolizer::tryAddingSymbolicOperand</a>.</p>
@@ -4411,6 +4411,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

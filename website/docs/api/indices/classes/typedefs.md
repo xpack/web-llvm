@@ -168,6 +168,7 @@ keywords:
 <li><b>AtomicOrderingBitfieldElement</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/atomicrmwinst/#a96ed33b586bc233392694d2519d3051f">llvm::AtomicRMWInst</a></li>
 <li><b>AtomicOrderingBitfieldElementT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/instruction/#a1ff5195448fd2558e384c94cb605cbaa">llvm::Instruction</a></li>
 <li><b>AtomicOrderingField</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/atomicrmwinst/#afe38a2b5e32581883c13c9943cb9e9d5">llvm::AtomicRMWInst</a></li>
+<li><b>AtomicUpdateCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab08e2c502864d33cabeb9b78dfe3cc02">llvm::OpenMPIRBuilder</a></li>
 <li><b>AtomType</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/appleacceleratortable/headerdata/#a4261e275e6e729f73476283e8968abce">llvm::AppleAcceleratorTable::HeaderData</a></li>
 <li><b>attr_iterator_range</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarfabbreviationdeclaration/#a8ec5d1c6239e870507fc273f8aa4e6ce">llvm::DWARFAbbreviationDeclaration</a></li>
 <li><b>AttributeGroupMapType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dxil/valueenumerator/#a620dacb977a04cc57042893c17186bf0">llvm::dxil::ValueEnumerator</a></li>
@@ -183,7 +184,7 @@ keywords:
 <li><b>AvailableValsTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/tailduplicator/#a533d2f6b8e63f0dc5d94c348038db804">llvm::TailDuplicator</a></li>
 <li><b>AvailValInBlkVect</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/gvnpass/#a3f60d95a30f6b03ac0444e402430ba86">llvm::GVNPass</a></li>
 </ul>
-<p>162 entries</p>
+<p>163 entries</p>
 
 ## - B -
 
@@ -507,7 +508,7 @@ keywords:
 <ul>
 <li><b>C</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/bitfields-details/impl/#a523737220bd74cbfd78269dd6799f248">llvm::bitfields_details::Impl&lt;Bitfield, StorageType&gt;</a></li>
 <li><b>CachedNonLocalPointerInfo</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/memorydependenceresults/#abb7ec7e0ef71b031bbb984f7bc7ad9b3">llvm::MemoryDependenceResults</a></li>
-<li><b>CachedResultsTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a7913c79a303d4d410777490004bf278b">ProvenanceAnalysis</a></li>
+<li><b>CachedResultsTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a1512369e587b4331d88fff3f4f7b8b9c">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>CacheEntry</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/msf/mappedblockstream/#ab9b3eb84fc7e73a5190e8540bc70ca76">llvm::msf::MappedBlockStream</a></li>
 <li><b>CacheMapTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/objectsizeoffsetevaluator/#a15ec516490812276c4fcd5313c0c0c86">llvm::ObjectSizeOffsetEvaluator</a></li>
 <li><b>CacheTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/immutablelistfactory/#aecd6fa999dcfcf5b7f5ec2408be0140a">llvm::ImmutableListFactory&lt;T&gt;</a></li>
@@ -1270,7 +1271,6 @@ keywords:
 <li><b>DOTTraits</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/graphwriter/#aeec6e5ec72e25776f32f269ef33b2a42">llvm::GraphWriter&lt;GraphType&gt;</a></li>
 <li><b>DoubleAPFloat</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/apfloat/#a8fb3ee99500c25c79431c9c13b48c729">llvm::APFloat</a></li>
 <li><b>DPUserVec</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/anonymous-promotememorytoregister-cpp-/allocainfo/#a7bda92b1076ceabc0f7dc0026215bca8">anonymous{PromoteMemoryToRegister.cpp}::AllocaInfo</a></li>
-<li><b>Dur</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6/#ad874fe921fc737cf0c6b5f4f87ad2f6d">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>duration</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">llvm::ExponentialBackoff</a></li>
 <li><b>DWARFAbbreviationDeclarationSetMap</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugabbrev/#a7740bebcc6af43185f769c544b8c088c">llvm::DWARFDebugAbbrev</a></li>
 <li><b>DWARFFormValue</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a652a8c8f9e1d6fe9889aa451f290c65b">llvm::DWARFDie</a></li>
@@ -1280,7 +1280,7 @@ keywords:
 <li><b>Dyn</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/object/elftype/#a2168b93cd7921bc55d98b2ea6ec64204">llvm::object::ELFType&lt;E, Is64&gt;</a></li>
 <li><b>DynRange</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/object/elftype/#abd8196cdce623052a1b2b85325699bf5">llvm::object::ELFType&lt;E, Is64&gt;</a></li>
 </ul>
-<p>223 entries</p>
+<p>222 entries</p>
 
 ## - E -
 
@@ -1394,6 +1394,8 @@ keywords:
 <li><b>ELFT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/elflinkgraphbuilder-aarch32/#a4ac669fbaea224dc99a59913ca4ff653">llvm::jitlink::ELFLinkGraphBuilder_aarch32&lt;DataEndianness&gt;</a></li>
 <li><b>ELFT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/elflinkgraphbuilder-ppc64/#abdee7614d5d803923575293a3937e107">llvm::jitlink::ELFLinkGraphBuilder_ppc64&lt;Endianness&gt;</a></li>
 <li><b>ELFT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/elflinkgraphbuilder-x86-64/#aa573c6c89f843b518f7bad167a66e474">llvm::jitlink::ELFLinkGraphBuilder_x86_64</a></li>
+<li><b>EmitFallbackCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a8be6d9636392371c1467984a429573a4">llvm::OpenMPIRBuilder</a></li>
+<li><b>EmitMetadataErrorReportFunctionTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#af45ce5586729bfa3160eaa9cec64e0f5">llvm::OpenMPIRBuilder</a></li>
 <li><b>EmitTrampolineFn</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/jitlinkreentrytrampolines/#ae70565c75d7ba26ace7d79c0edd0e5a4">llvm::orc::JITLinkReentryTrampolines</a></li>
 <li><b>EmitTrampolinesFn</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/lazyreexportsmanager/#aaf414262a7add3f75deb5679c717d9ae">llvm::orc::LazyReexportsManager</a></li>
 <li><b>EmptyTrait</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/acqrelt/#ac1552da2fc8087e16348e4f6b6dc7880">tomp::clause::AcqRelT&lt;T, I, E&gt;</a></li>
@@ -1488,7 +1490,7 @@ keywords:
 <li><b>ExtraValueToDebugLocsMap</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#a8d0bc81039d5e2c5c855590d222c0fae">llvm::slpvectorizer::BoUpSLP</a></li>
 <li><b>ExtStringEntryPtr</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a711f027e6410991c771ad61e420ec220">llvm::DwarfStringPoolEntryRef</a></li>
 </ul>
-<p>202 entries</p>
+<p>204 entries</p>
 
 ## - F -
 
@@ -1506,6 +1508,7 @@ keywords:
 <li><b>FCmpLibcallsList</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/armlegalizerinfo/#aa67704ba0630b91c0b5151a880015ea6">llvm::ARMLegalizerInfo</a></li>
 <li><b>FCmpLibcallsMapTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/armlegalizerinfo/#a3675ceb077be1a33d41f3fea633e96eb">llvm::ARMLegalizerInfo</a></li>
 <li><b>FileChecksumArray</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/codeview/debugchecksumssubsectionref/#aee1e6c5ec3c5a0c8213c6cb5ec7a22b8">llvm::codeview::DebugChecksumsSubsectionRef</a></li>
+<li><b>FileIdentifierInfoCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad324bf833c1de81f7dfdbd943660e9bc">llvm::OpenMPIRBuilder</a></li>
 <li><b>FileNamesCache</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarfunit/#a2962714894f04021fc77f2d80d495a98">llvm::dwarf_linker::parallel::DwarfUnit</a></li>
 <li><b>FilenamesMapTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/typeunit/#a254dff5ce1e179fd7e6c0a08d16fcc25">llvm::dwarf_linker::parallel::TypeUnit</a></li>
 <li><b>FileSystemList</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/vfs/overlayfilesystem/#a894d9e10c9d1721f884f74bee8dafd29">llvm::vfs::OverlayFileSystem</a></li>
@@ -1573,6 +1576,7 @@ keywords:
 <li><b>FunctionCallsMap</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/assumptioncachetracker/#a8a06fd382902a089db28bda9a3f82e23">llvm::AssumptionCacheTracker</a></li>
 <li><b>FunctionCandidatesMap</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/speculator/#ab045b4a1defa729eb9cadb5e2b923413">llvm::orc::Speculator</a></li>
 <li><b>FunctionFaultInfos</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/faultmaps/#ad539e188fb1a4568cf7d4b02e35791c1">llvm::FaultMaps</a></li>
+<li><b>FunctionGenCallback</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a05c4178639e79ab4749063b330cff5da">llvm::OpenMPIRBuilder</a></li>
 <li><b>FunctionListType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/module/#a391a6ee45603f6d05cb045d89e79f344">llvm::Module</a></li>
 <li><b>FunctionMap</b>: as typedef in class <a href="/web-llvm/docs/api/classes/anonymous-stacksafetyanalysis-cpp-/stacksafetydataflowanalysis/#aada4db204009a80da9f07b2003b400c9">anonymous{StackSafetyAnalysis.cpp}::StackSafetyDataFlowAnalysis&lt;CalleeTy&gt;</a></li>
 <li><b>FunctionMapTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/callgraph/#a33df16b263460a814d3c0f2922f2f905">llvm::CallGraph</a></li>
@@ -1605,12 +1609,13 @@ keywords:
 <li><b>FuncUnits</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">llvm::InstrStage</a></li>
 <li><b>FusionOpSet</b>: as typedef in class <a href="/web-llvm/docs/api/classes/anonymous-ppcmacrofusion-cpp-/fusionfeature/#afce7c3d42d830243e56b0191e205f35a">anonymous{PPCMacroFusion.cpp}::FusionFeature</a></li>
 </ul>
-<p>111 entries</p>
+<p>113 entries</p>
 
 ## - G -
 
 <ul>
 <li><b>generator_type</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/randomnumbergenerator/#a64a8bab63db181b42ad925b481d35f03">llvm::RandomNumberGenerator</a></li>
+<li><b>GenMapInfoCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a249878a72f57b4634ae65800060983f5">llvm::OpenMPIRBuilder</a></li>
 <li><b>GEPHTType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/anonymous-earlycse-cpp-/earlycse/#a0e8ddc4bd4b376bab8ec20e2fa50143f">anonymous{EarlyCSE.cpp}::EarlyCSE</a></li>
 <li><b>GEPList</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/slpvectorizerpass/#a82d9a1312a1de19657653c5d478e3921">llvm::SLPVectorizerPass</a></li>
 <li><b>GEPListMap</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/slpvectorizerpass/#a062fd8a26c89155c6963b333ee200b44">llvm::SLPVectorizerPass</a></li>
@@ -1674,7 +1679,7 @@ keywords:
 <li><b>GVInfoVecMapType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/constanthoistingpass/#a7a3007f8f44353c7b4e987373260253d">llvm::ConstantHoistingPass</a></li>
 <li><b>GVMapTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/anonymous-nvptxgenerictonvvm-cpp-/generictonvvm/#a9fa1e11a239c03011dacdf714bdf5686">anonymous{NVPTXGenericToNVVM.cpp}::GenericToNVVM</a></li>
 </ul>
-<p>63 entries</p>
+<p>64 entries</p>
 
 ## - H -
 
@@ -1910,7 +1915,6 @@ keywords:
 <li><b>InternalEdgeMapT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/xray/graph/inoutedgeview/#a5de1fd7b8926eac22fd390b7511570cb">llvm::xray::Graph::InOutEdgeView&lt;isConst, isOut&gt;</a></li>
 <li><b>InternalEdgeMapT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/xray/graph/neighboredgeiteratort/#a0d6a83803c8c0371605b537a14ed93bd">llvm::xray::Graph::NeighborEdgeIteratorT&lt;IsConst, IsOut, BaseIt, T&gt;</a></li>
 <li><b>InternalIteratorTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/imutavltreeinorderiterator/#a746d84f51364373a6fe2cd3869f01300">llvm::ImutAVLTreeInOrderIterator&lt;ImutInfo&gt;</a></li>
-<li><b>InternalRep</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6/#ab5ff5bdce3001482da21dcaf2a1675f9">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>InteropPreference</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/initt/#a0090fd3e9e6c4bfc124e1877ead78920">tomp::clause::InitT&lt;T, I, E&gt;</a></li>
 <li><b>InteropTypes</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/initt/#aae9db0c8e14d50b639755c2c3fbbaf07">tomp::clause::InitT&lt;T, I, E&gt;</a></li>
 <li><b>InteropVar</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/initt/#a80d4fb7f80503fd6037a0b18a041df0a">tomp::clause::InitT&lt;T, I, E&gt;</a></li>
@@ -1964,6 +1968,7 @@ keywords:
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/aliassettracker/#a00e1f4c5cd973ec788f9a59a6b564e2b">llvm::AliasSetTracker</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">llvm::AllocatorList&lt;T, AllocatorT&gt;</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a9b76b9e6f7d06ec15424e309cf440114">llvm::ArrayRef&lt;T&gt;</a></li>
+<li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aad976ce39a2c7b654a9174afe3a99fa9">llvm::AttributeList</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a0e31e2a6f1f0d5f6b332609a54fe2f13">llvm::AttributeListImpl</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a0e90e873ae304e75966619a3e706a295">llvm::AttributeSet</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a91d93b50d27c551531da9bd362248f63">llvm::AttributeSetNode</a></li>
@@ -2057,6 +2062,7 @@ keywords:
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/hashkeymap/#a3b3ce75cf09c26ff4a7c487ef9cd394d">llvm::sampleprof::HashKeyMap&lt;MapT, KeyT, ValueT, MapTArgs&gt;</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/profiledcallgraph/#a9bcc7eefa431e84d1636faf7d86fe225">llvm::sampleprof::ProfiledCallGraph</a></li>
 <li><b>iterator</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/sampleprof/profiledcallgraphnode/#a1ba04bfbe655da7d83d348727cca718c">llvm::sampleprof::ProfiledCallGraphNode</a></li>
+<li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0f3d15b829112cd2c7640cdaab98ba36">llvm::sandboxir::BasicBlock</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dgnode/#a5a092a57c6895926cdc38b5b86d37c12">llvm::sandboxir::DGNode</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function/#af6e22d270007a90db3d652af8ad44ef9">llvm::sandboxir::Function</a></li>
 <li><b>iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalwithnodeapi/#afeace33990af9dc8f24656e4e09fc710">llvm::sandboxir::GlobalWithNodeAPI&lt;GlobalT, LLVMGlobalT, ParentT, LLVMParentT&gt;</a></li>
@@ -2178,7 +2184,7 @@ keywords:
 <li><b>IttnotifyInfoPtr</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/inteljiteventswrapper/#a5beb6a29928dab4382531981adf45534">llvm::IntelJITEventsWrapper</a></li>
 <li><b>ItTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/graphtraits/nodes-iterator-0333db08b4884940a0b852ccb2ddad27/#a806960b67d3d0cca6c663f8a80330c76">llvm::GraphTraits::nodes_iterator&lt;BoUpSLP * &gt;::nodes_iterator</a></li>
 </ul>
-<p>440 entries</p>
+<p>441 entries</p>
 
 ## - J -
 
@@ -2447,8 +2453,13 @@ keywords:
 <li><b>Map</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/declcontext/#a1ecad72119d95995bc84d91ff34fcdd5">llvm::dwarf_linker::classic::DeclContext</a></li>
 <li><b>Map</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/liveintervalunion/#af2f7ebbad70dee51c4d0be722852ca19">llvm::LiveIntervalUnion</a></li>
 <li><b>map_type</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/yaml/stdmapstringcustommappingtraitsimpl/#a73a212905474c2e215c21bc78d528b3f">llvm::yaml::StdMapStringCustomMappingTraitsImpl&lt;T&gt;</a></li>
+<li><b>MapDeviceInfoArrayTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a751d216ddce395dc7fa49fcf8e0a82c0">llvm::OpenMPIRBuilder</a></li>
+<li><b>MapDimArrayTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a44f261ea64dfab54a32fedf028c7c33f">llvm::OpenMPIRBuilder</a></li>
 <li><b>MapEntryTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/stringmap/#ae4367476b57e62bd12547515281177e8">llvm::StringMap&lt;ValueTy, AllocatorTy&gt;</a></li>
+<li><b>MapFlagsArrayTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a62976e7f4bbb16d15c3483044afe20e7">llvm::OpenMPIRBuilder</a></li>
 <li><b>MapKey</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/anonymous-assumebundlebuilder-cpp-/assumebuilderstate/#ad886c9b221cb58d34773ae1ed4d1de13">anonymous{AssumeBundleBuilder.cpp}::AssumeBuilderState</a></li>
+<li><b>MapNamesArrayTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a4ab7cfa9fab97684d498b889987bcc74">llvm::OpenMPIRBuilder</a></li>
+<li><b>MapNonContiguousArrayTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a708e1a451b8b9f851317bbd2ab0d9118">llvm::OpenMPIRBuilder</a></li>
 <li><b>mapped_type</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/densemapbase/#a7165eb86ce281d80dba162eac37259ec">llvm::DenseMapBase&lt;DerivedT, KeyT, ValueT, KeyInfoT, BucketT&gt;</a></li>
 <li><b>mapped_type</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/json/object/#a320516d4d69003069a672105e5291592">llvm::json::Object</a></li>
 <li><b>mapped_type</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/rdf/registeraggrmap/#a3a636b0ab1d424f59c7c46bea701b8f2">llvm::rdf::RegisterAggrMap&lt;KeyType&gt;</a></li>
@@ -2473,6 +2484,7 @@ keywords:
 <li><b>MapType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/passregistry/#a9d7a3da391ee50729de306978ce1807c">llvm::PassRegistry</a></li>
 <li><b>MapType</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/rdf/registeraggr/ref-iterator/#a8d8dc689487cf4743b9364e88c4e4512">llvm::rdf::RegisterAggr::ref_iterator</a></li>
 <li><b>MapTypeModifiers</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/mapt/#ab46182f83d34bf495a440862ccba238a">tomp::clause::MapT&lt;T, I, E&gt;</a></li>
+<li><b>MapValuesArrayTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a83dc195f27cf9d455f808cd6d0d17e57">llvm::OpenMPIRBuilder</a></li>
 <li><b>MaskVector</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/dxcontaineryaml/psvinfo/#aed5956c024c3ddad3c20f802821563b3">llvm::DXContainerYAML::PSVInfo</a></li>
 <li><b>MatchedOperandNo</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/inlineasm/flag/#a7e674f5c3a51c2fd3abcce7243958304">llvm::InlineAsm::Flag</a></li>
 <li><b>MaterializeValueFnTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/bitcodereadervaluelist/#a9d5258ca74ffda4bf9083c6c51d54734">llvm::BitcodeReaderValueList</a></li>
@@ -2584,7 +2596,7 @@ keywords:
 <li><b>MuxInfoList</b>: as typedef in class <a href="/web-llvm/docs/api/classes/anonymous-hexagongenmux-cpp-/hexagongenmux/#a1c246a2ebcd94ad4387a7d4695317c4f">anonymous{HexagonGenMux.cpp}::HexagonGenMux</a></li>
 <li><b>MyType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbenumchildren/#afe4d6f6bbaabb47c1ccdaa6909667815">llvm::pdb::IPDBEnumChildren&lt;ChildType&gt;</a></li>
 </ul>
-<p>149 entries</p>
+<p>155 entries</p>
 
 ## - N -
 
@@ -3105,6 +3117,7 @@ keywords:
 <li><b>PostDomTreeT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/regioninfobase/#a6f3510b1fb6c367ce02190470c253af0">llvm::RegionInfoBase&lt;Tr&gt;</a></li>
 <li><b>PostDomTreeT</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/regiontraits-0f5d60cddaa2a9bddfbb61dc941a8926/#a37304fbf0d66ca1f3450522238f6e996">llvm::RegionTraits&lt;Function&gt;</a></li>
 <li><b>PostDomTreeT</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/regiontraits-c2500bb2a5b69b206350ed65636c42b7/#acffebad97881e6ed1bf24ca22f9f8ed2">llvm::RegionTraits&lt;MachineFunction&gt;</a></li>
+<li><b>PostOutlineCBTy</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#a896457ce5b8abab633e14c660dab00a7">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>POTIterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/loopblockstraversal/#ab53cbc5bee07b681b729adc5e7803256">llvm::LoopBlocksTraversal</a></li>
 <li><b>PQueue</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/ragreedy/#ad8dbcf5d6359e0e9f27a823bf5fd047a">llvm::RAGreedy</a></li>
 <li><b>pred_closure_iterator_ty</b>: as typedef in class <a href="/web-llvm/docs/api/classes/anonymous-dagdeltaalgorithm-cpp-/dagdeltaalgorithmimpl/#a3bf7d55bcff35edf81945934b089f638">anonymous{DAGDeltaAlgorithm.cpp}::DAGDeltaAlgorithmImpl</a></li>
@@ -3155,7 +3168,7 @@ keywords:
 <li><b>PushInitializersSendResultFn</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/machoplatform/#a049d88db8b8c6139a2b6e22b25a446a5">llvm::orc::MachOPlatform</a></li>
 <li><b>PushSymbolsInSendResultFn</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/machoplatform/#ac8694415b66355a2fff841e6a3399c1d">llvm::orc::MachOPlatform</a></li>
 </ul>
-<p>225 entries</p>
+<p>226 entries</p>
 
 ## - Q -
 
@@ -3209,6 +3222,9 @@ keywords:
 <li><b>RecVec</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/settheory/#ae849bddddd831fff452588a2c7bc0fad">llvm::SetTheory</a></li>
 <li><b>RecyclerCapacity</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/basicexpression/#a8e6ed14676bac31b7c92470c22d8d734">llvm::GVNExpression::BasicExpression</a></li>
 <li><b>RecyclerType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/basicexpression/#ad482e6a54b5b87468762a9cdf1506d22">llvm::GVNExpression::BasicExpression</a></li>
+<li><b>ReductionGenAtomicCBTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab81d602b13a50807afdda254fe16aecf">llvm::OpenMPIRBuilder</a></li>
+<li><b>ReductionGenCBTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a3aadc019775907d5ff516545c5d2bfc8">llvm::OpenMPIRBuilder</a></li>
+<li><b>ReductionGenClangCBTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a20304a012a6cc83d8114222bb0337228">llvm::OpenMPIRBuilder</a></li>
 <li><b>ReductionIdentifiers</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/inreductiont/#acc0e0720606ad24d1e4b36c692f77389">tomp::clause::InReductionT&lt;T, I, E&gt;</a></li>
 <li><b>ReductionIdentifiers</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/reductiont/#af48f9a9b42b68043230dd1889e016049">tomp::clause::ReductionT&lt;T, I, E&gt;</a></li>
 <li><b>ReductionIdentifiers</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clause/taskreductiont/#a4171d37cbca5dc5fc879180025a34d5b">tomp::clause::TaskReductionT&lt;T, I, E&gt;</a></li>
@@ -3399,6 +3415,7 @@ keywords:
 <li><b>ResolveLandingFunction</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/trampolinepool/#a83c081d3058ae4422db7692b857021b9">llvm::orc::TrampolinePool</a></li>
 <li><b>ResolveSendResultFn</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/lazyreexportsmanager/#ad75dce816afff1a660e9b5c76a60533c">llvm::orc::LazyReexportsManager</a></li>
 <li><b>ResourceArray</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/object/directx/psvruntimeinfo/#a6011850908f2f2d7218deaa0538d103a">llvm::object::DirectX::PSVRuntimeInfo</a></li>
+<li><b>ResourceWithCycles</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a5d0922d705874b9cea40f18f294fa123">llvm::mca::ResourceManager</a></li>
 <li><b>Result</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/aamanager/#a44bceb7b6f9ba8fd85a8376ab5fc6f82">llvm::AAManager</a></li>
 <li><b>Result</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/amdgpuaa/#a3dfd5880252b0469bbe23f412cf253d6">llvm::AMDGPUAA</a></li>
 <li><b>Result</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/assumptionanalysis/#a98f04bfd4fd5778b01448da3321ccc87">llvm::AssumptionAnalysis</a></li>
@@ -3549,7 +3566,7 @@ keywords:
 <li><b>rpot_iterator</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfoimpl/#a8d231c4d81102c8bed8a4dea43189153">llvm::BlockFrequencyInfoImpl&lt;BT&gt;</a></li>
 <li><b>RQITy</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/anonymous-attributorattributes-cpp-/cachedreachabilityaa/#ad1eb46d4088a7ee8f8d778fe77443eaa">anonymous{AttributorAttributes.cpp}::CachedReachabilityAA&lt;BaseTy, ToTy&gt;</a></li>
 </ul>
-<p>378 entries</p>
+<p>382 entries</p>
 
 ## - S -
 
@@ -3898,9 +3915,11 @@ keywords:
 <li><b>TagT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/mmrametadata/#ac31f45f864356ef75c7a91569473d58a">llvm::MMRAMetadata</a></li>
 <li><b>TailCallKindField</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/callinst/#a82c587cb8f31deaf307ba6382d8632a1">llvm::CallInst</a></li>
 <li><b>TargetAndLikelies</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/irspeculationlayer/#a9ce64934c80c28276e373706c2556e65">llvm::orc::IRSpeculationLayer</a></li>
+<li><b>TargetBodyGenCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a73e20c5fd6145c56d7ce35c2ccd99e5b">llvm::OpenMPIRBuilder</a></li>
 <li><b>TargetExtTypeSet</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/llvmcontextimpl/#a8128667a1c6f8bfeb7ccaf466763c2e7">llvm::LLVMContextImpl</a></li>
 <li><b>TargetFAddr</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/orc/speculator/#aa6d83bea68a9ab0aa9e725872df07f2b">llvm::orc::Speculator</a></li>
 <li><b>TargetFlagsType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/jitsymbolflags/#a52b2cde16c7a36e0ac89c4a9462f2226">llvm::JITSymbolFlags</a></li>
+<li><b>TargetGenArgAccessorsCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a3ad579ff0c72b56f5ebc91bf2d747bc2">llvm::OpenMPIRBuilder</a></li>
 <li><b>TargetID</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/object/offloadfile/#a6c0c9b12f8ee79572afeb77fdac1bdfa">llvm::object::OffloadFile</a></li>
 <li><b>TargetMachineCtorTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/target/#ae50a6e34e0b78a4bd13981d9ab7b1453">llvm::Target</a></li>
 <li><b>TargetPtrT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldelfmips/#a16cef55e7744145fbfd29f941d16f8d3">llvm::RuntimeDyldELFMips</a></li>
@@ -3908,6 +3927,7 @@ keywords:
 <li><b>TargetPtrT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldmachoarm/#a719f0a1928932e9942031e460df96bb2">llvm::RuntimeDyldMachOARM</a></li>
 <li><b>TargetPtrT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldmachoi386/#aefd3c9498e51570fe5cd621a54920e8d">llvm::RuntimeDyldMachOI386</a></li>
 <li><b>TargetPtrT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldmachox86-64/#a0e8b398a34891759288f13935451f758">llvm::RuntimeDyldMachOX86_64</a></li>
+<li><b>TargetTaskBodyCallbackTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a5f44f79e28451e12a142140450888ecd">llvm::OpenMPIRBuilder</a></li>
 <li><b>TBAABaseNodeSummary</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/tbaaverifier/#ad0c97388ec16c5e1085504cf2faee1a0">llvm::TBAAVerifier</a></li>
 <li><b>TemplateParamList</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/abstractmanglingparser/#a1520018fbee9a2889452cd7f161d380f">AbstractManglingParser&lt;Derived, Alloc&gt;</a></li>
 <li><b>TestVectors</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/mcdcrecord/#a59573d02b596b1d3f901d928fbab9a5f">llvm::coverage::MCDCRecord</a></li>
@@ -4089,7 +4109,7 @@ keywords:
 <li><b>TypeTy</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/clauset/#ac48808e1995dd73f2ea4cc3562249a78">tomp::ClauseT&lt;TypeType, IdType, ExprType, Extras&gt;</a></li>
 <li><b>TypeTy</b>: as typedef in struct <a href="/web-llvm/docs/api/structs/tomp/constructdecompositiont/#a47a07ee164eb6cf21ebad728c3661589">tomp::ConstructDecompositionT&lt;ClauseType, HelperType&gt;</a></li>
 </ul>
-<p>199 entries</p>
+<p>202 entries</p>
 
 ## - U -
 
@@ -4378,7 +4398,7 @@ keywords:
 <li><b>ValueMapType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/dxil/valueenumerator/#a8f0bfad659ad2d0c6c89b45818f407a0">llvm::dxil::ValueEnumerator</a></li>
 <li><b>ValueMapType</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/valueenumerator/#a6a95dd1e61695ded1746d841ef645427">llvm::ValueEnumerator</a></li>
 <li><b>ValueNumberMap</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/globalnumberstate/#adfae77808d3046fb44dedb11a73c66ca">llvm::GlobalNumberState</a></li>
-<li><b>ValuePairTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a270fc4ac0067c4471780b05faeafa5ce">ProvenanceAnalysis</a></li>
+<li><b>ValuePairTy</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a616a55f88aacbb023f73238174fcd1c8">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>ValueParamT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl/#aef191f78c6e0e362e81bfe7d6b43fb2c">llvm::SmallVectorImpl&lt;T&gt;</a></li>
 <li><b>ValueParamT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase/#a47fa0eb331582edc3b5c55b5b7af40f3">llvm::SmallVectorTemplateBase&lt;T, bool&gt;</a></li>
 <li><b>ValueParamT</b>: as typedef in class <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase-d7d249fb8bb1e1b13d21e8212052041a/#a0fca420bb53539464d8c2708f9d01860">llvm::SmallVectorTemplateBase&lt;T, true&gt;</a></li>
@@ -4590,10 +4610,10 @@ keywords:
 </ul>
 <p>4 entries</p>
 <br/>
-<p>Total: 4423 entries.</p>
+<p>Total: 4443 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

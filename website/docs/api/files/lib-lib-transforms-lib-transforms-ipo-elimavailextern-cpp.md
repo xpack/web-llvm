@@ -267,7 +267,7 @@ keywords:
 <p>Definition at line 91 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/elimavailextern-cpp">ElimAvailExtern.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#ac4570ec116206d63142095cd80eb77bb">ConvertToLocal</a>, <a href="#a0dff0e83176712b3e57686c7164eb7c0">convertToLocalCopy</a>, <a href="#ad7344d1168abcbd9203ef6e3a0fb29c4">deleteFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#aedfa75f0c85c4aa85b257f066fbea57ca6c93794d7b99cd433e96c53eadb15a6e">llvm::GlobalValue::ExternalLinkage</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6b369f94d5ebc6e107a988f17b42b3eb">llvm::isSafeToDestroyConstant</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3d2cdc4a0db233678e7141c9d6ea3419">llvm::make_early_inc_range</a>.</p>
+<p>References <a href="#ac4570ec116206d63142095cd80eb77bb">ConvertToLocal</a>, <a href="#a0dff0e83176712b3e57686c7164eb7c0">convertToLocalCopy</a>, <a href="#ad7344d1168abcbd9203ef6e3a0fb29c4">deleteFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#aedfa75f0c85c4aa85b257f066fbea57ca6c93794d7b99cd433e96c53eadb15a6e">llvm::GlobalValue::ExternalLinkage</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6b369f94d5ebc6e107a988f17b42b3eb">llvm::isSafeToDestroyConstant</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3d2cdc4a0db233678e7141c9d6ea3419">llvm::make_early_inc_range</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/eliminateavailableexternallypass/#acb30ee5db432a603141e0f783643f5d1">llvm::EliminateAvailableExternallyPass::run</a>.</p>
@@ -419,6 +419,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

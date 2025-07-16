@@ -139,7 +139,7 @@ struct llvm::GVNPass::Expression { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AttributeList</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a></td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad0093aee488f2a78df645a806e237f9c">attrs</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -269,7 +269,7 @@ struct llvm::GVNPass::Expression { ... }
 <p>Definition at line 152 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp">GVN.cpp</a>.</p>
 
 
-<p>References <a href="#ad0093aee488f2a78df645a806e237f9c">attrs</a>, <a href="#ac8903c858d2f772afe5645945071edd8">Expression</a>, <a href="#a9befc406b4248fcadb0b81079602515f">opcode</a>, <a href="#a880eb73e8f60cb6c3dc2e1e639fc6236">type</a> and <a href="#a069d9ba665289a777ed0d340ca800132">varargs</a>.</p>
+<p>References <a href="#ad0093aee488f2a78df645a806e237f9c">attrs</a>, <a href="#ac8903c858d2f772afe5645945071edd8">Expression</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a5269e6b95f5007a652d53ca847cca6f3">llvm::AttributeList::isEmpty</a>, <a href="#a9befc406b4248fcadb0b81079602515f">opcode</a>, <a href="#a880eb73e8f60cb6c3dc2e1e639fc6236">type</a> and <a href="#a069d9ba665289a777ed0d340ca800132">varargs</a>.</p>
 
 </div>
 </div>
@@ -429,6 +429,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

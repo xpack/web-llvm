@@ -87,16 +87,16 @@ struct llvm::format_provider&lt;T, std::enable_if_t&lt; support::detail::use_dou
 
 
 
-### | style | Meaning | Example | {#autotoc_md52}
+### | style | Meaning | Example | {#autotoc_md51}
 
 
-## | | | Input | Output | {#autotoc_md53}
+## | | | Input | Output | {#autotoc_md52}
 
 
 <p>| P / p | Percentage | 0.05 | 5.00% | | F / f | Fixed point | 1.0 | 1.00 | | E | Exponential with E | 100000 | 1.0E+05 | | e | Exponential with e | 100000 | 1.0e+05 |</p>
 
 
-## | (empty) | Same as F / f | | | {#autotoc_md54}
+## | (empty) | Same as F / f | | | {#autotoc_md53}
 
 
 <p>The default precision is 6 for exponential (E / e) and 2 for everything else.</p>
@@ -156,6 +156,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

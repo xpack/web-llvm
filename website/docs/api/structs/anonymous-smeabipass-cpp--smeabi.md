@@ -201,7 +201,7 @@ struct anonymous{SMEABIPass.cpp}::SMEABI { ... }
 <p>Definition at line 37 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#ac5c76ddab5601ff5ead828edc802e912">llvm::SMEAttrs::isNewZA</a> and <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#a69746b44d6e2baf8fde71e2ec31d1b36">llvm::SMEAttrs::isNewZT0</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#ac5c76ddab5601ff5ead828edc802e912">llvm::SMEAttrs::isNewZA</a> and <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#a69746b44d6e2baf8fde71e2ec31d1b36">llvm::SMEAttrs::isNewZT0</a>.</p>
 
 </div>
 </div>
@@ -305,6 +305,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

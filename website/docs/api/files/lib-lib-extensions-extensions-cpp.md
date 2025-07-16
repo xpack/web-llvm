@@ -77,7 +77,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a521c1789df77ba08d88ca195c68d3bfc">HANDLE_EXTENSION</a>(Ext)&nbsp;&nbsp;&nbsp;			get##Ext##PluginInfo();</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af66a776546f945e750f1892354116ee9">HANDLE_EXTENSION</a>(Ext)&nbsp;&nbsp;&nbsp;			get##Ext##PluginInfo();</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -120,7 +120,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_EXTENSION {#a521c1789df77ba08d88ca195c68d3bfc}
+### HANDLE\_EXTENSION {#af66a776546f945e750f1892354116ee9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -149,6 +149,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

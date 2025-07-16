@@ -74,7 +74,7 @@ class llvm::StructuralHashPrinterPass { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afe15599f186ed0311708ffe7f629d374">run</a> (Module &amp;M, ModuleAnalysisManager &amp;MAM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -210,7 +210,7 @@ class llvm::StructuralHashPrinterPass { ... }
 <p>Declaration at line 33 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/structuralhash-h">StructuralHash.h</a>, definition at line 21 of file <a href="/web-llvm/docs/api/files/lib/lib/analysis/structuralhash-cpp">StructuralHash.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af85ca655fbe4ec523007c763ebe801fdae20bbf35ba42e0aaa85657ac47992a17">llvm::CallTargetIgnored</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af85ca655fbe4ec523007c763ebe801fda4042fcadbe61a3300451157e2c9fe651">llvm::Detailed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a939bc2108d47080767f0c06ba56caec7">llvm::format</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af85ca655fbe4ec523007c763ebe801fda6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af18a8188b0254597abea12364ac397a6">llvm::StructuralHash</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a26bee962bfc116c19a2acd57fe65d304">llvm::StructuralHashWithDifferences</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#af85ca655fbe4ec523007c763ebe801fdae20bbf35ba42e0aaa85657ac47992a17">llvm::CallTargetIgnored</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af85ca655fbe4ec523007c763ebe801fda4042fcadbe61a3300451157e2c9fe651">llvm::Detailed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a939bc2108d47080767f0c06ba56caec7">llvm::format</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af85ca655fbe4ec523007c763ebe801fda6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af18a8188b0254597abea12364ac397a6">llvm::StructuralHash</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a26bee962bfc116c19a2acd57fe65d304">llvm::StructuralHashWithDifferences</a>.</p>
 
 </div>
 </div>
@@ -321,6 +321,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

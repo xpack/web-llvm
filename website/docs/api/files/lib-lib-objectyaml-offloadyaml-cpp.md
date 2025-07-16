@@ -76,7 +76,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8c36a148929ce5ee501d6c5e99ed059b">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">object::X</a>)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5e666a6894b18808026a5a176cbe0fff">ECase</a>(X)&nbsp;&nbsp;&nbsp;IO.enumCase(Value, #<a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, <a href="/web-llvm/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">object::X</a>)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -119,7 +119,7 @@ keywords:
 </div>
 </div>
 
-### ECase {#a8c36a148929ce5ee501d6c5e99ed059b}
+### ECase {#a5e666a6894b18808026a5a176cbe0fff}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -148,6 +148,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

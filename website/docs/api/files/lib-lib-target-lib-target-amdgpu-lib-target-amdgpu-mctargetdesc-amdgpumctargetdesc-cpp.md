@@ -280,7 +280,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a125da064bb99459483887c91182923b8">GET_SUBTARGETINFO_MC_DESC</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a99ea904bef8a9f247901c6d75441be09">GET_SUBTARGETINFO_MC_DESC</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -306,7 +306,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7450ae576d0fab98e1f81508551d6e7e">GET_REGINFO_MC_DESC</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac2f8bd9f2afacb62b75ed9592b458f43">GET_REGINFO_MC_DESC</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -751,7 +751,7 @@ keywords:
 </div>
 </div>
 
-### GET\_REGINFO\_MC\_DESC {#a7450ae576d0fab98e1f81508551d6e7e}
+### GET\_REGINFO\_MC\_DESC {#ac2f8bd9f2afacb62b75ed9592b458f43}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -801,7 +801,7 @@ keywords:
 </div>
 </div>
 
-### GET\_SUBTARGETINFO\_MC\_DESC {#a125da064bb99459483887c91182923b8}
+### GET\_SUBTARGETINFO\_MC\_DESC {#a99ea904bef8a9f247901c6d75441be09}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -855,6 +855,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

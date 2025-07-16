@@ -544,7 +544,7 @@ struct anonymous{LanaiDelaySlotFiller.cpp}::Filler { ... }
 <p>Definition at line 48 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/lanai/lanaidelayslotfiller-cpp">LanaiDelaySlotFiller.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/lanaisubtarget/#a7e13656412731980d94152e3a7e428d6">llvm::LanaiSubtarget::getInstrInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/lanaisubtarget/#a5d740bc25d0c54eb72015ccc8b082e53">llvm::LanaiSubtarget::getRegisterInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="#ad3c882c0fe4c6f653e386a5b3a940020">runOnMachineBasicBlock</a>, <a href="#a2ddb9687c13ecd7e4f4e44212ee31dcd">TII</a> and <a href="#abb42aee7f1174988098018aaaf7850c6">TRI</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/lanaisubtarget/#a7e13656412731980d94152e3a7e428d6">llvm::LanaiSubtarget::getInstrInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/lanaisubtarget/#a5d740bc25d0c54eb72015ccc8b082e53">llvm::LanaiSubtarget::getRegisterInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="#ad3c882c0fe4c6f653e386a5b3a940020">runOnMachineBasicBlock</a>, <a href="#a2ddb9687c13ecd7e4f4e44212ee31dcd">TII</a> and <a href="#abb42aee7f1174988098018aaaf7850c6">TRI</a>.</p>
 
 </div>
 </div>
@@ -690,6 +690,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

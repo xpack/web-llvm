@@ -704,7 +704,7 @@ class anonymous{RewriteRope.cpp}::RopePieceBTreeInterior { ... }
 <p>Definition at line 444 of file <a href="/web-llvm/docs/api/files/lib/lib/support/rewriterope-cpp">RewriteRope.cpp</a>.</p>
 
 
-<p>References <a href="#aa3c9b7644751344ccf4b40366a1af0d5">getChild</a>, <a href="#ac323732b9264b45b563594cbe953b0dc">HandleChildPiece</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>, <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreenode/#a469f9d8881255bab80c4a1cf69696f0f">anonymous{RewriteRope.cpp}::RopePieceBTreeNode::RopePieceBTreeNode</a>, <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreenode/#a65789943b6e154b98f662c1e2d882c82">anonymous{RewriteRope.cpp}::RopePieceBTreeNode::size</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a8e3001fd5d1324d1e63ddcf56a45e955">llvm::split</a>.</p>
+<p>References <a href="#aa3c9b7644751344ccf4b40366a1af0d5">getChild</a>, <a href="#ac323732b9264b45b563594cbe953b0dc">HandleChildPiece</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">llvm::Offset</a>, <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreenode/#a469f9d8881255bab80c4a1cf69696f0f">anonymous{RewriteRope.cpp}::RopePieceBTreeNode::RopePieceBTreeNode</a>, <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreenode/#a65789943b6e154b98f662c1e2d882c82">anonymous{RewriteRope.cpp}::RopePieceBTreeNode::size</a> and <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreenode/#a02b6f427df62fc4de4b851a72ce6da66">anonymous{RewriteRope.cpp}::RopePieceBTreeNode::split</a>.</p>
 
 </div>
 </div>
@@ -817,6 +817,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

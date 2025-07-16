@@ -260,7 +260,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">Tail <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">Tail Call</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8b5e010ec24b31e0466f88d3b583d97b">Elimination</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -273,7 +273,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">Tail <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">Tail Call</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a66aaf3f9ce013a20a2a27d4a105d9402">false</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -459,7 +459,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">INITIALIZE_PASS_BEGIN (TailCallElim, "tailcallelim", "Tail <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> Elimination", false, false)</td>
+<td class="doxyMemberName">INITIALIZE_PASS_BEGIN (TailCallElim, "tailcallelim", "Tail Call Elimination", false, false)</td>
 </tr>
 </table>
 </td>
@@ -705,6 +705,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

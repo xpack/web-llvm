@@ -100,7 +100,7 @@ keywords:
 <p>Definition at line 19 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inferfunctionattrs-cpp">InferFunctionAttrs.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ada75fb6345bfa2602ef65d6898d3e236">llvm::inferAttributesFromOthers</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a4a57dcd94b6daa3eacdbe8471955f4b1">llvm::inferNonMandatoryLibFuncAttrs</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ada75fb6345bfa2602ef65d6898d3e236">llvm::inferAttributesFromOthers</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a4a57dcd94b6daa3eacdbe8471955f4b1">llvm::inferNonMandatoryLibFuncAttrs</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/inferfunctionattrspass/#a43509c520610b43c4b366bee12dc1f4b">llvm::InferFunctionAttrsPass::run</a>.</p>
@@ -143,6 +143,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

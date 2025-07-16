@@ -914,9 +914,6 @@ class llvm::MD5 { ... }
 <p>Declaration at line 84 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/md5-h">MD5.h</a>, definition at line 287 of file <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp">MD5.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#abec19670f96ed423c2e4d4f10a4c6975">llvm::toHex</a>.</p>
-
-
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/typerecordmapping-cpp/#a583d026b8d43fe8bfa1bb824342a521e">computeHashString</a>, <a href="/web-llvm/docs/api/classes/anonymous-nameanonglobals-cpp-/modulehasher/#a1df471b751b0e5d0812dd5cebc1dfe98">anonymous{NameAnonGlobals.cpp}::ModuleHasher::get</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa3185cb2a23629ee9ed7ad67f719b60c">llvm::getUniqueInternalLinkagePostfix</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a6b8599f07b1b0181899c650b7b385b26">llvm::getUniqueModuleId</a>.</p>
 
 </div>
@@ -935,6 +932,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

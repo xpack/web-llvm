@@ -96,7 +96,7 @@ struct llvm::ControlFlowHub { ... }
 
 
 
-### Input CFG: {#autotoc_md60}
+### Input CFG: {#autotoc_md59}
 
 
 
@@ -114,7 +114,7 @@ struct llvm::ControlFlowHub { ... }
 
 
 
-### Create hub: Incoming = {In1, In2}, Outgoing = {Out1, Out2} {#autotoc_md61}
+### Create hub: Incoming = {In1, In2}, Outgoing = {Out1, Out2} {#autotoc_md60}
 
 
 
@@ -132,7 +132,7 @@ struct llvm::ControlFlowHub { ... }
 </ul>
 
 
-### Limitations: {#autotoc_md62}
+### Limitations: {#autotoc_md61}
 
 
 <ol class="doxyList" type="1">
@@ -263,6 +263,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

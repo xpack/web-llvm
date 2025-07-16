@@ -1652,9 +1652,6 @@ keywords:
 
 <p>Definition at line 2043 of file <a href="/web-llvm/docs/api/files/lib/lib/support/commandline-cpp">CommandLine.cpp</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a55601fba8a44698d545bac51ab0c53b7">llvm::to_float</a>.</p>
-
 </div>
 </div>
 
@@ -2428,6 +2425,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

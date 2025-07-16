@@ -156,7 +156,7 @@ class llvm::PassManager&lt;IRUnitT, AnalysisManagerT, ExtraArgTs&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aef5d9142acafceffd14c76b8ddd0fd4e">run</a> (IRUnitT &amp;IR, AnalysisManagerT &amp;AM, ExtraArgTs... ExtraArgs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -223,7 +223,7 @@ class llvm::PassManager&lt;IRUnitT, AnalysisManagerT, ExtraArgTs&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a6d74effaad77f6ecb91e1806993cda8f">run</a> (LazyCallGraph::SCC &amp;InitialC, CGSCCAnalysisManager &amp;AM, LazyCallGraph &amp;G, CGSCCUpdateResult &amp;UR)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -239,7 +239,7 @@ class llvm::PassManager&lt;IRUnitT, AnalysisManagerT, ExtraArgTs&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a26223c50cd4a92948d2ac2a0d0e4eefd">run</a> (MachineFunction &amp;, AnalysisManager&lt; MachineFunction &gt; &amp;)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -255,7 +255,7 @@ class llvm::PassManager&lt;IRUnitT, AnalysisManagerT, ExtraArgTs&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a6d74effaad77f6ecb91e1806993cda8f">run</a> (LazyCallGraph::SCC &amp;InitialC, CGSCCAnalysisManager &amp;AM, LazyCallGraph &amp;G, CGSCCUpdateResult &amp;UR)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -322,7 +322,7 @@ class llvm::PassManager&lt;IRUnitT, AnalysisManagerT, ExtraArgTs&gt; { ... }
 <p>A pass manager contains a sequence of passes to run over a particular unit of IR (e.g. Functions, Modules). It is itself a valid pass over that unit of IR, and when run over some given IR will run each of its contained passes in sequence. <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> managers are the primary and most basic building block of a pass pipeline.</p>
 
 
-<p>When you run a pass manager, you provide an <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/analysismanager">AnalysisManager&lt;IRUnitT&gt;</a></span> argument. The pass manager will propagate that analysis manager to each pass it runs, and will call the analysis manager's invalidation routine with the <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> of each pass it runs.</p>
+<p>When you run a pass manager, you provide an <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/analysismanager">AnalysisManager&lt;IRUnitT&gt;</a></span> argument. The pass manager will propagate that analysis manager to each pass it runs, and will call the analysis manager's invalidation routine with the PreservedAnalyses of each pass it runs.</p>
 
 
 <p>Definition at line 161 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.</p>
@@ -641,7 +641,7 @@ class llvm::PassManager&lt;IRUnitT, AnalysisManagerT, ExtraArgTs&gt; { ... }
 <p>Declaration at line 190 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>, definition at line 29 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h">PassManagerImpl.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/namespaces/llvm/detail/#abd2eb0563df3078fb91a47d6203fe1d6">llvm::detail::getAnalysisResult</a>, <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation/#a79b8b2488fca01c969f40f133c416e99">llvm::PassInstrumentation::getPassNameForClassName</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a5f5dc18d0b2c71cba501f12975188e40">llvm::PreservedAnalyses::intersect</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/legalizer-cpp/#a05ab4853f7153e537774d02580e761ec">IR</a>, <a href="/web-llvm/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="#a8bd144cba90e4ead30e5ee59165c4ee5">llvm::PassManager&lt; IRUnitT, AnalysisManagerT, ExtraArgTs &gt;::Passes</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86loweramxintrinsics-cpp/#adb9257105a403ef9d0773b87693f7779">PassName</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a937c42f77e161349ce0f999e448c7027">llvm::PreservedAnalyses::preserveSet</a>, <a href="/web-llvm/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3e747628bd3eea8ba888d3615c900c9f">llvm::printIRUnitNameForStackTrace</a>, <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation/#acec038dce9072b64301f6e5226c5579a">llvm::PassInstrumentation::runAfterPass</a>, <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation/#aead32b9af4b66a742d37585c6d6b4cbc">llvm::PassInstrumentation::runBeforePass</a> and <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#a926189935285d6e5df83fc0f45bf9b36">UseNewDbgInfoFormat</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/detail/#abd2eb0563df3078fb91a47d6203fe1d6">llvm::detail::getAnalysisResult</a>, <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation/#a79b8b2488fca01c969f40f133c416e99">llvm::PassInstrumentation::getPassNameForClassName</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/legalizer-cpp/#a05ab4853f7153e537774d02580e761ec">IR</a>, <a href="/web-llvm/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="#a8bd144cba90e4ead30e5ee59165c4ee5">llvm::PassManager&lt; IRUnitT, AnalysisManagerT, ExtraArgTs &gt;::Passes</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86loweramxintrinsics-cpp/#adb9257105a403ef9d0773b87693f7779">PassName</a>, <a href="/web-llvm/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3e747628bd3eea8ba888d3615c900c9f">llvm::printIRUnitNameForStackTrace</a>, <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation/#acec038dce9072b64301f6e5226c5579a">llvm::PassInstrumentation::runAfterPass</a>, <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation/#aead32b9af4b66a742d37585c6d6b4cbc">llvm::PassInstrumentation::runBeforePass</a> and <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#a926189935285d6e5df83fc0f45bf9b36">UseNewDbgInfoFormat</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/fuzzmutate/irmutator-cpp/#a740b270dfd80a81a0765fb1d31930828">eliminateDeadCode</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#ac80362d592aa56ce616f030fbc3a0bd0">if</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/thinltocodegenerator-cpp/#ae1b1fc686e5285c37b8f51cab4d213f0">optimizeModule</a>, <a href="/web-llvm/docs/api/structs/llvm/corocleanuppass/#ad94b3bcb5dea38b6b7d891fa9344322c">llvm::CoroCleanupPass::run</a>, <a href="/web-llvm/docs/api/files/lib/lib/lto/ltobackend-cpp/#af5d1d807d38250523b2335cec221c2f1">runNewPMPasses</a> and <a href="/web-llvm/docs/api/classes/llvm/amdgputargetmachine/#ae1dadcf6ee688f96abb563274e620f44">llvm::AMDGPUTargetMachine::splitModule</a>.</p>
@@ -821,6 +821,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

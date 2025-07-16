@@ -80,7 +80,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa0d599d6fbdf8df45ed651086c821c75">SHADER_FEATURE_FLAG</a>(Num, DxilModuleNum, Val, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a19b0802080985924a1b7b5029186c480">SHADER_FEATURE_FLAG</a>(Num, DxilModuleNum, Val, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -93,7 +93,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa0d599d6fbdf8df45ed651086c821c75">SHADER_FEATURE_FLAG</a>(Num, DxilModuleNum, Val, Str)&nbsp;&nbsp;&nbsp;  IO.mapRequired(#Val, Flags.Val);</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ada325f6c39be2720e99b315355de3178">SHADER_FEATURE_FLAG</a>(Num, DxilModuleNum, Val, Str)&nbsp;&nbsp;&nbsp;  IO.mapRequired(#Val, Flags.Val);</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -174,7 +174,7 @@ keywords:
 </div>
 </div>
 
-### SHADER\_FEATURE\_FLAG {#aa0d599d6fbdf8df45ed651086c821c75}
+### SHADER\_FEATURE\_FLAG {#a19b0802080985924a1b7b5029186c480}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -208,7 +208,7 @@ keywords:
 </div>
 </div>
 
-### SHADER\_FEATURE\_FLAG {#aa0d599d6fbdf8df45ed651086c821c75}
+### SHADER\_FEATURE\_FLAG {#ada325f6c39be2720e99b315355de3178}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -237,6 +237,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

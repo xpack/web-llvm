@@ -409,7 +409,7 @@ class llvm::BPFCoreSharedInfo { ... }
 <p>Declaration at line 57 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfcore-h">BPFCORE.h</a>, definition at line 429 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp">BPFAbstractMemberAccess.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp/#a36be37a99f7cf2fdd84b942e5dafba1b">replaceWithGEP</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp/#a36be37a99f7cf2fdd84b942e5dafba1b">replaceWithGEP</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp/#a36fe1ed1682023b7fb3c4699f9009d31">removePAICalls</a>.</p>
@@ -445,7 +445,7 @@ class llvm::BPFCoreSharedInfo { ... }
 <p>Declaration at line 58 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfcore-h">BPFCORE.h</a>, definition at line 433 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp">BPFAbstractMemberAccess.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp/#a36be37a99f7cf2fdd84b942e5dafba1b">replaceWithGEP</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp/#a36be37a99f7cf2fdd84b942e5dafba1b">replaceWithGEP</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp/#a36fe1ed1682023b7fb3c4699f9009d31">removePAICalls</a>.</p>
@@ -479,9 +479,6 @@ class llvm::BPFCoreSharedInfo { ... }
 
 
 <p>Declaration at line 59 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfcore-h">BPFCORE.h</a>, definition at line 437 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfabstractmemberaccess-cpp">BPFAbstractMemberAccess.cpp</a>.</p>
-
-
-<p>Reference <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/bpf/bpfpreservestaticoffset-cpp/#a36fe1ed1682023b7fb3c4699f9009d31">removePAICalls</a>.</p>
@@ -609,6 +606,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

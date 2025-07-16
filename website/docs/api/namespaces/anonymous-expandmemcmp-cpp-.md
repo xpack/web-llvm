@@ -31,7 +31,7 @@ namespace anonymous{ExpandMemCmp.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-expandmemcmp-cpp-/expandmemcmplegacypass">ExpandMemCmpLegacyPass</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-expandmemcmp-cpp-/memcmpexpansion">MemCmpExpansion</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -44,7 +44,7 @@ namespace anonymous{ExpandMemCmp.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-expandmemcmp-cpp-/memcmpexpansion">MemCmpExpansion</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-expandmemcmp-cpp-/expandmemcmplegacypass">ExpandMemCmpLegacyPass</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -89,7 +89,7 @@ namespace anonymous{ExpandMemCmp.cpp} { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1ed6e9933878fa5790bdacff6d5a907b">runImpl</a> (Function &amp;F, const TargetLibraryInfo *TLI, const TargetTransformInfo *TTI, const TargetLowering *TL, ProfileSummaryInfo *PSI, BlockFrequencyInfo *BFI, DominatorTree *DT)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -172,7 +172,7 @@ namespace anonymous{ExpandMemCmp.cpp} { ... }
 <p>Definition at line 964 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/expandmemcmp-cpp">ExpandMemCmp.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#ad966bea18aa62ffb9e040509adc7c99f">llvm::PreservedAnalyses::preserve</a>, <a href="#ab8309872ede007a47eebce4974ab341c">runOnBlock</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a42108fe3c2695cb429e6fe312908fa0d">llvm::SimplifyInstructionsInBlock</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="#ab8309872ede007a47eebce4974ab341c">runOnBlock</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a42108fe3c2695cb429e6fe312908fa0d">llvm::SimplifyInstructionsInBlock</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-expandmemcmp-cpp-/expandmemcmplegacypass/#a744c97bd2b03802d78ec941f5c7b9d16">anonymous{ExpandMemCmp.cpp}::ExpandMemCmpLegacyPass::runOnFunction</a>.</p>
@@ -228,6 +228,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

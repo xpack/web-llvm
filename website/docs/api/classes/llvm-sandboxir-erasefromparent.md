@@ -173,7 +173,7 @@ class llvm::sandboxir::EraseFromParent { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This is either the next <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> in the stream, or the parent <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> if at the end of the BB. <a href="#ae8ae37201845f49bc27d2109b6b1056e">More...</a></p>
+<p>This is either the next <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> in the stream, or the parent <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> if at the end of the BB. <a href="#ae8ae37201845f49bc27d2109b6b1056e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -483,7 +483,7 @@ class llvm::sandboxir::EraseFromParent { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>This is either the next <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> in the stream, or the parent <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> if at the end of the BB.</p>
+<p>This is either the next <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> in the stream, or the parent <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> if at the end of the BB.</p>
 
 <p>Definition at line 227 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.</p>
 
@@ -503,6 +503,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

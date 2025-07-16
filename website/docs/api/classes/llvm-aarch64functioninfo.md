@@ -3814,7 +3814,7 @@ class llvm::AArch64FunctionInfo { ... }
 <p>Definition at line 417 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64machinefunctioninfo-h">AArch64MachineFunctionInfo.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a538e94fb7d7a71910f3cbb5cd97aae0c">llvm::AArch64InstrInfo::insertIndirectBranch</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a538e94fb7d7a71910f3cbb5cd97aae0c">llvm::AArch64InstrInfo::insertIndirectBranch</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a8e7ea4a37a21caeb8c336ef3e95f8ee0">llvm::AArch64InstrInfo::isFunctionSafeToOutlineFrom</a> and <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#aab2bb29af5f95ecde069091fc13e0dd9">llvm::AArch64InstrInfo::isFunctionSafeToSplit</a>.</p>
 
 </div>
 </div>
@@ -3946,7 +3946,7 @@ class llvm::AArch64FunctionInfo { ... }
 <p>Definition at line 555 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64machinefunctioninfo-h">AArch64MachineFunctionInfo.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a362113d81c98925d063d3ad6602a1e17">llvm::AArch64FrameLowering::enableStackSlotScavenging</a>, <a href="#af1bf187d995b982c232e7c73bb45c832">needsAsyncDwarfUnwindInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a3def849b8e45d0b1fb07e36644e2920e">requiresGetVGCall</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#af7b36ff0cf5c71f306b50c0fc3072434">requiresSaveVG</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a362113d81c98925d063d3ad6602a1e17">llvm::AArch64FrameLowering::enableStackSlotScavenging</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a8e7ea4a37a21caeb8c336ef3e95f8ee0">llvm::AArch64InstrInfo::isFunctionSafeToOutlineFrom</a>, <a href="#af1bf187d995b982c232e7c73bb45c832">needsAsyncDwarfUnwindInfo</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#a3def849b8e45d0b1fb07e36644e2920e">requiresGetVGCall</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64framelowering-cpp/#af7b36ff0cf5c71f306b50c0fc3072434">requiresSaveVG</a>.</p>
 
 </div>
 </div>
@@ -4261,7 +4261,7 @@ class llvm::AArch64FunctionInfo { ... }
 <p>References <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#afb72c5626afbc815284e2b26bb0663f8">llvm::TargetMachine::getMCAsmInfo</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#af777ff93c9e07a6ff5ffe3226deb3e76">llvm::MachineFunction::getTarget</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a4f117e439113383ea819a6f7beb8ff0b">llvm::MachineFunction::needsFrameMoves</a> and <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#ac158349781823fe8ff9e02d3a3533d55">llvm::MCAsmInfo::usesWindowsCFI</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a566df1a4bd19d5e175f1d38c4a487f91">llvm::AArch64FrameLowering::emitPrologue</a> and <a href="#af1bf187d995b982c232e7c73bb45c832">needsAsyncDwarfUnwindInfo</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9b0a622dbae74cb8a4b9b87a8b559b25">llvm::AArch64InstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#a566df1a4bd19d5e175f1d38c4a487f91">llvm::AArch64FrameLowering::emitPrologue</a> and <a href="#af1bf187d995b982c232e7c73bb45c832">needsAsyncDwarfUnwindInfo</a>.</p>
 
 </div>
 </div>
@@ -4773,6 +4773,9 @@ class llvm::AArch64FunctionInfo { ... }
 
 
 <p>Definition at line 325 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64machinefunctioninfo-h">AArch64MachineFunctionInfo.h</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9b0a622dbae74cb8a4b9b87a8b559b25">llvm::AArch64InstrInfo::buildOutlinedFrame</a>.</p>
 
 </div>
 </div>
@@ -5550,7 +5553,7 @@ class llvm::AArch64FunctionInfo { ... }
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64machinefunctioninfo-cpp/#ad8d9de20a2440d472786e299fc96a97e">isLRSpilled</a> and <a href="#a606dce8fc572cecd6eab6f419f11aa6d">shouldSignReturnAddress</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#aa3348fc65e993db75e0c3c050c561018">llvm::AArch64FrameLowering::emitEpilogue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ac15c0fdff1ea78da81fb615670cbd7c1">outliningCandidatesSigningScopeConsensus</a> and <a href="#a606dce8fc572cecd6eab6f419f11aa6d">shouldSignReturnAddress</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9b0a622dbae74cb8a4b9b87a8b559b25">llvm::AArch64InstrInfo::buildOutlinedFrame</a>, <a href="/web-llvm/docs/api/classes/llvm/aarch64framelowering/#aa3348fc65e993db75e0c3c050c561018">llvm::AArch64FrameLowering::emitEpilogue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64instrinfo-cpp/#ac15c0fdff1ea78da81fb615670cbd7c1">outliningCandidatesSigningScopeConsensus</a> and <a href="#a606dce8fc572cecd6eab6f419f11aa6d">shouldSignReturnAddress</a>.</p>
 
 </div>
 </div>
@@ -7093,6 +7096,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

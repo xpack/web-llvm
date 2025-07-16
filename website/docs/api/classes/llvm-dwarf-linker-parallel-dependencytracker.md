@@ -36,7 +36,7 @@ class llvm::dwarf_linker::parallel::DependencyTracker { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa2ba7d664d32a10e2f1916898da07694">RootEntriesListTy</a> = <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty">LiveRootWorklistItemTy</a> &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa2ba7d664d32a10e2f1916898da07694">RootEntriesListTy</a> = <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; LiveRootWorklistItemTy &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -155,19 +155,6 @@ class llvm::dwarf_linker::parallel::DependencyTracker { ... }
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a713ff4f56c059b816949d50ba30e4fc6">isTypeAction</a> (LiveRootWorklistActionTy Action)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a50eb1acc693fa793fff47bfe79a39b13">isChildrenAction</a> (LiveRootWorklistActionTy Action)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -307,6 +294,59 @@ class llvm::dwarf_linker::parallel::DependencyTracker { ... }
 ## Protected Member Attributes Index
 
 <table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/pointerintpair">PointerIntPair</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">CompileUnit</a> *, 3, <a href="#acb3226f07be871308b3ebc1fe2e22ad8">LiveRootWorklistActionTy</a>, <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits">CompileUnitPointerTraits</a> &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa411def72116744e4a23ebda2b9b9250">RootCU</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/dwarfdebuginfoentry">DWARFDebugInfoEntry</a> *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a948ffc10c192b2502908ae6a0aa6a082">RootDieEntry</a> = nullptr</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">CompileUnit</a> *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3823523700ff25bf711096e0e22578de">ReferencedByCU</a> = nullptr</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Another root entry which references this RootDieEntry. <a href="#a3823523700ff25bf711096e0e22578de">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/dwarfdebuginfoentry">DWARFDebugInfoEntry</a> *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adf99246a5f6c50057f9725ad80bebcd5">ReferencedByDieEntry</a> = nullptr</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">CompileUnit</a> &amp;</td>
@@ -780,62 +820,6 @@ DW_AT_low_pc) or otherwise roots which is not live(they need to be collected if 
 </div>
 </div>
 
-### isChildrenAction() {#a50eb1acc693fa793fff47bfe79a39b13}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">bool llvm::dwarf_linker::parallel::DependencyTracker::isChildrenAction (<a href="#acb3226f07be871308b3ebc1fe2e22ad8">LiveRootWorklistActionTy</a> Action)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-<span class="doxyMemberLabel protected">protected</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-
-
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>true if the specified action affects only Root entry itself and does not affect it`s children. bool isSingleAction(LiveRootWorklistActionTy Action) { switch (Action) { default: return false;</p></dd>
-</dl>
-
-
-<p>case <a href="#acb3226f07be871308b3ebc1fe2e22ad8a5f0d4ecd2ea6dda3c5bc99cf667fedfa">LiveRootWorklistActionTy::MarkSingleLiveEntry</a>: case <a href="#acb3226f07be871308b3ebc1fe2e22ad8a4b0413e0a4858e280698bd82ada3d3f0">LiveRootWorklistActionTy::MarkSingleTypeEntry</a>: return true; } }</p>
-
-
-<p>/</p>
-
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>true if the specified action affects only Root entry / itself and does not affect it`s children.</p></dd>
-</dl>
-
-
-<p>Definition at line 121 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>.</p>
-
-
-<p>References <a href="#acb3226f07be871308b3ebc1fe2e22ad8a76f7c22e7afa4d9203192b924b1d2447">MarkLiveChildrenRec</a> and <a href="#acb3226f07be871308b3ebc1fe2e22ad8a8cdcce5d067ca8d256189c00ccf279cd">MarkTypeChildrenRec</a>.</p>
-
-
-<p>Referenced by <a href="#a99ca361384a0bc6e5fe805b3050ced95">markDIEEntryAsKeptRec</a>.</p>
-
-</div>
-</div>
-
 ### isLiveAction() {#a4b4a1d2b759deb0cb3917f4ad33c2ca1}
 
 <div class="doxyMemberItem">
@@ -992,7 +976,7 @@ DW_AT_low_pc) or otherwise roots which is not live(they need to be collected if 
 <p>Declaration at line 225 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>, definition at line 225 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-cpp">DependencyTracker.cpp</a>.</p>
 
 
-<p>References <a href="#a06bc651ada60f19beefe066cf9d314a8">Dependencies</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#ae96ecbe1f7161c18bab554e554654e08">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::getAction</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a6591460eefa46122282d50c68a82397b">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::getRootEntry</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#af8de76b51e353f26b23bec4c2bddd357">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::hasReferencedByOtherEntry</a>, <a href="#a99ca361384a0bc6e5fe805b3050ced95">markDIEEntryAsKeptRec</a> and <a href="#aab2d7f8a06a89d372e4cf7da8d45d499">RootEntriesWorkList</a>.</p>
+<p>References <a href="#a06bc651ada60f19beefe066cf9d314a8">Dependencies</a>, <a href="#a99ca361384a0bc6e5fe805b3050ced95">markDIEEntryAsKeptRec</a> and <a href="#aab2d7f8a06a89d372e4cf7da8d45d499">RootEntriesWorkList</a>.</p>
 
 
 <p>Referenced by <a href="#ac29d7dd5c7ba980d5a368339b4fc03af">resolveDependenciesAndMarkLiveness</a>.</p>
@@ -1028,7 +1012,7 @@ DW_AT_low_pc) or otherwise roots which is not live(they need to be collected if 
 <p>Declaration at line 229 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>, definition at line 428 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-cpp">DependencyTracker.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-cpp/#aa791c4b3d0582a90ae8059dfa4598a9c">getFinalPlacementForEntry</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-cpp/#a0bd005c8437f95e31592128ee5c97e99">isAlreadyMarked</a>, <a href="#a50eb1acc693fa793fff47bfe79a39b13">isChildrenAction</a>, <a href="#a4b4a1d2b759deb0cb3917f4ad33c2ca1">isLiveAction</a>, <a href="#a713ff4f56c059b816949d50ba30e4fc6">isTypeAction</a>, <a href="#a9d4d1ef3bbae56f8ec7ac95bb5320146">isTypeTableCandidate</a>, <a href="#a99ca361384a0bc6e5fe805b3050ced95">markDIEEntryAsKeptRec</a>, <a href="#a137ba2e95278852dbeb5d4b7a372b3a3">markParentsAsKeepingChildren</a>, <a href="#a42ebac4ef7af0fc75e5f1a36dccd169a">maybeAddReferencedRoots</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineblockplacement-cpp/#a10783a549bfb83fd142ae4e645a283ef">Placement</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a5270021419d157f502aba678e1ee8549aecc6950928c245961306947efbae3db7">llvm::dwarf_linker::parallel::CompileUnit::PlainDwarf</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a5270021419d157f502aba678e1ee8549ae4e2eb6616a94c80f428778e4b1bb3bf">llvm::dwarf_linker::parallel::CompileUnit::TypeTable</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-cpp/#aa791c4b3d0582a90ae8059dfa4598a9c">getFinalPlacementForEntry</a>, <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-cpp/#a0bd005c8437f95e31592128ee5c97e99">isAlreadyMarked</a>, <a href="#a4b4a1d2b759deb0cb3917f4ad33c2ca1">isLiveAction</a>, <a href="#a713ff4f56c059b816949d50ba30e4fc6">isTypeAction</a>, <a href="#a9d4d1ef3bbae56f8ec7ac95bb5320146">isTypeTableCandidate</a>, <a href="#a99ca361384a0bc6e5fe805b3050ced95">markDIEEntryAsKeptRec</a>, <a href="#a137ba2e95278852dbeb5d4b7a372b3a3">markParentsAsKeepingChildren</a>, <a href="#a42ebac4ef7af0fc75e5f1a36dccd169a">maybeAddReferencedRoots</a>, <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineblockplacement-cpp/#a10783a549bfb83fd142ae4e645a283ef">Placement</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a5270021419d157f502aba678e1ee8549aecc6950928c245961306947efbae3db7">llvm::dwarf_linker::parallel::CompileUnit::PlainDwarf</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a5270021419d157f502aba678e1ee8549ae4e2eb6616a94c80f428778e4b1bb3bf">llvm::dwarf_linker::parallel::CompileUnit::TypeTable</a>.</p>
 
 
 <p>Referenced by <a href="#a29cd2bdde62b64762aa4c406eff8618f">markCollectedLiveRootsAsKept</a> and <a href="#a99ca361384a0bc6e5fe805b3050ced95">markDIEEntryAsKeptRec</a>.</p>
@@ -1213,6 +1197,130 @@ DW_AT_low_pc) or otherwise roots which is not live(they need to be collected if 
 </div>
 </div>
 
+### ReferencedByCU {#a3823523700ff25bf711096e0e22578de}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">CompileUnit* llvm::dwarf_linker::parallel::DependencyTracker::ReferencedByCU = nullptr</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel protected">protected</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Another root entry which references this RootDieEntry.</p>
+
+
+<p>ReferencedByDieEntry is kept to update placement. if RootDieEntry has placement incompatible with placement of ReferencedByDieEntry then it should be updated.</p>
+
+
+<p>Definition at line 201 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>.</p>
+
+</div>
+</div>
+
+### ReferencedByDieEntry {#adf99246a5f6c50057f9725ad80bebcd5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">const DWARFDebugInfoEntry* llvm::dwarf_linker::parallel::DependencyTracker::ReferencedByDieEntry = nullptr</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel protected">protected</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 202 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>.</p>
+
+</div>
+</div>
+
+### RootCU {#aa411def72116744e4a23ebda2b9b9250}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">PointerIntPair&lt;CompileUnit *, 3, LiveRootWorklistActionTy, CompileUnitPointerTraits&gt; llvm::dwarf_linker::parallel::DependencyTracker::RootCU</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel protected">protected</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 194 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>.</p>
+
+</div>
+</div>
+
+### RootDieEntry {#a948ffc10c192b2502908ae6a0aa6a082}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">const DWARFDebugInfoEntry* llvm::dwarf_linker::parallel::DependencyTracker::RootDieEntry = nullptr</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel protected">protected</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+
+
+<p>Definition at line 195 of file <a href="/web-llvm/docs/api/files/lib/lib/dwarflinker/lib/dwarflinker/parallel/dependencytracker-h">DependencyTracker.h</a>.</p>
+
+</div>
+</div>
+
 ### RootEntriesWorkList {#aab2d7f8a06a89d372e4cf7da8d45d499}
 
 <div class="doxyMemberItem">
@@ -1339,6 +1447,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

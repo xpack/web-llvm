@@ -219,7 +219,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6d4e347e4428d2d51f7b498d073de380">DEF_INSTR</a>(ID, OPCODE, CLASS)&nbsp;&nbsp;&nbsp;friend class CLASS;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a461b0e643e1b6033d0500b8e518acb04">DEF_INSTR</a>(ID, OPCODE, CLASS)&nbsp;&nbsp;&nbsp;friend class CLASS;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -232,7 +232,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a31f1c3329e06ba4a719da628a7fcefa4">DEF_CONST</a>(ID, CLASS)&nbsp;&nbsp;&nbsp;friend class CLASS;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adfe1d856fed901542d3d494e8619af2f">DEF_CONST</a>(ID, CLASS)&nbsp;&nbsp;&nbsp;friend class CLASS;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -275,7 +275,7 @@ keywords:
 </div>
 </div>
 
-### DEF\_CONST {#a31f1c3329e06ba4a719da628a7fcefa4}
+### DEF\_CONST {#adfe1d856fed901542d3d494e8619af2f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -325,7 +325,7 @@ keywords:
 </div>
 </div>
 
-### DEF\_INSTR {#a6d4e347e4428d2d51f7b498d073de380}
+### DEF\_INSTR {#a461b0e643e1b6033d0500b8e518acb04}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -354,6 +354,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

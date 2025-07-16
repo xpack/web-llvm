@@ -17,7 +17,7 @@ keywords:
 
 # The `ProvenanceAnalysis.cpp` File Reference
 
-<p>This file defines a special form of Alias Analysis called <span class="doxyComputerOutput">Provenance / Analysis''. </span> <a href="#details">More...</a></p>
+<p>This file defines a special form of Alias Analysis called “Provenance Analysis”. <a href="#details">More...</a></p>
 
 ## Included Headers
 
@@ -56,10 +56,10 @@ keywords:
 
 ## Description {#details}
 
-<p>This file defines a special form of Alias Analysis called <span class="doxyComputerOutput">Provenance / Analysis''. </span></p>
+<p>This file defines a special form of Alias Analysis called “Provenance Analysis”.</p>
 
 
-<p>The word provenance'' refers to the history of the ownership / of an object. Thus `‘Provenance Analysis`' is an analysis which attempts to use various techniques to determine if locally</p>
+<p>The word “provenance” refers to the history of the ownership of an object. Thus “Provenance Analysis” is an analysis which attempts to use various techniques to determine if locally</p>
 
 
 <p>WARNING: This file knows about certain library functions. It recognizes them by name, and hardwires knowledge of their semantics.</p>
@@ -109,6 +109,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

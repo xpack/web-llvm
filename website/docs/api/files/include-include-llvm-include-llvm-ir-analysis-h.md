@@ -107,26 +107,12 @@ particular IR unit\&gt;" (e.g. <a href="/web-llvm/docs/api/classes/llvm/allanaly
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">PreservedAnalysisChecker</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A set of analyses that are preserved following a run of a transformation pass. <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker">PreservedAnalysisChecker</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>A checker object that makes it easy to query for whether an analysis or some set covering it is preserved. <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#details">More...</a></p>
+<p>A checker object that makes it easy to query for whether an analysis or some set covering it is preserved. <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -141,6 +127,6 @@ particular IR unit\&gt;" (e.g. <a href="/web-llvm/docs/api/classes/llvm/allanaly
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

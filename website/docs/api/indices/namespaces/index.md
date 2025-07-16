@@ -4919,6 +4919,17 @@ The <a href="/web-llvm/docs/api/classes/llvm/deltatree">DeltaTree</a> class is a
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/anonymous-instcombineselect-cpp-">anonymous{InstCombineSelect.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/anonymous-instcount-cpp-">anonymous{InstCount.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -13158,402 +13169,6 @@ This is an optimization pass for GlobalISel generic memory operations
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> helper functions
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aa/pointerinfo">PointerInfo</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am">AArch64_AM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am">AArch64_AM</a> - <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> Addressing Mode Stuff
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-imm">AArch64_IMM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-mc">AArch64_MC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64at">AArch64AT</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64btihint">AArch64BTIHint</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64buildattrs">AArch64BuildAttrs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64cc">AArch64CC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64db">AArch64DB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64dbnxs">AArch64DBnXS</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64dc">AArch64DC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64exactfpimm">AArch64ExactFPImm</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64giselutils">AArch64GISelUtils</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64ic">AArch64IC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii">AArch64II</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64isb">AArch64ISB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64isd">AArch64ISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64layout">AArch64Layout</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64packey">AArch64PACKey</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth">AArch64PAuth</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64phint">AArch64PHint</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64prfm">AArch64PRFM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64psbhint">AArch64PSBHint</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64pstate">AArch64PState</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64rprfm">AArch64RPRFM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64se">AArch64SE</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sme">AArch64SME</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64svcr">AArch64SVCR</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64svepredpattern">AArch64SVEPredPattern</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sveprfm">AArch64SVEPRFM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sveveclenspecifier">AArch64SVEVecLenSpecifier</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sysreg">AArch64SysReg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64tlbi">AArch64TLBI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/aarch64tsb">AArch64TSB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/adl-detail">adl_detail</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -13565,10 +13180,417 @@ Abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> helpe
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/afdo-detail">afdo_detail</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+These are wrappers over isa* function that allow them to be used in generic algorithms such as <span class="doxyComputerOutput">llvm:all_of</span>, <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#a7dc3069afa2ce5ea62ac2eb183e51c00">llvm::none_of</a></span>, etc
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/detail/anonymous-apfloat-cpp-">anonymous{APFloat.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/apintops">APIntOps</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/bitfields-details">bitfields_details</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/bitmaskenumdetail">BitmaskEnumDetail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/densemap">densemap</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/densemap/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/intrinsic">Intrinsic</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+This namespace contains an enum with a value for every intrinsic/builtin function known by LLVM
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hashing">hashing</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hashing/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ilist-detail">ilist_detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/intervalmapimpl">IntervalMapImpl</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/intervalmapimpl">IntervalMapImpl</a> - Namespace used for <a href="/web-llvm/docs/api/classes/llvm/intervalmap">IntervalMap</a> implementation details
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pointer-union-detail">pointer_union_detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/callable-detail">callable_detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/bfi-detail">bfi_detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dxil">dxil</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dxil/pointertypeanalysis">PointerTypeAnalysis</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+An analysis to compute the <span class="doxyComputerOutput">PointerTypes</span> for pointers in a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/module">Module</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/inlineconstants">InlineConstants</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/irsimilarity">IRSimilarity</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/idfcalculatordetail">IDFCalculatorDetail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/memprof">memprof</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/memprof/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/memprof/anonymous-memprofreader-cpp-">anonymous{MemProfReader.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mssahelpers">MSSAHelpers</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-mustexecute-h-">anonymous{MustExecute.h}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/objcarc">objcarc</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ore">ore</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Add a small namespace to avoid name clashes with the classes used in the streaming interface
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/scevpatternmatch">SCEVPatternMatch</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/json">json</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/json/anonymous-json-cpp-">anonymous{JSON.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lltok">lltok</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack">msgpack</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/firstbyte">FirstByte</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The first byte identifiers of MessagePack object formats
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixbits">FixBits</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Most significant bits used to identify "Fix" variants in MessagePack
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixbitsmask">FixBitsMask</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Mask of bits used to identify "Fix" variants in MessagePack
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixmax">FixMax</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The maximum value or size encodable in "Fix" variants of formats
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixlen">FixLen</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The exact size encodable in "Fix" variants of formats
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixmin">FixMin</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The minimum value or size encodable in "Fix" variants of formats
 </td>
 </tr>
 
@@ -13587,105 +13609,6 @@ Abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> helpe
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/anonymous-amdgpubaseinfo-cpp-">anonymous{AMDGPUBaseInfo.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/barrier">Barrier</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/cpol">CPol</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/depctr">DepCtr</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/dpp">DPP</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/elfnote">ElfNote</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/encvalues">EncValues</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/exp">Exp</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/genericversion">GenericVersion</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Generic target versions emitted by this version of LLVM
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd">HSAMD</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -13697,29 +13620,18 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/v3">V3</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel">Kernel</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 60px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg">Arg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 72px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg/key">Key</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13742,6 +13654,28 @@ Generic target versions emitted by this version of LLVM
 <span style="width: 72px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/attrs/key">Key</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg">Arg</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 72px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/arg/key">Key</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13816,42 +13750,9 @@ Generic target versions emitted by this version of LLVM
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hsamd/v3">V3</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hwencoding">HWEncoding</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hwreg">Hwreg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/implicitarg">ImplicitArg</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/palmd">PALMD</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13873,7 +13774,7 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/mfmascaleformats">MFMAScaleFormats</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/elfnote">ElfNote</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13884,7 +13785,7 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/mtbufformat">MTBUFFormat</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/vgprindexmode">VGPRIndexMode</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13895,7 +13796,7 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/palmd">PALMD</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/encvalues">EncValues</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13906,7 +13807,18 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/sdwa">SDWA</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hwencoding">HWEncoding</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/cpol">CPol</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13928,7 +13840,7 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/swizzle">Swizzle</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/hwreg">Hwreg</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13939,7 +13851,7 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/ucversion">UCVersion</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/mtbufformat">MTBUFFormat</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13972,7 +13884,7 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/vgprindexmode">VGPRIndexMode</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/swizzle">Swizzle</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -13983,7 +13895,29 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/virtregflag">VirtRegFlag</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/sdwa">SDWA</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/dpp">DPP</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/exp">Exp</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -14005,6 +13939,72 @@ Generic target versions emitted by this version of LLVM
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/implicitarg">ImplicitArg</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/mfmascaleformats">MFMAScaleFormats</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/virtregflag">VirtRegFlag</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/barrier">Barrier</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/depctr">DepCtr</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/ucversion">UCVersion</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/vopd">VOPD</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -14014,196 +14014,9 @@ Generic target versions emitted by this version of LLVM
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpuas">AMDGPUAS</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-OpenCL uses address spaces to differentiate between various memory regions on the hardware
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpuasmvariants">AMDGPUAsmVariants</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdgpuisd">AMDGPUISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/amdhsa">amdhsa</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-">anonymous{AMDGPUSplitModule.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-armlatencymutations-cpp-">anonymous{ARMLatencyMutations.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-avrmcexpr-cpp-">anonymous{AVRMCExpr.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-avrtargetmachine-cpp-">anonymous{AVRTargetMachine.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-debuginfod-cpp-">anonymous{Debuginfod.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-lanaimccodeemitter-cpp-">anonymous{LanaiMCCodeEmitter.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-lazyvalueinfo-cpp-">anonymous{LazyValueInfo.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-loopboundsplit-cpp-">anonymous{LoopBoundSplit.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-looppassmanager-h-">anonymous{LoopPassManager.h}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-loopvectorizationlegality-cpp-">anonymous{LoopVectorizationLegality.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-mcsymbolelf-cpp-">anonymous{MCSymbolELF.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-mustexecute-h-">anonymous{MustExecute.h}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-nvptxutilities-cpp-">anonymous{NVPTXUtilities.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-passtiminginfo-cpp-">anonymous{PassTimingInfo.cpp}</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/anonymous-amdgpubaseinfo-cpp-">anonymous{AMDGPUBaseInfo.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -14214,615 +14027,10 @@ OpenCL uses address spaces to differentiate between various memory regions on th
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-passtiminginfo-cpp-/legacy">legacy</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpu/genericversion">GenericVersion</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-sectionmemorymanager-cpp-">anonymous{SectionMemoryManager.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-spirvstructurizer-cpp-">anonymous{SPIRVStructurizer.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/apintops">APIntOps</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arccc">ARCCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/archyaml">ArchYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arcisd">ARCISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Define some predicates that are used for node matching
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm/ehabi">EHABI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm/wineh">WinEH</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-am">ARM_AM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-am">ARM_AM</a> - <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> Addressing Mode Stuff
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-isb">ARM_ISB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-mb">ARM_MB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-mc">ARM_MC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-proc">ARM_PROC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/arm-tsb">ARM_TSB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armbankedreg">ARMBankedReg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armbuildattrs">ARMBuildAttrs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armcc">ARMCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armcp">ARMCP</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armii">ARMII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/armii">ARMII</a> - This namespace holds all of the target specific flags that instruction info tracks
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armisd">ARMISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armri">ARMRI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/classes/llvm/register">Register</a> allocation hints
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armsysreg">ARMSysReg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/armvcc">ARMVCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/at">at</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Assignment Tracking (at)
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Contains the <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> backend
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/avr/fixups">fixups</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/avrcc">AVRCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/avrii">AVRII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/avrisd">AVRISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/bfi-detail">bfi_detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/binaryformat">binaryformat</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/bitc">bitc</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/bitfields-details">bitfields_details</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/bitmaskenumdetail">BitmaskEnumDetail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/bpf">BPF</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/bpfisd">BPFISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/btf">BTF</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/callable-detail">callable_detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/callingconv">CallingConv</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/callingconv">CallingConv</a> Namespace - This namespace contains an enum with a value for the well-known calling conventions
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cfg">cfg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cgdata">cgdata</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cgsccanalysismanagermoduleproxy">CGSCCAnalysisManagerModuleProxy</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/check">Check</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cl">cl</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-This namespace contains all of the command line option processing machinery
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cl/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codegen">codegen</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codegenopt">CodeGenOpt</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codegenoptions">codegenoptions</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codelayout">codelayout</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codemodel">CodeModel</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codeview">codeview</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codeview/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml">CodeViewYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
+Generic target versions emitted by this version of LLVM
 </td>
 </tr>
 
@@ -14841,362 +14049,10 @@ This namespace contains all of the command line option processing machinery
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coffyaml">COFFYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/compression">compression</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib">zlib</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/compression/zstd">zstd</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/consthoist">consthoist</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A private "module" namespace for types and utilities used by ConstantHoisting
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/converterebcdic">ConverterEBCDIC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coro">coro</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coro/anonymous-spillutils-cpp-">anonymous{SpillUtils.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coro/anonymous-spillutils-cpp-/anonymous-spillutils-cpp-">anonymous{SpillUtils.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coverage">coverage</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coverage/accessors">accessors</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-This namespace defines accessors shared by different versions of coverage mapping records
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/coverage/mcdc">mcdc</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/csky">CSKY</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cskyattrs">CSKYAttrs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cskycp">CSKYCP</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cskyii">CSKYII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cskyisd">CSKYISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/cskyop">CSKYOp</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ctx-profile">ctx_profile</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/densemap">densemap</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/densemap/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-These are wrappers over isa* function that allow them to be used in generic algorithms such as <span class="doxyComputerOutput">llvm:all_of</span>, <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#a7dc3069afa2ce5ea62ac2eb183e51c00">llvm::none_of</a></span>, etc
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/detail/anonymous-apfloat-cpp-">anonymous{APFloat.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/details">details</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/domtreebuilder">DomTreeBuilder</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dot">DOT</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/driver">driver</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/dwarf">dwarf</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Calculates the starting offsets for various sections within the .debug_names section
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker">dwarf_linker</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/classic">classic</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/parallel">parallel</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dwarfflavour">DWARFFlavour</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Flavour of dwarf regnumbers
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dwarfyaml">DWARFYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
 </td>
 </tr>
 
@@ -15270,139 +14126,7 @@ Flavour of dwarf regnumbers
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dxcontaineryaml">DXContainerYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dxil">dxil</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/dxil/pointertypeanalysis">PointerTypeAnalysis</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-An analysis to compute the <span class="doxyComputerOutput">PointerTypes</span> for pointers in a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/module">Module</a></span>
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/elfattrs">ELFAttrs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/elfyaml">ELFYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/enginekind">EngineKind</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/floatabi">FloatABI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/fp">fp</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/fpopfusion">FPOpFusion</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/fuzzerop">fuzzerop</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/gcov">GCOV</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/giseladdressing">GISelAddressing</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15424,73 +14148,7 @@ An analysis to compute the <span class="doxyComputerOutput">PointerTypes</span> 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/goffyaml">GOFFYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/graphprogram">GraphProgram</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/gsym">gsym</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/gvn">gvn</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A private "module" namespace for types and utilities used by GVN
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/gvnexpression">GVNExpression</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hashbuilder-detail">hashbuilder_detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hashing">hashing</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15501,7 +14159,18 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hashing/detail">detail</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/macho/dylibreader">DylibReader</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic Library Reader
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/minidump">minidump</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15512,7 +14181,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/binaryformat">binaryformat</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15523,7 +14192,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagon-mc">Hexagon_MC</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/wasm">wasm</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15534,7 +14203,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagonattrs">HexagonAttrs</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/xcoff">XCOFF</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15545,7 +14214,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagonfunits">HexagonFUnits</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/bitc">bitc</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15556,106 +14225,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagonii">HexagonII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagonii">HexagonII</a> - This namespace holds all of the target specific flags that instruction info tracks
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagonisd">HexagonISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo">HexagonMCInstrInfo</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hexstyle">HexStyle</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hlsl">hlsl</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/hwasanaccessinfo">HWASanAccessInfo</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/idfcalculatordetail">IDFCalculatorDetail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ifs">ifs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ifs/anonymous-elfobjhandler-cpp-">anonymous{ELFObjHandler.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ilist-detail">ilist_detail</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/cgdata">cgdata</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15677,7 +14247,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/indexedinstrprof">IndexedInstrProf</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/remarks">remarks</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15688,7 +14258,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/inlineconstants">InlineConstants</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/codegen">codegen</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15699,7 +14269,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/internal">internal</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/legacylegalizeactions">LegacyLegalizeActions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15710,29 +14280,7 @@ A private "module" namespace for types and utilities used by GVN
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/intervalmapimpl">IntervalMapImpl</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/intervalmapimpl">IntervalMapImpl</a> - Namespace used for <a href="/web-llvm/docs/api/classes/llvm/intervalmap">IntervalMap</a> implementation details
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/intrinsic">Intrinsic</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-This namespace contains an enum with a value for every intrinsic/builtin function known by LLVM
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/irsimilarity">IRSimilarity</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/legalizeactions">LegalizeActions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15743,7 +14291,7 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/irsymtab">irsymtab</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates">LegalityPredicates</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15752,9 +14300,31 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
+<span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/irsymtab/storage">storage</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/legalizemutations">LegalizeMutations</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/giseladdressing">GISelAddressing</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mipatternmatch">MIPatternMatch</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15777,6 +14347,501 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/isd/globalisel">GlobalISel</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/domtreebuilder">DomTreeBuilder</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/regstate">RegState</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/outliner">outliner</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/misched">MISched</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vfs">vfs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vfs/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vfs/detail/anonymous-virtualfilesystem-cpp-">anonymous{VirtualFileSystem.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/yaml">yaml</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/yaml/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/yaml/anonymous-coffyaml-cpp-">anonymous{COFFYAML.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/yaml/anonymous-elfyaml-cpp-">anonymous{ELFYAML.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pbqp/regalloc">RegAlloc</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/rdf">rdf</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/rdf/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/rdf/anonymous-rdfgraph-cpp-">anonymous{RDFGraph.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/rtlib">RTLIB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sdpatternmatch">SDPatternMatch</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/switchcg">SwitchCG</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid">TargetStackID</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sched">Sched</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/targetopcode">TargetOpcode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Invariant opcodes: All instruction sets have these as their low opcodes
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/legacy">legacy</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/btf">BTF</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/codeview">codeview</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/codeview/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/object">object</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/object/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/object/directx">DirectX</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/object/anonymous-coffimportfile-cpp-">anonymous{COFFImportFile.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker">dwarf_linker</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/classic">classic</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/parallel">parallel</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/gsym">gsym</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/logicalview">logicalview</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/logicalview/anonymous-lvcodeviewvisitor-cpp-">anonymous{LVCodeViewVisitor.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pdb">pdb</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pdb/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pdb/anonymous-nativeenuminjectedsources-cpp-">anonymous{NativeEnumInjectedSources.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msf">msf</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/symbolize">symbolize</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/symbolize/anonymous-symbolize-cpp-">anonymous{Symbolize.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ms-demangle">ms_demangle</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/enginekind">EngineKind</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15821,17 +14886,6 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/aarch64">aarch64</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/jitlink/anonymous-elf-riscv-cpp-">anonymous{ELF_riscv.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15895,9 +14949,20 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/jitlink/anonymous-elf-riscv-cpp-">anonymous{ELF_riscv.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/json">json</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc">orc</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15908,7 +14973,7 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/json/anonymous-json-cpp-">anonymous{JSON.cpp}</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/shared">shared</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -15917,152 +14982,9 @@ This namespace contains an enum with a value for every intrinsic/builtin functio
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/jumptable">JumpTable</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/jumpthreading">jumpthreading</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A private "module" namespace for types and utilities used by JumpThreading
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lanai">Lanai</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lanaiii">LanaiII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lanaiisd">LanaiISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lcomm">LCOMM</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/legacy">legacy</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/legacylegalizeactions">LegacyLegalizeActions</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/legalitypredicates">LegalityPredicates</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/legalizeactions">LegalizeActions</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/legalizemutations">LegalizeMutations</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lltok">lltok</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loc">Loc</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/logicalview">logicalview</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/shared/detail">detail</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16073,172 +14995,7 @@ A private "module" namespace for types and utilities used by JumpThreading
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/logicalview/anonymous-lvcodeviewvisitor-cpp-">anonymous{LVCodeViewVisitor.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loongarch">LoongArch</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loongarchabi">LoongArchABI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loongarchii">LoongArchII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loongarchisd">LoongArchISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loongarchmatint">LoongArchMatInt</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/loopanalysismanagerfunctionproxy">LoopAnalysisManagerFunctionProxy</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lowertypetests">lowertypetests</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lpac">LPAC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lpcc">LPCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/lto">lto</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Define some predicates that are used for node matching
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/m68kbeads">M68kBeads</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/m68kii">M68kII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-This namespace holds all of the target specific flags that instruction info tracks
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/m68kisd">M68kISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/detail">detail</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16249,18 +15006,7 @@ This namespace holds all of the target specific flags that instruction info trac
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/macho/dylibreader">DylibReader</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic Library Reader
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/machoyaml">MachOYAML</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/rt">rt</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16269,9 +15015,9 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mc">mc</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/rt-alt">rt_alt</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16280,9 +15026,9 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mca">mca</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/simpleremoteepcdefaultbootstrapsymbolnames">SimpleRemoteEPCDefaultBootstrapSymbolNames</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16291,9 +15037,9 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mcd">MCD</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/tpctypes">tpctypes</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16302,9 +15048,9 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mcdwarf">mcdwarf</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/orc/rt-bootstrap">rt_bootstrap</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16315,7 +15061,7 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mcdxbc">mcdxbc</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/check">Check</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16326,7 +15072,7 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mcid">MCID</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/codegenoptions">codegenoptions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16337,7 +15083,7 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mcoi">MCOI</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/driver">driver</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16348,7 +15094,128 @@ Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mcparserutils">MCParserUtils</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/hlsl">hlsl</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/offloading">offloading</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/offloading/amdgpu">amdgpu</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/omp">omp</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/fuzzerop">fuzzerop</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ifs">ifs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ifs/anonymous-elfobjhandler-cpp-">anonymous{ELFObjHandler.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/attributefuncs">AttributeFuncs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/callingconv">CallingConv</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/callingconv">CallingConv</a> Namespace - This namespace contains an enum with a value for the well-known calling conventions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/at">at</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Assignment Tracking (at)
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/fp">fp</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/syncscope">SyncScope</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16381,446 +15248,6 @@ Transitional API for extracting constants from <a href="/web-llvm/docs/api/class
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/memprof">memprof</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/memprof/anonymous-memprofreader-cpp-">anonymous{MemProfReader.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/memprof/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/memtag">memtag</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/memtag/anonymous-memorytaggingsupport-cpp-">anonymous{MemoryTaggingSupport.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/minidump">minidump</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/minidumpyaml">MinidumpYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/minidumpyaml/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mipatternmatch">MIPatternMatch</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mips16hardfloatinfo">Mips16HardFloatInfo</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mips-mc">MIPS_MC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mipsii">MipsII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/mipsii">MipsII</a> - This namespace holds all of the target specific flags that instruction info tracks
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mipsisd">MipsISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/misched">MISched</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/misexpect">misexpect</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ms-demangle">ms_demangle</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msf">msf</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack">msgpack</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/firstbyte">FirstByte</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The first byte identifiers of MessagePack object formats
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixbits">FixBits</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Most significant bits used to identify "Fix" variants in MessagePack
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixbitsmask">FixBitsMask</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Mask of bits used to identify "Fix" variants in MessagePack
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixlen">FixLen</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The exact size encodable in "Fix" variants of formats
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixmax">FixMax</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The maximum value or size encodable in "Fix" variants of formats
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msgpack/fixmin">FixMin</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The minimum value or size encodable in "Fix" variants of formats
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msp430attrs">MSP430Attrs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/msp430isd">MSP430ISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/mssahelpers">MSSAHelpers</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/n86">N86</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Native <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> register numbers
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/numbers">numbers</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Mathematical constants
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx">NVPTX</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a> - Comparison mode enumeration
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcvtmode">PTXCvtMode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcvtmode">PTXCvtMode</a> - Conversion code enumeration
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxldstinstcode">PTXLdStInstCode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxprmtmode">PTXPrmtMode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptxas">NVPTXAS</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptxcc">NVPTXCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptxii">NVPTXII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/nvptxisd">NVPTXISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/nvvm">nvvm</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -16832,7 +15259,172 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/objcarc">objcarc</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/patternmatch">PatternMatch</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vfabi">VFABI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lto">lto</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/thinltocodegeneratorimpl">ThinLTOCodeGeneratorImpl</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/thinltocodegeneratorimpl">ThinLTOCodeGeneratorImpl</a> - Namespace used for <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator">ThinLTOCodeGenerator</a> implementation details
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mcdxbc">mcdxbc</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/wineh">WinEH</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lcomm">LCOMM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mcd">MCD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mcdwarf">mcdwarf</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexstyle">HexStyle</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mcoi">MCOI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mcid">MCID</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mcparserutils">MCParserUtils</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mc">mc</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/win64eh">Win64EH</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mca">mca</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16909,40 +15501,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/object">object</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/object/anonymous-coffimportfile-cpp-">anonymous{COFFImportFile.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/object/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/object/directx">DirectX</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/omf">OMF</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16953,7 +15512,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/offloading">offloading</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/irsymtab">irsymtab</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16964,7 +15523,128 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/offloading/amdgpu">amdgpu</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/irsymtab/storage">storage</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/archyaml">ArchYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml">CodeViewYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/coffyaml">COFFYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dwarfyaml">DWARFYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dxcontaineryaml">DXContainerYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/elfyaml">ELFYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/goffyaml">GOFFYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/machoyaml">MachOYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/minidumpyaml">MinidumpYAML</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/minidumpyaml/detail">detail</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16986,7 +15666,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/omf">OMF</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/wasmyaml">WasmYAML</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -16997,7 +15677,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/omp">omp</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/xcoffyaml">XCOFFYAML</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17019,7 +15699,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc">orc</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/coverage">coverage</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17030,7 +15710,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/detail">detail</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/coverage/mcdc">mcdc</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17041,76 +15721,10 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/rt">rt</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/coverage/accessors">accessors</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/rt-alt">rt_alt</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/rt-bootstrap">rt_bootstrap</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/shared">shared</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/shared/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/simpleremoteepcdefaultbootstrapsymbolnames">SimpleRemoteEPCDefaultBootstrapSymbolNames</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/orc/tpctypes">tpctypes</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
+This namespace defines accessors shared by different versions of coverage mapping records
 </td>
 </tr>
 
@@ -17118,612 +15732,7 @@ Mathematical constants
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ore">ore</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Add a small namespace to avoid name clashes with the classes used in the streaming interface
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/outliner">outliner</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/parallel">parallel</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/parallel/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/patternmatch">PatternMatch</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pbqp/regalloc">RegAlloc</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pdb">pdb</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pdb/anonymous-nativeenuminjectedsources-cpp-">anonymous{NativeEnumInjectedSources.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pdb/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pgo">pgo</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/piclevel">PICLevel</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/picstyles">PICStyles</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> backend supports a number of different styles of PIC
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pielevel">PIELevel</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/pointer-union-detail">pointer_union_detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ppc">PPC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Define some predicates that are used for node matching
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ppcii">PPCII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/ppcii">PPCII</a> - This namespace holds all of the PowerPC target-specific per-instruction flags
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ppcisd">PPCISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/r600instrflags">R600InstrFlags</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/rawinstrprof">RawInstrProf</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/rdf">rdf</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/rdf/anonymous-rdfgraph-cpp-">anonymous{RDFGraph.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/rdf/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/reassociate">reassociate</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A private "module" namespace for types and utilities used by Reassociate
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/regstate">RegState</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/reloc">Reloc</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/remarks">remarks</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscv">RISCV</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscv/anonymous-riscvtargetparser-cpp-">anonymous{RISCVTargetParser.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscv/riscvextensionbitmasktable">RISCVExtensionBitmaskTable</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvabi">RISCVABI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvattrs">RISCVAttrs</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvcc">RISCVCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvfeatures">RISCVFeatures</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvfencefield">RISCVFenceField</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvfprndmode">RISCVFPRndMode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvii">RISCVII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvinsnopcode">RISCVInsnOpcode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvisautils">RISCVISAUtils</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvisd">RISCVISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvloadfpimm">RISCVLoadFPImm</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvmatint">RISCVMatInt</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvop">RISCVOp</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvri">RISCVRI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvrvc">RISCVRVC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvsysreg">RISCVSysReg</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvtuneinfotable">RISCVTuneInfoTable</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvvintrinsicstable">RISCVVIntrinsicsTable</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvvinversepseudostable">RISCVVInversePseudosTable</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvvpseudostable">RISCVVPseudosTable</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvvtype">RISCVVType</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvvxrndmode">RISCVVXRndMode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/riscvzc">RISCVZC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/rtlib">RTLIB</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/safestack">safestack</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/ctx-profile">ctx_profile</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17745,7 +15754,40 @@ A private "module" namespace for types and utilities used by Reassociate
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sampleprofutil">sampleprofutil</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/gcov">GCOV</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/indexedinstrprof">IndexedInstrProf</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/rawinstrprof">RawInstrProf</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/internal">internal</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17767,7 +15809,7 @@ A private "module" namespace for types and utilities used by Reassociate
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/scalednumbers">ScaledNumbers</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64buildattrs">AArch64BuildAttrs</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17778,7 +15820,18 @@ A private "module" namespace for types and utilities used by Reassociate
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/scevpatternmatch">SCEVPatternMatch</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpuas">AMDGPUAS</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+OpenCL uses address spaces to differentiate between various memory regions on the hardware
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdhsa">amdhsa</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17789,7 +15842,7 @@ A private "module" namespace for types and utilities used by Reassociate
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sched">Sched</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/armbuildattrs">ARMBuildAttrs</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17800,29 +15853,18 @@ A private "module" namespace for types and utilities used by Reassociate
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sdpatternmatch">SDPatternMatch</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
+Define some predicates that are used for node matching
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sharedlivedebugvalues">SharedLiveDebugValues</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm/ehabi">EHABI</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -17833,260 +15875,7 @@ A private "module" namespace for types and utilities used by Reassociate
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/si/kernelinputoffsets">KernelInputOffsets</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/siencodingfamily">SIEncodingFamily</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/siinstrflags">SIInstrFlags</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sioutmods">SIOutMods</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sisched">SISched</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sisrcmods">SISrcMods</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/slpvectorizer">slpvectorizer</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A private "module" namespace for types and utilities used by this pass
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sparc">Sparc</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sparcasitag">SparcASITag</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sparcprefetchtag">SparcPrefetchTag</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/spcc">SPCC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/spii">SPII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/spii">SPII</a> - This namespace holds all of the target specific flags that instruction info tracks
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/spirv">SPIRV</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/spirv/anonymous-spirvconvergenceregionanalysis-cpp-">anonymous{SPIRVConvergenceRegionAnalysis.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/spisd">SPISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/support">support</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/support/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/support/endian">endian</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/support/endian/anonymous-sampleprofwriter-cpp-">anonymous{SampleProfWriter.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/switchcg">SwitchCG</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/symbolize">symbolize</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/symbolize/anonymous-symbolize-cpp-">anonymous{Symbolize.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/symbolrewriter">SymbolRewriter</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/syncscope">SyncScope</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm/wineh">WinEH</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18101,28 +15890,6 @@ A private "module" namespace for types and utilities used by this pass
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sys/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/sys/detail/x86">x86</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/api/namespaces/llvm/sys/detail/x86">x86</a>
 </td>
 </tr>
 
@@ -18194,9 +15961,31 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sys/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sys/detail/x86">x86</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/api/namespaces/llvm/sys/detail/x86">x86</a>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemz">SystemZ</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/cfg">cfg</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18207,7 +15996,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemzas">SYSTEMZAS</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/reloc">Reloc</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18218,7 +16007,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemzcp">SystemZCP</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/codemodel">CodeModel</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18229,7 +16018,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemzicmp">SystemZICMP</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/piclevel">PICLevel</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18240,7 +16029,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemzii">SystemZII</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/pielevel">PIELevel</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18251,7 +16040,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemzisd">SystemZISD</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/tlsmodel">TLSModel</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18262,7 +16051,326 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/systemzmc">SystemZMC</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/codegenopt">CodeGenOpt</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/zerocallusedregs">ZeroCallUsedRegs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cl">cl</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+This namespace contains all of the command line option processing machinery
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cl/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/compression">compression</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/compression/zlib">zlib</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/compression/zstd">zstd</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/converterebcdic">ConverterEBCDIC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cskyattrs">CSKYAttrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/elfattrs">ELFAttrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/support">support</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/support/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/support/endian">endian</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/support/endian/anonymous-sampleprofwriter-cpp-">anonymous{SampleProfWriter.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dot">DOT</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/graphprogram">GraphProgram</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hashbuilder-detail">hashbuilder_detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagonattrs">HexagonAttrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/numbers">numbers</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Mathematical constants
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msp430attrs">MSP430Attrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptxas">NVPTXAS</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/parallel">parallel</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/parallel/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvattrs">RISCVAttrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvisautils">RISCVISAUtils</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/scalednumbers">ScaledNumbers</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/trailing-objects-internal">trailing_objects_internal</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/details">details</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/x86disassembler">X86Disassembler</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18295,7 +16403,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/tailpredication">TailPredication</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/floatabi">FloatABI</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18306,18 +16414,7 @@ Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/ap
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/targetopcode">TargetOpcode</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Invariant opcodes: All instruction sets have these as their low opcodes
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/targetstackid">TargetStackID</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/fpopfusion">FPOpFusion</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18328,32 +16425,10 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/telemetry">telemetry</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/jumptable">JumpTable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/tgtok">tgtok</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/thinltocodegeneratorimpl">ThinLTOCodeGeneratorImpl</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/thinltocodegeneratorimpl">ThinLTOCodeGeneratorImpl</a> - Namespace used for <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator">ThinLTOCodeGenerator</a> implementation details
 </td>
 </tr>
 
@@ -18372,7 +16447,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/tlsmodel">TLSModel</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18383,7 +16458,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/tploop">TPLoop</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/csky">CSKY</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18394,7 +16469,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/trailing-objects-internal">trailing_objects_internal</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/loongarch">LoongArch</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18405,10 +16480,10 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/unittest">unittest</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/ppc">PPC</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
+Define some predicates that are used for node matching
 </td>
 </tr>
 
@@ -18416,73 +16491,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vecc">VECC</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/veii">VEII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/veii">VEII</a> - This namespace holds all of the Aurora <a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a> target-specific per-instruction flags
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/veisd">VEISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/verd">VERD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vfabi">VFABI</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vfs">vfs</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscv">RISCV</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18493,40 +16502,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vfs/detail">detail</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vfs/detail/anonymous-virtualfilesystem-cpp-">anonymous{VirtualFileSystem.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vncoercion">VNCoercion</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vplanpatternmatch">VPlanPatternMatch</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscv/riscvextensionbitmasktable">RISCVExtensionBitmaskTable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18537,7 +16513,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vplanpatternmatch/detail">detail</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscv/anonymous-riscvtargetparser-cpp-">anonymous{RISCVTargetParser.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18548,7 +16524,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/vputils">vputils</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvii">RISCVII</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18559,95 +16535,7 @@ Invariant opcodes: All instruction sets have these as their low opcodes
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/wasm">wasm</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/wasmyaml">WasmYAML</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/webassemblyii">WebAssemblyII</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/webassemblyisd">WebAssemblyISD</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/wholeprogramdevirt">wholeprogramdevirt</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/win64eh">Win64EH</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/windows-manifest">windows_manifest</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/wineh">WinEH</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvvtype">RISCVVType</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18669,7 +16557,7 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/x86-mc">X86_MC</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/telemetry">telemetry</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18680,7 +16568,7 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/x86as">X86AS</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/unittest">unittest</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18691,7 +16579,29 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/x86disassembler">X86Disassembler</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/coro">coro</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/coro/anonymous-spillutils-cpp-">anonymous{SpillUtils.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/coro/anonymous-spillutils-cpp-/anonymous-spillutils-cpp-">anonymous{SpillUtils.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18702,18 +16612,7 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/x86ii">X86II</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-<a href="/web-llvm/docs/api/namespaces/llvm/x86ii">X86II</a> - This namespace holds all of the target specific flags that instruction info tracks
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/x86isd">X86ISD</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/hwasanaccessinfo">HWASanAccessInfo</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18724,7 +16623,18 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/xcoff">XCOFF</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> helper functions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aa/pointerinfo">PointerInfo</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18735,7 +16645,7 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/xcoffyaml">XCOFFYAML</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/lowertypetests">lowertypetests</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18746,7 +16656,7 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/wholeprogramdevirt">wholeprogramdevirt</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18757,7 +16667,183 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/xcoreisd">XCoreISD</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/consthoist">consthoist</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A private "module" namespace for types and utilities used by ConstantHoisting
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/gvn">gvn</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A private "module" namespace for types and utilities used by GVN
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/gvnexpression">GVNExpression</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/jumpthreading">jumpthreading</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A private "module" namespace for types and utilities used by JumpThreading
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-looppassmanager-h-">anonymous{LoopPassManager.h}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/reassociate">reassociate</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A private "module" namespace for types and utilities used by Reassociate
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/codelayout">codelayout</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/pgo">pgo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/memtag">memtag</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/memtag/anonymous-memorytaggingsupport-cpp-">anonymous{MemoryTaggingSupport.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/misexpect">misexpect</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/afdo-detail">afdo_detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sampleprofutil">sampleprofutil</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/symbolrewriter">SymbolRewriter</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vncoercion">VNCoercion</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/slpvectorizer">slpvectorizer</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A private "module" namespace for types and utilities used by this pass
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/windows-manifest">windows_manifest</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18823,6 +16909,1920 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-lazyvalueinfo-cpp-">anonymous{LazyValueInfo.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/loc">Loc</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sharedlivedebugvalues">SharedLiveDebugValues</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/safestack">safestack</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-debuginfod-cpp-">anonymous{Debuginfod.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-sectionmemorymanager-cpp-">anonymous{SectionMemoryManager.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-passtiminginfo-cpp-">anonymous{PassTimingInfo.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-passtiminginfo-cpp-/legacy">legacy</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-mcsymbolelf-cpp-">anonymous{MCSymbolELF.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/tgtok">tgtok</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-imm">AArch64_IMM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64isd">AArch64ISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64pauth">AArch64PAuth</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64giselutils">AArch64GISelUtils</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am">AArch64_AM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am">AArch64_AM</a> - <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> Addressing Mode Stuff
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64-mc">AArch64_MC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64at">AArch64AT</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64dbnxs">AArch64DBnXS</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64db">AArch64DB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64dc">AArch64DC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64ic">AArch64IC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64isb">AArch64ISB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64tsb">AArch64TSB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64prfm">AArch64PRFM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sveprfm">AArch64SVEPRFM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64rprfm">AArch64RPRFM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64svepredpattern">AArch64SVEPredPattern</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sveveclenspecifier">AArch64SVEVecLenSpecifier</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64exactfpimm">AArch64ExactFPImm</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64pstate">AArch64PState</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64psbhint">AArch64PSBHint</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64phint">AArch64PHint</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64btihint">AArch64BTIHint</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sysreg">AArch64SysReg</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64tlbi">AArch64TLBI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64svcr">AArch64SVCR</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64cc">AArch64CC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64sme">AArch64SME</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64se">AArch64SE</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64layout">AArch64Layout</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64ii">AArch64II</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/aarch64packey">AArch64PACKey</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpuisd">AMDGPUISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-">anonymous{AMDGPUSplitModule.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/r600instrflags">R600InstrFlags</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/siencodingfamily">SIEncodingFamily</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/siinstrflags">SIInstrFlags</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sisrcmods">SISrcMods</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sioutmods">SIOutMods</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/amdgpuasmvariants">AMDGPUAsmVariants</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/si/kernelinputoffsets">KernelInputOffsets</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sisched">SISched</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arcisd">ARCISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arccc">ARCCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armri">ARMRI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/classes/llvm/register">Register</a> allocation hints
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armcp">ARMCP</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armisd">ARMISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-armlatencymutations-cpp-">anonymous{ARMLatencyMutations.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-am">ARM_AM</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-am">ARM_AM</a> - <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> Addressing Mode Stuff
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/tailpredication">TailPredication</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/tploop">TPLoop</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-proc">ARM_PROC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-mb">ARM_MB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-tsb">ARM_TSB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-isb">ARM_ISB</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armii">ARMII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/armii">ARMII</a> - This namespace holds all of the target specific flags that instruction info tracks
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/arm-mc">ARM_MC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armsysreg">ARMSysReg</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armbankedreg">ARMBankedReg</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armcc">ARMCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/armvcc">ARMVCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Contains the <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> backend
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/avr/fixups">fixups</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/avrcc">AVRCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/avrii">AVRII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/avrisd">AVRISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-avrtargetmachine-cpp-">anonymous{AVRTargetMachine.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-avrmcexpr-cpp-">anonymous{AVRMCExpr.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/bpfisd">BPFISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/bpf">BPF</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cskycp">CSKYCP</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cskyisd">CSKYISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cskyii">CSKYII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cskyop">CSKYOp</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagonii">HexagonII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagonii">HexagonII</a> - This namespace holds all of the target specific flags that instruction info tracks
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagonfunits">HexagonFUnits</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagonisd">HexagonISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagonmcinstrinfo">HexagonMCInstrInfo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/hexagon-mc">Hexagon_MC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lpac">LPAC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lpcc">LPCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lanaiisd">LanaiISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lanaiii">LanaiII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/lanai">Lanai</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-lanaimccodeemitter-cpp-">anonymous{LanaiMCCodeEmitter.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/loongarchisd">LoongArchISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/loongarchabi">LoongArchABI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/loongarchii">LoongArchII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/loongarchmatint">LoongArchMatInt</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Define some predicates that are used for node matching
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/m68kisd">M68kISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/m68kbeads">M68kBeads</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/m68kii">M68kII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+This namespace holds all of the target specific flags that instruction info tracks
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mipsii">MipsII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/mipsii">MipsII</a> - This namespace holds all of the target specific flags that instruction info tracks
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mips-mc">MIPS_MC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mips16hardfloatinfo">Mips16HardFloatInfo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/mipsisd">MipsISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/msp430isd">MSP430ISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptxii">NVPTXII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptxcc">NVPTXCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx">NVPTX</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxldstinstcode">PTXLdStInstCode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcvtmode">PTXCvtMode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcvtmode">PTXCvtMode</a> - Conversion code enumeration
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a> - Comparison mode enumeration
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxprmtmode">PTXPrmtMode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/nvptxisd">NVPTXISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-nvptxutilities-cpp-">anonymous{NVPTXUtilities.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ppcii">PPCII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/ppcii">PPCII</a> - This namespace holds all of the PowerPC target-specific per-instruction flags
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ppcisd">PPCISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvsysreg">RISCVSysReg</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvinsnopcode">RISCVInsnOpcode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvabi">RISCVABI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvfeatures">RISCVFeatures</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvop">RISCVOp</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvfencefield">RISCVFenceField</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvfprndmode">RISCVFPRndMode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvvxrndmode">RISCVVXRndMode</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvloadfpimm">RISCVLoadFPImm</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvrvc">RISCVRVC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvzc">RISCVZC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvmatint">RISCVMatInt</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvvinversepseudostable">RISCVVInversePseudosTable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvvpseudostable">RISCVVPseudosTable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvcc">RISCVCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvvintrinsicstable">RISCVVIntrinsicsTable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvisd">RISCVISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvri">RISCVRI</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/riscvtuneinfotable">RISCVTuneInfoTable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sparc">Sparc</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sparcasitag">SparcASITag</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/sparcprefetchtag">SparcPrefetchTag</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/spcc">SPCC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/spii">SPII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/spii">SPII</a> - This namespace holds all of the target specific flags that instruction info tracks
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/spisd">SPISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/spirv">SPIRV</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/spirv/anonymous-spirvconvergenceregionanalysis-cpp-">anonymous{SPIRVConvergenceRegionAnalysis.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-spirvstructurizer-cpp-">anonymous{SPIRVStructurizer.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemz">SystemZ</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemzmc">SystemZMC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemzas">SYSTEMZAS</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemzcp">SystemZCP</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemzii">SystemZII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemzisd">SystemZISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/systemzicmp">SystemZICMP</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vecc">VECC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/verd">VERD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/veii">VEII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/veii">VEII</a> - This namespace holds all of the Aurora <a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a> target-specific per-instruction flags
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/veisd">VEISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/webassemblyii">WebAssemblyII</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/webassemblyisd">WebAssemblyISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/x86ii">X86II</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+<a href="/web-llvm/docs/api/namespaces/llvm/x86ii">X86II</a> - This namespace holds all of the target specific flags that instruction info tracks
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/x86-mc">X86_MC</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/dwarfflavour">DWARFFlavour</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Flavour of dwarf regnumbers
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/n86">N86</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Native <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> register numbers
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/x86as">X86AS</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/x86isd">X86ISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/picstyles">PICStyles</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> backend supports a number of different styles of PIC
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/xcoreisd">XCoreISD</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/web-llvm/docs/api/namespaces/llvm/xtensa">Xtensa</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -18856,40 +18856,7 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/yaml">yaml</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/yaml/anonymous-coffyaml-cpp-">anonymous{COFFYAML.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/yaml/anonymous-elfyaml-cpp-">anonymous{ELFYAML.cpp}</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/yaml/detail">detail</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-loopboundsplit-cpp-">anonymous{LoopBoundSplit.cpp}</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -18900,7 +18867,62 @@ Define some predicates that are used for node matching
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/llvm/zerocallusedregs">ZeroCallUsedRegs</a>
+<a href="/web-llvm/docs/api/namespaces/llvm/anonymous-loopvectorizationlegality-cpp-">anonymous{LoopVectorizationLegality.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vplanpatternmatch">VPlanPatternMatch</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vplanpatternmatch/detail">detail</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/vputils">vputils</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/cgsccanalysismanagermoduleproxy">CGSCCAnalysisManagerModuleProxy</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/web-llvm/docs/api/namespaces/llvm/loopanalysismanagerfunctionproxy">LoopAnalysisManagerFunctionProxy</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -19043,7 +19065,7 @@ Implement std::hash so that hash_code can be used in STL containers
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/tomp/clause">clause</a>
+<a href="/web-llvm/docs/api/namespaces/tomp/type">type</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -19054,7 +19076,7 @@ Implement std::hash so that hash_code can be used in STL containers
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/web-llvm/docs/api/namespaces/tomp/type">type</a>
+<a href="/web-llvm/docs/api/namespaces/tomp/clause">clause</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -19065,6 +19087,6 @@ Implement std::hash so that hash_code can be used in STL containers
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

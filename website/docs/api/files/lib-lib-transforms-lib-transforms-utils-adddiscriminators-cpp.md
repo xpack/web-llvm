@@ -180,7 +180,7 @@ if.end:
 <p>Definition at line 140 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/adddiscriminators-cpp">AddDiscriminators.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/dilocation/#a839785a42c232b11d0e1b6b6c0ddba69">llvm::DILocation::cloneWithBaseDiscriminator</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sampleprofutil/#a9495513e04a8f797cc8723887bdbd13c">llvm::sampleprofutil::createFSDiscriminatorVariable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a61cf315897c96016607a2b8d5916a64d">llvm::EnableFSDiscriminator</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="#a5337a668286392f40c0935dc25471710">NoDiscriminators</a> and <a href="#a80b3b9cef1539f6a37cd6a19af09933e">shouldHaveDiscriminator</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/classes/llvm/dilocation/#a839785a42c232b11d0e1b6b6c0ddba69">llvm::DILocation::cloneWithBaseDiscriminator</a>, <a href="/web-llvm/docs/api/namespaces/llvm/sampleprofutil/#a9495513e04a8f797cc8723887bdbd13c">llvm::sampleprofutil::createFSDiscriminatorVariable</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a61cf315897c96016607a2b8d5916a64d">llvm::EnableFSDiscriminator</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM_DEBUG</a>, <a href="#a5337a668286392f40c0935dc25471710">NoDiscriminators</a> and <a href="#a80b3b9cef1539f6a37cd6a19af09933e">shouldHaveDiscriminator</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/adddiscriminatorspass/#a7c89dac3d04b8cda0fe7586df5429d28">llvm::AddDiscriminatorsPass::run</a>.</p>
@@ -298,6 +298,6 @@ if.end:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

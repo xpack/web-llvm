@@ -559,7 +559,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad39d0066ff9816ac402a679d98b9a594">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, /* MASK = */ false, VABI_PREFIX},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab01ee1383c0a3968f4b3d41d5a10606b">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, /* MASK = */ false, VABI_PREFIX},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -585,7 +585,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4ea6cbcb8172517a69eb9371135ff3a5">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abc0d1d89ba91c0e0531b9812bcce33a9">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -611,7 +611,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4ea6cbcb8172517a69eb9371135ff3a5">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac1fc126e9bcb8562837692c1af096aa4">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -637,7 +637,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4ea6cbcb8172517a69eb9371135ff3a5">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af9645087b4aafa578c73788b0cec4046">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -663,7 +663,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4ea6cbcb8172517a69eb9371135ff3a5">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a248ada79cca5079ac31930b344b3faa3">TLI_DEFINE_VECFUNC</a>(SCAL, VEC, VF, MASK, VABI_PREFIX)&nbsp;&nbsp;&nbsp;  {SCAL, VEC, VF, MASK, VABI_PREFIX},</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2227,7 +2227,7 @@ keywords:
 </div>
 </div>
 
-### TLI\_DEFINE\_VECFUNC {#ad39d0066ff9816ac402a679d98b9a594}
+### TLI\_DEFINE\_VECFUNC {#ab01ee1383c0a3968f4b3d41d5a10606b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2252,7 +2252,7 @@ keywords:
 </div>
 </div>
 
-### TLI\_DEFINE\_VECFUNC {#a4ea6cbcb8172517a69eb9371135ff3a5}
+### TLI\_DEFINE\_VECFUNC {#abc0d1d89ba91c0e0531b9812bcce33a9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2277,7 +2277,7 @@ keywords:
 </div>
 </div>
 
-### TLI\_DEFINE\_VECFUNC {#a4ea6cbcb8172517a69eb9371135ff3a5}
+### TLI\_DEFINE\_VECFUNC {#ac1fc126e9bcb8562837692c1af096aa4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2302,7 +2302,7 @@ keywords:
 </div>
 </div>
 
-### TLI\_DEFINE\_VECFUNC {#a4ea6cbcb8172517a69eb9371135ff3a5}
+### TLI\_DEFINE\_VECFUNC {#af9645087b4aafa578c73788b0cec4046}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2327,7 +2327,7 @@ keywords:
 </div>
 </div>
 
-### TLI\_DEFINE\_VECFUNC {#a4ea6cbcb8172517a69eb9371135ff3a5}
+### TLI\_DEFINE\_VECFUNC {#a248ada79cca5079ac31930b344b3faa3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2356,6 +2356,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -133,9 +133,6 @@ struct llvm::MD5::MD5Result { ... }
 <p>Declaration at line 44 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/md5-h">MD5.h</a>, definition at line 281 of file <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp">MD5.cpp</a>.</p>
 
 
-<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#abec19670f96ed423c2e4d4f10a4c6975">llvm::toHex</a>.</p>
-
-
 <p>Referenced by <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/prologue/#a337d62499b18cdbc7fa0a79cc820d09b">llvm::DWARFDebugLine::Prologue::dump</a>.</p>
 
 </div>
@@ -259,6 +256,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

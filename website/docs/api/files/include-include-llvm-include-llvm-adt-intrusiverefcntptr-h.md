@@ -189,12 +189,12 @@ keywords:
 
 <ul class="doxyList ">
 <li>inherits from (ThreadSafe)RefCountedBase,</li>
-<li>has <a href="/web-llvm/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain()</a> and Release() methods, or</li>
+<li>has Retain() and Release() methods, or</li>
 <li>specializes IntrusiveRefCntPtrInfo.</li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

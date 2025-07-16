@@ -101,7 +101,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acec6f7e3c8f55141a25830332307d3ea">HANDLE_INST</a>(NUM, OPCODE, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae4a45d8a5d13fcd4819f9501002a44da">HANDLE_INST</a>(NUM, OPCODE, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -114,7 +114,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acec6f7e3c8f55141a25830332307d3ea">HANDLE_INST</a>(NUM, OPCODE, CLASS)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a522ad9d6c02e690c8a124234f0255e40">HANDLE_INST</a>(NUM, OPCODE, CLASS)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -194,7 +194,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_INST {#acec6f7e3c8f55141a25830332307d3ea}
+### HANDLE\_INST {#ae4a45d8a5d13fcd4819f9501002a44da}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -229,7 +229,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_INST {#acec6f7e3c8f55141a25830332307d3ea}
+### HANDLE\_INST {#a522ad9d6c02e690c8a124234f0255e40}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -253,7 +253,7 @@ keywords:
 <dt>Value</dt>
 <dd>
 <div class="doxyVerbatim">    RetTy <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/spirv/spirvpostlegalizer-cpp/#a090736355958192cac4db32336c48bbd">visit</a>##<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/systemz/systemzisellowering-cpp/#a6c9b5dc65aa7364c6e3ed632c9e9f02e">OPCODE</a>(CLASS &amp;<a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) { \
-      <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a> (NUM == <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Instruction::Call</a>) \
+      <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a> (NUM == Instruction::Call) \
         return delegateCallInst(<a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>); \
       <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a0544c3fe466e421738dae463968b70ba">else</a> \
         <a href="#a1731d8b09e6c62e50d2e39be54d910ec">DELEGATE</a>(CLASS); \
@@ -271,6 +271,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

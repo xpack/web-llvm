@@ -519,7 +519,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae2558cb097460e2dfa5315ec18c38c24">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)&nbsp;&nbsp;&nbsp;Enumerator = Value,</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a806f28489e8f6c6c347485fbc3ef50a6">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)&nbsp;&nbsp;&nbsp;Enumerator = Value,</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -532,7 +532,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a964fe748db42abb3035346a85f7aa3b9">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a61629fdb389d51542976cbea4c4ebd75">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -545,7 +545,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9fffbf1bcdf0b73994e7d71af9fda706">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a092a23d90c264232a2c4b67b64cf9f71">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -558,7 +558,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2039a5308a9a7aecdfc29f45d1a04fb7">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0d0cb095fe390c2e0d64636a856e5267">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -571,7 +571,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af05e05e47a5f9945cf30597645458686">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7a48c3c420871c8895aa03e069452a3a">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -584,7 +584,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7b37e795b394a273b4adca2984d0c5c">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a87c1bbac0b84ba640670d7cfb8d46c62">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -597,7 +597,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ec3bc606baecfea5832789f9b4f998b">INSTR_PROF_COMMA</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad10b7a2548ea86ccc6388b280ead6912">INSTR_PROF_COMMA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -610,7 +610,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a461567c719c6f8cd15517aec497c5ecf">INSTR_PROF_DATA_DEFINED</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa444dc102f83b1a9c40e12a256180b8b">INSTR_PROF_DATA_DEFINED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -623,7 +623,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b82a7fc9ea6b68d597e54245e85f21b">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad6bb5475a20c78d558a590a9d1797598">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -636,7 +636,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac825b81edfa1cf2df4102c9c34f821e4">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a16bfa8a0f94bdccd624802854edf75ab">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -649,7 +649,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0af632e6ce572cbccbe06f3cd5383e2">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a079591b91e1c043f39277a0049f5788c">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -675,7 +675,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a964fe748db42abb3035346a85f7aa3b9">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac698947e76449da7cb367a70c8a087cc">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -688,7 +688,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9fffbf1bcdf0b73994e7d71af9fda706">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad3be382e77e5696131d47257c2fab384">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -701,7 +701,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2039a5308a9a7aecdfc29f45d1a04fb7">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a29eabb7ef345000d765ff485ee6ad388">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -714,7 +714,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af05e05e47a5f9945cf30597645458686">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7ba41a4beec52b1d055ef71498417f70">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -727,7 +727,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7b37e795b394a273b4adca2984d0c5c">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acd4151bff44f84562f25648869139d6c">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -740,7 +740,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ec3bc606baecfea5832789f9b4f998b">INSTR_PROF_COMMA</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afa5472cd38e53d2907a357a182c9912f">INSTR_PROF_COMMA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -753,7 +753,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae2558cb097460e2dfa5315ec18c38c24">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5b35df8d700a0d1e3771733e0004225f">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -766,7 +766,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b82a7fc9ea6b68d597e54245e85f21b">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a86126f6eb3464c149331aa4dacbd5e62">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -779,7 +779,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac825b81edfa1cf2df4102c9c34f821e4">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac543621b15e2b4f7caf1c209f12df037">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -792,7 +792,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0af632e6ce572cbccbe06f3cd5383e2">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a948087c65e44128955faf1792ad4998d">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -805,7 +805,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a461567c719c6f8cd15517aec497c5ecf">INSTR_PROF_DATA_DEFINED</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9925a14052e5398066d02ca3ab5a953c">INSTR_PROF_DATA_DEFINED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -831,7 +831,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac0475d0e4d44726fa8cb0c513656b94a">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Init)&nbsp;&nbsp;&nbsp;Type Name;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9db10d049bc5dcb6f2150d273142d6e1">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Init)&nbsp;&nbsp;&nbsp;Type Name;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -844,7 +844,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a461567c719c6f8cd15517aec497c5ecf">INSTR_PROF_DATA_DEFINED</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a320f1d593dd9c9f284580b62f804c6e0">INSTR_PROF_DATA_DEFINED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -857,7 +857,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9fffbf1bcdf0b73994e7d71af9fda706">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae000e23960985f006f4c29c9c184f8ad">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -870,7 +870,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2039a5308a9a7aecdfc29f45d1a04fb7">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af37201b1ce57b3816c9ac843b093bf59">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -883,7 +883,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af05e05e47a5f9945cf30597645458686">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad4171cb67d6ecb3d87c5a368fe674310">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -896,7 +896,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7b37e795b394a273b4adca2984d0c5c">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aaf127a8a854f91a2e91a1552d7210efd">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -909,7 +909,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ec3bc606baecfea5832789f9b4f998b">INSTR_PROF_COMMA</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1efd38656772fff14510cbd3e2269c30">INSTR_PROF_COMMA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -922,7 +922,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae2558cb097460e2dfa5315ec18c38c24">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aac196c95ed70f103a82296da4407cd3c">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -935,7 +935,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b82a7fc9ea6b68d597e54245e85f21b">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5cdc18d9b0562049012b74c71fff204d">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -948,7 +948,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac825b81edfa1cf2df4102c9c34f821e4">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2cc459fa6f52bdab341d573b7f02fd5c">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -961,7 +961,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0af632e6ce572cbccbe06f3cd5383e2">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a987e57ec8b087948754d561c3516a124">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -974,7 +974,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a79113e2a464a599e48d66b7fb5b30de0">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Init)&nbsp;&nbsp;&nbsp;Type Name;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a585406d8ad5767cf97f6c02d940dd6ce">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Init)&nbsp;&nbsp;&nbsp;Type Name;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -987,7 +987,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a964fe748db42abb3035346a85f7aa3b9">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aed2095db5fd979c45144987d8acabd68">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1013,7 +1013,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2039a5308a9a7aecdfc29f45d1a04fb7">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae90b3987ac582c1488aff339b90962ba">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1026,7 +1026,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af05e05e47a5f9945cf30597645458686">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2ea1b566e92c744409abef66c108d544">INSTR_PROF_RAW_HEADER</a>(Type, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1039,7 +1039,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7b37e795b394a273b4adca2984d0c5c">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a44f8cf2b698873c1f35e763cbca693a8">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1052,7 +1052,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ec3bc606baecfea5832789f9b4f998b">INSTR_PROF_COMMA</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afea1a0b95a3670b9b7007b14c12fc420">INSTR_PROF_COMMA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1065,7 +1065,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae2558cb097460e2dfa5315ec18c38c24">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad5464f194ae16017796a0ce5ba1519ec">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1078,7 +1078,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b82a7fc9ea6b68d597e54245e85f21b">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abb6307d41404928e71a26d35ad9eeada">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1091,7 +1091,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac825b81edfa1cf2df4102c9c34f821e4">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a60133e8467d15be894ecb6a6943f7ab3">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1104,7 +1104,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0af632e6ce572cbccbe06f3cd5383e2">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a316cf82ac530cdde1e5181a10ae3fce1">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2209,7 +2209,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4fd24a82ef2eee9b912b28a985496043">INSTR_PROF_RAW_HEADER</a>(Type, Name, Init)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> Type Name;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a80ad194615b0aad7b7cb1388f42b9de6">INSTR_PROF_RAW_HEADER</a>(Type, Name, Init)&nbsp;&nbsp;&nbsp;<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> Type Name;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2222,7 +2222,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a964fe748db42abb3035346a85f7aa3b9">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0f40b5a0e18a3e44c6b30490e3669517">INSTR_PROF_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2235,7 +2235,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9fffbf1bcdf0b73994e7d71af9fda706">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0f5c60aad8384f8fc83961d6f57658af">INSTR_PROF_VTABLE_DATA</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2248,7 +2248,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2039a5308a9a7aecdfc29f45d1a04fb7">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6cef2549172caaaf145369be707fb901">INSTR_PROF_VALUE_NODE</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2261,7 +2261,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a461567c719c6f8cd15517aec497c5ecf">INSTR_PROF_DATA_DEFINED</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3156676b9f44d00166e9482e18fba75f">INSTR_PROF_DATA_DEFINED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2274,7 +2274,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7b37e795b394a273b4adca2984d0c5c">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8402adede8f049254f25874e3a6f321b">VALUE_PROF_FUNC_PARAM</a>(ArgType, ArgName, ArgLLVMType)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2287,7 +2287,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ec3bc606baecfea5832789f9b4f998b">INSTR_PROF_COMMA</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a737462bacbec549cb1d59c50314037e4">INSTR_PROF_COMMA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2300,7 +2300,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae2558cb097460e2dfa5315ec18c38c24">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a032f66821c7b2a252e2ff6938f5c7be5">VALUE_PROF_KIND</a>(Enumerator, Value, Descr)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2313,7 +2313,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4b82a7fc9ea6b68d597e54245e85f21b">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adeb638f68277a5a99d64ce2ff3b7c222">COVMAP_FUNC_RECORD</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2326,7 +2326,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac825b81edfa1cf2df4102c9c34f821e4">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0441411dc4e934faa67278dd141c6a50">COVMAP_HEADER</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2339,7 +2339,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae0af632e6ce572cbccbe06f3cd5383e2">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7716f624be4f362c35870911fb8f107">COVINIT_FUNC</a>(Type, LLVMType, Name, Initializer)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -2382,7 +2382,7 @@ keywords:
 </div>
 </div>
 
-### COVINIT\_FUNC {#ae0af632e6ce572cbccbe06f3cd5383e2}
+### COVINIT\_FUNC {#a079591b91e1c043f39277a0049f5788c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2407,7 +2407,7 @@ keywords:
 </div>
 </div>
 
-### COVINIT\_FUNC {#ae0af632e6ce572cbccbe06f3cd5383e2}
+### COVINIT\_FUNC {#a948087c65e44128955faf1792ad4998d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2432,7 +2432,7 @@ keywords:
 </div>
 </div>
 
-### COVINIT\_FUNC {#ae0af632e6ce572cbccbe06f3cd5383e2}
+### COVINIT\_FUNC {#a987e57ec8b087948754d561c3516a124}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2457,7 +2457,7 @@ keywords:
 </div>
 </div>
 
-### COVINIT\_FUNC {#ae0af632e6ce572cbccbe06f3cd5383e2}
+### COVINIT\_FUNC {#a316cf82ac530cdde1e5181a10ae3fce1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2482,7 +2482,7 @@ keywords:
 </div>
 </div>
 
-### COVINIT\_FUNC {#ae0af632e6ce572cbccbe06f3cd5383e2}
+### COVINIT\_FUNC {#ad7716f624be4f362c35870911fb8f107}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2532,7 +2532,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_FUNC\_RECORD {#a4b82a7fc9ea6b68d597e54245e85f21b}
+### COVMAP\_FUNC\_RECORD {#ad6bb5475a20c78d558a590a9d1797598}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2557,7 +2557,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_FUNC\_RECORD {#a4b82a7fc9ea6b68d597e54245e85f21b}
+### COVMAP\_FUNC\_RECORD {#a86126f6eb3464c149331aa4dacbd5e62}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2582,7 +2582,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_FUNC\_RECORD {#a4b82a7fc9ea6b68d597e54245e85f21b}
+### COVMAP\_FUNC\_RECORD {#a5cdc18d9b0562049012b74c71fff204d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2607,7 +2607,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_FUNC\_RECORD {#a4b82a7fc9ea6b68d597e54245e85f21b}
+### COVMAP\_FUNC\_RECORD {#abb6307d41404928e71a26d35ad9eeada}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2632,7 +2632,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_FUNC\_RECORD {#a4b82a7fc9ea6b68d597e54245e85f21b}
+### COVMAP\_FUNC\_RECORD {#adeb638f68277a5a99d64ce2ff3b7c222}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2682,7 +2682,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_HEADER {#ac825b81edfa1cf2df4102c9c34f821e4}
+### COVMAP\_HEADER {#a16bfa8a0f94bdccd624802854edf75ab}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2707,7 +2707,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_HEADER {#ac825b81edfa1cf2df4102c9c34f821e4}
+### COVMAP\_HEADER {#ac543621b15e2b4f7caf1c209f12df037}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2732,7 +2732,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_HEADER {#ac825b81edfa1cf2df4102c9c34f821e4}
+### COVMAP\_HEADER {#a2cc459fa6f52bdab341d573b7f02fd5c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2757,7 +2757,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_HEADER {#ac825b81edfa1cf2df4102c9c34f821e4}
+### COVMAP\_HEADER {#a60133e8467d15be894ecb6a6943f7ab3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2782,7 +2782,7 @@ keywords:
 </div>
 </div>
 
-### COVMAP\_HEADER {#ac825b81edfa1cf2df4102c9c34f821e4}
+### COVMAP\_HEADER {#a0441411dc4e934faa67278dd141c6a50}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3091,7 +3091,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_COMMA {#a9ec3bc606baecfea5832789f9b4f998b}
+### INSTR\_PROF\_COMMA {#ad10b7a2548ea86ccc6388b280ead6912}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3116,7 +3116,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_COMMA {#a9ec3bc606baecfea5832789f9b4f998b}
+### INSTR\_PROF\_COMMA {#afa5472cd38e53d2907a357a182c9912f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3141,7 +3141,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_COMMA {#a9ec3bc606baecfea5832789f9b4f998b}
+### INSTR\_PROF\_COMMA {#a1efd38656772fff14510cbd3e2269c30}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3166,7 +3166,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_COMMA {#a9ec3bc606baecfea5832789f9b4f998b}
+### INSTR\_PROF\_COMMA {#afea1a0b95a3670b9b7007b14c12fc420}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3191,7 +3191,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_COMMA {#a9ec3bc606baecfea5832789f9b4f998b}
+### INSTR\_PROF\_COMMA {#a737462bacbec549cb1d59c50314037e4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3666,7 +3666,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA {#a964fe748db42abb3035346a85f7aa3b9}
+### INSTR\_PROF\_DATA {#a61629fdb389d51542976cbea4c4ebd75}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3691,7 +3691,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA {#a964fe748db42abb3035346a85f7aa3b9}
+### INSTR\_PROF\_DATA {#ac698947e76449da7cb367a70c8a087cc}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3716,7 +3716,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA {#ac0475d0e4d44726fa8cb0c513656b94a}
+### INSTR\_PROF\_DATA {#a9db10d049bc5dcb6f2150d273142d6e1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3741,7 +3741,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA {#a964fe748db42abb3035346a85f7aa3b9}
+### INSTR\_PROF\_DATA {#aed2095db5fd979c45144987d8acabd68}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3766,7 +3766,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA {#a964fe748db42abb3035346a85f7aa3b9}
+### INSTR\_PROF\_DATA {#a0f40b5a0e18a3e44c6b30490e3669517}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3891,7 +3891,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA\_DEFINED {#a461567c719c6f8cd15517aec497c5ecf}
+### INSTR\_PROF\_DATA\_DEFINED {#aa444dc102f83b1a9c40e12a256180b8b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3916,7 +3916,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA\_DEFINED {#a461567c719c6f8cd15517aec497c5ecf}
+### INSTR\_PROF\_DATA\_DEFINED {#a9925a14052e5398066d02ca3ab5a953c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3941,7 +3941,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA\_DEFINED {#a461567c719c6f8cd15517aec497c5ecf}
+### INSTR\_PROF\_DATA\_DEFINED {#a320f1d593dd9c9f284580b62f804c6e0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -3966,7 +3966,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_DATA\_DEFINED {#a461567c719c6f8cd15517aec497c5ecf}
+### INSTR\_PROF\_DATA\_DEFINED {#a3156676b9f44d00166e9482e18fba75f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4568,7 +4568,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_RAW\_HEADER {#af05e05e47a5f9945cf30597645458686}
+### INSTR\_PROF\_RAW\_HEADER {#a7a48c3c420871c8895aa03e069452a3a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4593,7 +4593,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_RAW\_HEADER {#af05e05e47a5f9945cf30597645458686}
+### INSTR\_PROF\_RAW\_HEADER {#a7ba41a4beec52b1d055ef71498417f70}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4618,7 +4618,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_RAW\_HEADER {#af05e05e47a5f9945cf30597645458686}
+### INSTR\_PROF\_RAW\_HEADER {#ad4171cb67d6ecb3d87c5a368fe674310}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4643,7 +4643,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_RAW\_HEADER {#af05e05e47a5f9945cf30597645458686}
+### INSTR\_PROF\_RAW\_HEADER {#a2ea1b566e92c744409abef66c108d544}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4668,7 +4668,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_RAW\_HEADER {#a4fd24a82ef2eee9b912b28a985496043}
+### INSTR\_PROF\_RAW\_HEADER {#a80ad194615b0aad7b7cb1388f42b9de6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5050,7 +5050,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VALUE\_NODE {#a2039a5308a9a7aecdfc29f45d1a04fb7}
+### INSTR\_PROF\_VALUE\_NODE {#a0d0cb095fe390c2e0d64636a856e5267}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5075,7 +5075,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VALUE\_NODE {#a2039a5308a9a7aecdfc29f45d1a04fb7}
+### INSTR\_PROF\_VALUE\_NODE {#a29eabb7ef345000d765ff485ee6ad388}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5100,7 +5100,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VALUE\_NODE {#a2039a5308a9a7aecdfc29f45d1a04fb7}
+### INSTR\_PROF\_VALUE\_NODE {#af37201b1ce57b3816c9ac843b093bf59}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5125,7 +5125,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VALUE\_NODE {#a2039a5308a9a7aecdfc29f45d1a04fb7}
+### INSTR\_PROF\_VALUE\_NODE {#ae90b3987ac582c1488aff339b90962ba}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5150,7 +5150,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VALUE\_NODE {#a2039a5308a9a7aecdfc29f45d1a04fb7}
+### INSTR\_PROF\_VALUE\_NODE {#a6cef2549172caaaf145369be707fb901}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5578,7 +5578,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VTABLE\_DATA {#a9fffbf1bcdf0b73994e7d71af9fda706}
+### INSTR\_PROF\_VTABLE\_DATA {#a092a23d90c264232a2c4b67b64cf9f71}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5603,7 +5603,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VTABLE\_DATA {#a9fffbf1bcdf0b73994e7d71af9fda706}
+### INSTR\_PROF\_VTABLE\_DATA {#ad3be382e77e5696131d47257c2fab384}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5628,7 +5628,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VTABLE\_DATA {#a9fffbf1bcdf0b73994e7d71af9fda706}
+### INSTR\_PROF\_VTABLE\_DATA {#ae000e23960985f006f4c29c9c184f8ad}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5653,7 +5653,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VTABLE\_DATA {#a79113e2a464a599e48d66b7fb5b30de0}
+### INSTR\_PROF\_VTABLE\_DATA {#a585406d8ad5767cf97f6c02d940dd6ce}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5678,7 +5678,7 @@ keywords:
 </div>
 </div>
 
-### INSTR\_PROF\_VTABLE\_DATA {#a9fffbf1bcdf0b73994e7d71af9fda706}
+### INSTR\_PROF\_VTABLE\_DATA {#a0f5c60aad8384f8fc83961d6f57658af}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5753,7 +5753,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_FUNC\_PARAM {#ad7b37e795b394a273b4adca2984d0c5c}
+### VALUE\_PROF\_FUNC\_PARAM {#a87c1bbac0b84ba640670d7cfb8d46c62}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5778,7 +5778,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_FUNC\_PARAM {#ad7b37e795b394a273b4adca2984d0c5c}
+### VALUE\_PROF\_FUNC\_PARAM {#acd4151bff44f84562f25648869139d6c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5803,7 +5803,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_FUNC\_PARAM {#ad7b37e795b394a273b4adca2984d0c5c}
+### VALUE\_PROF\_FUNC\_PARAM {#aaf127a8a854f91a2e91a1552d7210efd}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5828,7 +5828,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_FUNC\_PARAM {#ad7b37e795b394a273b4adca2984d0c5c}
+### VALUE\_PROF\_FUNC\_PARAM {#a44f8cf2b698873c1f35e763cbca693a8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5853,7 +5853,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_FUNC\_PARAM {#ad7b37e795b394a273b4adca2984d0c5c}
+### VALUE\_PROF\_FUNC\_PARAM {#a8402adede8f049254f25874e3a6f321b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5903,7 +5903,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_KIND {#ae2558cb097460e2dfa5315ec18c38c24}
+### VALUE\_PROF\_KIND {#a806f28489e8f6c6c347485fbc3ef50a6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5928,7 +5928,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_KIND {#ae2558cb097460e2dfa5315ec18c38c24}
+### VALUE\_PROF\_KIND {#a5b35df8d700a0d1e3771733e0004225f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5953,7 +5953,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_KIND {#ae2558cb097460e2dfa5315ec18c38c24}
+### VALUE\_PROF\_KIND {#aac196c95ed70f103a82296da4407cd3c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5978,7 +5978,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_KIND {#ae2558cb097460e2dfa5315ec18c38c24}
+### VALUE\_PROF\_KIND {#ad5464f194ae16017796a0ce5ba1519ec}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -6003,7 +6003,7 @@ keywords:
 </div>
 </div>
 
-### VALUE\_PROF\_KIND {#ae2558cb097460e2dfa5315ec18c38c24}
+### VALUE\_PROF\_KIND {#a032f66821c7b2a252e2ff6938f5c7be5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -6309,6 +6309,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

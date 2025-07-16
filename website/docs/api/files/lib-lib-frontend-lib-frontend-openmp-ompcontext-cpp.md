@@ -167,7 +167,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7e55c90adf189b48711ce0c6970f951e">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -180,7 +180,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adbbc2ef80506fd714ce71b12e18fc5e2">OMP_TRAIT_SET</a>(Enum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7508ce26947c5b2489cb5d9136b95f4f">OMP_TRAIT_SET</a>(Enum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -193,7 +193,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5be2d078c441cd94469605cf837acb5a">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;  .Case(Str, TraitSelector::Enum)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab92d0511e84a38a4ccfc3dacef270896">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;  .Case(Str, TraitSelector::Enum)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -206,7 +206,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae020e12f341a072b87e8a5c33c59b4e8">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -219,7 +219,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5be2d078c441cd94469605cf837acb5a">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6246fb949161c39acf3e31d0776739c9">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -232,7 +232,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a13c4bb4a785d6b309bff8a14bb5d7c95">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -245,7 +245,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8e9f39148c9c48b52657f8ce241d8255">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -258,7 +258,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2f90397388c1522f57e245004e8394da">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -271,7 +271,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5e450060b23ff26fbe153782db985176">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -284,7 +284,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5be2d078c441cd94469605cf837acb5a">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af8b0fe975bb1da76e4bb18a7a4b5c5f4">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -297,7 +297,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0a744e8a33807a07202a437bda1b5c3f">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -310,7 +310,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adbbc2ef80506fd714ce71b12e18fc5e2">OMP_TRAIT_SET</a>(Enum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac407db0f26286ea47f769fa4e6994da2">OMP_TRAIT_SET</a>(Enum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -323,7 +323,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5be2d078c441cd94469605cf837acb5a">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a505405adbb01d28b09505d77b07e6347">OMP_TRAIT_SELECTOR</a>(Enum, TraitSetEnum, Str, ReqProp)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -336,7 +336,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4472c452d7a9a0a2bb0af8ed35e290a6">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3dfa3a8e022d5b8720b0b44fab8fa685">OMP_TRAIT_PROPERTY</a>(Enum, TraitSetEnum, TraitSelectorEnum, Str)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -614,7 +614,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a7e55c90adf189b48711ce0c6970f951e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -648,7 +648,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#ae020e12f341a072b87e8a5c33c59b4e8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -682,7 +682,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a13c4bb4a785d6b309bff8a14bb5d7c95}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -716,7 +716,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a8e9f39148c9c48b52657f8ce241d8255}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -751,7 +751,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a2f90397388c1522f57e245004e8394da}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -785,7 +785,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a5e450060b23ff26fbe153782db985176}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -819,7 +819,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a0a744e8a33807a07202a437bda1b5c3f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -854,7 +854,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_PROPERTY {#a4472c452d7a9a0a2bb0af8ed35e290a6}
+### OMP\_TRAIT\_PROPERTY {#a3dfa3a8e022d5b8720b0b44fab8fa685}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -924,7 +924,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_SELECTOR {#a5be2d078c441cd94469605cf837acb5a}
+### OMP\_TRAIT\_SELECTOR {#ab92d0511e84a38a4ccfc3dacef270896}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -949,7 +949,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_SELECTOR {#a5be2d078c441cd94469605cf837acb5a}
+### OMP\_TRAIT\_SELECTOR {#a6246fb949161c39acf3e31d0776739c9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -983,7 +983,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_SELECTOR {#a5be2d078c441cd94469605cf837acb5a}
+### OMP\_TRAIT\_SELECTOR {#af8b0fe975bb1da76e4bb18a7a4b5c5f4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1018,7 +1018,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_SELECTOR {#a5be2d078c441cd94469605cf837acb5a}
+### OMP\_TRAIT\_SELECTOR {#a505405adbb01d28b09505d77b07e6347}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1077,7 +1077,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_SET {#adbbc2ef80506fd714ce71b12e18fc5e2}
+### OMP\_TRAIT\_SET {#a7508ce26947c5b2489cb5d9136b95f4f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1111,7 +1111,7 @@ keywords:
 </div>
 </div>
 
-### OMP\_TRAIT\_SET {#adbbc2ef80506fd714ce71b12e18fc5e2}
+### OMP\_TRAIT\_SET {#ac407db0f26286ea47f769fa4e6994da2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1149,6 +1149,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

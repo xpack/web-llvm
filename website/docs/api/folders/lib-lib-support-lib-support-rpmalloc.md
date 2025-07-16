@@ -81,7 +81,7 @@ keywords:
 
 
 
-## rpmalloc - General Purpose Memory Allocator {#autotoc_md87}
+## rpmalloc - General Purpose Memory Allocator {#autotoc_md86}
 
 
 <p>This library provides a cross platform lock free thread caching 16-byte aligned memory allocator implemented in C. This is a fork of rpmalloc 1.4.5.</p>
@@ -105,7 +105,7 @@ keywords:
 <p>This library is put in the public domain; you can redistribute it and/or modify it without any restrictions. Or, if you choose, you can use it under the MIT license.</p>
 
 
-## Performance {#autotoc_md88}
+## Performance {#autotoc_md87}
 
 
 <p>We believe rpmalloc is faster than most popular memory allocators like tcmalloc, hoard, ptmalloc3 and others without causing extra allocated memory overhead in the thread caches compared to these allocators. We also believe the implementation to be easier to read and modify compared to these allocators, as it is a single source file of ~3000 lines of C code. All allocations have a natural 16-byte alignment.</p>
@@ -131,7 +131,7 @@ keywords:
 <p>Configuration of the thread and global caches can be important depending on your use pattern. See <a href="/web-llvm/docs/api/pages/md-lib-2-support-2rpmalloc-2-c-a-c-h-e">CACHE</a> for a case study and some comments/guidelines.</p>
 
 
-## Required functions {#autotoc_md89}
+## Required functions {#autotoc_md88}
 
 
 <p>Before calling any other function in the API, you <b>MUST</b> call the initialization function, either <b>rpmalloc_initialize</b> or <b>rpmalloc_initialize_config</b>, or you will get undefined behaviour when calling other rpmalloc entry point.</p>
@@ -140,7 +140,7 @@ keywords:
 <p>Before terminating your use of the allocator, you <b>SHOULD</b> call <b>rpmalloc_finalize</b> in order to release caches and unmap virtual memory, as well as prepare the allocator for global scope cleanup at process exit or dynamic library unload depending on your use case.</p>
 
 
-## Using {#autotoc_md90}
+## Using {#autotoc_md89}
 
 
 <p>The easiest way to use the library is simply adding <b>rpmalloc.[h|c]</b> to your project and compile them along with your sources. This contains only the rpmalloc specific entry points and does not provide internal hooks to process and/or thread creation at the moment. You are required to call these functions from your own code in order to initialize and finalize the allocator in your process and threads:</p>
@@ -173,7 +173,7 @@ keywords:
 <p>For explicit first class heaps, see the <b>rpmalloc_heap_*</b> API under first class heaps section, requiring <b>RPMALLOC_FIRST_CLASS_HEAPS</b> tp be defined to 1.</p>
 
 
-## Building {#autotoc_md91}
+## Building {#autotoc_md90}
 
 
 <p>To compile as a static library run the configure python script which generates a Ninja build script, then build using ninja. The ninja build produces two static libraries, one named <span class="doxyComputerOutput">rpmalloc</span> and one named <span class="doxyComputerOutput">rpmallocwrap</span>, where the latter includes the libc entry point overrides.</p>
@@ -185,7 +185,7 @@ keywords:
 <p>The latest stable release is available in the master branch. For latest development code, use the develop branch.</p>
 
 
-## Cache configuration options {#autotoc_md92}
+## Cache configuration options {#autotoc_md91}
 
 
 <p>Free memory pages are cached both per thread and in a global cache for all threads. The size of the thread caches is determined by an adaptive scheme where each cache is limited by a percentage of the maximum allocation count of the corresponding size class. The size of the global caches is determined by a multiple of the maximum of all thread caches. The factors controlling the cache sizes can be set by editing the individual defines in the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/rpmalloc/rpmalloc-c">rpmalloc.c</a></span> source file for fine tuned control.</p>
@@ -209,7 +209,7 @@ keywords:
 <p><b>ENABLE_ADAPTIVE_THREAD_CACHE</b>: Introduces a simple heuristics in the thread cache size, keeping 25% of the high water mark for each span count class.</p>
 
 
-## Other configuration options {#autotoc_md93}
+## Other configuration options {#autotoc_md92}
 
 
 <p>Detailed statistics are available if <b>ENABLE_STATISTICS</b> is defined to 1 (default is 0, or disabled), either on compile command line or by setting the value in <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/rpmalloc/rpmalloc-c">rpmalloc.c</a></span>. This will cause a slight overhead in runtime to collect statistics for each memory operation, and will also add 4 bytes overhead per allocation to track sizes.</p>
@@ -230,19 +230,19 @@ keywords:
 <p>To enable support for first class heaps, define <b>RPMALLOC_FIRST_CLASS_HEAPS</b> to 1. By default, the first class heap API is disabled.</p>
 
 
-## Huge pages {#autotoc_md94}
+## Huge pages {#autotoc_md93}
 
 
 <p>The allocator has support for huge/large pages on Windows, Linux and MacOS. To enable it, pass a non-zero value in the config value <span class="doxyComputerOutput">enable_huge_pages</span> when initializing the allocator with <span class="doxyComputerOutput">rpmalloc_initialize_config</span>. If the system does not support huge pages it will be automatically disabled. You can query the status by looking at <span class="doxyComputerOutput">enable_huge_pages</span> in the config returned from a call to <span class="doxyComputerOutput">rpmalloc_config</span> after initialization is done.</p>
 
 
-## Quick overview {#autotoc_md95}
+## Quick overview {#autotoc_md94}
 
 
 <p>The allocator is similar in spirit to tcmalloc from the <a href="https://github.com/gperftools/gperftools">Google Performance Toolkit</a>. It uses separate heaps for each thread and partitions memory blocks according to a preconfigured set of size classes, up to 2MiB. Larger blocks are mapped and unmapped directly. Allocations for different size classes will be served from different set of memory pages, each "span" of pages is dedicated to one size class. Spans of pages can flow between threads when the thread cache overflows and are released to a global cache, or when the thread ends. Unlike tcmalloc, single blocks do not flow between threads, only entire spans of pages.</p>
 
 
-## Implementation details {#autotoc_md96}
+## Implementation details {#autotoc_md95}
 
 
 <p>The allocator is based on a fixed but configurable page alignment (defaults to 64KiB) and 16 byte block alignment, where all runs of memory pages (spans) are mapped to this alignment boundary. On Windows this is automatically guaranteed up to 64KiB by the VirtualAlloc granularity, and on mmap systems it is achieved by oversizing the mapping and aligning the returned virtual memory address to the required boundaries. By aligning to a fixed size the free operation can locate the header of the memory span without having to do a table lookup (as tcmalloc does) by simply masking out the low bits of the address (for 64KiB this would be the low 16 bits).</p>
@@ -263,7 +263,7 @@ keywords:
 <p>Large blocks, or super spans, are cached in two levels. The first level is a per thread list of free super spans. The second level is a global list of free super spans.</p>
 
 
-## Memory mapping {#autotoc_md97}
+## Memory mapping {#autotoc_md96}
 
 
 <p>By default the allocator uses OS APIs to map virtual memory pages as needed, either <span class="doxyComputerOutput">VirtualAlloc</span> on Windows or <span class="doxyComputerOutput">mmap</span> on POSIX systems. If you want to use your own custom memory mapping provider you can use <b>rpmalloc_initialize_config</b> and pass function pointers to map and unmap virtual memory. These function should reserve and free the requested number of bytes.</p>
@@ -281,7 +281,7 @@ keywords:
 <p>On macOS and iOS mmap requests are tagged with tag 240 for easy identification with the vmmap tool.</p>
 
 
-## Span breaking {#autotoc_md98}
+## Span breaking {#autotoc_md97}
 
 
 <p>Super spans (spans a multiple &gt; 1 of the span size) can be subdivided into smaller spans to fulfill a need to map a new span of memory. By default the allocator will greedily grab and break any larger span from the available caches before mapping new virtual memory. However, spans can currently not be glued together to form larger super spans again. Subspans can traverse the cache and be used by different threads individually.</p>
@@ -293,7 +293,7 @@ keywords:
 <p>If you use a custom memory map/unmap function you need to take this into account by looking at the <span class="doxyComputerOutput">release</span> parameter given to the <span class="doxyComputerOutput">memory_unmap</span> function. It is set to 0 for decommitting individual pages and the total super span byte size for finally releasing the entire super span memory range.</p>
 
 
-## Memory fragmentation {#autotoc_md99}
+## Memory fragmentation {#autotoc_md98}
 
 
 <p>There is no memory fragmentation by the allocator in the sense that it will not leave unallocated and unusable "holes" in the memory pages by calls to allocate and free blocks of different sizes. This is due to the fact that the memory pages allocated for each size class is split up in perfectly aligned blocks which are not reused for a request of a different size. The block freed by a call to <span class="doxyComputerOutput">rpfree</span> will always be immediately available for an allocation request within the same size class.</p>
@@ -305,19 +305,19 @@ keywords:
 <p>rpmalloc keeps an "active span" and free list for each size class. This leads to back-to-back allocations will most likely be served from within the same span of memory pages (unless the span runs out of free blocks). The rpmalloc implementation will also use any "holes" in memory pages in semi-filled spans before using a completely free span.</p>
 
 
-## First class heaps {#autotoc_md100}
+## First class heaps {#autotoc_md99}
 
 
 <p>rpmalloc provides a first class heap type with explicit heap control API. Heaps are maintained with calls to <b>rpmalloc_heap_acquire</b> and <b>rpmalloc_heap_release</b> and allocations/frees are done with <b>rpmalloc_heap_alloc</b> and <b>rpmalloc_heap_free</b>. See the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/files/lib/lib/support/lib/support/rpmalloc/rpmalloc-h">rpmalloc.h</a></span> documentation for the full list of functions in the heap API. The main use case of explicit heap control is to scope allocations in a heap and release everything with a single call to <b>rpmalloc_heap_free_all</b> without having to maintain ownership of memory blocks. Note that the heap API is not thread-safe, the caller must make sure that each heap is only used in a single thread at any given time.</p>
 
 
-## Producer-consumer scenario {#autotoc_md101}
+## Producer-consumer scenario {#autotoc_md100}
 
 
 <p>Compared to the some other allocators, rpmalloc does not suffer as much from a producer-consumer thread scenario where one thread allocates memory blocks and another thread frees the blocks. In some allocators the free blocks need to traverse both the thread cache of the thread doing the free operations as well as the global cache before being reused in the allocating thread. In rpmalloc the freed blocks will be reused as soon as the allocating thread needs to get new spans from the thread cache. This enables faster release of completely freed memory pages as blocks in a memory page will not be aliased between different owning threads.</p>
 
 
-## Best case scenarios {#autotoc_md102}
+## Best case scenarios {#autotoc_md101}
 
 
 <p>Threads that keep ownership of allocated memory blocks within the thread and free the blocks from the same thread will have optimal performance.</p>
@@ -326,7 +326,7 @@ keywords:
 <p>Threads that have allocation patterns where the difference in memory usage high and low water marks fit within the thread cache thresholds in the allocator will never touch the global cache except during thread init/fini and have optimal performance. Tweaking the cache limits can be done on a per-size-class basis.</p>
 
 
-## Worst case scenarios {#autotoc_md103}
+## Worst case scenarios {#autotoc_md102}
 
 
 <p>Since each thread cache maps spans of memory pages per size class, a thread that allocates just a few blocks of each size class (16, 32, ...) for many size classes will never fill each bucket, and thus map a lot of memory pages while only using a small fraction of the mapped memory. However, the wasted memory will always be less than 4KiB (or the configured memory page size) per size class as each span is initialized one memory page at a time. The cache for free spans will be reused by all size classes.</p>
@@ -335,7 +335,7 @@ keywords:
 <p>Threads that perform a lot of allocations and deallocations in a pattern that have a large difference in high and low water marks, and that difference is larger than the thread cache size, will put a lot of contention on the global cache. What will happen is the thread cache will overflow on each low water mark causing pages to be released to the global cache, then underflow on high water mark causing pages to be re-acquired from the global cache. This can be mitigated by changing the <b>MAX_SPAN_CACHE_DIVISOR</b> define in the source code (at the cost of higher average memory overhead).</p>
 
 
-## Caveats {#autotoc_md104}
+## Caveats {#autotoc_md103}
 
 
 <p>VirtualAlloc has an internal granularity of 64KiB. However, mmap lacks this granularity control, and the implementation instead oversizes the memory mapping with configured span size to be able to always return a memory area with the required alignment. Since the extra memory pages are never touched this will not result in extra committed physical memory pages, but rather only increase virtual memory address space.</p>
@@ -347,7 +347,7 @@ keywords:
 <p>To support global scope data doing dynamic allocation/deallocation such as C++ objects with custom constructors and destructors, the call to <b>rpmalloc_finalize</b> will not completely terminate the allocator but rather empty all caches and put the allocator in finalization mode. Once this call has been made, the allocator is no longer thread safe and expects all remaining calls to originate from global data destruction on main thread. Any spans or heaps becoming free during this phase will be immediately unmapped to allow correct teardown of the process or dynamic library without any leaks.</p>
 
 
-## Other languages {#autotoc_md105}
+## Other languages {#autotoc_md104}
 
 
 <p><a href="https://github.com/repi">Johan Andersson</a> at Embark has created a Rust wrapper available at <a href="https://github.com/EmbarkStudios/rpmalloc-rs">rpmalloc-rs</a></p>
@@ -356,7 +356,7 @@ keywords:
 <p><a href="https://github.com/nxrighthere">Stas Denisov</a> has created a C# wrapper available at <a href="https://github.com/nxrighthere/Rpmalloc-CSharp">Rpmalloc-CSharp</a></p>
 
 
-## License {#autotoc_md106}
+## License {#autotoc_md105}
 
 
 <p>This is free and unencumbered software released into the public domain.</p>
@@ -394,6 +394,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -299,7 +299,7 @@ class llvm::AMDGPUPerfHintAnalysis { ... }
 <p>Declaration at line 57 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuperfhintanalysis-h">AMDGPUPerfHintAnalysis.h</a>, definition at line 442 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuperfhintanalysis-cpp">AMDGPUPerfHintAnalysis.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/structs/anonymous-amdgpuperfhintanalysis-cpp-/amdgpuperfhint/#a62c54f2daeebdb915908547891a8c62c">anonymous{AMDGPUPerfHintAnalysis.cpp}::AMDGPUPerfHint::AMDGPUPerfHint</a>, <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/#a72787ab6acfbe504a11ca1d927513356">llvm::LazyCallGraph::buildRefSCCs</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/#ad5c39918b16a0755f8e0506ce27bc053">llvm::LazyCallGraph::postorder_ref_sccs</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/anonymous-amdgpuperfhintanalysis-cpp-/amdgpuperfhint/#a62c54f2daeebdb915908547891a8c62c">anonymous{AMDGPUPerfHintAnalysis.cpp}::AMDGPUPerfHint::AMDGPUPerfHint</a>, <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/#a72787ab6acfbe504a11ca1d927513356">llvm::LazyCallGraph::buildRefSCCs</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/#ad5c39918b16a0755f8e0506ce27bc053">llvm::LazyCallGraph::postorder_ref_sccs</a>.</p>
 
 </div>
 </div>
@@ -327,7 +327,7 @@ class llvm::AMDGPUPerfHintAnalysis { ... }
 <p>Declaration at line 54 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuperfhintanalysis-h">AMDGPUPerfHintAnalysis.h</a>, definition at line 424 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpuperfhintanalysis-cpp">AMDGPUPerfHintAnalysis.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/structs/anonymous-amdgpuperfhintanalysis-cpp-/amdgpuperfhint/#a62c54f2daeebdb915908547891a8c62c">anonymous{AMDGPUPerfHintAnalysis.cpp}::AMDGPUPerfHint::AMDGPUPerfHint</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="/web-llvm/docs/api/structs/anonymous-amdgpuperfhintanalysis-cpp-/amdgpuperfhint/#a62c54f2daeebdb915908547891a8c62c">anonymous{AMDGPUPerfHintAnalysis.cpp}::AMDGPUPerfHint::AMDGPUPerfHint</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 </div>
 </div>
@@ -376,6 +376,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

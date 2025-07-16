@@ -192,7 +192,7 @@ keywords:
 <p>Definition at line 85 of file <a href="/web-llvm/docs/api/files/lib/lib/support/fileutilities-cpp">FileUtilities.cpp</a>.</p>
 
 
-<p>References <a href="#a40b372b5f6e9042262fff84eddd9acb1">EndOfNumber</a>, <a href="#a8156d08864b8327047e16efcbd80f247">isNumberChar</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#acea2ac67f3ff35107bcf1693416da8e7">llvm::isSpace</a>.</p>
+<p>References <a href="#a40b372b5f6e9042262fff84eddd9acb1">EndOfNumber</a> and <a href="#a8156d08864b8327047e16efcbd80f247">isNumberChar</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#aedbcf5909f70207a579202cbbbaa4893">llvm::DiffFilesWithTolerance</a>.</p>
@@ -352,6 +352,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

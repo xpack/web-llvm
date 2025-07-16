@@ -399,7 +399,7 @@ struct anonymous{LoopVersioningLICM.cpp}::LoopVersioningLICM { ... }
 <p>Definition at line 124 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopversioninglicm-cpp">LoopVersioningLICM.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a55c9054d63d1c6a39e9c09ba13a482fa">llvm::addStringMetadataToLoop</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/classes/llvm/loopversioning/#afc32c640645a5caeb9fe788699d4f75b">llvm::LoopVersioning::getNonVersionedLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/loopversioning/#a296de170be5a983234de7d53da3c1635">llvm::LoopVersioning::getVersionedLoop</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa1a001d9051b71d83307766b1a96b7d3">llvm::hasLICMVersioningTransformation</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopversioninglicm-cpp/#a05fae90ee62b36eb73e2b0f4e4626f3d">LICMVersioningMetaData</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa3e837c0d2a0521b4a4680071cac0dcbaa70bd8f3da4232ad809b2ffdcc1254bd">llvm::TM_Disable</a> and <a href="/web-llvm/docs/api/classes/llvm/loopversioning/#a65b5f9f4aa48ceb121d65679d8b1a689">llvm::LoopVersioning::versionLoop</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a55c9054d63d1c6a39e9c09ba13a482fa">llvm::addStringMetadataToLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/loopversioning/#afc32c640645a5caeb9fe788699d4f75b">llvm::LoopVersioning::getNonVersionedLoop</a>, <a href="/web-llvm/docs/api/classes/llvm/loopversioning/#a296de170be5a983234de7d53da3c1635">llvm::LoopVersioning::getVersionedLoop</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa1a001d9051b71d83307766b1a96b7d3">llvm::hasLICMVersioningTransformation</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopversioninglicm-cpp/#a05fae90ee62b36eb73e2b0f4e4626f3d">LICMVersioningMetaData</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aa3e837c0d2a0521b4a4680071cac0dcbaa70bd8f3da4232ad809b2ffdcc1254bd">llvm::TM_Disable</a> and <a href="/web-llvm/docs/api/classes/llvm/loopversioning/#a65b5f9f4aa48ceb121d65679d8b1a689">llvm::LoopVersioning::versionLoop</a>.</p>
 
 </div>
 </div>
@@ -919,6 +919,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -31,12 +31,12 @@ namespace llvm::RISCVISAUtils { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensioncomparator">ExtensionComparator</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensionversion">ExtensionVersion</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Helper class for <a href="#a8557faa65915a2ad7c9f4576d736f50b">OrderedExtensionMap</a>. <a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensioncomparator/#details">More...</a></p>
+<p>Represents the major and version number components of a RISC-V extension. <a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensionversion/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -45,12 +45,12 @@ namespace llvm::RISCVISAUtils { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensionversion">ExtensionVersion</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensioncomparator">ExtensionComparator</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Represents the major and version number components of a RISC-V extension. <a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensionversion/#details">More...</a></p>
+<p>Helper class for <a href="#a8557faa65915a2ad7c9f4576d736f50b">OrderedExtensionMap</a>. <a href="/web-llvm/docs/api/structs/llvm/riscvisautils/extensioncomparator/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -236,6 +236,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

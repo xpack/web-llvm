@@ -2530,6 +2530,9 @@ class anonymous{VEAsmParser.cpp}::VEOperand { ... }
 
 <p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> and <a href="#ab97bf0e2479b963f728ca528a67e70ae">Tok</a>.</p>
 
+
+<p>Referenced by <a href="#aec04f8d178bf883e8dba85770a7391e1">print</a>.</p>
+
 </div>
 </div>
 
@@ -3277,7 +3280,7 @@ class anonymous{VEAsmParser.cpp}::VEOperand { ... }
 <p>Definition at line 413 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/ve/lib/target/ve/asmparser/veasmparser-cpp">VEAsmParser.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a18f81f24f7a42b294d10289c1cc5fdb1">getCCVal</a>, <a href="#ab49229ee99923fd41af092fa58ef8850">getImm</a>, <a href="#a48b81be143bf9b1ed4c7e28c7ea28718">getM0Flag</a>, <a href="#ad13afedb0c3d3a137ab3114310c89a06">getMemBase</a>, <a href="#a0361733f829e558a242bf7ccbfd75585">getMemIndex</a>, <a href="#ad167f3895bc6df30c733e88830189b9e">getMemIndexReg</a>, <a href="#a3a9b183fea62d7a1901824d6f433abf9">getMemOffset</a>, <a href="#ae482f51527219c79bbd80fa79e826354">getMImmVal</a>, <a href="#a5108082ad2e32986163396ec54dc0143">getRDVal</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a20237283e8b9e354abec8dc5ab16bd16">llvm::getToken</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="#a18f81f24f7a42b294d10289c1cc5fdb1">getCCVal</a>, <a href="#ab49229ee99923fd41af092fa58ef8850">getImm</a>, <a href="#a48b81be143bf9b1ed4c7e28c7ea28718">getM0Flag</a>, <a href="#ad13afedb0c3d3a137ab3114310c89a06">getMemBase</a>, <a href="#a0361733f829e558a242bf7ccbfd75585">getMemIndex</a>, <a href="#ad167f3895bc6df30c733e88830189b9e">getMemIndexReg</a>, <a href="#a3a9b183fea62d7a1901824d6f433abf9">getMemOffset</a>, <a href="#ae482f51527219c79bbd80fa79e826354">getMImmVal</a>, <a href="#a5108082ad2e32986163396ec54dc0143">getRDVal</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg</a> and <a href="#a7a6660d04f732423d6cc8f901efb5191">getToken</a>.</p>
 
 </div>
 </div>
@@ -4210,6 +4213,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

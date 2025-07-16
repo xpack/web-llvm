@@ -499,7 +499,7 @@ struct anonymous{PPCMIPeephole.cpp}::PPCMIPeephole { ... }
 <p>Definition at line 169 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/powerpc/ppcmipeephole-cpp">PPCMIPeephole.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a19d27915595e7f0a0ef271448bcdac6f">initialize</a>, <a href="/web-llvm/docs/api/classes/llvm/ppcsubtarget/#a6a2a00931f022fa78f6cdadb07e6d775">llvm::PPCSubtarget::isUsingPCRelativeCalls</a>, <a href="#acd94eee3c67dbf69500fbaa24d834216">MF</a> and <a href="/web-llvm/docs/api/classes/llvm/functionpass/#af9f5f511d75e16f09a5520cb9444cfa8">llvm::FunctionPass::skipFunction</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a19d27915595e7f0a0ef271448bcdac6f">initialize</a>, <a href="/web-llvm/docs/api/classes/llvm/ppcsubtarget/#a6a2a00931f022fa78f6cdadb07e6d775">llvm::PPCSubtarget::isUsingPCRelativeCalls</a>, <a href="#acd94eee3c67dbf69500fbaa24d834216">MF</a> and <a href="/web-llvm/docs/api/classes/llvm/functionpass/#af9f5f511d75e16f09a5520cb9444cfa8">llvm::FunctionPass::skipFunction</a>.</p>
 
 </div>
 </div>
@@ -1056,6 +1056,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -778,7 +778,7 @@ class llvm::Argument { ... }
 <p>This class represents an incoming formal argument to a <a href="/web-llvm/docs/api/classes/llvm/function">Function</a>.</p>
 
 
-<p>A formal argument, since it is `‘formal`', does not contain an actual value but instead represents the type, argument number, and attributes of an argument for a specific function. When used in the body of said function, the argument of course represents the value of the actual argument that the function was called with.</p>
+<p>A formal argument, since it is “formal”, does not contain an actual value but instead represents the type, argument number, and attributes of an argument for a specific function. When used in the body of said function, the argument of course represents the value of the actual argument that the function was called with.</p>
 
 
 <p>Definition at line 31 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/argument-h">Argument.h</a>.</p>
@@ -922,7 +922,7 @@ class llvm::Argument { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void Argument::addAttrs (AttrBuilder &amp; B)</td>
+<td class="doxyMemberName">void Argument::addAttrs (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B)</td>
 </tr>
 </table>
 </td>
@@ -2264,6 +2264,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

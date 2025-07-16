@@ -127,7 +127,7 @@ struct llvm::SelectPatternResult { ... }
 <p>Definition at line 1137 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/valuetracking-h">ValueTracking.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a323137971325611ddc1b899b00b8aaa0">llvm::canConvertToMinOrMaxIntrinsic</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecalls-cpp/#ac6169fee4cf2c33a0c3abb46628bfefc">foldCttzCtlz</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a8de411243dcb508d9d512006edaba1ec">llvm::InstCombinerImpl::foldICmpUsingKnownBits</a>, <a href="/web-llvm/docs/api/classes/llvm/armttiimpl/#ae83866ca1a903e74fd6b66c1fec0d528">llvm::ARMTTIImpl::getCmpSelInstrCost</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#a6a2d7b6d01962d7dff4c6e3e87f4575e">isSignedMinMaxClamp</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armtargettransforminfo-cpp/#a0deafca5c66f3b900139bcf024085e8f">isSSATMinMaxPattern</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#ab2e632f73c35674249cdee998f104cc0">matchMinMax</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#afa1ff3254ee225171cb55d46b0eab145">simplifySelectWithICmpCond</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a86b0437dceb8e39c8185dc7def325011">llvm::InstCombinerImpl::visitFCmpInst</a> and <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ae31c50e938b95587c87aed0f133b1346">llvm::InstCombinerImpl::visitICmpInst</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a323137971325611ddc1b899b00b8aaa0">llvm::canConvertToMinOrMaxIntrinsic</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombinecalls-cpp/#ac6169fee4cf2c33a0c3abb46628bfefc">foldCttzCtlz</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a8de411243dcb508d9d512006edaba1ec">llvm::InstCombinerImpl::foldICmpUsingKnownBits</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instcombine/instcombineselect-cpp/#ac83b2f6d1a223c7b4ac9eb3783ee1465">foldSelectWithConstOpToBinOp</a>, <a href="/web-llvm/docs/api/classes/llvm/armttiimpl/#ae83866ca1a903e74fd6b66c1fec0d528">llvm::ARMTTIImpl::getCmpSelInstrCost</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#a6a2d7b6d01962d7dff4c6e3e87f4575e">isSignedMinMaxClamp</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armtargettransforminfo-cpp/#a0deafca5c66f3b900139bcf024085e8f">isSSATMinMaxPattern</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#ab2e632f73c35674249cdee998f104cc0">matchMinMax</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#afa1ff3254ee225171cb55d46b0eab145">simplifySelectWithICmpCond</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a86b0437dceb8e39c8185dc7def325011">llvm::InstCombinerImpl::visitFCmpInst</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ae31c50e938b95587c87aed0f133b1346">llvm::InstCombinerImpl::visitICmpInst</a> and <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a62e2ba967b974d6e68931532ab1aa4e8">llvm::InstCombinerImpl::visitSelectInst</a>.</p>
 
 </div>
 </div>
@@ -179,6 +179,9 @@ struct llvm::SelectPatternResult { ... }
 
 <p>Definition at line 1140 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/valuetracking-h">ValueTracking.h</a>.</p>
 
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a62e2ba967b974d6e68931532ab1aa4e8">llvm::InstCombinerImpl::visitSelectInst</a>.</p>
+
 </div>
 </div>
 
@@ -224,7 +227,7 @@ struct llvm::SelectPatternResult { ... }
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a6bf471c1030973649c2e426afc212097a07d293fd946951d9655259c5e9b93356">llvm::SPF_ABS</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6bf471c1030973649c2e426afc212097a08658871fecea100ad724bd8b1c3ae56">llvm::SPF_NABS</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a6bf471c1030973649c2e426afc212097aee3dafa9fac8f6fa1e1110ef463cc452">llvm::SPF_UNKNOWN</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a323137971325611ddc1b899b00b8aaa0">llvm::canConvertToMinOrMaxIntrinsic</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a8de411243dcb508d9d512006edaba1ec">llvm::InstCombinerImpl::foldICmpUsingKnownBits</a>, <a href="/web-llvm/docs/api/classes/llvm/recurrencedescriptor/#a6415fb68bc55f3a316aa414a5c2c0ab2">llvm::RecurrenceDescriptor::getReductionOpChain</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#a77bc4c2ac5bdfea178b15627e282cc8c">matchMinMaxOfMinMax</a> and <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#afa1ff3254ee225171cb55d46b0eab145">simplifySelectWithICmpCond</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#a323137971325611ddc1b899b00b8aaa0">llvm::canConvertToMinOrMaxIntrinsic</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a8de411243dcb508d9d512006edaba1ec">llvm::InstCombinerImpl::foldICmpUsingKnownBits</a>, <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a18ae85abc7c8af141f01734655f933ec">llvm::InstCombinerImpl::foldSPFofSPF</a>, <a href="/web-llvm/docs/api/classes/llvm/recurrencedescriptor/#a6415fb68bc55f3a316aa414a5c2c0ab2">llvm::RecurrenceDescriptor::getReductionOpChain</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/valuetracking-cpp/#a77bc4c2ac5bdfea178b15627e282cc8c">matchMinMaxOfMinMax</a>, <a href="/web-llvm/docs/api/files/lib/lib/analysis/instructionsimplify-cpp/#afa1ff3254ee225171cb55d46b0eab145">simplifySelectWithICmpCond</a> and <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a62e2ba967b974d6e68931532ab1aa4e8">llvm::InstCombinerImpl::visitSelectInst</a>.</p>
 
 </div>
 </div>
@@ -241,6 +244,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

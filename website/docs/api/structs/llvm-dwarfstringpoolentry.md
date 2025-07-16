@@ -209,7 +209,7 @@ struct llvm::DwarfStringPoolEntry { ... }
 <p>Definition at line 25 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/dwarfstringpoolentry-h">DwarfStringPoolEntry.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/stringentrytodwarfstringpoolentrymap/#ad80767cd1b949a276d944c352d451e98">llvm::dwarf_linker::parallel::StringEntryToDwarfStringPoolEntryMap::add</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a357ae759731d2b8d69f8613004f8c8b2">llvm::DwarfStringPoolEntryRef::getIndex</a> and <a href="#a0f63507e2c65d915e897f80e1f121091">isIndexed</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/stringentrytodwarfstringpoolentrymap/#ad80767cd1b949a276d944c352d451e98">llvm::dwarf_linker::parallel::StringEntryToDwarfStringPoolEntryMap::add</a> and <a href="#a0f63507e2c65d915e897f80e1f121091">isIndexed</a>.</p>
 
 </div>
 </div>
@@ -237,7 +237,7 @@ struct llvm::DwarfStringPoolEntry { ... }
 <p>Definition at line 24 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/dwarfstringpoolentry-h">DwarfStringPoolEntry.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/stringentrytodwarfstringpoolentrymap/#ad80767cd1b949a276d944c352d451e98">llvm::dwarf_linker::parallel::StringEntryToDwarfStringPoolEntryMap::add</a>, <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a3213c25080b17088c407332aedfd7b41">llvm::AsmPrinter::emitDwarfStringOffset</a>, <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarflinkerimpl/#a9d569b5d160f74ec5712bf4c3be31c60">llvm::dwarf_linker::parallel::DWARFLinkerImpl::emitStringSections</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a74ed912ccb6cd7a7c5cc2a8543da9d89">llvm::DwarfStringPoolEntryRef::getOffset</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/stringentrytodwarfstringpoolentrymap/#ad80767cd1b949a276d944c352d451e98">llvm::dwarf_linker::parallel::StringEntryToDwarfStringPoolEntryMap::add</a>, <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a3213c25080b17088c407332aedfd7b41">llvm::AsmPrinter::emitDwarfStringOffset</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dwarflinkerimpl/#a9d569b5d160f74ec5712bf4c3be31c60">llvm::dwarf_linker::parallel::DWARFLinkerImpl::emitStringSections</a>.</p>
 
 </div>
 </div>
@@ -265,7 +265,7 @@ struct llvm::DwarfStringPoolEntry { ... }
 <p>Definition at line 23 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/dwarfstringpoolentry-h">DwarfStringPoolEntry.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/stringentrytodwarfstringpoolentrymap/#ad80767cd1b949a276d944c352d451e98">llvm::dwarf_linker::parallel::StringEntryToDwarfStringPoolEntryMap::add</a>, <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a3213c25080b17088c407332aedfd7b41">llvm::AsmPrinter::emitDwarfStringOffset</a> and <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#ae0cadcb3f3cd8b7bad5fd2d044c24643">llvm::DwarfStringPoolEntryRef::getSymbol</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/stringentrytodwarfstringpoolentrymap/#ad80767cd1b949a276d944c352d451e98">llvm::dwarf_linker::parallel::StringEntryToDwarfStringPoolEntryMap::add</a> and <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a3213c25080b17088c407332aedfd7b41">llvm::AsmPrinter::emitDwarfStringOffset</a>.</p>
 
 </div>
 </div>
@@ -322,6 +322,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

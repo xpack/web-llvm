@@ -237,12 +237,12 @@ struct anonymous{DebugCounter.cpp}::DebugCounterOwner { ... }
 <dt>Initialiser</dt>
 <dd>
 <div class="doxyVerbatim">{
-      "debug-counter-<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>-on-last",
+      "debug-counter-break-on-last",
       cl::Hidden,
       cl::Optional,
       cl::location(this-&gt;<a href="/web-llvm/docs/api/classes/llvm/debugcounter/#a52574a8c1b845df5c78d5a837a180f10">BreakOnLast</a>),
       cl::init(false),
-      <a href="/web-llvm/docs/api/structs/llvm/cl/desc">cl::desc</a>("Insert a <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a> point on the last enabled count of a "
+      <a href="/web-llvm/docs/api/structs/llvm/cl/desc">cl::desc</a>("Insert a break point on the last enabled count of a "
                "chunks list")}
 </div>
 </dd>
@@ -340,6 +340,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

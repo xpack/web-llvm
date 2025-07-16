@@ -165,7 +165,6 @@ class llvm::sandboxir::Context { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Iterator for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a></span>s in a `BasicBlock. <a href="#a87273cb892a8182f137567e6b631695e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -657,13 +656,13 @@ class llvm::sandboxir::Context { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a008a32bf404093142fba745ed3ab0918">createBasicBlock</a> (llvm::BasicBlock *BB)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Create a <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">sandboxir::BasicBlock</a> for an existing LLVM IR <span class="doxyComputerOutput">BB</span>. <a href="#a008a32bf404093142fba745ed3ab0918">More...</a></p>
+<p>Create a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">sandboxir::BasicBlock</a> for an existing LLVM IR <span class="doxyComputerOutput">BB</span>. <a href="#a008a32bf404093142fba745ed3ab0918">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1863,7 +1862,7 @@ class llvm::sandboxir::Context { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend class <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a></td>
+<td class="doxyMemberName">friend class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a></td>
 </tr>
 </table>
 </td>
@@ -1947,20 +1946,6 @@ class llvm::sandboxir::Context { ... }
 </table>
 </div>
 <div class="doxyMemberDoc">
-
-<p>Iterator for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a></span>s in a `BasicBlock.</p>
-
-
-<p>/ \Returns an <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">sandboxir::Instruction</a> &amp; when derereferenced. class BBIterator { public: using difference_type = std::ptrdiff_t; using value_type = <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a>; using pointer = value_type *; using reference = value_type &amp;; using iterator_category = std::bidirectional_iterator_tag;</p>
-
-
-<p>private: <a href="/web-llvm/docs/api/classes/llvm/basicblock">llvm::BasicBlock</a> *BB; <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">llvm::BasicBlock::iterator</a> It; <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a> *Ctx; pointer getInstr(llvm::BasicBlock::iterator It) const;</p>
-
-
-<p>public: BBIterator() : BB(nullptr), Ctx(nullptr) {} BBIterator(llvm::BasicBlock &lt;em&gt;BB, llvm::BasicBlock::iterator It, Context *Ctx) : BB(BB), It(It), Ctx(Ctx) {} reference operator() const { return *getInstr(It); } BBIterator &amp;operator++(); BBIterator operator++(int) { auto Copy = *this; ++*this; return Copy; } BBIterator &amp;operator--(); BBIterator operator--(int) { auto Copy = *this; –*this; return Copy; } bool operator==(const BBIterator &amp;Other) const { assert(Ctx == Other.Ctx &amp;&amp; "BBIterators in different context!"); return It == Other.It; } bool operator!=(const BBIterator &amp;Other) const { return !(*this == Other); } / \Returns the SBInstruction that corresponds to this iterator, or null if / the instruction is not found in the IR-to-SandboxIR tables. pointer get() const { return getInstr(It); } / \Returns the parent BB. <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *getNodeParent() const; };</p>
-
-
-<p>/ Contains a list of <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">sandboxir::Instruction</a>'s. class <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> : public <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> { / Builds a graph that contains all values in <span class="doxyComputerOutput">BB</span> in their original form / i.e., no vectorization is taking place here. void buildBasicBlockFromLLVMIR(llvm::BasicBlock *LLVMBB); friend class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a>; // For <span class="doxyComputerOutput">buildBasicBlockFromIR</span></p>
 
 
 <p>Definition at line 112 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/context-h">Context.h</a>.</p>
@@ -2609,7 +2594,7 @@ class llvm::sandboxir::Context { ... }
 <p>Reference <a href="#a91988130fe6107522da95b9796016deb">LLVMValueToValueMap</a>.</p>
 
 
-<p>Referenced by <a href="#a008a32bf404093142fba745ed3ab0918">createBasicBlock</a>, <a href="#ae78048f8d05be4c2b2c20435114b4753">createFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dsolocalequivalent/#a66f628a21e67b68d6ae93a9f80bb4067">llvm::sandboxir::DSOLocalEquivalent::get</a>, <a href="#adad27d8740783e65067b7c2ad286aa38">getOrCreateValueInternal</a> and <a href="#a67b2e6dc3f689b0f00dcf30f2e6a9c40">getValue</a>.</p>
+<p>Referenced by <a href="#a008a32bf404093142fba745ed3ab0918">createBasicBlock</a>, <a href="#ae78048f8d05be4c2b2c20435114b4753">createFunction</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dsolocalequivalent/#a66f628a21e67b68d6ae93a9f80bb4067">llvm::sandboxir::DSOLocalEquivalent::get</a>, <a href="#adad27d8740783e65067b7c2ad286aa38">getOrCreateValueInternal</a>, <a href="#a67b2e6dc3f689b0f00dcf30f2e6a9c40">getValue</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress/#a095a6dbd20e2611d899aa9f03380a573">llvm::sandboxir::BlockAddress::lookup</a>.</p>
 
 </div>
 </div>
@@ -3021,7 +3006,7 @@ class llvm::sandboxir::Context { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Create a <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">sandboxir::BasicBlock</a> for an existing LLVM IR <span class="doxyComputerOutput">BB</span>.</p>
+<p>Create a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">sandboxir::BasicBlock</a> for an existing LLVM IR <span class="doxyComputerOutput">BB</span>.</p>
 
 
 <p>This will also create all contents of the block.</p>
@@ -4304,7 +4289,7 @@ class llvm::sandboxir::Context { ... }
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a> and <a href="#adad27d8740783e65067b7c2ad286aa38">getOrCreateValueInternal</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/shufflevectorinst/#a6224f807d740562c873c036926d0dfd9">llvm::sandboxir::ShuffleVectorInst::convertShuffleMaskForBitcode</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/nocfivalue/#afa0e3ddd6a06a4f5de4142baad208a38">llvm::sandboxir::NoCFIValue::get</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/sandboxir/shufflevectorinst/#a6224f807d740562c873c036926d0dfd9">llvm::sandboxir::ShuffleVectorInst::convertShuffleMaskForBitcode</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress/#ab92aa8e12ea15943c53deddbdea43eb7">llvm::sandboxir::BlockAddress::get</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/nocfivalue/#afa0e3ddd6a06a4f5de4142baad208a38">llvm::sandboxir::NoCFIValue::get</a>.</p>
 
 </div>
 </div>
@@ -6081,6 +6066,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

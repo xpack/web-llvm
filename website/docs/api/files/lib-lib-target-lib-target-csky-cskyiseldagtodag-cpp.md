@@ -166,7 +166,7 @@ keywords:
 <p>Definition at line 334 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/csky/cskyiseldagtodag-cpp">CSKYISelDAGToDAG.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a1c04c72abd24de2572a03ef686a36dd6">llvm::SelectionDAG::getMachineNode</a>, <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#abf892d1e00a3d79026c5ab518c187c45">llvm::SelectionDAG::getTargetConstant</a>, <a href="/web-llvm/docs/api/classes/llvm/sdvalue/#a6b2b8ca5b0fdf6484247d5ae74deb9ff">llvm::SDValue::getValueType</a>, <a href="/web-llvm/docs/api/classes/llvm/cskysubtarget/#afde750479f02948e8e5f1a4e3ffd485e">llvm::CSKYSubtarget::has2E3</a>, <a href="/web-llvm/docs/api/classes/llvm/cskysubtarget/#a479200e0ad1d653f9ebec4a88c611ab3">llvm::CSKYSubtarget::hasE2</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a51cb24bd3e700fcf2f93d1afbb555a16">SDValue</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a1c04c72abd24de2572a03ef686a36dd6">llvm::SelectionDAG::getMachineNode</a>, <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#abf892d1e00a3d79026c5ab518c187c45">llvm::SelectionDAG::getTargetConstant</a>, <a href="/web-llvm/docs/api/classes/llvm/sdvalue/#a6b2b8ca5b0fdf6484247d5ae74deb9ff">llvm::SDValue::getValueType</a>, <a href="/web-llvm/docs/api/classes/llvm/cskysubtarget/#afde750479f02948e8e5f1a4e3ffd485e">llvm::CSKYSubtarget::has2E3</a> and <a href="/web-llvm/docs/api/classes/llvm/cskysubtarget/#a479200e0ad1d653f9ebec4a88c611ab3">llvm::CSKYSubtarget::hasE2</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/anonymous-cskyiseldagtodag-cpp-/cskydagtodagisel/#adc422f6987f0ad82fa646f7f9535fb0b">anonymous{CSKYISelDAGToDAG.cpp}::CSKYDAGToDAGISel::selectSubCarry</a>.</p>
@@ -234,6 +234,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

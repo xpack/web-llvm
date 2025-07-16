@@ -389,8 +389,6 @@ keywords:
 <li><b>abandon()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/jitlinkmemorymanager/inflightalloc/#a5d1ec6968b3cef7a9ef6011238bb6f17">llvm::jitlink::JITLinkMemoryManager::InFlightAlloc</a></li>
 <li><b>abandon()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/epcgenericjitlinkmemorymanager/inflightalloc/#a6be2c182f59edfb11705bcb46a6cc1da">llvm::orc::EPCGenericJITLinkMemoryManager::InFlightAlloc</a></li>
 <li><b>abandon()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/mapperjitlinkmemorymanager/inflightalloc/#ac67c274a02173e4e17bb33aabfe71b5c">llvm::orc::MapperJITLinkMemoryManager::InFlightAlloc</a></li>
-<li><b>abandon()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#ac8a842a601c470fa22db443ac34d0a67">llvm::PreservedAnalyses</a></li>
-<li><b>abandon()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a73a88c83a622e7dba81e049710d8bab7">llvm::PreservedAnalyses</a></li>
 <li><b>abandonAllocAndBailOut()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/jitlinkerbase/#a66eabfbd895fcbba3f2f528d2a5e45c4">llvm::jitlink::JITLinkerBase</a></li>
 <li><b>Abbrev()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugnames/abbrev/#a72c959d9ad9fd5d4d7d0258ecb15d915">llvm::DWARFDebugNames::Abbrev</a></li>
 <li><b>abds()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/knownbits/#a864f5b0ab8f1fa7249cf280e6b572620">llvm::KnownBits</a></li>
@@ -592,10 +590,10 @@ keywords:
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a91945efc8e44a3f170402a1b1a2316fe">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a8e8f681c61a2745facd1cb55855fe402">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a1815b02e7fafbe2f603c7893bd131666">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
-<li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a10e1cde5bdf37faed1fafd171aa33619">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
+<li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a59fdc8314566fde04327675653093798">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#ab4c3f8c5c42740075dea32797798473f">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a7d71f0c32204f6a2f72915b7ad28d215">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
-<li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a3a94d5635dcb6728b77fc7ae9157abb4">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
+<li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#aec1c59c35109f73b2f1293524a7eaa47">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonblockranges/rangelist/#a9f026832bd064ad1fa46ba05dd98603e">llvm::HexagonBlockRanges::RangeList</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonblockranges/rangelist/#a02022309cdac3a5689cb172a9ba84ed2">llvm::HexagonBlockRanges::RangeList</a></li>
 <li><b>add()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ifs/anonymous-elfobjhandler-cpp-/elfsymboltablebuilder/#ac38b96186cc2e97848cd33218b5941f6">llvm::ifs::anonymous{ELFObjHandler.cpp}::ELFSymbolTableBuilder&lt;ELFT&gt;</a></li>
@@ -736,13 +734,19 @@ keywords:
 <li><b>addAlignedMemory64or128or256Operands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#a6f0e634d4d9455ffde9266a5619b0d21">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>addAlignedMemoryNoneOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#ae3d3cadf9e0b4a15f550c916bcaf9c45">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>addAlignedMemoryOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#a548a79ef6ddd55b914e259d2f957c632">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
+<li><b>addAlignmentAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a062f49b866f0e49c0dd872c2a904b5db">llvm::AttrBuilder</a></li>
+<li><b>addAlignmentAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ad5aa952b736a1bc4b079799fb0cfeee3">llvm::AttrBuilder</a></li>
 <li><b>addAllArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a8a832028dff8abb97e1b9fec4987b13a">llvm::opt::ArgList</a></li>
 <li><b>AddAllArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a623040a06f67b95ab24c5e78e41c8bc8">llvm::opt::ArgList</a></li>
 <li><b>AddAllArgsExcept()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#ab7ef568579e2fc175c4d3d68921a1a9b">llvm::opt::ArgList</a></li>
 <li><b>AddAllArgsTranslated()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a58ecc4f607c39abaf338915a04a29922">llvm::opt::ArgList</a></li>
 <li><b>AddAllArgValues()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a279c6ca725e36eff09469d98e6ee1988">llvm::opt::ArgList</a></li>
 <li><b>addAllExtLoads()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#af9a6eb2899b9a24ed9063e600c2a79af">llvm::ARMTargetLowering</a></li>
+<li><b>addAllocKindAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a230b26f00b5d9bb361631d0ed53c1730">llvm::AttrBuilder</a></li>
 <li><b>addAllocNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-memprofcontextdisambiguation-cpp-/callsitecontextgraph/#adf8f8ad14c08099e793ca64a0768c96a">anonymous{MemProfContextDisambiguation.cpp}::CallsiteContextGraph&lt;DerivedCCG, FuncTy, CallTy&gt;</a></li>
+<li><b>addAllocSizeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#adea27caeeec5d68cef4a452b8cc25162">llvm::AttrBuilder</a></li>
+<li><b>addAllocSizeAttrFromRawRepr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a8240e42bf15e889595d0a5f054f32f04">llvm::AttrBuilder</a></li>
+<li><b>addAllocSizeParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac19f7bd764bed56888170d913d6915c7">llvm::AttributeList</a></li>
 <li><b>addAllocType()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/memprof/callstacktrie/callstacktrienode/#a00b94b29e2223aabe6d58543968978e6">llvm::memprof::CallStackTrie::CallStackTrieNode</a></li>
 <li><b>addAllowableClient()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/interfacefile/#ae36a717235cff5fcda53c3f918cb1309">llvm::MachO::InterfaceFile</a></li>
 <li><b>addAM2OffsetImmOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#ab5034e33be4df547034085fd56f5ef7a">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
@@ -789,6 +793,9 @@ keywords:
 <li><b>addAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a5ebecf01cf4ede715f689b4f92de9a71">llvm::Argument</a></li>
 <li><b>addAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a15cb95d0645ccef68f704f1e68ce73e2">llvm::Argument</a></li>
 <li><b>addAttribute()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-assumebundlebuilder-cpp-/assumebuilderstate/#aa411f806557fdaf4af309b7c541757d2">anonymous{AssumeBundleBuilder.cpp}::AssumeBuilderState</a></li>
+<li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a59d23ba2e7eac46cbc6cd3086e013b49">llvm::AttrBuilder</a></li>
+<li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a7464f6980d299143f57a229f73181c39">llvm::AttrBuilder</a></li>
+<li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a1df399b697ebab2755c841d66350778f">llvm::AttrBuilder</a></li>
 <li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributebitset/#a53b94e0ce80b0a34e208a5e1af0e8811">llvm::AttributeBitSet</a></li>
 <li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#a86730a1a0c270eb9b066301bfaac8581">llvm::AttributeMask</a></li>
 <li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#ac8718c125d72fe1673865494b72d7154">llvm::AttributeMask</a></li>
@@ -802,12 +809,16 @@ keywords:
 <li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-2/#a3a4749711edc974c75d9439d5f8d8d3b">llvm::DwarfUnit</a></li>
 <li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#af763d890b27bbeacc1b06636740de9a1">llvm::GlobalVariable</a></li>
 <li><b>addAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#a6cee3c634aa5de8c51e6eaa4e41898bc">llvm::GlobalVariable</a></li>
+<li><b>addAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ada583c27bb2634195f2964c7e695a0b3">llvm::AttributeList</a></li>
+<li><b>addAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af51a5d5a3a63f237d28e10eedf5fcd2b">llvm::AttributeList</a></li>
+<li><b>addAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab5a927b6368c3822a66d37651a978f4f">llvm::AttributeList</a></li>
 <li><b>addAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a9ec1fe122d152d6c6cefbdab43a43cdc">llvm::CallBase</a></li>
 <li><b>addAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a2060ab64acfc67af974e20cbc79ca273">llvm::CallBase</a></li>
 <li><b>addAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#af9603b8b801fc36a29ea533b19c1baca">llvm::Function</a></li>
 <li><b>addAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a46f189c4026ace551d70a16566e641b1">llvm::AttributeSet</a></li>
 <li><b>addAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diehash/#a46a7226655e75b3878146c57d18fee65">llvm::DIEHash</a></li>
 <li><b>addAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a50c6490cf353f064946c4e32673ac098">llvm::OpenMPIRBuilder</a></li>
+<li><b>addAttributesAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab58814a61429a0b976eae58a0695c206">llvm::AttributeList</a></li>
 <li><b>addAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#aa7aa7a234eec956680268b4b5b0222bf">llvm::Argument</a></li>
 <li><b>addAvailableCaps()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/requirementhandler/#a91c1307c498a571a4404494e050f0ab8">llvm::SPIRV::RequirementHandler</a></li>
 <li><b>AddAvailableValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinessaupdater/#ab01bfdaa2826542f165fa1ff6a2aacf1">llvm::MachineSSAUpdater</a></li>
@@ -875,7 +886,9 @@ keywords:
 <li><b>addBTI()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armbranchtargets-cpp-/armbranchtargets/#a08db69b636b7f72f804a015bb91fd89c">anonymous{ARMBranchTargets.cpp}::ARMBranchTargets</a></li>
 <li><b>addBTIHintOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#a8745b3f6e84510f5123c608560d067c3">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
 <li><b>addBypassSlowDiv()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a3ebc673c7187aba992cc6925c27d47b5">llvm::TargetLoweringBase</a></li>
+<li><b>addByRefAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a2a6c55813387d70c3263f0aa9d9f731f">llvm::AttrBuilder</a></li>
 <li><b>addBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nvptxasmprinter/aggbuffer/#a04d5f6e5ff9ee3ea89a77eeae4037b68">llvm::NVPTXAsmPrinter::AggBuffer</a></li>
+<li><b>addByValAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a5f0b4baa6787e964dded34f7137090ff">llvm::AttrBuilder</a></li>
 <li><b>addCall()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-assumebundlebuilder-cpp-/assumebuilderstate/#a80f30a0c0c861405e3eeb6f37c364256">anonymous{AssumeBundleBuilder.cpp}::AssumeBuilderState</a></li>
 <li><b>addCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/functionsummary/#a37c294f5981df28f61ab4799fb6e8935">llvm::FunctionSummary</a></li>
 <li><b>addCallbackToPipeline()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/symbolvisitorcallbackpipeline/#aac550f4b9139ed55855943e77c226f42">llvm::codeview::SymbolVisitorCallbackPipeline</a></li>
@@ -900,6 +913,7 @@ keywords:
 <li><b>addCandidateForPush2Pop2()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86machinefunctioninfo/#ad0cd3133a28b196d900d4a2fb49f19e2">llvm::X86MachineFunctionInfo</a></li>
 <li><b>addCapabilities()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/requirementhandler/#a03e9e9711e88943ba1fc4ec17815155e">llvm::SPIRV::RequirementHandler</a></li>
 <li><b>addCapability()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/requirementhandler/#a8e809ea30076107903b18dcacdd74ed9">llvm::SPIRV::RequirementHandler</a></li>
+<li><b>addCapturesAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a39b827eb3d46a1c7c9c66905b46c2a48">llvm::AttrBuilder</a></li>
 <li><b>addCase()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/switchinst/#a249e3556685c37af7a58055436dadbfe">llvm::sandboxir::SwitchInst</a></li>
 <li><b>addCase()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/switchinst/#a62abc2475d09c01d583ba24a487898fd">llvm::SwitchInst</a></li>
 <li><b>addCase()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/switchinstprofupdatewrapper/#a722eca444a919e1bc6af18b07941aad9">llvm::SwitchInstProfUpdateWrapper</a></li>
@@ -986,6 +1000,8 @@ keywords:
 <li><b>addConstantPoolEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armtargetstreamer/#a73892053d64aff715825c4e09d464f4a">llvm::ARMTargetStreamer</a></li>
 <li><b>addConstantPoolEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cskytargetstreamer/#a7a30e46a787d5dbca4fc50093cb02a90">llvm::CSKYTargetStreamer</a></li>
 <li><b>addConstantPoolIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#a88177c2ee5d3e579e50128cf83de5ba6">llvm::MachineInstrBuilder</a></li>
+<li><b>addConstantRangeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a773374bcf6e6f638f8a996c1df6cc998">llvm::AttrBuilder</a></li>
+<li><b>addConstantRangeListAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a731a53feffdd319d9fbaaf4154e30f09">llvm::AttrBuilder</a></li>
 <li><b>addConstantSImmOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsasmparser-cpp-/mipsoperand/#ac6fc6636f3e516e99df40178e7e06215">anonymous{MipsAsmParser.cpp}::MipsOperand</a></li>
 <li><b>addConstantUImmOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsasmparser-cpp-/mipsoperand/#a7df0924976dc5e03315428d6d30ace75">anonymous{MipsAsmParser.cpp}::MipsOperand</a></li>
 <li><b>addConstantValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-2/#a47ccb514c025257d1c6d106dae4c0689">llvm::DwarfUnit</a></li>
@@ -1071,9 +1087,14 @@ keywords:
 <li><b>AddDelta()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/deltatree/#a65b2200df7c029fc766e3486c6629ae5">llvm::DeltaTree</a></li>
 <li><b>addDep()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spirv/dtsortableentry/#aefde4ed03ec270b37573b8788d03a17e">llvm::SPIRV::DTSortableEntry</a></li>
 <li><b>addDependencies()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib/#ac4973708749bfe2241ac333a0bf7b95f">llvm::orc::JITDylib</a></li>
+<li><b>addDereferenceableAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a676e566281b7f39a0c685bc6d1032283">llvm::AttrBuilder</a></li>
+<li><b>addDereferenceableOrNullAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ac857d238048717f6284dd46bbf867fcd">llvm::AttrBuilder</a></li>
+<li><b>addDereferenceableOrNullParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac6e6fb5739626983930f5cfd8d8b0f07">llvm::AttributeList</a></li>
 <li><b>addDereferenceableOrNullParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a8f040402288effcbdffb4f7c9748f067">llvm::Function</a></li>
+<li><b>addDereferenceableParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a0e8aeaa2675b027d52c93a39ae453471">llvm::AttributeList</a></li>
 <li><b>addDereferenceableParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#adf1a2105045f7e33738b34f49b0f9f08">llvm::CallBase</a></li>
 <li><b>addDereferenceableParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#af49f352a100314919e2603afe4d87cff">llvm::Function</a></li>
+<li><b>addDereferenceableRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a402a2e4e215f051eb560a99327b8c49e">llvm::AttributeList</a></li>
 <li><b>addDereferenceableRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a9add940717795f05bb69603216f17254">llvm::CallBase</a></li>
 <li><b>addDestination()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/indirectbrinst/#a08b418bd465a9f2ff316beb04005f6d7">llvm::IndirectBrInst</a></li>
 <li><b>addDestination()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/telemetry/manager/#a888a637953e3de96f1afd41dd92efe66">llvm::telemetry::Manager</a></li>
@@ -1275,6 +1296,10 @@ keywords:
 <li><b>addFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a01875e4204852069dd4b7938cab4140b">llvm::Function</a></li>
 <li><b>addFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#ae7b919df259dce5480774e656791c079">llvm::Function</a></li>
 <li><b>addFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a2902ff168f1dbd817ebf6bbb9c468e5a">llvm::Function</a></li>
+<li><b>addFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a54ec2da7f0fb48a9208234c425f83ea6">llvm::AttributeList</a></li>
+<li><b>addFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#afa32c5a977d6e4bb922611a29d8f7482">llvm::AttributeList</a></li>
+<li><b>addFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aafb72fdaef87bc94257783b6d2bd8817">llvm::AttributeList</a></li>
+<li><b>addFnAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a5d7d1a9d74e14b7535745a80fbc51f70">llvm::AttributeList</a></li>
 <li><b>addFnAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a34cf0c64f57241d690ee7009afc629b1">llvm::Function</a></li>
 <li><b>addForwardCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spirvglobalregistry/#a088dabce389b169b6428434b3fee2153">llvm::SPIRVGlobalRegistry</a></li>
 <li><b>addFPDRegListWithVPROperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#aa2eac2546f1093e8938ee0ae4d5562fd">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
@@ -1441,6 +1466,7 @@ keywords:
 <li><b>AddImplicitConstAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dieabbrev/#a0eaf3cdeee5108ca35546d43255ecb74">llvm::DIEAbbrev</a></li>
 <li><b>addImplicitDefUseOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a2be4041e5133aa22135fa2890cc7aeae">llvm::MachineInstr</a></li>
 <li><b>addImport()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/debugcrossmoduleimportssubsection/#a1209350693a5a00201ab9b8d06cf2586">llvm::codeview::DebugCrossModuleImportsSubsection</a></li>
+<li><b>addInAllocaAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#aa4629ac8989d1523b9d92c979b8e7bdf">llvm::AttrBuilder</a></li>
 <li><b>addInclude()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/windowsresourceprocessor/#aeb10f3547a4a60270dbb6cbf7c8a1205">llvm::WindowsResourceProcessor</a></li>
 <li><b>AddIncludeFile()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sourcemgr/#ade78f93269ac7fa03b8ed1806262443d">llvm::SourceMgr</a></li>
 <li><b>addIncoming()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memoryphi/#ab9945ed381faa9dbee65a92e6225768d">llvm::MemoryPhi</a></li>
@@ -1459,6 +1485,7 @@ keywords:
 <li><b>addInfoFor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/predicateinfobuilder/#ac1bb18a2649d1592b7e6f4afafe1d435">llvm::PredicateInfoBuilder</a></li>
 <li><b>addInfoForInductions()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/state/#a77dccdccff30d1cf89c684cf37cd85d8">anonymous{ConstraintElimination.cpp}::State</a></li>
 <li><b>addInitialFrameState()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a0456a5b5fb7d2743d6852e8bba806c7d">llvm::MCAsmInfo</a></li>
+<li><b>addInitializesAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a68bcd3ec2f0fecf3aa12a335ceb45d94">llvm::AttrBuilder</a></li>
 <li><b>addInjectedProbe()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcpseudoprobedecoder/#ad226d8757d48e41bda85b17c7a88478f">llvm::MCPseudoProbeDecoder</a></li>
 <li><b>addInjectedSource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/pdbfilebuilder/#ada66402b91631de13ba71849303ce3d5">llvm::pdb::PDBFileBuilder</a></li>
 <li><b>addInlineAsmDiagBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a0dc14dc5aeb9cc3018449a7e00c63228">llvm::AsmPrinter</a></li>
@@ -1777,6 +1804,7 @@ keywords:
 <li><b>addMemOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-msp430asmparser-cpp-/msp430operand/#af6f292c019d2b087fc36a88099ea71a4">anonymous{MSP430AsmParser.cpp}::MSP430Operand</a></li>
 <li><b>addMemOperands()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/x86operand/#aa68185209b553ccd5de6d4cd21aae0b7">llvm::X86Operand</a></li>
 <li><b>AddMemOpInit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sitargetlowering/#a52716532c3562bbe9c3fc343761c3c8a">llvm::SITargetLowering</a></li>
+<li><b>addMemoryAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a6ac29dd4821e6321d0987b951582a85d">llvm::AttrBuilder</a></li>
 <li><b>addMemoryLocation()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aliasset/#a1f19ed9236e4f38ad696989ea64b8ace">llvm::AliasSet</a></li>
 <li><b>addMemoryLocation()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aliassettracker/#ab8b7331818d9dd1900bd0367f914f33c">llvm::AliasSetTracker</a></li>
 <li><b>addMemoryUsers()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-newgvn-cpp-/newgvn/#adc567f36b88c98915ab354d44653d66f">anonymous{NewGVN.cpp}::NewGVN</a></li>
@@ -1945,6 +1973,7 @@ keywords:
 <li><b>addNodeToList()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/ilist-callback-traits-6a00974026f1163ef87516ae73fba13d/#aa3592c6a473996778f4a411d2706292b">llvm::ilist_callback_traits&lt;MachineBasicBlock&gt;</a></li>
 <li><b>addNodeToList()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/ilist-traits-58bb2936e8a6e4674ffe4f47907d64dc/#aa022f8a30a02c004bf6d39332cf7643d">llvm::ilist_traits&lt;MachineInstr&gt;</a></li>
 <li><b>addNodeToList()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/symboltablelisttraits/#a619d61eb54e62808cef4cf2be64362d9">llvm::SymbolTableListTraits&lt;ValueSubClass, Args&gt;</a></li>
+<li><b>addNoFPClassAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a2eaea5837bb95874261fd1bca760e137">llvm::AttrBuilder</a></li>
 <li><b>addNoMergeSiteInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a471f60ab3308e8e2a12a42b0aae03111">llvm::SelectionDAG</a></li>
 <li><b>addNonLocalCost()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/regbankselect/mappingcost/#a9d17352b9fccfdf80448e9d0d15eebb6">llvm::RegBankSelect::MappingCost</a></li>
 <li><b>addNonOpaque()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irmover/identifiedstructtypeset/#a22e984972040373beb98ce061c5d15c5">llvm::IRMover::IdentifiedStructTypeSet</a></li>
@@ -2031,6 +2060,7 @@ keywords:
 <li><b>addOrUpdateCallerEdge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-memprofcontextdisambiguation-cpp-/callsitecontextgraph/contextnode/#a65c09e3b6dd0ad4eada5aeb000e6b43f">anonymous{MemProfContextDisambiguation.cpp}::CallsiteContextGraph::ContextNode</a></li>
 <li><b>addOutEdge()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-pgoctxprofflattening-cpp-/profileannotator/bbinfo/#a9461ded55c1486dc20c10acd4cf4bd4b">anonymous{PGOCtxProfFlattening.cpp}::ProfileAnnotator::BBInfo</a></li>
 <li><b>addOutEdge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-pgoinstrumentation-cpp-/pgousebbinfo/#aeedc3c57539646156c6f9f7d53d60e6d">anonymous{PGOInstrumentation.cpp}::PGOUseBBInfo</a></li>
+<li><b>addOutlineInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a5610e0ef8f016e84694778d8ce1c9479">llvm::OpenMPIRBuilder</a></li>
 <li><b>addOverflowAssumption()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scalarevolution-cpp-/scevpredicaterewriter/#ac066254b5f9d06012a4baaa8fb67e1f5">anonymous{ScalarEvolution.cpp}::SCEVPredicateRewriter</a></li>
 <li><b>addOverflowAssumption()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scalarevolution-cpp-/scevpredicaterewriter/#ab3bee7edc3ddf11a48948024dcb48e5b">anonymous{ScalarEvolution.cpp}::SCEVPredicateRewriter</a></li>
 <li><b>addPadding()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-x86padshortfunction-cpp-/padshortfunc/#a96d4dd98b88605632405b05ad1ccc674">anonymous{X86PadShortFunction.cpp}::PadShortFunc</a></li>
@@ -2040,6 +2070,10 @@ keywords:
 <li><b>addParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a433ec4bd285111f13acdc8a78be16a72">llvm::CallBase</a></li>
 <li><b>addParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#aa5087b607af833220d9ebab0c88c83c1">llvm::Function</a></li>
 <li><b>addParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a6eb05d774eaaab1b7ad6cee10e3713e2">llvm::Function</a></li>
+<li><b>addParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af3a6727ecc3f601729c11f37a19f93f8">llvm::AttributeList</a></li>
+<li><b>addParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a731a5e7d7624c487d5dbb8471e1e2857">llvm::AttributeList</a></li>
+<li><b>addParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3f1e8df5d1ec58e81979760331f7808e">llvm::AttributeList</a></li>
+<li><b>addParamAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae18cffa676178ae60f0692ad4410e940">llvm::AttributeList</a></li>
 <li><b>addParamAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a092beb46ecce99e6b39628ee92ccd95a">llvm::Function</a></li>
 <li><b>addParamNames()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/synthetictypenamebuilder/#a461535e36ca5b8a26e8fb2901a23941d">llvm::dwarf_linker::parallel::SyntheticTypeNameBuilder</a></li>
 <li><b>addParentContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diehash/#ae2949099d4783246b5cf81c59477a3fe">llvm::DIEHash</a></li>
@@ -2123,6 +2157,7 @@ keywords:
 <li><b>addPotentialUndefinedSymbol()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/ltomodule/#a2ec29bcb7fa6e7ae50a7ab1fe2982c11">llvm::LTOModule</a></li>
 <li><b>addPowerTwoOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#a874c0f5a1884183760a4e951c10874d4">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>addPPRorPNRRegOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#a5f2b9dd674ec50e06b69b98a88e00317">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
+<li><b>addPreallocatedAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a867308c21cb0d61d6569651f3174b9e8">llvm::AttrBuilder</a></li>
 <li><b>addPred()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-objcarcopts-cpp-/bbstate/#abf56f09ced8f685a4fa522b02e44e544">anonymous{ObjCARCOpts.cpp}::BBState</a></li>
 <li><b>AddPred()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagfast-cpp-/scheduledagfast/#a92723fbc9b5347da67a06b63043fcff9">anonymous{ScheduleDAGFast.cpp}::ScheduleDAGFast</a></li>
 <li><b>AddPred()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/scheduledagrrlist/#a81edbd7ea9536622badd16797bb7fb9c">anonymous{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</a></li>
@@ -2277,14 +2312,17 @@ keywords:
 <li><b>addRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#aac10ca9284dac49b244037588df79ca2">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>addRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a499eab6d3ce4ac7f7342621c39b950ef">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>addRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stacklifetime/liverange/#a28bae52f53b9f8de88cb72ea4235faba">llvm::StackLifetime::LiveRange</a></li>
+<li><b>addRangeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ae84514c1d131430da5f249455d15041f">llvm::AttrBuilder</a></li>
 <li><b>addRangeElements()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a4e1c3c0190de95c6a73e63dcb02f3f97">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>addRangeElements()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a44f68de74fc37dcfba02bab2f044cca4">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>addRangeElementsImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a12329287391db2113bfc3f64c8549fdc">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
 <li><b>addRangeElementsImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hashbuilder/#a6773e7544a444016ffa6885be69b42ae">llvm::HashBuilder&lt;HasherT, Endianness&gt;</a></li>
+<li><b>addRangeRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a17828da99c4b2a5fc6b0384e6689fb0c">llvm::AttributeList</a></li>
 <li><b>addRangeRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a0e7b74d310c94c459b8985806192cc99">llvm::CallBase</a></li>
 <li><b>addRangeRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a93469502fd939d1f842d69f813f38d33">llvm::Function</a></li>
 <li><b>AddRawComment()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-codeviewdebug-cpp-/cvmcadapter/#a5e53ae3c1ce76e9e8f3d670746cf8ef5">anonymous{CodeViewDebug.cpp}::CVMCAdapter</a></li>
 <li><b>AddRawComment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/codeviewrecordstreamer/#af0352ad8c87833c475de6274c29adc17">llvm::codeview::CodeViewRecordStreamer</a></li>
+<li><b>addRawIntAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a57bb5ff1076799c12e720e248f40a791">llvm::AttrBuilder</a></li>
 <li><b>addRDOpOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-veasmparser-cpp-/veoperand/#ad9f45cd35c477b521daca23573ec3fcd">anonymous{VEAsmParser.cpp}::VEOperand</a></li>
 <li><b>addReachesFunctionCallbacksIfEnabled()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-dataflowsanitizer-cpp-/dfsanfunction/#ac04b6d4e5d3715d33fee0cf6c80a15c8">anonymous{DataFlowSanitizer.cpp}::DFSanFunction</a></li>
 <li><b>addRealField()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-masmparser-cpp-/masmparser/#ab3c37a9325928495237a3050dfbe4f69">anonymous{MasmParser.cpp}::MasmParser</a></li>
@@ -2507,6 +2545,9 @@ keywords:
 <li><b>addRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#ae30660fb489f8cbe69bf8650daadcdb1">llvm::CallBase</a></li>
 <li><b>addRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a6afca945952abdd7be262d5fe5ddad77">llvm::Function</a></li>
 <li><b>addRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#ae2732a9861a5ff74a3468a1b53d700bb">llvm::Function</a></li>
+<li><b>addRetAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a32c2b32d61cf856c6a5b2ceb3de7fd0d">llvm::AttributeList</a></li>
+<li><b>addRetAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aca368a465f897becfa3a426fa59c2fd9">llvm::AttributeList</a></li>
+<li><b>addRetAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3e2663f4f16dd7748ba4b0d68836aa5c">llvm::AttributeList</a></li>
 <li><b>addRetAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a0cccf168c794d734b0377a0c61a89909">llvm::Function</a></li>
 <li><b>addReturnedOffsetsTo()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-attributorattributes-cpp-/aapointerinfoimpl/#a6f3f47474554552391f037aeef54188b">anonymous{AttributorAttributes.cpp}::AAPointerInfoImpl</a></li>
 <li><b>addReturnedOffsetsTo()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aapointerinfo/#a2ffbaabec427f3e4a97d6a5f73261ba7">llvm::AAPointerInfo</a></li>
@@ -2662,6 +2703,8 @@ keywords:
 <li><b>addSrcIdxOperands()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/x86operand/#a49468934edef8e57cda0f8aad36c57e9">llvm::X86Operand</a></li>
 <li><b>addSrcToMIB()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/srcop/#aba93d72255e1239b5209e416a1b7f199">llvm::SrcOp</a></li>
 <li><b>addSSAUpdateEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/tailduplicator/#aaf6dfbbe064199ada8872db93fafbb25">llvm::TailDuplicator</a></li>
+<li><b>addStackAlignmentAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a9099509c2ae2a88e0bb1b01fd404f40a">llvm::AttrBuilder</a></li>
+<li><b>addStackAlignmentAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a19fdcd265c364dba7fcb4fa50cdb8510">llvm::AttrBuilder</a></li>
 <li><b>addStackMapLiveVars()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fastisel/#ae5be01d3a07be840817fab33ea35d9e2">llvm::FastISel</a></li>
 <li><b>addStackNodesForMIB()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-memprofcontextdisambiguation-cpp-/callsitecontextgraph/#a3c04d483e66e81efc4812a2d38b93a8d">anonymous{MemProfContextDisambiguation.cpp}::CallsiteContextGraph&lt;DerivedCCG, FuncTy, CallTy&gt;</a></li>
 <li><b>addStackRoot()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcfunctioninfo/#a50b928b23918dbf2a51af34c418535c3">llvm::GCFunctionInfo</a></li>
@@ -2696,6 +2739,7 @@ keywords:
 <li><b>addStripDebugPass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetpassconfig/#aba8991d9b9fdd34b0303df95b74e072d">llvm::TargetPassConfig</a></li>
 <li><b>addStrTab()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/basicelfbuilder/#a46bf4a5a8c7c2180cc146f232e4f7f6d">llvm::objcopy::elf::BasicELFBuilder</a></li>
 <li><b>addStructField()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-masmparser-cpp-/masmparser/#a30e0de4e9cabb3a6ad1223b6e8ef0a38">anonymous{MasmParser.cpp}::MasmParser</a></li>
+<li><b>addStructRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a046d7cf22a984d2bc22d82443375706e">llvm::AttrBuilder</a></li>
 <li><b>addSub()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-controlheightreduction-cpp-/chrscope/#ab1c09db38e4818f2ea0126b7257abe06">anonymous{ControlHeightReduction.cpp}::CHRScope</a></li>
 <li><b>addsub()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonblockranges/rangelist/#ae74793fa612da39dc58d91b33ecf0a90">llvm::HexagonBlockRanges::RangeList</a></li>
 <li><b>AddSubClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/tgparser/#a1448223f3ed5019a9c551b6d4d116b57">llvm::TGParser</a></li>
@@ -2847,6 +2891,7 @@ keywords:
 <li><b>addType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/debuginfofinder/#a0b450b9729e0cf2198e616b6700d5dc3">llvm::DebugInfoFinder</a></li>
 <li><b>addType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-2/#af901a106fc9f196e781bcc03587c66d8">llvm::DwarfUnit</a></li>
 <li><b>addTypeAccelerator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/compileunit/#aa370919f943300e25bac7a0d0d3949f7">llvm::dwarf_linker::classic::CompileUnit</a></li>
+<li><b>addTypeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ad79f5341284d1c6e5d0be00043b1235c">llvm::AttrBuilder</a></li>
 <li><b>addTypeEntries()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf5acceltable/#acda854409535c8534bf80610784b613b">llvm::DWARF5AccelTable</a></li>
 <li><b>addTypeForFixedLengthSVE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#a85c14b1dd6d933addae9fbbfb9e70c5b">llvm::AArch64TargetLowering</a></li>
 <li><b>addTypeForNEON()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#a49e4e3535343601fee67d7c303e81478">llvm::AArch64TargetLowering</a></li>
@@ -2919,6 +2964,7 @@ keywords:
 <li><b>AddUsersToWorklist()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#aa5fb397536f4de2fde985ab8642162e6">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
 <li><b>addUsersToWorkList()</b>: as function in class <a href="/web-llvm/docs/api/classes/combiner/worklistmaintainerimpl/#afe3f48a41bbbfc79a0c7160865d61ea9">Combiner::WorkListMaintainerImpl&lt;Lvl&gt;</a></li>
 <li><b>addUses()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/livephysregs/#aa64a4c432876fe5615cab79fd5650f7a">llvm::LivePhysRegs</a></li>
+<li><b>addUWTableAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#af841d3a8b19fc08621a782d9f4091921">llvm::AttrBuilder</a></li>
 <li><b>addValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-attributorattributes-cpp-/aapotentialvaluesimpl/#a135bd9f6645b2fba9c7652cbd7b8a157">anonymous{AttributorAttributes.cpp}::AAPotentialValuesImpl</a></li>
 <li><b>addValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cl/bits-storage/#a611377b91deb1bb04916b07acd890fc6">llvm::cl::bits_storage&lt;DataType, StorageClass&gt;</a></li>
 <li><b>addValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cl/bits-storage-1f8614c5076dfbe1f951d3f7bfe58228/#a444cb44f16b9d03e3f2d8271fdc01340">llvm::cl::bits_storage&lt;DataType, bool&gt;</a></li>
@@ -2975,6 +3021,8 @@ keywords:
 <li><b>addVPTPredROperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#a45c157d6c567f135196ef6a2c1571409">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>addVRegDefDeps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledaginstrs/#a10acc9310a21d9a8191d3d84916bdffb">llvm::ScheduleDAGInstrs</a></li>
 <li><b>addVRegUseDeps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledaginstrs/#a0f958ee7dc9902af4093fe8fabbabd6e">llvm::ScheduleDAGInstrs</a></li>
+<li><b>addVScaleRangeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a4566311f748debbde7053963d802d87e">llvm::AttrBuilder</a></li>
+<li><b>addVScaleRangeAttrFromRawRepr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a0ed6d6889a7e667138cb66e12cd41e27">llvm::AttrBuilder</a></li>
 <li><b>addVTableName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofsymtab/#a6e42074180a160835f3222c6d6017fc1">llvm::InstrProfSymtab</a></li>
 <li><b>addVTableName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofwriter/#a1ffa18a7702d5aee782d6e25a105ca8a">llvm::InstrProfWriter</a></li>
 <li><b>addVTableWithName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofsymtab/#af55408d1b2ecdb51489bf199a86976a0">llvm::InstrProfSymtab</a></li>
@@ -3290,10 +3338,7 @@ keywords:
 <li><b>all()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gepnowrapflags/#a54c411a616301bb93b1b04327a0c3123">llvm::GEPNoWrapFlags</a></li>
 <li><b>all()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/lanebitmask/#a82565e0ea5a398255ac8a153b92aa5b6">llvm::LaneBitmask</a></li>
 <li><b>All()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/architectureset/#a0a93b211f78eb5c97ccc38db119ded83">llvm::MachO::ArchitectureSet</a></li>
-<li><b>all()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses</a></li>
 <li><b>all()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smallbitvector/#a8cfcd92a373cdd7deefb939dd76b83e3">llvm::SmallBitVector</a></li>
-<li><b>allAnalysesInSetPreserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a2de5aab2964e0b9266423d5f6c375051">llvm::PreservedAnalyses</a></li>
-<li><b>allAnalysesInSetPreserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a7810efbb63c59ebac46c15ac6008a7f7">llvm::PreservedAnalyses</a></li>
 <li><b>allCountersAreAssigned()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-pgoctxprofflattening-cpp-/profileannotator/#a35afe5bb722555e5c517312c023bdf36">anonymous{PGOCtxProfFlattening.cpp}::ProfileAnnotator</a></li>
 <li><b>allDefsAreDead()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#af408efad64e3aa0eef6c3a37c7794a83">llvm::MachineInstr</a></li>
 <li><b>allEdges()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cfgmst/#a267cdc4a586557f3a11db067a56e009d">llvm::CFGMST&lt;Edge, BBInfo&gt;</a></li>
@@ -3301,7 +3346,6 @@ keywords:
 <li><b>allGepOperandsAvailable()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gvnhoist/#a1ce661064ec1cc447e8cc43ddce9073c">llvm::GVNHoist</a></li>
 <li><b>allImplicitDefsAreDead()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a39f79b8dd21fa75c7c273ebb9177a6a7">llvm::MachineInstr</a></li>
 <li><b>allInComplete()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitsinit/#a2e01bc898012a498b96f19348d38d15a">llvm::BitsInit</a></li>
-<li><b>allInSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aea87afbe4520fdc60652c554501f5cdf">llvm::PreservedAnalyses</a></li>
 <li><b>allInstrsInSameMBB()</b>: as function in struct <a href="/web-llvm/docs/api/structs/blocksplitinfo/#aae359e559a78b42097a79266c811fc3e">BlockSplitInfo</a></li>
 <li><b>allLoopPathsLeadToBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopsafetyinfo/#a0937bbe895c7ed05d32c861b0f9e0f97">llvm::LoopSafetyInfo</a></li>
 <li><b>allnodes_begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a5afbc8267a0ca49e65d97cb3fde65801">llvm::SelectionDAG</a></li>
@@ -4215,6 +4259,7 @@ keywords:
 <li><b>append()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/liverange/#a8fc86da696e49b67827c940045434c4b">llvm::LiveRange</a></li>
 <li><b>append()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mbbreachingdefsinfo/#a0ae156d4c2826796f2ab0c7e29a070bd">llvm::MBBReachingDefsInfo</a></li>
 <li><b>append()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mibundlebuilder/#a6c15d55cada45b3ba4ec4ba5560c39c4">llvm::MIBundleBuilder</a></li>
+<li><b>append()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#a635fd9f6c5f2092419d60086cb1e0b87">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>append()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a862d6016ee6bbfb979acf4739b4fcfac">llvm::opt::ArgList</a></li>
 <li><b>append()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-6551f236402cb4450ad318ef3746f88b/#a788dd48b8053fb4ee3abdf6d3eb19632">llvm::orc::shared::TrivialSPSSequenceDeserialization&lt;char, std::string&gt;</a></li>
 <li><b>append()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/shared/trivialspssequencedeserialization-50e0d7f1c41e4df8199f0418331b4143/#a9507346a57175270a46d71ba74cc8d57">llvm::orc::shared::TrivialSPSSequenceDeserialization&lt;SPSElementTagT, SmallVectorImpl&lt; T &gt;&gt;</a></li>
@@ -4684,7 +4729,6 @@ keywords:
 <li><b>areAllLoopsRotatedForm()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopnest/#aafe544749686c1cec7d210cd31cc092c">llvm::LoopNest</a></li>
 <li><b>areAllLoopsSimplifyForm()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopnest/#aeb914cbf1769e0ced099aafb56e63adf">llvm::LoopNest</a></li>
 <li><b>areAllOperandsInvariant()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpwidengeprecipe/#aee6f4cd535e077cc60511767f85bcd42">llvm::VPWidenGEPRecipe</a></li>
-<li><b>areAllPreserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a0eb77e2d868c69bebc48c07b49675748">llvm::PreservedAnalyses</a></li>
 <li><b>areAllSpeculatable()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-sroa-cpp-/selecthandspeculativity/#adad8666c34db782ec65e459474d9818e">anonymous{SROA.cpp}::SelectHandSpeculativity</a></li>
 <li><b>areAllUsersVectorized()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#a835c2380aa3fbc9ddeb4b919902e9838">llvm::slpvectorizer::BoUpSLP</a></li>
 <li><b>areAllUsesAssumedDead()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-attributorattributes-cpp-/aaisdeadvalueimpl/#a50bddcd3343e78000f5f7a626614d50a">anonymous{AttributorAttributes.cpp}::AAIsDeadValueImpl</a></li>
@@ -5371,6 +5415,11 @@ keywords:
 <li><b>attemptElide()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-coroelide-cpp-/coroidelider/#ab170ffc9dea0395ef981c715778778a5">anonymous{CoroElide.cpp}::CoroIdElider</a></li>
 <li><b>AttemptFillSlot()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/r600schedstrategy/#a8598a95e86ec98f702fbbf196e398f01">llvm::R600SchedStrategy</a></li>
 <li><b>attemptToBalignSmallLoop()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagonloopalign-cpp-/hexagonloopalign/#a49530a2f7101146544b49c809bc2e035">anonymous{HexagonLoopAlign.cpp}::HexagonLoopAlign</a></li>
+<li><b>AttrBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a4566caff986223552a7433e011c0832f">llvm::AttrBuilder</a></li>
+<li><b>AttrBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a126b8d1322df4469acdd78cd068b9cd9">llvm::AttrBuilder</a></li>
+<li><b>AttrBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a0e7b8635dbe2ea1164deb68b3472bec2">llvm::AttrBuilder</a></li>
+<li><b>AttrBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#af04c6ca27bfe182389cccf2ec1113460">llvm::AttrBuilder</a></li>
+<li><b>AttrBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a4dd4de1460995af3299849187d09c4e1">llvm::AttrBuilder</a></li>
 <li><b>attribute_iterator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/attribute-iterator/#a2490c902cfb844522cd43c29fdc3f80e">llvm::DWARFDie::attribute_iterator</a></li>
 <li><b>attribute_iterator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/attribute-iterator/#a9680f78c02dbc8d42ac84767e7e30e31">llvm::DWARFDie::attribute_iterator</a></li>
 <li><b>ATTRIBUTE_OPTION()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvoptions/#a475e8a0f37842e4801a891b8ce865455">llvm::logicalview::LVOptions</a></li>
@@ -5420,6 +5469,8 @@ keywords:
 <li><b>AttributeImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeimpl/#a802c6cb7f206ed389cbe1998a0ee01a9">llvm::AttributeImpl</a></li>
 <li><b>attributeImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#ac2218cffea84ee2b2ae4a43110007039">llvm::json::OStream</a></li>
 <li><b>AttributeItem()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mcelfstreamer/attributeitem/#a34f36ab6768686360817688ce9f65df4">llvm::MCELFStreamer::AttributeItem</a></li>
+<li><b>AttributeList()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a2c449a1f7f0fc08e792806925ddbed72">llvm::AttributeList</a></li>
+<li><b>AttributeList()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a2885d9e0a24b49b1b451eb07335e3ecd">llvm::AttributeList</a></li>
 <li><b>AttributeListImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a6f9b9f798d2c70c515f146562de005b1">llvm::AttributeListImpl</a></li>
 <li><b>AttributeListImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#abd66e5ab69fb69e81b4f7f15afa6e255">llvm::AttributeListImpl</a></li>
 <li><b>AttributeMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#aa4688a151549c9f8b86425855f329ba1">llvm::AttributeMask</a></li>
@@ -5443,6 +5494,7 @@ keywords:
 <li><b>~AttributorCallGraph()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributorcallgraph/#a7cce890d3d605a0974f9c34ece9c89c4">llvm::AttributorCallGraph</a></li>
 <li><b>AttributorCallGraph()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributorcallgraph/#a478a90d0012e9504327d5956f19c6e5f">llvm::AttributorCallGraph</a></li>
 <li><b>AttributorConfig()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributorconfig/#af949d20dda8a0a31b5b49d2e4067372a">llvm::AttributorConfig</a></li>
+<li><b>attrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#aa42e22bee0625f08b9d569a6d62bbd3b">llvm::AttrBuilder</a></li>
 <li><b>AUFoldingSetNode()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/pmtoplevelmanager/aufoldingsetnode/#a427f58d09c9798626f8436a10fe66051">llvm::PMTopLevelManager::AUFoldingSetNode</a></li>
 <li><b>augmentFlowAlongDAG()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-sampleprofileinference-cpp-/mincostmaxflow/#a5387d7de7e63ccb89f482b119fb52222">anonymous{SampleProfileInference.cpp}::MinCostMaxFlow</a></li>
 <li><b>augmentFlowAlongPath()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-sampleprofileinference-cpp-/mincostmaxflow/#a2468f5bb186703fa1943a17a6e461a57">anonymous{SampleProfileInference.cpp}::MinCostMaxFlow</a></li>
@@ -5511,7 +5563,7 @@ keywords:
 <li><b>AVRTargetMachine()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/avrtargetmachine/#a787511152a773b69a7a1a5a3031543de">llvm::AVRTargetMachine</a></li>
 <li><b>AVRTargetStreamer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/avrtargetstreamer/#aa83f2f0948bfec5d056cc5d60b01f27f">llvm::AVRTargetStreamer</a></li>
 </ul>
-<p>5480 entries</p>
+<p>5532 entries</p>
 
 ## - B -
 
@@ -5524,7 +5576,7 @@ keywords:
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/allocatorlist/#adf33ce5f713c4c371f572781c84c6b32">llvm::AllocatorList&lt;T, AllocatorT&gt;</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/allocatorlist/#a2a158158ba55e2c852fcc8348009771c">llvm::AllocatorList&lt;T, AllocatorT&gt;</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a291ac49156942529f159a9ec003cc25f">llvm::ArrayRef&lt;T&gt;</a></li>
-<li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a2d071e661a02790177ba05f62c7c27d1">llvm::BasicBlock</a></li>
+<li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#afbc181ceecaec94bd0ea2eab8f23cbd8">llvm::BasicBlock</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a6c8359947a7a39375d8f959e4e5bdd8f">llvm::BasicBlock</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitcodereadervaluelist/#a777192e4402e9223d1dc25182f9d41b0">llvm::BitcodeReaderValueList</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitvector/#a47f07515f4207097b7e00c345fb4bf95">llvm::BitVector</a></li>
@@ -5555,6 +5607,7 @@ keywords:
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref/#aaf7853428d9cb2b59fe268b757e3dc16">llvm::MutableArrayRef&lt;T&gt;</a></li>
 <li><b>back()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/outliner/candidate/#a95d91bc5f619fedd6590f8513084924f">llvm::outliner::Candidate</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/priorityworklist/#a0de474a0d8de9597fc17bb366769f2f2">llvm::PriorityWorklist&lt;T, VectorT, MapT&gt;</a></li>
+<li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a2d071e661a02790177ba05f62c7c27d1">llvm::sandboxir::BasicBlock</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/schedbundle/#ab8f3e62604745a8329dfdfab4b10b48f">llvm::sandboxir::SchedBundle</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/setvector/#a475a23ed9737641ade0a2f0dab1f19d0">llvm::SetVector&lt;T, Vector, Set, N&gt;</a></li>
 <li><b>back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/simple-ilist/#a3333290ba61b2ce8abdfa4e1ec0e0644">llvm::simple_ilist&lt;T, Options&gt;</a></li>
@@ -5642,6 +5695,8 @@ keywords:
 <li><b>~BasicBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a98a03933e831cb54c02b5068ebc30478">llvm::BasicBlock</a></li>
 <li><b>BasicBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a092f0c59f208feb3688bcdf7795e228a">llvm::BasicBlock</a></li>
 <li><b>BasicBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a27d81089e8a1627663ea9ae51707ff10">llvm::BasicBlock</a></li>
+<li><b>~BasicBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aac8c30b9e01ec13dd8c881e8cbcf6b4f">llvm::sandboxir::BasicBlock</a></li>
+<li><b>BasicBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aed7f98219ea90c21c7f29d00bee9cf00">llvm::sandboxir::BasicBlock</a></li>
 <li><b>BasicBlockCallbackVH()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/branchprobabilityinfo/basicblockcallbackvh/#ac2c0e6b46a0884c17bf3d8a172c6089e">llvm::BranchProbabilityInfo::BasicBlockCallbackVH</a></li>
 <li><b>BasicBlockEdge()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblockedge/#ae571c44fdd7e57eaac0c032528f71b79">llvm::BasicBlockEdge</a></li>
 <li><b>BasicBlockEdge()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblockedge/#aeda13f9c87526c92714dc1e3720c7852">llvm::BasicBlockEdge</a></li>
@@ -5771,11 +5826,13 @@ keywords:
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamer/#ab86708fa850091115f8e078916210200">llvm::AMDGPU::HSAMD::MetadataStreamer</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamermsgpackv4/#a8e4f1ee036e76220fa5c2b0e021a829c">llvm::AMDGPU::HSAMD::MetadataStreamerMsgPackV4</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arrayref/#aab36927882fbfdcbb860d87fd9c30da8">llvm::ArrayRef&lt;T&gt;</a></li>
+<li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a361c9c88d8b9972fa0071b508acc9de2">llvm::AttributeList</a></li>
+<li><b>begin()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/#aec89fe1be6a2f967a1cd274e27c1026b">llvm::AttributeList::index_iterator</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a59c75db87b60e7d9bf119d66a8330464">llvm::AttributeListImpl</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a8cb72099c01f493de3b1b4768cddf770">llvm::AttributeSet</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a7a22429aa93da033c65bcba49a7a2efb">llvm::AttributeSetNode</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a0ed5f3ab3c2e4196ee0cffffa080c062">llvm::BasicBlock</a></li>
-<li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aa9fdcfbadaf887aed46b04d2cae72865">llvm::BasicBlock</a></li>
+<li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a13e1d8cf35c3ceaf4b935c4e732c27fa">llvm::BasicBlock</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bf-iterator/#a4133f7cd7fa3f3898dd21263fe763b7e">llvm::bf_iterator&lt;GraphT, SetType, GT&gt;</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/blotmapvector/#afe9bb2d89b79c53645c7adef310b66f9">llvm::BlotMapVector&lt;KeyT, ValueT&gt;</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/blotmapvector/#a3fac90fc710f50b9f95655bd691d2461">llvm::BlotMapVector&lt;KeyT, ValueT&gt;</a></li>
@@ -5980,6 +6037,7 @@ keywords:
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ropepiecebtree/#aa8b2b0744ac7a323d5f97fc03bc8190e">llvm::RopePieceBTree</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/samplecontexttracker/#a83752b2f27a46b7f0bea80368cbe84f0">llvm::SampleContextTracker</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/profiledcallgraph/#ae0ddc9bdb077cf643f29ddd1320bafb4">llvm::sampleprof::ProfiledCallGraph</a></li>
+<li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aa9fdcfbadaf887aed46b04d2cae72865">llvm::sandboxir::BasicBlock</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function/#a60b365540bb2d07cbcebdba12039aed9">llvm::sandboxir::Function</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/interval/#a877d075d0a47b45e7183caa1bef533e2">llvm::sandboxir::Interval&lt;T&gt;</a></li>
 <li><b>begin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/interval/#aea77738924bffd4a7a873be242ddc8df">llvm::sandboxir::Interval&lt;T&gt;</a></li>
@@ -6757,6 +6815,7 @@ keywords:
 <li><b>buildAtomicRMWUSubSat()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder/#a17fe1c83d1fe58f743ec0d66f2073443">llvm::MachineIRBuilder</a></li>
 <li><b>buildAtomicRMWXchg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder/#af5df6737579f8493e9dbf21b3e042daa">llvm::MachineIRBuilder</a></li>
 <li><b>buildAtomicRMWXor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder/#a0a35bae390b9e7d83ce0ef35512da4ce">llvm::MachineIRBuilder</a></li>
+<li><b>buildBasicBlockFromLLVMIR()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aacd74c453d34ce88cd7694bab1d4bd3b">llvm::sandboxir::BasicBlock</a></li>
 <li><b>buildBitcast()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder/#acf0f51041fbaaed06a39f2fe2686bb92">llvm::MachineIRBuilder</a></li>
 <li><b>buildBitReverse()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder/#a828ddf4cfe2b05f70a6566d36b4804c5">llvm::MachineIRBuilder</a></li>
 <li><b>buildBitSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-lowertypetests-cpp-/lowertypetestsmodule/#a221dda8ab4a0bb084a701257a07428c7">anonymous{LowerTypeTests.cpp}::LowerTypeTestsModule</a></li>
@@ -6786,6 +6845,7 @@ keywords:
 <li><b>BuildCFI()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86framelowering/#aef0079a40a972f2942156b2d73bbf190">llvm::X86FrameLowering</a></li>
 <li><b>buildCFICheck()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-crossdsocfi-cpp-/crossdsocfi/#ab29f15fad3f35ea8248e93e3dc805224">anonymous{CrossDSOCFI.cpp}::CrossDSOCFI</a></li>
 <li><b>buildChain()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-machineblockplacement-cpp-/machineblockplacement/#a66ed2f04dbeb423f8b2b05d83fe373c0">anonymous{MachineBlockPlacement.cpp}::MachineBlockPlacement</a></li>
+<li><b>buildClearRegister()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9a7f5712e4a4603a0bdd87cc08e9b1d6">llvm::AArch64InstrInfo</a></li>
 <li><b>buildClearRegister()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a0c5b9f0e5e1e90caa9c8def3d230ddbf">llvm::TargetInstrInfo</a></li>
 <li><b>buildClearRegister()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86instrinfo/#ad9c4463170797dc633ce8dfa192f132b">llvm::X86InstrInfo</a></li>
 <li><b>buildClosure()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86domainreassignment-cpp-/x86domainreassignment/#a12fd07c4b91f77afea3ec20f5b2b3a90">anonymous{X86DomainReassignment.cpp}::X86DomainReassignment</a></li>
@@ -7003,6 +7063,7 @@ keywords:
 <li><b>buildOr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder/#ad93e8a9d68a578f6a53c70d39aef0dbe">llvm::MachineIRBuilder</a></li>
 <li><b>buildOrderingBT()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagongeninsert-cpp-/hexagongeninsert/#a1c719748c08affb358cdf5c7904933f7">anonymous{HexagonGenInsert.cpp}::HexagonGenInsert</a></li>
 <li><b>buildOrderingMF()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagongeninsert-cpp-/hexagongeninsert/#a899b91f896f30cb67c4c2acf5d623d6c">anonymous{HexagonGenInsert.cpp}::HexagonGenInsert</a></li>
+<li><b>buildOutlinedFrame()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9b0a622dbae74cb8a4b9b87a8b559b25">llvm::AArch64InstrInfo</a></li>
 <li><b>buildOutlinedFrame()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#aee485429210d9273f05a2ffc2d1f38d6">llvm::ARMBaseInstrInfo</a></li>
 <li><b>buildOutlinedFrame()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#aa0ee8a29120b044f4c4668626e264393">llvm::RISCVInstrInfo</a></li>
 <li><b>buildOutlinedFrame()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a73e2b33837925c6898584bc1118f2f2a">llvm::TargetInstrInfo</a></li>
@@ -7250,7 +7311,7 @@ keywords:
 <li><b>ByvalParmDbgEnd()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a23c454c9a371e53dcd3445792ab3aa5f">llvm::SelectionDAG</a></li>
 <li><b>byValueType()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-numericalstabilitysanitizer-cpp-/mappingconfig/#ae379af4e58fe7f76d962fa0019d5fbff">anonymous{NumericalStabilitySanitizer.cpp}::MappingConfig</a></li>
 </ul>
-<p>1733 entries</p>
+<p>1742 entries</p>
 
 ## - C -
 
@@ -7584,7 +7645,7 @@ keywords:
 <li><b>CallStackTrie()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memprof/callstacktrie/#a49f2ad3f9b504bbc6ac5fbb306d74772">llvm::memprof::CallStackTrie</a></li>
 <li><b>CallStackTrieNode()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/memprof/callstacktrie/callstacktrienode/#aaab4470c425c697a10995d12d7e8805f">llvm::memprof::CallStackTrie::CallStackTrieNode</a></li>
 <li><b>callsUnwindInit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a6799fb8536b173a2078ef97e1f0d16ec">llvm::MachineFunction</a></li>
-<li><b>callToNoUnwindFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ehstreamer/#a1ea22df61755266413f65ca7e970c4bc">llvm::EHStreamer</a></li>
+<li><b>callToNoUnwindFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ehstreamer/#add3aa627d6c1eb31f0b6563af39b8b64">llvm::EHStreamer</a></li>
 <li><b>callUsesLocalStack()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-tailrecursionelimination-cpp-/allocaderivedvaluetracker/#a6019b1c94104110144aa402a98d7076f">anonymous{TailRecursionElimination.cpp}::AllocaDerivedValueTracker</a></li>
 <li><b>CallValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-earlycse-cpp-/callvalue/#ac96e19b3c68d14bc252bc64c994f11a1">anonymous{EarlyCSE.cpp}::CallValue</a></li>
 <li><b>callValueTypeCallback()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodereader/#a8e0a33ea7b44e284667265afe9ae1e8a">anonymous{BitcodeReader.cpp}::BitcodeReader</a></li>
@@ -7614,6 +7675,7 @@ keywords:
 <li><b>canBasicBlockModify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aaresults/#afaa8c01c6784e2dea310daf0a2b55fc1">llvm::AAResults</a></li>
 <li><b>canBasicBlockModify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aaresults/#a6c6e1f2976c2cf774cacb209606ed41d">llvm::AAResults</a></li>
 <li><b>canBeConsideredALU()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/r600instrinfo/#a507703ee09a583ff911a8d09cd409b68">llvm::R600InstrInfo</a></li>
+<li><b>canBeDispatched()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#ad4667d37055ff477b91719d2c84e2171">llvm::mca::ResourceManager</a></li>
 <li><b>canBeFreed()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/value/#a7b4d048a84149ece45db862333dea428">llvm::Value</a></li>
 <li><b>canBeHoistedTo()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-guardwidening-cpp-/guardwideningimpl/#a5e7d3e3e94a516f327ab285752e06baf">anonymous{GuardWidening.cpp}::GuardWideningImpl</a></li>
 <li><b>canBeHoistedTo()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-guardwidening-cpp-/guardwideningimpl/#a33f52a08a49cef4ec90169a9c92917b4">anonymous{GuardWidening.cpp}::GuardWideningImpl</a></li>
@@ -8064,6 +8126,7 @@ keywords:
 <li><b>castToAtomicIntPointer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/atomicinfo/#a82a039c43dd6deabdfad356f8d53ba28">llvm::AtomicInfo</a></li>
 <li><b>castToScalarTyElem()</b>: as function in class <a href="/web-llvm/docs/api/classes/boupslp/shuffleinstructionbuilder/#a233dc20c2458649e53eb35ad1b51f11d">BoUpSLP::ShuffleInstructionBuilder</a></li>
 <li><b>castValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/detail/typeswitchbase/#a47c8f0bc76ad4fa3a6f2dc31e77604ba">llvm::detail::TypeSwitchBase&lt;DerivedT, T&gt;</a></li>
+<li><b>castValueToType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a1cb6bfe878702e37e95e0380de07134c">llvm::OpenMPIRBuilder</a></li>
 <li><b>cat()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/bittracker/registercell/#a1385460950e6fe590c5913ba8c9dbe90">llvm::BitTracker::RegisterCell</a></li>
 <li><b>cat()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/cl/cat/#a2f56050522b68775d35e111956545206">llvm::cl::cat</a></li>
 <li><b>CatchPadInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/catchpadinst/#aa2209a4d348954c8233511a277603543">llvm::CatchPadInst</a></li>
@@ -8316,6 +8379,7 @@ keywords:
 <li><b>checkAllRulesInBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldchecker/#a0f3ab46a78d6f16381bb41f1cd07a6da">llvm::RuntimeDyldChecker</a></li>
 <li><b>checkAllRulesInBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldcheckerimpl/#a03459afe90e9865de42de9912ec0c972">llvm::RuntimeDyldCheckerImpl</a></li>
 <li><b>checkAllSuperRegsMarked()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetregisterinfo/#a7bd2eaf010a0c53df66932fc514f1cc9">llvm::TargetRegisterInfo</a></li>
+<li><b>checkAndEmitFlushAfterAtomic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad9851d43b78a60e8de23a05bc9728e9b">llvm::OpenMPIRBuilder</a></li>
 <li><b>checkAndInvalidate()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/potentialvaluesstate/#af7951b3d4541493e61a1efe5684267fc">llvm::PotentialValuesState&lt;MemberTy&gt;</a></li>
 <li><b>CheckAndMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondagisel/#a9dcbd38183e29746d52bb60bdcd611ba">llvm::SelectionDAGISel</a></li>
 <li><b>checkAndPrepareMerge()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-siloadstoreoptimizer-cpp-/siloadstoreoptimizer/#a4ac2d1fd13b9e199d5b4ff9a510e9a97">anonymous{SILoadStoreOptimizer.cpp}::SILoadStoreOptimizer</a></li>
@@ -8327,6 +8391,7 @@ keywords:
 <li><b>checkAsmConstraintValA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sitargetlowering/#a86114eca650ef66fed00037558e4b33a">llvm::SITargetLowering</a></li>
 <li><b>checkAtomicMemAccessSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-verifier-cpp-/verifier/#a7c4fa2a58c464d2a7bacb566c1898e8e">anonymous{Verifier.cpp}::Verifier</a></li>
 <li><b>checkAuthenticatedLR()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64pointerauth-cpp-/aarch64pointerauth/#ae8e0f5496350c38b919304c254d9fad4">anonymous{AArch64PointerAuth.cpp}::AArch64PointerAuth</a></li>
+<li><b>checkAvailability()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#aec872e4acf72f2b7fe8347d1c027b2b9">llvm::mca::ResourceManager</a></li>
 <li><b>checkAXOK()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonmcchecker/#ae1341fd41ab49b1f371ac2213e54c5ea">llvm::HexagonMCChecker</a></li>
 <li><b>checkBody()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/structtype/#a586d9700a173a63ae1e26e725bc70ff5">llvm::StructType</a></li>
 <li><b>checkBranches()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonmcchecker/#a4f7c12ffb1dd8cd324d8a38b93a08c23">llvm::HexagonMCChecker</a></li>
@@ -9599,6 +9664,7 @@ keywords:
 <li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/arraytype/#a3c013658646965dc531bf1bf68dc16ed">llvm::sandboxir::ArrayType</a></li>
 <li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/atomiccmpxchginst/#a99be2c82af15ed5f67bbbaa62f221551">llvm::sandboxir::AtomicCmpXchgInst</a></li>
 <li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/atomicrmwinst/#ab9035fde5a006f3701837b709a61da87">llvm::sandboxir::AtomicRMWInst</a></li>
+<li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a1a61b9b27fdeca606f320fff0771b690">llvm::sandboxir::BasicBlock</a></li>
 <li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/binaryoperator/#a6604628209963c12817d8b1e67fbc196">llvm::sandboxir::BinaryOperator</a></li>
 <li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress/#afd7b8936d60b2dce62b15ea6be1484f6">llvm::sandboxir::BlockAddress</a></li>
 <li><b>classof()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/branchinst/#a37ae6ff97ab138e11035976625dca8f1">llvm::sandboxir::BranchInst</a></li>
@@ -9987,6 +10053,7 @@ keywords:
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arrayrecycler/#ab9b0fb1cc4d9ce7997a79e3976f6e772">llvm::ArrayRecycler&lt;T, Align&gt;</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arrayrecycler/#aa66a69ed68cdd92d2cd979eb3d407120">llvm::ArrayRecycler&lt;T, Align&gt;</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/assumptioncache/#a2f5aab0e9687dd8250c8fa49d4de1b1b">llvm::AssumptionCache</a></li>
+<li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a1546ba76a8d78e0a34a7e9111467288d">llvm::AttrBuilder</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitcodereadervaluelist/#a78085b7374b1c5f3d548fc6837c49b9a">llvm::BitcodeReaderValueList</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitvector/#a35bbc237e4a675c5332103ac6e7dcce1">llvm::BitVector</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfoimplbase/#a90cc95ac676cd6751e696d9a683745c0">llvm::BlockFrequencyInfoImplBase</a></li>
@@ -10089,6 +10156,7 @@ keywords:
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/modifiedpostorder/#a0360f130fe61f2abd34cb6b3a155ac33">llvm::ModifiedPostOrder&lt;ContextT&gt;</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/msgpack/document/#a652965396b20331b4d45122baba0eccc">llvm::msgpack::Document</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nodeset/#af2d10c02d0df15403b3279d76f743b00">llvm::NodeSet</a></li>
+<li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#ac1e7c0f132f5c996af8278d0779e3295">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>clear()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/objcarc/rrinfo/#ae219d35c9d1bb909cd32110815007c7f">llvm::objcarc::RRInfo</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/machouniversalbinary/objectforarch/#a9a0a714b1be3b1f6cce557c7c2af5b02">llvm::object::MachOUniversalBinary::ObjectForArch</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib/#a25e558db9c4a9a9b6cbd5dc09a2b929b">llvm::orc::JITDylib</a></li>
@@ -10150,7 +10218,6 @@ keywords:
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblyasmtypecheck/#a3d3c6861d8429320494c70c05a02dc81">llvm::WebAssemblyAsmTypeCheck</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xray/graph/#a4c5b8f18fe884f08a1cb2bb9baf4cea0">llvm::xray::Graph&lt;VertexAttribute, EdgeAttribute, VI&gt;</a></li>
 <li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/podsmallvector/#a29fd045b4662f1b55cddf250b74f42b4">PODSmallVector&lt;T, N&gt;</a></li>
-<li><b>clear()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a20f52eaac258b06cdc7537d7c4f27b6f">ProvenanceAnalysis</a></li>
 <li><b>clearAddedDanglingWorklistEntries()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#a83c78ee8b40cd0b4e626731bf4bf8719">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
 <li><b>clearAll()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/timergroup/#a5677ae12c385811e1ddcaf063644838a">llvm::TimerGroup</a></li>
 <li><b>clearAllBits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apint/#a781bd5c20864a9c185018258af774ace">llvm::APInt</a></li>
@@ -10162,6 +10229,7 @@ keywords:
 <li><b>clearAndDispose()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/simple-ilist/#af3e13ba39a57af4a57b5e7d0cc553f0e">llvm::simple_ilist&lt;T, Options&gt;</a></li>
 <li><b>clearAndLeakNodesUnsafely()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/iplist-impl/#ac2b98de832dea293bf7bb743a101ccc1">llvm::iplist_impl&lt;IntrusiveListT, TraitsT&gt;</a></li>
 <li><b>clearArguments()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#af9428610ca28f18617fcef7e711f2c7d">llvm::Function</a></li>
+<li><b>clearArrayInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a187f54bc5382762e59e300fd468b8953">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>clearAsmPrinterFlag()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a3381aa77ac8bf4b65adf2d02a78c4dc9">llvm::MachineInstr</a></li>
 <li><b>clearAsmPrinterFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a1cc4487354633e23a68f6ca683d593f1">llvm::MachineInstr</a></li>
 <li><b>clearAssumeInstAndAlignedBarriers()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aaexecutiondomain/executiondomainty/#a5be8d3e5802f922f7755bfc3cb998164">llvm::AAExecutionDomain::ExecutionDomainTy</a></li>
@@ -10255,6 +10323,7 @@ keywords:
 <li><b>clearReferenceType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcsymbolmacho/#a4c7b06ed26ba9de68ded30b76ed10ac2">llvm::MCSymbolMachO</a></li>
 <li><b>clearRegisterDeads()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad4a32b52ea36d2c35a9860fe263d0574">llvm::MachineInstr</a></li>
 <li><b>clearRegisterKills()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#ad61dd8c3be8a7f284aa7ac8f2c8bca5b">llvm::MachineInstr</a></li>
+<li><b>clearReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#af46fb23efb212b10dc397a1657a7b9de">llvm::mca::ResourceState</a></li>
 <li><b>clearResources()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dfapacketizer/#aa2aa15f4b12628474dcfe9b2b9f2a2ac">llvm::DFAPacketizer</a></li>
 <li><b>ClearReverseInsertPts()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/ptrstate/#a1e8374268ff00721371c4e0927510d88">llvm::objcarc::PtrState</a></li>
 <li><b>clearSchedBundle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dgnode/#acf18a7c5378cde4012d8d0a74124593e">llvm::sandboxir::DGNode</a></li>
@@ -10533,6 +10602,8 @@ keywords:
 <li><b>cloneLoop()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopconstrainer/#a6e521fd5833638707a5bfa7fa0d56340">llvm::LoopConstrainer</a></li>
 <li><b>cloneLoops()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-loopdistribute-cpp-/instpartitioncontainer/#a36f7b9a37f452349ad02d4d7f7d33972">anonymous{LoopDistribute.cpp}::InstPartitionContainer</a></li>
 <li><b>cloneLoopWithPreheader()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-loopdistribute-cpp-/instpartition/#a2041884c5740bd6521ce7cc9c4257138">anonymous{LoopDistribute.cpp}::InstPartition</a></li>
+<li><b>CloneMachineInstr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ac485421b5fcb9454ea64e74f6396a810">llvm::MachineFunction</a></li>
+<li><b>cloneMachineInstrBundle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3c50b05be0be83e693f50b87284c76d6">llvm::MachineFunction</a></li>
 <li><b>cloneMemRefs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a3a26f11d1735bf0f25261aefd2bee9c1">llvm::MachineInstr</a></li>
 <li><b>cloneMemRefs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstrbuilder/#ad84ebe08bb098cd283e922fd186f77e9">llvm::MachineInstrBuilder</a></li>
 <li><b>cloneMergedMemRefs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a7a5607fcb0a195620036bb0f1217c8a2">llvm::MachineInstr</a></li>
@@ -10728,6 +10799,7 @@ keywords:
 <li><b>collectAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diehash/#a02c8d6348b33dd023129a417d1cd2934">llvm::DIEHash</a></li>
 <li><b>collectBitGroups()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-ppciseldagtodag-cpp-/bitpermutationselector/#ad8058e9b6604892db86eb5555b75ec79">anonymous{PPCISelDAGToDAG.cpp}::BitPermutationSelector</a></li>
 <li><b>collectBlockCondInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86speculativeloadhardening-cpp-/x86speculativeloadhardeningpass/#a9288e68efcb80c36f717b85f956b8c22">anonymous{X86SpeculativeLoadHardening.cpp}::X86SpeculativeLoadHardeningPass</a></li>
+<li><b>collectBlocks()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#a218bc49443ef1f05fc8074d872d41fcd">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>collectCallInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86callframeoptimization-cpp-/x86callframeoptimization/#a12e3a1eb57675c978a25dc8ba1423283">anonymous{X86CallFrameOptimization.cpp}::X86CallFrameOptimization</a></li>
 <li><b>collectCandidateRegisters()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-sioptimizevgprliverange-cpp-/sioptimizevgprliverange/#a5290bdffbf68a26e47345d1bb2abb246">anonymous{SIOptimizeVGPRLiveRange.cpp}::SIOptimizeVGPRLiveRange</a></li>
 <li><b>collectCandidates()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-ppcloopinstrformprep-cpp-/ppcloopinstrformprep/#a63b3cd356b9f535b60366bfda134c55b">anonymous{PPCLoopInstrFormPrep.cpp}::PPCLoopInstrFormPrep</a></li>
@@ -12046,11 +12118,9 @@ keywords:
 <li><b>consumeNumHexDigits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/support/detail/helperfunctions/#a7820283c9bbf6077dccc08dcb649e788">llvm::support::detail::HelperFunctions</a></li>
 <li><b>consumeOneOption()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/format-provider-5361e6bb4a56f61bc90e5b264ca769ca/#a1c69bec2571fc4b49b84a87f58b0a99c">llvm::format_provider&lt;llvm::iterator_range&lt; IterT &gt;&gt;</a></li>
 <li><b>consumesDP()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anonymous-armlatencymutations-cpp-/instructioninformation/#acf455f7d3d3fbf4250b5d75841310ee7">llvm::anonymous{ARMLatencyMutations.cpp}::InstructionInformation</a></li>
-<li><b>consumeShowUnit()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6/#a48d7800e68fb0c5f9347ece734364883">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>consumesQP()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anonymous-armlatencymutations-cpp-/instructioninformation/#ab26173b46bacc05b8a192c000185cc31">llvm::anonymous{ARMLatencyMutations.cpp}::InstructionInformation</a></li>
 <li><b>consumesSP()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anonymous-armlatencymutations-cpp-/instructioninformation/#abf5d3f8e03cfab5337089883699bb1cd">llvm::anonymous{ARMLatencyMutations.cpp}::InstructionInformation</a></li>
 <li><b>consumeToken()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86asmparser-cpp-/x86asmparser/#a72fd0d993586f5ab41001151669a59ce">anonymous{X86AsmParser.cpp}::X86AsmParser</a></li>
-<li><b>consumeUnit()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6/#a2c4da946d0753663941b481e03fe8369">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>consumingModuleDo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/threadsafemodule/#a0f1e21cac5addd85d48c5e4819d31df7">llvm::orc::ThreadSafeModule</a></li>
 <li><b>containedIn()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/jsonwriter/#a4180202f21dd7ed21b802e7dcadfff3d">anonymous{VirtualFileSystem.cpp}::JSONWriter</a></li>
 <li><b>containedPart()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/jsonwriter/#a2fee2954f999fb71d1f54e74d1a21c48">anonymous{VirtualFileSystem.cpp}::JSONWriter</a></li>
@@ -12071,6 +12141,8 @@ keywords:
 <li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/addressrange/#a95a8d92d0624d42d9682525b0adaaa50">llvm::AddressRange</a></li>
 <li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/addressrangesbase/#a3f7dc6877a2e9502fe7c51b9aef7ce6f">llvm::AddressRangesBase&lt;T&gt;</a></li>
 <li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/addressrangesbase/#ad13ee3edc9e7ee34df1e1eb20cd9ea3b">llvm::AddressRangesBase&lt;T&gt;</a></li>
+<li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a6abb550fd00c7568af7b045429491d9e">llvm::AttrBuilder</a></li>
+<li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a0a656771b0cea2b1276b684e1cba00f5">llvm::AttrBuilder</a></li>
 <li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#ab0582254d525e9b4612f0239ac19fd39">llvm::AttributeMask</a></li>
 <li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#a0d1025eb026eaed77c4e4f7504929905">llvm::AttributeMask</a></li>
 <li><b>contains()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#aebb66fe68085ef9390340f538851f64b">llvm::AttributeMask</a></li>
@@ -12177,6 +12249,7 @@ keywords:
 <li><b>containsPC()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/sequence/#ad71c2b014b37f42efef1e43d3d104a73">llvm::DWARFDebugLine::Sequence</a></li>
 <li><b>containsPoisonElement()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constant/#af9581ba8da8565cd6a274bc571a37728">llvm::Constant</a></li>
 <li><b>containsQNaN()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantfprange/#a1280f3ee32c39f4732e88d94f62ba72d">llvm::ConstantFPRange</a></li>
+<li><b>containsResource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a83cebd4f01a9f5d634d1ed8609b2bd39">llvm::mca::ResourceState</a></li>
 <li><b>containsSNaN()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantfprange/#a3c822545e0122b707c5953be7c06fef3">llvm::ConstantFPRange</a></li>
 <li><b>containsSpillLocs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-varlocbasedimpl-cpp-/varlocbasedldv/varloc/#ae60bd10f9e230ddaaeb85f220767c730">anonymous{VarLocBasedImpl.cpp}::VarLocBasedLDV::VarLoc</a></li>
 <li><b>containsSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/sectionref/#a9252daa21a3dd50c0c31a70c482a94a0">llvm::object::SectionRef</a></li>
@@ -13299,9 +13372,11 @@ keywords:
 <li><b>createAtomicCmpXchgInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#af3ea0b86a033cba8b1b853a84d9a3999">llvm::sandboxir::Context</a></li>
 <li><b>createAtomicCompare()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6c4eeba23c6f192892487de272e8ce72">llvm::OpenMPIRBuilder</a></li>
 <li><b>createAtomicCompare()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab84af206a9a08b9bf97eaadc87874c6c">llvm::OpenMPIRBuilder</a></li>
+<li><b>createAtomicRead()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a388d5a62753f4e7ff4b72e54c1233fbc">llvm::OpenMPIRBuilder</a></li>
 <li><b>CreateAtomicRMW()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ab2a2c89b21cf14b2c729a898006cb438">llvm::IRBuilderBase</a></li>
 <li><b>createAtomicRMWInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#a6160a35b731fb9211dba3730f7c449b4">llvm::sandboxir::Context</a></li>
 <li><b>createAtomicUpdate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ae75c4b44f208011259ee93497c2cb411">llvm::OpenMPIRBuilder</a></li>
+<li><b>createAtomicWrite()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0e2de2c034e3083d006b92ddf14b8bcf">llvm::OpenMPIRBuilder</a></li>
 <li><b>createAtRegisterPlusOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation/#a341ae4c735da746b35ffb8a9ef480563">llvm::dwarf::UnwindLocation</a></li>
 <li><b>CreateAttributeSetSlot()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/slottracker/#aa85ca657ce29d6859609a6e2db1bd3b0">llvm::SlotTracker</a></li>
 <li><b>createAttributesSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcelfstreamer/#a9d75577456f184efd5ca461a3a0688d6">llvm::MCELFStreamer</a></li>
@@ -13343,6 +13418,7 @@ keywords:
 <li><b>createBuildVector()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#a7190a8565c844f810d43ed05d7ad6573">llvm::slpvectorizer::BoUpSLP</a></li>
 <li><b>createBundle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/scheduler/#a1281604142558e345e1352c34018e092">llvm::sandboxir::Scheduler</a></li>
 <li><b>createByteArray()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-lowertypetests-cpp-/lowertypetestsmodule/#a0e6b194b0dac3ea1ff1ea51716d9ed6a">anonymous{LowerTypeTests.cpp}::LowerTypeTestsModule</a></li>
+<li><b>createCachedThreadPrivate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad89dcb3cd8a39ae57a69487c2988dace">llvm::OpenMPIRBuilder</a></li>
 <li><b>CreateCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ab086c5b9f9563eda0cdd703f454e041e">llvm::IRBuilderBase</a></li>
 <li><b>CreateCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a891814abf1fc39325e8b66345f1bc071">llvm::IRBuilderBase</a></li>
 <li><b>CreateCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#adc98da60f2b273bc1cfdbd6c35eb7919">llvm::IRBuilderBase</a></li>
@@ -13445,11 +13521,14 @@ keywords:
 <li><b>CreateCoprocNum()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#ac13faa176d165c9851de42f98dc67751">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>CreateCoprocOption()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#ae21045d82a2369063d0d44a2107571a3">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>CreateCoprocReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#aeccfe6cc24a9c3111acd0fe4a8e9ab36">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
+<li><b>createCopyinClauseBlocks()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a70356a38271d388e7c4b477cef0d7b2c">llvm::OpenMPIRBuilder</a></li>
 <li><b>CreateCopyLoc()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-varlocbasedimpl-cpp-/varlocbasedldv/varloc/#ab2f76d36eb2fec3691668e118955bb06">anonymous{VarLocBasedImpl.cpp}::VarLocBasedLDV::VarLoc</a></li>
+<li><b>createCopyPrivate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#af2808c704c935cee35e9529907b59b1c">llvm::OpenMPIRBuilder</a></li>
 <li><b>CreateCopySign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a999b90b0f59e9a5e21aa170bc71e2a09">llvm::IRBuilderBase</a></li>
 <li><b>CreateCountTrailingZeroElems()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a92154cb608be190734597123ba1be141">llvm::IRBuilderBase</a></li>
 <li><b>createCoverageReaderFromBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/coverage/binarycoveragereader/#a608c62cd1d91bfd8613f274ec9098ee6">llvm::coverage::BinaryCoverageReader</a></li>
 <li><b>CreateCPI()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#aebe6fe7948d0ae093aba94381c73ed67">llvm::MachineOperand</a></li>
+<li><b>createCritical()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ac379895c55a89804f49f1a775828c235">llvm::OpenMPIRBuilder</a></li>
 <li><b>createCRLogicalOpInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-ppcreducecrlogicals-cpp-/ppcreducecrlogicals/#ae5e50a6a8cb928fb34cd4fde19384381">anonymous{PPCReduceCRLogicals.cpp}::PPCReduceCRLogicals</a></li>
 <li><b>createCtxVectorFromStr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/samplecontext/#a03a9d7487e3a99b134abd6aa5bf2a101">llvm::sampleprof::SampleContext</a></li>
 <li><b>createCustomBehaviour()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/target/#a7c7919dc813775925a2a5a3cfafa270a">llvm::Target</a></li>
@@ -13510,6 +13589,10 @@ keywords:
 <li><b>createDirectoryStream()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/msf/writablemappedblockstream/#a882f086ce986358c3aff75c298823739">llvm::msf::WritableMappedBlockStream</a></li>
 <li><b>CreateDisjoint()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/binaryoperator/#ac3620292d253c4ad2efdba8623f7ce5c">llvm::BinaryOperator</a></li>
 <li><b>CreateDisjoint()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/binaryoperator/#a2cdc7abc417800f113d92c333ea29ddb">llvm::BinaryOperator</a></li>
+<li><b>createDispatchDeinitFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ae2d016504f27bd96960ace8645073d63">llvm::OpenMPIRBuilder</a></li>
+<li><b>createDispatchFiniFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a5946a2c7130bcf42add273f83cb6e257">llvm::OpenMPIRBuilder</a></li>
+<li><b>createDispatchInitFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aac7493b7e13af08014a1c49dcdecbf20">llvm::OpenMPIRBuilder</a></li>
+<li><b>createDispatchNextFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a49dbf0af8f3e1314b3b60222651b6fc2">llvm::OpenMPIRBuilder</a></li>
 <li><b>createDisplayEdges()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-standardinstrumentations-cpp-/dotcfgdiffnode/#a82bbd4467dd3225e5b2ecf7a3a811d40">anonymous{StandardInstrumentations.cpp}::DotCfgDiffNode</a></li>
 <li><b>createDisplayGraph()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-standardinstrumentations-cpp-/dotcfgdiff/#a3fa9750e84e933fde1239fbf5da2a81f">anonymous{StandardInstrumentations.cpp}::DotCfgDiff</a></li>
 <li><b>CreateDiv()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fixedpointbuilder/#a05b24458637907fb6e27a842cc8dc0fc">llvm::FixedPointBuilder&lt;IRBuilderTy&gt;</a></li>
@@ -13745,6 +13828,7 @@ keywords:
 <li><b>createForPosition()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aavalueconstantrange/#ad8fdf45732dbb27e594ac307efcbc7dd">llvm::AAValueConstantRange</a></li>
 <li><b>createForPosition()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aavaluesimplify/#a1529195157874b83ec25ab5e6e968b7c">llvm::AAValueSimplify</a></li>
 <li><b>createForPosition()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aawillreturn/#a9f69b6e84c336c791fe594545a8cc53a">llvm::AAWillReturn</a></li>
+<li><b>createForStaticInitFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a8191e2fd322236b59afb070919f0d6af">llvm::OpenMPIRBuilder</a></li>
 <li><b>createForwardDecl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#af5b51afb7d6bdbb81b30eb5e121c1efb">llvm::DIBuilder</a></li>
 <li><b>CreateFPCast()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/castinst/#a877d5d2a2a1ab4fd979e1d3de94404b7">llvm::CastInst</a></li>
 <li><b>CreateFPCast()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a85da0abb1e43779210427c14a9bd9311">llvm::IRBuilderBase</a></li>
@@ -13840,6 +13924,7 @@ keywords:
 <li><b>createGEPExpr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gvnpass/valuetable/#a2da868874e64aef71c31d21187ce5ac1">llvm::GVNPass::ValueTable</a></li>
 <li><b>createGetElementPtrInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#a13cdb8a5d527cb1d32c4a2a702956ff1">llvm::sandboxir::Context</a></li>
 <li><b>createGetStateLibcall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/legalizerhelper/#ac9711313d362123a5753bbf9e11e87c5">llvm::LegalizerHelper</a></li>
+<li><b>createGlobalFlag()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ada8d44774af63e8cab5f9b2a088121fe">llvm::OpenMPIRBuilder</a></li>
 <li><b>createGlobalsEnumerator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/symbolcache/#a19cb28847fb480a08cfbfd16e0121308">llvm::pdb::SymbolCache</a></li>
 <li><b>CreateGlobalString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#af377188a476a2d71184b0498a136fd1d">llvm::IRBuilderBase</a></li>
 <li><b>CreateGlobalStringPtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a8240180b602f60980be558e3cd44b460">llvm::IRBuilderBase</a></li>
@@ -14112,6 +14197,7 @@ keywords:
 <li><b>createMachineFunctionInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86targetmachine/#a07989934f4f0b4a3dba82be453bd6fe9">llvm::X86TargetMachine</a></li>
 <li><b>createMachineFunctionInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xcoretargetmachine/#a447fbaf356370dcf82513fec7cbf36e0">llvm::XCoreTargetMachine</a></li>
 <li><b>createMachineFunctionInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xtensatargetmachine/#a530384e09f9622d262d7e3d877419237">llvm::XtensaTargetMachine</a></li>
+<li><b>CreateMachineInstr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a418c87b57626e29b332b6ffafca9f1af">llvm::MachineFunction</a></li>
 <li><b>createMachineMemOperandFor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fastisel/#a6bec3fdf48dcde80a42b76f09d151a03">llvm::FastISel</a></li>
 <li><b>createMachineScheduler()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64targetmachine-cpp-/aarch64passconfig/#a32cd4388c6010537824ebe8992c09d5f">anonymous{AArch64TargetMachine.cpp}::AArch64PassConfig</a></li>
 <li><b>createMachineScheduler()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-amdgputargetmachine-cpp-/gcnpassconfig/#abee7911947922a80fe782ead0742972e">anonymous{AMDGPUTargetMachine.cpp}::GCNPassConfig</a></li>
@@ -14130,8 +14216,10 @@ keywords:
 <li><b>createMacro()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#a1fe785a1cdccf63c091f5faf40f622ee">llvm::DIBuilder</a></li>
 <li><b>CreateMalloc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a792b08a6322bb539ee5ce2f754588c8c">llvm::IRBuilderBase</a></li>
 <li><b>CreateMalloc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a2cf7c4d4afbdac181224f5abed80ee3e">llvm::IRBuilderBase</a></li>
+<li><b>createMapperAllocas()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a544a84c75ac55356516cc7365cbe6f02">llvm::OpenMPIRBuilder</a></li>
 <li><b>createMarker()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a27413d863d6f6e778b34b1369b10ecf6">llvm::BasicBlock</a></li>
 <li><b>createMarker()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a0269c36140cc599f3a97609c091f514d">llvm::BasicBlock</a></li>
+<li><b>createMasked()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#adf9f105d93a1a09d5307dc14e77293f1">llvm::OpenMPIRBuilder</a></li>
 <li><b>CreateMaskedCompressStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a2001dcf6278f9e7e10b895d060d15abb">llvm::IRBuilderBase</a></li>
 <li><b>CreateMaskedExpandLoad()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#ad878957c30eb65983e09b60edb0e1a1b">llvm::IRBuilderBase</a></li>
 <li><b>createMaskedFindMismatch()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-loopidiomvectorize-cpp-/loopidiomvectorize/#ad2dff051201782735bcf2396325bf243">anonymous{LoopIdiomVectorize.cpp}::LoopIdiomVectorize</a></li>
@@ -14141,6 +14229,7 @@ keywords:
 <li><b>CreateMaskedScatter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#aee07a8623893cdad858a3b5f77354375">llvm::IRBuilderBase</a></li>
 <li><b>CreateMaskedStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#aad07e3e0fa03f6c780e13d924325d8d0">llvm::IRBuilderBase</a></li>
 <li><b>createMASSVFuncName()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-ppclowermassventries-cpp-/ppclowermassventries/#a1ab68cb2f3820fffd900fe2191802693">anonymous{PPCLowerMASSVEntries.cpp}::PPCLowerMASSVEntries</a></li>
+<li><b>createMaster()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a970cc920a6bae8d641ac63fb33afb40b">llvm::OpenMPIRBuilder</a></li>
 <li><b>createMatchEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvpatterns/#a2089c9a1e005f77be7dbf21b9ec53b8a">llvm::logicalview::LVPatterns</a></li>
 <li><b>createMaterializationResponsibility()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession/#a594d054bdaa56e1ba7ad7eb984eae408">llvm::orc::ExecutionSession</a></li>
 <li><b>createMaterializationUnitState()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/reoptimizelayer/#a880da947c2de3f8e421a0306a30ae402">llvm::orc::ReOptimizeLayer</a></li>
@@ -14369,8 +14458,17 @@ keywords:
 <li><b>createObjectTargetWriter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xtensamcasmbackend/#a9019c5af11e4e15f13a7584a8f398858">llvm::XtensaMCAsmBackend</a></li>
 <li><b>createObjectWriter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcasmbackend/#a02cf2dc89bc571d73da6a7eedc39580d">llvm::MCAsmBackend</a></li>
 <li><b>createOccupancy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpumcexpr/#a528b669c7627f74c541a4800020df024">llvm::AMDGPUMCExpr</a></li>
+<li><b>createOffloadEntriesAndInfoMetadata()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#acc290ce16055813d4ee68af4c8023a09">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOffloadEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ac5805e4c7f00be338494407152cf34aa">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOffloadMapnames()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab1aa0d632549db4855d6412f4d2d44ae">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOffloadMaptypes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad56f71598b251a0f66e590c94d01c67b">llvm::OpenMPIRBuilder</a></li>
 <li><b>createOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccfiinstruction/#a6a60a82f8cb445e9e7029e38733b2d30">llvm::MCCFIInstruction</a></li>
 <li><b>createOffsetExpr()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-loopstrengthreduce-cpp-/scevdbgvaluebuilder/#a86078042131d19e2f2316d66815279cd">anonymous{LoopStrengthReduce.cpp}::SCEVDbgValueBuilder</a></li>
+<li><b>createOMPAlloc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a81bc7a57bd0332843aed6275ba47bee0">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOMPFree()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a807c913d5889a80440269b74d5755d6c">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOMPInteropDestroy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a38345e93229faed92e719f1793807bb1">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOMPInteropInit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a7709370a0f6564aa772ce20caa45337e">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOMPInteropUse()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aaef3fb3339c2ade5ffffccdd177e465c">llvm::OpenMPIRBuilder</a></li>
 <li><b>createOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-slpvectorizer-cpp-/horizontalreduction/#a7eb7173f8c5554251c785ecfb8ad4a84">anonymous{SLPVectorizer.cpp}::HorizontalReduction</a></li>
 <li><b>createOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-slpvectorizer-cpp-/horizontalreduction/#ab4899ad7457900fa098f5f39fe2fdf1c">anonymous{SLPVectorizer.cpp}::HorizontalReduction</a></li>
 <li><b>createOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dxil/dxilopbuilder/#a9fde2412fafaa1ea67cc7f0f2d9dda69">llvm::dxil::DXILOpBuilder</a></li>
@@ -14389,10 +14487,13 @@ keywords:
 <li><b>createOr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpbuilder/#a31ed5837f037c5ea5aadfb64bdb9b4c3">llvm::VPBuilder</a></li>
 <li><b>createOrCond()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-libcallsshrinkwrap-cpp-/libcallsshrinkwrap/#afd2cf7bb13ccb5570393246073fa7f41">anonymous{LibCallsShrinkWrap.cpp}::LibCallsShrinkWrap</a></li>
 <li><b>createOrCond()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-libcallsshrinkwrap-cpp-/libcallsshrinkwrap/#a35faf33a9a34982d022af31db74bf8f2">anonymous{LibCallsShrinkWrap.cpp}::LibCallsShrinkWrap</a></li>
+<li><b>createOrderedDepend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6e2bd6420d3d12339e32d4d1b3ba1394">llvm::OpenMPIRBuilder</a></li>
+<li><b>createOrderedThreadsSimd()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a012d736828ba67916f7e5a3e9ff1d68f">llvm::OpenMPIRBuilder</a></li>
 <li><b>createOrderFileData()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-instrorderfile-cpp-/instrorderfile/#a3b3620fdf60408799b2d1957707a81d2">anonymous{InstrOrderFile.cpp}::InstrOrderFile</a></li>
 <li><b>createOrDie()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/specialcaselist/#a6c0343ae2b29d3a9882c0cfc4bee8c03">llvm::SpecialCaseList</a></li>
 <li><b>CreateOrReduce()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a784d99f22cf1632638a2fa652e7723d1">llvm::IRBuilderBase</a></li>
 <li><b>createOutlinedFunction()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-machineoutliner-cpp-/machineoutliner/#a272487247e40605fc8a0ee848d4dcf44">anonymous{MachineOutliner.cpp}::MachineOutliner</a></li>
+<li><b>createOutlinedFunctionID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6b89b3ff925ab192f9ae19165b342f83">llvm::OpenMPIRBuilder</a></li>
 <li><b>createOutOfBandError()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/shared/wrapperfunctionresult/#ae0a341aa5651a0e6b296119ad73cdef5">llvm::orc::shared::WrapperFunctionResult</a></li>
 <li><b>createOutOfBandError()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/shared/wrapperfunctionresult/#a8e5d89bf6db44e74a23642fd04d94f73">llvm::orc::shared::WrapperFunctionResult</a></li>
 <li><b>createOutputDIE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/compileunit/#a80d99d15a9e1149425f3f33d4bafa84d">llvm::dwarf_linker::classic::CompileUnit</a></li>
@@ -14540,6 +14641,9 @@ keywords:
 <li><b>createReaders()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvreaderhandler/#ac09f0c7754ac2c529417c3a504b8f1d1">llvm::logicalview::LVReaderHandler</a></li>
 <li><b>createRedirectableSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/redirectablesymbolmanager/#ab736237f4b3f3a8c0569a3718caabcf0">llvm::orc::RedirectableSymbolManager</a></li>
 <li><b>createRedirectableSymbols()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/redirectablesymbolmanager/#aa3bba6d1a7f84b8ead4d44a6788ee929">llvm::orc::RedirectableSymbolManager</a></li>
+<li><b>createReductionFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad623afd8ebb3dfc080662cb43391b856">llvm::OpenMPIRBuilder</a></li>
+<li><b>createReductions()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab0996924f219129d8de3cc1b8830f768">llvm::OpenMPIRBuilder</a></li>
+<li><b>createReductionsGPU()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aaa655ca8bca40c564d0b7c81ebaf8ff9">llvm::OpenMPIRBuilder</a></li>
 <li><b>createReferenceType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#ab1b53df8ec7e16b15d8d72c50c9d7448">llvm::DIBuilder</a></li>
 <li><b>createRefSCC()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/#a6cc26f12e4bd55a68d563d2932dc1141">llvm::LazyCallGraph</a></li>
 <li><b>CreateReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#ab7a28dcef468d7f382405644a61ebdb6">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
@@ -14620,6 +14724,7 @@ keywords:
 <li><b>CreateRotImm()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand/#a8da46e955a2317f9cdb9cc6a08d02d7f">anonymous{ARMAsmParser.cpp}::ARMOperand</a></li>
 <li><b>createRTTIPointerPrologue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdbuilder/#adcc9fe7836755744b735d32c7e58901f">llvm::MDBuilder</a></li>
 <li><b>createRuntimeCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-addresssanitizer-cpp-/runtimecallinserter/#ac35be115df797c75d7875cf63e56ea2b">anonymous{AddressSanitizer.cpp}::RuntimeCallInserter</a></li>
+<li><b>createRuntimeShuffleFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0d88ee325115ec9b60143c76f1d52dd6">llvm::OpenMPIRBuilder</a></li>
 <li><b>createRVVRegAllocPass()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvtargetmachine-cpp-/riscvpassconfig/#a133a13b65f016ae40049bb567e6c1850">anonymous{RISCVTargetMachine.cpp}::RISCVPassConfig</a></li>
 <li><b>createSame()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation/#abf0dcdacc18895c617de0fe50ac8499c">llvm::dwarf::UnwindLocation</a></li>
 <li><b>createSameValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccfiinstruction/#ae43652fadd6c5abd6a6554cd3395baee">llvm::MCCFIInstruction</a></li>
@@ -14642,9 +14747,11 @@ keywords:
 <li><b>CreateSDiv()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#aae4ce532b47b5df74ee2cd34f6bff281">llvm::IRBuilderBase</a></li>
 <li><b>CreateSecStartEnd()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-sanitizercoverage-cpp-/modulesanitizercoverage/#a4dcce7b14f9e00fd69615723f7814272">anonymous{SanitizerCoverage.cpp}::ModuleSanitizerCoverage</a></li>
 <li><b>createSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/linkgraph/#ae7114002397e58c659cf5716678c5011">llvm::jitlink::LinkGraph</a></li>
+<li><b>createSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a8565ee3d1c387153e57cd65a96390dfa">llvm::OpenMPIRBuilder</a></li>
 <li><b>createSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/wincoffwriter/#a8d99d1a1036350e8fbcb68bc440f6f70">llvm::WinCOFFWriter</a></li>
 <li><b>createSectionHeader()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/wasm/writer/#acc509a7bb79829154552f8632ba750bc">llvm::objcopy::wasm::Writer</a></li>
 <li><b>createSectionMap()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/dbistreambuilder/#a0af5d507fc700e7925e19c7e2911be9b">llvm::pdb::DbiStreamBuilder</a></li>
+<li><b>createSections()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#af36172c1f538b7305b44760997d5a3c2">llvm::OpenMPIRBuilder</a></li>
 <li><b>createSegment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gsym/gsymcreator/#a5a00b6c05d78359948c41de0ee1f20a4">llvm::gsym::GsymCreator</a></li>
 <li><b>createSegmentRecord()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/continuationrecordbuilder/#a7fb38a6bc81e98ab6bffab783c17bcd5">llvm::codeview::ContinuationRecordBuilder</a></li>
 <li><b>CreateSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a49b228f797f9b3563256da446100c3ac">llvm::IRBuilderBase</a></li>
@@ -14696,6 +14803,7 @@ keywords:
 <li><b>createSimpleReduction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vectorbuilder/#a4fe2dcc825f1f75c104a23ab6b405491">llvm::VectorBuilder</a></li>
 <li><b>createSimpleStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagonvectorcombine-cpp-/alignvectors/#a009a06a38cea706ec867a3d4e9a7fef1">anonymous{HexagonVectorCombine.cpp}::AlignVectors</a></li>
 <li><b>createSimpleType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/symbolcache/#ac35d7ed761c737bce29a2726d593d8bd">llvm::pdb::SymbolCache</a></li>
+<li><b>createSingle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a3e1a0b27abb4d57e2293c46802eee89d">llvm::OpenMPIRBuilder</a></li>
 <li><b>createSingleExitNode()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/spirvstructurizer/splitter/#ac643f3658b54504358c762b1fee80f63">llvm::SPIRVStructurizer::Splitter</a></li>
 <li><b>createSingletonCongruenceClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-newgvn-cpp-/newgvn/#a514a2f69694ccfafe2324bba37dfa4e8">anonymous{NewGVN.cpp}::NewGVN</a></li>
 <li><b>CreateSIToFP()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a2e19b7738daed96724457c786521e5e1">llvm::IRBuilderBase</a></li>
@@ -14786,10 +14894,14 @@ keywords:
 <li><b>createTailCallBranchInstr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcframelowering/#a45d19fc3f98636936e5c13e7d9988a34">llvm::PPCFrameLowering</a></li>
 <li><b>createTailRecurseLoopHeader()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-tailrecursionelimination-cpp-/tailrecursioneliminator/#a3f4c3e7f42bf5fe508f9293509d8cd60">anonymous{TailRecursionElimination.cpp}::TailRecursionEliminator</a></li>
 <li><b>CreateTailRelocSym()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-sparcasmparser-cpp-/sparcoperand/#aec1a7821c156445621317c79635338fa">anonymous{SparcAsmParser.cpp}::SparcOperand</a></li>
+<li><b>createTarget()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aa4d3157abd79d79562db3feb088706f4">llvm::OpenMPIRBuilder</a></li>
+<li><b>createTargetData()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ae54a581ccf494afe52ae45af317bbd58">llvm::OpenMPIRBuilder</a></li>
+<li><b>createTargetDeinit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a1e1e2695745252cae26a9843b4d8daa3">llvm::OpenMPIRBuilder</a></li>
 <li><b>CreateTargetHazardRecognizer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a1b4105078d9414276e67bb58a5f27306">llvm::ARMBaseInstrInfo</a></li>
 <li><b>CreateTargetHazardRecognizer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#a8abe69762bb82834b786c78b35015734">llvm::PPCInstrInfo</a></li>
 <li><b>CreateTargetHazardRecognizer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a7242b69b2f705111801d717e2ea243b5">llvm::TargetInstrInfo</a></li>
 <li><b>CreateTargetIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#af3137f95a28140bba664c03c2f350870">llvm::MachineOperand</a></li>
+<li><b>createTargetInit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a7db9daa323dee69eb9ecc380ce6edae8">llvm::OpenMPIRBuilder</a></li>
 <li><b>createTargetMachine()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/ltocodegenerator/#a52301bf564759ac74c09807da982d9d2">llvm::LTOCodeGenerator</a></li>
 <li><b>createTargetMachine()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/jittargetmachinebuilder/#ad851482024748222bc5538345ec2bd12">llvm::orc::JITTargetMachineBuilder</a></li>
 <li><b>createTargetMachine()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/target/#a97b31e68ba164458a37e49e7d1053fc1">llvm::Target</a></li>
@@ -14803,6 +14915,7 @@ keywords:
 <li><b>CreateTargetPostRAHazardRecognizer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siinstrinfo/#aec04a6eb6586a960ecd2e9210cac2952">llvm::SIInstrInfo</a></li>
 <li><b>CreateTargetPostRAHazardRecognizer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a000bd55721d30de4fee9eb3d812714ea">llvm::TargetInstrInfo</a></li>
 <li><b>CreateTargetPostRAHazardRecognizer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a55d2e824f1b036f45b51519f2844720b">llvm::TargetInstrInfo</a></li>
+<li><b>createTargetRegionEntryAddr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a1713e12dd45c8fe0066bc7294cb18e7a">llvm::OpenMPIRBuilder</a></li>
 <li><b>createTargetRegisterAllocator()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-nvptxtargetmachine-cpp-/nvptxpassconfig/#a563131d2198d70f6410d25a3e67dda5f">anonymous{NVPTXTargetMachine.cpp}::NVPTXPassConfig</a></li>
 <li><b>createTargetRegisterAllocator()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-spirvtargetmachine-cpp-/spirvpassconfig/#a6e9eb07321f4c47ecc902f60c6a03ac8">anonymous{SPIRVTargetMachine.cpp}::SPIRVPassConfig</a></li>
 <li><b>createTargetRegisterAllocator()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-webassemblytargetmachine-cpp-/webassemblypassconfig/#a9eb82e354d23248e7a99cecc1fb98e55">anonymous{WebAssemblyTargetMachine.cpp}::WebAssemblyPassConfig</a></li>
@@ -14813,6 +14926,8 @@ keywords:
 <li><b>CreateTargetScheduleState()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a186f383639b8c8fe141b55411d1121a9">llvm::TargetInstrInfo</a></li>
 <li><b>createTargetUnaryExpr()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsasmparser-cpp-/mipsasmparser/#a79d8b8865a2b71781082b9ea2da3b5a5">anonymous{MipsAsmParser.cpp}::MipsAsmParser</a></li>
 <li><b>createTargetUnaryExpr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mctargetasmparser/#abefd1a22d96014163fe12930da2364ec">llvm::MCTargetAsmParser</a></li>
+<li><b>createTask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0af3c7a02c1325c04c59f857604bd4f3">llvm::OpenMPIRBuilder</a></li>
+<li><b>createTaskgroup()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a1f8b732c2f951d56302d4431f00f16bd">llvm::OpenMPIRBuilder</a></li>
 <li><b>createTaskwait()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a419ffad9e4d59275e299ce1ad3c73cd4">llvm::OpenMPIRBuilder</a></li>
 <li><b>createTaskyield()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0b0ed7f600549e4239bf10b5b85de66c">llvm::OpenMPIRBuilder</a></li>
 <li><b>createTBAAAccessTag()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdbuilder/#a0dc11a237cde4f082d956d6c60af0113">llvm::MDBuilder</a></li>
@@ -14823,6 +14938,7 @@ keywords:
 <li><b>createTBAAStructTagNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdbuilder/#ae8e9e63ea1324e1c2ac905f4b9b68bd6">llvm::MDBuilder</a></li>
 <li><b>createTBAAStructTypeNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdbuilder/#a9f79697a0b629233029dab1823b23be8">llvm::MDBuilder</a></li>
 <li><b>createTBAATypeNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdbuilder/#aecae3ba429df973662fc145e3347149b">llvm::MDBuilder</a></li>
+<li><b>createTeams()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a3f603d822817256077c95e6573f2b14a">llvm::OpenMPIRBuilder</a></li>
 <li><b>createTempFunctionFwdDecl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#a3ae4713be3cb6c59e31f8e83d02ee7e3">llvm::DIBuilder</a></li>
 <li><b>createTempGlobalVariableFwdDecl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#a0836d7f22fd1d8bd8d2fd97da17bc9ba">llvm::DIBuilder</a></li>
 <li><b>createTemplateAlias()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#a88e594333479ba5f47d695a163a72846">llvm::DIBuilder</a></li>
@@ -15179,7 +15295,7 @@ keywords:
 <li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunit/memorygroup/#ace475942d876eace51bdd190294c730d">llvm::mca::LSUnit::MemoryGroup</a></li>
 <li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunitbase/#a5efdb8e58c2a8c3c2ff6291ac2706c18">llvm::mca::LSUnitBase</a></li>
 <li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/readstate/#a9c112ef420d848772a69cff91ccfd512">llvm::mca::ReadState</a></li>
-<li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a32dd6a9044edddba5266d1c62dd34db2">llvm::mca::ResourceState</a></li>
+<li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#aa1f2beab8ceaaf066d1523dd523fe25a">llvm::mca::ResourceManager</a></li>
 <li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#ab88715985e19d51a306fb8be0cf857f3">llvm::mca::Scheduler</a></li>
 <li><b>cycleEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/writestate/#a8e8fb2ef994bda08fd66b7a8b2f912e1">llvm::mca::WriteState</a></li>
 <li><b>CycleInfoPrinterPass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cycleinfoprinterpass/#a39097402fd4e306eeae9153e3e0e4a20">llvm::CycleInfoPrinterPass</a></li>
@@ -15198,7 +15314,7 @@ keywords:
 <li><b>cycleStart()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/stage/#a80de2aef0dcd705677e781f80147725e">llvm::mca::Stage</a></li>
 <li><b>cyclesUntilReturn()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-x86padshortfunction-cpp-/padshortfunc/#af39452419323125a4c31111db4e03856">anonymous{X86PadShortFunction.cpp}::PadShortFunc</a></li>
 </ul>
-<p>7942 entries</p>
+<p>7997 entries</p>
 
 ## - D -
 
@@ -15649,6 +15765,7 @@ keywords:
 <li><b>decomposeConstVolatile()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarftypeprinter/#a3ffc1f6f44d6f01f289108370a0fbf21">llvm::DWARFTypePrinter&lt;DieType&gt;</a></li>
 <li><b>decomposeGEP()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mvegatherscatterlowering-cpp-/mvegatherscatterlowering/#ad7e30a9b3ac391e7862223bfe52581f6">anonymous{MVEGatherScatterLowering.cpp}::MVEGatherScatterLowering</a></li>
 <li><b>DecomposeGEPExpression()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicaaresult/#a3334c8974b875c83f227f07d9d360dae">llvm::BasicAAResult</a></li>
+<li><b>decomposeMachineOperandsTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#acb8985e96f5a8a270fc9d57fc8c99920">llvm::AArch64InstrInfo</a></li>
 <li><b>decomposeMachineOperandsTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a31eba269056d6cd7830101118d1d9547">llvm::ARMBaseInstrInfo</a></li>
 <li><b>decomposeMachineOperandsTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagoninstrinfo/#a21531eaca9ebc1b16dd6b6dbfc6ae785">llvm::HexagonInstrInfo</a></li>
 <li><b>decomposeMachineOperandsTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lanaiinstrinfo/#a4558f8112acab3ff5fff1e1729d2fb80">llvm::LanaiInstrInfo</a></li>
@@ -15669,6 +15786,8 @@ keywords:
 <li><b>decomposeMulByConstant()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86targetlowering/#aaef16aaed0ce790c381e75d7c9253f1e">llvm::X86TargetLowering</a></li>
 <li><b>decomposeMulByConstant()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xtensatargetlowering/#a5aaa4e25dcb7c49efaa3a2a5423a9416">llvm::XtensaTargetLowering</a></li>
 <li><b>decomposePtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mvegatherscatterlowering-cpp-/mvegatherscatterlowering/#af2961906c4bf81fe7bc8e7eb7a336ffa">anonymous{MVEGatherScatterLowering.cpp}::MVEGatherScatterLowering</a></li>
+<li><b>decomposeStackOffsetForDwarfOffsets()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#aff8cfe59027e5ffa1af1ff646a2da516">llvm::AArch64InstrInfo</a></li>
+<li><b>decomposeStackOffsetForFrameOffsets()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a06abc64620fa2741d4756f05c337c9aa">llvm::AArch64InstrInfo</a></li>
 <li><b>decomposeSubvectorInsertExtractToSubRegs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvtargetlowering/#a01ee44fd979fc25e2afe3d23a2079494">llvm::RISCVTargetLowering</a></li>
 <li><b>Decomposition()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decomposition/#acbe183d480c55ba96b3716679525c787">anonymous{ConstraintElimination.cpp}::Decomposition</a></li>
 <li><b>Decomposition()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decomposition/#ad3f108f2a6164e643c6418cbc08d6d8b">anonymous{ConstraintElimination.cpp}::Decomposition</a></li>
@@ -15944,6 +16063,7 @@ keywords:
 <li><b>deleteInstructionsInBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-newgvn-cpp-/newgvn/#ac62ef98203e3d760df843662e27cc66f">anonymous{NewGVN.cpp}::NewGVN</a></li>
 <li><b>deleteMachineBasicBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a889392a85aab80a2c2aa0ddd7cff116c">llvm::MachineFunction</a></li>
 <li><b>deleteMachineFunctionFor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfo/#af9bbdfe50af72a053dcce39a50ba5399">llvm::MachineModuleInfo</a></li>
+<li><b>deleteMachineInstr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a63a92e13c7107826b68916401528f35c">llvm::MachineFunction</a></li>
 <li><b>deleteMarkedDeadInsts()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/legalizationartifactcombiner/#a0d17dedd924eed66e10933d33fa7d081">llvm::LegalizationArtifactCombiner</a></li>
 <li><b>deleteMe()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memorydef/#ad0a512b16e3776d863775957cc869c16">llvm::MemoryDef</a></li>
 <li><b>deleteMe()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memoryphi/#a48d03b7f760ffc67f4aa6bea41b29196">llvm::MemoryPhi</a></li>
@@ -16177,6 +16297,7 @@ keywords:
 <li><b>deriveNewFramePointer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/coro/basecloner/#a2039a88cc5cd331c4012e856dde33eed">llvm::coro::BaseCloner</a></li>
 <li><b>desc()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/cl/desc/#a064c1faea2501f633f8e8695d78b7c3b">llvm::cl::desc</a></li>
 <li><b>descend()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-loopfuse-cpp-/loopdepthtree/#aea0d9800d14f08ba6d3597be21a1159c">anonymous{LoopFuse.cpp}::LoopDepthTree</a></li>
+<li><b>describeLoadedValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a7a1bb4352b705901de9836f44ad326f4">llvm::AArch64InstrInfo</a></li>
 <li><b>describeLoadedValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a9623871230b3a4317f06f55c576c404e">llvm::ARMBaseInstrInfo</a></li>
 <li><b>describeLoadedValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipsinstrinfo/#ac9fa612919367a702574336b92a242d2">llvm::MipsInstrInfo</a></li>
 <li><b>describeLoadedValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a6885e40448874565521daac98e11f50d">llvm::TargetInstrInfo</a></li>
@@ -17409,6 +17530,7 @@ keywords:
 <li><b>dump()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/appleacceltabledata/atom/#a8175b97ff6db40b4d7ac340099cfce86">llvm::AppleAccelTableData::Atom</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armconstantpoolvalue/#a72e996e33d02377f36d099211fedf9bc">llvm::ARMConstantPoolValue</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmtoken/#a9e8e74c88aca8715d0c131ce35b75387">llvm::AsmToken</a></li>
+<li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae88787fab8a5d948bd5100aded6fc799">llvm::AttributeList</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#ac43eb5815cf8c827bfd5ab7bc71b5283">llvm::AttributeListImpl</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#af6ce36dbf14e9ac50946fb22b1c2bca2">llvm::AttributeSet</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/baseindexoffset/#ac35bc2b25cf6caba17a6b9d662b52db8">llvm::BaseIndexOffset</a></li>
@@ -17581,6 +17703,7 @@ keywords:
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunit/#a0b9033ae934d66cde6f48838e4da5fa6">llvm::mca::LSUnit</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunitbase/#a05ad2c90a151c8858f7b96e573f93ac1">llvm::mca::LSUnitBase</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/registerfile/#a2055c0850627bf2b455c883667b78f3d">llvm::mca::RegisterFile</a></li>
+<li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#affc2d4b4c36db8ff43920257cd64d615">llvm::mca::ResourceManager</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#afa99bfd758109a4e146d24a336a8b7e4">llvm::mca::ResourceState</a></li>
 <li><b>dump()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mca/retirecontrolunit/#ab9754ca17ca12f24c9e82dc0d87f50f2">llvm::mca::RetireControlUnit</a></li>
 <li><b>dump()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#ad3b463eb7a35c82d80ad92090f8d7a13">llvm::mca::Scheduler</a></li>
@@ -17937,6 +18060,7 @@ keywords:
 <li><b>dumpNodeName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledag/#ac464b0883162724583f0f124c8be8157">llvm::ScheduleDAG</a></li>
 <li><b>DumpObjects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/dumpobjects/#afcdecffed69334cfd8fc517836656751">llvm::orc::DumpObjects</a></li>
 <li><b>dumpOS()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/argument/#a068026a02cfbf57847a29a10aec86286">llvm::sandboxir::Argument</a></li>
+<li><b>dumpOS()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#adb5063d2a20ba3cbc09d6fb56ffaabc2">llvm::sandboxir::BasicBlock</a></li>
 <li><b>dumpOS()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/cmpinst/#a71553c04d79dee6c0ca7ac1d66732120">llvm::sandboxir::CmpInst</a></li>
 <li><b>dumpOS()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#a528b9eb53f5e35beac3d1c8a15ab303c">llvm::sandboxir::Constant</a></li>
 <li><b>dumpOS()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constantaggregatezero/#ac160aa25e33ee624357efaa86e3fdb6e">llvm::sandboxir::ConstantAggregateZero</a></li>
@@ -18144,7 +18268,6 @@ keywords:
 <li><b>DwarfStreamer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarfstreamer/#a3b68ff50e1e1f073a066600407489bd8">llvm::dwarf_linker::classic::DwarfStreamer</a></li>
 <li><b>DwarfStringPool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpool/#aeb9e920e87fdf01c305c9cdcf1366e68">llvm::DwarfStringPool</a></li>
 <li><b>DwarfStringPoolEntryRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a747c3f0eda29a4b8cea30091c7e975cd">llvm::DwarfStringPoolEntryRef</a></li>
-<li><b>DwarfStringPoolEntryRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#aba578baca5b932aec30ae208a5f2d251">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>DwarfTagField()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-llparser-cpp-/dwarftagfield/#a39f87ebd58c03e0061921f72af1fc00d">anonymous{LLParser.cpp}::DwarfTagField</a></li>
 <li><b>DwarfTagField()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-llparser-cpp-/dwarftagfield/#a89e2ddd3bd2b461b5d9ff89b205a91ec">anonymous{LLParser.cpp}::DwarfTagField</a></li>
 <li><b>DWARFToGSYMFileIndex()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/gsym/cuinfo/#a44c3e2e1f1513822fef926de568c244f">llvm::gsym::CUInfo</a></li>
@@ -18246,7 +18369,7 @@ keywords:
 <li><b>DynamicSymbolTableSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/dynamicsymboltablesection/#a4f715db9864117c72b39e157d87bf506">llvm::objcopy::elf::DynamicSymbolTableSection</a></li>
 <li><b>DynSym()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ifs/anonymous-elfobjhandler-cpp-/dynsym/#a22017edfad4c22a9b03c51e61d642cc7">llvm::ifs::anonymous{ELFObjHandler.cpp}::DynSym&lt;ELFT&gt;</a></li>
 </ul>
-<p>3042 entries</p>
+<p>3049 entries</p>
 
 ## - E -
 
@@ -18928,6 +19051,7 @@ keywords:
 <li><b>EmitAtomicLoadLibcall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/atomicinfo/#a5df935e7c87e3e1dc8b3d7e1870ee1c9">llvm::AtomicInfo</a></li>
 <li><b>emitAtomicLoadMinMax()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemztargetlowering/#ad2af9b4ee9f3f3b618e5f50e9dd966e6">llvm::SystemZTargetLowering</a></li>
 <li><b>EmitAtomicLoadOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/atomicinfo/#a7a533a649b6b2b58c0705ba06f522598">llvm::AtomicInfo</a></li>
+<li><b>emitAtomicUpdate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aa6d8ea685a6567c8b8747c7ac1545788">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitAtributesSubsection()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64elfstreamer-cpp-/aarch64targetasmstreamer/#a8396a2c28bca0bb7adf67d5c72873528">anonymous{AArch64ELFStreamer.cpp}::AArch64TargetAsmStreamer</a></li>
 <li><b>emitAtributesSubsection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetelfstreamer/#ae9b82193782b24f314c0f6b9614f1b73">llvm::AArch64TargetELFStreamer</a></li>
 <li><b>emitAtributesSubsection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetstreamer/#a1b052670a8e9d827535baa7fbddf87de">llvm::AArch64TargetStreamer</a></li>
@@ -18990,8 +19114,10 @@ keywords:
 <li><b>emitBlend()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64pointerauth-cpp-/aarch64pointerauth/#a908c3c8a6a68f0609388c1566eb9955a">anonymous{AArch64PointerAuth.cpp}::AArch64PointerAuth</a></li>
 <li><b>emitBlob()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitstreamwriter/#a42a0cfa56ebe2de750170da9db67f927">llvm::BitstreamWriter</a></li>
 <li><b>emitBlob()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitstreamwriter/#ac7a72ed69b91577b81089ff1a7a57197">llvm::BitstreamWriter</a></li>
+<li><b>emitBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a9199bb920d3966ef9c614a623c7af495">llvm::OpenMPIRBuilder</a></li>
 <li><b>EmitBlockInfoAbbrev()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitstreamwriter/#a7507fea7693cf3d8124918eca60eef85">llvm::BitstreamWriter</a></li>
 <li><b>emitBPOSGE32()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipssetargetlowering/#a92bcfb49a7996d716520ae2f549ba17f">llvm::MipsSETargetLowering</a></li>
+<li><b>emitBranch()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0c977097cc5c8d9c7c049e8fc988fdcf">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitBranchForMergedCondition()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irtranslator/#a90ef59d749a900a49785a8377e5113fc">llvm::IRTranslator</a></li>
 <li><b>EmitBranchForMergedCondition()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondagbuilder/#a41a8f459a2dcfcfc624394df6b432689">llvm::SelectionDAGBuilder</a></li>
 <li><b>emitBTFExtSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/btfdebug/#aaba5ee21cd29085b14b233256dcb7f9d">llvm::BTFDebug</a></li>
@@ -19042,6 +19168,7 @@ keywords:
 <li><b>emitCallsiteEntries()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmaps/#a1b5ea170fffe072b252dec9bd7dd5edf">llvm::StackMaps</a></li>
 <li><b>emitCallSiteOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#ab4b86e71e534c6d923ba86376ff866c5">llvm::AsmPrinter</a></li>
 <li><b>emitCallSiteValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#af90813313f2afd5050b75d119046c2c9">llvm::AsmPrinter</a></li>
+<li><b>emitCancelationCheckImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a98b55a0d95b3926151545101e4f2aef9">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitCantUnwind()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armelfstreamer/#ad92995bd7470bfe1e25b937d8c1e7ea7">anonymous{ARMELFStreamer.cpp}::ARMELFStreamer</a></li>
 <li><b>emitCantUnwind()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armtargetasmstreamer/#acc5bb419edc500516f968a9d6138e91a">anonymous{ARMELFStreamer.cpp}::ARMTargetAsmStreamer</a></li>
 <li><b>emitCantUnwind()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armtargetelfstreamer/#aa3d9107743df1b4e890afb3f89e4a8d2">anonymous{ARMELFStreamer.cpp}::ARMTargetELFStreamer</a></li>
@@ -19201,6 +19328,8 @@ keywords:
 <li><b>emitCombineRR()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagoncopytocombine-cpp-/hexagoncopytocombine/#a8e0cd357e390f8639d9b28e93e4e495b">anonymous{HexagonCopyToCombine.cpp}::HexagonCopyToCombine</a></li>
 <li><b>emitComment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/codeviewrecordio/#ac63578d84a63364631dbec6b2416b782">llvm::codeview::CodeViewRecordIO</a></li>
 <li><b>EmitCommentsAndEOL()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mcasmstreamer-cpp-/mcasmstreamer/#ab07e49a5499032dc8f97198892218853">anonymous{MCAsmStreamer.cpp}::MCAsmStreamer</a></li>
+<li><b>emitCommonDirectiveEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#af4f8d828d3259d777583fd581935f8e9">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitCommonDirectiveExit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a229ff4e9eef9f328f8200b1cf14ac699">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitCommonFunctionComments()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpuasmprinter/#acbdd21f58c62601a214532f459277da8">llvm::AMDGPUAsmPrinter</a></li>
 <li><b>emitCommonHeader()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/btfdebug/#a1627db0068d68e268da1b7a88d1a9032">llvm::BTFDebug</a></li>
 <li><b>emitCommonHeader()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-2/#ab0c77b8d4ff2ea875d1c29128d4ef848">llvm::DwarfUnit</a></li>
@@ -19833,6 +19962,7 @@ keywords:
 <li><b>emitFill()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvelfstreamer/#ab66ae90afc003b5739dac0c82e32dda9">llvm::RISCVELFStreamer</a></li>
 <li><b>EmitFixup()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armelfstreamer/#ae5d668c2c68f154cd48ba3a960de50f4">anonymous{ARMELFStreamer.cpp}::ARMELFStreamer</a></li>
 <li><b>emitFlagsForSetcc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86targetlowering/#afcc90943b4dd635e767a7a06bb10458e">llvm::X86TargetLowering</a></li>
+<li><b>emitFlush()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2a4b97bb7670d306c756cdbd5ee9b560">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitFlushICache()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvtargetlowering/#a7b7128cbc1b0b5f44ef2e1c1e3614748">llvm::RISCVTargetLowering</a></li>
 <li><b>emitFMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetasmstreamer/#a981cf47ab596eebaca38a9de41745a58">llvm::MipsTargetAsmStreamer</a></li>
 <li><b>emitFMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetelfstreamer/#a9eeac4cc804bfa81fbf7da9e1dcff8f9">llvm::MipsTargetELFStreamer</a></li>
@@ -19967,6 +20097,8 @@ keywords:
 <li><b>emitGlobalIFunc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a9620e0fe0df6213a0f8df36f4fe394ff">llvm::AsmPrinter</a></li>
 <li><b>emitGlobals()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/executionengine/#aca88a09e03611e624c1b6ac0aad41ce3">llvm::ExecutionEngine</a></li>
 <li><b>emitGlobals()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nvptxasmprinter/#a79540bd006abce467288532fadb91837">llvm::NVPTXAsmPrinter</a></li>
+<li><b>emitGlobalToListCopyFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2e59efece640b939c81eaf81fa02ab32">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitGlobalToListReduceFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6401106579001ad5ac42a7332bfffd37">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitGlobalType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblytargetasmstreamer/#aa2841293de9505ceb9ef958d38fa1526">llvm::WebAssemblyTargetAsmStreamer</a></li>
 <li><b>emitGlobalType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblytargetnullstreamer/#a7eaabbf833d0e587cef439e7b8490dc8">llvm::WebAssemblyTargetNullStreamer</a></li>
 <li><b>emitGlobalType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblytargetstreamer/#a72e444cf89b61ea6d36b20c6163ce69b">llvm::WebAssemblyTargetStreamer</a></li>
@@ -20038,6 +20170,7 @@ keywords:
 <li><b>emitIDRLSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzasmprinter/#ac1c348e4f0995733b609dfce63553c62">llvm::SystemZAsmPrinter</a></li>
 <li><b>emitIf()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-silowercontrolflow-cpp-/silowercontrolflow/#a32d25f1a85ca1d14e4847668a7d1305f">anonymous{SILowerControlFlow.cpp}::SILowerControlFlow</a></li>
 <li><b>emitIfBreak()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-silowercontrolflow-cpp-/silowercontrolflow/#a7b2ea114e6761e379a4687718ec4b57a">anonymous{SILowerControlFlow.cpp}::SILowerControlFlow</a></li>
+<li><b>emitIfClause()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a39b12e3ad8afd4183a2cd63f1b1b8746">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitII()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetstreamer/#a7ff09aba59d7dcc5dd800735494b14ff">llvm::MipsTargetStreamer</a></li>
 <li><b>emitImm()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/intelexpr/#a90c2a69257a8fb499590383bd6b41f41">llvm::IntelExpr</a></li>
 <li><b>emitImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86mccodeemitter/#ac2f5eebb5cb136ccfeb2e1a4cad662df">anonymous{X86MCCodeEmitter.cpp}::X86MCCodeEmitter</a></li>
@@ -20220,6 +20353,7 @@ keywords:
 <li><b>emitInterruptEpilogueStub()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipsseframelowering/#ae4a585ee1f55c1001050615c81182ed5">llvm::MipsSEFrameLowering</a></li>
 <li><b>emitInterruptPrologueStub()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipsseframelowering/#aa4eef05b7c70e372a9a5b157cfeaca6b">llvm::MipsSEFrameLowering</a></li>
 <li><b>EmitInterruptVectorSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-msp430asmprinter-cpp-/msp430asmprinter/#a94bff456a6f3ec56f6db8eb5c0aa1acb">anonymous{MSP430AsmPrinter.cpp}::MSP430AsmPrinter</a></li>
+<li><b>emitInterWarpCopyFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#af2b92df8e0b82feb2e05a5bb228ff1fc">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitIntExt()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64fastisel-cpp-/aarch64fastisel/#a5a280f68eafced52383ef9d8d5c9925b">anonymous{AArch64FastISel.cpp}::AArch64FastISel</a></li>
 <li><b>emitIntExt()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsfastisel-cpp-/mipsfastisel/#a4678e09ecc5679e2b50677ee07a5a31e">anonymous{MipsFastISel.cpp}::MipsFastISel</a></li>
 <li><b>emitIntExt()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsfastisel-cpp-/mipsfastisel/#a64bc82ec54ccf5008a475a8f682a5b1b">anonymous{MipsFastISel.cpp}::MipsFastISel</a></li>
@@ -20283,8 +20417,10 @@ keywords:
 <li><b>emitKernelAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamermsgpackv5/#ae8b78bc8c92db11a11ca0cf7f7fc6f90">llvm::AMDGPU::HSAMD::MetadataStreamerMsgPackV5</a></li>
 <li><b>EmitKernelCodeT()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpu/amdgpumckernelcodet/#a7a26180c2fb2542d3bbbf51b33da6569">llvm::AMDGPU::AMDGPUMCKernelCodeT</a></li>
 <li><b>EmitKernelCodeT()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpu/amdgpumckernelcodet/#a766a8f22f00b2895f373b0328840e760">llvm::AMDGPU::AMDGPUMCKernelCodeT</a></li>
+<li><b>emitKernelExecutionMode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a1943d078483c15aa78cb00f7fff2590c">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitKernelFunctionDirectives()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nvptxasmprinter/#a5e4868cb2203ae82d5d8f57e48695546">llvm::NVPTXAsmPrinter</a></li>
 <li><b>emitKernelLanguage()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamermsgpackv4/#a161232fcda35d33312029e1d80015b77">llvm::AMDGPU::HSAMD::MetadataStreamerMsgPackV4</a></li>
+<li><b>emitKernelLaunch()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a9f09d4b7d64e71987be7bb45d8694ffe">llvm::OpenMPIRBuilder</a></li>
 <li><b>EmitKey()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofrecordwritertrait/#ad6f07481b72e3568320b1a68fe1d320d">llvm::InstrProfRecordWriterTrait</a></li>
 <li><b>EmitKey()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memprof/callstackwritertrait/#aa48f71d55544a852ac0d0aabb4e9ace2">llvm::memprof::CallStackWriterTrait</a></li>
 <li><b>EmitKey()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memprof/framewritertrait/#a1d14cab68adc6f0511436bacbf46cfee">llvm::memprof::FrameWriterTrait</a></li>
@@ -20351,6 +20487,8 @@ keywords:
 <li><b>emitLinkerOptions()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mcasmstreamer-cpp-/mcasmstreamer/#a8a393824072c5571972394a72ee86cf1">anonymous{MCAsmStreamer.cpp}::MCAsmStreamer</a></li>
 <li><b>emitLinkerOptions()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mcmachostreamer-cpp-/mcmachostreamer/#a20df437db4d5607918482b6758bd9ffa">anonymous{MCMachOStreamer.cpp}::MCMachOStreamer</a></li>
 <li><b>emitLinkerOptions()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcstreamer/#ac27396eeeea0b7f7842ad7015444f5b9">llvm::MCStreamer</a></li>
+<li><b>emitListToGlobalCopyFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a9a44a77d29e591a2a0c4202074c68e80">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitListToGlobalReduceFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a89a9562bf041f9579c3a632035c32090">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitLiteral()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xtensatargetasmstreamer/#a3bed684acd63359143ccec5b37ccd397">llvm::XtensaTargetAsmStreamer</a></li>
 <li><b>emitLiteral()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xtensatargetelfstreamer/#a6b2f770d3a95aa3a96fdde70ad59fbbd">llvm::XtensaTargetELFStreamer</a></li>
 <li><b>emitLiteral()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/xtensatargetstreamer/#ae6906efd572266057d0047dda68411a0">llvm::XtensaTargetStreamer</a></li>
@@ -20474,6 +20612,7 @@ keywords:
 <li><b>emitMacroTableImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a1c3a091a8bbfad0d558dc8a20151afb7">llvm::dwarf_linker::parallel::CompileUnit</a></li>
 <li><b>emitMacroTables()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarfemitter/#a7e16c9f1d1e12c1cc34f48b1685e7aee">llvm::dwarf_linker::classic::DwarfEmitter</a></li>
 <li><b>emitMacroTables()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarfstreamer/#ade966339669e6b2fad9f486468044008">llvm::dwarf_linker::classic::DwarfStreamer</a></li>
+<li><b>emitMapperCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a654b33adee2ae78ce74ecbe6aa5e5282">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitMappingSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64elfstreamer-cpp-/aarch64elfstreamer/#a842528ff6b06d6dec9f191ccc12ee280">anonymous{AArch64ELFStreamer.cpp}::AArch64ELFStreamer</a></li>
 <li><b>emitMappingSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armelfstreamer/#a7acaebe0e244b16ff5bdd42d52afe237">anonymous{ARMELFStreamer.cpp}::ARMELFStreamer</a></li>
 <li><b>EmitMappingSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armelfstreamer/#a579d1243aac3362c765939ad2b0a0326">anonymous{ARMELFStreamer.cpp}::ARMELFStreamer</a></li>
@@ -20536,6 +20675,7 @@ keywords:
 <li><b>emitNarrowVector()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64instructionselector-cpp-/aarch64instructionselector/#a72a69a004bf8c5d96a593dcb98735fc6">anonymous{AArch64InstructionSelector.cpp}::AArch64InstructionSelector</a></li>
 <li><b>EmitNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/scheduledagrrlist/#acbb8b96518c5b89e76b69fafd1852d74">anonymous{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</a></li>
 <li><b>EmitNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instremitter/#a461913029999dc961dbc0aff26365413">llvm::InstrEmitter</a></li>
+<li><b>emitNonContiguousDescriptor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a827b80924bcd29f32b772a4ed162fb68">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitNoop()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-postraschedulerlist-cpp-/schedulepostratdlist/#a00420b14ef66ef3997782ca767930070">anonymous{PostRASchedulerList.cpp}::SchedulePostRATDList</a></li>
 <li><b>EmitNoop()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnhazardrecognizer/#a441eaa1d314b850d169305bfd9e22737">llvm::GCNHazardRecognizer</a></li>
 <li><b>EmitNoop()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/multihazardrecognizer/#a22f7c50913c8449715bab579036208e6">llvm::MultiHazardRecognizer</a></li>
@@ -20555,8 +20695,12 @@ keywords:
 <li><b>emitObjectArch()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armtargetelfstreamer/#ac5f31e5d336946e15f21b8d2a9055326">anonymous{ARMELFStreamer.cpp}::ARMTargetELFStreamer</a></li>
 <li><b>emitObjectArch()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armtargetstreamer/#a7245dfb3e78f51e165602c9e3dbf8a6f">llvm::ARMTargetStreamer</a></li>
 <li><b>emitObjName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeviewdebug/#ac451a3e8d9492479566dbe85eb0bcc6b">llvm::CodeViewDebug</a></li>
+<li><b>emitOffloadingArrays()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a752e863c1af5fe463d0f08574492c12f">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitOffloadingArraysAndArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a966e441c1e3f27fce994c360b55abae9">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitOffloadingArraysArgument()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#adb95f78638066c9b6ccba6e3a7d335da">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitOffset()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/sectiondescriptor/#a2b514ad5d75b2375ee443a0338d694e8">llvm::dwarf_linker::parallel::SectionDescriptor</a></li>
 <li><b>emitOffsets()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-acceltable-cpp-/acceltablewriter/#a637e26f48b1c1e072264db82f1ebbf1d">anonymous{AccelTable.cpp}::AccelTableWriter</a></li>
+<li><b>EmitOMPInlinedRegion()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a233f727933cae11ca5eed3ba2142bf41">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitOne()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcdwarflinetable/#adf60d16739e1ceabb1cee9e9dede7ba5">llvm::MCDwarfLineTable</a></li>
 <li><b>emitOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bcarray/#ab6ac0fabd6449680e3eda2025d1a50ec">llvm::BCArray&lt;ElementTy&gt;</a></li>
 <li><b>emitOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bcblob/#aa7f7ef55083b0adc089a39f5c6b4e284">llvm::BCBlob</a></li>
@@ -20710,6 +20854,7 @@ keywords:
 <li><b>emitRedirectableSymbols()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/lazyreexportsmanager/#a6486a3a29c59402b6d71a506d7b9d40c">llvm::orc::LazyReexportsManager</a></li>
 <li><b>emitRedirectableSymbols()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/redirectablesymbolmanager/#adeba1076cb445206426dd27c5158c16c">llvm::orc::RedirectableSymbolManager</a></li>
 <li><b>emitReduction()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-slpvectorizer-cpp-/horizontalreduction/#aeef4eed59a6b591aa4eeabd821facd0b">anonymous{SLPVectorizer.cpp}::HorizontalReduction</a></li>
+<li><b>emitReductionListCopy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2e4dd18eb0b858f2905a2f5f9d12960a">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitReentryTrampolines()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/lazyreexportsmanager/#a38634af3fdc553a7eacb20fad2600e01">llvm::orc::LazyReexportsManager</a></li>
 <li><b>emitRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcdwarflinestr/#ad325ab6e610eb8bd1f59534515561fdc">llvm::MCDwarfLineStr</a></li>
 <li><b>EmitRegisterName()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mcasmstreamer-cpp-/mcasmstreamer/#a6bc00d06c62e15be5f5081158962456d">anonymous{MCAsmStreamer.cpp}::MCAsmStreamer</a></li>
@@ -20742,6 +20887,7 @@ keywords:
 <li><b>emitREXPrefix()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86mccodeemitter/#a633bfa32e2919311ac4c7445e29587d0">anonymous{X86MCCodeEmitter.cpp}::X86MCCodeEmitter</a></li>
 <li><b>emitRI()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetstreamer/#aaac5a23f685560581a0ed18649b930af">llvm::MipsTargetStreamer</a></li>
 <li><b>emitRLDICWhenLoweringJumpTables()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-ppcmipeephole-cpp-/ppcmipeephole/#a8434313f5c03e968594610d03d405079">anonymous{PPCMIPeephole.cpp}::PPCMIPeephole</a></li>
+<li><b>emitRMWOpAsInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a145de1d8971dac0fcc64919ecc758f3e">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitRR()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetstreamer/#a936108fd0c95676dd98dcfb5ca1d8773">llvm::MipsTargetStreamer</a></li>
 <li><b>emitRRI()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetstreamer/#a187cf8bd0c76fa7b07a76bdf6938c47e">llvm::MipsTargetStreamer</a></li>
 <li><b>emitRRIII()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipstargetstreamer/#a09e7b7665f50b4338f746a50f6a454b1">llvm::MipsTargetStreamer</a></li>
@@ -20781,6 +20927,7 @@ keywords:
 <li><b>EmitSetSP()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/unwindopcodeassembler/#a1564384a9331059dce31b7164158bc97">llvm::UnwindOpcodeAssembler</a></li>
 <li><b>emitShadowPadding()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86asmprinter/stackmapshadowtracker/#a993606bfb3d7cbb710cad681c34aaa6a">llvm::X86AsmPrinter::StackMapShadowTracker</a></li>
 <li><b>EmitShiftInstr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/msp430targetlowering/#a33dd164bd4caf16d69db25a98f5d338f">llvm::MSP430TargetLowering</a></li>
+<li><b>emitShuffleAndReduceFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aac0d4846664b3da00ab8601767c90a0a">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitSIBByte()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86mccodeemitter/#ae9d7243a5b6afc8efbd07e7eb0f52eae">anonymous{X86MCCodeEmitter.cpp}::X86MCCodeEmitter</a></li>
 <li><b>emitSigned()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/debuglocdwarfexpression/#aafd6ad35aac1a90a1c7d0f2cab33d4a5">llvm::DebugLocDwarfExpression</a></li>
 <li><b>emitSigned()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diedwarfexpression/#acb2f75931c5fbbc7dbcd9d23d42a9393">llvm::DIEDwarfExpression</a></li>
@@ -20986,6 +21133,11 @@ keywords:
 <li><b>EmitTargetCodeForStrnlen()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzselectiondaginfo/#a6f20163a74746a3592d5a323eb28129f">llvm::SystemZSelectionDAGInfo</a></li>
 <li><b>EmitTargetFeatures()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblyasmprinter/#a06dab5b53d53c65a118f25ea11570352">llvm::WebAssemblyAsmPrinter</a></li>
 <li><b>emitTargetID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamermsgpackv4/#a935ca0164610567e453bd629e5f6da0e">llvm::AMDGPU::HSAMD::MetadataStreamerMsgPackV4</a></li>
+<li><b>emitTargetKernel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad48c785749c7160070b39be42c67d2b7">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitTargetRegionFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a567502d7244077ed45e0c9471d31ba4c">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitTargetTask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2841680b34ec9c2c7185a877f8f8b4c8">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitTaskwaitImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a177df2c9d7d8692ed214018f420c3de6">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitTaskyieldImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6383328cfcdbbd56502b92f9e2415432">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitTBSSSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mcasmstreamer-cpp-/mcasmstreamer/#afb1b0b113e4532d3f1e83b665f9c1906">anonymous{MCAsmStreamer.cpp}::MCAsmStreamer</a></li>
 <li><b>emitTBSSSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mcmachostreamer-cpp-/mcmachostreamer/#a2cc7ffb47b770c4b442fd456d6c66963">anonymous{MCMachOStreamer.cpp}::MCMachOStreamer</a></li>
 <li><b>emitTBSSSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcelfstreamer/#ad062afbbe3efa8e98e50f016c3d42726">llvm::MCELFStreamer</a></li>
@@ -21067,6 +21219,7 @@ keywords:
 <li><b>emitTypeInformation()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeviewdebug/#a08004a112f1f55ab7037d41eceb78ec6">llvm::CodeViewDebug</a></li>
 <li><b>emitTypeInfos()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armexception/#af88e2a2ad3e73ab0f3994b4c7c0ad17b">llvm::ARMException</a></li>
 <li><b>emitTypeInfos()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ehstreamer/#a0693fd10cd699cd25acfe38350e47577">llvm::EHStreamer</a></li>
+<li><b>emitUDMapperArrayInitOrDel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a9c12e64fffe008109723c3ca4618f988">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitULEB128()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apbytestreamer/#a3b2caf0bc04302e3d73e082b475a72ed">llvm::APByteStreamer</a></li>
 <li><b>emitULEB128()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a08ec3698e95cf5fd8194cff1a988803e">llvm::AsmPrinter</a></li>
 <li><b>emitULEB128()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bufferbytestreamer/#a3a51263347faf8ada3bc99807c509bad">llvm::BufferByteStreamer</a></li>
@@ -21095,6 +21248,8 @@ keywords:
 <li><b>emitUnwindRaw()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armtargetasmstreamer/#adc9702ef8aa6a29846ee83a87b9e679a">anonymous{ARMELFStreamer.cpp}::ARMTargetAsmStreamer</a></li>
 <li><b>emitUnwindRaw()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armelfstreamer-cpp-/armtargetelfstreamer/#ad8f0154dbe47852ae5850385a750407c">anonymous{ARMELFStreamer.cpp}::ARMTargetELFStreamer</a></li>
 <li><b>emitUnwindRaw()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armtargetstreamer/#a087ea52d8224d56676b4d9d4991e5433">llvm::ARMTargetStreamer</a></li>
+<li><b>emitUsed()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a3bb33831dbcaa836f630ed1dc986b5c2">llvm::OpenMPIRBuilder</a></li>
+<li><b>emitUserDefinedMapper()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aad01bd2643d37f64f9d9a2933b8ddfc2">llvm::OpenMPIRBuilder</a></li>
 <li><b>emitUses()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-instrprofiling-cpp-/instrlowerer/#aac8a9ef6baf5a9153e54f21187f521c6">anonymous{InstrProfiling.cpp}::InstrLowerer</a></li>
 <li><b>emitV2FileDirTables()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mcdwarflinetableheader/#a1326bb7f4ebb54f9e6f400b0e07c9c7d">llvm::MCDwarfLineTableHeader</a></li>
 <li><b>emitV5FileDirTables()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mcdwarflinetableheader/#a80dafec99dbdd3400469e41c903f838f">llvm::MCDwarfLineTableHeader</a></li>
@@ -21427,6 +21582,7 @@ keywords:
 <li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimepointerchecking/#a9cf66c1cf0a720805c2c9d396f9c0b1d">llvm::RuntimePointerChecking</a></li>
 <li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/functionid/#a8f6fbd8851c1e7809544abaf1fae75a0">llvm::sampleprof::FunctionId</a></li>
 <li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/functionsamples/#aa1b0659ee7d8e17ab407b3bd902e280c">llvm::sampleprof::FunctionSamples</a></li>
+<li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a061ff476c5e8bda6b0e8c3975583f8f0">llvm::sandboxir::BasicBlock</a></li>
 <li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dependencygraph/#a1e6263e5ae80d0e8dffd164c1587af04">llvm::sandboxir::DependencyGraph</a></li>
 <li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/interval/#aa00dd97592c93e24f76a6619cb158eb2">llvm::sandboxir::Interval&lt;T&gt;</a></li>
 <li><b>empty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/readylistcontainer/#a3780d00e2283c0f0a8063d682cbdf525">llvm::sandboxir::ReadyListContainer</a></li>
@@ -21847,6 +22003,8 @@ keywords:
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamer/#aa8d5e938ebd03af1246d6a179c291c94">llvm::AMDGPU::HSAMD::MetadataStreamer</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpu/hsamd/metadatastreamermsgpackv4/#aa6bd85a0e2d2b53c2f59708830ba3c6b">llvm::AMDGPU::HSAMD::MetadataStreamerMsgPackV4</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a7ca5197533a9c1fb8a2bd30587fcec6b">llvm::ArrayRef&lt;T&gt;</a></li>
+<li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a77dcf96d9d822c5289b9506ba191e0d8">llvm::AttributeList</a></li>
+<li><b>end()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/#ae237e52e479692a3b838f3bfe622ed4b">llvm::AttributeList::index_iterator</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a777e8e107d992835d1fc6e69974f7db1">llvm::AttributeListImpl</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a8d6284eaaa73040ae5829d51dbeacfe3">llvm::AttributeSet</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a8c1b8fa06791bca599634d328d0dd666">llvm::AttributeSetNode</a></li>
@@ -22065,6 +22223,7 @@ keywords:
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ropepiecebtree/#a486ee7fcc0835385f167633ac8cf0625">llvm::RopePieceBTree</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/samplecontexttracker/#acc29a07e94a407a336aeab6086cd3d0e">llvm::SampleContextTracker</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/profiledcallgraph/#add34fd6645cc6eb20b5210117cd4f767">llvm::sampleprof::ProfiledCallGraph</a></li>
+<li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aca8f458e659a38da0d7e75907e1917e3">llvm::sandboxir::BasicBlock</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function/#aff295bbd03c1b8177ec8c511467f3147">llvm::sandboxir::Function</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/interval/#a1619f49f5518a23e1f5ca96f9844b936">llvm::sandboxir::Interval&lt;T&gt;</a></li>
 <li><b>end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/interval/#a6e539ab897ca8586a3f3a0e08c2614fd">llvm::sandboxir::Interval&lt;T&gt;</a></li>
@@ -23656,6 +23815,7 @@ keywords:
 <li><b>expandPAuthBlend()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64pointerauth-cpp-/aarch64pointerauth/#ab5bf18c5cfcd174b9539bc7f33b2edad">anonymous{AArch64PointerAuth.cpp}::AArch64PointerAuth</a></li>
 <li><b>expandPcalau12iInstPair()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-loongarchexpandpseudoinsts-cpp-/loongarchpreraexpandpseudo/#a2eb58eeeec03c694762bdb98fd384bbf">anonymous{LoongArchExpandPseudoInsts.cpp}::LoongArchPreRAExpandPseudo</a></li>
 <li><b>ExpandPostRA()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-expandpostrapseudos-cpp-/expandpostra/#a3d9cd2a06cdfe18bbdcb1343192a9de3">anonymous{ExpandPostRAPseudos.cpp}::ExpandPostRA</a></li>
+<li><b>expandPostRAPseudo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a8997d907b1de0e1b433c59102335b06a">llvm::AArch64InstrInfo</a></li>
 <li><b>expandPostRAPseudo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#abe2c3303ec55393902e579d316051289">llvm::ARMBaseInstrInfo</a></li>
 <li><b>expandPostRAPseudo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bpfinstrinfo/#a8822f429ed25813ec7cf377f1df5bdba">llvm::BPFInstrInfo</a></li>
 <li><b>expandPostRAPseudo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagoninstrinfo/#ab2790230883e599a288a12ded77463bc">llvm::HexagonInstrInfo</a></li>
@@ -24097,7 +24257,7 @@ keywords:
 <li><b>ExtValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-hexagonconstextenders-cpp-/hexagonconstextenders/extvalue/#a337c6cce017cea9f65544c989c8c938c">anonymous{HexagonConstExtenders.cpp}::HexagonConstExtenders::ExtValue</a></li>
 <li><b>eZXT()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/bittracker/machineevaluator/#a57424565b80f4f8fef7b5a8e11735f34">llvm::BitTracker::MachineEvaluator</a></li>
 </ul>
-<p>5845 entries</p>
+<p>5882 entries</p>
 
 ## - F -
 
@@ -24191,7 +24351,7 @@ keywords:
 <li><b>FastFoldingSetNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fastfoldingsetnode/#a6d4945c794a2f931b11a533df839c5aa">llvm::FastFoldingSetNode</a></li>
 <li><b>~FastISel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fastisel/#afb0278799e68968933127f7b9de1550c">llvm::FastISel</a></li>
 <li><b>FastISel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fastisel/#ac447d383d507dc43c984bd02ff8e74ff">llvm::FastISel</a></li>
-<li><b>fastIssueInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#aad12ec4f74c5d78414738ed3b6bdb363">llvm::mca::ResourceState</a></li>
+<li><b>fastIssueInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a422417017bcd1f449e0fc7f64622ad42">llvm::mca::ResourceManager</a></li>
 <li><b>fastLowerArguments()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64fastisel-cpp-/aarch64fastisel/#a7a8566fc82e7aff86f0a1043f857d959">anonymous{AArch64FastISel.cpp}::AArch64FastISel</a></li>
 <li><b>fastLowerArguments()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armfastisel-cpp-/armfastisel/#a5d79c9f9ea1cb5607c9938d7aecccb32">anonymous{ARMFastISel.cpp}::ARMFastISel</a></li>
 <li><b>fastLowerArguments()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsfastisel-cpp-/mipsfastisel/#a6da0b602240c2b5d2de71e1e510e7fec">anonymous{MipsFastISel.cpp}::MipsFastISel</a></li>
@@ -25767,7 +25927,7 @@ keywords:
 <li><b>FMFSource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fmfsource/#a2462a20e8f7f637c16ca5d0271004fae">llvm::FMFSource</a></li>
 <li><b>FMFSource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fmfsource/#ad0bfba3f4ab730db1fb4812e909cf427">llvm::FMFSource</a></li>
 <li><b>FmtAlign()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/fmtalign/#a2f6b25c52e2d0d54c032f8654da81881">llvm::FmtAlign</a></li>
-<li><b>fmulByZeroIsZero()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a10754a38599ac233315f9f88fff7d01c">llvm::InstCombinerImpl</a></li>
+<li><b>fmulByZeroIsZero()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a982e49c60a2c0180bce8a7f0914c9ce3">llvm::InstCombinerImpl</a></li>
 <li><b>FMVInfo()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aarch64/fmvinfo/#a9b73a1335d6734413011556429eafd5e">llvm::AArch64::FMVInfo</a></li>
 <li><b>FNeg_match()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/patternmatch/fneg-match/#a35efe84fdc412d882dfb73c1126f08b3">llvm::PatternMatch::FNeg_match&lt;Op_t&gt;</a></li>
 <li><b>fneg()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/knownfpclass/#a61b974f96f2e5ccbf86376dc849e065d">llvm::KnownFPClass</a></li>
@@ -25795,7 +25955,7 @@ keywords:
 <li><b>foldAllocaCmp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ad4fde4387244f67f320e62602af17b68">llvm::InstCombinerImpl</a></li>
 <li><b>foldAndOrOfICmps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a3ba35b5226bba407c964cf32e06404ef">llvm::InstCombinerImpl</a></li>
 <li><b>foldAndOrOfICmpsUsingRanges()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a20fcaac37809b21f2b99a2bb327f6a6b">llvm::InstCombinerImpl</a></li>
-<li><b>foldAndOrOfSelectUsingImpliedCond()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a890ec233e304e1b18dd89819cb0b1cab">llvm::InstCombinerImpl</a></li>
+<li><b>foldAndOrOfSelectUsingImpliedCond()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a2fcb0887af3c66d538708b4904855782">llvm::InstCombinerImpl</a></li>
 <li><b>foldAsLoad()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/liverangeedit/#a9077e6ce66024661a1f78392ad87c74a">llvm::LiveRangeEdit</a></li>
 <li><b>FoldBinaryIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantfolder/#aece245c9fd95b6a449741619cf4b5f21">llvm::ConstantFolder</a></li>
 <li><b>FoldBinaryIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instsimplifyfolder/#ac1bb8d8d128e0cd379507a02a8175ed5">llvm::InstSimplifyFolder</a></li>
@@ -26047,19 +26207,19 @@ keywords:
 <li><b>FoldSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetfolder/#a274f50a431e3afa88b479415947f9f58">llvm::TargetFolder</a></li>
 <li><b>foldSelectCCToShiftAnd()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#a95220befa255bc02c837835b289cf3ef">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
 <li><b>foldSelectEqualityTest()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a209065257718791ccf5c3834a5f0ef98">llvm::InstCombinerImpl</a></li>
-<li><b>foldSelectExtConst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ac273936424b4fb08531a628ed07eba70">llvm::InstCombinerImpl</a></li>
+<li><b>foldSelectExtConst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ab6b30eb5a835fd225bcd74248fa65693">llvm::InstCombinerImpl</a></li>
 <li><b>foldSelectICmp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#aaa55d4e19334af5b17eb03205a1bece3">llvm::InstCombinerImpl</a></li>
-<li><b>foldSelectInstWithICmp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a85630c64e8cd637fbf33575313a33533">llvm::InstCombinerImpl</a></li>
+<li><b>foldSelectInstWithICmp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ad2480247c6d76207d0f6c5a617534ab4">llvm::InstCombinerImpl</a></li>
 <li><b>foldSelectIntoOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a9eeb1caaa920e692849cb94d64b7d66f">llvm::InstCombinerImpl</a></li>
 <li><b>foldSelectOfBinops()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#a3d16cc6e11f1ea725c795240c3f1b639">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
-<li><b>foldSelectOfBools()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ac0f740beac706fa74d2c524df164d5f0">llvm::InstCombinerImpl</a></li>
+<li><b>foldSelectOfBools()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#aebb0348d8efce5fbf0d73f96cfb1212e">llvm::InstCombinerImpl</a></li>
 <li><b>foldSelectOfConstants()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#a076900e1a2d6d86d2e8be240b150c247">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
 <li><b>foldSelectOpOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a4bd29d381405675f36964e4a5382dae4">llvm::InstCombinerImpl</a></li>
 <li><b>foldSelectShuffle()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-vectorcombine-cpp-/vectorcombine/#a677c8593b8bac0375c5103296157e132">anonymous{VectorCombine.cpp}::VectorCombine</a></li>
 <li><b>foldSelectShuffle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a3b73df3a995af9ca26c9d024c957c45a">llvm::InstCombinerImpl</a></li>
 <li><b>foldSelectToABD()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#adce4f833b7da511b84e87976fb5a242c">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
-<li><b>foldSelectToCmp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a0958419cfed263cf706312b8a44392fc">llvm::InstCombinerImpl</a></li>
-<li><b>foldSelectValueEquivalence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a249045710b0ab9dbf38ac89353a05a3e">llvm::InstCombinerImpl</a></li>
+<li><b>foldSelectToCmp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a5f883a229d57832ae195c8d102445847">llvm::InstCombinerImpl</a></li>
+<li><b>foldSelectValueEquivalence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#addf615067cb73b374b5b008a6e51d43c">llvm::InstCombinerImpl</a></li>
 <li><b>FoldSetCC()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a1ae915deb8e22ab5d8617a090149d0e6">llvm::SelectionDAG</a></li>
 <li><b>foldSetCCWithAnd()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetlowering/#ab7011ad40466921625b5f10b38753fb1">llvm::TargetLowering</a></li>
 <li><b>foldSetCCWithBinOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetlowering/#a33b4592c3de00d9152cca06551702cf3">llvm::TargetLowering</a></li>
@@ -26082,7 +26242,7 @@ keywords:
 <li><b>foldSignChangeInBitcast()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#a9c293e02d603e37ffe05328a953f8d92">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
 <li><b>foldSimpleCrossClassCopies()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64postselectoptimize-cpp-/aarch64postselectoptimize/#a32243f6964733d2b55b8e1ff59269516">anonymous{AArch64PostSelectOptimize.cpp}::AArch64PostSelectOptimize</a></li>
 <li><b>foldSingleElementStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-vectorcombine-cpp-/vectorcombine/#adce4786d27c1966beb70bd65b01ae2b2">anonymous{VectorCombine.cpp}::VectorCombine</a></li>
-<li><b>foldSPFofSPF()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a41e55e4718842d54bd41874b373eb522">llvm::InstCombinerImpl</a></li>
+<li><b>foldSPFofSPF()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a18ae85abc7c8af141f01734655f933ec">llvm::InstCombinerImpl</a></li>
 <li><b>foldSquareSumFP()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a4a128160ac46052a6accc9ba3e84ae08">llvm::InstCombinerImpl</a></li>
 <li><b>foldSquareSumInt()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a2f7fbcaeeb7e6d76fa71bf5abebcae45">llvm::InstCombinerImpl</a></li>
 <li><b>foldSubToAvg()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#ac0766669fa0704a5d199c22d93c8b5e7">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
@@ -26102,7 +26262,7 @@ keywords:
 <li><b>foldValueComparisonIntoPredecessors()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-simplifycfg-cpp-/simplifycfgopt/#a408a295f02e0ad60d19a06a3500ef775">anonymous{SimplifyCFG.cpp}::SimplifyCFGOpt</a></li>
 <li><b>foldVariableSignZeroExtensionOfVariableHighBitExtract()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#aa72b51b8f455c8a622bb6f8cc9c14860">llvm::InstCombinerImpl</a></li>
 <li><b>foldVectorBinop()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#acbf4c17d9f1b9f6729602a3c2a6c5b9d">llvm::InstCombinerImpl</a></li>
-<li><b>foldVectorSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a37917731b931aee3150190267d3dd2b5">llvm::InstCombinerImpl</a></li>
+<li><b>foldVectorSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a777bef8b513df8776aec8f3cf9ce066b">llvm::InstCombinerImpl</a></li>
 <li><b>foldVMV_V_V()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvvectorpeephole-cpp-/riscvvectorpeephole/#a368f8e04839bc19976833c9d7eb2980d">anonymous{RISCVVectorPeephole.cpp}::RISCVVectorPeephole</a></li>
 <li><b>foldVSelectOfConstants()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-dagcombiner-cpp-/dagcombiner/#a5f0d120f1018abe6db6ef0f3dd0f00d1">anonymous{DAGCombiner.cpp}::DAGCombiner</a></li>
 <li><b>foldX86XALUIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86fastisel-cpp-/x86fastisel/#a56f39bd86327221792e9c6366aff9c95">anonymous{X86FastISel.cpp}::X86FastISel</a></li>
@@ -26243,7 +26403,6 @@ keywords:
 <li><b>format()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-529796c169261fe2c884ec9b378a7ff5/#a80130a9a7cfce0a540ad578cb4955c4c">llvm::format_provider&lt;Enum, std::enable_if_t&lt; dwarf::EnumTraits&lt; Enum &gt;::value &gt;&gt;</a></li>
 <li><b>format()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/format-provider-5361e6bb4a56f61bc90e5b264ca769ca/#abbf6dcd12697c330a44aa62117b7f6da">llvm::format_provider&lt;llvm::iterator_range&lt; IterT &gt;&gt;</a></li>
 <li><b>format()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-df0cd734ece492f0149be4ce4c8d5fd4/#a190aff78bb7ee7618b561151f06dd5cd">llvm::format_provider&lt;llvm::json::Value&gt;</a></li>
-<li><b>format()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6/#a3cc0b61f999f92a2a11528175487220f">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>format()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-bf689c9ff674024f18c58d50fd076614/#abe54668061dd2e64bf01c720689becbc">llvm::format_provider&lt;sys::TimePoint&lt;&gt;&gt;</a></li>
 <li><b>format()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-0fc70501588571ec0ff51d52fb9fddbf/#a468f8b88c4c5b21564d05ee8d95420d7">llvm::format_provider&lt;sys::UtcTime&lt; std::chrono::seconds &gt;&gt;</a></li>
 <li><b>format()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-a74b156048fbf039572976048a22c3b3/#a7fbc2c56473c64824f777e4667c4aa25">llvm::format_provider&lt;T, std::enable_if_t&lt; support::detail::use_char_formatter&lt; T &gt;::value &gt;&gt;</a></li>
@@ -26458,7 +26617,7 @@ keywords:
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/allocatorlist/#aa5d7e7fe547ee46b288909f6a4c0fad9">llvm::AllocatorList&lt;T, AllocatorT&gt;</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/allocatorlist/#aa37a7b7d7cf353c946691f424fbe0cec">llvm::AllocatorList&lt;T, AllocatorT&gt;</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arrayref/#a721fc555cb3d8dc2a1a680dcc2ce69b2">llvm::ArrayRef&lt;T&gt;</a></li>
-<li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a63cfb2a0dae69153fd961eb335949caa">llvm::BasicBlock</a></li>
+<li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a4848d1a141ddc7cf0068460fba53ba37">llvm::BasicBlock</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a49a6d4a5d9b4dcd337096732c3a97fba">llvm::BasicBlock</a></li>
 <li><b>front()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/bittracker/usequeuetype/#a5009bb6d83a755c275df305dc08e516c">llvm::BitTracker::UseQueueType</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cl/list-storage-1f8614c5076dfbe1f951d3f7bfe58228/#af823eb1b1e178f00be62f64e0e943473">llvm::cl::list_storage&lt;DataType, bool&gt;</a></li>
@@ -26484,6 +26643,7 @@ keywords:
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mapvector/#a5526dcd6cc74a6840830de1e55d6293a">llvm::MapVector&lt;KeyT, ValueT, MapType, VectorType&gt;</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref/#a6fb86e9e92241fe6fe6b2058650e3a67">llvm::MutableArrayRef&lt;T&gt;</a></li>
 <li><b>front()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/outliner/candidate/#a16c39dfa2a8b341bb2448fd032c58b64">llvm::outliner::Candidate</a></li>
+<li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a63cfb2a0dae69153fd961eb335949caa">llvm::sandboxir::BasicBlock</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/setvector/#a2309608beb7af149f7bf6158319ecfdb">llvm::SetVector&lt;T, Vector, Set, N&gt;</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/simple-ilist/#afc8f7be86492c65c4894c5456eb08573">llvm::simple_ilist&lt;T, Options&gt;</a></li>
 <li><b>front()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/simple-ilist/#a2cee63e92f8efc2150567a839134021b">llvm::simple_ilist&lt;T, Options&gt;</a></li>
@@ -26748,6 +26908,7 @@ keywords:
 <li><b>~GDBJITRegistrationListener()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-gdbregistrationlistener-cpp-/gdbjitregistrationlistener/#a4fe8ec178b276bf2cc56801053e83143">anonymous{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</a></li>
 <li><b>GDBJITRegistrationListener()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-gdbregistrationlistener-cpp-/gdbjitregistrationlistener/#abfc8b002958ca498ceaeb864ee156dd3">anonymous{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</a></li>
 <li><b>genAllInsnTimingClasses()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagoninstrinfo/#abbab66c4fbf9fd6512efa4efae8f69ef">llvm::HexagonInstrInfo</a></li>
+<li><b>genAlternativeCodeSequence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a605515c2c4d676bb83888309fdaf1af0">llvm::AArch64InstrInfo</a></li>
 <li><b>genAlternativeCodeSequence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#a4e9ec39f5237e4efa0bc7bb0844c3867">llvm::PPCInstrInfo</a></li>
 <li><b>genAlternativeCodeSequence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a4862e12e65a868264ab84a2252104dda">llvm::RISCVInstrInfo</a></li>
 <li><b>genAlternativeCodeSequence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a6875e5a149ffdf299b10e8f969d379d4">llvm::TargetInstrInfo</a></li>
@@ -26961,6 +27122,15 @@ keywords:
 <li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a438a746d30d8cd255a96ffb06749602e">llvm::Attribute</a></li>
 <li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a1f33826a7081abb8cd61583464d7ca51">llvm::Attribute</a></li>
 <li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a39a3342c858856b421c6e2c306aaf241">llvm::Attribute</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4ac0d01bf5ca24e679de53067c8f6a44">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa0934a03f7182abfbf5e57fc4e7c7c82">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad544515efb693b15ac9855c6be03189b">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac0b476a2ef81faca335499a5cafb9241">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4387a04798ee02597a248ac196fc1d53">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a15fc36bf8d33e06423d939bb34bc9305">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#abc9345ab199d872cbb5a7c31b84a4cde">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#acf23368370765012fba0a78c1b42fdf9">llvm::AttributeList</a></li>
+<li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa3e752c843b2d32061a0dfbb3b784eb9">llvm::AttributeList</a></li>
 <li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#ae8ed437b15a7ca943716e5284a9cb9a6">llvm::AttributeSet</a></li>
 <li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a5cf798325c216183c6894d028d02117b">llvm::AttributeSet</a></li>
 <li><b>get()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#aea231e8710d7b9a61e424c3f0ad22e85">llvm::AttributeSetNode</a></li>
@@ -27218,8 +27388,8 @@ keywords:
 <li><b>get64BitZExtCompare()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-ppciseldagtodag-cpp-/integercompareeliminator/#ac1d1f78fcb7c437defc112efc6e183a8">anonymous{PPCISelDAGToDAG.cpp}::IntegerCompareEliminator</a></li>
 <li><b>getA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dependenceinfo/constraint/#abb5356f8205699eb95565cebbbc018f2">llvm::DependenceInfo::Constraint</a></li>
 <li><b>getAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memoryssa/#a09b19c342a68cda17cb92c8fd9804cc4">llvm::MemorySSA</a></li>
+<li><b>getAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a186a005768089d004c0048c6efb6ed63">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>getAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/analyses/#a9d55907a563a8932a5b2da6d31dede84">llvm::sandboxir::Analyses</a></li>
-<li><b>getAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#ac411cb78ae7d4c44bcbb46e665054a3a">ProvenanceAnalysis</a></li>
 <li><b>getAAFor()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributor/#a4f07dfd5d71c602655995567fe27d4a7">llvm::Attributor</a></li>
 <li><b>getAAForDep()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledaginstrs/#a954c0aedb37bd7682d2d586026c5c483">llvm::ScheduleDAGInstrs</a></li>
 <li><b>getAAInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinememoperand/#ad4e46eec152e23bfb02096e53bde67da">llvm::MachineMemOperand</a></li>
@@ -27314,7 +27484,6 @@ keywords:
 <li><b>getACCReg()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-ppcasmparser-cpp-/ppcoperand/#afd47908f21bc243be854f13fd2696be0">anonymous{PPCAsmParser.cpp}::PPCOperand</a></li>
 <li><b>getAccumulator()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armparalleldsp-cpp-/reduction/#a97c53f521d43ae7e7b62c9ce981a4b4b">anonymous{ARMParallelDSP.cpp}::Reduction</a></li>
 <li><b>getAction()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-codegenprepare-cpp-/typepromotionhelper/#a6df9b95e8bacacbad0035f25c46d2581">anonymous{CodeGenPrepare.cpp}::TypePromotionHelper</a></li>
-<li><b>getAction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#ae96ecbe1f7161c18bab554e554654e08">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>getAction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/legacylegalizerinfo/#ab2df8f41f63c8cd97c9f3b4a6b6374b0">llvm::LegacyLegalizerInfo</a></li>
 <li><b>getAction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/legalizerinfo/#af3687eafb2772c29aa67ce722c2081fd">llvm::LegalizerInfo</a></li>
 <li><b>getAction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/legalizerinfo/#a373eb03c4fdd576998906436ebe07001">llvm::LegalizerInfo</a></li>
@@ -27672,6 +27841,7 @@ keywords:
 <li><b>getAlignInBits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/divariable/#a08730cf239c9ebb27c7c1dc2c3ee5936">llvm::DIVariable</a></li>
 <li><b>getAlignInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ditype/#aa58988e88e7b1220cf23af045dfb0f70">llvm::DIType</a></li>
 <li><b>getAlignInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/divariable/#a4a83181ff1d7e4f04ea87a382f974347">llvm::DIVariable</a></li>
+<li><b>getAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a5c04a127391177020d55364130abc481">llvm::AttrBuilder</a></li>
 <li><b>getAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#af1c88577e9470957be5ad4e4d401146a">llvm::Attribute</a></li>
 <li><b>getAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#abbebeeab2f7fc663ae61eb5c391a79db">llvm::AttributeSet</a></li>
 <li><b>getAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a43140fd298069fe8f74ca61e1b235ec0">llvm::AttributeSetNode</a></li>
@@ -27786,11 +27956,13 @@ keywords:
 <li><b>getAllocatorRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/stringpool/#a12e1f5ae4684a4607c9d33c506ded1fa">llvm::dwarf_linker::StringPool</a></li>
 <li><b>getAllocFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anycoroidretconinst/#a6557fc92152c6e431a0072d7fe76bd83">llvm::AnyCoroIdRetconInst</a></li>
 <li><b>getAllocKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a2473a7c5ee60c5a3ae90782d494b436e">llvm::Attribute</a></li>
+<li><b>getAllocKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a50abfb2dceb5d84bcbf1cf263e33d7d9">llvm::AttributeList</a></li>
 <li><b>getAllocKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a022e1f0b85c0273bd954327152f43d5a">llvm::AttributeSet</a></li>
 <li><b>getAllocKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a3039ad1a8fb6019f55eeab8b135f6820">llvm::AttributeSetNode</a></li>
 <li><b>getAllocSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ctx-profile/contextnode/#a9eec8d154d4aff4bda0f8aef9d5b74b3">llvm::ctx_profile::ContextNode</a></li>
 <li><b>getAllocSize()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mdnode/header/#a077735da5f0f9468d43dfd1f958811f7">llvm::MDNode::Header</a></li>
 <li><b>getAllocSize()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mdnode/header/#acdd602c28adcba131e3f7293f4c2e16b">llvm::MDNode::Header</a></li>
+<li><b>getAllocSizeArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ad808bb8ebc706c23f9a9a513e74262be">llvm::AttrBuilder</a></li>
 <li><b>getAllocSizeArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a5bac674280b8fed3e09ea688b91bb1a0">llvm::Attribute</a></li>
 <li><b>getAllocSizeArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a867c581afc07ab3d8066493ba6fb047e">llvm::AttributeSet</a></li>
 <li><b>getAllocSizeArgs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a879a776189c95cce6d5bf31fcb1be977">llvm::AttributeSetNode</a></li>
@@ -28600,7 +28772,6 @@ keywords:
 <li><b>getArraySize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/allocainst/#ae684a2f65ccc383cea7b06af76253f14">llvm::sandboxir::AllocaInst</a></li>
 <li><b>getArtifactRegBank()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpuinstructionselector/#a4781ec664a2a93e436f7ca4b1b74d3cc">llvm::AMDGPUInstructionSelector</a></li>
 <li><b>getArtifactSrcReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/legalizationartifactcombiner/#a010771f5f5f2de8e4efdbd310ffb6178">llvm::LegalizationArtifactCombiner</a></li>
-<li><b>getAs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6/#a50f93edeba74beec4cb1e69aecf75e0e">llvm::format_provider&lt;std::chrono::duration&lt; Rep, Period &gt;&gt;</a></li>
 <li><b>getAsAddRec()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/predicatedscalarevolution/#aa364810e8fe30937277d9dd8a301c4c9">llvm::PredicatedScalarEvolution</a></li>
 <li><b>getAsAddress()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfformvalue/#a958f097ef2e9e5f193089b36ee820e85">llvm::DWARFFormValue</a></li>
 <li><b>GetAsanVersion()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-addresssanitizer-cpp-/moduleaddresssanitizer/#a38bd1f12cdaf0a62c25596f0ed02de66">anonymous{AddressSanitizer.cpp}::ModuleAddressSanitizer</a></li>
@@ -28776,6 +28947,7 @@ keywords:
 <li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anonymousnameinit/#ad799f16782ad10d9ca3b89a52243cb43">llvm::AnonymousNameInit</a></li>
 <li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argumentinit/#afc2f4e6bfa3fffaaf68316345d567338">llvm::ArgumentInit</a></li>
 <li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a493e72ce53ee16d92489ba67d7ce2bb0">llvm::Attribute</a></li>
+<li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a917739f8f62442b8fea20bbe72cab891">llvm::AttributeList</a></li>
 <li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a7d970fbb2839d43eea2ca4675abd3380">llvm::AttributeSet</a></li>
 <li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#ae8b206f1405871e4fa5124a9cc883140">llvm::AttributeSetNode</a></li>
 <li><b>getAsString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/binopinit/#a5d801c7bc5e5db15b1a6ec6bc5035c17">llvm::BinOpInit</a></li>
@@ -28872,7 +29044,7 @@ keywords:
 <li><b>GetAsValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/trackingvh/#a34e72e741d6b96219ceeb6a1d370ab45">llvm::TrackingVH&lt;ValueTy&gt;</a></li>
 <li><b>getAsValuePtr()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/irposition/#aca0130086cc6ea1961e712c469542ff3">llvm::IRPosition</a></li>
 <li><b>getAsVgpr()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-amdgpuregbankcombiner-cpp-/amdgpuregbankcombinerimpl/#acd0704abf20181a14e4502b8e69e972e">anonymous{AMDGPURegBankCombiner.cpp}::AMDGPURegBankCombinerImpl</a></li>
-<li><b>getAsVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/compileunitpointertraits/#a0841350a9cbf4527f2925bc967fe7fc9">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::CompileUnitPointerTraits</a></li>
+<li><b>getAsVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits/#a3d548ea7f0fe6f6f3363a5d19593298a">llvm::dwarf_linker::parallel::DependencyTracker::CompileUnitPointerTraits</a></li>
 <li><b>getAsVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/functionpointerliketypetraits/#ae588adf5b3cc5cf13935d184f362665e">llvm::FunctionPointerLikeTypeTraits&lt;Alignment, FunctionPointerT&gt;</a></li>
 <li><b>getAsVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/globalsaaresult/functioninfo/alignedmappointertraits/#a30838db45cce7cc2a5872bbc9b56224c">GlobalsAAResult::FunctionInfo::AlignedMapPointerTraits</a></li>
 <li><b>getAsVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/intervalmapimpl/noderef/cachealignedpointertraits/#a6e92ecef7c0a3fc77e4eceb927901c5e">llvm::IntervalMapImpl::NodeRef::CacheAlignedPointerTraits</a></li>
@@ -28925,6 +29097,8 @@ keywords:
 <li><b>getAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvobject/#a5157693d11a038b15c26163b2caaa943">llvm::logicalview::LVObject</a></li>
 <li><b>getAttrByIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfabbreviationdeclaration/#a492fdf2702f0b7ff4fb07bc41e877bd5">llvm::DWARFAbbreviationDeclaration</a></li>
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a35f8be95d8a3801b89185cee96b4491d">llvm::Argument</a></li>
+<li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a25b551ed387e14d474d11852713de201">llvm::AttrBuilder</a></li>
+<li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a9210487118bedcf64de77fc4427941c7">llvm::AttrBuilder</a></li>
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#ab50af3bf5ee8727df07c79065d61c204">llvm::AttributeSet</a></li>
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#aa3322f35facffb8a21244b040e2a9599">llvm::AttributeSet</a></li>
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#afcc84fdd0be8b704187ba4378807d673">llvm::AttributeSetNode</a></li>
@@ -28935,6 +29109,8 @@ keywords:
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#a7fe127548d8e01ddb7f30b78d951ca77">llvm::GlobalVariable</a></li>
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalvariable/#a0e875bf05a725c8925549f5843ca837c">llvm::sandboxir::GlobalVariable</a></li>
 <li><b>getAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalvariable/#a4b4296da74e6fc9d6b0620f0aca07ed0">llvm::sandboxir::GlobalVariable</a></li>
+<li><b>getAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa13d8e07ad2d8a1e2cbc5e8baa5d4c60">llvm::AttributeList</a></li>
+<li><b>getAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab6b2a026f921a5c932f3320ede3e19ac">llvm::AttributeList</a></li>
 <li><b>getAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#abcdfbff6a28275c90eab24a36cbc4240">llvm::CallBase</a></li>
 <li><b>getAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#affe34085f142d12218c875ad46b506b8">llvm::CallBase</a></li>
 <li><b>getAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#ae420319b63092fad3cff17a964ae3c90">llvm::Function</a></li>
@@ -28953,6 +29129,7 @@ keywords:
 <li><b>getAttributeOffsetFromIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfabbreviationdeclaration/#a94f847fdc533254e25f90cd4ea91de3e">llvm::DWARFAbbreviationDeclaration</a></li>
 <li><b>getAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodereader/#ab217cff2a75c459a35b29d9a9f950156">anonymous{BitcodeReader.cpp}::BitcodeReader</a></li>
 <li><b>getAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#ae86fc6af8da2140064a1dc5e5fe3ba43">llvm::Argument</a></li>
+<li><b>getAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac8d6f220fcf8f327c6c739813df8c4c9">llvm::AttributeList</a></li>
 <li><b>getAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#ae0c55761fce39dd71617690b04385193">llvm::CallBase</a></li>
 <li><b>getAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/debugnamesabbrev/#a8a4897bae4e7ada6e71f2051f441e6d5">llvm::DebugNamesAbbrev</a></li>
 <li><b>getAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diobjcproperty/#a1bb2fa10539da181f0c25a879b998fdd">llvm::DIObjCProperty</a></li>
@@ -29002,6 +29179,7 @@ keywords:
 <li><b>getAuxType64()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/xcoffcsectauxref/#abbdcbb2e852e02aca871aa55aafae379">llvm::object::XCOFFCsectAuxRef</a></li>
 <li><b>getAvailableAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pmdatamanager/#ab8c6ff569cf219c05ed1af66c6d231b0">llvm::PMDataManager</a></li>
 <li><b>getAvailableFeatures()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mctargetasmparser/#a05c3c74b5d565682e793e2336c8b2774">llvm::MCTargetAsmParser</a></li>
+<li><b>getAvailableProcResUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#af2495a18d0d821d616adc01d4fa6c717">llvm::mca::ResourceManager</a></li>
 <li><b>getAVLDefMI()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvinsertvsetvli-cpp-/vsetvliinfo/#a58659e9d9d29818cd6d0ad0d4abbd107">anonymous{RISCVInsertVSETVLI.cpp}::VSETVLIInfo</a></li>
 <li><b>getAVLImm()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvinsertvsetvli-cpp-/vsetvliinfo/#a3a37225cf903ed6441d2581f100aaf61">anonymous{RISCVInsertVSETVLI.cpp}::VSETVLIInfo</a></li>
 <li><b>getAVLReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvinsertvsetvli-cpp-/vsetvliinfo/#a34228acc92d686ec244da04ce11a76d4">anonymous{RISCVInsertVSETVLI.cpp}::VSETVLIInfo</a></li>
@@ -29657,6 +29835,7 @@ keywords:
 <li><b>getBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-fileoutputbuffer-cpp-/inmemorybuffer/#aaf92bf3e4ce97c313b6430e7f16268d9">anonymous{FileOutputBuffer.cpp}::InMemoryBuffer</a></li>
 <li><b>getBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-fileoutputbuffer-cpp-/ondiskbuffer/#ad4fd5a73cc9f5a25c8a82f76e9dbaf04">anonymous{FileOutputBuffer.cpp}::OnDiskBuffer</a></li>
 <li><b>getBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fileoutputbuffer/#abe56ca0702b9a1b01ea3152df952f813">llvm::FileOutputBuffer</a></li>
+<li><b>getBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a48457031a32ddb64e79938d8025feadb">llvm::mca::ResourceState</a></li>
 <li><b>getBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#a2ea075bd68f15b57e95f0771b8ba0bca">llvm::MemoryBuffer</a></li>
 <li><b>getBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memorybufferref/#a2036a4973d159e49dcc471488205656f">llvm::MemoryBufferRef</a></li>
 <li><b>GetBufferSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/raw-ostream/#a2d79232a41a2f24d43acb936c8522443">llvm::raw_ostream</a></li>
@@ -29717,6 +29896,7 @@ keywords:
 <li><b>getBusy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazyatomicpointer/#a8faf2e6fda417848ab1edf25b8911d57">llvm::LazyAtomicPointer&lt;T&gt;</a></li>
 <li><b>getBypassSlowDivWidths()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#abc6a0c251a75bb3b9b47c79c7ab0e503">llvm::TargetLoweringBase</a></li>
 <li><b>getByRefSize()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/isd/argflagsty/#a9d7d2b62757aeb7bd6701da3c78ad6a2">llvm::ISD::ArgFlagsTy</a></li>
+<li><b>getByRefType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a423397fe206ed3dc1dcb5197481cf5e3">llvm::AttrBuilder</a></li>
 <li><b>getByRefType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#ae07c0c5638ef5fa4da628d22a3347e8b">llvm::AttributeSet</a></li>
 <li><b>getByteOrder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gsym/filewriter/#aded943536fd3590c1c6b3ccb1dc7bbe2">llvm::gsym::FileWriter</a></li>
 <li><b>getBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dataextractor/#ade9e119455709c0d46a34464ebdbf179">llvm::DataExtractor</a></li>
@@ -29745,6 +29925,7 @@ keywords:
 <li><b>getByteTy()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagonvectorcombine-cpp-/hexagonvectorcombine/#a6a243a4cdb6c27c0c4276793b5136a01">anonymous{HexagonVectorCombine.cpp}::HexagonVectorCombine</a></li>
 <li><b>GetByValArgRegs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipsabiinfo/#aa682266c506cc18c1949775a7886ed08">llvm::MipsABIInfo</a></li>
 <li><b>getByValSize()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/isd/argflagsty/#ab366d3f0cbcf25efa33e8406c851be4f">llvm::ISD::ArgFlagsTy</a></li>
+<li><b>getByValType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a083aac381cdc9cfb2194983b3d568825">llvm::AttrBuilder</a></li>
 <li><b>getByValType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a2ade48bec43f06da0e142b9c8d27ccb1">llvm::AttributeSet</a></li>
 <li><b>getByValTypeAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppctargetlowering/#a51b3288a078ec78d279a486db1946b31">llvm::PPCTargetLowering</a></li>
 <li><b>getByValTypeAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a00e2bab3b9d978fef4c7b13f805eedc7">llvm::TargetLoweringBase</a></li>
@@ -30141,8 +30322,6 @@ keywords:
 <li><b>getCheck()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/factorcheck/#ace832dc792e7ab1b3fab181da9a726c5">anonymous{ConstraintElimination.cpp}::FactOrCheck</a></li>
 <li><b>getCheckBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-implicitnullchecks-cpp-/implicitnullchecks/nullcheck/#aed0455a1cc63d1c551be248f402b286f">anonymous{ImplicitNullChecks.cpp}::ImplicitNullChecks::NullCheck</a></li>
 <li><b>getChecked()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/error/#ad04083f4dad76660e9727f50161878a6">llvm::Error</a></li>
-<li><b>getChecker()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#aa7a1b769f9c57010cc41d9c3bb9d39c6">llvm::PreservedAnalyses</a></li>
-<li><b>getChecker()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a452552a70b5998a3a831fb2560498927">llvm::PreservedAnalyses</a></li>
 <li><b>getCheckInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-guardwidening-cpp-/guardwideningimpl/rangecheck/#ad9044dbf76e1241ae93b2ebcaa5c0f67">anonymous{GuardWidening.cpp}::GuardWideningImpl::RangeCheck</a></li>
 <li><b>getCheckOperation()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-implicitnullchecks-cpp-/implicitnullchecks/nullcheck/#a9c979985f0c9f13cb62ee0904eb5bc25">anonymous{ImplicitNullChecks.cpp}::ImplicitNullChecks::NullCheck</a></li>
 <li><b>getChecks()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimepointerchecking/#ac837a7d2828c8fe9e84140095d003d51">llvm::RuntimePointerChecking</a></li>
@@ -30802,7 +30981,6 @@ keywords:
 <li><b>getContainedType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/type/#ad1d50278883f39969187bceabe068acf">llvm::Type</a></li>
 <li><b>getContainedTypeID()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodereader/#aadd783017d0863b163f4b45776ea0c0d">anonymous{BitcodeReader.cpp}::BitcodeReader</a></li>
 <li><b>getContainerForFixedLengthVector()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvtargetlowering/#a76f853961d86118eb25685e66816a46c">llvm::RISCVTargetLowering</a></li>
-<li><b>getContaingFile()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#a78764e87199f5b89827a6ba760bfcd7c">llvm::dwarf_linker::parallel::CompileUnit</a></li>
 <li><b>getContaining()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/intervaltree/#af47ed4deea972261fe9561c075b8244c">llvm::IntervalTree&lt;PointT, ValueT, DataT&gt;</a></li>
 <li><b>getContainingLoop()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/blockfrequencyinfoimplbase/workingdata/#ac98dd1c5dace8f581b741b8ba806c3d0">llvm::BlockFrequencyInfoImplBase::WorkingData</a></li>
 <li><b>getContainingMMap()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/symbolize/markupfilter/#acd0fde90c321ec03cabbf06883a775f0">llvm::symbolize::MarkupFilter</a></li>
@@ -30863,6 +31041,7 @@ keywords:
 <li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pattern/#a6b4c59c2efdda38066089fa98dd6134a">llvm::Pattern</a></li>
 <li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/replaceablemetadataimpl/#a670e80d760b55bce4ab5accdf5c0ef53">llvm::ReplaceableMetadataImpl</a></li>
 <li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/functionsamples/#ad117577730085f895045fc7ff90d8fc2">llvm::sampleprof::FunctionSamples</a></li>
+<li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aacd79c30c16a90caa7529e83a58b5686">llvm::sandboxir::BasicBlock</a></li>
 <li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/module/#a98d95ed484aba4fb483c43d452d92b1a">llvm::sandboxir::Module</a></li>
 <li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/region/#a2c690228f7424bd91013fff858b5b132">llvm::sandboxir::Region</a></li>
 <li><b>getContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/tracker/#ac7e4e8e2c44d4ab0839dac693df7b06c">llvm::sandboxir::Tracker</a></li>
@@ -31629,10 +31808,12 @@ keywords:
 <li><b>getDepth()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/swingschedulerdag/#a23e7afeb8a38aa0340c5644ebcd28f40">llvm::SwingSchedulerDAG</a></li>
 <li><b>getDepthResources()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/ensemble/#a8653801cc578cc48ccbe3e63704b46c2">llvm::MachineTraceMetrics::Ensemble</a></li>
 <li><b>getDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#af996ca89ce53f22731001cd4fcbe4fd8">llvm::Argument</a></li>
+<li><b>getDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a477c1842d901f08be882df39e2622190">llvm::AttrBuilder</a></li>
 <li><b>getDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a7a7458f7bdc291db1a43ad26f149cfed">llvm::Attribute</a></li>
 <li><b>getDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#abac98c505a75cb4d3883913ca0aa0437">llvm::AttributeSet</a></li>
 <li><b>getDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a927ab1b523430e5b92b2dfaa738e3416">llvm::AttributeSetNode</a></li>
 <li><b>getDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a5b06db40548ac13bc6f5e9c41cf48f10">llvm::Argument</a></li>
+<li><b>getDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a9e6368ff5b970cdae9731e73e92ded8e">llvm::AttrBuilder</a></li>
 <li><b>getDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a49fa360a9d36f3b7668437a0385bf436">llvm::Attribute</a></li>
 <li><b>getDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#aec6315746619b1a42c4a466582f82d34">llvm::AttributeSet</a></li>
 <li><b>getDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a01a7a50393df8f3996045fe1fbd42b87">llvm::AttributeSetNode</a></li>
@@ -32218,6 +32399,7 @@ keywords:
 <li><b>getElementSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86asmparser-cpp-/x86asmparser/intelexprstatemachine/#a7fa493c8284df782abe186d175b85808">anonymous{X86AsmParser.cpp}::X86AsmParser::IntelExprStateMachine</a></li>
 <li><b>getElementSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/vtablelayoutitem/#ae5da13f1c0bff03803efbbfac8fef075">llvm::pdb::VTableLayoutItem</a></li>
 <li><b>getElementSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#ad61acd1c9fda9921a30f3ff510509873">llvm::ScalarEvolution</a></li>
+<li><b>getElementSizeForOpcode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a225bf56c837056189e19a6d525e9a93a">llvm::AArch64InstrInfo</a></li>
 <li><b>getElementSizeInBits()</b>: as function in class <a href="/web-llvm/docs/api/classes/immcheck/#a1a4df56cd02f5db56e5fe9dc2f1c8de3">ImmCheck</a></li>
 <li><b>getElementSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/atomicmemintrinsic/#aa3542df5988f1f03edd97c65f30a220c">llvm::AtomicMemIntrinsic</a></li>
 <li><b>getElementSizeInBytesCst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/atomicmemintrinsic/#a1b1e216f4fb8ec289b7b33bf796b237c">llvm::AtomicMemIntrinsic</a></li>
@@ -32313,6 +32495,7 @@ keywords:
 <li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-764fe38a670fa71a18e1c5f119bcef9d/#a7a2118067fa6a14efafaf90494593eea">llvm::DenseMapInfo&lt;ArrayRef&lt; T &gt;, void&gt;</a></li>
 <li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0/#a95cb0505b2ba4d8077e17b88f59bed38">llvm::DenseMapInfo&lt;at::VarRecord&gt;</a></li>
 <li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97/#a2edb48bde72543fa4b4332344901854f">llvm::DenseMapInfo&lt;Attribute::AttrKind&gt;</a></li>
+<li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70/#abfe4e4d365ab31cb54528ca85c71b9ad">llvm::DenseMapInfo&lt;AttributeList, void&gt;</a></li>
 <li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962/#ad4d0ed77a38ff696458f83f63d9d6a60">llvm::DenseMapInfo&lt;AttributeSet, void&gt;</a></li>
 <li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9/#a1276169805c816c2c460bad8d1e913d7">llvm::DenseMapInfo&lt;BasicBlock::iterator&gt;</a></li>
 <li><b>getEmptyKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6/#a01dfb153267cac92c6211be866198a49">llvm::DenseMapInfo&lt;BasicBlockEdge&gt;</a></li>
@@ -32578,7 +32761,6 @@ keywords:
 <li><b>getEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dieentry/#aa8d5588f457749bd4760159b4ad16135">llvm::DIEEntry</a></li>
 <li><b>getEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugnames/nameindex/#a8475a510867f94e8f55f39ed0697d833">llvm::DWARFDebugNames::NameIndex</a></li>
 <li><b>getEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpool/#a0ae658befffa5408ecc112022d86cd84">llvm::DwarfStringPool</a></li>
-<li><b>getEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a19bdd968558bb15b3dcf9477866c0ace">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>getEntry()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/indexedinstrprof/summary/#adef12c41a9f9dfeb46ce7e9d3e6e89d1">llvm::IndexedInstrProf::Summary</a></li>
 <li><b>getEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/aarch32/anonymous-aarch32-cpp-/fixupinfotable/#ab2e3cfe0c1c491a20cff3f1ac2a6ac17">llvm::jitlink::aarch32::anonymous{aarch32.cpp}::FixupInfoTable</a></li>
 <li><b>getEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvrange/#a0409fa6b52c2d7e04d9c1d0e63c72479">llvm::logicalview::LVRange</a></li>
@@ -33308,7 +33490,6 @@ keywords:
 <li><b>getFilename()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diobjcproperty/#a1beda2690d20a7d9631d5dca447b036d">llvm::DIObjCProperty</a></li>
 <li><b>getFilename()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/discope/#a0c08c7f5b8a509d93f2874b2e6a25d10">llvm::DIScope</a></li>
 <li><b>getFilename()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/divariable/#aac3fc031201869546e67305289b4aacc">llvm::DIVariable</a></li>
-<li><b>getFileName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#affd8bc2fe0d879ef4ad2538a617e7629">llvm::dwarf_linker::parallel::CompileUnit</a></li>
 <li><b>getFileName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfobject/#a15d7005fd6f90e6e9415f68094b43542">llvm::DWARFObject</a></li>
 <li><b>getFileName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fileerror/#a7b783102658f17c98f2d4966dbd4694e">llvm::FileError</a></li>
 <li><b>getFilename()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcovfunction/#a958ded96222c13408529a306519cfae4">llvm::GCOVFunction</a></li>
@@ -33627,17 +33808,21 @@ keywords:
 <li><b>getFMA3OpcodeToCommuteOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86instrinfo/#af39f85bc7795ab54bd45481cb6fbd7ef">llvm::X86InstrInfo</a></li>
 <li><b>getFMAOpIdxInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#a044888b8dba4ee5a752fd0ff96f45bfc">llvm::PPCInstrInfo</a></li>
 <li><b>getFMAPatterns()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#a0df98b068b652d32c3529381db723b9c">llvm::PPCInstrInfo</a></li>
+<li><b>getFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a90024ee48918b2167a4c9409750d4148">llvm::AttributeList</a></li>
+<li><b>getFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a060fe3a67cf9794919c0559515be2ffc">llvm::AttributeList</a></li>
 <li><b>getFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a9e46a3a4bf99f8dcea9cb9efb4d977a3">llvm::CallBase</a></li>
 <li><b>getFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a838a60b97fcf512dbf9116b564b05f2c">llvm::CallBase</a></li>
 <li><b>getFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a4c319db4fe05c27cfe55bd133a87414d">llvm::Function</a></li>
 <li><b>getFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#aacaa0c150cd66194d15d1bdd389009e3">llvm::Function</a></li>
 <li><b>getFnAttributeAsParsedInteger()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a4c866d3504a1e0717c8152a590bd6203">llvm::Function</a></li>
 <li><b>getFnAttrOnCalledFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a930cd28d366d4597913b7108fdb94868">llvm::CallBase</a></li>
+<li><b>getFnAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a1cf553641e8527095ae4c8ec88a2cd92">llvm::AttributeList</a></li>
 <li><b>getFnDebugLoc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/debugloc/#a4bccb0979d1d30e83fe142ac7fb4747b">llvm::DebugLoc</a></li>
 <li><b>getFnEndSym()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccvinlinelinetablefragment/#ad5b6fb85f5bff2aa22a04c1c24722d15">llvm::MCCVInlineLineTableFragment</a></li>
 <li><b>getFnInfos()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmaps/#ad1d146def33c43931a7aad77bdf5dfc7">llvm::StackMaps</a></li>
 <li><b>getFnMetadataByID()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodereader/#ab3ab35ac7bcc3e57e04903c72f8ec06b">anonymous{BitcodeReader.cpp}::BitcodeReader</a></li>
 <li><b>getFnStackAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a3494b54c5cae8ae5d9c3008238963e09">llvm::Function</a></li>
+<li><b>getFnStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab0eaea88fb8f6bc99c7547113ec906bc">llvm::AttributeList</a></li>
 <li><b>getFnStartSym()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccvinlinelinetablefragment/#a8fc66977127329e7998c6c3b4e3b9359">llvm::MCCVInlineLineTableFragment</a></li>
 <li><b>getFnValueByID()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodereader/#af1f0ddc1f2f1df26cea35d4b31433091">anonymous{BitcodeReader.cpp}::BitcodeReader</a></li>
 <li><b>getFoldedRestoreSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a87d05d77b880d0d3e4a480affaf85f5d">llvm::MachineInstr</a></li>
@@ -33933,7 +34118,7 @@ keywords:
 <li><b>getFromPointer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smloc/#a16ebb09610e55f63cfc55f28e3a56ad5">llvm::SMLoc</a></li>
 <li><b>getFromString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/substitution/#a255f149343d5a52972fcd99b782c2db6">llvm::Substitution</a></li>
 <li><b>getFromTy()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpulibfuncbase/param/#aedd940cbe9661c05ef27f751e09cac77">llvm::AMDGPULibFuncBase::Param</a></li>
-<li><b>getFromVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/compileunitpointertraits/#ad876d06207b487eeb6e8891e0a0462ad">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::CompileUnitPointerTraits</a></li>
+<li><b>getFromVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits/#a327c02fc1ad75a54d17615c6b58590b9">llvm::dwarf_linker::parallel::DependencyTracker::CompileUnitPointerTraits</a></li>
 <li><b>getFromVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/functionpointerliketypetraits/#ad53d1471afacf1b381c0cb3f5192251b">llvm::FunctionPointerLikeTypeTraits&lt;Alignment, FunctionPointerT&gt;</a></li>
 <li><b>getFromVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/globalsaaresult/functioninfo/alignedmappointertraits/#a33c53a94f96f009f851c640576619f3e">GlobalsAAResult::FunctionInfo::AlignedMapPointerTraits</a></li>
 <li><b>getFromVoidPointer()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/intervalmapimpl/noderef/cachealignedpointertraits/#a4602dad84ea7f71f4a2e7a374350d771">llvm::IntervalMapImpl::NodeRef::CacheAlignedPointerTraits</a></li>
@@ -34040,6 +34225,7 @@ keywords:
 <li><b>getFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a7bbd043f57d1d0ab11080103d057e662">llvm::MachineFunction</a></li>
 <li><b>getFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mapped-iterator/#a06f78487ed5ae83bafb84d6dce427505">llvm::mapped_iterator&lt;ItTy, FuncTy, ReferenceTy&gt;</a></li>
 <li><b>getFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/module/#a209a615a3a32241323420cca24b5520a">llvm::Module</a></li>
+<li><b>getFunction()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#a334c0ce83f20ed15258f78b933c48716">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>getFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/functionsamples/#a7ff8c2d016ae9169f35cdd1d1aaa1564">llvm::sampleprof::FunctionSamples</a></li>
 <li><b>getFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/samplecontext/#aaec6c587638c9dedc9041f186e598196">llvm::sampleprof::SampleContext</a></li>
 <li><b>getFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprofileloaderbaseimpl/#a27bf2b96e5c474b00a78fade0b7a37e9">llvm::SampleProfileLoaderBaseImpl&lt;FT&gt;</a></li>
@@ -34360,6 +34546,8 @@ keywords:
 <li><b>getGPRSizeValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mipsabiflagssection/#a8bffac22cd2a102a12487fad4fa9ce88">llvm::MipsABIFlagsSection</a></li>
 <li><b>getGPRState()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvmctargetdesc-cpp-/riscvmcinstranalysis/#a58b0ec9234c39c8458141beb53d38728">anonymous{RISCVMCTargetDesc.cpp}::RISCVMCInstrAnalysis</a></li>
 <li><b>getGPUName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgputargetmachine/#ac7c7ab2466ba18c193faea8966362085">llvm::AMDGPUTargetMachine</a></li>
+<li><b>getGPUThreadID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2a009f425138ea4040d027b23d083390">llvm::OpenMPIRBuilder</a></li>
+<li><b>getGPUWarpSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#af903623c40d9e3c2ab371d7591d41bac">llvm::OpenMPIRBuilder</a></li>
 <li><b>getGraph()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-domprinter-cpp-/legacydominatortreewrapperpassanalysisgraphtraits/#abb3e2bfb4ab6667c1a6818c6f697ed43">anonymous{DomPrinter.cpp}::LegacyDominatorTreeWrapperPassAnalysisGraphTraits</a></li>
 <li><b>getGraph()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-domprinter-cpp-/legacypostdominatortreewrapperpassanalysisgraphtraits/#a3cdb9e63d8e74653b87e04f4d969f539">anonymous{DomPrinter.cpp}::LegacyPostDominatorTreeWrapperPassAnalysisGraphTraits</a></li>
 <li><b>getGraph()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-regionprinter-cpp-/regioninfopassgraphtraits/#a3a24ad4146237b673452489ec4e74c19">anonymous{RegionPrinter.cpp}::RegionInfoPassGraphTraits</a></li>
@@ -34525,6 +34713,7 @@ keywords:
 <li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-764fe38a670fa71a18e1c5f119bcef9d/#a2895334c043839ae91cec9fc7eb3eded">llvm::DenseMapInfo&lt;ArrayRef&lt; T &gt;, void&gt;</a></li>
 <li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0/#ad5f791c09e8ce96486adbc75adc54966">llvm::DenseMapInfo&lt;at::VarRecord&gt;</a></li>
 <li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97/#a6365ea7ed5f2f560f1fbc7696cf18f16">llvm::DenseMapInfo&lt;Attribute::AttrKind&gt;</a></li>
+<li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70/#a73491b81e721c1f0f96426d418df807f">llvm::DenseMapInfo&lt;AttributeList, void&gt;</a></li>
 <li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962/#ad66f2256395744540b721514c4c83351">llvm::DenseMapInfo&lt;AttributeSet, void&gt;</a></li>
 <li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9/#a1658ec5ae9988c37c80c1cf07ae31f91">llvm::DenseMapInfo&lt;BasicBlock::iterator&gt;</a></li>
 <li><b>getHashValue()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6/#a78edcd106c97adafe060ffac6051a5ba">llvm::DenseMapInfo&lt;BasicBlockEdge&gt;</a></li>
@@ -35032,6 +35221,7 @@ keywords:
 <li><b>getImmTy()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-amdgpuasmparser-cpp-/amdgpuoperand/#a9f901d3b6a8c3b686d2f3408de0fb817">anonymous{AMDGPUAsmParser.cpp}::AMDGPUOperand</a></li>
 <li><b>getImmU16Context()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-ppcasmparser-cpp-/ppcoperand/#a771af6229c9ebe45f90a0a4a9fae5ca9">anonymous{PPCAsmParser.cpp}::PPCOperand</a></li>
 <li><b>getImmutablePasses()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager/#ad8b44da91c0acd3bd2263f5f1c071696">llvm::PMTopLevelManager</a></li>
+<li><b>getImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a309fbc0a0cba5a9d8f4ada5402f8fbe8">llvm::AttributeList</a></li>
 <li><b>getImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantarray/#a9ea336db8f810ac98de9ce6abe57b876">llvm::ConstantArray</a></li>
 <li><b>getImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantdatasequential/#a9a20b607f6fdb3dd6689a3daed25f3cb">llvm::ConstantDataSequential</a></li>
 <li><b>getImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantvector/#a309f3c62954552f077916c5085761bc4">llvm::ConstantVector</a></li>
@@ -35129,6 +35319,7 @@ keywords:
 <li><b>getImportType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/functionimporter/importmapty/#a7d29b2803cb1da68e09e4990312e3f40">llvm::FunctionImporter::ImportMapTy</a></li>
 <li><b>getImpPrefix()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/dllimportdefinitiongenerator/#a0185a0cd91a5dace7e0e4b0c86ca7277">llvm::orc::DLLImportDefinitionGenerator</a></li>
 <li><b>getImpreciseRecordIndicesForFilename()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/coverage/coveragemapping/#a62c0fd7f7063ee2342b84090d23b4ac2">llvm::coverage::CoverageMapping</a></li>
+<li><b>getInAllocaType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a8ab02acc2888e8d6360a57d767038faa">llvm::AttrBuilder</a></li>
 <li><b>getInAllocaType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a1948967a0a7675ab316c1b30d2cabdef">llvm::AttributeSet</a></li>
 <li><b>getInBoundsGetElementPtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantexpr/#a0fbdc8f9ebcc506b52a9f5c82feb363e">llvm::ConstantExpr</a></li>
 <li><b>getInBoundsGetElementPtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantexpr/#ab908f67575336091b5a9d099ddf483bb">llvm::ConstantExpr</a></li>
@@ -35189,7 +35380,6 @@ keywords:
 <li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/debuglocstream/#aaa8e8773ca97108687fdf84405738210">llvm::DebugLocStream</a></li>
 <li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diebasetyperef/#a2006b28c0cf31a883274f3361a39fb21">llvm::DIEBaseTypeRef</a></li>
 <li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugnames/nametableentry/#ad19b2c7c5010ed83803ed67ee545ffb4">llvm::DWARFDebugNames::NameTableEntry</a></li>
-<li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a357ae759731d2b8d69f8613004f8c8b2">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/frameindexsdnode/#a1cf719b8c945859e29131c892774b21c">llvm::FrameIndexSDNode</a></li>
 <li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/giseladdressing/baseindexoffset/#a50e98ca1c05f43ec792d90b085ce63c6">llvm::GISelAddressing::BaseIndexOffset</a></li>
 <li><b>getIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/giseladdressing/baseindexoffset/#a1db34dad57286e0d2985946dd11f0ca4">llvm::GISelAddressing::BaseIndexOffset</a></li>
@@ -35497,6 +35687,7 @@ keywords:
 <li><b>getInsertElement()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantexpr/#a64d6bd55aa4447bb25f1361993223450">llvm::ConstantExpr</a></li>
 <li><b>getInserter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilder/#a8b7810474e93491ff49e693464df1800">llvm::IRBuilder&lt;FolderTy, InserterTy&gt;</a></li>
 <li><b>getInserter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilder/#aeee8096cd576f21f56b74874dd61bfc2">llvm::IRBuilder&lt;FolderTy, InserterTy&gt;</a></li>
+<li><b>getInsertionPoint()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aa26124809eff11c5f244027439751c50">llvm::OpenMPIRBuilder</a></li>
 <li><b>getInsertionPointAfterDef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instruction/#ad2b97a10a92351d0df82c9759ad1ee07">llvm::Instruction</a></li>
 <li><b>getInsertMBB()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/regbankselect/insertpoint/#a461885c579b71413b87ee1e0eb5bc294">llvm::RegBankSelect::InsertPoint</a></li>
 <li><b>getInsertMBBImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/regbankselect/edgeinsertpoint/#ac8785cf3dec39b2b13968e2d84257a99">llvm::RegBankSelect::EdgeInsertPoint</a></li>
@@ -36126,6 +36317,7 @@ keywords:
 <li><b>getKCFITrapSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#a919076c2cfa73586ca99b52ff984ae40">llvm::MCObjectFileInfo</a></li>
 <li><b>getKernargParameterPtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpulegalizerinfo/#adeb18e3c3ca254b1eac668a91c0a18e8">llvm::AMDGPULegalizerInfo</a></li>
 <li><b>getKernArgSegmentSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpusubtarget/#a76976ccb29b7c0317d800e4dcd294ddb">llvm::AMDGPUSubtarget</a></li>
+<li><b>getKernelArgsVector()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a49e1f0512e7d7b37dfcecc0b25dd875b">llvm::OpenMPIRBuilder</a></li>
 <li><b>getKey()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64authmcexpr/#ac458db75cc6b35e68100a2de8254904c">llvm::AArch64AuthMCExpr</a></li>
 <li><b>getKey()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/concurrenthashtableinfobyptr/#a3a77ca8506207a5a0751194113a265f5">llvm::ConcurrentHashTableInfoByPtr&lt;KeyTy, KeyDataTy, AllocatorTy&gt;</a></li>
 <li><b>getKey()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantptrauth/#a9c3928485f63866f20e21c67776300e7">llvm::ConstantPtrAuth</a></li>
@@ -37103,6 +37295,7 @@ keywords:
 <li><b>getMachine()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/coffimportfile/#aeb6311c33755bec8635be3a41057f924">llvm::object::COFFImportFile</a></li>
 <li><b>getMachine()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/coffobjectfile/#af5f85cadd55a2d71ca8bef9ef5891d37">llvm::object::COFFObjectFile</a></li>
 <li><b>getMachineBasicBlocks()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lexicalscopes/#a6478937e0927f9038e58dca2e03e38ab">llvm::LexicalScopes</a></li>
+<li><b>getMachineCombinerPatterns()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a2b3b6bff91628c24b2539a2733b3c292">llvm::AArch64InstrInfo</a></li>
 <li><b>getMachineCombinerPatterns()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#aea29efd6193842d296829d058dcd107a">llvm::PPCInstrInfo</a></li>
 <li><b>getMachineCombinerPatterns()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#ae92946bff8cb4ef04b71f5f6360e832e">llvm::RISCVInstrInfo</a></li>
 <li><b>getMachineCombinerPatterns()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a861381cad67866e249c6330631ac0742">llvm::TargetInstrInfo</a></li>
@@ -37793,6 +37986,7 @@ keywords:
 <li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aaresults/model/#a9b1c9b5014d69e878103627753f983e1">llvm::AAResults::Model&lt;AAResultT&gt;</a></li>
 <li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aaresults/model/#a3c9c0dd642ac2e27efc5c2cb7f6e79fb">llvm::AAResults::Model&lt;AAResultT&gt;</a></li>
 <li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a7c68b48aeb5f2440cf65d5e8b2e16040">llvm::Attribute</a></li>
+<li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#afb984e3fb006d09d90fcc934789cfbd8">llvm::AttributeList</a></li>
 <li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a481ff076fc621dd7d69f160632b8f7df">llvm::AttributeSet</a></li>
 <li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a49e3587a5e1a5f2ae497acfe1ccaab7b">llvm::AttributeSetNode</a></li>
 <li><b>getMemoryEffects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicaaresult/#ab0468b18b8866896e7c3aa99700c6a97">llvm::BasicAAResult</a></li>
@@ -38705,6 +38899,7 @@ keywords:
 <li><b>getNameWithPrefix()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfilecoff/#ab61c33276b67ea22d0ad922a545ced9a">llvm::TargetLoweringObjectFileCOFF</a></li>
 <li><b>getNameWithPrefix()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfilemacho/#a2aa25f7f2b406e074ebced65fa3dd531">llvm::TargetLoweringObjectFileMachO</a></li>
 <li><b>getNameWithPrefix()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#af25263afe4b2685f4571b432ced7d171">llvm::TargetMachine</a></li>
+<li><b>getNameWithSeparators()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad724b3adf53754848d6f9ac6818ef34e">llvm::OpenMPIRBuilder</a></li>
 <li><b>getNaN()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apfloat/#aeecd5fa66870de83d235933a683b5952">llvm::APFloat</a></li>
 <li><b>getNaN()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantfp/#ab21342133676f10340dc3f541b128f24">llvm::ConstantFP</a></li>
 <li><b>getNaN()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constantfp/#a2c3fd2e994435c07ab2528eaa04b6899">llvm::sandboxir::ConstantFP</a></li>
@@ -39222,6 +39417,7 @@ keywords:
 <li><b>getNumAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#af135b1c30e805d731ab9a709cfb74ce5">llvm::AttributeSet</a></li>
 <li><b>getNumAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#aa3ed0d055fb6045180f20db84abc23de">llvm::AttributeSetNode</a></li>
 <li><b>getNumAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfabbreviationdeclaration/#a0a4a66da167ba3c1491519a9fcb7594c">llvm::DWARFAbbreviationDeclaration</a></li>
+<li><b>getNumAttrSets()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a7b3e5b33beb7828efdd751c208bfbee9">llvm::AttributeList</a></li>
 <li><b>getNumBackEdges()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopbase/#a389bb3581ba3c8094b89642efaf8e514">llvm::LoopBase&lt;BlockT, LoopT&gt;</a></li>
 <li><b>getNumBBEntries()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/object/bbaddrmap/#a6d7c85f2247fe5ff8118edd512bb53a9">llvm::object::BBAddrMap</a></li>
 <li><b>getNumber()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a0bf3a7e9bff209ef9f8d2eb194196848">llvm::BasicBlock</a></li>
@@ -39608,6 +39804,7 @@ keywords:
 <li><b>getNumProcResourceKinds()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mcschedmodel/#a5268bc4b5673e84a8f75df74b024d374">llvm::MCSchedModel</a></li>
 <li><b>getNumProcResourceKinds()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetschedmodel/#aefe560ffcce905bc34e2d46becb54e84">llvm::TargetSchedModel</a></li>
 <li><b>getNumRangeExtensions()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/valuelatticeelement/#a8589b2fc437dff685d325713531f741d">llvm::ValueLatticeElement</a></li>
+<li><b>getNumReadyUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a8bc30739c7dc3548e9ffd1c44f145cf1">llvm::mca::ResourceState</a></li>
 <li><b>getNumRecords()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmapparser/#a93ac9b2920d63c0cbeccf7342b479212">llvm::StackMapParser&lt;Endianness&gt;</a></li>
 <li><b>getNumReferences()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callgraphnode/#ac7d600e0d783d8c4f8980bfe9daa6ae7">llvm::CallGraphNode</a></li>
 <li><b>getNumRegBanks()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo/#a955b1188aace2fd0ff954c427821b49a">llvm::RegisterBankInfo</a></li>
@@ -39708,6 +39905,8 @@ keywords:
 <li><b>getNumTypesUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunitvector/#a6e9ac3452a271b08374bac97a1290496">llvm::DWARFUnitVector</a></li>
 <li><b>getNumTypeUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfcontext/#a2649448397bdce699c88751d0bc17926">llvm::DWARFContext</a></li>
 <li><b>getNumUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunitvector/#a77655394de93c2b51bb4f32587e452a6">llvm::DWARFUnitVector</a></li>
+<li><b>getNumUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a93d63cb46cdcebeed8a4c3b4af72dc93">llvm::mca::ResourceManager</a></li>
+<li><b>getNumUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a95b0a9105b457a084a856daae87e8101">llvm::mca::ResourceState</a></li>
 <li><b>getNumUnresolved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdnode/#afaa888eea64d3619550d172aa7caa19e">llvm::MDNode</a></li>
 <li><b>getNumUnscheduledSuccs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dgnode/#a638d8c378ec2ed88b12edf9a64078240">llvm::sandboxir::DGNode</a></li>
 <li><b>getNumUnusedBits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/seedbundle/#a80e62a5d59fb4223760482558e69094b">llvm::sandboxir::SeedBundle</a></li>
@@ -39750,7 +39949,9 @@ keywords:
 <li><b>getNUWSub()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantexpr/#a0d70778cb3a4a14272eace95cb2690e0">llvm::ConstantExpr</a></li>
 <li><b>getNValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/machoobjectfile/#ad823d575bb639330180ee9d8b43bf237">llvm::object::MachOObjectFile</a></li>
 <li><b>getNVPTXCPUName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/elfobjectfilebase/#a5979d36cbaba9d56a7ec8787223abdcf">llvm::object::ELFObjectFileBase</a></li>
+<li><b>getNVPTXLaneID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a2a9e43b0db2fb1ca6bee29b4f11130cc">llvm::OpenMPIRBuilder</a></li>
 <li><b>getNVPTXTargetMachine()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-nvptxtargetmachine-cpp-/nvptxpassconfig/#aee7479abb2de25ebc1a1040af93bb8e1">anonymous{NVPTXTargetMachine.cpp}::NVPTXPassConfig</a></li>
+<li><b>getNVPTXWarpID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a94f57a8823240d7bc68dd7c32c0dd882">llvm::OpenMPIRBuilder</a></li>
 <li><b>getO0WantsFastISel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#abe330a3972c5bf72e4093fd113c6ebac">llvm::TargetMachine</a></li>
 <li><b>getObj()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvcodeviewreader/#a933ea4c4d8737ac457284944ae8d98f6">llvm::logicalview::LVCodeViewReader</a></li>
 <li><b>getObjAddress()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sectionentry/#a873c676a0b78fcac1c9840af57815aee">llvm::SectionEntry</a></li>
@@ -39882,7 +40083,6 @@ keywords:
 <li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebuginfoentry/#a74338425061cc0d9df5fe5398d48d9f2">llvm::DWARFDebugInfoEntry</a></li>
 <li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugline/sectionparser/#a06eaded13d6b6377eaa436b038bf9b71">llvm::DWARFDebugLine::SectionParser</a></li>
 <li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a14abe929fe7e3d9a46c3ad1d8a1eb2fd">llvm::DWARFDie</a></li>
-<li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a74ed912ccb6cd7a7c5cc2a8543da9d89">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-1/#af52bec8bfd6fcde07ecb8d04e495b8a0">llvm::DWARFUnit</a></li>
 <li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunitheader/#a025007b0ee5bf47ace3e98086eb4f600">llvm::DWARFUnitHeader</a></li>
 <li><b>getOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunitindex/entry/sectioncontribution/#ae92621f43ffe14255080f55a1386fa76">llvm::DWARFUnitIndex::Entry::SectionContribution</a></li>
@@ -39979,6 +40179,7 @@ keywords:
 <li><b>getOldMember()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/newarchivemember/#aadff13fd008345361aa920977e0c9e32">llvm::NewArchiveMember</a></li>
 <li><b>getOldOpndValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-gcndppcombine-cpp-/gcndppcombine/#aa6ba8c0c2cf824458a8543916be0359d">anonymous{GCNDPPCombine.cpp}::GCNDPPCombine</a></li>
 <li><b>getOmitDwarfIfHaveCompactUnwind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#ace2637cdddf7452b83365442e31a5d1c">llvm::MCObjectFileInfo</a></li>
+<li><b>getOMPCriticalRegionLock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a4910b0d2c5749629437e9c52bc639c7f">llvm::OpenMPIRBuilder</a></li>
 <li><b>getOnConditionDirective()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/xcofftracebacktable/#a3e0c4370b27ef7385250a560aeb8c9d7">llvm::object::XCOFFTracebackTable</a></li>
 <li><b>getOne()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apfloat/#a7f8802ce4f0a7839abb4c836cb52138a">llvm::APFloat</a></li>
 <li><b>getOne()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/branchprobability/#a56e1b2d1999aadf4c513caee1ce5275b">llvm::BranchProbability</a></li>
@@ -40333,6 +40534,7 @@ keywords:
 <li><b>getOrCreateContextPath()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/profileconverter/#a31186ba63a94a622a398821fb53eb6f8">llvm::sampleprof::ProfileConverter</a></li>
 <li><b>getOrCreateConvergenceTokenVReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irtranslator/#a96c9aad4977855820a051523927ec1e3">llvm::IRTranslator</a></li>
 <li><b>getOrCreateDataFragment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcobjectstreamer/#a3558114ca72d34962abb28004d864b19">llvm::MCObjectStreamer</a></li>
+<li><b>getOrCreateDefaultSrcLocStr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ac35a35b620a34821da2801ebf452a9a0">llvm::OpenMPIRBuilder</a></li>
 <li><b>getOrCreateDefsList()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memoryssa/#a51b01927f064891af68ace526a4f9be1">llvm::MemorySSA</a></li>
 <li><b>getOrCreateDirectionalLocalSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccontext/#a63c61935b3730e67c3ddcc30be70adba">llvm::MCContext</a></li>
 <li><b>getOrCreateDwarfCompileUnit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebug/#a87a0abfa2e3ed4c261513379e04bde84">llvm::DwarfDebug</a></li>
@@ -40355,6 +40557,7 @@ keywords:
 <li><b>getOrCreateGOTSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/elfjitlinker-i386/#a3d40e26448bde9fdec8b8903ebee7940">llvm::jitlink::ELFJITLinker_i386</a></li>
 <li><b>getOrCreateGOTSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/elfjitlinker-x86-64/#a8e35243475df0e9df46e4648d97fbb72">llvm::jitlink::ELFJITLinker_x86_64</a></li>
 <li><b>getOrCreateHoistedBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-licm-cpp-/controlflowhoister/#ac2231bda91f0fdd79e476cb36e48d33b">anonymous{LICM.cpp}::ControlFlowHoister</a></li>
+<li><b>getOrCreateIdent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a02cae9681b22a06e7738a4c1f3de233e">llvm::OpenMPIRBuilder</a></li>
 <li><b>getOrCreateImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazyvalueinfo/#afad0aad168ce55a0d76d369e6dbc4a44">llvm::LazyValueInfo</a></li>
 <li><b>getOrCreateImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/threadsafetrierawhashmapbase/#abc5645ab19a5c0519962296675b3f162">llvm::ThreadSafeTrieRawHashMapBase</a></li>
 <li><b>getOrCreateImportedEntityDIE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfcompileunit-2/#a1b6f98e91ce662c3a7a89705a00ef67f">llvm::DwarfCompileUnit</a></li>
@@ -40406,6 +40609,8 @@ keywords:
 <li><b>getOrCreateResultFromMemIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo/#ad5e18a8730e428b4967b375d57c2e401">llvm::TargetTransformInfo</a></li>
 <li><b>getOrCreateResultFromMemIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo/model/#a3c5a7b0667adafe8f446531c8295fb6c">llvm::TargetTransformInfo::Model&lt;T&gt;</a></li>
 <li><b>getOrCreateResultFromMemIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targettransforminfoimplbase/#a4d5e0c0f63c5e4fd115109bd03f4c1a3">llvm::TargetTransformInfoImplBase</a></li>
+<li><b>getOrCreateRuntimeFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a034dc6253a2a36f78ac071a7c12d5c27">llvm::OpenMPIRBuilder</a></li>
+<li><b>getOrCreateRuntimeFunctionPtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a7a0ce50dfb1a164ee67119899992c75b">llvm::OpenMPIRBuilder</a></li>
 <li><b>getOrCreateSectionDescriptor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/outputsections/#ab6597212694001f13f816944c69bb0b2">llvm::dwarf_linker::parallel::OutputSections</a></li>
 <li><b>getOrCreateSectionSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccontext/#a165f584cb1a4409c46783117c44b9dec">llvm::MCContext</a></li>
 <li><b>getOrCreateSlotEntrypoint()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/aarch32/stubsmanager-prev7/#ab7a77315f5c270652a16ee7e66254c82">llvm::jitlink::aarch32::StubsManager_prev7</a></li>
@@ -40427,6 +40632,10 @@ keywords:
 <li><b>getOrCreateSPIRVTypeByName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spirvglobalregistry/#a8f17d3e92f855f675577a021e9bc2a35">llvm::SPIRVGlobalRegistry</a></li>
 <li><b>getOrCreateSPIRVVectorType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spirvglobalregistry/#acd545bc376f8f5880178094a2d165476">llvm::SPIRVGlobalRegistry</a></li>
 <li><b>getOrCreateSPIRVVectorType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spirvglobalregistry/#a4791c0c5f18aaa298445226456f15547">llvm::SPIRVGlobalRegistry</a></li>
+<li><b>getOrCreateSrcLocStr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a55a39962245dd2e0938194dd3b4438e5">llvm::OpenMPIRBuilder</a></li>
+<li><b>getOrCreateSrcLocStr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a061144e3e490f8917de9c53163ef8c01">llvm::OpenMPIRBuilder</a></li>
+<li><b>getOrCreateSrcLocStr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a9b8c05f635a1b8e5a66eeec4704bf291">llvm::OpenMPIRBuilder</a></li>
+<li><b>getOrCreateSrcLocStr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a4950d59a5a139f25fa75e82a948537fc">llvm::OpenMPIRBuilder</a></li>
 <li><b>getOrCreateStaticMemberDIE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-2/#acc3268e4df66097512cb6b4b87b438d4">llvm::DwarfUnit</a></li>
 <li><b>getOrCreateStubsSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/ppc64/plttablemanager/#a7fd06151a9620fd248a59f4914362465">llvm::jitlink::ppc64::PLTTableManager&lt;Endianness&gt;</a></li>
 <li><b>getOrCreateSubprogramDIE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunit-2/#ad258972cf15e00c497db2e2621c60e7b">llvm::DwarfUnit</a></li>
@@ -40435,6 +40644,7 @@ keywords:
 <li><b>getOrCreateSubrange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#a3656fa387ece7e6b1d3511da750743bd">llvm::DIBuilder</a></li>
 <li><b>getOrCreateSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/ehframeedgefixer/#a146f3d72267a3803c69bdf9dc9109cfe">llvm::jitlink::EHFrameEdgeFixer</a></li>
 <li><b>getOrCreateSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mccontext/#ac11eef690074972378846024abbe8722">llvm::MCContext</a></li>
+<li><b>getOrCreateThreadID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a9607f501333d84917dc48f5d263e9b6c">llvm::OpenMPIRBuilder</a></li>
 <li><b>getOrCreateTOCSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/ppc64/toctablemanager/#abf7e877f3712276a098df1f79d05bb17">llvm::jitlink::ppc64::TOCTableManager&lt;Endianness&gt;</a></li>
 <li><b>getOrCreateTypeArray()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#abf27ce323516bd289ce53d2e241581fc">llvm::DIBuilder</a></li>
 <li><b>getOrCreateTypeCollection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/inputfile/#adf57ff7aa3ccbf7404559cad9e8bf8b8">llvm::pdb::InputFile</a></li>
@@ -40594,9 +40804,11 @@ keywords:
 <li><b>getOutermostLoop()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopnest/#aeb26e0f4ad96cecfa73f0abbed21b61f">llvm::LoopNest</a></li>
 <li><b>getOuterRefSCC()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/scc/#aef7abf8c91d56934fe4097746f8e5c30">llvm::LazyCallGraph::SCC</a></li>
 <li><b>getOuterResumeDest()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-inlinefunction-cpp-/landingpadinlininginfo/#a100e0ffc3bc367581b416e2cd64fb6e5">anonymous{InlineFunction.cpp}::LandingPadInliningInfo</a></li>
+<li><b>getOutlinableRanges()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a57639f2f066637e2f3571662526f213d">llvm::AArch64InstrInfo</a></li>
 <li><b>getOutlinableRanges()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a0028f0ee9f737ba5290254b7924accbb">llvm::TargetInstrInfo</a></li>
 <li><b>getOutlinedHashTree()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codegendata/#a8e5f32b1f85714a5fb918833048c04d8">llvm::CodeGenData</a></li>
 <li><b>getOutliningCallBBRelativeFreq()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-partialinlining-cpp-/partialinlinerimpl/#a3727f9ce1229c5e642b1a913eb312a5e">anonymous{PartialInlining.cpp}::PartialInlinerImpl</a></li>
+<li><b>getOutliningCandidateInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#ae0385b9c4d9ad37aeb63e7dd01093c63">llvm::AArch64InstrInfo</a></li>
 <li><b>getOutliningCandidateInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a99791c9647b053fc872d35a3f0faafd7">llvm::ARMBaseInstrInfo</a></li>
 <li><b>getOutliningCandidateInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a0c5b673184f4d81114afba8a699cdb7e">llvm::RISCVInstrInfo</a></li>
 <li><b>getOutliningCandidateInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#aae4e1b8b82113ab0848fe7e4e3a2574f">llvm::TargetInstrInfo</a></li>
@@ -40605,6 +40817,7 @@ keywords:
 <li><b>getOutliningCost()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/outliner/outlinedfunction/#a28a370a7f9867fa70385aa4ff45c65e7">llvm::outliner::OutlinedFunction</a></li>
 <li><b>getOutliningStyle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#adda0b11bd1bc8d81e88218a69f78b309">llvm::AArch64FunctionInfo</a></li>
 <li><b>getOutliningType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a3034fb1c96df7c2c8f52f11c8fc82467">llvm::TargetInstrInfo</a></li>
+<li><b>getOutliningTypeImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a72a70493afafbf4374226300289c04b9">llvm::AArch64InstrInfo</a></li>
 <li><b>getOutliningTypeImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#abffddc65a79eca0830b7dd232ff74dc5">llvm::ARMBaseInstrInfo</a></li>
 <li><b>getOutliningTypeImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a80ada2af2a2f2c3f640c0ad4192f53cb">llvm::RISCVInstrInfo</a></li>
 <li><b>getOutliningTypeImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a2af67652d97de393fd3208c625cea6b1">llvm::TargetInstrInfo</a></li>
@@ -40662,21 +40875,30 @@ keywords:
 <li><b>getParamAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a7713a45c8983df00c3975444b94e69ae">llvm::CallBase</a></li>
 <li><b>getParamAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a97fb0bcc88f78900c3d4780d963540e0">llvm::Function</a></li>
 <li><b>getParamAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#ad3da5e0b4c0c86ff3f7da94396931523">llvm::Argument</a></li>
+<li><b>getParamAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a704aa0a94c0e6bf8fd60e6e4e463e93d">llvm::AttributeList</a></li>
+<li><b>getParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4bd6dadb077a5c3503a74b8c5850a805">llvm::AttributeList</a></li>
+<li><b>getParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#abe0327f306fb6582ae6b1a55586e2410">llvm::AttributeList</a></li>
 <li><b>getParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a50b4d34365cf704260dd9e43796144ea">llvm::CallBase</a></li>
 <li><b>getParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a29461b85f0f7f0d91323ff2e40de2d75">llvm::CallBase</a></li>
 <li><b>getParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a28eb38953dee4718455ab384f21f638c">llvm::Function</a></li>
 <li><b>getParamAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a31dce9e2b84da293213f996778355b32">llvm::CallBase</a></li>
 <li><b>getParamAttrOnCalledFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a9cc421e50b26e4986a97db788c8db7dd">llvm::CallBase</a></li>
+<li><b>getParamAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ada7a173c40ca7ac048a4b7099ceb71c0">llvm::AttributeList</a></li>
 <li><b>getParamByRefType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a1247bbc672e07bf7e30e147cd1990dc3">llvm::Argument</a></li>
+<li><b>getParamByRefType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ada3107abfa5601f959a5403190d230f8">llvm::AttributeList</a></li>
 <li><b>getParamByRefType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a1951bdad78f9a0cb364948f121d6fba4">llvm::CallBase</a></li>
 <li><b>getParamByRefType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a80155b6dbeda6df7d2c106b89fe1027e">llvm::Function</a></li>
 <li><b>getParamByValType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#ac1d02322e0e7eccafbe38a7116841018">llvm::Argument</a></li>
+<li><b>getParamByValType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab58adac46c3ade432914ab977a69e17e">llvm::AttributeList</a></li>
 <li><b>getParamByValType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a88cc5fa65ff17e62b49dc5fb4401f813">llvm::CallBase</a></li>
 <li><b>getParamByValType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a669daedc0f098c6b21ad743df19e1d73">llvm::Function</a></li>
+<li><b>getParamDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a62f9460daf3f10c40cbeae0fd222cbd9">llvm::AttributeList</a></li>
 <li><b>getParamDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a37269632d3b68130c5b7019cd795be44">llvm::CallBase</a></li>
 <li><b>getParamDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a5a457ddc9964340847b216e105b8eb32">llvm::Function</a></li>
+<li><b>getParamDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac2ac94e810bcb4e307b82617c2d1f22d">llvm::AttributeList</a></li>
 <li><b>getParamDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#abaf8a257af9e537d7cd8b05299e5090c">llvm::CallBase</a></li>
 <li><b>getParamDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a8b1396e0135cc83920828f81ce53d71d">llvm::Function</a></li>
+<li><b>getParamElementType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a9d429f5f04915251440ffdafeb462616">llvm::AttributeList</a></li>
 <li><b>getParamElementType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#aa9d39950dcbd9e1e6dac2b66db4324d4">llvm::CallBase</a></li>
 <li><b>getParameterCount()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/memberfunctionrecord/#a6bcc704320991e4eccbb1a4afac46f6f">llvm::codeview::MemberFunctionRecord</a></li>
 <li><b>getParameterCount()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/procedurerecord/#a445450f43dd40124fdc72b452a4e52ee">llvm::codeview::ProcedureRecord</a></li>
@@ -40685,21 +40907,27 @@ keywords:
 <li><b>getParameters()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtype/#aab5db3c6664f781ddbc31756ef483cdd">llvm::logicalview::LVType</a></li>
 <li><b>getParamFramePtrReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/frameprocsym/#a8d6b80731607ab8ea8ee698d255ce3cf">llvm::codeview::FrameProcSym</a></li>
 <li><b>getParamInAllocaType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#aace470f9201b0139a075fa91a2d340f1">llvm::Argument</a></li>
+<li><b>getParamInAllocaType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a7b3b0b8961a38c7735a4b9660c42be7b">llvm::AttributeList</a></li>
 <li><b>getParamInAllocaType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a2b576de254a0b0c5f278538862840e76">llvm::CallBase</a></li>
 <li><b>getParamInAllocaType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#ab1f37b7f4032fef91001845b5f506e66">llvm::Function</a></li>
 <li><b>getParamIndexForOptionalMask()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/vfinfo/#a9b430434548d148d4fcab54003f5f57b">llvm::VFInfo</a></li>
 <li><b>getParamName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetlowering/#a7dfd846c7bc87f28f0dc5dab92e7fe58">llvm::NVPTXTargetLowering</a></li>
+<li><b>getParamNoFPClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#acc215f164f494921945f7cb648056c56">llvm::AttributeList</a></li>
 <li><b>getParamNoFPClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a01640692cf7fbf4574227f7899af2e71">llvm::CallBase</a></li>
 <li><b>getParamNoFPClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a67810dc8301ddb65ca4ce52d4a446af1">llvm::Function</a></li>
+<li><b>getParamPreallocatedType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa27e1eb608ff6d7e99bbba7d7aaf5b71">llvm::AttributeList</a></li>
 <li><b>getParamPreallocatedType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a1e664c47c22c883baf848ad37261637c">llvm::CallBase</a></li>
 <li><b>getParamPreallocatedType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a9e292c5881887f1c1bfb54bcda262b32">llvm::Function</a></li>
+<li><b>getParamRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae6559a2babd0e7bd0f96d7116fb49940">llvm::AttributeList</a></li>
 <li><b>getParams()</b>: as function in class <a href="/web-llvm/docs/api/classes/functionencoding/#af0e094b07900ce79390f725aae13e44b">FunctionEncoding</a></li>
 <li><b>getParams()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblyfunctioninfo/#af05f6370f2508ffc40a3600dfb6e2341">llvm::WebAssemblyFunctionInfo</a></li>
 <li><b>getParams()</b>: as function in class <a href="/web-llvm/docs/api/classes/templateargs/#a7b6305741a8f57925cef85662fcd30e0">TemplateArgs</a></li>
 <li><b>getParamStackAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#af59bfa623b37e5fb7c1130ef66e73986">llvm::Argument</a></li>
 <li><b>getParamStackAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a00a04c74b7f139321a0b49f5249e2d57">llvm::CallBase</a></li>
 <li><b>getParamStackAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#ac667b0a43e49f4e4ae4e1d558f37df8c">llvm::Function</a></li>
+<li><b>getParamStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab9095b759fb33104bdcafec14e2b15c1">llvm::AttributeList</a></li>
 <li><b>getParamStructRetType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a6e2e406d1f112c192fbd431d28c31ce4">llvm::Argument</a></li>
+<li><b>getParamStructRetType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a0e3b1e69f26a3784d71f161942e31829">llvm::AttributeList</a></li>
 <li><b>getParamStructRetType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a287b116e4b7437fc6f4a0ca5f96add85">llvm::CallBase</a></li>
 <li><b>getParamStructRetType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#aeb2fec27f03901fdf633971423877345">llvm::Function</a></li>
 <li><b>getParamSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetlowering/#a0fc4314d2f6a49d4e04d768b0fc6ea54">llvm::NVPTXTargetLowering</a></li>
@@ -40708,7 +40936,7 @@ keywords:
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-typebasedaliasanalysis-cpp-/tbaanodeimpl/#ad598a10777eb06c93aced64710df5951">anonymous{TypeBasedAliasAnalysis.cpp}::TBAANodeImpl&lt;MDNodeTy&gt;</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a862c73765000251be786c801260ba7c1">llvm::Argument</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a8ed1d642c949eef868937797f5240811">llvm::Argument</a></li>
-<li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::BasicBlock</a></li>
+<li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a80069e261aca5e34cffcc2ef67cfa29b">llvm::BasicBlock</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#a8418f5e52a18c1b1ab5860eb591fd325">llvm::BasicBlock</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dbgmarker/#acf6be32c12a1a6509d7ac0a4d0819f3f">llvm::DbgMarker</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dbgmarker/#a08c76096cf924426a3ec7a830e055148">llvm::DbgMarker</a></li>
@@ -40743,6 +40971,7 @@ keywords:
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/layoutitembase/#ad17df02fb67e74f3b29d21803b57ca6c">llvm::pdb::LayoutItemBase</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/regionbase/#a7ed9c79ac80ed5996c7e241814302eab">llvm::RegionBase&lt;Tr&gt;</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/regionnodebase/#a79b09475f3753504a26dc312d572112e">llvm::RegionNodeBase&lt;Tr&gt;</a></li>
+<li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a1b4bf7c97cdc8159fd73d48063f0b250">llvm::sandboxir::BasicBlock</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#a07fff35dbe661268e701d1e465d40e8e">llvm::sandboxir::Constant</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function/#a2dab2e91c26b67cdf679bbdf6bc748b7">llvm::sandboxir::Function</a></li>
 <li><b>getParent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalwithnodeapi/#ae8bcbcefa45fb5dec449326922668aa3">llvm::sandboxir::GlobalWithNodeAPI&lt;GlobalT, LLVMGlobalT, ParentT, LLVMParentT&gt;</a></li>
@@ -41361,7 +41590,6 @@ keywords:
 <li><b>getPIELevel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/module/#af3295ffffcff40d7c95aa9fb4d13256a">llvm::Module</a></li>
 <li><b>getPlaceholderOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-metadataloader-cpp-/anonymous-metadataloader-cpp-/placeholderqueue/#a49a61d6bde2f6c3a38128341f8d99753">anonymous{MetadataLoader.cpp}::anonymous{MetadataLoader.cpp}::PlaceholderQueue</a></li>
 <li><b>getPlacement()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/compileunit/dieinfo/#aa410d61287a4ff37d4d8c3bf5e3879a1">llvm::dwarf_linker::parallel::CompileUnit::DIEInfo</a></li>
-<li><b>getPlacement()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#aef62a193fbeea10e3ec64ee56c31a2b3">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>getPlainRelocationExternal()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/machoobjectfile/#a7bec3ca52f60d7ca088f0634a2e8f779">llvm::object::MachOObjectFile</a></li>
 <li><b>getPlainRelocationSymbolNum()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/macho/relocationinfo/#aa6cb93904421a2b7656a4756165d8c4e">llvm::objcopy::macho::RelocationInfo</a></li>
 <li><b>getPlainRelocationSymbolNum()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/machoobjectfile/#a99471e40aa719f7de1a81c38b8b129cc">llvm::object::MachOObjectFile</a></li>
@@ -41647,6 +41875,7 @@ keywords:
 <li><b>getPreallocatedArgOffsets()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86machinefunctioninfo/#a3c38584ad91b3e408fa867373ca63225">llvm::X86MachineFunctionInfo</a></li>
 <li><b>getPreallocatedIdForCallSite()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86machinefunctioninfo/#afdfb496f636dacb853a26c073874950f">llvm::X86MachineFunctionInfo</a></li>
 <li><b>getPreallocatedStackSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86machinefunctioninfo/#a98635a734a316564e14c3d8026dfd579">llvm::X86MachineFunctionInfo</a></li>
+<li><b>getPreallocatedType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a689e4253d15e22e474fe0bade6747a15">llvm::AttrBuilder</a></li>
 <li><b>getPreallocatedType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#ab7f8b65e8459440e4a71c3076cdad21d">llvm::AttributeSet</a></li>
 <li><b>getPrecedence()</b>: as function in struct <a href="/web-llvm/docs/api/structs/abstractmanglingparser/operatorinfo/#a833f0b876264ebdec33723d0b006835e">AbstractManglingParser::OperatorInfo</a></li>
 <li><b>getPrecedence()</b>: as function in class <a href="/web-llvm/docs/api/classes/node/#a0f7ff9fb24050fa53369a209955d62d9">Node</a></li>
@@ -41903,6 +42132,8 @@ keywords:
 <li><b>getProcResource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetschedmodel/#aea6b86c09906bafae5cdf3393ba05f9a">llvm::TargetSchedModel</a></li>
 <li><b>getProcResourceDepths()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/ensemble/#a8a2f482cc1f32a8cf3193f34f051064e">llvm::MachineTraceMetrics::Ensemble</a></li>
 <li><b>getProcResourceHeights()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/ensemble/#a0ec4ed0a00f77f3225c7e200021c2da2">llvm::MachineTraceMetrics::Ensemble</a></li>
+<li><b>getProcResourceID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a3531c482699ec5c57cda4fe5da71e437">llvm::mca::ResourceState</a></li>
+<li><b>getProcResUnitMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#aaa90fc6aed26d5f91436e6693d08274b">llvm::mca::ResourceManager</a></li>
 <li><b>getProducedBinaries()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#a73f6c6916269fbca6fd4a36fa8435af4">llvm::ThinLTOCodeGenerator</a></li>
 <li><b>getProducedBinaryFiles()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#ab7aef709e1748908f580b2a8427c5a0f">llvm::ThinLTOCodeGenerator</a></li>
 <li><b>getProducer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dicompileunit/#aa1d9dd21a67dd50dbfae84e25d00e104">llvm::DICompileUnit</a></li>
@@ -42043,6 +42274,7 @@ keywords:
 <li><b>getRAIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86machinefunctioninfo/#aa60550c920daccfdd275d8d94ac355b7">llvm::X86MachineFunctionInfo</a></li>
 <li><b>GetRandomNumber()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sys/process/#a92b058c34d04f6d0adf6eac3060343c6">llvm::sys::Process</a></li>
 <li><b>getRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#ad7a83acf52b94d9f56c5d5f27d0ceb0a">llvm::Argument</a></li>
+<li><b>getRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ac809872a1cc7c2d6be09b58f8cf7b400">llvm::AttrBuilder</a></li>
 <li><b>getRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a10eb642c38648a5edb4a6bc7ce217a17">llvm::Attribute</a></li>
 <li><b>getRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#aa64b47f684944bcb9aea2c1350440cd7">llvm::CallBase</a></li>
 <li><b>getRange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantrangelist/#a01de56edfbaf77ed1cd239fb9053a4b0">llvm::ConstantRangeList</a></li>
@@ -42159,6 +42391,7 @@ keywords:
 <li><b>getRawIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/corosubfninst/#ab1bf8e23e9fb08ebfcc7de672a334f11">llvm::CoroSubFnInst</a></li>
 <li><b>getRawInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/coroidinst/#a9dbdb0ca9332c447a3ec6f7b3bbb2fce">llvm::CoroIdInst</a></li>
 <li><b>getRawInlinedAt()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dilocation/#aa28470ce55ef213267d4aab516a8c315">llvm::DILocation</a></li>
+<li><b>getRawIntAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a196eaf12b6408f442a6d164c336d3d52">llvm::AttrBuilder</a></li>
 <li><b>getRawLabel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dbglabelinst/#a37e5a810d1b08405046290f99050ddc3">llvm::DbgLabelInst</a></li>
 <li><b>getRawLabel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dbglabelrecord/#a11af0bfa48234611c77f38c3704a1fbc">llvm::DbgLabelRecord</a></li>
 <li><b>getRawLastModified()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/abstractarchivememberheader/#ae6af5815082421e20334d3056a8f30f1">llvm::object::AbstractArchiveMemberHeader</a></li>
@@ -42193,6 +42426,7 @@ keywords:
 <li><b>getRawOperands()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfexpression/operation/#a8b88cc734c06f9947e43aff4b9749c15">llvm::DWARFExpression::Operation</a></li>
 <li><b>getRawOS()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-elfemitter-cpp-/contiguousblobaccumulator/#a97f47d3b8141306a0a5b43535ddedc0c">anonymous{ELFEmitter.cpp}::ContiguousBlobAccumulator</a></li>
 <li><b>getRawPointer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#ab3acc035135394d0b3ccf4c062d72810">llvm::Attribute</a></li>
+<li><b>getRawPointer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4cb7d44e0a657e7807506627647ea203">llvm::AttributeList</a></li>
 <li><b>getRawProducer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dicompileunit/#a462ce085c954ae30cf97838d3742f8fd">llvm::DICompileUnit</a></li>
 <li><b>getRawPtr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/coffsymbolref/#a215579b7e283e1a7e5649ad2c920e759">llvm::object::COFFSymbolRef</a></li>
 <li><b>getRawRank()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dicompositetype/#a11d3af8f69447353e96e2d6c049c5cab">llvm::DICompositeType</a></li>
@@ -42268,6 +42502,7 @@ keywords:
 <li><b>getReadOnlySection()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcobjectfileinfo/#ab14fbbabe5077f89e7d887b3d3d90d0a">llvm::MCObjectFileInfo</a></li>
 <li><b>getReadOnlyWithRel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sectionkind/#a3d239dea51a80324a3ce44985ed41dd4">llvm::SectionKind</a></li>
 <li><b>getReadOrWriteInstsForFunction()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/informationcache/#ae0a19530205e37d3a06f8e0035c663e2">llvm::InformationCache</a></li>
+<li><b>getReadyMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a1f30db123002f2e8d39b42dcd1c18570">llvm::mca::ResourceState</a></li>
 <li><b>getReadySuccessors()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-gcnminregstrategy-cpp-/gcnminregscheduler/#abde5f711227f01b62e44d3ed3386a127">anonymous{GCNMinRegStrategy.cpp}::GCNMinRegScheduler</a></li>
 <li><b>getRealMaxVLen()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvsubtarget/#abde732c96ba8d5e16bd6f142a4277edd">llvm::RISCVSubtarget</a></li>
 <li><b>getRealMinVLen()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvsubtarget/#a3ec69534e1dc21afa0aaa006323a7a0b">llvm::RISCVSubtarget</a></li>
@@ -42349,6 +42584,7 @@ keywords:
 <li><b>getReducedAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a017a91fde9e329082de784114d8f137c">llvm::SelectionDAG</a></li>
 <li><b>getReducedOperand()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/truncinstcombine/#a2a085892142be607c01be998c6884d0a">llvm::TruncInstCombine</a></li>
 <li><b>getReductionCost()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-slpvectorizer-cpp-/horizontalreduction/#a3623100f171b3a13f9788ec31a15fc3e">anonymous{SLPVectorizer.cpp}::HorizontalReduction</a></li>
+<li><b>getReductionFuncName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6eea64b337e04e34f135fe9294eeb941">llvm::OpenMPIRBuilder</a></li>
 <li><b>getReductionIntrinsic()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/#a81c6ba0364aa10d89f08cf0277278911">llvm::IRBuilderBase</a></li>
 <li><b>getReductionOpChain()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/recurrencedescriptor/#a6415fb68bc55f3a316aa414a5c2c0ab2">llvm::RecurrenceDescriptor</a></li>
 <li><b>getReductionPatternCost()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopvectorizationcostmodel/#a4e307866e6d65e87d1e6884b0d13306c">llvm::LoopVectorizationCostModel</a></li>
@@ -42374,7 +42610,6 @@ keywords:
 <li><b>getReference()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvsymbol/#ae52a41533d37ad09d77c498841dd2795">llvm::logicalview::LVSymbol</a></li>
 <li><b>getReferencedAddresses()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpusymbolizer/#a3716e8d35ed9e76daa734f04befa0b92">llvm::AMDGPUSymbolizer</a></li>
 <li><b>getReferencedAddresses()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcsymbolizer/#aff22a92530c025154e8c3aa07d887b2c">llvm::MCSymbolizer</a></li>
-<li><b>getReferencedByEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a03f3665b37eb52ac2e0b99dc3a671fbf">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>getReferenceLocs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/record/#ad30eeed65685cc5f0296e127927c113b">llvm::Record</a></li>
 <li><b>getReferenceLocs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/recordval/#acc700a87395413f0ed5a59d0e2deadf7">llvm::RecordVal</a></li>
 <li><b>getReferentType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/pointerrecord/#a3b6f788c7fff0b1304ebf74c193ef020">llvm::codeview::PointerRecord</a></li>
@@ -43236,6 +43471,7 @@ keywords:
 <li><b>getResourceKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hlsl/frontendresource/#ac8e551dfbed05f4b90d452a3443f5333">llvm::hlsl::FrontendResource</a></li>
 <li><b>getResourceLength()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/trace/#a3bab5c2e4f0b9a464665f79677b7f7e7">llvm::MachineTraceMetrics::Trace</a></li>
 <li><b>getResourceLimit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diagnosticinforesourcelimit/#aa7735b8cc2d71cb34b80e96a2b4fc576">llvm::DiagnosticInfoResourceLimit</a></li>
+<li><b>getResourceMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#ae73af25b2ef1f64bacd9159b4a6245bd">llvm::mca::ResourceState</a></li>
 <li><b>getResourceName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diagnosticinforesourcelimit/#a67fa81fbc2c42de4915f3d0424e8ffa4">llvm::DiagnosticInfoResourceLimit</a></li>
 <li><b>getResourceName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetschedmodel/#a0c4f7c8efe6089fc458df3df0acbd9be">llvm::TargetSchedModel</a></li>
 <li><b>getResources()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/#acd5b92b97f3839e8483329915a2bd8a9">llvm::MachineTraceMetrics</a></li>
@@ -43315,18 +43551,25 @@ keywords:
 <li><b>getResumeFunctionType()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#a1a578073d9d2487a3806e8a51abb1b6e">llvm::coro::Shape</a></li>
 <li><b>getRetainedTypes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dicompileunit/#abb84ad711e2a0a0638d71098e807163b">llvm::DICompileUnit</a></li>
 <li><b>getRetAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a16d457bc91b566b5fdcb785dfc8862e7">llvm::CallBase</a></li>
+<li><b>getRetAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a9bb1595f5c255bb9ec836172ad5537e9">llvm::AttributeList</a></li>
+<li><b>getRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab6fa6901843f6a775399fcbb31fee52a">llvm::AttributeList</a></li>
 <li><b>getRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a06511680b1f7b6834735343e1d5c2e7f">llvm::CallBase</a></li>
 <li><b>getRetAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#afff5709a997763240c888e86db09e4e2">llvm::Function</a></li>
 <li><b>getRetAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a82be2ba8b164fb0cf70e254f9c8a13a3">llvm::CallBase</a></li>
+<li><b>getRetAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a5604157867b3d226260f6388b987e49a">llvm::AttributeList</a></li>
 <li><b>getRetComponents()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/captureinfo/#a4edaf7e1a8e8b408524fdef8043214e9">llvm::CaptureInfo</a></li>
 <li><b>getRetconCoroId()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#a2acb69a078f9bb3184aa59c6d4966861">llvm::coro::Shape</a></li>
 <li><b>getRetconResultTypes()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#ac91071b50ec814bdcb75af662c3b8b28">llvm::coro::Shape</a></li>
 <li><b>getRetconResumeTypes()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/coro/shape/#a5831a89147ca4aaf1b08877d21ca931b">llvm::coro::Shape</a></li>
+<li><b>getRetDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#abda2f1696e90762ee9b7b64065c64969">llvm::AttributeList</a></li>
 <li><b>getRetDereferenceableBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#ab114d0e71d6a1db826bade5d22b0028c">llvm::CallBase</a></li>
+<li><b>getRetDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae6b7413239e3f901328769ef2b5a23b0">llvm::AttributeList</a></li>
 <li><b>getRetDereferenceableOrNullBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#acf32f4feeff0b07e12c42c614a4791c1">llvm::CallBase</a></li>
 <li><b>getRethrowDepth()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-webassemblycfgstackify-cpp-/webassemblycfgstackify/#a9aa64dee368b1655be1aaf03761cef01">anonymous{WebAssemblyCFGStackify.cpp}::WebAssemblyCFGStackify</a></li>
 <li><b>getRetireOOO()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/instructionbase/#a1ff8f392f445f8ea9dfa539c98bc114c">llvm::mca::InstructionBase</a></li>
+<li><b>getRetNoFPClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a7d05f2b6b9067ce92dc32f2f6443df5d">llvm::AttributeList</a></li>
 <li><b>getRetNoFPClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a08c455a4c7338c00f6d0bc9efecf9cb8">llvm::CallBase</a></li>
+<li><b>getRetStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3a5a24c43e105c203f779ca9a0ae0093">llvm::AttributeList</a></li>
 <li><b>getReturnAddressFrameIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/m68ktargetlowering/#ad57474f40f5c714b58fb77fdf1f5350b">llvm::M68kTargetLowering</a></li>
 <li><b>getReturnAddressFrameIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/msp430targetlowering/#a05a6b99eac75ab2bb04130e0abf6340b">llvm::MSP430TargetLowering</a></li>
 <li><b>getReturnAddressFrameIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86targetlowering/#adc0b03138cc7b455d625146b7091345d">llvm::X86TargetLowering</a></li>
@@ -43437,7 +43680,6 @@ keywords:
 <li><b>getRootBaseOpcode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/emptymatchcontext/#a80bf29753627b7c12416ed742d15e103">llvm::EmptyMatchContext</a></li>
 <li><b>getRootBaseOpcode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpmatchcontext/#aa6d0d760dd7360d7039c76c59f96000e">llvm::VPMatchContext</a></li>
 <li><b>getRootContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/samplecontexttracker/#a42ff5d19f024e956412b151ae3a095ec">llvm::SampleContextTracker</a></li>
-<li><b>getRootEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a6591460eefa46122282d50c68a82397b">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>getRootEntryInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#abc035709a419cdb3f324255cb01543f9">llvm::slpvectorizer::BoUpSLP</a></li>
 <li><b>getRootFile()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcdwarflinetable/#a65fb41d3f061e9004436525117bf6f8b">llvm::MCDwarfLineTable</a></li>
 <li><b>getRootFile()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcdwarflinetable/#a271248239aa7d86ee2f113f0c909b741">llvm::MCDwarfLineTable</a></li>
@@ -44108,10 +44350,12 @@ keywords:
 <li><b>getSequentialElement()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/undefvalue/#ac1a71ad4196bd3e400699fa02e152958">llvm::UndefValue</a></li>
 <li><b>getSequentialElementStride()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/generic-gep-type-iterator/#ae3d47d990ab77e9659cc0fc35c9353de">llvm::generic_gep_type_iterator&lt;ItTy&gt;</a></li>
 <li><b>getSequentialMinMaxExpr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a4976a99a4f39b4daee84f4f60319df03">llvm::ScalarEvolution</a></li>
+<li><b>getSerializableBitmaskMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#aedb4c96bbe231a3c622b06e15fdb05cb">llvm::AArch64InstrInfo</a></li>
 <li><b>getSerializableBitmaskMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a5cd1f16c5f15b23dfbd3f66027fc4dc1">llvm::ARMBaseInstrInfo</a></li>
 <li><b>getSerializableBitmaskMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagoninstrinfo/#a8fcb221e0c543e3bb5acd22a4a14b264">llvm::HexagonInstrInfo</a></li>
 <li><b>getSerializableBitmaskMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loongarchinstrinfo/#a0f9bbc0c3688c1cf4970a9f4c3d8cfc0">llvm::LoongArchInstrInfo</a></li>
 <li><b>getSerializableBitmaskMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a82ef2aeaba3f310827d58a0a3b16cfd8">llvm::TargetInstrInfo</a></li>
+<li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a9e7195b691e065ac34568c1b3340a3f8">llvm::AArch64InstrInfo</a></li>
 <li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#ae3b8142ae1da479687097277072cf97d">llvm::ARMBaseInstrInfo</a></li>
 <li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagoninstrinfo/#a62e30711a965b31fe03a5ff14d8819bb">llvm::HexagonInstrInfo</a></li>
 <li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lanaiinstrinfo/#a9820f09afff0667367f527bef8e3fb34">llvm::LanaiInstrInfo</a></li>
@@ -44123,6 +44367,7 @@ keywords:
 <li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siinstrinfo/#a1bb14a9b3b3a3886cead6fd320980b3a">llvm::SIInstrInfo</a></li>
 <li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#aefb630da1cbdfc0d8425933e20b37a73">llvm::TargetInstrInfo</a></li>
 <li><b>getSerializableDirectMachineOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86instrinfo/#ab3c0d813d20fa6c4d57db5317cc70449">llvm::X86InstrInfo</a></li>
+<li><b>getSerializableMachineMemOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a74f4174a5d158b611050cdf7abd04b58">llvm::AArch64InstrInfo</a></li>
 <li><b>getSerializableMachineMemOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a8cdf5b9105b8578f9cb896378d0c9fe3">llvm::RISCVInstrInfo</a></li>
 <li><b>getSerializableMachineMemOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siinstrinfo/#ad2a37b361832888b7decb77cfdf3d465">llvm::SIInstrInfo</a></li>
 <li><b>getSerializableMachineMemOperandTargetFlags()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a27e0bf9b6a35f938342ed56dfcfe7786">llvm::TargetInstrInfo</a></li>
@@ -44530,6 +44775,7 @@ keywords:
 <li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineconstantpoolentry/#a83ee6354426969c03c400e0458e8038b">llvm::MachineConstantPoolEntry</a></li>
 <li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineconstantpoolvalue/#afe84e8c49c4a611ad7b668e3899d2b7a">llvm::MachineConstantPoolValue</a></li>
 <li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcconstantexpr/#a723344f63b9a579c118f9fdf8f7d6cac">llvm::MCConstantExpr</a></li>
+<li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ae19488d3493945579ed3987ce14c6ff2">llvm::OpenMPIRBuilder</a></li>
 <li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmapparser/liveoutaccessor/#adc49712db014a783f317004d56a3e6bf">llvm::StackMapParser::LiveOutAccessor</a></li>
 <li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmapparser/locationaccessor/#a19f2925fa1bdba0166ea0f8232b6ea41">llvm::StackMapParser::LocationAccessor</a></li>
 <li><b>getSizeInBytes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmapparser/recordaccessor/#a45c7779a2da99ddee6f332aa8fd828ee">llvm::StackMapParser::RecordAccessor</a></li>
@@ -44873,6 +45119,7 @@ keywords:
 <li><b>getStackAlign()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetframelowering/#a74d93035f53f5e8c2aaea5a8f307972d">llvm::TargetFrameLowering</a></li>
 <li><b>getStackAlignBaseReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonmachinefunctioninfo/#ac871abb2ae67dc57722da23b8f571394">llvm::HexagonMachineFunctionInfo</a></li>
 <li><b>getStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armsubtarget/#a66662d23168fc7ef438ee5e05366bae1">llvm::ARMSubtarget</a></li>
+<li><b>getStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a405a29f0133cf557a593dcc3cca7ffe2">llvm::AttrBuilder</a></li>
 <li><b>getStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#ae16611668da23acd765262e5d079f462">llvm::Attribute</a></li>
 <li><b>getStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#aa90abd2918349f316b579114bd44ef17">llvm::AttributeSet</a></li>
 <li><b>getStackAlignment()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a013135ae037e63717ec8253876912584">llvm::AttributeSetNode</a></li>
@@ -45243,7 +45490,6 @@ keywords:
 <li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dieinlinestring/#ac55cc952482c1766e91271fb80e828cd">llvm::DIEInlineString</a></li>
 <li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diestring/#afb81be0ecd3e8a39fd8e9b7a8f4114d0">llvm::DIEString</a></li>
 <li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugnames/nametableentry/#ad02e500594d15668f1510a4d365e352e">llvm::DWARFDebugNames::NameTableEntry</a></li>
-<li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a42fcdbe75a2931cb341fcdd3815147a9">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcovbuffer/#adc0580e9799d5afe5272949dc8a95978">llvm::GCOVBuffer</a></li>
 <li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gsym/gsymcreator/#a9614258b67dc42d2f0708464bddc96dd">llvm::gsym::GsymCreator</a></li>
 <li><b>getString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gsym/gsymreader/#a65ec9133639d066dcf6843b1fc3ae79c">llvm::gsym::GsymReader</a></li>
@@ -45341,6 +45587,7 @@ keywords:
 <li><b>getStructLayout()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dxil/legacycbufferlayout/#af5d337a96ef4f340b8082b909a1fe429">llvm::dxil::LegacyCBufferLayout</a></li>
 <li><b>getStructName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/type/#a4d0a50f63402f509e3f6c62a6c513fbf">llvm::Type</a></li>
 <li><b>getStructNumElements()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/type/#a58e54adaa7672bbf72091254a5391137">llvm::Type</a></li>
+<li><b>getStructRetType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ae6ae84086635f30842f58148b2f12153">llvm::AttrBuilder</a></li>
 <li><b>getStructRetType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a73e118d056b68673a2c5b4f85d1a4c17">llvm::AttributeSet</a></li>
 <li><b>getStructSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-coroframe-cpp-/frametypebuilder/#ad6161377f5a2114ed00d462f609aeeca">anonymous{CoroFrame.cpp}::FrameTypeBuilder</a></li>
 <li><b>getStructType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/generic-gep-type-iterator/#a4d30b08b7e35b1e11328f8450e9d9b25">llvm::generic_gep_type_iterator&lt;ItTy&gt;</a></li>
@@ -45650,7 +45897,6 @@ keywords:
 <li><b>getSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a07b368631b4c3217eacc9d0d93001d76">llvm::AsmPrinter</a></li>
 <li><b>getSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cskyconstantpoolsymbol/#ad73838254673eb1374cbb7ac9825d8b7">llvm::CSKYConstantPoolSymbol</a></li>
 <li><b>getSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dbglabel/#ac426ae31f2f32822144763669700a544">llvm::DbgLabel</a></li>
-<li><b>getSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#ae0cadcb3f3cd8b7bad5fd2d044c24643">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>getSymbol()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/elf/elf32-rel/#aa2f4b957de000895773388aaafa7cc04">llvm::ELF::Elf32_Rel</a></li>
 <li><b>getSymbol()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/elf/elf32-rela/#a64ccc0f2888178676c576fdff94e93cd">llvm::ELF::Elf32_Rela</a></li>
 <li><b>getSymbol()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/elf/elf64-rel/#ad0b96abbaf2060b1d6dc81f071d48555">llvm::ELF::Elf64_Rel</a></li>
@@ -46053,6 +46299,7 @@ keywords:
 <li><b>getTailCallReservedStack()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#a1e887116bba8ca08bd717cbf2cbd1ac6">llvm::AArch64FunctionInfo</a></li>
 <li><b>getTailCallSPDelta()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcfunctioninfo/#a08f2debfe0bdcad74420a98b94d9e73b">llvm::PPCFunctionInfo</a></li>
 <li><b>getTailDupAggressiveThreshold()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvsubtarget/#a3dd1d359a581d3119be8ff699d197e71">llvm::RISCVSubtarget</a></li>
+<li><b>getTailDuplicateSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a8d7964e592c77513d96717c18c422d54">llvm::AArch64InstrInfo</a></li>
 <li><b>getTailDuplicateSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a6b319f98f28928ad420e00e12d8668b0">llvm::RISCVInstrInfo</a></li>
 <li><b>getTailDuplicateSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#af1fbe2cfd4ac1e373cdaba16ec4a70b4">llvm::TargetInstrInfo</a></li>
 <li><b>getTailFoldingStyle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopvectorizationcostmodel/#a738b994c87e0e816cf5f323e0e2b6c07">llvm::LoopVectorizationCostModel</a></li>
@@ -46090,6 +46337,7 @@ keywords:
 <li><b>getTargetConstantPoolValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cskytargetlowering/#a41eba7a6a95fcc004d8bb4c71b1d06f2">llvm::CSKYTargetLowering</a></li>
 <li><b>getTargetCPU()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#a8d4930d9bba5bf85a86c2177b950c10f">llvm::TargetMachine</a></li>
 <li><b>getTargetCustom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pseudosourcevalue/#a910d62b4a78d479229264ae084ce2324">llvm::PseudoSourceValue</a></li>
+<li><b>getTargetEntryUniqueInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a12b066e3e9cc61240457d12df75df64b">llvm::OpenMPIRBuilder</a></li>
 <li><b>getTargetExternalSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#ae6f9eed3ec877628ac2b052733cee4d4">llvm::SelectionDAG</a></li>
 <li><b>getTargetExtName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/type/#a757dc51e994d986d1b9f8211f6390b4d">llvm::Type</a></li>
 <li><b>getTargetExtractSubreg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a9bc12259f8156d068dfb2e91f04f6a06">llvm::SelectionDAG</a></li>
@@ -46340,8 +46588,9 @@ keywords:
 <li><b>getTerminatingDeoptimizeCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#ab60db4e6c6df756daf688cf7ea76293c">llvm::BasicBlock</a></li>
 <li><b>getTerminatingMustTailCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#ad7038933b96247814b611635abb9686c">llvm::BasicBlock</a></li>
 <li><b>getTerminatingMustTailCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#acb5567bfc9bdf953e2d365ef7a3a54ae">llvm::BasicBlock</a></li>
-<li><b>getTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aef9e9fcf4c5dfce90276ca16d91b8e46">llvm::BasicBlock</a></li>
+<li><b>getTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#acf3c3aa4880eb60d00963ba93082c298">llvm::BasicBlock</a></li>
 <li><b>getTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aaf87930bfa1c4483b0d94ce7b8622a91">llvm::BasicBlock</a></li>
+<li><b>getTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a49382daafa52a27ab04ecccd4e455e73">llvm::sandboxir::BasicBlock</a></li>
 <li><b>getTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpbasicblock/#ac98e46fa8ff66b24ce678ddea88a23ac">llvm::VPBasicBlock</a></li>
 <li><b>getTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpbasicblock/#aff4e7099c1a57f72fbf9c1b55c6a45e5">llvm::VPBasicBlock</a></li>
 <li><b>getTestBranchTargetOpValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64mccodeemitter-cpp-/aarch64mccodeemitter/#a4f69cf496ca3871e7c496029a2cf29ce">anonymous{AArch64MCCodeEmitter.cpp}::AArch64MCCodeEmitter</a></li>
@@ -46566,6 +46815,7 @@ keywords:
 <li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-764fe38a670fa71a18e1c5f119bcef9d/#a1150da5567547a3678b94016525b2a38">llvm::DenseMapInfo&lt;ArrayRef&lt; T &gt;, void&gt;</a></li>
 <li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0/#aef7884092c1ace32396a4b76138ff75f">llvm::DenseMapInfo&lt;at::VarRecord&gt;</a></li>
 <li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97/#adeb96fe57603c6997007e44de7992f8c">llvm::DenseMapInfo&lt;Attribute::AttrKind&gt;</a></li>
+<li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70/#acb09709d0faaba1abde698daa5cb3c7f">llvm::DenseMapInfo&lt;AttributeList, void&gt;</a></li>
 <li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962/#a837d167f5f9813db93c9c5597baf7905">llvm::DenseMapInfo&lt;AttributeSet, void&gt;</a></li>
 <li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9/#a869e03853af9aac3a625561b4ebeb036">llvm::DenseMapInfo&lt;BasicBlock::iterator&gt;</a></li>
 <li><b>getTombstoneKey()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6/#a2a5f3ddd4fbf423b914b75deddae2836">llvm::DenseMapInfo&lt;BasicBlockEdge&gt;</a></li>
@@ -46975,6 +47225,7 @@ keywords:
 <li><b>getTypeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/getelementptrinst/#a42390e35dbb1e38d90b6a2ff16c537f8">llvm::GetElementPtrInst</a></li>
 <li><b>getTypeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/structtype/#abe11230ab448dd37adc9feb99ac7d3da">llvm::StructType</a></li>
 <li><b>getTypeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/structtype/#aa4a68dda48893ebd98fe7d4878ba0830">llvm::StructType</a></li>
+<li><b>getTypeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#abc11c5784b54b55a9e82aa4bbbcb06bf">llvm::AttrBuilder</a></li>
 <li><b>getTypeBasedIntrinsicInstrCost()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicttiimplbase/#ae2b0b2a1ae237432c1c272406a8b4667">llvm::BasicTTIImplBase&lt;T&gt;</a></li>
 <li><b>getTypeByID()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodereader/#a814e5bf07b41523df3147ad1e2671c24">anonymous{BitcodeReader.cpp}::BitcodeReader</a></li>
 <li><b>getTypeByName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/structtype/#a75a89f1513d9f9bdcf0366a436ca43b5">llvm::StructType</a></li>
@@ -47428,6 +47679,7 @@ keywords:
 <li><b>getUuidCommand()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/machoobjectfile/#a983feccca34dfdfebe0d79c35c166d7d">llvm::object::MachOObjectFile</a></li>
 <li><b>getUwtable()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/module/#a6113fb21d027efcf333cbe204b2e2633">llvm::Module</a></li>
 <li><b>getUWTableKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a84c175adc74c833d57ab21f177e99c73">llvm::Attribute</a></li>
+<li><b>getUWTableKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a98312c308907b87211168eda9c6b605b">llvm::AttributeList</a></li>
 <li><b>getUWTableKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a869ddfab05d4e80046bf248d211e3e96">llvm::AttributeSet</a></li>
 <li><b>getUWTableKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a8534bc02a90f2c9a4b751725ace71142">llvm::AttributeSetNode</a></li>
 <li><b>getUWTableKind()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a7e181b32a135b15eb712e81ffe52ea50">llvm::Function</a></li>
@@ -48704,7 +48956,7 @@ keywords:
 <li><b>GVNPass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gvnpass/#a62b9ab672829302405b735225d5e20b6">llvm::GVNPass</a></li>
 <li><b>GVNSink()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-gvnsink-cpp-/gvnsink/#a8895aed5d4168ada50076def330294cb">anonymous{GVNSink.cpp}::GVNSink</a></li>
 </ul>
-<p>22040 entries</p>
+<p>22132 entries</p>
 
 ## - H -
 
@@ -49285,11 +49537,16 @@ keywords:
 <li><b>hasAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/samplecontext/#acddf84ace68d71cc96ecfdf7da44da58">llvm::sampleprof::SampleContext</a></li>
 <li><b>hasAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalvariable/#a7e0984d796e429a17f7426d60e6fe179">llvm::sandboxir::GlobalVariable</a></li>
 <li><b>hasAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalvariable/#a8fd630950f74e9337ec2947dea205cdd">llvm::sandboxir::GlobalVariable</a></li>
+<li><b>hasAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a09a57939ead526bbae148522e31f198d">llvm::AttributeList</a></li>
+<li><b>hasAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a6590789e70f40b3d72d525bb7327dcbc">llvm::AttributeList</a></li>
 <li><b>hasAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a5d53cff701a33669d57f1a55cb4b84cc">llvm::Function</a></li>
+<li><b>hasAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a4cf3cb56358d18065c78992569c32d2f">llvm::AttrBuilder</a></li>
 <li><b>hasAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a03e88ecc68b413d829593f385d84dca6">llvm::AttributeSet</a></li>
 <li><b>hasAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#aeb744072a6f00bef9e42906e0f08d816">llvm::AttributeSetNode</a></li>
 <li><b>hasAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#a24a42a0e1c35c9b83aaae9e6cbd367d2">llvm::GlobalVariable</a></li>
 <li><b>hasAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalvariable/#abb3c931ed4a2f3fa5c9b95a02af0791d">llvm::sandboxir::GlobalVariable</a></li>
+<li><b>hasAttributesAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a180523993bcaffcbbb7cca7a3fc0d51c">llvm::AttributeList</a></li>
+<li><b>hasAttrSomewhere()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a75d6c6f22bf21c4725e3f9be5ec0b07e">llvm::AttributeList</a></li>
 <li><b>hasAttrSomewhere()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a2a6344fd0684b89f1f885ce36e488141">llvm::AttributeListImpl</a></li>
 <li><b>hasAutoWaitcntBeforeBarrier()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a361e1bd0ac3e221a2fe75f68ea9d0d41">llvm::GCNSubtarget</a></li>
 <li><b>hasAvailableExternallyLinkage()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalvalue/#ae76e0b39c563b63554b4c99a8ad726e4">llvm::GlobalValue</a></li>
@@ -49742,6 +49999,8 @@ keywords:
 <li><b>hasFmacF64Inst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a59ab2534372c0adc46a34c429cedbc05">llvm::GCNSubtarget</a></li>
 <li><b>hasFmaMixInsts()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#addfe5ff70771ccdda4ae3c6e282a5441">llvm::GCNSubtarget</a></li>
 <li><b>hasFminFmaxLegacy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpusubtarget/#a0ef060ab29111ba063f28f56e2e1605a">llvm::AMDGPUSubtarget</a></li>
+<li><b>hasFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a61054ea97168f709c1e46345f80c16a3">llvm::AttributeList</a></li>
+<li><b>hasFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a65daa7efe6ca841a6772474c62137aa3">llvm::AttributeList</a></li>
 <li><b>hasFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a2fbfe5377a984518a7c03d8558df726d">llvm::CallBase</a></li>
 <li><b>hasFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a4c901967b076f5c9d245000b7637822a">llvm::CallBase</a></li>
 <li><b>hasFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a435f285158c81ab9dbc1700594b6a061">llvm::AttributeListImpl</a></li>
@@ -49750,6 +50009,7 @@ keywords:
 <li><b>hasFnAttrImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#adb7a292e6d06890882b156168d82b85c">llvm::CallBase</a></li>
 <li><b>hasFnAttrOnCalledFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a9a75d6fe5ffe0df5c42c2eed243726d3">llvm::CallBase</a></li>
 <li><b>hasFnAttrOnCalledFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a201344cbb7c2893ea88f8f1e4fa75572">llvm::CallBase</a></li>
+<li><b>hasFnAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad78e7e25df5981be38867dd67df81f92">llvm::AttributeList</a></li>
 <li><b>hasFnStart()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/unwindcontext/#ac184770e6ab3e69a6e44004670950db6">anonymous{ARMAsmParser.cpp}::UnwindContext</a></li>
 <li><b>hasFoldedStackStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/livedebugvalues/instrrefbasedldv/#abe3764a9e5e3a3929c0cef3d6dceaedf">LiveDebugValues::InstrRefBasedLDV</a></li>
 <li><b>hasForbiddenSlot()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsasmparser-cpp-/mipsasmparser/#a0c5c0612448c5ac2b161b8519f8d07ef">anonymous{MipsAsmParser.cpp}::MipsAsmParser</a></li>
@@ -50464,9 +50724,13 @@ keywords:
 <li><b>hasPairedLoad()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#acb51326eb72adb30e442667892c1f5ae">llvm::AArch64TargetLowering</a></li>
 <li><b>hasPairedLoad()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#afadad19db03732207982eed6049007e0">llvm::TargetLoweringBase</a></li>
 <li><b>hasParamAccess()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/modulesummaryindex/#abfd87a1f2efdd7b9af4b6210885753ad">llvm::ModuleSummaryIndex</a></li>
+<li><b>hasParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab04846c93ea7d802afbaa48efd84f37e">llvm::AttributeList</a></li>
+<li><b>hasParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a726d79ceb91ce0b86d8dfeb8d50dd0b1">llvm::AttributeList</a></li>
 <li><b>hasParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a5c8e58da4c28ac380a697fcb2f1ddaa3">llvm::Function</a></li>
 <li><b>hasParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#afc02f5ba395bfe8a3a81815d37621494">llvm::Function</a></li>
+<li><b>hasParamAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3737e67f34f29a0244b6e1b236652bc8">llvm::AttributeList</a></li>
 <li><b>hasParentContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#ab4f63a12196c8f1a595311d67a4bdd3d">llvm::Attribute</a></li>
+<li><b>hasParentContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa34082941d26848b9383954c70054792">llvm::AttributeList</a></li>
 <li><b>hasParentContext()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a8984085edcf095d697764f03314c7ae6">llvm::AttributeSet</a></li>
 <li><b>hasParentInformation()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugnames/entry/#aa52b75e81f83faaff001fdf8f6433144">llvm::DWARFDebugNames::Entry</a></li>
 <li><b>hasParmsOnStack()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/xcofftracebacktable/#a2582f57ad756c02e4f6858fdc671522f">llvm::object::XCOFFTracebackTable</a></li>
@@ -50590,7 +50854,6 @@ keywords:
 <li><b>hasReassociableVectorSibling()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#af4101a32aa07d223fc253bde75b7ee76">llvm::RISCVInstrInfo</a></li>
 <li><b>hasRecurrence()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/nodeset/#a88e3d5fd1132a51cdd9ab5f9c09e3a79">llvm::NodeSet</a></li>
 <li><b>hasRedZone()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#ac81232e8ac34e95d748e2e31e43482b5">llvm::AArch64FunctionInfo</a></li>
-<li><b>hasReferencedByOtherEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#af8de76b51e353f26b23bec4c2bddd357">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>HasReferenceResolver()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hasreferenceresolver/#a911630195a8f7295ce1bbef8575e5a2d">llvm::HasReferenceResolver</a></li>
 <li><b>hasReferenceTypes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblysubtarget/#a8de7fbc55636eb6b4cab46202419758c">llvm::WebAssemblySubtarget</a></li>
 <li><b>hasRefs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/interferencecache/entry/#ad7f7adc6d6f4fdcf1d2dce88e66d44db">llvm::InterferenceCache::Entry</a></li>
@@ -50646,10 +50909,13 @@ keywords:
 <li><b>hasRestrictedSOffset()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a7a64fa91bbb4ff5f0417e16ad408e0c9">llvm::GCNSubtarget</a></li>
 <li><b>hasResult()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpinstruction/#a53f3fa71b92cd3ef9f488c5d4ede784c">llvm::VPInstruction</a></li>
 <li><b>hasResults()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anycoroendinst/#aafd1766cc8a87fcbc039347b8d8c082c">llvm::AnyCoroEndInst</a></li>
+<li><b>hasRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#afe4e348d7ff2f6b76dcaa69382b78980">llvm::AttributeList</a></li>
+<li><b>hasRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a1aeb561c53719a10aecb2757ef0fff79">llvm::AttributeList</a></li>
 <li><b>hasRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a330471067c17061b7c2152d75102f24a">llvm::CallBase</a></li>
 <li><b>hasRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a528035b19a094c04b880d91fedfe8b6c">llvm::CallBase</a></li>
 <li><b>hasRetAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#abdd453734de0c5ec547939f9bb475190">llvm::Function</a></li>
 <li><b>hasRetAttrImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a3290146bc52003c0772c6f1ca7df2636">llvm::CallBase</a></li>
+<li><b>hasRetAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac58b17d02803ec68e3dbfc82a8f45d5e">llvm::AttributeList</a></li>
 <li><b>hasReturn()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/object/bbaddrmap/bbentry/#a15dbc0809c8a4e48791b44535cac550a">llvm::object::BBAddrMap::BBEntry</a></li>
 <li><b>hasReturnedAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a6e1df4428e5c6b9bfea6ef909a5f7019">llvm::Argument</a></li>
 <li><b>HasReverseInsertPts()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/ptrstate/#a4a3ce7e4e153b91ea5d72f2df4cb023a">llvm::objcarc::PtrState</a></li>
@@ -51360,7 +51626,7 @@ keywords:
 <li><b>HWStallEvent()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/hwstallevent/#a569fe53eb2aebe3c0648c18aa1d307d0">llvm::mca::HWStallEvent</a></li>
 <li><b>hybrid_ls_rr_sort()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-scheduledagrrlist-cpp-/hybrid-ls-rr-sort/#a42b3a657b71e32f819c6a83a169c32b7">anonymous{ScheduleDAGRRList.cpp}::hybrid_ls_rr_sort</a></li>
 </ul>
-<p>2650 entries</p>
+<p>2664 entries</p>
 
 ## - I -
 
@@ -51800,6 +52066,7 @@ keywords:
 <li><b>index_end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/immutablegraph/edgeset/#ae5b44a8842110e3eb1c7118bbf6f009e">llvm::ImmutableGraph::EdgeSet</a></li>
 <li><b>index_end()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/immutablegraph/nodeset/#a8616e4b22d960d998a78ce1510c365a4">llvm::ImmutableGraph::NodeSet</a></li>
 <li><b>index_is_valid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/succiterator/#a2ddad471e9766fcfbc529bb8e67210fc">llvm::SuccIterator&lt;InstructionT, BlockT&gt;</a></li>
+<li><b>index_iterator()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/#a6135f0f6fafd980cb3eeb702a28ae8a8">llvm::AttributeList::index_iterator</a></li>
 <li><b>index_iterator()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/detail/index-iterator/#afa45ad3abe414dc2d3ab1bcb6a8262ca">llvm::detail::index_iterator</a></li>
 <li><b>index_range()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/index-range/#a1656cb9dfa7d8cdc424fb4d6176be0bc">llvm::index_range</a></li>
 <li><b>index()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-dxilvalueenumerator-cpp-/ordermap/#ac3c97f693842041897f4dffe1d6b3d00">anonymous{DXILValueEnumerator.cpp}::OrderMap</a></li>
@@ -51841,6 +52108,7 @@ keywords:
 <li><b>IndexedMemProfReader()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/indexedmemprofreader/#a3a303d48b32fedd50a36fb5acf854a16">llvm::IndexedMemProfReader</a></li>
 <li><b>IndexedReference()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/indexedreference/#a726079632be5714f8c5e86023ca51f8b">llvm::IndexedReference</a></li>
 <li><b>IndexedSet()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/rdf/indexedset/#a3d9a103e8ef8f1d4fac156b23c178f85">llvm::rdf::IndexedSet&lt;T, N&gt;</a></li>
+<li><b>indexes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a1f51ca3a752de383f463899aaf39104d">llvm::AttributeList</a></li>
 <li><b>IndexListEntry()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/indexlistentry/#a03e11885bd3c4555b6b33a12f9a80345">llvm::IndexListEntry</a></li>
 <li><b>IndexMaskPair()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/liveregset/indexmaskpair/#ace6fa51d43fb7154a81a3481d3927126">llvm::LiveRegSet::IndexMaskPair</a></li>
 <li><b>~IndexNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/internal/indexnode/#a5b7c94fc0c11b44329b6ee23ff1e8aa6">llvm::internal::IndexNode</a></li>
@@ -52483,6 +52751,7 @@ keywords:
 <li><b>initializeTargetID()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgputargetstreamer/#a713f9a6b7ea055e52006afe0128eca27">llvm::AMDGPUTargetStreamer</a></li>
 <li><b>initializeTargetRegionEntryInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#ab05d360f14a80b1fc10d1632aa0f1433">llvm::OffloadEntriesInfoManager</a></li>
 <li><b>InitializeTileConfigStackSpace()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86fastpretileconfig-cpp-/x86fastpretileconfig/#a6f9d88d6d97536bc440c36e5a7fa2034">anonymous{X86FastPreTileConfig.cpp}::X86FastPreTileConfig</a></li>
+<li><b>initializeTypes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a6b69d9afaff34536b7ccc2ec990ae656">llvm::OpenMPIRBuilder</a></li>
 <li><b>initializeVaList()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-expandvariadics-cpp-/amdgpu/#af5a4f5aff9e1b6f03d3447ad012a3481">anonymous{ExpandVariadics.cpp}::Amdgpu</a></li>
 <li><b>initializeVaList()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-expandvariadics-cpp-/nvptx/#a882652a35850dbc21f64eb6b3d94bdb9">anonymous{ExpandVariadics.cpp}::NVPTX</a></li>
 <li><b>initializeVaList()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-expandvariadics-cpp-/variadicabiinfo/#af4c2ea721bca7290444df60ddbae94d2">anonymous{ExpandVariadics.cpp}::VariadicABIInfo</a></li>
@@ -53255,6 +53524,7 @@ keywords:
 <li><b>insertOnEdge()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vpblockutils/#a2057d0749eedf6749f9e1cc6694eb1fd">llvm::VPBlockUtils</a></li>
 <li><b>insertOperandRuntimeCheck()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-bypassslowdivision-cpp-/fastdivinsertiontask/#af0d64e9189eea24fe6f912a3eb090d26">anonymous{BypassSlowDivision.cpp}::FastDivInsertionTask</a></li>
 <li><b>insertOutgoingEdge()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/refscc/#a743c2ac21f2f8a8c6af18e1e09f13229">llvm::LazyCallGraph::RefSCC</a></li>
+<li><b>insertOutlinedCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a4c5be0dce0caceff8b457e09b8a998fc">llvm::AArch64InstrInfo</a></li>
 <li><b>insertOutlinedCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a7e56a357662b8329b718e0d8ae12983b">llvm::ARMBaseInstrInfo</a></li>
 <li><b>insertOutlinedCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#ad0969c58f63ddf77c6e219dbb0fc44f0">llvm::RISCVInstrInfo</a></li>
 <li><b>insertOutlinedCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#ab00242d76e808398358fa1e46e9a6885">llvm::TargetInstrInfo</a></li>
@@ -53716,6 +53986,7 @@ keywords:
 <li><b>int_op_push_back()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/aggregatevalueexpression/#abd92ea59c1abf3a822a6742bdf035d8a">llvm::GVNExpression::AggregateValueExpression</a></li>
 <li><b>int_op_size()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/aggregatevalueexpression/#a357ef7117f5b65480621112bca65fb81">llvm::GVNExpression::AggregateValueExpression</a></li>
 <li><b>int_params()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetexttype/#a6030f7c01b148d99864e2922695b3fda">llvm::TargetExtType</a></li>
+<li><b>int_wrapper()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper/#a2729ea2d1ca88d17a22c082ecf8b9d6e">llvm::AttributeList::index_iterator::int_wrapper</a></li>
 <li><b>Int16Short()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/typeindex/#a09abd837c33e966c52e94ec326f9be35">llvm::codeview::TypeIndex</a></li>
 <li><b>Int32()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/typeindex/#aec978047481405c331bba53b6ad72acf">llvm::codeview::TypeIndex</a></li>
 <li><b>Int32Long()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/typeindex/#a3f9c3611ddbf70d01f8bbe219f315889">llvm::codeview::TypeIndex</a></li>
@@ -53814,8 +54085,6 @@ keywords:
 <li><b>intersect()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dbgvariablefragmentinfo/#aa86c07e6c797389355badf65a44276f8">llvm::DbgVariableFragmentInfo</a></li>
 <li><b>intersect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fmfsource/#af63b286b1615a2c0712b4bc0190ab999">llvm::FMFSource</a></li>
 <li><b>intersect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mdnode/#acdbfda46c9837123ef7143244fc1f904">llvm::MDNode</a></li>
-<li><b>intersect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a5f5dc18d0b2c71cba501f12975188e40">llvm::PreservedAnalyses</a></li>
-<li><b>intersect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a72f56d9cb73db3c1ea0eee8fba48b64c">llvm::PreservedAnalyses</a></li>
 <li><b>intersect()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/rdf/registeraggr/#a9e1f73246f7efd5f109751eba770e896">llvm::rdf::RegisterAggr</a></li>
 <li><b>intersect()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/rdf/registeraggr/#a0f8d18996fd693bd08fc10b7e5588d0f">llvm::rdf::RegisterAggr</a></li>
 <li><b>intersect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/valuelatticeelement/#a975cd575019795ff8714252a22f27c26">llvm::ValueLatticeElement</a></li>
@@ -53845,6 +54114,7 @@ keywords:
 <li><b>intersects()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsebitvector/#a145e1ea3d033825fcbe55728c67c3f35">llvm::SparseBitVector&lt;ElementSize&gt;</a></li>
 <li><b>intersects()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/sparsebitvectorelement/#af2a8a217cf029e4f99b47fc91efa8d94">llvm::SparseBitVectorElement&lt;ElementSize&gt;</a></li>
 <li><b>intersectsSlowCase()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apint/#ac50f7ae767c4c80c49390cd6f805b21b">llvm::APInt</a></li>
+<li><b>intersectWith()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad67533111413cc397100c48c82291ec7">llvm::AttributeList</a></li>
 <li><b>intersectWith()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a63d9b863a7b6781a87890f1474b55150">llvm::AttributeSet</a></li>
 <li><b>intersectWith()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantfprange/#a980922d17596d03dcc175b9fa44c44ad">llvm::ConstantFPRange</a></li>
 <li><b>intersectWith()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantrange/#ac098fe4f07549fb029fbf950dbe78fd3">llvm::ConstantRange</a></li>
@@ -54284,6 +54554,7 @@ keywords:
 <li><b>isAdd()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gaddsubcarryout/#a03bddab5de1aabdab0c2344803fc119e">llvm::GAddSubCarryOut</a></li>
 <li><b>isAdd()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcinstrdesc/#ad750b3821971522747198a5ba6c452ef">llvm::MCInstrDesc</a></li>
 <li><b>isADDIInstrEligibleForFolding()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#a919a65c38470ee5665afa859cda18025">llvm::PPCInstrInfo</a></li>
+<li><b>isAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a195a0fee60fb5a1164767ec13d9729dd">llvm::AArch64InstrInfo</a></li>
 <li><b>isAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a4b5fcf3c38734c224904ec0203c965b1">llvm::ARMBaseInstrInfo</a></li>
 <li><b>isAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipsinstrinfo/#a75313c138825e233baef675bb1c5c43d">llvm::MipsInstrInfo</a></li>
 <li><b>isAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a89651558e264c97ec3977357ce4f0422">llvm::RISCVInstrInfo</a></li>
@@ -54314,6 +54585,7 @@ keywords:
 <li><b>isAddrTargetThumb()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldmachoarm/#a66ea8b31d8dedc659636270db9b37790">llvm::RuntimeDyldMachOARM</a></li>
 <li><b>isAddSubImm()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#ae40e6dd1a68e37d4348480f3c10858f8">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
 <li><b>isAddSubImmNeg()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#aa1ceb39d04bc1c073d4dacdf7b5a6f04">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
+<li><b>isADispatchHazard()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a60da4b5907972b572cd9bfea05e873d2">llvm::mca::ResourceState</a></li>
 <li><b>isAdjacent()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-loopfuse-cpp-/loopfuser/#ab3cc552627ead496e41304b6a7f97edf">anonymous{LoopFuse.cpp}::LoopFuser</a></li>
 <li><b>isADoublePackage()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/blockfrequencyinfoimplbase/workingdata/#af59992d1f4d494ae6d3c33f61df86d20">llvm::BlockFrequencyInfoImplBase::WorkingData</a></li>
 <li><b>isAdrLabel()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#a80247423cff6ce10b85e83fe46850605">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
@@ -54493,6 +54765,7 @@ keywords:
 <li><b>isArchive()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/binary/#aaf510bc1183c2a63b19a8e3f8917047c">llvm::objcopy::elf::Binary</a></li>
 <li><b>isArchive()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/binary/#aaf510bc1183c2a63b19a8e3f8917047c">llvm::object::Binary</a></li>
 <li><b>isAReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-m68kasmparser-cpp-/m68koperand/#ad355c84be7fb2addbe5af81abb643d69">anonymous{M68kAsmParser.cpp}::M68kOperand</a></li>
+<li><b>isAResourceGroup()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#afed8fbb52bd979bc9a12381779985c6e">llvm::mca::ResourceState</a></li>
 <li><b>isArgOperand()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#aeac59c1598cb931a07550c901220bcf2">llvm::CallBase</a></li>
 <li><b>isArgOperand()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a8fe3eec799f786c28b6bc7b1d6e21813">llvm::CallBase</a></li>
 <li><b>isArgOperand()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/callbase/#ac92a5f2997eea0db1c8833e73cd34ae5">llvm::sandboxir::CallBase</a></li>
@@ -54553,6 +54826,7 @@ keywords:
 <li><b>isAssociative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/intrinsicinst/#af9b5f95ce4d53d3dc75bd54d696a358f">llvm::IntrinsicInst</a></li>
 <li><b>isAssociative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction/#a06c696aa12c471522d351eb0b474daac">llvm::sandboxir::Instruction</a></li>
 <li><b>isAssociative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/intrinsicinst/#a36b56f010406e38bbdf345ed794be4c1">llvm::sandboxir::IntrinsicInst</a></li>
+<li><b>isAssociativeAndCommutative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#aab3d65d6e0daa1da2c564a3803f207b2">llvm::AArch64InstrInfo</a></li>
 <li><b>isAssociativeAndCommutative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#ab8d93b0ff1b64f553c4e86fdebacff56">llvm::PPCInstrInfo</a></li>
 <li><b>isAssociativeAndCommutative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#ade726ab992f758b88dcc4d6691efd90d">llvm::RISCVInstrInfo</a></li>
 <li><b>isAssociativeAndCommutative()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzinstrinfo/#a5183ec05f7f9d8e1211aa1fd88200fd9">llvm::SystemZInstrInfo</a></li>
@@ -54868,6 +55142,8 @@ keywords:
 <li><b>isBSSExtern()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sectionkind/#a8acd2c7eb8807ad6d82313d5e41b8fa1">llvm::SectionKind</a></li>
 <li><b>isBSSLocal()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sectionkind/#a530d168e733ea6e9f298d3f22dcee93d">llvm::SectionKind</a></li>
 <li><b>isBTIHint()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#acd57ad7ad3cabdfb0f446aaf5871853d">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
+<li><b>isBufferAvailable()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a0337f8d8b79a284ebeb54749866da71f">llvm::mca::ResourceState</a></li>
+<li><b>isBuffered()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#ada9e3a6c57a59a8b3840a728bc96babb">llvm::mca::ResourceState</a></li>
 <li><b>isBufferSMRD()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siinstrinfo/#a6c6831e85182fd706818bd9196f8604a">llvm::SIInstrInfo</a></li>
 <li><b>isBundlableWithCurrentPMI()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-r600packetizer-cpp-/r600packetizerlist/#ad2f5472a8ef3d4a8979234c5bc76b2dc">anonymous{R600Packetizer.cpp}::R600PacketizerList</a></li>
 <li><b>isBundle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a3e2f795dfcb9269e1263453796f4b994">llvm::MachineInstr</a></li>
@@ -55010,7 +55286,6 @@ keywords:
 <li><b>isCheck()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/factorcheck/#a6a087c3fe48cccf8c8d0951f0494cacd">anonymous{ConstraintElimination.cpp}::FactOrCheck</a></li>
 <li><b>isChildOf()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/refscc/#a5c04e8da471c500d025dfdf206c24ed2">llvm::LazyCallGraph::RefSCC</a></li>
 <li><b>isChildOf()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/scc/#a571e944cc1b3b151736f9c8ff6c38b56">llvm::LazyCallGraph::SCC</a></li>
-<li><b>isChildrenAction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/#a50eb1acc693fa793fff47bfe79a39b13">llvm::dwarf_linker::parallel::DependencyTracker</a></li>
 <li><b>isCI()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-amdgpuasmparser-cpp-/amdgpuasmparser/#ae8c11d76cf3216eae559553ba6cb045a">anonymous{AMDGPUAsmParser.cpp}::AMDGPUAsmParser</a></li>
 <li><b>isCIE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/ehframecfiblockinspector/#a5209b3defc29c58a86d0f6731d3f20b7">llvm::jitlink::EHFrameCFIBlockInspector</a></li>
 <li><b>isCImm()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineoperand/#a32ea768fbb182d6bbe3ff85ae1eb7031">llvm::MachineOperand</a></li>
@@ -55804,6 +56079,7 @@ keywords:
 <li><b>isEmitted()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sddbgvalue/#a164e0d03251f0dcfe0e9c358ae749308">llvm::SDDbgValue</a></li>
 <li><b>isEmpty()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-inductiverangecheckelimination-cpp-/inductiverangecheck/range/#a18ae90407a801091335439ed8b4a5e70">anonymous{InductiveRangeCheckElimination.cpp}::InductiveRangeCheck::Range</a></li>
 <li><b>isEmpty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/addresspool/#a82e6b4f0011add0f9468c431335ec06b">llvm::AddressPool</a></li>
+<li><b>isEmpty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a5269e6b95f5007a652d53ca847cca6f3">llvm::AttributeList</a></li>
 <li><b>isEmpty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bfi-detail/blockmass/#a3874be041c63e0b867d82331409a0de2">llvm::bfi_detail::BlockMass</a></li>
 <li><b>isEmpty()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dependenceinfo/constraint/#a52e8835fb90c05f9f1f36b51c085ab52">llvm::DependenceInfo::Constraint</a></li>
 <li><b>isEmpty()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/data/#af1fe4e18f5a2278fdd0c3e9ba559947e">llvm::DWARFYAML::Data</a></li>
@@ -55929,6 +56205,7 @@ keywords:
 <li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-764fe38a670fa71a18e1c5f119bcef9d/#a05dc2681024b3fb98cf31d200f4a6efe">llvm::DenseMapInfo&lt;ArrayRef&lt; T &gt;, void&gt;</a></li>
 <li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-339e92432108a12c437bc5c3804a88b0/#a23ae9f275f6f94a7e4767066c7cb43bc">llvm::DenseMapInfo&lt;at::VarRecord&gt;</a></li>
 <li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3b8d43b48b72aa66e434ce6f39c7dc97/#a7d3f860c73e1d3f695414b9b07b45a48">llvm::DenseMapInfo&lt;Attribute::AttrKind&gt;</a></li>
+<li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70/#ae63b11a0e668792aeee36384b1cae5c5">llvm::DenseMapInfo&lt;AttributeList, void&gt;</a></li>
 <li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-ecb20e40fb02f83e393bbb457da30962/#a9033e9851290c3aa15c92699c783627b">llvm::DenseMapInfo&lt;AttributeSet, void&gt;</a></li>
 <li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-333ebb6b07f3716a084b17bee52e7bf9/#a5b0a44b325eeb0972ec5c9c6672bcf2b">llvm::DenseMapInfo&lt;BasicBlock::iterator&gt;</a></li>
 <li><b>isEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-f7fedf7f0b9c672bb5f47002dc8c99c6/#af0ee2308b44c38f0626d723d3b0d25af">llvm::DenseMapInfo&lt;BasicBlockEdge&gt;</a></li>
@@ -56187,6 +56464,7 @@ keywords:
 <li><b>isExtendedScalarInteger()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/evt/#a0971c7bf43884a214b157517e037bd8f">llvm::EVT</a></li>
 <li><b>isExtendedTrueVal()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetlowering/#a2dc906a01997a28f62fd05f6470d7dd7">llvm::TargetLowering</a></li>
 <li><b>isExtendedVector()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/evt/#a17c69a2302512946dfe1ee066b63b20d">llvm::EVT</a></li>
+<li><b>isExtendLikelyToBeFolded()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a791f9b87aba84585f9777360bb26d84b">llvm::AArch64InstrInfo</a></li>
 <li><b>isExtendLikelyToBeFolded()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a0ec0a63c3d6d45dd9fee9c1115816e0b">llvm::TargetInstrInfo</a></li>
 <li><b>isExtendLSL64()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand/#acf323a9890c80ec88255035c5655c35f">anonymous{AArch64AsmParser.cpp}::AArch64Operand</a></li>
 <li><b>isExternal()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/symbol/#a0a31b65e4d98ba6601ffb8d7d3525932">llvm::jitlink::Symbol</a></li>
@@ -56242,6 +56520,7 @@ keywords:
 <li><b>isFAbsFree()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#af4dac2cd51ca7d7082cabfba3f81dd27">llvm::TargetLoweringBase</a></li>
 <li><b>isFailure()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/parsestatus/#a01a3be3f469c6f0a26bf9a5180b7b322">llvm::ParseStatus</a></li>
 <li><b>isFakeUse()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#af2df666e80610d028fc34fc23a82dd27">llvm::MachineInstr</a></li>
+<li><b>isFalkorShiftExtFast()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a796a2f531a01a5d72a58920fa8ec61b9">llvm::AArch64InstrInfo</a></li>
 <li><b>isFallthrough()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anycoroendinst/#a036630ac474668be40715deed83a0e65">llvm::AnyCoroEndInst</a></li>
 <li><b>isFalse()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagonvectorcombine-cpp-/hexagonvectorcombine/#af87e9ef5e6f1cb1da40b0e50fefeddb2">anonymous{HexagonVectorCombine.cpp}::HexagonVectorCombine</a></li>
 <li><b>isFalseWhenEqual()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cmpinst/#a1e32582702cf5b9d4484c0ce346b2f57">llvm::CmpInst</a></li>
@@ -56544,10 +56823,12 @@ keywords:
 <li><b>isFunctionIPOAmendable()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributor/#a596c00dc88e93bcbe9f9c58b0c1f23bb">llvm::Attributor</a></li>
 <li><b>isFunctionKnown()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pgocontextualprofile/#af33a9e09888e910edab4b81d2b601f80">llvm::PGOContextualProfile</a></li>
 <li><b>isFunctionLineInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/coffsymbolref/#a8cce049f3d490d8a85ec34be92f96351">llvm::object::COFFSymbolRef</a></li>
+<li><b>isFunctionSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a8e7ea4a37a21caeb8c336ef3e95f8ee0">llvm::AArch64InstrInfo</a></li>
 <li><b>isFunctionSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a7135ce67312a13f34932d42937861857">llvm::ARMBaseInstrInfo</a></li>
 <li><b>isFunctionSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a27e5a818e421079a4fb086a0dca39bcd">llvm::RISCVInstrInfo</a></li>
 <li><b>isFunctionSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a6fd9a0614742c8f6c8523b0c34b984ee">llvm::TargetInstrInfo</a></li>
 <li><b>isFunctionSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86instrinfo/#a377e3edcd6fff2b8154c0b78e64f09e7">llvm::X86InstrInfo</a></li>
+<li><b>isFunctionSafeToSplit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#aab2bb29af5f95ecde069091fc13e0dd9">llvm::AArch64InstrInfo</a></li>
 <li><b>isFunctionSafeToSplit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#ae0b0cbf92a3dd0f5cab9d5d3067c2003">llvm::TargetInstrInfo</a></li>
 <li><b>isFunctionScope()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/irposition/#a79c71e9c03aff7ec01197395cab4e521">llvm::IRPosition</a></li>
 <li><b>isFunctionSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-calledvaluepropagation-cpp-/cvplatticeval/#a27bf6cf99101d7870e801cb8df22dc8d">anonymous{CalledValuePropagation.cpp}::CVPLatticeVal</a></li>
@@ -57086,6 +57367,7 @@ keywords:
 <li><b>isInnerLoopIncrement()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-loopflatten-cpp-/flatteninfo/#abdfa122e452fb5d8d87c316c7a8b6643">anonymous{LoopFlatten.cpp}::FlattenInfo</a></li>
 <li><b>isInnerLoopTest()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-loopflatten-cpp-/flatteninfo/#ae66f1f5a4030c6984644f3590ff729aa">anonymous{LoopFlatten.cpp}::FlattenInfo</a></li>
 <li><b>isInnermost()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopbase/#a16165c1e5da45acaa086c3a54a188d34">llvm::LoopBase&lt;BlockT, LoopT&gt;</a></li>
+<li><b>isInOrder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a846b5bca981ffa2e1df9a8ba83d9bfae">llvm::mca::ResourceState</a></li>
 <li><b>isInOutZA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#aadc9b29185f58ba6752a3c7c5e254e14">llvm::SMEAttrs</a></li>
 <li><b>isInOutZT0()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#a6a7c8d26150da168c48f20e3ab5991c2">llvm::SMEAttrs</a></li>
 <li><b>isInPacket()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vliwresourcemodel/#a788886ebcf4427cbaef1b29089eb0ff3">llvm::VLIWResourceModel</a></li>
@@ -57470,6 +57752,7 @@ keywords:
 <li><b>isLargest()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalednumber/#af27d4b08ba66b7d19da844c65784233b">llvm::ScaledNumber&lt;DigitsT&gt;</a></li>
 <li><b>isLargeStride()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-amdgpuperfhintanalysis-cpp-/amdgpuperfhint/#afd93a890632771073642d06a10ce7b89">anonymous{AMDGPUPerfHintAnalysis.cpp}::AMDGPUPerfHint</a></li>
 <li><b>isLargeStride()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-amdgpuperfhintanalysis-cpp-/amdgpuperfhint/memaccessinfo/#af1a9a7a24ca8f7df3eefa2f7156784c0">anonymous{AMDGPUPerfHintAnalysis.cpp}::AMDGPUPerfHint::MemAccessInfo</a></li>
+<li><b>isLastFinalizationInfoCancellable()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad44e60b9d264f6ceb54e6cd660e859fb">llvm::OpenMPIRBuilder</a></li>
 <li><b>isLastUse()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-simemorylegalizer-cpp-/simemopinfo/#a6ea603e1a3e01de23129a0be889ef9e1">anonymous{SIMemoryLegalizer.cpp}::SIMemOpInfo</a></li>
 <li><b>isLatencyBound()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/convergingvliwscheduler/vliwschedboundary/#a22fcbadc45fff4fab6990448ae152ee9">llvm::ConvergingVLIWScheduler::VLIWSchedBoundary</a></li>
 <li><b>isLateSourceInstr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagoninstrinfo/#aa79ad041cbd1b04e5a721b2a1fb8e7a6">llvm::HexagonInstrInfo</a></li>
@@ -57520,6 +57803,7 @@ keywords:
 <li><b>isLegalAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo/model/#abf0ef807bd7c35a5eb1f333b3749c82c">llvm::TargetTransformInfo::Model&lt;T&gt;</a></li>
 <li><b>isLegalAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targettransforminfoimplbase/#a66899148fa4c9729c8bfb2c157269916">llvm::TargetTransformInfoImplBase</a></li>
 <li><b>isLegalAddImmediate()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/x86targetlowering/#a092cc6666d98dc58d90d67082beda499">llvm::X86TargetLowering</a></li>
+<li><b>isLegalAddressingMode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#adf6a27b8c3cbc89e6a94e6e144f52452">llvm::AArch64InstrInfo</a></li>
 <li><b>isLegalAddressingMode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#ae854a8e8c09efe0960eaae718304b77d">llvm::AArch64TargetLowering</a></li>
 <li><b>isLegalAddressingMode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/arctargetlowering/#aa92aa97d7c1a7783e53b9a3baac05b03">llvm::ARCTargetLowering</a></li>
 <li><b>isLegalAddressingMode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armtargetlowering/#a14ba388c0893657958340f94a164faa9">llvm::ARMTargetLowering</a></li>
@@ -58079,6 +58363,7 @@ keywords:
 <li><b>isMBBSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#aedba2e5f9aa7cb803611f295ad04b865">llvm::ARMBaseInstrInfo</a></li>
 <li><b>isMBBSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a9e0f1068be127e44f7350a2481e21a9c">llvm::RISCVInstrInfo</a></li>
 <li><b>isMBBSafeToOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a952e245a616622682cd83b1291314660">llvm::TargetInstrInfo</a></li>
+<li><b>isMBBSafeToSplitToCold()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#ad43fedc407890aa868187b433c768f66">llvm::AArch64InstrInfo</a></li>
 <li><b>isMBBSafeToSplitToCold()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a726928467271e18f3d17b2942cd04984">llvm::TargetInstrInfo</a></li>
 <li><b>isMCDCBitmapBase()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofinstbase/#afb30fab29908de685db246b4221663d3">llvm::InstrProfInstBase</a></li>
 <li><b>isMClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armasmparser/#a94839285a9d74ca6809a182466ae94d2">anonymous{ARMAsmParser.cpp}::ARMAsmParser</a></li>
@@ -59218,6 +59503,7 @@ keywords:
 <li><b>isPseudoProbeDiscriminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dilocation/#a1d5bbfbe6fc9f92e22bf16cb1c2dc110">llvm::DILocation</a></li>
 <li><b>isPSInputAllocated()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#a02538b0ed6775ee36651d7abec91256b">llvm::SIMachineFunctionInfo</a></li>
 <li><b>isPSRFlag()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-cskyasmparser-cpp-/cskyoperand/#a5519906431d13fc0c4cff7eb6ff8e809">anonymous{CSKYAsmParser.cpp}::CSKYOperand</a></li>
+<li><b>isPTestLikeOpcode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#af93867ed83dede2b0063fbaa26a3086d">llvm::AArch64InstrInfo</a></li>
 <li><b>isPTR32bit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipssubtarget/#a733bd521aa3c58f4c7aae3a009db5c44">llvm::MipsSubtarget</a></li>
 <li><b>isPTR64()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsdisassembler-cpp-/mipsdisassembler/#af300d278d647a6456b28b48af5a7b4d4">anonymous{MipsDisassembler.cpp}::MipsDisassembler</a></li>
 <li><b>isPTR64bit()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipssubtarget/#af2685456833bb936c5a7ce7f85d1a405">llvm::MipsSubtarget</a></li>
@@ -59276,6 +59562,7 @@ keywords:
 <li><b>isReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunit/memorygroup/#aa5eb95bbc456dfc770ca1ddfe91b63f2">llvm::mca::LSUnit::MemoryGroup</a></li>
 <li><b>isReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunitbase/#a393eeeb81c0a6b2883e64e20b54387bc">llvm::mca::LSUnitBase</a></li>
 <li><b>isReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/readstate/#aa829c88db872fbf0aa3117e6cfdd2b95">llvm::mca::ReadState</a></li>
+<li><b>isReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a73ae2ace0d555c5682324d2381d2e9d1">llvm::mca::ResourceState</a></li>
 <li><b>isReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/writestate/#aff992d17b30f8c0accaf7ddcfbe70ba3">llvm::mca::WriteState</a></li>
 <li><b>isReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/schedulingpriorityqueue/#a6464517aaf84d0af2fb33e65be0c514b">llvm::SchedulingPriorityQueue</a></li>
 <li><b>isReady()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/slpvectorizer/boupslp/scheduledata/#a9051001515f474d9612a4e8e8d2ab1ad">llvm::slpvectorizer::BoUpSLP::ScheduleData</a></li>
@@ -59643,6 +59930,7 @@ keywords:
 <li><b>isReserved()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-machineverifier-cpp-/machineverifier/#a9ecab0dcc8cd296f6c8bb0988dcd25d4">anonymous{MachineVerifier.cpp}::MachineVerifier</a></li>
 <li><b>isReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo/#a53ca7cff9e929ba372da9780fdd44b02">llvm::MachineRegisterInfo</a></li>
 <li><b>isReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/cyclesegment/#a903fd7a52d7842b62292fd3e070b4f5b">llvm::mca::CycleSegment</a></li>
+<li><b>isReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#ad86068473600ec09094efb9a31296440">llvm::mca::ResourceState</a></li>
 <li><b>isReserved()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mca/resourceusage/#af880b90220e769e0f9d88309e443ab7d">llvm::mca::ResourceUsage</a></li>
 <li><b>isReserved()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/object/elf-sym-impl/#af629bc2b279cc4bfc49f1ad04aa03250">llvm::object::Elf_Sym_Impl&lt;ELFT&gt;</a></li>
 <li><b>isReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/regscavenger/#a97fd6bedfd5f59208b06d0c1de8f0539">llvm::RegScavenger</a></li>
@@ -60021,6 +60309,7 @@ keywords:
 <li><b>isSeenInterference()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/liveintervalunion/query/#a26d85c17ef2adfcdbf06a4049a6297e0">llvm::LiveIntervalUnion::Query</a></li>
 <li><b>isSegmentSpecificFLAT()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siinstrinfo/#a248ac957da40daa5249681573066b693">llvm::SIInstrInfo</a></li>
 <li><b>isSegmentSpecificFLAT()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siinstrinfo/#a8ed947ddafde5421d3f771f43f9c04d1">llvm::SIInstrInfo</a></li>
+<li><b>isSEHInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a52619cc1f9c5c3029a03a6c956b32595">llvm::AArch64InstrInfo</a></li>
 <li><b>isSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a30e4fdd20c6b04f83aef00924bc65e15">llvm::MachineInstr</a></li>
 <li><b>isSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcinstrdesc/#a2b7547c48ed80dd2eda2ddf5fcf1c22a">llvm::MCInstrDesc</a></li>
 <li><b>isSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/shufflevectorinst/#ae3c3174242fb6e6a4c1267aa36f0f131">llvm::sandboxir::ShuffleVectorInst</a></li>
@@ -60547,6 +60836,7 @@ keywords:
 <li><b>isSubRegister()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcregisterinfo/#a97b138b96791a09a0d9b9c77f0fb6e85">llvm::MCRegisterInfo</a></li>
 <li><b>isSubRegisterEq()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcregisterinfo/#ac5ea214c523615af8b7c8c6547ef59de">llvm::MCRegisterInfo</a></li>
 <li><b>isSubregToReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineinstr/#a5822e16afda1fcf154cfb4179bacef3c">llvm::MachineInstr</a></li>
+<li><b>isSubResourceReady()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#aaf33619af255e0dcc5354e2ba359cd89">llvm::mca::ResourceState</a></li>
 <li><b>isSubroutineDIE()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#a5cb799dc32cfff9bf946923f4775550b">llvm::DWARFDie</a></li>
 <li><b>isSubsetEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mdnodesubsetequalimpl/#a3b9a2337cb316fdd1981cee2593d7f03">llvm::MDNodeSubsetEqualImpl&lt;NodeTy&gt;</a></li>
 <li><b>isSubsetEqual()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mdnodesubsetequalimpl/#af08f390f37915e40f61e126140fa2c12">llvm::MDNodeSubsetEqualImpl&lt;NodeTy&gt;</a></li>
@@ -60565,8 +60855,9 @@ keywords:
 <li><b>IsSuccOfPrevNthGroup()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-amdgpuigrouplp-cpp-/mfmaexpinterleaveopt/issuccofprevnthgroup/#ae8956cac00c560e95725ccfe651c2ea7">anonymous{AMDGPUIGroupLP.cpp}::MFMAExpInterleaveOpt::IsSuccOfPrevNthGroup</a></li>
 <li><b>issueInitLookups()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-lljit-cpp-/genericllvmirplatformsupport/#a7b7438e1267d617cea4b68c10b8ebddc">anonymous{LLJIT.cpp}::GenericLLVMIRPlatformSupport</a></li>
 <li><b>issueInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/executestage/#ab83b700a124d0e161d4a3ce3ab388dfd">llvm::mca::ExecuteStage</a></li>
+<li><b>issueInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a036f48e5c25b534f16e84aae90c56df7">llvm::mca::ResourceManager</a></li>
 <li><b>issueInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#a216ffefe6fe4a2b566a72228c0bd763d">llvm::mca::Scheduler</a></li>
-<li><b>issueInstructionImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a965a906ee0ae3fe72d57f6e3a47a7695">llvm::mca::ResourceState</a></li>
+<li><b>issueInstructionImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a94ebe004dfbba2e68530d0125ed16293">llvm::mca::ResourceManager</a></li>
 <li><b>issueInstructionImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#a105e62424e6f2b5d3014f3f0dbfa650c">llvm::mca::Scheduler</a></li>
 <li><b>issueReadyInstructions()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/executestage/#a11749a2fcf99ebaf0ba71bfa138b9051">llvm::mca::ExecuteStage</a></li>
 <li><b>isSUInBlock()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sischeduleblockcreator/#a25695e02f3a68587c54629bda36cb5cb">llvm::SIScheduleBlockCreator</a></li>
@@ -61477,6 +61768,7 @@ keywords:
 <li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mirprofileloader/#a059bc3bbf771ba306ca5a1d9005cd4c5">llvm::MIRProfileLoader</a></li>
 <li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mvt/#adde2b3c4de4c4ded2b80ff32f1020b9b">llvm::MVT</a></li>
 <li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/offloadentryinfo/#a64b93e23ee0517feee76402f2917c0f0">llvm::OffloadEntriesInfoManager::OffloadEntryInfo</a></li>
+<li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#ab8507b42d9593b14a2dff718cb97d38b">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/option/#a99f5ea5ba3bdee23daa085d5610947f2">llvm::opt::Option</a></li>
 <li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/optspecifier/#af0576dabe32560c0867667f9c68391a0">llvm::opt::OptSpecifier</a></li>
 <li><b>isValid()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pressurechange/#a488d33ac015981b0f8e2086fcbd49db2">llvm::PressureChange</a></li>
@@ -62047,6 +62339,7 @@ keywords:
 <li><b>isWeakReferenced()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/record/#aef3f7c6f7b11a738c421391707a88ef7">llvm::MachO::Record</a></li>
 <li><b>isWeakReferenced()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/symbol/#ae25e6461883a31fe9dc9868b1af23213">llvm::MachO::Symbol</a></li>
 <li><b>isWeakrefUsedInReloc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcsymbolelf/#a3e683b1f93c043f9fb48cdc47e736fb2">llvm::MCSymbolELF</a></li>
+<li><b>isWhileOpcode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a38f8066c29c8c7afd3906d08e8407282">llvm::AArch64InstrInfo</a></li>
 <li><b>isWideningCondProfitable()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-guardwidening-cpp-/guardwideningimpl/#aacf701867ea778aca724363a7f424985">anonymous{GuardWidening.cpp}::GuardWideningImpl</a></li>
 <li><b>isWideningInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64ttiimpl/#a319b3e12996bba3166a32d934b887ec1">llvm::AArch64TTIImpl</a></li>
 <li><b>isWin32Module()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/symbolize/symbolizablemodule/#a89baf7e7fedad506270275e18daf866c">llvm::symbolize::SymbolizableModule</a></li>
@@ -62277,7 +62570,7 @@ keywords:
 <li><b>~IVVisitor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ivvisitor/#a1f289591a97d7dd0088a499a3745654c">llvm::IVVisitor</a></li>
 <li><b>IVVisitor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ivvisitor/#a3514f750bbc476c7918e33012ab7eab8">llvm::IVVisitor</a></li>
 </ul>
-<p>10911 entries</p>
+<p>10938 entries</p>
 
 ## - J -
 
@@ -63130,7 +63423,6 @@ keywords:
 <li><b>ListScope()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/listscope/#a5acba889a3aed11f0b56e335bbbbd6c3">llvm::ListScope</a></li>
 <li><b>ListScope()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/listscope/#a07f6fe0f7383861135b5e94f7896962f">llvm::ListScope</a></li>
 <li><b>ListScope()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/listscope/#af6e380e7a4bb1b79b86ca9485d7ad811">llvm::ListScope</a></li>
-<li><b>ListSeparator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/listseparator/#ad01bf1fe12c9e7c3ff5cbd2251154109">llvm::ListSeparator</a></li>
 <li><b>ListStream()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/minidumpyaml/detail/liststream/#aabaacb61442151ad1ef7a203d239d039">llvm::MinidumpYAML::detail::ListStream&lt;EntryT&gt;</a></li>
 <li><b>LiteralOperator()</b>: as function in class <a href="/web-llvm/docs/api/classes/literaloperator/#a761000bad8c5ac6e4222eed45c76dfd6">LiteralOperator</a></li>
 <li><b>LiteralOperatorIdentifierNode()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/literaloperatoridentifiernode/#ab5f720e1284950a339dc4fde905b2a0c">llvm::ms_demangle::LiteralOperatorIdentifierNode</a></li>
@@ -63202,10 +63494,6 @@ keywords:
 <li><b>LiveRegUnit()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/liveregunit/#a51515548ca2ffbcb5f10bc9e7699e9da">llvm::LiveRegUnit</a></li>
 <li><b>LiveRegUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/liveregunits/#a8dfc69c592334589ab1606b8e0a86d90">llvm::LiveRegUnits</a></li>
 <li><b>LiveRegUnits()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/liveregunits/#a0eecad44f69f89053e0330df2808241d">llvm::LiveRegUnits</a></li>
-<li><b>LiveRootWorklistItemTy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a3b3905f0edc2524a3a1f085ba65f4384">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
-<li><b>LiveRootWorklistItemTy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a13929917503b39ea538309b36a24ac79">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
-<li><b>LiveRootWorklistItemTy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a605e1f6e432a87442769291a182cff34">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
-<li><b>LiveRootWorklistItemTy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#ab27ce3d3d7b6ba054c4e09abdec45476">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
 <li><b>LiveStacksPrinterPass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/livestacksprinterpass/#ae41284bbbc37871c09259b21e5934ac6">llvm::LiveStacksPrinterPass</a></li>
 <li><b>LiveStacksWrapperLegacy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/livestackswrapperlegacy/#a5592647b51ec84f1fb0258b4e452c1cc">llvm::LiveStacksWrapperLegacy</a></li>
 <li><b>LiveVariables()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/livevariables/#a94ed84d4e32ab0c0ce0aec69fb44310b">llvm::LiveVariables</a></li>
@@ -65654,7 +65942,7 @@ keywords:
 <li><b>LVTypeSubrange()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypesubrange/#a60066a77727c7660b2f7614ba6387436">llvm::logicalview::LVTypeSubrange</a></li>
 <li><b>LVTypeVisitor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypevisitor/#a1a651ef717527d00b7509e0850ca6baa">llvm::logicalview::LVTypeVisitor</a></li>
 </ul>
-<p>3101 entries</p>
+<p>3096 entries</p>
 
 ## - M -
 
@@ -66722,6 +67010,7 @@ keywords:
 <li><b>markResultUsed()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scevexpandercleaner/#adebccfabab3d98cd238936760a34a15d">llvm::SCEVExpanderCleaner</a></li>
 <li><b>markSamplesUsed()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprofutil/samplecoveragetracker/#adb303c9c849d1db014aac9dc66d344c8">llvm::sampleprofutil::SampleCoverageTracker</a></li>
 <li><b>markSectionStart()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/sampleprofilewriterextbinarybase/#ab6d9741f6d03790df898209e50342f2b">llvm::sampleprof::SampleProfileWriterExtBinaryBase</a></li>
+<li><b>markSubResourceAsUsed()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a2748d56f2089c41461ee67396540a4df">llvm::mca::ResourceState</a></li>
 <li><b>markSuperRegs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetregisterinfo/#a40618817060842f7ea6164f397c2fbd8">llvm::TargetRegisterInfo</a></li>
 <li><b>markSwapsForRemoval()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-ppcvsxswapremoval-cpp-/ppcvsxswapremoval/#ad7f3650d755a645a5569835a4f8b18e7">anonymous{PPCVSXSwapRemoval.cpp}::PPCVSXSwapRemoval</a></li>
 <li><b>markSymbols()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/coff/object/#ae20d61d1b09ad5ca69701afe73043675">llvm::objcopy::coff::Object</a></li>
@@ -68140,6 +68429,7 @@ keywords:
 <li><b>merge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aamdnodes/#a6b173e97523275314f3f2b433a5f71a9">llvm::AAMDNodes</a></li>
 <li><b>merge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aapointerinfo/offsetinfo/#af3981da39f7d4904f07fa2c456a06448">llvm::AAPointerInfo::OffsetInfo</a></li>
 <li><b>merge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/aapointerinfo/rangelist/#ad023aa7a5f5bbdd7c63849edf8296dec">llvm::AAPointerInfo::RangeList</a></li>
+<li><b>merge()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a3f05fda2b6c78a87f8d6e608b55693f7">llvm::AttrBuilder</a></li>
 <li><b>merge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfaddressrange/#a771573ea5cd6f54eccf26c50dac5e049">llvm::DWARFAddressRange</a></li>
 <li><b>merge()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dxil/computedshaderflags/#a6118b92eeded01ec4ff9d4c162b41a2f">llvm::dxil::ComputedShaderFlags</a></li>
 <li><b>merge()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/executiondomainfix/#a400099433f030ba48a87545288e89fc6">llvm::ExecutionDomainFix</a></li>
@@ -68246,6 +68536,7 @@ keywords:
 <li><b>MergeOpsUpdate()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-armloadstoreoptimizer-cpp-/armloadstoreopt/#ae9a190e6cd88906b1a23f21a9adc5b52">anonymous{ARMLoadStoreOptimizer.cpp}::ARMLoadStoreOpt</a></li>
 <li><b>MergeOptions()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/valuelatticeelement/mergeoptions/#a225f048a5b5b01db03baa36b62f52b89">llvm::ValueLatticeElement::MergeOptions</a></li>
 <li><b>MergeOptions()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/valuelatticeelement/mergeoptions/#ad8e7891f7dafb6899d68d2339ce23248">llvm::ValueLatticeElement::MergeOptions</a></li>
+<li><b>mergeOutliningCandidateAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#afb2faf0aba253c62b8f0e7b8a829f228">llvm::AArch64InstrInfo</a></li>
 <li><b>mergeOutliningCandidateAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a68ff609e7f9151e0c2c6a6b1445c9134">llvm::ARMBaseInstrInfo</a></li>
 <li><b>mergeOutliningCandidateAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a4253df7a10e437a01d42c223e196c0b8">llvm::TargetInstrInfo</a></li>
 <li><b>mergePairedInsns()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-aarch64loadstoreoptimizer-cpp-/aarch64loadstoreopt/#acfa23971275a6efd8097dd91be42ee3b">anonymous{AArch64LoadStoreOptimizer.cpp}::AArch64LoadStoreOpt</a></li>
@@ -69189,7 +69480,7 @@ keywords:
 <li><b>MVT()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mvt/#a34d504ffa055ef466b376b553aedcd9e">llvm::MVT</a></li>
 <li><b>MVT()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mvt/#af713e778478e2d600943ecd8fa981e38">llvm::MVT</a></li>
 </ul>
-<p>3529 entries</p>
+<p>3532 entries</p>
 
 ## - N -
 
@@ -69771,7 +70062,6 @@ keywords:
 <li><b>none()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gepnowrapflags/#ad41d3c975038ec4a4fc791601729124e">llvm::GEPNoWrapFlags</a></li>
 <li><b>none()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/lanebitmask/#a60907035da962ba7bea74ffb9af977bd">llvm::LaneBitmask</a></li>
 <li><b>none()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#af04065f3c729719471689b08089942f3">llvm::MemoryEffectsBase&lt;LocationEnum&gt;</a></li>
-<li><b>none()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses</a></li>
 <li><b>none()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/retainedknowledge/#a5831cbb744aa662c00d3cb9e56a1dad3">llvm::RetainedKnowledge</a></li>
 <li><b>none()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smallbitvector/#af66ea412504abedf84eebd3a5c744bd8">llvm::SmallBitVector</a></li>
 <li><b>nonEmpty()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/intervalmaphalfopeninfo/#aed9eafeb6d2bddedc1f0ad68bd31442c">llvm::IntervalMapHalfOpenInfo&lt;T&gt;</a></li>
@@ -70101,7 +70391,7 @@ keywords:
 <li><b>NWindowsSubsystem()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/yaml/anonymous-coffyaml-cpp-/nwindowssubsystem/#a0044421c60ef88e8adb6c4bb67b00f93">llvm::yaml::anonymous{COFFYAML.cpp}::NWindowsSubsystem</a></li>
 <li><b>NWindowsSubsystem()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/yaml/anonymous-coffyaml-cpp-/nwindowssubsystem/#a0b937f595253d711b2cf55d3742ca273">llvm::yaml::anonymous{COFFYAML.cpp}::NWindowsSubsystem</a></li>
 </ul>
-<p>906 entries</p>
+<p>905 entries</p>
 
 ## - O -
 
@@ -70655,7 +70945,6 @@ keywords:
 <li><b>operator bool()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfcontext/diesforaddress/#a263bef91c2bc19c9bdd0fbb7bdd6521f">llvm::DWARFContext::DIEsForAddress</a></li>
 <li><b>operator bool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/attribute-iterator/#ae6630740634c26300605c3dc6f63b4c9">llvm::DWARFDie::attribute_iterator</a></li>
 <li><b>operator bool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdie/#ad12709d83cc62353d47c5bbb059f1ebe">llvm::DWARFDie</a></li>
-<li><b>operator bool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a72652b3a9ad874224db0ac8a9cf3ace2">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>operator bool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfunitindex/#adcd1a2d0ec5ab4457a45cbefea5e405e">llvm::DWARFUnitIndex</a></li>
 <li><b>operator bool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/error/#a981b4992a3b7cce718c7995a7d6193a0">llvm::Error</a></li>
 <li><b>operator bool()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/erroror/#a912f09c878488673ca05dd079bbec829">llvm::ErrorOr&lt;T&gt;</a></li>
@@ -70876,7 +71165,6 @@ keywords:
 <li><b>operator StringMapConstIterator< ValueTy >()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stringmapiterator/#a4236fc46baa9711c806da9adec1d5873">llvm::StringMapIterator&lt;ValueTy&gt;</a></li>
 <li><b>operator StringRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cachedhashstring/#a347989b8e7305c453e8599c4393c43de">llvm::CachedHashString</a></li>
 <li><b>operator StringRef()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/knownassumptionstring/#a9fc54333718c3d9a6a498663b499c29d">llvm::KnownAssumptionString</a></li>
-<li><b>operator StringRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/listseparator/#ab31661eb306df0f87b4327dcbcf89c1b">llvm::ListSeparator</a></li>
 <li><b>operator StringRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smallstring/#aa5c7dae1699bd5bf5b900a50fb710566">llvm::SmallString&lt;InternalLen&gt;</a></li>
 <li><b>operator SwitchInst *()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/switchinstprofupdatewrapper/#ac6e30063cd182edcbc2dfd4fd8cd116e">llvm::SwitchInstProfUpdateWrapper</a></li>
 <li><b>operator T const &()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callable-detail/callable-d7d249fb8bb1e1b13d21e8212052041a/#a2450d14f9548b578161bde7a7e40da28">llvm::callable_detail::Callable&lt;T, true&gt;</a></li>
@@ -71200,7 +71488,10 @@ keywords:
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#ab7aa405305ba6e728670588f0ed19d96">llvm::APSInt</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#a3605b6a7a5f5a3f0be655b9b780d184b">llvm::APSInt</a></li>
 <li><b>operator!=()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/arginfo/#a8ebb6d70d9a0c35f82d43d309214b3f7">llvm::ArgInfo</a></li>
+<li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#adff33b435e0a75999042827ca4f4b28c">llvm::AttrBuilder</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a66141548ab771821d839ebc03d828460">llvm::Attribute</a></li>
+<li><b>operator!=()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper/#a2b252f3825e153c5e1ec1054e3ff72ca">llvm::AttributeList::index_iterator::int_wrapper</a></li>
+<li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a7b788ffb2fa7e52afacff05ac28269c1">llvm::AttributeList</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a3e0f20be890835497699df17c616909f">llvm::AttributeSet</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bf-iterator/#ad5b8876309998ad88d27cf7f3bd5289d">llvm::bf_iterator&lt;GraphT, SetType, GT&gt;</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bfi-detail/blockmass/#ad3a2d7c4fc82e84aa6823b9ec79bc7f5">llvm::bfi_detail::BlockMass</a></li>
@@ -71241,7 +71532,6 @@ keywords:
 <li><b>operator!=()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/difile/checksuminfo/#a69feafb57188ca39cd909f645c45f050">llvm::DIFile::ChecksumInfo&lt;T&gt;</a></li>
 <li><b>operator!=()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dilineinfo/#a413313c492e3c86ec9bb8c0a04461a5f">llvm::DILineInfo</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dityperefarray/iterator/#a0b9fe94af93aa6028965fae418a64509">llvm::DITypeRefArray::iterator</a></li>
-<li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a0db455ae963fb767ae7ba78ccf3007ba">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcebindinginfo/#aa3970f4c7053e9dc979d5f4e6c814ced">llvm::dxil::ResourceBindingInfo</a></li>
 <li><b>operator!=()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dxil/resourcebindinginfo/resourcebinding/#a3509cbc83c147b1d1abc0df4d882ad01">llvm::dxil::ResourceBindingInfo::ResourceBinding</a></li>
 <li><b>operator!=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcetypeinfo/#a43b52d59119d7b57121e995e1b276e77">llvm::dxil::ResourceTypeInfo</a></li>
@@ -71807,6 +72097,7 @@ keywords:
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#a362dcab03bc42a305f3c62db691daac7">llvm::APSInt</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/assertingvh/#a4bca372ad6de27dad7918ed4a32a3808">llvm::AssertingVH&lt;ValueTy&gt;</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/at/dbgassignit/#ad199a62007b3aef843aa6327ba8c6def">llvm::at::DbgAssignIt</a></li>
+<li><b>operator*()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper/#a33f6ee7c56f6b14f5cd4c21d65c0cf0d">llvm::AttributeList::index_iterator::int_wrapper</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/phi-iterator-impl/#a7e20880f55667e9f814fcbdf34b6ec3a">llvm::BasicBlock::phi_iterator_impl&lt;PHINodeT, BBIteratorT&gt;</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bf-iterator/#a84187e916b5536063bfb57f5b6d0144d">llvm::bf_iterator&lt;GraphT, SetType, GT&gt;</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/blockfrequency/#ab81f3ce1ca68468d20391910b841a78b">llvm::BlockFrequency</a></li>
@@ -71989,8 +72280,6 @@ keywords:
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smallsetiterator/#abd07bc46d991e12648e0effefcaddf95">llvm::SmallSetIterator&lt;T, N, C&gt;</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsebitvector/sparsebitvectoriterator/#aaa569f0bb9cab5f4c1b0ba53679c2b85">llvm::SparseBitVector::SparseBitVectorIterator</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsemultiset/iterator-base/#ac4b5568892661683743f27a9c191b7f9">llvm::SparseMultiSet::iterator_base&lt;SMSPtrTy&gt;</a></li>
-<li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a031bb433c3fac151078d8853b3c89cd6">llvm::SplittingIterator</a></li>
-<li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a40b07de6d0b7c11b30dcafcc8349554d">llvm::SplittingIterator</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stackmapparser/accessoriterator/#a19b5a6bdb082e7da04532fcf3f3aba04">llvm::StackMapParser::AccessorIterator&lt;AccessorT&gt;</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stringmapconstiterator/#ac56aaa09ac29731a028c52c250c9576b">llvm::StringMapConstIterator&lt;ValueTy&gt;</a></li>
 <li><b>operator*()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stringmapiterator/#a8345daefd5b22873783584eec813a751">llvm::StringMapIterator&lt;ValueTy&gt;</a></li>
@@ -72157,6 +72446,7 @@ keywords:
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/appleacceleratortable/samenameiterator/#add561169f3ecfc072749bd5abc90227d">llvm::AppleAcceleratorTable::SameNameIterator</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#a3ec345f698381947eaca2b9c5a8b61c1">llvm::APSInt</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#a5850ef75730e924d2a3eb1b2b8065e2f">llvm::APSInt</a></li>
+<li><b>operator++()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper/#a3a9c34508383759eafbbf295c33798b5">llvm::AttributeList::index_iterator::int_wrapper</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/phi-iterator-impl/#ab25dd243d30c6d70a1991f210040b948">llvm::BasicBlock::phi_iterator_impl&lt;PHINodeT, BBIteratorT&gt;</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bf-iterator/#a92257d9afb6dd3219fdd6c0b12c7c14d">llvm::bf_iterator&lt;GraphT, SetType, GT&gt;</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bf-iterator/#a2453ce066b172c13a0d5d3b14a675f62">llvm::bf_iterator&lt;GraphT, SetType, GT&gt;</a></li>
@@ -72354,7 +72644,6 @@ keywords:
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsebitvector/sparsebitvectoriterator/#a00ead5752179b43cb10a80b3df479fd1">llvm::SparseBitVector::SparseBitVectorIterator</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsemultiset/iterator-base/#acdcb851770e3bdbb6a281aec5e854b01">llvm::SparseMultiSet::iterator_base&lt;SMSPtrTy&gt;</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsemultiset/iterator-base/#a21292ed929dc2a97f2e897aaa2b6d300">llvm::SparseMultiSet::iterator_base&lt;SMSPtrTy&gt;</a></li>
-<li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a85b602601f97fdb213e4ce2eabb80e4e">llvm::SplittingIterator</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits/phi-iterator-6378c5910886d7a8595c30cf77f6df16/#af29144e7383a8e3e4890d9bf04c9b64a">llvm::SSAUpdaterTraits::PHI_iterator&lt;LDVSSAUpdater &gt;::PHI_iterator</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits/phi-iterator-aafb8198284d925e7b2074b7152e40c8/#a8f8670e7f3fe9b9c8251e7523ba8d762">llvm::SSAUpdaterTraits::PHI_iterator&lt;MachineSSAUpdater &gt;::PHI_iterator</a></li>
 <li><b>operator++()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits/phi-iterator-8c2004dc384f8895c408f99ce225ab0c/#a94d36a2caa989a30c412e294a8917937">llvm::SSAUpdaterTraits::PHI_iterator&lt;SSAUpdater &gt;::PHI_iterator</a></li>
@@ -73159,6 +73448,7 @@ keywords:
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/negator/#a22885c61ce1e5de3ad59c5b2cbec7a48">llvm::Negator</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/negator/#a2017eb6b6bf65b25ab42ad9f283d38b3">llvm::Negator</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/noopstatistic/#aadcc8b1fcf715032e894f3075ede4ae6">llvm::NoopStatistic</a></li>
+<li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a8703fd414233c0f4cf1118e7da6644f7">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/owningbinary/#a61d6472d98f7e3a566bc458ae4c74b25">llvm::objcopy::elf::OwningBinary&lt;T&gt;</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/archive/child/#aa13536751052c3b3cab6ef09803fc603">llvm::object::Archive::Child</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/archive/child/#a587b2803cc38fa645cef1af5cff24d37">llvm::object::Archive::Child</a></li>
@@ -73321,7 +73611,6 @@ keywords:
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/specialcaselist/#a08a8c1a7772379f7ef89625ba236a177">llvm::SpecialCaseList</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/specificbumpptrallocator/#aea155fb482e6938779c6bbfd18c43503">llvm::SpecificBumpPtrAllocator&lt;T&gt;</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spirv/convergenceregioninfo/#a7a2737b6adfc13cc0876a74f5a62a98d">llvm::SPIRV::ConvergenceRegionInfo</a></li>
-<li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a80dd62dc4ec22fbafa7eba0e61a973a7">llvm::SplittingIterator</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdater/#a372e48a7ebee2344db07fef48667604e">llvm::SSAUpdater</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdaterbulk/#a1341b52a3332fa3c3b18e575f771fff7">llvm::SSAUpdaterBulk</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/stacksafetyglobalinfo/#a9c9af03976abd230213c445313149cb1">llvm::StackSafetyGlobalInfo</a></li>
@@ -73451,7 +73740,6 @@ keywords:
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/outputbuffer/#a7edcffe9292e5aec52b66240970b660d">OutputBuffer</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/podsmallvector/#a51e16ab1bba98232787b9426148530ce">PODSmallVector&lt;T, N&gt;</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/podsmallvector/#a04bb8f0efe33c21c02aaa891d4c556f7">PODSmallVector&lt;T, N&gt;</a></li>
-<li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#aaa1f1edcb19db81bdae3e29575c40866">ProvenanceAnalysis</a></li>
 <li><b>operator=()</b>: as function in class <a href="/web-llvm/docs/api/classes/scopedoverride/#a46ab7ef569f22342fb6ab3b336138641">ScopedOverride&lt;T&gt;</a></li>
 <li><b>operator==()</b>: as function in struct <a href="/web-llvm/docs/api/structs/abstractmanglingparser/operatorinfo/#ac6781a0b48ac43ac1221921367ddc6fa">AbstractManglingParser::OperatorInfo</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/allocaslices/partition-iterator/#a09094d8b7d9ec638b7c1dab3c9a2060d">AllocaSlices::partition_iterator</a></li>
@@ -73527,7 +73815,9 @@ keywords:
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#a1457368e287459e33ec3f528553a94e0">llvm::APSInt</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apsint/#a0fdf528acf926d7414b19c7883a75562">llvm::APSInt</a></li>
 <li><b>operator==()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/arginfo/#ab08c8b48ba0e30cdd90049fb6ed53778">llvm::ArgInfo</a></li>
+<li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#ab19fdcd83e92aeff9d2bf8ff322d6618">llvm::AttrBuilder</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a0c489bca200589e7b76e8220f53bfa7f">llvm::Attribute</a></li>
+<li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a077134723a79280e93101adb56e36614">llvm::AttributeList</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a53727566039329ca5e9208d25fc4afa0">llvm::AttributeSet</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/basicblock/phi-iterator-impl/#a6e082057a9ffeff550d45f6558ee6ef7">llvm::BasicBlock::phi_iterator_impl&lt;PHINodeT, BBIteratorT&gt;</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bf-iterator/#aaf268b7f838a41feaa29a51dfefb34d9">llvm::bf_iterator&lt;GraphT, SetType, GT&gt;</a></li>
@@ -73597,7 +73887,6 @@ keywords:
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf/registerlocations/#a2c8060f890891236e14de3b1cf9726fe">llvm::dwarf::RegisterLocations</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindlocation/#a67b30c85270b84204fa8e271586527d8">llvm::dwarf::UnwindLocation</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfexpression-1/#ac8df7d32c8cb16c06e7c3809abdfdb15">llvm::DWARFExpression</a></li>
-<li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a7faec5e3c71e75f99c6fcdcdd9ca602a">llvm::DwarfStringPoolEntryRef</a></li>
 <li><b>operator==()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/resourceflags/#af6678df84a1073ad72aa0bd6df5836ea">llvm::dxbc::PSV::ResourceFlags</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcebindinginfo/#a096ec18ed5481343090f565df763b2cd">llvm::dxil::ResourceBindingInfo</a></li>
 <li><b>operator==()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dxil/resourcebindinginfo/resourcebinding/#ad5e8f5a037b48eb09d93fa46346e957a">llvm::dxil::ResourceBindingInfo::ResourceBinding</a></li>
@@ -73858,7 +74147,6 @@ keywords:
 <li><b>operator==()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/sparsebitvectorelement/#a0465f3f2e654d7d503a58942b03016bf">llvm::SparseBitVectorElement&lt;ElementSize&gt;</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sparsemultiset/iterator-base/#ae05d3098f152c0dd6285fbb6a9b32c1f">llvm::SparseMultiSet::iterator_base&lt;SMSPtrTy&gt;</a></li>
 <li><b>operator==()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/specsig/#a6117161cbb27c573955b81492f0c9a13">llvm::SpecSig</a></li>
-<li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a6670771966efb0097d663b62382a41d3">llvm::SplittingIterator</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits/phi-iterator-6378c5910886d7a8595c30cf77f6df16/#afee958da1eec7b6b56701847fefde452">llvm::SSAUpdaterTraits::PHI_iterator&lt;LDVSSAUpdater &gt;::PHI_iterator</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits/phi-iterator-aafb8198284d925e7b2074b7152e40c8/#a4da2e614647914c69163ac5299021812">llvm::SSAUpdaterTraits::PHI_iterator&lt;MachineSSAUpdater &gt;::PHI_iterator</a></li>
 <li><b>operator==()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits/phi-iterator-8c2004dc384f8895c408f99ce225ab0c/#acb6a65a62e905ffaf754f03b8e410258">llvm::SSAUpdaterTraits::PHI_iterator&lt;SSAUpdater &gt;::PHI_iterator</a></li>
@@ -74239,7 +74527,6 @@ keywords:
 <li><b>optimizeRemquo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/libcallsimplifier/#aabbc6474a470ac58212a6151a49f2391">llvm::LibCallSimplifier</a></li>
 <li><b>optimizeRetainCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-objcarccontract-cpp-/objcarccontract/#a9f0fde9cd5b3738974c06d706cba0a7a">anonymous{ObjCARCContract.cpp}::ObjCARCContract</a></li>
 <li><b>OptimizeReturned()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-webassemblyoptimizereturned-cpp-/optimizereturned/#a3f4e531bfafe75555435d34798226f5e">anonymous{WebAssemblyOptimizeReturned.cpp}::OptimizeReturned</a></li>
-<li><b>OptimizeReturns()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-objcarcopts-cpp-/objcarcopt/#a76700840dd8760932f9a40f4f1dedfa0">anonymous{ObjCARCOpts.cpp}::ObjCARCOpt</a></li>
 <li><b>optimizeSDPattern()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-a15sdoptimizer-cpp-/a15sdoptimizer/#a59878ef8c01f9aa30c91e79f586d5868">anonymous{A15SDOptimizer.cpp}::A15SDOptimizer</a></li>
 <li><b>optimizeSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64fastisel-cpp-/aarch64fastisel/#af60dc500ed81600b4ca379081135e23b">anonymous{AArch64FastISel.cpp}::AArch64FastISel</a></li>
 <li><b>optimizeSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/peepholeoptimizer/#a63ce8874033db1b2e54c2a23d232384e">anonymous{PeepholeOptimizer.cpp}::PeepholeOptimizer</a></li>
@@ -74594,6 +74881,7 @@ keywords:
 <li><b>overlapIntv()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/spliteditor/#a061a8d1b2719e16851521dddcd1a73cc">llvm::SplitEditor</a></li>
 <li><b>overlapRecord()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofwriter/#a2882c6d2a257083c160385fe493c0cf2">llvm::InstrProfWriter</a></li>
 <li><b>overlaps()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-stackslotcoloring-cpp-/stackslotcoloring/colorassignmentinfo/#a6fe58921bee593626612fe7be7bde77a">anonymous{StackSlotColoring.cpp}::StackSlotColoring::ColorAssignmentInfo</a></li>
+<li><b>overlaps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a39fc1d3fa5b22ffc2dc48e94b40409e2">llvm::AttrBuilder</a></li>
 <li><b>overlaps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonblockranges/indexrange/#a7c68ec020f9529a22c70a6528950da1d">llvm::HexagonBlockRanges::IndexRange</a></li>
 <li><b>overlaps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/intervalmap/#ab4b4075554919795e770660d7f13bb21">llvm::IntervalMap&lt;KeyT, ValT, N, Traits&gt;</a></li>
 <li><b>overlaps()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/liverange/#a69ef19ea9e324373a8f6d2cadfd1dad3">llvm::LiveRange</a></li>
@@ -74657,7 +74945,7 @@ keywords:
 <li><b>ownsAllocator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/imutavlfactory/#ad8135d69758f1f32e7ce5d540c2572d0">llvm::ImutAVLFactory&lt;ImutInfo&gt;</a></li>
 <li><b>ownsModule()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcjit/owningmodulecontainer/#a70c80f5129fea664f66357ceba926e8a">llvm::MCJIT::OwningModuleContainer</a></li>
 </ul>
-<p>4550 entries</p>
+<p>4548 entries</p>
 
 ## - P -
 
@@ -77741,24 +78029,20 @@ keywords:
 <li><b>PrescanInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aggressiveantidepbreaker/#ae31e69c9797b91c96437e9367c38e738">llvm::AggressiveAntiDepBreaker</a></li>
 <li><b>PrescanInstruction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/criticalantidepbreaker/#a97ff1e386a0aad4c32cddbdccc995113">llvm::CriticalAntiDepBreaker</a></li>
 <li><b>PrescheduleNodesWithMultipleUses()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/regreductionpqbase/#a6df9e18cc58cb146ccfa7c7d47b6b9ca">anonymous{ScheduleDAGRRList.cpp}::RegReductionPQBase</a></li>
-<li><b>preserve()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#ad966bea18aa62ffb9e040509adc7c99f">llvm::PreservedAnalyses</a></li>
-<li><b>preserve()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#ac138874dedaeb0b8cdcf6c381bc2103b">llvm::PreservedAnalyses</a></li>
 <li><b>PreserveAPIList()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-internalize-cpp-/preserveapilist/#a06d54e713c3dd2f9de17099ffee34445">anonymous{Internalize.cpp}::PreserveAPIList</a></li>
 <li><b>preserveAsmComments()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a0f7df73b154416582fac8a5b51819eb1">llvm::MCAsmInfo</a></li>
 <li><b>preserveBaseRegister()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armconstantislandpass-cpp-/armconstantislands/#a0e5a435a047ef3f277eec100c1ecf031">anonymous{ARMConstantIslandPass.cpp}::ARMConstantIslands</a></li>
-<li><b>preserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a2f84945a09787006fe8e0c94e1de89f1">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
-<li><b>PreservedAnalysisChecker()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a4a23e26ba9eb94d4f75bc75bb459a6fa">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
+<li><b>preserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#a96eee8e68a03f258b63510d47436a9f7">llvm::PreservedAnalysisChecker</a></li>
+<li><b>PreservedAnalysisChecker()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#ad78527a465153f3d7cc889f34582d255">llvm::PreservedAnalysisChecker</a></li>
 <li><b>preserveDebugSections()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-debuggersupportplugin-cpp-/machodebugobjectsynthesizerbase/#a2e160e39a23517dff688b6bb5dfa1c06">anonymous{DebuggerSupportPlugin.cpp}::MachODebugObjectSynthesizerBase</a></li>
 <li><b>preserveDiscardableGVs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/ltocodegenerator/#acee6ecb649f9f5349b6ad3947a23946b">llvm::LTOCodeGenerator</a></li>
-<li><b>preservedSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#abaaa2690a96aed712836f8f292d8128c">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
-<li><b>preservedWhenStateless()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a48ecc8b3108b550239565f675adfd6f8">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
+<li><b>preservedSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#ad5c5895ea2f2d754cb17aa57faa20836">llvm::PreservedAnalysisChecker</a></li>
+<li><b>preservedWhenStateless()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#ad51961e5eef7b750b19a4107498ab0f6">llvm::PreservedAnalysisChecker</a></li>
 <li><b>preserveHigherLevelAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pmdatamanager/#aa2fd2b9e450d0a3dc5255cc52151b7ff">llvm::PMDataManager</a></li>
 <li><b>preserveImportantSections()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/machoplatform/machoplatformplugin/#a463c5f524f5e2cc42bb0939fe1b29e69">llvm::orc::MachOPlatform::MachOPlatformPlugin</a></li>
 <li><b>preserveInitializerSections()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/coffplatform/coffplatformplugin/#a9c70191ec36f9f14d9c0fec3b2c3e4d1">llvm::orc::COFFPlatform::COFFPlatformPlugin</a></li>
 <li><b>preserveInitSections()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/elfnixplatform/elfnixplatformplugin/#a9d3b95e373b19a536c7ad9c15a752f80">llvm::orc::ELFNixPlatform::ELFNixPlatformPlugin</a></li>
 <li><b>PreserveLibCallsAndAsmUsed()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-updatecompilerused-cpp-/preservelibcallsandasmused/#adb4cdb7eddf05c3279a4bf431ecb91ad">anonymous{UpdateCompilerUsed.cpp}::PreserveLibCallsAndAsmUsed</a></li>
-<li><b>preserveSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a937c42f77e161349ce0f999e448c7027">llvm::PreservedAnalyses</a></li>
-<li><b>preserveSet()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a05f35e3a28f0760667448247878c1b80">llvm::PreservedAnalyses</a></li>
 <li><b>preservesResourceLen()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-machinecombiner-cpp-/machinecombiner/#a06c28697f9bb2973a7c7c91243aca3fc">anonymous{MachineCombiner.cpp}::MachineCombiner</a></li>
 <li><b>preserveSymbol()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#a0d863527fbd7b2fe4ca8dc51d6c8d525">llvm::ThinLTOCodeGenerator</a></li>
 <li><b>preservesZeroValueInReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a45aa2763f52ee7bb3f41393d1d4ba079">llvm::TargetInstrInfo</a></li>
@@ -77928,6 +78212,7 @@ keywords:
 <li><b>print()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armconstantpoolsymbol/#a87cc1c8dfc064bce322ee7c2641eaff3">llvm::ARMConstantPoolSymbol</a></li>
 <li><b>print()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armconstantpoolvalue/#a7b8d7ad0899bfee6d615c35f0dfd9841">llvm::ARMConstantPoolValue</a></li>
 <li><b>print()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armconstantpoolvalue/#a2939cb3fb23575c829b38126355af2a9">llvm::ARMConstantPoolValue</a></li>
+<li><b>print()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3fa5ba0fe693cb5a3739950924cb2033">llvm::AttributeList</a></li>
 <li><b>print()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributorcallgraph/#a4ed30c6f160b1c8d82b17c65e182605c">llvm::AttributorCallGraph</a></li>
 <li><b>print()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/baseindexoffset/#a231ef8a0e91e4b1e7c0db41834449e58">llvm::BaseIndexOffset</a></li>
 <li><b>print()</b>: as function in struct <a href="/web-llvm/docs/api/structs/basicaaresult/decomposedgep/#ab6a79f54408f9804ecf731ebe2897402">BasicAAResult::DecomposedGEP</a></li>
@@ -80682,8 +80967,8 @@ keywords:
 <li><b>protectMappedMemory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/anonymous-sectionmemorymanager-cpp-/defaultmmapper/#a7f9c28a81a61c5f292d14dbd7a9b2766">llvm::anonymous{SectionMemoryManager.cpp}::DefaultMMapper</a></li>
 <li><b>protectMappedMemory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sectionmemorymanager/memorymapper/#a1f7f6733e8af2f2911c2ff4832b5d693">llvm::SectionMemoryManager::MemoryMapper</a></li>
 <li><b>protectMappedMemory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sys/memory/#ae27409ddee7e191f33392283ca826703">llvm::sys::Memory</a></li>
-<li><b>ProvenanceAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#ac99eba63e7f4add5028da044ff9a14d5">ProvenanceAnalysis</a></li>
-<li><b>ProvenanceAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a9bb453bb08515faa4236920d6b6a1317">ProvenanceAnalysis</a></li>
+<li><b>ProvenanceAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#afcdae3be2fa8bb4f06d699064fbd8011">llvm::objcarc::ProvenanceAnalysis</a></li>
+<li><b>ProvenanceAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#adafa7ed2458c9594c1a36671b18b6dee">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>proveNoSignedWrapViaInduction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#ac77d8ec075ce875713036ca1439d25e6">llvm::ScalarEvolution</a></li>
 <li><b>proveNoUnsignedWrapViaInduction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a7b08bbacf652ea6888acde49f097b1ff">llvm::ScalarEvolution</a></li>
 <li><b>proveNoWrapByVaryingStart()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#a93dea5275169c80999e1f74e522a69fb">llvm::ScalarEvolution</a></li>
@@ -80906,7 +81191,7 @@ keywords:
 <li><b>pwrite()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/raw-pwrite-stream/#a9a004bff5f9c00b2ede3a52c93c665c2">llvm::raw_pwrite_stream</a></li>
 <li><b>pwrite()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/support/endian/anonymous-sampleprofwriter-cpp-/seekablewriter/#ad5e920c664979d35633d569df89641f4">llvm::support::endian::anonymous{SampleProfWriter.cpp}::SeekableWriter</a></li>
 </ul>
-<p>6243 entries</p>
+<p>6240 entries</p>
 
 ## - Q -
 
@@ -81090,6 +81375,7 @@ keywords:
 <li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref/#a3df721fcf3c8137e001ed99aded1be59">llvm::MutableArrayRef&lt;T&gt;</a></li>
 <li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#aa367fe2f66ef3f505946b6bf9beec0c3">llvm::opt::ArgList</a></li>
 <li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a9a3314fc0453555bb2cc3aea75b02ea6">llvm::opt::ArgList</a></li>
+<li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a0cd7b4e860e4525f8dffae9425a67685">llvm::sandboxir::BasicBlock</a></li>
 <li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagtopologicalsort/#ad0ab86f00424ef15aa14542a57b2798d">llvm::ScheduleDAGTopologicalSort</a></li>
 <li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagtopologicalsort/#a19ef4102be66c620b1a26ba5d67e4918">llvm::ScheduleDAGTopologicalSort</a></li>
 <li><b>rbegin()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/setvector/#a93d06d8915817e94a425aca68a8b8628">llvm::SetVector&lt;T, Vector, Set, N&gt;</a></li>
@@ -81392,7 +81678,9 @@ keywords:
 <li><b>readSymbols()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/coff/coffreader/#ae6d7f442f45160554dddaf9f4a2b5137">llvm::objcopy::coff::COFFReader</a></li>
 <li><b>readSymbols()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/xcoff/xcoffreader/#a331f9900ca6fbcb4d92d3530f9e959a0">llvm::objcopy::xcoff::XCOFFReader</a></li>
 <li><b>readSymbolTable()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/macho/machoreader/#aaae729953b0d1515b9d1025357644adf">llvm::objcopy::macho::MachOReader</a></li>
+<li><b>readTeamBoundsForKernel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aed359885b0e344d18e4921011813748b">llvm::OpenMPIRBuilder</a></li>
 <li><b>readTemporalProfTraceData()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/textinstrprofreader/#a82ac41fe67683b86cf94a838fcafad76">llvm::TextInstrProfReader</a></li>
+<li><b>readThreadBoundsForKernel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a321704fa9e503d47cab3eec5492f35ba">llvm::OpenMPIRBuilder</a></li>
 <li><b>readTPHard()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/cskysubtarget/#a6205da029a51425f9cfae92700095c83">llvm::CSKYSubtarget</a></li>
 <li><b>readU32FromAccel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/appleacceleratortable/#adf89fd8e7fd699bc183085eb9cd07c6c">llvm::AppleAcceleratorTable</a></li>
 <li><b>readUInt()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/msgpack/reader/#ac687413b80c8970240dad62aefae5508">llvm::msgpack::Reader</a></li>
@@ -81762,6 +82050,8 @@ keywords:
 <li><b>Reduction()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armparalleldsp-cpp-/reduction/#aa38eaf5bcfbccb38cf33579a2c94a8c3">anonymous{ARMParallelDSP.cpp}::Reduction</a></li>
 <li><b>Reduction()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armparalleldsp-cpp-/reduction/#a330ba1dd3d26f93f62888bad0065bd60">anonymous{ARMParallelDSP.cpp}::Reduction</a></li>
 <li><b>ReductionFlags()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/reductionflags/#af697bd9a686d600fe8cca03860569262">llvm::TargetTransformInfo::ReductionFlags</a></li>
+<li><b>ReductionInfo()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a63ae5ded4ed861058caa4220c94cbdf8">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
+<li><b>ReductionInfo()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a4af0772728af924cad5f22feb715537f">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>RedundantInstrElimination()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagonbitsimplify-cpp-/redundantinstrelimination/#aee884901a4bad6e0e83df32395854f3e">anonymous{HexagonBitSimplify.cpp}::RedundantInstrElimination</a></li>
 <li><b>reenter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/localtrampolinepool/#ad0c013e171b8e23ca499655bee71366d">llvm::orc::LocalTrampolinePool&lt;ORCABI&gt;</a></li>
 <li><b>reexportedLibraries()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/interfacefile/#a92274909dd6de751a00cc114bbd43d23">llvm::MachO::InterfaceFile</a></li>
@@ -82197,6 +82487,7 @@ keywords:
 <li><b>RegisterTargetMachine()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/registertargetmachine/#af793b528b184d98a9ccc21ff3f8c552d">llvm::RegisterTargetMachine&lt;TargetMachineImpl&gt;</a></li>
 <li><b>RegisterTargetMachine()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/targetregistry/#aa7abb11d1faa188e94cbe7b8aff7ca6c">llvm::TargetRegistry</a></li>
 <li><b>registerTargetRegionEntryInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#a9736eb60d11b4a8d644d3e32346e7f56">llvm::OffloadEntriesInfoManager</a></li>
+<li><b>registerTargetRegionFunction()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a17c7f65c3ce26b3b0de6774c0d3c723f">llvm::OpenMPIRBuilder</a></li>
 <li><b>registerTryScope()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-webassemblycfgstackify-cpp-/webassemblycfgstackify/#a90b241caaf210939f10d983072da53f4">anonymous{WebAssemblyCFGStackify.cpp}::WebAssemblyCFGStackify</a></li>
 <li><b>registerUsed()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonmcchecker/#a35e5e03fda13a0e74bcd5d60780bdc9b">llvm::HexagonMCChecker</a></li>
 <li><b>registerUser()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#aeefacaa2eccab8db38ff9ccdad1e0b1d">llvm::ScalarEvolution</a></li>
@@ -82260,10 +82551,10 @@ keywords:
 <li><b>RelAndSymbol()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/machobjectwriter/relandsymbol/#a6c751f2cd90563578f749b4012066bcf">llvm::MachObjectWriter::RelAndSymbol</a></li>
 <li><b>relas()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/elffile/#a63434f54fe78bfe55d1c3de263359e6f">llvm::objcopy::elf::ELFFile&lt;ELFT&gt;</a></li>
 <li><b>relas()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/elffile/#a63434f54fe78bfe55d1c3de263359e6f">llvm::object::ELFFile&lt;ELFT&gt;</a></li>
-<li><b>related()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">ProvenanceAnalysis</a></li>
-<li><b>relatedCheck()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#ae148766368045247e287034f187a4989">ProvenanceAnalysis</a></li>
-<li><b>relatedPHI()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a3d664fe955dda8b96b77eb54fa003e6b">ProvenanceAnalysis</a></li>
-<li><b>relatedSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a7d05adc0b59cc54112756e4e7bd70454">ProvenanceAnalysis</a></li>
+<li><b>related()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a0cd2cebbb0c91816f3af00f1014dd172">llvm::objcarc::ProvenanceAnalysis</a></li>
+<li><b>relatedCheck()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#ae148766368045247e287034f187a4989">llvm::objcarc::ProvenanceAnalysis</a></li>
+<li><b>relatedPHI()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a3d664fe955dda8b96b77eb54fa003e6b">llvm::objcarc::ProvenanceAnalysis</a></li>
+<li><b>relatedSelect()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a7d05adc0b59cc54112756e4e7bd70454">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>relativeAShl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apint/#a793e27a4e7b6ec5ecab8e7616e0d4ac0">llvm::APInt</a></li>
 <li><b>relativeAShr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apint/#a57604a130a7bf75be0295a8ba37ff4fe">llvm::APInt</a></li>
 <li><b>relativeLShl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/apint/#a3bbf73dc4411a52b8d03e582a09893ce">llvm::APInt</a></li>
@@ -82314,6 +82605,7 @@ keywords:
 <li><b>release()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/intrusiverefcntptrinfo/#acd7a88e0a43d734b6692c22e9d93e7f5">llvm::IntrusiveRefCntPtrInfo&lt;T&gt;</a></li>
 <li><b>release()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/intrusiverefcntptrinfo-700d0f2a5262a9ba37b56160d1f20b3d/#af75ea76ee1cf62c981ef43d5e7c1d086">llvm::IntrusiveRefCntPtrInfo&lt;ImutAVLTree&lt; ImutInfo &gt;&gt;</a></li>
 <li><b>release()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/jitlinkmemorymanager/finalizedalloc/#a555b4d547e388b770585087dc398b667">llvm::jitlink::JITLinkMemoryManager::FinalizedAlloc</a></li>
+<li><b>release()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a834ce03ab17698b3131e79dc14471bc7">llvm::mca::ResourceManager</a></li>
 <li><b>release()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/inprocessmemorymapper/#ae7b7c908c1016860ed8c53965f8f167a">llvm::orc::InProcessMemoryMapper</a></li>
 <li><b>release()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/memorymapper/#a5378c64c63dbec6bf94e44336f5c32e3">llvm::orc::MemoryMapper</a></li>
 <li><b>release()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/rt-bootstrap/executorsharedmemorymapperservice/#a917f3a8ccf396bf9c6aee999ce552f2e">llvm::orc::rt_bootstrap::ExecutorSharedMemoryMapperService</a></li>
@@ -82337,6 +82629,8 @@ keywords:
 <li><b>releaseBottomNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/postgenericscheduler/#ac32bc6bea26f0dc3cc421145f6c41af6">llvm::PostGenericScheduler</a></li>
 <li><b>releaseBottomNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/r600schedstrategy/#a4ae49efe3ba813f5cb7a746245b9b0e1">llvm::R600SchedStrategy</a></li>
 <li><b>releaseBottomNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzpostraschedstrategy/#a199a79c029d6fc9c4b1f338083539bd1">llvm::SystemZPostRASchedStrategy</a></li>
+<li><b>releaseBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a328531d91fb4e878f50c00ed55bf1d79">llvm::mca::ResourceState</a></li>
+<li><b>releaseBuffers()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a3d93a035221e49bed83c4e10a906ebad">llvm::mca::ResourceManager</a></li>
 <li><b>releaseFile()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fileremover/#ac22fb24ad5b08dc2a8a399063940026e">llvm::FileRemover</a></li>
 <li><b>releaseGlobalResolutionsMemory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lto/lto/#a9d5eaa05fdf3c1e1d36cd91c4d4cf59f">llvm::lto::LTO</a></li>
 <li><b>releaseGroup()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/interleavedaccessinfo/#a2d4a5c3e268a2fcfdeaeb753674448a5">llvm::InterleavedAccessInfo</a></li>
@@ -82438,6 +82732,7 @@ keywords:
 <li><b>ReleasePredecessors()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagfast-cpp-/scheduledagfast/#a523cfb82932bec98df513dd3950cd86f">anonymous{ScheduleDAGFast.cpp}::ScheduleDAGFast</a></li>
 <li><b>ReleasePredecessors()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/scheduledagrrlist/#a71f9ee19c4785d50729582ff915ec6e9">anonymous{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</a></li>
 <li><b>releasePredecessors()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagmi/#a25f9975b56fe38f7a8bb4d10b7f6f5ea">llvm::ScheduleDAGMI</a></li>
+<li><b>releaseResource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a7a285124e918bd59e42a03792e0fee81">llvm::mca::ResourceManager</a></li>
 <li><b>releaseSeqNo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepc/#a233ef25a2a9adb33fbcdf46685e9ae89">llvm::orc::SimpleRemoteEPC</a></li>
 <li><b>releaseSeqNo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepcserver/#a9c76afe9ea5ab15a5d39506f7186dfa1">llvm::orc::SimpleRemoteEPCServer</a></li>
 <li><b>releaseSQSlot()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/lsunitbase/#afbeb4a136a4594261472807e309c6ee7">llvm::mca::LSUnitBase</a></li>
@@ -82448,6 +82743,7 @@ keywords:
 <li><b>releaseState()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/schedulingpriorityqueue/#a4a1424925a29a70383ebc11b7cac319d">llvm::SchedulingPriorityQueue</a></li>
 <li><b>releaseStream()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/circular-raw-ostream/#a7c7ec4459d82b49fde2d6037092cf7b1">llvm::circular_raw_ostream</a></li>
 <li><b>releaseStream()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/formatted-raw-ostream/#a81acdaa9ede919f1eed45bee715afa6e">llvm::formatted_raw_ostream</a></li>
+<li><b>releaseSubResource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a45b5633dbc64f7b112191eb422c3ae0b">llvm::mca::ResourceState</a></li>
 <li><b>ReleaseSucc()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-postraschedulerlist-cpp-/schedulepostratdlist/#a3b6bb6091ca857630b00935594371c6c">anonymous{PostRASchedulerList.cpp}::SchedulePostRATDList</a></li>
 <li><b>releaseSucc()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagvliw-cpp-/scheduledagvliw/#ab821fd41ed170899d33452e3962329a2">anonymous{ScheduleDAGVLIW.cpp}::ScheduleDAGVLIW</a></li>
 <li><b>releaseSucc()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagmi/#a90ffd918ef80c711049758b2064e15c4">llvm::ScheduleDAGMI</a></li>
@@ -82630,6 +82926,7 @@ keywords:
 <li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-machineblockplacement-cpp-/blockchain/#aa6a5128cead90f00a37234c186692340">anonymous{MachineBlockPlacement.cpp}::BlockChain</a></li>
 <li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mergefunctions-cpp-/mergefunctions/#af3c22b35020364b5ff8a5afd5a49b987">anonymous{MergeFunctions.cpp}::MergeFunctions</a></li>
 <li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/regreductionpqbase/#a2cca36eb6eaa100e41d95d8123eb21fb">anonymous{ScheduleDAGRRList.cpp}::RegReductionPQBase</a></li>
+<li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#abf8bb6f24f26021a4ea1b6486bc983db">llvm::AttrBuilder</a></li>
 <li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/constantuniquemap/#ab693c4c2441887d4b0ac60758510ad30">llvm::ConstantUniqueMap&lt;ConstantClass&gt;</a></li>
 <li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/giselworklist/#accddc13f9bec1fc1deb55fa09c542fd6">llvm::GISelWorkList&lt;N&gt;</a></li>
 <li><b>remove()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ilist-base/#ab0e773629519dab96a519c567524ba65">llvm::ilist_base&lt;EnableSentinelTracking, ParentTy&gt;</a></li>
@@ -82681,13 +82978,21 @@ keywords:
 <li><b>removeAssumedBits()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/bitintegerstate/#a69055c62a711a6f503db05930ccb6ce7">llvm::BitIntegerState&lt;base_ty, BestState, WorstState&gt;</a></li>
 <li><b>removeAtomicPseudoMIs()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-simemorylegalizer-cpp-/simemorylegalizer/#a3c1cd9abd99df528f5b336213150546f">anonymous{SIMemoryLegalizer.cpp}::SIMemoryLegalizer</a></li>
 <li><b>removeAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a7dc24cdf7fd375d1e26da159387cd526">llvm::Argument</a></li>
+<li><b>removeAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#aa63e528eeff5082f6920b10244143920">llvm::AttrBuilder</a></li>
+<li><b>removeAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#aa9a9eff4713139ed6dc481a14a2a6897">llvm::AttrBuilder</a></li>
+<li><b>removeAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a987229e1e53239051e8e0d581c7b6395">llvm::AttrBuilder</a></li>
+<li><b>removeAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4be93bfc0865b2bc93136f67be092471">llvm::AttributeList</a></li>
 <li><b>removeAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#a1247d3316a7816eaee459556671caab5">llvm::AttributeSet</a></li>
 <li><b>removeAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#aac0004bd4937c1de995d7fd1ef010efd">llvm::AttributeSet</a></li>
+<li><b>removeAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a0fdf10b37833524db3870b2dd98693a8">llvm::AttributeList</a></li>
+<li><b>removeAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#abac2c888655f9fa00f53c7c7e851ff20">llvm::AttributeList</a></li>
 <li><b>removeAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#ab18063e13ecbbbdea86aa54cd118b1db">llvm::CallBase</a></li>
 <li><b>removeAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a38dc9fea21bad23a1ca15b9c7a7ec484">llvm::CallBase</a></li>
 <li><b>removeAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a838fded9375bdf5078b6853449ee44f5">llvm::Function</a></li>
 <li><b>removeAttributeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#aced83766bacb03989c05422bfc341449">llvm::Function</a></li>
 <li><b>removeAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributeset/#aa3392828dc2b425dbafab7dd81fae786">llvm::AttributeSet</a></li>
+<li><b>removeAttributesAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a2240c7569f0786a6bea570d21e924060">llvm::AttributeList</a></li>
+<li><b>removeAttributesAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad2077a29ae8c3a0a7afe3bd0345f8738">llvm::AttributeList</a></li>
 <li><b>removeAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/argument/#a836e39b4e0fddf9df0ec7fbfbeacd50e">llvm::Argument</a></li>
 <li><b>removeAttrs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributor/#a33ddc37dc52df4343895a6ada894428c">llvm::Attributor</a></li>
 <li><b>removeAttrs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/attributor/#a7c6aa966d08ba8856227ba098f739522">llvm::Attributor</a></li>
@@ -82802,7 +83107,11 @@ keywords:
 <li><b>removeFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#ada5536ea9f061a27091a487f69565b3e">llvm::CallBase</a></li>
 <li><b>removeFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a8baad1df39d45576fe7a642b49f0e6dc">llvm::Function</a></li>
 <li><b>removeFnAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#af6b3606d6657d553ba9065fad0e333f0">llvm::Function</a></li>
+<li><b>removeFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac22a21db26809ce1d18b8ee41295b474">llvm::AttributeList</a></li>
+<li><b>removeFnAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad0308f412730541938ee571fea17925d">llvm::AttributeList</a></li>
 <li><b>removeFnAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hwaddresssanitizer-cpp-/hwaddresssanitizer/#ace465f7591693cebb59fe341a4bb1ec7">anonymous{HWAddressSanitizer.cpp}::HWAddressSanitizer</a></li>
+<li><b>removeFnAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad58229d1b1450ad0311f0a138fce5a73">llvm::AttributeList</a></li>
+<li><b>removeFnAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ab6847a760305fc6dfb31721c185a1aa6">llvm::AttributeList</a></li>
 <li><b>removeFnAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a68f6ab734f9bafb1a1b591267ef402d8">llvm::CallBase</a></li>
 <li><b>removeFnAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a6875de46fcb2a74ca95bce67edd215a0">llvm::Function</a></li>
 <li><b>RemoveFromAllocasList()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-promotememorytoregister-cpp-/promotemem2reg/#af5716f3a33bef514c8d2e235395274a5">anonymous{PromoteMemoryToRegister.cpp}::PromoteMem2Reg</a></li>
@@ -82932,6 +83241,10 @@ keywords:
 <li><b>removeParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#af7aecdc1aa280f1c8c0aa194b3453b46">llvm::CallBase</a></li>
 <li><b>removeParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a1bb42b4d714a18ee81315cfb6ae1ed13">llvm::Function</a></li>
 <li><b>removeParamAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a948ae5afe80982c85442c19b2855cb35">llvm::Function</a></li>
+<li><b>removeParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aabcd25c0256b5c210d20ada500ca7faf">llvm::AttributeList</a></li>
+<li><b>removeParamAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a4f4ebc3eed35009a0cc35d7a8f6d878e">llvm::AttributeList</a></li>
+<li><b>removeParamAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a161139dd3cce264762282c9009eb1acd">llvm::AttributeList</a></li>
+<li><b>removeParamAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a14fe429b8e7e3af4cab47a826ae6918f">llvm::AttributeList</a></li>
 <li><b>removeParamAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a14f9c4f42aae35f61b404a5d21e9d88d">llvm::CallBase</a></li>
 <li><b>removeParamAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a55c554858450f67ef20c4abbc7e1ed19">llvm::Function</a></li>
 <li><b>removePartiallyOverlappedStores()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-deadstoreelimination-cpp-/dsestate/#afceb7703f48842eea9acf024ce0bd865">anonymous{DeadStoreElimination.cpp}::DSEState</a></li>
@@ -82980,6 +83293,9 @@ keywords:
 <li><b>removeRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a9724a78a61a4a4d72941116c6bd7c892">llvm::CallBase</a></li>
 <li><b>removeRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a09ac042b7e543197d4911a0436d46349">llvm::Function</a></li>
 <li><b>removeRetAttr()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#a5574f481ddb505fe7c2b90c46e22db33">llvm::Function</a></li>
+<li><b>removeRetAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aec0a2e70b99735033d6c8565181fbacf">llvm::AttributeList</a></li>
+<li><b>removeRetAttribute()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a1aad76febe84315bf8b5cae3336bd612">llvm::AttributeList</a></li>
+<li><b>removeRetAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a42c63d5e6fd828727093857e31c22cd3">llvm::AttributeList</a></li>
 <li><b>removeRetAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a2d9fe4a8103a58d5dee8ff09e6fa2152">llvm::CallBase</a></li>
 <li><b>removeRetAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/function/#acb3914db988819782f3a6317d2e2b925">llvm::Function</a></li>
 <li><b>removeRuntimeSymbols()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/openmpopt/#a631cc036792f412ea171b2d61a0e1916">anonymous{OpenMPOpt.cpp}::OpenMPOpt</a></li>
@@ -83097,6 +83413,7 @@ keywords:
 <li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref/#aef01345ce5602b267175a8b505b4be04">llvm::MutableArrayRef&lt;T&gt;</a></li>
 <li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#ab7464b01e58453e55bbb26521e50dd65">llvm::opt::ArgList</a></li>
 <li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a7210cd8ea9a9e820e62cdefe20981524">llvm::opt::ArgList</a></li>
+<li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a2d9418d5f7436d51ef2abebbd5ada6a8">llvm::sandboxir::BasicBlock</a></li>
 <li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagtopologicalsort/#a1faf371bd07c60102c4cf7b334d5dac9">llvm::ScheduleDAGTopologicalSort</a></li>
 <li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagtopologicalsort/#aa2be15ea3a7108710d5d27090a25d121">llvm::ScheduleDAGTopologicalSort</a></li>
 <li><b>rend()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/setvector/#aa1aa7b0d548ef1b5a4c3eeb728c9c4c5">llvm::SetVector&lt;T, Vector, Set, N&gt;</a></li>
@@ -83236,6 +83553,7 @@ keywords:
 <li><b>replaceArg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/diexpression/#a9c14a49c489d623a8174f48b368cd3e8">llvm::DIExpression</a></li>
 <li><b>replaceArgString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/opt/inputarglist/#a8537773bdfd1d357d4a7c5fc1b7979e4">llvm::opt::InputArgList</a></li>
 <li><b>replaceArrays()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dibuilder/#afee05194feacd4f95209e840e7242332">llvm::DIBuilder</a></li>
+<li><b>replaceAttributeTypeAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af4d7d74d32e67259997832a663e14739">llvm::AttributeList</a></li>
 <li><b>replaceBinOpShuffles()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-interleavedaccesspass-cpp-/interleavedaccessimpl/#abcca7aba196d68ce10fa885c7827fb95">anonymous{InterleavedAccessPass.cpp}::InterleavedAccessImpl</a></li>
 <li><b>ReplaceBITCASTResults()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64targetlowering/#ab2fc37cebc11869e096bbcc810ca9961">llvm::AArch64TargetLowering</a></li>
 <li><b>replaceBranch()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mipsbranchexpansion-cpp-/mipsbranchexpansion/#adb1d2eb89dc3cf751f94b0cede1bebd3">anonymous{MipsBranchExpansion.cpp}::MipsBranchExpansion</a></li>
@@ -83615,6 +83933,7 @@ keywords:
 <li><b>requiresCallersForArgOrFunction()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/abstractattribute/#aeb873d328f3ef9c9f88447c0df0be6c5">llvm::AbstractAttribute</a></li>
 <li><b>requiresCodeGenSCCOrder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetpassconfig/#a0a8fe59aa27ee157f47094d5dd3b88ec">llvm::TargetPassConfig</a></li>
 <li><b>requiresCodeObjectV6()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#afd17b1239dc4bc597ba3b9fa0c54c6f0">llvm::GCNSubtarget</a></li>
+<li><b>requiresDevicePointerInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a50649e8d403db2fa366f239585e94094">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>requiresDisablingZABeforeCall()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/smeattrs/#a7a3118e33d31e320d165ff3d5f0d0d63">llvm::SMEAttrs</a></li>
 <li><b>requiresDisjointEarlyClobberAndUndef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a9078d25e7337b0e6490e8662f3a281a5">llvm::GCNSubtarget</a></li>
 <li><b>requiresDisjointEarlyClobberAndUndef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/r600subtarget/#a704e1bc52ac7ba0adc959220e1a3beaa">llvm::R600Subtarget</a></li>
@@ -83720,6 +84039,8 @@ keywords:
 <li><b>reserveAllocationSpace()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyld/memorymanager/#a10401be6f4a60bfb003221c8976049ce">llvm::RuntimeDyld::MemoryManager</a></li>
 <li><b>reserveBlocks()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopbase/#a756142b56356b7a9083d52a88c7bd3af">llvm::LoopBase&lt;BlockT, LoopT&gt;</a></li>
 <li><b>reserveBlocks()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/webassemblyexception/#a5a54053a570eff68cc578048f25bf88f">llvm::WebAssemblyException</a></li>
+<li><b>reserveBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#aab156c820364f0655426202aca3ef989">llvm::mca::ResourceState</a></li>
+<li><b>reserveBuffers()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a02869b34a5fed7e3d15b09d677ee8cf2">llvm::mca::ResourceManager</a></li>
 <li><b>reserveClauses()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/landingpadinst/#ab436e9b2bf4e8566f80d64faf1ce9ef5">llvm::LandingPadInst</a></li>
 <li><b>reservedPrivateSegmentBufferReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siregisterinfo/#a51db99e6baa393260b874d1d04e7ecdc">llvm::SIRegisterInfo</a></li>
 <li><b>reservedRegsFrozen()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo/#a5ecfe2828dd348fc0b23c8d1d73c4b75">llvm::MachineRegisterInfo</a></li>
@@ -83735,6 +84056,7 @@ keywords:
 <li><b>reserveReg()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo/#ab490792bb2387856aeb83267a1bd55d2">llvm::MachineRegisterInfo</a></li>
 <li><b>reserveRegisterTuples()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/r600registerinfo/#aad6959e2460facca35f77df6f777b4bd">llvm::R600RegisterInfo</a></li>
 <li><b>reserveRegisterTuples()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/siregisterinfo/#a6b20bef91a090d2b2fb43153c9d29bfd">llvm::SIRegisterInfo</a></li>
+<li><b>reserveResource()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a946efb5d7f623e1285039dadcab561a9">llvm::mca::ResourceManager</a></li>
 <li><b>reserveResources()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dfapacketizer/#a9d9616a84ad6dd4722956b2765d5017b">llvm::DFAPacketizer</a></li>
 <li><b>reserveResources()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dfapacketizer/#ab125ad75eb5ad112b53b0877d6b0585a">llvm::DFAPacketizer</a></li>
 <li><b>reserveResources()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resourcemanager/#a66b0369aaa8c87a6969ec5b56700d0d8">llvm::ResourceManager</a></li>
@@ -84185,6 +84507,7 @@ keywords:
 <li><b>resolveRelocations()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyld/#a4b3756c713e9a0e034b96a96ebd8ebc2">llvm::RuntimeDyld</a></li>
 <li><b>resolveRelocations()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldimpl/#af32873ce4ce9becfcc874f9d34f0d793">llvm::RuntimeDyldImpl</a></li>
 <li><b>ResolverError()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resolvererror/#af7a6da49a7e0a172e7cc1ffd83a8e942">llvm::ResolverError</a></li>
+<li><b>resolveResourceMask()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a9a795cf659d06359358c86c4ea0f64ad">llvm::mca::ResourceManager</a></li>
 <li><b>resolveRISCVRelocation()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldelf/#a912f2ec871e6617b38c99d8f347b0690">llvm::RuntimeDyldELF</a></li>
 <li><b>resolveSchedClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetschedmodel/#aad3a46af0e50906ff7193aa923b80c65">llvm::TargetSchedModel</a></li>
 <li><b>resolveSchedClass()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo/#ae7cda8924c60f445e822e54c32c42314">llvm::TargetSubtargetInfo</a></li>
@@ -84203,14 +84526,17 @@ keywords:
 <li><b>ResourceBindingInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dxil/resourcebindinginfo/#a52c967a651ac05246a6c48ea46de5101">llvm::dxil::ResourceBindingInfo</a></li>
 <li><b>ResourceEntryRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/resourceentryref/#aeaf0e478d33e9b0f941270a28e628ac7">llvm::object::ResourceEntryRef</a></li>
 <li><b>ResourceFlags()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/resourceflags/#aa140a92cbabb7f26d8e2a240dc9b9142">llvm::dxbc::PSV::ResourceFlags</a></li>
+<li><b>~ResourceManager()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a7a57518c78fb4d6fe1d515b27c7b9117">llvm::mca::ResourceManager</a></li>
+<li><b>ResourceManager()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a7d000778dc6adcdb34b656a83939800a">llvm::mca::ResourceManager</a></li>
 <li><b>~ResourceManager()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/resourcemanager/#a3847ee6199dc077d833a33d235d1a728">llvm::orc::ResourceManager</a></li>
-<li><b>ResourceManager()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resourcemanager/#a9ce4c61ea2bb484a1fe208881f1ad52d">llvm::ResourceManager</a></li>
+<li><b>ResourceManager()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resourcemanager/#a6b881604ed6d1c9eafbbd61e14dea2cf">llvm::ResourceManager</a></li>
 <li><b>ResourcePriorityQueue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resourcepriorityqueue/#a16fbd46e51c3d60b6bb29c18ea546aa7">llvm::ResourcePriorityQueue</a></li>
 <li><b>resourcesCost()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzhazardrecognizer/#ab727fc0077d4f6ff1ad7b34cc5d2f069">llvm::SystemZHazardRecognizer</a></li>
 <li><b>ResourceSectionRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/resourcesectionref/#ac5b9f4bdc037ce9761aacb3cb4ed9bd6">llvm::object::ResourceSectionRef</a></li>
 <li><b>ResourceSectionRef()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/object/resourcesectionref/#ab5c7011d70e8dc0b6ef69d8ba523aa5e">llvm::object::ResourceSectionRef</a></li>
 <li><b>ResourceSegments()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resourcesegments/#a1acb88064bee4429a66c43624abf0fad">llvm::ResourceSegments</a></li>
 <li><b>ResourceSegments()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/resourcesegments/#ade0e5e61ec4d1af9caa7af68ceea9c4c">llvm::ResourceSegments</a></li>
+<li><b>ResourceState()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a0571f42d6bb1d3b1dd87654d84850a36">llvm::mca::ResourceState</a></li>
 <li><b>~ResourceStrategy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestrategy/#a7e949b40770b10b26d316a04bf2edcea">llvm::mca::ResourceStrategy</a></li>
 <li><b>ResourceStrategy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c">llvm::mca::ResourceStrategy</a></li>
 <li><b>ResourceStrategy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestrategy/#ae0d501b1579f4c9de6bf6ab5edbe8b20">llvm::mca::ResourceStrategy</a></li>
@@ -85192,7 +85518,6 @@ keywords:
 <li><b>run()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loopversioningpass/#ab85aee23551eb41e8d1d7e01e1fd3f98">llvm::LoopVersioningPass</a></li>
 <li><b>run()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lowerallowcheckpass/#a0333cadd9ec11ea319d1fd3d3e0e6f05">llvm::LowerAllowCheckPass</a></li>
 <li><b>run()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loweratomicpass/#aa6367f2b0be097467a383973068b444e">llvm::LowerAtomicPass</a></li>
-<li><b>run()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/lowerconstantintrinsicspass/#ab82707f4044f916e7c0ce1955b987cba">llvm::LowerConstantIntrinsicsPass</a></li>
 <li><b>run()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/loweremutlspass/#aa02b6a6722504e6fb7a176a81fc5d49c">llvm::LowerEmuTLSPass</a></li>
 <li><b>run()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/lowerexpectintrinsicpass/#afb59e74c5181b5a9fa8d58780be0699a">llvm::LowerExpectIntrinsicPass</a></li>
 <li><b>run()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/lowerglobaldtorspass/#a8895fb3cf22b753143095a1552ca974a">llvm::LowerGlobalDtorsPass</a></li>
@@ -86371,7 +86696,7 @@ keywords:
 <li><b>RVVRegisterRegAlloc()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvtargetmachine-cpp-/rvvregisterregalloc/#a8f45b46a8dddb92f59e625e2e0765bd9">anonymous{RISCVTargetMachine.cpp}::RVVRegisterRegAlloc</a></li>
 <li><b>RxSBGOperands()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-systemziseldagtodag-cpp-/rxsbgoperands/#a4b2d6d1e99db7d3b107024307650bc0d">anonymous{SystemZISelDAGToDAG.cpp}::RxSBGOperands</a></li>
 </ul>
-<p>5442 entries</p>
+<p>5482 entries</p>
 
 ## - S -
 
@@ -87935,6 +88260,7 @@ keywords:
 <li><b>SelectPExtPair()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64iseldagtodag-cpp-/aarch64dagtodagisel/#a7076f4bbd65a6427f11dd14cce281ed4">anonymous{AArch64ISelDAGToDAG.cpp}::AArch64DAGToDAGISel</a></li>
 <li><b>selectPhi()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-spirvinstructionselector-cpp-/spirvinstructionselector/#a47fcf61f80f3860f0d4f5d6f1da48f4e">anonymous{SPIRVInstructionSelector.cpp}::SPIRVInstructionSelector</a></li>
 <li><b>selectPHI()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/amdgpuinstructionselector/#aaa77a9c8277088f02af9dfec00afdf5e">llvm::AMDGPUInstructionSelector</a></li>
+<li><b>selectPipe()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a5a464c1ec4304ed04bf623070c352b12">llvm::mca::ResourceManager</a></li>
 <li><b>SelectPostLoad()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64iseldagtodag-cpp-/aarch64dagtodagisel/#ac1346d28c3d5d259661f14ed8dc02423">anonymous{AArch64ISelDAGToDAG.cpp}::AArch64DAGToDAGISel</a></li>
 <li><b>SelectPostLoadLane()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64iseldagtodag-cpp-/aarch64dagtodagisel/#a87024e3cd8e787fed3e17063882847aa">anonymous{AArch64ISelDAGToDAG.cpp}::AArch64DAGToDAGISel</a></li>
 <li><b>SelectPostStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64iseldagtodag-cpp-/aarch64dagtodagisel/#a7e3d9cf3f95460906ecb45fd30a3c6e5">anonymous{AArch64ISelDAGToDAG.cpp}::AArch64DAGToDAGISel</a></li>
@@ -88315,6 +88641,7 @@ keywords:
 <li><b>sendMessage()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepcserver/#abb5f1d3ca5f0bd6275bad25b1374f4d2">llvm::orc::SimpleRemoteEPCServer</a></li>
 <li><b>sendMessage()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepctransport/#aaf0798dc9fea356e7235626731290c85">llvm::orc::SimpleRemoteEPCTransport</a></li>
 <li><b>sendSetupMessage()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepcserver/#a4503add8f56b7678463f9d53a971f5ac">llvm::orc::SimpleRemoteEPCServer</a></li>
+<li><b>separateBeginEndCalls()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a0a3c46b8e781b77de5bc7ed771197805">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>separateChainForNode()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagoncommongep-cpp-/hexagoncommongep/#a5bd29beb57ac4bd2a5a86827cc594462">anonymous{HexagonCommonGEP.cpp}::HexagonCommonGEP</a></li>
 <li><b>separateConstantChains()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-hexagoncommongep-cpp-/hexagoncommongep/#a0689ca21e6bac562747faeb30f1198b7">anonymous{HexagonCommonGEP.cpp}::HexagonCommonGEP</a></li>
 <li><b>SeparateConstOffsetFromGEP()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-separateconstoffsetfromgep-cpp-/separateconstoffsetfromgep/#a5c5223afb0dcd4237e14d95265b1782f">anonymous{SeparateConstOffsetFromGEP.cpp}::SeparateConstOffsetFromGEP</a></li>
@@ -88482,7 +88809,7 @@ keywords:
 <li><b>set4V()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86opcodeprefixhelper/#a78f25fc15377b5269dedd460e27fa3d7">anonymous{X86MCCodeEmitter.cpp}::X86OpcodePrefixHelper</a></li>
 <li><b>set4VV2()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86opcodeprefixhelper/#aa2dfe429ab12a9a8a9a85ed43ba19ca6">anonymous{X86MCCodeEmitter.cpp}::X86OpcodePrefixHelper</a></li>
 <li><b>set5M()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86opcodeprefixhelper/#a7a57e01d61efef5d2bb26f6b6162816d">anonymous{X86MCCodeEmitter.cpp}::X86OpcodePrefixHelper</a></li>
-<li><b>setAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a76191600b1c369e6eb0b9176719cc87f">ProvenanceAnalysis</a></li>
+<li><b>setAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a746f7f7833928dfd2e5dec71aad6d240">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>setAAA()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86mccodeemitter-cpp-/x86opcodeprefixhelper/#a957ca11e54899f7d5bfdd5708c57f905">anonymous{X86MCCodeEmitter.cpp}::X86OpcodePrefixHelper</a></li>
 <li><b>setAAMetadata()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instruction/#a4dd9b6c5bb93e01393c47dbe60f8b23f">llvm::Instruction</a></li>
 <li><b>setAbbrevNumber()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/die/#ab1516bd8f1676ec9e541a375a0dea5b1">llvm::DIE</a></li>
@@ -88641,6 +88968,7 @@ keywords:
 <li><b>setAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalvariable/#a354e3a068c327a26d861d0d6851c90f0">llvm::GlobalVariable</a></li>
 <li><b>setAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcpseudoprobebase/#aca9214b20b8789809139bf7d5652ba25">llvm::MCPseudoProbeBase</a></li>
 <li><b>setAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/arglistentry/#a2b5fc958c69057eb6752424f6417ef42">llvm::TargetLoweringBase::ArgListEntry</a></li>
+<li><b>setAttributesAtIndex()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ae00e1c0c71d57328a34d6b09fe44d7ed">llvm::AttributeList</a></li>
 <li><b>setAttributeString()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/elfattributeparser/#a01e06169ca2f03a40e79318702704cb1">llvm::ELFAttributeParser</a></li>
 <li><b>setAttrList()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/irposition/#a167c9f2ddb243187bdd2313de8586458">llvm::IRPosition</a></li>
 <li><b>setAttrs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codeview/pointerrecord/#a6282397b548f1c128cfd04b02cedf488">llvm::codeview::PointerRecord</a></li>
@@ -88988,6 +89316,8 @@ keywords:
 <li><b>setCurrentWorkingDirectory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vfs/overlayfilesystem/#a5c7d522dd54b33c64b87699f1a325994">llvm::vfs::OverlayFileSystem</a></li>
 <li><b>setCurrentWorkingDirectory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vfs/proxyfilesystem/#a7bda318b42cd16030466af98f4c5e300">llvm::vfs::ProxyFileSystem</a></li>
 <li><b>setCurrentWorkingDirectory()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfilesystem/#aade7a1732e7a6faf95b10e4c084c19da">llvm::vfs::RedirectingFileSystem</a></li>
+<li><b>setCustomStrategy()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#ac566e78d7358c6a1d6b94e5c448b3bcd">llvm::mca::ResourceManager</a></li>
+<li><b>setCustomStrategyImpl()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#adc76507f1ad2988efd88c428e78e2cce">llvm::mca::ResourceManager</a></li>
 <li><b>setCVBytesOfCalleeSavedRegisters()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineframeinfo/#a5ed62fb6fd245cb4efd8ea1bb4d56856">llvm::MachineFrameInfo</a></li>
 <li><b>setDarwinTargetVariantSDKVersion()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/module/#af036e8aea57e28daa0a63afb9c764b66">llvm::Module</a></li>
 <li><b>setDarwinTargetVariantTriple()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/module/#a94bbecbd83ac11d59a0653ea5d4fbf8b">llvm::Module</a></li>
@@ -90250,6 +90580,7 @@ keywords:
 <li><b>setOSLibNotForSharedCache()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/interfacefile/#a144e94258fe8e42f94d0e25f32d7593e">llvm::MachO::InterfaceFile</a></li>
 <li><b>setOSName()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/triple/#ab3500e69a89f930107cd6f067371da4a">llvm::Triple</a></li>
 <li><b>setOther()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mcsymbolelf/#aed9abfbf50800b7378713d657bf0cf5a">llvm::MCSymbolELF</a></li>
+<li><b>setOutlinedTargetRegionFunctionAttributes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ace5c16ccd45a0ce550055164ab081b5a">llvm::OpenMPIRBuilder</a></li>
 <li><b>setOutliningStyle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo/#a648d29a4010d7cc1be7785eab399d5fa">llvm::AArch64FunctionInfo</a></li>
 <li><b>setOutOfLineStorage()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/detail/uniquefunctionbase/#a3f042ddd5a6cb8e0cee6575743d53ef7">llvm::detail::UniqueFunctionBase&lt;ReturnT, ParamTs&gt;</a></li>
 <li><b>setOutputDWARFEmitter()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarflinker/#ab3c001f01a280aefade681724cc88f7f">llvm::dwarf_linker::classic::DWARFLinker</a></li>
@@ -90551,6 +90882,7 @@ keywords:
 <li><b>setRequiresCodeGenSCCOrder()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetpassconfig/#a809a59c560dc200a93667852f2dc68ca">llvm::TargetPassConfig</a></li>
 <li><b>setRequiresStructuredCFG()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetmachine/#aab914199574166419ae7e055ce1f43a0">llvm::TargetMachine</a></li>
 <li><b>setReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/cyclesegment/#a3d1eacab4e8871fea9fb43313dba3a0f">llvm::mca::CycleSegment</a></li>
+<li><b>setReserved()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a544c4ac3f4c76f40043ddc6d27062c0d">llvm::mca::ResourceState</a></li>
 <li><b>setReserved()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/mca/resourceusage/#a61576d858233cd56b66a0ddc3c20f78f">llvm::mca::ResourceUsage</a></li>
 <li><b>setResolver()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/globalifunc/#aa1b5f031e2c5057e76cbd682d08103ed">llvm::GlobalIFunc</a></li>
 <li><b>setResolver()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pass/#a2423fcc912a698d4f36c9c9380b53a50">llvm::Pass</a></li>
@@ -91786,6 +92118,7 @@ keywords:
 <li><b>shouldOptForSize()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/selectiondagisel/#af60d290b781bb09e01807251eb18c75d">llvm::SelectionDAGISel</a></li>
 <li><b>shouldOptimizeCast()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#aa7064bf030d29cdbef25df7432afcc62">llvm::InstCombinerImpl</a></li>
 <li><b>shouldOutlineFrom()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hotcoldsplitting/#aa3bae22347453a5f6fb996517d32f6f2">llvm::HotColdSplitting</a></li>
+<li><b>shouldOutlineFromFunctionByDefault()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a944bf3cc625b6bf05e52bc6daa2cc47f">llvm::AArch64InstrInfo</a></li>
 <li><b>shouldOutlineFromFunctionByDefault()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/armbaseinstrinfo/#a773d4ec5eecb09f98e46019e6bf0194e">llvm::ARMBaseInstrInfo</a></li>
 <li><b>shouldOutlineFromFunctionByDefault()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#ac1326b52721d728a3551b1433ded0f9a">llvm::RISCVInstrInfo</a></li>
 <li><b>shouldOutlineFromFunctionByDefault()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo/#a2de90c613673f0815ee6aa406f67390a">llvm::TargetInstrInfo</a></li>
@@ -92001,6 +92334,7 @@ keywords:
 <li><b>shrinkWrapDisabled()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcfunctioninfo/#a2df082f8ff947495e48aaf8f83520ddd">llvm::PPCFunctionInfo</a></li>
 <li><b>Shuffle_match()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/patternmatch/shuffle-match/#a3e1a80d42d6b8673d67fc49e8159990f">llvm::PatternMatch::Shuffle_match&lt;T0, T1, T2&gt;</a></li>
 <li><b>shuffle()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonshuffler/#a572425344ad3846264384af43858a5e1">llvm::HexagonShuffler</a></li>
+<li><b>shuffleAndStore()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0ab8f7d26b196b4d0cff794943f8aea9">llvm::OpenMPIRBuilder</a></li>
 <li><b>~ShuffleCostBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/boupslp/shufflecostestimator/shufflecostbuilder/#a75c5d2657585dbafffa029c9fce5960a">BoUpSLP::ShuffleCostEstimator::ShuffleCostBuilder</a></li>
 <li><b>ShuffleCostBuilder()</b>: as function in class <a href="/web-llvm/docs/api/classes/boupslp/shufflecostestimator/shufflecostbuilder/#af30829c7609f13de8770eec6e047653e">BoUpSLP::ShuffleCostEstimator::ShuffleCostBuilder</a></li>
 <li><b>~ShuffleCostEstimator()</b>: as function in class <a href="/web-llvm/docs/api/classes/boupslp/shufflecostestimator/#a8b21be07c1bcaf8f86c6d4c3b8ab39eb">BoUpSLP::ShuffleCostEstimator</a></li>
@@ -93475,9 +93809,6 @@ keywords:
 <li><b>splitTargetDataBeginRTC()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/openmpopt/#a0c364351d7a1ea24f33ec2f9d4ce9089">anonymous{OpenMPOpt.cpp}::OpenMPOpt</a></li>
 <li><b>Splitter()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/spirvstructurizer/splitter/#a28e4b1b470f810298c14e2d44149a787">llvm::SPIRVStructurizer::Splitter</a></li>
 <li><b>splitTernaryVectorOp()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sitargetlowering/#a01001268634e40bee4795018346e91b4">llvm::SITargetLowering</a></li>
-<li><b>SplittingIterator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a4631b00daa200a0f741a711bb46f784f">llvm::SplittingIterator</a></li>
-<li><b>SplittingIterator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a103b23c1f23db964edcb45cbf7b4a324">llvm::SplittingIterator</a></li>
-<li><b>SplittingIterator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#adef803ea10f0acef48191de83a869a08">llvm::SplittingIterator</a></li>
 <li><b>splitToValueTypes()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/calllowering/#a57d1263b6f2a16c765d594a59c2f8130">llvm::CallLowering</a></li>
 <li><b>splitTwoPartImm()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-aarch64mipeepholeopt-cpp-/aarch64mipeepholeopt/#a92e31a04c0a1b5d17db90c99fa48f6aa">anonymous{AArch64MIPeepholeOpt.cpp}::AArch64MIPeepholeOpt</a></li>
 <li><b>splitUnary()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-scalarizer-cpp-/scalarizervisitor/#a7a4a0da01b32a9ebf68fcb3b8033fcf1">anonymous{Scalarizer.cpp}::ScalarizerVisitor</a></li>
@@ -94768,7 +95099,7 @@ keywords:
 <li><b>~SystemZXPLINK64Registers()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzxplink64registers/#adceadc88e8353b265cba48d7dd9f2837">llvm::SystemZXPLINK64Registers</a></li>
 <li><b>SystemZXPLINKFrameLowering()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzxplinkframelowering/#a7bcdc2077c9cfc6b08d447fc27020702">llvm::SystemZXPLINKFrameLowering</a></li>
 </ul>
-<p>8391 entries</p>
+<p>8397 entries</p>
 
 ## - T -
 
@@ -94880,6 +95211,10 @@ keywords:
 <li><b>Target()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/target/#a72a74d5ae8a1267c806da8b3a0dc0130">llvm::MachO::Target</a></li>
 <li><b>Target()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/macho/target/#ae060502909a83311796c0e2a11ac6153">llvm::MachO::Target</a></li>
 <li><b>Target()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/target/#a14d24f8712acaf204fe7277fc4889f42">llvm::Target</a></li>
+<li><b>TargetDataInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a7bf6800eded835928b835a476f3111a8">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
+<li><b>TargetDataInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a00ad685d826acb7153f27604d28a698e">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
+<li><b>TargetDataRTArgs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#a456264f5524ecbab63a41b61a2eb9ee7">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
+<li><b>TargetDataRTArgs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#a1fd0da634ba0e9b861b5028332970245">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>TargetExtType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetexttype/#a9ace01ade0ae856fa712d6373cb6ee3d">llvm::TargetExtType</a></li>
 <li><b>TargetExtType()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetexttype/#a5f362b788702d64a77b25d40317c3798">llvm::TargetExtType</a></li>
 <li><b>TargetFeaturesSection()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/wasmyaml/targetfeaturessection/#a287c0559eb1f1c25d00cd1f6f222ceea">llvm::WasmYAML::TargetFeaturesSection</a></li>
@@ -94905,6 +95240,8 @@ keywords:
 <li><b>TargetIRAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetiranalysis/#a28bd4a2f1f55e63df1f13a421b795a78">llvm::TargetIRAnalysis</a></li>
 <li><b>TargetIRAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetiranalysis/#ade395bd3ce83f921753e690eb7041e27">llvm::TargetIRAnalysis</a></li>
 <li><b>targetIsGPU()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/informationcache/#a1c3b2000f1aa5040442b20128b2e6d64">llvm::InformationCache</a></li>
+<li><b>TargetKernelArgs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#a2533a0b130e39dab9f0298b47abe8553">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
+<li><b>TargetKernelArgs()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#a23864b156465861c7a363bbca51dcca4">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>TargetLibraryAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryanalysis/#a00357b5bce8bb4a84757aaf9bf073354">llvm::TargetLibraryAnalysis</a></li>
 <li><b>TargetLibraryAnalysis()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryanalysis/#aebd62990ace058914a6d4974d09bae3b">llvm::TargetLibraryAnalysis</a></li>
 <li><b>TargetLibraryInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfo/#a9088608ebb8bafd853e87b7e7b4676b9">llvm::TargetLibraryInfo</a></li>
@@ -96632,7 +96969,7 @@ keywords:
 <li><b>tyScalar()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagontargetlowering/#ace45ef2491545526334d4fed1bc34137">llvm::HexagonTargetLowering</a></li>
 <li><b>tyVector()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagontargetlowering/#ad31f1d7eb9486062da2cefb37dd6aff7">llvm::HexagonTargetLowering</a></li>
 </ul>
-<p>1858 entries</p>
+<p>1864 entries</p>
 
 ## - U -
 
@@ -97392,6 +97729,7 @@ keywords:
 <li><b>updateThreshold()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/inlinecostcallanalyzer/#a1c691b0f71f23818b50648cb8f9f6817">anonymous{InlineCost.cpp}::InlineCostCallAnalyzer</a></li>
 <li><b>UpdateThumbVFPPredicate()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-armdisassembler-cpp-/armdisassembler/#a8bea41b8f45233b3ca8c4ebd396b2ea3">anonymous{ARMDisassembler.cpp}::ARMDisassembler</a></li>
 <li><b>UpdateTOCSaves()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-ppcmipeephole-cpp-/ppcmipeephole/#a5f21f7384d36e88c34d8be2a05a7be62">anonymous{PPCMIPeephole.cpp}::PPCMIPeephole</a></li>
+<li><b>updateToLocation()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#afad4662affec545adea91dfb62f11829">llvm::OpenMPIRBuilder</a></li>
 <li><b>updateTotalSamples()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/functionsamples/#a2137413c9c2e159eb718bb5a797ccb22">llvm::sampleprof::FunctionSamples</a></li>
 <li><b>updateTypeIndexOffsets()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pdb/tpistreambuilder/#ac444b8625b11811db74dde63b71af66c">llvm::pdb::TpiStreamBuilder</a></li>
 <li><b>updateValueMap()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/fastisel/#ac32081d2d2bf0593aebb564fd7e11d8b">llvm::FastISel</a></li>
@@ -97468,6 +97806,7 @@ keywords:
 <li><b>use_operands()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo/#ade188fadae5a455fcc4bd8d70142851d">llvm::MachineRegisterInfo</a></li>
 <li><b>use_size()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sdnode/#a6163a1abbdce6098d64026e3393ecca7">llvm::SDNode</a></li>
 <li><b>use()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-hexagonloopidiomrecognition-cpp-/simplifier/context/#aa42ab63ac18c420e40549caf1f600018">anonymous{HexagonLoopIdiomRecognition.cpp}::Simplifier::Context</a></li>
+<li><b>use()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a6dc69bc3beffd768c0c6c7a65a19da66">llvm::mca::ResourceManager</a></li>
 <li><b>Use()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/use/#ad1dfc78f8246577408c7bcbec46cbc0b">llvm::sandboxir::Use</a></li>
 <li><b>Use()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/use/#a16697b507dc08d64042a8eb001b8960e">llvm::sandboxir::Use</a></li>
 <li><b>~Use()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/use/#aeb18a92dc5900d1bcde573be804c47bc">llvm::Use</a></li>
@@ -97627,6 +97966,7 @@ keywords:
 <li><b>useLoadStorePairs()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvsubtarget/#a9d2d380dcba647a508c62a0655a01854">llvm::RISCVSubtarget</a></li>
 <li><b>useLongCalls()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/hexagonsubtarget/#a1f82fda8d0d6a2a78ea8b62ab810e559">llvm::HexagonSubtarget</a></li>
 <li><b>useLongCalls()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/mipssubtarget/#aba475652437691d8a20fccc8df6839bb">llvm::MipsSubtarget</a></li>
+<li><b>useMachineCombiner()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/aarch64instrinfo/#a74804e3c6e291fe90c0cb697632dcf0e">llvm::AArch64InstrInfo</a></li>
 <li><b>useMachineCombiner()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/ppcinstrinfo/#a950ab81bc77e4b2b21183e92a7d44e4a">llvm::PPCInstrInfo</a></li>
 <li><b>useMachineCombiner()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/riscvinstrinfo/#a729e7fc6dac4bf5f0bd41f5792b49baa">llvm::RISCVInstrInfo</a></li>
 <li><b>useMachineCombiner()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/systemzinstrinfo/#a61f7de12d579711f2e6825f0e165e0fe">llvm::SystemZInstrInfo</a></li>
@@ -97830,7 +98170,7 @@ keywords:
 <li><b>UUIDv4()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-textstub-cpp-/uuidv4/#a65cb1a6fb9ef886b81c27d39cf1c2ff3">anonymous{TextStub.cpp}::UUIDv4</a></li>
 <li><b>UUIDv4()</b>: as function in struct <a href="/web-llvm/docs/api/structs/anonymous-textstub-cpp-/uuidv4/#a6453f34ac90dfdfce9a267e4c86a80b2">anonymous{TextStub.cpp}::UUIDv4</a></li>
 </ul>
-<p>1192 entries</p>
+<p>1195 entries</p>
 
 ## - V -
 
@@ -98375,6 +98715,7 @@ keywords:
 <li><b>verify()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/registerbankinfo/valuemapping/#a6778093ec4b236fadf3c13e2fe1e2ee9">llvm::RegisterBankInfo::ValueMapping</a></li>
 <li><b>verify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo/#aca0f86b578b560c1ea67d71987c1df57">llvm::RegisterBankInfo</a></li>
 <li><b>verify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/argument/#aad9974dafadc102c607acae06ceaeb55">llvm::sandboxir::Argument</a></li>
+<li><b>verify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#a1fa796ad2366ba7b3422f65a6b8d0fcb">llvm::sandboxir::BasicBlock</a></li>
 <li><b>verify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#a4a93facd552b6d55e38198a180236920">llvm::sandboxir::Constant</a></li>
 <li><b>verify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constantaggregatezero/#a6ed61ba0739e353de9c17915f79541c6">llvm::sandboxir::ConstantAggregateZero</a></li>
 <li><b>verify()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constantfp/#a8f07e8b67441936e0eae0b6e9fc9f4f4">llvm::sandboxir::ConstantFP</a></li>
@@ -99935,7 +100276,7 @@ keywords:
 <li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-verifier-cpp-/verifier/#a90a19dc61facfd0f14c79ea1e8d47a39">anonymous{Verifier.cpp}::Verifier</a></li>
 <li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/datascalarizervisitor/#a8aa54c99130c6d38f6dc50c5d449b633">DataScalarizerVisitor</a></li>
 <li><b>visitSelectInst()</b>: as function in struct <a href="/web-llvm/docs/api/structs/llvm/coro/anonymous-spillutils-cpp-/anonymous-spillutils-cpp-/allocausevisitor/#a9243fbfd9f574d8a94c4469b3bba4967">llvm::coro::anonymous{SpillUtils.cpp}::anonymous{SpillUtils.cpp}::AllocaUseVisitor</a></li>
-<li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#ab9ad7261c8479d6ead16983b6f32c7ad">llvm::InstCombinerImpl</a></li>
+<li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcombinerimpl/#a62e2ba967b974d6e68931532ab1aa4e8">llvm::InstCombinerImpl</a></li>
 <li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instcostvisitor/#aad541de5eb19121c03c73448368d0005">llvm::InstCostVisitor</a></li>
 <li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instvisitor/#aeb67eff747cfcdb17ca1079aff8ed9ca">llvm::InstVisitor&lt;SubClass, RetTy&gt;</a></li>
 <li><b>visitSelectInst()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/interpreter/#a1df708fd8aa2d183afcafa641e96ccc1">llvm::Interpreter</a></li>
@@ -100567,7 +100908,7 @@ keywords:
 <li><b>VXRMInfo()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-riscvinsertwritevxrm-cpp-/vxrminfo/#a655f535341b3329db5eb4df016abb493">anonymous{RISCVInsertWriteVXRM.cpp}::VXRMInfo</a></li>
 <li><b>VZeroUpperInserter()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-x86vzeroupper-cpp-/vzeroupperinserter/#a0d3f0b77ab076d738ef40325c371466e">anonymous{X86VZeroUpper.cpp}::VZeroUpperInserter</a></li>
 </ul>
-<p>2731 entries</p>
+<p>2732 entries</p>
 
 ## - W -
 
@@ -101750,12 +102091,14 @@ keywords:
 <li><b>writeTableSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-wasmobjectwriter-cpp-/wasmobjectwriter/#ae4833edba7c20cfbf04ccb5f8946eebf">anonymous{WasmObjectWriter.cpp}::WasmObjectWriter</a></li>
 <li><b>writeTagSection()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-wasmobjectwriter-cpp-/wasmobjectwriter/#af59c47ed54df92586cd6ebed63016bb8">anonymous{WasmObjectWriter.cpp}::WasmObjectWriter</a></li>
 <li><b>writeTail()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/macho/machowriter/#a87436c89822e2239de2c08662450b0f5">llvm::objcopy::macho::MachOWriter</a></li>
+<li><b>writeTeamsForKernel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ab79b6d86df13a709eee10c4c7d39c644">llvm::OpenMPIRBuilder</a></li>
 <li><b>writeTensor()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/logger/#a669517f2f22d2dc4e39cfe2f5ff94881">llvm::Logger</a></li>
 <li><b>writeTerminator()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/objcopy/elf/srecwriter/#a3f07a1716d7b677a10f53af1c2fa575f">llvm::objcopy::elf::SRECWriter</a></li>
 <li><b>writeText()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/codegendatawriter/#a3d66364f052981f528220d5580ad012f">llvm::CodeGenDataWriter</a></li>
 <li><b>writeText()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofwriter/#a2a76e869a218e271ec68f8a68968fde2">llvm::InstrProfWriter</a></li>
 <li><b>writeTextTemporalProfTraceData()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/instrprofwriter/#ab803c3548558a7dd296a3b2be2ef9773">llvm::InstrProfWriter</a></li>
 <li><b>writeThinLinkBitcode()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/bitcodewriter/#a03f3ffa01b7de15ab90e804ead0472b4">llvm::BitcodeWriter</a></li>
+<li><b>writeThreadBoundsForKernel()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a0ea31ab1f2b7d1f5585df18b0528fcf3">llvm::OpenMPIRBuilder</a></li>
 <li><b>WriteThroughMemoryBuffer()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/writethroughmemorybuffer/#a06117131e4bf6b50632601c865e124d6">llvm::WriteThroughMemoryBuffer</a></li>
 <li><b>writeThunk()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mergefunctions-cpp-/mergefunctions/#a85ad0ab198d56eb3a45448eea544e3f7">anonymous{MergeFunctions.cpp}::MergeFunctions</a></li>
 <li><b>writeThunkOrAlias()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-mergefunctions-cpp-/mergefunctions/#a0692a212e79396bcd5a141bdac31da71">anonymous{MergeFunctions.cpp}::MergeFunctions</a></li>
@@ -101830,7 +102173,7 @@ keywords:
 <li><b>wrongValue()</b>: as function in class <a href="/web-llvm/docs/api/classes/llvm/pgoctxprofilereader/#a48f2bb92082568ecea7e6ac9ed9452fb">llvm::PGOCtxProfileReader</a></li>
 <li><b>WWMRegisterRegAlloc()</b>: as function in class <a href="/web-llvm/docs/api/classes/anonymous-amdgputargetmachine-cpp-/wwmregisterregalloc/#a6c9e5e71b5a3ea1913fc98782bc293e7">anonymous{AMDGPUTargetMachine.cpp}::WWMRegisterRegAlloc</a></li>
 </ul>
-<p>1257 entries</p>
+<p>1259 entries</p>
 
 ## - X -
 
@@ -102129,10 +102472,10 @@ keywords:
 </ul>
 <p>27 entries</p>
 <br/>
-<p>Total: 101950 entries.</p>
+<p>Total: 102293 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

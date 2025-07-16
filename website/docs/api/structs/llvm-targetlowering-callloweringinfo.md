@@ -842,7 +842,7 @@ struct llvm::TargetLowering::CallLoweringInfo { ... }
 <p>Definition at line 4612 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/targetlowering-h">TargetLowering.h</a>.</p>
 
 
-<p>References <a href="#a144154df8c813c3a0a9e8d7281c53853">Args</a>, <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="#ae47a430364102f6e179d49cb3411b955">CallConv</a>, <a href="#a31faa4803c937d756c28947a070c6c2e">Callee</a>, <a href="#af35bb64b495f2a61199dda4a3b9ec4b2">CallLoweringInfo</a>, <a href="#acd79db0f7d45129e8af1258541861ef8">CB</a>, <a href="#aff7c93844158eb2304289287f542b777">DoesNotReturn</a>, <a href="/web-llvm/docs/api/classes/llvm/functiontype/#a104d6154321899b53e40455e71d8e83a">llvm::FunctionType::getNumParams</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="#a06d8dcdadb7fe5b0b670265c16adcdc7">IsInReg</a>, <a href="#ac0915ec58e22758e2c4381de292b4790">IsReturnValueUsed</a>, <a href="#a3eb6e80dc80f35553ccc33a89d691df8">IsVarArg</a>, <a href="/web-llvm/docs/api/classes/llvm/functiontype/#aa9d770048c7ab9e08222a50b7bc1be1c">llvm::FunctionType::isVarArg</a>, <a href="#aa91cc3233b03071cdfbb5a88d90703c9">NoMerge</a>, <a href="#aa2860be7d7f42a52797181279c5f5d63">NumFixedArgs</a>, <a href="#aa70600610484cd4224ebf4b46656ef6a">RetSExt</a>, <a href="#add4f6f94fcf01be61720d26a49591535">RetTy</a> and <a href="#a6d1ffe16a83c436cac93b14e50ebf0bc">RetZExt</a>.</p>
+<p>References <a href="#a144154df8c813c3a0a9e8d7281c53853">Args</a>, <a href="#ae47a430364102f6e179d49cb3411b955">CallConv</a>, <a href="#a31faa4803c937d756c28947a070c6c2e">Callee</a>, <a href="#af35bb64b495f2a61199dda4a3b9ec4b2">CallLoweringInfo</a>, <a href="#acd79db0f7d45129e8af1258541861ef8">CB</a>, <a href="#aff7c93844158eb2304289287f542b777">DoesNotReturn</a>, <a href="/web-llvm/docs/api/classes/llvm/functiontype/#a104d6154321899b53e40455e71d8e83a">llvm::FunctionType::getNumParams</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">llvm::isa</a>, <a href="#a06d8dcdadb7fe5b0b670265c16adcdc7">IsInReg</a>, <a href="#ac0915ec58e22758e2c4381de292b4790">IsReturnValueUsed</a>, <a href="#a3eb6e80dc80f35553ccc33a89d691df8">IsVarArg</a>, <a href="/web-llvm/docs/api/classes/llvm/functiontype/#aa9d770048c7ab9e08222a50b7bc1be1c">llvm::FunctionType::isVarArg</a>, <a href="#aa91cc3233b03071cdfbb5a88d90703c9">NoMerge</a>, <a href="#aa2860be7d7f42a52797181279c5f5d63">NumFixedArgs</a>, <a href="#aa70600610484cd4224ebf4b46656ef6a">RetSExt</a>, <a href="#add4f6f94fcf01be61720d26a49591535">RetTy</a> and <a href="#a6d1ffe16a83c436cac93b14e50ebf0bc">RetZExt</a>.</p>
 
 </div>
 </div>
@@ -2252,6 +2252,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -321,7 +321,7 @@ struct llvm::yaml::anonymous{ELFYAML.cpp}::NormalizedOther { ... }
 <p>Definition at line 1250 of file <a href="/web-llvm/docs/api/files/lib/lib/objectyaml/elfyaml-cpp">ELFYAML.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/files/lib/lib/object/tapifile-cpp/#a7a3ba7cd94762ae7f243367830320ca2">getFlags</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ae03f2b6a02fc9092755ba3a6cf6d2446">llvm::to_integer</a> and <a href="#a43cf0b87d97e2b1ffd8f74b8a25cc999">YamlIO</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/object/tapifile-cpp/#a7a3ba7cd94762ae7f243367830320ca2">getFlags</a> and <a href="#a43cf0b87d97e2b1ffd8f74b8a25cc999">YamlIO</a>.</p>
 
 
 <p>Referenced by <a href="#a819d4923618533869325f9cda1087fca">denormalize</a>.</p>
@@ -431,6 +431,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

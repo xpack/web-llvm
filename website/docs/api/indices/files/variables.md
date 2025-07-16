@@ -277,7 +277,6 @@ keywords:
 <li><b>BranchRelaxation</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/sparctargetmachine-cpp/#aab9e7369063681dfb8655f4c095c58ea">lib/lib/Target/lib/Target/Sparc/SparcTargetMachine.cpp</a></li>
 <li><b>BranchRelaxSafetyBuffer</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbranchrelaxation-cpp/#ab98d80f9762cf98ebfaf2f50bfd8eb88">lib/lib/Target/lib/Target/Hexagon/HexagonBranchRelaxation.cpp</a></li>
 <li><b>BranchSelectEnabled</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/msp430/msp430branchselector-cpp/#afbeac7bd599ba143fa9e1bb7d9a0e29f">lib/lib/Target/lib/Target/MSP430/MSP430BranchSelector.cpp</a></li>
-<li><b>break</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">lib/lib/CodeGen/lib/CodeGen/AsmPrinter/EHStreamer.cpp</a></li>
 <li><b>BrMap</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mipsdelayslotfiller-cpp/#a50463d32c431f46d57456304bf032946">lib/lib/Target/lib/Target/Mips/MipsDelaySlotFiller.cpp</a></li>
 <li><b>BrMergingBaseCostThresh</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a4fab51db30fb085ff7ef8fa9ecb4c58a">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
 <li><b>BrMergingCcmpBias</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86isellowering-cpp/#a16ee7c0f765b7e0985af597bc9d90a5b">lib/lib/Target/lib/Target/X86/X86ISelLowering.cpp</a></li>
@@ -297,7 +296,7 @@ keywords:
 <li><b>BypassPrefetchInstructions</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/x86discriminatememops-cpp/#a57a8e68a104e2b0be8e38c477df2f910">lib/lib/Target/lib/Target/X86/X86DiscriminateMemOps.cpp</a></li>
 <li><b>ByteCmpVF</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopidiomvectorize-cpp/#a9a0e365757dae35c25c18c016c756409">lib/lib/Transforms/lib/Transforms/Vectorize/LoopIdiomVectorize.cpp</a></li>
 </ul>
-<p>69 entries</p>
+<p>68 entries</p>
 
 ## - C -
 
@@ -2803,7 +2802,6 @@ keywords:
 <li><b>ManifestInternal</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributorattributes-cpp/#aabd5cb0bb03287986dcab9f4e3058885">lib/lib/Transforms/lib/Transforms/IPO/AttributorAttributes.cpp</a></li>
 <li><b>MarkBTIProperty</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/mctargetdesc/aarch64targetstreamer-cpp/#add663f92da28d1c282e3c532cd3ee053">lib/lib/Target/lib/Target/AArch64/lib/Target/AArch64/MCTargetDesc/AArch64TargetStreamer.cpp</a></li>
 <li><b>MarkedJTDataRegions</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/x86/lib/target/x86/mctargetdesc/x86mcasminfo-cpp/#a1d4d245812841c4a9049ffebfcbd007e">lib/lib/Target/lib/Target/X86/lib/Target/X86/MCTargetDesc/X86MCAsmInfo.cpp</a></li>
-<li><b>MarkedNoUnwind</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#ac2dd37c8f7d372404ce138528932e489">lib/lib/CodeGen/lib/CodeGen/AsmPrinter/EHStreamer.cpp</a></li>
 <li><b>Markers</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/r600emitclausemarkers-cpp/#a3e626da28e8adca2cea957462d9fe860">lib/lib/Target/lib/Target/AMDGPU/R600EmitClauseMarkers.cpp</a></li>
 <li><b>MarkOutlinedColdCC</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/partialinlining-cpp/#a2885a9c4f28f179095493c5467797f97">lib/lib/Transforms/lib/Transforms/IPO/PartialInlining.cpp</a></li>
 <li><b>MaskTransformOverride</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/expandvectorpredication-cpp/#a268e4e732c0e3eb76cc3b297bbe1e98a">lib/lib/CodeGen/ExpandVectorPredication.cpp</a></li>
@@ -3109,7 +3107,7 @@ keywords:
 <li><b>MVEMaxSupportedInterleaveFactor</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armtargettransforminfo-cpp/#a50f6974f61f41438e2668ce303981c2e">lib/lib/Target/lib/Target/ARM/ARMTargetTransformInfo.cpp</a></li>
 <li><b>MVT_CC</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#aee2d47ae29d47b14b759625ee38930cf">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 </ul>
-<p>319 entries</p>
+<p>318 entries</p>
 
 ## - N -
 
@@ -3735,7 +3733,6 @@ keywords:
 <li><b>SanCtorAndDtorPriority</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/sanitizercoverage-cpp/#a55f48a0c5e236f9c3dba145653d2e23c">lib/lib/Transforms/lib/Transforms/Instrumentation/SanitizerCoverage.cpp</a></li>
 <li><b>SaturationThreshold</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/analysis/aliassettracker-cpp/#a56dc0c15d5bc2bbe9e96fd24e84af7ad">lib/lib/Analysis/AliasSetTracker.cpp</a></li>
 <li><b>Saved</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/fixupstatepointcallersaved-cpp/#ad94b44823fa05679a48c3addadb05c75">lib/lib/CodeGen/FixupStatepointCallerSaved.cpp</a></li>
-<li><b>SawFunc</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a731789da8ec2ef49be7583456b261527">lib/lib/CodeGen/lib/CodeGen/AsmPrinter/EHStreamer.cpp</a></li>
 <li><b>ScalableErrorAsWarning</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/support/typesize-cpp/#aab4caf9ee23cf5c86e27330e2fab6b35">lib/lib/Support/TypeSize.cpp</a></li>
 <li><b>Scalarization</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxildatascalarization-cpp/#a62f8de62f2021d9dd4f1928330d3e712">lib/lib/Target/lib/Target/DirectX/DXILDataScalarization.cpp</a></li>
 <li><b>ScalarizeGlobal</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-cpp/#af321bb5b53cba648dec8306c269407ad">lib/lib/Target/lib/Target/AMDGPU/AMDGPUTargetMachine.cpp</a></li>
@@ -3965,7 +3962,7 @@ keywords:
 <li><b>SysReg64DecoderTable</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/disassembler/hexagondisassembler-cpp/#a5cfae706910d385f4a522147251e3069">lib/lib/Target/lib/Target/Hexagon/lib/Target/Hexagon/Disassembler/HexagonDisassembler.cpp</a></li>
 <li><b>SysRegDecoderTable</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/disassembler/hexagondisassembler-cpp/#a9a5462b5685cd80c97a88bd8d316003b">lib/lib/Target/lib/Target/Hexagon/lib/Target/Hexagon/Disassembler/HexagonDisassembler.cpp</a></li>
 </ul>
-<p>296 entries</p>
+<p>295 entries</p>
 
 ## - T -
 
@@ -4091,7 +4088,6 @@ keywords:
 <li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineregioninfo-cpp/#abeba076c202ed9c008cd8450e16a4023">lib/lib/CodeGen/MachineRegionInfo.cpp</a></li>
 <li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineuniformityanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">lib/lib/CodeGen/MachineUniformityAnalysis.cpp</a></li>
 <li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/codegen/spillplacement-cpp/#a664d624d87e6fdf269226a601eb2a224">lib/lib/CodeGen/SpillPlacement.cpp</a></li>
-<li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64isellowering-cpp/#a1a24fc2eb8c1af6d06ac15bcec47f088">lib/lib/Target/lib/Target/AArch64/AArch64ISelLowering.cpp</a></li>
 <li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64mipeepholeopt-cpp/#a930920b2bc42824a5c03be681830f4b2">lib/lib/Target/lib/Target/AArch64/AArch64MIPeepholeOpt.cpp</a></li>
 <li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxilprettyprinter-cpp/#afc18f9bedd5a458320ead44c4a6ba0a4">lib/lib/Target/lib/Target/DirectX/DXILPrettyPrinter.cpp</a></li>
 <li><b>true</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/directx/dxilresourceanalysis-cpp/#ae08e07f60b17fab75faca29a41fc9c0a">lib/lib/Target/lib/Target/DirectX/DXILResourceAnalysis.cpp</a></li>
@@ -4108,7 +4104,7 @@ keywords:
 <li><b>TypeModifierNames</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/typedumpvisitor-cpp/#a1b16e18e0e2ad28cde442bd89b68f27b">lib/lib/DebugInfo/lib/DebugInfo/CodeView/TypeDumpVisitor.cpp</a></li>
 <li><b>TypeModifierNames</b>: as variable in file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/enumtables-cpp/#a1b16e18e0e2ad28cde442bd89b68f27b">lib/lib/DebugInfo/lib/DebugInfo/CodeView/EnumTables.cpp</a></li>
 </ul>
-<p>137 entries</p>
+<p>136 entries</p>
 
 ## - U -
 
@@ -4475,10 +4471,10 @@ keywords:
 </ul>
 <p>5 entries</p>
 <br/>
-<p>Total: 4297 entries.</p>
+<p>Total: 4293 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

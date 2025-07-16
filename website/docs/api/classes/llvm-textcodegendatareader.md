@@ -665,7 +665,7 @@ class llvm::TextCodeGenDataReader { ... }
 <p>Declaration at line 157 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/cgdata/codegendatareader-h">CodeGenDataReader.h</a>, definition at line 156 of file <a href="/web-llvm/docs/api/files/lib/lib/cgdata/codegendatareader-cpp">CodeGenDataReader.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all_of</a>, <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#a69d9843621ff4677c0b9087277dc4bd0">llvm::MemoryBuffer::getBuffer</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#acea2ac67f3ff35107bcf1693416da8e7">llvm::isSpace</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#aa28286a33491b5d9a936fb6ae853baee">llvm::StringRef::take_front</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all_of</a>, <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#a69d9843621ff4677c0b9087277dc4bd0">llvm::MemoryBuffer::getBuffer</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#aa28286a33491b5d9a936fb6ae853baee">llvm::StringRef::take_front</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/codegendatareader/#a378e68eccfba5cca99d032743ec74ad1">llvm::CodeGenDataReader::create</a>.</p>
@@ -686,6 +686,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

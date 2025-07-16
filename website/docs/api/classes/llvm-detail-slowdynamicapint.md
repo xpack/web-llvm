@@ -1193,7 +1193,7 @@ class llvm::detail::SlowDynamicAPInt { ... }
 
 
 
-### Assignment operators, preincrement, predecrement {#autotoc_md110}
+### Assignment operators, preincrement, predecrement {#autotoc_md109}
 
 
 <p>Declaration at line 55 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/slowdynamicapint-h">SlowDynamicAPInt.h</a>, definition at line 251 of file <a href="/web-llvm/docs/api/files/lib/lib/support/slowdynamicapint-cpp">SlowDynamicAPInt.cpp</a>.</p>
@@ -1313,7 +1313,7 @@ class llvm::detail::SlowDynamicAPInt { ... }
 
 
 
-### Comparison operators {#autotoc_md108}
+### Comparison operators {#autotoc_md107}
 
 
 <p>Declaration at line 44 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/slowdynamicapint-h">SlowDynamicAPInt.h</a>, definition at line 126 of file <a href="/web-llvm/docs/api/files/lib/lib/support/slowdynamicapint-cpp">SlowDynamicAPInt.cpp</a>.</p>
@@ -1469,7 +1469,7 @@ class llvm::detail::SlowDynamicAPInt { ... }
 
 
 
-### Printing {#autotoc_md111}
+### Printing {#autotoc_md110}
 
 
 <p>Declaration at line 81 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/slowdynamicapint-h">SlowDynamicAPInt.h</a>, definition at line 284 of file <a href="/web-llvm/docs/api/files/lib/lib/support/slowdynamicapint-cpp">SlowDynamicAPInt.cpp</a>.</p>
@@ -1555,6 +1555,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

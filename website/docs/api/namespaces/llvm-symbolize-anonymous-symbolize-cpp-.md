@@ -124,7 +124,7 @@ namespace llvm::symbolize::anonymous{Symbolize.cpp} { ... }
 <p>Definition at line 312 of file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/symbolize/symbolize-cpp">Symbolize.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm::arrayRefFromStringRef</a>, <a href="#ade75bef9f219b31ef89e452d482e59a7">checkFileCRC</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9b39f29a121496d294af31158c65740b">llvm::crc32</a> and <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#a9c54e2428ad0163441789c281ca42ee4">llvm::MemoryBuffer::getFileOrSTDIN</a>.</p>
+<p>References <a href="#ade75bef9f219b31ef89e452d482e59a7">checkFileCRC</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a9b39f29a121496d294af31158c65740b">llvm::crc32</a> and <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#a9c54e2428ad0163441789c281ca42ee4">llvm::MemoryBuffer::getFileOrSTDIN</a>.</p>
 
 
 <p>Referenced by <a href="#ade75bef9f219b31ef89e452d482e59a7">checkFileCRC</a>.</p>
@@ -186,7 +186,7 @@ namespace llvm::symbolize::anonymous{Symbolize.cpp} { ... }
 <p>Definition at line 719 of file <a href="/web-llvm/docs/api/files/lib/lib/debuginfo/lib/debuginfo/symbolize/symbolize-cpp">Symbolize.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all_of</a>, <a href="#ae263aed138fcb0a6ceea9c9f29fcfb8d">demanglePE32ExternCFunc</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a02981de53fb6ffd384d39addc4d25f37">llvm::drop_begin</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a82c27bc751f7669f9c2a79de96e2d0fd">llvm::isDigit</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#ad0f54a163ac500b144590640c6f1eb6b">llvm::StringRef::npos</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all_of</a>, <a href="#ae263aed138fcb0a6ceea9c9f29fcfb8d">demanglePE32ExternCFunc</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a02981de53fb6ffd384d39addc4d25f37">llvm::drop_begin</a>, <a href="/web-llvm/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#a12d4f37888b638bcbd9fc0201492c776">isDigit</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#ad0f54a163ac500b144590640c6f1eb6b">llvm::StringRef::npos</a>.</p>
 
 
 <p>Referenced by <a href="#ae263aed138fcb0a6ceea9c9f29fcfb8d">demanglePE32ExternCFunc</a>.</p>
@@ -268,6 +268,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

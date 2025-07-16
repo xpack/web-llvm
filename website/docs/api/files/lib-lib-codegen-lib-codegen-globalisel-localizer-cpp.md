@@ -231,7 +231,7 @@ keywords:
 <p>Definition at line 33 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/localizer-cpp">Localizer.cpp</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/gepoperator/#a57286aaebfc778a6c1215125ed8493ef">llvm::GEPOperator::countNonConstantIndices</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/gepoperator/#a57286aaebfc778a6c1215125ed8493ef">llvm::GEPOperator::countNonConstantIndices</a>, <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a422417017bcd1f449e0fc7f64622ad42">llvm::mca::ResourceManager::fastIssueInstruction</a> and <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a94ebe004dfbba2e68530d0125ed16293">llvm::mca::ResourceManager::issueInstructionImpl</a>.</p>
 
 </div>
 </div>
@@ -271,6 +271,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

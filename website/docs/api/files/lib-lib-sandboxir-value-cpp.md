@@ -588,7 +588,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Value::Name##Val:                                                       \
     <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>("constants should be destroyed with destroyConstant");    \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -623,7 +623,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Value::InstructionVal + Instruction::OPC:                               \
     delete static_cast&lt;CLASS *&gt;(this);                                         \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -684,7 +684,7 @@ keywords:
 <div class="doxyVerbatim">  case Value::Name##Val:                                                       \
     static_cast&lt;DerivedUser *&gt;(this)-&gt;DeleteValue(                             \
         static_cast&lt;DerivedUser *&gt;(this));                                     \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -744,7 +744,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Value::Name##Val:                                                       \
     delete static_cast&lt;Name *&gt;(this);                                          \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -758,6 +758,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

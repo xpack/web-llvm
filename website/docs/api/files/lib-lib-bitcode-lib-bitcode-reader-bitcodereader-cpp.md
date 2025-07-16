@@ -708,7 +708,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This fills an AttrBuilder object with the LLVM attributes that have been decoded from the given integer. <a href="#a680090be3d94b8e77d284da7e51f671f">More...</a></p>
+<p>This fills an <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> object with the LLVM attributes that have been decoded from the given integer. <a href="#a680090be3d94b8e77d284da7e51f671f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -986,7 +986,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void addRawAttributeValue (AttrBuilder &amp; B, uint64_t Val)</td>
+<td class="doxyMemberName">void addRawAttributeValue (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B, uint64_t Val)</td>
 </tr>
 </table>
 </td>
@@ -1056,7 +1056,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void decodeLLVMAttributesForBitcode (AttrBuilder &amp; B, uint64_t EncodedAttrs, uint64_t AttrIdx)</td>
+<td class="doxyMemberName">void decodeLLVMAttributesForBitcode (<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> &amp; B, uint64_t EncodedAttrs, uint64_t AttrIdx)</td>
 </tr>
 </table>
 </td>
@@ -1070,7 +1070,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>This fills an AttrBuilder object with the LLVM attributes that have been decoded from the given integer.</p>
+<p>This fills an <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a> object with the LLVM attributes that have been decoded from the given integer.</p>
 
 
 <p>This function must stay in sync with 'encodeLLVMAttributesForBitcode'.</p>
@@ -1079,7 +1079,7 @@ keywords:
 <p>Definition at line 1942 of file <a href="/web-llvm/docs/api/files/lib/lib/bitcode/lib/bitcode/reader/bitcodereader-cpp">BitcodeReader.cpp</a>.</p>
 
 
-<p>References <a href="#a88097e7039070e670b83a2f0c420f977">addRawAttributeValue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a5cba4a49c183c6c2f6168be64f04a7b9">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::inaccessibleMemOnly</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#ad341f584befc40ff0aefca99682baf7c">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::inaccessibleOrArgMemOnly</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6dec2b5d3e04b47adf4d918d678e81c9">llvm::isPowerOf2_32</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#af04065f3c729719471689b08089942f3">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::none</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a0dc1a3456bce25673dff8dce6f240a8f">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::readOnly</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#aff771abf487136aeebb6862871d5e715">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::unknown</a> and <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a9e3dc568b5f51e03441c9c44b618f337">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::writeOnly</a>.</p>
+<p>References <a href="#a88097e7039070e670b83a2f0c420f977">addRawAttributeValue</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af5dcb6d3da4b30a7d21c9fb39bbf1a68a895001b186ed51e1cb7a256dbd3545f8">llvm::AttributeList::FunctionIndex</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a5cba4a49c183c6c2f6168be64f04a7b9">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::inaccessibleMemOnly</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#ad341f584befc40ff0aefca99682baf7c">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::inaccessibleOrArgMemOnly</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a6dec2b5d3e04b47adf4d918d678e81c9">llvm::isPowerOf2_32</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#af04065f3c729719471689b08089942f3">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::none</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a0dc1a3456bce25673dff8dce6f240a8f">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::readOnly</a>, <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#aff771abf487136aeebb6862871d5e715">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::unknown</a> and <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#a9e3dc568b5f51e03441c9c44b618f337">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::writeOnly</a>.</p>
 
 </div>
 </div>
@@ -2832,6 +2832,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

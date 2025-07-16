@@ -414,7 +414,7 @@ class llvm::mca::Scheduler { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::unique_ptr&lt; <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">ResourceManager</a> &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::unique_ptr&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a82b7c80dbc0b04cde1e897da32e33f84">Resources</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -524,7 +524,7 @@ class llvm::mca::Scheduler { ... }
 <p>Class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler">Scheduler</a> is responsible for issuing instructions to pipeline resources.</p>
 
 
-<p>Internally, it delegates to a <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">ResourceManager</a> the management of processor resources. This class is also responsible for tracking the progress of instructions from the dispatch stage, until the write-back stage.</p>
+<p>Internally, it delegates to a <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a> the management of processor resources. This class is also responsible for tracking the progress of instructions from the dispatch stage, until the write-back stage.</p>
 
 
 <p>Definition at line 70 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/mca/include/llvm/mca/hardwareunits/scheduler-h">Scheduler.h</a>.</p>
@@ -676,7 +676,7 @@ class llvm::mca::Scheduler { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">llvm::mca::Scheduler::Scheduler (std::unique_ptr&lt; <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">ResourceManager</a> &gt; RM, <a href="/web-llvm/docs/api/classes/llvm/mca/lsunitbase">LSUnitBase</a> &amp; Lsu, std::unique_ptr&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/schedulerstrategy">SchedulerStrategy</a> &gt; SelectStrategy)</td>
+<td class="doxyMemberName">llvm::mca::Scheduler::Scheduler (std::unique_ptr&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a> &gt; RM, <a href="/web-llvm/docs/api/classes/llvm/mca/lsunitbase">LSUnitBase</a> &amp; Lsu, std::unique_ptr&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/schedulerstrategy">SchedulerStrategy</a> &gt; SelectStrategy)</td>
 </tr>
 </table>
 </td>
@@ -775,7 +775,7 @@ class llvm::mca::Scheduler { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::mca::Scheduler::cycleEvent (<a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> &gt; &amp; Freed, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Executed, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Pending, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Ready)</td>
+<td class="doxyMemberName">void llvm::mca::Scheduler::cycleEvent (<a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/namespaces/llvm/mca/#aa013ffaca9bcaadec118afaede71ab29">ResourceRef</a> &gt; &amp; Freed, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Executed, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Pending, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Ready)</td>
 </tr>
 </table>
 </td>
@@ -787,7 +787,7 @@ class llvm::mca::Scheduler { ... }
 <p>This routine notifies the <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler">Scheduler</a> that a new cycle just started.</p>
 
 
-<p>It notifies the underlying <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">ResourceManager</a> that a new cycle just started. Vector <span class="doxyComputerOutput">Freed</span> is populated with resourceRef related to resources that have changed in state, and that are now available to new instructions. Instructions executed are added to vector Executed, while vector Ready is populated with instructions that have become ready in this new cycle. Vector Pending is popluated by instructions that have transitioned through the pending stat during this cycle. The Pending and Ready sets may not be disjoint. An instruction is allowed to transition from the WAIT state to the READY state (going through the PENDING state) within a single cycle. That means, instructions may appear in both the Pending and Ready set.</p>
+<p>It notifies the underlying <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a> that a new cycle just started. Vector <span class="doxyComputerOutput">Freed</span> is populated with resourceRef related to resources that have changed in state, and that are now available to new instructions. Instructions executed are added to vector Executed, while vector Ready is populated with instructions that have become ready in this new cycle. Vector Pending is popluated by instructions that have transitioned through the pending stat during this cycle. The Pending and Ready sets may not be disjoint. An instruction is allowed to transition from the WAIT state to the READY state (going through the PENDING state) within a single cycle. That means, instructions may appear in both the Pending and Ready set.</p>
 
 
 <p>Declaration at line 225 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/mca/include/llvm/mca/hardwareunits/scheduler-h">Scheduler.h</a>, definition at line 265 of file <a href="/web-llvm/docs/api/files/lib/lib/mca/lib/mca/hardwareunits/scheduler-cpp">Scheduler.cpp</a>.</p>
@@ -1032,7 +1032,7 @@ class llvm::mca::Scheduler { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::mca::Scheduler::issueInstruction (<a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; std::pair&lt; <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a>, <a href="/web-llvm/docs/api/classes/llvm/mca/releaseatcycles">ReleaseAtCycles</a> &gt; &gt; &amp; Used, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Pending, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Ready)</td>
+<td class="doxyMemberName">void llvm::mca::Scheduler::issueInstruction (<a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; std::pair&lt; <a href="/web-llvm/docs/api/namespaces/llvm/mca/#aa013ffaca9bcaadec118afaede71ab29">ResourceRef</a>, <a href="/web-llvm/docs/api/classes/llvm/mca/releaseatcycles">ReleaseAtCycles</a> &gt; &gt; &amp; Used, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Pending, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; &amp; Ready)</td>
 </tr>
 </table>
 </td>
@@ -1188,7 +1188,7 @@ class llvm::mca::Scheduler { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void llvm::mca::Scheduler::issueInstructionImpl (<a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; std::pair&lt; <a href="/web-llvm/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a>, <a href="/web-llvm/docs/api/classes/llvm/mca/releaseatcycles">ReleaseAtCycles</a> &gt; &gt; &amp; Pipes)</td>
+<td class="doxyMemberName">void llvm::mca::Scheduler::issueInstructionImpl (<a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR, <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; std::pair&lt; <a href="/web-llvm/docs/api/namespaces/llvm/mca/#aa013ffaca9bcaadec118afaede71ab29">ResourceRef</a>, <a href="/web-llvm/docs/api/classes/llvm/mca/releaseatcycles">ReleaseAtCycles</a> &gt; &gt; &amp; Pipes)</td>
 </tr>
 </table>
 </td>
@@ -1548,6 +1548,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -177,7 +177,7 @@ class llvm::DwarfStringPool { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Same as getEntry, except that you can use <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a357ae759731d2b8d69f8613004f8c8b2">EntryRef::getIndex</a> to obtain a unique <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> of this entry (e.g., for use in indexed forms like DW_FORM_strx). <a href="#a14f3b99ea7acdfe6ed22bf3fbc0ef16c">More...</a></p>
+<p>Same as getEntry, except that you can use EntryRef::getIndex to obtain a unique <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> of this entry (e.g., for use in indexed forms like DW_FORM_strx). <a href="#a14f3b99ea7acdfe6ed22bf3fbc0ef16c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -509,7 +509,7 @@ class llvm::DwarfStringPool { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Same as getEntry, except that you can use <a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref/#a357ae759731d2b8d69f8613004f8c8b2">EntryRef::getIndex</a> to obtain a unique <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> of this entry (e.g., for use in indexed forms like DW_FORM_strx).</p>
+<p>Same as getEntry, except that you can use EntryRef::getIndex to obtain a unique <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> of this entry (e.g., for use in indexed forms like DW_FORM_strx).</p>
 
 <p>Declaration at line 61 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/dwarfstringpool-h">DwarfStringPool.h</a>, definition at line 45 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/dwarfstringpool-cpp">DwarfStringPool.cpp</a>.</p>
 
@@ -757,6 +757,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

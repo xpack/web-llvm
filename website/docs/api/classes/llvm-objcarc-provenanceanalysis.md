@@ -3,7 +3,7 @@
 # DO NOT EDIT!
 # Automatically generated via doxygen2docusaurus by Doxygen.
 
-slug: /api/classes/provenanceanalysis
+slug: /api/classes/llvm/objcarc/provenanceanalysis
 custom_edit_url: null
 toc_max_heading_level: 4
 keywords:
@@ -17,12 +17,12 @@ keywords:
 
 # The `ProvenanceAnalysis` Class Reference
 
-
+<p>This is similar to BasicAliasAnalysis, and it uses many of the same techniques, except it uses special ObjC-specific reasoning about pointer relationships. <a href="#details">More...</a></p>
 
 ## Declaration
 
 <div class="doxyDeclaration">
-class ProvenanceAnalysis { ... }
+class llvm::objcarc::ProvenanceAnalysis { ... }
 </div>
 
 ## Included Headers
@@ -36,7 +36,7 @@ class ProvenanceAnalysis { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a270fc4ac0067c4471780b05faeafa5ce">ValuePairTy</a> = std::pair&lt; <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> Value *, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> Value * &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a616a55f88aacbb023f73238174fcd1c8">ValuePairTy</a> = std::pair&lt; <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> *, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -49,7 +49,7 @@ class ProvenanceAnalysis { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7913c79a303d4d410777490004bf278b">CachedResultsTy</a> = DenseMap&lt; ValuePairTy, bool &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1512369e587b4331d88fff3f4f7b8b9c">CachedResultsTy</a> = <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; ValuePairTy, bool &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -68,7 +68,7 @@ class ProvenanceAnalysis { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac99eba63e7f4add5028da044ff9a14d5">ProvenanceAnalysis</a> ()=default</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afcdae3be2fa8bb4f06d699064fbd8011">ProvenanceAnalysis</a> ()=default</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -81,7 +81,7 @@ class ProvenanceAnalysis { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top"></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9bb453bb08515faa4236920d6b6a1317">ProvenanceAnalysis</a> (const ProvenanceAnalysis &amp;)=delete</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adafa7ed2458c9594c1a36671b18b6dee">ProvenanceAnalysis</a> (const ProvenanceAnalysis &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -99,8 +99,8 @@ class ProvenanceAnalysis { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aaa1f1edcb19db81bdae3e29575c40866">operator=</a> (const ProvenanceAnalysis &amp;)=delete</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8703fd414233c0f4cf1118e7da6644f7">operator=</a> (const ProvenanceAnalysis &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -119,7 +119,7 @@ class ProvenanceAnalysis { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a76191600b1c369e6eb0b9176719cc87f">setAA</a> (AAResults *aa)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a746f7f7833928dfd2e5dec71aad6d240">setAA</a> (AAResults *aa)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -131,8 +131,8 @@ class ProvenanceAnalysis { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AAResults *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac411cb78ae7d4c44bcbb46e665054a3a">getAA</a> () const</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a> *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a186a005768089d004c0048c6efb6ed63">getAA</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -158,7 +158,7 @@ class ProvenanceAnalysis { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a20f52eaac258b06cdc7537d7c4f27b6f">clear</a> ()</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac1e7c0f132f5c996af8278d0779e3295">clear</a> ()</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -221,8 +221,8 @@ class ProvenanceAnalysis { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">AAResults *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abccb4cb411653f580ca0eea13b8ea446">AA</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a> *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9adc3fe1633b78ac87e2df27798aa9a4">AA</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -234,8 +234,8 @@ class ProvenanceAnalysis { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">CachedResultsTy</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a09512720d6316dfe42bb99339e97afbd">CachedResults</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/densemap">CachedResultsTy</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7d75c2d6871188b6fe6a8e2fff16084e">CachedResults</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -247,8 +247,8 @@ class ProvenanceAnalysis { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">DenseMap&lt; <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> Value *, std::pair&lt; WeakVH, WeakTrackingVH &gt; &gt;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a61b3488edc6aadc4b6a32d83cbc6da5f">UnderlyingObjCPtrCache</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> *, std::pair&lt; <a href="/web-llvm/docs/api/classes/llvm/weakvh">WeakVH</a>, <a href="/web-llvm/docs/api/classes/llvm/weaktrackingvh">WeakTrackingVH</a> &gt; &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a27dea9e4198a1ecc2933690a2a0cd609">UnderlyingObjCPtrCache</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -261,6 +261,13 @@ class ProvenanceAnalysis { ... }
 
 </table>
 
+## Description {#details}
+
+<p>This is similar to BasicAliasAnalysis, and it uses many of the same techniques, except it uses special ObjC-specific reasoning about pointer relationships.</p>
+
+
+<p>In this context “Provenance” is defined as the history of an object's ownership. Thus “Provenance Analysis” is defined by using the notion of an “independent provenance source” of a pointer to determine whether or not two pointers have the same provenance source and thus could potentially be related.</p>
+
 
 <p>Definition at line 51 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysis-h">ProvenanceAnalysis.h</a>.</p>
 
@@ -269,7 +276,7 @@ class ProvenanceAnalysis { ... }
 
 ## Private Member Typedefs
 
-### CachedResultsTy {#a7913c79a303d4d410777490004bf278b}
+### CachedResultsTy {#a1512369e587b4331d88fff3f4f7b8b9c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -278,7 +285,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using ProvenanceAnalysis::CachedResultsTy =  DenseMap&lt;ValuePairTy, bool&gt;</td>
+<td class="doxyMemberName">using llvm::objcarc::ProvenanceAnalysis::CachedResultsTy =  DenseMap&lt;ValuePairTy, bool&gt;</td>
 </tr>
 </table>
 </td>
@@ -294,7 +301,7 @@ class ProvenanceAnalysis { ... }
 </div>
 </div>
 
-### ValuePairTy {#a270fc4ac0067c4471780b05faeafa5ce}
+### ValuePairTy {#a616a55f88aacbb023f73238174fcd1c8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -303,7 +310,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using ProvenanceAnalysis::ValuePairTy =  std::pair&lt;const Value *, const Value *&gt;</td>
+<td class="doxyMemberName">using llvm::objcarc::ProvenanceAnalysis::ValuePairTy =  std::pair&lt;const Value *, const Value *&gt;</td>
 </tr>
 </table>
 </td>
@@ -325,7 +332,7 @@ class ProvenanceAnalysis { ... }
 
 ## Public Constructors
 
-### ProvenanceAnalysis() {#ac99eba63e7f4add5028da044ff9a14d5}
+### ProvenanceAnalysis() {#afcdae3be2fa8bb4f06d699064fbd8011}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -334,7 +341,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">ProvenanceAnalysis::ProvenanceAnalysis ()</td>
+<td class="doxyMemberName">llvm::objcarc::ProvenanceAnalysis::ProvenanceAnalysis ()</td>
 </tr>
 </table>
 </td>
@@ -353,12 +360,12 @@ class ProvenanceAnalysis { ... }
 <p>Definition at line 67 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysis-h">ProvenanceAnalysis.h</a>.</p>
 
 
-<p>Referenced by <a href="#aaa1f1edcb19db81bdae3e29575c40866">operator=</a> and <a href="#a9bb453bb08515faa4236920d6b6a1317">ProvenanceAnalysis</a>.</p>
+<p>Referenced by <a href="#a8703fd414233c0f4cf1118e7da6644f7">operator=</a> and <a href="#adafa7ed2458c9594c1a36671b18b6dee">ProvenanceAnalysis</a>.</p>
 
 </div>
 </div>
 
-### ProvenanceAnalysis() {#a9bb453bb08515faa4236920d6b6a1317}
+### ProvenanceAnalysis() {#adafa7ed2458c9594c1a36671b18b6dee}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -367,7 +374,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">ProvenanceAnalysis::ProvenanceAnalysis (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp;)</td>
+<td class="doxyMemberName">llvm::objcarc::ProvenanceAnalysis::ProvenanceAnalysis (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -386,7 +393,7 @@ class ProvenanceAnalysis { ... }
 <p>Definition at line 68 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysis-h">ProvenanceAnalysis.h</a>.</p>
 
 
-<p>Reference <a href="#ac99eba63e7f4add5028da044ff9a14d5">ProvenanceAnalysis</a>.</p>
+<p>Reference <a href="#afcdae3be2fa8bb4f06d699064fbd8011">ProvenanceAnalysis</a>.</p>
 
 </div>
 </div>
@@ -397,7 +404,7 @@ class ProvenanceAnalysis { ... }
 
 ## Public Operators
 
-### operator=() {#aaa1f1edcb19db81bdae3e29575c40866}
+### operator=() {#a8703fd414233c0f4cf1118e7da6644f7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -406,7 +413,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">ProvenanceAnalysis &amp; ProvenanceAnalysis::operator= (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a> &amp;)</td>
+<td class="doxyMemberName">ProvenanceAnalysis &amp; llvm::objcarc::ProvenanceAnalysis::operator= (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -425,7 +432,7 @@ class ProvenanceAnalysis { ... }
 <p>Definition at line 69 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysis-h">ProvenanceAnalysis.h</a>.</p>
 
 
-<p>Reference <a href="#ac99eba63e7f4add5028da044ff9a14d5">ProvenanceAnalysis</a>.</p>
+<p>Reference <a href="#afcdae3be2fa8bb4f06d699064fbd8011">ProvenanceAnalysis</a>.</p>
 
 </div>
 </div>
@@ -436,7 +443,7 @@ class ProvenanceAnalysis { ... }
 
 ## Public Member Functions
 
-### clear() {#a20f52eaac258b06cdc7537d7c4f27b6f}
+### clear() {#ac1e7c0f132f5c996af8278d0779e3295}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -445,7 +452,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void ProvenanceAnalysis::clear ()</td>
+<td class="doxyMemberName">void llvm::objcarc::ProvenanceAnalysis::clear ()</td>
 </tr>
 </table>
 </td>
@@ -466,7 +473,7 @@ class ProvenanceAnalysis { ... }
 </div>
 </div>
 
-### getAA() {#ac411cb78ae7d4c44bcbb46e665054a3a}
+### getAA() {#a186a005768089d004c0048c6efb6ed63}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -475,7 +482,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AAResults * ProvenanceAnalysis::getAA ()</td>
+<td class="doxyMemberName">AAResults * llvm::objcarc::ProvenanceAnalysis::getAA ()</td>
 </tr>
 </table>
 </td>
@@ -530,7 +537,7 @@ class ProvenanceAnalysis { ... }
 </div>
 </div>
 
-### setAA() {#a76191600b1c369e6eb0b9176719cc87f}
+### setAA() {#a746f7f7833928dfd2e5dec71aad6d240}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -539,7 +546,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void ProvenanceAnalysis::setAA (AAResults * aa)</td>
+<td class="doxyMemberName">void llvm::objcarc::ProvenanceAnalysis::setAA (<a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a> * aa)</td>
 </tr>
 </table>
 </td>
@@ -653,7 +660,7 @@ class ProvenanceAnalysis { ... }
 
 ## Private Member Attributes
 
-### AA {#abccb4cb411653f580ca0eea13b8ea446}
+### AA {#a9adc3fe1633b78ac87e2df27798aa9a4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -662,7 +669,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">AAResults* ProvenanceAnalysis::AA</td>
+<td class="doxyMemberName">AAResults* llvm::objcarc::ProvenanceAnalysis::AA</td>
 </tr>
 </table>
 </td>
@@ -678,7 +685,7 @@ class ProvenanceAnalysis { ... }
 </div>
 </div>
 
-### CachedResults {#a09512720d6316dfe42bb99339e97afbd}
+### CachedResults {#a7d75c2d6871188b6fe6a8e2fff16084e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -687,7 +694,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">CachedResultsTy ProvenanceAnalysis::CachedResults</td>
+<td class="doxyMemberName">CachedResultsTy llvm::objcarc::ProvenanceAnalysis::CachedResults</td>
 </tr>
 </table>
 </td>
@@ -703,7 +710,7 @@ class ProvenanceAnalysis { ... }
 </div>
 </div>
 
-### UnderlyingObjCPtrCache {#a61b3488edc6aadc4b6a32d83cbc6da5f}
+### UnderlyingObjCPtrCache {#a27dea9e4198a1ecc2933690a2a0cd609}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -712,7 +719,7 @@ class ProvenanceAnalysis { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">DenseMap&lt;const Value *, std::pair&lt;WeakVH, WeakTrackingVH&gt; &gt; ProvenanceAnalysis::UnderlyingObjCPtrCache</td>
+<td class="doxyMemberName">DenseMap&lt;const Value *, std::pair&lt;WeakVH, WeakTrackingVH&gt; &gt; llvm::objcarc::ProvenanceAnalysis::UnderlyingObjCPtrCache</td>
 </tr>
 </table>
 </td>
@@ -741,6 +748,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

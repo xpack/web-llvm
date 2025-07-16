@@ -707,7 +707,7 @@ class llvm::memprof::RawMemProfReader { ... }
 <p>Declaration at line 115 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/profiledata/memprofreader-h">MemProfReader.h</a>, definition at line 306 of file <a href="/web-llvm/docs/api/files/lib/lib/profiledata/memprofreader-cpp">MemProfReader.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/memprof/memprofreader/#a5433f28dd23b726c305096acb90b3f23">llvm::memprof::MemProfReader::MemProfData</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3beda524b0772ca36035db4399a6a571">llvm::utohexstr</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/memprof/memprofreader/#a5433f28dd23b726c305096acb90b3f23">llvm::memprof::MemProfReader::MemProfData</a>.</p>
 
 </div>
 </div>
@@ -1400,6 +1400,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

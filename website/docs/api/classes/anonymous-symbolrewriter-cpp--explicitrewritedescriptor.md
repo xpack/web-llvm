@@ -223,7 +223,7 @@ class anonymous{SymbolRewriter.cpp}::ExplicitRewriteDescriptor&lt;DT, ValueType,
 <p>Definition at line 121 of file <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/symbolrewriter-cpp">SymbolRewriter.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/symbolrewriter-cpp/#aabf6669a0eeb25780619fa043d4c945a">rewriteComdat</a>, <a href="#ad797ced0a7fa1aa2e6caf0c8e9dd579a">anonymous{SymbolRewriter.cpp}::ExplicitRewriteDescriptor&lt; DT, ValueType, Get &gt;::Source</a> and <a href="#ae3d8263a593bb69d6eec16405b4815c1">anonymous{SymbolRewriter.cpp}::ExplicitRewriteDescriptor&lt; DT, ValueType, Get &gt;::Target</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">llvm::dyn_cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/utils/symbolrewriter-cpp/#aabf6669a0eeb25780619fa043d4c945a">rewriteComdat</a>, <a href="#ad797ced0a7fa1aa2e6caf0c8e9dd579a">anonymous{SymbolRewriter.cpp}::ExplicitRewriteDescriptor&lt; DT, ValueType, Get &gt;::Source</a> and <a href="#ae3d8263a593bb69d6eec16405b4815c1">anonymous{SymbolRewriter.cpp}::ExplicitRewriteDescriptor&lt; DT, ValueType, Get &gt;::Target</a>.</p>
 
 </div>
 </div>
@@ -342,6 +342,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

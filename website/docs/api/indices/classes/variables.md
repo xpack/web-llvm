@@ -124,13 +124,13 @@ keywords:
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/memorydependenceresults/#ab54c80229f77a7729c4f49c6c6e3dab9">llvm::MemoryDependenceResults</a></li>
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/memoryssa/#a9bfebb1c5c9f151ca7054789586a8fb5">llvm::MemorySSA</a></li>
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/memoryssa/optimizeuses/#a78bb9b4cc2902c24215ca19f8e7f7a28">llvm::MemorySSA::OptimizeUses</a></li>
+<li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a9adc3fe1633b78ac87e2df27798aa9a4">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>AA</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objectsizeopts/#a18e6d4ff8dd1d58ffe5bf8ff600026ef">llvm::ObjectSizeOpts</a></li>
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/analyses/#a717f07a1be8f61d05bda7876d6608ac4">llvm::sandboxir::Analyses</a></li>
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sandboxvectorizerpass/#a8b08e42660ee04227f6aadd6853960f9">llvm::SandboxVectorizerPass</a></li>
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/scheduledagmi/#a79b8428bb41e16b71ae2bb0139bce5eb">llvm::ScheduleDAGMI</a></li>
 <li><b>AA</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/slpvectorizerpass/#aa003b2024aed43223cfd42f1f2155c91">llvm::SLPVectorizerPass</a></li>
 <li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/vliwpacketizerlist/#a34cd7219145832625cfe1d7b5b873c7d">llvm::VLIWPacketizerList</a></li>
-<li><b>AA</b>: as variable in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#abccb4cb411653f580ca0eea13b8ea446">ProvenanceAnalysis</a></li>
 <li><b>AACallEdges</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aacalledgeiterator/#a6feb104915dedc22faa9163fe60bbea5">llvm::AACallEdgeIterator</a></li>
 <li><b>AADepGraph</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/attributor/#a2c4ab9b13ea1a3b4a36d18736d3da837">llvm::Attributor</a></li>
 <li><b>AADeps</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aaresults/#af75e22cd2eccdd791f44db37941d73f0">llvm::AAResults</a></li>
@@ -824,7 +824,6 @@ keywords:
 <li><b>All</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/annotations/#a0291b15c27a52e9ed08a4e5f800e70a7">llvm::Annotations</a></li>
 <li><b>All</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/disablelirp/#aac47a395ddc8679b300a4b6c112df309">llvm::DisableLIRP</a></li>
 <li><b>AllAddrModesTrivial</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-codegenprepare-cpp-/addressingmodecombiner/#a36ce47b3102dc454305f24d6c1dd3746">anonymous{CodeGenPrepare.cpp}::AddressingModeCombiner</a></li>
-<li><b>AllAnalysesKey</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#adff624f8bb356741634ae566379c463f">llvm::PreservedAnalyses</a></li>
 <li><b>AllArchRelatedMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-mipsasmparser-cpp-/mipsassembleroptions/#a2ea6c2ba5c815eadcaf46d1a19dbdce1">anonymous{MipsAsmParser.cpp}::MipsAssemblerOptions</a></li>
 <li><b>AllBases</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pdb/udtlayoutbase/#abd663483b6074d59c2d75f982c104878">llvm::pdb::UDTLayoutBase</a></li>
 <li><b>AllBlocks</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/gcov/options/#ac6691ccf7e7549380d4535b1683b45a5">llvm::GCOV::Options</a></li>
@@ -1478,13 +1477,16 @@ keywords:
 <li><b>Args</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/functionsummary/constvcall/#a11c4637332d781d83b2f83a6cfd08b3d">llvm::FunctionSummary::ConstVCall</a></li>
 <li><b>Args</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/initllvm/#a9cc9b4d5b0983680affb248973c5e482">llvm::InitLLVM</a></li>
 <li><b>Args</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mclohdirective/#a38e44d68a414b6d637ccca5d7defc673">llvm::MCLOHDirective</a></li>
+<li><b>Args</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapperallocas/#aa90c5e272864414356fbeede370d5053">llvm::OpenMPIRBuilder::MapperAllocas</a></li>
 <li><b>Args</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/opt/arglist/#a70aa569fc72f042e1729ddfa3202c074">llvm::opt::ArgList</a></li>
 <li><b>Args</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/remarks/bitstreamremarkparserhelper/#a03e0ae3c26607b39bb3e68ccecd97f57">llvm::remarks::BitstreamRemarkParserHelper</a></li>
 <li><b>Args</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/remarks/remark/#ad43b86418150167e66360c78b004daae">llvm::remarks::Remark</a></li>
 <li><b>Args</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/specsig/#a1b88d6bbcb32262d5a8a34542e7b4e7b">llvm::SpecSig</a></li>
 <li><b>Args</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targetlowering/callloweringinfo/#a144154df8c813c3a0a9e8d7281c53853">llvm::TargetLowering::CallLoweringInfo</a></li>
+<li><b>ArgsBase</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapperallocas/#a9d27bf73f53ec62c72ffd3137f47efde">llvm::OpenMPIRBuilder::MapperAllocas</a></li>
 <li><b>ArgsInZeroAddressSpace</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeextractor/#a6e027485b8b10f5d9f0a3b6517a32b0a">llvm::CodeExtractor</a></li>
 <li><b>ArgSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/vloperands/#a41018a81362511814deaf3dec72c8a8d">llvm::slpvectorizer::BoUpSLP::VLOperands</a></li>
+<li><b>ArgSizes</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapperallocas/#ad41f11a634af5e69560ac0279c74b100">llvm::OpenMPIRBuilder::MapperAllocas</a></li>
 <li><b>ArgStoreVector</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-x86callframeoptimization-cpp-/x86callframeoptimization/callcontext/#ae2ff8b02b1b318837fc75e87acc9bc3e">anonymous{X86CallFrameOptimization.cpp}::X86CallFrameOptimization::CallContext</a></li>
 <li><b>ArgStr</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/cl/option/#a29fc50efce4c1ac670e638f1049a9d9f">llvm::cl::Option</a></li>
 <li><b>ArgStrings</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/opt/inputarglist/#aec8afb3da18c349a0ca9de35755f4ef5">llvm::opt::InputArgList</a></li>
@@ -1699,6 +1701,7 @@ keywords:
 <li><b>AtomicInfo</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machinememoperand/#aef4a4190e82c8a16bbf7cd07afa55915">llvm::MachineMemOperand</a></li>
 <li><b>AtomicLoadExtActions</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a9be40d1b568c29bae63c3228800f30e0">llvm::TargetLoweringBase</a></li>
 <li><b>AtomicPseudoMIs</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-simemorylegalizer-cpp-/simemorylegalizer/#a303b559dc7a690e89873bba9c1ecc8f6">anonymous{SIMemoryLegalizer.cpp}::SIMemoryLegalizer</a></li>
+<li><b>AtomicReductionGen</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a3c969fa43d5f18e4237461ba967a16ae">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>AtomicRMWInst</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#abfbbc21f9fc5067c81720ce1b1e652b5">llvm::sandboxir::Context</a></li>
 <li><b>Atomics</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-sanitizerbinarymetadata-cpp-/metadatainfo/#a24acea382906bc133de092e8f80396bb">anonymous{SanitizerBinaryMetadata.cpp}::MetadataInfo</a></li>
 <li><b>Atomics</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/sanitizerbinarymetadataoptions/#a4d6f00f1f1b9e48abcf36513d5222a60">llvm::SanitizerBinaryMetadataOptions</a></li>
@@ -1773,6 +1776,7 @@ keywords:
 <li><b>AttrOutOffset</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dieattributecloner/#a349ad92c804dcea3e5f1470bc7dc254f">llvm::dwarf_linker::parallel::DIEAttributeCloner</a></li>
 <li><b>Attrs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-modulesummaryindex-cpp-/attributes/#a7c1eea4667bb3f18addaae2547be9296">anonymous{ModuleSummaryIndex.cpp}::Attributes</a></li>
 <li><b>Attrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/functionencoding/#a7ed5361ef20b7c34d5343c3744003626">FunctionEncoding</a></li>
+<li><b>Attrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a295469fcde5bbe8fa8c6770fb33bd6c2">llvm::AttrBuilder</a></li>
 <li><b>Attrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributemask/#af0eea68b663eef68e32f0133344896dd">llvm::AttributeMask</a></li>
 <li><b>Attrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/callbase/#a97849e9f49e6326c0e055bc8f1ea4eec">llvm::CallBase</a></li>
 <li><b>Attrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeview/baseclassrecord/#aa3a84d3ef3c756ed6adfcb5ce53d44da">llvm::codeview::BaseClassRecord</a></li>
@@ -1878,6 +1882,7 @@ keywords:
 <li><b>AvailableArray</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfoimpl/#ac83dea0dea0341ab92e2d3347624cfaf">llvm::TargetLibraryInfoImpl</a></li>
 <li><b>AvailableAttrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributebitset/#a90bb0accf87225942734987eade48ef7">llvm::AttributeBitSet</a></li>
 <li><b>AvailableAttrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a54f33fab966ff8914450a63b8898210a">llvm::AttributeSetNode</a></li>
+<li><b>AvailableBuffers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a1714d0370fa0f51782d51fb6c0110aa1">llvm::mca::ResourceManager</a></li>
 <li><b>AvailableCalls</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-earlycse-cpp-/earlycse/#aed16834803abfd7e250361e3d2e8be9f">anonymous{EarlyCSE.cpp}::EarlyCSE</a></li>
 <li><b>AvailableCaps</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/requirementhandler/#af4eec5a6091bb83c0b7d4db5efdc2a9c">llvm::SPIRV::RequirementHandler</a></li>
 <li><b>AvailableDomains</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/domainvalue/#ac900f658d1c226c23057b843aa5df4d0">llvm::DomainValue</a></li>
@@ -1897,10 +1902,12 @@ keywords:
 <li><b>AvailableMemory</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/mapperjitlinkmemorymanager/#ab890c1cfba62265faca5260557d8b642">llvm::orc::MapperJITLinkMemoryManager</a></li>
 <li><b>AvailableOut</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-riscvinsertwritevxrm-cpp-/blockdata/#a765031f3b81bc039ec8de753f0fb2543">anonymous{RISCVInsertWriteVXRM.cpp}::BlockData</a></li>
 <li><b>AvailableOut</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-safepointirverifier-cpp-/basicblockstate/#aae4aa46ae04c638a851b15c0fb108c8d">anonymous{SafepointIRVerifier.cpp}::BasicBlockState</a></li>
+<li><b>AvailableProcResUnits</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#aa0ee2217d4458262fc94a72926f2105a">llvm::mca::ResourceManager</a></li>
 <li><b>AvailableQueue</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-postraschedulerlist-cpp-/schedulepostratdlist/#abd96511ab071cdaa14ef7a7a0a0c0e46">anonymous{PostRASchedulerList.cpp}::SchedulePostRATDList</a></li>
 <li><b>AvailableQueue</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagfast-cpp-/scheduledagfast/#a8bb566b736fcb926f249bf140e6876ba">anonymous{ScheduleDAGFast.cpp}::ScheduleDAGFast</a></li>
 <li><b>AvailableQueue</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/scheduledagrrlist/#a3716f1cf6af7da4a34fb0ad31ab84389">anonymous{ScheduleDAGRRList.cpp}::ScheduleDAGRRList</a></li>
 <li><b>AvailableQueue</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-scheduledagvliw-cpp-/scheduledagvliw/#a6b94c0572ad98c185bf37047e4e751dc">anonymous{ScheduleDAGVLIW.cpp}::ScheduleDAGVLIW</a></li>
+<li><b>AvailableSlots</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a5b05cd0b348538ffe35da47e293cc412">llvm::mca::ResourceState</a></li>
 <li><b>AvailableSomewhereAttrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a0f21ae5b07ce1d131ce7386ef83e7f9d">llvm::AttributeListImpl</a></li>
 <li><b>AvailableStages</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/peelingmoduloscheduleexpander/#a8591900a7378c95e5875f531330085c1">llvm::PeelingModuloScheduleExpander</a></li>
 <li><b>AvailableTrampolines</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/trampolinepool/#a21e470ebe990337ac5917986ae91c5a6">llvm::orc::TrampolinePool</a></li>
@@ -1916,7 +1923,7 @@ keywords:
 <li><b>AvoidMovs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-thumb2sizereduction-cpp-/reduceentry/#a531781b221b9da4649de441a463231e2">anonymous{Thumb2SizeReduction.cpp}::ReduceEntry</a></li>
 <li><b>AvoidWeakIfComdat</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a4ba4b1aaa416d3db5d4005e2d6e799d1">llvm::MCAsmInfo</a></li>
 </ul>
-<p>1862 entries</p>
+<p>1869 entries</p>
 
 ## - B -
 
@@ -2116,6 +2123,8 @@ keywords:
 <li><b>BaseOrd</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-hexagongeninsert-cpp-/ifordering/#a1eebd4ddd6bc75285ed2cd55603d4044">anonymous{HexagonGenInsert.cpp}::IFOrdering</a></li>
 <li><b>BasePointer</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/indexedreference/#a1c368b78930e2754e5dfa3aba37f3d6a">llvm::IndexedReference</a></li>
 <li><b>BasePointerOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/codeview/defrangeregisterrelheader/#aa35912ee6dc477785d65b0bfa20de028">llvm::codeview::DefRangeRegisterRelHeader</a></li>
+<li><b>BasePointers</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#a7f0b33fc6977b91af2e3a595430af816">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
+<li><b>BasePointersArray</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#aa998b8b179dd186fe4b5a1f6b6e25327">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>BasePointerSaveIndex</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ppcfunctioninfo/#a3c5109bdbfaf93f1550f9387bda28ddd">llvm::PPCFunctionInfo</a></li>
 <li><b>BasePointerSaveOffset</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ppcframelowering/#a69339ef165c863f260c40ab6f5501677">llvm::PPCFrameLowering</a></li>
 <li><b>BasePtr</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64stacktagging-cpp-/initializerbuilder/#a603cd23137e32870b05c7227ee5bb75d">anonymous{AArch64StackTagging.cpp}::InitializerBuilder</a></li>
@@ -3047,6 +3056,7 @@ keywords:
 <li><b>Buffers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sourcemgr/#a953b5aaaa8ba761726dda1530996d7fc">llvm::SourceMgr</a></li>
 <li><b>BufferSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-fileoutputbuffer-cpp-/inmemorybuffer/#ab9afbf497f95490e9f1721b2310bdce0">anonymous{FileOutputBuffer.cpp}::InMemoryBuffer</a></li>
 <li><b>BufferSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/circular-raw-ostream/#a638b19f5e84b1872d2d0df22abe38a20">llvm::circular_raw_ostream</a></li>
+<li><b>BufferSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#aab7ef0fd3a8f6ff66cd5bf8e70b009bf">llvm::mca::ResourceState</a></li>
 <li><b>BufferSize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mcprocresourcedesc/#a1cabc35908985a4252812bbff35df8f9">llvm::MCProcResourceDesc</a></li>
 <li><b>BufferStart</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/memorybuffer/#a9034848575a96838e78a98c4fc24a394">llvm::MemoryBuffer</a></li>
 <li><b>BufferStart</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/windowsresourcecoffwriter/#a5edcb6fcaf9e5b8394a06972a9a0addd">llvm::object::WindowsResourceCOFFWriter</a></li>
@@ -3082,6 +3092,7 @@ keywords:
 <li><b>Builder</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/loopvectorizationplanner/#a8d79b326968a7f668c5ab209e75d3883">llvm::LoopVectorizationPlanner</a></li>
 <li><b>Builder</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/negator/#a01e49fb8561321486ffdc6c5fb9524a6">llvm::Negator</a></li>
 <li><b>Builder</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objectsizeoffsetevaluator/#ab949b6685d544ef372bb8bf7133b418a">llvm::ObjectSizeOffsetEvaluator</a></li>
+<li><b>Builder</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#ad90c28bb43cb3cee06cb2f1686784b40">llvm::OpenMPIRBuilder</a></li>
 <li><b>Builder</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/machobuilder/section/#afbd9cb34ffcfc79afdf91502fe41bee4">llvm::orc::MachOBuilder::Section</a></li>
 <li><b>Builder</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/machobuilder/segment/#adc7f01d7dc2942afb6d225eaa2828400">llvm::orc::MachOBuilder::Segment</a></li>
 <li><b>Builder</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/scevexpander/#a39ca47578ad55b6c8bb653c64c3bf536">llvm::SCEVExpander</a></li>
@@ -3138,6 +3149,7 @@ keywords:
 <li><b>BundleVirtRegsMap</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-regallocfast-cpp-/regallocfastimpl/#a33ea713485f282f9ecfda102a5948e22">anonymous{RegAllocFast.cpp}::RegAllocFastImpl</a></li>
 <li><b>BurstDuration</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-instrprofiling-cpp-/sampledinstrumentationconfig/#a761c3263fcd2aae8509ba8a68759c2d0">anonymous{InstrProfiling.cpp}::SampledInstrumentationConfig</a></li>
 <li><b>busy</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/fp-status-t/#a75f0e2caeecb1ecd7f6b58feab25928b">llvm::MachO::fp_status_t</a></li>
+<li><b>BusyResources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#ad3dfa8e08ce4bcf0e534dac33e1ccfed">llvm::mca::ResourceManager</a></li>
 <li><b>BusyResourceUnits</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#aa4d16f621aa30e898979d32b6a37b55d">llvm::mca::Scheduler</a></li>
 <li><b>BVH</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpu/mimgbaseopcodeinfo/#ae568e3885ff86491cfec37106f83d1c7">llvm::AMDGPU::MIMGBaseOpcodeInfo</a></li>
 <li><b>BvhCnt</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpu/waitcnt/#a4f86c2a317fac87bd19fd4ea0f51ef14">llvm::AMDGPU::Waitcnt</a></li>
@@ -3190,7 +3202,7 @@ keywords:
 <li><b>ByvalParmDbgValues</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sddbginfo/#a8df1eac6177620e5fbe00c415a50146b">llvm::SDDbgInfo</a></li>
 <li><b>ByValRegs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ccstate/#a72efb51b9f22b1cd630a865712f67a86">llvm::CCState</a></li>
 </ul>
-<p>1268 entries</p>
+<p>1273 entries</p>
 
 ## - C -
 
@@ -3264,7 +3276,7 @@ keywords:
 <li><b>CachedOnly</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/analysisgetter/#adf7ed7f8926b9c38d552bb6204870edf">llvm::AnalysisGetter</a></li>
 <li><b>CachedRegisterPressure</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-machinesink-cpp-/machinesinking/#af6fa5d79afc632ba84929804836cb713">anonymous{MachineSink.cpp}::MachineSinking</a></li>
 <li><b>CachedResult</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-complexdeinterleavingpass-cpp-/complexdeinterleavinggraph/#ac3af3410d977983a6d71537c5bc8fa5a">anonymous{ComplexDeinterleavingPass.cpp}::ComplexDeinterleavingGraph</a></li>
-<li><b>CachedResults</b>: as variable in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a09512720d6316dfe42bb99339e97afbd">ProvenanceAnalysis</a></li>
+<li><b>CachedResults</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a7d75c2d6871188b6fe6a8e2fff16084e">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>CachedShadows</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-dataflowsanitizer-cpp-/dfsanfunction/#aef62266aa7ddab4b91e67bde55fa5ec3">anonymous{DataFlowSanitizer.cpp}::DFSanFunction</a></li>
 <li><b>CachedStart</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/coalescingbitvector/const-iterator/#ab63d47c6c7735deaeef443ef30663b61">llvm::CoalescingBitVector::const_iterator</a></li>
 <li><b>CachedStop</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/coalescingbitvector/const-iterator/#a47263c5e1d38a9910cbd3463703dc506">llvm::CoalescingBitVector::const_iterator</a></li>
@@ -4562,6 +4574,7 @@ keywords:
 <li><b>Cond</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armasmparser/#a8ab7568e76095800128e82299e0a831e">anonymous{ARMAsmParser.cpp}::ARMAsmParser</a></li>
 <li><b>Cond</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/factorcheck/#a87667f0f616441f6c08f37536bdf775d">anonymous{ConstraintElimination.cpp}::FactOrCheck</a></li>
 <li><b>Cond</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-earlyifconversion-cpp-/ssaifconv/#a21312f1e765687ad983427e2d56acba2">anonymous{EarlyIfConversion.cpp}::SSAIfConv</a></li>
+<li><b>Cond</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect/#a498cf9728b1e5f3843be1bff3edefd7f">anonymous{InstCombineSelect.cpp}::DecomposedSelect</a></li>
 <li><b>Cond</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-ppcbranchcoalescing-cpp-/ppcbranchcoalescing/coalescingcandidateinfo/#a41daf98889789a58267425bb2e17426b">anonymous{PPCBranchCoalescing.cpp}::PPCBranchCoalescing::CoalescingCandidateInfo</a></li>
 <li><b>Cond</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-riscvinstrinfo-cpp-/riscvpipelinerloopinfo/#a15c5f539cc267aca8ab593e686dd6b3a">anonymous{RISCVInstrInfo.cpp}::RISCVPipelinerLoopInfo</a></li>
 <li><b>Cond</b>: as variable in class <a href="/web-llvm/docs/api/classes/conditionalexpr/#a9a1b7d34c72864b58f41930bd2283c33">ConditionalExpr</a></li>
@@ -4607,6 +4620,7 @@ keywords:
 <li><b>Config</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/balancedpartitioning/#af9d9d9a4b59dbd54e5b5967e4b489057">llvm::BalancedPartitioning</a></li>
 <li><b>Config</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/jitlink/anonymous-elf-riscv-cpp-/relaxaux/#a94cd5bf22cec9662e98420b93a04ce2a">llvm::jitlink::anonymous{ELF_riscv.cpp}::RelaxAux</a></li>
 <li><b>Config</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ltocodegenerator/#a3aef3419c03e774c1fabe8e457fb0a0a">llvm::LTOCodeGenerator</a></li>
+<li><b>Config</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a355507f9e59388e467dc9288e4f82c3d">llvm::OpenMPIRBuilder</a></li>
 <li><b>Config</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/symbolize/jsonprinter/#aaab40ba6308a07c045f38dce8f468126">llvm::symbolize::JSONPrinter</a></li>
 <li><b>Config</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">llvm::symbolize::PlainPrinterBase</a></li>
 <li><b>Configs</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-numericalstabilitysanitizer-cpp-/mappingconfig/#a6a7b6da0e0a806f039e94d7ec92b3388">anonymous{NumericalStabilitySanitizer.cpp}::MappingConfig</a></li>
@@ -4626,6 +4640,7 @@ keywords:
 <li><b>Constant</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/globalvarsummary/gvarflags/#af005b1da67090d23f2588f627cab672b">llvm::GlobalVarSummary::GVarFlags</a></li>
 <li><b>Constant</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/coffshortexport/#ae83833c94b4acd454f8d8b08aaa2caba">llvm::object::COFFShortExport</a></li>
 <li><b>ConstantAccessorSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/stackmapparser/constantaccessor/#af587cf0e132a82430f3d8bfdff1fdd63">llvm::StackMapParser::ConstantAccessor</a></li>
+<li><b>ConstantAllocaRaiseCandidates</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aebfa8e874069dcc7e02ea471d941d9ca">llvm::OpenMPIRBuilder</a></li>
 <li><b>ConstantArrayOpcode</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-bitcodereader-cpp-/bitcodeconstant/#af3c18a48443dc736b3afd55c4373f987">anonymous{BitcodeReader.cpp}::BitcodeConstant</a></li>
 <li><b>ConstantCounter</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/cskytargetstreamer/#a23a833b2f661175c574cf0b5c62e7803">llvm::CSKYTargetStreamer</a></li>
 <li><b>ConstantDependenciesCache</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/globaldcepass/#ad5d52e5b5529f2df19016d4795ddde4e">llvm::GlobalDCEPass</a></li>
@@ -5131,6 +5146,7 @@ keywords:
 <li><b>CountPosition</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-pgoinstrumentation-cpp-/pgousefunc/#a99a91400fa69e31f370bbd21b2ac7eff">anonymous{PGOInstrumentation.cpp}::PGOUseFunc</a></li>
 <li><b>Counts</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/countvisitspass/#add0716c90902ca5766e8e4c4937e8464">llvm::CountVisitsPass</a></li>
 <li><b>Counts</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/instrprofrecord/#a1b5488b65ab76c49ab7dd16115c23f56">llvm::InstrProfRecord</a></li>
+<li><b>Counts</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo/#a91a7ec15dbfee1518848d8c415e8ec1b">llvm::OpenMPIRBuilder::MapInfosTy::StructNonContiguousInfo</a></li>
 <li><b>CountSum</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/countsumorpercent/#aa86b18bf848839782dee252ea6871d00">llvm::CountSumOrPercent</a></li>
 <li><b>CountType</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-hardwareloops-cpp-/hardwareloop/#a8b112fdc9d16a0aca816da50fb06b031">anonymous{HardwareLoops.cpp}::HardwareLoop</a></li>
 <li><b>CountType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/hardwareloopinfo/#ac3a4a577c64538aa965b6ce5d81de298">llvm::HardwareLoopInfo</a></li>
@@ -5403,6 +5419,7 @@ keywords:
 <li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aarch64mcinstlower/#a7cb8c0bd3eb125cfac62c16807459b7b">llvm::AArch64MCInstLower</a></li>
 <li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/amdgpumcexpr/#aad75af2e85e0565565c2dbd4fc4b3d60">llvm::AMDGPUMCExpr</a></li>
 <li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/arcmcinstlower/#a7118595d5c3b43a241ce7f7f7b1310b0">llvm::ARCMCInstLower</a></li>
+<li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a20f9e984e933c2e6b3985e7902488686">llvm::AttrBuilder</a></li>
 <li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/avrmccodeemitter/#aba64c6bee17601364d3122e974cb718f">llvm::AVRMCCodeEmitter</a></li>
 <li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/avrmcinstlower/#a7e1eef62f9ed6f6866aa64e92eea145b">llvm::AVRMCInstLower</a></li>
 <li><b>Ctx</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/bpfmcinstlower/#a7b218ad0156fbaa0e9e6f59a51db133c">llvm::BPFMCInstLower</a></li>
@@ -5607,7 +5624,6 @@ keywords:
 <li><b>Current</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/minidumpfile/memory64iterator/#ad2cb481f9704c6df7a7bc52d8749f7b8">llvm::object::MinidumpFile::Memory64Iterator</a></li>
 <li><b>Current</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/viewarray/iterator/#adcbf7253e555527db570c185f3e34929">llvm::object::ViewArray::iterator</a></li>
 <li><b>Current</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/opt/arg-iterator/#a4cfd0677b5ee63ed26052e2295857f8c">llvm::opt::arg_iterator&lt;BaseIter, NumOptSpecifiers&gt;</a></li>
-<li><b>Current</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a378390b48e8950dcc55c9b8fa1384497">llvm::SplittingIterator</a></li>
 <li><b>Current</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetregistry/iterator/#a1b0f983cc365a3202da2a3001b10fc8d">llvm::TargetRegistry::iterator</a></li>
 <li><b>Current</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfsdiriterimpl/#ada85b891be09a55d08ed5cf8d3ce3954">llvm::vfs::RedirectingFSDirIterImpl</a></li>
 <li><b>Current</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/yaml/scanner/#a1c308b3af89a4eb128d361990506ab6f">llvm::yaml::Scanner</a></li>
@@ -5876,7 +5892,7 @@ keywords:
 <li><b>CyclesLeft</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/writestate/#a479a151cc915ee125243b2c0dea92aa7">llvm::mca::WriteState</a></li>
 <li><b>CyclicCritPath</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/schedremainder/#a798404b9b97fe7b30a5d59cd2504d1ee">llvm::SchedRemainder</a></li>
 </ul>
-<p>2680 entries</p>
+<p>2684 entries</p>
 
 ## - D -
 
@@ -6844,6 +6860,8 @@ keywords:
 <li><b>Device</b>: as variable in class <a href="/web-llvm/docs/api/classes/uniqueid/#aef0f2051c7d419dd0dc7cd54dee48978">UniqueID</a></li>
 <li><b>DeviceID</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targetregionentryinfo/#a50a8eeba86c83f02b7e129b7880ec654">llvm::TargetRegionEntryInfo</a></li>
 <li><b>DeviceIDArgNum</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/offloadarray/#a82d3a8ab468d984c21c102488a3e665e">anonymous{OpenMPOpt.cpp}::OffloadArray</a></li>
+<li><b>DevicePointers</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#a71a5c5757b7d47dac50e0cdd270e52ae">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
+<li><b>DevicePtrInfoMap</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a069184e2b170a9681870471c4a4daeee">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>DevMajor</b>: as variable in struct <a href="/web-llvm/docs/api/structs/ustarheader/#a573655f919c650693a4b4e8572959a25">UstarHeader</a></li>
 <li><b>DevMinor</b>: as variable in struct <a href="/web-llvm/docs/api/structs/ustarheader/#ae4027c9755a8cd8846841903b5ae32a3">UstarHeader</a></li>
 <li><b>DF</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dominancefrontierwrapperpass/#a94ad483404b86765cc28259303134617">llvm::DominanceFrontierWrapperPass</a></li>
@@ -7010,6 +7028,7 @@ keywords:
 <li><b>Dimension</b>: as variable in class <a href="/web-llvm/docs/api/classes/vectortype/#af430a8c74076ad485e52edf3ae20f101">VectorType</a></li>
 <li><b>Dimensions</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/arraytypenode/#a3f90bd596a39495e162d526402330cb0">llvm::ms_demangle::ArrayTypeNode</a></li>
 <li><b>Dims</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-dxilflattenarrays-cpp-/gepdata/#a000a712855aecfbdc87538195761056a">anonymous{DXILFlattenArrays.cpp}::GEPData</a></li>
+<li><b>Dims</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo/#a455750a6772d7b4dbf49c6e2a6892bee">llvm::OpenMPIRBuilder::MapInfosTy::StructNonContiguousInfo</a></li>
 <li><b>Dir</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-virtualfilesystem-cpp-/redirectingfsdirremapiterimpl/#aeb68afa1c562e29e48bd56d903b022a4">anonymous{VirtualFileSystem.cpp}::RedirectingFSDirRemapIterImpl</a></li>
 <li><b>Dir</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/gsym/fileentry/#ae9efc2fdaa930f2cbdddfd4c553e50a6">llvm::gsym::FileEntry</a></li>
 <li><b>Dir</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/gsym/sourcelocation/#a9c40347d10af7c2cefe3d77e8487f4b7">llvm::gsym::SourceLocation</a></li>
@@ -7825,6 +7844,7 @@ keywords:
 <li><b>DynamicValueRelocTableOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/coff-load-configuration64/#a1a6bbc28bddc8a5654cf725da8e9ee4e">llvm::object::coff_load_configuration64</a></li>
 <li><b>DynamicValueRelocTableSection</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/coff-load-configuration32/#a8fa2593b963e337060e827a1f15419e7">llvm::object::coff_load_configuration32</a></li>
 <li><b>DynamicValueRelocTableSection</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/coff-load-configuration64/#ade97ffbe2e91afb03c11886df764514b">llvm::object::coff_load_configuration64</a></li>
+<li><b>DynCGGroupMem</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#a54507f6f762774d59326a2145ae440f9">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>DynEnt</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ifs/anonymous-elfobjhandler-cpp-/dynsym/#ab8297316cc5ad833f247cfe6f3d56330">llvm::ifs::anonymous{ELFObjHandler.cpp}::DynSym&lt;ELFT&gt;</a></li>
 <li><b>DynLDSAlign</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/amdgpumachinefunction/#a26dfb8d7a283c9d86569786a61f4ced8">llvm::AMDGPUMachineFunction</a></li>
 <li><b>DynLDSAlign</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/yaml/simachinefunctioninfo/#a2ce6322058842a2f550cdece7f45a460">llvm::yaml::SIMachineFunctionInfo</a></li>
@@ -7837,7 +7857,7 @@ keywords:
 <li><b>DySymTabCommandIndex</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/macho/object/#aa152aa92492629c923912104a1da4709">llvm::objcopy::macho::Object</a></li>
 <li><b>DysymtabLoadCmd</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/machoobjectfile/#a3b6d2e8189483a02f909be96679b3a81">llvm::object::MachOObjectFile</a></li>
 </ul>
-<p>1955 entries</p>
+<p>1959 entries</p>
 
 ## - E -
 
@@ -8097,6 +8117,7 @@ keywords:
 <li><b>ElementType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dxil/resourcebase/extendedproperties/#ab9da5fa220903ce721cffa92a8f0e222">llvm::dxil::ResourceBase::ExtendedProperties</a></li>
 <li><b>ElementType</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvelement/#ac5a196b62ca4642de22709f6a03723d8">llvm::logicalview::LVElement</a></li>
 <li><b>ElementType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/arraytypenode/#ac296fe474e5f8d36757a30020433b331">llvm::ms_demangle::ArrayTypeNode</a></li>
+<li><b>ElementType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a808df20c6281c68ce8be2a89aaba392a">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>ElementTypesInLoop</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/loopvectorizationcostmodel/#a00a28a503636abdbedf080f3896b937c">llvm::LoopVectorizationCostModel</a></li>
 <li><b>ElementWidth</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-aarch64asmparser-cpp-/aarch64operand/matrixregop/#a50b0dc137eae1943fcfcd613beb6b85e">anonymous{AArch64AsmParser.cpp}::AArch64Operand::MatrixRegOp</a></li>
 <li><b>ElementWidth</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-aarch64asmparser-cpp-/aarch64operand/regop/#aa19c6d827ed8a103771fc9e0c89675e6">anonymous{AArch64AsmParser.cpp}::AArch64Operand::RegOp</a></li>
@@ -8105,6 +8126,7 @@ keywords:
 <li><b>ElemKind</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/wasmyaml/elemsegment/#aa33a86b5e213238f6fb29f038197593b">llvm::WasmYAML::ElemSegment</a></li>
 <li><b>Elems</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/allocgroupsmallmap/#a194507ba82d31a9f86afcad4e4b60d57">llvm::orc::AllocGroupSmallMap&lt;T&gt;</a></li>
 <li><b>ElemSegments</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/wasmobjectfile/#ac21f50b0ce04d013436d27ec80c2c069">llvm::object::WasmObjectFile</a></li>
+<li><b>ElemTy</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue/#ae8ed82c3d82f5df97d8ebb3f77cc8dfa">llvm::OpenMPIRBuilder::AtomicOpValue</a></li>
 <li><b>ElemType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/btf/btfarray/#af15271f6eeb6c3ef7703839631086f2d">llvm::BTF::BTFArray</a></li>
 <li><b>ElemType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/wasm/wasmtabletype/#a9e6205df9696b4d237496b86b95389b7">llvm::wasm::WasmTableType</a></li>
 <li><b>ElemType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/wasmyaml/table/#accce6df434c5a9133f6e2fe274679086">llvm::WasmYAML::Table</a></li>
@@ -8147,6 +8169,7 @@ keywords:
 <li><b>EmitCGData</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codegendata/#a1de6bb5642d04f0900ff0d30804f1aeb">llvm::CodeGenData</a></li>
 <li><b>EmitCompactUnwindNonCanonical</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mctargetoptions/#a57b2bb92f0f16cc71abb01992c3e2ff2">llvm::MCTargetOptions</a></li>
 <li><b>EmitData</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/gcovoptions/#aaa4ca0fc70da4cc8a069186333919c9d">llvm::GCOVOptions</a></li>
+<li><b>EmitDebug</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a16fbd2505a0cf3ff5e4296e2284d3b46">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>EmitDebugEntryValues</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarfdebug/#ab358b7ac5f8f1d053139c7613c9199f6">llvm::DwarfDebug</a></li>
 <li><b>EmitDebugFrame</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mcobjectstreamer/#ab282e54df723d2cda9140603522856fe">llvm::MCObjectStreamer</a></li>
 <li><b>EmitDebugGlobalHashes</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeviewdebug/#aa9dcb36748c75a86c627628eedd00931">llvm::CodeViewDebug</a></li>
@@ -8639,6 +8662,7 @@ keywords:
 <li><b>Entry32</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/xcoffcsectauxref/#a2b8f8625b61503b195240c3b8fd57002">llvm::object::XCOFFCsectAuxRef</a></li>
 <li><b>Entry64</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/importedsymbolref/#afb3f3c6a3b8c7a4b810fbdee266b4ee2">llvm::object::ImportedSymbolRef</a></li>
 <li><b>Entry64</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/xcoffcsectauxref/#ae7da193159c907e736508d051d4394e9">llvm::object::XCOFFCsectAuxRef</a></li>
+<li><b>EntryBB</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#adc0b48022847ca44b3868d058cb98686">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>EntryBlock</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-gcovprofiling-cpp-/gcovfunction/#a06bf05cea43b72182c03aefb92abf31e">anonymous{GCOVProfiling.cpp}::GCOVFunction</a></li>
 <li><b>EntryBlock</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-partialinlining-cpp-/functionoutliningmultiregioninfo/outlineregioninfo/#a39774958fed1a644b85c10f17df4a271">anonymous{PartialInlining.cpp}::FunctionOutliningMultiRegionInfo::OutlineRegionInfo</a></li>
 <li><b>EntryBlock_</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-mergeicmps-cpp-/bcecmpchain/#ad636d9cf78417aad22cc8046ebb15202">anonymous{MergeICmps.cpp}::BCECmpChain</a></li>
@@ -8887,6 +8911,7 @@ keywords:
 <li><b>EvalBinop</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/binaryoperation/#ae5750c3eaf0ad9927e4ec13b252296d8">llvm::BinaryOperation</a></li>
 <li><b>EvalMode</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objectsizeopts/#a0c614185ae8ad5ed7bd5ff0aa66f8242">llvm::ObjectSizeOpts</a></li>
 <li><b>EvalOpts</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objectsizeoffsetevaluator/#a916c303cf2d131fdbc6ee7f5fa12bea2">llvm::ObjectSizeOffsetEvaluator</a></li>
+<li><b>EvaluationKind</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a29b6374efc73821625db25650244d87c">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>Evaluator</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/inlinesizeestimatoranalysis/#a15783aae83a1e0d2214fc91660e22e8c">llvm::InlineSizeEstimatorAnalysis</a></li>
 <li><b>EvenFlowDistribution</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/profiparams/#afa5c8536542aef51080617f59b7a4756">llvm::ProfiParams</a></li>
 <li><b>Event</b>: as variable in struct <a href="/web-llvm/docs/api/structs/inprogressentry/#a85aff93b8ba123fb98113db10addb580">InProgressEntry</a></li>
@@ -8941,6 +8966,7 @@ keywords:
 <li><b>Exchange</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-armparalleldsp-cpp-/mulcandidate/#a515a4fd469e9f71db959022a73045b41">anonymous{ARMParallelDSP.cpp}::MulCandidate</a></li>
 <li><b>Exclude</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/gcovoptions/#a82b0da882b862e60f85f88712a182bb3">llvm::GCOVOptions</a></li>
 <li><b>ExcludeArgsFromAggregate</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeextractor/#ab48f25d4f0c09a0d963a9744a14727d8">llvm::CodeExtractor</a></li>
+<li><b>ExcludeArgsFromAggregate</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#a5abe93575e72c30376079d2fb31b40f8">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>ExcludeCompilandFilters</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pdb/lineprinter/#a63635d1c8a471bbef0e752e2b8e15def">llvm::pdb::LinePrinter</a></li>
 <li><b>ExcludeCompilands</b>: as variable in struct <a href="/web-llvm/docs/api/structs/filteroptions/#a99cb9205d334dab56c010ae0c034224b">FilterOptions</a></li>
 <li><b>Excluded</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/elfyaml/sectionheadertable/#a1427a2befbb4d882c35e6bf1d0523192">llvm::ELFYAML::SectionHeaderTable</a></li>
@@ -8960,6 +8986,7 @@ keywords:
 <li><b>Exec</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-sioptimizeexecmasking-cpp-/sioptimizeexecmasking/#a76d8bc6540ee2efcf1fcbb540540b80e">anonymous{SIOptimizeExecMasking.cpp}::SIOptimizeExecMasking</a></li>
 <li><b>Exec</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-siwholequadmode-cpp-/siwholequadmode/#a658f8c38b07fac9073446c2332e9bb83">anonymous{SIWholeQuadMode.cpp}::SIWholeQuadMode</a></li>
 <li><b>ExecBlocks</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-gcovprofiling-cpp-/gcovprofiler/#a40e56b5baa8163bf4cc94e91ee234576">anonymous{GCOVProfiling.cpp}::GCOVProfiler</a></li>
+<li><b>ExecFlags</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs/#a5e8225fcd68743300d12916c15f88fe7">llvm::OpenMPIRBuilder::TargetKernelDefaultAttrs</a></li>
 <li><b>ExecReg</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-silatebranchlowering-cpp-/silatebranchlowering/#abe4c03469be4223c1afdc42f1c72df72">anonymous{SILateBranchLowering.cpp}::SILateBranchLowering</a></li>
 <li><b>ExecReg</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-sioptimizeexecmaskingprera-cpp-/sioptimizeexecmaskingprera/#a726d96b9b4aebdb7601b338ad9a1d913">anonymous{SIOptimizeExecMaskingPreRA.cpp}::SIOptimizeExecMaskingPreRA</a></li>
 <li><b>ExecReg</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/philoweringhelper/#ab28c61f3424d42ec86dca0bce1b10266">llvm::PhiLoweringHelper</a></li>
@@ -8991,6 +9018,7 @@ keywords:
 <li><b>exit</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/regionbase/#a0b573d190986926312a8eaebd8742c22">llvm::RegionBase&lt;Tr&gt;</a></li>
 <li><b>Exit</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/spillplacement/blockconstraint/#a1e36bf5c748d62c8fa43ff7827f94684">llvm::SpillPlacement::BlockConstraint</a></li>
 <li><b>ExitBB</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-moduloschedule-cpp-/kernelrewriter/#a64fb237bebc68c891f974333918f32f1">anonymous{ModuloSchedule.cpp}::KernelRewriter</a></li>
+<li><b>ExitBB</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#adb6b79680b86167fd4ec4f32346e9e58">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>ExitBB</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/vptransformstate/cfgstate/#a36947e5b1b6b334794cd2cdaa2fcede1">llvm::VPTransformState::CFGState</a></li>
 <li><b>ExitBlock</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-loopfuse-cpp-/fusioncandidate/#aa216f276b8d0c8a38aa269b0087d98ea">anonymous{LoopFuse.cpp}::FusionCandidate</a></li>
 <li><b>ExitBlock</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-partialinlining-cpp-/functionoutliningmultiregioninfo/outlineregioninfo/#a75d9b277d1f3e67e231fa5cc24c71ad3">anonymous{PartialInlining.cpp}::FunctionOutliningMultiRegionInfo::OutlineRegionInfo</a></li>
@@ -9296,7 +9324,7 @@ keywords:
 <li><b>ExtTy</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sdnode/loadsdnodebitfields/#a86b9f9fc72e575955239ba71df9f7af0">llvm::SDNode::LoadSDNodeBitfields</a></li>
 <li><b>ExtType</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64fastisel-cpp-/aarch64fastisel/address/#a708ce089996f3e78477575fa395156f2">anonymous{AArch64FastISel.cpp}::AArch64FastISel::Address</a></li>
 </ul>
-<p>1453 entries</p>
+<p>1461 entries</p>
 
 ## - F -
 
@@ -9451,6 +9479,7 @@ keywords:
 <li><b>FalseExecutionCount</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/countedregion/#ae34161eca25262cc1024fe67d2700d0c">llvm::coverage::CountedRegion</a></li>
 <li><b>FalseFolded</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/countedregion/#a41ed2fbd9d5ec5bbddbb75de4324987f">llvm::coverage::CountedRegion</a></li>
 <li><b>FalseProb</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/switchcg/caseblock/#a3cab00e92ff09b90369ee038ef5149cf">llvm::SwitchCG::CaseBlock</a></li>
+<li><b>FalseVal</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect/#adf503d125429e31a517892266dd0104b">anonymous{InstCombineSelect.cpp}::DecomposedSelect</a></li>
 <li><b>FalseWeight</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-structurizecfg-cpp-/condbranchweights/#a558bf9f6f473899a14753bd4df3145f5">anonymous{StructurizeCFG.cpp}::CondBranchWeights</a></li>
 <li><b>FalseX</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-hexagongenmux-cpp-/hexagongenmux/condsetinfo/#a82382c84261f3f5aae4931eda3193aee">anonymous{HexagonGenMux.cpp}::HexagonGenMux::CondsetInfo</a></li>
 <li><b>FAM</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-inlineorder-cpp-/priorityinlineorder/#acc699b672e2fa42f798c9cf1ec1c3f29">anonymous{InlineOrder.cpp}::PriorityInlineOrder&lt;PriorityT&gt;</a></li>
@@ -9835,6 +9864,7 @@ keywords:
 <li><b>FinalIVValue</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/loop/loopbounds/#a974fcbb525c26a433e75b9ed2a3591bd">llvm::Loop::LoopBounds</a></li>
 <li><b>FinalizationLocked</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyld/memorymanager/#a6b624061500506b26ddb02f527db1256">llvm::RuntimeDyld::MemoryManager</a></li>
 <li><b>FinalizationSegments</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/inprocessmemorymanager/ipinflightalloc/#ac3048dc34eed1283780f8bdd06fdca63">llvm::jitlink::InProcessMemoryManager::IPInFlightAlloc</a></li>
+<li><b>FinalizationStack</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a75f3209cae3f3f2700c6bc6e9623f841">llvm::OpenMPIRBuilder</a></li>
 <li><b>finalize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/heap-t/#a13ccab5430ace95c471aacf1fab0fcd6">heap_t</a></li>
 <li><b>Finalize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/epcgenericjitlinkmemorymanager/symboladdrs/#a60f71231831b265f133bc5481f4d259c">llvm::orc::EPCGenericJITLinkMemoryManager::SymbolAddrs</a></li>
 <li><b>Finalize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/epcgenericrtdyldmemorymanager/symboladdrs/#ae3cff0eab2d451c8f7df7e3523640102">llvm::orc::EPCGenericRTDyldMemoryManager::SymbolAddrs</a></li>
@@ -9869,7 +9899,6 @@ keywords:
 <li><b>First</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/interferencecache/blockinterference/#a324392f17f15e47b9ae0a2874bc4c39a">llvm::InterferenceCache::BlockInterference</a></li>
 <li><b>first</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/intervalmapimpl/nodebase/#a56d3e243604b73a27ffb7929cdf71922">llvm::IntervalMapImpl::NodeBase&lt;T1, T2, N&gt;</a></li>
 <li><b>First</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/sectionrange/#a9b628471b2367da11adda9338c2e8656">llvm::jitlink::SectionRange</a></li>
-<li><b>First</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/listseparator/#ae006db899322dd509902f5b3c2e94591">llvm::ListSeparator</a></li>
 <li><b>First</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/dataregion/#a9ae4af765a9582bb16201b2a86d06029">llvm::object::DataRegion&lt;T&gt;</a></li>
 <li><b>First</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/switchcg/bittestblock/#aab093c0fd67bedbdea3cfbdd922dcd9e">llvm::SwitchCG::BitTestBlock</a></li>
 <li><b>First</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/switchcg/jumptableheader/#aa26ad8f7cc9ed4d3050176cc117fe152">llvm::SwitchCG::JumpTableHeader</a></li>
@@ -11075,7 +11104,7 @@ keywords:
 <li><b>fvmlib</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/fvmlib-command/#a83c56885684a6397669420cb9340d181">llvm::MachO::fvmlib_command</a></li>
 <li><b>FwdDecls</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-metadataloader-cpp-/bitcodereadermetadatalist/#a0f9c310000d873fc4de0e161f764362f">anonymous{MetadataLoader.cpp}::BitcodeReaderMetadataList</a></li>
 </ul>
-<p>1773 entries</p>
+<p>1774 entries</p>
 
 ## - G -
 
@@ -12131,6 +12160,7 @@ keywords:
 <li><b>HasMadMacF32Insts</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/amdgpusubtarget/#ae20ef2fb682f8b3cb3e119de73a8160a">llvm::AMDGPUSubtarget</a></li>
 <li><b>HasMadMixInsts</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/amdgpusubtarget/#af4bb1f4c115c9dbd6be786152a46b0cf">llvm::AMDGPUSubtarget</a></li>
 <li><b>HasMAIInsts</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a2f1176e8f488b0bc45c6478cc494e8ba">llvm::GCNSubtarget</a></li>
+<li><b>HasMapper</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#abf6f25bda0380e3e02197c94846cab5a">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>HasMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/vpinterleaverecipe/#ac32519c8a56f356c87a09fdba249f5ac">llvm::VPInterleaveRecipe</a></li>
 <li><b>HasMD5</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugline/contenttypetracker/#ac39a435461d271d9b76742b39f2ea5a4">llvm::DWARFDebugLine::ContentTypeTracker</a></li>
 <li><b>HasMemcpy</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-hexagonloopidiomrecognition-cpp-/hexagonloopidiomrecognize/#a387c86b7eee592dfe9baf9fabfd37db0">anonymous{HexagonLoopIdiomRecognition.cpp}::HexagonLoopIdiomRecognize</a></li>
@@ -12190,6 +12220,8 @@ keywords:
 <li><b>HasNoSdstCMPX</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a8fb3a41719c2219a977c3aa110a29cc8">llvm::GCNSubtarget</a></li>
 <li><b>HasNoSideEffects</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/scalarevolution/loopproperties/#a043b147a681ad63fd2f38c233ee0c114">llvm::ScalarEvolution::LoopProperties</a></li>
 <li><b>HasNoSplitStack</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/asmprinter/#a7ef32414efdf85bccc008d452b9e1b38">llvm::AsmPrinter</a></li>
+<li><b>HasNoWait</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a444b6db9eaff11a4e25c8878f5065306">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
+<li><b>HasNoWait</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#abb0aaa97617824c208f95e218b9fcf6c">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>HasNSAClauseBug</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#a4ae3a84968e835cfb541a62de2007476">llvm::GCNSubtarget</a></li>
 <li><b>HasNSAEncoding</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#ae2847a61e28335ec96f3aba0aa582e23">llvm::GCNSubtarget</a></li>
 <li><b>HasNSAtoVMEMBug</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#abfaf0dbd880bc35fd34db18c5166370c">llvm::GCNSubtarget</a></li>
@@ -12760,7 +12792,7 @@ keywords:
 <li><b>HwStages</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/amdgpupalmetadata/#a684120ab74a620fb65bf37c5e23d01bf">llvm::AMDGPUPALMetadata</a></li>
 <li><b>HybridImageInfoBitfield</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/chpe-metadata/#a0ae5b68fa8ade57a3f31943937e3c2eb">llvm::object::chpe_metadata</a></li>
 </ul>
-<p>1087 entries</p>
+<p>1090 entries</p>
 
 ## - I -
 
@@ -12773,6 +12805,7 @@ keywords:
 <li><b>I</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-pgomemopsizeopt-cpp-/memop/#a3c296b31d6adebb56f4343afe15c91fe">anonymous{PGOMemOPSizeOpt.cpp}::MemOp</a></li>
 <li><b>I</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-selectoptimize-cpp-/selectoptimizeimpl/selectlike/#aa9582d717d8218768a25fc37fa654934">anonymous{SelectOptimize.cpp}::SelectOptimizeImpl::SelectLike</a></li>
 <li><b>I</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-siloadstoreoptimizer-cpp-/siloadstoreoptimizer/combineinfo/#a7d0d4f159fd9eac41cb6df2f0bde39b9">anonymous{SILoadStoreOptimizer.cpp}::SILoadStoreOptimizer::CombineInfo</a></li>
+<li><b>i</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper/#aa4cf4927df54f437187c8208b6f0d324">llvm::AttributeList::index_iterator::int_wrapper</a></li>
 <li><b>I</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/chiarg/#ab737650d2167bc3e9c6037da35abef26">llvm::CHIArg</a></li>
 <li><b>I</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dbgvariablerecord/location-op-iterator/#a4a460c34eebb3b990eac08d49dfc033e">llvm::DbgVariableRecord::location_op_iterator</a></li>
 <li><b>I</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/detail/densesetimpl/constiterator/#a96eaa9669a18c6a8407b462b1450266e">llvm::detail::DenseSetImpl::ConstIterator</a></li>
@@ -13626,7 +13659,7 @@ keywords:
 <li><b>ID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/phivalueswrapperpass/#a4708fb722e00b45eb462bd12feb3773f">llvm::PhiValuesWrapperPass</a></li>
 <li><b>ID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/physicalregisterusageinfowrapperlegacy/#aaf019c18e2d0ec685c734e6ada2d59e7">llvm::PhysicalRegisterUsageInfoWrapperLegacy</a></li>
 <li><b>ID</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/postdominatortreewrapperpass/#a95277b94787d11f1280b4b894c0a14db">llvm::PostDominatorTreeWrapperPass</a></li>
-<li><b>ID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a8403791c6f149578573745f42da4585e">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
+<li><b>ID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#a5eaaa70882c0dffce850cb5855107fbb">llvm::PreservedAnalysisChecker</a></li>
 <li><b>ID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfowrapperpass/#a36c8841d223063771b92580e48a11fa6">llvm::ProfileSummaryInfoWrapperPass</a></li>
 <li><b>Id</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/pseudoprobe/#a1cfaeb1c25b77ca9a6797bff03d2e816">llvm::PseudoProbe</a></li>
 <li><b>ID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ragreedy/#acc1010755cb4b7307ca310cc6d86167f">llvm::RAGreedy</a></li>
@@ -13719,6 +13752,7 @@ keywords:
 <li><b>Identifier</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/omp/assumptionclausemappinginfo/#a5c3e627c29b05e588c79f75a3dbdbb52">llvm::omp::AssumptionClauseMappingInfo</a></li>
 <li><b>IdentifierOverride</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/dumpobjects/#acc0e40c13366e7fcf7bd67031571c360">llvm::orc::DumpObjects</a></li>
 <li><b>IdentityMD</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-valuemapper-cpp-/mapper/#a11e82f25b2a278574e525fab55aaaab2">anonymous{ValueMapper.cpp}::Mapper</a></li>
+<li><b>IdentMap</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a801d4c8626e9914c0bc6b756c64c0730">llvm::OpenMPIRBuilder</a></li>
 <li><b>identOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/cs-codedirectory/#a295dda56637fe38b25f7a1f29d59fd69">llvm::MachO::CS_CodeDirectory</a></li>
 <li><b>identToFunction</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcovfile/#a9335b69a4e2e5eada84e28ba4fe6e52c">llvm::GCOVFile</a></li>
 <li><b>IDFBlocks</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gvnhoist/#a5abb07885d7af927dca924f770ab9453">llvm::GVNHoist</a></li>
@@ -15152,6 +15186,7 @@ keywords:
 <li><b>InternalState</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/md5/#ae8fdc894e9e46e2bdba683177e074832">llvm::MD5</a></li>
 <li><b>InternalState</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sha1/#a3caa4a40771b1a46580b5181cf88cb98">llvm::SHA1</a></li>
 <li><b>InternalState</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sha256/#a268b05f4cf9d80d542a155451312eaf0">llvm::SHA256</a></li>
+<li><b>InternalVars</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aa58c09ca23b31b6bebfa825111dc3923">llvm::OpenMPIRBuilder</a></li>
 <li><b>InterpCtor</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/executionengine/#a6947cede6cdd00042e82b3597606a515">llvm::ExecutionEngine</a></li>
 <li><b>InterProceduralED</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/aaexecutiondomainfunction/#ae24a07850f18b8f5cd2a1fac4c32ee89">anonymous{OpenMPOpt.cpp}::AAExecutionDomainFunction</a></li>
 <li><b>Interval</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/cachepruningpolicy/#a26f65d4efd088dd6f035a970ef350628">llvm::CachePruningPolicy</a></li>
@@ -15383,7 +15418,7 @@ keywords:
 <li><b>isAArch64</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/arm/wineh/exceptiondatarecord/#a233df223bb2d0c05a94506b1cd866e0a">llvm::ARM::WinEH::ExceptionDataRecord</a></li>
 <li><b>isAArch64</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/winexception/#a0d319c75ced62fb57b7fc9399544e759">llvm::WinException</a></li>
 <li><b>IsAArch64</b>: as variable in struct <a href="/web-llvm/docs/api/structs/setccinfoandkind/#a666ed28403d10ad74ae21fab5c70e0da">SetCCInfoAndKind</a></li>
-<li><b>IsAbandoned</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a9cd4ed40f8a35fa001f31ca2c42d701f">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
+<li><b>IsAbandoned</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#a0dbebb5c085cca678ed87c5046958add">llvm::PreservedAnalysisChecker</a></li>
 <li><b>IsAbsolute</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/addressable/#a1928ed1993cc2d77f0586b22eef4be45">llvm::jitlink::Addressable</a></li>
 <li><b>IsActive</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mcelfstreamer/attributesubsection/#af6a0b8c887dbf0aa7b9bf2e03ea9523d">llvm::MCELFStreamer::AttributeSubSection</a></li>
 <li><b>IsAcyclicLatencyLimited</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/schedremainder/#aa3b3fd299929b7553fb7b6414efd8511">llvm::SchedRemainder</a></li>
@@ -15394,6 +15429,7 @@ keywords:
 <li><b>ISAExtension</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/elfyaml/mipsabiflags/#ae51a5e196444e2b14e23310ff8a51b9c">llvm::ELFYAML::MipsABIFlags</a></li>
 <li><b>ISAExtension</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mipsabiflagssection/#ae0e8635d59d901585ea160636163af58">llvm::MipsABIFlagsSection</a></li>
 <li><b>IsAGPR</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-siloadstoreoptimizer-cpp-/siloadstoreoptimizer/combineinfo/#abf348c817e6e15228667742d623283e8">anonymous{SILoadStoreOptimizer.cpp}::SILoadStoreOptimizer::CombineInfo</a></li>
+<li><b>IsAGroup</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a76de91c646227b63a009ae0ca26eb018">llvm::mca::ResourceState</a></li>
 <li><b>IsAIX</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#a093fab9654b4d8829128e983d0fb4e1d">llvm::MCAsmInfo</a></li>
 <li><b>ISALevel</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/elfyaml/mipsabiflags/#acbe8ecc94e356799c0e413530143d1fc">llvm::ELFYAML::MipsABIFlags</a></li>
 <li><b>ISALevel</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mipsabiflagssection/#aa1db766015c0b14f344e1fc9f26f7703">llvm::MipsABIFlagsSection</a></li>
@@ -15878,6 +15914,7 @@ keywords:
 <li><b>IsNoexcept</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/functionsignaturenode/#aa5fd0a955620ac5a1d85d58bee9e986c">llvm::ms_demangle::FunctionSignatureNode</a></li>
 <li><b>IsNoExt</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/isd/argflagsty/#af11bb3cda2651ceb9ac6f166249fab44">llvm::ISD::ArgFlagsTy</a></li>
 <li><b>IsNoExt</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/arglistentry/#a1b7b6eedd166d5a9dce023f4caf3744d">llvm::TargetLoweringBase::ArgListEntry</a></li>
+<li><b>IsNonContiguous</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo/#a63f192a9701952d6ffe90fd19beb0a71">llvm::OpenMPIRBuilder::MapInfosTy::StructNonContiguousInfo</a></li>
 <li><b>IsNonCopyable</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/anonymous-amdgpusplitmodule-cpp-/splitgraph/node/#ae561b8ba07f6738d3e730d259df53d80">llvm::anonymous{AMDGPUSplitModule.cpp}::SplitGraph::Node</a></li>
 <li><b>IsNonIntegral</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/datalayout/pointerspec/#ad846f2e4294b2b7abe1fa835f6890b47">llvm::DataLayout::PointerSpec</a></li>
 <li><b>IsNonNegative</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-basicaliasanalysis-cpp-/castedvalue/#a1a0e1440d27c963222e5b1f84ccf3f8d">anonymous{BasicAliasAnalysis.cpp}::CastedValue</a></li>
@@ -16048,6 +16085,7 @@ keywords:
 <li><b>IsSigned</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/stackentry/#abad9dac281baeaa97b80e530375f00f5">anonymous{ConstraintElimination.cpp}::StackEntry</a></li>
 <li><b>IsSigned</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/fixedpointsemantics/#a6f0b43bc6965ab65054313b6b3482e24">llvm::FixedPointSemantics</a></li>
 <li><b>IsSigned</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mclebfragment/#aa171330cc5de058352cad6939f0492a9">llvm::MCLEBFragment</a></li>
+<li><b>IsSigned</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue/#ae7c1da24621fdb687fa549528f9f48ce">llvm::OpenMPIRBuilder::AtomicOpValue</a></li>
 <li><b>IsSigned</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/recurrencedescriptor/#a7deb2536001ecd9371ac5a241f9f0a65">llvm::RecurrenceDescriptor</a></li>
 <li><b>IsSigned</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targetlowering/makelibcalloptions/#a34d0fd5ae047db9c073452c64b66db44">llvm::TargetLowering::MakeLibCallOptions</a></li>
 <li><b>IsSigned</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/reductionflags/#a88b418509a3b30f3956df7ca82caf160">llvm::TargetTransformInfo::ReductionFlags</a></li>
@@ -16238,6 +16276,7 @@ keywords:
 <li><b>IsVisible</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/localstaticguardvariablenode/#a0e1437b125a1ec0891d597f1a87c3fde">llvm::ms_demangle::LocalStaticGuardVariableNode</a></li>
 <li><b>IsVolatile</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-simemorylegalizer-cpp-/simemopinfo/#a3195bf0a52acfaa3620ccb7f35e05d36">anonymous{SIMemoryLegalizer.cpp}::SIMemOpInfo</a></li>
 <li><b>IsVolatile</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/memintrinsicinfo/#a7d579746ad6df824664d9b17a8528cad">llvm::MemIntrinsicInfo</a></li>
+<li><b>IsVolatile</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue/#a8405ac1a632edb9252a0d46334f45008">llvm::OpenMPIRBuilder::AtomicOpValue</a></li>
 <li><b>IsVolatile</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sdnode/memsdnodebitfields/#a8ef4c37de6c5f34b1b627ccb77171184">llvm::SDNode::MemSDNodeBitfields</a></li>
 <li><b>isVRegCycle</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sunit/#ad11870c750d0016478df39175d3088a1">llvm::SUnit</a></li>
 <li><b>IsVRSavedOnStackMask</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/xcoff/tracebacktable/#a4180c04ed12a601190ba6dd1c650e293">llvm::XCOFF::TracebackTable</a></li>
@@ -16341,7 +16380,7 @@ keywords:
 <li><b>IVPhi</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-indvarsimplify-cpp-/indvarsimplifyvisitor/#ac42a6a84066b761ab26741898f23027d">anonymous{IndVarSimplify.cpp}::IndVarSimplifyVisitor</a></li>
 <li><b>IVUses</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ivusers/#afe21f100c5308cd992db37d5f237d127">llvm::IVUsers</a></li>
 </ul>
-<p>3575 entries</p>
+<p>3582 entries</p>
 
 ## - J -
 
@@ -18445,6 +18484,7 @@ keywords:
 <li><b>LoopInfo</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/moduloscheduleexpandermve/#a4d9902c740e9185da8f0208fb82676f8">llvm::ModuloScheduleExpanderMVE</a></li>
 <li><b>LoopInfo</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/peelingmoduloscheduleexpander/#a9357ad432be24622dd254b420a65a5b9">llvm::PeelingModuloScheduleExpander</a></li>
 <li><b>LoopInfoBroken</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-dfajumpthreading-cpp-/dfajumpthreading/#a41cb730d19ffef4906e3050a1658e1e0">anonymous{DFAJumpThreading.cpp}::DFAJumpThreading</a></li>
+<li><b>LoopInfos</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a418fd65883c81897f472643208a988b4">llvm::OpenMPIRBuilder</a></li>
 <li><b>LoopInsertPts</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-licm-cpp-/looppromoter/#aa0b0347d0f2643c449ef3ccbe224990f">anonymous{LICM.cpp}::LoopPromoter</a></li>
 <li><b>LoopInterleaving</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pipelinetuningoptions/#aca24b802a8802101b5f43ca52ae51c54">llvm::PipelineTuningOptions</a></li>
 <li><b>LoopInvariantRegs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/loopvectorizationcostmodel/registerusage/#a12f1d225b87b9cb583e78478d9ef3b9c">llvm::LoopVectorizationCostModel::RegisterUsage</a></li>
@@ -18482,6 +18522,7 @@ keywords:
 <li><b>LoopStack</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-r600controlflowfinalizer-cpp-/cfstack/#acc36a88519e7d83bbe67bc620a80c2d0">anonymous{R600ControlFlowFinalizer.cpp}::CFStack</a></li>
 <li><b>LoopToCandidates</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-instrprofiling-cpp-/pgocounterpromoter/#abd4f15cbff41f44fcc3e1ef8620d35c2">anonymous{InstrProfiling.cpp}::PGOCounterPromoter</a></li>
 <li><b>LoopToCandidates</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-instrprofiling-cpp-/pgocounterpromoterhelper/#ab6176ebb81c994d2dd7f703e4d1b73e5">anonymous{InstrProfiling.cpp}::PGOCounterPromoterHelper</a></li>
+<li><b>LoopTripCount</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs/#a37f4994f7b33d51c2f25c9b6e787a021">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
 <li><b>LoopUnrolling</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pipelinetuningoptions/#af5b2b612c2769e79040e34bc4be7a77f">llvm::PipelineTuningOptions</a></li>
 <li><b>LoopUsers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/scalarevolution/#ab406e56dc4cb60fee23782a8163f8e06">llvm::ScalarEvolution</a></li>
 <li><b>LoopVectorization</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pipelinetuningoptions/#af94d30491218ab25314dbff8123a9de7">llvm::PipelineTuningOptions</a></li>
@@ -18644,7 +18685,7 @@ keywords:
 <li><b>LVL</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/tailfoldinginfo/#af46a62c534289ff11de343a3d5613202">llvm::TailFoldingInfo</a></li>
 <li><b>LZ</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpu/mimglzmappinginfo/#a28348ffacda47a7b8a8d232d15e80b3a">llvm::AMDGPU::MIMGLZMappingInfo</a></li>
 </ul>
-<p>1728 entries</p>
+<p>1730 entries</p>
 
 ## - M -
 
@@ -18698,6 +18739,7 @@ keywords:
 <li><b>M</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/lto/lto/regularltostate/addedmodule/#a2ef8b5402a0547886cb3bf431aa83deb">llvm::lto::LTO::RegularLTOState::AddedModule</a></li>
 <li><b>M</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/moduleslottracker/#af4cc5cfca3dd35a2357986c1fd347acd">llvm::ModuleSlotTracker</a></li>
 <li><b>M</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/arcmdkindcache/#a672436be02f680814f91457bb86982f3">llvm::objcarc::ARCMDKindCache</a></li>
+<li><b>M</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a535304630869bfe0b7c0a81bb3c44497">llvm::OpenMPIRBuilder</a></li>
 <li><b>M</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/definitiongenerator/#ac933feb4562f64d0bcf93f3e07763fcd">llvm::orc::DefinitionGenerator</a></li>
 <li><b>M</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/epcgenericrtdyldmemorymanager/#a1812b18b47c877024b8ebfe6af1cc6ff">llvm::orc::EPCGenericRTDyldMemoryManager</a></li>
 <li><b>M</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/fdsimpleremoteepctransport/#a0b11b71f3e840934d456edf09d3b6017">llvm::orc::FDSimpleRemoteEPCTransport</a></li>
@@ -18996,6 +19038,7 @@ keywords:
 <li><b>MapIt</b>: as variable in struct <a href="/web-llvm/docs/api/structs/writerstacklevel/#a4218cbd9f7d2fd0386d63e85991ef2f9">WriterStackLevel</a></li>
 <li><b>MapIterator</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/coalescingbitvector/const-iterator/#ae089c33fea2137a48973e827065284d9">llvm::CoalescingBitVector::const_iterator</a></li>
 <li><b>MapKey</b>: as variable in struct <a href="/web-llvm/docs/api/structs/stacklevel/#aec05acf887f731fa8bc0958881070fa3">StackLevel</a></li>
+<li><b>MapNamesArray</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#aff8f3378279256a13c9938a109ef38fe">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>MapOfInstructionMappings</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo/#a24613d27c71fc9afbdf123a8fe968831">llvm::RegisterBankInfo</a></li>
 <li><b>MapOfOperandsMappings</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo/#a68961b55ca0a388313028d387291f2d2">llvm::RegisterBankInfo</a></li>
 <li><b>MapOfPartialMappings</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo/#a3e50a2e023b3326abe501dcaf4110d17">llvm::RegisterBankInfo</a></li>
@@ -19012,6 +19055,7 @@ keywords:
 <li><b>Mapper</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-irmover-cpp-/irlinker/#a80788ee325f4ee998cc0a98347839476">anonymous{IRMover.cpp}::IRLinker</a></li>
 <li><b>Mapper</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier/#aea0f78cbdd47f5f602541e21cbbbd4c7">llvm::IRSimilarity::IRSimilarityIdentifier</a></li>
 <li><b>Mapper</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/mapperjitlinkmemorymanager/#a82e531749c41c3f2499222bccdef2cab">llvm::orc::MapperJITLinkMemoryManager</a></li>
+<li><b>MappersArray</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#a4b54534e64cdf22a09f26ddacebe69ac">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>Mapping</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-addresssanitizer-cpp-/addresssanitizer/#a1cc8bd72eb748c10a54dd1deb3a823e0">anonymous{AddressSanitizer.cpp}::AddressSanitizer</a></li>
 <li><b>Mapping</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-addresssanitizer-cpp-/functionstackpoisoner/#a994ce80af04048616ca5954e257d6723">anonymous{AddressSanitizer.cpp}::FunctionStackPoisoner</a></li>
 <li><b>Mapping</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-addresssanitizer-cpp-/moduleaddresssanitizer/#a20f5d33534b1307da5db5a5df416418a">anonymous{AddressSanitizer.cpp}::ModuleAddressSanitizer</a></li>
@@ -19044,6 +19088,8 @@ keywords:
 <li><b>Maps</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/msgpack/document/#a943cfad5da263fb2b4c509cfa84afee6">llvm::msgpack::Document</a></li>
 <li><b>Maps</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/implsymbolmap/#aeb7bcb0d55a39e1fb23383ac45510824">llvm::orc::ImplSymbolMap</a></li>
 <li><b>MapTy</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-instrorderfile-cpp-/instrorderfile/#a52f8fc5cff26b31216109e2515b7e97f">anonymous{InstrOrderFile.cpp}::InstrOrderFile</a></li>
+<li><b>MapTypesArray</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#abfc59185affff631915c34412a350c8c">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
+<li><b>MapTypesArrayEnd</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#a4fa67b508fb4ba886c018192e5a8d21e">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>MArch</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-riscvisainfo-cpp-/riscvprofile/#a1f593c9bf38d7b22835240d5e0d83097">anonymous{RISCVISAInfo.cpp}::RISCVProfile</a></li>
 <li><b>MArch</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/enginebuilder/#af061530a70e7f7962437ec53c66c4535">llvm::EngineBuilder</a></li>
 <li><b>MArch</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ltocodegenerator/#abb9b28cb9a270260f117c30e6ca036b6">llvm::LTOCodeGenerator</a></li>
@@ -19414,7 +19460,11 @@ keywords:
 <li><b>MaxSVEVectorSizeInBits</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#adbf5d5f04e136fcc8888ff37491c264a">llvm::AArch64Subtarget</a></li>
 <li><b>MaxSymlinkDepth</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/vfs/inmemoryfilesystem/#a581c67f4906221535b1d91295f30b19e">llvm::vfs::InMemoryFileSystem</a></li>
 <li><b>MaxTargetVectorWidthInBits</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/memorydepchecker/#a45b913ea0c21c016337a92b6c47809d4">llvm::MemoryDepChecker</a></li>
+<li><b>MaxTeams</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs/#a6a58730797c8b6b08176e1a402615693">llvm::OpenMPIRBuilder::TargetKernelDefaultAttrs</a></li>
+<li><b>MaxTeams</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs/#a06039fa62681bd554d38d5130a6d0f17">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
 <li><b>MaxTemporalProfTraceLength</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/instrprofwriter/#a5bacb955beb5c43a5af57892fd902600">llvm::InstrProfWriter</a></li>
+<li><b>MaxThreads</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs/#ac75f9d60fb2c1a48f8302f8b3e7f848a">llvm::OpenMPIRBuilder::TargetKernelDefaultAttrs</a></li>
+<li><b>MaxThreads</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs/#a26119d87731909e3af5d026bbe182328">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
 <li><b>MaxUpperBound</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/unrollingpreferences/#afc0d01a3d1fda6a5702b045b4bcfa56c">llvm::TargetTransformInfo::UnrollingPreferences</a></li>
 <li><b>MaxVal</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/densemapinfo-3a192aca07a75a73a86480e72b0c1ee3/#ab317414306d1fccff4ee0e7858c870d6">llvm::DenseMapInfo&lt;DIExpression::FragmentInfo&gt;</a></li>
 <li><b>MaxVecRegSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#aa1a6e405b6b9407ae9ab78f1519b5617">llvm::slpvectorizer::BoUpSLP</a></li>
@@ -20393,6 +20443,9 @@ keywords:
 <li><b>MinSVEVectorSizeInBits</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#ab773b1501fea6965ed8f896ba2e71468">llvm::AArch64Subtarget</a></li>
 <li><b>MinTag</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/detail/pointersumtypehelper/#a4092e609a5f36c3dc8a0b548c5b901db">llvm::detail::PointerSumTypeHelper&lt;TagT, MemberTs&gt;</a></li>
 <li><b>MinTagPointer</b>: as variable in union <a href="/web-llvm/docs/api/unions/llvm/pointersumtype/storaget/#a6dfbe0bc733eaa25638b4228f902c4d6">llvm::PointerSumType::StorageT</a></li>
+<li><b>MinTeams</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs/#a7cd6a102b7b066653e064bea5757ba05">llvm::OpenMPIRBuilder::TargetKernelDefaultAttrs</a></li>
+<li><b>MinTeams</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs/#a3bae7a3945223a4d83da368363d76263">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
+<li><b>MinThreads</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs/#afe08cdc32c046abe3943b1a642c848c9">llvm::OpenMPIRBuilder::TargetKernelDefaultAttrs</a></li>
 <li><b>MinVecRegSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#a9cb0c966edf73d76b32a5ec0fc9d33eb">llvm::slpvectorizer::BoUpSLP</a></li>
 <li><b>MinVectorRegisterBitWidth</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a837e4a0338312af979138355d05834b1">llvm::AArch64Subtarget</a></li>
 <li><b>MinVer</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/requirements/#acc4a39bbb6c0941a2bbc94344e7daa7a">llvm::SPIRV::Requirements</a></li>
@@ -21169,7 +21222,7 @@ keywords:
 <li><b>mWorkGroupSizeHint</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpu/hsamd/kernel/attrs/metadata/#aa6b21313323966f1e9b5517121dd9085">llvm::AMDGPU::HSAMD::Kernel::Attrs::Metadata</a></li>
 <li><b>MyShift</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-siinsertwaitcnts-cpp-/waitcntbrackets/mergeinfo/#ae910020aa7d84d622948d66f81640960">anonymous{SIInsertWaitcnts.cpp}::WaitcntBrackets::MergeInfo</a></li>
 </ul>
-<p>2519 entries</p>
+<p>2531 entries</p>
 
 ## - N -
 
@@ -21709,6 +21762,7 @@ keywords:
 <li><b>Names</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeview/typetablecollection/#a437d4313ff8d0ee370f41da2bb205f1c">llvm::codeview::TypeTableCollection</a></li>
 <li><b>Names</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelator/#a8708967ee1eb68916b2b81d12dd2b17d">llvm::InstrProfCorrelator</a></li>
 <li><b>Names</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/backrefcontext/#a5e06716af0b11712cb947e2fbe0fd76b">llvm::ms_demangle::BackrefContext</a></li>
+<li><b>Names</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#a87b3b8488a8b835c326ac389bed33f14">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>Names</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/sampleprofilereadergcc/#a4e59b0f8cf7428c8692ef42b6bc36a1b">llvm::sampleprof::SampleProfileReaderGCC</a></li>
 <li><b>Names</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvmorccdependencemappair/#ac5189d2c4ab9ad944f768a4f59f3b79e">LLVMOrcCDependenceMapPair</a></li>
 <li><b>Names2BitmaskTargetFlags</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/pertargetmiparsingstate/#a083e8380f80c1f8d6643446a89ea9e62">llvm::PerTargetMIParsingState</a></li>
@@ -21977,7 +22031,6 @@ keywords:
 <li><b>Next</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sduse/#a510953442ce792594aeaf9ec7dff1350">llvm::SDUse</a></li>
 <li><b>Next</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/selectiondag/dagupdatelistener/#a7ccf5c27bb0d12828404e9ca69677bb2">llvm::SelectionDAG::DAGUpdateListener</a></li>
 <li><b>Next</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/sparsemultiset/smsnode/#a6171daaf035645bea986c148e088d24a">llvm::SparseMultiSet::SMSNode</a></li>
-<li><b>Next</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#ad733b38c173a9670d388e107760ee260">llvm::SplittingIterator</a></li>
 <li><b>Next</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/target/#abbc0ab66f80da2b0f9003cb0a7ce565e">llvm::Target</a></li>
 <li><b>Next</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/timer/#ab926ece238936d787801b0bcbab87684">llvm::Timer</a></li>
 <li><b>Next</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/timergroup/#afe6b074360f1b0698d724f9703c8759b">llvm::TimerGroup</a></li>
@@ -22246,6 +22299,7 @@ keywords:
 <li><b>NoNaN</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/reductionflags/#af084eefe1500c11c145b42e10381e99d">llvm::TargetTransformInfo::ReductionFlags</a></li>
 <li><b>NoNaNs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/vprecipewithirflags/fastmathflagsty/#a46901481eecd35eb438024fc08cca61d">llvm::VPRecipeWithIRFlags::FastMathFlagsTy</a></li>
 <li><b>NoNaNsFPMath</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetoptions/#aaf9cc05758a26e784f7cfa554e76f175">llvm::TargetOptions</a></li>
+<li><b>NonContigInfo</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#add3dff2ccb3dbfbc0659e74acec6c421">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>NonDebugSections</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-debuggersupportplugin-cpp-/machodebugobjectsynthesizer/#aada4976b50a8900e789b698ff5331034">anonymous{DebuggerSupportPlugin.cpp}::MachODebugObjectSynthesizer&lt;MachOTraits&gt;</a></li>
 <li><b>nonFiniteBehavior</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/fltsemantics/#a627fc7f98b788a5ed6da4856a414736b">llvm::fltSemantics</a></li>
 <li><b>NonImportedCallers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/importedfunctionsinliningstatistics/#a213b28d3482cab59a4dae1f8f646c1de">llvm::ImportedFunctionsInliningStatistics</a></li>
@@ -22333,7 +22387,6 @@ keywords:
 <li><b>notInlinedCallInfo</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-sampleprofile-cpp-/sampleprofileloader/#a09c53287a76f1544e782601e437149be">anonymous{SampleProfile.cpp}::SampleProfileLoader</a></li>
 <li><b>NotNullSucc</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-implicitnullchecks-cpp-/implicitnullchecks/nullcheck/#acafc35938e327e7f1339928d582887a8">anonymous{ImplicitNullChecks.cpp}::ImplicitNullChecks::NullCheck</a></li>
 <li><b>NotOpc</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/sgprspillbuilder/#a780ff1cb44df81c9895eb346779f6413">llvm::SGPRSpillBuilder</a></li>
-<li><b>NotPreservedAnalysisIDs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a37b20de6fd9783d24921c263d127a291">llvm::PreservedAnalyses</a></li>
 <li><b>NotProvablyAllocatableNodes</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pbqp/regalloc/regallocsolverimpl/#a250d83710e0a2e7bccb216d7cd72e215">llvm::PBQP::RegAlloc::RegAllocSolverImpl</a></li>
 <li><b>NoTrapAfterNoreturn</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-nvptxlowerunreachable-cpp-/nvptxlowerunreachable/#a1a2bf484e98c335ae4c1b6db38df06c6">anonymous{NVPTXLowerUnreachable.cpp}::NVPTXLowerUnreachable</a></li>
 <li><b>NoTrapAfterNoreturn</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetoptions/#acd83fce25de1ac9f6c975135a8235c22">llvm::TargetOptions</a></li>
@@ -22427,6 +22480,7 @@ keywords:
 <li><b>NumAssumptionUses</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/aaqueryinfo/cacheentry/#aee2e591e46b34c4629b9ef78066a6ae5">llvm::AAQueryInfo::CacheEntry</a></li>
 <li><b>NumAssumptionUses</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aaqueryinfo/#aa8a0539d2cf9c0e654fb4390f657e28b">llvm::AAQueryInfo</a></li>
 <li><b>NumAttrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributesetnode/#a470bb92fd293a86e8163e02793c8b34a">llvm::AttributeSetNode</a></li>
+<li><b>NumAttrSets</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/#ae30b475d00e07682d65aeeda80903bf8">llvm::AttributeList::index_iterator</a></li>
 <li><b>NumAttrSets</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#ae7dd97a02e9d84eb8d8e6145b55c2923">llvm::AttributeListImpl</a></li>
 <li><b>NumBadIndices</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-typestreammerger-cpp-/typestreammerger/#ae87706637a05e846e4f174f31b73de65">anonymous{TypeStreamMerger.cpp}::TypeStreamMerger</a></li>
 <li><b>NumBaseAdds</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/lsrcost/#ad56d6a45ed26384d00b88e431e6e9181">llvm::TargetTransformInfo::LSRCost</a></li>
@@ -22496,6 +22550,7 @@ keywords:
 <li><b>NumberOfNamePointers</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/export-directory-table-entry/#a6d07d74600d7ddd538e9b9fa1ffc8013">llvm::object::export_directory_table_entry</a></li>
 <li><b>NumberOfObjects</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/machouniversalbinary/#a9c883e994e6ea4ee915e84f8e4f4ab4f">llvm::object::MachOUniversalBinary</a></li>
 <li><b>NumberOfProcessors</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/minidump/systeminfo/#a8b583419a15ba1e4e3af873ea0656c84">llvm::minidump::SystemInfo</a></li>
+<li><b>NumberOfPtrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#a1e6414b31c1189036465a51cac853be7">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>NumberOfRealInlines</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/importedfunctionsinliningstatistics/inlinegraphnode/#a023fed8bbf5fc4285e508d608f31f9e4">llvm::ImportedFunctionsInliningStatistics::InlineGraphNode</a></li>
 <li><b>NumberOfRelocationItems</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/coff/dosheader/#a46030e7c8804a58bd0528a3d0e949385">llvm::COFF::DOSHeader</a></li>
 <li><b>NumberOfRelocationItems</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/dos-header/#a1edbe17b39936722209eedb403fa919d">llvm::object::dos_header</a></li>
@@ -22747,6 +22802,7 @@ keywords:
 <li><b>NumItems</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/stringmapimpl/#a55b46867823a76d3b6675c72965f001a">llvm::StringMapImpl</a></li>
 <li><b>NumItemsInBucketLeft</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ondiskiterablechainedhashtable/iterator-base/#ad4388cb4317ef2b460434267e26dc456">llvm::OnDiskIterableChainedHashTable::iterator_base</a></li>
 <li><b>NumIterations</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-stackcoloring-cpp-/stackcoloring/#a3c9ca929b48b028ea79a547cf8ff98f7">anonymous{StackColoring.cpp}::StackColoring</a></li>
+<li><b>NumIterations</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#a9289b4e3e6193c6848534421a1f6d325">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>NumIVMuls</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/targettransforminfo/lsrcost/#a1cc611760ab739d87bf545a55dcea72b">llvm::TargetTransformInfo::LSRCost</a></li>
 <li><b>NumKernargPreloadSGPRs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnusersgprusageinfo/#aa3ce488bce3066ba6ae6c6cca26878e4">llvm::GCNUserSGPRUsageInfo</a></li>
 <li><b>NumLanes</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/lookaheadheuristics/#aead5d5911835293a60bf715764aede28">llvm::slpvectorizer::BoUpSLP::LookAheadHeuristics</a></li>
@@ -22771,7 +22827,7 @@ keywords:
 <li><b>NumLoops</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-loopextractor-cpp-/loopextractorlegacypass/#a5ae3cadcbbbacf6f3d425dd74ddda1bf">anonymous{LoopExtractor.cpp}::LoopExtractorLegacyPass</a></li>
 <li><b>NumLoops</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/loopextractorpass/#a42a09a12830a0e7321274c369e780427">llvm::LoopExtractorPass</a></li>
 <li><b>NumLostDebugLocs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/lostdebuglocobserver/#a28142645d96b19fbfd2c5247fbcf34da">llvm::LostDebugLocObserver</a></li>
-<li><b>NumLowBitsAvailable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/compileunitpointertraits/#a7a2ee20aa194f23ab8c515f7a17fbbc1">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy::CompileUnitPointerTraits</a></li>
+<li><b>NumLowBitsAvailable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits/#ae39ecf317e218a769add75bb8c3c66c1">llvm::dwarf_linker::parallel::DependencyTracker::CompileUnitPointerTraits</a></li>
 <li><b>NumLowBitsAvailable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/functionpointerliketypetraits/#a9270de90d202ecf2e3c2b99d4888eed3">llvm::FunctionPointerLikeTypeTraits&lt;Alignment, FunctionPointerT&gt;</a></li>
 <li><b>NumLowBitsAvailable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/globalsaaresult/functioninfo/alignedmappointertraits/#a3153cf7f8037acf9541a0fc5a036c49a">GlobalsAAResult::FunctionInfo::AlignedMapPointerTraits</a></li>
 <li><b>NumLowBitsAvailable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/intervalmapimpl/noderef/cachealignedpointertraits/#a608cd016d34b0902023dba8efb6a6992">llvm::IntervalMapImpl::NodeRef::CacheAlignedPointerTraits</a></li>
@@ -22954,9 +23010,12 @@ keywords:
 <li><b>NumSystemSGPRs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#a2c5469c2f33fde34a4d51ad03b90606d">llvm::SIMachineFunctionInfo</a></li>
 <li><b>NumTableImports</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-wasmobjectwriter-cpp-/wasmobjectwriter/#ae33b7a3d7efe5c88b18d8c6a8c305322">anonymous{WasmObjectWriter.cpp}::WasmObjectWriter</a></li>
 <li><b>NumTagImports</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-wasmobjectwriter-cpp-/wasmobjectwriter/#a661d613ca42f7af5cc4a782e4d9bbe70">anonymous{WasmObjectWriter.cpp}::WasmObjectWriter</a></li>
+<li><b>NumTargetItems</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#ab406e5f23f9a8061483e9d879708e58b">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>NumTargetRegs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aggressiveantidepstate/#ae5db545f6beb24a07508ca78e298ac8e">llvm::AggressiveAntiDepState</a></li>
+<li><b>NumTeams</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#ac5718af182d3976468a66ffef21caefd">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>NumTerminators</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-systemzlongbranch-cpp-/mbbinfo/#abd3053f504f92defc5a048b143fe5393">anonymous{SystemZLongBranch.cpp}::MBBInfo</a></li>
 <li><b>NumTestVectors</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/coverage/mcdc/tvidxbuilder/#ae40a1dc93bf1f50f9198eee9cc596564">llvm::coverage::mcdc::TVIdxBuilder</a></li>
+<li><b>NumThreads</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#a565226b20a62efa516b5f5b69af983dc">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>NumThreadsX</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/v2/runtimeinfo/#adfcc4bbf6d26cabb48469bd63fcb4b32">llvm::dxbc::PSV::v2::RuntimeInfo</a></li>
 <li><b>NumThreadsX</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dxil/entryproperties/#ade0e0b49d3f1bf9679cf66b2f9735fa7">llvm::dxil::EntryProperties</a></li>
 <li><b>NumThreadsY</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dxbc/psv/v2/runtimeinfo/#a41e762c795aac1b5f31ba590755ef72d">llvm::dxbc::PSV::v2::RuntimeInfo</a></li>
@@ -23032,7 +23091,7 @@ keywords:
 <li><b>NW</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/offsetresult/#af66701208dc6bbeceef777b36e6f1f45">anonymous{ConstraintElimination.cpp}::OffsetResult</a></li>
 <li><b>NWFlags</b>: as variable in struct <a href="/web-llvm/docs/api/structs/basicaaresult/decomposedgep/#abf9633eb0bf2cfdf1aa958070d1c0a0d">BasicAAResult::DecomposedGEP</a></li>
 </ul>
-<p>1857 entries</p>
+<p>1863 entries</p>
 
 ## - O -
 
@@ -23187,6 +23246,7 @@ keywords:
 <li><b>OffloadEntriesDeviceGlobalVar</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#a49c225018cdcdaadd602cc74d738893b">llvm::OffloadEntriesInfoManager</a></li>
 <li><b>OffloadEntriesTargetRegion</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#a2cc82ccba01900ab3ad0d002589f0fa4">llvm::OffloadEntriesInfoManager</a></li>
 <li><b>OffloadEntriesTargetRegionCount</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#ad7afcc67060216ff841fccef7b091607">llvm::OffloadEntriesInfoManager</a></li>
+<li><b>OffloadInfoManager</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#aed2a8b469e9884788eef400fbc892dd3">llvm::OpenMPIRBuilder</a></li>
 <li><b>OffloadingEntriesNum</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/offloadentriesinfomanager/#a4a921193c2e2d5a6499b14834f6acd5e">llvm::OffloadEntriesInfoManager</a></li>
 <li><b>OffloadKind</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/offloadyaml/binary/member/#a3bedf6d96a5d2c18afe9149ebb17b71d">llvm::OffloadYAML::Binary::Member</a></li>
 <li><b>OffParts</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-amdgpulowerbufferfatpointers-cpp-/splitptrstructs/#ae3375bb6ee868eab4d1a0b2a78e3ee36">anonymous{AMDGPULowerBufferFatPointers.cpp}::SplitPtrStructs</a></li>
@@ -23493,6 +23553,7 @@ keywords:
 <li><b>Offsets</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/functionsummary/paramaccess/call/#a28a3f82560c4f126f0b799f1ef5ce210">llvm::FunctionSummary::ParamAccess::Call</a></li>
 <li><b>Offsets</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvoptions/lvselect/#a586b05364eaae98f397a397f1abfa579">llvm::logicalview::LVOptions::LVSelect</a></li>
 <li><b>Offsets</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/lowertypetests/bitsetbuilder/#aa74e4e2e9b72748cd2b65915711b006c">llvm::lowertypetests::BitSetBuilder</a></li>
+<li><b>Offsets</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo/#a279b64a58a905fae32a957b2e0036b6a">llvm::OpenMPIRBuilder::MapInfosTy::StructNonContiguousInfo</a></li>
 <li><b>Offsets</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/remarks/parsedstringtable/#a43fd6579c3145b4bd9cb2fe8fda0838b">llvm::remarks::ParsedStringTable</a></li>
 <li><b>OffsetSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-x86asmbackend-cpp-/darwinx86asmbackend/#a5d7394c757ac97af183322992c888655">anonymous{X86AsmBackend.cpp}::DarwinX86AsmBackend</a></li>
 <li><b>OffsetStart</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/codeview/localvariableaddrrange/#a546632ccb8b0a49c435682ec3e89a244">llvm::codeview::LocalVariableAddrRange</a></li>
@@ -24468,6 +24529,7 @@ keywords:
 <li><b>OutEdges</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-gcovprofiling-cpp-/gcovblock/#a691cbd9cc5fd2b37003f67eaaa16dc46">anonymous{GCOVProfiling.cpp}::GCOVBlock</a></li>
 <li><b>OutEdges</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-pgoctxprofflattening-cpp-/profileannotator/bbinfo/#a1dcb02ed04864a6f098409c8dfa9499f">anonymous{PGOCtxProfFlattening.cpp}::ProfileAnnotator::BBInfo</a></li>
 <li><b>OutEdges</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-pgoinstrumentation-cpp-/pgousebbinfo/#aabfaf73999a9880b25ff9b739f60b14d">anonymous{PGOInstrumentation.cpp}::PGOUseBBInfo</a></li>
+<li><b>OuterAllocaBB</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#aed0779b309d9a705e9b78adacc839875">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>OuterAM</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/outeranalysismanagerproxy/#ac4cb329debaa1e7d9b92e6bd4ad884a4">llvm::OuterAnalysisManagerProxy&lt;AnalysisManagerT, IRUnitT, ExtraArgTs&gt;</a></li>
 <li><b>OuterAM</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/outeranalysismanagerproxy/result/#a47025ecd0a05f66a1fa526676d3f80c7">llvm::OuterAnalysisManagerProxy::Result</a></li>
 <li><b>OuterAnalysisInvalidationMap</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/outeranalysismanagerproxy/result/#a2ceef85a4a025a9d8b5f3e46e01f0806">llvm::OuterAnalysisManagerProxy::Result</a></li>
@@ -24513,6 +24575,7 @@ keywords:
 <li><b>OutlineFromLinkODRs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/iroutliner/#a717a443b3e21b0442a79b4677d2b0d5d">llvm::IROutliner</a></li>
 <li><b>OutlineFromLinkOnceODRs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-machineoutliner-cpp-/machineoutliner/#a45c2e1dd74ff36083e927139a76cc651">anonymous{MachineOutliner.cpp}::MachineOutliner</a></li>
 <li><b>OutlineFunctionSamples</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sampleprofileloaderbaseimpl/#a28a1e350b54691c575efa482bfc72140">llvm::SampleProfileLoaderBaseImpl&lt;FT&gt;</a></li>
+<li><b>OutlineInfos</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a79e8ec8cdc9299c9bab67b625e6578c5">llvm::OpenMPIRBuilder</a></li>
 <li><b>OutlineRepeatedNum</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-machineoutliner-cpp-/machineoutliner/#a98cbe4fb24d1ca4e8e4a2f747d5f3841">anonymous{MachineOutliner.cpp}::MachineOutliner</a></li>
 <li><b>OutlinerLeafDescendants</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/suffixtree/#af73cec98a8c1f4c57f72cdd127716536">llvm::SuffixTree</a></li>
 <li><b>OutlinerLeafDescendants</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/suffixtree/repeatedsubstringiterator/#a2ca3fef172c637fe5f61867c3bdd100b">llvm::SuffixTree::RepeatedSubstringIterator</a></li>
@@ -24654,7 +24717,7 @@ keywords:
 <li><b>OWriter</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/wincoffwriter/#a07020e5970f6cd969ef207f11670e1ef">llvm::WinCOFFWriter</a></li>
 <li><b>Oz</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/optimizationlevel/#a1e916712888d6a2d3952834c126460e7">llvm::OptimizationLevel</a></li>
 </ul>
-<p>1616 entries</p>
+<p>1620 entries</p>
 
 ## - P -
 
@@ -24745,7 +24808,7 @@ keywords:
 <li><b>P9PipelineFlushEstimate</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/ppcttiimpl/#a6b47f55029778253ccb3757c11867129">llvm::PPCTTIImpl</a></li>
 <li><b>PA</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-objcarccontract-cpp-/objcarccontract/#af4ba6cf634c0ebc116e4d46210739167">anonymous{ObjCARCContract.cpp}::ObjCARCContract</a></li>
 <li><b>PA</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-objcarcopts-cpp-/objcarcopt/#a567ad30d7e9cd356f717dc87256acd8e">anonymous{ObjCARCOpts.cpp}::ObjCARCOpt</a></li>
-<li><b>PA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker/#a90c91b1d13ea50f6f8d5aa54f7bff22e">llvm::PreservedAnalyses::PreservedAnalysisChecker</a></li>
+<li><b>PA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker/#ada0cd761cb1a9c556126040064e36184">llvm::PreservedAnalysisChecker</a></li>
 <li><b>Pack</b>: as variable in class <a href="/web-llvm/docs/api/classes/foldexpr/#a355f3fb45166555559450e18c0d951fc">FoldExpr</a></li>
 <li><b>Pack</b>: as variable in class <a href="/web-llvm/docs/api/classes/sizeofparampackexpr/#ae1005c8e40e57e57da2231c05ba34495">SizeofParamPackExpr</a></li>
 <li><b>Packed</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/asanaccessinfo/#ac266711cabbe76782e3e68d0ad07f120">llvm::ASanAccessInfo</a></li>
@@ -25449,6 +25512,7 @@ keywords:
 <li><b>PId</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/xray/yamlxrayrecord/#ad77887eb14e5ba5236bfe52fa8e5cce8">llvm::xray::YAMLXRayRecord</a></li>
 <li><b>Pieces</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreeleaf/#ae5730d96d5d30aebe76a1e4f1dc99ae9">anonymous{RewriteRope.cpp}::RopePieceBTreeLeaf</a></li>
 <li><b>pImpl</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attribute/#a55318c4d90472ba993547b9c6c078755">llvm::Attribute</a></li>
+<li><b>pImpl</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/attributelist/#af1343a33d10b62461677274e4b354eaa">llvm::AttributeList</a></li>
 <li><b>PImpl</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/lazyvalueinfo/#a7d2a787f0a15bf32d7c276299e8d83ca">llvm::LazyValueInfo</a></li>
 <li><b>PImpl</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/livedebugvariables/#ab49b0b43512b33c6902403e3bd48eb82">llvm::LiveDebugVariables</a></li>
 <li><b>pImpl</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/llvmcontext/#aa142c8c536b95dd8e8a243cb67b57a80">llvm::LLVMContext</a></li>
@@ -25554,7 +25618,9 @@ keywords:
 <li><b>PointerOp</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/patternmatch/ptradd-match/#ad6ee4750e8933c73cf4d224ed4d5ff8b">llvm::PatternMatch::PtrAdd_match&lt;PointerOpTy, OffsetOpTy&gt;</a></li>
 <li><b>PointerOptionMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeview/pointerrecord/#a244133c5dc0a7aa634d4c65196f57ff1">llvm::codeview::PointerRecord</a></li>
 <li><b>PointerReloc</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyldcoff/#a5096736268d1d9cb3be7c544fa9546f9">llvm::RuntimeDyldCOFF</a></li>
+<li><b>Pointers</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#ac3fbb78e0f7d3e62a8dc557721b761c2">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>Pointers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/runtimepointerchecking/#aa6ad96a1c2591e0a61c92e0be5776978">llvm::RuntimePointerChecking</a></li>
+<li><b>PointersArray</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#a44027c71c6a6a9a4111594eeb16da30e">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>PointerSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-stacksafetyanalysis-cpp-/stacksafetylocalanalysis/#a1bb49c08e40b76e3bac0caae87386192">anonymous{StackSafetyAnalysis.cpp}::StackSafetyLocalAnalysis</a></li>
 <li><b>PointerSize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/jitlink/compactunwindtraits/#a184217f5650b46b8dcee5c2c0536199e">llvm::jitlink::CompactUnwindTraits&lt;CRTPImpl, PtrSize&gt;</a></li>
 <li><b>PointerSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/jitlink/ehframeedgefixer/#acd947a4ca896323d74cf4cbfec6a7735">llvm::jitlink::EHFrameEdgeFixer</a></li>
@@ -25682,6 +25748,7 @@ keywords:
 <li><b>PostOrder</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-adce-cpp-/blockinfotype/#a6ab4ca075b615d446b799eb371096be8">anonymous{ADCE.cpp}::BlockInfoType</a></li>
 <li><b>PostOrderNumbers</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-deadstoreelimination-cpp-/dsestate/#a84c6b1abd4690a7185fa71371a4e523e">anonymous{DeadStoreElimination.cpp}::DSEState</a></li>
 <li><b>PostOrderRefSCCs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/#ae2037bb0adc41d20b991f55a5b182534">llvm::LazyCallGraph</a></li>
+<li><b>PostOutlineCB</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo/#a0b8f73f7987421a24a842d3e2633278d">llvm::OpenMPIRBuilder::OutlineInfo</a></li>
 <li><b>PostponedGathers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#a7a9dcf5bc2ba583e66567329dbfd1396">llvm::slpvectorizer::BoUpSLP</a></li>
 <li><b>PostPromoteModuleHook</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/lto/config/#a929cce8a073bdcefff79d854deedb7ed">llvm::lto::Config</a></li>
 <li><b>PostPromotionWorklist</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-sroa-cpp-/sroa/#a1aae3849009fdcd89acb4c5bd60f7a64">anonymous{SROA.cpp}::SROA</a></li>
@@ -25941,7 +26008,6 @@ keywords:
 <li><b>Preserved</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/analysisusage/#a7d80ecdab831a4832c10772885b6f870">llvm::AnalysisUsage</a></li>
 <li><b>PreserveDates</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/commonconfig/#a1596e949faf0fab36f10c5c55492ad3d">llvm::objcopy::CommonConfig</a></li>
 <li><b>PreservedCFGChecker</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/standardinstrumentations/#a9aca010895004d4d1eeacf4d0ebf13ce">llvm::StandardInstrumentations</a></li>
-<li><b>PreservedIDs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#ae8b1077ed88229e6b2a24bbea9292807">llvm::PreservedAnalyses</a></li>
 <li><b>PreservedSymbols</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#a854c1995ff7a992a7cbd21d06f32390c">llvm::ThinLTOCodeGenerator</a></li>
 <li><b>PreserveLCSSA</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-hardwareloops-cpp-/hardwareloopsimpl/#a810dcf9ef62793eed0fbe15fa5068022">anonymous{HardwareLoops.cpp}::HardwareLoopsImpl</a></li>
 <li><b>PreserveLCSSA</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-ppcloopinstrformprep-cpp-/ppcloopinstrformprep/#a6262994b83787b1d122d53aba58fa92f">anonymous{PPCLoopInstrFormPrep.cpp}::PPCLoopInstrFormPrep</a></li>
@@ -26112,6 +26178,7 @@ keywords:
 <li><b>PrivateSegmentWaveByteOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpufunctionarginfo/#a62ee299b4c716abdc806cd12ff8cd007">llvm::AMDGPUFunctionArgInfo</a></li>
 <li><b>PrivateSegmentWaveByteOffset</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#a94d32e1d6a5a9f45264fda16a3eb87e2">llvm::SIMachineFunctionInfo</a></li>
 <li><b>PrivateSegmentWaveByteOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/yaml/siargumentinfo/#a15a48fa21d3f8f742377af427cf0ee5b">llvm::yaml::SIArgumentInfo</a></li>
+<li><b>PrivateVariable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a63498704b583a96137c70ed7172f1ec3">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>PrivatizableType</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-attributorattributes-cpp-/aaprivatizableptrimpl/#a35dd1e53b0ddedfaabeb2bd0a4ea27e7">anonymous{AttributorAttributes.cpp}::AAPrivatizablePtrImpl</a></li>
 <li><b>prng</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-metarenamer-cpp-/renamer/#a8ee6d62ba42d6993fc06e24ce07c1d0d">anonymous{MetaRenamer.cpp}::Renamer</a></li>
 <li><b>Prob</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/pgoanalysismap/pgobbentry/successorentry/#a5a9ed8bc8d6e7878b0677ce1bbd66cd4">llvm::object::PGOAnalysisMap::PGOBBEntry::SuccessorEntry</a></li>
@@ -26166,6 +26233,7 @@ keywords:
 <li><b>ProcName</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/timetraceprofiler/#aaae58325f44d45fe6b11c8710af37ea1">llvm::TimeTraceProfiler</a></li>
 <li><b>ProcNames</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mcsubtargetinfo/#ad7118621c50bb55b5e242dffd677b0bd">llvm::MCSubtargetInfo</a></li>
 <li><b>ProcReleaseAtCycles</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/#a99a8b2aa73c50c31e8f1064e51b323f2">llvm::MachineTraceMetrics</a></li>
+<li><b>ProcResID2Mask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a6a3fbf9aee5e9773016223f495f8e0c3">llvm::mca::ResourceManager</a></li>
 <li><b>ProcResourceCounters</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/systemzhazardrecognizer/#aa26f64ed9c85aded2324baf7a3cf9749">llvm::SystemZHazardRecognizer</a></li>
 <li><b>ProcResourceDepths</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/ensemble/#a44e089a094ba750d7a5742532937ddb5">llvm::MachineTraceMetrics::Ensemble</a></li>
 <li><b>ProcResourceDescIndex</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a4d986b91e554d8aecae6e4334adbba3a">llvm::mca::ResourceState</a></li>
@@ -26174,6 +26242,7 @@ keywords:
 <li><b>ProcResourceMasks</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/instrbuilder/#a1074c1d63fb60a9fd9e815bea83702e8">llvm::mca::InstrBuilder</a></li>
 <li><b>ProcResourceMasks</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/resourcemanager/#a63b137553584b6d48d736353c29ff854">llvm::ResourceManager</a></li>
 <li><b>ProcResourceTable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mcschedmodel/#aa0ee2bb9fa1d41b69c587580e157f6fa">llvm::MCSchedModel</a></li>
+<li><b>ProcResUnitMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a553465efb94f9f5dc6f9fe1d8a24b346">llvm::mca::ResourceManager</a></li>
 <li><b>ProducedBinaries</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#adf368ac932f7f8761ae0ec036eff6bff">llvm::ThinLTOCodeGenerator</a></li>
 <li><b>ProducedBinaryFiles</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator/#a8ea7f0ec3700644b725b4551b2d9c2f0">llvm::ThinLTOCodeGenerator</a></li>
 <li><b>ProduceNonFlagSettingCondBr</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-aarch64instructionselector-cpp-/aarch64instructionselector/#aabe4495aade98de335d1a4a45ad1465a">anonymous{AArch64InstructionSelector.cpp}::AArch64InstructionSelector</a></li>
@@ -26496,7 +26565,7 @@ keywords:
 <li><b>pVal</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/apint/#a23b5d5d53d9a7a8d473b61cd78b1a543">llvm::APInt</a></li>
 <li><b>PVConstants</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/llvmcontextimpl/#a3887b5bd85846ac49e356acceac66bed">llvm::LLVMContextImpl</a></li>
 </ul>
-<p>1836 entries</p>
+<p>1842 entries</p>
 
 ## - Q -
 
@@ -26913,6 +26982,7 @@ keywords:
 <li><b>ReadyBlocks</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sischeduleblockscheduler/#aafbe5e8ffd20a53cd45924e7938801dc">llvm::SIScheduleBlockScheduler</a></li>
 <li><b>ReadyInsts</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/slpvectorizer/boupslp/blockscheduling/#a2c9dd985c740e8cf960c1e7e39e600dd">llvm::slpvectorizer::BoUpSLP::BlockScheduling</a></li>
 <li><b>ReadyList</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/scheduler/#af51a5db50b03e4d90b83a4feb412f207">llvm::sandboxir::Scheduler</a></li>
+<li><b>ReadyMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#af70002b5ef6b35c0e992c99b78c182a9">llvm::mca::ResourceState</a></li>
 <li><b>ReadyQ</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-machinescheduler-cpp-/ilpscheduler/#a1bf2948006f095427c467c457d6607a6">anonymous{MachineScheduler.cpp}::ILPScheduler</a></li>
 <li><b>ReadySet</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#ac1494329e19bfae43a2fefca73aedd82">llvm::mca::Scheduler</a></li>
 <li><b>ReadyToParseRemarks</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/remarks/bitstreamremarkparser/#af9f1e6a87ddd2ec08cedc692e87bf3c4">llvm::remarks::BitstreamRemarkParser</a></li>
@@ -27103,6 +27173,8 @@ keywords:
 <li><b>ReducibleCycleHeaders</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/modifiedpostorder/#abbd9a41b844050d6a94443c524b9039e">llvm::ModifiedPostOrder&lt;ContextT&gt;</a></li>
 <li><b>Reduction</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/partialreductionchain/#a7a361f16955c8555edbee19fe966bff4">llvm::PartialReductionChain</a></li>
 <li><b>ReductionBitWidth</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/slpvectorizer/boupslp/#ac8c4611dde12401c1a83394bc6e0f0d0">llvm::slpvectorizer::BoUpSLP</a></li>
+<li><b>ReductionGen</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a3fa70db8a68df256973daa02f87133b1">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
+<li><b>ReductionGenClang</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a6a824a78a70fdb0c3b258f3d93ffa071">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>ReductionInfo</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-complexdeinterleavingpass-cpp-/complexdeinterleavinggraph/#aa082061229175790bb77502a904a21ee">anonymous{ComplexDeinterleavingPass.cpp}::ComplexDeinterleavingGraph</a></li>
 <li><b>ReductionOps</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-slpvectorizer-cpp-/horizontalreduction/#a13111b40234cadd74ba601594a3471cb">anonymous{SLPVectorizer.cpp}::HorizontalReduction</a></li>
 <li><b>ReductionRoot</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-slpvectorizer-cpp-/horizontalreduction/#a07bb39fe748d1c4b041fbc46d6cebf7f">anonymous{SLPVectorizer.cpp}::HorizontalReduction</a></li>
@@ -27147,8 +27219,8 @@ keywords:
 <li><b>Referenced</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/elf/symbol/#ae5097af0fd03e4b7110cb53cfca8860b">llvm::objcopy::elf::Symbol</a></li>
 <li><b>Referenced</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/macho/symbolentry/#a4be78edc14431bea745a92fd6f25c1d2">llvm::objcopy::macho::SymbolEntry</a></li>
 <li><b>ReferencedAddresses</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/amdgpusymbolizer/#a88603de9e9cf882b2489872ed46970d9">llvm::AMDGPUSymbolizer</a></li>
-<li><b>ReferencedByCU</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#ac36631a8d5183068ea83f82765333ccf">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
-<li><b>ReferencedByDieEntry</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a7d32dab5d97f9ce61a5810b7e4fd4723">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
+<li><b>ReferencedByCU</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/#a3823523700ff25bf711096e0e22578de">llvm::dwarf_linker::parallel::DependencyTracker</a></li>
+<li><b>ReferencedByDieEntry</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/#adf99246a5f6c50057f9725ad80bebcd5">llvm::dwarf_linker::parallel::DependencyTracker</a></li>
 <li><b>ReferencedNames</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-instrprofiling-cpp-/instrlowerer/#ad98d1383124eacb9b6b67ed7950307ab">anonymous{InstrProfiling.cpp}::InstrLowerer</a></li>
 <li><b>ReferencedVTables</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-instrprofiling-cpp-/instrlowerer/#aefc6ae67fc99faa662ed967498489b54">anonymous{InstrProfiling.cpp}::InstrLowerer</a></li>
 <li><b>ReferenceLocs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/record/#aa281cd31b3147d292a68f6407d3fb755">llvm::Record</a></li>
@@ -27740,6 +27812,7 @@ keywords:
 <li><b>RemoteCode</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/epcgenericrtdyldmemorymanager/sectionallocgroup/#aee1924067806f3b302c8627bbea676bc">llvm::orc::EPCGenericRTDyldMemoryManager::SectionAllocGroup</a></li>
 <li><b>RemoteI</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/aapointerinfo/access/#a2975ce0960947b7045a5aa855d33124d">llvm::AAPointerInfo::Access</a></li>
 <li><b>RemoteIMap</b>: as variable in struct <a href="/web-llvm/docs/api/structs/aa/pointerinfo/state/#a0f95c58e4dfb9965e55d8f8f02bfe729">AA::PointerInfo::State</a></li>
+<li><b>RemoteLaneOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/copyoptionsty/#a5e6155a084fb8490a674e06c23553be0">llvm::OpenMPIRBuilder::CopyOptionsTy</a></li>
 <li><b>RemoteROData</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/epcgenericrtdyldmemorymanager/sectionallocgroup/#af255fe48132f1433b4b264ca83a42741">llvm::orc::EPCGenericRTDyldMemoryManager::SectionAllocGroup</a></li>
 <li><b>RemoteRWData</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/orc/epcgenericrtdyldmemorymanager/sectionallocgroup/#a63295751e775f32aa7e302b88251acb3">llvm::orc::EPCGenericRTDyldMemoryManager::SectionAllocGroup</a></li>
 <li><b>RemoveAllRpaths</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/objcopy/machoconfig/#ab25866653b367bec23cf05ef587b4051">llvm::objcopy::MachOConfig</a></li>
@@ -27859,6 +27932,7 @@ keywords:
 <li><b>Requires2</b>: as variable in class <a href="/web-llvm/docs/api/classes/closuretypename/#adbf4ab0c36780000022a01b796f29dfa">ClosureTypeName</a></li>
 <li><b>RequiresCodeGenSCCOrder</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/cgpassbuilderoption/#a1e671d316b3527f264fbbbc858472ed0">llvm::CGPassBuilderOption</a></li>
 <li><b>RequiresCOV6</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcnsubtarget/#adc9aba4af084a7e0c89b55c62f8367d9">llvm::GCNSubtarget</a></li>
+<li><b>RequiresDevicePointerInfo</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#abc0226645c20c788a3e4b34caac39eb0">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>RequiresExactDefinition</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/attributeinferer/inferencedescriptor/#aaad765d34835c286ef433f03e072d01a">anonymous{FunctionAttrs.cpp}::AttributeInferer::InferenceDescriptor</a></li>
 <li><b>RequiresFlags</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilderconfig/#a18f0fd50adb73a6e6af7e8e4c8127ed1">llvm::OpenMPIRBuilderConfig</a></li>
 <li><b>RequireSplit</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-mergeicmps-cpp-/bcecmpblock/#a6d81b75e5387b36bc6ab32f1a8aadf09">anonymous{MergeICmps.cpp}::BCECmpBlock</a></li>
@@ -27961,6 +28035,7 @@ keywords:
 <li><b>reserved5</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/routines-command/#a22f00e488e724ade82065039384ae421">llvm::MachO::routines_command</a></li>
 <li><b>reserved6</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/routines-command-64/#a5e4f2f3988879aef86690ec1376ffda2">llvm::MachO::routines_command_64</a></li>
 <li><b>reserved6</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/routines-command/#a3bacc2e63acade1fea23893c3457c112">llvm::MachO::routines_command</a></li>
+<li><b>ReservedBuffers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a9c8918212c2767ae8d32b0f67a84d918">llvm::mca::ResourceManager</a></li>
 <li><b>ReservedCycles</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/schedboundary/#a715f2a77767bd26a183a7fadc77887bb">llvm::SchedBoundary</a></li>
 <li><b>ReservedCyclesIndex</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/schedboundary/#ae0e3134959c28004f015b8f031464263">llvm::SchedBoundary</a></li>
 <li><b>ReservedForDebugger</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/object/xcoffauxiliaryheader32/#a3f5c398916e87ec8e85528b8a8502ceb">llvm::object::XCOFFAuxiliaryHeader32</a></li>
@@ -27969,6 +28044,7 @@ keywords:
 <li><b>ReservedR19</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/hexagonsubtarget/#ae098ce44f130769abbaafa657a193ee9">llvm::HexagonSubtarget</a></li>
 <li><b>ReservedRegs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo/#a875f5fc41819ee3a88e6ac8097f030ee">llvm::MachineRegisterInfo</a></li>
 <li><b>ReservedRegs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/rdf/dataflowgraph/#ab8149a6e14d4f0fc0b8da64f2272152e">llvm::rdf::DataFlowGraph</a></li>
+<li><b>ReservedResourceGroups</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#ac6bdaf2eb2b93791dd68c5ba9c5d48df">llvm::mca::ResourceManager</a></li>
 <li><b>ReservedResourceSegments</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/schedboundary/#a30ba79cae0c4a51e6e1b4b7fb83705e3">llvm::SchedBoundary</a></li>
 <li><b>ReservedScoreboard</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/scoreboardhazardrecognizer/#af4518544a7c74d795ce79240a67fb5a8">llvm::ScoreboardHazardRecognizer</a></li>
 <li><b>ReservedSlotMask</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/hexagonshuffler/hexagonpacketsummary/#a1b0919234addae2cb574cff5837c7f74">llvm::HexagonShuffler::HexagonPacketSummary</a></li>
@@ -27987,6 +28063,7 @@ keywords:
 <li><b>ReserveXRegisterForRA</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/aarch64subtarget/#a0729bd502584fc2e92ead492e9b462af">llvm::AArch64Subtarget</a></li>
 <li><b>RESET</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/raw-ostream/#a9ba1327251e8c5c71480b9876c52f4e4">llvm::raw_ostream</a></li>
 <li><b>Resimplify</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-simplifycfg-cpp-/simplifycfgopt/#aecbd9ecca37e5e1385a90bab4a32c6b7">anonymous{SimplifyCFG.cpp}::SimplifyCFGOpt</a></li>
+<li><b>ResIndex2ProcResID</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#ac23bfc0c963f295a65497666bfafd6f0">llvm::mca::ResourceManager</a></li>
 <li><b>ResNo</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sddbgoperand/#a5221233d4cec2351331406959c3a52e8">llvm::SDDbgOperand</a></li>
 <li><b>ResNo</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sdvalue/#ac9f4d3df752880e2d1f0c87af96ada32">llvm::SDValue</a></li>
 <li><b>Resolution</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-registercoalescer-cpp-/joinvals/val/#a4c6ceb1ee6ad85695b0386d923a1e99c">anonymous{RegisterCoalescer.cpp}::JoinVals::Val</a></li>
@@ -28022,6 +28099,7 @@ keywords:
 <li><b>ResolverCodeSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/orcx86-64-win32/#a8008b9792cb734901c078fc26c585897">llvm::orc::OrcX86_64_Win32</a></li>
 <li><b>ResolverIFuncs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-lowertypetests-cpp-/scopedsavealiaseesandused/#a729df76e3dafb848268841775e1bde6a">anonymous{LowerTypeTests.cpp}::ScopedSaveAliaseesAndUsed</a></li>
 <li><b>resource</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/crashrecoverycontextcleanupbase/#a7409ae4ff379ef98870edae5053de46a">llvm::CrashRecoveryContextCleanupBase&lt;Derived, T&gt;</a></li>
+<li><b>Resource2Groups</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#af5bcd3de89fc81d686c6d5436437ad0e">llvm::mca::ResourceManager</a></li>
 <li><b>ResourceFactors</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetschedmodel/#a482a7fc8de13890a743713b8bb59595a">llvm::TargetSchedModel</a></li>
 <li><b>ResourceGroupSubUnitMasks</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/schedboundary/#a0f26751117ede798319fa824d4041803">llvm::SchedBoundary</a></li>
 <li><b>ResourceInfo</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/amdgpuresourceusageanalysis/#a03bd8a5983a5d04d36c152f3c0090380">llvm::AMDGPUResourceUsageAnalysis</a></li>
@@ -28029,6 +28107,7 @@ keywords:
 <li><b>ResourceLimit</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/diagnosticinforesourcelimit/#ae814702603fe6fed547a9e41b660cb9b">llvm::DiagnosticInfoResourceLimit</a></li>
 <li><b>ResourceManagers</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession/#a49d7523a5c241742909ee74e12398d6b">llvm::orc::ExecutionSession</a></li>
 <li><b>ResourceMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/hwpressureevent/#abb98e7099e8e67edaad5194c9eb37913">llvm::mca::HWPressureEvent</a></li>
+<li><b>ResourceMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a4b0a77f2903a18085fe2636c85bef00c">llvm::mca::ResourceState</a></li>
 <li><b>ResourceModel</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/convergingvliwscheduler/vliwschedboundary/#a547811c189bc99f76bf3e59c8ac547d1">llvm::ConvergingVLIWScheduler::VLIWSchedBoundary</a></li>
 <li><b>ResourceName</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/diagnosticinforesourcelimit/#abb5a7057d8dd282d89e23fa3ebc96dd0">llvm::DiagnosticInfoResourceLimit</a></li>
 <li><b>Resources</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-machinepipeliner-cpp-/funcunitsorter/#aee4af029e02c7340032731e5e7c9c7c9">anonymous{MachinePipeliner.cpp}::FuncUnitSorter</a></li>
@@ -28036,12 +28115,14 @@ keywords:
 <li><b>Resources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dxilresourcemdwrapper/#a6d48bd4b86480c63902c2c44449b06e3">llvm::DXILResourceMDWrapper</a></li>
 <li><b>Resources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/hexagonhazardrecognizer/#a82388420f6c514b1260bc1f27163b7ec">llvm::HexagonHazardRecognizer</a></li>
 <li><b>Resources</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mca/instrdesc/#a6cf9e62b0ff123f79b171ed4a183d4ca">llvm::mca::InstrDesc</a></li>
+<li><b>Resources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#a7bd0b5cdb01bdda564051785bf084ca7">llvm::mca::ResourceManager</a></li>
 <li><b>Resources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#a82b7c80dbc0b04cde1e897da32e33f84">llvm::mca::Scheduler</a></li>
 <li><b>Resources</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mcdxbc/psvruntimeinfo/#a3a9d9cf1ccca83f03102ae0774632632">llvm::mcdxbc::PSVRuntimeInfo</a></li>
 <li><b>Resources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/directx/psvruntimeinfo/#a95d685287e596f47a5fa3f2cc0fe8a44">llvm::object::DirectX::PSVRuntimeInfo</a></li>
 <li><b>Resources</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/object/windowsresourcecoffwriter/#a053f4f65398302a238c86bf7f4fd67d4">llvm::object::WindowsResourceCOFFWriter</a></li>
 <li><b>ResourcesCost</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/systemzpostraschedstrategy/candidate/#a0c63361de1f6248cc2b48721091211ea">llvm::SystemZPostRASchedStrategy::Candidate</a></li>
 <li><b>ResourceSize</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/diagnosticinforesourcelimit/#a41b491a0346f5e00fc6cf65c766e22fc">llvm::DiagnosticInfoResourceLimit</a></li>
+<li><b>ResourceSizeMask</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#a87fbb539ff37b06fb66d1f6cfcc15795">llvm::mca::ResourceState</a></li>
 <li><b>ResourcesModel</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/resourcepriorityqueue/#a8a7bae92230d99c56041868d7f80aba3">llvm::ResourcePriorityQueue</a></li>
 <li><b>ResourcesModel</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/vliwresourcemodel/#a93aaa6653570715ab620a108c4a8dc1a">llvm::VLIWResourceModel</a></li>
 <li><b>ResourceStride</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dxcontaineryaml/psvinfo/#ae8d643e482694699c73d917ae25d6efc">llvm::DXContainerYAML::PSVInfo</a></li>
@@ -28372,8 +28453,8 @@ keywords:
 <li><b>Root</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/yaml/document/#a40d264fc8a65a20a9e26d5f2212fff6d">llvm::yaml::Document</a></li>
 <li><b>Root</b>: as variable in struct <a href="/web-llvm/docs/api/structs/loadops/#a8b98a9e2a1802799596a2f7a0893431d">LoadOps</a></li>
 <li><b>RootContext</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/samplecontexttracker/#ae9ddc2fda31b20746125d6d8f3182ee3">llvm::SampleContextTracker</a></li>
-<li><b>RootCU</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#a637e46c2326a3e5ab947419ffdf91a1c">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
-<li><b>RootDieEntry</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/#ad7f6fbba27e7887118c893bc4246e915">llvm::dwarf_linker::parallel::DependencyTracker::LiveRootWorklistItemTy</a></li>
+<li><b>RootCU</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/#aa411def72116744e4a23ebda2b9b9250">llvm::dwarf_linker::parallel::DependencyTracker</a></li>
+<li><b>RootDieEntry</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/#a948ffc10c192b2502908ae6a0aa6a082">llvm::dwarf_linker::parallel::DependencyTracker</a></li>
 <li><b>RootEntriesWorkList</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/#aab2d7f8a06a89d372e4cf7da8d45d499">llvm::dwarf_linker::parallel::DependencyTracker</a></li>
 <li><b>RootFile</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mcdwarflinetableheader/#a432c9e68eeaa5f4c9a43e23cb4818f91">llvm::MCDwarfLineTableHeader</a></li>
 <li><b>RootFrame</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sampleprof/profileconverter/#aec524c90f01dc5385c23d9f73ccbfc8c">llvm::sampleprof::ProfileConverter</a></li>
@@ -28477,6 +28558,8 @@ keywords:
 <li><b>RT</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/materializationresponsibility/#a4c561c1b8a70730a369c91944a0bd6ae">llvm::orc::MaterializationResponsibility</a></li>
 <li><b>RT</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/reoptimizelayer/reoptmaterializationunitstate/#ad59bb624ca4f7f978964667974e2541b">llvm::orc::ReOptimizeLayer::ReOptMaterializationUnitState</a></li>
 <li><b>RT</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/resourcetrackerdefunct/#a8c6f1130fa70a9158d1f49bdb2683073">llvm::orc::ResourceTrackerDefunct</a></li>
+<li><b>RTArgs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#aca874dd2d3b9671378e23e0a7c1607da">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
+<li><b>RTArgs</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs/#a5a05e86ad780f78491ca53c7cade2629">llvm::OpenMPIRBuilder::TargetKernelArgs</a></li>
 <li><b>RTChecks</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/innerloopvectorizer/#ae9880a8edd20b3b9b1527ecd5a03ac8c">llvm::InnerLoopVectorizer</a></li>
 <li><b>RTCI</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-addresssanitizer-cpp-/functionstackpoisoner/#a6658c9ec8a5872994fee162488df739c">anonymous{AddressSanitizer.cpp}::FunctionStackPoisoner</a></li>
 <li><b>RTDyld</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/runtimedyld/loadedobjectinfo/#a95b62f22193e46f10790cf2e0b778ac6">llvm::RuntimeDyld::LoadedObjectInfo</a></li>
@@ -28555,7 +28638,7 @@ keywords:
 <li><b>RWDataMem</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sectionmemorymanager/#ae26c34dc8ed8bd7458866dd7db9fbe41">llvm::SectionMemoryManager</a></li>
 <li><b>RWInsts</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/informationcache/functioninfo/#aca1cfdf1508b3bc7fd7ea28b89598c6a">llvm::InformationCache::FunctionInfo</a></li>
 </ul>
-<p>1992 entries</p>
+<p>2006 entries</p>
 
 ## - S -
 
@@ -29001,6 +29084,8 @@ keywords:
 <li><b>ScratchBlocks</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/siprograminfo/#a403f09379ebb1045ef45a83925a0ed70">llvm::SIProgramInfo</a></li>
 <li><b>ScratchBuffer</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeview/simpletypeserializer/#a8f194b3b40e72a4c73cca0f519a0b913">llvm::codeview::SimpleTypeSerializer</a></li>
 <li><b>ScratchEnable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/siprograminfo/#a772aff37f042ff311ff9c8d3af5e3f5f">llvm::SIProgramInfo</a></li>
+<li><b>ScratchpadIndex</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/copyoptionsty/#acacd05705db92081a48dc42365547fa6">llvm::OpenMPIRBuilder::CopyOptionsTy</a></li>
+<li><b>ScratchpadWidth</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/copyoptionsty/#ac029ed01e507c56abf9358635abd1099">llvm::OpenMPIRBuilder::CopyOptionsTy</a></li>
 <li><b>ScratchRSrcReg</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/simachinefunctioninfo/#a93d8c685dfa01315821c820cc3326bfd">llvm::SIMachineFunctionInfo</a></li>
 <li><b>ScratchRSrcReg</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/yaml/simachinefunctioninfo/#afae943f235ffb0ac6224181bc5d3b213">llvm::yaml::SIMachineFunctionInfo</a></li>
 <li><b>ScratchSize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/siprograminfo/#ac3752448069c8c6edb67b57e0ac92f85">llvm::SIProgramInfo</a></li>
@@ -29535,12 +29620,10 @@ keywords:
 <li><b>Semi</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/domtreebuilder/semincainfo/inforec/#a7cf7afef13861e3f6ce5dc5c4ba63d20">llvm::DomTreeBuilder::SemiNCAInfo::InfoRec</a></li>
 <li><b>Sentinel</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/simple-ilist/#a1d4dc123588a821ba5f695001db77552">llvm::simple_ilist&lt;T, Options&gt;</a></li>
 <li><b>Sep</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-asmwriter-cpp-/fieldseparator/#a64c8493a05e1970973265dee04f2dc64">anonymous{AsmWriter.cpp}::FieldSeparator</a></li>
+<li><b>SeparateBeginEndCalls</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo/#adcd9a0295cade251adac0bd1ef372193">llvm::OpenMPIRBuilder::TargetDataInfo</a></li>
 <li><b>SeparateBuf</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/remarks/yamlremarkparser/#a5a72b6dc5e513ac03007e8ac9ee20307">llvm::remarks::YAMLRemarkParser</a></li>
 <li><b>SeparateNamedSections</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/targetoptions/#a661f99862caa07e96eaab915c23e610e">llvm::TargetOptions</a></li>
-<li><b>Separator</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/listseparator/#a36b8ebc1463c3afa6d9ac62699955f72">llvm::ListSeparator</a></li>
 <li><b>Separator</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilderconfig/#a8a018e70e883dec55d007dce44b459b8">llvm::OpenMPIRBuilderConfig</a></li>
-<li><b>Separator</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#a8b8c6cb50fa4f4c784d53445e9d28434">llvm::SplittingIterator</a></li>
-<li><b>SeparatorStorage</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/splittingiterator/#acd196f36b7d35b1ac3fe8c7e14bde381">llvm::SplittingIterator</a></li>
 <li><b>SeparatorString</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mcasminfo/#aabcffa0fe7b36126687bc1f1ea65fa91">llvm::MCAsmInfo</a></li>
 <li><b>Seq</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-hexagongeninsert-cpp-/orderedregisterlist/#a7774dea769faeb129d961a3fff751c0e">anonymous{HexagonGenInsert.cpp}::OrderedRegisterList</a></li>
 <li><b>Seq</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/ptrstate/#a0b687054dd0937d288747449fea1cb86">llvm::objcarc::PtrState</a></li>
@@ -30346,8 +30429,10 @@ keywords:
 <li><b>SizeOnly</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/globalmergeoptions/#a516c6319797ab7f25b21cde3992c3284">llvm::GlobalMergeOptions</a></li>
 <li><b>Sizes</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/indexedreference/#a6d3249a42232ab9df50d89ef6c319c2b">llvm::IndexedReference</a></li>
 <li><b>Sizes</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvscopecompileunit/#af58accf8f36607400990c98a7a766999">llvm::logicalview::LVScopeCompileUnit</a></li>
+<li><b>Sizes</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#aae351998f1a0107dc5b8f4ea32fe0c60">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>Sizes</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo/#a7efe71b047699bd4139c3e5f36318aa2">llvm::RegisterBankInfo</a></li>
 <li><b>SizesArgNum</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/offloadarray/#a58a7b27f98146692b1ee1e481d359910">anonymous{OpenMPOpt.cpp}::OffloadArray</a></li>
+<li><b>SizesArray</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs/#a00635325d57af0b95f0b797f63ee6df6">llvm::OpenMPIRBuilder::TargetDataRTArgs</a></li>
 <li><b>SizesSummary</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvoptions/lvprint/#ad36c4251128f61b400461cfe43adabd1">llvm::logicalview::LVOptions::LVPrint</a></li>
 <li><b>SizeThreshold</b>: as variable in struct <a href="/web-llvm/docs/api/structs/filteroptions/#a685eeb3316d3a8ee9a1ac0301444a1d9">FilterOptions</a></li>
 <li><b>SJ</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-sroa-cpp-/partition/#a49713c2554e15bc96ca9655332fe0567">anonymous{SROA.cpp}::Partition</a></li>
@@ -30746,6 +30831,7 @@ keywords:
 <li><b>SrcLang</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/moduleanalysisinfo/#ac51010ad431bba8addce754ac5da46a5">llvm::SPIRV::ModuleAnalysisInfo</a></li>
 <li><b>SrcLangVersion</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/spirv/moduleanalysisinfo/#a1a937bb04a43f4184758b70f8d2318ba">llvm::SPIRV::ModuleAnalysisInfo</a></li>
 <li><b>SrcLevels</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dependenceinfo/#a069c302e230f2ea0e4d055344ba80d7b">llvm::DependenceInfo</a></li>
+<li><b>SrcLocStrMap</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a539b79b038631cce06319250c09f8cfd">llvm::OpenMPIRBuilder</a></li>
 <li><b>SrcM</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-irmover-cpp-/irlinker/#aab4af0d1fac20b1821690fb597a49f26">anonymous{IRMover.cpp}::IRLinker</a></li>
 <li><b>SrcM</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-linkmodules-cpp-/modulelinker/#ae2fad6c05cee0fe1cae6c2d911dc37ff">anonymous{LinkModules.cpp}::ModuleLinker</a></li>
 <li><b>SrcMgr</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-asmparser-cpp-/asmparser/#af6b4499584c3db46e263719ee1ea0417">anonymous{AsmParser.cpp}::AsmParser</a></li>
@@ -31538,6 +31624,7 @@ keywords:
 <li><b>StrAlloc</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/nvptxregisterinfo/#afb414e1c2ae1975d704f3496d1d5dfed">llvm::NVPTXRegisterInfo</a></li>
 <li><b>StrAlloc</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/nvptxtargetmachine/#a790f57c0ff0de74313a3a75dbe5125b1">llvm::NVPTXTargetMachine</a></li>
 <li><b>Strategies</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/irmutator/#ae02478eda563daaad061111a9701f7f6">llvm::IRMutator</a></li>
+<li><b>Strategies</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager/#add2f262593360499dfeff8472de4ac3f">llvm::mca::ResourceManager</a></li>
 <li><b>Strategy</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/gcniterativescheduler/#adee265df6741b5fdd6f8729d32853ad7">llvm::GCNIterativeScheduler</a></li>
 <li><b>Strategy</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/genericdomtreeupdater/#a6c1229274a768152e5ed6af3872af602">llvm::GenericDomTreeUpdater&lt;DerivedT, DomTreeT, PostDomTreeT&gt;</a></li>
 <li><b>Strategy</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler/#a0d3720aa55395a263394cca0301fcc10">llvm::mca::Scheduler</a></li>
@@ -31628,6 +31715,7 @@ keywords:
 <li><b>Strided</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/riscv/vssegpseudo/#aadd7349bf5cb8d518434a8ef54e321dc">llvm::RISCV::VSSEGPseudo</a></li>
 <li><b>StridedAddrs</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-riscvgatherscatterlowering-cpp-/riscvgatherscatterlowering/#af0a882beb06de111d97030f44ae6639a">anonymous{RISCVGatherScatterLowering.cpp}::RISCVGatherScatterLowering</a></li>
 <li><b>Strides</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-delinearization-cpp-/scevcollectstrides/#ab0252f05cce0b249d2ddd56f8f506fc6">anonymous{Delinearization.cpp}::SCEVCollectStrides</a></li>
+<li><b>Strides</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo/#ae4726949bede9ff73a4defca2a4e00d7">llvm::OpenMPIRBuilder::MapInfosTy::StructNonContiguousInfo</a></li>
 <li><b>StrideToCheck</b>: as variable in struct <a href="/web-llvm/docs/api/structs/pointerbounds/#aae56c5255d0c8015537a9e0dd7a93e31">PointerBounds</a></li>
 <li><b>String</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeview/stringidrecord/#a4a043366139ae3d9c448efa743342e6c">llvm::codeview::StringIdRecord</a></li>
 <li><b>String</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/debuglinestrpatch/#a24285c30dcc0db9773eb2c80d25eabe6">llvm::dwarf_linker::parallel::DebugLineStrPatch</a></li>
@@ -32635,12 +32723,13 @@ keywords:
 <li><b>SystemZRegSaveAreaSize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-memorysanitizer-cpp-/varargsystemzhelper/#ab8b9c78abe59bfab0b87c5d9c2e2fc7a">anonymous{MemorySanitizer.cpp}::VarArgSystemZHelper</a></li>
 <li><b>SystemZVAListTagSize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-memorysanitizer-cpp-/varargsystemzhelper/#a4c2bd17808c0303e7a2724883b78ec04">anonymous{MemorySanitizer.cpp}::VarArgSystemZHelper</a></li>
 </ul>
-<p>4074 entries</p>
+<p>4079 entries</p>
 
 ## - T -
 
 <ul>
 <li><b>t</b>: as variable in union <a href="/web-llvm/docs/api/unions/llvm/detail/trivial-helper/#ad733ecd06f2730322483f53c621392de">llvm::detail::trivial_helper&lt;T&gt;</a></li>
+<li><b>T</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/#a7f3588f949f4fb51454b0b8c6194ca75">llvm::OpenMPIRBuilder</a></li>
 <li><b>T</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepc/#a7d6a6b98d811b81ae84dc6164b358fd6">llvm::orc::SimpleRemoteEPC</a></li>
 <li><b>T</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/simpleremoteepcserver/#af7b8eaeab825b7cbf38b4ccc9e717460">llvm::orc::SimpleRemoteEPCServer</a></li>
 <li><b>T</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/patternmatch/brc-match/#a75e56a111679e73e8fc43324a08f096f">llvm::PatternMatch::brc_match&lt;Cond_t, TrueBlock_t, FalseBlock_t&gt;</a></li>
@@ -32919,6 +33008,7 @@ keywords:
 <li><b>TargetSize</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mcfixupkindinfo/#acfcb94e2996dda3707eaa1eb1cb79f80">llvm::MCFixupKindInfo</a></li>
 <li><b>TargetSoftwareEnvironment</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/goffyaml/fileheader/#a20284655ad958c44a8c7ce38a4587825">llvm::GOFFYAML::FileHeader</a></li>
 <li><b>TargetStreamer</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mcstreamer/#accfcffbe239c8404d6454ebb0b129354">llvm::MCStreamer</a></li>
+<li><b>TargetThreadLimit</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs/#aeeb9144a0aa6dbbdc72c08fb2e025348">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
 <li><b>TargetTriple</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-addresssanitizer-cpp-/addresssanitizer/#ae402906bf8d98003fa463b7675342e75">anonymous{AddressSanitizer.cpp}::AddressSanitizer</a></li>
 <li><b>TargetTriple</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-addresssanitizer-cpp-/moduleaddresssanitizer/#a3197944b170fdaedfd94bb3e87fb648f">anonymous{AddressSanitizer.cpp}::ModuleAddressSanitizer</a></li>
 <li><b>TargetTriple</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-dwarfehprepare-cpp-/dwarfehprepare/#a9d19e4ab578db98b3b43286e6e5e34c5">anonymous{DwarfEHPrepare.cpp}::DwarfEHPrepare</a></li>
@@ -32991,6 +33081,7 @@ keywords:
 <li><b>TE</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics/trace/#a1bebd5e5b40a4a8d2f2f09ace395c233">llvm::MachineTraceMetrics::Trace</a></li>
 <li><b>TE</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/slpvectorizer/boupslp/scheduledata/#a181eae5058e0eb9b9103a1c8b8f6a52e">llvm::slpvectorizer::BoUpSLP::ScheduleData</a></li>
 <li><b>teamOffset</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/macho/cs-codedirectory/#aa77943e7fd584cafaecc404b62912289">llvm::MachO::CS_CodeDirectory</a></li>
+<li><b>TeamsThreadLimit</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs/#afe8e9584a1a5cc5fcb2919ddb0425c0b">llvm::OpenMPIRBuilder::TargetKernelRuntimeAttrs</a></li>
 <li><b>Temp</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-fileoutputbuffer-cpp-/ondiskbuffer/#ac2f255c9e6b72b3931927e6383054f21">anonymous{FileOutputBuffer.cpp}::OnDiskBuffer</a></li>
 <li><b>TempBB</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-valuemapper-cpp-/delayedbasicblock/#a9f2f65273a8bc92c15375d52b8f8d706">anonymous{ValueMapper.cpp}::DelayedBasicBlock</a></li>
 <li><b>TempDIAssignIDAttachments</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/llparser/#a7606a05aa6b21ba6e544a2098c8afe35">llvm::LLParser</a></li>
@@ -34469,6 +34560,7 @@ keywords:
 <li><b>TrueFolded</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/coverage/countedregion/#a4aebb46ec85c882c403e71547d9bbad6">llvm::coverage::CountedRegion</a></li>
 <li><b>TrueMemOrderLatency</b>: as variable in class <a href="/web-llvm/docs/api/classes/scheduledaginstrs/value2susmap/#ad4525fdaac69519c8b29bd1c2c51f707">ScheduleDAGInstrs::Value2SUsMap</a></li>
 <li><b>TrueProb</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/switchcg/caseblock/#a11ec00a8f98caffafaae61f79580d2ec">llvm::SwitchCG::CaseBlock</a></li>
+<li><b>TrueVal</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect/#a2280137045a6c50e2b7550331e36c3d9">anonymous{InstCombineSelect.cpp}::DecomposedSelect</a></li>
 <li><b>TrueWeight</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-structurizecfg-cpp-/condbranchweights/#ab0e2c0da5c5203e86f7deac5633da8aa">anonymous{StructurizeCFG.cpp}::CondBranchWeights</a></li>
 <li><b>TrueX</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-hexagongenmux-cpp-/hexagongenmux/condsetinfo/#a8386ed61ef2432876f483af049896622">anonymous{HexagonGenMux.cpp}::HexagonGenMux::CondsetInfo</a></li>
 <li><b>Trunc</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/vpwidenintorfpinductionrecipe/#a8b1decc8f3b0b755404fa9604bdeeb3b">llvm::VPWidenIntOrFpInductionRecipe</a></li>
@@ -35008,6 +35100,7 @@ keywords:
 <li><b>Types</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvsymbolvisitor/#a412bc72789d9400347d3a5880f7cbca8">llvm::logicalview::LVSymbolVisitor</a></li>
 <li><b>Types</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/logicalview/lvtypevisitor/#aefd6104caf0426a8d3fa9767a1933006">llvm::logicalview::LVTypeVisitor</a></li>
 <li><b>Types</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mipsregisterbankinfo/typeinfoformf/#acbc695e5ec796da4b8128cffcf70de7c">llvm::MipsRegisterBankInfo::TypeInfoForMF</a></li>
+<li><b>Types</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/#a81575ee2bccba5b439ed4d436ffa53ed">llvm::OpenMPIRBuilder::MapInfosTy</a></li>
 <li><b>Types</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pdb/inputfile/#a01526822564b702be2a6d669c0db0d18">llvm::pdb::InputFile</a></li>
 <li><b>Types</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pdb/tpistream/#a14fb99113747400b3ce99f851eb09d19">llvm::pdb::TpiStream</a></li>
 <li><b>Types</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/slotmapping/#a5a4bb84f8e2e094ed46ce7e46e5263c5">llvm::SlotMapping</a></li>
@@ -35052,7 +35145,7 @@ keywords:
 <li><b>TysanGlobalsSetTypeFunction</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-typesanitizer-cpp-/typesanitizer/#a99c7e674b240d9e26ec43a089160fe2a">anonymous{TypeSanitizer.cpp}::TypeSanitizer</a></li>
 <li><b>TyVal</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/lllexer/#aa61a12ba6eb2d8e0d2958845f9e6bb04">llvm::LLLexer</a></li>
 </ul>
-<p>2411 entries</p>
+<p>2416 entries</p>
 
 ## - U -
 
@@ -35141,6 +35234,7 @@ keywords:
 <li><b>Uname</b>: as variable in struct <a href="/web-llvm/docs/api/structs/ustarheader/#ad8c685953141b05bfab8bda52ef1a317">UstarHeader</a></li>
 <li><b>UnaryOperator</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#a59c4491d55e6e3eb33f888e2446fabd0">llvm::sandboxir::Context</a></li>
 <li><b>Unassigned</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/aa/rangety/#a5960fe0f64e0af63e9cbddb4ab880b7f">llvm::AA::RangeTy</a></li>
+<li><b>Unavailable</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/mca/resourcestate/#ae705da50d420f6ca973e0041dd2f22d8">llvm::mca::ResourceState</a></li>
 <li><b>UncategorizedHiddenPrinter</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-commandline-cpp-/commandlinecommonoptions/#a4fc072f90ba2ce6c519c7805f7073401">anonymous{CommandLine.cpp}::CommandLineCommonOptions</a></li>
 <li><b>UncategorizedNormalPrinter</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-commandline-cpp-/commandlinecommonoptions/#ab86a1a0b54e47d0679e45c69deb23f29">anonymous{CommandLine.cpp}::CommandLineCommonOptions</a></li>
 <li><b>UncategorizedPrinter</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-commandline-cpp-/helpprinterwrapper/#a25e9ae187d7f1f9cbdced10ec593e4d5">anonymous{CommandLine.cpp}::HelpPrinterWrapper</a></li>
@@ -35180,7 +35274,7 @@ keywords:
 <li><b>Underlying</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-instrprofreader-cpp-/instrprofreadernullremapper/#ae5aed8e03c0649c67e34acefbf8c4517">anonymous{InstrProfReader.cpp}::InstrProfReaderNullRemapper</a></li>
 <li><b>Underlying</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/enumeratedarray/#a9893b7fd5cdeb94a196c029a3929bf3f">llvm::EnumeratedArray&lt;ValueType, Enumeration, LargestEnum, IndexType, Size&gt;</a></li>
 <li><b>Underlying</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/instrprofreaderitaniumremapper/#ac166c464a4e0f36d16a3641feea26ae1">llvm::InstrProfReaderItaniumRemapper&lt;HashTableImpl&gt;</a></li>
-<li><b>UnderlyingObjCPtrCache</b>: as variable in class <a href="/web-llvm/docs/api/classes/provenanceanalysis/#a61b3488edc6aadc4b6a32d83cbc6da5f">ProvenanceAnalysis</a></li>
+<li><b>UnderlyingObjCPtrCache</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis/#a27dea9e4198a1ecc2933690a2a0cd609">llvm::objcarc::ProvenanceAnalysis</a></li>
 <li><b>UnderlyingObject</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-deadstoreelimination-cpp-/memorylocationwrapper/#a6dcb2c7e682afd013b32631ad46c10da">anonymous{DeadStoreElimination.cpp}::MemoryLocationWrapper</a></li>
 <li><b>UnderlyingObjects</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-loopaccessanalysis-cpp-/accessanalysis/#a83605b59d4c132a9a43bcbf43639ba14">anonymous{LoopAccessAnalysis.cpp}::AccessAnalysis</a></li>
 <li><b>UnderlyingType</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/codeview/enumrecord/#a1213bfb38a9295f2630ce8439f588745">llvm::codeview::EnumRecord</a></li>
@@ -35759,7 +35853,7 @@ keywords:
 <li><b>UVConstants</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/llvmcontextimpl/#a61efa06e00257bf060f040285796ad66">llvm::LLVMContextImpl</a></li>
 <li><b>UWSecs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/orc/unwindinfomanager/#aa7cff35c5633531820ada766926523e7">llvm::orc::UnwindInfoManager</a></li>
 </ul>
-<p>701 entries</p>
+<p>702 entries</p>
 
 ## - V -
 
@@ -36411,6 +36505,7 @@ keywords:
 <li><b>Var</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/dwarfcompileunit/globalexpr/#af9a76e2b51fbfd9bb82a3a14e6848ea9">llvm::DwarfCompileUnit::GlobalExpr</a></li>
 <li><b>Var</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/inlineasmidentifierinfo/#a5cfdb7a6308cd66fdc1659cc5c6b9588">llvm::InlineAsmIdentifierInfo</a></li>
 <li><b>Var</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/variabledbginfo/#ac0f6c13dd0f326802404c14b6b4748f7">llvm::MachineFunction::VariableDbgInfo</a></li>
+<li><b>Var</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue/#afa06cdaada62e025bfb13b3ca8999963">llvm::OpenMPIRBuilder::AtomicOpValue</a></li>
 <li><b>Var</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/sddbgvalue/#aba6a01568e0977f16bd70edf22f63b46">llvm::SDDbgValue</a></li>
 <li><b>Var2Indices</b>: as variable in class <a href="/web-llvm/docs/api/classes/anonymous-varlocbasedimpl-cpp-/varlocbasedldv/varlocmap/#a45a77def47096d81761da069cfab283b">anonymous{VarLocBasedImpl.cpp}::VarLocBasedLDV::VarLocMap</a></li>
 <li><b>VarAddressAdjustment</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dieattributecloner/#ae2c034842b86e727cabd95686828fc5d">llvm::dwarf_linker::parallel::DIEAttributeCloner</a></li>
@@ -36467,6 +36562,7 @@ keywords:
 <li><b>Variable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/mdnodekeyimpl-0b55a2b041180b066c6c661c2f699b12/#a49b006e5f4df9bc82f06db9dd1dbcc35">llvm::MDNodeKeyImpl&lt;DIGlobalVariableExpression&gt;</a></li>
 <li><b>Variable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/ms-demangle/dynamicstructoridentifiernode/#ad2372470b952a66c2e6370859fb62f54">llvm::ms_demangle::DynamicStructorIdentifierNode</a></li>
 <li><b>Variable</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/numericvariableuse/#ad646900e6980144d48c217c2e8fe64de">llvm::NumericVariableUse</a></li>
+<li><b>Variable</b>: as variable in struct <a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo/#a5a2adb59d172175dafdc9466d436e198">llvm::OpenMPIRBuilder::ReductionInfo</a></li>
 <li><b>Variable</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/selectiondagbuilder/danglingdebuginfo/#a874a1960ffcb1610ba82a9436ef91d54">llvm::SelectionDAGBuilder::DanglingDebugInfo</a></li>
 <li><b>VariableDbgInfos</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#af22f0d1a72635602fa5e310cd2335f32">llvm::MachineFunction</a></li>
 <li><b>VariableDefs</b>: as variable in class <a href="/web-llvm/docs/api/classes/llvm/pattern/#a8dc704521498407c55d187400bcfba6e">llvm::Pattern</a></li>
@@ -37160,7 +37256,7 @@ keywords:
 <li><b>VXRMOut</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-riscvinsertwritevxrm-cpp-/blockdata/#a7903a6600c495fdfda663be8f4281b22">anonymous{RISCVInsertWriteVXRM.cpp}::BlockData</a></li>
 <li><b>VXRMUse</b>: as variable in struct <a href="/web-llvm/docs/api/structs/anonymous-riscvinsertwritevxrm-cpp-/blockdata/#ab7df81f69be830a65e611c9f0e7a50e3">anonymous{RISCVInsertWriteVXRM.cpp}::BlockData</a></li>
 </ul>
-<p>1395 entries</p>
+<p>1397 entries</p>
 
 ## - W -
 
@@ -37647,10 +37743,10 @@ keywords:
 </ul>
 <p>39 entries</p>
 <br/>
-<p>Total: 37468 entries.</p>
+<p>Total: 37564 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

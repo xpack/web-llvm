@@ -480,7 +480,7 @@ class llvm::AAResultBase { ... }
 <p>Definition at line 842 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/aliasanalysis-h">AliasAnalysis.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea6524b183b5cd0850f2cff6d30d581af9">llvm::ModRef</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea6524b183b5cd0850f2cff6d30d581af9">llvm::ModRef</a>.</p>
 
 </div>
 </div>
@@ -513,7 +513,7 @@ class llvm::AAResultBase { ... }
 <p>Definition at line 846 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/aliasanalysis-h">AliasAnalysis.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#aff771abf487136aeebb6862871d5e715">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::unknown</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/classes/llvm/memoryeffectsbase/#aff771abf487136aeebb6862871d5e715">llvm::MemoryEffectsBase&lt; IRMemLocation &gt;::unknown</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult/#a071f909717c950fac24cc53e42ef4c86">llvm::objcarc::ObjCARCAAResult::getMemoryEffects</a> and <a href="/web-llvm/docs/api/classes/llvm/globalsaaresult/#a3836a87402e650ad29e1e8d2e691e3f4">llvm::GlobalsAAResult::~GlobalsAAResult</a>.</p>
@@ -582,7 +582,7 @@ class llvm::AAResultBase { ... }
 <p>Definition at line 854 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/analysis/aliasanalysis-h">AliasAnalysis.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea6524b183b5cd0850f2cff6d30d581af9">llvm::ModRef</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea6524b183b5cd0850f2cff6d30d581af9">llvm::ModRef</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/objcarc/objcarcaaresult/#ab37ef2f706e7e7f64d0d3cd8e76d91bd">llvm::objcarc::ObjCARCAAResult::getModRefInfo</a> and <a href="/web-llvm/docs/api/classes/llvm/globalsaaresult/#a3836a87402e650ad29e1e8d2e691e3f4">llvm::GlobalsAAResult::~GlobalsAAResult</a>.</p>
@@ -671,6 +671,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

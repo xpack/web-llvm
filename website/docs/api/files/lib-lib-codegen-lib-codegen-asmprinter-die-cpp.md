@@ -88,7 +88,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5188ffb606c333829043a4c05a025c15">HANDLE_DIEVALUE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aafb0532fb750dbd75b7976cba9abf398">HANDLE_DIEVALUE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -101,7 +101,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5188ffb606c333829043a4c05a025c15">HANDLE_DIEVALUE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad254c57ddb2bd1f95ffd2ecbdbdc66b2">HANDLE_DIEVALUE</a>(T)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -211,7 +211,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case is##T:                                                                  \
     getDIE##T().emitValue(AP, Form);                                           \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -221,7 +221,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE {#a5188ffb606c333829043a4c05a025c15}
+### HANDLE\_DIEVALUE {#aafb0532fb750dbd75b7976cba9abf398}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -255,7 +255,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_DIEVALUE {#a5188ffb606c333829043a4c05a025c15}
+### HANDLE\_DIEVALUE {#ad254c57ddb2bd1f95ffd2ecbdbdc66b2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -280,7 +280,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case is##T:                                                                  \
     getDIE##T().<a href="/web-llvm/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(O);                                                      \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -294,6 +294,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

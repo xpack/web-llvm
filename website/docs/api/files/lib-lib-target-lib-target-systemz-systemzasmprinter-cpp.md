@@ -343,7 +343,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a335e8d7725e2d7ec9142f6a1ba3c51c2">LOWER_LOW</a>(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#a80b4a8ba65789bdb6aa8e88a36a0d752">lowerRILow</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a335e8d7725e2d7ec9142f6a1ba3c51c2">LOWER_LOW</a>(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#a80b4a8ba65789bdb6aa8e88a36a0d752">lowerRILow</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); break</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -356,7 +356,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a664ddf1df2f9fdea2563a5f59b328a4e">LOWER_HIGH</a>(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#aa35546976f2247d92d87b67efb61b529">lowerRIHigh</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a664ddf1df2f9fdea2563a5f59b328a4e">LOWER_HIGH</a>(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#aa35546976f2247d92d87b67efb61b529">lowerRIHigh</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); break</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1183,7 +1183,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define LOWER_HIGH(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#aa35546976f2247d92d87b67efb61b529">lowerRIHigh</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td>
+<td class="doxyMemberName">#define LOWER_HIGH(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#aa35546976f2247d92d87b67efb61b529">lowerRIHigh</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); break</td>
 </tr>
 </table>
 </td>
@@ -1211,7 +1211,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">#define LOWER_LOW(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#a80b4a8ba65789bdb6aa8e88a36a0d752">lowerRILow</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td>
+<td class="doxyMemberName">#define LOWER_LOW(NAME)&nbsp;&nbsp;&nbsp;  case SystemZ::NAME##64: LoweredMI = <a href="#a80b4a8ba65789bdb6aa8e88a36a0d752">lowerRILow</a>(<a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>, SystemZ::NAME); break</td>
 </tr>
 </table>
 </td>
@@ -1234,6 +1234,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

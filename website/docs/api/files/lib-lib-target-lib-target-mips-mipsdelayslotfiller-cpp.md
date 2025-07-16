@@ -502,7 +502,7 @@ keywords:
 <p>Definition at line 311 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/mipsdelayslotfiller-cpp">MipsDelaySlotFiller.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/mibundlebuilder/#a6c15d55cada45b3ba4ec4ba5560c39c4">llvm::MIBundleBuilder::append</a>, <a href="#a50463d32c431f46d57456304bf032946">BrMap</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
+<p>References <a href="/web-llvm/docs/api/classes/llvm/mibundlebuilder/#a6c15d55cada45b3ba4ec4ba5560c39c4">llvm::MIBundleBuilder::append</a>, <a href="#a50463d32c431f46d57456304bf032946">BrMap</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ac485421b5fcb9454ea64e74f6396a810">llvm::MachineFunction::CloneMachineInstr</a> and <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.</p>
 
 </div>
 </div>
@@ -879,6 +879,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

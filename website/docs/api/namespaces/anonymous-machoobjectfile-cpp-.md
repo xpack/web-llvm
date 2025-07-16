@@ -111,7 +111,7 @@ namespace anonymous{MachOObjectFile.cpp} { ... }
 <p>Definition at line 2078 of file <a href="/web-llvm/docs/api/files/lib/lib/object/machoobjectfile-cpp">MachOObjectFile.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm::arrayRefFromStringRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/classes/llvm/object/binary/#a5379c20deca096e73006138ba387f171">llvm::object::Binary::getData</a>, <a href="#ad6473b2753bdca7d12955749ed652b7c">getSegmentContents</a>, <a href="/web-llvm/docs/api/files/lib/lib/object/machoobjectfile-cpp/#a3be6030c853d0e0ffe5bc8545197118a">getStructOrErr</a>, <a href="/web-llvm/docs/api/structs/llvm/object/machoobjectfile/loadcommandinfo/#a33838c43c0c6af81bfcb023eeab2b9c9">llvm::object::MachOObjectFile::LoadCommandInfo::Ptr</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5d4c961b9b6f1da17df74b4496ecb30e">llvm::StringRef::slice</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a2cd8968ff703aaeb395dcd63f6805ff1">llvm::StringRef::starts_with</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/classes/llvm/object/binary/#a5379c20deca096e73006138ba387f171">llvm::object::Binary::getData</a>, <a href="#ad6473b2753bdca7d12955749ed652b7c">getSegmentContents</a>, <a href="/web-llvm/docs/api/files/lib/lib/object/machoobjectfile-cpp/#a3be6030c853d0e0ffe5bc8545197118a">getStructOrErr</a>, <a href="/web-llvm/docs/api/structs/llvm/object/machoobjectfile/loadcommandinfo/#a33838c43c0c6af81bfcb023eeab2b9c9">llvm::object::MachOObjectFile::LoadCommandInfo::Ptr</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5d4c961b9b6f1da17df74b4496ecb30e">llvm::StringRef::slice</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a2cd8968ff703aaeb395dcd63f6805ff1">llvm::StringRef::starts_with</a>.</p>
 
 
 <p>Referenced by <a href="#a468583934460cfc450055eaac3ec3397">getSegmentContents</a> and <a href="#ad6473b2753bdca7d12955749ed652b7c">getSegmentContents</a>.</p>
@@ -143,7 +143,7 @@ namespace anonymous{MachOObjectFile.cpp} { ... }
 <p>Definition at line 2094 of file <a href="/web-llvm/docs/api/files/lib/lib/object/machoobjectfile-cpp">MachOObjectFile.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm::arrayRefFromStringRef</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/classes/llvm/object/binary/#a5379c20deca096e73006138ba387f171">llvm::object::Binary::getData</a>, <a href="#ad6473b2753bdca7d12955749ed652b7c">getSegmentContents</a>, <a href="/web-llvm/docs/api/files/lib/lib/object/machoobjectfile-cpp/#a3be6030c853d0e0ffe5bc8545197118a">getStructOrErr</a>, <a href="/web-llvm/docs/api/structs/llvm/object/machoobjectfile/loadcommandinfo/#a33838c43c0c6af81bfcb023eeab2b9c9">llvm::object::MachOObjectFile::LoadCommandInfo::Ptr</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a25f1fd81f2132805676c82ab8ae0c109">llvm::StringRef::substr</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">llvm::consumeError</a>, <a href="/web-llvm/docs/api/classes/llvm/object/binary/#a5379c20deca096e73006138ba387f171">llvm::object::Binary::getData</a>, <a href="#ad6473b2753bdca7d12955749ed652b7c">getSegmentContents</a>, <a href="/web-llvm/docs/api/files/lib/lib/object/machoobjectfile-cpp/#a3be6030c853d0e0ffe5bc8545197118a">getStructOrErr</a>, <a href="/web-llvm/docs/api/structs/llvm/object/machoobjectfile/loadcommandinfo/#a33838c43c0c6af81bfcb023eeab2b9c9">llvm::object::MachOObjectFile::LoadCommandInfo::Ptr</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a25f1fd81f2132805676c82ab8ae0c109">llvm::StringRef::substr</a>.</p>
 
 </div>
 </div>
@@ -160,6 +160,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

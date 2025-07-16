@@ -408,7 +408,7 @@ class llvm::ErrataWorkaround { ... }
 <p>Declaration at line 62 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/leonpasses-h">LeonPasses.h</a>, definition at line 295 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/sparc/leonpasses-cpp">LeonPasses.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="#a05e62770db6a3675506a910c798f80d0">checkSeqTN0009A</a>, <a href="#aa71e2734650c780bb839f0c283affecc">checkSeqTN0009B</a>, <a href="#a9ca7d3c709feb89bb21527a0b439c6ad">checkSeqTN0010</a>, <a href="#a314af006499e848836367f2e019009c8">checkSeqTN0010First</a>, <a href="#a97e744d4954c2bbf1ebf01f00ff11b42">checkSeqTN0012</a>, <a href="#a0f8cf9161e0574d4b2a6cdc426c77f8b">checkSeqTN0013</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ac8ca28de0f4dcee651340e7ef0c45233">llvm::MachineFunction::front</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="#a66a2d01629c4c642a3291a213779697c">ST</a>, <a href="#aa8bb3ad34689e6e1d466f9b53efeb414">TII</a> and <a href="#aebf23f17abe8eb6870c9c736b236e48b">TRI</a>.</p>
+<p>References <a href="#a05e62770db6a3675506a910c798f80d0">checkSeqTN0009A</a>, <a href="#aa71e2734650c780bb839f0c283affecc">checkSeqTN0009B</a>, <a href="#a9ca7d3c709feb89bb21527a0b439c6ad">checkSeqTN0010</a>, <a href="#a314af006499e848836367f2e019009c8">checkSeqTN0010First</a>, <a href="#a97e744d4954c2bbf1ebf01f00ff11b42">checkSeqTN0012</a>, <a href="#a0f8cf9161e0574d4b2a6cdc426c77f8b">checkSeqTN0013</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#ac8ca28de0f4dcee651340e7ef0c45233">llvm::MachineFunction::front</a>, <a href="/web-llvm/docs/api/classes/llvm/machinefunction/#a3825368aca2bc1550d173660df4da6a6">llvm::MachineFunction::getSubtarget</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="#a66a2d01629c4c642a3291a213779697c">ST</a>, <a href="#aa8bb3ad34689e6e1d466f9b53efeb414">TII</a> and <a href="#aebf23f17abe8eb6870c9c736b236e48b">TRI</a>.</p>
 
 </div>
 </div>
@@ -936,6 +936,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

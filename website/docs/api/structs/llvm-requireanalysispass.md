@@ -59,7 +59,7 @@ struct llvm::RequireAnalysisPass&lt;AnalysisT, IRUnitT, AnalysisManagerT, ExtraA
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt; ... &gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ab43e4aa43606bb4fd7ce7575f2c075f5">run</a> (IRUnitT &amp;Arg, AnalysisManagerT &amp;AM, ExtraArgTs &amp;&amp;... Args)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -196,9 +196,6 @@ struct llvm::RequireAnalysisPass&lt;AnalysisT, IRUnitT, AnalysisManagerT, ExtraA
 
 <p>Definition at line 885 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.</p>
 
-
-<p>Reference <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>.</p>
-
 </div>
 </div>
 
@@ -252,6 +249,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

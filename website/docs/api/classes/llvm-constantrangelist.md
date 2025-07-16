@@ -930,7 +930,7 @@ class llvm::ConstantRangeList { ... }
 <p>Definition at line 48 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/constantrangelist-h">ConstantRangeList.h</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/functionattrs-cpp/#a25e479981fb1f791dba4f32a891d6ff2">inferInitializes</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a68bcd3ec2f0fecf3aa12a335ceb45d94">llvm::AttrBuilder::addInitializesAttr</a> and <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/ipo/functionattrs-cpp/#a25e479981fb1f791dba4f32a891d6ff2">inferInitializes</a>.</p>
 
 </div>
 </div>
@@ -1149,6 +1149,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

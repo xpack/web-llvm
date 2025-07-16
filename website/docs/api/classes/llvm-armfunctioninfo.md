@@ -4132,11 +4132,11 @@ class llvm::ARMFunctionInfo { ... }
 
 
 
-### GPR callee-saved (1) : r4, r5, r6, r7, lr {#autotoc_md112}
+### GPR callee-saved (1) : r4, r5, r6, r7, lr {#autotoc_md111}
 
 
 
-### GPR callee-saved (2) : r8, r10, r11 {#autotoc_md113}
+### GPR callee-saved (2) : r8, r10, r11 {#autotoc_md112}
 
 
 <p>DPR callee-saved : d8 - d15</p>
@@ -4744,6 +4744,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

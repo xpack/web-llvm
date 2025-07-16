@@ -30,33 +30,6 @@ namespace anonymous{SelectionDAG.cpp} { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/evtarray">EVTArray</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener">RAUOVWUpdateListener</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener">RAUOVWUpdateListener</a> - Helper for ReplaceAllUsesOfValuesWith - When the node pointed to by a <a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/usememo">UseMemo</a> is deleted, set the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> to nullptr to indicate that the node already has been taken care of recursively. <a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauwupdatelistener">RAUWUpdateListener</a></td>
 </tr>
@@ -78,6 +51,33 @@ namespace anonymous{SelectionDAG.cpp} { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p><a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/usememo">UseMemo</a> - This class is used by <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a2869d5459dca008c1c7a1e824e7faf5e">SelectionDAG::ReplaceAllUsesOfValuesWith</a> to record information about a use. <a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/usememo/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener">RAUOVWUpdateListener</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener">RAUOVWUpdateListener</a> - Helper for ReplaceAllUsesOfValuesWith - When the node pointed to by a <a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/usememo">UseMemo</a> is deleted, set the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> to nullptr to indicate that the node already has been taken care of recursively. <a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/evtarray">EVTArray</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -148,6 +148,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

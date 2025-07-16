@@ -31,12 +31,12 @@ namespace anonymous{InstCombineAddSub.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine">FAddCombine</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddendcoef">FAddendCoef</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine">FAddCombine</a> is the class for optimizing an unsafe fadd/fsub along with its neighboring at most two instructions. <a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine/#details">More...</a></p>
+<p>Class representing coefficient of floating-point addend. <a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddendcoef/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -59,12 +59,12 @@ namespace anonymous{InstCombineAddSub.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddendcoef">FAddendCoef</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine">FAddCombine</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Class representing coefficient of floating-point addend. <a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddendcoef/#details">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine">FAddCombine</a> is the class for optimizing an unsafe fadd/fsub along with its neighboring at most two instructions. <a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -76,6 +76,6 @@ namespace anonymous{InstCombineAddSub.cpp} { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

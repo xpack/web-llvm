@@ -105,7 +105,7 @@ class llvm::sandboxir::BlockAddress { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac44be2ae75307f9aaeba771b6a2e320a">getBasicBlock</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -158,7 +158,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Lookup an existing <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress">BlockAddress</a></span> constant for the given <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a>. <a href="#a095a6dbd20e2611d899aa9f03380a573">More...</a></p>
+<p>Lookup an existing <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress">BlockAddress</a></span> constant for the given <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a>. <a href="#a095a6dbd20e2611d899aa9f03380a573">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -211,7 +211,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <p>Definition at line 1163 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#ab7194606aa12931e96f8f5448d418ed0">llvm::sandboxir::Constant::Function</a>.</p>
+<p>References <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#ab7194606aa12931e96f8f5448d418ed0">llvm::sandboxir::Constant::Function</a>.</p>
 
 
 <p>Referenced by <a href="#ac26c806e60ca4a0547680edb68f6e39b">Context</a>.</p>
@@ -284,7 +284,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <p>Declaration at line 1179 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>, definition at line 478 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/constant-cpp">Constant.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a4705ee51ec0da1ba978f2353d2c47f27">llvm::sandboxir::Value::Ctx</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -366,7 +366,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">BlockAddress * llvm::sandboxir::BlockAddress::get (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/function">Function</a> * F, <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">BlockAddress * llvm::sandboxir::BlockAddress::get (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/function">Function</a> * F, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -385,7 +385,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <p>Declaration at line 1167 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>, definition at line 457 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/constant-cpp">Constant.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#ab7194606aa12931e96f8f5448d418ed0">llvm::sandboxir::Constant::Function</a> and <a href="/web-llvm/docs/api/classes/llvm/blockaddress/#af6e2f535824d8f9b4bf1b1a75e5ab57c">llvm::BlockAddress::get</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/constant/#ab7194606aa12931e96f8f5448d418ed0">llvm::sandboxir::Constant::Function</a>, <a href="/web-llvm/docs/api/classes/llvm/blockaddress/#af6e2f535824d8f9b4bf1b1a75e5ab57c">llvm::BlockAddress::get</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">BlockAddress * llvm::sandboxir::BlockAddress::get (<a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">BlockAddress * llvm::sandboxir::BlockAddress::get (<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -422,7 +422,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <p>Declaration at line 1171 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>, definition at line 463 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/constant-cpp">Constant.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/blockaddress/#af6e2f535824d8f9b4bf1b1a75e5ab57c">llvm::BlockAddress::get</a> and <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aa286a0f7f5d38488d593bb7ef0ba183e">llvm::BasicBlock::getContext</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/classes/llvm/blockaddress/#af6e2f535824d8f9b4bf1b1a75e5ab57c">llvm::BlockAddress::get</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aacd79c30c16a90caa7529e83a58b5686">llvm::sandboxir::BasicBlock::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#a7bf97c49fc62d8d7b10f346d1887c727">llvm::sandboxir::Context::getOrCreateConstant</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -436,7 +436,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">BlockAddress * llvm::sandboxir::BlockAddress::lookup (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> * BB)</td>
+<td class="doxyMemberName">BlockAddress * llvm::sandboxir::BlockAddress::lookup (<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a> * BB)</td>
 </tr>
 </table>
 </td>
@@ -450,7 +450,7 @@ class llvm::sandboxir::BlockAddress { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Lookup an existing <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress">BlockAddress</a></span> constant for the given <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a>.</p>
+<p>Lookup an existing <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/blockaddress">BlockAddress</a></span> constant for the given <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a>.</p>
 
 
 <dl class="doxySectionUser">
@@ -462,7 +462,7 @@ class llvm::sandboxir::BlockAddress { ... }
 <p>Declaration at line 1176 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/constant-h">Constant.h</a>, definition at line 468 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/constant-cpp">Constant.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">llvm::sandboxir::BasicBlock</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3e627c32543ca70720c4270a8b11da3f">llvm::cast_or_null</a>, <a href="/web-llvm/docs/api/classes/llvm/basicblock/#aa286a0f7f5d38488d593bb7ef0ba183e">llvm::BasicBlock::getContext</a> and <a href="/web-llvm/docs/api/classes/llvm/blockaddress/#a5272e28bf5a3ca5f021f055c88adc118">llvm::BlockAddress::lookup</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">llvm::cast</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3e627c32543ca70720c4270a8b11da3f">llvm::cast_or_null</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock/#aacd79c30c16a90caa7529e83a58b5686">llvm::sandboxir::BasicBlock::getContext</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context/#a2dee21c5ed6d922ac4567a4fcd58a412">llvm::sandboxir::Context::getValue</a>, <a href="/web-llvm/docs/api/classes/llvm/blockaddress/#a5272e28bf5a3ca5f021f055c88adc118">llvm::BlockAddress::lookup</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value/#a0c4530f3c64d8c2eafac20fb87105d8a">llvm::sandboxir::Value::Val</a>.</p>
 
 </div>
 </div>
@@ -480,6 +480,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

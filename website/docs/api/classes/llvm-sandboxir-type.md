@@ -2079,7 +2079,7 @@ class llvm::sandboxir::Type { ... }
 <p>Declaration at line 287 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/sandboxir/type-h">Type.h</a>, definition at line 42 of file <a href="/web-llvm/docs/api/files/lib/lib/sandboxir/type-cpp">Type.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a> and <a href="/web-llvm/docs/api/namespaces/llvm/sandboxir/#aaf8e099af367077208606316ecceb9db">llvm::sandboxir::dumpOS</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a> and <a href="#ab65fd199fac3312ff9d0426dbae8cba8">dumpOS</a>.</p>
 
 </div>
 </div>
@@ -2110,7 +2110,7 @@ class llvm::sandboxir::Type { ... }
 <p>References <a href="#ab65fd199fac3312ff9d0426dbae8cba8">dumpOS</a> and <a href="#a330bbaf89b90196df6960be4724513c6">LLVMTy</a>.</p>
 
 
-<p>Referenced by <a href="#ab65fd199fac3312ff9d0426dbae8cba8">dumpOS</a>.</p>
+<p>Referenced by <a href="#a975aa15f5744af5a899e491135ab1384">dump</a> and <a href="#ab65fd199fac3312ff9d0426dbae8cba8">dumpOS</a>.</p>
 
 </div>
 </div>
@@ -3964,6 +3964,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

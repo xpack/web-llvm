@@ -356,7 +356,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a477622ad955f5d0af4e4bf352c488ad7">TYPE_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9ce842b399e2cfc9dc14445647b9f951">TYPE_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -369,7 +369,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3626d43307657155e786836157a03432">TYPE_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a362f930eb61ea35bc63a797ad5bae4c8">TYPE_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9aa4bafd7b111c10e8c14a85d7f62e17">TYPE_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a362f930eb61ea35bc63a797ad5bae4c8">TYPE_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -382,7 +382,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abd262b4d642662073110c15c45c0b859">MEMBER_RECORD</a>(EnumName, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a692121a16febd1b824c818782fe88337">MEMBER_RECORD</a>(EnumName, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -395,7 +395,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9e1128d31f2a588d8a55d04719ca51c1">MEMBER_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a030b53c6764bd7861d98406fd90c3966">MEMBER_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -408,7 +408,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a477622ad955f5d0af4e4bf352c488ad7">TYPE_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aec767c18942a48eadb3a591de86fa448">TYPE_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -421,7 +421,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3626d43307657155e786836157a03432">TYPE_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a362f930eb61ea35bc63a797ad5bae4c8">TYPE_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a06773ccbe02b6e9c2534af4a1c9ca830">TYPE_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a362f930eb61ea35bc63a797ad5bae4c8">TYPE_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -434,7 +434,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abd262b4d642662073110c15c45c0b859">MEMBER_RECORD</a>(EnumName, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af4d41cf6ed479a488cb42ab066edd352">MEMBER_RECORD</a>(EnumName, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -447,7 +447,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9e1128d31f2a588d8a55d04719ca51c1">MEMBER_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab0833c64315fb61c95fc1a6e431e10f8">MEMBER_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -460,7 +460,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abd262b4d642662073110c15c45c0b859">MEMBER_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a38fc8bfc4d97dc6c521153d5a67846e5">MEMBER_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -473,7 +473,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9e1128d31f2a588d8a55d04719ca51c1">MEMBER_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a5e2ee29444bff06b1a2320e6562a2dd9">MEMBER_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a16a65148cf73c88d042959e2030236ec">MEMBER_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a5e2ee29444bff06b1a2320e6562a2dd9">MEMBER_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -486,7 +486,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a477622ad955f5d0af4e4bf352c488ad7">TYPE_RECORD</a>(EnumName, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a909158cdc0540fc2f4e83c5106b10240">TYPE_RECORD</a>(EnumName, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -499,7 +499,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3626d43307657155e786836157a03432">TYPE_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aed336663f03123f3139f3e8ceec93962">TYPE_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -686,7 +686,7 @@ keywords:
 </div>
 </div>
 
-### MEMBER\_RECORD {#abd262b4d642662073110c15c45c0b859}
+### MEMBER\_RECORD {#a692121a16febd1b824c818782fe88337}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -711,7 +711,7 @@ keywords:
 </div>
 </div>
 
-### MEMBER\_RECORD {#abd262b4d642662073110c15c45c0b859}
+### MEMBER\_RECORD {#af4d41cf6ed479a488cb42ab066edd352}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -736,7 +736,7 @@ keywords:
 </div>
 </div>
 
-### MEMBER\_RECORD {#abd262b4d642662073110c15c45c0b859}
+### MEMBER\_RECORD {#a38fc8bfc4d97dc6c521153d5a67846e5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -761,7 +761,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case EnumName:                                                               \
     <a href="#aa054019d38a18172c3592ab3bfae2930">mapMemberRecordImpl</a>&lt;ClassName##<a href="/web-llvm/docs/api/classes/llvm/record">Record</a>&gt;(<a href="/web-llvm/docs/api/classes/llvm/yaml/io">IO</a>, #ClassName, Kind, Obj);         \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -796,7 +796,7 @@ keywords:
 </div>
 </div>
 
-### MEMBER\_RECORD\_ALIAS {#a9e1128d31f2a588d8a55d04719ca51c1}
+### MEMBER\_RECORD\_ALIAS {#a030b53c6764bd7861d98406fd90c3966}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -821,7 +821,7 @@ keywords:
 </div>
 </div>
 
-### MEMBER\_RECORD\_ALIAS {#a9e1128d31f2a588d8a55d04719ca51c1}
+### MEMBER\_RECORD\_ALIAS {#ab0833c64315fb61c95fc1a6e431e10f8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -846,7 +846,7 @@ keywords:
 </div>
 </div>
 
-### MEMBER\_RECORD\_ALIAS {#a9e1128d31f2a588d8a55d04719ca51c1}
+### MEMBER\_RECORD\_ALIAS {#a16a65148cf73c88d042959e2030236ec}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -896,7 +896,7 @@ keywords:
 </div>
 </div>
 
-### TYPE\_RECORD {#a477622ad955f5d0af4e4bf352c488ad7}
+### TYPE\_RECORD {#a9ce842b399e2cfc9dc14445647b9f951}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -930,7 +930,7 @@ keywords:
 </div>
 </div>
 
-### TYPE\_RECORD {#a477622ad955f5d0af4e4bf352c488ad7}
+### TYPE\_RECORD {#aec767c18942a48eadb3a591de86fa448}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -955,7 +955,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case EnumName:                                                               \
     <a href="#a02f0c453e9a72b7bb391a936c4eba8a8">mapLeafRecordImpl</a>&lt;ClassName##<a href="/web-llvm/docs/api/classes/llvm/record">Record</a>&gt;(<a href="/web-llvm/docs/api/classes/llvm/yaml/io">IO</a>, #ClassName, Kind, Obj);           \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -965,7 +965,7 @@ keywords:
 </div>
 </div>
 
-### TYPE\_RECORD {#a477622ad955f5d0af4e4bf352c488ad7}
+### TYPE\_RECORD {#a909158cdc0540fc2f4e83c5106b10240}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1015,7 +1015,7 @@ keywords:
 </div>
 </div>
 
-### TYPE\_RECORD\_ALIAS {#a3626d43307657155e786836157a03432}
+### TYPE\_RECORD\_ALIAS {#a9aa4bafd7b111c10e8c14a85d7f62e17}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1040,7 +1040,7 @@ keywords:
 </div>
 </div>
 
-### TYPE\_RECORD\_ALIAS {#a3626d43307657155e786836157a03432}
+### TYPE\_RECORD\_ALIAS {#a06773ccbe02b6e9c2534af4a1c9ca830}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1065,7 +1065,7 @@ keywords:
 </div>
 </div>
 
-### TYPE\_RECORD\_ALIAS {#a3626d43307657155e786836157a03432}
+### TYPE\_RECORD\_ALIAS {#aed336663f03123f3139f3e8ceec93962}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1094,6 +1094,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -259,7 +259,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54ed6a9e280db2dafb38201414c9aaf6">SYMBOL_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a14911f0df71d89f9e692c535647850b9">SYMBOL_RECORD</a>(EnumName, EnumVal, ClassName)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -272,7 +272,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a8d1fe1b31f3faffb3b0ef0bb383cac4e">SYMBOL_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a867e55fc9dff8311dfaf572c75836e38">SYMBOL_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a77a7435035149bb54ec48ea8b5970dff">SYMBOL_RECORD_ALIAS</a>(EnumName, EnumVal, AliasName, ClassName)&nbsp;&nbsp;&nbsp;  <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/codeview-h/#a867e55fc9dff8311dfaf572c75836e38">SYMBOL_RECORD</a>(<a href="/web-llvm/docs/api/files/lib/lib/mc/mcsectionmacho-cpp/#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, EnumVal, ClassName)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -402,7 +402,7 @@ keywords:
 </div>
 </div>
 
-### SYMBOL\_RECORD {#a54ed6a9e280db2dafb38201414c9aaf6}
+### SYMBOL\_RECORD {#a14911f0df71d89f9e692c535647850b9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -428,7 +428,7 @@ keywords:
 <div class="doxyVerbatim">  case EnumName:                                                               \
     <a href="#a40f025c89c1dd1b8036e86f07018de8d">mapSymbolRecordImpl</a>&lt;SymbolRecordImpl&lt;ClassName&gt;&gt;(IO, #ClassName, Kind,     \
                                                      Obj);                     \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -463,7 +463,7 @@ keywords:
 </div>
 </div>
 
-### SYMBOL\_RECORD\_ALIAS {#a8d1fe1b31f3faffb3b0ef0bb383cac4e}
+### SYMBOL\_RECORD\_ALIAS {#a77a7435035149bb54ec48ea8b5970dff}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -492,6 +492,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

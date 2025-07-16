@@ -151,7 +151,7 @@ class llvm::mca::ResourceStrategy { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Called by the <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">ResourceManager</a> when a processor resource group, or a processor resource with multiple units has become unavailable. <a href="#a8f5c6f9a9d50b1d06510d43a736e9be9">More...</a></p>
+<p>Called by the <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a> when a processor resource group, or a processor resource with multiple units has become unavailable. <a href="#a8f5c6f9a9d50b1d06510d43a736e9be9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -364,7 +364,7 @@ class llvm::mca::ResourceStrategy { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Called by the <a href="/web-llvm/docs/api/classes/llvm/resourcemanager">ResourceManager</a> when a processor resource group, or a processor resource with multiple units has become unavailable.</p>
+<p>Called by the <a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a> when a processor resource group, or a processor resource with multiple units has become unavailable.</p>
 
 
 <p>The default strategy uses this information to bias its selection logic.</p>
@@ -387,6 +387,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

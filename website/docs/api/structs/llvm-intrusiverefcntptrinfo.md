@@ -90,7 +90,7 @@ struct llvm::IntrusiveRefCntPtrInfo&lt;T&gt; { ... }
 <p>Class you can specialize to provide custom retain/release functionality for a type.</p>
 
 
-<p>Usually specializing this class is not necessary, as <a href="/web-llvm/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr</a> works with any type which defines <a href="/web-llvm/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain()</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> functions – you can define those functions yourself if <a href="/web-llvm/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> doesn't work for you.</p>
+<p>Usually specializing this class is not necessary, as <a href="/web-llvm/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr</a> works with any type which defines Retain() and <a href="/web-llvm/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> functions – you can define those functions yourself if <a href="/web-llvm/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> doesn't work for you.</p>
 
 
 <p>One case when you might want to specialize this type is if you have</p>
@@ -234,6 +234,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

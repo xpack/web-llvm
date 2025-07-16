@@ -50,6 +50,20 @@ namespace llvm::json { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/object">Object</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>An <a href="/web-llvm/docs/api/classes/llvm/json/object">Object</a> is a JSON object, which maps strings to heterogenous JSON values. <a href="/web-llvm/docs/api/classes/llvm/json/object/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/array">Array</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -64,12 +78,12 @@ namespace llvm::json { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/object">Object</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>An <a href="/web-llvm/docs/api/classes/llvm/json/object">Object</a> is a JSON object, which maps strings to heterogenous JSON values. <a href="/web-llvm/docs/api/classes/llvm/json/object/#details">More...</a></p>
+<p>A <a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a> is an JSON value of unknown type. <a href="/web-llvm/docs/api/classes/llvm/json/value/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -92,12 +106,12 @@ namespace llvm::json { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/objectmapper">ObjectMapper</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/path">Path</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Helper for mapping JSON objects onto protocol structs. <a href="/web-llvm/docs/api/classes/llvm/json/objectmapper/#details">More...</a></p>
+<p>A "cursor" marking a position within a <a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a>. <a href="/web-llvm/docs/api/classes/llvm/json/path/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -106,12 +120,12 @@ namespace llvm::json { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/ostream">OStream</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/objectmapper">ObjectMapper</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p><a href="/web-llvm/docs/api/classes/llvm/json/ostream">json::OStream</a> allows writing well-formed JSON without materializing all structures as <a href="/web-llvm/docs/api/classes/llvm/json/value">json::Value</a> ahead of time. <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#details">More...</a></p>
+<p>Helper for mapping JSON objects onto protocol structs. <a href="/web-llvm/docs/api/classes/llvm/json/objectmapper/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -133,26 +147,12 @@ namespace llvm::json { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/path">Path</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/ostream">OStream</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A "cursor" marking a position within a <a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a>. <a href="/web-llvm/docs/api/classes/llvm/json/path/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>A <a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a> is an JSON value of unknown type. <a href="/web-llvm/docs/api/classes/llvm/json/value/#details">More...</a></p>
+<p><a href="/web-llvm/docs/api/classes/llvm/json/ostream">json::OStream</a> allows writing well-formed JSON without materializing all structures as <a href="/web-llvm/docs/api/classes/llvm/json/value">json::Value</a> ahead of time. <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1407,7 +1407,7 @@ namespace llvm::json { ... }
 <p>Definition at line 693 of file <a href="/web-llvm/docs/api/files/lib/lib/support/json-cpp">JSON.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">llvm::StringRef::data</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#ac16e0f83231b9500e324afbe69c23420">llvm::isASCII</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aca142ea35118234e55d7eab9b19f51ce">llvm::isLegalUTF8String</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#ae5b35beb6f127e5f47269e9124b886fb">LLVM_LIKELY</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">llvm::StringRef::size</a>.</p>
+<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">llvm::Data</a>, <a href="/web-llvm/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">llvm::StringRef::data</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#aca142ea35118234e55d7eab9b19f51ce">llvm::isLegalUTF8String</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#ae5b35beb6f127e5f47269e9124b886fb">LLVM_LIKELY</a> and <a href="/web-llvm/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">llvm::StringRef::size</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/json/ostream/#a39613bf6aa1a8059a4dd25d57c7fd1e5">llvm::json::OStream::attributeBegin</a>, <a href="/web-llvm/docs/api/classes/llvm/json/anonymous-json-cpp-/parser/#a8ea3f97a66ca1a26f33af4c68d535a4b">llvm::json::anonymous{JSON.cpp}::Parser::checkUTF8</a>, <a href="/web-llvm/docs/api/classes/llvm/json/objectkey/#a956bf032105bef7c40ebc21c3d3382db">llvm::json::ObjectKey::ObjectKey</a>, <a href="/web-llvm/docs/api/classes/llvm/json/objectkey/#aab18e463fcd9b0040f321fe8e80d9dfe">llvm::json::ObjectKey::ObjectKey</a>, <a href="/web-llvm/docs/api/classes/llvm/json/value/#aa1465e2b320fbcb13a49ee925ef1909d">llvm::json::Value::Value</a> and <a href="/web-llvm/docs/api/classes/llvm/json/value/#ae6e91d6ff92490ec9e59e57411a14a4e">llvm::json::Value::Value</a>.</p>
@@ -1639,6 +1639,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

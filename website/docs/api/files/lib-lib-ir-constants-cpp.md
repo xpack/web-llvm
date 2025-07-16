@@ -261,7 +261,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acf38b15c88cc9aaa1d9d16d8ef901eef">HANDLE_CONSTANT</a>(Name)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6d1fdfac0da0fc7b77e776509ad67a16">HANDLE_CONSTANT</a>(Name)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -775,7 +775,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Value::Name##Val:                                                       \
     cast&lt;Name&gt;(this)-&gt;destroyConstantImpl();                                   \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -785,7 +785,7 @@ keywords:
 </div>
 </div>
 
-### HANDLE\_CONSTANT {#acf38b15c88cc9aaa1d9d16d8ef901eef}
+### HANDLE\_CONSTANT {#a6d1fdfac0da0fc7b77e776509ad67a16}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -810,7 +810,7 @@ keywords:
 <dd>
 <div class="doxyVerbatim">  case Value::Name##Val:                                                       \
     Replacement = cast&lt;Name&gt;(this)-&gt;handleOperandChangeImpl(From, To);         \
-    <a href="/web-llvm/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/ehstreamer-cpp/#a91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>;
+    break;
 </div>
 </dd>
 </dl>
@@ -824,6 +824,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

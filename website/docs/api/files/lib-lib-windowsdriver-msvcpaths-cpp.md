@@ -190,7 +190,7 @@ keywords:
 <p>Definition at line 175 of file <a href="/web-llvm/docs/api/files/lib/lib/windowsdriver/msvcpaths-cpp">MSVCPaths.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a82c27bc751f7669f9c2a79de96e2d0fd">llvm::isDigit</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">size</a>.</p>
+<p>Reference <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">size</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/namespaces/llvm/#aee9b1b3966b67cad2185aac5d1159358">llvm::findVCToolChainViaRegistry</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#af944c296925180c38c773968d6970623">llvm::getUniversalCRTSdkDir</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a3f08996be2dce22d6d6777faaa4cbe41">llvm::getWindowsSDKDir</a>.</p>
@@ -274,6 +274,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -501,7 +501,7 @@ struct llvm::DiagnosticInfoOptimizationBase::Argument { ... }
 <p>Declaration at line 510 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/diagnosticinfo-h">DiagnosticInfo.h</a>, definition at line 231 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/diagnosticinfo-cpp">DiagnosticInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#af6295cac2790cf237a57525d3d74b4a6">llvm::itostr</a>, <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
+<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
 
 </div>
 </div>
@@ -557,7 +557,7 @@ struct llvm::DiagnosticInfoOptimizationBase::Argument { ... }
 <p>Declaration at line 512 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/diagnosticinfo-h">DiagnosticInfo.h</a>, definition at line 237 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/diagnosticinfo-cpp">DiagnosticInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#af6295cac2790cf237a57525d3d74b4a6">llvm::itostr</a>, <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
+<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
 
 </div>
 </div>
@@ -585,7 +585,7 @@ struct llvm::DiagnosticInfoOptimizationBase::Argument { ... }
 <p>Declaration at line 513 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/diagnosticinfo-h">DiagnosticInfo.h</a>, definition at line 240 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/diagnosticinfo-cpp">DiagnosticInfo.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#af6295cac2790cf237a57525d3d74b4a6">llvm::itostr</a>, <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
+<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
 
 </div>
 </div>
@@ -613,7 +613,7 @@ struct llvm::DiagnosticInfoOptimizationBase::Argument { ... }
 <p>Declaration at line 514 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/diagnosticinfo-h">DiagnosticInfo.h</a>, definition at line 243 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/diagnosticinfo-cpp">DiagnosticInfo.cpp</a>.</p>
 
 
-<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
+<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
 
 </div>
 </div>
@@ -641,7 +641,7 @@ struct llvm::DiagnosticInfoOptimizationBase::Argument { ... }
 <p>Declaration at line 515 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/diagnosticinfo-h">DiagnosticInfo.h</a>, definition at line 246 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/diagnosticinfo-cpp">DiagnosticInfo.cpp</a>.</p>
 
 
-<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
+<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
 
 </div>
 </div>
@@ -669,7 +669,7 @@ struct llvm::DiagnosticInfoOptimizationBase::Argument { ... }
 <p>Declaration at line 516 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/diagnosticinfo-h">DiagnosticInfo.h</a>, definition at line 250 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/diagnosticinfo-cpp">DiagnosticInfo.cpp</a>.</p>
 
 
-<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a41972fe6f3fab862543b7b835a714f9b">llvm::utostr</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
+<p>References <a href="#a97e444c76098bb3cce46ad2d51000e00">Key</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> and <a href="#a71dcf73afcc3e377656e9503a261c42f">Val</a>.</p>
 
 </div>
 </div>
@@ -894,6 +894,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

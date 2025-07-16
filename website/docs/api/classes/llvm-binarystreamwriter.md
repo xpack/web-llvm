@@ -1205,7 +1205,7 @@ class llvm::BinaryStreamWriter { ... }
 <p>Declaration at line 104 of file <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/binarystreamwriter-h">BinaryStreamWriter.h</a>, definition at line 56 of file <a href="/web-llvm/docs/api/files/lib/lib/support/binarystreamwriter-cpp">BinaryStreamWriter.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/namespaces/llvm/#a1b144823e66f38f789fb4909c29b8bec">llvm::arrayRefFromStringRef</a> and <a href="#abb614d7e749a1af26c1d719b28ba4fb7">writeBytes</a>.</p>
+<p>Reference <a href="#abb614d7e749a1af26c1d719b28ba4fb7">writeBytes</a>.</p>
 
 
 <p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/pdb/namedstreammap/#a6253147b299d9a15f29775b79c273d3c">llvm::pdb::NamedStreamMap::commit</a>, <a href="/web-llvm/docs/api/namespaces/llvm/codeviewyaml/#ad026ca61ae553f5da149349b2662e425">llvm::CodeViewYAML::toDebugH</a> and <a href="#a07608f1ac2a8045b1b72108b840a8ca3">writeCString</a>.</p>
@@ -1541,6 +1541,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

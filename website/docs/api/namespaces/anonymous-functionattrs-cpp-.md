@@ -31,12 +31,12 @@ namespace anonymous{FunctionAttrs.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentaccessinfo">ArgumentAccessInfo</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentgraphnode">ArgumentGraphNode</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A struct of argument access info. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentaccessinfo/#details">More...</a></p>
+<p>For a given pointer <a href="/web-llvm/docs/api/classes/llvm/argument">Argument</a>, this retains a list of Arguments of functions in the same SCC that the pointer data flows into. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentgraphnode/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,12 +58,12 @@ namespace anonymous{FunctionAttrs.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentgraphnode">ArgumentGraphNode</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusestracker">ArgumentUsesTracker</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>For a given pointer <a href="/web-llvm/docs/api/classes/llvm/argument">Argument</a>, this retains a list of Arguments of functions in the same SCC that the pointer data flows into. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentgraphnode/#details">More...</a></p>
+<p>This tracker checks whether callees are in the SCC, and if so it does not consider that a capture, instead adding it to the "Uses" list and continuing with the analysis. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusestracker/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -86,12 +86,12 @@ namespace anonymous{FunctionAttrs.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusessummary">ArgumentUsesSummary</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentaccessinfo">ArgumentAccessInfo</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A struct to summarize the argument use info in a function. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusessummary/#details">More...</a></p>
+<p>A struct of argument access info. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentaccessinfo/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -100,12 +100,26 @@ namespace anonymous{FunctionAttrs.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusestracker">ArgumentUsesTracker</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/usesperblockinfo">UsesPerBlockInfo</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This tracker checks whether callees are in the SCC, and if so it does not consider that a capture, instead adding it to the "Uses" list and continuing with the analysis. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusestracker/#details">More...</a></p>
+<p>A struct to wrap the argument use info per block. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/usesperblockinfo/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusessummary">ArgumentUsesSummary</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>A struct to summarize the argument use info in a function. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/argumentusessummary/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -133,20 +147,6 @@ namespace anonymous{FunctionAttrs.cpp} { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/usesperblockinfo">UsesPerBlockInfo</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>A struct to wrap the argument use info per block. <a href="/web-llvm/docs/api/structs/anonymous-functionattrs-cpp-/usesperblockinfo/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -316,6 +316,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

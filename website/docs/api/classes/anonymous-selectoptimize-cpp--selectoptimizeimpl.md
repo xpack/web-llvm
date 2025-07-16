@@ -100,7 +100,7 @@ class anonymous{SelectOptimize.cpp}::SelectOptimizeImpl { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">PreservedAnalyses</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae454ad67b6e4fa9846a5395dc76759d6">run</a> (Function &amp;F, FunctionAnalysisManager &amp;FAM)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -662,7 +662,7 @@ class anonymous{SelectOptimize.cpp}::SelectOptimizeImpl { ... }
 <p>Definition at line 115 of file <a href="/web-llvm/docs/api/files/lib/lib/codegen/selectoptimize-cpp">SelectOptimize.cpp</a>.</p>
 
 
-<p>References <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a1258a1ff55557c27684010ebd7283712">llvm::PreservedAnalyses::all</a>, <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/#a03797a73044a81cbc6a3409d6c72ee8f">llvm::PreservedAnalyses::none</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a575e134a5e8414029a5c4a284858e6cda14714058f9e9eb27b0a4ec62d23bddd5">llvm::TargetLoweringBase::ScalarCondVectorVal</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a575e134a5e8414029a5c4a284858e6cda87a93c29e9b581a0845c5cd878a8d3b7">llvm::TargetLoweringBase::ScalarValSelect</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3af72f14ea20f2c762c751d2d49e5ea3">llvm::shouldOptimizeForSize</a> and <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a575e134a5e8414029a5c4a284858e6cda57d13a184979a5a9b7110c20e9d6f55d">llvm::TargetLoweringBase::VectorMaskSelect</a>.</p>
+<p>References <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>, <a href="/web-llvm/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/web-llvm/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a575e134a5e8414029a5c4a284858e6cda14714058f9e9eb27b0a4ec62d23bddd5">llvm::TargetLoweringBase::ScalarCondVectorVal</a>, <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a575e134a5e8414029a5c4a284858e6cda87a93c29e9b581a0845c5cd878a8d3b7">llvm::TargetLoweringBase::ScalarValSelect</a>, <a href="/web-llvm/docs/api/namespaces/llvm/#a3af72f14ea20f2c762c751d2d49e5ea3">llvm::shouldOptimizeForSize</a> and <a href="/web-llvm/docs/api/classes/llvm/targetloweringbase/#a575e134a5e8414029a5c4a284858e6cda57d13a184979a5a9b7110c20e9d6f55d">llvm::TargetLoweringBase::VectorMaskSelect</a>.</p>
 
 </div>
 </div>
@@ -1419,6 +1419,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

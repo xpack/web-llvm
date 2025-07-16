@@ -31,12 +31,12 @@ namespace anonymous{M68kCollapseMOVEMPass.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/m68kcollapsemovem">M68kCollapseMOVEM</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/movemstate">MOVEMState</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>This Pass first walks through all the MOVEM instructions that are chained together and record each of the instruction's properties like register mask and data access type into a <span class="doxyComputerOutput">MOVEState</span> instance. <a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/m68kcollapsemovem/#details">More...</a></p>
+<p>An abtraction of the MOVEM chain currently processing. <a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/movemstate/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -45,12 +45,12 @@ namespace anonymous{M68kCollapseMOVEMPass.cpp} { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/movemstate">MOVEMState</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/m68kcollapsemovem">M68kCollapseMOVEM</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>An abtraction of the MOVEM chain currently processing. <a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/movemstate/#details">More...</a></p>
+<p>This Pass first walks through all the MOVEM instructions that are chained together and record each of the instruction's properties like register mask and data access type into a <span class="doxyComputerOutput">MOVEState</span> instance. <a href="/web-llvm/docs/api/classes/anonymous-m68kcollapsemovempass-cpp-/m68kcollapsemovem/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -143,6 +143,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

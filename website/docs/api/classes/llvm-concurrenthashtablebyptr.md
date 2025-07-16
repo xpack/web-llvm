@@ -644,9 +644,6 @@ class llvm::ConcurrentHashTableByPtr&lt;KeyTy, KeyDataTy, AllocatorTy, Info&gt; 
 
 <p>References <a href="#a45da1a667c220a2ac0fedb7909854fdd">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::BucketsArray</a>, <a href="/web-llvm/docs/api/structs/llvm/concurrenthashtablebyptr/bucket/#a49298c812045349a99ae5d9c1f66f887">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::Bucket::Entries</a>, <a href="#a857ab9b7da763acc25c658249b28392b">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::getBucketIdx</a>, <a href="#ae8cffee93b5b0c062e8d97e379bb1ef1">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::getExtHashBits</a>, <a href="#a168883c86f9ce8b870444e70b6764735">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::getStartIdx</a>, <a href="/web-llvm/docs/api/structs/llvm/concurrenthashtablebyptr/bucket/#a7b75e8b63cf9b1849f0310f3d82acb28">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::Bucket::Hashes</a>, <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>, <a href="#af35139c2a8f5bac9ccaa8fbdf71f575b">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::MultiThreadAllocator</a>, <a href="/web-llvm/docs/api/structs/llvm/concurrenthashtablebyptr/bucket/#ab2b0b6cb8e9ed68ff3a3ab5e5ed90548">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::Bucket::NumberOfEntries</a>, <a href="#ade6907f5a5422e625635b35e22dfe10a">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::RehashBucket</a> and <a href="/web-llvm/docs/api/structs/llvm/concurrenthashtablebyptr/bucket/#aa615b1ffd20a1385b4fa159a306d2b5e">llvm::ConcurrentHashTableByPtr&lt; KeyTy, KeyDataTy, AllocatorTy, Info &gt;::Bucket::Size</a>.</p>
 
-
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit/#affd8bc2fe0d879ef4ad2538a617e7629">llvm::dwarf_linker::parallel::CompileUnit::getFileName</a>.</p>
-
 </div>
 </div>
 
@@ -1132,6 +1129,6 @@ The documentation for this class was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

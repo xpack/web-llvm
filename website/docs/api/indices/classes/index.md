@@ -4975,6 +4975,17 @@ An <a href="/web-llvm/docs/api/structs/llvm/appleacceltabledata/atom">Atom</a> d
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/atomicopvalue">AtomicOpValue</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+a struct to pack relevant information while generating atomic Ops
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/tomp/clause/att">AtT&lt;T, I, E&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -4990,6 +5001,17 @@ An <a href="/web-llvm/docs/api/structs/llvm/appleacceltabledata/atom">Atom</a> d
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+This class is used in conjunction with the <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">Attribute::get</a> method to create an <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> object
 </td>
 </tr>
 
@@ -5107,10 +5129,21 @@ Collects a set of attribute inference requests and performs them all in one go o
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+This class holds the attributes for a function, its return value, and its parameters
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/web-llvm/docs/api/classes/llvm/attributemask">AttributeMask</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This class stores enough information to efficiently remove some attributes from an existing AttrBuilder, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or AttributeList
+This class stores enough information to efficiently remove some attributes from an existing <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a>, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>
 </td>
 </tr>
 
@@ -17130,10 +17163,10 @@ Stores all information relating to a compile unit, be it in its original instanc
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty/compileunitpointertraits">CompileUnitPointerTraits</a>
+<a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/dependencytracker/compileunitpointertraits">CompileUnitPointerTraits</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Root entry
+Pointer traits for <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">CompileUnit</a>
 </td>
 </tr>
 
@@ -18583,6 +18616,17 @@ Given a set of branch descriptors [BB, Succ0, Succ1], create a "hub" such that t
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/tomp/clause/copyint">CopyinT&lt;T, I, E&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/copyoptionsty">CopyOptionsTy</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -22058,6 +22102,17 @@ Represents the operation icmp (X &amp; Mask) pred C, where pred can only be eq o
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/anonymous-instcombineselect-cpp-/decomposedselect">DecomposedSelect</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/anonymous-constraintelimination-cpp-/decomposition">Decomposition</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -23602,6 +23657,17 @@ Provide <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> 
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/densemapinfo-731ec5c3705a061d8b7a48aaf6657b70">DenseMapInfo&lt;AttributeList, void&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Provide <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> for <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>
 </td>
 </tr>
 
@@ -36347,17 +36413,6 @@ Allow printing <a href="/web-llvm/docs/api/classes/llvm/json/value">json::Value<
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/web-llvm/docs/api/structs/llvm/format-provider-72ff2760342f0c9be8bb272d8498c9a6">format_provider&lt;...&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Implementation of <a href="/web-llvm/docs/api/structs/llvm/format-provider">format_provider&lt;T&gt;</a> for duration types
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/llvm/format-provider-bf689c9ff674024f18c58d50fd076614">format_provider&lt;sys::TimePoint&lt;&gt;&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -44596,6 +44651,17 @@ A handler or incoming WrapperFunctionResults – either return values from callW
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator">index_iterator</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/web-llvm/docs/api/classes/llvm/index-range">index_range</a>
 </td>
@@ -48151,6 +48217,17 @@ Convert [vectors of] buffer fat pointers to integers when they are read from or 
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/int-op-inserter">int_op_inserter</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/attributelist/index-iterator/int-wrapper">int_wrapper</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -52847,17 +52924,6 @@ Enumerate the SCCs of a directed graph in reverse topological order of the SCC D
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/web-llvm/docs/api/classes/llvm/splittingiterator">SplittingIterator</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A forward iterator over partitions of string over a separator
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/web-llvm/docs/api/classes/llvm/stringmapiterbase">StringMapIterBase&lt;DerivedTy, ValueTy&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -56036,17 +56102,6 @@ Manages a passive (i.e., listening) UNIX domain socket
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/web-llvm/docs/api/classes/llvm/listseparator">ListSeparator</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A helper class to return the specified delimiter string after the first invocation of operator StringRef(). Used to generate a comma-separated list from a loop like so:
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/llvm/dwarfyaml/listtable">ListTable&lt;EntryType&gt;</a>
 </td>
@@ -56349,17 +56404,6 @@ A set of live virtual registers and physical register units
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A set of register units used to track register liveness
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/dependencytracker/liverootworklistitemty">LiveRootWorklistItemTy</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Class keeping live worklist item data
 </td>
 </tr>
 
@@ -61933,6 +61977,17 @@ Mangles symbol names then uniques them in the context of an <a href="/web-llvm/d
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty">MapInfosTy</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+This structure contains combined information generated for mappable clauses, including base pointers, pointers, sizes, map types, user-defined mappers, and non-contiguous information
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/anonymous-typerecordmapping-cpp-/maponemethodrecord">MapOneMethodRecord</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -61978,6 +62033,17 @@ This class represents a memory mapped file
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/web-llvm/docs/api/classes/anonymous-valuemapper-cpp-/mapper">Mapper</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapperallocas">MapperAllocas</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
@@ -76665,7 +76731,7 @@ Base class for <a href="/web-llvm/docs/api/classes/llvm/loadsdnode">LoadSDNode</
 <a href="/web-llvm/docs/api/classes/llvm/loadsdnode">LoadSDNode</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This class is used to represent ISD::LOAD nodes
+This class is used to represent <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a269b81f007000306e3e69d0d290c2159">ISD::LOAD</a> nodes
 </td>
 </tr>
 
@@ -76676,7 +76742,7 @@ This class is used to represent ISD::LOAD nodes
 <a href="/web-llvm/docs/api/classes/llvm/storesdnode">StoreSDNode</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This class is used to represent ISD::STORE nodes
+This class is used to represent <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a047178c3b2c6a5df40ae22a407b8aca9">ISD::STORE</a> nodes
 </td>
 </tr>
 
@@ -81813,7 +81879,7 @@ Base class for <a href="/web-llvm/docs/api/classes/llvm/loadsdnode">LoadSDNode</
 <a href="/web-llvm/docs/api/classes/llvm/loadsdnode">LoadSDNode</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This class is used to represent ISD::LOAD nodes
+This class is used to represent <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a269b81f007000306e3e69d0d290c2159">ISD::LOAD</a> nodes
 </td>
 </tr>
 
@@ -81824,7 +81890,7 @@ This class is used to represent ISD::LOAD nodes
 <a href="/web-llvm/docs/api/classes/llvm/storesdnode">StoreSDNode</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-This class is used to represent ISD::STORE nodes
+This class is used to represent <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a047178c3b2c6a5df40ae22a407b8aca9">ISD::STORE</a> nodes
 </td>
 </tr>
 
@@ -85433,6 +85499,17 @@ The information necessary to create an outlined function that is matched globall
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/outlineinfo">OutlineInfo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Helper that contains information about regions we need to outline during finalization
 </td>
 </tr>
 
@@ -104569,18 +104646,7 @@ A record for a potential prefetch made during the initial scan of the loop
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/web-llvm/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A set of analyses that are preserved following a run of a transformation pass
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/web-llvm/docs/api/classes/llvm/preservedanalyses/preservedanalysischecker">PreservedAnalysisChecker</a>
+<a href="/web-llvm/docs/api/classes/llvm/preservedanalysischecker">PreservedAnalysisChecker</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A checker object that makes it easy to query for whether an analysis or some set covering it is preserved
@@ -105614,10 +105680,10 @@ Various thresholds and options controlling the behavior of the profile inference
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/web-llvm/docs/api/classes/provenanceanalysis">ProvenanceAnalysis</a>
+<a href="/web-llvm/docs/api/classes/llvm/objcarc/provenanceanalysis">ProvenanceAnalysis</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
+This is similar to BasicAliasAnalysis, and it uses many of the same techniques, except it uses special ObjC-specific reasoning about pointer relationships
 </td>
 </tr>
 
@@ -108082,6 +108148,17 @@ Flags describing the kind of vector reduction
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/reductioninfo">ReductionInfo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Information about an OpenMP reduction
 </td>
 </tr>
 
@@ -111195,6 +111272,17 @@ Sorting functions for the Available queue
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/web-llvm/docs/api/classes/llvm/mca/resourcemanager">ResourceManager</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A resource manager for processor resource units and groups
 </td>
 </tr>
 
@@ -125766,6 +125854,17 @@ Represents base address of the <a href="/web-llvm/docs/api/namespaces/cu">CU</a>
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/mapinfosty/structnoncontiguousinfo">StructNonContiguousInfo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/llvm/asmprinter/structor">Structor</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -128900,6 +128999,28 @@ Utility class to perform tail duplication
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder/targetdatainfo">TargetDataInfo</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct that keeps the information that should be kept throughout a 'target data' region
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetdatartargs">TargetDataRTArgs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Container for the arguments used to pass data to the runtime library
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/web-llvm/docs/api/structs/llvm/targetexttypekeyinfo">TargetExtTypeKeyInfo</a>
 </td>
@@ -129301,6 +129422,39 @@ This struct describes target specific location
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 <a href="/web-llvm/docs/api/classes/llvm/targetintrinsicinfo">TargetIntrinsicInfo</a> - Interface to description of machine instruction set
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelargs">TargetKernelArgs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Data structure that contains the needed information to construct the kernel args vector
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkerneldefaultattrs">TargetKernelDefaultAttrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Container to pass the default attributes with which a kernel must be launched, used to set kernel attributes and populate associated static structures
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/web-llvm/docs/api/structs/llvm/openmpirbuilder/targetkernelruntimeattrs">TargetKernelRuntimeAttrs</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Container to pass LLVM IR runtime values or constants related to the number of teams and threads with which the kernel must be launched, as well as the trip count of the loop, if it is an SPMD or Generic-SPMD kernel
 </td>
 </tr>
 
@@ -135912,6 +136066,17 @@ A SandboxIR <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> 
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 <a href="/web-llvm/docs/api/classes/llvm/sandboxir/argument">Argument</a> of a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function">sandboxir::Function</a>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/web-llvm/docs/api/classes/llvm/sandboxir/basicblock">BasicBlock</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Contains a list of <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">sandboxir::Instruction</a>'s
 </td>
 </tr>
 
@@ -146765,6 +146930,6 @@ Partial specialization for non-const tuple storage
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -429,7 +429,7 @@ class llvm::AVRMCCodeEmitter { ... }
 
 <p>Gets the encoding of the target for the <span class="doxyComputerOutput">CALL k</span> instruction.</p>
 
-<p>Definition at line 73 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+<p>Declaration at line 73 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 204 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -454,7 +454,7 @@ class llvm::AVRMCCodeEmitter { ... }
 
 <p>Takes the complement of a number (~0 - val).</p>
 
-<p>Definition at line 61 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+<p>Declaration at line 61 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 168 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -493,7 +493,7 @@ class llvm::AVRMCCodeEmitter { ... }
 </dd>
 </dl>
 
-<p>Definition at line 68 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+<p>Declaration at line 68 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 179 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -523,7 +523,7 @@ class llvm::AVRMCCodeEmitter { ... }
 
 <p>Encode the given <span class="doxyComputerOutput">Inst</span> to bytes and append to <span class="doxyComputerOutput">CB</span>.</p>
 
-<p>Definition at line 93 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+<p>Declaration at line 93 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 267 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -548,7 +548,74 @@ class llvm::AVRMCCodeEmitter { ... }
 
 <p>Encodes a <span class="doxyComputerOutput">register+immediate</span> operand for <span class="doxyComputerOutput">LDD</span>/<span class="doxyComputerOutput">STD</span>.</p>
 
-<p>Definition at line 56 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+
+<p>Performs a post-encoding step on a <span class="doxyComputerOutput">LD</span> or <span class="doxyComputerOutput">ST</span> instruction.</p>
+
+
+<p>The encoding of the LD/ST family of instructions is inconsistent w.r.t the pointer register and the addressing mode.</p>
+
+
+<p>The permutations of the format are as followed: ld Rd, X <span class="doxyComputerOutput">1001 000d dddd 1100</span> ld Rd, X+ <span class="doxyComputerOutput">1001 000d dddd 1101</span> ld Rd, -X <span class="doxyComputerOutput">1001 000d dddd 1110</span></p>
+
+
+<p>ld Rd, Y <span class="doxyComputerOutput">1000 000d dddd 1000</span> ld Rd, Y+ <span class="doxyComputerOutput">1001 000d dddd 1001</span> ld Rd, -Y <span class="doxyComputerOutput">1001 000d dddd 1010</span></p>
+
+
+<p>ld Rd, Z <span class="doxyComputerOutput">1000 000d dddd 0000</span> ld Rd, Z+ <span class="doxyComputerOutput">1001 000d dddd 0001</span> ld Rd, -Z <span class="doxyComputerOutput">1001 000d dddd 0010</span> ^ | Note this one inconsistent bit - it is 1 sometimes and 0 at other times. There is no logical pattern. Looking at a truth table, the following formula can be derived to fit the pattern:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">inconsistent_bit = is_predec <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a7415ab9f2172c59a2ee7c7a02afa56a4">OR</a> is_postinc <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a7415ab9f2172c59a2ee7c7a02afa56a4">OR</a> is_reg_x</span></span></div>
+
+</div>
+
+
+<p>// We manually set this bit in this post encoder method. */ unsigned AVRMCCodeEmitter::loadStorePostEncoder(const MCInst &amp;MI, unsigned EncodedValue,
+                                       const MCSubtargetInfo &amp;STI) const {</p>
+
+
+<p>assert(MI.getOperand(0).<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsinstprinter-cpp/#a85e8dc708ae90b1129b892cb8ae1500f">isReg()</a> &amp;&amp; MI.getOperand(1).<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsinstprinter-cpp/#a85e8dc708ae90b1129b892cb8ae1500f">isReg()</a> &amp;&amp; "the load/store operands must be registers");</p>
+
+
+<p>unsigned Opcode = MI.getOpcode();</p>
+
+
+<p>Get the index of the pointer register operand. unsigned Idx = 0; if (Opcode == AVR::LDRdPtrPd || Opcode == AVR::LDRdPtrPi || Opcode == AVR::LDRdPtr) Idx = 1;</p>
+
+
+<p><a href="/web-llvm/docs/api/namespaces/llvm/check">Check</a> if we need to set the inconsistent bit bool IsPredec = Opcode == AVR::LDRdPtrPd || Opcode == AVR::STPtrPdRr; bool IsPostinc = Opcode == AVR::LDRdPtrPi || Opcode == AVR::STPtrPiRr; if (MI.getOperand(Idx).<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg()</a> == AVR::R27R26 || IsPredec || IsPostinc) EncodedValue |= (1 &lt;&lt; 12);</p>
+
+
+<p>Encode the pointer register. switch (MI.getOperand(Idx).<a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/disassembler/mipsdisassembler-cpp/#a15b5b86944f6df97d2c3659d77f51f91">getReg()</a>) { case AVR::R27R26: EncodedValue |= 0xc; break; case AVR::R29R28: EncodedValue |= 0x8; break; case AVR::R31R30: break; default: llvm_unreachable("invalid pointer register"); break; }</p>
+
+
+<p>return EncodedValue; }</p>
+
+
+<p>template &lt;<a href="/web-llvm/docs/api/namespaces/llvm/avr/#ae093893769f0a31accd70fbf3fd419b1">AVR::Fixups</a> Fixup&gt; unsigned AVRMCCodeEmitter::encodeRelCondBrTarget(const MCInst &amp;MI, unsigned OpNo,
+                                        SmallVectorImpl&lt;MCFixup&gt; &amp;Fixups,
+                                        const MCSubtargetInfo &amp;STI) const { const <a href="/web-llvm/docs/api/classes/llvm/mcoperand">MCOperand</a> &amp;MO = MI.getOperand(OpNo);</p>
+
+
+<p>if (MO.isExpr()) { Fixups.push_back( <a href="/web-llvm/docs/api/classes/llvm/mcfixup/#abdf37854fa6eb68017b96486df443a32">MCFixup::create</a>(0, MO.getExpr(), <a href="/web-llvm/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58">MCFixupKind(Fixup)</a>, MI.getLoc())); return 0; }</p>
+
+
+<p>assert(MO.isImm());</p>
+
+
+<p>Take the size of the current instruction away. With labels, this is implicitly done. auto target = MO.getImm(); AVR::fixups::adjustBranchTarget(target); return target; }</p>
+
+
+<p>/** Encodes a <span class="doxyComputerOutput">memri</span> operand. The operand is 7-bits.</p>
+
+
+<ul class="doxyList ">
+<li>The lower 6 bits is the immediate</li>
+<li>The upper bit is the pointer register bit (Z=0,Y=1)</li>
+</ul>
+
+<p>Declaration at line 56 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 131 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -624,7 +691,7 @@ class llvm::AVRMCCodeEmitter { ... }
 
 
 
-<p>Definition at line 82 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+<p>Declaration at line 82 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 222 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -653,7 +720,7 @@ class llvm::AVRMCCodeEmitter { ... }
 <p>If the machine operand requires relocation, the relocation is recorded and zero is returned.</p>
 
 
-<p>Definition at line 89 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>.</p>
+<p>Declaration at line 89 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a>, definition at line 249 of file <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a>.</p>
 
 </div>
 </div>
@@ -747,14 +814,15 @@ class llvm::AVRMCCodeEmitter { ... }
 
 <hr/>
 
-The documentation for this class was generated from the following file:
+The documentation for this class was generated from the following files:
 
 <ul>
+<li><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-cpp">AVRMCCodeEmitter.cpp</a></li>
 <li><a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/avr/lib/target/avr/mctargetdesc/avrmccodeemitter-h">AVRMCCodeEmitter.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

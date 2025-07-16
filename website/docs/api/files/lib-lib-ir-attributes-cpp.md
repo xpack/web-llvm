@@ -235,7 +235,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Map from AttributeList index to the internal array index. <a href="#a9cee1ad5adf2690eb7b15f3f5a71dee5">More...</a></p>
+<p>Map from <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> index to the internal array index. <a href="#a9cee1ad5adf2690eb7b15f3f5a71dee5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -484,7 +484,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aba63655d8ee18e876fc5cee12bbaa35e">GET_ATTR_NAMES</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a071d47a02c0ca8b57596eea81c5bdee2">GET_ATTR_NAMES</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -497,7 +497,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac52fd56f4583e0aed1c9b900c3ac98c4">ATTRIBUTE_ENUM</a>(ENUM_NAME, DISPLAY_NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a6c9483392aa0cf508b9ac300b9e550a4">ATTRIBUTE_ENUM</a>(ENUM_NAME, DISPLAY_NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -510,7 +510,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aba63655d8ee18e876fc5cee12bbaa35e">GET_ATTR_NAMES</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1b41e24f10b13f0f51727234d0c698a7">GET_ATTR_NAMES</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -549,7 +549,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aba63655d8ee18e876fc5cee12bbaa35e">GET_ATTR_NAMES</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac21254daccb964b2506c5c068058190e">GET_ATTR_NAMES</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -562,7 +562,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac52fd56f4583e0aed1c9b900c3ac98c4">ATTRIBUTE_ENUM</a>(ENUM_NAME, DISPLAY_NAME)&nbsp;&nbsp;&nbsp;...</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac9102fc703447e36f0fc9a9c14e52de7">ATTRIBUTE_ENUM</a>(ENUM_NAME, DISPLAY_NAME)&nbsp;&nbsp;&nbsp;...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -715,6 +715,9 @@ keywords:
 
 
 <p>References <a href="/web-llvm/docs/api/namespaces/llvm/#aa81eb67f09ee4944eaeeddbc54c0c0de">llvm::lower_bound</a> and <a href="/web-llvm/docs/api/namespaces/std/#ab8424022895aee3e366fb9a32f2883cb">std::swap</a>.</p>
+
+
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a7464f6980d299143f57a229f73181c39">llvm::AttrBuilder::addAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a59d23ba2e7eac46cbc6cd3086e013b49">llvm::AttrBuilder::addAttribute</a> and <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a1df399b697ebab2755c841d66350778f">llvm::AttrBuilder::addAttribute</a>.</p>
 
 </div>
 </div>
@@ -905,7 +908,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Map from AttributeList index to the internal array index.</p>
+<p>Map from <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a> index to the internal array index.</p>
 
 
 <p>Adding one happens to work, because -1 wraps around to 0.</p>
@@ -914,7 +917,7 @@ keywords:
 <p>Definition at line 1410 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a6f9b9f798d2c70c515f146562de005b1">llvm::AttributeListImpl::AttributeListImpl</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attributelist/#a3f1e8df5d1ec58e81979760331f7808e">llvm::AttributeList::addParamAttribute</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelistimpl/#a6f9b9f798d2c70c515f146562de005b1">llvm::AttributeListImpl::AttributeListImpl</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#aa0934a03f7182abfbf5e57fc4e7c7c82">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#acf23368370765012fba0a78c1b42fdf9">llvm::AttributeList::get</a>, <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ac8d6f220fcf8f327c6c739813df8c4c9">llvm::AttributeList::getAttributes</a> and <a href="/web-llvm/docs/api/classes/llvm/attributelist/#ad2077a29ae8c3a0a7afe3bd0345f8738">llvm::AttributeList::removeAttributesAtIndex</a>.</p>
 
 </div>
 </div>
@@ -1257,7 +1260,7 @@ keywords:
 <p>References <a href="#ab120e0d08d1d90a92f27558a82005dcb">AllocSizeNumElemsNotPresent</a> and <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attribute/#a6f90f8b9a9209911cdd0573c4e25388e">llvm::Attribute::getWithAllocSizeArgs</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#adea27caeeec5d68cef4a452b8cc25162">llvm::AttrBuilder::addAllocSizeAttr</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a6f90f8b9a9209911cdd0573c4e25388e">llvm::Attribute::getWithAllocSizeArgs</a>.</p>
 
 </div>
 </div>
@@ -1290,7 +1293,7 @@ keywords:
 <p>Definition at line 81 of file <a href="/web-llvm/docs/api/files/lib/lib/ir/attributes-cpp">Attributes.cpp</a>.</p>
 
 
-<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attribute/#a7b20ebfa9bcf271438ffda63f623d0f5">llvm::Attribute::getWithVScaleRangeArgs</a>.</p>
+<p>Referenced by <a href="/web-llvm/docs/api/classes/llvm/attrbuilder/#a4566311f748debbde7053963d802d87e">llvm::AttrBuilder::addVScaleRangeAttr</a> and <a href="/web-llvm/docs/api/classes/llvm/attribute/#a7b20ebfa9bcf271438ffda63f623d0f5">llvm::Attribute::getWithVScaleRangeArgs</a>.</p>
 
 </div>
 </div>
@@ -1529,7 +1532,7 @@ keywords:
 </div>
 </div>
 
-### ATTRIBUTE\_ENUM {#ac52fd56f4583e0aed1c9b900c3ac98c4}
+### ATTRIBUTE\_ENUM {#a6c9483392aa0cf508b9ac300b9e550a4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1563,7 +1566,7 @@ keywords:
 </div>
 </div>
 
-### ATTRIBUTE\_ENUM {#ac52fd56f4583e0aed1c9b900c3ac98c4}
+### ATTRIBUTE\_ENUM {#ac9102fc703447e36f0fc9a9c14e52de7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1685,7 +1688,7 @@ keywords:
 </div>
 </div>
 
-### GET\_ATTR\_NAMES {#aba63655d8ee18e876fc5cee12bbaa35e}
+### GET\_ATTR\_NAMES {#a071d47a02c0ca8b57596eea81c5bdee2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1710,7 +1713,7 @@ keywords:
 </div>
 </div>
 
-### GET\_ATTR\_NAMES {#aba63655d8ee18e876fc5cee12bbaa35e}
+### GET\_ATTR\_NAMES {#a1b41e24f10b13f0f51727234d0c698a7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1735,7 +1738,7 @@ keywords:
 </div>
 </div>
 
-### GET\_ATTR\_NAMES {#aba63655d8ee18e876fc5cee12bbaa35e}
+### GET\_ATTR\_NAMES {#ac21254daccb964b2506c5c068058190e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1789,6 +1792,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>
