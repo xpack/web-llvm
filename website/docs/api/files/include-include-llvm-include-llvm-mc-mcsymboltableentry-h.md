@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolTableEntry.h` File Reference
+# `MCSymbolTableEntry.h` File
 
 
 

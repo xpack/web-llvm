@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLoweringBase` Class Reference
+# `TargetLoweringBase` Class
 
 <p>This base class for <a href="/web-llvm/docs/api/classes/llvm/targetlowering">TargetLowering</a> contains the SelectionDAG-independent parts that can be used from the rest of CodeGen. <a href="#details">More...</a></p>
 

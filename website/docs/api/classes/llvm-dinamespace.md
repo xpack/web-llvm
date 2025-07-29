@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DINamespace` Class Reference
+# `DINamespace` Class
 
 <p>Debug lexical block. <a href="#details">More...</a></p>
 

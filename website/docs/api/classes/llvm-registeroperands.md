@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterOperands` Class Reference
+# `RegisterOperands` Class
 
 <p>List of registers defined and used by a machine instruction. <a href="#details">More...</a></p>
 

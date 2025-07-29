@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockSDNode` Class Reference
+# `BasicBlockSDNode` Class
 
 
 

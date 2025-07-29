@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintCallGraphPass` Class Reference
+# `PrintCallGraphPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-callgraphsccpass-cpp-/printcallgraphpass">PrintCallGraphPass</a> - Print a <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> corresponding to a call graph. <a href="#details">More...</a></p>
 

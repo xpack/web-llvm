@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiDisassembler` Class Reference
+# `LanaiDisassembler` Class
 
 
 

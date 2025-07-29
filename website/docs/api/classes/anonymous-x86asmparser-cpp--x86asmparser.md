@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AsmParser` Class Reference
+# `X86AsmParser` Class
 
 
 

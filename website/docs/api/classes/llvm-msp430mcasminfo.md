@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430MCAsmInfo` Class Reference
+# `MSP430MCAsmInfo` Class
 
 
 

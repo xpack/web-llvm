@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `liveout_iterator` Class Reference
+# `liveout_iterator` Class
 
 
 

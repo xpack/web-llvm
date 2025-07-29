@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionInfo` Class Reference
+# `FunctionInfo` Class
 
 <p>The mod/ref information collected for a particular function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueVector.h` File Reference
+# `UniqueVector.h` File
 
 
 

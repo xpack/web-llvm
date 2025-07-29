@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreMCAsmInfo` Class Reference
+# `XCoreMCAsmInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSetter` Class Template Reference
+# `GenericSetter` Class Template
 
 <p>This class can be used for tracking most instruction setters. <a href="#details">More...</a></p>
 

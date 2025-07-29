@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfReaderIndex` Class Template Reference
+# `InstrProfReaderIndex` Class Template
 
 
 

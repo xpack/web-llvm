@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILMetadataAnalysisWrapperPass` Class Reference
+# `DXILMetadataAnalysisWrapperPass` Class
 
 <p>Legacy pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDebugFixup` Class Reference
+# `WebAssemblyDebugFixup` Class
 
 
 

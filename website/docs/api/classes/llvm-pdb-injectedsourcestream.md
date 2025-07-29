@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InjectedSourceStream` Class Reference
+# `InjectedSourceStream` Class
 
 
 

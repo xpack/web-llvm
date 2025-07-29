@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULegalizerInfo` Class Reference
+# `AMDGPULegalizerInfo` Class
 
 
 

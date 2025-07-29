@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStackTrie` Class Reference
+# `CallStackTrie` Class
 
 <p>Class to build a trie of call stack contexts for a particular profiled allocation call, along with their associated allocation types. <a href="#details">More...</a></p>
 

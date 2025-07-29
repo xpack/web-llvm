@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Float2IntPass` Class Reference
+# `Float2IntPass` Class
 
 
 

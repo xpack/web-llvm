@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizePICCall` Class Reference
+# `OptimizePICCall` Class
 
 
 

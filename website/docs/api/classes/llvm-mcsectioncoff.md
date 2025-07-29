@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionCOFF` Class Reference
+# `MCSectionCOFF` Class
 
 <p>This represents a section on Windows. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCSubtarget` Class Reference
+# `ARCSubtarget` Class
 
 
 

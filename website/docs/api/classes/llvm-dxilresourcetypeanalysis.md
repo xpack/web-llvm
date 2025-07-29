@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceTypeAnalysis` Class Reference
+# `DXILResourceTypeAnalysis` Class
 
 
 

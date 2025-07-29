@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostMachineScheduler` Class Reference
+# `PostMachineScheduler` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-machinescheduler-cpp-/postmachinescheduler">PostMachineScheduler</a> runs after shortly before code emission. <a href="#details">More...</a></p>
 

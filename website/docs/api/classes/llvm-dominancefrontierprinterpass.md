@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DominanceFrontierPrinterPass` Class Reference
+# `DominanceFrontierPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/dominancefrontier">DominanceFrontier</a></span>. <a href="#details">More...</a></p>
 

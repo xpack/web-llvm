@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CatchSwitchAddHandler` Class Reference
+# `CatchSwitchAddHandler` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFBuilder` Class Template Reference
+# `ELFBuilder` Class Template
 
 
 

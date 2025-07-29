@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyGlobalAnalysis` Class Reference
+# `StackSafetyGlobalAnalysis` Class
 
 <p>This pass performs the global (interprocedural) stack safety analysis (new pass manager). <a href="#details">More...</a></p>
 

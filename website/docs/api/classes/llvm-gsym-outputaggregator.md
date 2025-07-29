@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputAggregator` Class Reference
+# `OutputAggregator` Class
 
 
 

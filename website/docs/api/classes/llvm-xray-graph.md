@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Graph` Class Template Reference
+# `Graph` Class Template
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/xray/graph">Graph</a> object represents a Directed <a href="/web-llvm/docs/api/classes/llvm/xray/graph">Graph</a> and is used in XRay to compute and store function call graphs and associated statistical information. <a href="#details">More...</a></p>
 

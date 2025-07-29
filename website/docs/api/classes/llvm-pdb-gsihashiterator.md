@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSIHashIterator` Class Reference
+# `GSIHashIterator` Class
 
 <p>Iterator over hash records producing symbol record offsets. <a href="#details">More...</a></p>
 

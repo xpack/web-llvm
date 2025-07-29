@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicAliasAnalysis.h` File Reference
+# `BasicAliasAnalysis.h` File
 
 <p>This is the interface for LLVM's primary stateless and local alias analysis. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scalar.h` File Reference
+# `Scalar.h` File
 
 
 

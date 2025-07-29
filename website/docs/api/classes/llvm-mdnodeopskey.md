@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeOpsKey` Class Reference
+# `MDNodeOpsKey` Class
 
 <p>Structure for hashing arbitrary <a href="/web-llvm/docs/api/classes/llvm/mdnode">MDNode</a> operands. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssemblyWriter` Class Reference
+# `AssemblyWriter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondCodeSDNode` Class Reference
+# `CondCodeSDNode` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APInt` Class Reference
+# `APInt` Class
 
 <p>Class for arbitrary precision integers. <a href="#details">More...</a></p>
 

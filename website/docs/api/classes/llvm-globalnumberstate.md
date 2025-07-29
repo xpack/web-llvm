@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalNumberState` Class Reference
+# `GlobalNumberState` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/globalnumberstate">GlobalNumberState</a> assigns an integer to each global value in the program, which is used by the comparison routine to order references to globals. <a href="#details">More...</a></p>
 

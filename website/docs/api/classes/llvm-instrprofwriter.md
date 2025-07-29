@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfWriter` Class Reference
+# `InstrProfWriter` Class
 
 
 

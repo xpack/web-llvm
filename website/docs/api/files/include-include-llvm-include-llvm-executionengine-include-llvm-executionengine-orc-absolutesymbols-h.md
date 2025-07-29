@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbsoluteSymbols.h` File Reference
+# `AbsoluteSymbols.h` File
 
 
 

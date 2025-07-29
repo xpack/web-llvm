@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DetectRoundChange` Class Reference
+# `DetectRoundChange` Class
 
 
 

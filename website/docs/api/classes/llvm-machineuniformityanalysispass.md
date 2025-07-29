@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineUniformityAnalysisPass` Class Reference
+# `MachineUniformityAnalysisPass` Class
 
 <p>Legacy analysis pass which computes a <a href="/web-llvm/docs/api/namespaces/llvm/#a02b9df38cfd95dfb86cb5b81234df892">MachineUniformityInfo</a>. <a href="#details">More...</a></p>
 

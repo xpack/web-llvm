@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMConstantPoolValue` Class Reference
+# `ARMConstantPoolValue` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/armconstantpoolvalue">ARMConstantPoolValue</a> - <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> specific constantpool value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionGOFF` Class Reference
+# `MCSectionGOFF` Class
 
 
 

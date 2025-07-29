@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYAsmParser` Class Reference
+# `CSKYAsmParser` Class
 
 
 

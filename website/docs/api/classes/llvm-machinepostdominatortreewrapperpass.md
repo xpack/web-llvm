@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePostDominatorTreeWrapperPass` Class Reference
+# `MachinePostDominatorTreeWrapperPass` Class
 
 
 

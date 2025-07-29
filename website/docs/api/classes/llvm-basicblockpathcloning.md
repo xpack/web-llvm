@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockPathCloning` Class Reference
+# `BasicBlockPathCloning` Class
 
 
 

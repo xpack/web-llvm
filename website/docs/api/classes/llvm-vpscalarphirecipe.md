@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPScalarPHIRecipe` Class Reference
+# `VPScalarPHIRecipe` Class
 
 <p>Recipe to generate a scalar PHI. <a href="#details">More...</a></p>
 

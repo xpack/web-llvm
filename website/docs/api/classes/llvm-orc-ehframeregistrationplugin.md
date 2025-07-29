@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHFrameRegistrationPlugin` Class Reference
+# `EHFrameRegistrationPlugin` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReachabilityGraph` Class Reference
+# `ReachabilityGraph` Class
 
 
 

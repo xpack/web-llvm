@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOUniversalBinary` Class Reference
+# `MachOUniversalBinary` Class
 
 
 

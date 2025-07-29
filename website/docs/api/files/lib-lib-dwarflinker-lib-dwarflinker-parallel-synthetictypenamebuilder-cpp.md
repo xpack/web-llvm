@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SyntheticTypeNameBuilder.cpp` File Reference
+# `SyntheticTypeNameBuilder.cpp` File
 
 
 

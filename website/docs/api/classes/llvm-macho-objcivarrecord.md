@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCIVarRecord` Class Reference
+# `ObjCIVarRecord` Class
 
 
 

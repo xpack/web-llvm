@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64FunctionInfo` Class Reference
+# `AArch64FunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/aarch64functioninfo">AArch64FunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/structs/llvm/machinefunctioninfo">MachineFunctionInfo</a> and contains private AArch64-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

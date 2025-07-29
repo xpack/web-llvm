@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowStackGCLowering.h` File Reference
+# `ShadowStackGCLowering.h` File
 
 
 

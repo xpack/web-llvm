@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTTIImpl` Class Reference
+# `NVPTXTTIImpl` Class
 
 
 

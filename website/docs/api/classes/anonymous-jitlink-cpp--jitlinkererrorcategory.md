@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkerErrorCategory` Class Reference
+# `JITLinkerErrorCategory` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchSubtarget` Class Reference
+# `LoongArchSubtarget` Class
 
 
 

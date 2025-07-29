@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrashRecoveryContextCleanup` Class Reference
+# `CrashRecoveryContextCleanup` Class
 
 <p>Abstract base class of cleanup handlers. <a href="#details">More...</a></p>
 

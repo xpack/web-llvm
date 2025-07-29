@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeBuiltin.h` File Reference
+# `PDBSymbolTypeBuiltin.h` File
 
 
 

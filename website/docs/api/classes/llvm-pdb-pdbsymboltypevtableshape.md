@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeVTableShape` Class Reference
+# `PDBSymbolTypeVTableShape` Class
 
 
 

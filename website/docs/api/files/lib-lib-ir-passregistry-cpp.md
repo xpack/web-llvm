@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassRegistry.cpp` File Reference
+# `PassRegistry.cpp` File
 
 
 

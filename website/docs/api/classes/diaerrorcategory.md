@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAErrorCategory` Class Reference
+# `DIAErrorCategory` Class
 
 
 

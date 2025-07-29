@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRLayer` Class Reference
+# `IRLayer` Class
 
 <p>Interface for layers that accept LLVM IR. <a href="#details">More...</a></p>
 

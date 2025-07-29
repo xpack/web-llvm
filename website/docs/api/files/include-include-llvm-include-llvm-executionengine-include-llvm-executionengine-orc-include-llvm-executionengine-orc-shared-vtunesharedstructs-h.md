@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTuneSharedStructs.h` File Reference
+# `VTuneSharedStructs.h` File
 
 
 

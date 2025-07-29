@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSpeculationLayer` Class Reference
+# `IRSpeculationLayer` Class
 
 
 

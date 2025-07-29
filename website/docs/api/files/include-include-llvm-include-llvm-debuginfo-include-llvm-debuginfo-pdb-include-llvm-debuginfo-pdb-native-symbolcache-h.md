@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolCache.h` File Reference
+# `SymbolCache.h` File
 
 
 

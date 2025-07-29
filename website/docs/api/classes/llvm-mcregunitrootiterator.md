@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegUnitRootIterator` Class Reference
+# `MCRegUnitRootIterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcregunitrootiterator">MCRegUnitRootIterator</a> enumerates the root registers of a register unit. <a href="#details">More...</a></p>
 

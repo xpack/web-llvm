@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TLSInfoTableManager_ELF_ppc64` Class Template Reference
+# `TLSInfoTableManager_ELF_ppc64` Class Template
 
 
 

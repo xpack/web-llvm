@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOPDCombineInfo` Class Reference
+# `VOPDCombineInfo` Class
 
 
 

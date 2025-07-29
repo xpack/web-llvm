@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHStreamer` Class Reference
+# `EHStreamer` Class
 
 <p>Emits exception handling directives. <a href="#details">More...</a></p>
 

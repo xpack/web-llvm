@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantDataSequential` Class Reference
+# `ConstantDataSequential` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/constantdatasequential">ConstantDataSequential</a> - A vector or array constant whose element type is a simple 1/2/4/8-byte integer or half/bfloat/float/double, and whose elements are just simple data values (i.e. <a href="#details">More...</a></p>
 

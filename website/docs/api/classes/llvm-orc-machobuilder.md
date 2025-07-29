@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOBuilder` Class Template Reference
+# `MachOBuilder` Class Template
 
 
 

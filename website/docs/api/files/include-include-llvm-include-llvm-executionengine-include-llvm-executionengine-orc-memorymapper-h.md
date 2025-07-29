@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryMapper.h` File Reference
+# `MemoryMapper.h` File
 
 
 

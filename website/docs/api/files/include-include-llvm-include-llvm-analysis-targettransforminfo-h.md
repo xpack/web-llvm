@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetTransformInfo.h` File Reference
+# `TargetTransformInfo.h` File
 
 <p>This pass exposes codegen information to IR-level passes. <a href="#details">More...</a></p>
 

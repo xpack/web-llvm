@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLocStream` Class Reference
+# `DebugLocStream` Class
 
 <p>Byte stream of .debug_loc entries. <a href="#details">More...</a></p>
 

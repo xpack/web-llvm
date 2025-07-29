@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostRAScheduler` Class Reference
+# `PostRAScheduler` Class
 
 
 

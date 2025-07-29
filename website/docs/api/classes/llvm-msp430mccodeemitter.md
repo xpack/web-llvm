@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430MCCodeEmitter` Class Reference
+# `MSP430MCCodeEmitter` Class
 
 
 

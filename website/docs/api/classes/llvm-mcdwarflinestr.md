@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfLineStr` Class Reference
+# `MCDwarfLineStr` Class
 
 <p>Manage the .debug_line_str section contents, if we use it. <a href="#details">More...</a></p>
 

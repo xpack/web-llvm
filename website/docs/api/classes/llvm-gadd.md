@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GAdd` Class Reference
+# `GAdd` Class
 
 <p>Represents an integer addition. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>Specialize to describe how to serialize/deserialize to/from the given concrete type. <a href="#details">More...</a></p>
 

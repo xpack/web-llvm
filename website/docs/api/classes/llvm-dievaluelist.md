@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEValueList` Class Reference
+# `DIEValueList` Class
 
 <p>A list of <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> values. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRFormatter.h` File Reference
+# `MIRFormatter.h` File
 
 
 

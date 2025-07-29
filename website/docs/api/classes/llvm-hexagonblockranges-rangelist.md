@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeList` Class Reference
+# `RangeList` Class
 
 
 

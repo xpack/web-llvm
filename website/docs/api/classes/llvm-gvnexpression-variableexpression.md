@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariableExpression` Class Reference
+# `VariableExpression` Class
 
 
 

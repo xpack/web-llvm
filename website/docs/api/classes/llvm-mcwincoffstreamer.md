@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCWinCOFFStreamer` Class Reference
+# `MCWinCOFFStreamer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleMemProfiler` Class Reference
+# `ModuleMemProfiler` Class
 
 
 

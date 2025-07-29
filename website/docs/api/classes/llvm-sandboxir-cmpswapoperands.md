@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpSwapOperands` Class Reference
+# `CmpSwapOperands` Class
 
 
 

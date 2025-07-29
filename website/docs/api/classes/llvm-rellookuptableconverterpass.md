@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelLookupTableConverterPass` Class Reference
+# `RelLookupTableConverterPass` Class
 
 
 

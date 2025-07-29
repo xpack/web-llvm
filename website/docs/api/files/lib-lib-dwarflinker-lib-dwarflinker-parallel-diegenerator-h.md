@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEGenerator.h` File Reference
+# `DIEGenerator.h` File
 
 
 

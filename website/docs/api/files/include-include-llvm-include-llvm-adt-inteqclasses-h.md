@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntEqClasses.h` File Reference
+# `IntEqClasses.h` File
 
 <p>Equivalence classes for small integers. <a href="#details">More...</a></p>
 

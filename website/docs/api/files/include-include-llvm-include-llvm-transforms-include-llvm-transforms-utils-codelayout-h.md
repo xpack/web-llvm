@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeLayout.h` File Reference
+# `CodeLayout.h` File
 
 <p>Declares methods and data structures for code layout algorithms. <a href="#details">More...</a></p>
 

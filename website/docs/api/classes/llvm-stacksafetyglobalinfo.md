@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyGlobalInfo` Class Reference
+# `StackSafetyGlobalInfo` Class
 
 
 

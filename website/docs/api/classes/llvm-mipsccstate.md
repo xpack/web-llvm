@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsCCState` Class Reference
+# `MipsCCState` Class
 
 
 

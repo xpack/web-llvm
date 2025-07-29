@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleInlinerWrapperPass` Class Reference
+# `ModuleInlinerWrapperPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/module">Module</a> pass, wrapping the inliner pass. <a href="#details">More...</a></p>
 

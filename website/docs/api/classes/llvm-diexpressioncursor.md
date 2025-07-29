@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIExpressionCursor` Class Reference
+# `DIExpressionCursor` Class
 
 <p>Holds a <a href="/web-llvm/docs/api/classes/llvm/diexpression">DIExpression</a> and keeps track of how many operands have been consumed so far. <a href="#details">More...</a></p>
 

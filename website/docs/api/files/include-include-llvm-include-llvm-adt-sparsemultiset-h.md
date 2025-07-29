@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseMultiSet.h` File Reference
+# `SparseMultiSet.h` File
 
 <p>This file defines the SparseMultiSet class, which adds multiset behavior to the SparseSet. <a href="#details">More...</a></p>
 

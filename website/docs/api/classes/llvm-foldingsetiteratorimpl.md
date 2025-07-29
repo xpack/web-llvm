@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetIteratorImpl` Class Reference
+# `FoldingSetIteratorImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetiteratorimpl">FoldingSetIteratorImpl</a> - This is the common iterator support shared by all folding sets, which knows how to walk the folding set hash table. <a href="#details">More...</a></p>
 

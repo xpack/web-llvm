@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CatchReturnInst` Class Reference
+# `CatchReturnInst` Class
 
 
 

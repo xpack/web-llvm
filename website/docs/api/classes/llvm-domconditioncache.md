@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomConditionCache` Class Reference
+# `DomConditionCache` Class
 
 
 

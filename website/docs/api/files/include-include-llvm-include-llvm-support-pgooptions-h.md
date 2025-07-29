@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOOptions.h` File Reference
+# `PGOOptions.h` File
 
 <p>Define option tunables for PGO. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRangeUpdater` Class Reference
+# `LiveRangeUpdater` Class
 
 <p>Helper class for performant <a href="/web-llvm/docs/api/classes/llvm/liverange">LiveRange</a> bulk updates. <a href="#details">More...</a></p>
 

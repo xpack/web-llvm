@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFTableShapeRecord` Class Reference
+# `VFTableShapeRecord` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MMRAMetadata` Class Reference
+# `MMRAMetadata` Class
 
 <p>Helper class to manipulate <span class="doxyComputerOutput">!mmra</span> metadata nodes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomBehaviour` Class Reference
+# `CustomBehaviour` Class
 
 <p>Class which can be overriden by targets to enforce instruction dependencies and behaviours that aren't expressed well enough within the scheduling model for mca to automatically simulate them properly. <a href="#details">More...</a></p>
 

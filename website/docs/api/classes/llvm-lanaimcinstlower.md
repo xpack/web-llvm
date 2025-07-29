@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCInstLower` Class Reference
+# `LanaiMCInstLower` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBlock` Class Reference
+# `MemoryBlock` Class
 
 <p>This class encapsulates the notion of a memory block which has an address and a size. <a href="#details">More...</a></p>
 

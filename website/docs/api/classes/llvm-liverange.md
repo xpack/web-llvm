@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRange` Class Reference
+# `LiveRange` Class
 
 <p>This class represents the liveness of a register, stack slot, etc. <a href="#details">More...</a></p>
 

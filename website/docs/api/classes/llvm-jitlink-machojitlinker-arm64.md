@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOJITLinker_arm64` Class Reference
+# `MachOJITLinker_arm64` Class
 
 
 

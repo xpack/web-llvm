@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassBuilder.h` File Reference
+# `PassBuilder.h` File
 
 <p>Interfaces for registering analysis passes, producing common pass manager configurations, and parsing of pass pipelines. <a href="#details">More...</a></p>
 

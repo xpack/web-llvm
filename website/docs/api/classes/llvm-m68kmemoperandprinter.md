@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMemOperandPrinter` Class Template Reference
+# `M68kMemOperandPrinter` Class Template
 
 
 

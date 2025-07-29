@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchRelaxation` Class Reference
+# `BranchRelaxation` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFFile` Class Template Reference
+# `ELFFile` Class Template
 
 
 

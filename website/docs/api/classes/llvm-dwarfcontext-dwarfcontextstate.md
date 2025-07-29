@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFContextState` Class Reference
+# `DWARFContextState` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfcontext/dwarfcontextstate">DWARFContextState</a> This structure contains all member variables for <a href="/web-llvm/docs/api/classes/llvm/dwarfcontext">DWARFContext</a> that need to be protected in multi-threaded environments. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemAlloc.h` File Reference
+# `MemAlloc.h` File
 
 <p>This file defines counterparts of C library allocation functions defined in the namespace 'std'. <a href="#details">More...</a></p>
 

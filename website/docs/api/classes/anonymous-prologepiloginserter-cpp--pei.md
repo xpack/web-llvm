@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PEI` Class Reference
+# `PEI` Class
 
 
 

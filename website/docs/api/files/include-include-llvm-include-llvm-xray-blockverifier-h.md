@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockVerifier.h` File Reference
+# `BlockVerifier.h` File
 
 
 

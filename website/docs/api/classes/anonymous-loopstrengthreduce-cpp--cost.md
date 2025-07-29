@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cost` Class Reference
+# `Cost` Class
 
 <p>This class is used to measure and compare candidate formulae. <a href="#details">More...</a></p>
 

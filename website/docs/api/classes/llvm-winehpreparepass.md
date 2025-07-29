@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinEHPreparePass` Class Reference
+# `WinEHPreparePass` Class
 
 
 

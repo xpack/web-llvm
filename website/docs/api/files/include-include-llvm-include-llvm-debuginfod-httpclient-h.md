@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPClient.h` File Reference
+# `HTTPClient.h` File
 
 <p>This file contains the declarations of the HTTPClient library for issuing HTTP requests and handling the responses. <a href="#details">More...</a></p>
 

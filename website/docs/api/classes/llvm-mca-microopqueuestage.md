@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MicroOpQueueStage` Class Reference
+# `MicroOpQueueStage` Class
 
 <p>A stage that simulates a queue of instruction opcodes. <a href="#details">More...</a></p>
 

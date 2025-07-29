@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MicrosoftDemangleNodes.h` File Reference
+# `MicrosoftDemangleNodes.h` File
 
 
 

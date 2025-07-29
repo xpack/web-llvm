@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineFunctionInfo` Class Reference
+# `InlineFunctionInfo` Class
 
 <p>This class captures the data input to the InlineFunction call, and records the auxiliary results produced by it. <a href="#details">More...</a></p>
 

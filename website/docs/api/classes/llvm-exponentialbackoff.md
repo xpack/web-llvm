@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExponentialBackoff` Class Reference
+# `ExponentialBackoff` Class
 
 <p>A class to help implement exponential backoff. <a href="#details">More...</a></p>
 

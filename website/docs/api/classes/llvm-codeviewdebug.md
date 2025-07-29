@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewDebug` Class Reference
+# `CodeViewDebug` Class
 
 <p>Collects and handles line tables information in a CodeView format. <a href="#details">More...</a></p>
 

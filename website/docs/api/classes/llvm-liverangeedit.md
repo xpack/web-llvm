@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRangeEdit` Class Reference
+# `LiveRangeEdit` Class
 
 
 

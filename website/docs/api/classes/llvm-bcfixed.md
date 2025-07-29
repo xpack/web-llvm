@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCFixed` Class Template Reference
+# `BCFixed` Class Template
 
 <p>Represents a fixed-width value in a bitcode record. <a href="#details">More...</a></p>
 

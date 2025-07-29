@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVNAryExpr` Class Reference
+# `SCEVNAryExpr` Class
 
 <p>This node is a base class providing common functionality for n'ary operators. <a href="#details">More...</a></p>
 

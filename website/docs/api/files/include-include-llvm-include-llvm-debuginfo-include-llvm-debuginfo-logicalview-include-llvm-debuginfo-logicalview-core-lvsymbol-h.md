@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVSymbol.h` File Reference
+# `LVSymbol.h` File
 
 
 

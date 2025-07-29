@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalOptPass` Class Reference
+# `GlobalOptPass` Class
 
 <p>Optimize globals that never have their address taken. <a href="#details">More...</a></p>
 

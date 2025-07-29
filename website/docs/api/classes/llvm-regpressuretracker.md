@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegPressureTracker` Class Reference
+# `RegPressureTracker` Class
 
 <p>Track the current register pressure at some position in the instruction stream, and remember the high water mark within the region traversed. <a href="#details">More...</a></p>
 

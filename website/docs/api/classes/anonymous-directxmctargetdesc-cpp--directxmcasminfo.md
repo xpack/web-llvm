@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXMCAsmInfo` Class Reference
+# `DirectXMCAsmInfo` Class
 
 
 

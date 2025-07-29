@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCBinaryExpr` Class Reference
+# `MCBinaryExpr` Class
 
 <p>Binary assembler expressions. <a href="#details">More...</a></p>
 

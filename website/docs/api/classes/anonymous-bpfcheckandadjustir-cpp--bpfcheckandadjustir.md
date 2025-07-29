@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFCheckAndAdjustIR` Class Reference
+# `BPFCheckAndAdjustIR` Class
 
 
 

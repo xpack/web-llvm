@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfTransformer` Class Reference
+# `DwarfTransformer` Class
 
 <p>A class that transforms the DWARF in a <a href="/web-llvm/docs/api/classes/llvm/dwarfcontext">DWARFContext</a> into GSYM information by populating the <a href="/web-llvm/docs/api/classes/llvm/gsym/gsymcreator">GsymCreator</a> object that it is constructed with. <a href="#details">More...</a></p>
 

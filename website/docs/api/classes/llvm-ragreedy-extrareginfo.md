@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraRegInfo` Class Reference
+# `ExtraRegInfo` Class
 
 <p>Track allocation stage and eviction loop prevention during allocation. <a href="#details">More...</a></p>
 

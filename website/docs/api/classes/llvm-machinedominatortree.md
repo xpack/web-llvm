@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineDominatorTree` Class Reference
+# `MachineDominatorTree` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dominatortree">DominatorTree</a> Class - Concrete subclass of <a href="/web-llvm/docs/api/classes/llvm/dominatortreebase">DominatorTreeBase</a> that is used to compute a normal dominator tree. <a href="#details">More...</a></p>
 

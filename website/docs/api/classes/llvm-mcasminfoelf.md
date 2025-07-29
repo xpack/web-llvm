@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoELF` Class Reference
+# `MCAsmInfoELF` Class
 
 
 

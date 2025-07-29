@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyRandomTypeCollection.h` File Reference
+# `LazyRandomTypeCollection.h` File
 
 
 

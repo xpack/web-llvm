@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueAsMetadata` Class Reference
+# `ValueAsMetadata` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> wrapper in the <a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a> hierarchy. <a href="#details">More...</a></p>
 

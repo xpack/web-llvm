@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LowerAMXIntrinsicsLegacyPass` Class Reference
+# `X86LowerAMXIntrinsicsLegacyPass` Class
 
 
 

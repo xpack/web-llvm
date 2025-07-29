@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CategorizedHelpPrinter` Class Reference
+# `CategorizedHelpPrinter` Class
 
 
 

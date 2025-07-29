@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandVariadics` Class Reference
+# `ExpandVariadics` Class
 
 
 

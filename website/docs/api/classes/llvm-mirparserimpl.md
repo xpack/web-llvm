@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRParserImpl` Class Reference
+# `MIRParserImpl` Class
 
 <p>This class implements the parsing of LLVM IR that's embedded inside a MIR file. <a href="#details">More...</a></p>
 

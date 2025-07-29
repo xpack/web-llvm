@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCMCInstrAnalysis` Class Reference
+# `PPCMCInstrAnalysis` Class
 
 
 

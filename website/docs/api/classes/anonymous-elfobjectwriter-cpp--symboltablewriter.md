@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTableWriter` Class Reference
+# `SymbolTableWriter` Class
 
 
 

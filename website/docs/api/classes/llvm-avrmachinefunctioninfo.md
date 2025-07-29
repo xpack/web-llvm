@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRMachineFunctionInfo` Class Reference
+# `AVRMachineFunctionInfo` Class
 
 <p>Contains AVR-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

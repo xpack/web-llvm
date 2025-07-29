@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassPlugin` Class Reference
+# `PassPlugin` Class
 
 <p>A loaded pass plugin. <a href="#details">More...</a></p>
 

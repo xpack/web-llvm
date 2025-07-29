@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostRAHazardRecognizer` Class Reference
+# `PostRAHazardRecognizer` Class
 
 
 

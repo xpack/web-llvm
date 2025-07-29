@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LexicalScopes` Class Reference
+# `LexicalScopes` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/lexicalscopes">LexicalScopes</a> - This class provides interface to collect and use lexical scoping information from machine instruction. <a href="#details">More...</a></p>
 

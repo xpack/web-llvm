@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeSourceFile` Class Reference
+# `NativeSourceFile` Class
 
 
 

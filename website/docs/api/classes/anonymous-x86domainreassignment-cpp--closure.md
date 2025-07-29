@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Closure` Class Reference
+# `Closure` Class
 
 <p>A closure is a set of virtual register representing all of the edges in the closure, as well as all of the instructions connected by those edges. <a href="#details">More...</a></p>
 

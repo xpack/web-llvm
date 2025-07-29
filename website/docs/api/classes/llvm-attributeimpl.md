@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeImpl` Class Reference
+# `AttributeImpl` Class
 
 <p>This class represents a single, uniqued attribute. <a href="#details">More...</a></p>
 

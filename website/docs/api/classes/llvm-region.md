@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Region` Class Reference
+# `Region` Class
 
 
 

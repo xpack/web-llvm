@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Immediate` Class Reference
+# `Immediate` Class
 
 
 

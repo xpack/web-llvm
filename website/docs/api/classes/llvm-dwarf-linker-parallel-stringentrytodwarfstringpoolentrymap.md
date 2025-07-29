@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringEntryToDwarfStringPoolEntryMap` Class Reference
+# `StringEntryToDwarfStringPoolEntryMap` Class
 
 <p>This class creates a <a href="/web-llvm/docs/api/structs/llvm/dwarfstringpoolentry">DwarfStringPoolEntry</a> for the corresponding <a href="/web-llvm/docs/api/namespaces/llvm/dwarf-linker/#a0b0094f2370abd91cc57b6d5476a599b">StringEntry</a>. <a href="#details">More...</a></p>
 

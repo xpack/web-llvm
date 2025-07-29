@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Result` Class Template Reference
+# `Result` Class Template
 
 <p>We need a specialized result for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#ab279be449a12f8ba5f83dceba257d796">CGSCCAnalysisManagerModuleProxy</a></span> so it can have access to the call graph in order to walk all the SCCs when invalidating things. <a href="#details">More...</a></p>
 

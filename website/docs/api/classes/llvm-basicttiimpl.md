@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicTTIImpl` Class Reference
+# `BasicTTIImpl` Class
 
 <p>Concrete <a href="/web-llvm/docs/api/classes/llvm/basicttiimpl">BasicTTIImpl</a> that can be used if no further customization is needed. <a href="#details">More...</a></p>
 

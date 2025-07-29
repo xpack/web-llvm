@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupBWInstPass` Class Reference
+# `FixupBWInstPass` Class
 
 
 

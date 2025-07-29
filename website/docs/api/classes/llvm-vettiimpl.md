@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETTIImpl` Class Reference
+# `VETTIImpl` Class
 
 
 

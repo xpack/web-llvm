@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIConstant` Class Reference
+# `GIConstant` Class
 
 <p>An integer-like constant. <a href="#details">More...</a></p>
 

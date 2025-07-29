@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassRegistry` Class Reference
+# `PassRegistry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/passregistry">PassRegistry</a> - This class manages the registration and intitialization of the pass subsystem as application startup, and assists the <a href="/web-llvm/docs/api/classes/llvm/passmanager">PassManager</a> in resolving pass dependencies. <a href="#details">More...</a></p>
 

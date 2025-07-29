@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTargetParser.h` File Reference
+# `RISCVTargetParser.h` File
 
 
 

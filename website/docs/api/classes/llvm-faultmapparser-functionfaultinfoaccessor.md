@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionFaultInfoAccessor` Class Reference
+# `FunctionFaultInfoAccessor` Class
 
 
 

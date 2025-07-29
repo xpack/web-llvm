@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadedObjectInfo` Class Reference
+# `LoadedObjectInfo` Class
 
 <p>Information about the loaded object. <a href="#details">More...</a></p>
 

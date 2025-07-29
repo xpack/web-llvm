@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAE` Class Reference
+# `DAE` Class
 
 <p>The dead argument elimination pass. <a href="#details">More...</a></p>
 

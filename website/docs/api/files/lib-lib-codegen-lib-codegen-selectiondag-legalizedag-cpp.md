@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeDAG.cpp` File Reference
+# `LegalizeDAG.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsebTargetMachine` Class Reference
+# `MipsebTargetMachine` Class
 
 <p>Mips32/64 big endian target machine. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSchedulerBase` Class Reference
+# `MachineSchedulerBase` Class
 
 <p>Base class for a machine scheduler class that can run at any point. <a href="#details">More...</a></p>
 

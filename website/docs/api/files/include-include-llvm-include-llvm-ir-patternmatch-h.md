@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PatternMatch.h` File Reference
+# `PatternMatch.h` File
 
 
 

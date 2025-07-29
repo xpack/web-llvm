@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator` Class Reference
+# `iterator` Class
 
 <p>An iterator used for the edges to both entry nodes and child nodes. <a href="#details">More...</a></p>
 

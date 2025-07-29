@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Solution.h` File Reference
+# `Solution.h` File
 
 
 

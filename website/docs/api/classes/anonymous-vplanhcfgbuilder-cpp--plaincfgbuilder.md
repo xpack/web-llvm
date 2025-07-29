@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PlainCFGBuilder` Class Reference
+# `PlainCFGBuilder` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarizerPass` Class Reference
+# `ScalarizerPass` Class
 
 
 

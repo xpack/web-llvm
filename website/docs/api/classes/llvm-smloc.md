@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMLoc` Class Reference
+# `SMLoc` Class
 
 <p>Represents a location in source code. <a href="#details">More...</a></p>
 

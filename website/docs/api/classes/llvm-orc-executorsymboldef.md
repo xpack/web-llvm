@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutorSymbolDef` Class Reference
+# `ExecutorSymbolDef` Class
 
 <p>Represents a defining location for a JIT symbol. <a href="#details">More...</a></p>
 

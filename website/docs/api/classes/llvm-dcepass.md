@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DCEPass` Class Reference
+# `DCEPass` Class
 
 <p>Basic Dead Code Elimination pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertSubregRewriter` Class Reference
+# `InsertSubregRewriter` Class
 
 <p>Specialized rewriter for INSERT_SUBREG instruction. <a href="#details">More...</a></p>
 

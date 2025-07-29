@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldELF` Class Reference
+# `RuntimeDyldELF` Class
 
 
 

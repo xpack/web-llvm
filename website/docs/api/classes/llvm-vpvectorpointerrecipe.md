@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPVectorPointerRecipe` Class Reference
+# `VPVectorPointerRecipe` Class
 
 <p>A recipe to compute the pointers for widened memory accesses of IndexTy. <a href="#details">More...</a></p>
 

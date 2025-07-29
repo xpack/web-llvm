@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSubRegIterator` Class Reference
+# `MCSubRegIterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcsubregiterator">MCSubRegIterator</a> enumerates all sub-registers of Reg. <a href="#details">More...</a></p>
 

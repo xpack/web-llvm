@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParentPass` Class Reference
+# `ParentPass` Class
 
 
 

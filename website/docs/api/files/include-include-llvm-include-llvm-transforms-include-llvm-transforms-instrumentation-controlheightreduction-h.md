@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ControlHeightReduction.h` File Reference
+# `ControlHeightReduction.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Metadata.h` File Reference
+# `Metadata.h` File
 
 <p>This file contains the declarations for metadata subclasses. <a href="#details">More...</a></p>
 

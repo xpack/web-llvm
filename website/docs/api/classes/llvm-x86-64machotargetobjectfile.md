@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86_64MachoTargetObjectFile` Class Reference
+# `X86_64MachoTargetObjectFile` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/x86-64machotargetobjectfile">X86_64MachoTargetObjectFile</a> - This TLOF implementation is used for Darwin x86-64. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCObjectFileInfo.cpp` File Reference
+# `MCObjectFileInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAGreedy` Class Reference
+# `RAGreedy` Class
 
 
 

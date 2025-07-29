@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRTargetObjectFile` Class Reference
+# `AVRTargetObjectFile` Class
 
 <p>Lowering for an <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> ELF32 object file. <a href="#details">More...</a></p>
 

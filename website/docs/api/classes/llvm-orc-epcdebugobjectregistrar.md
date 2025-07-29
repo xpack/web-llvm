@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCDebugObjectRegistrar` Class Reference
+# `EPCDebugObjectRegistrar` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/use">Use</a> <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> to register debug objects locally or in a remote executor process. <a href="#details">More...</a></p>
 

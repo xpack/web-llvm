@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsyncABI` Class Reference
+# `AsyncABI` Class
 
 
 

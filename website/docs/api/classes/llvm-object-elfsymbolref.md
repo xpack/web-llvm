@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFSymbolRef` Class Reference
+# `ELFSymbolRef` Class
 
 
 

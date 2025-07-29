@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InteractiveModelRunner` Class Reference
+# `InteractiveModelRunner` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/mlmodelrunner">MLModelRunner</a> that asks for advice from an external agent, or host. <a href="#details">More...</a></p>
 

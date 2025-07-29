@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDataPrefetch.h` File Reference
+# `LoopDataPrefetch.h` File
 
 <p>This file provides the interface for LLVM's Loop Data Prefetching Pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSet.h` File Reference
+# `FoldingSet.h` File
 
 <p>This file defines a hash set that can be used to remove duplication of nodes in a graph. <a href="#details">More...</a></p>
 

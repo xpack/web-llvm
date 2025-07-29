@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyCFG.h` File Reference
+# `SimplifyCFG.h` File
 
 <p>This file provides the interface for the pass responsible for both simplifying and canonicalizing the CFG. <a href="#details">More...</a></p>
 

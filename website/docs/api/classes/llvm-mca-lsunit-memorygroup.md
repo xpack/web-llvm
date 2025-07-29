@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryGroup` Class Reference
+# `MemoryGroup` Class
 
 <p>A node of a memory dependency graph. <a href="#details">More...</a></p>
 

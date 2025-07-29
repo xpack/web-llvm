@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueDFSStack` Class Reference
+# `ValueDFSStack` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCELFStreamer` Class Reference
+# `HexagonMCELFStreamer` Class
 
 
 

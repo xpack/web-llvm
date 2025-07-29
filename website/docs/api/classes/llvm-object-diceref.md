@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiceRef` Class Reference
+# `DiceRef` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/diceref">DiceRef</a> - This is a value type class that represents a single data in code entry in the table in a Mach-O object file. <a href="#details">More...</a></p>
 

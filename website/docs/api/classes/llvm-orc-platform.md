@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Platform` Class Reference
+# `Platform` Class
 
 <p>Platforms set up standard symbols and mediate interactions between dynamic initializers (e.g. <a href="#details">More...</a></p>
 

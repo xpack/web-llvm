@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphDiff` Class Template Reference
+# `GraphDiff` Class Template
 
 
 

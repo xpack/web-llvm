@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPTypeAnalysis` Class Reference
+# `VPTypeAnalysis` Class
 
 <p>An analysis for type-inference for VPValues. <a href="#details">More...</a></p>
 

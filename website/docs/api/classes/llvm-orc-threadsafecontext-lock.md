@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Lock` Class Reference
+# `Lock` Class
 
 
 

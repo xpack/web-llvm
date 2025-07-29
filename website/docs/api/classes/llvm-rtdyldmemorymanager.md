@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RTDyldMemoryManager` Class Reference
+# `RTDyldMemoryManager` Class
 
 
 

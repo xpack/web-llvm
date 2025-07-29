@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmLexer` Class Reference
+# `AsmLexer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/asmlexer">AsmLexer</a> - Lexer class for assembly files. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SharesPredWithPrevNthGroup` Class Reference
+# `SharesPredWithPrevNthGroup` Class
 
 <p>Whether the SU shares a V_PERM predecessor with any SU in the <a href="/web-llvm/docs/api/classes/anonymous-amdgpuigrouplp-cpp-/schedgroup">SchedGroup</a> that is <span class="doxyComputerOutput">Distance</span> steps away. <a href="#details">More...</a></p>
 

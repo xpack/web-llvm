@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopStrengthReducePass` Class Reference
+# `LoopStrengthReducePass` Class
 
 <p>Performs <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Strength Reduce <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

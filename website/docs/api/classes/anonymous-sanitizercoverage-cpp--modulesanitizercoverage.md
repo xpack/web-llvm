@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSanitizerCoverage` Class Reference
+# `ModuleSanitizerCoverage` Class
 
 
 

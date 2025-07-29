@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionToLoopPassAdaptor` Class Reference
+# `FunctionToLoopPassAdaptor` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MachineFunctionInfo` Class Reference
+# `X86MachineFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/x86machinefunctioninfo">X86MachineFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> and contains private <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCPassConfig` Class Reference
+# `ARCPassConfig` Class
 
 <p>ARC Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

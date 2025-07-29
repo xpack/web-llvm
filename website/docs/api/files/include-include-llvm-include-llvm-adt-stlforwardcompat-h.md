@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `STLForwardCompat.h` File Reference
+# `STLForwardCompat.h` File
 
 <p>This file contains library features backported from future STL versions. <a href="#details">More...</a></p>
 

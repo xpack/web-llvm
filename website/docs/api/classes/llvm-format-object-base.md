@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_object_base` Class Reference
+# `format_object_base` Class
 
 <p>This is a helper class used for handling formatted output. <a href="#details">More...</a></p>
 

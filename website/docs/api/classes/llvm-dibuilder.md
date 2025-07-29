@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIBuilder` Class Reference
+# `DIBuilder` Class
 
 
 

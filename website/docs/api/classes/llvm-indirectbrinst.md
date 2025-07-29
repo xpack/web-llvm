@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectBrInst` Class Reference
+# `IndirectBrInst` Class
 
 <p>Indirect Branch <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCounterPromoterHelper` Class Reference
+# `PGOCounterPromoterHelper` Class
 
 <p>A helper class to promote one counter RMW operation in the loop into register update. <a href="#details">More...</a></p>
 

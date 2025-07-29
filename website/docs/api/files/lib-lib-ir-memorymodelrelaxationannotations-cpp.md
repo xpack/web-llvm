@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryModelRelaxationAnnotations.cpp` File Reference
+# `MemoryModelRelaxationAnnotations.cpp` File
 
 
 

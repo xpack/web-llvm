@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasNode` Class Reference
+# `AliasNode` Class
 
 <p>Represents an alias to a <a href="/web-llvm/docs/api/classes/llvm/yaml/node">Node</a> with an anchor. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OccursAtOrAfterNode` Class Reference
+# `OccursAtOrAfterNode` Class
 
 <p>Whether or not the instruction occurs after the SU with NodeNUm <span class="doxyComputerOutput">Number</span>. <a href="#details">More...</a></p>
 

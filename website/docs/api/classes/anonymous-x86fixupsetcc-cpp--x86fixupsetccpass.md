@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FixupSetCCPass` Class Reference
+# `X86FixupSetCCPass` Class
 
 
 

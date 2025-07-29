@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostGenericScheduler` Class Reference
+# `PostGenericScheduler` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/postgenericscheduler">PostGenericScheduler</a> - Interface to the scheduling algorithm used by <a href="/web-llvm/docs/api/classes/llvm/scheduledagmi">ScheduleDAGMI</a>. <a href="#details">More...</a></p>
 

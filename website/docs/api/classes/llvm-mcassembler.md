@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAssembler` Class Reference
+# `MCAssembler` Class
 
 
 

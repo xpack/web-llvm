@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileLoaderBaseImpl` Class Template Reference
+# `SampleProfileLoaderBaseImpl` Class Template
 
 
 

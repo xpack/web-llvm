@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeDimension.h` File Reference
+# `PDBSymbolTypeDimension.h` File
 
 
 

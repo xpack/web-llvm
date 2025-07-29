@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MOVEMState` Class Reference
+# `MOVEMState` Class
 
 <p>An abtraction of the MOVEM chain currently processing. <a href="#details">More...</a></p>
 

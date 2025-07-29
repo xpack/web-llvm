@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scoreboard` Class Reference
+# `Scoreboard` Class
 
 
 

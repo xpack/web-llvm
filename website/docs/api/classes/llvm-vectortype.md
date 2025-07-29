@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorType` Class Reference
+# `VectorType` Class
 
 <p>Base class of all SIMD vector types. <a href="#details">More...</a></p>
 

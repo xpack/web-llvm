@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItaniumManglingCanonicalizer.h` File Reference
+# `ItaniumManglingCanonicalizer.h` File
 
 
 

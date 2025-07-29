@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FAddCombine` Class Reference
+# `FAddCombine` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddcombine">FAddCombine</a> is the class for optimizing an unsafe fadd/fsub along with its neighboring at most two instructions. <a href="#details">More...</a></p>
 

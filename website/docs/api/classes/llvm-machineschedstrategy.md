@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSchedStrategy` Class Reference
+# `MachineSchedStrategy` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a> - Interface to the scheduling algorithm used by <a href="/web-llvm/docs/api/classes/llvm/scheduledagmi">ScheduleDAGMI</a>. <a href="#details">More...</a></p>
 

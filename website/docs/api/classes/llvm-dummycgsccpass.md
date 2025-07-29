@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DummyCGSCCPass` Class Reference
+# `DummyCGSCCPass` Class
 
 <p>This pass is required by interprocedural register allocation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCRegisterInfo` Class Reference
+# `PPCRegisterInfo` Class
 
 
 

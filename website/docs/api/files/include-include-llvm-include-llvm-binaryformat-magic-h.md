@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Magic.h` File Reference
+# `Magic.h` File
 
 
 

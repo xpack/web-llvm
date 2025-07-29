@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocSectionWithSymtabBase` Class Template Reference
+# `RelocSectionWithSymtabBase` Class Template
 
 
 

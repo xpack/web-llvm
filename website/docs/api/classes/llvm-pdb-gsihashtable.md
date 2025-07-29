@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSIHashTable` Class Reference
+# `GSIHashTable` Class
 
 <p>A readonly view of a hash table used in the globals and publics streams. <a href="#details">More...</a></p>
 

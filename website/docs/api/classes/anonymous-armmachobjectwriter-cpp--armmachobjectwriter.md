@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMachObjectWriter` Class Reference
+# `ARMMachObjectWriter` Class
 
 
 

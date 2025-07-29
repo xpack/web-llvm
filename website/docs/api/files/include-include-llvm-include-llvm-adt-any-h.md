@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Any.h` File Reference
+# `Any.h` File
 
 <p>This file provides Any, a non-template class modeled in the spirit of std::any. <a href="#details">More...</a></p>
 

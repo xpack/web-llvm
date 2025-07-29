@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Constants.h` File Reference
+# `Constants.h` File
 
 <p>This file contains the declarations for the subclasses of Constant, which represent the different flavors of constant values that live in LLVM. <a href="#details">More...</a></p>
 

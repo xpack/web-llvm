@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecificBumpPtrAllocator` Class Template Reference
+# `SpecificBumpPtrAllocator` Class Template
 
 <p>A <a href="/web-llvm/docs/api/namespaces/llvm/#a8e612822d4ba7bb36c9c79582a567108">BumpPtrAllocator</a> that allows only elements of a specific type to be allocated. <a href="#details">More...</a></p>
 

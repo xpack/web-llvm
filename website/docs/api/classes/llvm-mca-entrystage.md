@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryStage` Class Reference
+# `EntryStage` Class
 
 
 

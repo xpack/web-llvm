@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PackedVector.h` File Reference
+# `PackedVector.h` File
 
 <p>This file implements the PackedVector class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LowerTileCopy` Class Reference
+# `X86LowerTileCopy` Class
 
 
 

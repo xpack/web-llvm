@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolIdFragment` Class Reference
+# `MCSymbolIdFragment` Class
 
 <p>Represents a symbol table index fragment. <a href="#details">More...</a></p>
 

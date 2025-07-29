@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCOperandInfo` Class Reference
+# `MCOperandInfo` Class
 
 <p>This holds information about one operand of a machine instruction, indicating the register class for register operands, etc. <a href="#details">More...</a></p>
 

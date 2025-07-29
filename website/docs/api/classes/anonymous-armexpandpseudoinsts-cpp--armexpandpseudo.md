@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMExpandPseudo` Class Reference
+# `ARMExpandPseudo` Class
 
 
 

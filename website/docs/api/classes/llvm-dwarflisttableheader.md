@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFListTableHeader` Class Reference
+# `DWARFListTableHeader` Class
 
 <p>A class representing the header of a list table such as the range list table in the .debug_rnglists section. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImplicitNullChecks` Class Reference
+# `ImplicitNullChecks` Class
 
 
 

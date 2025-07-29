@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Pass` Class Reference
+# `Pass` Class
 
 <p>The base class of a Sandbox IR <a href="/web-llvm/docs/api/classes/llvm/sandboxir/pass">Pass</a>. <a href="#details">More...</a></p>
 

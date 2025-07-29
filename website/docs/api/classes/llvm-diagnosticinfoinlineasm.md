@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoInlineAsm` Class Reference
+# `DiagnosticInfoInlineAsm` Class
 
 <p>Diagnostic information for inline asm reporting. <a href="#details">More...</a></p>
 

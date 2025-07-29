@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarHNode` Class Reference
+# `ScalarHNode` Class
 
 
 

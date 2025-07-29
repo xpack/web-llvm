@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetImageBaseSymbol` Class Reference
+# `GetImageBaseSymbol` Class
 
 
 

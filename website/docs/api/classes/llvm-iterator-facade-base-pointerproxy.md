@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerProxy` Class Reference
+# `PointerProxy` Class
 
 <p>A proxy object for computing a pointer via indirecting a copy of a reference. <a href="#details">More...</a></p>
 

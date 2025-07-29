@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnablesInitialMFMA` Class Reference
+# `EnablesInitialMFMA` Class
 
 
 

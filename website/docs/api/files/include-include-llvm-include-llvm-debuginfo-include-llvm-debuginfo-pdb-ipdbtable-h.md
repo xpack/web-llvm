@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBTable.h` File Reference
+# `IPDBTable.h` File
 
 
 

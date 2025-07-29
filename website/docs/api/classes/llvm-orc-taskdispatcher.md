@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TaskDispatcher` Class Reference
+# `TaskDispatcher` Class
 
 <p>Abstract base for classes that dispatch ORC Tasks. <a href="#details">More...</a></p>
 

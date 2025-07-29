@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonConvergingVLIWScheduler` Class Reference
+# `HexagonConvergingVLIWScheduler` Class
 
 
 

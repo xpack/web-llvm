@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InLineChangePrinter` Class Reference
+# `InLineChangePrinter` Class
 
 
 

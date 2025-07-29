@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandMemCmp.h` File Reference
+# `ExpandMemCmp.h` File
 
 
 

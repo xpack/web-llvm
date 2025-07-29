@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreSelectionDAGInfo` Class Reference
+# `XCoreSelectionDAGInfo` Class
 
 
 

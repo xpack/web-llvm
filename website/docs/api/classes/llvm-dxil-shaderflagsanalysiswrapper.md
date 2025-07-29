@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShaderFlagsAnalysisWrapper` Class Reference
+# `ShaderFlagsAnalysisWrapper` Class
 
 <p>Wrapper pass for the legacy pass manager. <a href="#details">More...</a></p>
 

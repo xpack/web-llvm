@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryOpRemark.h` File Reference
+# `MemoryOpRemark.h` File
 
 
 

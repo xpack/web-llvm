@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstrainedFPIntrinsic` Class Reference
+# `ConstrainedFPIntrinsic` Class
 
 <p>This is the common base class for constrained floating point intrinsics. <a href="#details">More...</a></p>
 

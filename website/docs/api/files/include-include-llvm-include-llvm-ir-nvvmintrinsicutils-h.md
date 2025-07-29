@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVVMIntrinsicUtils.h` File Reference
+# `NVVMIntrinsicUtils.h` File
 
 <p>This file contains the definitions of the enumerations and flags associated with NVVM Intrinsics, along with some helper functions. <a href="#details">More...</a></p>
 

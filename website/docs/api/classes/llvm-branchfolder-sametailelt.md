@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SameTailElt` Class Reference
+# `SameTailElt` Class
 
 
 

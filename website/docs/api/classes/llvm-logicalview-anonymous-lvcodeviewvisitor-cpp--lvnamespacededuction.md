@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVNamespaceDeduction` Class Reference
+# `LVNamespaceDeduction` Class
 
 
 

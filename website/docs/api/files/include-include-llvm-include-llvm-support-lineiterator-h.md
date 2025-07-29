@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineIterator.h` File Reference
+# `LineIterator.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintArg` Class Reference
+# `PrintArg` Class
 
 
 

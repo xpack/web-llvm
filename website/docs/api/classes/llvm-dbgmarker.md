@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgMarker` Class Reference
+# `DbgMarker` Class
 
 <p>Per-instruction record of debug-info. <a href="#details">More...</a></p>
 

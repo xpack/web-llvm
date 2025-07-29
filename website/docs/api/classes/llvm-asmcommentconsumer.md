@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmCommentConsumer` Class Reference
+# `AsmCommentConsumer` Class
 
 <p>A callback class which is notified of each comment in an assembly file as it is lexed. <a href="#details">More...</a></p>
 

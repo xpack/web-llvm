@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSTextureExtType` Class Reference
+# `MSTextureExtType` Class
 
 <p>The dx.MSTexture target extension type. <a href="#details">More...</a></p>
 

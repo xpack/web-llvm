@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemProfReader.h` File Reference
+# `MemProfReader.h` File
 
 
 

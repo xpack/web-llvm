@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotMapping.h` File Reference
+# `SlotMapping.h` File
 
 
 

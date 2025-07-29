@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MultiFormatConfig` Class Reference
+# `MultiFormatConfig` Class
 
 
 

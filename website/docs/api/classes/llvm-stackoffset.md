@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackOffset` Class Reference
+# `StackOffset` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stackoffset">StackOffset</a> holds a fixed and a scalable offset in bytes. <a href="#details">More...</a></p>
 

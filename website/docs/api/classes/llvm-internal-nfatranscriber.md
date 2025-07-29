@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NfaTranscriber` Class Reference
+# `NfaTranscriber` Class
 
 <p>The internal class that maintains all possible paths through an NFA based on a path through the DFA. <a href="#details">More...</a></p>
 

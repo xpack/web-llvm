@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZTargetMachine` Class Reference
+# `SystemZTargetMachine` Class
 
 
 

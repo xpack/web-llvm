@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DroppedVariableStatsIR.h` File Reference
+# `DroppedVariableStatsIR.h` File
 
 <p>===- <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/passes/droppedvariablestatsir-h">DroppedVariableStatsIR.h</a> - Opt Diagnostics -*- C++ -*-----------—===// <a href="#details">More...</a></p>
 

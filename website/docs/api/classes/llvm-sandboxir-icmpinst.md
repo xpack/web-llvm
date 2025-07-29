@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICmpInst` Class Reference
+# `ICmpInst` Class
 
 
 

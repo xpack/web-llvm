@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopTermFoldPass` Class Reference
+# `LoopTermFoldPass` Class
 
 
 

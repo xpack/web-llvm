@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSymbolRVASubsection.h` File Reference
+# `DebugSymbolRVASubsection.h` File
 
 
 

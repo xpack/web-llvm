@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerBinaryMetadata.h` File Reference
+# `SanitizerBinaryMetadata.h` File
 
 
 

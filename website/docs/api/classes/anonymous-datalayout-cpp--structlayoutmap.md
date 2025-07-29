@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructLayoutMap` Class Reference
+# `StructLayoutMap` Class
 
 
 

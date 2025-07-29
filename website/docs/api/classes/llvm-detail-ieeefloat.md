@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IEEEFloat` Class Reference
+# `IEEEFloat` Class
 
 
 

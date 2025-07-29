@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolRefExpr` Class Reference
+# `MCSymbolRefExpr` Class
 
 <p>Represent a reference to a symbol from inside an expression. <a href="#details">More...</a></p>
 

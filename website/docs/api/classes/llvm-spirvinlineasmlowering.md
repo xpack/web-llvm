@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVInlineAsmLowering` Class Reference
+# `SPIRVInlineAsmLowering` Class
 
 
 

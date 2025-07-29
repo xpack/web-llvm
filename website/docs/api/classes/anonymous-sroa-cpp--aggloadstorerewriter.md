@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AggLoadStoreRewriter` Class Reference
+# `AggLoadStoreRewriter` Class
 
 <p>Visitor to rewrite aggregate loads and stores as scalar. <a href="#details">More...</a></p>
 

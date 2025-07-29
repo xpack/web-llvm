@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedMemProfReader` Class Reference
+# `IndexedMemProfReader` Class
 
 
 

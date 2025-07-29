@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutliningRegion` Class Reference
+# `OutliningRegion` Class
 
 <p>A maximal outlining region. <a href="#details">More...</a></p>
 

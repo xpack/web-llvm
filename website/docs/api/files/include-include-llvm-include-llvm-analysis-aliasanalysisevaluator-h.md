@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasAnalysisEvaluator.h` File Reference
+# `AliasAnalysisEvaluator.h` File
 
 <p>This file implements a simple N^2 alias analysis accuracy evaluator. <a href="#details">More...</a></p>
 

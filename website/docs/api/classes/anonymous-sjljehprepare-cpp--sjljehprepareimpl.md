@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SjLjEHPrepareImpl` Class Reference
+# `SjLjEHPrepareImpl` Class
 
 
 

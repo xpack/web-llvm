@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaterializationResponsibility` Class Reference
+# `MaterializationResponsibility` Class
 
 <p>Tracks responsibility for materialization, and mediates interactions between MaterializationUnits and JDs. <a href="#details">More...</a></p>
 

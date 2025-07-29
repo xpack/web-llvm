@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HipStdParAllocationInterpositionPass` Class Reference
+# `HipStdParAllocationInterpositionPass` Class
 
 
 

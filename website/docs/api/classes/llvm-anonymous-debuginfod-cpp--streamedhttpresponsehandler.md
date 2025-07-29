@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StreamedHTTPResponseHandler` Class Reference
+# `StreamedHTTPResponseHandler` Class
 
 <p>A simple handler which streams the returned data to a cache file. <a href="#details">More...</a></p>
 

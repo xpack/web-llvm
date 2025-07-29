@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSubRegIndexIterator` Class Reference
+# `MCSubRegIndexIterator` Class
 
 <p>Iterator that enumerates the sub-registers of a Reg and the associated sub-register indices. <a href="#details">More...</a></p>
 

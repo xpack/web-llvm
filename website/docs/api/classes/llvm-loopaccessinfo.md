@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopAccessInfo` Class Reference
+# `LoopAccessInfo` Class
 
 <p>Drive the analysis of memory accesses in the loop. <a href="#details">More...</a></p>
 

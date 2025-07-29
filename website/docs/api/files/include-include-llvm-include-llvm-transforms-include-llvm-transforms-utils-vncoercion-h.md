@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VNCoercion.h` File Reference
+# `VNCoercion.h` File
 
 
 

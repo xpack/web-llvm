@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `early_inc_iterator_impl` Class Template Reference
+# `early_inc_iterator_impl` Class Template
 
 <p>A pseudo-iterator adaptor that is designed to implement "early increment" style loops. <a href="#details">More...</a></p>
 

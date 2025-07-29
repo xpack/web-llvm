@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOIndirectCallPromotion` Class Reference
+# `PGOIndirectCallPromotion` Class
 
 <p>The indirect function call promotion pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfCntrInstBase` Class Reference
+# `InstrProfCntrInstBase` Class
 
 <p>A base class for all instrprof counter intrinsics. <a href="#details">More...</a></p>
 

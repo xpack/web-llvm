@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueIterator` Class Reference
+# `ValueIterator` Class
 
 
 

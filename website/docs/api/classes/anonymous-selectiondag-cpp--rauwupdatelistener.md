@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAUWUpdateListener` Class Reference
+# `RAUWUpdateListener` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauwupdatelistener">RAUWUpdateListener</a> - Helper for ReplaceAllUsesWith - When the node pointed to by a use iterator is deleted, increment the use iterator so that it doesn't dangle. <a href="#details">More...</a></p>
 

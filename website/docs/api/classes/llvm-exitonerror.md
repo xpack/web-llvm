@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExitOnError` Class Reference
+# `ExitOnError` Class
 
 <p>Helper for check-and-exit error handling. <a href="#details">More...</a></p>
 

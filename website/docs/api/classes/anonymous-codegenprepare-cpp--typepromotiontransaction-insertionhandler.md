@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertionHandler` Class Reference
+# `InsertionHandler` Class
 
 <p>Utility to remember the position of an instruction. <a href="#details">More...</a></p>
 

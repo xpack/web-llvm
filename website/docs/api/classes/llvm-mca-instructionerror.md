@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionError` Class Template Reference
+# `InstructionError` Class Template
 
 
 

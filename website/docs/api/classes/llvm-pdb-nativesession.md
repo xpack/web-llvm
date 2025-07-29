@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeSession` Class Reference
+# `NativeSession` Class
 
 
 

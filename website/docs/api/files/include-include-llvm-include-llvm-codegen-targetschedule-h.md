@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetSchedule.h` File Reference
+# `TargetSchedule.h` File
 
 
 

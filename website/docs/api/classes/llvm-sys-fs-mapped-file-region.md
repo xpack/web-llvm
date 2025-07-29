@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mapped_file_region` Class Reference
+# `mapped_file_region` Class
 
 <p>This class represents a memory mapped file. <a href="#details">More...</a></p>
 

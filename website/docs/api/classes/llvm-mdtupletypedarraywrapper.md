@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDTupleTypedArrayWrapper` Class Template Reference
+# `MDTupleTypedArrayWrapper` Class Template
 
 <p>Typed, array-like tuple of metadata. <a href="#details">More...</a></p>
 

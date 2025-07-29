@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FMFSource` Class Reference
+# `FMFSource` Class
 
 <p>This provides a helper for copying FMF from an instruction or setting specified flags. <a href="#details">More...</a></p>
 

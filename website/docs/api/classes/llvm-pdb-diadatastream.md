@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIADataStream` Class Reference
+# `DIADataStream` Class
 
 
 

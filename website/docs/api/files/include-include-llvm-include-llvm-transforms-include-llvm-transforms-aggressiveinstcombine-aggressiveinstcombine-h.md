@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AggressiveInstCombine.h` File Reference
+# `AggressiveInstCombine.h` File
 
 <p>AggressiveInstCombiner - Combine expression patterns to form expressions with fewer, simple instructions. <a href="#details">More...</a></p>
 

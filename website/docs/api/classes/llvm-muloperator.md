@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MulOperator` Class Reference
+# `MulOperator` Class
 
 
 

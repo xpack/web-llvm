@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRYamlMapping.h` File Reference
+# `MIRYamlMapping.h` File
 
 
 

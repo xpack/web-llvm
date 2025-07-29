@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageFilenamesSectionWriter` Class Reference
+# `CoverageFilenamesSectionWriter` Class
 
 <p>Writer of the filenames section for the instrumentation based code coverage. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenCastRecipe` Class Reference
+# `VPWidenCastRecipe` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpwidencastrecipe">VPWidenCastRecipe</a> is a recipe to create vector cast instructions. <a href="#details">More...</a></p>
 

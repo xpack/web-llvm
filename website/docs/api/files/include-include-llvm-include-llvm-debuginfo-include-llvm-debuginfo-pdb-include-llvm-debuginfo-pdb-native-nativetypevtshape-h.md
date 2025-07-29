@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeVTShape.h` File Reference
+# `NativeTypeVTShape.h` File
 
 
 

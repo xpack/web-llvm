@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfIncrementInst` Class Reference
+# `InstrProfIncrementInst` Class
 
 <p>This represents the llvm.instrprof.increment intrinsic. <a href="#details">More...</a></p>
 

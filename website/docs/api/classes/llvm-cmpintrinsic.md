@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpIntrinsic` Class Reference
+# `CmpIntrinsic` Class
 
 <p>This class represents a ucmp/scmp intrinsic. <a href="#details">More...</a></p>
 

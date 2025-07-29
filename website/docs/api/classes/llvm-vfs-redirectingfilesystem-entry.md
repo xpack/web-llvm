@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Class Reference
+# `Entry` Class
 
 <p>A single file or directory in the VFS. <a href="#details">More...</a></p>
 

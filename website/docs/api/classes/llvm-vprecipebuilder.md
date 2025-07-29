@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPRecipeBuilder` Class Reference
+# `VPRecipeBuilder` Class
 
 <p>Helper class to create VPRecipies from IR instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILPrettyPrinterLegacy` Class Reference
+# `DXILPrettyPrinterLegacy` Class
 
 
 

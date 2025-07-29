@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuryPointer.h` File Reference
+# `BuryPointer.h` File
 
 
 

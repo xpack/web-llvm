@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSAWrapperPass` Class Reference
+# `MemorySSAWrapperPass` Class
 
 <p>Legacy analysis pass which computes <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/memoryssa">MemorySSA</a></span>. <a href="#details">More...</a></p>
 

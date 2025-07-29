@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430FrameLowering` Class Reference
+# `MSP430FrameLowering` Class
 
 
 

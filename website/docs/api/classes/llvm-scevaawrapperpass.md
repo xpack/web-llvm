@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVAAWrapperPass` Class Reference
+# `SCEVAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/scevaaresult">SCEVAAResult</a> object. <a href="#details">More...</a></p>
 

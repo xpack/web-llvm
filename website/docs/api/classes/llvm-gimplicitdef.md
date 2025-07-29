@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GImplicitDef` Class Reference
+# `GImplicitDef` Class
 
 <p>Represents a G_IMPLICIT_DEF. <a href="#details">More...</a></p>
 

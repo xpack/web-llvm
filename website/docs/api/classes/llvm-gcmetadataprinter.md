@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCMetadataPrinter` Class Reference
+# `GCMetadataPrinter` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gcmetadataprinter">GCMetadataPrinter</a> - Emits GC metadata as assembly code. <a href="#details">More...</a></p>
 

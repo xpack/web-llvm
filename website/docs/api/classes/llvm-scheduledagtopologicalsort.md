@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGTopologicalSort` Class Reference
+# `ScheduleDAGTopologicalSort` Class
 
 <p>This class can compute a topological ordering for SUnits and provides methods for dynamically updating the ordering as new edges are added. <a href="#details">More...</a></p>
 

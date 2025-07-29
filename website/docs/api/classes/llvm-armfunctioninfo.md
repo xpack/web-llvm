@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMFunctionInfo` Class Reference
+# `ARMFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/armfunctioninfo">ARMFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/structs/llvm/machinefunctioninfo">MachineFunctionInfo</a> and contains private ARM-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `F128ShadowConfig` Class Reference
+# `F128ShadowConfig` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RNSuccIterator` Class Template Reference
+# `RNSuccIterator` Class Template
 
 <p>Hierarchical <a href="/web-llvm/docs/api/classes/llvm/regionnode">RegionNode</a> successor iterator. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumptionCache` Class Reference
+# `AssumptionCache` Class
 
 <p>A cache of @llvm.assume calls within a function. <a href="#details">More...</a></p>
 

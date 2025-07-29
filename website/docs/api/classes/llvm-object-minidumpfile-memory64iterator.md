@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Memory64Iterator` Class Reference
+# `Memory64Iterator` Class
 
 <p>Class the provides an iterator over the memory64 memory ranges. <a href="#details">More...</a></p>
 

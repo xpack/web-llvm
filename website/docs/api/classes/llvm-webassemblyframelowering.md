@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFrameLowering` Class Reference
+# `WebAssemblyFrameLowering` Class
 
 
 

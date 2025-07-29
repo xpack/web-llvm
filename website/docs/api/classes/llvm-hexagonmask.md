@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMask` Class Reference
+# `HexagonMask` Class
 
 
 

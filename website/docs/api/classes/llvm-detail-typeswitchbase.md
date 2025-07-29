@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSwitchBase` Class Template Reference
+# `TypeSwitchBase` Class Template
 
 
 

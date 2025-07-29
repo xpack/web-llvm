@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItaniumMangler` Class Reference
+# `ItaniumMangler` Class
 
 
 

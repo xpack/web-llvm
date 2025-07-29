@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemoryHardLink` Class Reference
+# `InMemoryHardLink` Class
 
 
 

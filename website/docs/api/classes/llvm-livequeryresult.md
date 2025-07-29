@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveQueryResult` Class Reference
+# `LiveQueryResult` Class
 
 <p>Result of a <a href="/web-llvm/docs/api/classes/llvm/liverange">LiveRange</a> query. <a href="#details">More...</a></p>
 

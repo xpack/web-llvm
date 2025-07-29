@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanSlp` Class Reference
+# `VPlanSlp` Class
 
 <p>Class that maps (parts of) an existing <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> to trees of combined VPInstructions. <a href="#details">More...</a></p>
 

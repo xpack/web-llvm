@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegBankSelect` Class Reference
+# `RegBankSelect` Class
 
 <p>This pass implements the reg bank selector pass used in the GlobalISel pipeline. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWAddressSanitizer.h` File Reference
+# `HWAddressSanitizer.h` File
 
 
 

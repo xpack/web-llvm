@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentGraph` Class Reference
+# `ArgumentGraph` Class
 
 
 

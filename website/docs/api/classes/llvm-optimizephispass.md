@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizePHIsPass` Class Reference
+# `OptimizePHIsPass` Class
 
 
 

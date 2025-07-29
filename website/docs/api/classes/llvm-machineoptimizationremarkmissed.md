@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOptimizationRemarkMissed` Class Reference
+# `MachineOptimizationRemarkMissed` Class
 
 <p>Diagnostic information for missed-optimization remarks. <a href="#details">More...</a></p>
 

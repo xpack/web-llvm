@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemSetBase` Class Template Reference
+# `MemSetBase` Class Template
 
 <p>Common base class for all memset intrinsics. <a href="#details">More...</a></p>
 

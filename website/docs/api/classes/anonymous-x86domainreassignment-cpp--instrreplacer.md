@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrReplacer` Class Reference
+# `InstrReplacer` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> Converter which replaces an instruction with another. <a href="#details">More...</a></p>
 

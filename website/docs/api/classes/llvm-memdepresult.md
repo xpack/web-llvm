@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemDepResult` Class Reference
+# `MemDepResult` Class
 
 <p>A memory dependence query can return one of three different answers. <a href="#details">More...</a></p>
 

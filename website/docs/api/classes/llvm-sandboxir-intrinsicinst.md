@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicInst` Class Reference
+# `IntrinsicInst` Class
 
 
 

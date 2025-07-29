@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVLineDebug` Class Reference
+# `LVLineDebug` Class
 
 
 

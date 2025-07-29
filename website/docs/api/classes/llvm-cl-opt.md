@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `opt` Class Template Reference
+# `opt` Class Template
 
 
 

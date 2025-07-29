@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverrideLegacyStrategy` Class Reference
+# `OverrideLegacyStrategy` Class
 
 
 

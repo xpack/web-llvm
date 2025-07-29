@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroShape.h` File Reference
+# `CoroShape.h` File
 
 
 

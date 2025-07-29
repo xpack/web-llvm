@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `circular_raw_ostream.h` File Reference
+# `circular_raw_ostream.h` File
 
 
 

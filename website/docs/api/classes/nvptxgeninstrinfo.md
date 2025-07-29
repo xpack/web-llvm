@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXGenInstrInfo` Class Reference
+# `NVPTXGenInstrInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebuginfodFetcher` Class Reference
+# `DebuginfodFetcher` Class
 
 
 

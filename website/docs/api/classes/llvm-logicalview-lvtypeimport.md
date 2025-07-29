@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVTypeImport` Class Reference
+# `LVTypeImport` Class
 
 
 

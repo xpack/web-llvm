@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCD.h` File Reference
+# `BCD.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeadArgumentEliminationPass` Class Reference
+# `DeadArgumentEliminationPass` Class
 
 <p>Eliminate dead arguments (and return values) from functions. <a href="#details">More...</a></p>
 

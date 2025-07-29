@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVersioning` Class Reference
+# `LoopVersioning` Class
 
 <p>This class emits a version of the loop where run-time checks ensure that may-alias pointers can't overlap. <a href="#details">More...</a></p>
 

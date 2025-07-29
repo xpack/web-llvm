@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ISelUpdater` Class Reference
+# `ISelUpdater` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-selectiondagisel-cpp-/iselupdater">ISelUpdater</a> - helper class to handle updates of the instruction selection graph. <a href="#details">More...</a></p>
 

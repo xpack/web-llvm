@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCReduceCRLogicals` Class Reference
+# `PPCReduceCRLogicals` Class
 
 
 

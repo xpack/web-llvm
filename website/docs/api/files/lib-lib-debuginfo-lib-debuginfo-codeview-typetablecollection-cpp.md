@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeTableCollection.cpp` File Reference
+# `TypeTableCollection.cpp` File
 
 
 

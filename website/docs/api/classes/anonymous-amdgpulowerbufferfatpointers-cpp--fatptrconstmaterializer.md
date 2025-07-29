@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FatPtrConstMaterializer` Class Reference
+# `FatPtrConstMaterializer` Class
 
 <p>Handle the remapping of ptr addrspace(7) constants. <a href="#details">More...</a></p>
 

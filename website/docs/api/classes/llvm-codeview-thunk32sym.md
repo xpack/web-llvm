@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thunk32Sym` Class Reference
+# `Thunk32Sym` Class
 
 
 

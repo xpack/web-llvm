@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumeratedArray.h` File Reference
+# `EnumeratedArray.h` File
 
 <p>This file defines an array type that can be indexed using scoped enum values. <a href="#details">More...</a></p>
 

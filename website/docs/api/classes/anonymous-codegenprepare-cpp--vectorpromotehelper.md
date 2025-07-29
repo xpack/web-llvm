@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorPromoteHelper` Class Reference
+# `VectorPromoteHelper` Class
 
 <p>Helper class to promote a scalar operation to a vector one. <a href="#details">More...</a></p>
 

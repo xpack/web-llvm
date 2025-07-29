@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalMapOverlaps` Class Template Reference
+# `IntervalMapOverlaps` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/intervalmapoverlaps">IntervalMapOverlaps</a> - Iterate over the overlaps of mapped intervals in two IntervalMaps. <a href="#details">More...</a></p>
 

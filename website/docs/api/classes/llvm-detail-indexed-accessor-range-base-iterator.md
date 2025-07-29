@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator` Class Reference
+# `iterator` Class
 
 <p>An iterator element of this range. <a href="#details">More...</a></p>
 

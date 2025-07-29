@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeakVH` Class Reference
+# `WeakVH` Class
 
 <p>A nullable <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> handle that is nullable. <a href="#details">More...</a></p>
 

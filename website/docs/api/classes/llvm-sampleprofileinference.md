@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileInference` Class Template Reference
+# `SampleProfileInference` Class Template
 
 <p>Sample profile inference pass. <a href="#details">More...</a></p>
 

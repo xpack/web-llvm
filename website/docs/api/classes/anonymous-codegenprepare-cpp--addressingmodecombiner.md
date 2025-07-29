@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressingModeCombiner` Class Reference
+# `AddressingModeCombiner` Class
 
 <p>A helper class for combining addressing modes. <a href="#details">More...</a></p>
 

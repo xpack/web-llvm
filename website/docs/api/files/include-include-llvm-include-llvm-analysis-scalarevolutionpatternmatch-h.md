@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEvolutionPatternMatch.h` File Reference
+# `ScalarEvolutionPatternMatch.h` File
 
 
 

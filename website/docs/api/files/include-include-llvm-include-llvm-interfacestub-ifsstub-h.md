@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFSStub.h` File Reference
+# `IFSStub.h` File
 
 <p>This file defines an internal representation of an InterFace Stub. <a href="#details">More...</a></p>
 

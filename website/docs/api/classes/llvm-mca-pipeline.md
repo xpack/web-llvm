@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Pipeline` Class Reference
+# `Pipeline` Class
 
 <p>A pipeline for a specific subtarget. <a href="#details">More...</a></p>
 

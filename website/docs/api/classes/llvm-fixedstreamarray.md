@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedStreamArray` Class Template Reference
+# `FixedStreamArray` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/fixedstreamarray">FixedStreamArray</a> is similar to <a href="/web-llvm/docs/api/classes/llvm/varstreamarray">VarStreamArray</a>, except with each record having a fixed-length. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCGOFFObjectWriter.h` File Reference
+# `MCGOFFObjectWriter.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDWADstOperand` Class Reference
+# `SDWADstOperand` Class
 
 
 

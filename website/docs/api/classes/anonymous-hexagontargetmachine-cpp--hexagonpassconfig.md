@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonPassConfig` Class Reference
+# `HexagonPassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

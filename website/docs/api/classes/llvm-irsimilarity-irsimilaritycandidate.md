@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSimilarityCandidate` Class Reference
+# `IRSimilarityCandidate` Class
 
 <p>This is a class that wraps a range of <a href="/web-llvm/docs/api/structs/llvm/irsimilarity/irinstructiondata">IRInstructionData</a> from one point to another in the vector of <a href="/web-llvm/docs/api/structs/llvm/irsimilarity/irinstructiondata">IRInstructionData</a>, which is a region of the program. <a href="#details">More...</a></p>
 

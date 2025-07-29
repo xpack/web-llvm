@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetNodeID` Class Reference
+# `FoldingSetNodeID` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetnodeid">FoldingSetNodeID</a> - This class is used to gather all the unique data bits of a node. <a href="#details">More...</a></p>
 

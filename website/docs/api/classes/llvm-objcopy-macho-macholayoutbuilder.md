@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOLayoutBuilder` Class Reference
+# `MachOLayoutBuilder` Class
 
 
 

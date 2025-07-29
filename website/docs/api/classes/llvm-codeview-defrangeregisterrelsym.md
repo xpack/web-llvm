@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefRangeRegisterRelSym` Class Reference
+# `DefRangeRegisterRelSym` Class
 
 
 

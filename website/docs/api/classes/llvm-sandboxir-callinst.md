@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallInst` Class Reference
+# `CallInst` Class
 
 
 

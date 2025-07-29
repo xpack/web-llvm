@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAUpdaterTraits` Class Template Reference
+# `SSAUpdaterTraits` Class Template
 
 <p>Template specialization to give <a href="/web-llvm/docs/api/classes/llvm/ssaupdater">SSAUpdater</a> access to CFG and value information. <a href="#details">More...</a></p>
 

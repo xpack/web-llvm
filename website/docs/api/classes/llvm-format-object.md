@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_object` Class Template Reference
+# `format_object` Class Template
 
 
 

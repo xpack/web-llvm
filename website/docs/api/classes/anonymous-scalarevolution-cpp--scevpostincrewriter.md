@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVPostIncRewriter` Class Reference
+# `SCEVPostIncRewriter` Class
 
 <p>Takes <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> S and <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> L. <a href="#details">More...</a></p>
 

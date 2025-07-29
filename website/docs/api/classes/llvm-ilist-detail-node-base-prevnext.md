@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `node_base_prevnext` Class Template Reference
+# `node_base_prevnext` Class Template
 
 
 

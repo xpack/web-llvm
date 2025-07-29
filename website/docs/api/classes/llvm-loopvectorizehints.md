@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizeHints` Class Reference
+# `LoopVectorizeHints` Class
 
 <p>Utility class for getting and setting loop vectorizer hints in the form of loop metadata. <a href="#details">More...</a></p>
 

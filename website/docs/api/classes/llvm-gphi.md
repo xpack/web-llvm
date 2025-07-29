@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GPhi` Class Reference
+# `GPhi` Class
 
 <p>Represents a G_PHI. <a href="#details">More...</a></p>
 

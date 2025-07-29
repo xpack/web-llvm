@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpillLocationNo` Class Reference
+# `SpillLocationNo` Class
 
 <p>Thin wrapper around an integer – designed to give more type safety to spill location numbers. <a href="#details">More...</a></p>
 

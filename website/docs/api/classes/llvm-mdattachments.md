@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDAttachments` Class Reference
+# `MDAttachments` Class
 
 <p>Multimap-like storage for metadata attachments. <a href="#details">More...</a></p>
 

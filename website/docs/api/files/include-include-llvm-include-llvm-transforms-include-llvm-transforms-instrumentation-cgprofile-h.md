@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGProfile.h` File Reference
+# `CGProfile.h` File
 
 <p>This file provides the interface for LLVM's Call Graph Profile pass. <a href="#details">More...</a></p>
 

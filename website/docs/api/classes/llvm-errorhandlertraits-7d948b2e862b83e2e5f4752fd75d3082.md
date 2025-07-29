@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorHandlerTraits` Class Template Reference
+# `ErrorHandlerTraits` Class Template
 
 <p>Specialization for functions of the form 'void (std::unique_ptr&lt;ErrT&gt;)'. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcX86_64_Win32` Class Reference
+# `OrcX86_64_Win32` Class
 
 <p>X86_64 support for Win32. <a href="#details">More...</a></p>
 

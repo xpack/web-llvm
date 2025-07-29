@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTableListTraits` Class Template Reference
+# `SymbolTableListTraits` Class Template
 
 
 

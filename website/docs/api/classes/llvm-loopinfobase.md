@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInfoBase` Class Template Reference
+# `LoopInfoBase` Class Template
 
 <p>This class builds and contains all of the top-level loop structures in the specified function. <a href="#details">More...</a></p>
 

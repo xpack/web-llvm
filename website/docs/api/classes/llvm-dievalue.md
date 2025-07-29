@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEValue` Class Reference
+# `DIEValue` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumAttributeImpl` Class Reference
+# `EnumAttributeImpl` Class
 
 <p>A set of classes that contain the value of the attribute object. <a href="#details">More...</a></p>
 

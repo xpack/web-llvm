@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCMachObjectWriter.h` File Reference
+# `MCMachObjectWriter.h` File
 
 
 

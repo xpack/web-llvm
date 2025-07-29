@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIELocList` Class Reference
+# `DIELocList` Class
 
 <p>Represents a pointer to a location list in the debug_loc section. <a href="#details">More...</a></p>
 

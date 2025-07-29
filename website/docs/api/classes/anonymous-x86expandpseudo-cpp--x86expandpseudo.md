@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ExpandPseudo` Class Reference
+# `X86ExpandPseudo` Class
 
 
 

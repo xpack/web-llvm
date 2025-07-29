@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiModuleList.h` File Reference
+# `DbiModuleList.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolizer.h` File Reference
+# `MCSymbolizer.h` File
 
 
 

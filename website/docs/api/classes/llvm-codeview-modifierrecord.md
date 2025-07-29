@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModifierRecord` Class Reference
+# `ModifierRecord` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReturnInst` Class Reference
+# `ReturnInst` Class
 
 <p>Return a value (possibly void), from a function. <a href="#details">More...</a></p>
 

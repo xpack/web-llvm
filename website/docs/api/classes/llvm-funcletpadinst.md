@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncletPadInst` Class Reference
+# `FuncletPadInst` Class
 
 
 

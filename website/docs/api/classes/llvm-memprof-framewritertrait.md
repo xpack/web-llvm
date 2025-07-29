@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameWriterTrait` Class Reference
+# `FrameWriterTrait` Class
 
 
 

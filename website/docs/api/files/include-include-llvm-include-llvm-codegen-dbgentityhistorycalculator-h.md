@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgEntityHistoryCalculator.h` File Reference
+# `DbgEntityHistoryCalculator.h` File
 
 
 

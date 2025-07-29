@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleBlockStrategy` Class Reference
+# `ShuffleBlockStrategy` Class
 
 <p>Strategy to randomly select a block and shuffle the operations without affecting data dependency. <a href="#details">More...</a></p>
 

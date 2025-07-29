@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedReference` Class Reference
+# `IndexedReference` Class
 
 <p>Represents a memory reference as a base pointer and a set of indexing operations. <a href="#details">More...</a></p>
 

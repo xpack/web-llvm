@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexListEntry` Class Reference
+# `IndexListEntry` Class
 
 <p>This class represents an entry in the slot index list held in the <a href="/web-llvm/docs/api/classes/llvm/slotindexes">SlotIndexes</a> pass. <a href="#details">More...</a></p>
 

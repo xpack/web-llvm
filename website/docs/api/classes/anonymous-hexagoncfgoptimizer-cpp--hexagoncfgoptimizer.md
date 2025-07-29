@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCFGOptimizer` Class Reference
+# `HexagonCFGOptimizer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDCRecordProcessor` Class Reference
+# `MCDCRecordProcessor` Class
 
 
 

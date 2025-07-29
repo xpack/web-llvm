@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnclosingExpr` Class Reference
+# `EnclosingExpr` Class
 
 
 

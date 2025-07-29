@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamBlockInfo` Class Reference
+# `BitstreamBlockInfo` Class
 
 <p>This class maintains the abbreviations read from a block info block. <a href="#details">More...</a></p>
 

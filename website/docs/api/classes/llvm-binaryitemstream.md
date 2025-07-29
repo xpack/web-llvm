@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryItemStream` Class Template Reference
+# `BinaryItemStream` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/binaryitemstream">BinaryItemStream</a> represents a sequence of objects stored in some kind of external container but for which it is useful to view as a stream of contiguous bytes. <a href="#details">More...</a></p>
 

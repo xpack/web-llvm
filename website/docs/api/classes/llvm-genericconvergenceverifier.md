@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericConvergenceVerifier` Class Template Reference
+# `GenericConvergenceVerifier` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Query` Class Reference
+# `Query` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/liveintervalunion/query">Query</a> interferences between a single live virtual register and a live interval union. <a href="#details">More...</a></p>
 

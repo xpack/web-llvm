@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveStacksAnalysis` Class Reference
+# `LiveStacksAnalysis` Class
 
 
 

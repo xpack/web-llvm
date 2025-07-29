@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantFP` Class Reference
+# `ConstantFP` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/constantfp">ConstantFP</a> - Floating Point Values [float, double]. <a href="#details">More...</a></p>
 

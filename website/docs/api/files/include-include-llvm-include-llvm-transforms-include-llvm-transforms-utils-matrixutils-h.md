@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixUtils.h` File Reference
+# `MatrixUtils.h` File
 
 
 

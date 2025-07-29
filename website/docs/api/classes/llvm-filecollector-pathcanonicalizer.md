@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PathCanonicalizer` Class Reference
+# `PathCanonicalizer` Class
 
 <p>Helper utility that encapsulates the logic for canonicalizing a virtual path and a path to copy from. <a href="#details">More...</a></p>
 

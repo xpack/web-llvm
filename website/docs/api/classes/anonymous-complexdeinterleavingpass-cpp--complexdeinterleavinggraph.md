@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComplexDeinterleavingGraph` Class Reference
+# `ComplexDeinterleavingGraph` Class
 
 
 

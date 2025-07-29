@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinidumpFile` Class Reference
+# `MinidumpFile` Class
 
 <p>A class providing access to the contents of a minidump file. <a href="#details">More...</a></p>
 

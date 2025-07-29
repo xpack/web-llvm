@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDeletionPass` Class Reference
+# `LoopDeletionPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayRef` Class Template Reference
+# `ArrayRef` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a> - Represent a constant reference to an array (0 or more elements consecutively in memory), i.e. <a href="#details">More...</a></p>
 

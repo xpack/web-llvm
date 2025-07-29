@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIPatternMatch.h` File Reference
+# `MIPatternMatch.h` File
 
 <p>Contains matchers for matching SSA Machine Instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaConstantPoolValue` Class Reference
+# `XtensaConstantPoolValue` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xtensaconstantpoolvalue">XtensaConstantPoolValue</a> - <a href="/web-llvm/docs/api/namespaces/llvm/xtensa">Xtensa</a> specific constantpool value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericUniformityInfo.h` File Reference
+# `GenericUniformityInfo.h` File
 
 
 

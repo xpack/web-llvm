@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertElementInst` Class Reference
+# `InsertElementInst` Class
 
 <p>This instruction inserts a single (scalar) element into a <a href="/web-llvm/docs/api/classes/llvm/vectortype">VectorType</a> value. <a href="#details">More...</a></p>
 

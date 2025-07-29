@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LandingPadInst` Class Reference
+# `LandingPadInst` Class
 
 
 

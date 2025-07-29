@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineSizeEstimatorAnalysisPrinterPass` Class Reference
+# `InlineSizeEstimatorAnalysisPrinterPass` Class
 
 
 

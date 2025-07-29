@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVExpander` Class Reference
+# `SCEVExpander` Class
 
 <p>This class uses information about analyze scalars to rewrite expressions in canonical form. <a href="#details">More...</a></p>
 

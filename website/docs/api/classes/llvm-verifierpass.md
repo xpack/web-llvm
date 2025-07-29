@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerifierPass` Class Reference
+# `VerifierPass` Class
 
 <p>Create a verifier pass. <a href="#details">More...</a></p>
 

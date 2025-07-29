@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SROAPass` Class Reference
+# `SROAPass` Class
 
 
 

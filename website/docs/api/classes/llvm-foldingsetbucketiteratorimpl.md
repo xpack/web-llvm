@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetBucketIteratorImpl` Class Reference
+# `FoldingSetBucketIteratorImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetbucketiteratorimpl">FoldingSetBucketIteratorImpl</a> - This is the common bucket iterator support shared by all folding sets, which knows how to walk a particular bucket of a folding set hash table. <a href="#details">More...</a></p>
 

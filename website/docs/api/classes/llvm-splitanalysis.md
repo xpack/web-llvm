@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitAnalysis` Class Reference
+# `SplitAnalysis` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/splitanalysis">SplitAnalysis</a> - Analyze a <a href="/web-llvm/docs/api/classes/llvm/liveinterval">LiveInterval</a>, looking for live range splitting opportunities. <a href="#details">More...</a></p>
 

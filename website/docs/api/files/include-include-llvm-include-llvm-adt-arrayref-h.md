@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayRef.h` File Reference
+# `ArrayRef.h` File
 
 
 

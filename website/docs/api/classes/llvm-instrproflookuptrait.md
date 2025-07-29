@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfLookupTrait` Class Reference
+# `InstrProfLookupTrait` Class
 
 <p>Trait for lookups into the on-disk hash table for the binary instrprof format. <a href="#details">More...</a></p>
 

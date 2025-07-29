@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllowedRegVector` Class Reference
+# `AllowedRegVector` Class
 
 <p>Holds a vector of the allowed physical regs for a vreg. <a href="#details">More...</a></p>
 

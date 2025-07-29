@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarArgsLoweringHelper` Class Reference
+# `VarArgsLoweringHelper` Class
 
 <p>This is a helper class for lowering variable arguments parameters. <a href="#details">More...</a></p>
 

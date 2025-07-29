@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicMemCpyInst` Class Reference
+# `AtomicMemCpyInst` Class
 
 <p>This class represents the atomic memcpy intrinsic i.e. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVExpanderCleaner` Class Reference
+# `SCEVExpanderCleaner` Class
 
 <p>Helper to remove instructions inserted during <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> expansion, unless they are marked as used. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLParseError` Class Reference
+# `YAMLParseError` Class
 
 
 

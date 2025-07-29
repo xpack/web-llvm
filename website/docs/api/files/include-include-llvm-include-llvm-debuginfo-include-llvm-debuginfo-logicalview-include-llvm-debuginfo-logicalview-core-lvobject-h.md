@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVObject.h` File Reference
+# `LVObject.h` File
 
 
 

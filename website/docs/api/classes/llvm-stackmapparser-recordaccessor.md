@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordAccessor` Class Reference
+# `RecordAccessor` Class
 
 <p>Accessor for stackmap records. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrettyStackTraceProgram` Class Reference
+# `PrettyStackTraceProgram` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/prettystacktraceprogram">PrettyStackTraceProgram</a> - This object prints a specified program arguments to the stream as the stack trace when a crash occurs. <a href="#details">More...</a></p>
 

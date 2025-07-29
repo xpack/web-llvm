@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceManager` Class Reference
+# `ResourceManager` Class
 
 <p>A resource manager for processor resource units and groups. <a href="#details">More...</a></p>
 

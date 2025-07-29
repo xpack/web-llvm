@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OcamlGCMetadataPrinter` Class Reference
+# `OcamlGCMetadataPrinter` Class
 
 
 

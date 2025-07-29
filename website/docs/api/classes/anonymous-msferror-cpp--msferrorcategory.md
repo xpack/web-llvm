@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSFErrorCategory` Class Reference
+# `MSFErrorCategory` Class
 
 
 

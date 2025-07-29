@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicLibrarySearchGenerator` Class Reference
+# `DynamicLibrarySearchGenerator` Class
 
 <p>A utility class to expose symbols found via dlsym to the JIT. <a href="#details">More...</a></p>
 

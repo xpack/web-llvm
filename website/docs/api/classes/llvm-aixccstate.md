@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AIXCCState` Class Reference
+# `AIXCCState` Class
 
 
 

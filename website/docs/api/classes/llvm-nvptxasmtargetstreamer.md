@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAsmTargetStreamer` Class Reference
+# `NVPTXAsmTargetStreamer` Class
 
 
 

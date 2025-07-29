@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGDeltaAlgorithm` Class Reference
+# `DAGDeltaAlgorithm` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dagdeltaalgorithm">DAGDeltaAlgorithm</a> - Implements a "delta debugging" algorithm for minimizing directed acyclic graphs using a predicate function. <a href="#details">More...</a></p>
 

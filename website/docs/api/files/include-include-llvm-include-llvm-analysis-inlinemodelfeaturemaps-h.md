@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineModelFeatureMaps.h` File Reference
+# `InlineModelFeatureMaps.h` File
 
 
 

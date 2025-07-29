@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryCoverageReader` Class Reference
+# `BinaryCoverageReader` Class
 
 <p>Reader for the coverage mapping data that is emitted by the frontend and stored in an object file. <a href="#details">More...</a></p>
 

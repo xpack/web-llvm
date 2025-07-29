@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrainingLogger.h` File Reference
+# `TrainingLogger.h` File
 
 
 

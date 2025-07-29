@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBStringTable` Class Reference
+# `PDBStringTable` Class
 
 
 

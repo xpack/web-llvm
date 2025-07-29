@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockCallbackVH` Class Reference
+# `BasicBlockCallbackVH` Class
 
 
 

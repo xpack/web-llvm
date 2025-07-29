@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedPointBuilder` Class Template Reference
+# `FixedPointBuilder` Class Template
 
 
 

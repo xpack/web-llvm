@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveIntervalUnion` Class Reference
+# `LiveIntervalUnion` Class
 
 <p>Union of live intervals that are strong candidates for coalescing into a single register (either physical or virtual depending on the context). <a href="#details">More...</a></p>
 

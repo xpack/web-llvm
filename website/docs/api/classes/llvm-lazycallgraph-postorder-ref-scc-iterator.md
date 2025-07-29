@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `postorder_ref_scc_iterator` Class Reference
+# `postorder_ref_scc_iterator` Class
 
 <p>A post-order depth-first <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/refscc">RefSCC</a> iterator over the call graph. <a href="#details">More...</a></p>
 

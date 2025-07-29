@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCopyToCombine` Class Reference
+# `HexagonCopyToCombine` Class
 
 
 

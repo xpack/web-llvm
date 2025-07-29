@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDisassembler` Class Reference
+# `MCDisassembler` Class
 
 <p>Superclass for all disassemblers. <a href="#details">More...</a></p>
 

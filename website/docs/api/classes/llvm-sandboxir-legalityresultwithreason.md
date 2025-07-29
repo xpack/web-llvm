@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalityResultWithReason` Class Reference
+# `LegalityResultWithReason` Class
 
 <p>Base class for results with reason. <a href="#details">More...</a></p>
 

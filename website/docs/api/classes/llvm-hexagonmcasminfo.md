@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCAsmInfo` Class Reference
+# `HexagonMCAsmInfo` Class
 
 
 

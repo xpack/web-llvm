@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandReductions.h` File Reference
+# `ExpandReductions.h` File
 
 
 

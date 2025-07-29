@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimerGroup` Class Reference
+# `TimerGroup` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/timergroup">TimerGroup</a> class is used to group together related timers into a single report that is printed when the <a href="/web-llvm/docs/api/classes/llvm/timergroup">TimerGroup</a> is destroyed. <a href="#details">More...</a></p>
 

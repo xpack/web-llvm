@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfo` Class Reference
+# `MCAsmInfo` Class
 
 <p>This class is intended to be used as a base class for asm properties and features specific to the target. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_base` Class Template Reference
+# `ilist_base` Class Template
 
 <p>Implementations of list algorithms using <a href="/web-llvm/docs/api/classes/llvm/ilist-node-base">ilist_node_base</a>. <a href="#details">More...</a></p>
 

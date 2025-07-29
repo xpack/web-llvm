@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ORCPlatformSupport` Class Reference
+# `ORCPlatformSupport` Class
 
 <p>A Platform-support class that implements initialize / deinitialize by forwarding to ORC runtime dlopen / dlclose operations. <a href="#details">More...</a></p>
 

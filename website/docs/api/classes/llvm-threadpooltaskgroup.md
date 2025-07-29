@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadPoolTaskGroup` Class Reference
+# `ThreadPoolTaskGroup` Class
 
 <p>A group of tasks to be run on a thread pool. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericLLVMIRPlatform` Class Reference
+# `GenericLLVMIRPlatform` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/platform">orc::Platform</a> component of Generic LLVM IR <a href="/web-llvm/docs/api/classes/llvm/orc/platform">Platform</a> support. <a href="#details">More...</a></p>
 

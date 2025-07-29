@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYTargetLowering` Class Reference
+# `CSKYTargetLowering` Class
 
 
 

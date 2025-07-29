@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericCycleInfo.h` File Reference
+# `GenericCycleInfo.h` File
 
 <p>Find all cycles in a control-flow graph, including irreducible loops. <a href="#details">More...</a></p>
 

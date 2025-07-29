@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetMachine` Class Reference
+# `TargetMachine` Class
 
 <p>Primary interface to the complete machine description for the target machine. <a href="#details">More...</a></p>
 

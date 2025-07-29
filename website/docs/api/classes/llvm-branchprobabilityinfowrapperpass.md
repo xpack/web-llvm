@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchProbabilityInfoWrapperPass` Class Reference
+# `BranchProbabilityInfoWrapperPass` Class
 
 <p>Legacy analysis pass which computes <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/branchprobabilityinfo">BranchProbabilityInfo</a></span>. <a href="#details">More...</a></p>
 

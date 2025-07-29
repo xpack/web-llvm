@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JMCInstrumenter.cpp` File Reference
+# `JMCInstrumenter.cpp` File
 
 
 

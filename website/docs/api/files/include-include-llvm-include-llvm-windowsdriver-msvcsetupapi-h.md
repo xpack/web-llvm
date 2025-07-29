@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSVCSetupApi.h` File Reference
+# `MSVCSetupApi.h` File
 
 
 

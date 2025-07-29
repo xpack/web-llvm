@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSelect` Class Reference
+# `GSelect` Class
 
 <p>Represents a G_SELECT. <a href="#details">More...</a></p>
 

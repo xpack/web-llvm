@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLOHDirective` Class Reference
+# `MCLOHDirective` Class
 
 <p>Store <a href="/web-llvm/docs/api/classes/llvm/linker">Linker</a> Optimization Hint information (LOH). <a href="#details">More...</a></p>
 

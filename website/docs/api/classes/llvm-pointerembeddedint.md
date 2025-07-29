@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerEmbeddedInt` Class Template Reference
+# `PointerEmbeddedInt` Class Template
 
 <p>Utility to embed an integer into a pointer-like type. <a href="#details">More...</a></p>
 

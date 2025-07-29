@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Destination` Class Reference
+# `Destination` Class
 
 <p>This class presents a data sink to which the Telemetry framework sends data. <a href="#details">More...</a></p>
 

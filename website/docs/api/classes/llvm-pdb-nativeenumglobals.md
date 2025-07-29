@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeEnumGlobals` Class Reference
+# `NativeEnumGlobals` Class
 
 
 

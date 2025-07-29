@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAsmLowering` Class Reference
+# `InlineAsmLowering` Class
 
 
 

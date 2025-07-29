@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DISubrange` Class Reference
+# `DISubrange` Class
 
 <p>Array subrange. <a href="#details">More...</a></p>
 

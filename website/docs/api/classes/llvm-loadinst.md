@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadInst` Class Reference
+# `LoadInst` Class
 
 <p>An instruction for reading from memory. <a href="#details">More...</a></p>
 

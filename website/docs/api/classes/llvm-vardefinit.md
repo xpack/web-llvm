@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarDefInit` Class Reference
+# `VarDefInit` Class
 
 <p>classname&lt;targs...&gt; - Represent an uninstantiated anonymous class instantiation. <a href="#details">More...</a></p>
 

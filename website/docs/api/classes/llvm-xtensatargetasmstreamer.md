@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaTargetAsmStreamer` Class Reference
+# `XtensaTargetAsmStreamer` Class
 
 
 

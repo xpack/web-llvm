@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerUnion` Class Template Reference
+# `PointerUnion` Class Template
 
 <p>A discriminated union of two or more pointer types, with the discriminator in the low bit of the pointer. <a href="#details">More...</a></p>
 

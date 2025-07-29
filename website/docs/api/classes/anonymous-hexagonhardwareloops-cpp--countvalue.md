@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CountValue` Class Reference
+# `CountValue` Class
 
 <p>Abstraction for a trip count of a loop. <a href="#details">More...</a></p>
 

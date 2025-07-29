@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumericalStabilitySanitizer.h` File Reference
+# `NumericalStabilitySanitizer.h` File
 
 
 

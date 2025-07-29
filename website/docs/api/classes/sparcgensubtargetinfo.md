@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcGenSubtargetInfo` Class Reference
+# `SparcGenSubtargetInfo` Class
 
 
 

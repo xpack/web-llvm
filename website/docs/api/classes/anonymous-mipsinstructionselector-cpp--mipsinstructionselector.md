@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsInstructionSelector` Class Reference
+# `MipsInstructionSelector` Class
 
 
 

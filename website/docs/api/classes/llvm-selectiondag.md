@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectionDAG` Class Reference
+# `SelectionDAG` Class
 
 <p>This is used to represent a portion of an LLVM function in a low-level Data <a href="/web-llvm/docs/api/classes/llvm/dependence">Dependence</a> DAG representation suitable for instruction selection. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstSimplifyPass` Class Reference
+# `InstSimplifyPass` Class
 
 <p>Run instruction simplification across each instruction in the function. <a href="#details">More...</a></p>
 

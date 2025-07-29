@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GEPNoWrapFlags` Class Reference
+# `GEPNoWrapFlags` Class
 
 <p>Represents flags for the getelementptr instruction/expression. <a href="#details">More...</a></p>
 

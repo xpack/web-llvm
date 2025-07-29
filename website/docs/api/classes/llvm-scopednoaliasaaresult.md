@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedNoAliasAAResult` Class Reference
+# `ScopedNoAliasAAResult` Class
 
 <p>A simple <a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a> result which uses scoped-noalias metadata to answer queries. <a href="#details">More...</a></p>
 

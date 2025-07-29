@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLocationTable` Class Reference
+# `DWARFLocationTable` Class
 
 <p>An abstract base class for various kinds of location tables (.debug_loc, .debug_loclists, and their dwo variants). <a href="#details">More...</a></p>
 

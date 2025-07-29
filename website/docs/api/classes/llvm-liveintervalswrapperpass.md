@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveIntervalsWrapperPass` Class Reference
+# `LiveIntervalsWrapperPass` Class
 
 
 

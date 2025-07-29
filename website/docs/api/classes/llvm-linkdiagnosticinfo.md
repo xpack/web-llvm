@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkDiagnosticInfo` Class Reference
+# `LinkDiagnosticInfo` Class
 
 
 

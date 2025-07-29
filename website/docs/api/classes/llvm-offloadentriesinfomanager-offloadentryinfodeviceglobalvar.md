@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadEntryInfoDeviceGlobalVar` Class Reference
+# `OffloadEntryInfoDeviceGlobalVar` Class
 
 <p>Device global variable entries info. <a href="#details">More...</a></p>
 

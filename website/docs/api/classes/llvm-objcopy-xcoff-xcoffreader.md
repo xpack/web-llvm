@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFReader` Class Reference
+# `XCOFFReader` Class
 
 
 

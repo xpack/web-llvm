@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZLDCleanup` Class Reference
+# `SystemZLDCleanup` Class
 
 
 

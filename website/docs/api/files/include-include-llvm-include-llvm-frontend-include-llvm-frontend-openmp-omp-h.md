@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMP.h` File Reference
+# `OMP.h` File
 
 
 

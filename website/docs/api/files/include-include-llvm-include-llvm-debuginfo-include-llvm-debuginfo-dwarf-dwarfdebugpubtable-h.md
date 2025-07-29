@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugPubTable.h` File Reference
+# `DWARFDebugPubTable.h` File
 
 
 

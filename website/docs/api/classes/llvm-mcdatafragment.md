@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDataFragment` Class Reference
+# `MCDataFragment` Class
 
 <p>Fragment for data and encoded instructions. <a href="#details">More...</a></p>
 

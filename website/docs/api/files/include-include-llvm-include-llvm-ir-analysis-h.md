@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Analysis.h` File Reference
+# `Analysis.h` File
 
 <p>Pass manager infrastructure for declaring and invalidating analyses. <a href="#details">More...</a></p>
 

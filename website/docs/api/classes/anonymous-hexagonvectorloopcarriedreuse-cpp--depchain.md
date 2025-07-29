@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DepChain` Class Reference
+# `DepChain` Class
 
 
 

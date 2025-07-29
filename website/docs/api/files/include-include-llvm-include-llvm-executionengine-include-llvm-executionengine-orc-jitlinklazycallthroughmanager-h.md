@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkLazyCallThroughManager.h` File Reference
+# `JITLinkLazyCallThroughManager.h` File
 
 
 

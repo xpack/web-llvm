@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSA` Class Reference
+# `MemorySSA` Class
 
 <p>Encapsulates <a href="/web-llvm/docs/api/classes/llvm/memoryssa">MemorySSA</a>, including all data associated with memory accesses. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFObjHandler.h` File Reference
+# `ELFObjHandler.h` File
 
 <p>This supports reading and writing of elf dynamic shared objects. <a href="#details">More...</a></p>
 

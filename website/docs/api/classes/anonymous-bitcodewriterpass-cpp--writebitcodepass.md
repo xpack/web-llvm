@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteBitcodePass` Class Reference
+# `WriteBitcodePass` Class
 
 
 

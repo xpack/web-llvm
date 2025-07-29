@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleavedAccessPass` Class Reference
+# `InterleavedAccessPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiamondReuseWithShuffle` Class Reference
+# `DiamondReuseWithShuffle` Class
 
 
 

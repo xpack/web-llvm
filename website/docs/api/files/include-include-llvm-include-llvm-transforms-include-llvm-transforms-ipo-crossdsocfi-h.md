@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrossDSOCFI.h` File Reference
+# `CrossDSOCFI.h` File
 
 
 

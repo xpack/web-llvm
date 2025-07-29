@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsCvt` Class Reference
+# `IsCvt` Class
 
 
 

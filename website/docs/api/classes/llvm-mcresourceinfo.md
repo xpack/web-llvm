@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCResourceInfo` Class Reference
+# `MCResourceInfo` Class
 
 
 

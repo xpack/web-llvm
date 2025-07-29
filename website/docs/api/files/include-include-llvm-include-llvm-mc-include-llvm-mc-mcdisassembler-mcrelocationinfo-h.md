@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRelocationInfo.h` File Reference
+# `MCRelocationInfo.h` File
 
 
 

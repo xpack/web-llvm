@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnexpectedSymbolDefinitions` Class Reference
+# `UnexpectedSymbolDefinitions` Class
 
 <p>Errors of this type should be returned if a module contains definitions for symbols that are not claimed by the module's associated <a href="/web-llvm/docs/api/classes/llvm/orc/materializationresponsibility">MaterializationResponsibility</a>. <a href="#details">More...</a></p>
 

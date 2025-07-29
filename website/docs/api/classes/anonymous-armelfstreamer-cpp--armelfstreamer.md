@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMELFStreamer` Class Reference
+# `ARMELFStreamer` Class
 
 <p>Extend the generic ELFStreamer class so that it can emit mapping symbols at the appropriate points in the object files. <a href="#details">More...</a></p>
 

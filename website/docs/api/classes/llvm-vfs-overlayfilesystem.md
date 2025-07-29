@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverlayFileSystem` Class Reference
+# `OverlayFileSystem` Class
 
 <p>A file system that allows overlaying one <span class="doxyComputerOutput">AbstractFileSystem</span> on top of another. <a href="#details">More...</a></p>
 

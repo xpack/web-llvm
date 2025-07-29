@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicRMWInst` Class Reference
+# `AtomicRMWInst` Class
 
 <p>an instruction that atomically reads a memory location, combines it with another value, and then stores the result back. <a href="#details">More...</a></p>
 

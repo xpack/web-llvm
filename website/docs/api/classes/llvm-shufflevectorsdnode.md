@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleVectorSDNode` Class Reference
+# `ShuffleVectorSDNode` Class
 
 <p>This <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> is used to implement the code generator support for the llvm IR shufflevector instruction. <a href="#details">More...</a></p>
 

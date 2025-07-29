@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnrollState` Class Reference
+# `UnrollState` Class
 
 <p>Helper to hold state needed for unrolling. <a href="#details">More...</a></p>
 

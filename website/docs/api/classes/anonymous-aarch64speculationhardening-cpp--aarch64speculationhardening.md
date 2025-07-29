@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SpeculationHardening` Class Reference
+# `AArch64SpeculationHardening` Class
 
 
 

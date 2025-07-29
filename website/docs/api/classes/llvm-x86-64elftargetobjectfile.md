@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86_64ELFTargetObjectFile` Class Reference
+# `X86_64ELFTargetObjectFile` Class
 
 <p>This implementation is used for X86_64 <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> targets, and defers to <a href="/web-llvm/docs/api/classes/llvm/x86elftargetobjectfile">X86ELFTargetObjectFile</a> for commonalities with 32-bit targets. <a href="#details">More...</a></p>
 

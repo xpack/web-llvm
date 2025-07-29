@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorSlice` Class Reference
+# `VectorSlice` Class
 
 <p>Helper class for "break large PHIs" (visitPHINode). <a href="#details">More...</a></p>
 

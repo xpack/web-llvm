@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SupportHelpers.h` File Reference
+# `SupportHelpers.h` File
 
 
 

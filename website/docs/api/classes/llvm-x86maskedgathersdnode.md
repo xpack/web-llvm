@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MaskedGatherSDNode` Class Reference
+# `X86MaskedGatherSDNode` Class
 
 
 

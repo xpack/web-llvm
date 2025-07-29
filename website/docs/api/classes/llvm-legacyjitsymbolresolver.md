@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyJITSymbolResolver` Class Reference
+# `LegacyJITSymbolResolver` Class
 
 <p>Legacy symbol resolution interface. <a href="#details">More...</a></p>
 

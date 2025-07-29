@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EliminateFrameIndex` Class Reference
+# `EliminateFrameIndex` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NamedNodeOrError` Class Reference
+# `NamedNodeOrError` Class
 
 
 

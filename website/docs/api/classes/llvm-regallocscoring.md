@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocScoring` Class Reference
+# `RegAllocScoring` Class
 
 
 

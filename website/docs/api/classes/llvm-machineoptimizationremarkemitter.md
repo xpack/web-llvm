@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOptimizationRemarkEmitter` Class Reference
+# `MachineOptimizationRemarkEmitter` Class
 
 <p>The optimization diagnostic interface. <a href="#details">More...</a></p>
 

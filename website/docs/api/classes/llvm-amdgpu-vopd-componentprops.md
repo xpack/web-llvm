@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComponentProps` Class Reference
+# `ComponentProps` Class
 
 
 

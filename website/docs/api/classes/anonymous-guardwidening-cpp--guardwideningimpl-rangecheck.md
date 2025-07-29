@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeCheck` Class Reference
+# `RangeCheck` Class
 
 <p>Represents a range check of the form <span class="doxyComputerOutput">Base</span> + <span class="doxyComputerOutput">Offset</span> u&lt; <span class="doxyComputerOutput">Length</span>, with the constraint that <span class="doxyComputerOutput">Length</span> is not negative. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JumpThreading.h` File Reference
+# `JumpThreading.h` File
 
 <p>See the comments on JumpThreadingPass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandsMapper` Class Reference
+# `OperandsMapper` Class
 
 <p>Helper class used to get/create the virtual registers that will be used to replace the <a href="/web-llvm/docs/api/classes/llvm/machineoperand">MachineOperand</a> when applying a mapping. <a href="#details">More...</a></p>
 

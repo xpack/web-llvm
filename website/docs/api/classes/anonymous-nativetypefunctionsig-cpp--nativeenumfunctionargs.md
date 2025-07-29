@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeEnumFunctionArgs` Class Reference
+# `NativeEnumFunctionArgs` Class
 
 
 

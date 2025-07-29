@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedNoAliasAAWrapperPass` Class Reference
+# `ScopedNoAliasAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/scopednoaliasaaresult">ScopedNoAliasAAResult</a> object. <a href="#details">More...</a></p>
 

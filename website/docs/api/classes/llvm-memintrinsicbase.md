@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemIntrinsicBase` Class Template Reference
+# `MemIntrinsicBase` Class Template
 
 <p>Common base class for all memory intrinsics. <a href="#details">More...</a></p>
 

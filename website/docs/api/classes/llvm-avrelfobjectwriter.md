@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRELFObjectWriter` Class Reference
+# `AVRELFObjectWriter` Class
 
 <p>Writes <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> machine code into an ELF32 object file. <a href="#details">More...</a></p>
 

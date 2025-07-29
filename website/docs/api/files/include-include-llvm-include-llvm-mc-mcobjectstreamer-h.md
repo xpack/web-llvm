@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCObjectStreamer.h` File Reference
+# `MCObjectStreamer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VAArgInst` Class Reference
+# `VAArgInst` Class
 
 
 

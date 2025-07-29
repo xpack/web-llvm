@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadEliminationForLoop` Class Reference
+# `LoadEliminationForLoop` Class
 
 <p>The per-loop class that does most of the work. <a href="#details">More...</a></p>
 

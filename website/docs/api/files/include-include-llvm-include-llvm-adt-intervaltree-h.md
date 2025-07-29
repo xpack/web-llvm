@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalTree.h` File Reference
+# `IntervalTree.h` File
 
 
 

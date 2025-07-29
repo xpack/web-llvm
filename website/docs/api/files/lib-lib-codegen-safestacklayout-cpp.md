@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafeStackLayout.cpp` File Reference
+# `SafeStackLayout.cpp` File
 
 
 

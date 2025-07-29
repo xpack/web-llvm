@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerifierAnalysis` Class Reference
+# `VerifierAnalysis` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/check">Check</a> a module for errors, and report separate error states for IR and debug info errors. <a href="#details">More...</a></p>
 

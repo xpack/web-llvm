@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600DAGToDAGISel` Class Reference
+# `R600DAGToDAGISel` Class
 
 
 

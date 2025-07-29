@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEBlock` Class Reference
+# `DIEBlock` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dieblock">DIEBlock</a> - Represents a block of values. <a href="#details">More...</a></p>
 

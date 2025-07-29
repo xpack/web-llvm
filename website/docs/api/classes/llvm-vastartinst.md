@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VAStartInst` Class Reference
+# `VAStartInst` Class
 
 <p>This represents the llvm.va_start intrinsic. <a href="#details">More...</a></p>
 

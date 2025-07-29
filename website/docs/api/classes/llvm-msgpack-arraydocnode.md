@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayDocNode` Class Reference
+# `ArrayDocNode` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/msgpack/docnode">DocNode</a> that is an array. <a href="#details">More...</a></p>
 

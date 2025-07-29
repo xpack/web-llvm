@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleInstructionBuilder` Class Reference
+# `ShuffleInstructionBuilder` Class
 
 <p>Merges shuffle masks and emits final shuffle instruction, if required. <a href="#details">More...</a></p>
 

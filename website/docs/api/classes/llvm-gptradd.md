@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GPtrAdd` Class Reference
+# `GPtrAdd` Class
 
 <p>Represents a G_PTR_ADD. <a href="#details">More...</a></p>
 

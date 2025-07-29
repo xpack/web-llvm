@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BufferFatPtrToIntTypeMap` Class Reference
+# `BufferFatPtrToIntTypeMap` Class
 
 <p>Remap ptr addrspace(7) to i160 and vector&lt;Nxptr addrspace(7)&gt; to vector&lt;Nxi60&gt; in order to correctly handling loading/storing these values from memory. <a href="#details">More...</a></p>
 

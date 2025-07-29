@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManager` Class Template Reference
+# `PassManager` Class Template
 
 <p>Base class. <a href="#details">More...</a></p>
 

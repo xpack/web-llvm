@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFIFixup` Class Reference
+# `CFIFixup` Class
 
 
 

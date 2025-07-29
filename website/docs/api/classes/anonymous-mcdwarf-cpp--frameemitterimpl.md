@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameEmitterImpl` Class Reference
+# `FrameEmitterImpl` Class
 
 
 

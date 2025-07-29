@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Capacity` Class Reference
+# `Capacity` Class
 
 <p>The size of an allocated array is represented by a <a href="/web-llvm/docs/api/classes/llvm/arrayrecycler/capacity">Capacity</a> instance. <a href="#details">More...</a></p>
 

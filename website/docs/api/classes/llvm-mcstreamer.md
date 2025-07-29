@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCStreamer` Class Reference
+# `MCStreamer` Class
 
 <p>Streaming machine code generation interface. <a href="#details">More...</a></p>
 

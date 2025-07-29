@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReadState` Class Reference
+# `ReadState` Class
 
 <p>Tracks register operand latency in cycles. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerGlobalDtorsLegacyPass` Class Reference
+# `LowerGlobalDtorsLegacyPass` Class
 
 
 

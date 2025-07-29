@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mapper` Class Reference
+# `Mapper` Class
 
 
 

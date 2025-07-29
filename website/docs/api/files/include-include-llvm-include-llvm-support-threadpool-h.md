@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadPool.h` File Reference
+# `ThreadPool.h` File
 
 
 

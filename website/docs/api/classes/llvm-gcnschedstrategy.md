@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNSchedStrategy` Class Reference
+# `GCNSchedStrategy` Class
 
 <p>This is a minimal scheduler strategy. <a href="#details">More...</a></p>
 

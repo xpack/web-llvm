@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCEncodedFragment` Class Reference
+# `MCEncodedFragment` Class
 
 <p>Interface implemented by fragments that contain encoded instructions and/or data. <a href="#details">More...</a></p>
 

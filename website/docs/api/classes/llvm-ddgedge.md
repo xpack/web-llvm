@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGEdge` Class Reference
+# `DDGEdge` Class
 
 <p>Data Dependency Graph Edge. <a href="#details">More...</a></p>
 

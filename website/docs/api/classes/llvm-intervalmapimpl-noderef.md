@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeRef` Class Reference
+# `NodeRef` Class
 
 
 

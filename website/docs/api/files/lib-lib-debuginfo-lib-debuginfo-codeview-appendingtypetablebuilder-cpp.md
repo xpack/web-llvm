@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppendingTypeTableBuilder.cpp` File Reference
+# `AppendingTypeTableBuilder.cpp` File
 
 
 

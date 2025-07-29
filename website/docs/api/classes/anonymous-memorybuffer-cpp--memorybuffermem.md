@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBufferMem` Class Template Reference
+# `MemoryBufferMem` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-memorybuffer-cpp-/memorybuffermem">MemoryBufferMem</a> - Named <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> pointing to a block of memory. <a href="#details">More...</a></p>
 

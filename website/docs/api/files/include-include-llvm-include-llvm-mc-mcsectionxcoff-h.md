@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionXCOFF.h` File Reference
+# `MCSectionXCOFF.h` File
 
 
 

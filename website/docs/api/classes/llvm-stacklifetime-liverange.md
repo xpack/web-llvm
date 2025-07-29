@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRange` Class Reference
+# `LiveRange` Class
 
 <p>This class represents a set of interesting instructions where an alloca is live. <a href="#details">More...</a></p>
 

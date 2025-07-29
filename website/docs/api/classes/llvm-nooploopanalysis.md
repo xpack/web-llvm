@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpLoopAnalysis` Class Reference
+# `NoOpLoopAnalysis` Class
 
 <p>No-op loop analysis. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetNullStreamer` Class Reference
+# `WebAssemblyTargetNullStreamer` Class
 
 <p>This part is for null output. <a href="#details">More...</a></p>
 

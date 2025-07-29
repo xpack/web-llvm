@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCGenericDylibManager.cpp` File Reference
+# `EPCGenericDylibManager.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConvergenceControlInst` Class Reference
+# `ConvergenceControlInst` Class
 
 <p>Represents calls to the llvm.experimintal.convergence.* intrinsics. <a href="#details">More...</a></p>
 

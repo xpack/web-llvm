@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackLayout` Class Reference
+# `StackLayout` Class
 
 <p>Compute the layout of an unsafe stack frame. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EpilogueVectorizerMainLoop` Class Reference
+# `EpilogueVectorizerMainLoop` Class
 
 <p>A specialized derived class of inner loop vectorizer that performs vectorization of <em>main</em> loops in the process of vectorizing loops and their epilogues. <a href="#details">More...</a></p>
 

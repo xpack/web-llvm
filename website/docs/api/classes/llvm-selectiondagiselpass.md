@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectionDAGISelPass` Class Reference
+# `SelectionDAGISelPass` Class
 
 
 

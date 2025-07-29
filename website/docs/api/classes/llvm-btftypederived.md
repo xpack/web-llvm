@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeDerived` Class Reference
+# `BTFTypeDerived` Class
 
 <p>Handle several derived types include pointer, const, volatile, typedef and restrict. <a href="#details">More...</a></p>
 

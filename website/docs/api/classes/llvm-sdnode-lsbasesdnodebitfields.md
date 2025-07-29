@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSBaseSDNodeBitfields` Class Reference
+# `LSBaseSDNodeBitfields` Class
 
 
 

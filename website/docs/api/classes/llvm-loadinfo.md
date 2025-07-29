@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadInfo` Class Reference
+# `LoadInfo` Class
 
 
 

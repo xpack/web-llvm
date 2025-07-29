@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindOpcodeStreamer` Class Reference
+# `UnwindOpcodeStreamer` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-armunwindopasm-cpp-/unwindopcodestreamer">UnwindOpcodeStreamer</a> - The simple wrapper over <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> to emit bytes with MSB to LSB per uint32_t ordering. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmCond` Class Reference
+# `AsmCond` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/asmcond">AsmCond</a> - Class to support conditional assembly. <a href="#details">More...</a></p>
 

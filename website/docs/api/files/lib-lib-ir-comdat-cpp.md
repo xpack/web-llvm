@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Comdat.cpp` File Reference
+# `Comdat.cpp` File
 
 
 

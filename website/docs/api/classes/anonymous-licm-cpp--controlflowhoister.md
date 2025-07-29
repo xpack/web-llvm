@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ControlFlowHoister` Class Reference
+# `ControlFlowHoister` Class
 
 
 

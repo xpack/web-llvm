@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicLibrary` Class Reference
+# `DynamicLibrary` Class
 
 <p>This class provides a portable interface to dynamic libraries which also might be known as shared libraries, shared objects, dynamic shared objects, or dynamic link libraries. <a href="#details">More...</a></p>
 

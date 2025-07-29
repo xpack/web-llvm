@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCOFFSectionOffsetTargetExpr` Class Reference
+# `MCCOFFSectionOffsetTargetExpr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcexpr">MCExpr</a> that represents the offset to a symbol from the beginning of its section. <a href="#details">More...</a></p>
 

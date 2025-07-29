@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Assumptions.cpp` File Reference
+# `Assumptions.cpp` File
 
 
 

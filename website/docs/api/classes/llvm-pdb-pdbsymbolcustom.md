@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolCustom` Class Reference
+# `PDBSymbolCustom` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/pdbsymbolcustom">PDBSymbolCustom</a> represents symbols that are compiler-specific and do not fit anywhere else in the lexical hierarchy. <a href="#details">More...</a></p>
 

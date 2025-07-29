@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemSeedBundle` Class Template Reference
+# `MemSeedBundle` Class Template
 
 <p>Specialization of <a href="/web-llvm/docs/api/classes/llvm/sandboxir/seedbundle">SeedBundle</a> for memory access instructions. <a href="#details">More...</a></p>
 

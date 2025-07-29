@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeModule.h` File Reference
+# `ThreadSafeModule.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeSet` Class Reference
+# `AttributeSet` Class
 
 <p>This class holds the attributes for a particular argument, parameter, function, or return value. <a href="#details">More...</a></p>
 

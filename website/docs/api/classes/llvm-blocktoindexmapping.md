@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockToIndexMapping` Class Reference
+# `BlockToIndexMapping` Class
 
 
 

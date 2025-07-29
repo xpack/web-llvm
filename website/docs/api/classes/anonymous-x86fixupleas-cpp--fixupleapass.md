@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupLEAPass` Class Reference
+# `FixupLEAPass` Class
 
 
 

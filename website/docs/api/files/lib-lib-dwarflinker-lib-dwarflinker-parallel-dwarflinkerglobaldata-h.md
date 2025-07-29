@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLinkerGlobalData.h` File Reference
+# `DWARFLinkerGlobalData.h` File
 
 
 

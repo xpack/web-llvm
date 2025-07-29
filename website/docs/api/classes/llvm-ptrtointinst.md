@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrToIntInst` Class Reference
+# `PtrToIntInst` Class
 
 <p>This class represents a cast from a pointer to an integer. <a href="#details">More...</a></p>
 

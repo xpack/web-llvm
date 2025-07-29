@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Operator` Class Reference
+# `Operator` Class
 
 <p>This is a utility class that provides an abstraction for the common functionality between Instructions and ConstantExprs. <a href="#details">More...</a></p>
 

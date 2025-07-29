@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegisterClass` Class Reference
+# `MCRegisterClass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> - Base class of <a href="/web-llvm/docs/api/classes/llvm/targetregisterclass">TargetRegisterClass</a>. <a href="#details">More...</a></p>
 

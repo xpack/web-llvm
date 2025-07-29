@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequencyInfoImplBase` Class Reference
+# `BlockFrequencyInfoImplBase` Class
 
 <p>Base class for <a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfoimpl">BlockFrequencyInfoImpl</a>. <a href="#details">More...</a></p>
 

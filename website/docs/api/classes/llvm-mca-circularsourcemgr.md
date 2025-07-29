@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CircularSourceMgr` Class Reference
+# `CircularSourceMgr` Class
 
 <p>The default implementation of <em><a href="/web-llvm/docs/api/structs/llvm/mca/sourcemgr">SourceMgr</a></em>. <a href="#details">More...</a></p>
 

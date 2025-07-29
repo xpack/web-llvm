@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashingByteStreamer` Class Reference
+# `HashingByteStreamer` Class
 
 
 

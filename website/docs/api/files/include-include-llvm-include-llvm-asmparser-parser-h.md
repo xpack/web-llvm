@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Parser.h` File Reference
+# `Parser.h` File
 
 
 

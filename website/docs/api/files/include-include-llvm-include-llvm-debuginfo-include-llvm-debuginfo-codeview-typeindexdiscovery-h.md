@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIndexDiscovery.h` File Reference
+# `TypeIndexDiscovery.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CHR` Class Reference
+# `CHR` Class
 
 
 

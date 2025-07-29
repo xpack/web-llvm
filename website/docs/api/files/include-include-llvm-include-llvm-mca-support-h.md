@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Support.h` File Reference
+# `Support.h` File
 
 <p>Helper functions used by various pipeline components. <a href="#details">More...</a></p>
 

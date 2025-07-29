@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ControlHeightReductionPass` Class Reference
+# `ControlHeightReductionPass` Class
 
 
 

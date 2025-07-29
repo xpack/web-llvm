@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimePointerChecking` Class Reference
+# `RuntimePointerChecking` Class
 
 <p>Holds information about the memory runtime legality checks to verify that a group of pointers do not overlap. <a href="#details">More...</a></p>
 

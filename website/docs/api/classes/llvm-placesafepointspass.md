@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PlaceSafepointsPass` Class Reference
+# `PlaceSafepointsPass` Class
 
 
 

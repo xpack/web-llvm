@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYMCCodeEmitter` Class Reference
+# `CSKYMCCodeEmitter` Class
 
 
 

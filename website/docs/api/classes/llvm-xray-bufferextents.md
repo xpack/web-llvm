@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BufferExtents` Class Reference
+# `BufferExtents` Class
 
 
 

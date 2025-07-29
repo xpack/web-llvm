@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFDAGToDAGISel` Class Reference
+# `BPFDAGToDAGISel` Class
 
 
 

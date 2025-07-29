@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLoc` Class Reference
+# `DebugLoc` Class
 
 <p>A debug info location. <a href="#details">More...</a></p>
 

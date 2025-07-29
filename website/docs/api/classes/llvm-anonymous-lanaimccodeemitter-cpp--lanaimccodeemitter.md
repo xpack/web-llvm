@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCCodeEmitter` Class Reference
+# `LanaiMCCodeEmitter` Class
 
 
 

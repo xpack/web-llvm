@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFYAML.h` File Reference
+# `DWARFYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of DWARF Debug Info. <a href="#details">More...</a></p>
 

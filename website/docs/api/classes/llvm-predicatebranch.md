@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateBranch` Class Reference
+# `PredicateBranch` Class
 
 
 

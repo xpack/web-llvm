@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondOpInit` Class Reference
+# `CondOpInit` Class
 
 <p>!cond(condition_1: value1, ... , condition_n: value) Selects the first value for which condition is true. <a href="#details">More...</a></p>
 

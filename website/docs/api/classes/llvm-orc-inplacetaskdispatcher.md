@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InPlaceTaskDispatcher` Class Reference
+# `InPlaceTaskDispatcher` Class
 
 <p>Runs all tasks on the current thread. <a href="#details">More...</a></p>
 

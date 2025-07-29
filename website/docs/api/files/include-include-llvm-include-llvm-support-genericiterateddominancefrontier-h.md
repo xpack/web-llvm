@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericIteratedDominanceFrontier.h` File Reference
+# `GenericIteratedDominanceFrontier.h` File
 
 <p>Compute iterated dominance frontiers using a linear time algorithm. <a href="#details">More...</a></p>
 

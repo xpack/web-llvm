@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImplicitControlFlowTracking` Class Reference
+# `ImplicitControlFlowTracking` Class
 
 <p>This class allows to keep track on instructions with implicit control flow. <a href="#details">More...</a></p>
 

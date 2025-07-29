@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCPipelinerLoopInfo` Class Reference
+# `PPCPipelinerLoopInfo` Class
 
 
 

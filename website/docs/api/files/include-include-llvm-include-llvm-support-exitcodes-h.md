@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExitCodes.h` File Reference
+# `ExitCodes.h` File
 
 <p>This file contains definitions of exit codes for exit() function. <a href="#details">More...</a></p>
 

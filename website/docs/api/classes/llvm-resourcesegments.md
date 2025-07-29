@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceSegments` Class Reference
+# `ResourceSegments` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/resourcesegments">ResourceSegments</a> are a collection of intervals closed on the left and opened on the right: <a href="#details">More...</a></p>
 

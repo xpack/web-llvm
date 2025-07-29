@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicLowering.h` File Reference
+# `IntrinsicLowering.h` File
 
 
 

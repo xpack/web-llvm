@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMaterializer` Class Reference
+# `ValueMaterializer` Class
 
 <p>This is a class that can be implemented by clients to materialize Values on demand. <a href="#details">More...</a></p>
 

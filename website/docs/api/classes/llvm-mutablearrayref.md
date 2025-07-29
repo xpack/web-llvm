@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MutableArrayRef` Class Template Reference
+# `MutableArrayRef` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mutablearrayref">MutableArrayRef</a> - Represent a mutable reference to an array (0 or more elements consecutively in memory), i.e. <a href="#details">More...</a></p>
 

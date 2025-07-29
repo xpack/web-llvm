@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOContextualProfile` Class Reference
+# `PGOContextualProfile` Class
 
 <p>The instrumented contextual profile, produced by the <a href="/web-llvm/docs/api/classes/llvm/ctxprofanalysis">CtxProfAnalysis</a>. <a href="#details">More...</a></p>
 

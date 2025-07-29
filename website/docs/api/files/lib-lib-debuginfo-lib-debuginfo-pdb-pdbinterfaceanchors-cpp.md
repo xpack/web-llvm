@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBInterfaceAnchors.cpp` File Reference
+# `PDBInterfaceAnchors.cpp` File
 
 
 

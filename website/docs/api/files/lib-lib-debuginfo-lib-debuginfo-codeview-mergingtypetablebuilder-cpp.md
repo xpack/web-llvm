@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergingTypeTableBuilder.cpp` File Reference
+# `MergingTypeTableBuilder.cpp` File
 
 
 

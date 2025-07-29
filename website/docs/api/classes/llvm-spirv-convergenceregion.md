@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConvergenceRegion` Class Reference
+# `ConvergenceRegion` Class
 
 
 

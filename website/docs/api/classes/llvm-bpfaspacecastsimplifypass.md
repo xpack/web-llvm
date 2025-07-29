@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFASpaceCastSimplifyPass` Class Reference
+# `BPFASpaceCastSimplifyPass` Class
 
 
 

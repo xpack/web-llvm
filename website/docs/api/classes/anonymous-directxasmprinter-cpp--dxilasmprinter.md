@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILAsmPrinter` Class Reference
+# `DXILAsmPrinter` Class
 
 
 

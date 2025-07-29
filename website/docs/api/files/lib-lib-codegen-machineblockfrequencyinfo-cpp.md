@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBlockFrequencyInfo.cpp` File Reference
+# `MachineBlockFrequencyInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeInjectedSource` Class Reference
+# `NativeInjectedSource` Class
 
 
 

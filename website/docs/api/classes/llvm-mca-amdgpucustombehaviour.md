@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCustomBehaviour` Class Reference
+# `AMDGPUCustomBehaviour` Class
 
 
 

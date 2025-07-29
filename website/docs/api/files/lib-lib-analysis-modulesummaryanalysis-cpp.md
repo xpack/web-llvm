@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryAnalysis.cpp` File Reference
+# `ModuleSummaryAnalysis.cpp` File
 
 
 

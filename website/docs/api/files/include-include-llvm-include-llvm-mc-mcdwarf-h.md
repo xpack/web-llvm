@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarf.h` File Reference
+# `MCDwarf.h` File
 
 
 

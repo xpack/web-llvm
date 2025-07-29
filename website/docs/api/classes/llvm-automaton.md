@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Automaton` Class Template Reference
+# `Automaton` Class Template
 
 <p>A deterministic finite-state automaton. <a href="#details">More...</a></p>
 

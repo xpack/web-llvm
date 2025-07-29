@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWPressureEvent` Class Reference
+# `HWPressureEvent` Class
 
 
 

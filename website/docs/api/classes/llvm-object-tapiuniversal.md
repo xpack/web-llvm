@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TapiUniversal` Class Reference
+# `TapiUniversal` Class
 
 
 

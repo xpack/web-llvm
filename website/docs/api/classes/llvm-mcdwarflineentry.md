@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfLineEntry` Class Reference
+# `MCDwarfLineEntry` Class
 
 <p>Instances of this class represent the line information for the dwarf line table entries. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyConstrain` Class Reference
+# `CopyConstrain` Class
 
 <p>Post-process the DAG to create weak edges from all uses of a copy to the one use that defines the copy's source vreg, most likely an induction variable increment. <a href="#details">More...</a></p>
 

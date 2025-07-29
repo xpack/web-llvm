@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolsCouldNotBeRemoved` Class Reference
+# `SymbolsCouldNotBeRemoved` Class
 
 <p>Used to notify clients that a set of symbols could not be removed. <a href="#details">More...</a></p>
 

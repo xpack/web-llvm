@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BFICallbackVH` Class Template Reference
+# `BFICallbackVH` Class Template
 
 
 

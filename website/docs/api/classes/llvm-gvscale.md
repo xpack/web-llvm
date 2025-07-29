@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVScale` Class Reference
+# `GVScale` Class
 
 <p>Represents a vscale. <a href="#details">More...</a></p>
 

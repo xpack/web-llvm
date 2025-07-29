@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DominanceFrontierAnalysis` Class Reference
+# `DominanceFrontierAnalysis` Class
 
 <p>Analysis pass which computes a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/dominancefrontier">DominanceFrontier</a></span>. <a href="#details">More...</a></p>
 

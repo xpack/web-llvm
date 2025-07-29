@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindInfoRegistrationPlugin.h` File Reference
+# `UnwindInfoRegistrationPlugin.h` File
 
 
 

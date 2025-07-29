@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILFlattenArrays` Class Reference
+# `DXILFlattenArrays` Class
 
 <p>A pass that transforms multidimensional arrays into one-dimensional arrays. <a href="#details">More...</a></p>
 

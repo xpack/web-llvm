@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrapperFunction` Class Template Reference
+# `WrapperFunction` Class Template
 
 
 

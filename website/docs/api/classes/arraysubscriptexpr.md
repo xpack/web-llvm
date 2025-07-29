@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArraySubscriptExpr` Class Reference
+# `ArraySubscriptExpr` Class
 
 
 

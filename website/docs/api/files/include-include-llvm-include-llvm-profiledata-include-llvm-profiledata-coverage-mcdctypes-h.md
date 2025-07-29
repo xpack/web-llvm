@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDCTypes.h` File Reference
+# `MCDCTypes.h` File
 
 
 

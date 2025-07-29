@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnaryInstruction` Class Reference
+# `UnaryInstruction` Class
 
 
 

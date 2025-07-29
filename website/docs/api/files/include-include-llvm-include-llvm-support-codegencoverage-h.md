@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenCoverage.h` File Reference
+# `CodeGenCoverage.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCPSolver` Class Reference
+# `SCCPSolver` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sccpsolver">SCCPSolver</a> - This interface class is a general purpose solver for Sparse Conditional <a href="/web-llvm/docs/api/classes/llvm/constant">Constant</a> Propagation (SCCP). <a href="#details">More...</a></p>
 

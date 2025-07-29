@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrPostProcess` Class Reference
+# `InstrPostProcess` Class
 
 <p>Class which can be overriden by targets to modify the <a href="/web-llvm/docs/api/classes/llvm/mca/instruction">mca::Instruction</a> objects before the pipeline starts. <a href="#details">More...</a></p>
 

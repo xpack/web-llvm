@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `list` Class Template Reference
+# `list` Class Template
 
 
 

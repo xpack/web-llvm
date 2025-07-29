@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEExpr` Class Reference
+# `DIEExpr` Class
 
 <p>An expression <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

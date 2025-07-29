@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFunctionProperties` Class Reference
+# `MachineFunctionProperties` Class
 
 <p>Properties which a <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> may have at a given point in time. <a href="#details">More...</a></p>
 

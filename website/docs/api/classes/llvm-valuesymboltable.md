@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueSymbolTable` Class Reference
+# `ValueSymbolTable` Class
 
 <p>This class provides a symbol table of name/value pairs. <a href="#details">More...</a></p>
 

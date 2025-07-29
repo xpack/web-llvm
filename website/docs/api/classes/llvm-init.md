@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Init` Class Reference
+# `Init` Class
 
 
 

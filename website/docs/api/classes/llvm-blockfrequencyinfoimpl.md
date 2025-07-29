@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequencyInfoImpl` Class Template Reference
+# `BlockFrequencyInfoImpl` Class Template
 
 <p>Shared implementation for block frequency analysis. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmObjectFile` Class Reference
+# `WasmObjectFile` Class
 
 
 

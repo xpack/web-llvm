@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WidenedLoad` Class Reference
+# `WidenedLoad` Class
 
 
 

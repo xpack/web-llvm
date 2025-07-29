@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDOperand` Class Reference
+# `MDOperand` Class
 
 <p>Tracking metadata reference owned by <a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a>. <a href="#details">More...</a></p>
 

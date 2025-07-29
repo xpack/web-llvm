@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFVCRuntimeSupport.h` File Reference
+# `COFFVCRuntimeSupport.h` File
 
 
 

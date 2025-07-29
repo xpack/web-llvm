@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_iterator_w_bits` Class Template Reference
+# `ilist_iterator_w_bits` Class Template
 
 <p>Iterator for intrusive lists based on <a href="/web-llvm/docs/api/classes/llvm/ilist-node">ilist_node</a>. <a href="#details">More...</a></p>
 

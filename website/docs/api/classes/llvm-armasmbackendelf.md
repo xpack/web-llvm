@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmBackendELF` Class Reference
+# `ARMAsmBackendELF` Class
 
 
 

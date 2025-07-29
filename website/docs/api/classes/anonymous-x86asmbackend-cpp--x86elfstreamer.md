@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ELFStreamer` Class Reference
+# `X86ELFStreamer` Class
 
 
 

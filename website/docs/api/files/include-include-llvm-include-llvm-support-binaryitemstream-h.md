@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryItemStream.h` File Reference
+# `BinaryItemStream.h` File
 
 
 

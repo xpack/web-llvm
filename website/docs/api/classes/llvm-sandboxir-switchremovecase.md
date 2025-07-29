@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchRemoveCase` Class Reference
+# `SwitchRemoveCase` Class
 
 
 

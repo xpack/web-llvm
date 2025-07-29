@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNMaxOccupancySchedStrategy` Class Reference
+# `GCNMaxOccupancySchedStrategy` Class
 
 <p>The goal of this scheduling strategy is to maximize kernel occupancy (i.e. <a href="#details">More...</a></p>
 

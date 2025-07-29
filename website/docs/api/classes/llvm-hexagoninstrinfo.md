@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonInstrInfo` Class Reference
+# `HexagonInstrInfo` Class
 
 
 

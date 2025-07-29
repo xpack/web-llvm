@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaterializedIterator` Class Reference
+# `MaterializedIterator` Class
 
 <p>Iterator on all the elements of the vector which have actually being constructed. <a href="#details">More...</a></p>
 

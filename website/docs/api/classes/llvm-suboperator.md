@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubOperator` Class Reference
+# `SubOperator` Class
 
 
 

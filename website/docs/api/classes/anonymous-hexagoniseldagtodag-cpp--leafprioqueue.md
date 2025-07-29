@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeafPrioQueue` Class Reference
+# `LeafPrioQueue` Class
 
 <p>A specialized priority queue for WeigthedLeaves. <a href="#details">More...</a></p>
 

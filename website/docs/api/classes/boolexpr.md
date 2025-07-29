@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BoolExpr` Class Reference
+# `BoolExpr` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultEvictionAdvisor` Class Reference
+# `DefaultEvictionAdvisor` Class
 
 
 

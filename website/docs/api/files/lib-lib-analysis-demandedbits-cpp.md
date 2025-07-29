@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DemandedBits.cpp` File Reference
+# `DemandedBits.cpp` File
 
 
 

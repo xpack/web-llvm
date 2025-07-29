@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizedStructLayout.h` File Reference
+# `OptimizedStructLayout.h` File
 
 <p>This file provides an interface for laying out a sequence of fields as a struct in a way that attempts to minimizes the total space requirements of the struct while still satisfying the layout requirements of the individual fields. <a href="#details">More...</a></p>
 

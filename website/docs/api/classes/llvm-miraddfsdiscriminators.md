@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRAddFSDiscriminators` Class Reference
+# `MIRAddFSDiscriminators` Class
 
 
 

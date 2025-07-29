@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetMachine64` Class Reference
+# `NVPTXTargetMachine64` Class
 
 
 

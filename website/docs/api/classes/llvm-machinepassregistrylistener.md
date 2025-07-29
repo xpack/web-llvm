@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePassRegistryListener` Class Template Reference
+# `MachinePassRegistryListener` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinepassregistrylistener">MachinePassRegistryListener</a> - Listener to adds and removals of nodes in registration list. <a href="#details">More...</a></p>
 

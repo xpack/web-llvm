@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleavedLoadCombinePass` Class Reference
+# `InterleavedLoadCombinePass` Class
 
 
 

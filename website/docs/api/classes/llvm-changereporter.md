@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChangeReporter` Class Template Reference
+# `ChangeReporter` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSimilarityIdentifier.h` File Reference
+# `IRSimilarityIdentifier.h` File
 
 
 

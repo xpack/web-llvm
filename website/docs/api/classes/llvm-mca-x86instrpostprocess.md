@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstrPostProcess` Class Reference
+# `X86InstrPostProcess` Class
 
 
 

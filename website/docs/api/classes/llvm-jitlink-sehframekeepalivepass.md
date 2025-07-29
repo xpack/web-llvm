@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SEHFrameKeepAlivePass` Class Reference
+# `SEHFrameKeepAlivePass` Class
 
 <p>This pass adds keep-alive edge from SEH frame sections to the parent function content block. <a href="#details">More...</a></p>
 

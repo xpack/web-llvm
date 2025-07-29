@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionPrinter` Class Reference
+# `VersionPrinter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCExpandAtomicPseudo` Class Reference
+# `PPCExpandAtomicPseudo` Class
 
 
 

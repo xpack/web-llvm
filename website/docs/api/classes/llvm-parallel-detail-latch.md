@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Latch` Class Reference
+# `Latch` Class
 
 
 

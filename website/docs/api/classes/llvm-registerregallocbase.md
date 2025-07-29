@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterRegAllocBase` Class Template Reference
+# `RegisterRegAllocBase` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/registerregallocbase">RegisterRegAllocBase</a> class - Track the registration of register allocators. <a href="#details">More...</a></p>
 

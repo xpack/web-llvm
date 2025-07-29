@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPScatterSDNode` Class Reference
+# `VPScatterSDNode` Class
 
 <p>This class is used to represent an VP_SCATTER node. <a href="#details">More...</a></p>
 

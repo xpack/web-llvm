@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BindRebaseSegInfo` Class Reference
+# `BindRebaseSegInfo` Class
 
 
 

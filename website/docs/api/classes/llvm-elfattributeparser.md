@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFAttributeParser` Class Reference
+# `ELFAttributeParser` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolAddressMap` Class Reference
+# `SymbolAddressMap` Class
 
 <p>A map of addresses to Symbols. <a href="#details">More...</a></p>
 

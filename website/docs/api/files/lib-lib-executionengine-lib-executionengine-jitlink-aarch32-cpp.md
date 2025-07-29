@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `aarch32.cpp` File Reference
+# `aarch32.cpp` File
 
 
 

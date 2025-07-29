@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeadExpression` Class Reference
+# `DeadExpression` Class
 
 
 

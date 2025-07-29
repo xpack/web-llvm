@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeFunctionsPass` Class Reference
+# `MergeFunctionsPass` Class
 
 <p>Merge identical functions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRMCCodeEmitter` Class Reference
+# `AVRMCCodeEmitter` Class
 
 <p>Writes <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> machine code to a stream. <a href="#details">More...</a></p>
 

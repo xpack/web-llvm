@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorMemoryBuffer.h` File Reference
+# `SmallVectorMemoryBuffer.h` File
 
 
 

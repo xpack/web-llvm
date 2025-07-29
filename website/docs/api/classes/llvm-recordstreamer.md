@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordStreamer` Class Reference
+# `RecordStreamer` Class
 
 
 

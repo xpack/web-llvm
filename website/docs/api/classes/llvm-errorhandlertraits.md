@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorHandlerTraits` Class Template Reference
+# `ErrorHandlerTraits` Class Template
 
 <p>Helper for testing applicability of, and applying, handlers for <a href="/web-llvm/docs/api/classes/llvm/errorinfo">ErrorInfo</a> types. <a href="#details">More...</a></p>
 

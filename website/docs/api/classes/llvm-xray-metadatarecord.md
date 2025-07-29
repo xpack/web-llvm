@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataRecord` Class Reference
+# `MetadataRecord` Class
 
 
 

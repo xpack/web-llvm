@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RTTIRoot` Class Reference
+# `RTTIRoot` Class
 
 <p>Base class for the extensible RTTI hierarchy. <a href="#details">More...</a></p>
 

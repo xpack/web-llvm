@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinCOFFTargetStreamer` Class Reference
+# `X86WinCOFFTargetStreamer` Class
 
 <p>Implements Windows x86-only directives for object emission. <a href="#details">More...</a></p>
 

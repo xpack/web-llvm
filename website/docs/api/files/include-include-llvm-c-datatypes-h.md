@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataTypes.h` File Reference
+# `DataTypes.h` File
 
 
 

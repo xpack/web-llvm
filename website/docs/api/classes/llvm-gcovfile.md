@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVFile` Class Reference
+# `GCOVFile` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gcovfile">GCOVFile</a> - Collects coverage information for one pair of coverage file (.gcno and .gcda). <a href="#details">More...</a></p>
 

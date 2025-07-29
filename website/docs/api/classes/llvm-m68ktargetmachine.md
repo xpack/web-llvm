@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetMachine` Class Reference
+# `M68kTargetMachine` Class
 
 
 

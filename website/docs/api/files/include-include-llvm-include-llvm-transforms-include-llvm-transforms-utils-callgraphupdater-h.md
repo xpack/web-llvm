@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphUpdater.h` File Reference
+# `CallGraphUpdater.h` File
 
 <p>This file provides interfaces used to manipulate a call graph, regardless if it is a "old style" CallGraph or an "new style" LazyCallGraph. <a href="#details">More...</a></p>
 

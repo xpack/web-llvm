@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600CodeGenPassBuilder` Class Reference
+# `R600CodeGenPassBuilder` Class
 
 
 

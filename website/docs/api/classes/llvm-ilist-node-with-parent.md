@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_node_with_parent` Class Template Reference
+# `ilist_node_with_parent` Class Template
 
 <p>An ilist node that can access its parent list. <a href="#details">More...</a></p>
 

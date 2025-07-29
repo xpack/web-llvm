@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCostAnnotationWriter` Class Reference
+# `InlineCostAnnotationWriter` Class
 
 
 

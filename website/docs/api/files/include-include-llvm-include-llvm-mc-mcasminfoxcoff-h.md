@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoXCOFF.h` File Reference
+# `MCAsmInfoXCOFF.h` File
 
 
 

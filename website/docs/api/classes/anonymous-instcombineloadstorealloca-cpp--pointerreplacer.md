@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerReplacer` Class Reference
+# `PointerReplacer` Class
 
 
 

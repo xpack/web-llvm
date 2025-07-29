@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineEditor` Class Reference
+# `LineEditor` Class
 
 
 

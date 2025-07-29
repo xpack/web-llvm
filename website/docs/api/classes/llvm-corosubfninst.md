@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSubFnInst` Class Reference
+# `CoroSubFnInst` Class
 
 <p>This class represents the llvm.coro.subfn.addr instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVPatterns` Class Reference
+# `LVPatterns` Class
 
 
 

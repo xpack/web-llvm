@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseIteratorImpl` Class Template Reference
+# `CaseIteratorImpl` Class Template
 
 
 

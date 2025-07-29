@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSanitizer.h` File Reference
+# `TypeSanitizer.h` File
 
 
 

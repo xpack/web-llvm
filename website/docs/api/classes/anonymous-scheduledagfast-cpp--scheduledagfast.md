@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGFast` Class Reference
+# `ScheduleDAGFast` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-scheduledagfast-cpp-/scheduledagfast">ScheduleDAGFast</a> - The actual "fast" list scheduler implementation. <a href="#details">More...</a></p>
 

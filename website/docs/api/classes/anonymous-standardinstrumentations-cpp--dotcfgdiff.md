@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DotCfgDiff` Class Reference
+# `DotCfgDiff` Class
 
 
 

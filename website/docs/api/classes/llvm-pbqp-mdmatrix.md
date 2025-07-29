@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDMatrix` Class Template Reference
+# `MDMatrix` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrPosIndexes` Class Reference
+# `InstrPosIndexes` Class
 
 <p>Assign ascending index for instructions in machine basic block. <a href="#details">More...</a></p>
 

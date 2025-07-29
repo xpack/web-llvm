@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizationLevel.h` File Reference
+# `OptimizationLevel.h` File
 
 <p>This header enumerates the LLVM-provided high-level optimization levels. <a href="#details">More...</a></p>
 

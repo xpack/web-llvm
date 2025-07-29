@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Vector` Class Reference
+# `Vector` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> <a href="/web-llvm/docs/api/classes/llvm/pbqp/vector">Vector</a> class. <a href="#details">More...</a></p>
 

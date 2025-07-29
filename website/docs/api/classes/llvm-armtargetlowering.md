@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTargetLowering` Class Reference
+# `ARMTargetLowering` Class
 
 
 

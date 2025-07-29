@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCFixup.h` File Reference
+# `MCFixup.h` File
 
 
 

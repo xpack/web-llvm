@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBid` Class Reference
+# `HexagonBid` Class
 
 
 

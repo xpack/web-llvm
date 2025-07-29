@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemoryNode` Class Reference
+# `InMemoryNode` Class
 
 <p>The in memory file system is a tree of Nodes. <a href="#details">More...</a></p>
 

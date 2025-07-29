@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoDontCall` Class Reference
+# `DiagnosticInfoDontCall` Class
 
 
 

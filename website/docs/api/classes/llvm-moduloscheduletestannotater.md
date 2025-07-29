@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuloScheduleTestAnnotater` Class Reference
+# `ModuloScheduleTestAnnotater` Class
 
 <p>Expander that simply annotates each scheduled instruction with a post-instr symbol that can be consumed by the ModuloScheduleTest pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerHelperCompares.cpp` File Reference
+# `CombinerHelperCompares.cpp` File
 
 
 

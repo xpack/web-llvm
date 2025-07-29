@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HelloWorldPass` Class Reference
+# `HelloWorldPass` Class
 
 
 

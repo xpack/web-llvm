@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionSummary` Class Reference
+# `FunctionSummary` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/function">Function</a> summary information to aid decisions and implementation of importing. <a href="#details">More...</a></p>
 

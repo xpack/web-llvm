@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIntrinsic` Class Reference
+# `GIntrinsic` Class
 
 <p>Represents a call to an intrinsic. <a href="#details">More...</a></p>
 

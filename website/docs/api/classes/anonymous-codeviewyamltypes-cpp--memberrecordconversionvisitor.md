@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemberRecordConversionVisitor` Class Reference
+# `MemberRecordConversionVisitor` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapVector` Class Template Reference
+# `MapVector` Class Template
 
 <p>This class implements a map that also provides access to all stored values in a deterministic order. <a href="#details">More...</a></p>
 

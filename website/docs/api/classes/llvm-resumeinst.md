@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResumeInst` Class Reference
+# `ResumeInst` Class
 
 <p>Resume the propagation of an exception. <a href="#details">More...</a></p>
 

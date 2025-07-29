@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Process.h` File Reference
+# `Process.h` File
 
 <p>Provides a library for accessing information about this process and other processes on the operating system. <a href="#details">More...</a></p>
 

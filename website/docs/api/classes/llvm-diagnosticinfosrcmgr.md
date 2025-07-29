@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoSrcMgr` Class Reference
+# `DiagnosticInfoSrcMgr` Class
 
 <p>Diagnostic information for <a href="/web-llvm/docs/api/classes/llvm/smdiagnostic">SMDiagnostic</a> reporting. <a href="#details">More...</a></p>
 

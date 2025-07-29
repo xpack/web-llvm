@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELF_loongarch.h` File Reference
+# `ELF_loongarch.h` File
 
 
 

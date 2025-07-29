@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SaveAndRestore.h` File Reference
+# `SaveAndRestore.h` File
 
 <p>This file provides utility classes that use RAII to save and restore values. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DylibReader.h` File Reference
+# `DylibReader.h` File
 
 
 

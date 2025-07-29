@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamArray.h` File Reference
+# `BinaryStreamArray.h` File
 
 <p>Lightweight arrays that are backed by an arbitrary BinaryStream. <a href="#details">More...</a></p>
 

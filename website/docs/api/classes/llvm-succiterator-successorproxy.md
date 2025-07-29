@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuccessorProxy` Class Reference
+# `SuccessorProxy` Class
 
 <p>Proxy object to allow write access in operator[]. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FixupVectorConstantsPass` Class Reference
+# `X86FixupVectorConstantsPass` Class
 
 
 

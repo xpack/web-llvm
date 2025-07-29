@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUnmangledLibFunc` Class Reference
+# `AMDGPUUnmangledLibFunc` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Operator` Class Reference
+# `Operator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/settheory/operator">Operator</a> - A callback representing a DAG operator. <a href="#details">More...</a></p>
 

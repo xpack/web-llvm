@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCSEImpl` Class Reference
+# `MachineCSEImpl` Class
 
 
 

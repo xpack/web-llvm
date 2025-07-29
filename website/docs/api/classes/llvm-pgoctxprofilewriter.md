@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCtxProfileWriter` Class Reference
+# `PGOCtxProfileWriter` Class
 
 <p>Write one or more ContextNodes to the provided <a href="/web-llvm/docs/api/classes/llvm/raw-fd-stream">raw_fd_stream</a>. <a href="#details">More...</a></p>
 

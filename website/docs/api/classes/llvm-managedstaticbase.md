@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ManagedStaticBase` Class Reference
+# `ManagedStaticBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/managedstaticbase">ManagedStaticBase</a> - Common base class for <a href="/web-llvm/docs/api/classes/llvm/managedstatic">ManagedStatic</a> instances. <a href="#details">More...</a></p>
 

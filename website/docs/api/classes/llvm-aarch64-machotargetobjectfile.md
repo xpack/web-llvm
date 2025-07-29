@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64_MachoTargetObjectFile` Class Reference
+# `AArch64_MachoTargetObjectFile` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/aarch64-machotargetobjectfile">AArch64_MachoTargetObjectFile</a> - This TLOF implementation is used for Darwin. <a href="#details">More...</a></p>
 

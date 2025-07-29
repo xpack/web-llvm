@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegUnitIterator` Class Reference
+# `MCRegUnitIterator` Class
 
 
 

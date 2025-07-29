@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenRangesSet` Class Reference
+# `OpenRangesSet` Class
 
 <p>This holds the working set of currently open ranges. <a href="#details">More...</a></p>
 

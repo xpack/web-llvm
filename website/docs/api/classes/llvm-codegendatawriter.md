@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenDataWriter` Class Reference
+# `CodeGenDataWriter` Class
 
 
 

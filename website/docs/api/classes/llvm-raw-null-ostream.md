@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_null_ostream` Class Reference
+# `raw_null_ostream` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> that discards all output. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VendorExtQualType` Class Reference
+# `VendorExtQualType` Class
 
 
 

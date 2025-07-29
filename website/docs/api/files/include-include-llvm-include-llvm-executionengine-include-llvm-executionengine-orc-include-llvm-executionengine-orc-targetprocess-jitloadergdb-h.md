@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLoaderGDB.h` File Reference
+# `JITLoaderGDB.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariableDbgInfo` Class Reference
+# `VariableDbgInfo` Class
 
 <p>Description of the location of a variable whose Address is valid and unchanging during function execution. <a href="#details">More...</a></p>
 

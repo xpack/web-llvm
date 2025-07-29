@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Wasm.h` File Reference
+# `Wasm.h` File
 
 
 

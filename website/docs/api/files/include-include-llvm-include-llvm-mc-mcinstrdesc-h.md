@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstrDesc.h` File Reference
+# `MCInstrDesc.h` File
 
 
 

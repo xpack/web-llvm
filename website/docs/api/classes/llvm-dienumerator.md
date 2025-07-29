@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEnumerator` Class Reference
+# `DIEnumerator` Class
 
 <p>Enumeration value. <a href="#details">More...</a></p>
 

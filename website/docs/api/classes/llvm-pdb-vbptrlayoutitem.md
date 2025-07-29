@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VBPtrLayoutItem` Class Reference
+# `VBPtrLayoutItem` Class
 
 
 

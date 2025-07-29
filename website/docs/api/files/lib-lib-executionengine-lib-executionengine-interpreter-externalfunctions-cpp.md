@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExternalFunctions.cpp` File Reference
+# `ExternalFunctions.cpp` File
 
 
 

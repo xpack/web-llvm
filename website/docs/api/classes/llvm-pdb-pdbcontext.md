@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBContext` Class Reference
+# `PDBContext` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/pdbcontext">PDBContext</a> This data structure is the top level entity that deals with PDB debug information parsing. <a href="#details">More...</a></p>
 

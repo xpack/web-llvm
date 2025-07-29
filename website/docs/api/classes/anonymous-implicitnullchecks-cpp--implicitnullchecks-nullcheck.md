@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NullCheck` Class Reference
+# `NullCheck` Class
 
 <p>Represents one null check that can be made implicit. <a href="#details">More...</a></p>
 

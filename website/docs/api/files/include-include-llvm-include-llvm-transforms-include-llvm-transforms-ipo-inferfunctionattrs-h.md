@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferFunctionAttrs.h` File Reference
+# `InferFunctionAttrs.h` File
 
 <p>Interfaces for passes which infer implicit function attributes from the name and signature of function declarations. <a href="#details">More...</a></p>
 

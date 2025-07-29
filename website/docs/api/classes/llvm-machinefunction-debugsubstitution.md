@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSubstitution` Class Reference
+# `DebugSubstitution` Class
 
 <p>Replacement definition for a debug instruction reference. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConfigManager.h` File Reference
+# `ConfigManager.h` File
 
 
 

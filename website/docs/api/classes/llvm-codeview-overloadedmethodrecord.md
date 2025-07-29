@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverloadedMethodRecord` Class Reference
+# `OverloadedMethodRecord` Class
 
 <p>For method overload sets. LF_METHOD. <a href="#details">More...</a></p>
 

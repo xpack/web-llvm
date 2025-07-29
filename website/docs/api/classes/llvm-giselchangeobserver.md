@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelChangeObserver` Class Reference
+# `GISelChangeObserver` Class
 
 <p>Abstract class that contains various methods for clients to notify about changes. <a href="#details">More...</a></p>
 

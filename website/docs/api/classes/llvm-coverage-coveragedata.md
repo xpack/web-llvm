@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageData` Class Reference
+# `CoverageData` Class
 
 <p>Coverage information to be processed or displayed. <a href="#details">More...</a></p>
 

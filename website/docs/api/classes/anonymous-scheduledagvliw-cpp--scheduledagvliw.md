@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGVLIW` Class Reference
+# `ScheduleDAGVLIW` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-scheduledagvliw-cpp-/scheduledagvliw">ScheduleDAGVLIW</a> - The actual DFA list scheduler implementation. <a href="#details">More...</a></p>
 

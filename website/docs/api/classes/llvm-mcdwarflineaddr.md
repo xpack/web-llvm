@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfLineAddr` Class Reference
+# `MCDwarfLineAddr` Class
 
 
 

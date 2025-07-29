@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Graph` Class Template Reference
+# `Graph` Class Template
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> <a href="/web-llvm/docs/api/classes/llvm/pbqp/graph">Graph</a> class. <a href="#details">More...</a></p>
 

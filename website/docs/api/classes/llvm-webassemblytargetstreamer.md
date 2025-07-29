@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetStreamer` Class Reference
+# `WebAssemblyTargetStreamer` Class
 
 <p>WebAssembly-specific streamer interface, to implement support WebAssembly-specific assembly directives. <a href="#details">More...</a></p>
 

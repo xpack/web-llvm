@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPCanonicalIVPHIRecipe` Class Reference
+# `VPCanonicalIVPHIRecipe` Class
 
 <p>Canonical scalar induction phi of the vector loop. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `generic_parser_base` Class Reference
+# `generic_parser_base` Class
 
 
 

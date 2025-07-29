@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandTraits.h` File Reference
+# `OperandTraits.h` File
 
 
 

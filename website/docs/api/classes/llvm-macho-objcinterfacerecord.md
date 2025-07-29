@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCInterfaceRecord` Class Reference
+# `ObjCInterfaceRecord` Class
 
 
 

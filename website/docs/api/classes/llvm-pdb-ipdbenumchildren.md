@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBEnumChildren` Class Template Reference
+# `IPDBEnumChildren` Class Template
 
 
 

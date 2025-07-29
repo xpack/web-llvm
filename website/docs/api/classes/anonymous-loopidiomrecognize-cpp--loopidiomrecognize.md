@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopIdiomRecognize` Class Reference
+# `LoopIdiomRecognize` Class
 
 
 

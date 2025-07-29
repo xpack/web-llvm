@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMContext` Class Reference
+# `LLVMContext` Class
 
 <p>This is an important class for using LLVM in a threaded context. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleExecutorMemoryManager.cpp` File Reference
+# `SimpleExecutorMemoryManager.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopNest` Class Reference
+# `LoopNest` Class
 
 <p>This class represents a loop nest and can be used to query its properties. <a href="#details">More...</a></p>
 

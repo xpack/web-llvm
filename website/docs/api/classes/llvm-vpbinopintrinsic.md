@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBinOpIntrinsic` Class Reference
+# `VPBinOpIntrinsic` Class
 
 
 

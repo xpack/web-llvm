@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleInfoImpls.h` File Reference
+# `MachineModuleInfoImpls.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCCState` Class Reference
+# `HexagonCCState` Class
 
 
 

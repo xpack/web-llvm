@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringViewExtras.h` File Reference
+# `StringViewExtras.h` File
 
 
 

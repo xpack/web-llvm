@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TensorSpec.h` File Reference
+# `TensorSpec.h` File
 
 
 

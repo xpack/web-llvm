@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InFlightAlloc` Class Reference
+# `InFlightAlloc` Class
 
 
 

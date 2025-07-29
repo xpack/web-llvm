@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashTable` Class Template Reference
+# `HashTable` Class Template
 
 
 

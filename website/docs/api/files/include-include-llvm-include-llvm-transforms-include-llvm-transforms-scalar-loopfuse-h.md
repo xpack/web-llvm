@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopFuse.h` File Reference
+# `LoopFuse.h` File
 
 <p>This file implements the Loop Fusion pass. <a href="#details">More...</a></p>
 

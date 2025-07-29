@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStringPool.h` File Reference
+# `SymbolStringPool.h` File
 
 
 

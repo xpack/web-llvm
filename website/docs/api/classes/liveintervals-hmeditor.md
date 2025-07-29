@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HMEditor` Class Reference
+# `HMEditor` Class
 
 <p>Toolkit used by handleMove to trim or extend live intervals. <a href="#details">More...</a></p>
 

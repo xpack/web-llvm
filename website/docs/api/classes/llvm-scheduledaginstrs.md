@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGInstrs` Class Reference
+# `ScheduleDAGInstrs` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/scheduledag">ScheduleDAG</a> for scheduling lists of <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a>. <a href="#details">More...</a></p>
 

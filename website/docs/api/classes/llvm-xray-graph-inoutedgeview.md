@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InOutEdgeView` Class Template Reference
+# `InOutEdgeView` Class Template
 
 <p>A class for ranging over the incoming edges incident to a vertex. <a href="#details">More...</a></p>
 

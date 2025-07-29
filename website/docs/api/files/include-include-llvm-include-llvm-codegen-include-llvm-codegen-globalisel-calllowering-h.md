@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallLowering.h` File Reference
+# `CallLowering.h` File
 
 <p>This file describes how to lower LLVM calls to machine code calls. <a href="#details">More...</a></p>
 

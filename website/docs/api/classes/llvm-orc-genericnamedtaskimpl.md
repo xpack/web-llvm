@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericNamedTaskImpl` Class Template Reference
+# `GenericNamedTaskImpl` Class Template
 
 <p>Generic task implementation. <a href="#details">More...</a></p>
 

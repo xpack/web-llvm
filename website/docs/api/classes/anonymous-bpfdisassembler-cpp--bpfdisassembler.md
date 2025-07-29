@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFDisassembler` Class Reference
+# `BPFDisassembler` Class
 
 <p>A disassembler class for <a href="/web-llvm/docs/api/namespaces/llvm/bpf">BPF</a>. <a href="#details">More...</a></p>
 

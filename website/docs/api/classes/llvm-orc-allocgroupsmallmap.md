@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocGroupSmallMap` Class Template Reference
+# `AllocGroupSmallMap` Class Template
 
 <p>A specialized small-map for AllocGroups. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCTrampolinePool` Class Reference
+# `EPCTrampolinePool` Class
 
 
 

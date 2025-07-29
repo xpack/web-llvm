@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBSession.h` File Reference
+# `IPDBSession.h` File
 
 
 

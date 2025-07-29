@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaTree` Class Reference
+# `DeltaTree` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/deltatree">DeltaTree</a> - a multiway search tree (BTree) structure with some fancy features. <a href="#details">More...</a></p>
 

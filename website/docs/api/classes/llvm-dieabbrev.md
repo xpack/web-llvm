@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEAbbrev` Class Reference
+# `DIEAbbrev` Class
 
 <p>Dwarf abbreviation, describes the organization of a debug information object. <a href="#details">More...</a></p>
 

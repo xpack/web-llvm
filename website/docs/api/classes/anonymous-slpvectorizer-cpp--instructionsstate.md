@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionsState` Class Reference
+# `InstructionsState` Class
 
 <p>Main data required for vectorization of instructions. <a href="#details">More...</a></p>
 

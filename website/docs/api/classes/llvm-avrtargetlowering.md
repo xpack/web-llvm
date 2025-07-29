@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRTargetLowering` Class Reference
+# `AVRTargetLowering` Class
 
 <p>Performs target lowering for the <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a>. <a href="#details">More...</a></p>
 

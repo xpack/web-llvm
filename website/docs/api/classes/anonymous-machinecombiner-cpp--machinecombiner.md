@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCombiner` Class Reference
+# `MachineCombiner` Class
 
 
 

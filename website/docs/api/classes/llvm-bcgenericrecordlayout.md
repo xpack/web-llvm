@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCGenericRecordLayout` Class Template Reference
+# `BCGenericRecordLayout` Class Template
 
 <p>Represents a single bitcode record type. <a href="#details">More...</a></p>
 

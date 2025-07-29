@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFrameInfo` Class Reference
+# `MachineFrameInfo` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/machineframeinfo">MachineFrameInfo</a> class represents an abstract stack frame until prolog/epilog code is inserted. <a href="#details">More...</a></p>
 

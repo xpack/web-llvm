@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoMemInstr` Class Reference
+# `NoMemInstr` Class
 
 <p>This subclass rejects any memory instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewYAMLTypes.h` File Reference
+# `CodeViewYAMLTypes.h` File
 
 
 

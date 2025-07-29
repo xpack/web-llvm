@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchFolderPass` Class Reference
+# `BranchFolderPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-branchfolding-cpp-/branchfolderpass">BranchFolderPass</a> - Wrap branch folder in a machine function pass. <a href="#details">More...</a></p>
 

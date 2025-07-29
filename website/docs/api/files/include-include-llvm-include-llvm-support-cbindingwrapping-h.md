@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CBindingWrapping.h` File Reference
+# `CBindingWrapping.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueInfo` Class Reference
+# `LazyValueInfo` Class
 
 <p>This pass computes, caches, and vends lazy value constraint information. <a href="#details">More...</a></p>
 

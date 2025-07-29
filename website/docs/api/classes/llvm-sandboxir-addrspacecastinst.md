@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddrSpaceCastInst` Class Reference
+# `AddrSpaceCastInst` Class
 
 
 

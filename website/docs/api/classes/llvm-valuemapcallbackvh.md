@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMapCallbackVH` Class Template Reference
+# `ValueMapCallbackVH` Class Template
 
 
 

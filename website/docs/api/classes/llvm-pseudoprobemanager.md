@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoProbeManager` Class Reference
+# `PseudoProbeManager` Class
 
 
 

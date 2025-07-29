@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIALineNumber` Class Reference
+# `DIALineNumber` Class
 
 
 

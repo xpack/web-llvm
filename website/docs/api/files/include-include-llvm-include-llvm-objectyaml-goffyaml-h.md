@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFYAML.h` File Reference
+# `GOFFYAML.h` File
 
 
 

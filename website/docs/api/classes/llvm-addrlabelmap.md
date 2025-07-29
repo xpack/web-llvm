@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddrLabelMap` Class Reference
+# `AddrLabelMap` Class
 
 
 

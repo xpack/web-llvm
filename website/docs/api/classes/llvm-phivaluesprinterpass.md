@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiValuesPrinterPass` Class Reference
+# `PhiValuesPrinterPass` Class
 
 <p>A pass for printing the <a href="/web-llvm/docs/api/classes/llvm/phivalues">PhiValues</a> for a function. <a href="#details">More...</a></p>
 

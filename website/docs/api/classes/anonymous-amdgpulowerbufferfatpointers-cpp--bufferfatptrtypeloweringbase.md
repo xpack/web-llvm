@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BufferFatPtrTypeLoweringBase` Class Reference
+# `BufferFatPtrTypeLoweringBase` Class
 
 <p>Recursively replace instances of ptr addrspace(7) and vector&lt;Nxptr addrspace(7)&gt; with some other type as defined by the relevant subclass. <a href="#details">More...</a></p>
 

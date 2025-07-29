@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveRefCntPtr.h` File Reference
+# `IntrusiveRefCntPtr.h` File
 
 <p>This file defines the RefCountedBase, ThreadSafeRefCountedBase, and IntrusiveRefCntPtr classes. <a href="#details">More...</a></p>
 

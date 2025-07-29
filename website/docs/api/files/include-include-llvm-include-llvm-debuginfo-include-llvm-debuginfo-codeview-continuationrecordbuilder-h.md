@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContinuationRecordBuilder.h` File Reference
+# `ContinuationRecordBuilder.h` File
 
 
 

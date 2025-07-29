@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchInstProfUpdateWrapper` Class Reference
+# `SwitchInstProfUpdateWrapper` Class
 
 <p>A wrapper class to simplify modification of <a href="/web-llvm/docs/api/classes/llvm/switchinst">SwitchInst</a> cases along with their prof branch_weights metadata. <a href="#details">More...</a></p>
 

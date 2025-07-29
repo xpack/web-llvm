@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeRecord` Class Reference
+# `TypeRecord` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoalescerPair` Class Reference
+# `CoalescerPair` Class
 
 <p>A helper class for register coalescers. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumLiteral` Class Reference
+# `EnumLiteral` Class
 
 
 

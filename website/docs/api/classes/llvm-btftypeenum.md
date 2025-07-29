@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeEnum` Class Reference
+# `BTFTypeEnum` Class
 
 <p>Handle enumerate type. <a href="#details">More...</a></p>
 

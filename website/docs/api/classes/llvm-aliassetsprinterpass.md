@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasSetsPrinterPass` Class Reference
+# `AliasSetsPrinterPass` Class
 
 
 

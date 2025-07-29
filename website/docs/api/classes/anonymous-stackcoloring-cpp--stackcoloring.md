@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackColoring` Class Reference
+# `StackColoring` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-stackcoloring-cpp-/stackcoloring">StackColoring</a> - A machine pass for merging disjoint stack allocations, marked by the LIFETIME_START and LIFETIME_END pseudo instructions. <a href="#details">More...</a></p>
 

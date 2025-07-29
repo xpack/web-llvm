@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstructionSelector` Class Reference
+# `M68kInstructionSelector` Class
 
 
 

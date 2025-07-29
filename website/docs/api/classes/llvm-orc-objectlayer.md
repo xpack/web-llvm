@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectLayer` Class Reference
+# `ObjectLayer` Class
 
 <p>Interface for Layers that accept object files. <a href="#details">More...</a></p>
 

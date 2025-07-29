@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600InstPrinter` Class Reference
+# `R600InstPrinter` Class
 
 
 

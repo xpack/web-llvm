@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TempDir` Class Reference
+# `TempDir` Class
 
 <p>A RAII object that creates a temporary directory upon initialization and removes it upon destruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceTrackerDefunct` Class Reference
+# `ResourceTrackerDefunct` Class
 
 
 

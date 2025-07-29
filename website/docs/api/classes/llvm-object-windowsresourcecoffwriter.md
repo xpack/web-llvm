@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsResourceCOFFWriter` Class Reference
+# `WindowsResourceCOFFWriter` Class
 
 
 

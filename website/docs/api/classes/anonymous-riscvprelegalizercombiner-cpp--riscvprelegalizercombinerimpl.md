@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVPreLegalizerCombinerImpl` Class Reference
+# `RISCVPreLegalizerCombinerImpl` Class
 
 
 

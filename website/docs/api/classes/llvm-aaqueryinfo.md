@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAQueryInfo` Class Reference
+# `AAQueryInfo` Class
 
 <p>This class stores info we want to provide to or retain within an alias query. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceMgr.h` File Reference
+# `SourceMgr.h` File
 
 
 

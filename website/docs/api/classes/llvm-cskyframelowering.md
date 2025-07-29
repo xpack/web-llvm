@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYFrameLowering` Class Reference
+# `CSKYFrameLowering` Class
 
 
 

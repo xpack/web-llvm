@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFGenRegisterInfo` Class Reference
+# `BPFGenRegisterInfo` Class
 
 
 

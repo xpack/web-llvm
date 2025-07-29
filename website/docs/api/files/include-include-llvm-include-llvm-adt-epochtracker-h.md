@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EpochTracker.h` File Reference
+# `EpochTracker.h` File
 
 <p>This file defines the DebugEpochBase and DebugEpochBase::HandleBase classes. <a href="#details">More...</a></p>
 

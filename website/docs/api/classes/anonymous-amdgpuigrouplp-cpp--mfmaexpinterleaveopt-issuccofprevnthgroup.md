@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsSuccOfPrevNthGroup` Class Reference
+# `IsSuccOfPrevNthGroup` Class
 
 <p>Whether or not the instruction is an immediate RAW successor of the <a href="/web-llvm/docs/api/classes/anonymous-amdgpuigrouplp-cpp-/schedgroup">SchedGroup</a> <span class="doxyComputerOutput">Distance</span> steps before. <a href="#details">More...</a></p>
 

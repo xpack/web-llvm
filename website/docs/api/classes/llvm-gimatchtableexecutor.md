@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIMatchTableExecutor` Class Reference
+# `GIMatchTableExecutor` Class
 
 <p>Provides the logic to execute GlobalISel match tables, which are used by the instruction selector and instruction combiners as their engine to match and apply MIR patterns. <a href="#details">More...</a></p>
 

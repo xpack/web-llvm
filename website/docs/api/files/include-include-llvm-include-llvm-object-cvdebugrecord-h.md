@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVDebugRecord.h` File Reference
+# `CVDebugRecord.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIGenericSubrange` Class Reference
+# `DIGenericSubrange` Class
 
 
 

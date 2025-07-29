@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrUseVisitorBase` Class Reference
+# `PtrUseVisitorBase` Class
 
 <p>Implementation of non-dependent functionality for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/ptrusevisitor">PtrUseVisitor</a></span>. <a href="#details">More...</a></p>
 

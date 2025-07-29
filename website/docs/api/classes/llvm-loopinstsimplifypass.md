@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInstSimplifyPass` Class Reference
+# `LoopInstSimplifyPass` Class
 
 <p>Performs <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Inst Simplify <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

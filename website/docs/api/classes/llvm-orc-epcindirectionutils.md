@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCIndirectionUtils` Class Reference
+# `EPCIndirectionUtils` Class
 
 <p>Provides <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> based indirect stubs, trampoline pool and lazy call through manager. <a href="#details">More...</a></p>
 

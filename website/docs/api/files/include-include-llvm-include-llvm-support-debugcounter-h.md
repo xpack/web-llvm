@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugCounter.h` File Reference
+# `DebugCounter.h` File
 
 <p>This file provides an implementation of debug counters. <a href="#details">More...</a></p>
 

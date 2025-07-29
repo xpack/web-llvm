@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShlOperator` Class Reference
+# `ShlOperator` Class
 
 
 

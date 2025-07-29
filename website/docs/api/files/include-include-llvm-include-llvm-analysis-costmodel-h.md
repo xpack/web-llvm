@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostModel.h` File Reference
+# `CostModel.h` File
 
 
 

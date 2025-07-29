@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetLowering` Class Reference
+# `M68kTargetLowering` Class
 
 
 

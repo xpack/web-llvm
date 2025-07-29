@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReferenceType` Class Reference
+# `ReferenceType` Class
 
 
 

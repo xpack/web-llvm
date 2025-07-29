@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumericVariableUse` Class Reference
+# `NumericVariableUse` Class
 
 <p>Class representing the use of a numeric variable in the AST of an expression. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDebugValueManager` Class Reference
+# `WebAssemblyDebugValueManager` Class
 
 
 

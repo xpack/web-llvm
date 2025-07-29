@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCtxProfContext` Class Reference
+# `PGOCtxProfContext` Class
 
 <p>A node (context) in the loaded contextual profile, suitable for mutation during IPO passes. <a href="#details">More...</a></p>
 

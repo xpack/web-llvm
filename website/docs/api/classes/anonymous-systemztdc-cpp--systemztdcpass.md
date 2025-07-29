@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZTDCPass` Class Reference
+# `SystemZTDCPass` Class
 
 
 

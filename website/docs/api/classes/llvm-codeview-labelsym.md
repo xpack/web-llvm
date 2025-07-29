@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LabelSym` Class Reference
+# `LabelSym` Class
 
 
 

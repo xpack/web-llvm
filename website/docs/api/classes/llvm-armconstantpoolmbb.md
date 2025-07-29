@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMConstantPoolMBB` Class Reference
+# `ARMConstantPoolMBB` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/armconstantpoolmbb">ARMConstantPoolMBB</a> - ARM-specific constantpool value of a machine basic block. <a href="#details">More...</a></p>
 

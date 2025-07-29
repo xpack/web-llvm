@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerWWMCopiesLegacy` Class Reference
+# `SILowerWWMCopiesLegacy` Class
 
 
 

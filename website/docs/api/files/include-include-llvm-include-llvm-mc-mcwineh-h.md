@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCWinEH.h` File Reference
+# `MCWinEH.h` File
 
 
 

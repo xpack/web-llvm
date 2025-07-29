@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVTraversal` Class Template Reference
+# `SCEVTraversal` Class Template
 
 <p>Visit all nodes in the expression tree using worklist traversal. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocIdxToIndexFunctor` Class Reference
+# `LocIdxToIndexFunctor` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIDerivedType` Class Reference
+# `DIDerivedType` Class
 
 <p>Derived types. <a href="#details">More...</a></p>
 

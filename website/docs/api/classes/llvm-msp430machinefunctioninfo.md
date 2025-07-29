@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430MachineFunctionInfo` Class Reference
+# `MSP430MachineFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/msp430machinefunctioninfo">MSP430MachineFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> and contains private <a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a> target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

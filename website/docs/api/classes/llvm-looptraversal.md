@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopTraversal` Class Reference
+# `LoopTraversal` Class
 
 <p>This class provides the basic blocks traversal order used by passes like <a href="/web-llvm/docs/api/classes/llvm/reachingdefanalysis">ReachingDefAnalysis</a> and <a href="/web-llvm/docs/api/classes/llvm/executiondomainfix">ExecutionDomainFix</a>. <a href="#details">More...</a></p>
 

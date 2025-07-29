@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNExpression.h` File Reference
+# `GVNExpression.h` File
 
 <p>The header file for the GVN pass that contains expression handling classes. <a href="#details">More...</a></p>
 

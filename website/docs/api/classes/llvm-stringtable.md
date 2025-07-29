@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTable` Class Reference
+# `StringTable` Class
 
 <p>A table of densely packed, null-terminated strings indexed by offset. <a href="#details">More...</a></p>
 

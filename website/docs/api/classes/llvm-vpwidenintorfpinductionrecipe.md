@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenIntOrFpInductionRecipe` Class Reference
+# `VPWidenIntOrFpInductionRecipe` Class
 
 <p>A recipe for handling phi nodes of integer and floating-point inductions, producing their vector values. <a href="#details">More...</a></p>
 

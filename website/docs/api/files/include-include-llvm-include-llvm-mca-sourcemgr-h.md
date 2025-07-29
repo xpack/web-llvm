@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceMgr.h` File Reference
+# `SourceMgr.h` File
 
 <p>This file contains abstract class SourceMgr and the default implementation, CircularSourceMgr. <a href="#details">More...</a></p>
 

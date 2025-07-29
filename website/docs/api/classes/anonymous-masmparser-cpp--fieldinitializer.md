@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FieldInitializer` Class Reference
+# `FieldInitializer` Class
 
 
 

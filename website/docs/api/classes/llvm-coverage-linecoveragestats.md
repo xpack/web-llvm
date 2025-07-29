@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineCoverageStats` Class Reference
+# `LineCoverageStats` Class
 
 <p>Coverage statistics for a single line. <a href="#details">More...</a></p>
 

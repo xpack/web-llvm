@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleExecutorDylibManager` Class Reference
+# `SimpleExecutorDylibManager` Class
 
 <p>Simple page-based allocator. <a href="#details">More...</a></p>
 

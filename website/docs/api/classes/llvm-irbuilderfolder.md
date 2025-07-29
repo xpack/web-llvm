@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRBuilderFolder` Class Reference
+# `IRBuilderFolder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/irbuilderfolder">IRBuilderFolder</a> - Interface for constant folding in <a href="/web-llvm/docs/api/classes/llvm/irbuilder">IRBuilder</a>. <a href="#details">More...</a></p>
 

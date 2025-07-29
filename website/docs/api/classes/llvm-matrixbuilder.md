@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixBuilder` Class Reference
+# `MatrixBuilder` Class
 
 
 

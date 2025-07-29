@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LifetimeAnnotationWriter` Class Reference
+# `LifetimeAnnotationWriter` Class
 
 
 

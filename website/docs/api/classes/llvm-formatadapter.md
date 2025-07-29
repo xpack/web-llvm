@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatAdapter` Class Template Reference
+# `FormatAdapter` Class Template
 
 
 

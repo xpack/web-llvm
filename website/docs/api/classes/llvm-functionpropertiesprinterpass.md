@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPropertiesPrinterPass` Class Reference
+# `FunctionPropertiesPrinterPass` Class
 
 <p>Printer pass for the <a href="/web-llvm/docs/api/classes/llvm/functionpropertiesanalysis">FunctionPropertiesAnalysis</a> results. <a href="#details">More...</a></p>
 

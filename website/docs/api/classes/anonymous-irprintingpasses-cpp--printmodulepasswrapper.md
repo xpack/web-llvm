@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintModulePassWrapper` Class Reference
+# `PrintModulePassWrapper` Class
 
 
 

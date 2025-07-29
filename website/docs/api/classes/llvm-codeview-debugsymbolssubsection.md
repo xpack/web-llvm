@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSymbolsSubsection` Class Reference
+# `DebugSymbolsSubsection` Class
 
 
 

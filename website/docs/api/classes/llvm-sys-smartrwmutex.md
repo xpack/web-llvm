@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmartRWMutex` Class Template Reference
+# `SmartRWMutex` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/smartmutex">SmartMutex</a> - An R/W mutex with a compile time constant parameter that indicates whether this mutex should become a no-op when we're not running in multithreaded mode. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugVariable` Class Reference
+# `DebugVariable` Class
 
 <p>Identifies a unique instance of a variable. <a href="#details">More...</a></p>
 

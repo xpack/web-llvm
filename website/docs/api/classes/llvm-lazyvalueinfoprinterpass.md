@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueInfoPrinterPass` Class Reference
+# `LazyValueInfoPrinterPass` Class
 
 <p>Printer pass for the <a href="/web-llvm/docs/api/classes/llvm/lazyvalueanalysis">LazyValueAnalysis</a> results. <a href="#details">More...</a></p>
 

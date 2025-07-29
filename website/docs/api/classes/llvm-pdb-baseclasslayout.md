@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseClassLayout` Class Reference
+# `BaseClassLayout` Class
 
 
 

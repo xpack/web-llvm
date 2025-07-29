@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVProfiler` Class Reference
+# `GCOVProfiler` Class
 
 
 

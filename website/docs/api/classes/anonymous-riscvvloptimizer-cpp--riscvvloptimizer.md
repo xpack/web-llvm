@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVVLOptimizer` Class Reference
+# `RISCVVLOptimizer` Class
 
 
 

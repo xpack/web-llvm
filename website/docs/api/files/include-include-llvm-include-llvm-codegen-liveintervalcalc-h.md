@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveIntervalCalc.h` File Reference
+# `LiveIntervalCalc.h` File
 
 
 

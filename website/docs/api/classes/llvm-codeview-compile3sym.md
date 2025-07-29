@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Compile3Sym` Class Reference
+# `Compile3Sym` Class
 
 
 

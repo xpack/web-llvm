@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectionManager` Class Reference
+# `RedirectionManager` Class
 
 <p>Base class for performing redirection of call to symbol to another symbol in runtime. <a href="#details">More...</a></p>
 

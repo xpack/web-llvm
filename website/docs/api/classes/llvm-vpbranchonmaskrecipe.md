@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBranchOnMaskRecipe` Class Reference
+# `VPBranchOnMaskRecipe` Class
 
 <p>A recipe for generating conditional branches on the bits of a mask. <a href="#details">More...</a></p>
 

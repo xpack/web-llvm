@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecuteStage.h` File Reference
+# `ExecuteStage.h` File
 
 <p>This file defines the execution stage of a default instruction pipeline. <a href="#details">More...</a></p>
 

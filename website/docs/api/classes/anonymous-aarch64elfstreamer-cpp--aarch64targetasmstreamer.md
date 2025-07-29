@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TargetAsmStreamer` Class Reference
+# `AArch64TargetAsmStreamer` Class
 
 
 

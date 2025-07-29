@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugPHIRecord` Class Reference
+# `DebugPHIRecord` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> of where we observed a DBG_PHI instruction. <a href="#details">More...</a></p>
 

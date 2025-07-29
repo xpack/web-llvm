@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVLegalizerInfo` Class Reference
+# `SPIRVLegalizerInfo` Class
 
 
 

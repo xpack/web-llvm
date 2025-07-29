@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapImpl` Class Reference
+# `StringMapImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringmapimpl">StringMapImpl</a> - This is the base class of <a href="/web-llvm/docs/api/classes/llvm/stringmap">StringMap</a> that is shared among all of its instantiations. <a href="#details">More...</a></p>
 

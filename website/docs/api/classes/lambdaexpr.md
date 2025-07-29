@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LambdaExpr` Class Reference
+# `LambdaExpr` Class
 
 
 

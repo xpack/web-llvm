@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterUsageInfo.h` File Reference
+# `RegisterUsageInfo.h` File
 
 <p>This pass is required to take advantage of the interprocedural register allocation infrastructure. <a href="#details">More...</a></p>
 

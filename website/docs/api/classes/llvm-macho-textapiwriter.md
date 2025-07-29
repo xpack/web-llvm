@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextAPIWriter` Class Reference
+# `TextAPIWriter` Class
 
 
 

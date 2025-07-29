@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PossiblyExactOperator` Class Reference
+# `PossiblyExactOperator` Class
 
 <p>A udiv or sdiv instruction, which can be marked as "exact", indicating that no bits are destroyed. <a href="#details">More...</a></p>
 

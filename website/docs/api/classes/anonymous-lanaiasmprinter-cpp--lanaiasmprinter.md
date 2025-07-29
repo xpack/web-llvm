@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiAsmPrinter` Class Reference
+# `LanaiAsmPrinter` Class
 
 
 

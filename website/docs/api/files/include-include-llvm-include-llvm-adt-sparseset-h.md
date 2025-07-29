@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseSet.h` File Reference
+# `SparseSet.h` File
 
 <p>This file defines the SparseSet class derived from the version described in Briggs, Torczon, "An efficient representation for sparse sets", ACM Letters on Programming Languages and Systems, Volume 2 Issue 1-4, March-Dec. <a href="#details">More...</a></p>
 

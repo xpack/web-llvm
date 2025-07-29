@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVector.h` File Reference
+# `SmallVector.h` File
 
 <p>This file defines the SmallVector class. <a href="#details">More...</a></p>
 

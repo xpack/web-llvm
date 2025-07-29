@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StableFunctionMapRecord.h` File Reference
+# `StableFunctionMapRecord.h` File
 
 
 

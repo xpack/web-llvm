@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `line_iterator` Class Reference
+# `line_iterator` Class
 
 <p>A forward iterator which reads text lines from a buffer. <a href="#details">More...</a></p>
 

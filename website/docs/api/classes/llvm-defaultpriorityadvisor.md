@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultPriorityAdvisor` Class Reference
+# `DefaultPriorityAdvisor` Class
 
 
 

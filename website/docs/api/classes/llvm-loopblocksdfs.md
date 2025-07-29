@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBlocksDFS` Class Reference
+# `LoopBlocksDFS` Class
 
 <p>Store the result of a depth first search within basic blocks contained by a single loop. <a href="#details">More...</a></p>
 

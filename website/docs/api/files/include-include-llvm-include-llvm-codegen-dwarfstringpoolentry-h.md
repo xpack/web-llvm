@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfStringPoolEntry.h` File Reference
+# `DwarfStringPoolEntry.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_sentinel` Class Template Reference
+# `ilist_sentinel` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `basic_parser` Class Template Reference
+# `basic_parser` Class Template
 
 
 

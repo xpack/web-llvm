@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFDirectiveParser` Class Reference
+# `COFFDirectiveParser` Class
 
 <p>Parser for the MSVC specific preprocessor directives. <a href="#details">More...</a></p>
 

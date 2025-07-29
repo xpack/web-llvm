@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsTargetAsmStreamer` Class Reference
+# `MipsTargetAsmStreamer` Class
 
 
 

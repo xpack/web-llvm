@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsConstantIslands` Class Reference
+# `MipsConstantIslands` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-mipsconstantislandpass-cpp-/mipsconstantislands">MipsConstantIslands</a> - Due to limited PC-relative displacements, <a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a> requires constant pool entries to be scattered among the instructions inside a function. <a href="#details">More...</a></p>
 

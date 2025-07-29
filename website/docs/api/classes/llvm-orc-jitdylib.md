@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITDylib` Class Reference
+# `JITDylib` Class
 
 <p>Represents a JIT'd dynamic library. <a href="#details">More...</a></p>
 

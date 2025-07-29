@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Delegate` Class Reference
+# `Delegate` Class
 
 <p>Callback methods for <a href="/web-llvm/docs/api/classes/llvm/liverangeedit">LiveRangeEdit</a> owners. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsImporter` Class Reference
+# `GlobalsImporter` Class
 
 <p>Import globals referenced by a function or other globals that are being imported, if importing such global is possible. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataLayout` Class Reference
+# `DataLayout` Class
 
 <p>A parsed version of the target data layout string in and methods for querying it. <a href="#details">More...</a></p>
 

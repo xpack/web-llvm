@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVRewriteVisitor` Class Template Reference
+# `SCEVRewriteVisitor` Class Template
 
 <p>This visitor recursively visits a <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> expression and re-writes it. <a href="#details">More...</a></p>
 

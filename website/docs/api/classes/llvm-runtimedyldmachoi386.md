@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldMachOI386` Class Reference
+# `RuntimeDyldMachOI386` Class
 
 
 

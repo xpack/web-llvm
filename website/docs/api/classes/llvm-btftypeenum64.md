@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeEnum64` Class Reference
+# `BTFTypeEnum64` Class
 
 <p>Handle 64-bit enumerate type. <a href="#details">More...</a></p>
 

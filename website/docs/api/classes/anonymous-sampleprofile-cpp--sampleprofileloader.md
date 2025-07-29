@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileLoader` Class Reference
+# `SampleProfileLoader` Class
 
 <p>Sample profile pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryExpr` Class Reference
+# `BinaryExpr` Class
 
 
 

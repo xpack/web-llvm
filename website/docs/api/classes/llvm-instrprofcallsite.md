@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfCallsite` Class Reference
+# `InstrProfCallsite` Class
 
 <p>This represents the llvm.instrprof.callsite intrinsic. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitProposal` Class Reference
+# `SplitProposal` Class
 
 <p>Represents a module splitting proposal. <a href="#details">More...</a></p>
 

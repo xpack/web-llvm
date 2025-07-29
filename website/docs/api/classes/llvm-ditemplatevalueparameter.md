@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DITemplateValueParameter` Class Reference
+# `DITemplateValueParameter` Class
 
 
 

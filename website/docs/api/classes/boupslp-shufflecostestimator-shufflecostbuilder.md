@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleCostBuilder` Class Reference
+# `ShuffleCostBuilder` Class
 
 
 

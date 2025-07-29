@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachORelocation` Class Reference
+# `MachORelocation` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machorelocation">MachORelocation</a> - This struct contains information about each relocation that needs to be emitted to the file. <a href="#details">More...</a></p>
 

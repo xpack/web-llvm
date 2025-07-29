@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuloSchedule` Class Reference
+# `ModuloSchedule` Class
 
 <p>Represents a schedule for a single-block loop. <a href="#details">More...</a></p>
 

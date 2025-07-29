@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopNestAnalysis.h` File Reference
+# `LoopNestAnalysis.h` File
 
 <p>This file defines the interface for the loop nest analysis. <a href="#details">More...</a></p>
 

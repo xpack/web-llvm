@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAssignID` Class Reference
+# `DIAssignID` Class
 
 <p>Assignment <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>. <a href="#details">More...</a></p>
 

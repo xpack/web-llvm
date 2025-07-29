@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiTTIImpl` Class Reference
+# `LanaiTTIImpl` Class
 
 
 

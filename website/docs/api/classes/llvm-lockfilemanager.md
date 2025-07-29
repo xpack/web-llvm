@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LockFileManager` Class Reference
+# `LockFileManager` Class
 
 <p>Class that manages the creation of a lock file to aid implicit coordination between different processes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoTable` Class Reference
+# `FixupInfoTable` Class
 
 
 

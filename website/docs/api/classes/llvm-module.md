@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Module` Class Reference
+# `Module` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> instance is used to store all the information related to an LLVM module. <a href="#details">More...</a></p>
 

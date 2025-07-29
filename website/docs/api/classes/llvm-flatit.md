@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlatIt` Class Template Reference
+# `FlatIt` Class Template
 
 <p>Marker class to iterate over the elements of a <a href="/web-llvm/docs/api/classes/llvm/region">Region</a> in flat mode. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnicodeCharSet` Class Reference
+# `UnicodeCharSet` Class
 
 <p>Holds a reference to an ordered array of <a href="/web-llvm/docs/api/structs/llvm/sys/unicodecharrange">UnicodeCharRange</a> and allows to quickly check if a code point is contained in the set represented by this array. <a href="#details">More...</a></p>
 

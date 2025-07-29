@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFPassConfig` Class Reference
+# `BPFPassConfig` Class
 
 
 

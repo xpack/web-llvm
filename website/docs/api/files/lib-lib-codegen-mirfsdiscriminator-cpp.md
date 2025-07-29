@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRFSDiscriminator.cpp` File Reference
+# `MIRFSDiscriminator.cpp` File
 
 
 

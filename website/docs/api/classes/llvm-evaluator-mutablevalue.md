@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MutableValue` Class Reference
+# `MutableValue` Class
 
 <p>The evaluator represents values either as a Constant*, or as a MutableAggregate, which allows changing individual aggregate elements without creating a new interned <a href="/web-llvm/docs/api/classes/llvm/constant">Constant</a>. <a href="#details">More...</a></p>
 

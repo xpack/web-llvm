@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedMap.h` File Reference
+# `IndexedMap.h` File
 
 <p>This file implements an indexed map. <a href="#details">More...</a></p>
 

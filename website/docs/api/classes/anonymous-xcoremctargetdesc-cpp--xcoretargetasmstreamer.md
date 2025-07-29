@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetAsmStreamer` Class Reference
+# `XCoreTargetAsmStreamer` Class
 
 
 

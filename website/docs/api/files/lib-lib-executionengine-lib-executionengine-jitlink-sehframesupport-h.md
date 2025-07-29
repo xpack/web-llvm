@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SEHFrameSupport.h` File Reference
+# `SEHFrameSupport.h` File
 
 
 

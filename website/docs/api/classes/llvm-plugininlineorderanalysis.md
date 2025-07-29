@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PluginInlineOrderAnalysis` Class Reference
+# `PluginInlineOrderAnalysis` Class
 
 <p>Used for dynamically loading instances of <a href="/web-llvm/docs/api/classes/llvm/inlineorder">InlineOrder</a> as plugins. <a href="#details">More...</a></p>
 

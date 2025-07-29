@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitCodeAbbrevOp` Class Reference
+# `BitCodeAbbrevOp` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/bitcodeabbrevop">BitCodeAbbrevOp</a> - This describes one or more operands in an abbreviation. <a href="#details">More...</a></p>
 

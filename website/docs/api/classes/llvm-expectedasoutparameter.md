@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpectedAsOutParameter` Class Template Reference
+# `ExpectedAsOutParameter` Class Template
 
 <p>Helper for <a href="/web-llvm/docs/api/classes/llvm/expected">Expected&lt;T&gt;</a>s used as out-parameters. <a href="#details">More...</a></p>
 

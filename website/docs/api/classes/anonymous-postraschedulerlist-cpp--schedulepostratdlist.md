@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedulePostRATDList` Class Reference
+# `SchedulePostRATDList` Class
 
 
 

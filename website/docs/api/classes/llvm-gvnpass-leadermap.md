@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeaderMap` Class Reference
+# `LeaderMap` Class
 
 <p>A mapping from value numbers to lists of Value*'s that have that value number. <a href="#details">More...</a></p>
 

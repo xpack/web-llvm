@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MCAsmInfoGNUCOFF` Class Reference
+# `X86MCAsmInfoGNUCOFF` Class
 
 
 

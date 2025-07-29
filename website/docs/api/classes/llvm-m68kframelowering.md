@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kFrameLowering` Class Reference
+# `M68kFrameLowering` Class
 
 
 

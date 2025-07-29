@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayList.h` File Reference
+# `ArrayList.h` File
 
 
 

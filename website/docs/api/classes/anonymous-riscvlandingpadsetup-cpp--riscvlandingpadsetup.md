@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVLandingPadSetup` Class Reference
+# `RISCVLandingPadSetup` Class
 
 
 

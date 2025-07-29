@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTTIImpl` Class Reference
+# `HexagonTTIImpl` Class
 
 
 

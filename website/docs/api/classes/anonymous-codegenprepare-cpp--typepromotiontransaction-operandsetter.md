@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandSetter` Class Reference
+# `OperandSetter` Class
 
 <p>Set the operand of an instruction with a new value. <a href="#details">More...</a></p>
 

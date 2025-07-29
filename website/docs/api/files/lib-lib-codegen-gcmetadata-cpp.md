@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCMetadata.cpp` File Reference
+# `GCMetadata.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenEVLRecipe` Class Reference
+# `VPWidenEVLRecipe` Class
 
 <p>A recipe for widening operations with vector-predication intrinsics with explicit vector length (EVL). <a href="#details">More...</a></p>
 

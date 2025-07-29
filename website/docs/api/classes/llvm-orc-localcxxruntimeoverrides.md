@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalCXXRuntimeOverrides` Class Reference
+# `LocalCXXRuntimeOverrides` Class
 
 
 

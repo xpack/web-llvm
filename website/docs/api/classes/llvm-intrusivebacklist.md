@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveBackList` Class Template Reference
+# `IntrusiveBackList` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSEmpty` Class Reference
+# `SPSEmpty` Class
 
 
 

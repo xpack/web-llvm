@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86PassConfig` Class Reference
+# `X86PassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

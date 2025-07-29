@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcX86_64_SysV` Class Reference
+# `OrcX86_64_SysV` Class
 
 <p>X86_64 support for SysV ABI (Linux, MacOSX). <a href="#details">More...</a></p>
 

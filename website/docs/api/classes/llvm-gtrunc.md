@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GTrunc` Class Reference
+# `GTrunc` Class
 
 <p>Represents a trunc. <a href="#details">More...</a></p>
 

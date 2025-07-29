@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorkListMaintainer` Class Reference
+# `WorkListMaintainer` Class
 
 <p>This class acts as the glue that joins the <a href="/web-llvm/docs/api/classes/llvm/combinerhelper">CombinerHelper</a> to the overall Combine algorithm. <a href="#details">More...</a></p>
 

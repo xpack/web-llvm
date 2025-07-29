@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileWriter` Class Reference
+# `FileWriter` Class
 
 <p>A simplified binary data writer class that doesn't require targets, target definitions, architectures, or require any other optional compile time libraries to be enabled via the build process. <a href="#details">More...</a></p>
 

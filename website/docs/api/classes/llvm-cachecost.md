@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CacheCost` Class Reference
+# `CacheCost` Class
 
 <p><span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/cachecost">CacheCost</a></span> represents the estimated cost of a inner loop as the number of cache lines used by the memory references it contains. <a href="#details">More...</a></p>
 

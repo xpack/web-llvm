@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallSet` Class Template Reference
+# `SmallSet` Class Template
 
 <p>If this set is of pointer values, transparently switch over to using <a href="/web-llvm/docs/api/classes/llvm/smallptrset">SmallPtrSet</a> for performance. <a href="#details">More...</a></p>
 

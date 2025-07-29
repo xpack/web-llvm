@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `node` Class Reference
+# `node` Class
 
 <p><a href="/web-llvm/docs/api/classes/node">Node</a> in linked list of entries. <a href="#details">More...</a></p>
 

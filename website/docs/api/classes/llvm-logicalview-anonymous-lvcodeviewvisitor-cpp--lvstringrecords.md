@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVStringRecords` Class Reference
+# `LVStringRecords` Class
 
 
 

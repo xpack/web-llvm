@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURemoveIncompatibleFunctionsPass` Class Reference
+# `AMDGPURemoveIncompatibleFunctionsPass` Class
 
 
 

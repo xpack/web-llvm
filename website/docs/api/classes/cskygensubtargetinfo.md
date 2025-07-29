@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYGenSubtargetInfo` Class Reference
+# `CSKYGenSubtargetInfo` Class
 
 
 

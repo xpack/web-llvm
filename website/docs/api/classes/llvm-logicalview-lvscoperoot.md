@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScopeRoot` Class Reference
+# `LVScopeRoot` Class
 
 
 

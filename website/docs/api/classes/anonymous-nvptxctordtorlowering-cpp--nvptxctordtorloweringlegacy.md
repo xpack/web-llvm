@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXCtorDtorLoweringLegacy` Class Reference
+# `NVPTXCtorDtorLoweringLegacy` Class
 
 
 

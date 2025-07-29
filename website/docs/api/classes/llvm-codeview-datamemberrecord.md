@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataMemberRecord` Class Reference
+# `DataMemberRecord` Class
 
 
 

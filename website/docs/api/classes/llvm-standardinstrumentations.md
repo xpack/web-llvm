@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StandardInstrumentations` Class Reference
+# `StandardInstrumentations` Class
 
 <p>This class provides an interface to register all the standard pass instrumentations and manages their state (if any). <a href="#details">More...</a></p>
 

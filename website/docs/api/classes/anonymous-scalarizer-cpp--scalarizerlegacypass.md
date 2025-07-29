@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarizerLegacyPass` Class Reference
+# `ScalarizerLegacyPass` Class
 
 
 

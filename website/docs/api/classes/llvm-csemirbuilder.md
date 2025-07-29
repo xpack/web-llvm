@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSEMIRBuilder` Class Reference
+# `CSEMIRBuilder` Class
 
 <p>Defines a builder that does CSE of MachineInstructions using <a href="/web-llvm/docs/api/classes/llvm/giselcseinfo">GISelCSEInfo</a>. <a href="#details">More...</a></p>
 

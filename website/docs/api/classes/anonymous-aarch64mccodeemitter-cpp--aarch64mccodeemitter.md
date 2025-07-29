@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MCCodeEmitter` Class Reference
+# `AArch64MCCodeEmitter` Class
 
 
 

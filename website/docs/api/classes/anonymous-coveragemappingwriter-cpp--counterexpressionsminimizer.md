@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CounterExpressionsMinimizer` Class Reference
+# `CounterExpressionsMinimizer` Class
 
 <p>Gather only the expressions that are used by the mapping regions in this function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionEntry` Class Reference
+# `SectionEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sectionentry">SectionEntry</a> - represents a section emitted into memory by the dynamic linker. <a href="#details">More...</a></p>
 

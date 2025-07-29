@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILBindingMap` Class Reference
+# `DXILBindingMap` Class
 
 
 

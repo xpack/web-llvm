@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleLinker` Class Reference
+# `ModuleLinker` Class
 
 <p>This is an implementation class for the LinkModules function, which is the entrypoint for this file. <a href="#details">More...</a></p>
 

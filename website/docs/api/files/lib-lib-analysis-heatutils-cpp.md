@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HeatUtils.cpp` File Reference
+# `HeatUtils.cpp` File
 
 
 

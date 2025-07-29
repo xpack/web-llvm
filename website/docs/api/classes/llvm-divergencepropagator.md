@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DivergencePropagator` Class Template Reference
+# `DivergencePropagator` Class Template
 
 <p>Compute divergence starting with a divergent branch. <a href="#details">More...</a></p>
 

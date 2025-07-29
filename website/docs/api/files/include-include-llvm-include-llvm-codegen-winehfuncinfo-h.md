@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinEHFuncInfo.h` File Reference
+# `WinEHFuncInfo.h` File
 
 
 

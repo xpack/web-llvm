@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocFast.h` File Reference
+# `RegAllocFast.h` File
 
 
 

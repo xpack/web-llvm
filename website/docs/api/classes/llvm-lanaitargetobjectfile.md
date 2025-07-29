@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiTargetObjectFile` Class Reference
+# `LanaiTargetObjectFile` Class
 
 
 

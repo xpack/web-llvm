@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineIRBuilder.cpp` File Reference
+# `MachineIRBuilder.cpp` File
 
 <p>This file implements the MachineIRBuidler class. <a href="#details">More...</a></p>
 

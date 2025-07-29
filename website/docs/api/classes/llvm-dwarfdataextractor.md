@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDataExtractor` Class Reference
+# `DWARFDataExtractor` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/dataextractor">DataExtractor</a> (typically for an in-memory copy of an object-file section) plus a relocation map for that section, if there is one. <a href="#details">More...</a></p>
 

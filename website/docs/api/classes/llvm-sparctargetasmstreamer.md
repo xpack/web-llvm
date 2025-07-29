@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcTargetAsmStreamer` Class Reference
+# `SparcTargetAsmStreamer` Class
 
 
 

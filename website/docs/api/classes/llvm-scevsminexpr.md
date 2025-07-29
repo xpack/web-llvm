@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVSMinExpr` Class Reference
+# `SCEVSMinExpr` Class
 
 <p>This class represents a signed minimum selection. <a href="#details">More...</a></p>
 

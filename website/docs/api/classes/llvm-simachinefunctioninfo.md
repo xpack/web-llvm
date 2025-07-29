@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMachineFunctionInfo` Class Reference
+# `SIMachineFunctionInfo` Class
 
 <p>This class keeps track of the SPI_SP_INPUT_ADDR config register, which tells the hardware which interpolation parameters to load. <a href="#details">More...</a></p>
 

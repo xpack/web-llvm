@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BLAKE3.h` File Reference
+# `BLAKE3.h` File
 
 
 

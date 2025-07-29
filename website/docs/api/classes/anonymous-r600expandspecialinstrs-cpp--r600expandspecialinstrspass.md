@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ExpandSpecialInstrsPass` Class Reference
+# `R600ExpandSpecialInstrsPass` Class
 
 
 

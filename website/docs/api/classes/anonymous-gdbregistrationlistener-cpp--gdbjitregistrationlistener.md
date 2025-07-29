@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GDBJITRegistrationListener` Class Reference
+# `GDBJITRegistrationListener` Class
 
 <p>Global access point for the JIT debugging interface designed for use with a singleton toolbox. <a href="#details">More...</a></p>
 

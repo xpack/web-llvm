@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoCFIValue` Class Reference
+# `NoCFIValue` Class
 
 <p>Wrapper for a value that won't be replaced with a CFI jump table pointer in LowerTypeTestsModule. <a href="#details">More...</a></p>
 

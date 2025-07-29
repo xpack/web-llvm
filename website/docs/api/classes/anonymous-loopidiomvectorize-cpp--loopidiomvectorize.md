@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopIdiomVectorize` Class Reference
+# `LoopIdiomVectorize` Class
 
 
 

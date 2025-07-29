@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCOFFSectionNumberTargetExpr` Class Reference
+# `MCCOFFSectionNumberTargetExpr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcexpr">MCExpr</a> that represents the physical number for the sections that contains a symbol. <a href="#details">More...</a></p>
 

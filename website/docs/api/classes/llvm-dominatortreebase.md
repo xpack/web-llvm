@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DominatorTreeBase` Class Template Reference
+# `DominatorTreeBase` Class Template
 
 <p>Core dominator tree base class. <a href="#details">More...</a></p>
 

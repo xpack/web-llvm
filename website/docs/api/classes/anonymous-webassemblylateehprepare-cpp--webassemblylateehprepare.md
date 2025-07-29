@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyLateEHPrepare` Class Reference
+# `WebAssemblyLateEHPrepare` Class
 
 
 

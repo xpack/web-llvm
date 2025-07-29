@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrInfo` Class Reference
+# `PtrInfo` Class
 
 <p>This class provides information about the result of a visit. <a href="#details">More...</a></p>
 

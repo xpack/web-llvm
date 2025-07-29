@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGPrinter.cpp` File Reference
+# `DDGPrinter.cpp` File
 
 
 

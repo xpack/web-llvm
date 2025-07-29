@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMCCodeEmitter` Class Reference
+# `SPIRVMCCodeEmitter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixBuilder.h` File Reference
+# `MatrixBuilder.h` File
 
 
 

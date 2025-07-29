@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LongestCommonSequence.h` File Reference
+# `LongestCommonSequence.h` File
 
 
 

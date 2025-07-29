@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrivialSPSSequenceSerialization` Class Template Reference
+# `TrivialSPSSequenceSerialization` Class Template
 
 <p>Specialize this to implement 'trivial' sequence serialization for a concrete sequence type. <a href="#details">More...</a></p>
 

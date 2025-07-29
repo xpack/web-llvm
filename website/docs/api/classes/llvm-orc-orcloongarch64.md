@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcLoongArch64` Class Reference
+# `OrcLoongArch64` Class
 
 
 

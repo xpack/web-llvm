@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaAsmParser` Class Reference
+# `XtensaAsmParser` Class
 
 
 

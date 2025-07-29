@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmPrinterHandler` Class Reference
+# `AsmPrinterHandler` Class
 
 <p>Collects and handles <a href="/web-llvm/docs/api/classes/llvm/asmprinter">AsmPrinter</a> objects required to build debug or EH information. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeInfoForMF` Class Reference
+# `TypeInfoForMF` Class
 
 
 

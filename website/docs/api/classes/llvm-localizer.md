@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Localizer` Class Reference
+# `Localizer` Class
 
 <p>This pass implements the localization mechanism described at the top of this file. <a href="#details">More...</a></p>
 

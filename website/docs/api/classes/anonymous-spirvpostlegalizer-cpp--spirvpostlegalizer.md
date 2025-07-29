@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVPostLegalizer` Class Reference
+# `SPIRVPostLegalizer` Class
 
 
 

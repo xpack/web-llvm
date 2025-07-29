@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructuredBindingName` Class Reference
+# `StructuredBindingName` Class
 
 
 

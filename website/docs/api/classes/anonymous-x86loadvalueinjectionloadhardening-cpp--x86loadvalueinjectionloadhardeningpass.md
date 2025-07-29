@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LoadValueInjectionLoadHardeningPass` Class Reference
+# `X86LoadValueInjectionLoadHardeningPass` Class
 
 
 

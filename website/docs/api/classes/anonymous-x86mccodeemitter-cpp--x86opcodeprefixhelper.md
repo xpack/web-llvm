@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86OpcodePrefixHelper` Class Reference
+# `X86OpcodePrefixHelper` Class
 
 
 

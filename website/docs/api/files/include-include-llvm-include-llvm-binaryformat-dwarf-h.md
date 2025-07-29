@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Dwarf.h` File Reference
+# `Dwarf.h` File
 
 <p>This file contains constants used for implementing Dwarf debug support. <a href="#details">More...</a></p>
 

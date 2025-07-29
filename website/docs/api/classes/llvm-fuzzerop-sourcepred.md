@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourcePred` Class Reference
+# `SourcePred` Class
 
 <p>A matcher/generator for finding suitable values for the next source in an operation's partially completed argument list. <a href="#details">More...</a></p>
 

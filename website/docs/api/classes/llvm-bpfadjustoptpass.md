@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFAdjustOptPass` Class Reference
+# `BPFAdjustOptPass` Class
 
 
 

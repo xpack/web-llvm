@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeWriterPass` Class Reference
+# `BitcodeWriterPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> for writing a module of IR out to a bitcode file. <a href="#details">More...</a></p>
 

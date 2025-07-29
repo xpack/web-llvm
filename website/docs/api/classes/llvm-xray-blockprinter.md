@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockPrinter` Class Reference
+# `BlockPrinter` Class
 
 
 

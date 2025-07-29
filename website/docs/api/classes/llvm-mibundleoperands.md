@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIBundleOperands` Class Reference
+# `MIBundleOperands` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mibundleoperands">MIBundleOperands</a> - Iterate over all operands in a bundle of machine instructions. <a href="#details">More...</a></p>
 

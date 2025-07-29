@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLinker` Class Reference
+# `DWARFLinker` Class
 
 <p>The core of the Dwarf linking logic. <a href="#details">More...</a></p>
 

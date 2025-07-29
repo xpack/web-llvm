@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThunksSet` Class Reference
+# `ThunksSet` Class
 
 
 

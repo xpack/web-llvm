@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumDebugStreams` Class Reference
+# `DIAEnumDebugStreams` Class
 
 
 

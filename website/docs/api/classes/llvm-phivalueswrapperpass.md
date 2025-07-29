@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiValuesWrapperPass` Class Reference
+# `PhiValuesWrapperPass` Class
 
 <p>Wrapper pass for the legacy pass manager. <a href="#details">More...</a></p>
 

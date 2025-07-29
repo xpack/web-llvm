@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrBuilder` Class Reference
+# `InstrBuilder` Class
 
 <p>A builder class that knows how to construct <a href="/web-llvm/docs/api/classes/llvm/mca/instruction">Instruction</a> objects. <a href="#details">More...</a></p>
 

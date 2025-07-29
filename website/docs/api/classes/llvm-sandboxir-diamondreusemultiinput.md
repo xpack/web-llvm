@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiamondReuseMultiInput` Class Reference
+# `DiamondReuseMultiInput` Class
 
 
 

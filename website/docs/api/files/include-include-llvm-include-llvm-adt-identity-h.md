@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `identity.h` File Reference
+# `identity.h` File
 
 
 

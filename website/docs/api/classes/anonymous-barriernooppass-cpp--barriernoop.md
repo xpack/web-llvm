@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BarrierNoop` Class Reference
+# `BarrierNoop` Class
 
 <p>A nonce module pass used to place a barrier in a pass manager. <a href="#details">More...</a></p>
 

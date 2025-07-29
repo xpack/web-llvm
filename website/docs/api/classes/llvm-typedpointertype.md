@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedPointerType` Class Reference
+# `TypedPointerType` Class
 
 <p>A few GPU targets, such as DXIL and SPIR-V, have typed pointers. <a href="#details">More...</a></p>
 

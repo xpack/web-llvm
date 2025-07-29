@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSymbolTable.h` File Reference
+# `ModuleSymbolTable.h` File
 
 
 

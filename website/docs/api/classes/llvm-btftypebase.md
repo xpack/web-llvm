@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeBase` Class Reference
+# `BTFTypeBase` Class
 
 <p>The base class for <a href="/web-llvm/docs/api/namespaces/llvm/btf">BTF</a> type generation. <a href="#details">More...</a></p>
 

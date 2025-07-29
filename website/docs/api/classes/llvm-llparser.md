@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLParser` Class Reference
+# `LLParser` Class
 
 
 

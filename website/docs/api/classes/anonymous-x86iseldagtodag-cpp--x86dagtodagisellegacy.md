@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86DAGToDAGISelLegacy` Class Reference
+# `X86DAGToDAGISelLegacy` Class
 
 
 

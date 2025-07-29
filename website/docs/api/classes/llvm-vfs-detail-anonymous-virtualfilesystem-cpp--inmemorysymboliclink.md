@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemorySymbolicLink` Class Reference
+# `InMemorySymbolicLink` Class
 
 
 

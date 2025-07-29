@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAEvaluator` Class Reference
+# `AAEvaluator` Class
 
 
 

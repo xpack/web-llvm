@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLOperands` Class Reference
+# `VLOperands` Class
 
 <p>A helper data structure to hold the operands of a vector of instructions. <a href="#details">More...</a></p>
 

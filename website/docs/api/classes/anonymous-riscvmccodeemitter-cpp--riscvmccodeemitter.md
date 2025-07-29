@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMCCodeEmitter` Class Reference
+# `RISCVMCCodeEmitter` Class
 
 
 

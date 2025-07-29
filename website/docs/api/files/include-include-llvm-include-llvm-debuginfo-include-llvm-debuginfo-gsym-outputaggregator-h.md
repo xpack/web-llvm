@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputAggregator.h` File Reference
+# `OutputAggregator.h` File
 
 
 

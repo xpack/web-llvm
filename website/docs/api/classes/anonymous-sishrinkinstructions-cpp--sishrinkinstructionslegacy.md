@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIShrinkInstructionsLegacy` Class Reference
+# `SIShrinkInstructionsLegacy` Class
 
 
 

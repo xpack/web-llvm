@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>'Trivial' sequence serialization: Sequence is serialized as a uint64_t size followed by a for-earch loop over the elements of the sequence to serialize each of them. <a href="#details">More...</a></p>
 

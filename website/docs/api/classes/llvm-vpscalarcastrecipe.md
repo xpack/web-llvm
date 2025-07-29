@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPScalarCastRecipe` Class Reference
+# `VPScalarCastRecipe` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpscalarcastrecipe">VPScalarCastRecipe</a> is a recipe to create scalar cast instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegAuxInfo` Class Reference
+# `VirtRegAuxInfo` Class
 
 <p>Calculate auxiliary information for a virtual register such as its spill weight and allocation hint. <a href="#details">More...</a></p>
 

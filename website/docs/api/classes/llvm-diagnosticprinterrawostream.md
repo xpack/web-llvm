@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticPrinterRawOStream` Class Reference
+# `DiagnosticPrinterRawOStream` Class
 
 <p>Basic diagnostic printer that uses an underlying <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a>. <a href="#details">More...</a></p>
 

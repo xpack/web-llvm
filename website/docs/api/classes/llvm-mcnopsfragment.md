@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCNopsFragment` Class Reference
+# `MCNopsFragment` Class
 
 
 

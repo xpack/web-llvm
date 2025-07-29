@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AvoidSFBPass` Class Reference
+# `X86AvoidSFBPass` Class
 
 
 

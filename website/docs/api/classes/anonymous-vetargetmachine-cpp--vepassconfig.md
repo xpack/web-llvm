@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEPassConfig` Class Reference
+# `VEPassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

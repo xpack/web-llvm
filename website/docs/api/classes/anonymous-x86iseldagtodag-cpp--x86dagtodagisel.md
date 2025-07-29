@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86DAGToDAGISel` Class Reference
+# `X86DAGToDAGISel` Class
 
 <p>ISel - X86-specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

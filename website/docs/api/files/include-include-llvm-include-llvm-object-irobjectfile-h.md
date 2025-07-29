@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRObjectFile.h` File Reference
+# `IRObjectFile.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MicroMipsSizeReduce` Class Reference
+# `MicroMipsSizeReduce` Class
 
 
 

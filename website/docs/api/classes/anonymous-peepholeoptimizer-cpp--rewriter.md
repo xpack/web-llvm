@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Rewriter` Class Reference
+# `Rewriter` Class
 
 <p>Interface to query instructions amenable to copy rewriting. <a href="#details">More...</a></p>
 

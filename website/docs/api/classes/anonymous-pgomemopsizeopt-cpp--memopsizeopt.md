@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemOPSizeOpt` Class Reference
+# `MemOPSizeOpt` Class
 
 
 

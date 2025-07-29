@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnvBlockSym` Class Reference
+# `EnvBlockSym` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GBinOpCarryOut` Class Reference
+# `GBinOpCarryOut` Class
 
 <p>Represents overflowing binary operations. <a href="#details">More...</a></p>
 

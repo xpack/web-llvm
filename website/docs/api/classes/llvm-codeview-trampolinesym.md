@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrampolineSym` Class Reference
+# `TrampolineSym` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphTraits.h` File Reference
+# `GraphTraits.h` File
 
 <p>This file defines the little GraphTraits&lt;X&gt; template class that should be specialized by classes that want to be iteratable by generic graph iterators. <a href="#details">More...</a></p>
 

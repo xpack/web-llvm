@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnablesNthMFMAInChain` Class Reference
+# `EnablesNthMFMAInChain` Class
 
 <p>Whether or not the instruction enables the exact MFMA that is the <span class="doxyComputerOutput">Number</span> th MFMA in the chain starting with <span class="doxyComputerOutput">ChainSeed</span>. <a href="#details">More...</a></p>
 

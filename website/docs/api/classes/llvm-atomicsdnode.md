@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicSDNode` Class Reference
+# `AtomicSDNode` Class
 
 <p>This is an <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> representing atomic operations. <a href="#details">More...</a></p>
 

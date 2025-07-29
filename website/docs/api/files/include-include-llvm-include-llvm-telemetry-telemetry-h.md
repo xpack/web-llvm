@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Telemetry.h` File Reference
+# `Telemetry.h` File
 
 <p>This file provides the basic framework for Telemetry. <a href="#details">More...</a></p>
 

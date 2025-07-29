@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectHandSpeculativity` Class Reference
+# `SelectHandSpeculativity` Class
 
 
 

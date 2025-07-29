@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TreeNode` Class Reference
+# `TreeNode` Class
 
 
 

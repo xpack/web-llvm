@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobPattern` Class Reference
+# `GlobPattern` Class
 
 <p>This class implements a glob pattern matcher similar to the one found in bash, but with some key differences. <a href="#details">More...</a></p>
 

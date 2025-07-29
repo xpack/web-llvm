@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXGenRegisterInfo` Class Reference
+# `DirectXGenRegisterInfo` Class
 
 
 

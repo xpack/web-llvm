@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVFrameLowering` Class Reference
+# `SPIRVFrameLowering` Class
 
 
 

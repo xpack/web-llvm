@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstrInfo` Class Reference
+# `MCInstrInfo` Class
 
 <p>Interface to description of machine instruction set. <a href="#details">More...</a></p>
 

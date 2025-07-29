@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemTransferBase` Class Template Reference
+# `MemTransferBase` Class Template
 
 <p>Common base class for all memory transfer intrinsics. <a href="#details">More...</a></p>
 

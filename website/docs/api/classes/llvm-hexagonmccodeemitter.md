@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCCodeEmitter` Class Reference
+# `HexagonMCCodeEmitter` Class
 
 
 

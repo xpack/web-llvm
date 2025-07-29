@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeadMachineInstructionElimImpl` Class Reference
+# `DeadMachineInstructionElimImpl` Class
 
 
 

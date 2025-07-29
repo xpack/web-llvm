@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitIntType` Class Reference
+# `BitIntType` Class
 
 
 

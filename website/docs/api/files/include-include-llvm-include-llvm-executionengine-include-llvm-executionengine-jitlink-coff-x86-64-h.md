@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFF_x86_64.h` File Reference
+# `COFF_x86_64.h` File
 
 
 

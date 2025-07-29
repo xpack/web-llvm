@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVSymbolDumperImpl` Class Reference
+# `CVSymbolDumperImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/use">Use</a> this private dumper implementation to keep implementation details about the visitor out of <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/codeview/symboldumper-h">SymbolDumper.h</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemCpyInst` Class Reference
+# `MemCpyInst` Class
 
 <p>This class wraps the llvm.memcpy intrinsic. <a href="#details">More...</a></p>
 

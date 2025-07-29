@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcI386` Class Reference
+# `OrcI386` Class
 
 <p>I386 support. <a href="#details">More...</a></p>
 

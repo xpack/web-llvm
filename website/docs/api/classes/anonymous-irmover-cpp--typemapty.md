@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeMapTy` Class Reference
+# `TypeMapTy` Class
 
 
 

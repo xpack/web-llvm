@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressSanitizerPass` Class Reference
+# `AddressSanitizerPass` Class
 
 <p>Public interface to the address sanitizer module pass for instrumenting code to check for various memory errors. <a href="#details">More...</a></p>
 

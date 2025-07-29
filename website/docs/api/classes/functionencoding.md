@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionEncoding` Class Reference
+# `FunctionEncoding` Class
 
 
 

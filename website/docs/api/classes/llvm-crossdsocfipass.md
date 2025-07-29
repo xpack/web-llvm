@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrossDSOCFIPass` Class Reference
+# `CrossDSOCFIPass` Class
 
 
 

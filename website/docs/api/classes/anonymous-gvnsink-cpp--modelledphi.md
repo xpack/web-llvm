@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModelledPHI` Class Reference
+# `ModelledPHI` Class
 
 <p>Describes a PHI node that may or may not exist. <a href="#details">More...</a></p>
 

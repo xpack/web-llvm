@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitModule.h` File Reference
+# `SplitModule.h` File
 
 
 

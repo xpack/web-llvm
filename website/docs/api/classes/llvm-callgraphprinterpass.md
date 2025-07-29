@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphPrinterPass` Class Reference
+# `CallGraphPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/callgraphanalysis">CallGraphAnalysis</a></span> results. <a href="#details">More...</a></p>
 

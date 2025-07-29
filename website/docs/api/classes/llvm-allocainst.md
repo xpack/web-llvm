@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocaInst` Class Reference
+# `AllocaInst` Class
 
 <p>an instruction to allocate memory on the stack <a href="#details">More...</a></p>
 

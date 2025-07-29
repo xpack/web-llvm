@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewGVN` Class Reference
+# `NewGVN` Class
 
 
 

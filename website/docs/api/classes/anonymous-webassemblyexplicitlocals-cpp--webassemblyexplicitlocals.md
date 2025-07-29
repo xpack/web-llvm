@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyExplicitLocals` Class Reference
+# `WebAssemblyExplicitLocals` Class
 
 
 

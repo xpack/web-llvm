@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGPassManager` Class Reference
+# `CGPassManager` Class
 
 
 

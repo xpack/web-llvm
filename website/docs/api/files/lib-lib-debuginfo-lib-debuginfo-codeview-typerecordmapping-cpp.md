@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeRecordMapping.cpp` File Reference
+# `TypeRecordMapping.cpp` File
 
 
 

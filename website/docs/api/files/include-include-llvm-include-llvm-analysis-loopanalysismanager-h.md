@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopAnalysisManager.h` File Reference
+# `LoopAnalysisManager.h` File
 
 <p>This header provides classes for managing per-loop analyses. <a href="#details">More...</a></p>
 

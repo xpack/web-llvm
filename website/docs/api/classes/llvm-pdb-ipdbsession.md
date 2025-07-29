@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBSession` Class Reference
+# `IPDBSession` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbsession">IPDBSession</a> defines an interface used to provide a context for querying debug information from a debug data source (for example, a PDB). <a href="#details">More...</a></p>
 

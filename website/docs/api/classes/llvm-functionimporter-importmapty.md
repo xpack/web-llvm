@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportMapTy` Class Reference
+# `ImportMapTy` Class
 
 <p>The map maintains the list of imports. <a href="#details">More...</a></p>
 

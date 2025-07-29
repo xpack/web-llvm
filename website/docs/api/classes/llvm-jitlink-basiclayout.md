@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicLayout` Class Reference
+# `BasicLayout` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/jitlink/basiclayout">BasicLayout</a> simplifies the implementation of JITLinkMemoryManagers. <a href="#details">More...</a></p>
 

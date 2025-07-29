@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppleAcceleratorTable` Class Reference
+# `AppleAcceleratorTable` Class
 
 <p>This implements the Apple accelerator table format, a precursor of the DWARF 5 accelerator table format. <a href="#details">More...</a></p>
 

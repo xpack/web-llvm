@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVVScale` Class Reference
+# `SCEVVScale` Class
 
 <p>This class represents the value of vscale, as used when defining the length of a scalable vector or returned by the llvm.vscale() intrinsic. <a href="#details">More...</a></p>
 

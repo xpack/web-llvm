@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGMST` Class Template Reference
+# `CFGMST` Class Template
 
 <p>An union-find based Minimum Spanning Tree for CFG. <a href="#details">More...</a></p>
 

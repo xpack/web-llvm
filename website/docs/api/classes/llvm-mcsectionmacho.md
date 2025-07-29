@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionMachO` Class Reference
+# `MCSectionMachO` Class
 
 <p>This represents a section on a Mach-O system (used by Mac OS X). <a href="#details">More...</a></p>
 

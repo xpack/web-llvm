@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalcLiveRangeUtilVector` Class Reference
+# `CalcLiveRangeUtilVector` Class
 
 
 

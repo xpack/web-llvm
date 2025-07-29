@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugCrossImpSubsection.h` File Reference
+# `DebugCrossImpSubsection.h` File
 
 
 

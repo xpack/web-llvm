@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitKit.h` File Reference
+# `SplitKit.h` File
 
 
 

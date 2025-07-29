@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Matcher` Class Reference
+# `Matcher` Class
 
 <p>Represents a set of globs and their line numbers. <a href="#details">More...</a></p>
 

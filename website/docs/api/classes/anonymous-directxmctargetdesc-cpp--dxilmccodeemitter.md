@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILMCCodeEmitter` Class Reference
+# `DXILMCCodeEmitter` Class
 
 
 

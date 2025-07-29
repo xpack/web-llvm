@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeEntry` Class Reference
+# `EdgeEntry` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineResult` Class Reference
+# `InlineResult` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/inlineresult">InlineResult</a> is basically true or false. <a href="#details">More...</a></p>
 

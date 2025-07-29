@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RenameIndependentSubregs` Class Reference
+# `RenameIndependentSubregs` Class
 
 
 

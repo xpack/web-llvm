@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIEliminationPass` Class Reference
+# `PHIEliminationPass` Class
 
 
 

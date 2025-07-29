@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZCallingConventionRegisters` Class Reference
+# `SystemZCallingConventionRegisters` Class
 
 <p>A SystemZ-specific class detailing special use registers particular for calling conventions. <a href="#details">More...</a></p>
 

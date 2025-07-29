@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTargetAsmStreamer` Class Reference
+# `ARMTargetAsmStreamer` Class
 
 
 

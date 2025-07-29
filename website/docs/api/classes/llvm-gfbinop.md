@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GFBinOp` Class Reference
+# `GFBinOp` Class
 
 <p>Represents a floating point binary operation. <a href="#details">More...</a></p>
 

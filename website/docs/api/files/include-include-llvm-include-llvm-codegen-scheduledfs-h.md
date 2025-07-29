@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDFS.h` File Reference
+# `ScheduleDFS.h` File
 
 
 

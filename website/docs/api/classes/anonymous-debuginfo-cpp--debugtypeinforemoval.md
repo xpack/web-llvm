@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugTypeInfoRemoval` Class Reference
+# `DebugTypeInfoRemoval` Class
 
 <p>Helper class to downgrade -g metadata to -gline-tables-only metadata. <a href="#details">More...</a></p>
 

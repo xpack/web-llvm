@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FalkorMarkStridedAccesses` Class Reference
+# `FalkorMarkStridedAccesses` Class
 
 
 

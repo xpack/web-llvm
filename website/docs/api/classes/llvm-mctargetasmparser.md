@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCTargetAsmParser` Class Reference
+# `MCTargetAsmParser` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mctargetasmparser">MCTargetAsmParser</a> - Generic interface to target specific assembly parsers. <a href="#details">More...</a></p>
 

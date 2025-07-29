@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UtcClock` Class Reference
+# `UtcClock` Class
 
 
 

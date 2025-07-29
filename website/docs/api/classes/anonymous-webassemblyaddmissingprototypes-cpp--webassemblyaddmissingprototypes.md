@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAddMissingPrototypes` Class Reference
+# `WebAssemblyAddMissingPrototypes` Class
 
 
 

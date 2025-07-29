@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectInst` Class Reference
+# `SelectInst` Class
 
 
 

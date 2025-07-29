@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `po_iterator_storage` Class Template Reference
+# `po_iterator_storage` Class Template
 
 <p>Specialization of <a href="/web-llvm/docs/api/classes/llvm/po-iterator-storage">po_iterator_storage</a> that references an external set. <a href="#details">More...</a></p>
 

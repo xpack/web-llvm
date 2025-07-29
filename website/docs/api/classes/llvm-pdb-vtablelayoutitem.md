@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTableLayoutItem` Class Reference
+# `VTableLayoutItem` Class
 
 
 

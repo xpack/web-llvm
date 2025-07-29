@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVPreLegalizerCombinerImpl` Class Reference
+# `SPIRVPreLegalizerCombinerImpl` Class
 
 
 

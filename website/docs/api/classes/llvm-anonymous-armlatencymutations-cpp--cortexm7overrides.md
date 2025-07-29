@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CortexM7Overrides` Class Reference
+# `CortexM7Overrides` Class
 
 
 

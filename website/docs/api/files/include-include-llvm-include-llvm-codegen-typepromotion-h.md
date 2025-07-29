@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotion.h` File Reference
+# `TypePromotion.h` File
 
 <p>Defines an IR pass for type promotion. <a href="#details">More...</a></p>
 

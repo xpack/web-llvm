@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailDuplicatePassBase` Class Template Reference
+# `TailDuplicatePassBase` Class Template
 
 
 

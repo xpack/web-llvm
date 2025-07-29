@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLIWMachineScheduler.h` File Reference
+# `VLIWMachineScheduler.h` File
 
 
 

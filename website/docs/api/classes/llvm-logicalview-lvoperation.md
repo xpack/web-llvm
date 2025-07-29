@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVOperation` Class Reference
+# `LVOperation` Class
 
 
 

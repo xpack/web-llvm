@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineInfo.cpp` File Reference
+# `InlineInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkingGlobalData` Class Reference
+# `LinkingGlobalData` Class
 
 <p>This class keeps data and services common for the whole linking process. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashTable.cpp` File Reference
+# `HashTable.cpp` File
 
 
 

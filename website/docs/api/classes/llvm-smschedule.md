@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMSchedule` Class Reference
+# `SMSchedule` Class
 
 <p>This class represents the scheduled code. <a href="#details">More...</a></p>
 

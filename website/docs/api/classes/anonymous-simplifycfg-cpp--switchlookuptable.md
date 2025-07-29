@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchLookupTable` Class Reference
+# `SwitchLookupTable` Class
 
 <p>This class represents a lookup table that can be used to replace a switch. <a href="#details">More...</a></p>
 

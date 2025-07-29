@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCInstLower` Class Reference
+# `AMDGPUMCInstLower` Class
 
 
 

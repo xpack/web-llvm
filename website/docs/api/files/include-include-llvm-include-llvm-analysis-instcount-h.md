@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCount.h` File Reference
+# `InstCount.h` File
 
 
 

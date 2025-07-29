@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MandatoryInlineAdvice` Class Reference
+# `MandatoryInlineAdvice` Class
 
 
 

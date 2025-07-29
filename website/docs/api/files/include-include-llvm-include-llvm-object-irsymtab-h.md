@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSymtab.h` File Reference
+# `IRSymtab.h` File
 
 
 

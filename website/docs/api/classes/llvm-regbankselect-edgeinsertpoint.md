@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeInsertPoint` Class Reference
+# `EdgeInsertPoint` Class
 
 <p>Insertion point on an edge. <a href="#details">More...</a></p>
 

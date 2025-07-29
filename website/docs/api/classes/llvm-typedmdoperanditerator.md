@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedMDOperandIterator` Class Template Reference
+# `TypedMDOperandIterator` Class Template
 
 <p>Typed iterator through <a href="/web-llvm/docs/api/classes/llvm/mdnode">MDNode</a> operands. <a href="#details">More...</a></p>
 

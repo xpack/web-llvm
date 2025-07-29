@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeEnumInjectedSources` Class Reference
+# `NativeEnumInjectedSources` Class
 
 
 

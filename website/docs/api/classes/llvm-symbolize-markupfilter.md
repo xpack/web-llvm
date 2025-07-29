@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MarkupFilter` Class Reference
+# `MarkupFilter` Class
 
 <p>Filter to convert parsed log symbolizer markup elements into human-readable text. <a href="#details">More...</a></p>
 

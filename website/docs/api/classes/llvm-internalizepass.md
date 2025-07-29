@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InternalizePass` Class Reference
+# `InternalizePass` Class
 
 <p>A pass that internalizes all functions and variables other than those that must be preserved according to <span class="doxyComputerOutput">MustPreserveGV</span>. <a href="#details">More...</a></p>
 

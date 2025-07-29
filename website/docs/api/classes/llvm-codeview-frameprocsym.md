@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameProcSym` Class Reference
+# `FrameProcSym` Class
 
 
 

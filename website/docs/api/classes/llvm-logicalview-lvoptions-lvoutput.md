@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVOutput` Class Reference
+# `LVOutput` Class
 
 
 

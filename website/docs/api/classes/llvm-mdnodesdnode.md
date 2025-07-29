@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeSDNode` Class Reference
+# `MDNodeSDNode` Class
 
 
 

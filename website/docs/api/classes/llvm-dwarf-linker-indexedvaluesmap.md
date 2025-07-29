@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedValuesMap` Class Template Reference
+# `IndexedValuesMap` Class Template
 
 <p>This class stores values sequentually and assigns index to the each value. <a href="#details">More...</a></p>
 

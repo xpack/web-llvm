@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPTruncInst` Class Reference
+# `FPTruncInst` Class
 
 <p>This class represents a truncation of floating point types. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaskedHistogramSDNode` Class Reference
+# `MaskedHistogramSDNode` Class
 
 
 

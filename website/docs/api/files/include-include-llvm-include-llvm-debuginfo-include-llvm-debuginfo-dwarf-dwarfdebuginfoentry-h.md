@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugInfoEntry.h` File Reference
+# `DWARFDebugInfoEntry.h` File
 
 
 

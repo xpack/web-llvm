@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPass` Class Reference
+# `LoopPass` Class
 
 
 

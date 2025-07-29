@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseCL` Class Reference
+# `BaseCL` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPRelativeSym` Class Reference
+# `BPRelativeSym` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPoolSDNode` Class Reference
+# `ConstantPoolSDNode` Class
 
 
 

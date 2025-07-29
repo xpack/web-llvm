@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineDomTreeUpdater` Class Reference
+# `MachineDomTreeUpdater` Class
 
 
 

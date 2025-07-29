@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCtxProfileReader` Class Reference
+# `PGOCtxProfileReader` Class
 
 
 

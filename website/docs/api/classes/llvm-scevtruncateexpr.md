@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVTruncateExpr` Class Reference
+# `SCEVTruncateExpr` Class
 
 <p>This class represents a truncation of an integer value to a smaller integer value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicAPInt` Class Reference
+# `DynamicAPInt` Class
 
 <p>This class provides support for dynamic arbitrary-precision arithmetic. <a href="#details">More...</a></p>
 

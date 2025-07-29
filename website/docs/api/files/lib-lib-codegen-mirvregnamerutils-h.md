@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRVRegNamerUtils.h` File Reference
+# `MIRVRegNamerUtils.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVPredicate` Class Reference
+# `SCEVPredicate` Class
 
 <p>This class represents an assumption made using <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> expressions which can be checked at run-time. <a href="#details">More...</a></p>
 

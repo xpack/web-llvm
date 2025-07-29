@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYConstantPoolConstant` Class Reference
+# `CSKYConstantPoolConstant` Class
 
 <p>CSKY-specific constant pool values for Constants, Functions, and BlockAddresses. <a href="#details">More...</a></p>
 

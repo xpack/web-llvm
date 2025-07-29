@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRMaterializationUnit` Class Reference
+# `IRMaterializationUnit` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/irmaterializationunit">IRMaterializationUnit</a> is a convenient base class for MaterializationUnits wrapping LLVM IR. <a href="#details">More...</a></p>
 

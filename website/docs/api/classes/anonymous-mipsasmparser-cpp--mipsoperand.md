@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsOperand` Class Reference
+# `MipsOperand` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-mipsasmparser-cpp-/mipsoperand">MipsOperand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a> machine instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachingWalker` Class Reference
+# `CachingWalker` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/memoryssawalker">MemorySSAWalker</a> that does <a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a> walks to disambiguate accesses. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SyntheticTemplateParamName` Class Reference
+# `SyntheticTemplateParamName` Class
 
 <p>An invented name for a template parameter for which we don't have a corresponding template argument. <a href="#details">More...</a></p>
 

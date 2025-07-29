@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSONEmitter` Class Reference
+# `JSONEmitter` Class
 
 
 

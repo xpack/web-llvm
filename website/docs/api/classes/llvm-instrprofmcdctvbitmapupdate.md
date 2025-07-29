@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfMCDCTVBitmapUpdate` Class Reference
+# `InstrProfMCDCTVBitmapUpdate` Class
 
 <p>This represents the llvm.instrprof.mcdc.tvbitmap.update intrinsic. <a href="#details">More...</a></p>
 

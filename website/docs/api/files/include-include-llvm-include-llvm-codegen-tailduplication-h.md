@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailDuplication.h` File Reference
+# `TailDuplication.h` File
 
 
 

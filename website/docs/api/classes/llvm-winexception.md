@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinException` Class Reference
+# `WinException` Class
 
 
 

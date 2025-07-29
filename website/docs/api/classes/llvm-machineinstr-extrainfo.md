@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraInfo` Class Reference
+# `ExtraInfo` Class
 
 <p>Internal implementation detail class that provides out-of-line storage for extra info used by the machine instruction when this info cannot be stored in-line within the instruction itself. <a href="#details">More...</a></p>
 

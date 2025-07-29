@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SingleLLVMInstructionImpl` Class Template Reference
+# `SingleLLVMInstructionImpl` Class Template
 
 <p>Instructions that contain a single LLVM <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> can inherit from this. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeFunc` Class Reference
+# `BTFTypeFunc` Class
 
 <p>Handle subprogram. <a href="#details">More...</a></p>
 

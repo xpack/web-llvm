@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEGenRegisterInfo` Class Reference
+# `VEGenRegisterInfo` Class
 
 
 

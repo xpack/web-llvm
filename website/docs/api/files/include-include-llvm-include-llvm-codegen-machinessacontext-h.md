@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSSAContext.h` File Reference
+# `MachineSSAContext.h` File
 
 <p>This file declares a specialization of the GenericSSAContext&lt;X&gt; template class for Machine IR. <a href="#details">More...</a></p>
 

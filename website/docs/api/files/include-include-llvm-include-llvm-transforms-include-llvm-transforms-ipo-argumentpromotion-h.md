@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentPromotion.h` File Reference
+# `ArgumentPromotion.h` File
 
 
 

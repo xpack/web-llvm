@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfiledCallGraph.h` File Reference
+# `ProfiledCallGraph.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyAtomicPointer` Class Template Reference
+# `LazyAtomicPointer` Class Template
 
 <p>Atomic pointer that's lock-free, but that can coordinate concurrent writes from a lazy generator. <a href="#details">More...</a></p>
 

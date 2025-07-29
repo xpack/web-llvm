@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsManifestError` Class Reference
+# `WindowsManifestError` Class
 
 
 

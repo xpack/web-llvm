@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BackedgeTakenInfo` Class Reference
+# `BackedgeTakenInfo` Class
 
 <p>Information about the backedge-taken count of a loop. <a href="#details">More...</a></p>
 

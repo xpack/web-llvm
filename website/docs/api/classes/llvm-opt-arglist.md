@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgList` Class Reference
+# `ArgList` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/opt/arglist">ArgList</a> - Ordered collection of driver arguments. <a href="#details">More...</a></p>
 

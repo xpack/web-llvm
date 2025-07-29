@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionInstantiationSetCollector` Class Reference
+# `FunctionInstantiationSetCollector` Class
 
 <p>Distributes functions into instantiation sets. <a href="#details">More...</a></p>
 

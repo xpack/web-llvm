@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorCombinePass` Class Reference
+# `VectorCombinePass` Class
 
 <p>Optimize scalar/vector interactions in IR using target cost models. <a href="#details">More...</a></p>
 

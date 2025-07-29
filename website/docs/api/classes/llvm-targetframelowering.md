@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetFrameLowering` Class Reference
+# `TargetFrameLowering` Class
 
 <p>Information about stack frame layout on the target. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleBitstreamCursor` Class Reference
+# `SimpleBitstreamCursor` Class
 
 <p>This represents a position within a bitstream. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Instruction` Class Reference
+# `Instruction` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user">sandboxir::User</a> with operands, opcode and linked with previous/next instructions in an instruction list. <a href="#details">More...</a></p>
 

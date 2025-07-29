@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOTTableManager` Class Reference
+# `GOTTableManager` Class
 
 <p>Global Offset Table Builder. <a href="#details">More...</a></p>
 

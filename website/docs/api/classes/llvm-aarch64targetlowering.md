@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TargetLowering` Class Reference
+# `AArch64TargetLowering` Class
 
 
 

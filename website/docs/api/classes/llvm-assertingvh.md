@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssertingVH` Class Template Reference
+# `AssertingVH` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> handle that asserts if the <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> is deleted. <a href="#details">More...</a></p>
 

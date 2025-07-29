@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedEventRecord` Class Reference
+# `TypedEventRecord` Class
 
 
 

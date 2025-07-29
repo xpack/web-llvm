@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TBVectorExt` Class Reference
+# `TBVectorExt` Class
 
 
 

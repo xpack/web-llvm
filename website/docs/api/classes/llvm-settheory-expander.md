@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Expander` Class Reference
+# `Expander` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/settheory/expander">Expander</a> - A callback function that can transform a <a href="/web-llvm/docs/api/classes/llvm/record">Record</a> representing a set into a fully expanded list of elements. <a href="#details">More...</a></p>
 

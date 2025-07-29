@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindInfoManager` Class Reference
+# `UnwindInfoManager` Class
 
 
 

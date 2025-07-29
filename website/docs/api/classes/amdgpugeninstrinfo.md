@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUGenInstrInfo` Class Reference
+# `AMDGPUGenInstrInfo` Class
 
 
 

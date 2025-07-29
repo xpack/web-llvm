@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRAsmParser` Class Reference
+# `AVRAsmParser` Class
 
 <p>Parses <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> assembly from a stream. <a href="#details">More...</a></p>
 

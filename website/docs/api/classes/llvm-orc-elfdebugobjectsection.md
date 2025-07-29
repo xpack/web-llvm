@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFDebugObjectSection` Class Template Reference
+# `ELFDebugObjectSection` Class Template
 
 
 

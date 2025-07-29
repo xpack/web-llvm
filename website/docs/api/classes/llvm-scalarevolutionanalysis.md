@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEvolutionAnalysis` Class Reference
+# `ScalarEvolutionAnalysis` Class
 
 <p>Analysis pass that exposes the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a></span> for a function. <a href="#details">More...</a></p>
 

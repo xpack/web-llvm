@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddOperator` Class Reference
+# `AddOperator` Class
 
 
 

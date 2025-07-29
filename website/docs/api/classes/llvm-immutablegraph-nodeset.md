@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeSet` Class Reference
+# `NodeSet` Class
 
 
 

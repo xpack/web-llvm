@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReOptimizeLayer` Class Reference
+# `ReOptimizeLayer` Class
 
 
 

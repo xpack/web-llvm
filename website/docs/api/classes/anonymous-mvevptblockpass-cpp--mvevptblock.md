@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MVEVPTBlock` Class Reference
+# `MVEVPTBlock` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionImportPass` Class Reference
+# `FunctionImportPass` Class
 
 <p>The function importing pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAsmLowering.cpp` File Reference
+# `InlineAsmLowering.cpp` File
 
 <p>This file implements the lowering from LLVM IR inline asm to MIR INLINEASM. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchInst` Class Reference
+# `SwitchInst` Class
 
 <p>Multiway switch. <a href="#details">More...</a></p>
 

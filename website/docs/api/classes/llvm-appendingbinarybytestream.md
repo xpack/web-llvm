@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppendingBinaryByteStream` Class Reference
+# `AppendingBinaryByteStream` Class
 
 <p>An implementation of <a href="/web-llvm/docs/api/classes/llvm/writablebinarystream">WritableBinaryStream</a> which can write at its end causing the underlying data to grow. <a href="#details">More...</a></p>
 

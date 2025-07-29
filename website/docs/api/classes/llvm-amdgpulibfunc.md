@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULibFunc` Class Reference
+# `AMDGPULibFunc` Class
 
 <p>Wrapper class for AMDGPULIbFuncImpl. <a href="#details">More...</a></p>
 

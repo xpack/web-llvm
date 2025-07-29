@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcreteOperator` Class Template Reference
+# `ConcreteOperator` Class Template
 
 <p>A helper template for defining operators for individual opcodes. <a href="#details">More...</a></p>
 

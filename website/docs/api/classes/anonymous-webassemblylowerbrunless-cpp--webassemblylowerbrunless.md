@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyLowerBrUnless` Class Reference
+# `WebAssemblyLowerBrUnless` Class
 
 
 

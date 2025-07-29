@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotIndexesAnalysis` Class Reference
+# `SlotIndexesAnalysis` Class
 
 
 

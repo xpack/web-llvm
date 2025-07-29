@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M85Overrides` Class Reference
+# `M85Overrides` Class
 
 
 

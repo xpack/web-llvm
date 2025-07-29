@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSchedRegistry` Class Reference
+# `MachineSchedRegistry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineschedregistry">MachineSchedRegistry</a> provides a selection of available machine instruction schedulers. <a href="#details">More...</a></p>
 

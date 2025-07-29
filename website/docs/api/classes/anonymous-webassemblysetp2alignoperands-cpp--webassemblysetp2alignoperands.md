@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySetP2AlignOperands` Class Reference
+# `WebAssemblySetP2AlignOperands` Class
 
 
 

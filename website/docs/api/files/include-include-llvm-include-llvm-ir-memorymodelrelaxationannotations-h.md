@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryModelRelaxationAnnotations.h` File Reference
+# `MemoryModelRelaxationAnnotations.h` File
 
 <p>This file provides utility for Memory Model Relaxation Annotations (MMRAs). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYELFTargetObjectFile` Class Reference
+# `CSKYELFTargetObjectFile` Class
 
 
 

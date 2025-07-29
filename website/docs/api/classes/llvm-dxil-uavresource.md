@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UAVResource` Class Reference
+# `UAVResource` Class
 
 
 

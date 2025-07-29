@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAdvice` Class Reference
+# `InlineAdvice` Class
 
 <p>Capture state between an inlining decision having had been made, and its impact being observable. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedTemplateParamList` Class Reference
+# `ScopedTemplateParamList` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVMulExpr` Class Reference
+# `SCEVMulExpr` Class
 
 <p>This node represents multiplication of some number of SCEVs. <a href="#details">More...</a></p>
 

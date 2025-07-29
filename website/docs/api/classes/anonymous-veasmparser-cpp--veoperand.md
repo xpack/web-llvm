@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEOperand` Class Reference
+# `VEOperand` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-veasmparser-cpp-/veoperand">VEOperand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a> machine instruction. <a href="#details">More...</a></p>
 

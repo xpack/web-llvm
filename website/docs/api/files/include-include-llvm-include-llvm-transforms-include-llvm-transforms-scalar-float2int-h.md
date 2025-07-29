@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Float2Int.h` File Reference
+# `Float2Int.h` File
 
 
 

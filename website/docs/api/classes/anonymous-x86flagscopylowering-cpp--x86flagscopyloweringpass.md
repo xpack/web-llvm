@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FlagsCopyLoweringPass` Class Reference
+# `X86FlagsCopyLoweringPass` Class
 
 
 

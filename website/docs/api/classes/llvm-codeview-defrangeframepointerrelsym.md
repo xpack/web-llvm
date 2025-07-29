@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefRangeFramePointerRelSym` Class Reference
+# `DefRangeFramePointerRelSym` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Platform.h` File Reference
+# `Platform.h` File
 
 
 

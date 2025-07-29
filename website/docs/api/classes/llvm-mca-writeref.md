@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteRef` Class Reference
+# `WriteRef` Class
 
 <p>A reference to a register write. <a href="#details">More...</a></p>
 

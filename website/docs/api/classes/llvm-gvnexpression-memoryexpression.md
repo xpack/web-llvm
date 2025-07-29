@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryExpression` Class Reference
+# `MemoryExpression` Class
 
 
 

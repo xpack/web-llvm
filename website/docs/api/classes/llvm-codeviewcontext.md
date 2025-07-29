@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewContext` Class Reference
+# `CodeViewContext` Class
 
 <p>Holds state from .cv_file and .cv_loc directives for later emission. <a href="#details">More...</a></p>
 

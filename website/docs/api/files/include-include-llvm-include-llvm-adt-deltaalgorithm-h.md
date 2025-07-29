@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaAlgorithm.h` File Reference
+# `DeltaAlgorithm.h` File
 
 
 

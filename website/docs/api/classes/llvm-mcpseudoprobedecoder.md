@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbeDecoder` Class Reference
+# `MCPseudoProbeDecoder` Class
 
 
 

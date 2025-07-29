@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DevirtSCCRepeatedPass` Class Reference
+# `DevirtSCCRepeatedPass` Class
 
 <p>A helper that repeats an SCC pass each time an indirect call is refined to a direct call by that pass. <a href="#details">More...</a></p>
 

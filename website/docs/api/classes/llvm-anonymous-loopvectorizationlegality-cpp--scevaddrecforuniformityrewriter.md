@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVAddRecForUniformityRewriter` Class Reference
+# `SCEVAddRecForUniformityRewriter` Class
 
 <p>A rewriter to build the SCEVs for each of the VF lanes in the expected vectorized loop, which can then be compared to detect their uniformity. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericCycleInfoCompute` Class Template Reference
+# `GenericCycleInfoCompute` Class Template
 
 <p>Helper class for computing cycle information. <a href="#details">More...</a></p>
 

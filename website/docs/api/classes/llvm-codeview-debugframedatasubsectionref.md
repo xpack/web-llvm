@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugFrameDataSubsectionRef` Class Reference
+# `DebugFrameDataSubsectionRef` Class
 
 
 

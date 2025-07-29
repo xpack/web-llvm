@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextCodeGenDataReader` Class Reference
+# `TextCodeGenDataReader` Class
 
 <p>This format is a simple text format that's suitable for test data. <a href="#details">More...</a></p>
 

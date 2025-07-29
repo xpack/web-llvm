@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleSegment` Class Reference
+# `CycleSegment` Class
 
 <p>A sequence of cycles. <a href="#details">More...</a></p>
 

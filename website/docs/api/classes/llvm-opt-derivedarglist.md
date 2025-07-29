@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DerivedArgList` Class Reference
+# `DerivedArgList` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/opt/derivedarglist">DerivedArgList</a> - An ordered collection of driver arguments, whose storage may be in another argument list. <a href="#details">More...</a></p>
 

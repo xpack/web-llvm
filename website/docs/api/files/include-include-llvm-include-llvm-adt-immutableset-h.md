@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableSet.h` File Reference
+# `ImmutableSet.h` File
 
 <p>This file defines the ImutAVLTree and ImmutableSet classes. <a href="#details">More...</a></p>
 

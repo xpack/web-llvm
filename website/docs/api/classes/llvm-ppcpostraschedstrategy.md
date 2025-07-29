@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCPostRASchedStrategy` Class Reference
+# `PPCPostRASchedStrategy` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a> implementation for PowerPC post RA scheduling. <a href="#details">More...</a></p>
 

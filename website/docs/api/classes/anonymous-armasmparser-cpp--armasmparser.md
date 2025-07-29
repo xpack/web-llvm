@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmParser` Class Reference
+# `ARMAsmParser` Class
 
 
 

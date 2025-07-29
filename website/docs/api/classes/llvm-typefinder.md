@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeFinder` Class Reference
+# `TypeFinder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/typefinder">TypeFinder</a> - Walk over a module, identifying all of the types that are used by the module. <a href="#details">More...</a></p>
 

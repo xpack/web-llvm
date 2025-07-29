@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubCommandGroup` Class Reference
+# `SubCommandGroup` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectionDAGTargetInfo` Class Reference
+# `SelectionDAGTargetInfo` Class
 
 <p>Targets can subclass this to parameterize the <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> lowering and instruction selection process. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileWriterRawBinary` Class Reference
+# `SampleProfileWriterRawBinary` Class
 
 
 

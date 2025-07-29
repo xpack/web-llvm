@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StoreClusterMutation` Class Reference
+# `StoreClusterMutation` Class
 
 
 

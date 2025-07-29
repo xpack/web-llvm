@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyTailDuplicatePass` Class Reference
+# `EarlyTailDuplicatePass` Class
 
 
 

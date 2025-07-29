@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgvArray` Class Reference
+# `ArgvArray` Class
 
 
 

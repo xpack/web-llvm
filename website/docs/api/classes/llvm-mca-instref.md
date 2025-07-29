@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstRef` Class Reference
+# `InstRef` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/mca/instref">InstRef</a> contains both a <a href="/web-llvm/docs/api/structs/llvm/mca/sourcemgr">SourceMgr</a> index and <a href="/web-llvm/docs/api/classes/llvm/mca/instruction">Instruction</a> pair. <a href="#details">More...</a></p>
 

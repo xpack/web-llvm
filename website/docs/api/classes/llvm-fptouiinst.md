@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPToUIInst` Class Reference
+# `FPToUIInst` Class
 
 <p>This class represents a cast from floating point to unsigned integer. <a href="#details">More...</a></p>
 

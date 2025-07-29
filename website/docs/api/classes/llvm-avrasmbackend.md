@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRAsmBackend` Class Reference
+# `AVRAsmBackend` Class
 
 <p>Utilities for manipulating generated <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> machine code. <a href="#details">More...</a></p>
 

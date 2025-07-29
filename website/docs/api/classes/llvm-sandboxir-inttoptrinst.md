@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntToPtrInst` Class Reference
+# `IntToPtrInst` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorBuilder.h` File Reference
+# `VectorBuilder.h` File
 
 
 

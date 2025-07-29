@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStackRadixTreeBuilder` Class Template Reference
+# `CallStackRadixTreeBuilder` Class Template
 
 
 

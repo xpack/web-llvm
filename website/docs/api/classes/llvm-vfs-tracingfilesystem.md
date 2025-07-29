@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TracingFileSystem` Class Reference
+# `TracingFileSystem` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vfs/file">File</a> system that tracks the number of calls to the underlying file system. <a href="#details">More...</a></p>
 

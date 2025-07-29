@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSext` Class Reference
+# `GSext` Class
 
 <p>Represents a sext. <a href="#details">More...</a></p>
 

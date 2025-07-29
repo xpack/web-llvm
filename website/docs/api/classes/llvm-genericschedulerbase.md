@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSchedulerBase` Class Reference
+# `GenericSchedulerBase` Class
 
 <p>Base class for <a href="/web-llvm/docs/api/classes/llvm/genericscheduler">GenericScheduler</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewRecordIO` Class Reference
+# `CodeViewRecordIO` Class
 
 
 

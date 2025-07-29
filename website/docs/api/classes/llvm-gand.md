@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GAnd` Class Reference
+# `GAnd` Class
 
 <p>Represents a logical and. <a href="#details">More...</a></p>
 

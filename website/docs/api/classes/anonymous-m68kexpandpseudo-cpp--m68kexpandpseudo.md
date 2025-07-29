@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kExpandPseudo` Class Reference
+# `M68kExpandPseudo` Class
 
 
 

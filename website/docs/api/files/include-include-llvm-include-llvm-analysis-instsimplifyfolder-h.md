@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstSimplifyFolder.h` File Reference
+# `InstSimplifyFolder.h` File
 
 
 

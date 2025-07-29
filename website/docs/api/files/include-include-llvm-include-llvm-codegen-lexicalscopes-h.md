@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LexicalScopes.h` File Reference
+# `LexicalScopes.h` File
 
 
 

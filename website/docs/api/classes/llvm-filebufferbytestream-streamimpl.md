@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StreamImpl` Class Reference
+# `StreamImpl` Class
 
 
 

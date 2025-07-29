@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolFuncDebugStart.h` File Reference
+# `PDBSymbolFuncDebugStart.h` File
 
 
 

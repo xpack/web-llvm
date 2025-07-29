@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCStrategy` Class Reference
+# `GCStrategy` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gcstrategy">GCStrategy</a> describes a garbage collector algorithm's code generation requirements, and provides overridable hooks for those needs which cannot be abstractly described. <a href="#details">More...</a></p>
 

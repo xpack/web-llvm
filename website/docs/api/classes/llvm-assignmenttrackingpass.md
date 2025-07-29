@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignmentTrackingPass` Class Reference
+# `AssignmentTrackingPass` Class
 
 <p>Convert @llvm.dbg.declare intrinsics into sets of @llvm.dbg.assign intrinsics by treating stores to the dbg.declare'd address as assignments to the variable. <a href="#details">More...</a></p>
 

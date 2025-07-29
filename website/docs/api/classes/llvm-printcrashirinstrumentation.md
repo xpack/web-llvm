@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintCrashIRInstrumentation` Class Reference
+# `PrintCrashIRInstrumentation` Class
 
 
 

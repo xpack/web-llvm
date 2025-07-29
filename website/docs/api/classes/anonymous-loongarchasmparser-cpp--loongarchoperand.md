@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchOperand` Class Reference
+# `LoongArchOperand` Class
 
 
 

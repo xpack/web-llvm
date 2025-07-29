@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DisplayEdge` Class Reference
+# `DisplayEdge` Class
 
 
 

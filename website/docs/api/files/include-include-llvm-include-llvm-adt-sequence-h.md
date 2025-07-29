@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Sequence.h` File Reference
+# `Sequence.h` File
 
 <p>Provides some synthesis utilities to produce sequences of values. <a href="#details">More...</a></p>
 

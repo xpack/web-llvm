@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyObjectLinkingLayer` Class Reference
+# `LazyObjectLinkingLayer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/lazyobjectlinkinglayer">LazyObjectLinkingLayer</a> is an adapter for <a href="/web-llvm/docs/api/classes/llvm/orc/objectlinkinglayer">ObjectLinkingLayer</a> that builds lazy reexports for all function symbols in objects that are/ added to defer linking until the first call to a function defined in the object. <a href="#details">More...</a></p>
 

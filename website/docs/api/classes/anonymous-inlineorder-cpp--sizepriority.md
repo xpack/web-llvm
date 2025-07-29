@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizePriority` Class Reference
+# `SizePriority` Class
 
 
 

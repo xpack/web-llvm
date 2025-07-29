@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectingFSDirRemapIterImpl` Class Reference
+# `RedirectingFSDirRemapIterImpl` Class
 
 <p>Directory iterator implementation for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfilesystem">RedirectingFileSystem</a>'s</span> directory remap entries that maps the paths reported by the external file system's directory iterator back to the virtual directory's path. <a href="#details">More...</a></p>
 

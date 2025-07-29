@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `STLFunctionalExtras.h` File Reference
+# `STLFunctionalExtras.h` File
 
 
 

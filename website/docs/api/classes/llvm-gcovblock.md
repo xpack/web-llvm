@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVBlock` Class Reference
+# `GCOVBlock` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gcovblock">GCOVBlock</a> - Collects block information. <a href="#details">More...</a></p>
 

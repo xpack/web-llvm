@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DICommonBlock` Class Reference
+# `DICommonBlock` Class
 
 <p>Debug common block. <a href="#details">More...</a></p>
 

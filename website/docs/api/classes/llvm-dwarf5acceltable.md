@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARF5AccelTable` Class Reference
+# `DWARF5AccelTable` Class
 
 
 

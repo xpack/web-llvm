@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>SPS serializatior for <a href="/web-llvm/docs/api/classes/llvm/jitsymbolflags">JITSymbolFlags</a>. <a href="#details">More...</a></p>
 

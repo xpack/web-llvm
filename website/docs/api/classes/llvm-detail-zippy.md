@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zippy` Class Template Reference
+# `zippy` Class Template
 
 
 

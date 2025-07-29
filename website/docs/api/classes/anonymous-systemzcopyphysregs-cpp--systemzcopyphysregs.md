@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZCopyPhysRegs` Class Reference
+# `SystemZCopyPhysRegs` Class
 
 
 

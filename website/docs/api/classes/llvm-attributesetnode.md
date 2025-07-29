@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeSetNode` Class Reference
+# `AttributeSetNode` Class
 
 <p>This class represents a group of attributes that apply to one element: function, return type, or parameter. <a href="#details">More...</a></p>
 

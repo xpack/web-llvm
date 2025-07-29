@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordConsumer` Class Reference
+# `RecordConsumer` Class
 
 
 

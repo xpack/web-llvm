@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBFIWrapper.cpp` File Reference
+# `MBFIWrapper.cpp` File
 
 
 

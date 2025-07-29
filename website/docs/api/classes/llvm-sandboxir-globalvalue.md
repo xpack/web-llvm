@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalValue` Class Reference
+# `GlobalValue` Class
 
 
 

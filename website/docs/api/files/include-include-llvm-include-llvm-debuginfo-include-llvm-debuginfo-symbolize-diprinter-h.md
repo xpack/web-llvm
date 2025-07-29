@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIPrinter.h` File Reference
+# `DIPrinter.h` File
 
 
 

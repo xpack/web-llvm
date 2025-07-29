@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrataWorkaround` Class Reference
+# `ErrataWorkaround` Class
 
 
 

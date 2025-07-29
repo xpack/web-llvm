@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantVector` Class Reference
+# `ConstantVector` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/constant">Constant</a> Vector Declarations. <a href="#details">More...</a></p>
 

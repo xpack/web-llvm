@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandMemCmpPass` Class Reference
+# `ExpandMemCmpPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetIndexSDNode` Class Reference
+# `TargetIndexSDNode` Class
 
 <p>Completely target-dependent object reference. <a href="#details">More...</a></p>
 

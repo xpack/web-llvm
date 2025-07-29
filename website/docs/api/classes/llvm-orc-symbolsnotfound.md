@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolsNotFound` Class Reference
+# `SymbolsNotFound` Class
 
 <p>Used to notify clients when symbols can not be found during a lookup. <a href="#details">More...</a></p>
 

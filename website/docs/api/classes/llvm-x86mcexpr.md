@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MCExpr` Class Reference
+# `X86MCExpr` Class
 
 
 

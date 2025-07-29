@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoFolder.h` File Reference
+# `NoFolder.h` File
 
 
 

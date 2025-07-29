@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InductionDescriptor` Class Reference
+# `InductionDescriptor` Class
 
 <p>A struct for saving information about induction variables. <a href="#details">More...</a></p>
 

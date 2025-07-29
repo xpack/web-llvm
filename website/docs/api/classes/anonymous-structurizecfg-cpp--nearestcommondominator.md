@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NearestCommonDominator` Class Reference
+# `NearestCommonDominator` Class
 
 <p>Finds the nearest common dominator of a set of BasicBlocks. <a href="#details">More...</a></p>
 

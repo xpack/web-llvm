@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubobjectExpr` Class Reference
+# `SubobjectExpr` Class
 
 
 

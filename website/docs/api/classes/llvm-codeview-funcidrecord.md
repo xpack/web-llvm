@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncIdRecord` Class Reference
+# `FuncIdRecord` Class
 
 
 

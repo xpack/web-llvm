@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DGEdge` Class Template Reference
+# `DGEdge` Class Template
 
 <p>Represent an edge in the directed graph. <a href="#details">More...</a></p>
 

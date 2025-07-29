@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ControlFlowFinalizer` Class Reference
+# `R600ControlFlowFinalizer` Class
 
 
 

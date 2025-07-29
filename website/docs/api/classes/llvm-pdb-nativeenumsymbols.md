@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeEnumSymbols` Class Reference
+# `NativeEnumSymbols` Class
 
 
 

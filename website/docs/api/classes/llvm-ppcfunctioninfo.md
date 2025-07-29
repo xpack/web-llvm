@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCFunctionInfo` Class Reference
+# `PPCFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ppcfunctioninfo">PPCFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> private PowerPC target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

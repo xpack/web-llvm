@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinker` Class Template Reference
+# `JITLinker` Class Template
 
 
 

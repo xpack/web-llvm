@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AggBuffer` Class Reference
+# `AggBuffer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PlaceholderQueue` Class Reference
+# `PlaceholderQueue` Class
 
 
 

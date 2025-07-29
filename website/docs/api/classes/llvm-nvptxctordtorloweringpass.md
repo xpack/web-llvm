@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXCtorDtorLoweringPass` Class Reference
+# `NVPTXCtorDtorLoweringPass` Class
 
 <p>Lower llvm.global_ctors and llvm.global_dtors to special kernels. <a href="#details">More...</a></p>
 

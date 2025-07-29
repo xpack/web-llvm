@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsBranchExpansion` Class Reference
+# `MipsBranchExpansion` Class
 
 
 

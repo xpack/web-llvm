@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RealFileSystem` Class Reference
+# `RealFileSystem` Class
 
 <p>A file system according to your operating system. <a href="#details">More...</a></p>
 

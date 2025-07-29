@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FeatureBitArray` Class Reference
+# `FeatureBitArray` Class
 
 <p>Class used to store the subtarget bits in the tables created by tablegen. <a href="#details">More...</a></p>
 

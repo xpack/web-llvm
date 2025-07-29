@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipselTargetMachine` Class Reference
+# `MipselTargetMachine` Class
 
 <p>Mips32/64 little endian target machine. <a href="#details">More...</a></p>
 

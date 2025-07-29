@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicRMWInst` Class Reference
+# `AtomicRMWInst` Class
 
 
 

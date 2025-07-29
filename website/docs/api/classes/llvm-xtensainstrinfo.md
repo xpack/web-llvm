@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaInstrInfo` Class Reference
+# `XtensaInstrInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndVarSimplify` Class Reference
+# `IndVarSimplify` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapIterator` Class Template Reference
+# `StringMapIterator` Class Template
 
 
 

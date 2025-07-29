@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIFoldOperandsImpl` Class Reference
+# `SIFoldOperandsImpl` Class
 
 
 

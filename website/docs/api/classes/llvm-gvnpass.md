@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNPass` Class Reference
+# `GVNPass` Class
 
 <p>The core GVN pass object. <a href="#details">More...</a></p>
 

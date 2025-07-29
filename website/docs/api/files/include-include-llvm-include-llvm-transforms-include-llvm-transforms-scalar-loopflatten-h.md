@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopFlatten.h` File Reference
+# `LoopFlatten.h` File
 
 
 

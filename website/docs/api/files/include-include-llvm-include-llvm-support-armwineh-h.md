@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMWinEH.h` File Reference
+# `ARMWinEH.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineDominatorTreeWrapperPass` Class Reference
+# `MachineDominatorTreeWrapperPass` Class
 
 <p>Analysis pass which computes a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a></span>. <a href="#details">More...</a></p>
 

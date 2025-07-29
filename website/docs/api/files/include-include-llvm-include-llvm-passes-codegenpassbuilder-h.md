@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenPassBuilder.h` File Reference
+# `CodeGenPassBuilder.h` File
 
 <p>Interfaces for producing common pass manager configurations. <a href="#details">More...</a></p>
 

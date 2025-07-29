@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TargetMachine` Class Reference
+# `X86TargetMachine` Class
 
 
 

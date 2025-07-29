@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64InstPrinter` Class Reference
+# `AArch64InstPrinter` Class
 
 
 

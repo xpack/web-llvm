@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarliestEscapeAnalysis` Class Reference
+# `EarliestEscapeAnalysis` Class
 
 <p>Context-sensitive <a href="/web-llvm/docs/api/structs/llvm/captureanalysis">CaptureAnalysis</a> provider, which computes and caches the earliest common dominator closure of all captures. <a href="#details">More...</a></p>
 

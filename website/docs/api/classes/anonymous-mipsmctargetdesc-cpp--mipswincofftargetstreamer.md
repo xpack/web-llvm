@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsWinCOFFTargetStreamer` Class Reference
+# `MipsWinCOFFTargetStreamer` Class
 
 
 

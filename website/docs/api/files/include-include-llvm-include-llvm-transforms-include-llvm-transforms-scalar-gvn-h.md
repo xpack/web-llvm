@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVN.h` File Reference
+# `GVN.h` File
 
 <p>This file provides the interface for LLVM's Global Value Numbering pass which eliminates fully redundant instructions. <a href="#details">More...</a></p>
 

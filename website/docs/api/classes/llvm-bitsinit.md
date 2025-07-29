@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitsInit` Class Reference
+# `BitsInit` Class
 
 <p>'{ a, b, c }' - Represents an initializer for a <a href="/web-llvm/docs/api/classes/llvm/bitsrecty">BitsRecTy</a> value. <a href="#details">More...</a></p>
 

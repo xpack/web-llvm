@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntegerType` Class Reference
+# `IntegerType` Class
 
 <p>Class to represent integer types. <a href="#details">More...</a></p>
 

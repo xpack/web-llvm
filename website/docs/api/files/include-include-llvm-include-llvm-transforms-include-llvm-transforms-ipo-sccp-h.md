@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCP.h` File Reference
+# `SCCP.h` File
 
 
 

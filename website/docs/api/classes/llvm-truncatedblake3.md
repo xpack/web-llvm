@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TruncatedBLAKE3` Class Template Reference
+# `TruncatedBLAKE3` Class Template
 
 <p>Like <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/blake3">BLAKE3</a></span> but using a class-level template parameter for specifying the hash size of the <span class="doxyComputerOutput"><a href="#a74a099d51430f54417d27af6f552d183">final()</a></span> and <span class="doxyComputerOutput"><a href="#adda4f5df8b748e9f3c27dc9872b52330">result()</a></span> functions. <a href="#details">More...</a></p>
 

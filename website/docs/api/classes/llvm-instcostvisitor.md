@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCostVisitor` Class Reference
+# `InstCostVisitor` Class
 
 
 

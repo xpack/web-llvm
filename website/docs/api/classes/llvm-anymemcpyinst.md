@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyMemCpyInst` Class Reference
+# `AnyMemCpyInst` Class
 
 <p>This class represents any memcpy intrinsic i.e. <a href="#details">More...</a></p>
 

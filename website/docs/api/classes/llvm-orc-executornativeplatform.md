@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutorNativePlatform` Class Reference
+# `ExecutorNativePlatform` Class
 
 <p>Configure the <a href="/web-llvm/docs/api/classes/llvm/orc/lljit">LLJIT</a> instance to use the ORC runtime and the detected native target for the executor. <a href="#details">More...</a></p>
 

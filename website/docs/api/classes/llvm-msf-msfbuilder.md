@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSFBuilder` Class Reference
+# `MSFBuilder` Class
 
 
 

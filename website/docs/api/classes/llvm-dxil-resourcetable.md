@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceTable` Class Template Reference
+# `ResourceTable` Class Template
 
 
 

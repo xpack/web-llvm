@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueToVRegInfo` Class Reference
+# `ValueToVRegInfo` Class
 
 <p>This class contains the mapping between the Values to vreg related data. <a href="#details">More...</a></p>
 

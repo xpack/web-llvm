@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveListT` Class Reference
+# `IntrusiveListT` Class
 
 
 

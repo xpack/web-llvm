@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ExecutionDomainFix` Class Reference
+# `X86ExecutionDomainFix` Class
 
 
 

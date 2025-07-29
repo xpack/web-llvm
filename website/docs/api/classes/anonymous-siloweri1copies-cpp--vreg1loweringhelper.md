@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Vreg1LoweringHelper` Class Reference
+# `Vreg1LoweringHelper` Class
 
 
 

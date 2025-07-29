@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_range` Class Template Reference
+# `iterator_range` Class Template
 
 <p>A range adaptor for a pair of iterators. <a href="#details">More...</a></p>
 

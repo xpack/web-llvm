@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RequireAllMachineFunctionPropertiesPass` Class Reference
+# `RequireAllMachineFunctionPropertiesPass` Class
 
 
 

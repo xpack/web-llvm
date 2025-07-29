@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVMaterializer` Class Reference
+# `GVMaterializer` Class
 
 
 

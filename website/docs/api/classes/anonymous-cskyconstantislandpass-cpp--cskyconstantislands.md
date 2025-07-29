@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYConstantIslands` Class Reference
+# `CSKYConstantIslands` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-cskyconstantislandpass-cpp-/cskyconstantislands">CSKYConstantIslands</a> - Due to limited PC-relative displacements, <a href="/web-llvm/docs/api/namespaces/llvm/csky">CSKY</a> requires constant pool entries to be scattered among the instructions inside a function. <a href="#details">More...</a></p>
 

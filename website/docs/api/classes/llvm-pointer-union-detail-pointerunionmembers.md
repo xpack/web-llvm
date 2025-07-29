@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerUnionMembers` Class Template Reference
+# `PointerUnionMembers` Class Template
 
 
 

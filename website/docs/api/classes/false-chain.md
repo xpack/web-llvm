@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Chain` Class Reference
+# `Chain` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/false/chain">Chain</a> is a sequence of instructions that are linked together by an accumulation operand. <a href="#details">More...</a></p>
 

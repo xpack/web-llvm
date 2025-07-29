@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFPlatform` Class Reference
+# `COFFPlatform` Class
 
 <p>Mediates between <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> initialization and <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> state. <a href="#details">More...</a></p>
 

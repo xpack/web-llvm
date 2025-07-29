@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcMips32_Base` Class Reference
+# `OrcMips32_Base` Class
 
 
 

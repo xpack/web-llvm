@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPStoreSDNode` Class Reference
+# `VPStoreSDNode` Class
 
 <p>This class is used to represent a VP_STORE node. <a href="#details">More...</a></p>
 

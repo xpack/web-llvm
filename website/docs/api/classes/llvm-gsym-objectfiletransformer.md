@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectFileTransformer` Class Reference
+# `ObjectFileTransformer` Class
 
 
 

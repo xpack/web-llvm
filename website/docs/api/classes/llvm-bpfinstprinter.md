@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFInstPrinter` Class Reference
+# `BPFInstPrinter` Class
 
 
 

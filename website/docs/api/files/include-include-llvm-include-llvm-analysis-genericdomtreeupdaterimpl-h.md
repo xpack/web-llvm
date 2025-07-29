@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericDomTreeUpdaterImpl.h` File Reference
+# `GenericDomTreeUpdaterImpl.h` File
 
 
 

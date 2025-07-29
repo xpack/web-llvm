@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kELFMCAsmInfo` Class Reference
+# `M68kELFMCAsmInfo` Class
 
 
 

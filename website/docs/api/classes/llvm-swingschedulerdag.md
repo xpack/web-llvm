@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwingSchedulerDAG` Class Reference
+# `SwingSchedulerDAG` Class
 
 <p>This class builds the dependence graph for the instructions in a loop, and attempts to schedule the instructions using the SMS algorithm. <a href="#details">More...</a></p>
 

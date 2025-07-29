@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCDebugObjectRegistrar.h` File Reference
+# `EPCDebugObjectRegistrar.h` File
 
 
 

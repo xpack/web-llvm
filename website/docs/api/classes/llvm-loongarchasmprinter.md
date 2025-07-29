@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchAsmPrinter` Class Reference
+# `LoongArchAsmPrinter` Class
 
 
 

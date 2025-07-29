@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Document` Class Reference
+# `Document` Class
 
 <p>A YAML <a href="/web-llvm/docs/api/classes/llvm/yaml/stream">Stream</a> is a sequence of Documents. <a href="#details">More...</a></p>
 

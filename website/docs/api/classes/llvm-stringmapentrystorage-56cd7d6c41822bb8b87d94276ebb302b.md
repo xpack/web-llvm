@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntryStorage` Class Template Reference
+# `StringMapEntryStorage` Class Template
 
 
 

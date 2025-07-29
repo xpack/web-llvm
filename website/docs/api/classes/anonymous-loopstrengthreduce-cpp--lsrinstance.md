@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSRInstance` Class Reference
+# `LSRInstance` Class
 
 <p>This class holds state for the main loop strength reduction logic. <a href="#details">More...</a></p>
 

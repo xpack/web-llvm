@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpaqueInst` Class Reference
+# `OpaqueInst` Class
 
 <p>An LLLVM <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> that has no SandboxIR equivalent class gets mapped to an OpaqueInstr. <a href="#details">More...</a></p>
 

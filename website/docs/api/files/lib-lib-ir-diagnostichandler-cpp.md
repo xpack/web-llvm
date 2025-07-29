@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticHandler.cpp` File Reference
+# `DiagnosticHandler.cpp` File
 
 
 

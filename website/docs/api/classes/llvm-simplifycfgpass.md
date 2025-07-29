@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyCFGPass` Class Reference
+# `SimplifyCFGPass` Class
 
 <p>A pass to simplify and canonicalize the CFG of a function. <a href="#details">More...</a></p>
 

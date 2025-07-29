@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPPassManager` Class Reference
+# `FPPassManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/fppassmanager">FPPassManager</a> manages BBPassManagers and FunctionPasses. <a href="#details">More...</a></p>
 

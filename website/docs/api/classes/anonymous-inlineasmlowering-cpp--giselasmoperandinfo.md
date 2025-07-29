@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelAsmOperandInfo` Class Reference
+# `GISelAsmOperandInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-inlineasmlowering-cpp-/giselasmoperandinfo">GISelAsmOperandInfo</a> - This contains information for each constraint that we are lowering. <a href="#details">More...</a></p>
 

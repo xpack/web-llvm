@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleRemoteEPCServer.h` File Reference
+# `SimpleRemoteEPCServer.h` File
 
 
 

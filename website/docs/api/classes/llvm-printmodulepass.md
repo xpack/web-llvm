@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintModulePass` Class Reference
+# `PrintModulePass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> (for the new pass manager) for printing a <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> as LLVM's text IR assembly. <a href="#details">More...</a></p>
 

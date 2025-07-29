@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoTranslateMD` Class Reference
+# `DiagnosticInfoTranslateMD` Class
 
 <p>A simple Wrapper DiagnosticInfo that generates Module-level diagnostic for TranslateMetadata pass. <a href="#details">More...</a></p>
 

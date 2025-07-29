@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StoreMergeCandidate` Class Reference
+# `StoreMergeCandidate` Class
 
 
 

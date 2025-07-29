@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenInductionRecipe` Class Reference
+# `VPWidenInductionRecipe` Class
 
 <p>Base class for widened induction (<a href="/web-llvm/docs/api/classes/llvm/vpwidenintorfpinductionrecipe">VPWidenIntOrFpInductionRecipe</a> and <a href="/web-llvm/docs/api/classes/llvm/vpwidenpointerinductionrecipe">VPWidenPointerInductionRecipe</a>), providing shared functionality, including retrieving the step value, induction descriptor and original phi node. <a href="#details">More...</a></p>
 

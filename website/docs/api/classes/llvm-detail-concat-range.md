@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `concat_range` Class Template Reference
+# `concat_range` Class Template
 
 <p>Helper to store a sequence of ranges being concatenated and access them. <a href="#details">More...</a></p>
 

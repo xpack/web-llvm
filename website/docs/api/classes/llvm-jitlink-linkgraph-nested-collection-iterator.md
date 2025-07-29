@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `nested_collection_iterator` Class Template Reference
+# `nested_collection_iterator` Class Template
 
 
 

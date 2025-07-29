@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyInstPrinter` Class Reference
+# `WebAssemblyInstPrinter` Class
 
 
 

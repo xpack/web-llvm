@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WWMRegisterRegAlloc` Class Reference
+# `WWMRegisterRegAlloc` Class
 
 
 

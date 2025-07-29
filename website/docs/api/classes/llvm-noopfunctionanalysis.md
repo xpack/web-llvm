@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpFunctionAnalysis` Class Reference
+# `NoOpFunctionAnalysis` Class
 
 <p>No-op function analysis. <a href="#details">More...</a></p>
 

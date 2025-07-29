@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Resolver` Class Reference
+# `Resolver` Class
 
 <p>Interface for looking up the initializer for a variable name, used by <a href="/web-llvm/docs/api/classes/llvm/init/#a00581957c4bb1587a458c3fbf4326f7a">Init::resolveReferences</a>. <a href="#details">More...</a></p>
 

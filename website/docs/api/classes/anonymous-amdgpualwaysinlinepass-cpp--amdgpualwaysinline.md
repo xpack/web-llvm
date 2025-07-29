@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAlwaysInline` Class Reference
+# `AMDGPUAlwaysInline` Class
 
 
 

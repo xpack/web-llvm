@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebuggerSupportPlugin.h` File Reference
+# `DebuggerSupportPlugin.h` File
 
 
 

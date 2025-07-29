@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenPassBuilder` Class Template Reference
+# `CodeGenPassBuilder` Class Template
 
 <p>This class provides access to building LLVM's passes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NullNode` Class Reference
+# `NullNode` Class
 
 <p>A null value. <a href="#details">More...</a></p>
 

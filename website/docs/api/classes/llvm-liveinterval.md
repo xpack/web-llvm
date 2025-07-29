@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveInterval` Class Reference
+# `LiveInterval` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/liveinterval">LiveInterval</a> - This class represents the liveness of a register, or stack slot. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InnerLoopAndEpilogueVectorizer` Class Reference
+# `InnerLoopAndEpilogueVectorizer` Class
 
 <p>An extension of the inner loop vectorizer that creates a skeleton for a vectorized loop that has its epilogue (residual) also vectorized. <a href="#details">More...</a></p>
 

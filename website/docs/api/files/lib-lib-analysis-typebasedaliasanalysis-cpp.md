@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeBasedAliasAnalysis.cpp` File Reference
+# `TypeBasedAliasAnalysis.cpp` File
 
 
 

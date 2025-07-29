@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DanglingDebugInfo` Class Reference
+# `DanglingDebugInfo` Class
 
 <p>Helper type for DanglingDebugInfoMap. <a href="#details">More...</a></p>
 

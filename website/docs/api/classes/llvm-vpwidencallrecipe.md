@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenCallRecipe` Class Reference
+# `VPWidenCallRecipe` Class
 
 <p>A recipe for widening Call instructions using library calls. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemmoveVerifier` Class Reference
+# `MemmoveVerifier` Class
 
 
 

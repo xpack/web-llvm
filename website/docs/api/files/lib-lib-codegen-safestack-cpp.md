@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafeStack.cpp` File Reference
+# `SafeStack.cpp` File
 
 
 

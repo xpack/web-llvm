@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGSCCPrinter.h` File Reference
+# `CFGSCCPrinter.h` File
 
 
 

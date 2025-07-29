@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedDAGReverseDFS` Class Reference
+# `SchedDAGReverseDFS` Class
 
 <p>Manage the stack used by a reverse depth-first search over the DAG. <a href="#details">More...</a></p>
 

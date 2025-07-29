@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeSession.cpp` File Reference
+# `NativeSession.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GStepVector` Class Reference
+# `GStepVector` Class
 
 <p>Represents a step vector. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cursor` Class Reference
+# `Cursor` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/interferencecache/cursor">Cursor</a> - The primary query interface for the block interference cache. <a href="#details">More...</a></p>
 

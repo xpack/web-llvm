@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SyntheticCountsUtils` Class Template Reference
+# `SyntheticCountsUtils` Class Template
 
 <p>Class with methods to propagate synthetic entry counts. <a href="#details">More...</a></p>
 

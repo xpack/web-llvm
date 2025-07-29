@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAResultsWrapperPass` Class Reference
+# `AAResultsWrapperPass` Class
 
 <p>A wrapper pass to provide the legacy pass manager access to a suitably prepared <a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a> object. <a href="#details">More...</a></p>
 

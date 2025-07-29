@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTargetLowering` Class Reference
+# `PPCTargetLowering` Class
 
 
 

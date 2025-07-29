@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConstantPoolEntry` Class Reference
+# `MachineConstantPoolEntry` Class
 
 <p>This class is a data container for one entry in a <a href="/web-llvm/docs/api/classes/llvm/machineconstantpool">MachineConstantPool</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarLocBasedLDV` Class Reference
+# `VarLocBasedLDV` Class
 
 
 

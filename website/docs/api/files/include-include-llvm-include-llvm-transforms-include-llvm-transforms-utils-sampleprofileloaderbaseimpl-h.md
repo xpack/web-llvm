@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileLoaderBaseImpl.h` File Reference
+# `SampleProfileLoaderBaseImpl.h` File
 
 <p>This file provides the interface for the sampled PGO profile loader base implementation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegSet` Class Reference
+# `LiveRegSet` Class
 
 <p>A set of live virtual registers and physical register units. <a href="#details">More...</a></p>
 

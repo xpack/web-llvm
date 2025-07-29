@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixMetadata` Class Reference
+# `MatrixMetadata` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a> to speed allocatability test. <a href="#details">More...</a></p>
 

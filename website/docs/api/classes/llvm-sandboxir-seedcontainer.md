@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeedContainer` Class Reference
+# `SeedContainer` Class
 
 <p>Class to conveniently track Seeds within SeedBundles. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallSiteInfoSym` Class Reference
+# `CallSiteInfoSym` Class
 
 
 

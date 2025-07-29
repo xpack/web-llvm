@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutablePass` Class Reference
+# `ImmutablePass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/immutablepass">ImmutablePass</a> class - This class is used to provide information that does not need to be run. <a href="#details">More...</a></p>
 

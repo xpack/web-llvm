@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectionDAGLegalize` Class Reference
+# `SelectionDAGLegalize` Class
 
 <p>This takes an arbitrary <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> as input and hacks on it until the target machine can handle it. <a href="#details">More...</a></p>
 

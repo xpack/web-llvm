@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LargeBlockInfo` Class Reference
+# `LargeBlockInfo` Class
 
 <p>This assigns and keeps a per-bb relative ordering of load/store instructions in the block that directly load or store an alloca. <a href="#details">More...</a></p>
 

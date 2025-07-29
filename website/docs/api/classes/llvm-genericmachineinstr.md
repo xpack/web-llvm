@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericMachineInstr` Class Reference
+# `GenericMachineInstr` Class
 
 <p>A base class for all GenericMachineInstrs. <a href="#details">More...</a></p>
 

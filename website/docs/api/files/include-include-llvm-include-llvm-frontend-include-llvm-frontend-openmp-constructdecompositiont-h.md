@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstructDecompositionT.h` File Reference
+# `ConstructDecompositionT.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiSelectionDAGInfo` Class Reference
+# `LanaiSelectionDAGInfo` Class
 
 
 

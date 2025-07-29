@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractLatticeFunction` Class Template Reference
+# `AbstractLatticeFunction` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/abstractlatticefunction">AbstractLatticeFunction</a> - This class is implemented by the dataflow instance to specify what the lattice values are and how they handle merges etc. <a href="#details">More...</a></p>
 

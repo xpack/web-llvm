@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHUtils.h` File Reference
+# `EHUtils.h` File
 
 
 

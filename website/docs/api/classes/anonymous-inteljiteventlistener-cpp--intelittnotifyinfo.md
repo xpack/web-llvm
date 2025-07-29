@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelIttnotifyInfo` Class Reference
+# `IntelIttnotifyInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkMemoryManager` Class Reference
+# `JITLinkMemoryManager` Class
 
 <p>Manages allocations of JIT memory. <a href="#details">More...</a></p>
 

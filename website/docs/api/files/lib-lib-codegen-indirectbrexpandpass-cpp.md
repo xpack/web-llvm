@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectBrExpandPass.cpp` File Reference
+# `IndirectBrExpandPass.cpp` File
 
 <p>Implements an expansion pass to turn <span class="doxyComputerOutput">indirectbr</span> instructions in the IR into <span class="doxyComputerOutput">switch</span> instructions. <a href="#details">More...</a></p>
 

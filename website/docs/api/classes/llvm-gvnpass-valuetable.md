@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueTable` Class Reference
+# `ValueTable` Class
 
 <p>This class holds the mapping between values and value numbers. <a href="#details">More...</a></p>
 

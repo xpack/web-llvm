@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64StackTaggingPreRA` Class Reference
+# `AArch64StackTaggingPreRA` Class
 
 
 

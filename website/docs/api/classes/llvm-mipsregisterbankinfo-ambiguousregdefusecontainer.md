@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AmbiguousRegDefUseContainer` Class Reference
+# `AmbiguousRegDefUseContainer` Class
 
 <p>Some generic instructions have operands that can be mapped to either fprb or gprb e.g. <a href="#details">More...</a></p>
 

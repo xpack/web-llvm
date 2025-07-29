@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FortifiedLibCallSimplifier` Class Reference
+# `FortifiedLibCallSimplifier` Class
 
 <p>This class implements simplifications for calls to fortified library functions (__st*cpy_chk, __memcpy_chk, __memmove_chk, __memset_chk), to, when possible, replace them with their non-checking counterparts. <a href="#details">More...</a></p>
 

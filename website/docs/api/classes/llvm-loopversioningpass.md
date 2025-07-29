@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVersioningPass` Class Reference
+# `LoopVersioningPass` Class
 
 <p>Expose <a href="/web-llvm/docs/api/classes/llvm/loopversioning">LoopVersioning</a> as a pass. <a href="#details">More...</a></p>
 

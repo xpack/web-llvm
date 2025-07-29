@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileWithFixedStatus` Class Reference
+# `FileWithFixedStatus` Class
 
 <p>Provide a file wrapper with an overriden status. <a href="#details">More...</a></p>
 

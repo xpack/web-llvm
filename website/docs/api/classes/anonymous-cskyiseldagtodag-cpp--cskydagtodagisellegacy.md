@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYDAGToDAGISelLegacy` Class Reference
+# `CSKYDAGToDAGISelLegacy` Class
 
 
 

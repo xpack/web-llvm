@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineEditor.cpp` File Reference
+# `LineEditor.cpp` File
 
 
 

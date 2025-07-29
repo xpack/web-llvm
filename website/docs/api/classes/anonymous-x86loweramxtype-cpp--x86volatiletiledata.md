@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86VolatileTileData` Class Reference
+# `X86VolatileTileData` Class
 
 
 

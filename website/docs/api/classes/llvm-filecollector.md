@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCollector` Class Reference
+# `FileCollector` Class
 
 <p>Captures file system interaction and generates data to be later replayed with the RedirectingFileSystem. <a href="#details">More...</a></p>
 

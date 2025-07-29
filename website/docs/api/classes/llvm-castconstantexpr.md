@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastConstantExpr` Class Reference
+# `CastConstantExpr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/castconstantexpr">CastConstantExpr</a> - This class is private to <a href="/web-llvm/docs/api/files/lib/lib/ir/constants-cpp">Constants.cpp</a>, and is used behind the scenes to implement cast constant exprs. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Remark.h` File Reference
+# `Remark.h` File
 
 
 

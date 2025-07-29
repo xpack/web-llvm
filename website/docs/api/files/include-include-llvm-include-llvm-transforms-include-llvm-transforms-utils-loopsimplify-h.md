@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSimplify.h` File Reference
+# `LoopSimplify.h` File
 
 
 

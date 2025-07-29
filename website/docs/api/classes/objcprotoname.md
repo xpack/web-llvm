@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCProtoName` Class Reference
+# `ObjCProtoName` Class
 
 
 

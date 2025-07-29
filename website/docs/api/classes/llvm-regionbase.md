@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionBase` Class Template Reference
+# `RegionBase` Class Template
 
 <p>A single entry single exit <a href="/web-llvm/docs/api/classes/llvm/region">Region</a>. <a href="#details">More...</a></p>
 

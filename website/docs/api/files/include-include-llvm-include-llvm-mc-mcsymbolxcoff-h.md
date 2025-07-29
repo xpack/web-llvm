@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolXCOFF.h` File Reference
+# `MCSymbolXCOFF.h` File
 
 
 

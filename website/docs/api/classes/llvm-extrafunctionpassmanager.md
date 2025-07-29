@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraFunctionPassManager` Class Template Reference
+# `ExtraFunctionPassManager` Class Template
 
 <p>A pass manager to run a set of extra function passes if the <a href="/web-llvm/docs/api/structs/llvm/shouldrunextrapasses">ShouldRunExtraPasses</a> marker analysis is present. <a href="#details">More...</a></p>
 

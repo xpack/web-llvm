@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Dispatcher` Class Reference
+# `Dispatcher` Class
 
 <p>Dispatches calls to runWrapper. <a href="#details">More...</a></p>
 

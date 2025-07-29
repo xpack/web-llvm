@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotionLegacy` Class Reference
+# `TypePromotionLegacy` Class
 
 
 

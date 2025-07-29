@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleIRBuilder` Class Reference
+# `ShuffleIRBuilder` Class
 
 
 

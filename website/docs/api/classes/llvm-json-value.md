@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Value` Class Reference
+# `Value` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a> is an JSON value of unknown type. <a href="#details">More...</a></p>
 

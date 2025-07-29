@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfCallFrameFragment` Class Reference
+# `MCDwarfCallFrameFragment` Class
 
 
 

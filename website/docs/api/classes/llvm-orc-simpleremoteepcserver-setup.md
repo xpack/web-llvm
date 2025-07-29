@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Setup` Class Reference
+# `Setup` Class
 
 
 

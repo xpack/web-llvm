@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIExpression` Class Reference
+# `DIExpression` Class
 
 <p>DWARF expression. <a href="#details">More...</a></p>
 

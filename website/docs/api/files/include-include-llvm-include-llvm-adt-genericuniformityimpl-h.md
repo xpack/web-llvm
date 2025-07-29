@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericUniformityImpl.h` File Reference
+# `GenericUniformityImpl.h` File
 
 <p>Implementation of uniformity analysis. <a href="#details">More...</a></p>
 

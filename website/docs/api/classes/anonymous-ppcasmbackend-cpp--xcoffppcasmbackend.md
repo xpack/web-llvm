@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFPPCAsmBackend` Class Reference
+# `XCOFFPPCAsmBackend` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiValuesAnalysis` Class Reference
+# `PhiValuesAnalysis` Class
 
 <p>The analysis pass which yields a <a href="/web-llvm/docs/api/classes/llvm/phivalues">PhiValues</a>. <a href="#details">More...</a></p>
 

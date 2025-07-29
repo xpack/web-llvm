@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniversalWriter` Class Reference
+# `UniversalWriter` Class
 
 
 

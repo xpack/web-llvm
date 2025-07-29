@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListInit` Class Reference
+# `ListInit` Class
 
 <p>[AL, AH, CL] - Represent a list of defs <a href="#details">More...</a></p>
 

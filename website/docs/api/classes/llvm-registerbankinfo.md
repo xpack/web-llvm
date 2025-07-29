@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterBankInfo` Class Reference
+# `RegisterBankInfo` Class
 
 <p>Holds all the information related to register banks. <a href="#details">More...</a></p>
 

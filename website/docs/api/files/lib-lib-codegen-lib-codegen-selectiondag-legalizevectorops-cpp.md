@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeVectorOps.cpp` File Reference
+# `LegalizeVectorOps.cpp` File
 
 
 

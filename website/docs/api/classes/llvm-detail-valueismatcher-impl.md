@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Impl` Class Template Reference
+# `Impl` Class Template
 
 
 

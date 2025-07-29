@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIAnnotateControlFlow` Class Reference
+# `SIAnnotateControlFlow` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleHasher` Class Reference
+# `ModuleHasher` Class
 
 
 

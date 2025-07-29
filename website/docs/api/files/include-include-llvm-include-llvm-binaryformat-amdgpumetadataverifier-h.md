@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMetadataVerifier.h` File Reference
+# `AMDGPUMetadataVerifier.h` File
 
 <p>This is a verifier for AMDGPU HSA metadata, which can verify both well-typed metadata and untyped metadata. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuloSchedule.cpp` File Reference
+# `ModuloSchedule.cpp` File
 
 
 

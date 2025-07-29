@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtTSPImpl` Class Reference
+# `ExtTSPImpl` Class
 
 <p>The implementation of the ExtTSP algorithm. <a href="#details">More...</a></p>
 

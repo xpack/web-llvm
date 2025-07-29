@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Allocator.h` File Reference
+# `Allocator.h` File
 
 <p>This file defines the BumpPtrAllocator interface. <a href="#details">More...</a></p>
 

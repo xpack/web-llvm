@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetELFStreamer` Class Reference
+# `VETargetELFStreamer` Class
 
 
 

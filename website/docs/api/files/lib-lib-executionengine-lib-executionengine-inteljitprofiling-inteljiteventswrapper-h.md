@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelJITEventsWrapper.h` File Reference
+# `IntelJITEventsWrapper.h` File
 
 
 

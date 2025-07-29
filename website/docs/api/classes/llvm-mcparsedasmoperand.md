@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCParsedAsmOperand` Class Reference
+# `MCParsedAsmOperand` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcparsedasmoperand">MCParsedAsmOperand</a> - This abstract class represents a source-level assembly instruction operand. <a href="#details">More...</a></p>
 

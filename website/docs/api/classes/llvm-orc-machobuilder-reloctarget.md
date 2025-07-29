@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocTarget` Class Reference
+# `RelocTarget` Class
 
 
 

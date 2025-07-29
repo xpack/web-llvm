@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleDebugInfoPrinter.h` File Reference
+# `ModuleDebugInfoPrinter.h` File
 
 
 

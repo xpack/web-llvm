@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuffixTree` Class Reference
+# `SuffixTree` Class
 
 
 

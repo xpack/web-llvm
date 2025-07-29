@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGAnalysis` Class Reference
+# `DDGAnalysis` Class
 
 <p>Analysis pass that builds the DDG for a loop. <a href="#details">More...</a></p>
 

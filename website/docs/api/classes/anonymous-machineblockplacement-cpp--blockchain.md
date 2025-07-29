@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockChain` Class Reference
+# `BlockChain` Class
 
 <p>A chain of blocks which will be laid out contiguously. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFCoreSharedInfo` Class Reference
+# `BPFCoreSharedInfo` Class
 
 
 

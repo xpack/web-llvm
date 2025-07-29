@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocScore.h` File Reference
+# `RegAllocScore.h` File
 
 
 

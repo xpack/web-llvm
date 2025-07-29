@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPredication` Class Reference
+# `LoopPredication` Class
 
 
 

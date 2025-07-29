@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OnDiskChainedHashTable` Class Template Reference
+# `OnDiskChainedHashTable` Class Template
 
 <p>Provides lookup on an on disk hash table. <a href="#details">More...</a></p>
 

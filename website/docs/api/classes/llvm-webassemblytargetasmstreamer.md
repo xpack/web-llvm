@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetAsmStreamer` Class Reference
+# `WebAssemblyTargetAsmStreamer` Class
 
 <p>This part is for ascii assembly output. <a href="#details">More...</a></p>
 

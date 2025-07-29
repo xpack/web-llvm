@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNCreateVOPD` Class Reference
+# `GCNCreateVOPD` Class
 
 
 

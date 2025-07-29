@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegStackify` Class Reference
+# `WebAssemblyRegStackify` Class
 
 
 

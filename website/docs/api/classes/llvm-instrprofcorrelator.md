@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfCorrelator` Class Reference
+# `InstrProfCorrelator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelator">InstrProfCorrelator</a> - A base class used to create raw instrumentation data to their functions. <a href="#details">More...</a></p>
 

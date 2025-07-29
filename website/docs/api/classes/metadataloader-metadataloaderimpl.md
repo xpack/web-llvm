@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataLoaderImpl` Class Reference
+# `MetadataLoaderImpl` Class
 
 
 

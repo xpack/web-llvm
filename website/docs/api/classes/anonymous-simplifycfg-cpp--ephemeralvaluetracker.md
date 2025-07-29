@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EphemeralValueTracker` Class Reference
+# `EphemeralValueTracker` Class
 
 <p>Track ephemeral values, which should be ignored for cost-modelling purposes. <a href="#details">More...</a></p>
 

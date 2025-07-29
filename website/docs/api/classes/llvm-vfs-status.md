@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Status` Class Reference
+# `Status` Class
 
 <p>The result of a <span class="doxyComputerOutput">status</span> operation. <a href="#details">More...</a></p>
 

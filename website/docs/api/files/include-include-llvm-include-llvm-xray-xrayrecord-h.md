@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XRayRecord.h` File Reference
+# `XRayRecord.h` File
 
 
 

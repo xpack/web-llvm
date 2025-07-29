@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DispatchStage.h` File Reference
+# `DispatchStage.h` File
 
 <p>This file models the dispatch component of an instruction pipeline. <a href="#details">More...</a></p>
 

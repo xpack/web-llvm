@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MVETPAndVPTOptimisations` Class Reference
+# `MVETPAndVPTOptimisations` Class
 
 
 

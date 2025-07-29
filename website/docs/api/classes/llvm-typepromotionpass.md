@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotionPass` Class Reference
+# `TypePromotionPass` Class
 
 
 

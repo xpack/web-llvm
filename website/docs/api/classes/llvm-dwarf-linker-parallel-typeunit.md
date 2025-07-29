@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeUnit` Class Reference
+# `TypeUnit` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/type">Type</a> Unit is used to represent an artificial compilation unit which keeps all type information. <a href="#details">More...</a></p>
 

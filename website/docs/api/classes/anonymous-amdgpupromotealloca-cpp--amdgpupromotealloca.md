@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPromoteAlloca` Class Reference
+# `AMDGPUPromoteAlloca` Class
 
 
 

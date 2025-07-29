@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringSwitch.h` File Reference
+# `StringSwitch.h` File
 
 <p>This file implements the StringSwitch template, which mimics a switch() statement whose cases are string literals. <a href="#details">More...</a></p>
 

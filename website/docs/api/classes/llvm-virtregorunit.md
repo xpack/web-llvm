@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegOrUnit` Class Reference
+# `VirtRegOrUnit` Class
 
 <p>Wrapper class representing a virtual register or register unit. <a href="#details">More...</a></p>
 

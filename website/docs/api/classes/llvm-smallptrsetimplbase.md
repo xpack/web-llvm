@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPtrSetImplBase` Class Reference
+# `SmallPtrSetImplBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallptrsetimplbase">SmallPtrSetImplBase</a> - This is the common code shared among all the <a href="/web-llvm/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;&gt;</a>'s, which is almost everything. <a href="#details">More...</a></p>
 

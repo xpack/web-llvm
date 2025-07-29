@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LexicalScope` Class Reference
+# `LexicalScope` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/lexicalscope">LexicalScope</a> - This class is used to track scope information. <a href="#details">More...</a></p>
 

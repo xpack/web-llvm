@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCTargetExpr` Class Reference
+# `MCTargetExpr` Class
 
 <p>This is an extension point for target-specific <a href="/web-llvm/docs/api/classes/llvm/mcexpr">MCExpr</a> subclasses to implement. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncDataT` Class Template Reference
+# `FuncDataT` Class Template
 
 
 

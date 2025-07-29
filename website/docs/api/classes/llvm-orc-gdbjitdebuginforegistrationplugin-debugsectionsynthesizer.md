@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSectionSynthesizer` Class Reference
+# `DebugSectionSynthesizer` Class
 
 
 

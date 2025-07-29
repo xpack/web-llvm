@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeRegion` Class Reference
+# `TimeRegion` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/timeregion">TimeRegion</a> class is used as a helper class to call the startTimer() and stopTimer() methods of the <a href="/web-llvm/docs/api/classes/llvm/timer">Timer</a> class. <a href="#details">More...</a></p>
 

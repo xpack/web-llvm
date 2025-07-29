@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIGlobalVariable` Class Reference
+# `DIGlobalVariable` Class
 
 <p>Global variables. <a href="#details">More...</a></p>
 

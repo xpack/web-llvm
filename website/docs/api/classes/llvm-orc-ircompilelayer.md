@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRCompileLayer` Class Reference
+# `IRCompileLayer` Class
 
 
 

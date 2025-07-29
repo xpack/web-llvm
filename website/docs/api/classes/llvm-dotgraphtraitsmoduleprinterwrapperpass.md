@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DOTGraphTraitsModulePrinterWrapperPass` Class Template Reference
+# `DOTGraphTraitsModulePrinterWrapperPass` Class Template
 
 
 

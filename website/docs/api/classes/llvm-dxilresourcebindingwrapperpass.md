@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceBindingWrapperPass` Class Reference
+# `DXILResourceBindingWrapperPass` Class
 
 
 

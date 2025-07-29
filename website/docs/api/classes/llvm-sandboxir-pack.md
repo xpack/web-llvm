@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Pack` Class Reference
+# `Pack` Class
 
 
 

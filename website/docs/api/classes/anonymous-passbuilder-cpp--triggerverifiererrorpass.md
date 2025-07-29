@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TriggerVerifierErrorPass` Class Reference
+# `TriggerVerifierErrorPass` Class
 
 
 

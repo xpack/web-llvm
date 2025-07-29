@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86PreTileConfig` Class Reference
+# `X86PreTileConfig` Class
 
 
 

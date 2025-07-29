@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetLowering` Class Reference
+# `NVPTXTargetLowering` Class
 
 
 

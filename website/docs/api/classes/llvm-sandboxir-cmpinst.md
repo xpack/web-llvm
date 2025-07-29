@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpInst` Class Reference
+# `CmpInst` Class
 
 
 

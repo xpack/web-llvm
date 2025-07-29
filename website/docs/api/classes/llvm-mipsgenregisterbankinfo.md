@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsGenRegisterBankInfo` Class Reference
+# `MipsGenRegisterBankInfo` Class
 
 
 

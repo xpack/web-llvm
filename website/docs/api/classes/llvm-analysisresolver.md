@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisResolver` Class Reference
+# `AnalysisResolver` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/analysisresolver">AnalysisResolver</a> - Simple interface used by <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> objects to pull all analysis information out of pass manager that is responsible to manage the pass. <a href="#details">More...</a></p>
 

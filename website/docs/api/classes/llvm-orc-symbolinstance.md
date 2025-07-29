@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolInstance` Class Reference
+# `SymbolInstance` Class
 
 <p>A definition of a Symbol within a <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib">JITDylib</a>. <a href="#details">More...</a></p>
 

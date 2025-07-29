@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryInstructionDependences` Class Reference
+# `MemoryInstructionDependences` Class
 
 <p>For each memory instruction, this class maintains difference of the number of unsafe dependences that start out from this instruction minus those that end here. <a href="#details">More...</a></p>
 

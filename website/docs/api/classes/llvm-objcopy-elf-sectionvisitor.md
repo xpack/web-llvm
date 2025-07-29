@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionVisitor` Class Reference
+# `SectionVisitor` Class
 
 
 

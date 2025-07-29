@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryInstrProfCorrelator` Class Template Reference
+# `BinaryInstrProfCorrelator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/binaryinstrprofcorrelator">BinaryInstrProfCorrelator</a> - A child of <a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelatorimpl">InstrProfCorrelatorImpl</a> that takes an object file as input to correlate profiles. <a href="#details">More...</a></p>
 

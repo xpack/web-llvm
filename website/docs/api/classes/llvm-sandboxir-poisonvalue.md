@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoisonValue` Class Reference
+# `PoisonValue` Class
 
 
 

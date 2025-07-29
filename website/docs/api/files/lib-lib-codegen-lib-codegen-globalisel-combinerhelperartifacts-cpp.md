@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerHelperArtifacts.cpp` File Reference
+# `CombinerHelperArtifacts.cpp` File
 
 
 

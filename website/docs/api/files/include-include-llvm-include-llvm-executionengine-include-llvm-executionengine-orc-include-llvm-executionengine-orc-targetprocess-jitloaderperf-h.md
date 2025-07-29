@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLoaderPerf.h` File Reference
+# `JITLoaderPerf.h` File
 
 
 

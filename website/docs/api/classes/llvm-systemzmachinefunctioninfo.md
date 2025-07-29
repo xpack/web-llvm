@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMachineFunctionInfo` Class Reference
+# `SystemZMachineFunctionInfo` Class
 
 
 

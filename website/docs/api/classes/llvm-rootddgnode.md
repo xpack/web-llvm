@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RootDDGNode` Class Reference
+# `RootDDGNode` Class
 
 <p>Subclass of <a href="/web-llvm/docs/api/classes/llvm/ddgnode">DDGNode</a> representing the root node of the graph. <a href="#details">More...</a></p>
 

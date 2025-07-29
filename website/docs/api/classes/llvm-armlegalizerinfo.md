@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLegalizerInfo` Class Reference
+# `ARMLegalizerInfo` Class
 
 
 

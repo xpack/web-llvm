@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDSimpleRemoteEPCTransport` Class Reference
+# `FDSimpleRemoteEPCTransport` Class
 
 <p>Uses read/write on FileDescriptors for transport. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EvalResult` Class Reference
+# `EvalResult` Class
 
 
 

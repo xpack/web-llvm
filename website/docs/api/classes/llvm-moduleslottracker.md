@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSlotTracker` Class Reference
+# `ModuleSlotTracker` Class
 
 <p>Manage lifetime of a slot tracker for printing IR. <a href="#details">More...</a></p>
 

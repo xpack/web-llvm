@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphUpdater` Class Reference
+# `CallGraphUpdater` Class
 
 <p>Wrapper to unify "old style" <a href="/web-llvm/docs/api/classes/llvm/callgraph">CallGraph</a> and "new style" <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph">LazyCallGraph</a>. <a href="#details">More...</a></p>
 

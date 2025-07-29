@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressPool` Class Reference
+# `AddressPool` Class
 
 
 

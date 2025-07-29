@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVTypeEnumerator` Class Reference
+# `LVTypeEnumerator` Class
 
 
 

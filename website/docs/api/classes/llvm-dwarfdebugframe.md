@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugFrame` Class Reference
+# `DWARFDebugFrame` Class
 
 <p>A parsed .debug_frame or .eh_frame section. <a href="#details">More...</a></p>
 

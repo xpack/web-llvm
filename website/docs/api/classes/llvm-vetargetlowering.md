@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetLowering` Class Reference
+# `VETargetLowering` Class
 
 
 

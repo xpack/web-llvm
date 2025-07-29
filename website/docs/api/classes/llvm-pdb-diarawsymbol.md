@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIARawSymbol` Class Reference
+# `DIARawSymbol` Class
 
 
 

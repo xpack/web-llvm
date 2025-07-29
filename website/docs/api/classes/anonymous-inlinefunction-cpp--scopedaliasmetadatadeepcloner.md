@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedAliasMetadataDeepCloner` Class Reference
+# `ScopedAliasMetadataDeepCloner` Class
 
 <p>Utility for cloning !noalias and !alias.scope metadata. <a href="#details">More...</a></p>
 

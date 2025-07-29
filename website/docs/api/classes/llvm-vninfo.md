@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VNInfo` Class Reference
+# `VNInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vninfo">VNInfo</a> - <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> Number Information. <a href="#details">More...</a></p>
 

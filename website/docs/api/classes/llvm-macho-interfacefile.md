@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterfaceFile` Class Reference
+# `InterfaceFile` Class
 
 <p>Defines the interface file. <a href="#details">More...</a></p>
 

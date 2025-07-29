@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeHashing.h` File Reference
+# `TypeHashing.h` File
 
 
 

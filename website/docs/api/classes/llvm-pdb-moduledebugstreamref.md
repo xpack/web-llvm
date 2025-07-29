@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleDebugStreamRef` Class Reference
+# `ModuleDebugStreamRef` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericToNVVM` Class Reference
+# `GenericToNVVM` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64_COFFTargetObjectFile` Class Reference
+# `AArch64_COFFTargetObjectFile` Class
 
 <p>This implementation is used for <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> targets. <a href="#details">More...</a></p>
 

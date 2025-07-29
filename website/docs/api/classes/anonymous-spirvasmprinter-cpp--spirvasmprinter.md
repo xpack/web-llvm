@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVAsmPrinter` Class Reference
+# `SPIRVAsmPrinter` Class
 
 
 

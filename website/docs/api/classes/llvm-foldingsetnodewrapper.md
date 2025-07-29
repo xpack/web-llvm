@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetNodeWrapper` Class Template Reference
+# `FoldingSetNodeWrapper` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetnodewrapper">FoldingSetNodeWrapper</a> - This template class is used to "wrap" arbitrary types in an enclosing object so that they can be inserted into FoldingSets. <a href="#details">More...</a></p>
 

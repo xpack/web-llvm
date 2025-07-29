@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgRecordParamRef` Class Template Reference
+# `DbgRecordParamRef` Class Template
 
 <p>A typed tracking <a href="/web-llvm/docs/api/classes/llvm/mdnode">MDNode</a> reference that does not require a definition for its parameter type. <a href="#details">More...</a></p>
 

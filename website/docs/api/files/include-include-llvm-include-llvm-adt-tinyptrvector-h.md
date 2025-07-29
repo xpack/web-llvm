@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TinyPtrVector.h` File Reference
+# `TinyPtrVector.h` File
 
 
 

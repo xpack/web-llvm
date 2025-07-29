@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTableBuilder.h` File Reference
+# `StringTableBuilder.h` File
 
 
 

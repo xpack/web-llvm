@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmLexerSkipSpaceRAII` Class Reference
+# `AsmLexerSkipSpaceRAII` Class
 
 
 

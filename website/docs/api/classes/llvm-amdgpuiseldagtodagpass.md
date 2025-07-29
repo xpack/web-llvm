@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUISelDAGToDAGPass` Class Reference
+# `AMDGPUISelDAGToDAGPass` Class
 
 
 

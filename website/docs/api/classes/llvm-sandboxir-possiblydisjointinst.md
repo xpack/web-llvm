@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PossiblyDisjointInst` Class Reference
+# `PossiblyDisjointInst` Class
 
 <p>An or instruction, which can be marked as "disjoint", indicating that the inputs don't have a 1 in the same bit position. <a href="#details">More...</a></p>
 

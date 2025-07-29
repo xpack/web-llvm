@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64Subtarget` Class Reference
+# `AArch64Subtarget` Class
 
 
 

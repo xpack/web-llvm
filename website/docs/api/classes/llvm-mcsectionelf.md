@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionELF` Class Reference
+# `MCSectionELF` Class
 
 <p>This represents a section on linux, lots of unix variants and some bare metal systems. <a href="#details">More...</a></p>
 

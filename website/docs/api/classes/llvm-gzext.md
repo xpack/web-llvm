@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GZext` Class Reference
+# `GZext` Class
 
 <p>Represents a zext. <a href="#details">More...</a></p>
 

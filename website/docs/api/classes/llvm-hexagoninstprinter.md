@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonInstPrinter` Class Reference
+# `HexagonInstPrinter` Class
 
 <p>Prints bundles as a newline separated list of individual instructions Duplexes are separated by a vertical tab \v character A trailing line includes bundle properties such as endloop0/1. <a href="#details">More...</a></p>
 

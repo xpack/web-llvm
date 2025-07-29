@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIATable.cpp` File Reference
+# `DIATable.cpp` File
 
 
 

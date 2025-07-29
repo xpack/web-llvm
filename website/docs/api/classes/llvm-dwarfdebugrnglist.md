@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugRnglist` Class Reference
+# `DWARFDebugRnglist` Class
 
 <p>A class representing a single rangelist. <a href="#details">More...</a></p>
 

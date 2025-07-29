@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTargetMachine` Class Reference
+# `HexagonTargetMachine` Class
 
 
 

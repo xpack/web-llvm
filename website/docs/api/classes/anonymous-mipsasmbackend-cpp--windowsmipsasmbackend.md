@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsMipsAsmBackend` Class Reference
+# `WindowsMipsAsmBackend` Class
 
 
 

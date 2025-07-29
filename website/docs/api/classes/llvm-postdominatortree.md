@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDominatorTree` Class Reference
+# `PostDominatorTree` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a> Class - Concrete subclass of <a href="/web-llvm/docs/api/classes/llvm/dominatortree">DominatorTree</a> that is used to compute the post-dominator tree. <a href="#details">More...</a></p>
 

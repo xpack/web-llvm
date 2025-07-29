@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DetectDeadLanes.h` File Reference
+# `DetectDeadLanes.h` File
 
 <p>Analysis that tracks defined/used subregister lanes across COPY instructions and instructions that get lowered to a COPY (PHI, REG_SEQUENCE, INSERT_SUBREG, EXTRACT_SUBREG). <a href="#details">More...</a></p>
 

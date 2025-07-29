@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectForArch` Class Reference
+# `ObjectForArch` Class
 
 
 

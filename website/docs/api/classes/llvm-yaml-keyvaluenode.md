@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KeyValueNode` Class Reference
+# `KeyValueNode` Class
 
 <p>A key and value pair. <a href="#details">More...</a></p>
 

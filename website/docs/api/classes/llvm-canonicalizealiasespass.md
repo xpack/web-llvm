@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanonicalizeAliasesPass` Class Reference
+# `CanonicalizeAliasesPass` Class
 
 <p>Simple pass that canonicalizes aliases. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionParser` Class Reference
+# `SectionParser` Class
 
 <p>Helper to allow for parsing of an entire .debug_line section in sequence. <a href="#details">More...</a></p>
 

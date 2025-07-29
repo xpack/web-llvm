@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GEPOperator` Class Reference
+# `GEPOperator` Class
 
 
 

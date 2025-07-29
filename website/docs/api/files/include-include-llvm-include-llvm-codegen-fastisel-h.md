@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastISel.h` File Reference
+# `FastISel.h` File
 
 <p>This file defines the FastISel class. <a href="#details">More...</a></p>
 

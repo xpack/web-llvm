@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelinerLoopInfo` Class Reference
+# `PipelinerLoopInfo` Class
 
 <p>Object returned by analyzeLoopForPipelining. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantAggregateZero` Class Reference
+# `ConstantAggregateZero` Class
 
 <p>All zero aggregate value. <a href="#details">More...</a></p>
 

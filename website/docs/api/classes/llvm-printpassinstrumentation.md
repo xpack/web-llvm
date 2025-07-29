@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintPassInstrumentation` Class Reference
+# `PrintPassInstrumentation` Class
 
 
 

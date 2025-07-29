@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Linker.h` File Reference
+# `Linker.h` File
 
 
 

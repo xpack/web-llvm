@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVectorLoopCarriedReuseLegacyPass` Class Reference
+# `HexagonVectorLoopCarriedReuseLegacyPass` Class
 
 
 

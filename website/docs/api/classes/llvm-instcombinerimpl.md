@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombinerImpl` Class Reference
+# `InstCombinerImpl` Class
 
 
 

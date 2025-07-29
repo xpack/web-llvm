@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSizeInst` Class Reference
+# `CoroSizeInst` Class
 
 <p>This represents the llvm.coro.size instruction. <a href="#details">More...</a></p>
 

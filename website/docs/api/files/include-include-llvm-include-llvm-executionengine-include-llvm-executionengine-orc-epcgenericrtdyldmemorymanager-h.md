@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCGenericRTDyldMemoryManager.h` File Reference
+# `EPCGenericRTDyldMemoryManager.h` File
 
 
 

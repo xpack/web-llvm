@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecycledInstErr` Class Reference
+# `RecycledInstErr` Class
 
 
 

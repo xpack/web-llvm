@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntryStorage` Class Template Reference
+# `StringMapEntryStorage` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringmapentrystorage">StringMapEntryStorage</a> - Holds the value in a <a href="/web-llvm/docs/api/classes/llvm/stringmapentry">StringMapEntry</a>. <a href="#details">More...</a></p>
 

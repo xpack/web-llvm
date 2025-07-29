@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkingSymbolResolver` Class Reference
+# `LinkingSymbolResolver` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetImpl` Class Template Reference
+# `FoldingSetImpl` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetimpl">FoldingSetImpl</a> - An implementation detail that lets us share code between <a href="/web-llvm/docs/api/classes/llvm/foldingset">FoldingSet</a> and <a href="/web-llvm/docs/api/classes/llvm/contextualfoldingset">ContextualFoldingSet</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraLoopPassManager` Class Template Reference
+# `ExtraLoopPassManager` Class Template
 
 <p>A pass manager to run a set of extra loop passes if the MarkerTy analysis is present. <a href="#details">More...</a></p>
 

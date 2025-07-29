@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterPassParser` Class Template Reference
+# `RegisterPassParser` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/registerpassparser">RegisterPassParser</a> class - Handle the addition of new machine passes. <a href="#details">More...</a></p>
 

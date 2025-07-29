@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelfExecutorProcessControl` Class Reference
+# `SelfExecutorProcessControl` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> implementation targeting the current process. <a href="#details">More...</a></p>
 

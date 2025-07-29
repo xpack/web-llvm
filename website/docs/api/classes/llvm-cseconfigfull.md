@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSEConfigFull` Class Reference
+# `CSEConfigFull` Class
 
 
 

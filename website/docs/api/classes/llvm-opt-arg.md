@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Arg` Class Reference
+# `Arg` Class
 
 <p>A concrete instance of a particular driver option. <a href="#details">More...</a></p>
 

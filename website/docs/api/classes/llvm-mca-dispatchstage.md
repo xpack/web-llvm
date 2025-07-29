@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DispatchStage` Class Reference
+# `DispatchStage` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueIsMatcher` Class Template Reference
+# `ValueIsMatcher` Class Template
 
 
 

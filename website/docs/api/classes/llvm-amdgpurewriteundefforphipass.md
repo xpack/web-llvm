@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURewriteUndefForPHIPass` Class Reference
+# `AMDGPURewriteUndefForPHIPass` Class
 
 
 

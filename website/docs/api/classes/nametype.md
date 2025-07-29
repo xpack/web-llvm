@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameType` Class Reference
+# `NameType` Class
 
 
 

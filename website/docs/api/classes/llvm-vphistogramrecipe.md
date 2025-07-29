@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPHistogramRecipe` Class Reference
+# `VPHistogramRecipe` Class
 
 <p>A recipe representing a sequence of load -&gt; update -&gt; store as part of a histogram operation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHContGuardCatchret.cpp` File Reference
+# `EHContGuardCatchret.cpp` File
 
 <p>This file contains a machine function pass to insert a symbol before each valid catchret target and store this in the <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>'s CatchRetTargets vector. <a href="#details">More...</a></p>
 

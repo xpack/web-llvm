@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeFunctionSymbol.h` File Reference
+# `NativeFunctionSymbol.h` File
 
 
 

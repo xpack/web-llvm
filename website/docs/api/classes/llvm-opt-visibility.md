@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Visibility` Class Reference
+# `Visibility` Class
 
 <p>Helper for overload resolution while transitioning from FlagsToInclude/FlagsToExclude APIs to VisibilityMask APIs. <a href="#details">More...</a></p>
 

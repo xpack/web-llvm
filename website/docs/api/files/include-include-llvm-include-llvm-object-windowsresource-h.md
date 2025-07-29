@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsResource.h` File Reference
+# `WindowsResource.h` File
 
 
 

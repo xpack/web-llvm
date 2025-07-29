@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumTables.h` File Reference
+# `DIAEnumTables.h` File
 
 
 

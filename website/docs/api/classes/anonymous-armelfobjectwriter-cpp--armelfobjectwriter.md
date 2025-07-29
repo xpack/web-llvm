@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMELFObjectWriter` Class Reference
+# `ARMELFObjectWriter` Class
 
 
 

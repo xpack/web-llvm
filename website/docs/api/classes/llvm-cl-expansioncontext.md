@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpansionContext` Class Reference
+# `ExpansionContext` Class
 
 <p>Contains options that control response file expansion. <a href="#details">More...</a></p>
 

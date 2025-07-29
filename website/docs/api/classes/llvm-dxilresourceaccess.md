@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceAccess` Class Reference
+# `DXILResourceAccess` Class
 
 
 

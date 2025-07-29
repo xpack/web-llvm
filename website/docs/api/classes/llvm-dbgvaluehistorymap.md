@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgValueHistoryMap` Class Reference
+# `DbgValueHistoryMap` Class
 
 <p>For each user variable, keep a list of instruction ranges where this variable is accessible. <a href="#details">More...</a></p>
 

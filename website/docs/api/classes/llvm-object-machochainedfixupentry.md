@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOChainedFixupEntry` Class Reference
+# `MachOChainedFixupEntry` Class
 
 
 

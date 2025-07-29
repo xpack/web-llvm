@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCodeEmitter` Class Reference
+# `MCCodeEmitter` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mccodeemitter">MCCodeEmitter</a> - Generic instruction encoding interface. <a href="#details">More...</a></p>
 

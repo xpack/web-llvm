@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Reader` Class Reference
+# `Reader` Class
 
 <p>This class can be used to read a Symtab and Strtab produced by <a href="/web-llvm/docs/api/namespaces/llvm/irsymtab/#a8af0e7caf92ff2e049dc40eceafc15be">irsymtab::build</a>. <a href="#details">More...</a></p>
 

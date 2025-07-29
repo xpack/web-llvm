@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalityPredicates.cpp` File Reference
+# `LegalityPredicates.cpp` File
 
 
 

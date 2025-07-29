@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reverse_iterator` Class Reference
+# `reverse_iterator` Class
 
 <p>Reverse path iterator. <a href="#details">More...</a></p>
 

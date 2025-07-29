@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafeStack` Class Reference
+# `SafeStack` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/anonymous-safestack-cpp-/safestack">SafeStack</a> pass splits the stack of each function into the safe stack, which is only accessed through memory safe dereferences (as determined statically), and the unsafe stack, which contains all local variables that are accessed in ways that we can't prove to be safe. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZHazardRecognizer` Class Reference
+# `SystemZHazardRecognizer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/systemzhazardrecognizer">SystemZHazardRecognizer</a> maintains the state for one MBB during scheduling. <a href="#details">More...</a></p>
 

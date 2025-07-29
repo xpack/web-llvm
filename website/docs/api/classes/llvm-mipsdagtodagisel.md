@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsDAGToDAGISel` Class Reference
+# `MipsDAGToDAGISel` Class
 
 
 

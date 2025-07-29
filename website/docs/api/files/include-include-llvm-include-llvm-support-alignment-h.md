@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Alignment.h` File Reference
+# `Alignment.h` File
 
 
 

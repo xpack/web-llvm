@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMConstantPoolSymbol` Class Reference
+# `ARMConstantPoolSymbol` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/armconstantpoolsymbol">ARMConstantPoolSymbol</a> - ARM-specific constantpool values for external symbols. <a href="#details">More...</a></p>
 

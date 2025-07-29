@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SequencePrinter` Class Template Reference
+# `SequencePrinter` Class Template
 
 
 

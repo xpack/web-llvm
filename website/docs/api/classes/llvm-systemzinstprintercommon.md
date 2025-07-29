@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZInstPrinterCommon` Class Reference
+# `SystemZInstPrinterCommon` Class
 
 
 

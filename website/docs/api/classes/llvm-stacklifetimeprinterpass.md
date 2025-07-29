@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackLifetimePrinterPass` Class Reference
+# `StackLifetimePrinterPass` Class
 
 <p>Printer pass for testing. <a href="#details">More...</a></p>
 

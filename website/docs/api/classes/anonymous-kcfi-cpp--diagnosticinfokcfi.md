@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoKCFI` Class Reference
+# `DiagnosticInfoKCFI` Class
 
 
 

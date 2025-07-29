@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DITypeRefArray` Class Reference
+# `DITypeRefArray` Class
 
 
 

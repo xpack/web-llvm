@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scalarizer.h` File Reference
+# `Scalarizer.h` File
 
 <p>This pass converts vector operations into scalar operations (or, optionally, operations on smaller vector widths), in order to expose optimization opportunities on the individual scalar operations. <a href="#details">More...</a></p>
 

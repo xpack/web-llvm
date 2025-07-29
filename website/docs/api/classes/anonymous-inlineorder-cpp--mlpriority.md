@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLPriority` Class Reference
+# `MLPriority` Class
 
 
 

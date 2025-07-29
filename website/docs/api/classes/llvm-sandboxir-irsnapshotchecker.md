@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSnapshotChecker` Class Reference
+# `IRSnapshotChecker` Class
 
 <p>A class that saves hashes and textual IR snapshots of functions in a SandboxIR <a href="/web-llvm/docs/api/classes/llvm/sandboxir/context">Context</a>, and does hash comparison when <span class="doxyComputerOutput">expectNoDiff</span> is called. <a href="#details">More...</a></p>
 

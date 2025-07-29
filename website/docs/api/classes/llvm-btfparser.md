@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFParser` Class Reference
+# `BTFParser` Class
 
 
 

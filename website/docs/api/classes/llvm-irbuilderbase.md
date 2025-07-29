@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRBuilderBase` Class Reference
+# `IRBuilderBase` Class
 
 <p>Common base class shared among various IRBuilders. <a href="#details">More...</a></p>
 

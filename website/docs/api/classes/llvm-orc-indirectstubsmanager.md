@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectStubsManager` Class Reference
+# `IndirectStubsManager` Class
 
 <p>Base class for managing collections of named indirect stubs. <a href="#details">More...</a></p>
 

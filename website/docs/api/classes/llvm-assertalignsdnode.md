@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssertAlignSDNode` Class Reference
+# `AssertAlignSDNode` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> that records if a register contains a value that is guaranteed to be aligned accordingly. <a href="#details">More...</a></p>
 

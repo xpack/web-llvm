@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_sha1_ostream.h` File Reference
+# `raw_sha1_ostream.h` File
 
 
 

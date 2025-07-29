@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinInstrCountEnsemble` Class Reference
+# `MinInstrCountEnsemble` Class
 
 
 

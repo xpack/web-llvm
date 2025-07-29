@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncrementalSourceMgr` Class Reference
+# `IncrementalSourceMgr` Class
 
 <p>An implementation of <em><a href="/web-llvm/docs/api/structs/llvm/mca/sourcemgr">SourceMgr</a></em> that allows users to add new instructions incrementally / dynamically. <a href="#details">More...</a></p>
 

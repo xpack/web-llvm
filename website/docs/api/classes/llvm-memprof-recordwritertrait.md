@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordWriterTrait` Class Reference
+# `RecordWriterTrait` Class
 
 
 

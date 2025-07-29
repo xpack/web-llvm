@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DummyPriorityAdvisor` Class Reference
+# `DummyPriorityAdvisor` Class
 
 <p>Stupid priority advisor which just enqueues in virtual register number order, for debug purposes only. <a href="#details">More...</a></p>
 

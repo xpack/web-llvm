@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonSplitDoubleRegs` Class Reference
+# `HexagonSplitDoubleRegs` Class
 
 
 

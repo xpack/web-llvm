@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputBuffer` Class Reference
+# `OutputBuffer` Class
 
 
 

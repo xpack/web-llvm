@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMGenInstrInfo` Class Reference
+# `ARMGenInstrInfo` Class
 
 
 

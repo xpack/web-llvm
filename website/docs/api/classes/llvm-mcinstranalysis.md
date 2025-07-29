@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstrAnalysis` Class Reference
+# `MCInstrAnalysis` Class
 
 
 

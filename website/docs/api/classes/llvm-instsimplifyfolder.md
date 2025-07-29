@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstSimplifyFolder` Class Reference
+# `InstSimplifyFolder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instsimplifyfolder">InstSimplifyFolder</a> - <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> InstructionSimplify to fold operations to existing values. <a href="#details">More...</a></p>
 

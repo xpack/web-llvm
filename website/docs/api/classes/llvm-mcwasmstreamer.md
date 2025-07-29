@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCWasmStreamer` Class Reference
+# `MCWasmStreamer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareUnit` Class Reference
+# `HardwareUnit` Class
 
 
 

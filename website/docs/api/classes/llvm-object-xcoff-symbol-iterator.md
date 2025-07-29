@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `xcoff_symbol_iterator` Class Reference
+# `xcoff_symbol_iterator` Class
 
 
 

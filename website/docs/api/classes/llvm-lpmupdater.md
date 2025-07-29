@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LPMUpdater` Class Reference
+# `LPMUpdater` Class
 
 <p>This class provides an interface for updating the loop pass manager based on mutations to the loop nest. <a href="#details">More...</a></p>
 

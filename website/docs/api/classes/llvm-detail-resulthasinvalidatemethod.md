@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResultHasInvalidateMethod` Class Template Reference
+# `ResultHasInvalidateMethod` Class Template
 
 <p>SFINAE metafunction for computing whether <span class="doxyComputerOutput">ResultT</span> provides an <span class="doxyComputerOutput">invalidate</span> member function. <a href="#details">More...</a></p>
 

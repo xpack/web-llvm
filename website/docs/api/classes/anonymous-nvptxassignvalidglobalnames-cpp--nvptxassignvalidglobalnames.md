@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAssignValidGlobalNames` Class Reference
+# `NVPTXAssignValidGlobalNames` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-nvptxassignvalidglobalnames-cpp-/nvptxassignvalidglobalnames">NVPTXAssignValidGlobalNames</a>. <a href="#details">More...</a></p>
 

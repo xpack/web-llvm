@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceMDWrapper` Class Reference
+# `DXILResourceMDWrapper` Class
 
 <p>The legacy pass manager's analysis pass to compute DXIL resource information. <a href="#details">More...</a></p>
 

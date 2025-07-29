@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TLSDescTableManager_ELF_aarch64` Class Reference
+# `TLSDescTableManager_ELF_aarch64` Class
 
 
 

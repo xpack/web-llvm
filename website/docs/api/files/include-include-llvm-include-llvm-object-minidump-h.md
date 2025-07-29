@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Minidump.h` File Reference
+# `Minidump.h` File
 
 
 

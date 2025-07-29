@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StaticLibraryDefinitionGenerator` Class Reference
+# `StaticLibraryDefinitionGenerator` Class
 
 <p>A utility class to expose symbols from a static library. <a href="#details">More...</a></p>
 

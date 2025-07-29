@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `basic_file_status` Class Reference
+# `basic_file_status` Class
 
 <p>Represents the result of a call to directory_iterator::status(). <a href="#details">More...</a></p>
 

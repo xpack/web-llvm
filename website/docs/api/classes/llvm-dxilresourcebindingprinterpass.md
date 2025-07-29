@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceBindingPrinterPass` Class Reference
+# `DXILResourceBindingPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/dxilresourcebindinganalysis">DXILResourceBindingAnalysis</a></span> results. <a href="#details">More...</a></p>
 

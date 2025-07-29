@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableSetRef` Class Template Reference
+# `ImmutableSetRef` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostPriority` Class Reference
+# `CostPriority` Class
 
 
 

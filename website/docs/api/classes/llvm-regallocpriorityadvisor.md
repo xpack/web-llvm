@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocPriorityAdvisor` Class Reference
+# `RegAllocPriorityAdvisor` Class
 
 <p>Interface to the priority advisor, which is responsible for prioritizing live ranges. <a href="#details">More...</a></p>
 

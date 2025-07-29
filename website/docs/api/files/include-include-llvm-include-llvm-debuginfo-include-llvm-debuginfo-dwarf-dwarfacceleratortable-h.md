@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFAcceleratorTable.h` File Reference
+# `DWARFAcceleratorTable.h` File
 
 
 

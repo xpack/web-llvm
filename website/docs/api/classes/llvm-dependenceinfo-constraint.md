@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Constraint` Class Reference
+# `Constraint` Class
 
 <p>Constraint - This private class represents a constraint, as defined in the paper. <a href="#details">More...</a></p>
 

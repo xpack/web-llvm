@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPCmpIntrinsic` Class Reference
+# `VPCmpIntrinsic` Class
 
 
 

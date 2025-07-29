@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SExtBuilder` Class Reference
+# `SExtBuilder` Class
 
 <p>Build a sign extension instruction. <a href="#details">More...</a></p>
 

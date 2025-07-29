@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmWriter` Class Reference
+# `WasmWriter` Class
 
 <p>This parses a yaml stream that represents a Wasm object file. <a href="#details">More...</a></p>
 

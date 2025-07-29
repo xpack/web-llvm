@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstructionSelector` Class Reference
+# `AMDGPUInstructionSelector` Class
 
 
 

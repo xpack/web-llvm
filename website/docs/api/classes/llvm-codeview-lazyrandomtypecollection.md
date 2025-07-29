@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyRandomTypeCollection` Class Reference
+# `LazyRandomTypeCollection` Class
 
 <p>Provides amortized O(1) random access to a CodeView type stream. <a href="#details">More...</a></p>
 

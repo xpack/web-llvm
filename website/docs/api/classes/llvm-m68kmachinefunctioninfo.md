@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMachineFunctionInfo` Class Reference
+# `M68kMachineFunctionInfo` Class
 
 
 

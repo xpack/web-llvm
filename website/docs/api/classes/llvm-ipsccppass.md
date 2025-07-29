@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPSCCPPass` Class Reference
+# `IPSCCPPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to perform interprocedural constant propagation. <a href="#details">More...</a></p>
 

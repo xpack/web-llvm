@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CleanupInstaller` Class Reference
+# `CleanupInstaller` Class
 
 
 

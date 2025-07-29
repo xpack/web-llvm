@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrackingMDRef` Class Reference
+# `TrackingMDRef` Class
 
 <p>Tracking metadata reference. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIToFPInst` Class Reference
+# `SIToFPInst` Class
 
 
 

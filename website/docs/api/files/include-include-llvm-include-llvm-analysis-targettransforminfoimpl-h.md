@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetTransformInfoImpl.h` File Reference
+# `TargetTransformInfoImpl.h` File
 
 <p>This file provides helpers for the implementation of a TargetTransformInfo-conforming class. <a href="#details">More...</a></p>
 

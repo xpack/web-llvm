@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultAllocator` Class Reference
+# `DefaultAllocator` Class
 
 
 

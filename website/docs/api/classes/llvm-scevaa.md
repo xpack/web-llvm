@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVAA` Class Reference
+# `SCEVAA` Class
 
 <p>Analysis pass providing a never-invalidated alias analysis result. <a href="#details">More...</a></p>
 

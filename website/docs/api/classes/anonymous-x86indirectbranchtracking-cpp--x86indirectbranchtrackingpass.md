@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86IndirectBranchTrackingPass` Class Reference
+# `X86IndirectBranchTrackingPass` Class
 
 
 

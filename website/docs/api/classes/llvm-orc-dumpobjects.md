@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DumpObjects` Class Reference
+# `DumpObjects` Class
 
 <p>A function object that can be used as an <a href="/web-llvm/docs/api/classes/llvm/orc/objecttransformlayer">ObjectTransformLayer</a> transform to dump object files to disk at a specified path. <a href="#details">More...</a></p>
 

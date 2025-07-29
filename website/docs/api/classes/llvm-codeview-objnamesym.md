@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjNameSym` Class Reference
+# `ObjNameSym` Class
 
 
 

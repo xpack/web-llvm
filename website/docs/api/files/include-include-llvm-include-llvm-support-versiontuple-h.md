@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionTuple.h` File Reference
+# `VersionTuple.h` File
 
 <p>Defines the <a href="/web-llvm/docs/api/classes/llvm/versiontuple">llvm::VersionTuple</a> class, which represents a version in the form major[.minor[.subminor]]. <a href="#details">More...</a></p>
 

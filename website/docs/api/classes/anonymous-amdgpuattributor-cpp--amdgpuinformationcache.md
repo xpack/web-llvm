@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInformationCache` Class Reference
+# `AMDGPUInformationCache` Class
 
 
 

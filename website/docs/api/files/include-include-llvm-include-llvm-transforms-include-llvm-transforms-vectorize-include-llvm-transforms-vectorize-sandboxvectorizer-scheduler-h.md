@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scheduler.h` File Reference
+# `Scheduler.h` File
 
 
 

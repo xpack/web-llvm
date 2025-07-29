@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrTypes.h` File Reference
+# `InstrTypes.h` File
 
 
 

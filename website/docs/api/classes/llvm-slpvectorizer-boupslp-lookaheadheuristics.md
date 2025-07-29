@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookAheadHeuristics` Class Reference
+# `LookAheadHeuristics` Class
 
 <p>A helper class used for scoring candidates for two consecutive lanes. <a href="#details">More...</a></p>
 

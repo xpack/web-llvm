@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Type` Class Reference
+# `Type` Class
 
 <p>Just like <a href="/web-llvm/docs/api/classes/llvm/type">llvm::Type</a> these are immutable, unique, never get freed and can only be created via static factory methods. <a href="#details">More...</a></p>
 

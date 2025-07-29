@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrIndexMap` Class Reference
+# `InstrIndexMap` Class
 
 
 

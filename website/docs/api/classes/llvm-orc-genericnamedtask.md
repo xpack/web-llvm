@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericNamedTask` Class Reference
+# `GenericNamedTask` Class
 
 <p>Base class for generic tasks. <a href="#details">More...</a></p>
 

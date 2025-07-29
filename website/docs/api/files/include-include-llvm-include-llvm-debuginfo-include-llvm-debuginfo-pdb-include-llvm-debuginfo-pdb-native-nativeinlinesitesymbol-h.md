@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeInlineSiteSymbol.h` File Reference
+# `NativeInlineSiteSymbol.h` File
 
 
 

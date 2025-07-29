@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TTIImpl` Class Reference
+# `AArch64TTIImpl` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CAPIDefinitionGenerator` Class Reference
+# `CAPIDefinitionGenerator` Class
 
 
 

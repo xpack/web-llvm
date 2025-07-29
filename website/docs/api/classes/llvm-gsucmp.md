@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSUCmp` Class Reference
+# `GSUCmp` Class
 
 <p>Represents a threeway compare. <a href="#details">More...</a></p>
 

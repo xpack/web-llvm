@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProcessEHFrameRegistrar` Class Reference
+# `InProcessEHFrameRegistrar` Class
 
 <p>Registers / Deregisters EH-frames in the current process. <a href="#details">More...</a></p>
 

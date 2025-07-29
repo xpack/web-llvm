@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Error` Class Reference
+# `Error` Class
 
 <p>Lightweight error class with error context and mandatory checking. <a href="#details">More...</a></p>
 

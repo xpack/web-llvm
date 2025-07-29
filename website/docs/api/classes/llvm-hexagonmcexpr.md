@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCExpr` Class Reference
+# `HexagonMCExpr` Class
 
 
 

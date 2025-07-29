@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionId` Class Reference
+# `FunctionId` Class
 
 <p>This class represents a function that is read from a sample profile. <a href="#details">More...</a></p>
 

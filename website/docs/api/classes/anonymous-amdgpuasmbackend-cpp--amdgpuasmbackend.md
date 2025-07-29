@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsmBackend` Class Reference
+# `AMDGPUAsmBackend` Class
 
 
 

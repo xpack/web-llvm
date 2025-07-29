@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430DAGToDAGISel` Class Reference
+# `MSP430DAGToDAGISel` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DerivedUser.h` File Reference
+# `DerivedUser.h` File
 
 
 

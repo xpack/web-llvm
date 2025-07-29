@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExportDirectoryEntryRef` Class Reference
+# `ExportDirectoryEntryRef` Class
 
 
 

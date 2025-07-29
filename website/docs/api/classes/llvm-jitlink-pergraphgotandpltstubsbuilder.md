@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerGraphGOTAndPLTStubsBuilder` Class Template Reference
+# `PerGraphGOTAndPLTStubsBuilder` Class Template
 
 <p>Per-object GOT and PLT Stub builder. <a href="#details">More...</a></p>
 

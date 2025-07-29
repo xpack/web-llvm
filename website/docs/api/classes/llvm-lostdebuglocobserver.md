@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LostDebugLocObserver` Class Reference
+# `LostDebugLocObserver` Class
 
 
 

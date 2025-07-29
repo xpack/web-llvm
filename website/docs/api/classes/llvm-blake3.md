@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BLAKE3` Class Reference
+# `BLAKE3` Class
 
 <p>A class that wraps the <a href="/web-llvm/docs/api/classes/llvm/blake3">BLAKE3</a> algorithm. <a href="#details">More...</a></p>
 

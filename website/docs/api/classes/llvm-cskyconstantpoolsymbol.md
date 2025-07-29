@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYConstantPoolSymbol` Class Reference
+# `CSKYConstantPoolSymbol` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/cskyconstantpoolsymbol">CSKYConstantPoolSymbol</a> - CSKY-specific constantpool values for external symbols. <a href="#details">More...</a></p>
 

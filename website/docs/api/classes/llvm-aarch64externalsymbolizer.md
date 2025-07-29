@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ExternalSymbolizer` Class Reference
+# `AArch64ExternalSymbolizer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmParserSemaCallback` Class Reference
+# `MCAsmParserSemaCallback` Class
 
 <p>Generic Sema callback for assembly parser. <a href="#details">More...</a></p>
 

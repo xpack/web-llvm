@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCStatepointInst` Class Reference
+# `GCStatepointInst` Class
 
 <p>Represents a gc.statepoint intrinsic call. <a href="#details">More...</a></p>
 

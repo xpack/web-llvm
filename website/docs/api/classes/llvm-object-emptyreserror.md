@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmptyResError` Class Reference
+# `EmptyResError` Class
 
 
 

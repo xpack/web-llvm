@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LatencyPriorityQueue.h` File Reference
+# `LatencyPriorityQueue.h` File
 
 
 

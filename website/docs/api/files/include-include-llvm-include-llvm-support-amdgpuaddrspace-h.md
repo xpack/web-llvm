@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAddrSpace.h` File Reference
+# `AMDGPUAddrSpace.h` File
 
 <p>AMDGPU address space definition. <a href="#details">More...</a></p>
 

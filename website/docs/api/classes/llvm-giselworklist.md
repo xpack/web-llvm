@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelWorkList` Class Template Reference
+# `GISelWorkList` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYELFObjectWriter` Class Reference
+# `CSKYELFObjectWriter` Class
 
 
 

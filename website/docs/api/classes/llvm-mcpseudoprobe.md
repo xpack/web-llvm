@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbe` Class Reference
+# `MCPseudoProbe` Class
 
 <p>Instances of this class represent a pseudo probe instance for a pseudo probe table entry, which is created during a machine instruction is assembled and uses an address from a temporary label created at the current address in the current section. <a href="#details">More...</a></p>
 

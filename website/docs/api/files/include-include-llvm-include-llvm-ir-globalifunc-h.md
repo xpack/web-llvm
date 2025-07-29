@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalIFunc.h` File Reference
+# `GlobalIFunc.h` File
 
 <p>This file contains the declaration of the GlobalIFunc class, which represents a single indirect function in the IR. <a href="#details">More...</a></p>
 

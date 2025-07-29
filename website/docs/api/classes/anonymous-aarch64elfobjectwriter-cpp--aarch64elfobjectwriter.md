@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ELFObjectWriter` Class Reference
+# `AArch64ELFObjectWriter` Class
 
 
 

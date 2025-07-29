@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntInit` Class Reference
+# `IntInit` Class
 
 <p>'7' - Represent an initialization by a literal integer value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLModelRunner` Class Reference
+# `MLModelRunner` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mlmodelrunner">MLModelRunner</a> interface: abstraction of a mechanism for evaluating a ML model. <a href="#details">More...</a></p>
 

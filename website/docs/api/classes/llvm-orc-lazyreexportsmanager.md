@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyReexportsManager` Class Reference
+# `LazyReexportsManager` Class
 
 
 

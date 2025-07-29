@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringRecTy` Class Reference
+# `StringRecTy` Class
 
 <p>'string' - Represent an string value <a href="#details">More...</a></p>
 

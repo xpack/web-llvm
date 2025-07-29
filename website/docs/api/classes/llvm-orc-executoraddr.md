@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutorAddr` Class Reference
+# `ExecutorAddr` Class
 
 <p>Represents an address in the executor process. <a href="#details">More...</a></p>
 

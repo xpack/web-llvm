@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNDownwardRPTracker` Class Reference
+# `GCNDownwardRPTracker` Class
 
 
 

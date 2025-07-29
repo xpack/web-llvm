@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPtrAuth` Class Reference
+# `ConstantPtrAuth` Class
 
 
 

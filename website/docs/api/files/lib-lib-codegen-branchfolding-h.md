@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchFolding.h` File Reference
+# `BranchFolding.h` File
 
 
 

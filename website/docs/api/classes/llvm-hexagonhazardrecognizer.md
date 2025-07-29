@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonHazardRecognizer` Class Reference
+# `HexagonHazardRecognizer` Class
 
 
 

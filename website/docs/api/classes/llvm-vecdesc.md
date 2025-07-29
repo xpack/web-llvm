@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VecDesc` Class Reference
+# `VecDesc` Class
 
 <p>Provides info so a possible vectorization of a function can be computed. <a href="#details">More...</a></p>
 

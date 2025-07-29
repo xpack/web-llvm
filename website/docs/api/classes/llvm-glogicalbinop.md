@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GLogicalBinOp` Class Reference
+# `GLogicalBinOp` Class
 
 <p>Represents a logical binary operation. <a href="#details">More...</a></p>
 

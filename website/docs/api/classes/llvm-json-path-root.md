@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Root` Class Reference
+# `Root` Class
 
 <p>The root is the trivial <a href="/web-llvm/docs/api/classes/llvm/json/path">Path</a> to the root value. <a href="#details">More...</a></p>
 

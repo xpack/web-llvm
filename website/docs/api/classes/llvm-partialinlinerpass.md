@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialInlinerPass` Class Reference
+# `PartialInlinerPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to remove unused function declarations. <a href="#details">More...</a></p>
 

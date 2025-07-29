@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VertexView` Class Template Reference
+# `VertexView` Class Template
 
 <p>A class for ranging over the vertices in the graph. <a href="#details">More...</a></p>
 

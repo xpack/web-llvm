@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Range` Class Reference
+# `Range` Class
 
 <p>Represents an signed integer range [<a href="#ae3064cf7e3c0ba55a60729c96e524642">Range.getBegin()</a>, <a href="#ada696071634a4b785b72900b4845d1d0">Range.getEnd()</a>). <a href="#details">More...</a></p>
 

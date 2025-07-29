@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ConditionalCompares` Class Reference
+# `AArch64ConditionalCompares` Class
 
 
 

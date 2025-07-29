@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCECmpChain` Class Reference
+# `BCECmpChain` Class
 
 
 

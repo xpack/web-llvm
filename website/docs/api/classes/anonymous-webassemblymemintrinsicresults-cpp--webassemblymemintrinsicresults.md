@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMemIntrinsicResults` Class Reference
+# `WebAssemblyMemIntrinsicResults` Class
 
 
 

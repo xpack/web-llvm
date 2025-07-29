@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttrBuilder` Class Reference
+# `AttrBuilder` Class
 
 <p>This class is used in conjunction with the <a href="/web-llvm/docs/api/classes/llvm/attribute/#a43708098bd7085788a680fd02f47c750">Attribute::get</a> method to create an <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> object. <a href="#details">More...</a></p>
 

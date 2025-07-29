@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFSectionRef` Class Reference
+# `ELFSectionRef` Class
 
 
 

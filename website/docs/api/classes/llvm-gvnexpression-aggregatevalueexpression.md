@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AggregateValueExpression` Class Reference
+# `AggregateValueExpression` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMCInstrAnalysis` Class Reference
+# `BPFMCInstrAnalysis` Class
 
 
 

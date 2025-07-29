@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VZeroUpperInserter` Class Reference
+# `VZeroUpperInserter` Class
 
 
 

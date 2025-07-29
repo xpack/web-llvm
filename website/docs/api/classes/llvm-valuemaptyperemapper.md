@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMapTypeRemapper` Class Reference
+# `ValueMapTypeRemapper` Class
 
 <p>This is a class that can be implemented by clients to remap types when cloning constants and instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Reduction` Class Reference
+# `Reduction` Class
 
 <p>Represent a sequence of multiply-accumulate operations with the aim to perform the multiplications in parallel. <a href="#details">More...</a></p>
 

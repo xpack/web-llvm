@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPressureMap` Class Reference
+# `RegionPressureMap` Class
 
 
 

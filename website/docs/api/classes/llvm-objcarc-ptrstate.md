@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrState` Class Reference
+# `PtrState` Class
 
 <p>This class summarizes several per-pointer runtime properties which are propagated through the flow graph. <a href="#details">More...</a></p>
 

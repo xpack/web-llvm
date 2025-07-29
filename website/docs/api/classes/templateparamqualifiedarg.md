@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TemplateParamQualifiedArg` Class Reference
+# `TemplateParamQualifiedArg` Class
 
 
 

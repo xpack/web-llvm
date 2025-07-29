@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TwoAddressInstructionPass` Class Reference
+# `TwoAddressInstructionPass` Class
 
 
 

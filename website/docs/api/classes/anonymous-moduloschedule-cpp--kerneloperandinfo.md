@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelOperandInfo` Class Reference
+# `KernelOperandInfo` Class
 
 <p>Describes an operand in the kernel of a pipelined loop. <a href="#details">More...</a></p>
 

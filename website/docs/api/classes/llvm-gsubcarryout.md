@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSubCarryOut` Class Reference
+# `GSubCarryOut` Class
 
 <p>Represents overflowing sub operations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEDisassembler` Class Reference
+# `VEDisassembler` Class
 
 <p>A disassembler class for <a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a>. <a href="#details">More...</a></p>
 

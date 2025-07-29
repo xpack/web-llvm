@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OcamlGC` Class Reference
+# `OcamlGC` Class
 
 <p>An example GC which attempts to be compatible with Objective Caml 3.10.0. <a href="#details">More...</a></p>
 

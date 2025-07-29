@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocationRef` Class Reference
+# `RelocationRef` Class
 
 <p>This is a value type class that represents a single relocation in the list of relocations in the object file. <a href="#details">More...</a></p>
 

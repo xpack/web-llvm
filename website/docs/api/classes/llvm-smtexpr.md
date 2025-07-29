@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMTExpr` Class Reference
+# `SMTExpr` Class
 
 <p>Generic base class for SMT exprs. <a href="#details">More...</a></p>
 

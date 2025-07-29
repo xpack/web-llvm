@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerMatrixIntrinsics` Class Reference
+# `LowerMatrixIntrinsics` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-lowermatrixintrinsics-cpp-/lowermatrixintrinsics">LowerMatrixIntrinsics</a> contains the methods used to lower matrix intrinsics. <a href="#details">More...</a></p>
 

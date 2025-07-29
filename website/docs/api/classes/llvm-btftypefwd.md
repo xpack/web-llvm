@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeFwd` Class Reference
+# `BTFTypeFwd` Class
 
 <p>Handle struct or union forward declaration. <a href="#details">More...</a></p>
 

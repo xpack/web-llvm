@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILoadStoreOptimizerLegacy` Class Reference
+# `SILoadStoreOptimizerLegacy` Class
 
 
 

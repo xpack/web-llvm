@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGCombiner` Class Reference
+# `DAGCombiner` Class
 
 
 

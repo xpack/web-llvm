@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileReaderBinary` Class Reference
+# `SampleProfileReaderBinary` Class
 
 
 

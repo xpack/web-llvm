@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `symbol_iterator` Class Reference
+# `symbol_iterator` Class
 
 
 

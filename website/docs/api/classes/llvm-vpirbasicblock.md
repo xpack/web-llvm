@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPIRBasicBlock` Class Reference
+# `VPIRBasicBlock` Class
 
 <p>A special type of <a href="/web-llvm/docs/api/classes/llvm/vpbasicblock">VPBasicBlock</a> that wraps an existing IR basic block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XorOpnd` Class Reference
+# `XorOpnd` Class
 
 <p>Utility class representing a non-constant Xor-operand. <a href="#details">More...</a></p>
 

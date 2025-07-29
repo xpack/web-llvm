@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinationGenerator` Class Template Reference
+# `CombinationGenerator` Class Template
 
 
 

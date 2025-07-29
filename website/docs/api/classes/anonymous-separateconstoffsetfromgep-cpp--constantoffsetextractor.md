@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantOffsetExtractor` Class Reference
+# `ConstantOffsetExtractor` Class
 
 <p>A helper class for separating a constant offset from a GEP index. <a href="#details">More...</a></p>
 

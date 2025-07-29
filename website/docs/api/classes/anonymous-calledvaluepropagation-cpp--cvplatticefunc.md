@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVPLatticeFunc` Class Reference
+# `CVPLatticeFunc` Class
 
 <p>The custom lattice function used by the generic sparse propagation solver. <a href="#details">More...</a></p>
 

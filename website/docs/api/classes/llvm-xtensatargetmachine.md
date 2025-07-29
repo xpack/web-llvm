@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaTargetMachine` Class Reference
+# `XtensaTargetMachine` Class
 
 
 

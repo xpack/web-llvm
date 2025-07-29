@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCombinerPattern.h` File Reference
+# `MachineCombinerPattern.h` File
 
 
 

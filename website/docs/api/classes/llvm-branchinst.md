@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchInst` Class Reference
+# `BranchInst` Class
 
 <p>Conditional or Unconditional Branch instruction. <a href="#details">More...</a></p>
 

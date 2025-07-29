@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetElementPtrInst` Class Reference
+# `GetElementPtrInst` Class
 
 
 

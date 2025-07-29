@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCStrategy.h` File Reference
+# `GCStrategy.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VRegRenamer` Class Reference
+# `VRegRenamer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vregrenamer">VRegRenamer</a> - This class is used for renaming vregs in a machine basic block according to semantics of the instruction. <a href="#details">More...</a></p>
 

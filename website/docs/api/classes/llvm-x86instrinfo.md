@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstrInfo` Class Reference
+# `X86InstrInfo` Class
 
 
 

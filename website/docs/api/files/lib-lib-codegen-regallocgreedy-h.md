@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocGreedy.h` File Reference
+# `RegAllocGreedy.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OProfileWrapper` Class Reference
+# `OProfileWrapper` Class
 
 
 

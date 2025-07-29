@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kDAGToDAGISel` Class Reference
+# `M68kDAGToDAGISel` Class
 
 
 

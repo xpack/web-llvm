@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFunctionAnalysis` Class Reference
+# `MachineFunctionAnalysis` Class
 
 <p>This analysis create <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> for given <a href="/web-llvm/docs/api/classes/llvm/function">Function</a>. <a href="#details">More...</a></p>
 

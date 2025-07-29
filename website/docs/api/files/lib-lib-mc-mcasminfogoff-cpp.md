@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoGOFF.cpp` File Reference
+# `MCAsmInfoGOFF.cpp` File
 
 <p>This file defines certain target specific asm properties for <a href="/web-llvm/docs/api/namespaces/llvm/goff">GOFF</a> (z/OS) based targets. <a href="#details">More...</a></p>
 

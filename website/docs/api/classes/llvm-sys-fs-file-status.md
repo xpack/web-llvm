@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `file_status` Class Reference
+# `file_status` Class
 
 <p>Represents the result of a call to <a href="/web-llvm/docs/api/namespaces/llvm/sys/fs/#a5f126cc7b64d31cd709215b48656d83d">sys::fs::status()</a>. <a href="#details">More...</a></p>
 

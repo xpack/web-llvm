@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThunkInserter` Class Template Reference
+# `ThunkInserter` Class Template
 
 <p>This class assists in inserting MI thunk functions into the module and rewriting the existing machine functions to call these thunks. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBDataStream` Class Reference
+# `IPDBDataStream` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbdatastream">IPDBDataStream</a> defines an interface used to represent a stream consisting of a name and a series of records whose formats depend on the particular stream type. <a href="#details">More...</a></p>
 

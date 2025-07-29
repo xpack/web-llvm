@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegMap.h` File Reference
+# `VirtRegMap.h` File
 
 
 

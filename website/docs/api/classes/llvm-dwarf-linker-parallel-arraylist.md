@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayList` Class Template Reference
+# `ArrayList` Class Template
 
 <p>This class is a simple list of T structures. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFKindDataSec` Class Reference
+# `BTFKindDataSec` Class
 
 <p>Handle data sections. <a href="#details">More...</a></p>
 

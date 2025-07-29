@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UserLabel` Class Reference
+# `UserLabel` Class
 
 <p>A user label is a part of a debug info user label. <a href="#details">More...</a></p>
 

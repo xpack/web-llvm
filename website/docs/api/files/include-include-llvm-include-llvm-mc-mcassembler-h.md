@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAssembler.h` File Reference
+# `MCAssembler.h` File
 
 
 

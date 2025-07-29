@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExportSym` Class Reference
+# `ExportSym` Class
 
 
 

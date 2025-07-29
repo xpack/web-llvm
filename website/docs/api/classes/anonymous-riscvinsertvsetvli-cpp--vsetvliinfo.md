@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VSETVLIInfo` Class Reference
+# `VSETVLIInfo` Class
 
 <p>Defines the abstract state with which the forward dataflow models the values of the VL and VTYPE registers after insertion. <a href="#details">More...</a></p>
 

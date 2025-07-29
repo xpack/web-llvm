@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamRef` Class Reference
+# `BinaryStreamRef` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/binarystreamref">BinaryStreamRef</a> is to <a href="/web-llvm/docs/api/classes/llvm/binarystream">BinaryStream</a> what <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a> is to an Array. <a href="#details">More...</a></p>
 

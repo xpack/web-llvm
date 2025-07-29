@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Task` Class Reference
+# `Task` Class
 
 <p>Represents an abstract task for ORC to run. <a href="#details">More...</a></p>
 

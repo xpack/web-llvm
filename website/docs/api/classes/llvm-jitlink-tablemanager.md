@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TableManager` Class Template Reference
+# `TableManager` Class Template
 
 <p>A CRTP base for tables that are built on demand, e.g. <a href="#details">More...</a></p>
 

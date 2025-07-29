@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRTargetStreamer` Class Reference
+# `AVRTargetStreamer` Class
 
 <p>A generic <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> target output stream. <a href="#details">More...</a></p>
 

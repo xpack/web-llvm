@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataDependenceGraph` Class Reference
+# `DataDependenceGraph` Class
 
 <p>Data Dependency Graph. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMatcher` Class Reference
+# `StringMatcher` Class
 
 <p>Given a list of strings and code to execute when they match, output a simple switch tree to classify the input string. <a href="#details">More...</a></p>
 

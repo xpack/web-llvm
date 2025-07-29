@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefineExternalSectionStartAndEndSymbols.h` File Reference
+# `DefineExternalSectionStartAndEndSymbols.h` File
 
 
 

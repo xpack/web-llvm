@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentPromotionPass` Class Reference
+# `ArgumentPromotionPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/argument">Argument</a> promotion pass. <a href="#details">More...</a></p>
 

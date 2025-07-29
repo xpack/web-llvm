@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPRecipeBase` Class Reference
+# `VPRecipeBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> is a base class modeling a sequence of one or more output IR instructions. <a href="#details">More...</a></p>
 

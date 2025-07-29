@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByteStreamer` Class Reference
+# `ByteStreamer` Class
 
 
 

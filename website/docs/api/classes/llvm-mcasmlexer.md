@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmLexer` Class Reference
+# `MCAsmLexer` Class
 
 <p>Generic assembler lexer interface, for use by target specific assembly lexers. <a href="#details">More...</a></p>
 

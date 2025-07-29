@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVExtract` Class Reference
+# `HexagonVExtract` Class
 
 
 

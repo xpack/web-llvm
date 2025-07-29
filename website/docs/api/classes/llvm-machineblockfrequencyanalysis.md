@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBlockFrequencyAnalysis` Class Reference
+# `MachineBlockFrequencyAnalysis` Class
 
 
 

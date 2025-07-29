@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIE` Class Reference
+# `DIE` Class
 
 <p>A structured debug information entry. <a href="#details">More...</a></p>
 

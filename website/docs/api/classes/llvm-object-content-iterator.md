@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `content_iterator` Class Template Reference
+# `content_iterator` Class Template
 
 
 

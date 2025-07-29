@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectoryEntry` Class Reference
+# `DirectoryEntry` Class
 
 <p>A directory in the vfs with explicitly specified contents. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalValueMaterializer` Class Reference
+# `LocalValueMaterializer` Class
 
 
 

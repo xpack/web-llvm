@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopAccessInfoManager` Class Reference
+# `LoopAccessInfoManager` Class
 
 
 

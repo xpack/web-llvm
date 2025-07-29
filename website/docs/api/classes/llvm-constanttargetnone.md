@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantTargetNone` Class Reference
+# `ConstantTargetNone` Class
 
 <p>A constant target extension type default initializer. <a href="#details">More...</a></p>
 

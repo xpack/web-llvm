@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIObjCProperty` Class Reference
+# `DIObjCProperty` Class
 
 
 

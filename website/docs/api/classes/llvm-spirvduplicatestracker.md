@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVDuplicatesTracker` Class Template Reference
+# `SPIRVDuplicatesTracker` Class Template
 
 
 

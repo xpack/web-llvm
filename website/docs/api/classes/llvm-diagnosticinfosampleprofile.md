@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoSampleProfile` Class Reference
+# `DiagnosticInfoSampleProfile` Class
 
 <p>Diagnostic information for the sample profiler. <a href="#details">More...</a></p>
 

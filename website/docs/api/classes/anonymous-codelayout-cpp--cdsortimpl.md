@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CDSortImpl` Class Reference
+# `CDSortImpl` Class
 
 <p>The implementation of the Cache-Directed Sort (CDSort) algorithm for ordering functions represented by a call graph. <a href="#details">More...</a></p>
 

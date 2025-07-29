@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackInfoBuilder` Class Reference
+# `StackInfoBuilder` Class
 
 
 

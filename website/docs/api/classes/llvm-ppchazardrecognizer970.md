@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCHazardRecognizer970` Class Reference
+# `PPCHazardRecognizer970` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ppchazardrecognizer970">PPCHazardRecognizer970</a> - This class defines a finite state automata that models the dispatch logic on the PowerPC 970 (aka G5) processor. <a href="#details">More...</a></p>
 

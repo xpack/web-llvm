@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBranchProbabilityPrinterPass` Class Reference
+# `MachineBranchProbabilityPrinterPass` Class
 
 
 

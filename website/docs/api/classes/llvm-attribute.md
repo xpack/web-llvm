@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Attribute` Class Reference
+# `Attribute` Class
 
 <p>Functions, function parameters, and return types can have attributes to indicate how they should be treated by optimizations and code generation. <a href="#details">More...</a></p>
 

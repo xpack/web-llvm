@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfDwoLineTable` Class Reference
+# `MCDwarfDwoLineTable` Class
 
 
 

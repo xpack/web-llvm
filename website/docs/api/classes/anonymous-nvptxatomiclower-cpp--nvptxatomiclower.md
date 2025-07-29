@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAtomicLower` Class Reference
+# `NVPTXAtomicLower` Class
 
 
 

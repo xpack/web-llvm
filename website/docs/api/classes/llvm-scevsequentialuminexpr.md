@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVSequentialUMinExpr` Class Reference
+# `SCEVSequentialUMinExpr` Class
 
 <p>This class represents a sequential/in-order unsigned minimum selection. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaptureTracking.h` File Reference
+# `CaptureTracking.h` File
 
 
 

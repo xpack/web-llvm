@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveRefCntPtr` Class Template Reference
+# `IntrusiveRefCntPtr` Class Template
 
 <p>A smart pointer to a reference-counted object that inherits from <a href="/web-llvm/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> or <a href="/web-llvm/docs/api/classes/llvm/threadsaferefcountedbase">ThreadSafeRefCountedBase</a>. <a href="#details">More...</a></p>
 

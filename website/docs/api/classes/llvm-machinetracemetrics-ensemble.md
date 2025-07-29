@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Ensemble` Class Reference
+# `Ensemble` Class
 
 <p>A trace ensemble is a collection of traces selected using the same strategy, for example 'minimum resource height'. <a href="#details">More...</a></p>
 

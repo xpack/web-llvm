@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeFinder.h` File Reference
+# `TypeFinder.h` File
 
 
 

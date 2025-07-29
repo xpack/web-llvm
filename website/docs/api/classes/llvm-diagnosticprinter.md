@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticPrinter` Class Reference
+# `DiagnosticPrinter` Class
 
 <p>Interface for custom diagnostic printing. <a href="#details">More...</a></p>
 

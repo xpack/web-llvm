@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchProbabilityInfo` Class Reference
+# `BranchProbabilityInfo` Class
 
 <p>Analysis providing branch probability information. <a href="#details">More...</a></p>
 

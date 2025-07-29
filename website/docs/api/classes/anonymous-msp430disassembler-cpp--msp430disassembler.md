@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430Disassembler` Class Reference
+# `MSP430Disassembler` Class
 
 
 

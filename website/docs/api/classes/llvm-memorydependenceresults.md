@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDependenceResults` Class Reference
+# `MemoryDependenceResults` Class
 
 <p>Provides a lazy, caching interface for making common memory aliasing information queries, backed by LLVM's alias analysis passes. <a href="#details">More...</a></p>
 

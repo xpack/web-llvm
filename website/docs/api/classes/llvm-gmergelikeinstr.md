@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GMergeLikeInstr` Class Reference
+# `GMergeLikeInstr` Class
 
 <p>Represents G_BUILD_VECTOR, G_CONCAT_VECTORS or G_MERGE_VALUES. <a href="#details">More...</a></p>
 

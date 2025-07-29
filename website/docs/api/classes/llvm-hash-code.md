@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hash_code` Class Reference
+# `hash_code` Class
 
 <p>An opaque object representing a hash code. <a href="#details">More...</a></p>
 

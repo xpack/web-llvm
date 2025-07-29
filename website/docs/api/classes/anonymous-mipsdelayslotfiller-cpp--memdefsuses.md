@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemDefsUses` Class Reference
+# `MemDefsUses` Class
 
 <p>This subclass uses memory dependence information to determine whether a memory instruction can be moved to a delay slot. <a href="#details">More...</a></p>
 

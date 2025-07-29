@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetStreamer` Class Reference
+# `NVPTXTargetStreamer` Class
 
 <p>Implments NVPTX-specific streamer. <a href="#details">More...</a></p>
 

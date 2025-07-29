@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandedSpecialSubstitution` Class Reference
+# `ExpandedSpecialSubstitution` Class
 
 
 

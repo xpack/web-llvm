@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DistinctMDOperandPlaceholder` Class Reference
+# `DistinctMDOperandPlaceholder` Class
 
 <p>Placeholder metadata for operands of distinct MDNodes. <a href="#details">More...</a></p>
 

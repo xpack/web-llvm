@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIIteratorMaintainer` Class Reference
+# `MIIteratorMaintainer` Class
 
 <p>This class observes instruction insertions/removals. <a href="#details">More...</a></p>
 

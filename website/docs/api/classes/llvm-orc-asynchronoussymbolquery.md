@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsynchronousSymbolQuery` Class Reference
+# `AsynchronousSymbolQuery` Class
 
 <p>A symbol query that returns results via a callback when results are ready. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionValueCopy` Class Template Reference
+# `OptionValueCopy` Class Template
 
 
 

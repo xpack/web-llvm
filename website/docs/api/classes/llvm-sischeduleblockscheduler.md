@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIScheduleBlockScheduler` Class Reference
+# `SIScheduleBlockScheduler` Class
 
 
 

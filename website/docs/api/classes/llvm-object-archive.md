@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Archive` Class Reference
+# `Archive` Class
 
 
 

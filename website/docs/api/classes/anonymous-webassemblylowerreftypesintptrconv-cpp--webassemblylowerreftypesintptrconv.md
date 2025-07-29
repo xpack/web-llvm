@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyLowerRefTypesIntPtrConv` Class Reference
+# `WebAssemblyLowerRefTypesIntPtrConv` Class
 
 
 

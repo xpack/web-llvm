@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntry` Class Template Reference
+# `StringMapEntry` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringmapentry">StringMapEntry</a> - This is used to represent one value that is inserted into a <a href="/web-llvm/docs/api/classes/llvm/stringmap">StringMap</a>. <a href="#details">More...</a></p>
 

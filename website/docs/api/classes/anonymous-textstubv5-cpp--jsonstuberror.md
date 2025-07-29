@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSONStubError` Class Reference
+# `JSONStubError` Class
 
 
 

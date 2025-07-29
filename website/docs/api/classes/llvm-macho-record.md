@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Record` Class Reference
+# `Record` Class
 
 <p>Define <a href="/web-llvm/docs/api/classes/llvm/macho/record">Record</a>. <a href="#details">More...</a></p>
 

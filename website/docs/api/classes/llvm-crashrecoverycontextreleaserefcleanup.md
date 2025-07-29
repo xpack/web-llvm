@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrashRecoveryContextReleaseRefCleanup` Class Template Reference
+# `CrashRecoveryContextReleaseRefCleanup` Class Template
 
 <p>Cleanup handler that reclaims resource by calling its method 'Release'. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `data_iterator` Class Reference
+# `data_iterator` Class
 
 <p>Iterates over all the entries in the table, returning the data. <a href="#details">More...</a></p>
 

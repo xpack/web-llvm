@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapVector.h` File Reference
+# `MapVector.h` File
 
 <p>This file implements a map that provides insertion order iteration. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WarnMissedTransformationsPass` Class Reference
+# `WarnMissedTransformationsPass` Class
 
 
 

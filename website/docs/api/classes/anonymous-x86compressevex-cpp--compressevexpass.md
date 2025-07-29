@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompressEVEXPass` Class Reference
+# `CompressEVEXPass` Class
 
 
 

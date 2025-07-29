@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedBinary` Class Reference
+# `CachedBinary` Class
 
 
 

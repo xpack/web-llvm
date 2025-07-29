@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractGV.h` File Reference
+# `ExtractGV.h` File
 
 
 

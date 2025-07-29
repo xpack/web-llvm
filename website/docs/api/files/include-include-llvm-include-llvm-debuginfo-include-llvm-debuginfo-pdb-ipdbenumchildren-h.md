@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBEnumChildren.h` File Reference
+# `IPDBEnumChildren.h` File
 
 
 

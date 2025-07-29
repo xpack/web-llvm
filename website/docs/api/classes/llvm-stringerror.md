@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringError` Class Reference
+# `StringError` Class
 
 <p>This class wraps a string in an <a href="/web-llvm/docs/api/classes/llvm/error">Error</a>. <a href="#details">More...</a></p>
 

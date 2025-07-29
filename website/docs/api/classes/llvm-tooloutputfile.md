@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ToolOutputFile` Class Reference
+# `ToolOutputFile` Class
 
 <p>This class contains a <a href="/web-llvm/docs/api/classes/llvm/raw-fd-ostream">raw_fd_ostream</a> and adds a few extra features commonly needed for compiler-like tool output files: <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `location_op_iterator` Class Reference
+# `location_op_iterator` Class
 
 <p>Iterator for <a href="/web-llvm/docs/api/classes/llvm/valueasmetadata">ValueAsMetadata</a> that internally uses direct pointer iteration over either a ValueAsMetadata* or a ValueAsMetadata**, dereferencing to the <a href="/web-llvm/docs/api/classes/llvm/valueasmetadata">ValueAsMetadata</a> . <a href="#details">More...</a></p>
 

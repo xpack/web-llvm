@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInfo` Class Reference
+# `PassInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/passinfo">PassInfo</a> class - An instance of this class exists for every pass known by the system, and can be obtained from a live <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> by calling its <a href="/web-llvm/docs/api/files/lib/lib/codegen/targetpassconfig-cpp/#a8fd5fd11f1d85fee7e28a197e915aa0d">getPassInfo()</a> method. <a href="#details">More...</a></p>
 

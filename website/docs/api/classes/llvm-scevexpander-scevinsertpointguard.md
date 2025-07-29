@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVInsertPointGuard` Class Reference
+# `SCEVInsertPointGuard` Class
 
 
 

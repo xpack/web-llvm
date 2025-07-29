@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRExpandPseudo` Class Reference
+# `AVRExpandPseudo` Class
 
 <p>Expands "placeholder" instructions marked as pseudo into actual <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> instructions. <a href="#details">More...</a></p>
 

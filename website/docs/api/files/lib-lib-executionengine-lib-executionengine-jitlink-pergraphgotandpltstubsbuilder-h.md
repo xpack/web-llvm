@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerGraphGOTAndPLTStubsBuilder.h` File Reference
+# `PerGraphGOTAndPLTStubsBuilder.h` File
 
 
 

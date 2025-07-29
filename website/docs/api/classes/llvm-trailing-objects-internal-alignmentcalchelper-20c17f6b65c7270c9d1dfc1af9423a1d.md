@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignmentCalcHelper` Class Template Reference
+# `AlignmentCalcHelper` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInst` Class Reference
+# `CastInst` Class
 
 
 

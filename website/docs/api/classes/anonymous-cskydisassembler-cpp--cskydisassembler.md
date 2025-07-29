@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYDisassembler` Class Reference
+# `CSKYDisassembler` Class
 
 
 

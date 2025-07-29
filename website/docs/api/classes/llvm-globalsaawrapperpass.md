@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsAAWrapperPass` Class Reference
+# `GlobalsAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/globalsaaresult">GlobalsAAResult</a> object. <a href="#details">More...</a></p>
 

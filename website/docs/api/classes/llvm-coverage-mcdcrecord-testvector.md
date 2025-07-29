@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TestVector` Class Reference
+# `TestVector` Class
 
 <p>Emulate <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector&lt;CondState&gt;</a> with a pair of <a href="/web-llvm/docs/api/classes/llvm/bitvector">BitVector</a>. <a href="#details">More...</a></p>
 

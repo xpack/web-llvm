@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSAWalkerAnnotatedWriter` Class Reference
+# `MemorySSAWalkerAnnotatedWriter` Class
 
 <p>An assembly annotator class to print <a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> SSA information in comments. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativePublicSymbol.cpp` File Reference
+# `NativePublicSymbol.cpp` File
 
 
 

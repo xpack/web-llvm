@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PLTTableManager` Class Reference
+# `PLTTableManager` Class
 
 <p>Procedure <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/#abee99c9c75d23a0304e5e58e3128a55f">Linkage</a> Table Builder. <a href="#details">More...</a></p>
 

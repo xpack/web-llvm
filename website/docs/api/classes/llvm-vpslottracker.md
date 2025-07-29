@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPSlotTracker` Class Reference
+# `VPSlotTracker` Class
 
 <p>This class can be used to assign names to VPValues. <a href="#details">More...</a></p>
 

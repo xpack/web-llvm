@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVMaterializer.h` File Reference
+# `GVMaterializer.h` File
 
 
 

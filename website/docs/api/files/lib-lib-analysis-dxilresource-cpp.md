@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResource.cpp` File Reference
+# `DXILResource.cpp` File
 
 
 

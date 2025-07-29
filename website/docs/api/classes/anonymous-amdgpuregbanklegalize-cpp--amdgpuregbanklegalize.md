@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegBankLegalize` Class Reference
+# `AMDGPURegBankLegalize` Class
 
 
 

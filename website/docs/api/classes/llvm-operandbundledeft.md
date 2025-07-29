@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandBundleDefT` Class Template Reference
+# `OperandBundleDefT` Class Template
 
 <p>A container for an operand bundle being viewed as a set of values rather than a set of uses. <a href="#details">More...</a></p>
 

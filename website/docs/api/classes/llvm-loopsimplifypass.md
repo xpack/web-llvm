@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSimplifyPass` Class Reference
+# `LoopSimplifyPass` Class
 
 <p>This pass is responsible for loop canonicalization. <a href="#details">More...</a></p>
 

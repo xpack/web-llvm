@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterClassInfo.cpp` File Reference
+# `RegisterClassInfo.cpp` File
 
 
 

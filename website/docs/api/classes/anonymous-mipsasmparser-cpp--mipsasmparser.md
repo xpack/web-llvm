@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsAsmParser` Class Reference
+# `MipsAsmParser` Class
 
 
 

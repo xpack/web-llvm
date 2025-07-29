@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GBuildVectorTrunc` Class Reference
+# `GBuildVectorTrunc` Class
 
 <p>Represents a G_BUILD_VECTOR_TRUNC. <a href="#details">More...</a></p>
 

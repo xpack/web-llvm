@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLTraits.h` File Reference
+# `YAMLTraits.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `formatted_raw_ostream` Class Reference
+# `formatted_raw_ostream` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/formatted-raw-ostream">formatted_raw_ostream</a> - A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> that wraps another one and keeps track of line and column position, allowing padding out to specific column boundaries and querying the number of lines written to the stream. <a href="#details">More...</a></p>
 

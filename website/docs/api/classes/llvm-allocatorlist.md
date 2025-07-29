@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocatorList` Class Template Reference
+# `AllocatorList` Class Template
 
 <p>A linked-list with a custom, local allocator. <a href="#details">More...</a></p>
 

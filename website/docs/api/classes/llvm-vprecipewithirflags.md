@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPRecipeWithIRFlags` Class Reference
+# `VPRecipeWithIRFlags` Class
 
 <p>Class to record LLVM IR flag for a recipe along with it. <a href="#details">More...</a></p>
 

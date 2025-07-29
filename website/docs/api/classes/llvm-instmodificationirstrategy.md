@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstModificationIRStrategy` Class Reference
+# `InstModificationIRStrategy` Class
 
 <p>Strategy that modifies instruction attributes and operands. <a href="#details">More...</a></p>
 

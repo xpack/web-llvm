@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMergeBaseOffsetOpt` Class Reference
+# `RISCVMergeBaseOffsetOpt` Class
 
 
 

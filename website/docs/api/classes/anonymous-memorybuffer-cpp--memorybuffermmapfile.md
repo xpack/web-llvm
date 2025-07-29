@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBufferMMapFile` Class Template Reference
+# `MemoryBufferMMapFile` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> maps a file descriptor using <a href="/web-llvm/docs/api/classes/llvm/sys/fs/mapped-file-region">sys::fs::mapped_file_region</a>. <a href="#details">More...</a></p>
 

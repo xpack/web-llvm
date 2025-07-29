@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCExternalSymbolizer.cpp` File Reference
+# `MCExternalSymbolizer.cpp` File
 
 
 

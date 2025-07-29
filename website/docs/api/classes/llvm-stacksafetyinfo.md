@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyInfo` Class Reference
+# `StackSafetyInfo` Class
 
 <p>Interface to access stack safety analysis results for single function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeFloat` Class Reference
+# `BTFTypeFloat` Class
 
 <p>Handle binary floating point type. <a href="#details">More...</a></p>
 

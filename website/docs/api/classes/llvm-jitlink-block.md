@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Block` Class Reference
+# `Block` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/jitlink/addressable">Addressable</a> with content and edges. <a href="#details">More...</a></p>
 

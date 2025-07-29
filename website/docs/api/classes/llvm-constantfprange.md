@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantFPRange` Class Reference
+# `ConstantFPRange` Class
 
 <p>This class represents a range of floating-point values. <a href="#details">More...</a></p>
 

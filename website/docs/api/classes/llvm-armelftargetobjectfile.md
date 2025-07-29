@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMElfTargetObjectFile` Class Reference
+# `ARMElfTargetObjectFile` Class
 
 
 

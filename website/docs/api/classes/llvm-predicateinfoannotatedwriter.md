@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateInfoAnnotatedWriter` Class Reference
+# `PredicateInfoAnnotatedWriter` Class
 
 <p>An assembly annotator class to print <a href="/web-llvm/docs/api/classes/llvm/predicateinfo">PredicateInfo</a> information in comments. <a href="#details">More...</a></p>
 

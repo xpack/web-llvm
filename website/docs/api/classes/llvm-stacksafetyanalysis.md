@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyAnalysis` Class Reference
+# `StackSafetyAnalysis` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stacksafetyinfo">StackSafetyInfo</a> wrapper for the new pass manager. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIndex` Class Reference
+# `TypeIndex` Class
 
 <p>A 32-bit type reference. <a href="#details">More...</a></p>
 

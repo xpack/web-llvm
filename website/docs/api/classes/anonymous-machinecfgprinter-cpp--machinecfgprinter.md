@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCFGPrinter` Class Reference
+# `MachineCFGPrinter` Class
 
 
 

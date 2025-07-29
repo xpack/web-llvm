@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeRecordHelpers.cpp` File Reference
+# `TypeRecordHelpers.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamCursor` Class Reference
+# `BitstreamCursor` Class
 
 <p>This represents a position within a bitcode file, implemented on top of a <a href="/web-llvm/docs/api/classes/llvm/simplebitstreamcursor">SimpleBitstreamCursor</a>. <a href="#details">More...</a></p>
 

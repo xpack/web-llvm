@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StubsManager_prev7` Class Reference
+# `StubsManager_prev7` Class
 
 <p>Stubs builder emits non-position-independent Arm stubs for pre-v7 CPUs. <a href="#details">More...</a></p>
 

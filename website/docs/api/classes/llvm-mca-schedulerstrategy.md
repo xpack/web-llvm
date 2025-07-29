@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedulerStrategy` Class Reference
+# `SchedulerStrategy` Class
 
 
 

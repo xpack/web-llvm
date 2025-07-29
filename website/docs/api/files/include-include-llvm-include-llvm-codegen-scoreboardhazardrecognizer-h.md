@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScoreboardHazardRecognizer.h` File Reference
+# `ScoreboardHazardRecognizer.h` File
 
 
 

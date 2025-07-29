@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRef` Class Reference
+# `SymbolRef` Class
 
 <p>Ephemeral symbols produced by <a href="/web-llvm/docs/api/classes/llvm/irsymtab/reader/#a583e69face84cad10651476ced420ebd">Reader::symbols()</a> and <a href="/web-llvm/docs/api/classes/llvm/irsymtab/reader/#a04409736e8ac494863b8d99d527923e1">Reader::module_symbols()</a>. <a href="#details">More...</a></p>
 

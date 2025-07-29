@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSimilarityIdentifier` Class Reference
+# `IRSimilarityIdentifier` Class
 
 <p>This class puts all the pieces of the <a href="/web-llvm/docs/api/structs/llvm/irsimilarity/irinstructiondata">IRInstructionData</a>, <a href="/web-llvm/docs/api/structs/llvm/irsimilarity/irinstructionmapper">IRInstructionMapper</a>, <a href="/web-llvm/docs/api/classes/llvm/irsimilarity/irsimilaritycandidate">IRSimilarityCandidate</a> together. <a href="#details">More...</a></p>
 

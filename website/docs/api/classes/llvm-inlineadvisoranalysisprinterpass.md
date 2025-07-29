@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAdvisorAnalysisPrinterPass` Class Reference
+# `InlineAdvisorAnalysisPrinterPass` Class
 
 <p>Printer pass for the <a href="/web-llvm/docs/api/classes/llvm/inlineadvisoranalysis">InlineAdvisorAnalysis</a> results. <a href="#details">More...</a></p>
 

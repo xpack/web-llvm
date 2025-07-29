@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PagedVector.h` File Reference
+# `PagedVector.h` File
 
 
 

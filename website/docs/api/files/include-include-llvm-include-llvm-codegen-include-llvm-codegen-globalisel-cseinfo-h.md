@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSEInfo.h` File Reference
+# `CSEInfo.h` File
 
 <p>Provides analysis for continuously CSEing during GISel passes. <a href="#details">More...</a></p>
 

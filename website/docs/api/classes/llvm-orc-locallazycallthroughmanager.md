@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalLazyCallThroughManager` Class Reference
+# `LocalLazyCallThroughManager` Class
 
 <p>A lazy call-through manager that builds trampolines in the current process. <a href="#details">More...</a></p>
 

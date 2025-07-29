@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleSegmentAlloc` Class Reference
+# `SimpleSegmentAlloc` Class
 
 <p>A utility class for making simple allocations using <a href="/web-llvm/docs/api/classes/llvm/jitlink/jitlinkmemorymanager">JITLinkMemoryManager</a>. <a href="#details">More...</a></p>
 

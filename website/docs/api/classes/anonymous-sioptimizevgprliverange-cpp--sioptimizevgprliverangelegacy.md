@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIOptimizeVGPRLiveRangeLegacy` Class Reference
+# `SIOptimizeVGPRLiveRangeLegacy` Class
 
 
 

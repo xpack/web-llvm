@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFG.h` File Reference
+# `CFG.h` File
 
 <p>This file provides various utilities for inspecting and working with the control flow graph in LLVM IR. <a href="#details">More...</a></p>
 

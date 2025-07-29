@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClobberWalker` Class Reference
+# `ClobberWalker` Class
 
 <p>Our algorithm for walking (and trying to optimize) clobbers, all wrapped up in one class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPtrSetImpl` Class Template Reference
+# `SmallPtrSetImpl` Class Template
 
 <p>A templated base class for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/smallptrset">SmallPtrSet</a></span> which provides the typesafe interface that is common across all small sizes. <a href="#details">More...</a></p>
 

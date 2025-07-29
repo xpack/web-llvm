@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastMathFlags` Class Reference
+# `FastMathFlags` Class
 
 <p>Convenience struct for specifying and reasoning about fast-math flags. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RefCountedBase` Class Template Reference
+# `RefCountedBase` Class Template
 
 <p>A CRTP mixin class that adds reference counting to a type. <a href="#details">More...</a></p>
 

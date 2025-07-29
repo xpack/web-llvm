@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InnerLoopVectorizer` Class Reference
+# `InnerLoopVectorizer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/innerloopvectorizer">InnerLoopVectorizer</a> vectorizes loops which contain only one basic block to a specified vectorization factor (VF). <a href="#details">More...</a></p>
 

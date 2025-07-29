@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DocNode` Class Reference
+# `DocNode` Class
 
 <p>A node in a MsgPack <a href="/web-llvm/docs/api/classes/llvm/msgpack/document">Document</a>. <a href="#details">More...</a></p>
 

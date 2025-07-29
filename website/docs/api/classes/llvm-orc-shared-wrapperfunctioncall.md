@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrapperFunctionCall` Class Reference
+# `WrapperFunctionCall` Class
 
 <p>Represents a serialized wrapper function call. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UserUseIterator` Class Reference
+# `UserUseIterator` Class
 
 <p>Iterator for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/sandboxir/use">Use</a></span> edges of a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a>'s users. <a href="#details">More...</a></p>
 

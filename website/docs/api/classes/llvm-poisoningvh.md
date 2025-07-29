@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoisoningVH` Class Template Reference
+# `PoisoningVH` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> handle that poisons itself if the <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> is deleted. <a href="#details">More...</a></p>
 

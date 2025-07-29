@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoSourceValueManager` Class Reference
+# `PseudoSourceValueManager` Class
 
 <p>Manages creation of pseudo source values. <a href="#details">More...</a></p>
 

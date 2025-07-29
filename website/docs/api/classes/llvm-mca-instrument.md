@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Instrument` Class Reference
+# `Instrument` Class
 
 
 

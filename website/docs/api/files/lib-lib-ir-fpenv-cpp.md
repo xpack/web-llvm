@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPEnv.cpp` File Reference
+# `FPEnv.cpp` File
 
 <p>This file contains the implementations of entities that describe floating point environment. <a href="#details">More...</a></p>
 

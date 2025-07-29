@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallSet.h` File Reference
+# `SmallSet.h` File
 
 <p>This file defines the SmallSet class. <a href="#details">More...</a></p>
 

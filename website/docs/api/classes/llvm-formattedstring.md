@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormattedString` Class Reference
+# `FormattedString` Class
 
 <p>This is a helper class for left_justify, right_justify, and center_justify. <a href="#details">More...</a></p>
 

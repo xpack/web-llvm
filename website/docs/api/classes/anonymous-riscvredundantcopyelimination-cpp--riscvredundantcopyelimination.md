@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVRedundantCopyElimination` Class Reference
+# `RISCVRedundantCopyElimination` Class
 
 
 

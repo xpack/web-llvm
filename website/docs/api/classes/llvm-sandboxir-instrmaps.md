@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrMaps` Class Reference
+# `InstrMaps` Class
 
 <p>Maps the original instructions to the vectorized instrs and the reverse. <a href="#details">More...</a></p>
 

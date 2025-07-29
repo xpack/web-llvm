@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PluginInlineAdvisorAnalysis` Class Reference
+# `PluginInlineAdvisorAnalysis` Class
 
 <p>Used for dynamically registering InlineAdvisors as plugins. <a href="#details">More...</a></p>
 

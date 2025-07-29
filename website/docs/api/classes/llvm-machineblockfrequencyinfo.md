@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBlockFrequencyInfo` Class Reference
+# `MachineBlockFrequencyInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineblockfrequencyinfo">MachineBlockFrequencyInfo</a> pass uses <a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfoimpl">BlockFrequencyInfoImpl</a> implementation to estimate machine basic block frequencies. <a href="#details">More...</a></p>
 

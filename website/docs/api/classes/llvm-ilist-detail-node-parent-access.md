@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `node_parent_access` Class Template Reference
+# `node_parent_access` Class Template
 
 <p>Mixin base class that is used to add <em><a href="#a7e19e7508415378ad9523e0339b23e22">getParent()</a></em> and <em><a href="#ad4cf5562c8c361844baaeb6a8b5cfb7e">setParent(ParentTy*)</a></em> methods to <em><a href="/web-llvm/docs/api/classes/llvm/ilist-node-impl">ilist_node_impl</a></em> iff <em><a href="/web-llvm/docs/api/structs/llvm/ilist-parent">ilist_parent</a></em> has been set in the list options. <a href="#details">More...</a></p>
 

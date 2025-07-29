@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Dwarf5AccelTableWriter` Class Reference
+# `Dwarf5AccelTableWriter` Class
 
 <p>Class responsible for emitting a DWARF v5 Accelerator Table. <a href="#details">More...</a></p>
 

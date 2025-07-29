@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkerBase` Class Reference
+# `JITLinkerBase` Class
 
 <p>Base class for a JIT linker. <a href="#details">More...</a></p>
 

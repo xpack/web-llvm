@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryRegionInfo` Class Reference
+# `MemoryRegionInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportedSymbolRef` Class Reference
+# `ImportedSymbolRef` Class
 
 
 

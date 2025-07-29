@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDXContainerStreamer` Class Reference
+# `MCDXContainerStreamer` Class
 
 
 

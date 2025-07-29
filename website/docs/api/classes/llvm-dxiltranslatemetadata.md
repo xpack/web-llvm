@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILTranslateMetadata` Class Reference
+# `DXILTranslateMetadata` Class
 
 <p>A pass that transforms DXIL Intrinsics that don't have DXIL opCodes. <a href="#details">More...</a></p>
 

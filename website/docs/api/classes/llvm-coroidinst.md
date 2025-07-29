@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroIdInst` Class Reference
+# `CoroIdInst` Class
 
 <p>This represents the llvm.coro.id instruction. <a href="#details">More...</a></p>
 

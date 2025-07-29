@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_sha1_ostream` Class Reference
+# `raw_sha1_ostream` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> that hash the content using the sha1 algorithm. <a href="#details">More...</a></p>
 

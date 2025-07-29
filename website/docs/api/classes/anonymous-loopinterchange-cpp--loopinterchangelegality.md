@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInterchangeLegality` Class Reference
+# `LoopInterchangeLegality` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-loopinterchange-cpp-/loopinterchangelegality">LoopInterchangeLegality</a> checks if it is legal to interchange the loop. <a href="#details">More...</a></p>
 

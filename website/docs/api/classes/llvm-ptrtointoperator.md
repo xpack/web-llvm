@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrToIntOperator` Class Reference
+# `PtrToIntOperator` Class
 
 
 

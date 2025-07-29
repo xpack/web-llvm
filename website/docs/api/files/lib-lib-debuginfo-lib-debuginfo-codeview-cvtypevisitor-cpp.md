@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVTypeVisitor.cpp` File Reference
+# `CVTypeVisitor.cpp` File
 
 
 

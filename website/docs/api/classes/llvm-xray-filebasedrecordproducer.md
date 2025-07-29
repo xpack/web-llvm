@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileBasedRecordProducer` Class Reference
+# `FileBasedRecordProducer` Class
 
 
 

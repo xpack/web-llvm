@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumeratorRecord` Class Reference
+# `EnumeratorRecord` Class
 
 
 

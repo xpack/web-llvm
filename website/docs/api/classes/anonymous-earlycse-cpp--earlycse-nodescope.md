@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeScope` Class Reference
+# `NodeScope` Class
 
 
 

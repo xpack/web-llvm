@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinCostMaxFlow` Class Reference
+# `MinCostMaxFlow` Class
 
 <p>The minimum-cost maximum flow algorithm. <a href="#details">More...</a></p>
 

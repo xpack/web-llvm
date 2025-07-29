@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetVector.h` File Reference
+# `SetVector.h` File
 
 <p>This file implements a set that has insertion order iteration characteristics. <a href="#details">More...</a></p>
 

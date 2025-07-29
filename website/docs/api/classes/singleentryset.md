@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SingleEntrySet` Class Template Reference
+# `SingleEntrySet` Class Template
 
 
 

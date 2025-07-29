@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Manager` Class Reference
+# `Manager` Class
 
 <p>This class is the main interaction point between any LLVM tool and this framework. <a href="#details">More...</a></p>
 

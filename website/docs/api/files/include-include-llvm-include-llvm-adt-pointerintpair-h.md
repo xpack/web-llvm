@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerIntPair.h` File Reference
+# `PointerIntPair.h` File
 
 <p>This file defines the PointerIntPair class. <a href="#details">More...</a></p>
 

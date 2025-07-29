@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructuralHashImpl` Class Reference
+# `StructuralHashImpl` Class
 
 
 

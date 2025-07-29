@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EngineBuilder` Class Reference
+# `EngineBuilder` Class
 
 <p>Builder class for ExecutionEngines. <a href="#details">More...</a></p>
 

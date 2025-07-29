@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGDataOStream` Class Reference
+# `CGDataOStream` Class
 
 <p>A wrapper class to abstract writer stream with support of bytes back patching. <a href="#details">More...</a></p>
 

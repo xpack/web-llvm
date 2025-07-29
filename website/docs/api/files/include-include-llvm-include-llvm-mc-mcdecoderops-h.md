@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDecoderOps.h` File Reference
+# `MCDecoderOps.h` File
 
 
 

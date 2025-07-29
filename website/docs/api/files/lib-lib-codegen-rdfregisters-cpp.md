@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RDFRegisters.cpp` File Reference
+# `RDFRegisters.cpp` File
 
 
 

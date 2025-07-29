@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegBankLegalizeCombiner` Class Reference
+# `AMDGPURegBankLegalizeCombiner` Class
 
 
 

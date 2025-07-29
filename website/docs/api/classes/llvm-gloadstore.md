@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GLoadStore` Class Reference
+# `GLoadStore` Class
 
 <p>Represents any type of generic load or store. <a href="#details">More...</a></p>
 

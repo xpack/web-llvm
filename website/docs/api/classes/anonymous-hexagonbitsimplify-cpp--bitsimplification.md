@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitSimplification` Class Reference
+# `BitSimplification` Class
 
 
 

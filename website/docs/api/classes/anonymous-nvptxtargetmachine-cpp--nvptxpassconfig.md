@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXPassConfig` Class Reference
+# `NVPTXPassConfig` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Instruction` Class Reference
+# `Instruction` Class
 
 <p>An instruction propagated through the simulated instruction pipeline. <a href="#details">More...</a></p>
 

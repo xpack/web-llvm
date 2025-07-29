@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsFunctionInfo` Class Reference
+# `MipsFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mipsfunctioninfo">MipsFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> private <a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a> target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

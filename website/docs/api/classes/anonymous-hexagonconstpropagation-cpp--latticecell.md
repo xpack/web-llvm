@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LatticeCell` Class Reference
+# `LatticeCell` Class
 
 
 

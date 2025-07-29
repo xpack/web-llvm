@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Markup.cpp` File Reference
+# `Markup.cpp` File
 
 <p>This file defines the log symbolizer markup data model and parser. <a href="#details">More...</a></p>
 

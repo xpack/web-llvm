@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOInstrumentation.h` File Reference
+# `PGOInstrumentation.h` File
 
 <p>This file provides the interface for IR based instrumentation passes ( (profile-gen, and profile-use). <a href="#details">More...</a></p>
 

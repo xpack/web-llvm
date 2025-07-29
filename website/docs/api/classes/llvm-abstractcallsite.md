@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractCallSite` Class Reference
+# `AbstractCallSite` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/abstractcallsite">AbstractCallSite</a>. <a href="#details">More...</a></p>
 

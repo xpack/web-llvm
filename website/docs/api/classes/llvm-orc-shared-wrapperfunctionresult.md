@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrapperFunctionResult` Class Reference
+# `WrapperFunctionResult` Class
 
 <p>C++ wrapper function result: Same as <a href="/web-llvm/docs/api/structs/llvm/orc/shared/cwrapperfunctionresult">CWrapperFunctionResult</a> but auto-releases memory. <a href="#details">More...</a></p>
 

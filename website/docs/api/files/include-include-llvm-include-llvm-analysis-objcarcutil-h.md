@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCUtil.h` File Reference
+# `ObjCARCUtil.h` File
 
 <p>This file defines ARC utility functions which are used by various parts of the compiler. <a href="#details">More...</a></p>
 

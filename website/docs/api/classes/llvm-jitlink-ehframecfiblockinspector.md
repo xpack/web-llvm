@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHFrameCFIBlockInspector` Class Reference
+# `EHFrameCFIBlockInspector` Class
 
 <p>Inspect an eh-frame CFI record. <a href="#details">More...</a></p>
 

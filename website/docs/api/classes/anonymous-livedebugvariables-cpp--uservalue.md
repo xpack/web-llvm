@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UserValue` Class Reference
+# `UserValue` Class
 
 <p>A user value is a part of a debug info user variable. <a href="#details">More...</a></p>
 

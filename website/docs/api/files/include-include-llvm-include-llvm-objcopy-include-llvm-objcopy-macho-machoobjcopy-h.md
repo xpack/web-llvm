@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOObjcopy.h` File Reference
+# `MachOObjcopy.h` File
 
 
 

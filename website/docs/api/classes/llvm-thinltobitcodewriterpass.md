@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLTOBitcodeWriterPass` Class Reference
+# `ThinLTOBitcodeWriterPass` Class
 
 
 

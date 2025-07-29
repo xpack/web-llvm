@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsInstPrinter` Class Reference
+# `MipsInstPrinter` Class
 
 
 

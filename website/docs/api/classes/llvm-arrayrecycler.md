@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayRecycler` Class Template Reference
+# `ArrayRecycler` Class Template
 
 <p>Recycle small arrays allocated from a <a href="/web-llvm/docs/api/namespaces/llvm/#a8e612822d4ba7bb36c9c79582a567108">BumpPtrAllocator</a>. <a href="#details">More...</a></p>
 

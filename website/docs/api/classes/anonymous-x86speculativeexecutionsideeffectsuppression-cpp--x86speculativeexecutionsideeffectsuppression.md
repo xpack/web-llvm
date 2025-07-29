@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86SpeculativeExecutionSideEffectSuppression` Class Reference
+# `X86SpeculativeExecutionSideEffectSuppression` Class
 
 
 

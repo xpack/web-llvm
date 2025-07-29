@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVType.cpp` File Reference
+# `LVType.cpp` File
 
 
 

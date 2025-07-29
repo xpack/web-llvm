@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySanitizer` Class Reference
+# `MemorySanitizer` Class
 
 <p>Instrument functions of a module to detect uninitialized reads. <a href="#details">More...</a></p>
 

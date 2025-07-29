@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBStringTable.cpp` File Reference
+# `PDBStringTable.cpp` File
 
 
 

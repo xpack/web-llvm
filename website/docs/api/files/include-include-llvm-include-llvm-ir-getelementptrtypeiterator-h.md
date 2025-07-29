@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetElementPtrTypeIterator.h` File Reference
+# `GetElementPtrTypeIterator.h` File
 
 
 

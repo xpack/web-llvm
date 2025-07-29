@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseSet.h` File Reference
+# `DenseSet.h` File
 
 <p>This file defines the DenseSet and SmallDenseSet classes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86OptimizeLEAPass` Class Reference
+# `X86OptimizeLEAPass` Class
 
 
 

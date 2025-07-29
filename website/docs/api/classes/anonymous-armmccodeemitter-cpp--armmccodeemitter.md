@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMCCodeEmitter` Class Reference
+# `ARMMCCodeEmitter` Class
 
 
 

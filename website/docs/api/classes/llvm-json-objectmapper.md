@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectMapper` Class Reference
+# `ObjectMapper` Class
 
 <p>Helper for mapping JSON objects onto protocol structs. <a href="#details">More...</a></p>
 

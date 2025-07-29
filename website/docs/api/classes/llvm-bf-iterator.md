@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bf_iterator` Class Template Reference
+# `bf_iterator` Class Template
 
 
 

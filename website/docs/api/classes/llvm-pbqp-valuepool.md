@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValuePool` Class Template Reference
+# `ValuePool` Class Template
 
 
 

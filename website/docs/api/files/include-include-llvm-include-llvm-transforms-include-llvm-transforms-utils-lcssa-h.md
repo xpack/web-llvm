@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LCSSA.h` File Reference
+# `LCSSA.h` File
 
 
 

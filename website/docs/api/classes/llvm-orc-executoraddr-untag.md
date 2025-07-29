@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Untag` Class Reference
+# `Untag` Class
 
 <p>Strips a tag of the given length from the given offset within the pointer: P' = P &amp; ~(((1 &lt;&lt; TagLen) -1) &lt;&lt; TagOffset) <a href="#details">More...</a></p>
 

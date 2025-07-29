@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVVectorMaskDAGMutation` Class Reference
+# `RISCVVectorMaskDAGMutation` Class
 
 
 

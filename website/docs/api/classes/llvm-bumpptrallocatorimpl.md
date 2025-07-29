@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BumpPtrAllocatorImpl` Class Template Reference
+# `BumpPtrAllocatorImpl` Class Template
 
 <p>Allocate memory in an ever growing pool, as if by bump-pointer. <a href="#details">More...</a></p>
 

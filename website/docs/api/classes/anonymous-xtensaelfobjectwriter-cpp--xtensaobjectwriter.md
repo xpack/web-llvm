@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaObjectWriter` Class Reference
+# `XtensaObjectWriter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonLocalDepEntry` Class Reference
+# `NonLocalDepEntry` Class
 
 <p>This is an entry in the NonLocalDepInfo cache. <a href="#details">More...</a></p>
 

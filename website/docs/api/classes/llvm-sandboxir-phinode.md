@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHINode` Class Reference
+# `PHINode` Class
 
 
 

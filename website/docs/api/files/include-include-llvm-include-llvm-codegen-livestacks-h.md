@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveStacks.h` File Reference
+# `LiveStacks.h` File
 
 
 

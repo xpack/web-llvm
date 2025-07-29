@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphSCC` Class Reference
+# `CallGraphSCC` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> - This is a single SCC that a <a href="/web-llvm/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a> is run on. <a href="#details">More...</a></p>
 

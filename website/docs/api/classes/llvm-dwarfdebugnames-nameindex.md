@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameIndex` Class Reference
+# `NameIndex` Class
 
 <p>Represents a single accelerator table within the DWARF v5 .debug_names section. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DepthFirstIterator.h` File Reference
+# `DepthFirstIterator.h` File
 
 <p>This file builds on the <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h">ADT/GraphTraits.h</a> file to build generic depth first graph iterator. <a href="#details">More...</a></p>
 

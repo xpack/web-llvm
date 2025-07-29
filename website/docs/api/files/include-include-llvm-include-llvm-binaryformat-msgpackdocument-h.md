@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MsgPackDocument.h` File Reference
+# `MsgPackDocument.h` File
 
 <p>This file declares a class that exposes a simple in-memory representation of a document of MsgPack objects, that can be read from MsgPack, written to MsgPack, and inspected and modified in memory. <a href="#details">More...</a></p>
 

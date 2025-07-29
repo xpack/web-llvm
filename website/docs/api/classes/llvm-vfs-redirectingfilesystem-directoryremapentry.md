@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectoryRemapEntry` Class Reference
+# `DirectoryRemapEntry` Class
 
 <p>A directory in the vfs that maps to a directory in the external file system. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Edge` Class Reference
+# `Edge` Class
 
 <p>Represents fixups and constraints in the <a href="/web-llvm/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a>. <a href="#details">More...</a></p>
 

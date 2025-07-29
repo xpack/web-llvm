@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultMMapper` Class Reference
+# `DefaultMMapper` Class
 
 
 

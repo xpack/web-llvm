@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Name2PairMap` Class Reference
+# `Name2PairMap` Class
 
 
 

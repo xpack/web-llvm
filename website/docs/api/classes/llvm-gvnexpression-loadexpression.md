@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadExpression` Class Reference
+# `LoadExpression` Class
 
 
 

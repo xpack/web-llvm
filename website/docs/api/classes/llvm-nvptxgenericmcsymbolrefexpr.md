@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXGenericMCSymbolRefExpr` Class Reference
+# `NVPTXGenericMCSymbolRefExpr` Class
 
 <p>A wrapper for <a href="/web-llvm/docs/api/classes/llvm/mcsymbolrefexpr">MCSymbolRefExpr</a> that tells the assembly printer that the symbol should be enclosed by generic(). <a href="#details">More...</a></p>
 

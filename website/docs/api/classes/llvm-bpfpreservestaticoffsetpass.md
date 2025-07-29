@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFPreserveStaticOffsetPass` Class Reference
+# `BPFPreserveStaticOffsetPass` Class
 
 
 

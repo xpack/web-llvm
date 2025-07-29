@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ColorAssignmentInfo` Class Reference
+# `ColorAssignmentInfo` Class
 
 
 

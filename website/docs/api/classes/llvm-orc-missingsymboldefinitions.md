@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MissingSymbolDefinitions` Class Reference
+# `MissingSymbolDefinitions` Class
 
 <p>Errors of this type should be returned if a module fails to include definitions that are claimed by the module's associated <a href="/web-llvm/docs/api/classes/llvm/orc/materializationresponsibility">MaterializationResponsibility</a>. <a href="#details">More...</a></p>
 

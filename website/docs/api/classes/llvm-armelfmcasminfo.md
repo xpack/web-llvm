@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMELFMCAsmInfo` Class Reference
+# `ARMELFMCAsmInfo` Class
 
 
 

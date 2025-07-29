@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchLowering` Class Reference
+# `SwitchLowering` Class
 
 
 

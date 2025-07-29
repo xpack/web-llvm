@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompressedSection` Class Reference
+# `CompressedSection` Class
 
 
 

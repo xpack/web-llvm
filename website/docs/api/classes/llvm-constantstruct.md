@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantStruct` Class Reference
+# `ConstantStruct` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineRegionInfo.h` File Reference
+# `MachineRegionInfo.h` File
 
 
 

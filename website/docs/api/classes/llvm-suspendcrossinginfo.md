@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuspendCrossingInfo` Class Reference
+# `SuspendCrossingInfo` Class
 
 
 

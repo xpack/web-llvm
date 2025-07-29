@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Verifier.h` File Reference
+# `Verifier.h` File
 
 
 

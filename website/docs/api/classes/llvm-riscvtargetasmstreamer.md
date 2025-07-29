@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTargetAsmStreamer` Class Reference
+# `RISCVTargetAsmStreamer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantData` Class Reference
+# `ConstantData` Class
 
 <p>Base class for constants with no operands. <a href="#details">More...</a></p>
 

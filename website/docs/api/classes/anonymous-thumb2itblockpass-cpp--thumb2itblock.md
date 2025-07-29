@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thumb2ITBlock` Class Reference
+# `Thumb2ITBlock` Class
 
 
 

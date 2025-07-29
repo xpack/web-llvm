@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleBindingMemoryManager` Class Reference
+# `SimpleBindingMemoryManager` Class
 
 
 

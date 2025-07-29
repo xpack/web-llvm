@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsExactMFMA` Class Reference
+# `IsExactMFMA` Class
 
 <p>Whether or not the SU is exactly the <span class="doxyComputerOutput">Number</span> th MFMA in the chain starting with <span class="doxyComputerOutput">ChainSeed</span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgListEntry` Class Reference
+# `ArgListEntry` Class
 
 
 

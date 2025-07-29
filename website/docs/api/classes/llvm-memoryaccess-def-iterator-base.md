@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `memoryaccess_def_iterator_base` Class Template Reference
+# `memoryaccess_def_iterator_base` Class Template
 
 <p>Iterator base class used to implement const and non-const iterators over the defining accesses of a <a href="/web-llvm/docs/api/classes/llvm/memoryaccess">MemoryAccess</a>. <a href="#details">More...</a></p>
 

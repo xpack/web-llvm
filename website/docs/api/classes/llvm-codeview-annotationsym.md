@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnnotationSym` Class Reference
+# `AnnotationSym` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULateCodeGenPrepare` Class Reference
+# `AMDGPULateCodeGenPrepare` Class
 
 
 

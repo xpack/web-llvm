@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopRotate` Class Reference
+# `LoopRotate` Class
 
 <p>A simple loop rotation transformation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionKind` Class Reference
+# `SectionKind` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sectionkind">SectionKind</a> - This is a simple POD value that classifies the properties of a section. <a href="#details">More...</a></p>
 

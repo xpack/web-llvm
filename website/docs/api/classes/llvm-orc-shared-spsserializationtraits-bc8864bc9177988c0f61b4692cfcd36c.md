@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>SPS serialization for integral types, bool, and char. <a href="#details">More...</a></p>
 

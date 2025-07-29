@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Note_Impl` Class Template Reference
+# `Elf_Note_Impl` Class Template
 
 <p>An <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> note. <a href="#details">More...</a></p>
 

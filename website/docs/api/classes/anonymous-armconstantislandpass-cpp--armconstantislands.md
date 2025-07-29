@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMConstantIslands` Class Reference
+# `ARMConstantIslands` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-armconstantislandpass-cpp-/armconstantislands">ARMConstantIslands</a> - Due to limited PC-relative displacements, <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> requires constant pool entries to be scattered among the instructions inside a function. <a href="#details">More...</a></p>
 

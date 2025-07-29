@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstrainedTypeTemplateParamDecl` Class Reference
+# `ConstrainedTypeTemplateParamDecl` Class
 
 <p>A constrained template type parameter declaration, 'C<u> T'. </u> <a href="#details">More...</a></p>
 

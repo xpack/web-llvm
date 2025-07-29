@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstrPostProcess` Class Reference
+# `AMDGPUInstrPostProcess` Class
 
 
 

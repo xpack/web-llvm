@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProcessMemoryMapper` Class Reference
+# `InProcessMemoryMapper` Class
 
 
 

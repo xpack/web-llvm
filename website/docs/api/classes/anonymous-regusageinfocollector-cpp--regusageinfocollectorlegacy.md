@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegUsageInfoCollectorLegacy` Class Reference
+# `RegUsageInfoCollectorLegacy` Class
 
 
 

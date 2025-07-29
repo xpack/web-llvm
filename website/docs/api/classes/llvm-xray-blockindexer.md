@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockIndexer` Class Reference
+# `BlockIndexer` Class
 
 
 

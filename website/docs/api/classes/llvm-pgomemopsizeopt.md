@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOMemOPSizeOpt` Class Reference
+# `PGOMemOPSizeOpt` Class
 
 <p>The profile size based optimization pass for memory intrinsics. <a href="#details">More...</a></p>
 

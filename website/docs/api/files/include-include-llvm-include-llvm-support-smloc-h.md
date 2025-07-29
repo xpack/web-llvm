@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMLoc.h` File Reference
+# `SMLoc.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyMemMoveInst` Class Reference
+# `AnyMemMoveInst` Class
 
 <p>This class represents any memmove intrinsic i.e. <a href="#details">More...</a></p>
 

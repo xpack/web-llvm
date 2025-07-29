@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataTracking` Class Reference
+# `MetadataTracking` Class
 
 <p>API for tracking metadata references through RAUW and deletion. <a href="#details">More...</a></p>
 

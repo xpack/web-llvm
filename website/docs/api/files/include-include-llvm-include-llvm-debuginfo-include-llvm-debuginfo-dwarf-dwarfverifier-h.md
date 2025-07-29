@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFVerifier.h` File Reference
+# `DWARFVerifier.h` File
 
 
 

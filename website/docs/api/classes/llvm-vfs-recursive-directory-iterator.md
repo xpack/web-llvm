@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `recursive_directory_iterator` Class Reference
+# `recursive_directory_iterator` Class
 
 <p>An input iterator over the recursive contents of a virtual path, similar to <a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator">llvm::sys::fs::recursive_directory_iterator</a>. <a href="#details">More...</a></p>
 

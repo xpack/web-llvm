@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Single` Class Reference
+# `Single` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loc/single">Single</a> value location description. <a href="#details">More...</a></p>
 

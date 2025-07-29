@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `indexed_accessor_range` Class Template Reference
+# `indexed_accessor_range` Class Template
 
 <p>This class provides an implementation of a range of indexed_accessor_iterators where the base is not indexable. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwingSchedulerDDG` Class Reference
+# `SwingSchedulerDDG` Class
 
 <p>Represents dependencies between instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFUnitHeader` Class Reference
+# `DWARFUnitHeader` Class
 
 <p>Base class describing the header of any kind of "unit." Some information is specific to certain unit types. <a href="#details">More...</a></p>
 

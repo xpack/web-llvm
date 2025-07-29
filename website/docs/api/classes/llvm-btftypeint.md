@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeInt` Class Reference
+# `BTFTypeInt` Class
 
 <p>Handle int type. <a href="#details">More...</a></p>
 

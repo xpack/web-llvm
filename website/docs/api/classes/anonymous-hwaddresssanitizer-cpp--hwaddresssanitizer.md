@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWAddressSanitizer` Class Reference
+# `HWAddressSanitizer` Class
 
 <p>An instrumentation pass implementing detection of addressability bugs using tagged pointers. <a href="#details">More...</a></p>
 

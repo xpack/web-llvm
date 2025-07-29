@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolCompiland.h` File Reference
+# `PDBSymbolCompiland.h` File
 
 
 

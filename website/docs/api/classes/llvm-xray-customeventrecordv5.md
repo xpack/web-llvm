@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomEventRecordV5` Class Reference
+# `CustomEventRecordV5` Class
 
 
 

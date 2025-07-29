@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLocTracker` Class Reference
+# `VLocTracker` Class
 
 <p>Collection of DBG_VALUEs observed when traversing a block. <a href="#details">More...</a></p>
 

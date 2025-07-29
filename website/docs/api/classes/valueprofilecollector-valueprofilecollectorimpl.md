@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueProfileCollectorImpl` Class Reference
+# `ValueProfileCollectorImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/valueprofilecollector/valueprofilecollectorimpl">ValueProfileCollectorImpl</a> inherits the API of <a href="/web-llvm/docs/api/classes/pluginchainfinal">PluginChainFinal</a>. <a href="#details">More...</a></p>
 

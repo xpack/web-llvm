@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErlangGC` Class Reference
+# `ErlangGC` Class
 
 <p>An example GC which attempts to be compatible with Erlang/OTP garbage collector. <a href="#details">More...</a></p>
 

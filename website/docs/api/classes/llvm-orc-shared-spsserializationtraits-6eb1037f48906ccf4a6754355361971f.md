@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>Serialize to a <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsexpected">SPSExpected&lt;SPSTagT&gt;</a> from a <a href="/web-llvm/docs/api/structs/llvm/orc/shared/detail/spsserializableexpected">detail::SPSSerializableExpected&lt;T&gt;</a>. <a href="#details">More...</a></p>
 

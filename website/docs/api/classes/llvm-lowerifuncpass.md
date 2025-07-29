@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerIFuncPass` Class Reference
+# `LowerIFuncPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to replace calls to ifuncs with indirect calls. <a href="#details">More...</a></p>
 

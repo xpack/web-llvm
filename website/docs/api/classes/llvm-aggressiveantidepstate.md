@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AggressiveAntiDepState` Class Reference
+# `AggressiveAntiDepState` Class
 
 <p>Contains all the state necessary for anti-dep breaking. <a href="#details">More...</a></p>
 

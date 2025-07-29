@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOAbstractFixupEntry` Class Reference
+# `MachOAbstractFixupEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/machoabstractfixupentry">MachOAbstractFixupEntry</a> is an abstract class representing a fixup in a MH_DYLDLINK file. <a href="#details">More...</a></p>
 

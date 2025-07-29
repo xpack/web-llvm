@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResetMachineFunctionPass.cpp` File Reference
+# `ResetMachineFunctionPass.cpp` File
 
 <p>This file implements a pass that will conditionally reset a machine function as if it was just created. <a href="#details">More...</a></p>
 

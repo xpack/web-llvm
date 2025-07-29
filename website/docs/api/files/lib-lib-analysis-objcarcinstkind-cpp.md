@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCInstKind.cpp` File Reference
+# `ObjCARCInstKind.cpp` File
 
 <p>This file defines several utility functions used by various ARC optimizations which are IMHO too big to be in a header file. <a href="#details">More...</a></p>
 

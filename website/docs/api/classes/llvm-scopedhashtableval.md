@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedHashTableVal` Class Template Reference
+# `ScopedHashTableVal` Class Template
 
 
 

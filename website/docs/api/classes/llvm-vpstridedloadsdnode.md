@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPStridedLoadSDNode` Class Reference
+# `VPStridedLoadSDNode` Class
 
 <p>This class is used to represent an EXPERIMENTAL_VP_STRIDED_LOAD node. <a href="#details">More...</a></p>
 

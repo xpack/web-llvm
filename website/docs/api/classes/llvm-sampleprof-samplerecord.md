@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleRecord` Class Reference
+# `SampleRecord` Class
 
 <p>Representation of a single sample record. <a href="#details">More...</a></p>
 

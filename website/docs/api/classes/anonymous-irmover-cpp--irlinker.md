@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRLinker` Class Reference
+# `IRLinker` Class
 
 <p>This is responsible for keeping track of the state used for moving data from SrcM to DstM. <a href="#details">More...</a></p>
 

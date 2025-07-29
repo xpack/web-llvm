@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVPipelinerLoopInfo` Class Reference
+# `RISCVPipelinerLoopInfo` Class
 
 
 

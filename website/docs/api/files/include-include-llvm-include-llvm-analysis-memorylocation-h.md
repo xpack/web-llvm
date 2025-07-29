@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryLocation.h` File Reference
+# `MemoryLocation.h` File
 
 <p>This file provides utility analysis objects describing memory locations. <a href="#details">More...</a></p>
 

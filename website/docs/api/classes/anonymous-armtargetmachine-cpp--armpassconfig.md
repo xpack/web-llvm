@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMPassConfig` Class Reference
+# `ARMPassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

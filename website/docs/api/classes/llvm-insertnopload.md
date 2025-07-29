@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertNOPLoad` Class Reference
+# `InsertNOPLoad` Class
 
 
 

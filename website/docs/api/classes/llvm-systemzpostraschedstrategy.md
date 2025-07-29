@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZPostRASchedStrategy` Class Reference
+# `SystemZPostRASchedStrategy` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a> implementation for <a href="/web-llvm/docs/api/namespaces/llvm/systemz">SystemZ</a> post RA scheduling. <a href="#details">More...</a></p>
 

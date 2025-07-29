@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `defusechain_instr_iterator` Class Template Reference
+# `defusechain_instr_iterator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo/defusechain-iterator">defusechain_iterator</a> - This class provides iterator support for machine operands in the function that use or define a specific register. <a href="#details">More...</a></p>
 

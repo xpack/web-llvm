@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SaveTemplateParams` Class Reference
+# `SaveTemplateParams` Class
 
 
 

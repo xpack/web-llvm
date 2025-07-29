@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Swift.h` File Reference
+# `Swift.h` File
 
 
 

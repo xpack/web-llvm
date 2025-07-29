@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64Arm64ECCallLowering` Class Reference
+# `AArch64Arm64ECCallLowering` Class
 
 
 

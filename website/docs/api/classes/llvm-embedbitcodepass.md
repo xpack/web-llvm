@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmbedBitcodePass` Class Reference
+# `EmbedBitcodePass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> embeds a copy of the module optimized with the provided pass pipeline into a global variable. <a href="#details">More...</a></p>
 

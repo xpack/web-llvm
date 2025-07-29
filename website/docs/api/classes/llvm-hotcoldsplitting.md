@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotColdSplitting` Class Reference
+# `HotColdSplitting` Class
 
 
 

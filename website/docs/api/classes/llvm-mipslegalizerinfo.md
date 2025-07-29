@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsLegalizerInfo` Class Reference
+# `MipsLegalizerInfo` Class
 
 <p>This class provides legalization strategies. <a href="#details">More...</a></p>
 

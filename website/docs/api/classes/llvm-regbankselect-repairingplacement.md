@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RepairingPlacement` Class Reference
+# `RepairingPlacement` Class
 
 <p>Struct used to represent the placement of a repairing point for a given operand. <a href="#details">More...</a></p>
 

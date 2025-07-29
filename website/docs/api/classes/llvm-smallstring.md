@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallString` Class Template Reference
+# `SmallString` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallstring">SmallString</a> - A <a href="/web-llvm/docs/api/classes/llvm/smallstring">SmallString</a> is just a <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> with methods and accessors that make it work better as a string (e.g. <a href="#details">More...</a></p>
 

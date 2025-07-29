@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFX86_32AsmBackend` Class Reference
+# `ELFX86_32AsmBackend` Class
 
 
 

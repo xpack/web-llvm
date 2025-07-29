@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionMemoryManager.cpp` File Reference
+# `SectionMemoryManager.cpp` File
 
 
 

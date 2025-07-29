@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYELFStreamer` Class Reference
+# `CSKYELFStreamer` Class
 
 
 

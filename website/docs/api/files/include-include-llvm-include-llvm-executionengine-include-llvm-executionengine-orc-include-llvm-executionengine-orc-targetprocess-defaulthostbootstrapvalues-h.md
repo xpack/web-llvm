@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultHostBootstrapValues.h` File Reference
+# `DefaultHostBootstrapValues.h` File
 
 
 

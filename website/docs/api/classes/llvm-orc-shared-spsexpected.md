@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSExpected` Class Template Reference
+# `SPSExpected` Class Template
 
 <p>SPS tag type for expecteds, which are either a T or a string representing an error. <a href="#details">More...</a></p>
 

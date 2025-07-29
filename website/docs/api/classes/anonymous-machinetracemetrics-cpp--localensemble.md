@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalEnsemble` Class Reference
+# `LocalEnsemble` Class
 
 <p>Pick only the current basic block for the trace and do not choose any predecessors/successors. <a href="#details">More...</a></p>
 

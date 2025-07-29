@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleDebugInfoPrinterPass` Class Reference
+# `ModuleDebugInfoPrinterPass` Class
 
 
 

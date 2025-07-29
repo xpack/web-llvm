@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUDAGToDAGISelLegacy` Class Reference
+# `AMDGPUDAGToDAGISelLegacy` Class
 
 
 

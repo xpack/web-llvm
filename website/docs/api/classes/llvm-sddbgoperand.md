@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDDbgOperand` Class Reference
+# `SDDbgOperand` Class
 
 <p>Holds the information for a single machine location through SDISel; either an <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a>, a constant, a stack location, or a virtual register. <a href="#details">More...</a></p>
 

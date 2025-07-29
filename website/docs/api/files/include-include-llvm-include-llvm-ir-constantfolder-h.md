@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantFolder.h` File Reference
+# `ConstantFolder.h` File
 
 
 

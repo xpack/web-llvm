@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterOperandsCollector` Class Reference
+# `RegisterOperandsCollector` Class
 
 <p>Collect this instruction's unique uses and defs into SmallVectors for processing defs and uses in order. <a href="#details">More...</a></p>
 

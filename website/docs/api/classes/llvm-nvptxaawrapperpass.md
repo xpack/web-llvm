@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAAWrapperPass` Class Reference
+# `NVPTXAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/nvptxaaresult">NVPTXAAResult</a> object. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveDebugValues.cpp` File Reference
+# `LiveDebugValues.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/namespaces/livedebugvalues">LiveDebugValues</a> pass extends the range of variable locations (specified by DBG_VALUE instructions) from single blocks to successors and any other code locations where the variable location is valid. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZELFObjectWriter` Class Reference
+# `SystemZELFObjectWriter` Class
 
 
 

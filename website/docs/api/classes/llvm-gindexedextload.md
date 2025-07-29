@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIndexedExtLoad` Class Reference
+# `GIndexedExtLoad` Class
 
 <p>Represents a G_INDEX_ZEXTLOAD/G_INDEXED_SEXTLOAD. <a href="#details">More...</a></p>
 

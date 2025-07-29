@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600EmitClauseMarkers` Class Reference
+# `R600EmitClauseMarkers` Class
 
 
 

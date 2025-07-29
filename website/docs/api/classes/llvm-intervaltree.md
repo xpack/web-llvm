@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalTree` Class Template Reference
+# `IntervalTree` Class Template
 
 
 

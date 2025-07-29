@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemCmpExpansion` Class Reference
+# `MemCmpExpansion` Class
 
 
 

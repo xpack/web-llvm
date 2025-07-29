@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVSymbolVisitor` Class Reference
+# `LVSymbolVisitor` Class
 
 
 

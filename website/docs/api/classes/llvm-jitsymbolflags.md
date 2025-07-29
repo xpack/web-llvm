@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITSymbolFlags` Class Reference
+# `JITSymbolFlags` Class
 
 <p>Flags for symbols in the JIT. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ArgumentStackSlotPass` Class Reference
+# `X86ArgumentStackSlotPass` Class
 
 
 

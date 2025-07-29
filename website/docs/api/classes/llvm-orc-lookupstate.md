@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookupState` Class Reference
+# `LookupState` Class
 
 <p>Wraps state for a lookup-in-progress. <a href="#details">More...</a></p>
 

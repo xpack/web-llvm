@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVMCAdapter` Class Reference
+# `CVMCAdapter` Class
 
 
 

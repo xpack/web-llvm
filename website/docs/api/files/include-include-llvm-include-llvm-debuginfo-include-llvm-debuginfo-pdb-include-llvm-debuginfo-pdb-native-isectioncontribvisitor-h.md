@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ISectionContribVisitor.h` File Reference
+# `ISectionContribVisitor.h` File
 
 
 

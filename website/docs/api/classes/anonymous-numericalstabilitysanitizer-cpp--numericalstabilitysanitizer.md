@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumericalStabilitySanitizer` Class Reference
+# `NumericalStabilitySanitizer` Class
 
 <p>Instantiating <a href="/web-llvm/docs/api/classes/anonymous-numericalstabilitysanitizer-cpp-/numericalstabilitysanitizer">NumericalStabilitySanitizer</a> inserts the nsan runtime library API function declarations into the module if they don't exist already. <a href="#details">More...</a></p>
 

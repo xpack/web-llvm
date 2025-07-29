@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumeratedArray` Class Template Reference
+# `EnumeratedArray` Class Template
 
 
 

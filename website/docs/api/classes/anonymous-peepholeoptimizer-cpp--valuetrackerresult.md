@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueTrackerResult` Class Reference
+# `ValueTrackerResult` Class
 
 <p>Helper class to hold a reply for <a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/valuetracker">ValueTracker</a> queries. <a href="#details">More...</a></p>
 

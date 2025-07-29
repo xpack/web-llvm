@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerRecord` Class Reference
+# `PointerRecord` Class
 
 
 

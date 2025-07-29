@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thumb1InstrInfo` Class Reference
+# `Thumb1InstrInfo` Class
 
 
 

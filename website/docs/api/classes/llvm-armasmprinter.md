@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmPrinter` Class Reference
+# `ARMAsmPrinter` Class
 
 
 

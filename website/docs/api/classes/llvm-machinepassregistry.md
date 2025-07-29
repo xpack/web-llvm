@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePassRegistry` Class Template Reference
+# `MachinePassRegistry` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinepassregistry">MachinePassRegistry</a> - Track the registration of machine passes. <a href="#details">More...</a></p>
 

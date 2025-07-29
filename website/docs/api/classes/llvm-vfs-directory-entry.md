@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `directory_entry` Class Reference
+# `directory_entry` Class
 
 <p>A member of a directory, yielded by a <a href="/web-llvm/docs/api/classes/llvm/vfs/directory-iterator">directory_iterator</a>. <a href="#details">More...</a></p>
 

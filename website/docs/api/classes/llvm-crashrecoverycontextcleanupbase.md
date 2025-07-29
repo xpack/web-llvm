@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrashRecoveryContextCleanupBase` Class Template Reference
+# `CrashRecoveryContextCleanupBase` Class Template
 
 <p>Base class of cleanup handler that controls recovery of resources of the given type. <a href="#details">More...</a></p>
 

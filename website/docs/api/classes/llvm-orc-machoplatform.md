@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOPlatform` Class Reference
+# `MachOPlatform` Class
 
 <p>Mediates between <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> initialization and <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> state. <a href="#details">More...</a></p>
 

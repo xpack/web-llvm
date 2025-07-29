@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTargetELFStreamer` Class Reference
+# `PPCTargetELFStreamer` Class
 
 
 

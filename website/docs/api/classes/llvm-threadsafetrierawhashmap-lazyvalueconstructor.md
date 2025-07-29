@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueConstructor` Class Reference
+# `LazyValueConstructor` Class
 
 
 

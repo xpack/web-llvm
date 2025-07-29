@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Layer.h` File Reference
+# `Layer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDRLogBuilder.h` File Reference
+# `FDRLogBuilder.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextInstrProfReader` Class Reference
+# `TextInstrProfReader` Class
 
 <p>Reader for the simple text based instrprof format. <a href="#details">More...</a></p>
 

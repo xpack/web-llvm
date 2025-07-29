@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionStrCmp.h` File Reference
+# `OptionStrCmp.h` File
 
 
 

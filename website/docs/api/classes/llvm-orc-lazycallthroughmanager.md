@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyCallThroughManager` Class Reference
+# `LazyCallThroughManager` Class
 
 <p>Manages a set of 'lazy call-through' trampolines. <a href="#details">More...</a></p>
 

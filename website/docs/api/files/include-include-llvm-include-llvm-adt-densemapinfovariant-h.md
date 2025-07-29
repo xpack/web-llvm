@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMapInfoVariant.h` File Reference
+# `DenseMapInfoVariant.h` File
 
 <p>This file defines DenseMapInfo traits for DenseMap&lt;std::variant&lt;Ts...&gt;&gt;. <a href="#details">More...</a></p>
 

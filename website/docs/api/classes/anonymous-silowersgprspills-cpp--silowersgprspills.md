@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerSGPRSpills` Class Reference
+# `SILowerSGPRSpills` Class
 
 
 

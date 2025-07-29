@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Partition` Class Reference
+# `Partition` Class
 
 <p>A partition of the slices. <a href="#details">More...</a></p>
 

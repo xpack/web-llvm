@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniformityInfoAnalysis` Class Reference
+# `UniformityInfoAnalysis` Class
 
 <p>Analysis pass which computes <a href="/web-llvm/docs/api/namespaces/llvm/#a00a2f5a62b5d5d5b6b0e143c4d30041f">UniformityInfo</a>. <a href="#details">More...</a></p>
 

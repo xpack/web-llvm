@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BottomUpVec.h` File Reference
+# `BottomUpVec.h` File
 
 
 

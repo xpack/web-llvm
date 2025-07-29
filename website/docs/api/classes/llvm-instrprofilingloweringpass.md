@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfilingLoweringPass` Class Reference
+# `InstrProfilingLoweringPass` Class
 
 <p>Instrumentation based profiling lowering pass. <a href="#details">More...</a></p>
 

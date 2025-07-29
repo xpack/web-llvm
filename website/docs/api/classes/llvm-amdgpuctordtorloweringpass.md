@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCtorDtorLoweringPass` Class Reference
+# `AMDGPUCtorDtorLoweringPass` Class
 
 <p>Lower llvm.global_ctors and llvm.global_dtors to special kernels. <a href="#details">More...</a></p>
 

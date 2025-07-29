@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreservedCFGCheckerInstrumentation` Class Reference
+# `PreservedCFGCheckerInstrumentation` Class
 
 
 

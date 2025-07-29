@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalMerge` Class Reference
+# `GlobalMerge` Class
 
 
 

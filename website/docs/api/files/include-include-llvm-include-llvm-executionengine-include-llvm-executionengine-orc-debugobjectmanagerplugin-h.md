@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugObjectManagerPlugin.h` File Reference
+# `DebugObjectManagerPlugin.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_node_base.h` File Reference
+# `ilist_node_base.h` File
 
 
 

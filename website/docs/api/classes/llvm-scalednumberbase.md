@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScaledNumberBase` Class Reference
+# `ScaledNumberBase` Class
 
 
 

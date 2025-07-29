@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDRTraceWriter` Class Reference
+# `FDRTraceWriter` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/xray/fdrtracewriter">FDRTraceWriter</a> allows us to hand-craft an XRay Flight Data Recorder (FDR) mode log file. <a href="#details">More...</a></p>
 

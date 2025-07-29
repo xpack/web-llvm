@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGViewerPass` Class Reference
+# `CFGViewerPass` Class
 
 
 

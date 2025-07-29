@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCXCOFFStreamer` Class Reference
+# `PPCXCOFFStreamer` Class
 
 
 

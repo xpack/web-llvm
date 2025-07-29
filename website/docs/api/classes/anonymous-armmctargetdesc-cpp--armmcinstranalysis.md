@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMCInstrAnalysis` Class Reference
+# `ARMMCInstrAnalysis` Class
 
 
 

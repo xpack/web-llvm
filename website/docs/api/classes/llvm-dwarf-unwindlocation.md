@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindLocation` Class Reference
+# `UnwindLocation` Class
 
 <p>A class that represents a location for the Call Frame Address (CFA) or a register. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringSwitch` Class Template Reference
+# `StringSwitch` Class Template
 
 <p>A switch()-like statement whose cases are string literals. <a href="#details">More...</a></p>
 

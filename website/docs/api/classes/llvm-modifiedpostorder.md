@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModifiedPostOrder` Class Template Reference
+# `ModifiedPostOrder` Class Template
 
 <p>Construct a specially modified post-order traversal of cycles. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecTy` Class Reference
+# `RecTy` Class
 
 
 

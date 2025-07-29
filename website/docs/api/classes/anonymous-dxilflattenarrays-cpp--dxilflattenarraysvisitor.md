@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILFlattenArraysVisitor` Class Reference
+# `DXILFlattenArraysVisitor` Class
 
 
 

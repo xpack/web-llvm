@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBSourceFile` Class Reference
+# `IPDBSourceFile` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbsourcefile">IPDBSourceFile</a> defines an interface used to represent source files whose information are stored in the PDB. <a href="#details">More...</a></p>
 

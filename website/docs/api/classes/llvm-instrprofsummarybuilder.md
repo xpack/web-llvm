@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfSummaryBuilder` Class Reference
+# `InstrProfSummaryBuilder` Class
 
 
 

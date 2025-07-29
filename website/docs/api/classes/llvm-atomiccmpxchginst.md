@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicCmpXchgInst` Class Reference
+# `AtomicCmpXchgInst` Class
 
 <p>An instruction that atomically checks whether a specified value is in a memory location, and, if it is, stores a new value there. <a href="#details">More...</a></p>
 

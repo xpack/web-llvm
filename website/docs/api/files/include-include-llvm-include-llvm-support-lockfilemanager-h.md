@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LockFileManager.h` File Reference
+# `LockFileManager.h` File
 
 
 

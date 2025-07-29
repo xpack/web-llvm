@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionOrdering` Class Reference
+# `InstructionOrdering` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> instruction ordering so we can query their relative positions within a function. <a href="#details">More...</a></p>
 

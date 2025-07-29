@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Class Reference
+# `Entry` Class
 
 <p>Specifies a change in a variable's debug value history. <a href="#details">More...</a></p>
 

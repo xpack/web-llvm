@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConstEvaluator` Class Reference
+# `MachineConstEvaluator` Class
 
 
 

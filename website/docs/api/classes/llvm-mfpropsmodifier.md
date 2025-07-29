@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MFPropsModifier` Class Template Reference
+# `MFPropsModifier` Class Template
 
 <p>An RAII based helper class to modify <a href="/web-llvm/docs/api/classes/llvm/machinefunctionproperties">MachineFunctionProperties</a> when running pass. <a href="#details">More...</a></p>
 

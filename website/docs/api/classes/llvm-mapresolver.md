@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapResolver` Class Reference
+# `MapResolver` Class
 
 <p>Resolve arbitrary mappings. <a href="#details">More...</a></p>
 

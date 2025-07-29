@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoProbeUpdatePass` Class Reference
+# `PseudoProbeUpdatePass` Class
 
 
 

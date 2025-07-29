@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerAtomicPass` Class Reference
+# `LowerAtomicPass` Class
 
 <p>A pass that lowers atomic intrinsic into non-atomic intrinsics. <a href="#details">More...</a></p>
 

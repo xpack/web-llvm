@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEInlineString` Class Reference
+# `DIEInlineString` Class
 
 <p>A container for inline string values. <a href="#details">More...</a></p>
 

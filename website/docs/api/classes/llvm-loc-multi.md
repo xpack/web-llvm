@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Multi` Class Reference
+# `Multi` Class
 
 <p>Multi-value location description. <a href="#details">More...</a></p>
 

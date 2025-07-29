@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NeighborEdgeIteratorT` Class Template Reference
+# `NeighborEdgeIteratorT` Class Template
 
 <p>An Iterator adapter using an InnerInvGraphT::iterator as a base iterator, and storing the <a href="/web-llvm/docs/api/classes/llvm/xray/graph/#aa7d4f1e9198ebd47ab0fc3cef797ac86">VertexIdentifier</a> the iterator range comes from. <a href="#details">More...</a></p>
 

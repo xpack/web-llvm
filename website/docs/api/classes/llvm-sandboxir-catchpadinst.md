@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CatchPadInst` Class Reference
+# `CatchPadInst` Class
 
 
 

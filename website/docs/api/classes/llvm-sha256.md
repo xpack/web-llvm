@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SHA256` Class Reference
+# `SHA256` Class
 
 
 

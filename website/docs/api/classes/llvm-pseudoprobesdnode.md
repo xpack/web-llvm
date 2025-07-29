@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoProbeSDNode` Class Reference
+# `PseudoProbeSDNode` Class
 
 <p>This <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> is used for PSEUDO_PROBE values, which are the function guid and the index of the basic block being probed. <a href="#details">More...</a></p>
 

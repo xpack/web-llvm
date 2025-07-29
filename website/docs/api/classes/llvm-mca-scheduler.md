@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scheduler` Class Reference
+# `Scheduler` Class
 
 <p>Class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler">Scheduler</a> is responsible for issuing instructions to pipeline resources. <a href="#details">More...</a></p>
 

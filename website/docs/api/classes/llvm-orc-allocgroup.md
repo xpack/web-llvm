@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocGroup` Class Reference
+# `AllocGroup` Class
 
 <p>A pair of memory protections and allocation policies. <a href="#details">More...</a></p>
 

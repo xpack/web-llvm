@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeTypes.h` File Reference
+# `LegalizeTypes.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FullDependence` Class Reference
+# `FullDependence` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/fulldependence">FullDependence</a> - This class represents a dependence between two memory references in a function. <a href="#details">More...</a></p>
 

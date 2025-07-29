@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractElementConstantExpr` Class Reference
+# `ExtractElementConstantExpr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/extractelementconstantexpr">ExtractElementConstantExpr</a> - This class is private to <a href="/web-llvm/docs/api/files/lib/lib/ir/constants-cpp">Constants.cpp</a>, and is used behind the scenes to implement extractelement constant exprs. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430AsmBackend` Class Reference
+# `MSP430AsmBackend` Class
 
 
 

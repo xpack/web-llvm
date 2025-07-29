@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockExtractor` Class Reference
+# `BlockExtractor` Class
 
 
 

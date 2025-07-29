@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchPassConfig` Class Reference
+# `LoongArchPassConfig` Class
 
 
 

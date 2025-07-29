@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86CallLowering` Class Reference
+# `X86CallLowering` Class
 
 
 

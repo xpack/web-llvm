@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroFrameInst` Class Reference
+# `CoroFrameInst` Class
 
 <p>This represents the llvm.coro.frame instruction. <a href="#details">More...</a></p>
 

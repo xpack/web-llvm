@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UndefVarError` Class Reference
+# `UndefVarError` Class
 
 <p>Class to represent an undefined variable error, which quotes that variable's name when printed. <a href="#details">More...</a></p>
 

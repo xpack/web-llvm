@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpeculateTask` Class Reference
+# `SpeculateTask` Class
 
 
 

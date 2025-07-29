@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCopyPropagation` Class Reference
+# `MachineCopyPropagation` Class
 
 
 

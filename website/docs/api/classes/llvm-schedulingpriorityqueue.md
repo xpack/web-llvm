@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedulingPriorityQueue` Class Reference
+# `SchedulingPriorityQueue` Class
 
 <p>This interface is used to plug different priorities computation algorithms into the list scheduler. <a href="#details">More...</a></p>
 

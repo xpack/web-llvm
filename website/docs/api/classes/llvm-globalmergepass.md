@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalMergePass` Class Reference
+# `GlobalMergePass` Class
 
 
 

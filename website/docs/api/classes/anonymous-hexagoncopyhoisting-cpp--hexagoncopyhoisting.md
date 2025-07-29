@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCopyHoisting` Class Reference
+# `HexagonCopyHoisting` Class
 
 
 

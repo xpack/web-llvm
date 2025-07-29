@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalRecord` Class Reference
+# `GlobalRecord` Class
 
 
 

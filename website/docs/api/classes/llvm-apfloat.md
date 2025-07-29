@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APFloat` Class Reference
+# `APFloat` Class
 
 
 

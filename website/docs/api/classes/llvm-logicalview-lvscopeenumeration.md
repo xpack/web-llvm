@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScopeEnumeration` Class Reference
+# `LVScopeEnumeration` Class
 
 
 

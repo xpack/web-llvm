@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseBitVector.h` File Reference
+# `SparseBitVector.h` File
 
 <p>This file defines the SparseBitVector class. <a href="#details">More...</a></p>
 

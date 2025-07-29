@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIMacroNode` Class Reference
+# `DIMacroNode` Class
 
 <p>Macro Info DWARF-like metadata node. <a href="#details">More...</a></p>
 

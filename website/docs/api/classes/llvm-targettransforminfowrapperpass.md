@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetTransformInfoWrapperPass` Class Reference
+# `TargetTransformInfoWrapperPass` Class
 
 <p>Wrapper pass for <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a>. <a href="#details">More...</a></p>
 

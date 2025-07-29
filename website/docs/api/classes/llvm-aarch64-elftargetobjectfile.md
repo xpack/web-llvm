@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64_ELFTargetObjectFile` Class Reference
+# `AArch64_ELFTargetObjectFile` Class
 
 <p>This implementation is used for <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> targets (Linux in particular). <a href="#details">More...</a></p>
 

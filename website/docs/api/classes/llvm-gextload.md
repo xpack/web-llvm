@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GExtLoad` Class Reference
+# `GExtLoad` Class
 
 <p>Represents either a G_SEXTLOAD or G_ZEXTLOAD. <a href="#details">More...</a></p>
 

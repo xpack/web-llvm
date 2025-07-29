@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolConverter` Class Reference
+# `SymbolConverter` Class
 
 <p>Specialized <a href="/web-llvm/docs/api/classes/llvm/macho/recordvisitor">RecordVisitor</a> for collecting exported symbols and undefined symbols if RecordSlice being visited represents a flat-namespaced library. <a href="#details">More...</a></p>
 

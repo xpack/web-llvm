@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleToFunctionPassAdaptor` Class Reference
+# `ModuleToFunctionPassAdaptor` Class
 
 <p>Trivial adaptor that maps from a module to its functions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorSuccess` Class Reference
+# `ErrorSuccess` Class
 
 <p>Subclass of <a href="/web-llvm/docs/api/classes/llvm/error">Error</a> for the sole purpose of identifying the success path in the type system. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SExtInst` Class Reference
+# `SExtInst` Class
 
 
 

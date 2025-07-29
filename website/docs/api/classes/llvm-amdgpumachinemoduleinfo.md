@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMachineModuleInfo` Class Reference
+# `AMDGPUMachineModuleInfo` Class
 
 
 

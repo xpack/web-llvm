@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeWriter` Class Reference
+# `BitcodeWriter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRecord.h` File Reference
+# `SymbolRecord.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegisterInfo` Class Reference
+# `MCRegisterInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> base class - We assume that the target defines a static array of <a href="/web-llvm/docs/api/structs/llvm/mcregisterdesc">MCRegisterDesc</a> objects that represent all of the machine registers that the target has. <a href="#details">More...</a></p>
 

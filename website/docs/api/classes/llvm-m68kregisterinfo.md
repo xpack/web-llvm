@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kRegisterInfo` Class Reference
+# `M68kRegisterInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPromoter` Class Reference
+# `LoopPromoter` Class
 
 
 

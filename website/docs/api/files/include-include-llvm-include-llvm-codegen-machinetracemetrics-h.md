@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineTraceMetrics.h` File Reference
+# `MachineTraceMetrics.h` File
 
 
 

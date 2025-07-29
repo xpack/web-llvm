@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyMemSetInst` Class Reference
+# `AnyMemSetInst` Class
 
 <p>This class represents any memset intrinsic. <a href="#details">More...</a></p>
 

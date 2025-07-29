@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetOfRulesForOpcode` Class Reference
+# `SetOfRulesForOpcode` Class
 
 
 

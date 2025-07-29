@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LShrOperator` Class Reference
+# `LShrOperator` Class
 
 
 

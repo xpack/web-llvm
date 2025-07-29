@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmParserExtension.h` File Reference
+# `MCAsmParserExtension.h` File
 
 
 

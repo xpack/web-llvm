@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFObjectWriter` Class Reference
+# `GOFFObjectWriter` Class
 
 
 

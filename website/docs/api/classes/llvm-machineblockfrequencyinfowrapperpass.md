@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBlockFrequencyInfoWrapperPass` Class Reference
+# `MachineBlockFrequencyInfoWrapperPass` Class
 
 
 

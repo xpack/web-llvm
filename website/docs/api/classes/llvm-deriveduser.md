@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DerivedUser` Class Reference
+# `DerivedUser` Class
 
 <p><a href="/web-llvm/docs/api/structs/extension">Extension</a> point for the <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> hierarchy. <a href="#details">More...</a></p>
 

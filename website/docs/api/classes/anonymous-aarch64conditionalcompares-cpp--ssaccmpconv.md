@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSACCmpConv` Class Reference
+# `SSACCmpConv` Class
 
 
 

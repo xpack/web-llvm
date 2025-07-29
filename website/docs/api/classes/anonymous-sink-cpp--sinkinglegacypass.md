@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SinkingLegacyPass` Class Reference
+# `SinkingLegacyPass` Class
 
 
 

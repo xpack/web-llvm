@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Debuginfod.h` File Reference
+# `Debuginfod.h` File
 
 <p>This file contains several declarations for the debuginfod client and server. <a href="#details">More...</a></p>
 

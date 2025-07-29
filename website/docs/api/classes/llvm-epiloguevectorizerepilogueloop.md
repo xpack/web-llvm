@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EpilogueVectorizerEpilogueLoop` Class Reference
+# `EpilogueVectorizerEpilogueLoop` Class
 
 
 

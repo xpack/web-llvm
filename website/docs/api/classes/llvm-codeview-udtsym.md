@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UDTSym` Class Reference
+# `UDTSym` Class
 
 
 

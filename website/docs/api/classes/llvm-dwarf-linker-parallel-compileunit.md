@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompileUnit` Class Reference
+# `CompileUnit` Class
 
 <p>Stores all information related to a compile unit, be it in its original instance of the object file or its brand new cloned and generated <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> tree. <a href="#details">More...</a></p>
 

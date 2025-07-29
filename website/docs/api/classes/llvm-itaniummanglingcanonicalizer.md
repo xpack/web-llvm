@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItaniumManglingCanonicalizer` Class Reference
+# `ItaniumManglingCanonicalizer` Class
 
 <p>Canonicalizer for mangled names. <a href="#details">More...</a></p>
 

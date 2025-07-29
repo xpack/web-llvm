@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonAttributeParser.h` File Reference
+# `HexagonAttributeParser.h` File
 
 
 

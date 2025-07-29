@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DevelopmentModeInlineAdvisor.cpp` File Reference
+# `DevelopmentModeInlineAdvisor.cpp` File
 
 
 

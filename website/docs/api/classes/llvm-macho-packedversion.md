@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PackedVersion` Class Reference
+# `PackedVersion` Class
 
 
 

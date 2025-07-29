@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFSection` Class Reference
+# `COFFSection` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kPassConfig` Class Reference
+# `M68kPassConfig` Class
 
 
 

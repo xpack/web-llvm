@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `recursive_directory_iterator` Class Reference
+# `recursive_directory_iterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/recursive-directory-iterator">recursive_directory_iterator</a> - Same as <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a> except for it recurses down into child directories. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyPeephole` Class Reference
+# `WebAssemblyPeephole` Class
 
 
 

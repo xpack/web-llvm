@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeNameComputer` Class Reference
+# `TypeNameComputer` Class
 
 
 

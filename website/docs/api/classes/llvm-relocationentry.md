@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocationEntry` Class Reference
+# `RelocationEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/relocationentry">RelocationEntry</a> - used to represent relocations internally in the dynamic linker. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappedBlockStream` Class Reference
+# `MappedBlockStream` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/msf/mappedblockstream">MappedBlockStream</a> represents data stored in an MSF file into chunks of a particular size (called the Block Size), and whose chunks may not be necessarily contiguous. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionComparator` Class Reference
+# `FunctionComparator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/functioncomparator">FunctionComparator</a> - Compares two functions to determine whether or not they will generate machine code with the same behaviour. <a href="#details">More...</a></p>
 

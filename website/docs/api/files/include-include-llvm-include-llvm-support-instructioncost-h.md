@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionCost.h` File Reference
+# `InstructionCost.h` File
 
 <p>This file defines an InstructionCost class that is used when calculating the cost of an instruction, or a group of instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDVImpl` Class Reference
+# `LDVImpl` Class
 
 
 

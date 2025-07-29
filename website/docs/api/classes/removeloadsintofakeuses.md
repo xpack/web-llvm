@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveLoadsIntoFakeUses` Class Reference
+# `RemoveLoadsIntoFakeUses` Class
 
 
 

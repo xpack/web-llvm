@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Record` Class Reference
+# `Record` Class
 
 <p>Represents a <a href="/web-llvm/docs/api/namespaces/llvm/goff">GOFF</a> physical record. <a href="#details">More...</a></p>
 

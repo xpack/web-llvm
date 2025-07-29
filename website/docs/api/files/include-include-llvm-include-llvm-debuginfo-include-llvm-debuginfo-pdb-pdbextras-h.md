@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBExtras.h` File Reference
+# `PDBExtras.h` File
 
 
 

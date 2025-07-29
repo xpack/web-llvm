@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StubsManager_v7` Class Reference
+# `StubsManager_v7` Class
 
 <p>Stubs builder for v7 emits non-position-independent Arm and Thumb stubs. <a href="#details">More...</a></p>
 

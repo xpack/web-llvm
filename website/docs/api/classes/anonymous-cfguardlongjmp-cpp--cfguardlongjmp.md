@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGuardLongjmp` Class Reference
+# `CFGuardLongjmp` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> pass to insert a symbol after each call to _setjmp and store this in the <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>'s LongjmpTargets vector. <a href="#details">More...</a></p>
 

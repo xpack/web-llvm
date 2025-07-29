@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FenceInst` Class Reference
+# `FenceInst` Class
 
 
 

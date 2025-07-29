@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAnnotateUniformValuesLegacy` Class Reference
+# `AMDGPUAnnotateUniformValuesLegacy` Class
 
 
 

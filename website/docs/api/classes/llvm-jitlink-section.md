@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Section` Class Reference
+# `Section` Class
 
 <p>Represents an object file section. <a href="#details">More...</a></p>
 

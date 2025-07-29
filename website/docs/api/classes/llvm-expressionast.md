@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpressionAST` Class Reference
+# `ExpressionAST` Class
 
 <p>Base class representing the AST of a given expression. <a href="#details">More...</a></p>
 

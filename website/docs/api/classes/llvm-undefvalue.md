@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UndefValue` Class Reference
+# `UndefValue` Class
 
 <p>'undef' values are things that do not have specified contents. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostOrderLoopTraversal` Class Reference
+# `PostOrderLoopTraversal` Class
 
 
 

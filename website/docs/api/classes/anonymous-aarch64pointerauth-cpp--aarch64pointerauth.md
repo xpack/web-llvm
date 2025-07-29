@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PointerAuth` Class Reference
+# `AArch64PointerAuth` Class
 
 
 

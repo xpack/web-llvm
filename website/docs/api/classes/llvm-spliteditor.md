@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitEditor` Class Reference
+# `SplitEditor` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/spliteditor">SplitEditor</a> - Edit machine code and <a href="/web-llvm/docs/api/classes/llvm/liveintervals">LiveIntervals</a> for live range splitting. <a href="#details">More...</a></p>
 

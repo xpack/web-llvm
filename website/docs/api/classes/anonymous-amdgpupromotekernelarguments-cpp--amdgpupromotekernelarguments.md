@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPromoteKernelArguments` Class Reference
+# `AMDGPUPromoteKernelArguments` Class
 
 
 

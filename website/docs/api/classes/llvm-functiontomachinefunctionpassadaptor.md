@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionToMachineFunctionPassAdaptor` Class Reference
+# `FunctionToMachineFunctionPassAdaptor` Class
 
 
 

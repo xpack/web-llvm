@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFObjectWriter` Class Reference
+# `ELFObjectWriter` Class
 
 
 

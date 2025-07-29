@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IMSFFile` Class Reference
+# `IMSFFile` Class
 
 
 

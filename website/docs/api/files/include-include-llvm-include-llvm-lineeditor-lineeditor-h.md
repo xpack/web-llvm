@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineEditor.h` File Reference
+# `LineEditor.h` File
 
 
 

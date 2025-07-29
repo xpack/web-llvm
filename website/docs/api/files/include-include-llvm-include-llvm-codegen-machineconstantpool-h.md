@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConstantPool.h` File Reference
+# `MachineConstantPool.h` File
 
 <p>This file declares the MachineConstantPool class which is an abstract constant pool to keep track of constants referenced by a function. <a href="#details">More...</a></p>
 

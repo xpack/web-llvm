@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrderedChangedData` Class Template Reference
+# `OrderedChangedData` Class Template
 
 
 

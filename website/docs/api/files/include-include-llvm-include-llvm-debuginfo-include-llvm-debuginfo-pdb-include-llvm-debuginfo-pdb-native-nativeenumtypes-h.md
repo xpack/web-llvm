@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeEnumTypes.h` File Reference
+# `NativeEnumTypes.h` File
 
 
 

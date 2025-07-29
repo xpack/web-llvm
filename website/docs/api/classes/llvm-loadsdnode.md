@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadSDNode` Class Reference
+# `LoadSDNode` Class
 
 <p>This class is used to represent <a href="/web-llvm/docs/api/namespaces/llvm/isd/#a22ea9cec080dd5f4f47ba234c2f59110a269b81f007000306e3e69d0d290c2159">ISD::LOAD</a> nodes. <a href="#details">More...</a></p>
 

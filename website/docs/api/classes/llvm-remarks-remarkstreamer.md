@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkStreamer` Class Reference
+# `RemarkStreamer` Class
 
 
 

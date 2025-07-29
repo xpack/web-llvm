@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueStringSaver` Class Reference
+# `UniqueStringSaver` Class
 
 <p>Saves strings in the provided stable storage and returns a <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> with a stable character pointer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawLocationWrapper` Class Reference
+# `RawLocationWrapper` Class
 
 <p>Lightweight class that wraps the location operand metadata of a debug intrinsic. <a href="#details">More...</a></p>
 

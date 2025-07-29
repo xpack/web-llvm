@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionedCovMapFuncRecordReader` Class Template Reference
+# `VersionedCovMapFuncRecordReader` Class Template
 
 
 

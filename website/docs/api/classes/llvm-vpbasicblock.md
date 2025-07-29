@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBasicBlock` Class Reference
+# `VPBasicBlock` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpbasicblock">VPBasicBlock</a> serves as the leaf of the Hierarchical Control-Flow Graph. <a href="#details">More...</a></p>
 

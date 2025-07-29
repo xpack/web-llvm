@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumptionPrinterPass` Class Reference
+# `AssumptionPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/assumptionanalysis">AssumptionAnalysis</a></span> results. <a href="#details">More...</a></p>
 

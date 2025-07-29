@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlinedHashTree` Class Reference
+# `OutlinedHashTree` Class
 
 
 

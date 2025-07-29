@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RopePieceBTreeInterior` Class Reference
+# `RopePieceBTreeInterior` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreeinterior">RopePieceBTreeInterior</a> - This represents an interior node in the B+Tree, which holds up to 2*WidthFactor pointers to child nodes. <a href="#details">More...</a></p>
 

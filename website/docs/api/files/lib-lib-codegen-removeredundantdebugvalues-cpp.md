@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveRedundantDebugValues.cpp` File Reference
+# `RemoveRedundantDebugValues.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/classes/anonymous-removeredundantdebugvalues-cpp-/removeredundantdebugvalues">RemoveRedundantDebugValues</a> pass removes redundant DBG_VALUEs that appear in MIR after the register allocator. <a href="#details">More...</a></p>
 

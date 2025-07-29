@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionSPIRV` Class Reference
+# `MCSectionSPIRV` Class
 
 
 

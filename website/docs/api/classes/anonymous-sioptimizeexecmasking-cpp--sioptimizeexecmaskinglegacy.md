@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIOptimizeExecMaskingLegacy` Class Reference
+# `SIOptimizeExecMaskingLegacy` Class
 
 
 

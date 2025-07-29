@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstraintInfo` Class Reference
+# `ConstraintInfo` Class
 
 <p>Wrapper encapsulating separate constraint systems and corresponding value mappings for both unsigned and signed information. <a href="#details">More...</a></p>
 

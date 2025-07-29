@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WaitcntGenerator` Class Reference
+# `WaitcntGenerator` Class
 
 
 

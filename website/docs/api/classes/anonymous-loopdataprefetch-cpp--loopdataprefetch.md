@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDataPrefetch` Class Reference
+# `LoopDataPrefetch` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> prefetch implementation class. <a href="#details">More...</a></p>
 

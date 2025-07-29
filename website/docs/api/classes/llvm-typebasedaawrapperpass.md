@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeBasedAAWrapperPass` Class Reference
+# `TypeBasedAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/typebasedaaresult">TypeBasedAAResult</a> object. <a href="#details">More...</a></p>
 

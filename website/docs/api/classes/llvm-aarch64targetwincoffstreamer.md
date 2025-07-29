@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TargetWinCOFFStreamer` Class Reference
+# `AArch64TargetWinCOFFStreamer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlock` Class Reference
+# `BasicBlock` Class
 
 <p>Contains a list of <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">sandboxir::Instruction</a>'s. <a href="#details">More...</a></p>
 

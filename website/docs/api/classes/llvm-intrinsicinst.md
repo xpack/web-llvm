@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicInst` Class Reference
+# `IntrinsicInst` Class
 
 <p>A wrapper class for inspecting calls to intrinsic functions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseSetPair` Class Template Reference
+# `DenseSetPair` Class Template
 
 
 

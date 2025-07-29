@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgAssignIntrinsic` Class Reference
+# `DbgAssignIntrinsic` Class
 
 <p>This represents the llvm.dbg.assign instruction. <a href="#details">More...</a></p>
 

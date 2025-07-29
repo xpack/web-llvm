@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedLoadStoreMotion.h` File Reference
+# `MergedLoadStoreMotion.h` File
 
 <p>This pass performs merges of loads and stores on both sides of a. <a href="#details">More...</a></p>
 

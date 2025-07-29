@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectBrExpand.h` File Reference
+# `IndirectBrExpand.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructurizeCFG.h` File Reference
+# `StructurizeCFG.h` File
 
 
 

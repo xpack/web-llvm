@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveOutAccessor` Class Reference
+# `LiveOutAccessor` Class
 
 <p>Accessor for stackmap live-out fields. <a href="#details">More...</a></p>
 

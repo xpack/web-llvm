@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVGatherScatterLowering` Class Reference
+# `RISCVGatherScatterLowering` Class
 
 
 

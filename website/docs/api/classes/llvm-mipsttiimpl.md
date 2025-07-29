@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsTTIImpl` Class Reference
+# `MipsTTIImpl` Class
 
 
 

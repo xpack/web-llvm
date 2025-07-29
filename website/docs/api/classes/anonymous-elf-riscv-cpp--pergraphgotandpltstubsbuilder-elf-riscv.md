@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerGraphGOTAndPLTStubsBuilder_ELF_riscv` Class Reference
+# `PerGraphGOTAndPLTStubsBuilder_ELF_riscv` Class
 
 
 

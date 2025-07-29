@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EquivalenceClasses` Class Template Reference
+# `EquivalenceClasses` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/equivalenceclasses">EquivalenceClasses</a> - This represents a collection of equivalence classes and supports three efficient operations: insert an element into a class of its own, union two classes, and find the class for a given element. <a href="#details">More...</a></p>
 

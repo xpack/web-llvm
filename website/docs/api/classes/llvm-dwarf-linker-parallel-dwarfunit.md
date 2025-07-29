@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfUnit` Class Reference
+# `DwarfUnit` Class
 
 <p>Base class for all Dwarf units(Compile unit/Type table unit). <a href="#details">More...</a></p>
 

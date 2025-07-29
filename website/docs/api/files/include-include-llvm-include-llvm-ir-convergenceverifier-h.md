@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConvergenceVerifier.h` File Reference
+# `ConvergenceVerifier.h` File
 
 <p>This file declares the LLVM IR specialization of the GenericConvergenceVerifier template. <a href="#details">More...</a></p>
 

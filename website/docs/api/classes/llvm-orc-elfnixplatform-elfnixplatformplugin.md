@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFNixPlatformPlugin` Class Reference
+# `ELFNixPlatformPlugin` Class
 
 
 

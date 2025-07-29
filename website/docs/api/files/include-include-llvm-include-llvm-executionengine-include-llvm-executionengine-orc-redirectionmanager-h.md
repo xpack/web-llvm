@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectionManager.h` File Reference
+# `RedirectionManager.h` File
 
 
 

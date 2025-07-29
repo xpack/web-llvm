@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkAsyncLookupContinuation` Class Reference
+# `JITLinkAsyncLookupContinuation` Class
 
 <p>A function object to call with a resolved symbol map (See <a href="/web-llvm/docs/api/namespaces/llvm/jitlink/#abc1e6c099e7e42740474d5f65c7fcd51">AsyncLookupResult</a>) or an error if resolution failed. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetRegisterInfo.h` File Reference
+# `TargetRegisterInfo.h` File
 
 
 

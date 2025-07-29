@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGCombine.h` File Reference
+# `DAGCombine.h` File
 
 
 

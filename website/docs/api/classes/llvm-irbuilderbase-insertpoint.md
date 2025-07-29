@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertPoint` Class Reference
+# `InsertPoint` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/irbuilderbase/insertpoint">InsertPoint</a> - A saved insertion point. <a href="#details">More...</a></p>
 

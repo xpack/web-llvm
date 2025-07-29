@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMap` Class Template Reference
+# `StringMap` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringmap">StringMap</a> - This is an unconventional map that is specialized for handling keys that are "strings", which are basically ranges of bytes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Uniformity.h` File Reference
+# `Uniformity.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRMutationStrategy` Class Reference
+# `IRMutationStrategy` Class
 
 <p>Base class for describing how to mutate a module. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExplicitRewriteDescriptor` Class Template Reference
+# `ExplicitRewriteDescriptor` Class Template
 
 
 

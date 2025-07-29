@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressingModeMatcher` Class Reference
+# `AddressingModeMatcher` Class
 
 <p>A helper class for matching addressing modes. <a href="#details">More...</a></p>
 

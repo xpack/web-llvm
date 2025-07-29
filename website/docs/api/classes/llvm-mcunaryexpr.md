@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCUnaryExpr` Class Reference
+# `MCUnaryExpr` Class
 
 <p>Unary assembler expressions. <a href="#details">More...</a></p>
 

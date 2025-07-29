@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldID` Class Reference
+# `FoldID` Class
 
 
 

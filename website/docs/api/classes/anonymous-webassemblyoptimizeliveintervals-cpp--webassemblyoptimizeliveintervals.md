@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyOptimizeLiveIntervals` Class Reference
+# `WebAssemblyOptimizeLiveIntervals` Class
 
 
 

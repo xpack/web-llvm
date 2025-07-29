@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLowering.h` File Reference
+# `TargetLowering.h` File
 
 <p>This file describes how to lower LLVM code to machine code. <a href="#details">More...</a></p>
 

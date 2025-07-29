@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerSumType.h` File Reference
+# `PointerSumType.h` File
 
 
 

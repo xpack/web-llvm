@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyBranchProbabilityInfo.h` File Reference
+# `LazyBranchProbabilityInfo.h` File
 
 
 

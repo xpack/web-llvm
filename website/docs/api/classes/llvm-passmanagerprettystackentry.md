@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManagerPrettyStackEntry` Class Reference
+# `PassManagerPrettyStackEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/passmanagerprettystackentry">PassManagerPrettyStackEntry</a> - This is used to print informative information about what pass is running when/if a stack trace is generated. <a href="#details">More...</a></p>
 

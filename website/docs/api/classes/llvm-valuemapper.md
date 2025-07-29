@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMapper` Class Reference
+# `ValueMapper` Class
 
 <p>Context for (re-)mapping values (and metadata). <a href="#details">More...</a></p>
 

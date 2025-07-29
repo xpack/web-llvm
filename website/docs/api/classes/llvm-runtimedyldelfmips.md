@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldELFMips` Class Reference
+# `RuntimeDyldELFMips` Class
 
 
 

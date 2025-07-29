@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadPoolInterface` Class Reference
+# `ThreadPoolInterface` Class
 
 <p>This defines the abstract base interface for a ThreadPool allowing asynchronous parallel execution on a defined number of threads. <a href="#details">More...</a></p>
 

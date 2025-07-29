@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegRelativeSym` Class Reference
+# `RegRelativeSym` Class
 
 
 

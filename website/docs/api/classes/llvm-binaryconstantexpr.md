@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryConstantExpr` Class Reference
+# `BinaryConstantExpr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/binaryconstantexpr">BinaryConstantExpr</a> - This class is private to <a href="/web-llvm/docs/api/files/lib/lib/ir/constants-cpp">Constants.cpp</a>, and is used behind the scenes to implement binary constant exprs. <a href="#details">More...</a></p>
 

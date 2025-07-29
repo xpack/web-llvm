@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kAsmParser` Class Reference
+# `M68kAsmParser` Class
 
 <p>Parses <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> assembly from a stream. <a href="#details">More...</a></p>
 

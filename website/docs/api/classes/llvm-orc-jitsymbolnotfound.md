@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITSymbolNotFound` Class Reference
+# `JITSymbolNotFound` Class
 
 
 

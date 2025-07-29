@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceLoadMachOArchiveMembers` Class Reference
+# `ForceLoadMachOArchiveMembers` Class
 
 <p>For use with StaticLibraryDefinitionGenerators. <a href="#details">More...</a></p>
 

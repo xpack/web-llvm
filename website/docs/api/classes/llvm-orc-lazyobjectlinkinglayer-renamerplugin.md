@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RenamerPlugin` Class Reference
+# `RenamerPlugin` Class
 
 
 

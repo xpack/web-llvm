@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoexceptSpec` Class Reference
+# `NoexceptSpec` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StaticInitGVIterator` Class Reference
+# `StaticInitGVIterator` Class
 
 <p>This iterator provides a convenient way to iterate over GlobalValues that have initialization effects. <a href="#details">More...</a></p>
 

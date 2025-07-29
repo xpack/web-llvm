@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemSDNode` Class Reference
+# `MemSDNode` Class
 
 <p>This is an abstract virtual class for memory operations. <a href="#details">More...</a></p>
 

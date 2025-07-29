@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutionSession` Class Reference
+# `ExecutionSession` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> represents a running JIT program. <a href="#details">More...</a></p>
 

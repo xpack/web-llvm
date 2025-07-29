@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeStreamMerger.h` File Reference
+# `TypeStreamMerger.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProxyFileSystem` Class Reference
+# `ProxyFileSystem` Class
 
 <p>By default, this delegates all calls to the underlying file system. <a href="#details">More...</a></p>
 

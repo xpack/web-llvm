@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldErrorCategory` Class Reference
+# `RuntimeDyldErrorCategory` Class
 
 
 

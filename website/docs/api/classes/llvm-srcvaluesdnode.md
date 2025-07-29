@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SrcValueSDNode` Class Reference
+# `SrcValueSDNode` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> that holds an arbitrary LLVM IR <a href="/web-llvm/docs/api/classes/llvm/value">Value</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEELFObjectWriter` Class Reference
+# `VEELFObjectWriter` Class
 
 
 

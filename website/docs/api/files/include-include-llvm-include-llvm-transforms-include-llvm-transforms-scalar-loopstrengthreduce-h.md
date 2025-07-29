@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopStrengthReduce.h` File Reference
+# `LoopStrengthReduce.h` File
 
 
 

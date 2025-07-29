@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FeatureBitset` Class Reference
+# `FeatureBitset` Class
 
 <p>Container class for subtarget features. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `use_iterator` Class Reference
+# `use_iterator` Class
 
 <p>This class provides iterator support for <a href="/web-llvm/docs/api/classes/llvm/sduse">SDUse</a> operands that use a specific <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a>. <a href="#details">More...</a></p>
 

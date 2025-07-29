@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYMCInstLower` Class Reference
+# `CSKYMCInstLower` Class
 
 
 

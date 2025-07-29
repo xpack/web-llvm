@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableListImpl` Class Template Reference
+# `ImmutableListImpl` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Sink.h` File Reference
+# `Sink.h` File
 
 
 

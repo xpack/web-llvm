@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolGroup` Class Reference
+# `SymbolGroup` Class
 
 
 

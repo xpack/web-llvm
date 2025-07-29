@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRemappingReader` Class Reference
+# `SymbolRemappingReader` Class
 
 <p>Reader for symbol remapping files. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopFinder` Class Reference
+# `LoopFinder` Class
 
 <p>Helper class that detects loops which require us to lower an i1 COPY into bitwise manipulation. <a href="#details">More...</a></p>
 

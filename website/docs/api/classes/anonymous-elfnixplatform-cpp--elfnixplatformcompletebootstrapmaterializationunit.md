@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFNixPlatformCompleteBootstrapMaterializationUnit` Class Reference
+# `ELFNixPlatformCompleteBootstrapMaterializationUnit` Class
 
 
 

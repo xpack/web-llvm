@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FrameLowering` Class Reference
+# `X86FrameLowering` Class
 
 
 

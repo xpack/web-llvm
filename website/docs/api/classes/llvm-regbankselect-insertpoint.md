@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertPoint` Class Reference
+# `InsertPoint` Class
 
 <p>Abstract class used to represent an insertion point in a CFG. <a href="#details">More...</a></p>
 

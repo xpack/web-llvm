@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCInstrInfo` Class Reference
+# `PPCInstrInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEV` Class Reference
+# `SCEV` Class
 
 <p>This class represents an analyzed expression in the program. <a href="#details">More...</a></p>
 

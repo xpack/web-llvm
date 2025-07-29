@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmCheck` Class Reference
+# `ImmCheck` Class
 
 
 

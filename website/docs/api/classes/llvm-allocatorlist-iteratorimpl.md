@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IteratorImpl` Class Template Reference
+# `IteratorImpl` Class Template
 
 
 

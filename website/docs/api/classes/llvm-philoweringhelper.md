@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiLoweringHelper` Class Reference
+# `PhiLoweringHelper` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Evaluator` Class Reference
+# `Evaluator` Class
 
 <p>This class evaluates LLVM IR, producing the <a href="/web-llvm/docs/api/classes/llvm/constant">Constant</a> representing each SSA instruction. <a href="#details">More...</a></p>
 

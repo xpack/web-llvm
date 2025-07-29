@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVUMinExpr` Class Reference
+# `SCEVUMinExpr` Class
 
 <p>This class represents an unsigned minimum selection. <a href="#details">More...</a></p>
 

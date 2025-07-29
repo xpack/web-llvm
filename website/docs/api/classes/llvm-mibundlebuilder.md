@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIBundleBuilder` Class Reference
+# `MIBundleBuilder` Class
 
 <p>Helper class for constructing bundles of MachineInstrs. <a href="#details">More...</a></p>
 

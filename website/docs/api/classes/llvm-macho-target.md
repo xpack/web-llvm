@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Target` Class Reference
+# `Target` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Watchdog.h` File Reference
+# `Watchdog.h` File
 
 
 

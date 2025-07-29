@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantAsMetadata` Class Reference
+# `ConstantAsMetadata` Class
 
 
 

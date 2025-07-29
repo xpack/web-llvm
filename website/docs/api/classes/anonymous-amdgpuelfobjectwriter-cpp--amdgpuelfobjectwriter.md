@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUELFObjectWriter` Class Reference
+# `AMDGPUELFObjectWriter` Class
 
 
 

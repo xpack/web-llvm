@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DoNothingMemorySSAWalker` Class Reference
+# `DoNothingMemorySSAWalker` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/memoryssawalker">MemorySSAWalker</a> that does no alias queries, or anything else. <a href="#details">More...</a></p>
 

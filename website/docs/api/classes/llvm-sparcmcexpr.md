@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcMCExpr` Class Reference
+# `SparcMCExpr` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenPHIRecipe` Class Reference
+# `VPWidenPHIRecipe` Class
 
 <p>A recipe for handling phis that are widened in the vector loop. <a href="#details">More...</a></p>
 

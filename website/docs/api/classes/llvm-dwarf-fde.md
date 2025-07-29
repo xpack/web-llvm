@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDE` Class Reference
+# `FDE` Class
 
 <p>DWARF Frame Description Entry (<a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a>) <a href="#details">More...</a></p>
 

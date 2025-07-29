@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkDylib.h` File Reference
+# `JITLinkDylib.h` File
 
 
 

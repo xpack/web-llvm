@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `concat_iterator` Class Template Reference
+# `concat_iterator` Class Template
 
 <p>Iterator wrapper that concatenates sequences together. <a href="#details">More...</a></p>
 

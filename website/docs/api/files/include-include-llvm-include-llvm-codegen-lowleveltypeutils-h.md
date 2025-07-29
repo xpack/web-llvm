@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowLevelTypeUtils.h` File Reference
+# `LowLevelTypeUtils.h` File
 
 <p>Implement a low-level type suitable for MachineInstr level instruction selection. <a href="#details">More...</a></p>
 

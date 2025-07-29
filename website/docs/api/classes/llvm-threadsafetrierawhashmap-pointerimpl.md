@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerImpl` Class Template Reference
+# `PointerImpl` Class Template
 
 
 

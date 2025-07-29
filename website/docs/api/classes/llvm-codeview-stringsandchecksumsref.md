@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringsAndChecksumsRef` Class Reference
+# `StringsAndChecksumsRef` Class
 
 
 

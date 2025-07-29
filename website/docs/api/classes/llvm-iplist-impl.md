@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iplist_impl` Class Template Reference
+# `iplist_impl` Class Template
 
 <p>A wrapper around an intrusive list with callbacks and non-intrusive ownership. <a href="#details">More...</a></p>
 

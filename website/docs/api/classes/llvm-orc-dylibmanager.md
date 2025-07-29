@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DylibManager` Class Reference
+# `DylibManager` Class
 
 
 

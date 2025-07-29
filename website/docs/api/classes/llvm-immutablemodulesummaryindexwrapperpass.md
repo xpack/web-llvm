@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableModuleSummaryIndexWrapperPass` Class Reference
+# `ImmutableModuleSummaryIndexWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/modulesummaryindex">ModuleSummaryIndex</a> object. <a href="#details">More...</a></p>
 

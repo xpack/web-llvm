@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseSolver` Class Template Reference
+# `SparseSolver` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sparsesolver">SparseSolver</a> - This class is a general purpose solver for Sparse Conditional Propagation with a programmable lattice function. <a href="#details">More...</a></p>
 

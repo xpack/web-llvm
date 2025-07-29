@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DuplicateDefinition` Class Reference
+# `DuplicateDefinition` Class
 
 
 

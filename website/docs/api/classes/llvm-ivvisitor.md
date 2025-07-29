@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVVisitor` Class Reference
+# `IVVisitor` Class
 
 <p>Interface for visiting interesting IV users that are recognized but not simplified by this utility. <a href="#details">More...</a></p>
 

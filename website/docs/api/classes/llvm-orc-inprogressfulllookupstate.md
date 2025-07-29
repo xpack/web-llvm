@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProgressFullLookupState` Class Reference
+# `InProgressFullLookupState` Class
 
 
 

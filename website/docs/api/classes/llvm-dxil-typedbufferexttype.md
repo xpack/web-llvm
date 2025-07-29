@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedBufferExtType` Class Reference
+# `TypedBufferExtType` Class
 
 <p>The dx.TypedBuffer target extension type. <a href="#details">More...</a></p>
 

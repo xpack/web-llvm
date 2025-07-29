@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBLineNumber` Class Reference
+# `IPDBLineNumber` Class
 
 
 

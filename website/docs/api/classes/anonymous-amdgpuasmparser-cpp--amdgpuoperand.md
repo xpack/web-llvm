@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUOperand` Class Reference
+# `AMDGPUOperand` Class
 
 
 

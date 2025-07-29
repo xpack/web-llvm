@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOUseFunc` Class Reference
+# `PGOUseFunc` Class
 
 
 

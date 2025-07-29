@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelScopeInfo` Class Reference
+# `KernelScopeInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedulerRegistry.h` File Reference
+# `SchedulerRegistry.h` File
 
 
 

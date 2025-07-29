@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerControlFlowLegacy` Class Reference
+# `SILowerControlFlowLegacy` Class
 
 
 

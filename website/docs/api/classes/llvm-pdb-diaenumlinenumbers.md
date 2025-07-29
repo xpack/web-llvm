@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumLineNumbers` Class Reference
+# `DIAEnumLineNumbers` Class
 
 
 

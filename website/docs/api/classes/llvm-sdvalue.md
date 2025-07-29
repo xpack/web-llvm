@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDValue` Class Reference
+# `SDValue` Class
 
 <p>Unlike LLVM values, Selection DAG nodes may return multiple values as the result of a computation. <a href="#details">More...</a></p>
 

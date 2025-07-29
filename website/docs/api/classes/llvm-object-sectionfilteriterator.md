@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionFilterIterator` Class Reference
+# `SectionFilterIterator` Class
 
 <p>A filtered iterator for SectionRefs that skips sections based on some given predicate. <a href="#details">More...</a></p>
 

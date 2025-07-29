@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoPGOProfile` Class Reference
+# `DiagnosticInfoPGOProfile` Class
 
 <p>Diagnostic information for the PGO profiler. <a href="#details">More...</a></p>
 

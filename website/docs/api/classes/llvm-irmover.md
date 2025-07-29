@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRMover` Class Reference
+# `IRMover` Class
 
 
 

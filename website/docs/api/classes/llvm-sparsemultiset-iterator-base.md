@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_base` Class Template Reference
+# `iterator_base` Class Template
 
 <p>Our iterators are iterators over the collection of objects that share a key. <a href="#details">More...</a></p>
 

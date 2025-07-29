@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_string_ostream` Class Reference
+# `raw_string_ostream` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> that writes to an std::string. <a href="#details">More...</a></p>
 

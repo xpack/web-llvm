@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyGlobalInfoWrapperPass` Class Reference
+# `StackSafetyGlobalInfoWrapperPass` Class
 
 <p>This pass performs the global (interprocedural) stack safety analysis (legacy pass manager). <a href="#details">More...</a></p>
 

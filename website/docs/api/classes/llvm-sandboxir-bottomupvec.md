@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BottomUpVec` Class Reference
+# `BottomUpVec` Class
 
 
 

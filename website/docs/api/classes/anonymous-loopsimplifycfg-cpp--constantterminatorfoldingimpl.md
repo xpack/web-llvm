@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantTerminatorFoldingImpl` Class Reference
+# `ConstantTerminatorFoldingImpl` Class
 
 <p>Helper class that can turn branches and switches with constant conditions into unconditional branches. <a href="#details">More...</a></p>
 

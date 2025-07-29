@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialInlining.h` File Reference
+# `PartialInlining.h` File
 
 
 

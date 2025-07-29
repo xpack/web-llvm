@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedPathResolver` Class Reference
+# `CachedPathResolver` Class
 
 <p>Small helper that resolves and caches file paths. <a href="#details">More...</a></p>
 

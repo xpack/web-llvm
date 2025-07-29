@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M85InstructionInformation` Class Reference
+# `M85InstructionInformation` Class
 
 
 

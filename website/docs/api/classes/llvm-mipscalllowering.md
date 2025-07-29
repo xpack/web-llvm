@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsCallLowering` Class Reference
+# `MipsCallLowering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizationArtifactCombiner.h` File Reference
+# `LegalizationArtifactCombiner.h` File
 
 
 

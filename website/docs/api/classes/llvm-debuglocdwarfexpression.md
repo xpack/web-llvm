@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLocDwarfExpression` Class Reference
+# `DebugLocDwarfExpression` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfexpression">DwarfExpression</a> implementation for .debug_loc entries. <a href="#details">More...</a></p>
 

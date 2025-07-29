@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContinuationRecordBuilder` Class Reference
+# `ContinuationRecordBuilder` Class
 
 
 

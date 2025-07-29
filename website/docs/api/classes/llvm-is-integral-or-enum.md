@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_integral_or_enum` Class Template Reference
+# `is_integral_or_enum` Class Template
 
 <p>Metafunction that determines whether the given type is either an integral type or an enumeration type, including enum classes. <a href="#details">More...</a></p>
 

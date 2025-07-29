@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVFunction` Class Reference
+# `GCOVFunction` Class
 
 
 

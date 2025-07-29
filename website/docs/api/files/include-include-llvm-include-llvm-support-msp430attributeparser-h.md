@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430AttributeParser.h` File Reference
+# `MSP430AttributeParser.h` File
 
 <p>This file contains support routines for parsing MSP430 ELF build attributes. <a href="#details">More...</a></p>
 

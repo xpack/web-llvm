@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionNodeBase` Class Template Reference
+# `RegionNodeBase` Class Template
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/regionnode">RegionNode</a> represents a subregion or a <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> that is part of a <a href="/web-llvm/docs/api/classes/llvm/region">Region</a>. <a href="#details">More...</a></p>
 

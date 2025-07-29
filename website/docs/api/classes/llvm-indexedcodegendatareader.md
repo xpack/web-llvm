@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedCodeGenDataReader` Class Reference
+# `IndexedCodeGenDataReader` Class
 
 
 

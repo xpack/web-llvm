@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalIterator` Class Template Reference
+# `IntervalIterator` Class Template
 
 <p>A simple iterator for iterating the interval. <a href="#details">More...</a></p>
 

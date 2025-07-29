@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMachORelocationInfo` Class Reference
+# `ARMMachORelocationInfo` Class
 
 
 

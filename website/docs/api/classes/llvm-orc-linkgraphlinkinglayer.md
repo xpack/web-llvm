@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkGraphLinkingLayer` Class Reference
+# `LinkGraphLinkingLayer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/linkgraphlinkinglayer">LinkGraphLinkingLayer</a> links LinkGraphs into the Executor using JITLink. <a href="#details">More...</a></p>
 

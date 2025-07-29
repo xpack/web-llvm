@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedTrackingMDRef` Class Template Reference
+# `TypedTrackingMDRef` Class Template
 
 <p>Typed tracking ref. <a href="#details">More...</a></p>
 

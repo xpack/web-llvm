@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionInfoPrinterPass` Class Reference
+# `RegionInfoPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/regioninfo">RegionInfo</a></span>. <a href="#details">More...</a></p>
 

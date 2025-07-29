@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfSupportPlugin` Class Reference
+# `PerfSupportPlugin` Class
 
 <p>Log perf jitdump events for each object (see <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/tools/perf/Documentation/jitdump-specification.txt">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/tools/perf/Documentation/jitdump-specification.txt</a>). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumptionCacheTracker` Class Reference
+# `AssumptionCacheTracker` Class
 
 <p>An immutable pass that tracks lazily created <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/assumptioncache">AssumptionCache</a></span> objects. <a href="#details">More...</a></p>
 

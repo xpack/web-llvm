@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `const_iterator` Class Reference
+# `const_iterator` Class
 
 
 

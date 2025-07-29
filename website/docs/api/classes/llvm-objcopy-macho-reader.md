@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Reader` Class Reference
+# `Reader` Class
 
 
 

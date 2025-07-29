@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIScheduleDAGMI` Class Reference
+# `SIScheduleDAGMI` Class
 
 
 

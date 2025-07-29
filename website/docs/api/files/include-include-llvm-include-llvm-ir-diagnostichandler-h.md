@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticHandler.h` File Reference
+# `DiagnosticHandler.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawCoverageFilenamesReader` Class Reference
+# `RawCoverageFilenamesReader` Class
 
 <p>Reader for the raw coverage filenames. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwiftErrorValueTracking` Class Reference
+# `SwiftErrorValueTracking` Class
 
 
 

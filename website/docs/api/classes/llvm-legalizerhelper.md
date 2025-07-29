@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizerHelper` Class Reference
+# `LegalizerHelper` Class
 
 
 

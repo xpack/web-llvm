@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNLegacyPass` Class Reference
+# `GVNLegacyPass` Class
 
 
 

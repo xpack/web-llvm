@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorReported` Class Reference
+# `ErrorReported` Class
 
 <p>An error that has already been reported. <a href="#details">More...</a></p>
 

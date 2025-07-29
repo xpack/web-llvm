@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GAnyLoad` Class Reference
+# `GAnyLoad` Class
 
 <p>Represents any generic load, including sign/zero extending variants. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastFoldingSetNode` Class Reference
+# `FastFoldingSetNode` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/fastfoldingsetnode">FastFoldingSetNode</a> - This is a subclass of <a href="/web-llvm/docs/api/namespaces/llvm/#a368e3de8ea854f34bc97c21a64d6a164">FoldingSetNode</a> which stores a <a href="/web-llvm/docs/api/classes/llvm/foldingsetnodeid">FoldingSetNodeID</a> value rather than requiring the node to recompute it each time it is needed. <a href="#details">More...</a></p>
 

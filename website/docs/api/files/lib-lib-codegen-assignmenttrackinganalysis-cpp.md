@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignmentTrackingAnalysis.cpp` File Reference
+# `AssignmentTrackingAnalysis.cpp` File
 
 
 

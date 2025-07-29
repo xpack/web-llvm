@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinCOFFObjectWriter` Class Reference
+# `X86WinCOFFObjectWriter` Class
 
 
 

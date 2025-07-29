@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Writer` Class Reference
+# `Writer` Class
 
 <p>Writes MessagePack objects to an output stream, one at a time. <a href="#details">More...</a></p>
 

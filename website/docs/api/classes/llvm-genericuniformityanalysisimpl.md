@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericUniformityAnalysisImpl` Class Template Reference
+# `GenericUniformityAnalysisImpl` Class Template
 
 <p>Analysis that identifies uniform values in a data-parallel execution. <a href="#details">More...</a></p>
 

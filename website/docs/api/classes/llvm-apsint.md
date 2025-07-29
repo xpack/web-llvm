@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APSInt` Class Reference
+# `APSInt` Class
 
 <p>An arbitrary precision integer that knows its signedness. <a href="#details">More...</a></p>
 

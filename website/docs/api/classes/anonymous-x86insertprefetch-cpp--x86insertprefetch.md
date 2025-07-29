@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InsertPrefetch` Class Reference
+# `X86InsertPrefetch` Class
 
 
 

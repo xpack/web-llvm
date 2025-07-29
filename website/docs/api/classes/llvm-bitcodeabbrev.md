@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitCodeAbbrev` Class Reference
+# `BitCodeAbbrev` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/bitcodeabbrev">BitCodeAbbrev</a> - This class represents an abbreviation record. <a href="#details">More...</a></p>
 

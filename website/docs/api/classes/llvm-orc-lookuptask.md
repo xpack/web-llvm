@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookupTask` Class Reference
+# `LookupTask` Class
 
 <p>Lookups are usually run on the current thread, but in some cases they may be run as tasks, e.g. <a href="#details">More...</a></p>
 

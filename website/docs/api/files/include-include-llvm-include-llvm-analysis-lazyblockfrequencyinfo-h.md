@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyBlockFrequencyInfo.h` File Reference
+# `LazyBlockFrequencyInfo.h` File
 
 
 

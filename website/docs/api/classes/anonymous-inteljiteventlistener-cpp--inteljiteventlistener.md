@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelJITEventListener` Class Reference
+# `IntelJITEventListener` Class
 
 
 

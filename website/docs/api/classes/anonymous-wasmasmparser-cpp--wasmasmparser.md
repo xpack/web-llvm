@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmAsmParser` Class Reference
+# `WasmAsmParser` Class
 
 
 

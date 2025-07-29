@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBasicBlockUtils` Class Reference
+# `ARMBasicBlockUtils` Class
 
 
 

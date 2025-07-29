@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCOperand` Class Reference
+# `MCOperand` Class
 
 <p>Instances of this class represent operands of the <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a> class. <a href="#details">More...</a></p>
 

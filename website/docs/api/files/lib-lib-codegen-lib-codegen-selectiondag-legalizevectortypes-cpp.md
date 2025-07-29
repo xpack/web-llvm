@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeVectorTypes.cpp` File Reference
+# `LegalizeVectorTypes.cpp` File
 
 
 

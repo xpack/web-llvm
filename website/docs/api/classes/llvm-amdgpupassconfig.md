@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPassConfig` Class Reference
+# `AMDGPUPassConfig` Class
 
 
 

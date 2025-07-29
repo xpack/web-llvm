@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMappingIterator` Class Reference
+# `CoverageMappingIterator` Class
 
 <p>A file format agnostic iterator over coverage mapping data. <a href="#details">More...</a></p>
 

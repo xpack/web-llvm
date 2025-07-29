@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphMetadata` Class Reference
+# `GraphMetadata` Class
 
 <p>Holds graph-level metadata relevant to <a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> RA problems. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDVSSAPhi` Class Reference
+# `LDVSSAPhi` Class
 
 <p>Represents an SSA PHI node for the SSA updater class. <a href="#details">More...</a></p>
 

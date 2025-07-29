@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpLowerer` Class Reference
+# `OpLowerer` Class
 
 
 

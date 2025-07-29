@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HelpPrinterWrapper` Class Reference
+# `HelpPrinterWrapper` Class
 
 
 

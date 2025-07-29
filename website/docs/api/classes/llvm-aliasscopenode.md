@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasScopeNode` Class Reference
+# `AliasScopeNode` Class
 
 <p>This is a simple wrapper around an <a href="/web-llvm/docs/api/classes/llvm/mdnode">MDNode</a> which provides a higher-level interface by hiding the details of how alias analysis information is encoded in its operands. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyAtomicPointer.h` File Reference
+# `LazyAtomicPointer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldCOFFX86_64` Class Reference
+# `RuntimeDyldCOFFX86_64` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUExternalAAWrapper` Class Reference
+# `AMDGPUExternalAAWrapper` Class
 
 
 

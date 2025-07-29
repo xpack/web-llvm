@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXMachineFunctionInfo` Class Reference
+# `NVPTXMachineFunctionInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemProfContextDisambiguation` Class Reference
+# `MemProfContextDisambiguation` Class
 
 
 

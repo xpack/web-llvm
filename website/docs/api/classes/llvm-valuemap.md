@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMap` Class Template Reference
+# `ValueMap` Class Template
 
 <p>See the file comment. <a href="#details">More...</a></p>
 

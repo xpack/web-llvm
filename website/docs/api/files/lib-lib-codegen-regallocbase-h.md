@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocBase.h` File Reference
+# `RegAllocBase.h` File
 
 
 

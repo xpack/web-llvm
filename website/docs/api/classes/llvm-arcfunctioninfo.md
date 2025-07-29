@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCFunctionInfo` Class Reference
+# `ARCFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/arcfunctioninfo">ARCFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> private ARC target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

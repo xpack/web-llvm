@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitCastInst` Class Reference
+# `BitCastInst` Class
 
 <p>This class represents a no-op cast from one type to another. <a href="#details">More...</a></p>
 

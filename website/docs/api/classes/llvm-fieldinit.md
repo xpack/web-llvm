@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FieldInit` Class Reference
+# `FieldInit` Class
 
 <p>X.Y - Represent a reference to a subfield of a variable. <a href="#details">More...</a></p>
 

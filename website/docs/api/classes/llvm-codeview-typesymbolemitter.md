@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSymbolEmitter` Class Reference
+# `TypeSymbolEmitter` Class
 
 
 

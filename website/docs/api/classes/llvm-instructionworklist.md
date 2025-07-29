@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionWorklist` Class Reference
+# `InstructionWorklist` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instructionworklist">InstructionWorklist</a> - This is the worklist management logic for InstCombine and other simplification passes. <a href="#details">More...</a></p>
 

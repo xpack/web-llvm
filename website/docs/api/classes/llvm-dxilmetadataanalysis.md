@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILMetadataAnalysis` Class Reference
+# `DXILMetadataAnalysis` Class
 
 
 

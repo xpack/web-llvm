@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLICMBase` Class Reference
+# `MachineLICMBase` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNMaxILPSchedStrategy` Class Reference
+# `GCNMaxILPSchedStrategy` Class
 
 <p>The goal of this scheduling strategy is to maximize ILP for a single wave (i.e. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APInt.h` File Reference
+# `APInt.h` File
 
 <p>This file implements a class to represent arbitrary precision integral constant values and operations on them. <a href="#details">More...</a></p>
 

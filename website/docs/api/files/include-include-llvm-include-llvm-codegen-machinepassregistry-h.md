@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePassRegistry.h` File Reference
+# `MachinePassRegistry.h` File
 
 
 

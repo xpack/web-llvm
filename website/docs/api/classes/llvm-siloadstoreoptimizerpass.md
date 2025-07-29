@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILoadStoreOptimizerPass` Class Reference
+# `SILoadStoreOptimizerPass` Class
 
 
 

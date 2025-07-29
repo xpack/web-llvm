@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerI1CopiesLegacy` Class Reference
+# `SILowerI1CopiesLegacy` Class
 
 
 

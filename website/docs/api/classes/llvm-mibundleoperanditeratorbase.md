@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIBundleOperandIteratorBase` Class Template Reference
+# `MIBundleOperandIteratorBase` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mibundleoperanditeratorbase">MIBundleOperandIteratorBase</a> - Iterator that visits all operands in a bundle of MachineInstrs. <a href="#details">More...</a></p>
 

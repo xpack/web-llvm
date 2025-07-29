@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IHexSectionWriterBase` Class Reference
+# `IHexSectionWriterBase` Class
 
 
 

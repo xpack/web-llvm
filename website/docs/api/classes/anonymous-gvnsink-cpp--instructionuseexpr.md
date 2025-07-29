@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionUseExpr` Class Reference
+# `InstructionUseExpr` Class
 
 <p>A GVN expression describing how an instruction is used. <a href="#details">More...</a></p>
 

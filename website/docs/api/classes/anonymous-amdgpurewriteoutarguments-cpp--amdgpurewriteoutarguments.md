@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURewriteOutArguments` Class Reference
+# `AMDGPURewriteOutArguments` Class
 
 
 

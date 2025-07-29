@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferAddressSpacesImpl` Class Reference
+# `InferAddressSpacesImpl` Class
 
 
 

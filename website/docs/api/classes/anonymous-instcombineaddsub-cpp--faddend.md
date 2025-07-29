@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FAddend` Class Reference
+# `FAddend` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-instcombineaddsub-cpp-/faddend">FAddend</a> is used to represent floating-point addend. <a href="#details">More...</a></p>
 

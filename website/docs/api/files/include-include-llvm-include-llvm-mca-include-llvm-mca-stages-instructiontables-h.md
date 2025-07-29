@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionTables.h` File Reference
+# `InstructionTables.h` File
 
 <p>This file implements a custom stage to generate instruction tables. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SHA1` Class Reference
+# `SHA1` Class
 
 <p>A class that wrap the <a href="/web-llvm/docs/api/classes/llvm/sha1">SHA1</a> algorithm. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerAllowCheckPass.h` File Reference
+# `LowerAllowCheckPass.h` File
 
 <p>This file provides the interface for the pass responsible for removing expensive ubsan checks. <a href="#details">More...</a></p>
 

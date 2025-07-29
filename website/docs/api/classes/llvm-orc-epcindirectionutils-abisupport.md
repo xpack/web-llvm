@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ABISupport` Class Reference
+# `ABISupport` Class
 
 <p>ABI support base class. <a href="#details">More...</a></p>
 

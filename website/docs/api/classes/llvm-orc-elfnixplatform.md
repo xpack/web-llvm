@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFNixPlatform` Class Reference
+# `ELFNixPlatform` Class
 
 <p>Mediates between ELFNix initialization and <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> state. <a href="#details">More...</a></p>
 

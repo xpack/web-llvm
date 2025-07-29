@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetSchedModel` Class Reference
+# `TargetSchedModel` Class
 
 <p>Provide an instruction scheduling machine model to CodeGen passes. <a href="#details">More...</a></p>
 

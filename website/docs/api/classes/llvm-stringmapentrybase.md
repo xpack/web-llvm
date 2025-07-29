@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntryBase` Class Reference
+# `StringMapEntryBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringmapentrybase">StringMapEntryBase</a> - Shared base class of <a href="/web-llvm/docs/api/classes/llvm/stringmapentry">StringMapEntry</a> instances. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterLocations` Class Reference
+# `RegisterLocations` Class
 
 <p>A class that can track all registers with locations in a <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindrow">UnwindRow</a> object. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Decompressor` Class Reference
+# `Decompressor` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/decompressor">Decompressor</a> helps to handle decompression of compressed sections. <a href="#details">More...</a></p>
 

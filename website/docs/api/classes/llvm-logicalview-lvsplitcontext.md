@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVSplitContext` Class Reference
+# `LVSplitContext` Class
 
 
 

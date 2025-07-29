@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolDumpDelegate` Class Reference
+# `SymbolDumpDelegate` Class
 
 
 

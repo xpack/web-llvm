@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIVariable` Class Reference
+# `DIVariable` Class
 
 <p>Base class for variables. <a href="#details">More...</a></p>
 

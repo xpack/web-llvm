@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBTypes.h` File Reference
+# `PDBTypes.h` File
 
 
 

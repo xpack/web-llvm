@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolGOFF` Class Reference
+# `MCSymbolGOFF` Class
 
 
 

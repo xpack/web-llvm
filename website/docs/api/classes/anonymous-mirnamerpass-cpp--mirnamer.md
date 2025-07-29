@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRNamer` Class Reference
+# `MIRNamer` Class
 
 
 

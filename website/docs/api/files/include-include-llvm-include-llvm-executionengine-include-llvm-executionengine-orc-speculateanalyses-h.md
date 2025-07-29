@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpeculateAnalyses.h` File Reference
+# `SpeculateAnalyses.h` File
 
 <p>Contains the Analyses and Result Interpretation to select likely functions to Speculatively compile before they are called. <a href="#details">More...</a></p>
 

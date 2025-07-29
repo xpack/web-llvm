@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubSectionWriter` Class Reference
+# `SubSectionWriter` Class
 
 
 

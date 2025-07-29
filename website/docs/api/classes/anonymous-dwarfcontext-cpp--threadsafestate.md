@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeState` Class Reference
+# `ThreadSafeState` Class
 
 
 

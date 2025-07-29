@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAError` Class Reference
+# `DIAError` Class
 
 <p>Base class for errors originating in DIA SDK, e.g. COM calls. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProvenanceAnalysis` Class Reference
+# `ProvenanceAnalysis` Class
 
 <p>This is similar to BasicAliasAnalysis, and it uses many of the same techniques, except it uses special ObjC-specific reasoning about pointer relationships. <a href="#details">More...</a></p>
 

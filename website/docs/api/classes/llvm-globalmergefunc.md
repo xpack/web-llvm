@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalMergeFunc` Class Reference
+# `GlobalMergeFunc` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/globalmergefunc">GlobalMergeFunc</a> is a <a href="/web-llvm/docs/api/classes/llvm/modulepass">ModulePass</a> that implements a function merging mechanism using stable function hashes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetDataInfo` Class Reference
+# `TargetDataInfo` Class
 
 <p>Struct that keeps the information that should be kept throughout a 'target data' region. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WallclockRecord` Class Reference
+# `WallclockRecord` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStream` Class Reference
+# `SymbolStream` Class
 
 
 

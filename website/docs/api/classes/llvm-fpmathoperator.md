@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPMathOperator` Class Reference
+# `FPMathOperator` Class
 
 <p>Utility class for floating point operations which can have information about relaxed accuracy requirements attached to them. <a href="#details">More...</a></p>
 

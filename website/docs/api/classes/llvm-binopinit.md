@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinOpInit` Class Reference
+# `BinOpInit` Class
 
 <p>!op (X, Y) - Combine two inits. <a href="#details">More...</a></p>
 

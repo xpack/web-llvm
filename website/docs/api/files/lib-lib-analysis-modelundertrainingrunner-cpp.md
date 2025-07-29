@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModelUnderTrainingRunner.cpp` File Reference
+# `ModelUnderTrainingRunner.cpp` File
 
 
 

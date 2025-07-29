@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyDataFlowAnalysis` Class Template Reference
+# `StackSafetyDataFlowAnalysis` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingNodeAllocator` Class Reference
+# `FoldingNodeAllocator` Class
 
 
 

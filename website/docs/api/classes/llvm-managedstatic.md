@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ManagedStatic` Class Template Reference
+# `ManagedStatic` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/managedstatic">ManagedStatic</a> - This transparently changes the behavior of global statics to be lazily constructed on demand (good for reducing startup times of dynamic libraries that link in LLVM components) and for making destruction be explicit through the <a href="/web-llvm/docs/api/namespaces/llvm/#ac27f7fe6f1543ef516aa0998bad20335">llvm_shutdown()</a> function call. <a href="#details">More...</a></p>
 

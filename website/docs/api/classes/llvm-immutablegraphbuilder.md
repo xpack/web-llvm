@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableGraphBuilder` Class Template Reference
+# `ImmutableGraphBuilder` Class Template
 
 
 

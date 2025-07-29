@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalVarSummary` Class Reference
+# `GlobalVarSummary` Class
 
 <p>Global variable summary information to aid decisions and implementation of importing. <a href="#details">More...</a></p>
 

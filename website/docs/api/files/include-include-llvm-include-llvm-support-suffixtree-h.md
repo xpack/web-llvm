@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuffixTree.h` File Reference
+# `SuffixTree.h` File
 
 
 

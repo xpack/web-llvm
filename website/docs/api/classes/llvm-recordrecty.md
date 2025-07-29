@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordRecTy` Class Reference
+# `RecordRecTy` Class
 
 <p>'[classname]' - <a href="/web-llvm/docs/api/classes/llvm/type">Type</a> of record values that have zero or more superclasses. <a href="#details">More...</a></p>
 

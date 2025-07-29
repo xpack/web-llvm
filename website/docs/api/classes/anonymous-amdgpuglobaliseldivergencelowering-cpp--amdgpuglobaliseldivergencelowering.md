@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUGlobalISelDivergenceLowering` Class Reference
+# `AMDGPUGlobalISelDivergenceLowering` Class
 
 
 

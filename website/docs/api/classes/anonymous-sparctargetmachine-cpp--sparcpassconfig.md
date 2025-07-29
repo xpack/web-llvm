@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcPassConfig` Class Reference
+# `SparcPassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/sparc">Sparc</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

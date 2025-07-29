@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintLoopPassWrapper` Class Reference
+# `PrintLoopPassWrapper` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/printlooppass">PrintLoopPass</a> - Print a <a href="/web-llvm/docs/api/classes/llvm/function">Function</a> corresponding to a <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a>. <a href="#details">More...</a></p>
 

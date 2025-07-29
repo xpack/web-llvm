@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandLargeFpConvertPass` Class Reference
+# `ExpandLargeFpConvertPass` Class
 
 
 

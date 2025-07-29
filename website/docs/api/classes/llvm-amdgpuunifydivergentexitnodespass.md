@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUnifyDivergentExitNodesPass` Class Reference
+# `AMDGPUUnifyDivergentExitNodesPass` Class
 
 
 

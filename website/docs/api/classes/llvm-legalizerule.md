@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeRule` Class Reference
+# `LegalizeRule` Class
 
 <p>A single rule in a legalizer info ruleset. <a href="#details">More...</a></p>
 

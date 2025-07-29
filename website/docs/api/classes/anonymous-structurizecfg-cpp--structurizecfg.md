@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructurizeCFG` Class Reference
+# `StructurizeCFG` Class
 
 <p>Transforms the control flow graph on one single entry/exit region at a time. <a href="#details">More...</a></p>
 

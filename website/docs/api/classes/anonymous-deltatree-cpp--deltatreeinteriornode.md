@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaTreeInteriorNode` Class Reference
+# `DeltaTreeInteriorNode` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a> - When isLeaf = false, a node has child pointers. <a href="#details">More...</a></p>
 

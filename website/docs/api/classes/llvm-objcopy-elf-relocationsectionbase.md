@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocationSectionBase` Class Reference
+# `RelocationSectionBase` Class
 
 
 

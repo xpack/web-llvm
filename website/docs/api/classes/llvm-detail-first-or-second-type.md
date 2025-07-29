@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `first_or_second_type` Class Template Reference
+# `first_or_second_type` Class Template
 
 <p>Return a reference to the first or second member of a reference. <a href="#details">More...</a></p>
 

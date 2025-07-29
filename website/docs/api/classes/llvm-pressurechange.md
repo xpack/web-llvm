@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PressureChange` Class Reference
+# `PressureChange` Class
 
 <p>Capture a change in pressure for a single pressure set. <a href="#details">More...</a></p>
 

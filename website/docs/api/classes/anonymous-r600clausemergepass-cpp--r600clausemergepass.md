@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ClauseMergePass` Class Reference
+# `R600ClauseMergePass` Class
 
 
 

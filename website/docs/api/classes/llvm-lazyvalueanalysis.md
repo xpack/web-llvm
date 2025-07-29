@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueAnalysis` Class Reference
+# `LazyValueAnalysis` Class
 
 <p>Analysis to compute lazy value information. <a href="#details">More...</a></p>
 

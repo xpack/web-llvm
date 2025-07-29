@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamError.h` File Reference
+# `BinaryStreamError.h` File
 
 
 

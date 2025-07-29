@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentInit` Class Reference
+# `ArgumentInit` Class
 
 
 

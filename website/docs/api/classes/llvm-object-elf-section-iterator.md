@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `elf_section_iterator` Class Reference
+# `elf_section_iterator` Class
 
 
 

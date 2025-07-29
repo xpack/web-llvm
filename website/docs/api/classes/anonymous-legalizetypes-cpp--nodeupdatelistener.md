@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeUpdateListener` Class Reference
+# `NodeUpdateListener` Class
 
 <p>This class is a DAGUpdateListener that listens for updates to nodes and recomputes their ready state. <a href="#details">More...</a></p>
 

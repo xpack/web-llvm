@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrailingObjects` Class Template Reference
+# `TrailingObjects` Class Template
 
 <p>See the file comment for details on the usage of the <a href="/web-llvm/docs/api/classes/llvm/trailingobjects">TrailingObjects</a> type. <a href="#details">More...</a></p>
 

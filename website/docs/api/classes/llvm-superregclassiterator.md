@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuperRegClassIterator` Class Reference
+# `SuperRegClassIterator` Class
 
 
 

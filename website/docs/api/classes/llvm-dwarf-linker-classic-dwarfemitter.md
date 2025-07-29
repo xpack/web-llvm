@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfEmitter` Class Reference
+# `DwarfEmitter` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarfemitter">DwarfEmitter</a> presents interface to generate all debug info tables. <a href="#details">More...</a></p>
 

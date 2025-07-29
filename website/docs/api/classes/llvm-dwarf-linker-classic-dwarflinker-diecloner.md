@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIECloner` Class Reference
+# `DIECloner` Class
 
 
 

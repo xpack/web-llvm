@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionBase` Class Reference
+# `InstructionBase` Class
 
 <p>Base class for instructions consumed by the simulation pipeline. <a href="#details">More...</a></p>
 

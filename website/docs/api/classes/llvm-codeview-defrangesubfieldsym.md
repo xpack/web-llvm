@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefRangeSubfieldSym` Class Reference
+# `DefRangeSubfieldSym` Class
 
 
 

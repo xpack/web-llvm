@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIELoc` Class Reference
+# `DIELoc` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dieloc">DIELoc</a> - Represents an expression location. <a href="#details">More...</a></p>
 

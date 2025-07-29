@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackColoringPass` Class Reference
+# `StackColoringPass` Class
 
 
 

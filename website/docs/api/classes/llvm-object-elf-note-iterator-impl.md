@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Note_Iterator_Impl` Class Template Reference
+# `Elf_Note_Iterator_Impl` Class Template
 
 
 

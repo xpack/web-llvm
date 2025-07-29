@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfUnit` Class Reference
+# `DwarfUnit` Class
 
 <p>This dwarf writer support class manages information associated with a source file. <a href="#details">More...</a></p>
 

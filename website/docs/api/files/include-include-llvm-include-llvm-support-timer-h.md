@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Timer.h` File Reference
+# `Timer.h` File
 
 
 

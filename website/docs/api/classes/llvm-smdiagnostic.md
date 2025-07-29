@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMDiagnostic` Class Reference
+# `SMDiagnostic` Class
 
 <p>Instances of this class encapsulate one diagnostic report, allowing printing to a <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> as a caret diagnostic. <a href="#details">More...</a></p>
 

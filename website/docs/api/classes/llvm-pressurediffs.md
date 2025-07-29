@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PressureDiffs` Class Reference
+# `PressureDiffs` Class
 
 <p>Array of <a href="/web-llvm/docs/api/classes/llvm/pressurediffs">PressureDiffs</a>. <a href="#details">More...</a></p>
 

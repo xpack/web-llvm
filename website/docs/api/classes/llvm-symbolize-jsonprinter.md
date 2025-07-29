@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSONPrinter` Class Reference
+# `JSONPrinter` Class
 
 
 

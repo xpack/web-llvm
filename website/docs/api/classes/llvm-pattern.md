@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Pattern` Class Reference
+# `Pattern` Class
 
 
 

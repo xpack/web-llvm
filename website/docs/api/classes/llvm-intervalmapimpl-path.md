@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Path` Class Reference
+# `Path` Class
 
 
 

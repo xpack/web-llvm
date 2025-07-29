@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptPassGate` Class Reference
+# `OptPassGate` Class
 
 <p>Extensions to this class implement mechanisms to disable passes and individual optimizations at compile time. <a href="#details">More...</a></p>
 

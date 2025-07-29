@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextAPIError` Class Reference
+# `TextAPIError` Class
 
 
 

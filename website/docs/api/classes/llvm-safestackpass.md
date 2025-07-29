@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafeStackPass` Class Reference
+# `SafeStackPass` Class
 
 
 

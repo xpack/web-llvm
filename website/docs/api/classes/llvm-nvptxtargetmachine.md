@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetMachine` Class Reference
+# `NVPTXTargetMachine` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/nvptxtargetmachine">NVPTXTargetMachine</a>. <a href="#details">More...</a></p>
 

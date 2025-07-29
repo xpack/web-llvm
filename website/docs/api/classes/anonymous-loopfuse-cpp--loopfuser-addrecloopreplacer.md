@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddRecLoopReplacer` Class Reference
+# `AddRecLoopReplacer` Class
 
 <p>Rewrite all additive recurrences in a <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> to use a new loop. <a href="#details">More...</a></p>
 

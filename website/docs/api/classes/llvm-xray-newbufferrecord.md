@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewBufferRecord` Class Reference
+# `NewBufferRecord` Class
 
 
 

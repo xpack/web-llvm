@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChildFallibleIterator` Class Reference
+# `ChildFallibleIterator` Class
 
 
 

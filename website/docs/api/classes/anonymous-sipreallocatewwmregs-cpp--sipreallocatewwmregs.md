@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPreAllocateWWMRegs` Class Reference
+# `SIPreAllocateWWMRegs` Class
 
 
 

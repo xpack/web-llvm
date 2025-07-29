@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrUseVisitor` Class Template Reference
+# `PtrUseVisitor` Class Template
 
 <p>A base class for visitors over the uses of a pointer value. <a href="#details">More...</a></p>
 

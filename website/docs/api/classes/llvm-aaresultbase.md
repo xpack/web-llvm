@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAResultBase` Class Reference
+# `AAResultBase` Class
 
 <p>A base class to help implement the function alias analysis results concept. <a href="#details">More...</a></p>
 

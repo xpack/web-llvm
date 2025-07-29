@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MachineFunctionInfo` Class Reference
+# `R600MachineFunctionInfo` Class
 
 
 

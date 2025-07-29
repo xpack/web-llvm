@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEvolution` Class Reference
+# `ScalarEvolution` Class
 
 <p>The main scalar evolution driver. <a href="#details">More...</a></p>
 

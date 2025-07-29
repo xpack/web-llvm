@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractValueInst` Class Reference
+# `ExtractValueInst` Class
 
 <p>This instruction extracts a struct member or array element value from an aggregate value. <a href="#details">More...</a></p>
 

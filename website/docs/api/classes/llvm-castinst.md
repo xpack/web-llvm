@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInst` Class Reference
+# `CastInst` Class
 
 <p>This is the base class for all instructions that perform data casts. <a href="#details">More...</a></p>
 

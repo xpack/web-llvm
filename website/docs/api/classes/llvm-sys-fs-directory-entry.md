@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `directory_entry` Class Reference
+# `directory_entry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-entry">directory_entry</a> - A single entry in a directory. <a href="#details">More...</a></p>
 

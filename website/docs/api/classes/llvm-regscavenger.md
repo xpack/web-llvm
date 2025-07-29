@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegScavenger` Class Reference
+# `RegScavenger` Class
 
 
 

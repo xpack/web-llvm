@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeparateConstOffsetFromGEP` Class Reference
+# `SeparateConstOffsetFromGEP` Class
 
 <p>A pass that tries to split every GEP in the function into a variadic base and a constant offset. <a href="#details">More...</a></p>
 

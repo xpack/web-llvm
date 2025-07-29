@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DCE.h` File Reference
+# `DCE.h` File
 
 
 

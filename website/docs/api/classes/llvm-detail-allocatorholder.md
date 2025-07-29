@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocatorHolder` Class Template Reference
+# `AllocatorHolder` Class Template
 
 
 

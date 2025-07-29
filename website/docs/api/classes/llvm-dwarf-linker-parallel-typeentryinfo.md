@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeEntryInfo` Class Reference
+# `TypeEntryInfo` Class
 
 
 

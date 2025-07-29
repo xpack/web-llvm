@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerI1CopiesPass` Class Reference
+# `SILowerI1CopiesPass` Class
 
 
 

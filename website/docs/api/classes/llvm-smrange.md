@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMRange` Class Reference
+# `SMRange` Class
 
 <p>Represents a range in source code. <a href="#details">More...</a></p>
 

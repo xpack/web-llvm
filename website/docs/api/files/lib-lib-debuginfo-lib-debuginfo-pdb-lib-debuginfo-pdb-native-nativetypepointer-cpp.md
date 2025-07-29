@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypePointer.cpp` File Reference
+# `NativeTypePointer.cpp` File
 
 
 

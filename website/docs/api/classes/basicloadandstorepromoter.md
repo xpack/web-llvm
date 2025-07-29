@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicLoadAndStorePromoter` Class Reference
+# `BasicLoadAndStorePromoter` Class
 
 <p>A basic LoadAndStorePromoter that does not remove store nodes. <a href="#details">More...</a></p>
 

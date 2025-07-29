@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppleAccelTableData` Class Reference
+# `AppleAccelTableData` Class
 
 <p>A base class for different implementations of Data classes for Apple Accelerator Tables. <a href="#details">More...</a></p>
 

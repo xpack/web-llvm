@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `node_parent_access` Class Template Reference
+# `node_parent_access` Class Template
 
 
 

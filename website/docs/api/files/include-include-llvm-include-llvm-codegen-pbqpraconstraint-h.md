@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PBQPRAConstraint.h` File Reference
+# `PBQPRAConstraint.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RandomNumberGenerator` Class Reference
+# `RandomNumberGenerator` Class
 
 <p>A random number generator. <a href="#details">More...</a></p>
 

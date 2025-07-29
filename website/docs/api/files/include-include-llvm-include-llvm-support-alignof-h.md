@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignOf.h` File Reference
+# `AlignOf.h` File
 
 
 

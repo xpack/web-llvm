@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugStringTableSubsectionRef` Class Reference
+# `DebugStringTableSubsectionRef` Class
 
 <p>Represents a read-only view of a CodeView string table. <a href="#details">More...</a></p>
 

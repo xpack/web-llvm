@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInfo.h` File Reference
+# `LoopInfo.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPMathOperator` Class Reference
+# `FPMathOperator` Class
 
 
 

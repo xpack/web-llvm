@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `filter_iterator_base` Class Template Reference
+# `filter_iterator_base` Class Template
 
 <p>An iterator adaptor that filters the elements of given inner iterators. <a href="#details">More...</a></p>
 

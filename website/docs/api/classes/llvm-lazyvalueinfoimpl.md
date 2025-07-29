@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueInfoImpl` Class Reference
+# `LazyValueInfoImpl` Class
 
 
 

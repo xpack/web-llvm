@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBranchProbabilityAnalysis` Class Reference
+# `MachineBranchProbabilityAnalysis` Class
 
 
 

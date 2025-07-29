@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVPLatticeVal` Class Reference
+# `CVPLatticeVal` Class
 
 <p>The lattice value type used by our custom lattice function. <a href="#details">More...</a></p>
 

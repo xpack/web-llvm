@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmToken` Class Reference
+# `AsmToken` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/target">Target</a> independent representation for an assembler token. <a href="#details">More...</a></p>
 

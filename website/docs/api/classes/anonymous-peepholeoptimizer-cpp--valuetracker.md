@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueTracker` Class Reference
+# `ValueTracker` Class
 
 <p>Helper class to track the possible sources of a value defined by a (chain of) copy related instructions. <a href="#details">More...</a></p>
 

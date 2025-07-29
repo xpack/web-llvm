@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCycleAnalysis.h` File Reference
+# `MachineCycleAnalysis.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFLegalizerInfo` Class Reference
+# `BPFLegalizerInfo` Class
 
 <p>This class provides the information for the <a href="/web-llvm/docs/api/namespaces/llvm/bpf">BPF</a> target legalizer for GlobalISel. <a href="#details">More...</a></p>
 

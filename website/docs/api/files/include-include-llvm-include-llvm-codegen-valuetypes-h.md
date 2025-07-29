@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueTypes.h` File Reference
+# `ValueTypes.h` File
 
 
 

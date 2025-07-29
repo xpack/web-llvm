@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListeningSocket` Class Reference
+# `ListeningSocket` Class
 
 <p>Manages a passive (i.e., listening) UNIX domain socket. <a href="#details">More...</a></p>
 

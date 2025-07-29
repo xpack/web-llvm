@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Option` Class Reference
+# `Option` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/opt/option">Option</a> - Abstract representation for a single form of driver argument. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Process` Class Reference
+# `Process` Class
 
 <p>A collection of legacy interfaces for querying information about the current executing process. <a href="#details">More...</a></p>
 

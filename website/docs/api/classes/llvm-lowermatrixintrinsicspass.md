@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerMatrixIntrinsicsPass` Class Reference
+# `LowerMatrixIntrinsicsPass` Class
 
 
 

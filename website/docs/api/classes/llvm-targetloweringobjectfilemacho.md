@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLoweringObjectFileMachO` Class Reference
+# `TargetLoweringObjectFileMachO` Class
 
 
 

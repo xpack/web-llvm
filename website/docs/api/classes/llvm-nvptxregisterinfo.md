@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXRegisterInfo` Class Reference
+# `NVPTXRegisterInfo` Class
 
 
 

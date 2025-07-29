@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVAsmPrinter` Class Reference
+# `RISCVAsmPrinter` Class
 
 
 

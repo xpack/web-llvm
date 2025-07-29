@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelTable.cpp` File Reference
+# `AccelTable.cpp` File
 
 
 

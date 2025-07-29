@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawError` Class Reference
+# `RawError` Class
 
 <p>Base class for errors originating when parsing raw PDB files. <a href="#details">More...</a></p>
 

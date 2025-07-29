@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPIRBuilder.cpp` File Reference
+# `OMPIRBuilder.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder">OpenMPIRBuilder</a> class, which is used as a convenient way to create LLVM instructions for OpenMP directives. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TagRecord` Class Reference
+# `TagRecord` Class
 
 
 

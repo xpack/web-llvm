@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDUse` Class Reference
+# `SDUse` Class
 
 <p>Represents a use of a <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a>. <a href="#details">More...</a></p>
 

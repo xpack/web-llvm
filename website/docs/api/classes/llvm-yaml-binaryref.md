@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryRef` Class Reference
+# `BinaryRef` Class
 
 <p>Specialized YAMLIO scalar type for representing a binary blob. <a href="#details">More...</a></p>
 

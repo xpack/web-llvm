@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonEarlyIfConversion` Class Reference
+# `HexagonEarlyIfConversion` Class
 
 
 

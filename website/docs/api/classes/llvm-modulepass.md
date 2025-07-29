@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModulePass` Class Reference
+# `ModulePass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/modulepass">ModulePass</a> class - This class is used to implement unstructured interprocedural optimizations and analyses. <a href="#details">More...</a></p>
 

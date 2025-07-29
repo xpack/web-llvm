@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIntBinOp` Class Reference
+# `GIntBinOp` Class
 
 <p>Represents an integer binary operation. <a href="#details">More...</a></p>
 

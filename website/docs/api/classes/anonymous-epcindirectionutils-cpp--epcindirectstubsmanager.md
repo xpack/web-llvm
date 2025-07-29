@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCIndirectStubsManager` Class Reference
+# `EPCIndirectStubsManager` Class
 
 
 

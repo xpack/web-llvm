@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCResultInst` Class Reference
+# `GCResultInst` Class
 
 <p>Represents calls to the gc.result intrinsic. <a href="#details">More...</a></p>
 

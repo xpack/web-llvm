@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_select_iterator_type` Class Template Reference
+# `ilist_select_iterator_type` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCRecordCoding` Class Template Reference
+# `BCRecordCoding` Class Template
 
 <p>Helper class for dealing with a scalar element in the middle of a record. <a href="#details">More...</a></p>
 

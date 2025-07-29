@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_svector_ostream` Class Reference
+# `raw_svector_ostream` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> that writes to an <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> or <a href="/web-llvm/docs/api/classes/llvm/smallstring">SmallString</a>. <a href="#details">More...</a></p>
 

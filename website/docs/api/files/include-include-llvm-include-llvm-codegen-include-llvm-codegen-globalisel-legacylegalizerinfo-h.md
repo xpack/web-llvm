@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyLegalizerInfo.h` File Reference
+# `LegacyLegalizerInfo.h` File
 
 <p>Interface for Targets to specify which operations they can successfully select and how the others should be expanded most efficiently. <a href="#details">More...</a></p>
 

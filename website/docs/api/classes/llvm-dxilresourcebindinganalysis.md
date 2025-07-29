@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceBindingAnalysis` Class Reference
+# `DXILResourceBindingAnalysis` Class
 
 
 

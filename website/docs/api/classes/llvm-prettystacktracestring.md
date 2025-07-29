@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrettyStackTraceString` Class Reference
+# `PrettyStackTraceString` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/prettystacktracestring">PrettyStackTraceString</a> - This object prints a specified string (which should not contain newlines) to the stream as the stack trace when a crash occurs. <a href="#details">More...</a></p>
 

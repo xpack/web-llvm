@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineCoverageIterator` Class Reference
+# `LineCoverageIterator` Class
 
 <p>An iterator over the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/coverage/linecoveragestats">LineCoverageStats</a></span> objects for lines described by a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/coverage/coveragedata">CoverageData</a></span> instance. <a href="#details">More...</a></p>
 

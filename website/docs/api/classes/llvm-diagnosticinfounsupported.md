@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoUnsupported` Class Reference
+# `DiagnosticInfoUnsupported` Class
 
 <p>Diagnostic information for unsupported feature in backend. <a href="#details">More...</a></p>
 

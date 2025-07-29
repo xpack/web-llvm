@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnicodeCharRanges.h` File Reference
+# `UnicodeCharRanges.h` File
 
 
 

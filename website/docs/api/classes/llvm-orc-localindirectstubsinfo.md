@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalIndirectStubsInfo` Class Template Reference
+# `LocalIndirectStubsInfo` Class Template
 
 
 

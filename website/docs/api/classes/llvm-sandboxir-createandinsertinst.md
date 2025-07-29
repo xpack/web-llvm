@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CreateAndInsertInst` Class Reference
+# `CreateAndInsertInst` Class
 
 
 

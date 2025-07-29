@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrOrderFilePass` Class Reference
+# `InstrOrderFilePass` Class
 
 <p>The instrumentation pass for recording function order. <a href="#details">More...</a></p>
 

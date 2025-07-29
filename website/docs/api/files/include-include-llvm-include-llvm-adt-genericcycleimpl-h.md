@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericCycleImpl.h` File Reference
+# `GenericCycleImpl.h` File
 
 <p>This template implementation resides in a separate file so that it does not get injected into every .cpp file that includes the generic header. <a href="#details">More...</a></p>
 

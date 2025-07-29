@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryManager` Class Reference
+# `MemoryManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> Management. <a href="#details">More...</a></p>
 

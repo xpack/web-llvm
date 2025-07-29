@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuiltinGCs.cpp` File Reference
+# `BuiltinGCs.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugInfoFinder` Class Reference
+# `DebugInfoFinder` Class
 
 <p>Utility to find all debug info in a module. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockDataT` Class Template Reference
+# `BlockDataT` Class Template
 
 
 

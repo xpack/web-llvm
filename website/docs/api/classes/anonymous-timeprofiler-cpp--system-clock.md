@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `system_clock` Class Reference
+# `system_clock` Class
 
 
 

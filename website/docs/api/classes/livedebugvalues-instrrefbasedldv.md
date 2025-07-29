@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrRefBasedLDV` Class Reference
+# `InstrRefBasedLDV` Class
 
 
 

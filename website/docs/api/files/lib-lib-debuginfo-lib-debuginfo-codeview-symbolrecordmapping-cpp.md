@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRecordMapping.cpp` File Reference
+# `SymbolRecordMapping.cpp` File
 
 
 

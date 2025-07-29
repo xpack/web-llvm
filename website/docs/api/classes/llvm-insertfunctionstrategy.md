@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertFunctionStrategy` Class Reference
+# `InsertFunctionStrategy` Class
 
 <p>Strategy that generates new function calls and inserts function signatures to the modules. <a href="#details">More...</a></p>
 

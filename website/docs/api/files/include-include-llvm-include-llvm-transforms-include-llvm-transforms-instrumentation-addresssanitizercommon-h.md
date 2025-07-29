@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressSanitizerCommon.h` File Reference
+# `AddressSanitizerCommon.h` File
 
 
 

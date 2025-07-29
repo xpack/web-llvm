@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionExtras.h` File Reference
+# `FunctionExtras.h` File
 
 <p>This file provides a collection of function (or more generally, callable) type erasure utilities supplementing those provided by the standard library in <span class="doxyComputerOutput">&lt;function&gt;</span>. <a href="#details">More...</a></p>
 

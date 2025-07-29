@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeTypedef` Class Reference
+# `NativeTypeTypedef` Class
 
 
 

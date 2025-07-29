@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawInstrProfReader` Class Template Reference
+# `RawInstrProfReader` Class Template
 
 <p>Reader for the raw instrprof binary format from runtime. <a href="#details">More...</a></p>
 

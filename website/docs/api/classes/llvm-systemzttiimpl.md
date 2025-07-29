@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZTTIImpl` Class Reference
+# `SystemZTTIImpl` Class
 
 
 

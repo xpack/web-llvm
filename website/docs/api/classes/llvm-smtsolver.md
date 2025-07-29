@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMTSolver` Class Reference
+# `SMTSolver` Class
 
 <p>Generic base class for SMT Solvers. <a href="#details">More...</a></p>
 

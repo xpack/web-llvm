@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopAnalysis` Class Reference
+# `LoopAnalysis` Class
 
 <p>Analysis pass that exposes the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/loopinfo">LoopInfo</a></span> for a function. <a href="#details">More...</a></p>
 

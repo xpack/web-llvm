@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CortexM7InstructionInformation` Class Reference
+# `CortexM7InstructionInformation` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFJITLinker_x86_64` Class Reference
+# `COFFJITLinker_x86_64` Class
 
 
 

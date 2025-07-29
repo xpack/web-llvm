@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemDGNodeIntervalBuilder` Class Reference
+# `MemDGNodeIntervalBuilder` Class
 
 <p>Convenience builders for a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/memdgnode">MemDGNode</a> interval. <a href="#details">More...</a></p>
 

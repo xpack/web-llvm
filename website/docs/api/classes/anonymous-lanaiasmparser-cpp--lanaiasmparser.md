@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiAsmParser` Class Reference
+# `LanaiAsmParser` Class
 
 
 

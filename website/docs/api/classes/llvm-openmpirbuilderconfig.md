@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenMPIRBuilderConfig` Class Reference
+# `OpenMPIRBuilderConfig` Class
 
 <p>Captures attributes that affect generating LLVM-IR using the <a href="/web-llvm/docs/api/classes/llvm/openmpirbuilder">OpenMPIRBuilder</a> and related classes. <a href="#details">More...</a></p>
 

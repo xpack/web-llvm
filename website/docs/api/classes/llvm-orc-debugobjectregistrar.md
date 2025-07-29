@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugObjectRegistrar` Class Reference
+# `DebugObjectRegistrar` Class
 
 <p>Abstract interface for registering debug objects in the executor process. <a href="#details">More...</a></p>
 

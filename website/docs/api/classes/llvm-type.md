@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Type` Class Reference
+# `Type` Class
 
 <p>The instances of the <a href="/web-llvm/docs/api/classes/llvm/type">Type</a> class are immutable: once they are created, they are never changed. <a href="#details">More...</a></p>
 

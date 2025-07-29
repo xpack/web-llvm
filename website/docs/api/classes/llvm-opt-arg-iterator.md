@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `arg_iterator` Class Template Reference
+# `arg_iterator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/opt/arg-iterator">arg_iterator</a> - Iterates through arguments stored inside an <a href="/web-llvm/docs/api/classes/llvm/opt/arglist">ArgList</a>. <a href="#details">More...</a></p>
 

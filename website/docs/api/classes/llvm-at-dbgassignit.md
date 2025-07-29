@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgAssignIt` Class Reference
+# `DbgAssignIt` Class
 
 <p>High level: this is an iterator for llvm.dbg.assign intrinsics. <a href="#details">More...</a></p>
 

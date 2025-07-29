@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCPtrTracker` Class Reference
+# `GCPtrTracker` Class
 
 <p>Builds <a href="/web-llvm/docs/api/structs/anonymous-safepointirverifier-cpp-/basicblockstate">BasicBlockState</a> for each BB of the function. <a href="#details">More...</a></p>
 

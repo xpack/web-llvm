@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCGenSubtargetInfo` Class Reference
+# `ARCGenSubtargetInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExportClustering` Class Reference
+# `ExportClustering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineDominatorTreePrinterPass` Class Reference
+# `MachineDominatorTreePrinterPass` Class
 
 <p>Machine function pass which print <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a></span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFNixPlatform.cpp` File Reference
+# `ELFNixPlatform.cpp` File
 
 
 

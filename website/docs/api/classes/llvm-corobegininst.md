@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroBeginInst` Class Reference
+# `CoroBeginInst` Class
 
 <p>This class represents the llvm.coro.begin or llvm.coro.begin.custom.abi instructions. <a href="#details">More...</a></p>
 

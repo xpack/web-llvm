@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `formatv_object` Class Template Reference
+# `formatv_object` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashBuilderBase` Class Template Reference
+# `HashBuilderBase` Class Template
 
 <p>Declares the hasher member, and functions forwarding directly to the hasher. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Result` Class Template Reference
+# `Result` Class Template
 
 <p>A specialized result for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#a43d65ba07f09dd4c0c13d551848cdc88">LoopAnalysisManagerFunctionProxy</a></span> which retains a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/loopinfo">LoopInfo</a></span> reference. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsX86AsmBackend` Class Reference
+# `WindowsX86AsmBackend` Class
 
 
 

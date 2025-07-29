@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPointerNull` Class Reference
+# `ConstantPointerNull` Class
 
 <p>A constant pointer value that points to null. <a href="#details">More...</a></p>
 

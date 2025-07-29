@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430Attributes.h` File Reference
+# `MSP430Attributes.h` File
 
 <p>This file contains enumerations for MSP430 ELF build attributes as defined in the MSP430 ELF psABI specification. <a href="#details">More...</a></p>
 

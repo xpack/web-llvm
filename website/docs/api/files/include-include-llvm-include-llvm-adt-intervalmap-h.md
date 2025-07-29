@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalMap.h` File Reference
+# `IntervalMap.h` File
 
 <p>This file implements a coalescing interval map for small objects. <a href="#details">More...</a></p>
 

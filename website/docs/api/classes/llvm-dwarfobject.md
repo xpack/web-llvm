@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFObject` Class Reference
+# `DWARFObject` Class
 
 
 

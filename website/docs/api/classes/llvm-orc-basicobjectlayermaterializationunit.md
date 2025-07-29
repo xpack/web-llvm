@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicObjectLayerMaterializationUnit` Class Reference
+# `BasicObjectLayerMaterializationUnit` Class
 
 <p>Materializes the given object file (represented by a <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> instance) by calling 'emit' on the given <a href="/web-llvm/docs/api/classes/llvm/orc/objectlayer">ObjectLayer</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExplicitObjectParameter` Class Reference
+# `ExplicitObjectParameter` Class
 
 <p>Represents the explicitly named object parameter. <a href="#details">More...</a></p>
 

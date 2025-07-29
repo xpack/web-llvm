@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeFunctionArg` Class Reference
+# `PDBSymbolTypeFunctionArg` Class
 
 
 

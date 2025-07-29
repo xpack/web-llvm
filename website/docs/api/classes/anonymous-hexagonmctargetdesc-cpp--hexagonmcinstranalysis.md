@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCInstrAnalysis` Class Reference
+# `HexagonMCInstrAnalysis` Class
 
 
 

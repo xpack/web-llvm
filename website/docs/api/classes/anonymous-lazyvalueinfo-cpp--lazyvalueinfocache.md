@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueInfoCache` Class Reference
+# `LazyValueInfoCache` Class
 
 <p>This is the cache kept by <a href="/web-llvm/docs/api/classes/llvm/lazyvalueinfo">LazyValueInfo</a> which maintains information about queries across the clients' queries. <a href="#details">More...</a></p>
 

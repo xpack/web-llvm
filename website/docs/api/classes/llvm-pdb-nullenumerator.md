@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NullEnumerator` Class Template Reference
+# `NullEnumerator` Class Template
 
 
 

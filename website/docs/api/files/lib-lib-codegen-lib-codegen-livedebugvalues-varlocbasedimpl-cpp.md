@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarLocBasedImpl.cpp` File Reference
+# `VarLocBasedImpl.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/livedebugvalues">LiveDebugValues</a> is an optimistic "available expressions" dataflow algorithm. <a href="#details">More...</a></p>
 

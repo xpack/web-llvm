@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPInterleaveRecipe` Class Reference
+# `VPInterleaveRecipe` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpinterleaverecipe">VPInterleaveRecipe</a> is a recipe for transforming an interleave group of load or stores into one wide load/store and shuffles. <a href="#details">More...</a></p>
 

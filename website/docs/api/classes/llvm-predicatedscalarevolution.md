@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicatedScalarEvolution` Class Reference
+# `PredicatedScalarEvolution` Class
 
 <p>An interface layer with <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> used to manage how we see <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> expressions for values in the context of existing predicates. <a href="#details">More...</a></p>
 

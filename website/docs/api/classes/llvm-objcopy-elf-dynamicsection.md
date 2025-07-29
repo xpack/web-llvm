@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicSection` Class Reference
+# `DynamicSection` Class
 
 
 

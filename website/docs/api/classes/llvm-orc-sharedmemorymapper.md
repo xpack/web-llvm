@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SharedMemoryMapper` Class Reference
+# `SharedMemoryMapper` Class
 
 
 

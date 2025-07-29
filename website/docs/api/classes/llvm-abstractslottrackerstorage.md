@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractSlotTrackerStorage` Class Reference
+# `AbstractSlotTrackerStorage` Class
 
 <p>Abstract interface of slot tracker storage. <a href="#details">More...</a></p>
 

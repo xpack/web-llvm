@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DSEPass` Class Reference
+# `DSEPass` Class
 
 <p>This class implements a trivial dead store elimination. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InspectMemInstr` Class Reference
+# `InspectMemInstr` Class
 
 <p>Base class for inspecting loads and stores. <a href="#details">More...</a></p>
 

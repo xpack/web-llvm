@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFDynamicTableBuilder` Class Template Reference
+# `ELFDynamicTableBuilder` Class Template
 
 
 

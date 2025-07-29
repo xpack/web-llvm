@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerHelper.h` File Reference
+# `CombinerHelper.h` File
 
 <p>This contains common combine transformations that may be used in a combine pass,or by the target elsewhere. <a href="#details">More...</a></p>
 

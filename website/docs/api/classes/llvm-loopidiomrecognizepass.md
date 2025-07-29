@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopIdiomRecognizePass` Class Reference
+# `LoopIdiomRecognizePass` Class
 
 <p>Performs <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Idiom Recognize <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVInsertReadWriteCSR` Class Reference
+# `RISCVInsertReadWriteCSR` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoopAlign` Class Reference
+# `HexagonLoopAlign` Class
 
 
 

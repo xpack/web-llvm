@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequencyInfo` Class Reference
+# `BlockFrequencyInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> pass uses <a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfoimpl">BlockFrequencyInfoImpl</a> implementation to estimate IR basic block frequencies. <a href="#details">More...</a></p>
 

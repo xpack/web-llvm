@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsAssemblerOptions` Class Reference
+# `MipsAssemblerOptions` Class
 
 
 

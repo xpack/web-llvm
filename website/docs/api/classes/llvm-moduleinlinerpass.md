@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleInlinerPass` Class Reference
+# `ModuleInlinerPass` Class
 
 <p>The module inliner pass for the new pass manager. <a href="#details">More...</a></p>
 

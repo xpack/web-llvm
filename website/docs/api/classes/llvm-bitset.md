@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Bitset` Class Template Reference
+# `Bitset` Class Template
 
 <p>This is a constexpr reimplementation of a subset of std::bitset. <a href="#details">More...</a></p>
 

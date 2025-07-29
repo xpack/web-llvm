@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCExpr` Class Reference
+# `AMDGPUMCExpr` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> target specific <a href="/web-llvm/docs/api/classes/llvm/mcexpr">MCExpr</a> operations. <a href="#details">More...</a></p>
 

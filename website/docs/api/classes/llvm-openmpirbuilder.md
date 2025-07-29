@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenMPIRBuilder` Class Reference
+# `OpenMPIRBuilder` Class
 
 <p>An interface to create LLVM-IR for OpenMP directives. <a href="#details">More...</a></p>
 

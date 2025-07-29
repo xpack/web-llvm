@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430TargetMachine` Class Reference
+# `MSP430TargetMachine` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/msp430targetmachine">MSP430TargetMachine</a>. <a href="#details">More...</a></p>
 

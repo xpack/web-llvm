@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUImageIntrinsicOptimizer` Class Reference
+# `AMDGPUImageIntrinsicOptimizer` Class
 
 
 

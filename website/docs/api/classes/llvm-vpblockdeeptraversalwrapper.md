@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBlockDeepTraversalWrapper` Class Template Reference
+# `VPBlockDeepTraversalWrapper` Class Template
 
 <p>Helper for <a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> specialization that traverses through VPRegionBlocks. <a href="#details">More...</a></p>
 

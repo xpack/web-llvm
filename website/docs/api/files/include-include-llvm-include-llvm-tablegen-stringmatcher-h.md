@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMatcher.h` File Reference
+# `StringMatcher.h` File
 
 
 

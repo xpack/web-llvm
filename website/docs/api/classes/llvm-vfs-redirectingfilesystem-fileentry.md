@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileEntry` Class Reference
+# `FileEntry` Class
 
 <p>A file in the vfs that maps to a file in the external file system. <a href="#details">More...</a></p>
 

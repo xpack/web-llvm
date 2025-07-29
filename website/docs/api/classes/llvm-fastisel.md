@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastISel` Class Reference
+# `FastISel` Class
 
 <p>This is a fast-path instruction selection class that generates poor code and doesn't support illegal types or non-trivial lowering, but runs quickly. <a href="#details">More...</a></p>
 

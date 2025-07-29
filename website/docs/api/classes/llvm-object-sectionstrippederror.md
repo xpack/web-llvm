@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionStrippedError` Class Reference
+# `SectionStrippedError` Class
 
 
 

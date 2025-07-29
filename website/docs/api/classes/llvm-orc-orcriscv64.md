@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcRiscv64` Class Reference
+# `OrcRiscv64` Class
 
 
 

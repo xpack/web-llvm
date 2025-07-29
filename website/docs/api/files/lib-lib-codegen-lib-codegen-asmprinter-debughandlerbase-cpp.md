@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugHandlerBase.cpp` File Reference
+# `DebugHandlerBase.cpp` File
 
 
 

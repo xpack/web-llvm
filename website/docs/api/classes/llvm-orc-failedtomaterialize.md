@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FailedToMaterialize` Class Reference
+# `FailedToMaterialize` Class
 
 <p>Used to notify a <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib">JITDylib</a> that the given set of symbols failed to materialize. <a href="#details">More...</a></p>
 

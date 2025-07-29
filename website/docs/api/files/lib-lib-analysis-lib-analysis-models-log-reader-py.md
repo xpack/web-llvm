@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `log_reader.py` File Reference
+# `log_reader.py` File
 
 
 

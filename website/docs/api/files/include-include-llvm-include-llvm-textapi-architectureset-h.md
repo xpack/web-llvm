@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArchitectureSet.h` File Reference
+# `ArchitectureSet.h` File
 
 
 

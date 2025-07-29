@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSAWalker` Class Reference
+# `MemorySSAWalker` Class
 
 <p>This is the generic walker interface for walkers of <a href="/web-llvm/docs/api/classes/llvm/memoryssa">MemorySSA</a>. <a href="#details">More...</a></p>
 

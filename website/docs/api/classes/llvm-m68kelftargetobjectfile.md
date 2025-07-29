@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kELFTargetObjectFile` Class Reference
+# `M68kELFTargetObjectFile` Class
 
 
 

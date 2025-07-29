@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyQuery.h` File Reference
+# `SimplifyQuery.h` File
 
 
 

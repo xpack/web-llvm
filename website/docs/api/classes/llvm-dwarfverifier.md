@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFVerifier` Class Reference
+# `DWARFVerifier` Class
 
 <p>A class that verifies DWARF debug information given a DWARF Context. <a href="#details">More...</a></p>
 

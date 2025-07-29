@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationRequirements` Class Reference
+# `LoopVectorizationRequirements` Class
 
 <p>This holds vectorization requirements that must be verified late in the process. <a href="#details">More...</a></p>
 

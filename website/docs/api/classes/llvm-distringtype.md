@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIStringType` Class Reference
+# `DIStringType` Class
 
 <p>String type, Fortran CHARACTER(n) <a href="#details">More...</a></p>
 

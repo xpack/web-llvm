@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgValueInst` Class Reference
+# `DbgValueInst` Class
 
 <p>This represents the llvm.dbg.value instruction. <a href="#details">More...</a></p>
 

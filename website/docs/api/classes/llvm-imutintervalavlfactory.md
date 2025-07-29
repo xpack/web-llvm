@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutIntervalAVLFactory` Class Template Reference
+# `ImutIntervalAVLFactory` Class Template
 
 
 

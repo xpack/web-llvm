@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListBuilder` Class Reference
+# `ListBuilder` Class
 
 <p>Builder for <a href="/web-llvm/docs/api/classes/llvm/debuglocstream">DebugLocStream</a> lists. <a href="#details">More...</a></p>
 

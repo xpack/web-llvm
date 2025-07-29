@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadYAML.h` File Reference
+# `OffloadYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of offloading binaries. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCTargetAsmParser.h` File Reference
+# `MCTargetAsmParser.h` File
 
 
 

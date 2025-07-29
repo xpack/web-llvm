@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoInstrumentation` Class Reference
+# `DiagnosticInfoInstrumentation` Class
 
 <p>Diagnostic information for IR instrumentation reporting. <a href="#details">More...</a></p>
 

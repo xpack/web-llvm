@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetMachine` Class Reference
+# `VETargetMachine` Class
 
 
 

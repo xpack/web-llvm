@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelTableBase` Class Reference
+# `AccelTableBase` Class
 
 <p>A base class holding non-template-dependant functionality of the <a href="/web-llvm/docs/api/classes/llvm/acceltable">AccelTable</a> class. <a href="#details">More...</a></p>
 

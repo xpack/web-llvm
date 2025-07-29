@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetFolder` Class Reference
+# `TargetFolder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/targetfolder">TargetFolder</a> - Create constants with target dependent folding. <a href="#details">More...</a></p>
 

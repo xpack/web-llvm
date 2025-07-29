@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchTargetStreamer` Class Reference
+# `LoongArchTargetStreamer` Class
 
 
 

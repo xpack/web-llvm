@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLibraryInfoWrapperPass` Class Reference
+# `TargetLibraryInfoWrapperPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractElementDescr` Class Reference
+# `ExtractElementDescr` Class
 
 <p>Describes how to get a value element. <a href="#details">More...</a></p>
 

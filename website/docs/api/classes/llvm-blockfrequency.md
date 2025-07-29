@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequency` Class Reference
+# `BlockFrequency` Class
 
 
 

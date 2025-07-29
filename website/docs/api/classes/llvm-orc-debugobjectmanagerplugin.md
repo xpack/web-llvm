@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugObjectManagerPlugin` Class Reference
+# `DebugObjectManagerPlugin` Class
 
 <p>Creates and manages DebugObjects for JITLink artifacts. <a href="#details">More...</a></p>
 

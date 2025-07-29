@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArtifactValueFinder` Class Reference
+# `ArtifactValueFinder` Class
 
 <p>This class provides utilities for finding source registers of specific bit ranges in an artifact. <a href="#details">More...</a></p>
 

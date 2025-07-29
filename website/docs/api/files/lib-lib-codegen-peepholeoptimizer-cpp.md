@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PeepholeOptimizer.cpp` File Reference
+# `PeepholeOptimizer.cpp` File
 
 
 

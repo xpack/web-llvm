@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInfo` Class Reference
+# `LoopInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGTimer` Class Reference
+# `TGTimer` Class
 
 
 

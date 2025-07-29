@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TargetLowering` Class Reference
+# `R600TargetLowering` Class
 
 
 

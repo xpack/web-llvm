@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GsymReader` Class Reference
+# `GsymReader` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gsym/gsymreader">GsymReader</a> is used to read GSYM data from a file or buffer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZELFTargetObjectFile` Class Reference
+# `SystemZELFTargetObjectFile` Class
 
 <p>This implementation is used for <a href="/web-llvm/docs/api/namespaces/llvm/systemz">SystemZ</a> <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> targets. <a href="#details">More...</a></p>
 

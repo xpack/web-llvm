@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EliminateAvailableExternallyPass` Class Reference
+# `EliminateAvailableExternallyPass` Class
 
 <p>A pass that transforms external global definitions into declarations. <a href="#details">More...</a></p>
 

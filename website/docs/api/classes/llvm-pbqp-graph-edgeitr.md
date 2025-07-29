@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeItr` Class Reference
+# `EdgeItr` Class
 
 
 

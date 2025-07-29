@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResultSerializer` Class Template Reference
+# `ResultSerializer` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraph.h` File Reference
+# `CallGraph.h` File
 
 <p>This file provides interfaces used to build and manipulate a call graph, which is a very useful tool for interprocedural optimization. <a href="#details">More...</a></p>
 

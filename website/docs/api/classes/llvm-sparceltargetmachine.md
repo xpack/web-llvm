@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcelTargetMachine` Class Reference
+# `SparcelTargetMachine` Class
 
 
 

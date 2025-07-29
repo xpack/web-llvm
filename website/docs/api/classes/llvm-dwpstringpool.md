@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWPStringPool` Class Reference
+# `DWPStringPool` Class
 
 
 

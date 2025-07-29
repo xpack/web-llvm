@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCRuntimeEntryPoints` Class Reference
+# `ARCRuntimeEntryPoints` Class
 
 <p>Declarations for ObjC runtime functions and constants. <a href="#details">More...</a></p>
 

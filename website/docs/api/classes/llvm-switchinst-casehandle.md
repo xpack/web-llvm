@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseHandle` Class Reference
+# `CaseHandle` Class
 
 
 

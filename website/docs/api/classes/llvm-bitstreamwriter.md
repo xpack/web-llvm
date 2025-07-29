@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamWriter` Class Reference
+# `BitstreamWriter` Class
 
 
 

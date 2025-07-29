@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterScavenging.h` File Reference
+# `RegisterScavenging.h` File
 
 <p>This file declares the machine register scavenger class. <a href="#details">More...</a></p>
 

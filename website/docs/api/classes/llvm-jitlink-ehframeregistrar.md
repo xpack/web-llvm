@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHFrameRegistrar` Class Reference
+# `EHFrameRegistrar` Class
 
 <p>Supports registration/deregistration of EH-frames in a target process. <a href="#details">More...</a></p>
 

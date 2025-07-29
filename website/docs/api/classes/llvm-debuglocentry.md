@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLocEntry` Class Reference
+# `DebugLocEntry` Class
 
 <p>This struct describes location entries emitted in the .debug_loc section. <a href="#details">More...</a></p>
 

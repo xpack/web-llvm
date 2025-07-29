@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectLike` Class Reference
+# `SelectLike` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-selectoptimize-cpp-/selectoptimizeimpl/selectlike">SelectLike</a> is an abstraction over <a href="/web-llvm/docs/api/classes/llvm/selectinst">SelectInst</a> and other operations that can act like selects. <a href="#details">More...</a></p>
 

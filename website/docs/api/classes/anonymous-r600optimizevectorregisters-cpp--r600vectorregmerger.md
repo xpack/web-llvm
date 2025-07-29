@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600VectorRegMerger` Class Reference
+# `R600VectorRegMerger` Class
 
 
 

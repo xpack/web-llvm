@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OwningMemoryBlock` Class Reference
+# `OwningMemoryBlock` Class
 
 <p>Owning version of <a href="/web-llvm/docs/api/classes/llvm/sys/memoryblock">MemoryBlock</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionType` Class Reference
+# `FunctionType` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotionAction` Class Reference
+# `TypePromotionAction` Class
 
 <p>This represents the common interface of the individual transaction. <a href="#details">More...</a></p>
 

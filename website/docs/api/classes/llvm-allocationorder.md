@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocationOrder` Class Reference
+# `AllocationOrder` Class
 
 
 

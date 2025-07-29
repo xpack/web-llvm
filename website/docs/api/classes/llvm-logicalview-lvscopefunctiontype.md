@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScopeFunctionType` Class Reference
+# `LVScopeFunctionType` Class
 
 
 

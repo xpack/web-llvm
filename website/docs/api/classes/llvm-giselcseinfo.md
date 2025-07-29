@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelCSEInfo` Class Reference
+# `GISelCSEInfo` Class
 
 <p>The CSE Analysis object. <a href="#details">More...</a></p>
 

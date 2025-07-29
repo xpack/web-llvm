@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcTargetELFStreamer` Class Reference
+# `SparcTargetELFStreamer` Class
 
 
 

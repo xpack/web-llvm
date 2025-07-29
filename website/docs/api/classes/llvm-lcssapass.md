@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LCSSAPass` Class Reference
+# `LCSSAPass` Class
 
 <p>Converts loops into loop-closed SSA form. <a href="#details">More...</a></p>
 

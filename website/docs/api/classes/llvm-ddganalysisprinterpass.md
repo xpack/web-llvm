@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGAnalysisPrinterPass` Class Reference
+# `DDGAnalysisPrinterPass` Class
 
 <p>Textual printer pass for the DDG of a loop. <a href="#details">More...</a></p>
 

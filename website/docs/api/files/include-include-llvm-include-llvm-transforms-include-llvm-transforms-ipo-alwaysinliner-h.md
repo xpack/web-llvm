@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlwaysInliner.h` File Reference
+# `AlwaysInliner.h` File
 
 <p>Provides passes to inlining "always_inline" functions. <a href="#details">More...</a></p>
 

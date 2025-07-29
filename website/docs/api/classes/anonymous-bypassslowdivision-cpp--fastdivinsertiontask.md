@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastDivInsertionTask` Class Reference
+# `FastDivInsertionTask` Class
 
 
 

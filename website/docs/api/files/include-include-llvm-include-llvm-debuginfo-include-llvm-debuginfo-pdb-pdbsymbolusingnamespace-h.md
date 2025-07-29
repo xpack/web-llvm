@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolUsingNamespace.h` File Reference
+# `PDBSymbolUsingNamespace.h` File
 
 
 

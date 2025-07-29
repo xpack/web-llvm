@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTargetELFStreamer` Class Reference
+# `HexagonTargetELFStreamer` Class
 
 
 

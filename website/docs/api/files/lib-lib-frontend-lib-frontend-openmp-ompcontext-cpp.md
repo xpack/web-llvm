@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPContext.cpp` File Reference
+# `OMPContext.cpp` File
 
 <p>This file implements helper functions and classes to deal with OpenMP contexts as used by <span class="doxyComputerOutput">[begin/end] declare variant</span> and <span class="doxyComputerOutput">metadirective</span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgInfoIntrinsic` Class Reference
+# `DbgInfoIntrinsic` Class
 
 <p>This is the common base class for debug info intrinsics. <a href="#details">More...</a></p>
 

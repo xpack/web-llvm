@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionAnalysisManagerCGSCCProxy` Class Reference
+# `FunctionAnalysisManagerCGSCCProxy` Class
 
 <p>A proxy from a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#adce09a5a0de0e3177eb00e932734af2f">FunctionAnalysisManager</a></span> to an <span class="doxyComputerOutput">SCC</span>. <a href="#details">More...</a></p>
 

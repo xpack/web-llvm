@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmParser` Class Reference
+# `MCAsmParser` Class
 
 <p>Generic assembler parser interface, for use by target specific assembly parsers. <a href="#details">More...</a></p>
 

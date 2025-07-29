@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StoreFatPtrsAsIntsVisitor` Class Reference
+# `StoreFatPtrsAsIntsVisitor` Class
 
 <p>Convert [vectors of] buffer fat pointers to integers when they are read from or stored to memory. <a href="#details">More...</a></p>
 

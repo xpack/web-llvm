@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXGenSubtargetInfo` Class Reference
+# `DirectXGenSubtargetInfo` Class
 
 
 

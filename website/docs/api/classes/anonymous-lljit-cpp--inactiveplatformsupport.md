@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InactivePlatformSupport` Class Reference
+# `InactivePlatformSupport` Class
 
 <p>Inactive <a href="/web-llvm/docs/api/classes/llvm/orc/platform">Platform</a> Support. <a href="#details">More...</a></p>
 

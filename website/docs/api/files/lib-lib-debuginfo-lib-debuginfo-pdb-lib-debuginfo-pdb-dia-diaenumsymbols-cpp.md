@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumSymbols.cpp` File Reference
+# `DIAEnumSymbols.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAsyncEndInst` Class Reference
+# `CoroAsyncEndInst` Class
 
 <p>This represents the llvm.coro.end instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LabelSDNode` Class Reference
+# `LabelSDNode` Class
 
 
 

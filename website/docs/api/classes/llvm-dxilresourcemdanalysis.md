@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceMDAnalysis` Class Reference
+# `DXILResourceMDAnalysis` Class
 
 <p>Analysis pass that exposes the <span class="doxyComputerOutput">DXILResource</span> for a module. <a href="#details">More...</a></p>
 

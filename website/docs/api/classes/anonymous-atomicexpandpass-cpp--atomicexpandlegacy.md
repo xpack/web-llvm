@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicExpandLegacy` Class Reference
+# `AtomicExpandLegacy` Class
 
 
 

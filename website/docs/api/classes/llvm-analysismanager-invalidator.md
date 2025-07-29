@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Invalidator` Class Reference
+# `Invalidator` Class
 
 <p>API to communicate dependencies between analyses during invalidation. <a href="#details">More...</a></p>
 

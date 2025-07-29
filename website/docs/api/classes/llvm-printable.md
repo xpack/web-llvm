@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Printable` Class Reference
+# `Printable` Class
 
 <p>Simple wrapper around std::function&lt;void(raw_ostream&amp;)&gt;. <a href="#details">More...</a></p>
 

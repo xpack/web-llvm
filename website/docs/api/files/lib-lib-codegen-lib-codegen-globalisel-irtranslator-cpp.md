@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRTranslator.cpp` File Reference
+# `IRTranslator.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/irtranslator">IRTranslator</a> class. <a href="#details">More...</a></p>
 

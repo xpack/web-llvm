@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandVectorPredication.h` File Reference
+# `ExpandVectorPredication.h` File
 
 
 

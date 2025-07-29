@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDTuple` Class Reference
+# `MDTuple` Class
 
 <p>Tuple of metadata. <a href="#details">More...</a></p>
 

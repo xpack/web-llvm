@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequencyAnalysis` Class Reference
+# `BlockFrequencyAnalysis` Class
 
 <p>Analysis pass which computes <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a></span>. <a href="#details">More...</a></p>
 

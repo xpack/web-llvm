@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbeInlineTreeBase` Class Template Reference
+# `MCPseudoProbeInlineTreeBase` Class Template
 
 
 

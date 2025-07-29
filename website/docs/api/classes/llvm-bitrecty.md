@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitRecTy` Class Reference
+# `BitRecTy` Class
 
 <p>'bit' - Represent a single bit <a href="#details">More...</a></p>
 

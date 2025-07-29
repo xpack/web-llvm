@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionLoweringInfo` Class Reference
+# `FunctionLoweringInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/functionloweringinfo">FunctionLoweringInfo</a> - This contains information that is global to a function that is used when lowering a region of the function. <a href="#details">More...</a></p>
 

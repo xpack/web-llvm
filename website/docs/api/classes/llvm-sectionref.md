@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionRef` Class Reference
+# `SectionRef` Class
 
 <p>This is a value type class that represents a single section in the list of sections in the object file. <a href="#details">More...</a></p>
 

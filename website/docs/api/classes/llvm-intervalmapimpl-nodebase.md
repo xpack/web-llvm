@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeBase` Class Template Reference
+# `NodeBase` Class Template
 
 
 

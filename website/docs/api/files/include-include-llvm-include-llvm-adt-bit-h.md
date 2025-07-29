@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bit.h` File Reference
+# `bit.h` File
 
 <p>This file implements the C++20 &lt;bit&gt; header. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDominatorTreeAnalysis` Class Reference
+# `PostDominatorTreeAnalysis` Class
 
 <p>Analysis pass which computes a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a></span>. <a href="#details">More...</a></p>
 

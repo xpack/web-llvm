@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMCAsmInfo` Class Reference
+# `SPIRVMCAsmInfo` Class
 
 
 

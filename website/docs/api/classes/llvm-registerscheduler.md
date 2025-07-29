@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterScheduler` Class Reference
+# `RegisterScheduler` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOperand` Class Reference
+# `MachineOperand` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineoperand">MachineOperand</a> class - Representation of each machine instruction operand. <a href="#details">More...</a></p>
 

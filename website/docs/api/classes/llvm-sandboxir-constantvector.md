@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantVector` Class Reference
+# `ConstantVector` Class
 
 
 

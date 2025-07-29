@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RenameIndependentSubregs.cpp` File Reference
+# `RenameIndependentSubregs.cpp` File
 
 
 

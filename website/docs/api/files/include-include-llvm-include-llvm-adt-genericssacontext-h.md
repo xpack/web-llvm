@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSSAContext.h` File Reference
+# `GenericSSAContext.h` File
 
 <p>This file defines the little GenericSSAContext&lt;X&gt; template class that can be used to implement IR analyses as templates. <a href="#details">More...</a></p>
 

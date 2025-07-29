@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonResource` Class Reference
+# `HexagonResource` Class
 
 
 

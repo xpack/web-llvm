@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFTypes.h` File Reference
+# `ELFTypes.h` File
 
 
 

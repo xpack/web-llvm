@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocEvictionAdvisorAnalysis` Class Reference
+# `RegAllocEvictionAdvisorAnalysis` Class
 
 <p>ImmutableAnalysis abstraction for fetching the Eviction Advisor. <a href="#details">More...</a></p>
 

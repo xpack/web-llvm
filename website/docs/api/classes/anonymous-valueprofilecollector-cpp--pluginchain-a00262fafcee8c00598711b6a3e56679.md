@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PluginChain` Class Template Reference
+# `PluginChain` Class Template
 
 
 

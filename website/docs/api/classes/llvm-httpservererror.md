@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPServerError` Class Reference
+# `HTTPServerError` Class
 
 
 

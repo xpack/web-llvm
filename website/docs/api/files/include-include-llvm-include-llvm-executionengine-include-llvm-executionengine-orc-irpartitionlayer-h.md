@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRPartitionLayer.h` File Reference
+# `IRPartitionLayer.h` File
 
 
 

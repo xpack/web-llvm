@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVPredicateRewriter` Class Reference
+# `SCEVPredicateRewriter` Class
 
 
 

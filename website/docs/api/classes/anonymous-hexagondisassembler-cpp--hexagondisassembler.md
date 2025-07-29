@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonDisassembler` Class Reference
+# `HexagonDisassembler` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a> disassembler for all <a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a> platforms. <a href="#details">More...</a></p>
 

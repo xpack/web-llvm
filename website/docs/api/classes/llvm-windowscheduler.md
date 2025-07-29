@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowScheduler` Class Reference
+# `WindowScheduler` Class
 
 <p>The main class in the implementation of the target independent window scheduler. <a href="#details">More...</a></p>
 

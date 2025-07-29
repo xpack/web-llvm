@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DagInit` Class Reference
+# `DagInit` Class
 
 <p>(v a, b) - Represent a DAG tree value. <a href="#details">More...</a></p>
 

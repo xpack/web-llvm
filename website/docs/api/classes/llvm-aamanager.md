@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAManager` Class Reference
+# `AAManager` Class
 
 <p>A manager for alias analyses. <a href="#details">More...</a></p>
 

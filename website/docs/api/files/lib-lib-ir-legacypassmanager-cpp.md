@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyPassManager.cpp` File Reference
+# `LegacyPassManager.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiGenSubtargetInfo` Class Reference
+# `LanaiGenSubtargetInfo` Class
 
 
 

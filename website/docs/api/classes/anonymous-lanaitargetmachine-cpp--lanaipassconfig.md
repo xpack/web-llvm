@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiPassConfig` Class Reference
+# `LanaiPassConfig` Class
 
 
 

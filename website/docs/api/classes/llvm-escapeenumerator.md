@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EscapeEnumerator` Class Reference
+# `EscapeEnumerator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/escapeenumerator">EscapeEnumerator</a> - This is a little algorithm to find all escape points from a function so that "finally"-style code can be inserted. <a href="#details">More...</a></p>
 

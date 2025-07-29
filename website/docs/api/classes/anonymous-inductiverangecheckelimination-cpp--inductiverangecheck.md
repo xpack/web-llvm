@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InductiveRangeCheck` Class Reference
+# `InductiveRangeCheck` Class
 
 <p>An inductive range check is conditional branch in a loop with a condition that is provably true for some contiguous range of values taken by the containing loop's induction variable. <a href="#details">More...</a></p>
 

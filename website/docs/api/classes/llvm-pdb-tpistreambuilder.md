@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TpiStreamBuilder` Class Reference
+# `TpiStreamBuilder` Class
 
 
 

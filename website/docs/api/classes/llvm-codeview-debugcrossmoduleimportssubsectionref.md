@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugCrossModuleImportsSubsectionRef` Class Reference
+# `DebugCrossModuleImportsSubsectionRef` Class
 
 
 

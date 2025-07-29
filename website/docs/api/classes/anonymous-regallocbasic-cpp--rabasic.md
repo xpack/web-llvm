@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RABasic` Class Reference
+# `RABasic` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-regallocbasic-cpp-/rabasic">RABasic</a> provides a minimal implementation of the basic register allocation algorithm. <a href="#details">More...</a></p>
 

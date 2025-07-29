@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBTable` Class Reference
+# `IPDBTable` Class
 
 
 

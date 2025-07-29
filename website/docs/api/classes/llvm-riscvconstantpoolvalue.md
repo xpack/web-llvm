@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVConstantPoolValue` Class Reference
+# `RISCVConstantPoolValue` Class
 
 <p>A RISCV-specific constant pool value. <a href="#details">More...</a></p>
 

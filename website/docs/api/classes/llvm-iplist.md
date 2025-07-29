@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iplist` Class Template Reference
+# `iplist` Class Template
 
 <p>An intrusive list with ownership and callbacks specified/controlled by <a href="/web-llvm/docs/api/structs/llvm/ilist-traits">ilist_traits</a>, only with API safe for polymorphic types. <a href="#details">More...</a></p>
 

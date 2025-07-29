@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleAnalysis` Class Reference
+# `CycleAnalysis` Class
 
 <p>Analysis pass which computes a <a href="/web-llvm/docs/api/namespaces/llvm/#afdb65a469d6a946a06be1765b1d8b5b4">CycleInfo</a>. <a href="#details">More...</a></p>
 

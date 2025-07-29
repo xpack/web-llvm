@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonELFObjectWriter` Class Reference
+# `HexagonELFObjectWriter` Class
 
 
 

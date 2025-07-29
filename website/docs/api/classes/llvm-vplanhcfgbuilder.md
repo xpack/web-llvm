@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanHCFGBuilder` Class Reference
+# `VPlanHCFGBuilder` Class
 
 <p>Main class to build the <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> H-CFG for an incoming IR. <a href="#details">More...</a></p>
 

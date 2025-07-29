@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ApplyRegBankMapping` Class Reference
+# `ApplyRegBankMapping` Class
 
 
 

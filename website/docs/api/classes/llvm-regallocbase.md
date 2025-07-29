@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocBase` Class Reference
+# `RegAllocBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/regallocbase">RegAllocBase</a> provides the register allocation driver and interface that can be extended to add interesting heuristics. <a href="#details">More...</a></p>
 

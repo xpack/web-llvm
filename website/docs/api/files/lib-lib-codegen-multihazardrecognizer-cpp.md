@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MultiHazardRecognizer.cpp` File Reference
+# `MultiHazardRecognizer.cpp` File
 
 
 

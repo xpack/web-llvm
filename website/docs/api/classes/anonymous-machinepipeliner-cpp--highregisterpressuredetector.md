@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HighRegisterPressureDetector` Class Reference
+# `HighRegisterPressureDetector` Class
 
 <p>Calculate the maximum register pressure of the scheduled instructions stream. <a href="#details">More...</a></p>
 

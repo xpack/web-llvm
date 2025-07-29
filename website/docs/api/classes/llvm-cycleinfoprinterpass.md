@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleInfoPrinterPass` Class Reference
+# `CycleInfoPrinterPass` Class
 
 
 

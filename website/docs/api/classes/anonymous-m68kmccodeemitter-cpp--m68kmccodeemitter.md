@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCCodeEmitter` Class Reference
+# `M68kMCCodeEmitter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependencyTracker` Class Reference
+# `DependencyTracker` Class
 
 <p>This class discovers DIEs dependencies: marks "live" DIEs, marks <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> locations (whether <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> should be cloned as regular <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> or it should be put into the artificial type unit). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Tracker` Class Reference
+# `Tracker` Class
 
 <p>The tracker collects all the change objects and implements the main API for saving / reverting / accepting. <a href="#details">More...</a></p>
 

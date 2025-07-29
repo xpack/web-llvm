@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgValue` Class Reference
+# `DbgValue` Class
 
 <p>Class recording the (high level) <em>value</em> of a variable. <a href="#details">More...</a></p>
 

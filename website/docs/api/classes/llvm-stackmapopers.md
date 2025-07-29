@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackMapOpers` Class Reference
+# `StackMapOpers` Class
 
 <p>MI-level stackmap operands. <a href="#details">More...</a></p>
 

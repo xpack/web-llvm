@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocScore.cpp` File Reference
+# `RegAllocScore.cpp` File
 
 
 

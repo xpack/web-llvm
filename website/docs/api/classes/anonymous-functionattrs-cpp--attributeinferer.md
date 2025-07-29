@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeInferer` Class Reference
+# `AttributeInferer` Class
 
 <p>Collects a set of attribute inference requests and performs them all in one go on a single SCC <a href="/web-llvm/docs/api/classes/node">Node</a>. <a href="#details">More...</a></p>
 

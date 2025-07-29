@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSafetyInfo` Class Reference
+# `LoopSafetyInfo` Class
 
 <p>Captures loop safety information. <a href="#details">More...</a></p>
 

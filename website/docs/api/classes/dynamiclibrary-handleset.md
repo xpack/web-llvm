@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HandleSet` Class Reference
+# `HandleSet` Class
 
 
 

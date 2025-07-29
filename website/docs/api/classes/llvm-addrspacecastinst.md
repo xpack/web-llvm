@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddrSpaceCastInst` Class Reference
+# `AddrSpaceCastInst` Class
 
 <p>This class represents a conversion between pointers from one address space to another. <a href="#details">More...</a></p>
 

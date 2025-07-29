@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarStreamArray` Class Template Reference
+# `VarStreamArray` Class Template
 
 
 

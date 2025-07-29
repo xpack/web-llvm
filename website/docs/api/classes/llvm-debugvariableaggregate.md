@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugVariableAggregate` Class Reference
+# `DebugVariableAggregate` Class
 
 <p>Identifies a unique instance of a whole variable (discards/ignores fragment information). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TempFile` Class Reference
+# `TempFile` Class
 
 <p>A RAII object that creates a file upon initialization and removes it upon destruction. <a href="#details">More...</a></p>
 

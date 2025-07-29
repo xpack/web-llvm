@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_adapter` Class Reference
+# `format_adapter` Class
 
 
 

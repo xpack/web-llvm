@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericCycle` Class Template Reference
+# `GenericCycle` Class Template
 
 <p>A possibly irreducible generalization of a <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericOptionInfo` Class Reference
+# `GenericOptionInfo` Class
 
 
 

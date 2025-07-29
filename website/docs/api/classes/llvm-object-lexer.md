@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Lexer` Class Reference
+# `Lexer` Class
 
 
 

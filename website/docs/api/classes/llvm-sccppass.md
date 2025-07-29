@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCPPass` Class Reference
+# `SCCPPass` Class
 
 <p>This pass performs function-level constant propagation and merging. <a href="#details">More...</a></p>
 

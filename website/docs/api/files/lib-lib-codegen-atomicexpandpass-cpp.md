@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicExpandPass.cpp` File Reference
+# `AtomicExpandPass.cpp` File
 
 
 

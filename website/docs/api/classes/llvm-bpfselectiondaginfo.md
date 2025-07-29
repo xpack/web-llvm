@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFSelectionDAGInfo` Class Reference
+# `BPFSelectionDAGInfo` Class
 
 
 

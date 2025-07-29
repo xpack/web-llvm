@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSink.h` File Reference
+# `LoopSink.h` File
 
 
 

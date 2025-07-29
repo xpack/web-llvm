@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormattedNumber` Class Reference
+# `FormattedNumber` Class
 
 <p>This is a helper class used for <a href="/web-llvm/docs/api/namespaces/llvm/#a90c017a4d672e046b7e98f67edf082ec">format_hex()</a> and <a href="/web-llvm/docs/api/namespaces/llvm/#a0891783364de54e1128f37fdbc01e8b1">format_decimal()</a>. <a href="#details">More...</a></p>
 

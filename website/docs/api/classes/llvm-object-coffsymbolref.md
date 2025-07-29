@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFSymbolRef` Class Reference
+# `COFFSymbolRef` Class
 
 
 

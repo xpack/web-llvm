@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HasReferenceResolver` Class Reference
+# `HasReferenceResolver` Class
 
 <p>Do not resolve anything, but keep track of whether a given variable was referenced. <a href="#details">More...</a></p>
 

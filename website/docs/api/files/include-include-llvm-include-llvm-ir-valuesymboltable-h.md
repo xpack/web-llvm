@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueSymbolTable.h` File Reference
+# `ValueSymbolTable.h` File
 
 
 

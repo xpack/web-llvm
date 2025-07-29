@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTSDNode` Class Reference
+# `VTSDNode` Class
 
 <p>This class is used to represent <a href="/web-llvm/docs/api/structs/llvm/evt">EVT</a>'s, which are used to parameterize some operations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeStreamMerger` Class Reference
+# `TypeStreamMerger` Class
 
 <p>Implementation of CodeView type stream merging. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Use` Class Reference
+# `Use` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> represents the edge between a <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> definition and its users. <a href="#details">More...</a></p>
 

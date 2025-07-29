@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LNICMPass` Class Reference
+# `LNICMPass` Class
 
 <p>Performs <a href="/web-llvm/docs/api/classes/llvm/loopnest">LoopNest</a> Invariant Code Motion <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

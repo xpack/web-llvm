@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBRawSymbol.h` File Reference
+# `IPDBRawSymbol.h` File
 
 
 

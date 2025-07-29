@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeEnum.cpp` File Reference
+# `PDBSymbolTypeEnum.cpp` File
 
 
 

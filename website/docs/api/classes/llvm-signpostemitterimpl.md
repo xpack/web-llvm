@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SignpostEmitterImpl` Class Reference
+# `SignpostEmitterImpl` Class
 
 <p>Definition necessary for use of std::unique_ptr in SignpostEmitter::Impl. <a href="#details">More...</a></p>
 

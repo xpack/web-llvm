@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPInstruction` Class Reference
+# `VPInstruction` Class
 
 <p>This is a concrete Recipe that models a single VPlan-level instruction. <a href="#details">More...</a></p>
 

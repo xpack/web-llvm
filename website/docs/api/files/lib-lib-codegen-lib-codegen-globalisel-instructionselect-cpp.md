@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionSelect.cpp` File Reference
+# `InstructionSelect.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/instructionselect">InstructionSelect</a> class. <a href="#details">More...</a></p>
 

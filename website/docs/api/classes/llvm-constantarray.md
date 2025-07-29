@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantArray` Class Reference
+# `ConstantArray` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/constantarray">ConstantArray</a> - <a href="/web-llvm/docs/api/classes/llvm/constant">Constant</a> Array Declarations. <a href="#details">More...</a></p>
 

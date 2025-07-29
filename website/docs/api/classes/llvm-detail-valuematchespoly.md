@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMatchesPoly` Class Template Reference
+# `ValueMatchesPoly` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64A53Fix835769` Class Reference
+# `AArch64A53Fix835769` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMIndirectThunks` Class Reference
+# `ARMIndirectThunks` Class
 
 
 

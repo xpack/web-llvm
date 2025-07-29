@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LatencyPriorityQueue.cpp` File Reference
+# `LatencyPriorityQueue.cpp` File
 
 
 

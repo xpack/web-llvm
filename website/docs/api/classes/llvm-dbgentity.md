@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgEntity` Class Reference
+# `DbgEntity` Class
 
 <p>This class is defined as the common parent of <a href="/web-llvm/docs/api/classes/llvm/dbgvariable">DbgVariable</a> and <a href="/web-llvm/docs/api/classes/llvm/dbglabel">DbgLabel</a> such that it could levarage polymorphism to extract common code for <a href="/web-llvm/docs/api/classes/llvm/dbgvariable">DbgVariable</a> and <a href="/web-llvm/docs/api/classes/llvm/dbglabel">DbgLabel</a>. <a href="#details">More...</a></p>
 

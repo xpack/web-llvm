@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadFile` Class Reference
+# `OffloadFile` Class
 
 <p>A class to contain the binary information for a single <a href="/web-llvm/docs/api/classes/llvm/object/offloadbinary">OffloadBinary</a> that owns its memory. <a href="#details">More...</a></p>
 

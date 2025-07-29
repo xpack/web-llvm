@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRTargetMachine` Class Reference
+# `AVRTargetMachine` Class
 
 <p>A generic <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> implementation. <a href="#details">More...</a></p>
 

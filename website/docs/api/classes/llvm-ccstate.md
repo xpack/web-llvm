@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CCState` Class Reference
+# `CCState` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ccstate">CCState</a> - This class holds information needed while lowering arguments and return values. <a href="#details">More...</a></p>
 

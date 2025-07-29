@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTO` Class Reference
+# `LTO` Class
 
 <p>This class implements a resolution-based interface to LLVM's <a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a> functionality. <a href="#details">More...</a></p>
 

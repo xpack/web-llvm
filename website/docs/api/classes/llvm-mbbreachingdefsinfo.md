@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBBReachingDefsInfo` Class Reference
+# `MBBReachingDefsInfo` Class
 
 
 

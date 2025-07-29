@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBlockPlacementStats` Class Reference
+# `MachineBlockPlacementStats` Class
 
 <p>A pass to compute block placement statistics. <a href="#details">More...</a></p>
 

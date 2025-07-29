@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstrDesc` Class Reference
+# `MCInstrDesc` Class
 
 <p>Describe properties that are true of each instruction in the target description file. <a href="#details">More...</a></p>
 

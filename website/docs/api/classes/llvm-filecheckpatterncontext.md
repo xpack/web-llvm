@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCheckPatternContext` Class Reference
+# `FileCheckPatternContext` Class
 
 <p>Class holding the <a href="/web-llvm/docs/api/classes/llvm/pattern">Pattern</a> global state, shared by all patterns: tables holding values of variables and whether they are defined or not at any given time in the matching process. <a href="#details">More...</a></p>
 

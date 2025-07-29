@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSSAUpdater.h` File Reference
+# `MachineSSAUpdater.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeMutator` Class Reference
+# `TypeMutator` Class
 
 <p>Mutate an instruction to another type. <a href="#details">More...</a></p>
 

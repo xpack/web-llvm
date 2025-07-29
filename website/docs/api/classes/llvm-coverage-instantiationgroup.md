@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstantiationGroup` Class Reference
+# `InstantiationGroup` Class
 
 <p>An instantiation group contains a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/coverage/functionrecord">FunctionRecord</a></span> list, such that each record corresponds to a distinct instantiation of the same function. <a href="#details">More...</a></p>
 

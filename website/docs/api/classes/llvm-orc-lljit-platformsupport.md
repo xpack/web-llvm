@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PlatformSupport` Class Reference
+# `PlatformSupport` Class
 
 <p>Initializer support for <a href="/web-llvm/docs/api/classes/llvm/orc/lljit">LLJIT</a>. <a href="#details">More...</a></p>
 

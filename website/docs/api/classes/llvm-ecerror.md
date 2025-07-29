@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ECError` Class Reference
+# `ECError` Class
 
 <p>This class wraps a std::error_code in a <a href="/web-llvm/docs/api/classes/llvm/error">Error</a>. <a href="#details">More...</a></p>
 

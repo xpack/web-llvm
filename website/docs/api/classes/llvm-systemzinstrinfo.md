@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZInstrInfo` Class Reference
+# `SystemZInstrInfo` Class
 
 
 

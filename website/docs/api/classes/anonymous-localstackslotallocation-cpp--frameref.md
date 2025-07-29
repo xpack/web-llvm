@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameRef` Class Reference
+# `FrameRef` Class
 
 
 

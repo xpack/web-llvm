@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugObjectManagerPlugin.cpp` File Reference
+# `DebugObjectManagerPlugin.cpp` File
 
 
 

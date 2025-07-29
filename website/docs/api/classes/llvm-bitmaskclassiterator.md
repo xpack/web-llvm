@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitMaskClassIterator` Class Reference
+# `BitMaskClassIterator` Class
 
 <p>This class encapuslates the logic to iterate over bitmask returned by the various RegClass related APIs. <a href="#details">More...</a></p>
 

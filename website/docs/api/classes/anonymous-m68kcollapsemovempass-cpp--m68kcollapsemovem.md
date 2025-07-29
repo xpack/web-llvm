@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kCollapseMOVEM` Class Reference
+# `M68kCollapseMOVEM` Class
 
 <p>This Pass first walks through all the MOVEM instructions that are chained together and record each of the instruction's properties like register mask and data access type into a <span class="doxyComputerOutput">MOVEState</span> instance. <a href="#details">More...</a></p>
 

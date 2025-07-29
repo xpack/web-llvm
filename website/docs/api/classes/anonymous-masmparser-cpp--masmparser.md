@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MasmParser` Class Reference
+# `MasmParser` Class
 
 <p>The concrete assembly parser instance. <a href="#details">More...</a></p>
 

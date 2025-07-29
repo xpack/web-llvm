@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDVSSABlockIterator` Class Reference
+# `LDVSSABlockIterator` Class
 
 <p>Thin wrapper around a block predecessor iterator. <a href="#details">More...</a></p>
 

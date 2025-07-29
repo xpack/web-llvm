@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalValueMaterializer` Class Reference
+# `GlobalValueMaterializer` Class
 
 <p>Creates prototypes for functions that are lazily linked on the fly. <a href="#details">More...</a></p>
 

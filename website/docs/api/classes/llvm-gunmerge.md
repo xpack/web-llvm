@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GUnmerge` Class Reference
+# `GUnmerge` Class
 
 <p>Represents a G_UNMERGE_VALUES. <a href="#details">More...</a></p>
 

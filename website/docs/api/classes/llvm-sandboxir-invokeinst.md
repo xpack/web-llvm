@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InvokeInst` Class Reference
+# `InvokeInst` Class
 
 
 

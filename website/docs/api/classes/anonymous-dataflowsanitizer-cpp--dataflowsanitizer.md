@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataFlowSanitizer` Class Reference
+# `DataFlowSanitizer` Class
 
 
 

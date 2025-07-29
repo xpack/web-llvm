@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyCallGraphAnalysis` Class Reference
+# `LazyCallGraphAnalysis` Class
 
 <p>An analysis pass which computes the call graph for a module. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HandleSDNode` Class Reference
+# `HandleSDNode` Class
 
 <p>This class is used to form a handle around another node that is persistent and is updated across invocations of replaceAllUsesWith on its operand. <a href="#details">More...</a></p>
 

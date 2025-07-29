@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator` Class Reference
+# `iterator` Class
 
 <p>Iterator to iterate over vectorization factors in a <a href="/web-llvm/docs/api/structs/llvm/vfrange">VFRange</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelCSEAnalysisWrapperPass` Class Reference
+# `GISelCSEAnalysisWrapperPass` Class
 
 <p>The actual analysis pass wrapper. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGVarScope` Class Reference
+# `TGVarScope` Class
 
 
 

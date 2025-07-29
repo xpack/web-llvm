@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Node` Class Reference
+# `Node` Class
 
 <p>A node in the call graph. <a href="#details">More...</a></p>
 

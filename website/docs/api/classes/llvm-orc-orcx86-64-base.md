@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcX86_64_Base` Class Reference
+# `OrcX86_64_Base` Class
 
 <p>X86_64 code that's common to all ABIs. <a href="#details">More...</a></p>
 

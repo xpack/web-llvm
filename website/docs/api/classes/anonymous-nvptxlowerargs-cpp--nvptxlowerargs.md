@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXLowerArgs` Class Reference
+# `NVPTXLowerArgs` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterRegAlloc` Class Reference
+# `RegisterRegAlloc` Class
 
 
 

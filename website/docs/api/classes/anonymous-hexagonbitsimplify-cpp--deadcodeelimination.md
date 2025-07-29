@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeadCodeElimination` Class Reference
+# `DeadCodeElimination` Class
 
 
 

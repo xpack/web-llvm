@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BypassSlowDivision.h` File Reference
+# `BypassSlowDivision.h` File
 
 
 

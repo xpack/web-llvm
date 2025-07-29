@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDVSSABlock` Class Reference
+# `LDVSSABlock` Class
 
 <p>Thin wrapper around a block for SSA Updater interface. <a href="#details">More...</a></p>
 

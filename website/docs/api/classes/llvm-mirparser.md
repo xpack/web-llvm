@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRParser` Class Reference
+# `MIRParser` Class
 
 <p>This class initializes machine functions by applying the state loaded from a MIR file. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRProfileLoader` Class Reference
+# `MIRProfileLoader` Class
 
 
 

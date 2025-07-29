@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIndexedLoad` Class Reference
+# `GIndexedLoad` Class
 
 <p>Represents indexed loads. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ESDRecord` Class Reference
+# `ESDRecord` Class
 
 
 

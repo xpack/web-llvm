@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LPPassManager` Class Reference
+# `LPPassManager` Class
 
 
 

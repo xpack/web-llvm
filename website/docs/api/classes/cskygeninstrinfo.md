@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYGenInstrInfo` Class Reference
+# `CSKYGenInstrInfo` Class
 
 
 

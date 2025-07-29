@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuccIterator` Class Template Reference
+# `SuccIterator` Class Template
 
 
 

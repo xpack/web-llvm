@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SUnit` Class Reference
+# `SUnit` Class
 
 <p>Scheduling unit. This is a node in the scheduling DAG. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSwitch.h` File Reference
+# `TypeSwitch.h` File
 
 <p>This file implements the TypeSwitch template, which mimics a switch() statement whose cases are type names. <a href="#details">More...</a></p>
 

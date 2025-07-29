@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockSectionsProfileReaderAnalysis` Class Reference
+# `BasicBlockSectionsProfileReaderAnalysis` Class
 
 <p>Analysis pass providing the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/basicblocksectionsprofilereader">BasicBlockSectionsProfileReader</a></span>. <a href="#details">More...</a></p>
 

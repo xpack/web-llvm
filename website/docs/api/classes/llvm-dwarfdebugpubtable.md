@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugPubTable` Class Reference
+# `DWARFDebugPubTable` Class
 
 <p>Represents structure for holding and parsing .debug_pub* tables. <a href="#details">More...</a></p>
 

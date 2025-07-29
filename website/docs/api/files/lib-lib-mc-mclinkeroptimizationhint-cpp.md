@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLinkerOptimizationHint.cpp` File Reference
+# `MCLinkerOptimizationHint.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LandingPadInst` Class Reference
+# `LandingPadInst` Class
 
 <p>The landingpad instruction holds all of the information necessary to generate correct exception handling. <a href="#details">More...</a></p>
 

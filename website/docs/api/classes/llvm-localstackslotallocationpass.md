@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalStackSlotAllocationPass` Class Reference
+# `LocalStackSlotAllocationPass` Class
 
 
 

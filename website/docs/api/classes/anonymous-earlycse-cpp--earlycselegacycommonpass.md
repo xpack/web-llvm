@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyCSELegacyCommonPass` Class Template Reference
+# `EarlyCSELegacyCommonPass` Class Template
 
 <p>A simple and fast domtree-based CSE pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppleAccelTableWriter` Class Reference
+# `AppleAccelTableWriter` Class
 
 
 

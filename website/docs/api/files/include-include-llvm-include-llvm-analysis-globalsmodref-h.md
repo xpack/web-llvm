@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsModRef.h` File Reference
+# `GlobalsModRef.h` File
 
 <p>This is the interface for a simple mod/ref and alias analysis over globals. <a href="#details">More...</a></p>
 

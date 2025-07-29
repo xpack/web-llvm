@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseSwap` Class Reference
+# `UseSwap` Class
 
 <p>Tracks swapping a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/use">Use</a> with another <a href="/web-llvm/docs/api/classes/llvm/sandboxir/use">Use</a>. <a href="#details">More...</a></p>
 

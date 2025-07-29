@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutAVLTreeGenericIterator` Class Template Reference
+# `ImutAVLTreeGenericIterator` Class Template
 
 
 

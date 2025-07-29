@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYConstantPool` Class Reference
+# `CSKYConstantPool` Class
 
 
 

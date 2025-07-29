@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRCanonicalizerPass.cpp` File Reference
+# `MIRCanonicalizerPass.cpp` File
 
 
 

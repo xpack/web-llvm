@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZShortenInst` Class Reference
+# `SystemZShortenInst` Class
 
 
 

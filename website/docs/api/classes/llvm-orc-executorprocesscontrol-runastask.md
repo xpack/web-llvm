@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RunAsTask` Class Reference
+# `RunAsTask` Class
 
 <p>Constructs an <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol/incomingwfrhandler">IncomingWFRHandler</a> from a function object by creating a new function object that dispatches the original using a <a href="/web-llvm/docs/api/classes/llvm/orc/taskdispatcher">TaskDispatcher</a>, wrapping the original as a <a href="/web-llvm/docs/api/classes/llvm/orc/genericnamedtask">GenericNamedTask</a>. <a href="#details">More...</a></p>
 

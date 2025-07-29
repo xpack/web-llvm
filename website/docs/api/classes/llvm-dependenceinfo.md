@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependenceInfo` Class Reference
+# `DependenceInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dependenceinfo">DependenceInfo</a> - This class is the main dependence-analysis driver. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaConstantPoolJumpTable` Class Reference
+# `XtensaConstantPoolJumpTable` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xtensaconstantpooljumptable">XtensaConstantPoolJumpTable</a> - Xtensa-specific constantpool values for Jump Table symbols. <a href="#details">More...</a></p>
 

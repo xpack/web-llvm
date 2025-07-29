@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SortRegionInfo` Class Reference
+# `SortRegionInfo` Class
 
 
 

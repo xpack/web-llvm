@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Loop` Class Reference
+# `Loop` Class
 
 <p>Represents a single loop in the control flow graph. <a href="#details">More...</a></p>
 

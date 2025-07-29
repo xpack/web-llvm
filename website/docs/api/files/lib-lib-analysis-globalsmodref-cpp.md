@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsModRef.cpp` File Reference
+# `GlobalsModRef.cpp` File
 
 
 

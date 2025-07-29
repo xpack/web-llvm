@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scanner` Class Reference
+# `Scanner` Class
 
 <p>Scans YAML tokens from a <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a>. <a href="#details">More...</a></p>
 

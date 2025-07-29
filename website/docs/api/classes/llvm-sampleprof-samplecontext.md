@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleContext` Class Reference
+# `SampleContext` Class
 
 
 

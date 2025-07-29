@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HorizontalReduction` Class Reference
+# `HorizontalReduction` Class
 
 <p>Model horizontal reductions. <a href="#details">More...</a></p>
 

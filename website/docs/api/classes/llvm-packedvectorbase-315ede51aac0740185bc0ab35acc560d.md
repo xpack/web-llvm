@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PackedVectorBase` Class Template Reference
+# `PackedVectorBase` Class Template
 
 
 

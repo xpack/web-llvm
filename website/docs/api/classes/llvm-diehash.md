@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEHash` Class Reference
+# `DIEHash` Class
 
 <p>An object containing the capability of hashing and adding hash attributes onto a <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

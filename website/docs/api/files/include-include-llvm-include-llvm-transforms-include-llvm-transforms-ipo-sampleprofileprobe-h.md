@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileProbe.h` File Reference
+# `SampleProfileProbe.h` File
 
 <p>This file provides the interface for the pseudo probe implementation for AutoFDO. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfCoverInst` Class Reference
+# `InstrProfCoverInst` Class
 
 <p>This represents the llvm.instrprof.cover intrinsic. <a href="#details">More...</a></p>
 

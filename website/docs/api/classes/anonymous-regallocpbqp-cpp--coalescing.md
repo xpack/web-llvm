@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Coalescing` Class Reference
+# `Coalescing` Class
 
 
 

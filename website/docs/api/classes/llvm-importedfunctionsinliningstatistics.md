@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportedFunctionsInliningStatistics` Class Reference
+# `ImportedFunctionsInliningStatistics` Class
 
 <p>Calculate and dump ThinLTO specific inliner stats. <a href="#details">More...</a></p>
 

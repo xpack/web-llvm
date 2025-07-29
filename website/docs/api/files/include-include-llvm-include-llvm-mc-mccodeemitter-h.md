@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCodeEmitter.h` File Reference
+# `MCCodeEmitter.h` File
 
 
 

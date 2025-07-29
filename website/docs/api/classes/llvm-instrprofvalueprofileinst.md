@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfValueProfileInst` Class Reference
+# `InstrProfValueProfileInst` Class
 
 <p>This represents the llvm.instrprof.value.profile intrinsic. <a href="#details">More...</a></p>
 

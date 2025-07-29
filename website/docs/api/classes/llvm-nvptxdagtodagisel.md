@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXDAGToDAGISel` Class Reference
+# `NVPTXDAGToDAGISel` Class
 
 
 

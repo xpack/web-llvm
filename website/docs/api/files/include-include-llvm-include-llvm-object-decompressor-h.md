@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Decompressor.h` File Reference
+# `Decompressor.h` File
 
 
 

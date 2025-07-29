@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryFPType` Class Reference
+# `BinaryFPType` Class
 
 
 

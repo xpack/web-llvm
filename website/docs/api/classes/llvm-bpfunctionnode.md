@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFunctionNode` Class Reference
+# `BPFunctionNode` Class
 
 <p>A function with a set of utility nodes where it is beneficial to order two functions close together if they have similar utility nodes. <a href="#details">More...</a></p>
 

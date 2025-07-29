@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedPointSemantics` Class Reference
+# `FixedPointSemantics` Class
 
 <p>The fixed point semantics work similarly to <a href="/web-llvm/docs/api/structs/llvm/fltsemantics">fltSemantics</a>. <a href="#details">More...</a></p>
 

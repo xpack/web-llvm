@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetTransformInfo` Class Reference
+# `TargetTransformInfo` Class
 
 <p>This pass provides access to the codegen interfaces that are needed for IR-level transformations. <a href="#details">More...</a></p>
 

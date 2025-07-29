@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRInstrInfo` Class Reference
+# `AVRInstrInfo` Class
 
 <p>Utilities related to the <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> instruction set. <a href="#details">More...</a></p>
 

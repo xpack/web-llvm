@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopAccessAnalysis` Class Reference
+# `LoopAccessAnalysis` Class
 
 <p>This analysis provides dependence information for the memory accesses of a loop. <a href="#details">More...</a></p>
 

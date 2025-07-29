@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GsymReader.cpp` File Reference
+# `GsymReader.cpp` File
 
 
 

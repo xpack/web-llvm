@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VACopyInst` Class Reference
+# `VACopyInst` Class
 
 <p>This represents the llvm.va_copy intrinsic. <a href="#details">More...</a></p>
 

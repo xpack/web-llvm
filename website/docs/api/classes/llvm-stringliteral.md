@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringLiteral` Class Reference
+# `StringLiteral` Class
 
 <p>A wrapper around a string literal that serves as a proxy for constructing global tables of StringRefs with the length computed at compile time. <a href="#details">More...</a></p>
 

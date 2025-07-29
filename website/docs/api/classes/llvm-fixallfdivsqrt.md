@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixAllFDIVSQRT` Class Reference
+# `FixAllFDIVSQRT` Class
 
 
 

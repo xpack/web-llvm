@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallEntryPseudoSourceValue` Class Reference
+# `CallEntryPseudoSourceValue` Class
 
 
 

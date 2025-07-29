@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRMCAsmInfo` Class Reference
+# `AVRMCAsmInfo` Class
 
 <p>Specifies the format of <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> assembly files. <a href="#details">More...</a></p>
 

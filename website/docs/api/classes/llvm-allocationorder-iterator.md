@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Iterator` Class Reference
+# `Iterator` Class
 
 <p>Forward iterator for an <a href="/web-llvm/docs/api/classes/llvm/allocationorder">AllocationOrder</a>. <a href="#details">More...</a></p>
 

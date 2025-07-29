@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWEventListener.h` File Reference
+# `HWEventListener.h` File
 
 <p>This file defines the main interface for hardware event listeners. <a href="#details">More...</a></p>
 

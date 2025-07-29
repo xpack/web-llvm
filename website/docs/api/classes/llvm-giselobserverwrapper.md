@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelObserverWrapper` Class Reference
+# `GISelObserverWrapper` Class
 
 <p>Simple wrapper observer that takes several observers, and calls each one for each event. <a href="#details">More...</a></p>
 

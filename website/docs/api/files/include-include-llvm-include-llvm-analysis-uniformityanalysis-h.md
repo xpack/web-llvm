@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniformityAnalysis.h` File Reference
+# `UniformityAnalysis.h` File
 
 <p>LLVM IR instance of the generic uniformity analysis. <a href="#details">More...</a></p>
 

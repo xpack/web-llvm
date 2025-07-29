@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPHeaderPHIRecipe` Class Reference
+# `VPHeaderPHIRecipe` Class
 
 <p>A pure virtual base class for all recipes modeling header phis, including phis for first order recurrences, pointer inductions and reductions. <a href="#details">More...</a></p>
 

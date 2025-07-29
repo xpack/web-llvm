@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetMachine` Class Reference
+# `WebAssemblyTargetMachine` Class
 
 
 

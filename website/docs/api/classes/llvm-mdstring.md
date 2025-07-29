@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDString` Class Reference
+# `MDString` Class
 
 <p>A single uniqued string. <a href="#details">More...</a></p>
 

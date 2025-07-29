@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleaveGroup` Class Template Reference
+# `InterleaveGroup` Class Template
 
 <p>The group of interleaved loads/stores sharing the same stride and close to each other. <a href="#details">More...</a></p>
 

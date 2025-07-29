@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Reader` Class Reference
+# `Reader` Class
 
 <p>Reads MessagePack objects from memory, one at a time. <a href="#details">More...</a></p>
 

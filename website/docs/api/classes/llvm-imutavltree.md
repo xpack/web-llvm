@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutAVLTree` Class Template Reference
+# `ImutAVLTree` Class Template
 
 
 

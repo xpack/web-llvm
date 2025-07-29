@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXTTIImpl` Class Reference
+# `DirectXTTIImpl` Class
 
 
 

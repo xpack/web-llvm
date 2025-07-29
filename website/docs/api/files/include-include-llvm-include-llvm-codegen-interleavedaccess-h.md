@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleavedAccess.h` File Reference
+# `InterleavedAccess.h` File
 
 <p>This file contains the declaration of the InterleavedAccessPass class, its corresponding pass name is <span class="doxyComputerOutput">interleaved-access</span>. <a href="#details">More...</a></p>
 

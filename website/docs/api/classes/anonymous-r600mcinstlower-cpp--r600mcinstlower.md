@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MCInstLower` Class Reference
+# `R600MCInstLower` Class
 
 
 

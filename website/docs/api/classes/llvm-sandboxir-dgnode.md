@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DGNode` Class Reference
+# `DGNode` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dependencygraph">DependencyGraph</a> <a href="/web-llvm/docs/api/classes/node">Node</a> that points to an <a href="/web-llvm/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> and contains memory dependency edges. <a href="#details">More...</a></p>
 

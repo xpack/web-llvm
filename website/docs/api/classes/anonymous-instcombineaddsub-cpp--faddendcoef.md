@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FAddendCoef` Class Reference
+# `FAddendCoef` Class
 
 <p>Class representing coefficient of floating-point addend. <a href="#details">More...</a></p>
 

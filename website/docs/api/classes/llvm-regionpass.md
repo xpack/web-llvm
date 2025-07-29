@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPass` Class Reference
+# `RegionPass` Class
 
 <p>A pass that runs on each <a href="/web-llvm/docs/api/classes/llvm/region">Region</a> in a function. <a href="#details">More...</a></p>
 

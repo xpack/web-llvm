@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceStrategy` Class Reference
+# `ResourceStrategy` Class
 
 <p>Resource allocation strategy used by hardware scheduler resources. <a href="#details">More...</a></p>
 

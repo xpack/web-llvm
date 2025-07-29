@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstPartition` Class Reference
+# `InstPartition` Class
 
 <p>Maintains the set of instructions of the loop for a partition before cloning. <a href="#details">More...</a></p>
 

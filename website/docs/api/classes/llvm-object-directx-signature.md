@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Signature` Class Reference
+# `Signature` Class
 
 
 

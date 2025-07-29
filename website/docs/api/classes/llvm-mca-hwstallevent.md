@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWStallEvent` Class Reference
+# `HWStallEvent` Class
 
 
 

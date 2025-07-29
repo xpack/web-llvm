@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEUnit` Class Reference
+# `DIEUnit` Class
 
 <p>Represents a compile or type unit. <a href="#details">More...</a></p>
 

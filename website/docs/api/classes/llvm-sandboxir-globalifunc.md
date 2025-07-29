@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalIFunc` Class Reference
+# `GlobalIFunc` Class
 
 
 

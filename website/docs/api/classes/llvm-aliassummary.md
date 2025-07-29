@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasSummary` Class Reference
+# `AliasSummary` Class
 
 <p>Alias summary information. <a href="#details">More...</a></p>
 

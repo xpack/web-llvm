@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleCoverageTracker` Class Reference
+# `SampleCoverageTracker` Class
 
 
 

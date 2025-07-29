@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScavengerTest` Class Reference
+# `ScavengerTest` Class
 
 <p>This class runs register scavenging independ of the PrologEpilogInserter. <a href="#details">More...</a></p>
 

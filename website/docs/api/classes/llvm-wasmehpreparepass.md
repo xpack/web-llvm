@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmEHPreparePass` Class Reference
+# `WasmEHPreparePass` Class
 
 
 

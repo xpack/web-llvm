@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Solution` Class Reference
+# `Solution` Class
 
 <p>Represents a solution to a <a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> problem. <a href="#details">More...</a></p>
 

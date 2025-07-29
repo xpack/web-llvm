@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinCOFFStreamer` Class Reference
+# `X86WinCOFFStreamer` Class
 
 
 

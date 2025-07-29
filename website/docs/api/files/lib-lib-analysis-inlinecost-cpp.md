@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCost.cpp` File Reference
+# `InlineCost.cpp` File
 
 
 

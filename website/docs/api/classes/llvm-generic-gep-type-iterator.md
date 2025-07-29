@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `generic_gep_type_iterator` Class Template Reference
+# `generic_gep_type_iterator` Class Template
 
 
 

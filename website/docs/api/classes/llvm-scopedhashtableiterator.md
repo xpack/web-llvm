@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedHashTableIterator` Class Template Reference
+# `ScopedHashTableIterator` Class Template
 
 
 

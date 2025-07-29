@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleSorter` Class Template Reference
+# `SampleSorter` Class Template
 
 <p>Sort a LocationT-&gt;SampleT map by LocationT. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Add` Class Template Reference
+# `Add` Class Template
 
 <p>A static registration template. <a href="#details">More...</a></p>
 

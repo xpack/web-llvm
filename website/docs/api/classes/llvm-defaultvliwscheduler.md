@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultVLIWScheduler` Class Reference
+# `DefaultVLIWScheduler` Class
 
 
 

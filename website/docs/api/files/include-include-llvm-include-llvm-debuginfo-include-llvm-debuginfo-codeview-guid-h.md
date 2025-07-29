@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GUID.h` File Reference
+# `GUID.h` File
 
 
 

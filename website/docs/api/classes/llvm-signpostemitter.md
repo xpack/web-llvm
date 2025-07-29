@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SignpostEmitter` Class Reference
+# `SignpostEmitter` Class
 
 <p>Manages the emission of signposts into the recording method supported by the OS. <a href="#details">More...</a></p>
 

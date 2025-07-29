@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBufferByteStream` Class Reference
+# `MemoryBufferByteStream` Class
 
 <p>An implementation of <a href="/web-llvm/docs/api/classes/llvm/binarystream">BinaryStream</a> whose data is backed by an llvm <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> object. <a href="#details">More...</a></p>
 

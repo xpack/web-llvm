@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICmpInst` Class Reference
+# `ICmpInst` Class
 
 <p>This instruction compares its operands according to the predicate given to the constructor. <a href="#details">More...</a></p>
 

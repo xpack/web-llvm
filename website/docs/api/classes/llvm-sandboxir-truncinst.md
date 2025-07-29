@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TruncInst` Class Reference
+# `TruncInst` Class
 
 
 

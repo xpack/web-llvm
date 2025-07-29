@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVBackedgeConditionFolder` Class Reference
+# `SCEVBackedgeConditionFolder` Class
 
 <p>This class evaluates the compare condition by matching it against the condition of loop latch. <a href="#details">More...</a></p>
 

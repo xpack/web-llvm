@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotion.cpp` File Reference
+# `TypePromotion.cpp` File
 
 <p>This is an opcode based type promotion pass for small types that would otherwise be promoted during legalisation. <a href="#details">More...</a></p>
 

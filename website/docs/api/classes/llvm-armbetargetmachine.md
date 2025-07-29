@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBETargetMachine` Class Reference
+# `ARMBETargetMachine` Class
 
 <p>ARM/Thumb big endian target machine. <a href="#details">More...</a></p>
 

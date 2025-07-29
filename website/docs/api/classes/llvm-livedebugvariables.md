@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveDebugVariables` Class Reference
+# `LiveDebugVariables` Class
 
 
 

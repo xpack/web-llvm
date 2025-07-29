@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileProber` Class Reference
+# `SampleProfileProber` Class
 
 <p>Sample profile pseudo prober. <a href="#details">More...</a></p>
 

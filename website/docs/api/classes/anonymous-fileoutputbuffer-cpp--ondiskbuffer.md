@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OnDiskBuffer` Class Reference
+# `OnDiskBuffer` Class
 
 
 

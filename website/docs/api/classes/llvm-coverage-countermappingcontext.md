@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CounterMappingContext` Class Reference
+# `CounterMappingContext` Class
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/coverage/counter">Counter</a> mapping context is used to connect the counters, expressions and the obtained counter values. <a href="#details">More...</a></p>
 

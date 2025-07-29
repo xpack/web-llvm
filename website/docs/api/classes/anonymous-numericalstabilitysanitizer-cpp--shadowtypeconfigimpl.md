@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowTypeConfigImpl` Class Template Reference
+# `ShadowTypeConfigImpl` Class Template
 
 
 

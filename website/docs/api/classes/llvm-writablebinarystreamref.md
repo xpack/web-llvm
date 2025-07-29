@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WritableBinaryStreamRef` Class Reference
+# `WritableBinaryStreamRef` Class
 
 
 

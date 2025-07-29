@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LostDebugLocObserver.h` File Reference
+# `LostDebugLocObserver.h` File
 
 <p>Tracks DebugLocs between checkpoints and verifies that they are transferred. <a href="#details">More...</a></p>
 

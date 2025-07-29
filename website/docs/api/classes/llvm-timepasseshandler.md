@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimePassesHandler` Class Reference
+# `TimePassesHandler` Class
 
 <p>This class implements -time-passes functionality for new pass manager. <a href="#details">More...</a></p>
 

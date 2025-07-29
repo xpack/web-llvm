@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVGenInstrInfo` Class Reference
+# `RISCVGenInstrInfo` Class
 
 
 

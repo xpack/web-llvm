@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInsertHardClauses` Class Reference
+# `SIInsertHardClauses` Class
 
 
 

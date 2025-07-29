@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Node` Class Reference
+# `Node` Class
 
 <p>Nodes in the <a href="/web-llvm/docs/api/classes/llvm/anonymous-amdgpusplitmodule-cpp-/splitgraph">SplitGraph</a> contain both incoming, and outgoing edges. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfLoc` Class Reference
+# `MCDwarfLoc` Class
 
 <p>Instances of this class represent the information from a dwarf .loc directive. <a href="#details">More...</a></p>
 

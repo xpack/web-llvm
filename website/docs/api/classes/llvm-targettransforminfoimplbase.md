@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetTransformInfoImplBase` Class Reference
+# `TargetTransformInfoImplBase` Class
 
 <p>Base class for use as a mix-in that aids implementing a TargetTransformInfo-compatible class. <a href="#details">More...</a></p>
 

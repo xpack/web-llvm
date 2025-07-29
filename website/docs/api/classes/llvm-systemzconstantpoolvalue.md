@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZConstantPoolValue` Class Reference
+# `SystemZConstantPoolValue` Class
 
 <p>A SystemZ-specific constant pool value. <a href="#details">More...</a></p>
 

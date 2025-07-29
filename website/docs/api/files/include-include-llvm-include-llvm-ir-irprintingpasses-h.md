@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRPrintingPasses.h` File Reference
+# `IRPrintingPasses.h` File
 
 <p>This file contains an interface for creating legacy passes to print out IR in various granularities. <a href="#details">More...</a></p>
 

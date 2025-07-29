@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyMachineBlockFrequencyInfoPass` Class Reference
+# `LazyMachineBlockFrequencyInfoPass` Class
 
 <p>This is an alternative analysis pass to <a href="/web-llvm/docs/api/classes/llvm/machineblockfrequencyinfo">MachineBlockFrequencyInfo</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhysicalRegisterUsageInfoPrinterPass` Class Reference
+# `PhysicalRegisterUsageInfoPrinterPass` Class
 
 
 

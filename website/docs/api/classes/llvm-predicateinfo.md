@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateInfo` Class Reference
+# `PredicateInfo` Class
 
 <p>Encapsulates <a href="/web-llvm/docs/api/classes/llvm/predicateinfo">PredicateInfo</a>, including all data associated with memory accesses. <a href="#details">More...</a></p>
 

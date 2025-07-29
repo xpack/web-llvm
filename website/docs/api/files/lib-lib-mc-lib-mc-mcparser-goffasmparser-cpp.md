@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFAsmParser.cpp` File Reference
+# `GOFFAsmParser.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Statistic.h` File Reference
+# `Statistic.h` File
 
 <p>This file defines the 'Statistic' class, which is designed to be an easy way to expose various metrics from passes. <a href="#details">More...</a></p>
 

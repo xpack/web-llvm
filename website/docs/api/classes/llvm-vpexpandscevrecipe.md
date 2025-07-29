@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPExpandSCEVRecipe` Class Reference
+# `VPExpandSCEVRecipe` Class
 
 <p>Recipe to expand a <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> expression. <a href="#details">More...</a></p>
 

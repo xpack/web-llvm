@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlagInserter` Class Reference
+# `FlagInserter` Class
 
 <p>Help to insert <a href="/web-llvm/docs/api/structs/llvm/sdnodeflags">SDNodeFlags</a> automatically in transforming. <a href="#details">More...</a></p>
 

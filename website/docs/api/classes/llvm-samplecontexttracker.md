@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleContextTracker` Class Reference
+# `SampleContextTracker` Class
 
 
 

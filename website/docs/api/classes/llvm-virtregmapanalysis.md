@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegMapAnalysis` Class Reference
+# `VirtRegMapAnalysis` Class
 
 
 

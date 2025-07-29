@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputUnitVariantPtr` Class Reference
+# `OutputUnitVariantPtr` Class
 
 <p>Output unit selector. <a href="#details">More...</a></p>
 

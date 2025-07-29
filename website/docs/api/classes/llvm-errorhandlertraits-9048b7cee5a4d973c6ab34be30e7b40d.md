@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorHandlerTraits` Class Template Reference
+# `ErrorHandlerTraits` Class Template
 
 
 

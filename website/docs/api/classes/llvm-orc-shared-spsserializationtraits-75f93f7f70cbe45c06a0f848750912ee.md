@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsoptional">SPSOptional</a> serialization for std::optional. <a href="#details">More...</a></p>
 

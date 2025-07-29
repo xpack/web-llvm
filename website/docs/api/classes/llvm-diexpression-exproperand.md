@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExprOperand` Class Reference
+# `ExprOperand` Class
 
 <p>A lightweight wrapper around an expression operand. <a href="#details">More...</a></p>
 

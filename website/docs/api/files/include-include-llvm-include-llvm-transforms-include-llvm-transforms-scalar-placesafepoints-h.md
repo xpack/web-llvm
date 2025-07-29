@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PlaceSafepoints.h` File Reference
+# `PlaceSafepoints.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThunkInserterPass` Class Template Reference
+# `ThunkInserterPass` Class Template
 
 <p>Basic implementation of <a href="/web-llvm/docs/api/classes/llvm/machinefunctionpass">MachineFunctionPass</a> wrapping one or more <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/thunkinserter">ThunkInserter</a></span>s passed as type parameters. <a href="#details">More...</a></p>
 

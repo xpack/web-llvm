@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterBank` Class Reference
+# `RegisterBank` Class
 
 <p>This class implements the register bank concept. <a href="#details">More...</a></p>
 

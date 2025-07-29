@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicMemMoveInst` Class Reference
+# `AtomicMemMoveInst` Class
 
 <p>This class represents the atomic memmove intrinsic i.e. <a href="#details">More...</a></p>
 

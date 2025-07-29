@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartiallyInlineLibCallsLegacyPass` Class Reference
+# `PartiallyInlineLibCallsLegacyPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorTemplateCommon` Class Template Reference
+# `SmallVectorTemplateCommon` Class Template
 
 <p>This is the part of <a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase">SmallVectorTemplateBase</a> which does not depend on whether the type T is a POD. <a href="#details">More...</a></p>
 

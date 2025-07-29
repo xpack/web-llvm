@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericToNVVMLegacyPass` Class Reference
+# `GenericToNVVMLegacyPass` Class
 
 
 

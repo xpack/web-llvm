@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueTable` Class Reference
+# `ValueTable` Class
 
 
 

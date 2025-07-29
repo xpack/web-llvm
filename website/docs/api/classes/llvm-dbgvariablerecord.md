@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgVariableRecord` Class Reference
+# `DbgVariableRecord` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> of a variable value-assignment, aka a non instruction representation of the dbg.value intrinsic. <a href="#details">More...</a></p>
 

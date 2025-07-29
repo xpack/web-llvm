@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolSerializer.cpp` File Reference
+# `SymbolSerializer.cpp` File
 
 
 

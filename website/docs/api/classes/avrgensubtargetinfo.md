@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRGenSubtargetInfo` Class Reference
+# `AVRGenSubtargetInfo` Class
 
 
 

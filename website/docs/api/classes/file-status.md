@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `file_status` Class Reference
+# `file_status` Class
 
 <p>Represents the result of a call to sys::fs::status(). <a href="#details">More...</a></p>
 

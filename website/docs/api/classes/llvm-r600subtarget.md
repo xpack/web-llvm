@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600Subtarget` Class Reference
+# `R600Subtarget` Class
 
 
 

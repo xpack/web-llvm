@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecursiveSearchSplitting` Class Reference
+# `RecursiveSearchSplitting` Class
 
 <p>Partitioning algorithm. <a href="#details">More...</a></p>
 

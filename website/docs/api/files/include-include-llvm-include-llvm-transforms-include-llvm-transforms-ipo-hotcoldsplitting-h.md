@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotColdSplitting.h` File Reference
+# `HotColdSplitting.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LockstepReverseIterator` Class Reference
+# `LockstepReverseIterator` Class
 
 <p>Iterates through instructions in a set of blocks in reverse order from the first non-terminator. <a href="#details">More...</a></p>
 

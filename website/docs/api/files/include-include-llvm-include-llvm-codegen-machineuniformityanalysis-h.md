@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineUniformityAnalysis.h` File Reference
+# `MachineUniformityAnalysis.h` File
 
 <p>Machine IR instance of the generic uniformity analysis. <a href="#details">More...</a></p>
 

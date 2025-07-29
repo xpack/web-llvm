@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAdvisorAnalysis` Class Reference
+# `InlineAdvisorAnalysis` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/inlineadvisoranalysis">InlineAdvisorAnalysis</a> is a module pass because the <a href="/web-llvm/docs/api/classes/llvm/inlineadvisor">InlineAdvisor</a> needs to capture state right before inlining commences over a module. <a href="#details">More...</a></p>
 

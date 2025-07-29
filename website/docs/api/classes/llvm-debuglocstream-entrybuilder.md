@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryBuilder` Class Reference
+# `EntryBuilder` Class
 
 <p>Builder for <a href="/web-llvm/docs/api/classes/llvm/debuglocstream">DebugLocStream</a> entries. <a href="#details">More...</a></p>
 

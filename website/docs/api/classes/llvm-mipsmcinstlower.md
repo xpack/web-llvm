@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMCInstLower` Class Reference
+# `MipsMCInstLower` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mipsmcinstlower">MipsMCInstLower</a> - This class is used to lower an <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> into an <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a>. <a href="#details">More...</a></p>
 

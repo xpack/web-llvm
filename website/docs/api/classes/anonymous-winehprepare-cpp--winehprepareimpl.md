@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinEHPrepareImpl` Class Reference
+# `WinEHPrepareImpl` Class
 
 
 

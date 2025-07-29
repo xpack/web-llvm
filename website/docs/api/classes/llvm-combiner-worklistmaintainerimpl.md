@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorkListMaintainerImpl` Class Template Reference
+# `WorkListMaintainerImpl` Class Template
 
 
 

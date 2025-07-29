@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_range.h` File Reference
+# `iterator_range.h` File
 
 <p>This provides a very simple, boring adaptor for a begin and end iterator into a range type. <a href="#details">More...</a></p>
 

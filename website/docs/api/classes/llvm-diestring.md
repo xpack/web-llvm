@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEString` Class Reference
+# `DIEString` Class
 
 <p>A container for string pool string values. <a href="#details">More...</a></p>
 

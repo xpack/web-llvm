@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeRefCountedBase` Class Template Reference
+# `ThreadSafeRefCountedBase` Class Template
 
 <p>A thread-safe version of <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/refcountedbase">RefCountedBase</a></span>. <a href="#details">More...</a></p>
 

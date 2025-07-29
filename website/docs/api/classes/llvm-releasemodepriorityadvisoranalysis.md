@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReleaseModePriorityAdvisorAnalysis` Class Reference
+# `ReleaseModePriorityAdvisorAnalysis` Class
 
 
 

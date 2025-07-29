@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignmentTrackingLowering` Class Reference
+# `AssignmentTrackingLowering` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering">AssignmentTrackingLowering</a> encapsulates a dataflow analysis over a function that interprets assignment tracking debug info metadata and stores in IR to create a map of variable locations. <a href="#details">More...</a></p>
 

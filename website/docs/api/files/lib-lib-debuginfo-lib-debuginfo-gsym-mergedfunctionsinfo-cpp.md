@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedFunctionsInfo.cpp` File Reference
+# `MergedFunctionsInfo.cpp` File
 
 
 

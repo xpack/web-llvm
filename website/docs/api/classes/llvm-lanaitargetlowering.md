@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiTargetLowering` Class Reference
+# `LanaiTargetLowering` Class
 
 
 

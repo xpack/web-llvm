@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVComparePredicate` Class Reference
+# `SCEVComparePredicate` Class
 
 <p>This class represents an assumption that the expression LHS Pred RHS evaluates to true, and this can be checked at run-time. <a href="#details">More...</a></p>
 

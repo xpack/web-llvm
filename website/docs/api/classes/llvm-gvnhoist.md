@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNHoist` Class Reference
+# `GVNHoist` Class
 
 
 

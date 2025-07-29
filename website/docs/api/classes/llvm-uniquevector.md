@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueVector` Class Template Reference
+# `UniqueVector` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/uniquevector">UniqueVector</a> - This class produces a sequential <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> number (base 1) for each unique entry that is added. <a href="#details">More...</a></p>
 

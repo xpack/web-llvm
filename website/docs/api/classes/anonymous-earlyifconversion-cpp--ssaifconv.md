@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAIfConv` Class Reference
+# `SSAIfConv` Class
 
 
 

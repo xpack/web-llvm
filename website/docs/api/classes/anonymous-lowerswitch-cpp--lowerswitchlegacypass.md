@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerSwitchLegacyPass` Class Reference
+# `LowerSwitchLegacyPass` Class
 
 <p>Replace all <a href="/web-llvm/docs/api/classes/llvm/switchinst">SwitchInst</a> instructions with chained branch instructions. <a href="#details">More...</a></p>
 

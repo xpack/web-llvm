@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMFrameLowering` Class Reference
+# `ARMFrameLowering` Class
 
 
 

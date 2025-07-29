@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeBufferContentTypesVisitor` Class Reference
+# `LegalizeBufferContentTypesVisitor` Class
 
 <p>Convert loads/stores of types that the buffer intrinsics can't handle into one ore more such loads/stores that consist of legal types. <a href="#details">More...</a></p>
 

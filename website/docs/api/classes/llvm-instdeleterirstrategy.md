@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstDeleterIRStrategy` Class Reference
+# `InstDeleterIRStrategy` Class
 
 <p>Strategy that deletes instructions when the <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> is too large. <a href="#details">More...</a></p>
 

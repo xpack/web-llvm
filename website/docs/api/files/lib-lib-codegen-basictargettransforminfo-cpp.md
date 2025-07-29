@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicTargetTransformInfo.cpp` File Reference
+# `BasicTargetTransformInfo.cpp` File
 
 <p>This file provides the implementation of a basic <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> pass predicated on the target abstractions present in the target independent code generator. <a href="#details">More...</a></p>
 

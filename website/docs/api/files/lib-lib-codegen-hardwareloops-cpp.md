@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareLoops.cpp` File Reference
+# `HardwareLoops.cpp` File
 
 <p>Insert hardware loop intrinsics into loops which are deemed profitable by the target, by querying <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `provider_format_adapter` Class Template Reference
+# `provider_format_adapter` Class Template
 
 
 

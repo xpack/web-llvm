@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LandingPadInliningInfo` Class Reference
+# `LandingPadInliningInfo` Class
 
 <p>A class for recording information about inlining a landing pad. <a href="#details">More...</a></p>
 

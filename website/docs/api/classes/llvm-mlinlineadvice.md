@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLInlineAdvice` Class Reference
+# `MLInlineAdvice` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/inlineadvice">InlineAdvice</a> that tracks changes post inlining. <a href="#details">More...</a></p>
 

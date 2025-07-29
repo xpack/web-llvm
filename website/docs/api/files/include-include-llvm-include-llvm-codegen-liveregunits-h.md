@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegUnits.h` File Reference
+# `LiveRegUnits.h` File
 
 <p>A set of register units. <a href="#details">More...</a></p>
 

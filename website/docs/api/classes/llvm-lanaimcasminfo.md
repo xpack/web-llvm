@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCAsmInfo` Class Reference
+# `LanaiMCAsmInfo` Class
 
 
 

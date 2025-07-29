@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZSubtarget` Class Reference
+# `SystemZSubtarget` Class
 
 
 

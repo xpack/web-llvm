@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseMultiSet` Class Template Reference
+# `SparseMultiSet` Class Template
 
 <p>Fast multiset implementation for objects that can be identified by small unsigned keys. <a href="#details">More...</a></p>
 

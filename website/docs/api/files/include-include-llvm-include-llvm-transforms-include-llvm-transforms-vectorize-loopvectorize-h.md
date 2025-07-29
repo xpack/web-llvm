@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorize.h` File Reference
+# `LoopVectorize.h` File
 
 
 

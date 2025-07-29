@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrConverterBase` Class Reference
+# `InstrConverterBase` Class
 
 <p>Abstract <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> Converter class. <a href="#details">More...</a></p>
 

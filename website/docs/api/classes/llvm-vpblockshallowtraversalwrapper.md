@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBlockShallowTraversalWrapper` Class Template Reference
+# `VPBlockShallowTraversalWrapper` Class Template
 
 <p>Helper for <a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> specialization that does not traverses through VPRegionBlocks. <a href="#details">More...</a></p>
 

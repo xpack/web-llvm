@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStackWriterTrait` Class Reference
+# `CallStackWriterTrait` Class
 
 
 

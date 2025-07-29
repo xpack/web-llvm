@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyArgumentMove` Class Reference
+# `WebAssemblyArgumentMove` Class
 
 
 

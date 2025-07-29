@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BoundsChecking.h` File Reference
+# `BoundsChecking.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PatchPointOpers` Class Reference
+# `PatchPointOpers` Class
 
 <p>MI-level patchpoint operands. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLXRayRecord.h` File Reference
+# `YAMLXRayRecord.h` File
 
 
 

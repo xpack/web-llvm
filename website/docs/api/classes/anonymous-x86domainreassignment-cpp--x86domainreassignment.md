@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86DomainReassignment` Class Reference
+# `X86DomainReassignment` Class
 
 
 

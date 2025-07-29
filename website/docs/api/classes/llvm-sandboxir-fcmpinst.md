@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FCmpInst` Class Reference
+# `FCmpInst` Class
 
 
 

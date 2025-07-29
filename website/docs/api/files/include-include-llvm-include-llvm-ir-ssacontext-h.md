@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAContext.h` File Reference
+# `SSAContext.h` File
 
 <p>This file declares a specialization of the GenericSSAContext&lt;X&gt; class template for LLVM IR. <a href="#details">More...</a></p>
 

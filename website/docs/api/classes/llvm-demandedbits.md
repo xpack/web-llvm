@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DemandedBits` Class Reference
+# `DemandedBits` Class
 
 
 

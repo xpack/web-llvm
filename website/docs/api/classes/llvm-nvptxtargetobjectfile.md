@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetObjectFile` Class Reference
+# `NVPTXTargetObjectFile` Class
 
 
 

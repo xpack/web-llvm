@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstDesc` Class Reference
+# `InstDesc` Class
 
 <p>This POD struct holds information about a potential recurrence operation. <a href="#details">More...</a></p>
 

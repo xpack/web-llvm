@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpeculateQuery` Class Reference
+# `SpeculateQuery` Class
 
 
 

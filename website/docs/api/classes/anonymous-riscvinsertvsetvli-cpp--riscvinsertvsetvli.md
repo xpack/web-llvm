@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVInsertVSETVLI` Class Reference
+# `RISCVInsertVSETVLI` Class
 
 
 

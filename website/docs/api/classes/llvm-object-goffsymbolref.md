@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFSymbolRef` Class Reference
+# `GOFFSymbolRef` Class
 
 
 

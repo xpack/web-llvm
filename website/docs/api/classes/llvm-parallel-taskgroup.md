@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TaskGroup` Class Reference
+# `TaskGroup` Class
 
 
 

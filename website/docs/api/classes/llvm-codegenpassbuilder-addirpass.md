@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddIRPass` Class Reference
+# `AddIRPass` Class
 
 
 

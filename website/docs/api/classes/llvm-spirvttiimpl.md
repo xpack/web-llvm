@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVTTIImpl` Class Reference
+# `SPIRVTTIImpl` Class
 
 
 

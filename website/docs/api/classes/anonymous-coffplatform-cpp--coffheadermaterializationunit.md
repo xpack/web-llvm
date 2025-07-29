@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFHeaderMaterializationUnit` Class Reference
+# `COFFHeaderMaterializationUnit` Class
 
 
 

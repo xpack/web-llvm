@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrivialSPSSequenceSerialization` Class Template Reference
+# `TrivialSPSSequenceSerialization` Class Template
 
 <p>Trivial std::vector&lt;T&gt; -&gt; <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spssequence">SPSSequence&lt;SPSElementTagT&gt;</a> serialization. <a href="#details">More...</a></p>
 

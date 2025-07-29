@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCost` Class Reference
+# `InlineCost` Class
 
 <p>Represents the cost of inlining a function. <a href="#details">More...</a></p>
 

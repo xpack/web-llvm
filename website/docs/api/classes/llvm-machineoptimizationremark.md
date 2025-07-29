@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOptimizationRemark` Class Reference
+# `MachineOptimizationRemark` Class
 
 <p>Diagnostic information for applied optimization remarks. <a href="#details">More...</a></p>
 

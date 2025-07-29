@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiFrameLowering` Class Reference
+# `LanaiFrameLowering` Class
 
 
 

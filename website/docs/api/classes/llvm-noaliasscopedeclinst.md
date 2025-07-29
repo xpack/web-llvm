@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoAliasScopeDeclInst` Class Reference
+# `NoAliasScopeDeclInst` Class
 
 
 

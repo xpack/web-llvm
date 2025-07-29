@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PassConfig` Class Reference
+# `AArch64PassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

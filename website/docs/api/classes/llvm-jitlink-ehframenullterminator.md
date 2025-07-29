@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHFrameNullTerminator` Class Reference
+# `EHFrameNullTerminator` Class
 
 <p>Add a 32-bit null-terminator to the end of the eh-frame section. <a href="#details">More...</a></p>
 

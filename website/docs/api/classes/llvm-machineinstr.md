@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstr` Class Reference
+# `MachineInstr` Class
 
 <p>Representation of each machine instruction. <a href="#details">More...</a></p>
 

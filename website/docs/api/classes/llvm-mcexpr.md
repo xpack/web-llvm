@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCExpr` Class Reference
+# `MCExpr` Class
 
 <p>Base class for the full range of assembler expressions which are needed for parsing. <a href="#details">More...</a></p>
 

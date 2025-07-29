@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadStoreVectorizerLegacyPass` Class Reference
+# `LoadStoreVectorizerLegacyPass` Class
 
 
 

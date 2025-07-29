@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPDerivedIVRecipe` Class Reference
+# `VPDerivedIVRecipe` Class
 
 <p>A recipe for converting the input value <span class="doxyComputerOutput">IV</span> value to the corresponding value of an IV with different start and step values, using Start + IV * Step. <a href="#details">More...</a></p>
 

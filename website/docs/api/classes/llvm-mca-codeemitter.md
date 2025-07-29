@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeEmitter` Class Reference
+# `CodeEmitter` Class
 
 <p>A utility class used to compute instruction encodings for a code region. <a href="#details">More...</a></p>
 

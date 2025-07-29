@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRSampleProfile.h` File Reference
+# `MIRSampleProfile.h` File
 
 
 

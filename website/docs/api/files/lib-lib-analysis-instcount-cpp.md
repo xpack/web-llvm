@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCount.cpp` File Reference
+# `InstCount.cpp` File
 
 
 

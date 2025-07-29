@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RefSCC` Class Reference
+# `RefSCC` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/refscc">RefSCC</a> of the call graph. <a href="#details">More...</a></p>
 

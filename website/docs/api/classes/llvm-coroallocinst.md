@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAllocInst` Class Reference
+# `CoroAllocInst` Class
 
 <p>This represents the llvm.coro.alloc instruction. <a href="#details">More...</a></p>
 

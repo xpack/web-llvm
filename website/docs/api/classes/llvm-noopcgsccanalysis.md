@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpCGSCCAnalysis` Class Reference
+# `NoOpCGSCCAnalysis` Class
 
 <p>No-op CGSCC analysis. <a href="#details">More...</a></p>
 

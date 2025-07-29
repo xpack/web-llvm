@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorBase` Class Template Reference
+# `SmallVectorBase` Class Template
 
 <p>This is all the stuff common to all SmallVectors. <a href="#details">More...</a></p>
 

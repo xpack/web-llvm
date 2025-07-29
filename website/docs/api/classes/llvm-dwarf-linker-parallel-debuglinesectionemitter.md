@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLineSectionEmitter` Class Reference
+# `DebugLineSectionEmitter` Class
 
 <p>This class emits specified line table into the .debug_line section. <a href="#details">More...</a></p>
 

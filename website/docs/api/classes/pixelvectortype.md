@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PixelVectorType` Class Reference
+# `PixelVectorType` Class
 
 
 

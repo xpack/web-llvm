@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOBindEntry` Class Reference
+# `MachOBindEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/machobindentry">MachOBindEntry</a> encapsulates the current state in the decompression of binding opcodes. <a href="#details">More...</a></p>
 

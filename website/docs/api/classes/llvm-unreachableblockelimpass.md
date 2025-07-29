@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnreachableBlockElimPass` Class Reference
+# `UnreachableBlockElimPass` Class
 
 
 

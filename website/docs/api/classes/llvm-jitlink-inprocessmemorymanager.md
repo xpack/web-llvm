@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProcessMemoryManager` Class Reference
+# `InProcessMemoryManager` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/jitlink/jitlinkmemorymanager">JITLinkMemoryManager</a> that allocates in-process memory. <a href="#details">More...</a></p>
 

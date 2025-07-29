@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineCycleInfoWrapperPass` Class Reference
+# `MachineCycleInfoWrapperPass` Class
 
 <p>Legacy analysis pass which computes a <a href="/web-llvm/docs/api/namespaces/llvm/#aee433bfa58b17266f2cff728e02fba26">MachineCycleInfo</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecurrenceInstr` Class Reference
+# `RecurrenceInstr` Class
 
 <p>Helper class to hold instructions that are inside recurrence cycles. <a href="#details">More...</a></p>
 

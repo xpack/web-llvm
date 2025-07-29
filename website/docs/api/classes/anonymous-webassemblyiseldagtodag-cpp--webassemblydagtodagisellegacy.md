@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDAGToDAGISelLegacy` Class Reference
+# `WebAssemblyDAGToDAGISelLegacy` Class
 
 
 

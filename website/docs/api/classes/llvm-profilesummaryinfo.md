@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryInfo` Class Reference
+# `ProfileSummaryInfo` Class
 
 <p>Analysis providing profile information. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCChecker` Class Reference
+# `HexagonMCChecker` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/check">Check</a> for a valid bundle. <a href="#details">More...</a></p>
 

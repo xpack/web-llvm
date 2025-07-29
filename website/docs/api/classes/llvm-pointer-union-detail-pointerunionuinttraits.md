@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerUnionUIntTraits` Class Template Reference
+# `PointerUnionUIntTraits` Class Template
 
 <p>Provide <a href="/web-llvm/docs/api/structs/llvm/pointerliketypetraits">PointerLikeTypeTraits</a> for void* that is used by <a href="/web-llvm/docs/api/classes/llvm/pointerunion">PointerUnion</a> for the template arguments. <a href="#details">More...</a></p>
 

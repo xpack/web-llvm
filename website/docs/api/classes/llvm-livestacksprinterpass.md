@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveStacksPrinterPass` Class Reference
+# `LiveStacksPrinterPass` Class
 
 
 

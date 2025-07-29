@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IROutlinerPass` Class Reference
+# `IROutlinerPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to outline similar regions. <a href="#details">More...</a></p>
 

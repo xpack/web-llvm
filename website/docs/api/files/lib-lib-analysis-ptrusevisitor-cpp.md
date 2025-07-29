@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrUseVisitor.cpp` File Reference
+# `PtrUseVisitor.cpp` File
 
 <p>Implementation of the pointer use visitors. <a href="#details">More...</a></p>
 

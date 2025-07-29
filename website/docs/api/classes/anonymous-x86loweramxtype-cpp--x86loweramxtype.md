@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LowerAMXType` Class Reference
+# `X86LowerAMXType` Class
 
 
 

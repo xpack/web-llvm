@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaskedGatherScatterSDNode` Class Reference
+# `MaskedGatherScatterSDNode` Class
 
 <p>This is a base class used to represent MGATHER and MSCATTER nodes. <a href="#details">More...</a></p>
 

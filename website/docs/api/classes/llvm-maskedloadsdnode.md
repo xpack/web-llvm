@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaskedLoadSDNode` Class Reference
+# `MaskedLoadSDNode` Class
 
 <p>This class is used to represent an MLOAD node. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfEHPreparePass` Class Reference
+# `DwarfEHPreparePass` Class
 
 
 

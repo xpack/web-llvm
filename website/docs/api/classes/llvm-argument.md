@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Argument` Class Reference
+# `Argument` Class
 
 <p>This class represents an incoming formal argument to a <a href="/web-llvm/docs/api/classes/llvm/function">Function</a>. <a href="#details">More...</a></p>
 

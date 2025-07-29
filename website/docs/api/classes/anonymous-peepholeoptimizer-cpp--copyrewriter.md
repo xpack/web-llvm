@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyRewriter` Class Reference
+# `CopyRewriter` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-peepholeoptimizer-cpp-/rewriter">Rewriter</a> for COPY instructions. <a href="#details">More...</a></p>
 

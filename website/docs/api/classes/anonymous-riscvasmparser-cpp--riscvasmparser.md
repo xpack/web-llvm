@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVAsmParser` Class Reference
+# `RISCVAsmParser` Class
 
 
 

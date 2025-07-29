@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Input` Class Reference
+# `Input` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/yaml/input">Input</a> class is used to parse a yaml document into in-memory structs and vectors. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SliceBuilder` Class Reference
+# `SliceBuilder` Class
 
 <p>Builder for the alloca slices. <a href="#details">More...</a></p>
 

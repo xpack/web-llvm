@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIASectionContrib.h` File Reference
+# `DIASectionContrib.h` File
 
 
 

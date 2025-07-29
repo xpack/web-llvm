@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntry.h` File Reference
+# `StringMapEntry.h` File
 
 
 

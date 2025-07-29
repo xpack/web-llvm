@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionKind.h` File Reference
+# `SectionKind.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicSymbolRef` Class Reference
+# `BasicSymbolRef` Class
 
 <p>This is a value type class that represents a single symbol in the list of symbols in the object file. <a href="#details">More...</a></p>
 

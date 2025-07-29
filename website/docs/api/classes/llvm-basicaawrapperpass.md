@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicAAWrapperPass` Class Reference
+# `BasicAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/basicaaresult">BasicAAResult</a> object. <a href="#details">More...</a></p>
 

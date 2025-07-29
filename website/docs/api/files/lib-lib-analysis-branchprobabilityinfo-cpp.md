@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchProbabilityInfo.cpp` File Reference
+# `BranchProbabilityInfo.cpp` File
 
 
 

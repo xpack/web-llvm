@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssociatedDataAreaTable` Class Reference
+# `AssociatedDataAreaTable` Class
 
 
 

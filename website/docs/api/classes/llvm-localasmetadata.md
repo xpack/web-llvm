@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalAsMetadata` Class Reference
+# `LocalAsMetadata` Class
 
 
 

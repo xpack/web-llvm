@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignmentTrackingAnalysis.h` File Reference
+# `AssignmentTrackingAnalysis.h` File
 
 
 

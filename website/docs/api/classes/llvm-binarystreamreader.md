@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamReader` Class Reference
+# `BinaryStreamReader` Class
 
 <p>Provides read only access to a subclass of <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/binarystream">BinaryStream</a></span>. <a href="#details">More...</a></p>
 

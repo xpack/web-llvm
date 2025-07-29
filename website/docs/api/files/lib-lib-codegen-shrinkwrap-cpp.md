@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShrinkWrap.cpp` File Reference
+# `ShrinkWrap.cpp` File
 
 
 

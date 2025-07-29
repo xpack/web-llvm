@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZOperand` Class Reference
+# `SystemZOperand` Class
 
 
 

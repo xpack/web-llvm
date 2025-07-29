@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseSet` Class Template Reference
+# `DenseSet` Class Template
 
 <p>Implements a dense probed hash-table based set. <a href="#details">More...</a></p>
 

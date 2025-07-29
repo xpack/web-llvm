@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMConstantPoolConstant` Class Reference
+# `ARMConstantPoolConstant` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/armconstantpoolconstant">ARMConstantPoolConstant</a> - ARM-specific constant pool values for Constants, Functions, and BlockAddresses. <a href="#details">More...</a></p>
 

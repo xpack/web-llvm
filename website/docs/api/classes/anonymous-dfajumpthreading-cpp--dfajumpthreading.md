@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DFAJumpThreading` Class Reference
+# `DFAJumpThreading` Class
 
 
 

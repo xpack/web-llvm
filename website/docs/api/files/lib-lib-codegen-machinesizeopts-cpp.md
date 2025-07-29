@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSizeOpts.cpp` File Reference
+# `MachineSizeOpts.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredIterator` Class Reference
+# `PredIterator` Class
 
 <p>Iterate over both def-use and mem dependencies. <a href="#details">More...</a></p>
 

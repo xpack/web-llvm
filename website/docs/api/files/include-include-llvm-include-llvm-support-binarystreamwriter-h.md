@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamWriter.h` File Reference
+# `BinaryStreamWriter.h` File
 
 
 

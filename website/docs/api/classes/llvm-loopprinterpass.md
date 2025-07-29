@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPrinterPass` Class Reference
+# `LoopPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/loopanalysis">LoopAnalysis</a></span> results. <a href="#details">More...</a></p>
 

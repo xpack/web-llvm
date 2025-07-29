@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleContextTracker.h` File Reference
+# `SampleContextTracker.h` File
 
 <p>This file provides the interface for context-sensitive profile tracker used by CSSPGO. <a href="#details">More...</a></p>
 

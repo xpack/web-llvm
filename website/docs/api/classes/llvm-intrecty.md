@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntRecTy` Class Reference
+# `IntRecTy` Class
 
 <p>'int' - Represent an integer value of no particular size <a href="#details">More...</a></p>
 

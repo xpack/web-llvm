@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrologEpilogSGPRSaveRestoreInfo` Class Reference
+# `PrologEpilogSGPRSaveRestoreInfo` Class
 
 
 

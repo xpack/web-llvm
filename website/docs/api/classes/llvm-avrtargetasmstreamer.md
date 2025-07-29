@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRTargetAsmStreamer` Class Reference
+# `AVRTargetAsmStreamer` Class
 
 <p>A target streamer for textual <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> assembly code. <a href="#details">More...</a></p>
 

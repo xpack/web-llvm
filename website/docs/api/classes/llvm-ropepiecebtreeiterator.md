@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RopePieceBTreeIterator` Class Reference
+# `RopePieceBTreeIterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ropepiecebtreeiterator">RopePieceBTreeIterator</a> - This class provides read-only forward iteration over bytes that are in a <a href="/web-llvm/docs/api/classes/llvm/ropepiecebtree">RopePieceBTree</a>. <a href="#details">More...</a></p>
 

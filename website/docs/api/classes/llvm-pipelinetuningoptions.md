@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelineTuningOptions` Class Reference
+# `PipelineTuningOptions` Class
 
 <p>Tunable parameters for passes in the default pipelines. <a href="#details">More...</a></p>
 

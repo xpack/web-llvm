@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrackUnresolvedResolver` Class Reference
+# `TrackUnresolvedResolver` Class
 
 <p>(Optionally) delegate resolving to a sub-resolver, and keep track whether there were unresolved references. <a href="#details">More...</a></p>
 

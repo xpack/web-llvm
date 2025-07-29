@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCAliasAnalysis.h` File Reference
+# `ObjCARCAliasAnalysis.h` File
 
 <p>This file declares a simple ARC-aware AliasAnalysis using special knowledge of Objective C to enhance other optimization passes which rely on the Alias Analysis infrastructure. <a href="#details">More...</a></p>
 

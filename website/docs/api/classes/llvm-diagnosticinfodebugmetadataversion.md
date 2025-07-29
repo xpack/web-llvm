@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoDebugMetadataVersion` Class Reference
+# `DiagnosticInfoDebugMetadataVersion` Class
 
 <p>Diagnostic information for debug metadata version reporting. <a href="#details">More...</a></p>
 

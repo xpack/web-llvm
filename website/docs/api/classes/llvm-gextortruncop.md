@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GExtOrTruncOp` Class Reference
+# `GExtOrTruncOp` Class
 
 <p>Represents an integer-like extending or truncating operation. <a href="#details">More...</a></p>
 

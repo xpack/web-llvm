@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteStatepointsForGC.h` File Reference
+# `RewriteStatepointsForGC.h` File
 
 
 

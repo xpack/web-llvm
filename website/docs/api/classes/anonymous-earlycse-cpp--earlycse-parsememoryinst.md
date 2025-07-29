@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParseMemoryInst` Class Reference
+# `ParseMemoryInst` Class
 
 <p>Wrapper class to handle memory instructions, including loads, stores and intrinsic loads and stores defined by the target. <a href="#details">More...</a></p>
 

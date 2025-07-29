@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOr` Class Reference
+# `GOr` Class
 
 <p>Represents a logical or. <a href="#details">More...</a></p>
 

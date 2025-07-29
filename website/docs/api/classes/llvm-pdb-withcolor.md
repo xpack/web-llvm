@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WithColor` Class Reference
+# `WithColor` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PromoteConstant` Class Reference
+# `AArch64PromoteConstant` Class
 
 <p>Promotes interesting constant into global variables. <a href="#details">More...</a></p>
 

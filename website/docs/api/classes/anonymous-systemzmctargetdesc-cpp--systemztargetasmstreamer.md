@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZTargetAsmStreamer` Class Reference
+# `SystemZTargetAsmStreamer` Class
 
 
 

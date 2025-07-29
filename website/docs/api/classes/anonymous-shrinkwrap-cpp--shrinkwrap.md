@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShrinkWrap` Class Reference
+# `ShrinkWrap` Class
 
 <p>Class to determine where the safe point to insert the prologue and epilogue are. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiModuleSourceFilesIterator` Class Reference
+# `DbiModuleSourceFilesIterator` Class
 
 
 

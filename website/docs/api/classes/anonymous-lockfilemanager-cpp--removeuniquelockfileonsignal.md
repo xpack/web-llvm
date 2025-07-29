@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveUniqueLockFileOnSignal` Class Reference
+# `RemoveUniqueLockFileOnSignal` Class
 
 <p>An RAII helper object ensure that the unique lock file is removed. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectCreateMaterializationUnit` Class Reference
+# `SectCreateMaterializationUnit` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportIDTable` Class Reference
+# `ImportIDTable` Class
 
 
 

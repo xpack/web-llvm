@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEDwarfExpression` Class Reference
+# `DIEDwarfExpression` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfexpression">DwarfExpression</a> implementation for singular DW_AT_location. <a href="#details">More...</a></p>
 

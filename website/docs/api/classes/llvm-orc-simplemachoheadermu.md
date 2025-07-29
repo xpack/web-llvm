@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleMachOHeaderMU` Class Reference
+# `SimpleMachOHeaderMU` Class
 
 
 

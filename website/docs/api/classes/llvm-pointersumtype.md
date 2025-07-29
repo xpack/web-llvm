@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerSumType` Class Template Reference
+# `PointerSumType` Class Template
 
 <p>A sum type over pointer-like types. <a href="#details">More...</a></p>
 

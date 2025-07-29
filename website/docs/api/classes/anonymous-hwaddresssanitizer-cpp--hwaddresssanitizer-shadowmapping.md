@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowMapping` Class Reference
+# `ShadowMapping` Class
 
 <p>This struct defines the shadow mapping using the rule: If <span class="doxyComputerOutput">kFixed</span>, then shadow = (mem &gt;&gt; Scale) + Offset. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeTraceScope` Class Reference
+# `TimeTraceScope` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/timetracescope">TimeTraceScope</a> is a helper class to call the begin and end functions of the time trace profiler. <a href="#details">More...</a></p>
 

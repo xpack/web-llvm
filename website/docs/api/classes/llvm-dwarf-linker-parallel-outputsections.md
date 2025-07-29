@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputSections` Class Reference
+# `OutputSections` Class
 
 <p>This class keeps contents and offsets to the debug sections. <a href="#details">More...</a></p>
 

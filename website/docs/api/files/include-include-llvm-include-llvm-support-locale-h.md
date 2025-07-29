@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Locale.h` File Reference
+# `Locale.h` File
 
 
 

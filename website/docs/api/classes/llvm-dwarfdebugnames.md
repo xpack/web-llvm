@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugNames` Class Reference
+# `DWARFDebugNames` Class
 
 <p>.debug_names section consists of one or more units. <a href="#details">More...</a></p>
 

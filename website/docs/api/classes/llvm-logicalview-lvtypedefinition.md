@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVTypeDefinition` Class Reference
+# `LVTypeDefinition` Class
 
 
 

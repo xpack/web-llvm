@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFunction` Class Reference
+# `MachineFunction` Class
 
 
 

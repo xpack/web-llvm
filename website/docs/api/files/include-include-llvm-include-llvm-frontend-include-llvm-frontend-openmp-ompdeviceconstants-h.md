@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPDeviceConstants.h` File Reference
+# `OMPDeviceConstants.h` File
 
 <p>This file defines constans that will be used by both host and device compilation. <a href="#details">More...</a></p>
 

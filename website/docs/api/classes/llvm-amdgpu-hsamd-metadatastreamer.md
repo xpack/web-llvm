@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataStreamer` Class Reference
+# `MetadataStreamer` Class
 
 
 

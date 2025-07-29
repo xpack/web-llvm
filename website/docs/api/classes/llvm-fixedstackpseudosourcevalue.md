@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedStackPseudoSourceValue` Class Reference
+# `FixedStackPseudoSourceValue` Class
 
 <p>A specialized <a href="/web-llvm/docs/api/classes/llvm/pseudosourcevalue">PseudoSourceValue</a> for holding FixedStack values, which must include a frame index. <a href="#details">More...</a></p>
 

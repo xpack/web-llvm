@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgDeclareInst` Class Reference
+# `DbgDeclareInst` Class
 
 <p>This represents the llvm.dbg.declare instruction. <a href="#details">More...</a></p>
 

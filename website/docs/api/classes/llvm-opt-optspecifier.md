@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptSpecifier` Class Reference
+# `OptSpecifier` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/opt/optspecifier">OptSpecifier</a> - Wrapper class for abstracting references to option IDs. <a href="#details">More...</a></p>
 

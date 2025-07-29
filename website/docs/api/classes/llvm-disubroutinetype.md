@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DISubroutineType` Class Reference
+# `DISubroutineType` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/type">Type</a> array for a subprogram. <a href="#details">More...</a></p>
 

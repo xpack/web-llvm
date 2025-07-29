@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpInst` Class Reference
+# `CmpInst` Class
 
 <p>This class is the base class for the comparison instructions. <a href="#details">More...</a></p>
 

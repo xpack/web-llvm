@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGSCCPrinterPass` Class Reference
+# `CFGSCCPrinterPass` Class
 
 
 

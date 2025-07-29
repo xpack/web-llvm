@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SyntheticCountsUtils.cpp` File Reference
+# `SyntheticCountsUtils.cpp` File
 
 
 

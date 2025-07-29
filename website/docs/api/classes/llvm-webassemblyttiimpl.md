@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTTIImpl` Class Reference
+# `WebAssemblyTTIImpl` Class
 
 
 

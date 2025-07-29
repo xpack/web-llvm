@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedDbgInfoFormatSetter` Class Template Reference
+# `ScopedDbgInfoFormatSetter` Class Template
 
 <p>Used to temporarily set the debug info format of a function, module, or basic block for the duration of this object's lifetime, after which the prior state will be restored. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOptimizationRemarkEmitter.cpp` File Reference
+# `MachineOptimizationRemarkEmitter.cpp` File
 
 <p>===- <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineoptimizationremarkemitter-cpp">MachineOptimizationRemarkEmitter.cpp</a> - Opt Diagnostic -*- C++ -*—===// <a href="#details">More...</a></p>
 

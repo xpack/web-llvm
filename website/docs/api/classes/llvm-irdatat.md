@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRDataT` Class Template Reference
+# `IRDataT` Class Template
 
 
 

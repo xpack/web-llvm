@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TempLink` Class Reference
+# `TempLink` Class
 
 <p>A RAII object that creates a link upon initialization and removes it upon destruction. <a href="#details">More...</a></p>
 

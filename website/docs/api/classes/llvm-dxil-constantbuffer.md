@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantBuffer` Class Reference
+# `ConstantBuffer` Class
 
 
 

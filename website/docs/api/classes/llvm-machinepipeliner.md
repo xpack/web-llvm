@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePipeliner` Class Reference
+# `MachinePipeliner` Class
 
 <p>The main class in the implementation of the target independent software pipeliner pass. <a href="#details">More...</a></p>
 

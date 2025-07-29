@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFIRestoreRegisterEmitter` Class Reference
+# `CFIRestoreRegisterEmitter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleCostEstimator` Class Reference
+# `ShuffleCostEstimator` Class
 
 <p>Merges shuffle masks and emits final shuffle instruction, if required. <a href="#details">More...</a></p>
 

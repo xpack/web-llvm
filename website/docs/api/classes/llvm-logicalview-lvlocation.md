@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVLocation` Class Reference
+# `LVLocation` Class
 
 
 

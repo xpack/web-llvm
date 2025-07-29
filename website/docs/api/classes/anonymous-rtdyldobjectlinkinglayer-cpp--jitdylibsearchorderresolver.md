@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITDylibSearchOrderResolver` Class Reference
+# `JITDylibSearchOrderResolver` Class
 
 
 

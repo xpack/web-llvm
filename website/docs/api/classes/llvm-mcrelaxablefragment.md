@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRelaxableFragment` Class Reference
+# `MCRelaxableFragment` Class
 
 <p>A relaxable fragment holds on to its <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a>, since it may need to be relaxed during the assembler layout and relaxation stage. <a href="#details">More...</a></p>
 

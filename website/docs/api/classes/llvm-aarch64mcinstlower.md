@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MCInstLower` Class Reference
+# `AArch64MCInstLower` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/aarch64mcinstlower">AArch64MCInstLower</a> - This class is used to lower an <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> into an <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcV2CAPIHelper` Class Reference
+# `OrcV2CAPIHelper` Class
 
 
 

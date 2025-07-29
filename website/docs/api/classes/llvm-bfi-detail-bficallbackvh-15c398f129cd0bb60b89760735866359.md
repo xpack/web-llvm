@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BFICallbackVH` Class Template Reference
+# `BFICallbackVH` Class Template
 
 <p>Dummy implementation since MachineBasicBlocks aren't Values, so ValueHandles don't apply to them. <a href="#details">More...</a></p>
 

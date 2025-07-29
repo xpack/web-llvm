@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LifetimeSDNode` Class Reference
+# `LifetimeSDNode` Class
 
 <p>This <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> is used for LIFETIME_START/LIFETIME_END values, which indicate the offet and size that are started/ended in the underlying FrameIndex. <a href="#details">More...</a></p>
 

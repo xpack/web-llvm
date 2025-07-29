@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringRef` Class Reference
+# `StringRef` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-path-cpp-/stringref">StringRef</a> - Represent a constant reference to a string, i.e. <a href="#details">More...</a></p>
 

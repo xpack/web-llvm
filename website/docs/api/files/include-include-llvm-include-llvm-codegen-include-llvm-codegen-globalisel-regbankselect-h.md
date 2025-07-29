@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegBankSelect.h` File Reference
+# `RegBankSelect.h` File
 
 <p>This file describes the interface of the MachineFunctionPass responsible for assigning the generic virtual registers to register bank. <a href="#details">More...</a></p>
 

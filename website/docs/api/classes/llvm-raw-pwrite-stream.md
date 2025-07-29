@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_pwrite_stream` Class Reference
+# `raw_pwrite_stream` Class
 
 <p>An abstract base class for streams implementations that also support a pwrite operation. <a href="#details">More...</a></p>
 

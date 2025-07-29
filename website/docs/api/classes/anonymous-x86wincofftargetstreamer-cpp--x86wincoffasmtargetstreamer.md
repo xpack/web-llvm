@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinCOFFAsmTargetStreamer` Class Reference
+# `X86WinCOFFAsmTargetStreamer` Class
 
 <p>Implements Windows x86-only directives for assembly emission. <a href="#details">More...</a></p>
 

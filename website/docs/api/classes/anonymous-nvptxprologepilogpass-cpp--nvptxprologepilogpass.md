@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXPrologEpilogPass` Class Reference
+# `NVPTXPrologEpilogPass` Class
 
 
 

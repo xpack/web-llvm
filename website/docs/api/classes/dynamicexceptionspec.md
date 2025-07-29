@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicExceptionSpec` Class Reference
+# `DynamicExceptionSpec` Class
 
 
 

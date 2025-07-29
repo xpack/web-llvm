@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReadyListContainer` Class Reference
+# `ReadyListContainer` Class
 
 <p>The list holding nodes that are ready to schedule. Used by the scheduler. <a href="#details">More...</a></p>
 

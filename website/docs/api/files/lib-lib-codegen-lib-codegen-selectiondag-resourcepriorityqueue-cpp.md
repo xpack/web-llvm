@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourcePriorityQueue.cpp` File Reference
+# `ResourcePriorityQueue.cpp` File
 
 
 

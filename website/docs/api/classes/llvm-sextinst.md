@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SExtInst` Class Reference
+# `SExtInst` Class
 
 <p>This class represents a sign extension of integer types. <a href="#details">More...</a></p>
 

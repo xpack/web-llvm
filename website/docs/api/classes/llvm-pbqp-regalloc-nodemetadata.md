@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeMetadata` Class Reference
+# `NodeMetadata` Class
 
 <p>Holds solver state and other metadata relevant to each <a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> RA node. <a href="#details">More...</a></p>
 

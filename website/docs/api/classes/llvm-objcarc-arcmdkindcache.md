@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCMDKindCache` Class Reference
+# `ARCMDKindCache` Class
 
 <p>A cache of MDKinds used by various ARC optimizations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSub` Class Reference
+# `GSub` Class
 
 <p>Represents an integer subtraction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WritableBinaryStream` Class Reference
+# `WritableBinaryStream` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/binarystream">BinaryStream</a> which can be read from as well as written to. <a href="#details">More...</a></p>
 

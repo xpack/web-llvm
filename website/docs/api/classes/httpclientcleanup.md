@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPClientCleanup` Class Reference
+# `HTTPClientCleanup` Class
 
 
 

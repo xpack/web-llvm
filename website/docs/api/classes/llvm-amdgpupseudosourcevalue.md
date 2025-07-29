@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPseudoSourceValue` Class Reference
+# `AMDGPUPseudoSourceValue` Class
 
 
 

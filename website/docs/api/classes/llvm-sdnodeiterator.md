@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDNodeIterator` Class Reference
+# `SDNodeIterator` Class
 
 
 

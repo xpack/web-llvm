@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanonicalLoopInfo` Class Reference
+# `CanonicalLoopInfo` Class
 
 <p>Class to represented the control flow structure of an OpenMP canonical loop. <a href="#details">More...</a></p>
 

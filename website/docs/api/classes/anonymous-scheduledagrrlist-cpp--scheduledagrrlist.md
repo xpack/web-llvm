@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGRRList` Class Reference
+# `ScheduleDAGRRList` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-scheduledagrrlist-cpp-/scheduledagrrlist">ScheduleDAGRRList</a> - The actual register reduction list scheduler implementation. <a href="#details">More...</a></p>
 

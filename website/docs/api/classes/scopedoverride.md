@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedOverride` Class Template Reference
+# `ScopedOverride` Class Template
 
 
 

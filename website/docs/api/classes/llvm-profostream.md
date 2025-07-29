@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfOStream` Class Reference
+# `ProfOStream` Class
 
 
 

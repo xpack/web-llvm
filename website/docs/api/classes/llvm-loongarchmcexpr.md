@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMCExpr` Class Reference
+# `LoongArchMCExpr` Class
 
 
 

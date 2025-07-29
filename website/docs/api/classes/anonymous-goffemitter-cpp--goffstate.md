@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFState` Class Reference
+# `GOFFState` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenMPOptCGSCCPass` Class Reference
+# `OpenMPOptCGSCCPass` Class
 
 
 

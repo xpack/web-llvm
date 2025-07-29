@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertPointAnalysis` Class Reference
+# `InsertPointAnalysis` Class
 
 <p>Determines the latest safe point in a block in which we can insert a split, spill or other instruction related with CurLI. <a href="#details">More...</a></p>
 

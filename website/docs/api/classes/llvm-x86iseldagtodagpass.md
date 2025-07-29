@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ISelDAGToDAGPass` Class Reference
+# `X86ISelDAGToDAGPass` Class
 
 
 

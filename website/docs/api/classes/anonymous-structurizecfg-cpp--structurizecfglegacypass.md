@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructurizeCFGLegacyPass` Class Reference
+# `StructurizeCFGLegacyPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLEBFragment` Class Reference
+# `MCLEBFragment` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorOr` Class Template Reference
+# `ErrorOr` Class Template
 
 <p>Represents either an error or a value T. <a href="#details">More...</a></p>
 

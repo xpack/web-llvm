@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TargetMachine` Class Reference
+# `R600TargetMachine` Class
 
 
 

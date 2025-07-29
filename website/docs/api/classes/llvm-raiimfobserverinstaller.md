@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAIIMFObserverInstaller` Class Reference
+# `RAIIMFObserverInstaller` Class
 
 <p>A simple RAII based Observer installer. <a href="#details">More...</a></p>
 

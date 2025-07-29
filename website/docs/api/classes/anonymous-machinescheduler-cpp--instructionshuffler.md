@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionShuffler` Class Reference
+# `InstructionShuffler` Class
 
 <p>Reorder instructions as much as possible. <a href="#details">More...</a></p>
 

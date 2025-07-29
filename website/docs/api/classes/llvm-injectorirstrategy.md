@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InjectorIRStrategy` Class Reference
+# `InjectorIRStrategy` Class
 
 <p>Strategy that injects operations into the function. <a href="#details">More...</a></p>
 

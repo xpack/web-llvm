@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockMass` Class Reference
+# `BlockMass` Class
 
 <p>Mass of a block. <a href="#details">More...</a></p>
 

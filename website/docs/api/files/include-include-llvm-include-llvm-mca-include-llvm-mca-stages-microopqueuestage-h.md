@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MicroOpQueueStage.h` File Reference
+# `MicroOpQueueStage.h` File
 
 <p>This file defines a stage that implements a queue of micro opcodes. <a href="#details">More...</a></p>
 

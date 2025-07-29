@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSimilarityIdentifierWrapperPass` Class Reference
+# `IRSimilarityIdentifierWrapperPass` Class
 
 <p>An analysis pass based on legacy pass manager that runs and returns <a href="/web-llvm/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> run on the <a href="/web-llvm/docs/api/classes/llvm/module">Module</a>. <a href="#details">More...</a></p>
 

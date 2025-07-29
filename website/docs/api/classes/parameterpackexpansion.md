@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParameterPackExpansion` Class Reference
+# `ParameterPackExpansion` Class
 
 <p>A pack expansion. <a href="#details">More...</a></p>
 

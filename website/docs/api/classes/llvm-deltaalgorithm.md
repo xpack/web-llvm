@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaAlgorithm` Class Reference
+# `DeltaAlgorithm` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/deltaalgorithm">DeltaAlgorithm</a> - Implements the delta debugging algorithm (A. <a href="#details">More...</a></p>
 

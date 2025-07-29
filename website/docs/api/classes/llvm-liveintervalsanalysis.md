@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveIntervalsAnalysis` Class Reference
+# `LiveIntervalsAnalysis` Class
 
 
 

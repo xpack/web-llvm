@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `QualType` Class Reference
+# `QualType` Class
 
 
 

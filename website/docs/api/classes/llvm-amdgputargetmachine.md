@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetMachine` Class Reference
+# `AMDGPUTargetMachine` Class
 
 
 

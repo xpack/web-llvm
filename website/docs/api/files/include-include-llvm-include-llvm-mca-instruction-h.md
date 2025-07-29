@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Instruction.h` File Reference
+# `Instruction.h` File
 
 <p>This file defines abstractions used by the Pipeline to model register reads, register writes and instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVAddRecExpr` Class Reference
+# `SCEVAddRecExpr` Class
 
 <p>This node represents a polynomial recurrence on the trip count of the specified loop. <a href="#details">More...</a></p>
 

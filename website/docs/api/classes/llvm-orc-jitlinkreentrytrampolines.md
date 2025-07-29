@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkReentryTrampolines` Class Reference
+# `JITLinkReentryTrampolines` Class
 
 <p>Produces trampolines on request using JITLink. <a href="#details">More...</a></p>
 

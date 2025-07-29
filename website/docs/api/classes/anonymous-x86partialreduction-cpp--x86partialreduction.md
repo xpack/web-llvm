@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86PartialReduction` Class Reference
+# `X86PartialReduction` Class
 
 
 

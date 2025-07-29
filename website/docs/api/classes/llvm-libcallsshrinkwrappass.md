@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LibCallsShrinkWrapPass` Class Reference
+# `LibCallsShrinkWrapPass` Class
 
 
 

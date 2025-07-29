@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSimilarityAnalysis` Class Reference
+# `IRSimilarityAnalysis` Class
 
 <p>An analysis pass that runs and returns the <a href="/web-llvm/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> run on the <a href="/web-llvm/docs/api/classes/llvm/module">Module</a>. <a href="#details">More...</a></p>
 

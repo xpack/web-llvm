@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOObjectFormat.h` File Reference
+# `MachOObjectFormat.h` File
 
 
 

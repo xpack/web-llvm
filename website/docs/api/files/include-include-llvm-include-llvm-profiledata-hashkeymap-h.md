@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashKeyMap.h` File Reference
+# `HashKeyMap.h` File
 
 <p>Defines HashKeyMap template. <a href="#details">More...</a></p>
 

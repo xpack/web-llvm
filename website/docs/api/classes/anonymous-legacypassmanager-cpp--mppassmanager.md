@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MPPassManager` Class Reference
+# `MPPassManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-legacypassmanager-cpp-/mppassmanager">MPPassManager</a> manages ModulePasses and function pass managers. <a href="#details">More...</a></p>
 

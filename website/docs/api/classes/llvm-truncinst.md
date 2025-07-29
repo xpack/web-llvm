@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TruncInst` Class Reference
+# `TruncInst` Class
 
 <p>This class represents a truncation of integer types. <a href="#details">More...</a></p>
 

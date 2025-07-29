@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFELFObjectWriter` Class Reference
+# `BPFELFObjectWriter` Class
 
 
 

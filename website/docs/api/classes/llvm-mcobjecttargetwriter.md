@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCObjectTargetWriter` Class Reference
+# `MCObjectTargetWriter` Class
 
 <p>Base class for classes that define behaviour that is specific to both the target and the object format. <a href="#details">More...</a></p>
 

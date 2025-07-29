@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `STLExtras.h` File Reference
+# `STLExtras.h` File
 
 <p>This file contains some templates that are useful if you are working with the STL at all. <a href="#details">More...</a></p>
 

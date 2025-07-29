@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStringPool` Class Reference
+# `SymbolStringPool` Class
 
 <p>String pool for symbol names used by the JIT. <a href="#details">More...</a></p>
 

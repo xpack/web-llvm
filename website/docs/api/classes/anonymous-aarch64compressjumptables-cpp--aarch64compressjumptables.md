@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64CompressJumpTables` Class Reference
+# `AArch64CompressJumpTables` Class
 
 
 

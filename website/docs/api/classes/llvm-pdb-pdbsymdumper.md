@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymDumper` Class Reference
+# `PDBSymDumper` Class
 
 
 

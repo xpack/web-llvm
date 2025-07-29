@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelineSolver` Class Reference
+# `PipelineSolver` Class
 
 
 

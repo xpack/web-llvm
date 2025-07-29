@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCBoundaryAlignFragment` Class Reference
+# `MCBoundaryAlignFragment` Class
 
 <p>Represents required padding such that a particular other set of fragments does not cross a particular power-of-two boundary. <a href="#details">More...</a></p>
 

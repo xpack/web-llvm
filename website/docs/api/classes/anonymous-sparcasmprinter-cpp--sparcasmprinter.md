@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcAsmPrinter` Class Reference
+# `SparcAsmPrinter` Class
 
 
 

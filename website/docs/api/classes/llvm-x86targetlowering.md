@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TargetLowering` Class Reference
+# `X86TargetLowering` Class
 
 
 

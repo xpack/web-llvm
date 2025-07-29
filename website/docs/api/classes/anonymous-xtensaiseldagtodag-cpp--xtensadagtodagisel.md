@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaDAGToDAGISel` Class Reference
+# `XtensaDAGToDAGISel` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LibCallSimplifier` Class Reference
+# `LibCallSimplifier` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/libcallsimplifier">LibCallSimplifier</a> - This class implements a collection of optimizations that replace well formed calls to library functions with a more optimal form. <a href="#details">More...</a></p>
 

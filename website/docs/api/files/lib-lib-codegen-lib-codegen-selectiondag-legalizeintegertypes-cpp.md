@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeIntegerTypes.cpp` File Reference
+# `LegalizeIntegerTypes.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalleeSavedInfo` Class Reference
+# `CalleeSavedInfo` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/calleesavedinfo">CalleeSavedInfo</a> class tracks the information need to locate where a callee saved register is in the current frame. <a href="#details">More...</a></p>
 

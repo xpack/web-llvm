@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FusionFeature` Class Reference
+# `FusionFeature` Class
 
 
 

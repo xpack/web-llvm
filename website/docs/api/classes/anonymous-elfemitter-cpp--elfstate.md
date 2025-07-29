@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFState` Class Template Reference
+# `ELFState` Class Template
 
 <p>"Single point of truth" for the <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> file construction. <a href="#details">More...</a></p>
 

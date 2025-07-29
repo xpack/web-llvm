@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayRecycler.h` File Reference
+# `ArrayRecycler.h` File
 
 
 

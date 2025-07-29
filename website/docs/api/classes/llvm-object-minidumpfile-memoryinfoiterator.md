@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryInfoIterator` Class Reference
+# `MemoryInfoIterator` Class
 
 
 

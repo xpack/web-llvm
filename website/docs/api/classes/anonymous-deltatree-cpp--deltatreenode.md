@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaTreeNode` Class Reference
+# `DeltaTreeNode` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-deltatree-cpp-/deltatreenode">DeltaTreeNode</a> - The common part of all nodes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Legality.h` File Reference
+# `Legality.h` File
 
 
 

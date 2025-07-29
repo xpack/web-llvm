@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMUsed` Class Reference
+# `LLVMUsed` Class
 
 <p>An easy to access representation of llvm.used and llvm.compiler.used. <a href="#details">More...</a></p>
 

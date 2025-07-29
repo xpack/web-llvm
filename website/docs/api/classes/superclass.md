@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuperClass` Class Reference
+# `SuperClass` Class
 
 
 

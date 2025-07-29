@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GuardUtils.h` File Reference
+# `GuardUtils.h` File
 
 
 

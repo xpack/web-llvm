@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinCFGuard.h` File Reference
+# `WinCFGuard.h` File
 
 
 

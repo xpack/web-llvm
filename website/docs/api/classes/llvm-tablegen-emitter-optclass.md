@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptClass` Class Template Reference
+# `OptClass` Class Template
 
 <p>Convienence wrapper around <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/tablegen/emitter/opt">Opt</a></span> that registers <span class="doxyComputerOutput">EmitterClass::run</span> as the callback. <a href="#details">More...</a></p>
 

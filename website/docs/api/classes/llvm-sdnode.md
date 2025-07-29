@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDNode` Class Reference
+# `SDNode` Class
 
 <p>Represents one node in the <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a>. <a href="#details">More...</a></p>
 

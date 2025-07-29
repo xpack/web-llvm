@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBase` Class Template Reference
+# `LoopBase` Class Template
 
 <p>Instances of this class are used to represent loops that are detected in the flow graph. <a href="#details">More...</a></p>
 

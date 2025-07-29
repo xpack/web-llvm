@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaskedLoadStoreSDNode` Class Reference
+# `MaskedLoadStoreSDNode` Class
 
 <p>This base class is used to represent MLOAD and MSTORE nodes. <a href="#details">More...</a></p>
 

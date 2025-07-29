@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetObjectFile` Class Reference
+# `XCoreTargetObjectFile` Class
 
 
 

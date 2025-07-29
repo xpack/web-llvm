@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFDebugObject` Class Reference
+# `ELFDebugObject` Class
 
 <p>The current implementation of <a href="/web-llvm/docs/api/classes/llvm/orc/elfdebugobject">ELFDebugObject</a> replicates the approach used in <a href="/web-llvm/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a>: It patches executable and data section headers in the given object buffer with load-addresses of their corresponding sections in target memory. <a href="#details">More...</a></p>
 

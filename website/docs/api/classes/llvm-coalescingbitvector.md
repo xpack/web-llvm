@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoalescingBitVector` Class Template Reference
+# `CoalescingBitVector` Class Template
 
 <p>A bitvector that, under the hood, relies on an <a href="/web-llvm/docs/api/classes/llvm/intervalmap">IntervalMap</a> to coalesce elements into intervals. <a href="#details">More...</a></p>
 

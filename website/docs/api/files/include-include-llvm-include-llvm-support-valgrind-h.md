@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Valgrind.h` File Reference
+# `Valgrind.h` File
 
 
 

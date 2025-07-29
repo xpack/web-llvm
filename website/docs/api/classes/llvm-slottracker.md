@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotTracker` Class Reference
+# `SlotTracker` Class
 
 <p>This class provides computation of slot numbers for LLVM Assembly writing. <a href="#details">More...</a></p>
 

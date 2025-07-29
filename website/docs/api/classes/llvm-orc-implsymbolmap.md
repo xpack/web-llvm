@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImplSymbolMap` Class Reference
+# `ImplSymbolMap` Class
 
 
 

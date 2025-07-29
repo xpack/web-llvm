@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsAnalyzeImmediate` Class Reference
+# `MipsAnalyzeImmediate` Class
 
 
 

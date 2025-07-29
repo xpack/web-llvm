@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPrinter.h` File Reference
+# `RegionPrinter.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrumentManager` Class Reference
+# `InstrumentManager` Class
 
 <p>This class allows targets to optionally customize the logic that resolves scheduling class IDs. <a href="#details">More...</a></p>
 

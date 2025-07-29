@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNDPPCombineLegacy` Class Reference
+# `GCNDPPCombineLegacy` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinMaxIntrinsic` Class Reference
+# `MinMaxIntrinsic` Class
 
 <p>This class represents min/max intrinsics. <a href="#details">More...</a></p>
 

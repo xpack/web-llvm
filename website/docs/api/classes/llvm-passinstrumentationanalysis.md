@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInstrumentationAnalysis` Class Reference
+# `PassInstrumentationAnalysis` Class
 
 <p>Pseudo-analysis pass that exposes the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/passinstrumentation">PassInstrumentation</a></span> to pass managers. <a href="#details">More...</a></p>
 

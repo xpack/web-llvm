@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StoreInst` Class Reference
+# `StoreInst` Class
 
 
 

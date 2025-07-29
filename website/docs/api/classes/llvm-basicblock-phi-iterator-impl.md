@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `phi_iterator_impl` Class Template Reference
+# `phi_iterator_impl` Class Template
 
 <p>Iterator to walk just the phi nodes in the basic block. <a href="#details">More...</a></p>
 

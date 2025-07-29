@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamError` Class Reference
+# `BinaryStreamError` Class
 
 <p>Base class for errors originating when parsing raw PDB files. <a href="#details">More...</a></p>
 

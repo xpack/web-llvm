@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsSEInstrInfo` Class Reference
+# `MipsSEInstrInfo` Class
 
 
 

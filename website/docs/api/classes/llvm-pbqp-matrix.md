@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Matrix` Class Reference
+# `Matrix` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> <a href="/web-llvm/docs/api/classes/llvm/pbqp/matrix">Matrix</a> class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MarkupFilter.h` File Reference
+# `MarkupFilter.h` File
 
 <p>This file declares a filter that replaces symbolizer markup with human-readable expressions. <a href="#details">More...</a></p>
 

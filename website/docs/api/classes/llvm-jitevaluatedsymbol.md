@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITEvaluatedSymbol` Class Reference
+# `JITEvaluatedSymbol` Class
 
 <p>Represents a symbol that has been evaluated to an address already. <a href="#details">More...</a></p>
 

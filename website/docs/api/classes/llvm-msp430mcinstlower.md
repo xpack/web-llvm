@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430MCInstLower` Class Reference
+# `MSP430MCInstLower` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/msp430mcinstlower">MSP430MCInstLower</a> - This class is used to lower an <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> into an <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocPBQP.cpp` File Reference
+# `RegAllocPBQP.cpp` File
 
 
 

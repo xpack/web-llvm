@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Formatters.h` File Reference
+# `Formatters.h` File
 
 
 

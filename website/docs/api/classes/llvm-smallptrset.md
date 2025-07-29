@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPtrSet` Class Template Reference
+# `SmallPtrSet` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallptrset">SmallPtrSet</a> - This class implements a set which is optimized for holding SmallSize or less elements. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignmentCalcHelper` Class Template Reference
+# `AlignmentCalcHelper` Class Template
 
 <p>Helper template to calculate the max alignment requirement for a set of objects. <a href="#details">More...</a></p>
 

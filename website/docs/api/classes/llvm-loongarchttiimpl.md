@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchTTIImpl` Class Reference
+# `LoongArchTTIImpl` Class
 
 
 

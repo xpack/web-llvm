@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIGfx10CacheControl` Class Reference
+# `SIGfx10CacheControl` Class
 
 
 

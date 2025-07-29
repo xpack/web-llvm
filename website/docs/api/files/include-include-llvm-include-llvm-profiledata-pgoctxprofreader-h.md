@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCtxProfReader.h` File Reference
+# `PGOCtxProfReader.h` File
 
 <p>Reader for contextual iFDO profile, which comes in bitstream format. <a href="#details">More...</a></p>
 

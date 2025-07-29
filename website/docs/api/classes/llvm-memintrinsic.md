@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemIntrinsic` Class Reference
+# `MemIntrinsic` Class
 
 <p>This is the common base class for memset/memcpy/memmove. <a href="#details">More...</a></p>
 

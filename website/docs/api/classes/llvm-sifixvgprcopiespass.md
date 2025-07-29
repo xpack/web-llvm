@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIFixVGPRCopiesPass` Class Reference
+# `SIFixVGPRCopiesPass` Class
 
 
 

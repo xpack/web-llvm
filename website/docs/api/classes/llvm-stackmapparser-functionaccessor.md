@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionAccessor` Class Reference
+# `FunctionAccessor` Class
 
 <p>Accessor for function records. <a href="#details">More...</a></p>
 

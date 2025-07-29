@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterEHFrames.cpp` File Reference
+# `RegisterEHFrames.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInterchangeProfitability` Class Reference
+# `LoopInterchangeProfitability` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-loopinterchange-cpp-/loopinterchangeprofitability">LoopInterchangeProfitability</a> checks if it is profitable to interchange the loop. <a href="#details">More...</a></p>
 

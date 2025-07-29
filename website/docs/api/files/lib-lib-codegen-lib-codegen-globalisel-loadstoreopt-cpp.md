@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadStoreOpt.cpp` File Reference
+# `LoadStoreOpt.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/loadstoreopt">LoadStoreOpt</a> optimization pass. <a href="#details">More...</a></p>
 

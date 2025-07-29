@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILocalVariable` Class Reference
+# `DILocalVariable` Class
 
 <p>Local variable. <a href="#details">More...</a></p>
 

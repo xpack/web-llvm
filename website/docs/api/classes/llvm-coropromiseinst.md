@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroPromiseInst` Class Reference
+# `CoroPromiseInst` Class
 
 <p>This represents the llvm.coro.promise instruction. <a href="#details">More...</a></p>
 

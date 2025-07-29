@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DTSortableEntry` Class Reference
+# `DTSortableEntry` Class
 
 
 

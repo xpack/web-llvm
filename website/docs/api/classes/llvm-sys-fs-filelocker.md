@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileLocker` Class Reference
+# `FileLocker` Class
 
 <p>RAII class that facilitates file locking. <a href="#details">More...</a></p>
 

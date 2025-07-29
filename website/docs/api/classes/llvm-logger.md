@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Logger` Class Reference
+# `Logger` Class
 
 <p>Logging utility - given an ordered specification of features, and assuming a scalar reward, allow logging feature values and rewards. <a href="#details">More...</a></p>
 

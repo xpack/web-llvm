@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonFrameLowering` Class Reference
+# `HexagonFrameLowering` Class
 
 
 

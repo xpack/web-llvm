@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeadLaneDetector` Class Reference
+# `DeadLaneDetector` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430TargetELFStreamer` Class Reference
+# `MSP430TargetELFStreamer` Class
 
 
 

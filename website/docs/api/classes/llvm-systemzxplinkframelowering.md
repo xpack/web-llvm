@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZXPLINKFrameLowering` Class Reference
+# `SystemZXPLINKFrameLowering` Class
 
 
 

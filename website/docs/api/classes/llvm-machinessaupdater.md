@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSSAUpdater` Class Reference
+# `MachineSSAUpdater` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinessaupdater">MachineSSAUpdater</a> - This class updates SSA form for a set of virtual registers defined in multiple blocks. <a href="#details">More...</a></p>
 

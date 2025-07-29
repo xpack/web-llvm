@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionDXContainer.h` File Reference
+# `MCSectionDXContainer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrIgnore` Class Reference
+# `InstrIgnore` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> Converter which ignores the given instruction. <a href="#details">More...</a></p>
 

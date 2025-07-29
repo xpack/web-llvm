@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGRRList.cpp` File Reference
+# `ScheduleDAGRRList.cpp` File
 
 
 

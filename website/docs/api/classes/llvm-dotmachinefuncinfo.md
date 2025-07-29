@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DOTMachineFuncInfo` Class Reference
+# `DOTMachineFuncInfo` Class
 
 
 

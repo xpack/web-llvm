@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstPrinter` Class Reference
+# `M68kInstPrinter` Class
 
 
 

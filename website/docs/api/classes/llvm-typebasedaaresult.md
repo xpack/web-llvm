@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeBasedAAResult` Class Reference
+# `TypeBasedAAResult` Class
 
 <p>A simple <a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a> result that uses TBAA metadata to answer queries. <a href="#details">More...</a></p>
 

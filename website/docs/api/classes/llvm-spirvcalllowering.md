@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVCallLowering` Class Reference
+# `SPIRVCallLowering` Class
 
 
 

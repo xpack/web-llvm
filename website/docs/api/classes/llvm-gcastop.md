@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCastOp` Class Reference
+# `GCastOp` Class
 
 <p>Represents a cast operation. <a href="#details">More...</a></p>
 

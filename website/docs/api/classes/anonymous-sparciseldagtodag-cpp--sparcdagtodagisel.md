@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcDAGToDAGISel` Class Reference
+# `SparcDAGToDAGISel` Class
 
 
 

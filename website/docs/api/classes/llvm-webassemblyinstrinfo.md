@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyInstrInfo` Class Reference
+# `WebAssemblyInstrInfo` Class
 
 
 

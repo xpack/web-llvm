@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkRedirectableSymbolManager.cpp` File Reference
+# `JITLinkRedirectableSymbolManager.cpp` File
 
 
 

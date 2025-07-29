@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RopePieceBTreeLeaf` Class Reference
+# `RopePieceBTreeLeaf` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreeleaf">RopePieceBTreeLeaf</a> - Directly manages up to '2*WidthFactor' <a href="/web-llvm/docs/api/structs/llvm/ropepiece">RopePiece</a> nodes. <a href="#details">More...</a></p>
 

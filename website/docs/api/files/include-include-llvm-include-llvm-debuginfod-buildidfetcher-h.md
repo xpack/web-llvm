@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuildIDFetcher.h` File Reference
+# `BuildIDFetcher.h` File
 
 <p>This file declares a Build ID fetcher implementation for obtaining debug info from debuginfod. <a href="#details">More...</a></p>
 

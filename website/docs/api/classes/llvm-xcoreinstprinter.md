@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreInstPrinter` Class Reference
+# `XCoreInstPrinter` Class
 
 
 

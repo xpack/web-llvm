@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OnDiskChainedHashTableGenerator` Class Template Reference
+# `OnDiskChainedHashTableGenerator` Class Template
 
 <p>Generates an on disk hash table. <a href="#details">More...</a></p>
 

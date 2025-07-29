@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryInfoWrapperPass` Class Reference
+# `ProfileSummaryInfoWrapperPass` Class
 
 <p>An analysis pass based on legacy pass manager to deliver <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>. <a href="#details">More...</a></p>
 

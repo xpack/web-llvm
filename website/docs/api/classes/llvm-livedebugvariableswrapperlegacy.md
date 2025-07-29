@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveDebugVariablesWrapperLegacy` Class Reference
+# `LiveDebugVariablesWrapperLegacy` Class
 
 
 

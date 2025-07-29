@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContiguousBlobAccumulator` Class Reference
+# `ContiguousBlobAccumulator` Class
 
 
 

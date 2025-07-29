@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectionManager.cpp` File Reference
+# `RedirectionManager.cpp` File
 
 
 

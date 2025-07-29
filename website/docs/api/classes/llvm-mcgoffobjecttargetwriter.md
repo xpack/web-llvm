@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCGOFFObjectTargetWriter` Class Reference
+# `MCGOFFObjectTargetWriter` Class
 
 
 

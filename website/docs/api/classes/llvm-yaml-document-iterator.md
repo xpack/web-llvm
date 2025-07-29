@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `document_iterator` Class Reference
+# `document_iterator` Class
 
 <p>Iterator abstraction for Documents over a <a href="/web-llvm/docs/api/classes/llvm/yaml/stream">Stream</a>. <a href="#details">More...</a></p>
 

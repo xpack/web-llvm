@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolizableModule.h` File Reference
+# `SymbolizableModule.h` File
 
 
 

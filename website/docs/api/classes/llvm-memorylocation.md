@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryLocation` Class Reference
+# `MemoryLocation` Class
 
 <p>Representation for a specific memory location. <a href="#details">More...</a></p>
 

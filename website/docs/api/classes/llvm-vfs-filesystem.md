@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileSystem` Class Reference
+# `FileSystem` Class
 
 <p>The virtual file system interface. <a href="#details">More...</a></p>
 

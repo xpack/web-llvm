@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolSet.h` File Reference
+# `SymbolSet.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectFile` Class Reference
+# `ObjectFile` Class
 
 <p>This class is the base class for all object file types. <a href="#details">More...</a></p>
 

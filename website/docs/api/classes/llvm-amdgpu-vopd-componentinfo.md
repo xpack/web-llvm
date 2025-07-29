@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComponentInfo` Class Reference
+# `ComponentInfo` Class
 
 
 

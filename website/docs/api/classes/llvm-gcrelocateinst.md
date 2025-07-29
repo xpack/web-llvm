@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCRelocateInst` Class Reference
+# `GCRelocateInst` Class
 
 <p>Represents calls to the gc.relocate intrinsic. <a href="#details">More...</a></p>
 

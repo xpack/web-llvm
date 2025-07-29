@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsAsmPrinter` Class Reference
+# `MipsAsmPrinter` Class
 
 
 

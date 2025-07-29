@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordPrinter` Class Reference
+# `RecordPrinter` Class
 
 
 

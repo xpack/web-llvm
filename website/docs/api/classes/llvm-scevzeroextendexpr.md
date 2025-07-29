@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVZeroExtendExpr` Class Reference
+# `SCEVZeroExtendExpr` Class
 
 <p>This class represents a zero extension of a small integer value to a larger integer value. <a href="#details">More...</a></p>
 

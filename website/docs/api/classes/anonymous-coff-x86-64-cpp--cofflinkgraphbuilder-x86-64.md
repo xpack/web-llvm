@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFLinkGraphBuilder_x86_64` Class Reference
+# `COFFLinkGraphBuilder_x86_64` Class
 
 
 

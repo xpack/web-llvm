@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Binary.h` File Reference
+# `Binary.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeArray` Class Reference
+# `BTFTypeArray` Class
 
 <p>Handle array type. <a href="#details">More...</a></p>
 

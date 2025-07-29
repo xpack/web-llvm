@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcurrentHashTableInfoByPtr` Class Template Reference
+# `ConcurrentHashTableInfoByPtr` Class Template
 
 <p>ConcurrentHashTable - is a resizeable concurrent hashtable. <a href="#details">More...</a></p>
 

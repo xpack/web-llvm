@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AShrOperator` Class Reference
+# `AShrOperator` Class
 
 
 

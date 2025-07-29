@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoSourceValue` Class Reference
+# `PseudoSourceValue` Class
 
 <p>Special value supplied for machine level alias analysis. <a href="#details">More...</a></p>
 

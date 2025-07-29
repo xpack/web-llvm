@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordLookupTrait` Class Reference
+# `RecordLookupTrait` Class
 
 
 

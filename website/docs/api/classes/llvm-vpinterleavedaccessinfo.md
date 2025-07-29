@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPInterleavedAccessInfo` Class Reference
+# `VPInterleavedAccessInfo` Class
 
 
 

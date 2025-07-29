@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVProfiler.h` File Reference
+# `GCOVProfiler.h` File
 
 <p>This file provides the interface for the GCOV style profiler pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorkListMaintainerImpl` Class Template Reference
+# `WorkListMaintainerImpl` Class Template
 
 <p>A configurable <a href="/web-llvm/docs/api/classes/combiner/worklistmaintainer">WorkListMaintainer</a> implementation. <a href="#details">More...</a></p>
 

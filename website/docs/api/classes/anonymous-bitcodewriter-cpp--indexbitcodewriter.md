@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexBitcodeWriter` Class Reference
+# `IndexBitcodeWriter` Class
 
 <p>Class to manage the bitcode writing for a combined index. <a href="#details">More...</a></p>
 

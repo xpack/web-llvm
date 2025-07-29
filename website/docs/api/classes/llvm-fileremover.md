@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileRemover` Class Reference
+# `FileRemover` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/fileremover">FileRemover</a> - This class is a simple object meant to be stack allocated. <a href="#details">More...</a></p>
 

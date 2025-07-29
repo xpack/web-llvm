@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInstrInfo` Class Reference
+# `SIInstrInfo` Class
 
 
 

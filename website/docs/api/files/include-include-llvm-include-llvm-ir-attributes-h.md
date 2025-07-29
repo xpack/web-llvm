@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Attributes.h` File Reference
+# `Attributes.h` File
 
 <p>This file contains the simple types necessary to represent the attributes associated with functions and their calls. <a href="#details">More...</a></p>
 

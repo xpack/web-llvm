@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRMover.h` File Reference
+# `IRMover.h` File
 
 
 

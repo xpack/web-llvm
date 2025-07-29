@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MCCodeEmitter` Class Reference
+# `R600MCCodeEmitter` Class
 
 
 

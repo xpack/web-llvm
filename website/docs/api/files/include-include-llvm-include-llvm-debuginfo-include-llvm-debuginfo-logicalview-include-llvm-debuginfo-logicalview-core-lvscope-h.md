@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScope.h` File Reference
+# `LVScope.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpillCosts` Class Reference
+# `SpillCosts` Class
 
 <p>Set spill costs for each node in the <a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> reg-alloc graph. <a href="#details">More...</a></p>
 

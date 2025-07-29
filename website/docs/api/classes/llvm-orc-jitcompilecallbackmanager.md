@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITCompileCallbackManager` Class Reference
+# `JITCompileCallbackManager` Class
 
 <p>Target-independent base class for compile callback management. <a href="#details">More...</a></p>
 

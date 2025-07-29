@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopRotation.h` File Reference
+# `LoopRotation.h` File
 
 
 

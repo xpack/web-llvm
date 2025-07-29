@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocFastPass` Class Reference
+# `RegAllocFastPass` Class
 
 
 

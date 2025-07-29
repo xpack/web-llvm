@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantFPSDNode` Class Reference
+# `ConstantFPSDNode` Class
 
 
 

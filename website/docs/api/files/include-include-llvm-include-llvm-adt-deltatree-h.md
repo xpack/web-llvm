@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaTree.h` File Reference
+# `DeltaTree.h` File
 
 
 

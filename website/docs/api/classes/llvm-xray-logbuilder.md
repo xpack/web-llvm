@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LogBuilder` Class Reference
+# `LogBuilder` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/xray/logbuilder">LogBuilder</a> class allows for creating ad-hoc collections of records through the <span class="doxyComputerOutput">add&lt;...&gt;(...)</span> function. <a href="#details">More...</a></p>
 

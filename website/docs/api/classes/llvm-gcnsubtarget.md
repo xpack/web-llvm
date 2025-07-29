@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNSubtarget` Class Reference
+# `GCNSubtarget` Class
 
 
 

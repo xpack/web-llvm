@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRangeCalc` Class Reference
+# `LiveRangeCalc` Class
 
 
 

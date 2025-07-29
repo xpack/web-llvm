@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDLoc` Class Reference
+# `SDLoc` Class
 
 <p>Wrapper class for IR location info (IR ordering and <a href="/web-llvm/docs/api/classes/llvm/debugloc">DebugLoc</a>) to be passed into <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> creation functions. <a href="#details">More...</a></p>
 

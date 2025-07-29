@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MachineCFGStructurizer` Class Reference
+# `R600MachineCFGStructurizer` Class
 
 
 

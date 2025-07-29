@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NestedTypeRecord` Class Reference
+# `NestedTypeRecord` Class
 
 
 

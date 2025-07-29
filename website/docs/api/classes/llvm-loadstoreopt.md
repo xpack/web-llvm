@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadStoreOpt` Class Reference
+# `LoadStoreOpt` Class
 
 
 

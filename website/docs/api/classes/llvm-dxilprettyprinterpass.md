@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILPrettyPrinterPass` Class Reference
+# `DXILPrettyPrinterPass` Class
 
 <p>A pass that prints resources in a format suitable for textual DXIL. <a href="#details">More...</a></p>
 

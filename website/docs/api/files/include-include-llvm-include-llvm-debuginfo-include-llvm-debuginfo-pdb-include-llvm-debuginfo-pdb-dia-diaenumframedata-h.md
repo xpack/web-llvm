@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumFrameData.h` File Reference
+# `DIAEnumFrameData.h` File
 
 
 

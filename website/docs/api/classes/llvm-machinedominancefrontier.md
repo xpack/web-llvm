@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineDominanceFrontier` Class Reference
+# `MachineDominanceFrontier` Class
 
 
 

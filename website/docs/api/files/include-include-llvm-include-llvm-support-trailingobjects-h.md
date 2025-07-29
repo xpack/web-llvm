@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrailingObjects.h` File Reference
+# `TrailingObjects.h` File
 
 <p>This header defines support for implementing classes that have some trailing object (or arrays of objects) appended to them. <a href="#details">More...</a></p>
 

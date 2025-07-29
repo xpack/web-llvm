@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCodeGenPreparePass` Class Reference
+# `AMDGPUCodeGenPreparePass` Class
 
 
 

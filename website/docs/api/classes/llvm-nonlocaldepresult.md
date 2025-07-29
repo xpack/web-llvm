@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonLocalDepResult` Class Reference
+# `NonLocalDepResult` Class
 
 <p>This is a result from a NonLocal dependence query. <a href="#details">More...</a></p>
 

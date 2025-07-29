@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetElementPtrConstantExpr` Class Reference
+# `GetElementPtrConstantExpr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/getelementptrconstantexpr">GetElementPtrConstantExpr</a> - This class is private to <a href="/web-llvm/docs/api/files/lib/lib/ir/constants-cpp">Constants.cpp</a>, and is used behind the scenes to implement getelementptr constant exprs. <a href="#details">More...</a></p>
 

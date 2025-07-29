@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLLazyJIT` Class Reference
+# `LLLazyJIT` Class
 
 <p>An extended version of <a href="/web-llvm/docs/api/classes/llvm/orc/lljit">LLJIT</a> that supports lazy function-at-a-time compilation of LLVM IR. <a href="#details">More...</a></p>
 

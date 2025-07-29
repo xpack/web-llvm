@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableMapRef` Class Template Reference
+# `ImmutableMapRef` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParameterPack` Class Reference
+# `ParameterPack` Class
 
 <p>An unexpanded parameter pack (either in the expression or type context). <a href="#details">More...</a></p>
 

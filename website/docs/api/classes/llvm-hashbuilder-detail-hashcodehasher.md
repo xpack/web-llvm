@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashCodeHasher` Class Reference
+# `HashCodeHasher` Class
 
 
 

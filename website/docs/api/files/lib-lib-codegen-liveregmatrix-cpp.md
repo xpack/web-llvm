@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegMatrix.cpp` File Reference
+# `LiveRegMatrix.cpp` File
 
 
 

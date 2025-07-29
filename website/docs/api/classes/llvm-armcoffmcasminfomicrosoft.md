@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMCOFFMCAsmInfoMicrosoft` Class Reference
+# `ARMCOFFMCAsmInfoMicrosoft` Class
 
 
 

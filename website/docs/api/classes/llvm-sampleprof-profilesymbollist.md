@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSymbolList` Class Reference
+# `ProfileSymbolList` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sampleprof/profilesymbollist">ProfileSymbolList</a> records the list of function symbols shown up in the binary used to generate the profile. <a href="#details">More...</a></p>
 

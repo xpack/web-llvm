@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMCallLowering` Class Reference
+# `ARMCallLowering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCGenInstrInfo` Class Reference
+# `ARCGenInstrInfo` Class
 
 
 

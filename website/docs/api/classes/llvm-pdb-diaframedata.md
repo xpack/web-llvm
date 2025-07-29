@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAFrameData` Class Reference
+# `DIAFrameData` Class
 
 
 

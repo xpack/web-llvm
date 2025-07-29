@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameIndexSDNode` Class Reference
+# `FrameIndexSDNode` Class
 
 
 

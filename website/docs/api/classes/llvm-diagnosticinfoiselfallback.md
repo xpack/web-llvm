@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoISelFallback` Class Reference
+# `DiagnosticInfoISelFallback` Class
 
 <p>Diagnostic information for ISel fallback path. <a href="#details">More...</a></p>
 

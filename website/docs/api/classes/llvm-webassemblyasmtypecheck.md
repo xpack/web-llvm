@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmTypeCheck` Class Reference
+# `WebAssemblyAsmTypeCheck` Class
 
 
 

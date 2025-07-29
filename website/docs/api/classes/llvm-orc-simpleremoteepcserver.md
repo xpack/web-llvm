@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleRemoteEPCServer` Class Reference
+# `SimpleRemoteEPCServer` Class
 
 <p>A simple EPC server implementation. <a href="#details">More...</a></p>
 

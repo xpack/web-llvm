@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamRefBase` Class Template Reference
+# `BinaryStreamRefBase` Class Template
 
 <p>Common stuff for mutable and immutable StreamRefs. <a href="#details">More...</a></p>
 

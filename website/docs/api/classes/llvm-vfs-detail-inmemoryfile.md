@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemoryFile` Class Reference
+# `InMemoryFile` Class
 
 
 

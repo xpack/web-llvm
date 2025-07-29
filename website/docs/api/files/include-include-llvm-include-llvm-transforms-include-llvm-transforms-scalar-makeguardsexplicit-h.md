@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MakeGuardsExplicit.h` File Reference
+# `MakeGuardsExplicit.h` File
 
 
 

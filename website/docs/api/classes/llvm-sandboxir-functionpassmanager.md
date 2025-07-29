@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPassManager` Class Reference
+# `FunctionPassManager` Class
 
 
 

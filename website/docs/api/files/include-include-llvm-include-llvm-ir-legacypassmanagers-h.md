@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyPassManagers.h` File Reference
+# `LegacyPassManagers.h` File
 
 
 

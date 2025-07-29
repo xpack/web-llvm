@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionSym` Class Reference
+# `SectionSym` Class
 
 
 

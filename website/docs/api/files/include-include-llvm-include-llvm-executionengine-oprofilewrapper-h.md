@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OProfileWrapper.h` File Reference
+# `OProfileWrapper.h` File
 
 
 

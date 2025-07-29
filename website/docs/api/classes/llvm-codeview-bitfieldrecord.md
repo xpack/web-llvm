@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitFieldRecord` Class Reference
+# `BitFieldRecord` Class
 
 
 

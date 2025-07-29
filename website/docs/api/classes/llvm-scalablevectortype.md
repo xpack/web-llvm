@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalableVectorType` Class Reference
+# `ScalableVectorType` Class
 
 <p>Class to represent scalable SIMD vectors. <a href="#details">More...</a></p>
 

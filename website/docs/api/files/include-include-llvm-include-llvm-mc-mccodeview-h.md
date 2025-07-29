@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCodeView.h` File Reference
+# `MCCodeView.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCAsmPrinter` Class Reference
+# `PPCAsmPrinter` Class
 
 
 

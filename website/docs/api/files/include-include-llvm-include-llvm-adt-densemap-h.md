@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMap.h` File Reference
+# `DenseMap.h` File
 
 <p>This file defines the DenseMap class. <a href="#details">More...</a></p>
 

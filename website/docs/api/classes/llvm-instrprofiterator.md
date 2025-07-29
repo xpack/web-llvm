@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfIterator` Class Template Reference
+# `InstrProfIterator` Class Template
 
 <p>A file format agnostic iterator over profiling data. <a href="#details">More...</a></p>
 

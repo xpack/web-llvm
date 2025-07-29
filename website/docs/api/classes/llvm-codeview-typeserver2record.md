@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeServer2Record` Class Reference
+# `TypeServer2Record` Class
 
 
 

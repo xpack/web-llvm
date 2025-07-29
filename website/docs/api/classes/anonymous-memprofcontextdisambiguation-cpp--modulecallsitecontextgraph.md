@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleCallsiteContextGraph` Class Reference
+# `ModuleCallsiteContextGraph` Class
 
 <p>CRTP derived class for graphs built from IR (regular LTO). <a href="#details">More...</a></p>
 

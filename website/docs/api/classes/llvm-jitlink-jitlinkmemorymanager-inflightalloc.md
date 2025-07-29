@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InFlightAlloc` Class Reference
+# `InFlightAlloc` Class
 
 <p>Represents an allocation which has not been finalized yet. <a href="#details">More...</a></p>
 

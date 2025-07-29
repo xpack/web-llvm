@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizationRemarkAnalysisFPCommute` Class Reference
+# `OptimizationRemarkAnalysisFPCommute` Class
 
 <p>Diagnostic information for optimization analysis remarks related to floating-point non-commutativity. <a href="#details">More...</a></p>
 

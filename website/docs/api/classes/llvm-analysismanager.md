@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisManager` Class Template Reference
+# `AnalysisManager` Class Template
 
 <p>A container for analyses that lazily runs them and caches their results. <a href="#details">More...</a></p>
 

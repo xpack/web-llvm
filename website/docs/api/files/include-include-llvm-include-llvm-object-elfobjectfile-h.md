@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFObjectFile.h` File Reference
+# `ELFObjectFile.h` File
 
 
 

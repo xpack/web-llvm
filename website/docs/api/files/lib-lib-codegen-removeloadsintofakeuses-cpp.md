@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveLoadsIntoFakeUses.cpp` File Reference
+# `RemoveLoadsIntoFakeUses.cpp` File
 
 <p>The FAKE_USE instruction is used to preserve certain values through optimizations for the sake of debugging. <a href="#details">More...</a></p>
 

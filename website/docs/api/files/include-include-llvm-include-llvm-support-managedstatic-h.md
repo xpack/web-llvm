@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ManagedStatic.h` File Reference
+# `ManagedStatic.h` File
 
 
 

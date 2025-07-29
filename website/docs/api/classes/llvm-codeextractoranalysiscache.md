@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeExtractorAnalysisCache` Class Reference
+# `CodeExtractorAnalysisCache` Class
 
 <p>A cache for the <a href="/web-llvm/docs/api/classes/llvm/codeextractor">CodeExtractor</a> analysis. <a href="#details">More...</a></p>
 

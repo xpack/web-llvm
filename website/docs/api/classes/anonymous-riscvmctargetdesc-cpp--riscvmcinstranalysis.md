@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMCInstrAnalysis` Class Reference
+# `RISCVMCInstrAnalysis` Class
 
 
 

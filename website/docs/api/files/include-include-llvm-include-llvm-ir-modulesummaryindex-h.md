@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryIndex.h` File Reference
+# `ModuleSummaryIndex.h` File
 
 <p><a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/ir/modulesummaryindex-h">ModuleSummaryIndex.h</a> This file contains the declarations the classes that hold the module index and summary for function importing. <a href="#details">More...</a></p>
 

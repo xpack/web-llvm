@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ExpandPseudo` Class Reference
+# `AArch64ExpandPseudo` Class
 
 
 

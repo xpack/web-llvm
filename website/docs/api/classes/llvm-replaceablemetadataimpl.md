@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplaceableMetadataImpl` Class Reference
+# `ReplaceableMetadataImpl` Class
 
 <p>Shared implementation of use-lists for replaceable metadata. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnsetInit` Class Reference
+# `UnsetInit` Class
 
 <p>'?' - Represents an uninitialized value. <a href="#details">More...</a></p>
 

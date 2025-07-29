@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnrollCostEstimator` Class Reference
+# `UnrollCostEstimator` Class
 
 <p>Produce an estimate of the unrolled cost of the specified loop. <a href="#details">More...</a></p>
 

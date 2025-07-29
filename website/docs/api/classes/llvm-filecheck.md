@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCheck` Class Reference
+# `FileCheck` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/filecheck">FileCheck</a> class takes the request and exposes various methods that use information from the request. <a href="#details">More...</a></p>
 

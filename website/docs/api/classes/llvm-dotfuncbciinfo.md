@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DotFuncBCIInfo` Class Reference
+# `DotFuncBCIInfo` Class
 
 
 

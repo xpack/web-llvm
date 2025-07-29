@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockAddressMap` Class Reference
+# `BlockAddressMap` Class
 
 <p>Enables easy lookup of blocks by addresses. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceMgr` Class Reference
+# `SourceMgr` Class
 
 <p>This owns the files read by a parser, handles include stacks, and handles diagnostic wrangling. <a href="#details">More...</a></p>
 

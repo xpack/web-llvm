@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVVMIntrRange` Class Reference
+# `NVVMIntrRange` Class
 
 
 

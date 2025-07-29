@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFStringTable` Class Reference
+# `BTFStringTable` Class
 
 <p>String table. <a href="#details">More...</a></p>
 

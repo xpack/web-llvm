@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinFixupBufferSecurityCheckPass` Class Reference
+# `X86WinFixupBufferSecurityCheckPass` Class
 
 
 

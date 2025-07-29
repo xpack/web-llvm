@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpressionLiteral` Class Reference
+# `ExpressionLiteral` Class
 
 <p>Class representing an unsigned literal in the AST of an expression. <a href="#details">More...</a></p>
 

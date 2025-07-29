@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COM.h` File Reference
+# `COM.h` File
 
 <p>Provides a library for accessing COM functionality of the Host OS. <a href="#details">More...</a></p>
 

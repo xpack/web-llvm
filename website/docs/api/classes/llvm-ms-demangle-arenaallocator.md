@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArenaAllocator` Class Reference
+# `ArenaAllocator` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoisonValue` Class Reference
+# `PoisonValue` Class
 
 <p>In order to facilitate speculative execution, many instructions do not invoke immediate undefined behavior when provided with illegal operands, and return a poison value instead. <a href="#details">More...</a></p>
 

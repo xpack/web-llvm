@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackLifetime.h` File Reference
+# `StackLifetime.h` File
 
 
 

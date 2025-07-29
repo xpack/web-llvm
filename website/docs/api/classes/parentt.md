@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParentT` Class Reference
+# `ParentT` Class
 
 
 

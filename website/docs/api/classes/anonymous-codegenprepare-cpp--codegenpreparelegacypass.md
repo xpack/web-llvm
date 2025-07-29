@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenPrepareLegacyPass` Class Reference
+# `CodeGenPrepareLegacyPass` Class
 
 
 

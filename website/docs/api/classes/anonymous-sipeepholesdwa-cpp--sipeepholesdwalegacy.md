@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPeepholeSDWALegacy` Class Reference
+# `SIPeepholeSDWALegacy` Class
 
 
 

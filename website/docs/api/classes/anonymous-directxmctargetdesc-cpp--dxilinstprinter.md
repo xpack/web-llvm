@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILInstPrinter` Class Reference
+# `DXILInstPrinter` Class
 
 
 

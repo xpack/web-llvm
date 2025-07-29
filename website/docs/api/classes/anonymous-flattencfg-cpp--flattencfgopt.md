@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlattenCFGOpt` Class Reference
+# `FlattenCFGOpt` Class
 
 
 

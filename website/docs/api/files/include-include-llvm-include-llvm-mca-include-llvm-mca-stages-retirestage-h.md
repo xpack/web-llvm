@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetireStage.h` File Reference
+# `RetireStage.h` File
 
 <p>This file defines the retire stage of a default instruction pipeline. <a href="#details">More...</a></p>
 

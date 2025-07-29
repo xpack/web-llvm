@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegUsageInfoCollector.h` File Reference
+# `RegUsageInfoCollector.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFVCRuntimeBootstrapper` Class Reference
+# `COFFVCRuntimeBootstrapper` Class
 
 <p>Bootstraps the vc runtime within jitdylibs. <a href="#details">More...</a></p>
 

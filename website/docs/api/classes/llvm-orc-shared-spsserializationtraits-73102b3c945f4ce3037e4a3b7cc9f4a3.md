@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>Serialization for <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spsempty">SPSEmpty</a> type. <a href="#details">More...</a></p>
 

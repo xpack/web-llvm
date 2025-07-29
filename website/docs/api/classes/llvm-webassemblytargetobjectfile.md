@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetObjectFile` Class Reference
+# `WebAssemblyTargetObjectFile` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFYAML.h` File Reference
+# `ELFYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of ELF. <a href="#details">More...</a></p>
 

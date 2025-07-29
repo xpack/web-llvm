@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphWriter` Class Template Reference
+# `GraphWriter` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStringPtrBase` Class Reference
+# `SymbolStringPtrBase` Class
 
 <p>Base class for both owning and non-owning symbol-string ptrs. <a href="#details">More...</a></p>
 

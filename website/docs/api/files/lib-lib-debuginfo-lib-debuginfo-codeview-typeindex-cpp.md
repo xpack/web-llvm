@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIndex.cpp` File Reference
+# `TypeIndex.cpp` File
 
 
 

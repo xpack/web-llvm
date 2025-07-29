@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeEntryBody` Class Reference
+# `TypeEntryBody` Class
 
 <p>Keeps cloned data for the type <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

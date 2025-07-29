@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCGenericJITLinkMemoryManager` Class Reference
+# `EPCGenericJITLinkMemoryManager` Class
 
 
 

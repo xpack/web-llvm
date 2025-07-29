@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Trace` Class Reference
+# `Trace` Class
 
 <p>A trace represents a plausible sequence of executed basic blocks that passes through the current basic block one. <a href="#details">More...</a></p>
 

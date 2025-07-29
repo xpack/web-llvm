@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AIXException` Class Reference
+# `AIXException` Class
 
 
 

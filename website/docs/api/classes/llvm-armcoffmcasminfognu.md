@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMCOFFMCAsmInfoGNU` Class Reference
+# `ARMCOFFMCAsmInfoGNU` Class
 
 
 

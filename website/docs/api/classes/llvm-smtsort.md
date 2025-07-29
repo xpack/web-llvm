@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMTSort` Class Reference
+# `SMTSort` Class
 
 <p>Generic base class for SMT sorts. <a href="#details">More...</a></p>
 

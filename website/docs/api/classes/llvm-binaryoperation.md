@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryOperation` Class Reference
+# `BinaryOperation` Class
 
 <p>Class representing a single binary operation in the AST of an expression. <a href="#details">More...</a></p>
 

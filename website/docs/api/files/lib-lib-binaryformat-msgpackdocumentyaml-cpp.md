@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MsgPackDocumentYAML.cpp` File Reference
+# `MsgPackDocumentYAML.cpp` File
 
 
 

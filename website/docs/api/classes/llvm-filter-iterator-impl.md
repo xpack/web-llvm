@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `filter_iterator_impl` Class Template Reference
+# `filter_iterator_impl` Class Template
 
 <p>Specialization of <a href="/web-llvm/docs/api/classes/llvm/filter-iterator-base">filter_iterator_base</a> for forward iteration only. <a href="#details">More...</a></p>
 

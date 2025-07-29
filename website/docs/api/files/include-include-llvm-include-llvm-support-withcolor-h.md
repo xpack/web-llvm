@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WithColor.h` File Reference
+# `WithColor.h` File
 
 
 

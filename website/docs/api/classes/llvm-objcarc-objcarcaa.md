@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCAA` Class Reference
+# `ObjCARCAA` Class
 
 <p>Analysis pass providing a never-invalidated alias analysis result. <a href="#details">More...</a></p>
 

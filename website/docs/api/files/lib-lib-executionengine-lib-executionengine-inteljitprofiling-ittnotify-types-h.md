@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ittnotify_types.h` File Reference
+# `ittnotify_types.h` File
 
 
 

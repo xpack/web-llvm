@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastMathFlagGuard` Class Reference
+# `FastMathFlagGuard` Class
 
 
 

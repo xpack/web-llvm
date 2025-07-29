@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedBlockName` Class Reference
+# `MergedBlockName` Class
 
 
 

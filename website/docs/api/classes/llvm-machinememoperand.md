@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineMemOperand` Class Reference
+# `MachineMemOperand` Class
 
 <p>A description of a memory reference used in the backend. <a href="#details">More...</a></p>
 

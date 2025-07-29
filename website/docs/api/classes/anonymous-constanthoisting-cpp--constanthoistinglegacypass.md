@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantHoistingLegacyPass` Class Reference
+# `ConstantHoistingLegacyPass` Class
 
 <p>The constant hoisting pass. <a href="#details">More...</a></p>
 

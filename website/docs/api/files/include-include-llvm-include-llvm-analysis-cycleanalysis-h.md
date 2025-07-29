@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleAnalysis.h` File Reference
+# `CycleAnalysis.h` File
 
 <p>This file declares an analysis pass that computes CycleInfo for LLVM IR, specialized from GenericCycleInfo. <a href="#details">More...</a></p>
 

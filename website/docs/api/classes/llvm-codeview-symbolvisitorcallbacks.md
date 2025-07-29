@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolVisitorCallbacks` Class Reference
+# `SymbolVisitorCallbacks` Class
 
 
 

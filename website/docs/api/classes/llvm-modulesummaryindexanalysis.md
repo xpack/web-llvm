@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryIndexAnalysis` Class Reference
+# `ModuleSummaryIndexAnalysis` Class
 
 <p>Analysis pass to provide the <a href="/web-llvm/docs/api/classes/llvm/modulesummaryindex">ModuleSummaryIndex</a> object. <a href="#details">More...</a></p>
 

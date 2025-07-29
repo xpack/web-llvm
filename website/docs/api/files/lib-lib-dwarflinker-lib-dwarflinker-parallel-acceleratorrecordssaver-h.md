@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AcceleratorRecordsSaver.h` File Reference
+# `AcceleratorRecordsSaver.h` File
 
 
 

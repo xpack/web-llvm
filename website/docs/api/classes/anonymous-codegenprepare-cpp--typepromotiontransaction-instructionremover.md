@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionRemover` Class Reference
+# `InstructionRemover` Class
 
 <p>Remove an instruction from the IR. <a href="#details">More...</a></p>
 

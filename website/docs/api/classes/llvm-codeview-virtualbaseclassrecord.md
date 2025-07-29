@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtualBaseClassRecord` Class Reference
+# `VirtualBaseClassRecord` Class
 
 
 

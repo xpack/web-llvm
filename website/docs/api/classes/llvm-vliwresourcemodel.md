@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLIWResourceModel` Class Reference
+# `VLIWResourceModel` Class
 
 
 

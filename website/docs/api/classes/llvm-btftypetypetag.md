@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeTypeTag` Class Reference
+# `BTFTypeTypeTag` Class
 
 
 

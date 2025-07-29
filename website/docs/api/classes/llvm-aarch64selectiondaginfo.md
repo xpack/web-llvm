@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SelectionDAGInfo` Class Reference
+# `AArch64SelectionDAGInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativePublicSymbol` Class Reference
+# `NativePublicSymbol` Class
 
 
 

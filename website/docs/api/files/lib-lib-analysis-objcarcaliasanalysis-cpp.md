@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCAliasAnalysis.cpp` File Reference
+# `ObjCARCAliasAnalysis.cpp` File
 
 <p>This file defines a simple ARC-aware <a href="/web-llvm/docs/api/namespaces/llvm/#ae457f1cf451ed893666c4a384e58f8e5">AliasAnalysis</a> using special knowledge of Objective C to enhance other optimization passes which rely on the Alias Analysis infrastructure. <a href="#details">More...</a></p>
 

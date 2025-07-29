@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyCBufferLayout` Class Reference
+# `LegacyCBufferLayout` Class
 
 
 

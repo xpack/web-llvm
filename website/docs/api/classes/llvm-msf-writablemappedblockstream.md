@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WritableMappedBlockStream` Class Reference
+# `WritableMappedBlockStream` Class
 
 
 

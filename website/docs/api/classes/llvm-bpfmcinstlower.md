@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMCInstLower` Class Reference
+# `BPFMCInstLower` Class
 
 
 

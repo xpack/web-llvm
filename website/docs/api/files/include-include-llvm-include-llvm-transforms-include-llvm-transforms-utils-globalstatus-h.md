@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalStatus.h` File Reference
+# `GlobalStatus.h` File
 
 
 

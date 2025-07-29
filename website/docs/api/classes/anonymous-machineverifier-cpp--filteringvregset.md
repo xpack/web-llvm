@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FilteringVRegSet` Class Reference
+# `FilteringVRegSet` Class
 
 
 

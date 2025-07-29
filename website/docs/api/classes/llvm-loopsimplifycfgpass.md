@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSimplifyCFGPass` Class Reference
+# `LoopSimplifyCFGPass` Class
 
 <p>Performs basic CFG simplifications to assist other loop passes. <a href="#details">More...</a></p>
 

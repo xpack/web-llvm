@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackNode` Class Reference
+# `StackNode` Class
 
 
 

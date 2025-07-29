@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateInfo.h` File Reference
+# `PredicateInfo.h` File
 
 <p>This file implements the PredicateInfo analysis, which creates an Extended SSA form for operations used in branch comparisons and llvm.assume comparisons. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalCtorDtorScraper` Class Reference
+# `GlobalCtorDtorScraper` Class
 
 <p>This transform parses llvm.global_ctors to produce a single initialization function for the module, records the function, then deletes llvm.global_ctors. <a href="#details">More...</a></p>
 

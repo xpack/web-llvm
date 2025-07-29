@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceSectionRef` Class Reference
+# `ResourceSectionRef` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseIndexOffset` Class Reference
+# `BaseIndexOffset` Class
 
 <p>Helper struct to store a base, index and offset that forms an address. <a href="#details">More...</a></p>
 

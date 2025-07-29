@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorOr.h` File Reference
+# `ErrorOr.h` File
 
 <p>Provides ErrorOr&lt;T&gt; smart pointer. <a href="#details">More...</a></p>
 

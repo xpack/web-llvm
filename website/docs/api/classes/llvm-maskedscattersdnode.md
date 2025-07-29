@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaskedScatterSDNode` Class Reference
+# `MaskedScatterSDNode` Class
 
 <p>This class is used to represent an MSCATTER node. <a href="#details">More...</a></p>
 

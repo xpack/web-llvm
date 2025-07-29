@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfErrorCategoryType` Class Reference
+# `SampleProfErrorCategoryType` Class
 
 
 

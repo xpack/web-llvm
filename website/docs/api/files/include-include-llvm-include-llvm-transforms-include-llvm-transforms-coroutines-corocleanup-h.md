@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroCleanup.h` File Reference
+# `CoroCleanup.h` File
 
 
 

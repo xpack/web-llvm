@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringsAndChecksums.cpp` File Reference
+# `StringsAndChecksums.cpp` File
 
 
 

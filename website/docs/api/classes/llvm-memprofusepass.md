@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemProfUsePass` Class Reference
+# `MemProfUsePass` Class
 
 
 

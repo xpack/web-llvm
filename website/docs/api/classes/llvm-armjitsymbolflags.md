@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMJITSymbolFlags` Class Reference
+# `ARMJITSymbolFlags` Class
 
 <p>ARM-specific JIT symbol flags. <a href="#details">More...</a></p>
 

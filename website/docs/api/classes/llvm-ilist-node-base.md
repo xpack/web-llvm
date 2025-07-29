@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_node_base` Class Template Reference
+# `ilist_node_base` Class Template
 
 <p>Base class for ilist nodes. <a href="#details">More...</a></p>
 

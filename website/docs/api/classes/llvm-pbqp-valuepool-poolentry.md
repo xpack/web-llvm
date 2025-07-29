@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoolEntry` Class Reference
+# `PoolEntry` Class
 
 
 

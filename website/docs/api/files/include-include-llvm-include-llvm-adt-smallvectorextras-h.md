@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorExtras.h` File Reference
+# `SmallVectorExtras.h` File
 
 <p>This file defines less commonly used SmallVector utilities. <a href="#details">More...</a></p>
 

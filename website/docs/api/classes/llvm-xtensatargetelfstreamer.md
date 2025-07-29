@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaTargetELFStreamer` Class Reference
+# `XtensaTargetELFStreamer` Class
 
 
 

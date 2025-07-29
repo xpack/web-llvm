@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteDXILPass` Class Reference
+# `WriteDXILPass` Class
 
 
 

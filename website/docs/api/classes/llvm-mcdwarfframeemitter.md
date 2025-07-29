@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfFrameEmitter` Class Reference
+# `MCDwarfFrameEmitter` Class
 
 
 

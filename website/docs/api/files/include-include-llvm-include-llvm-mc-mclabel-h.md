@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLabel.h` File Reference
+# `MCLabel.h` File
 
 
 

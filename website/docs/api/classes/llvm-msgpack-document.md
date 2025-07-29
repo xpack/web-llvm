@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Document` Class Reference
+# `Document` Class
 
 <p>Simple in-memory representation of a document of msgpack objects with ability to find and create array and map elements. <a href="#details">More...</a></p>
 

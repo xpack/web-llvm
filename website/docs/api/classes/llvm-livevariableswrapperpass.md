@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveVariablesWrapperPass` Class Reference
+# `LiveVariablesWrapperPass` Class
 
 
 

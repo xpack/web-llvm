@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleRegistryEntry` Class Template Reference
+# `SimpleRegistryEntry` Class Template
 
 <p>A simple registry entry which provides only a name, description, and no-argument constructor. <a href="#details">More...</a></p>
 

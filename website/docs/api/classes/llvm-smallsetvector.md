@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallSetVector` Class Template Reference
+# `SmallSetVector` Class Template
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/setvector">SetVector</a> that performs no allocations if smaller than a certain size. <a href="#details">More...</a></p>
 

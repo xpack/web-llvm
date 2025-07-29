@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphNode` Class Reference
+# `CallGraphNode` Class
 
 <p>A node in the call graph for a module. <a href="#details">More...</a></p>
 

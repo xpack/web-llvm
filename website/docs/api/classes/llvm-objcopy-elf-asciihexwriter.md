@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ASCIIHexWriter` Class Reference
+# `ASCIIHexWriter` Class
 
 
 

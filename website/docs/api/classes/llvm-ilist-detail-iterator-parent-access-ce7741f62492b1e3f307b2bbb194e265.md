@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_parent_access` Class Template Reference
+# `iterator_parent_access` Class Template
 
 
 

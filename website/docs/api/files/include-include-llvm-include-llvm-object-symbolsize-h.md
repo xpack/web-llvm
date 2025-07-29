@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolSize.h` File Reference
+# `SymbolSize.h` File
 
 
 

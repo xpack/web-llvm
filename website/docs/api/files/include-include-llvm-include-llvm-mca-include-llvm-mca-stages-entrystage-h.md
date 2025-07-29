@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryStage.h` File Reference
+# `EntryStage.h` File
 
 <p>This file defines the Entry stage of an instruction pipeline. <a href="#details">More...</a></p>
 

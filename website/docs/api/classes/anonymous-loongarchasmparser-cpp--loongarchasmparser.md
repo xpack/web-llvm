@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchAsmParser` Class Reference
+# `LoongArchAsmParser` Class
 
 
 

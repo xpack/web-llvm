@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFContext` Class Reference
+# `DWARFContext` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfcontext">DWARFContext</a> This data structure is the top level entity that deals with dwarf debug information parsing. <a href="#details">More...</a></p>
 

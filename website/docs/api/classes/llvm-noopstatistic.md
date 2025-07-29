@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoopStatistic` Class Reference
+# `NoopStatistic` Class
 
 
 

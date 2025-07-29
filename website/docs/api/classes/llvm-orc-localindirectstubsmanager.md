@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalIndirectStubsManager` Class Template Reference
+# `LocalIndirectStubsManager` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/indirectstubsmanager">IndirectStubsManager</a> implementation for the host architecture, e.g. <a href="#details">More...</a></p>
 

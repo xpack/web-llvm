@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileReaderExtBinaryBase` Class Reference
+# `SampleProfileReaderExtBinaryBase` Class
 
 <p>SampleProfileReaderExtBinaryBase/SampleProfileWriterExtBinaryBase defines the basic structure of the extensible binary format. <a href="#details">More...</a></p>
 

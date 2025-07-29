@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsSuccOfPrevGroup` Class Reference
+# `IsSuccOfPrevGroup` Class
 
 
 

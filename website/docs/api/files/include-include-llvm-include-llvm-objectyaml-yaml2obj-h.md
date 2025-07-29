@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `yaml2obj.h` File Reference
+# `yaml2obj.h` File
 
 <p>Common declarations for yaml2obj. <a href="#details">More...</a></p>
 

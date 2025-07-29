@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantMergePass` Class Reference
+# `ConstantMergePass` Class
 
 <p>A pass that merges duplicate global constants into a single constant. <a href="#details">More...</a></p>
 

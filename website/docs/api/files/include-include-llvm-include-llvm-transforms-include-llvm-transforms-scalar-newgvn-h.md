@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewGVN.h` File Reference
+# `NewGVN.h` File
 
 <p>This file provides the interface for LLVM's Global Value Numbering pass. <a href="#details">More...</a></p>
 

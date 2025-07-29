@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GuardWidening.h` File Reference
+# `GuardWidening.h` File
 
 
 

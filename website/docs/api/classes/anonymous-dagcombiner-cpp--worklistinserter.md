@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorklistInserter` Class Reference
+# `WorklistInserter` Class
 
 
 

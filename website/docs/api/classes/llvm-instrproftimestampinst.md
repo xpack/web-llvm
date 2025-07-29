@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfTimestampInst` Class Reference
+# `InstrProfTimestampInst` Class
 
 <p>This represents the llvm.instrprof.timestamp intrinsic. <a href="#details">More...</a></p>
 

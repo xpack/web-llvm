@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFDatabase` Class Reference
+# `VFDatabase` Class
 
 <p>The Vector <a href="/web-llvm/docs/api/classes/llvm/function">Function</a> Database. <a href="#details">More...</a></p>
 

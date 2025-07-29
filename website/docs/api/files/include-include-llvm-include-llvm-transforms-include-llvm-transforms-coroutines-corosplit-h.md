@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSplit.h` File Reference
+# `CoroSplit.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MU` Class Reference
+# `MU` Class
 
 
 

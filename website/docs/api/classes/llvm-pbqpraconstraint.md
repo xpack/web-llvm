@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PBQPRAConstraint` Class Reference
+# `PBQPRAConstraint` Class
 
 <p>Abstract base for classes implementing <a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> register allocation constraints (e.g. <a href="#details">More...</a></p>
 

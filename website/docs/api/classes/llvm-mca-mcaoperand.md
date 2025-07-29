@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAOperand` Class Reference
+# `MCAOperand` Class
 
 <p>A representation of an <a href="/web-llvm/docs/api/classes/llvm/mca/instruction">mca::Instruction</a> operand for use in <a href="/web-llvm/docs/api/classes/llvm/mca/custombehaviour">mca::CustomBehaviour</a>. <a href="#details">More...</a></p>
 

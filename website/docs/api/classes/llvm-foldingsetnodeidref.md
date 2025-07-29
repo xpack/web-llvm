@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetNodeIDRef` Class Reference
+# `FoldingSetNodeIDRef` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetnodeidref">FoldingSetNodeIDRef</a> - This class describes a reference to an interned <a href="/web-llvm/docs/api/classes/llvm/foldingsetnodeid">FoldingSetNodeID</a>, which can be a useful to store node id data rather than using plain FoldingSetNodeIDs, since the 32-element <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> is often much larger than necessary, and the possibility of heap allocation means it requires a non-trivial destructor call. <a href="#details">More...</a></p>
 

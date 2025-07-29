@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVPrint` Class Reference
+# `LVPrint` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTfrCleanup` Class Reference
+# `HexagonTfrCleanup` Class
 
 
 

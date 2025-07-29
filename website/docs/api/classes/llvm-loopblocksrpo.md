@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBlocksRPO` Class Reference
+# `LoopBlocksRPO` Class
 
 <p>Wrapper class to <a href="/web-llvm/docs/api/classes/llvm/loopblocksdfs">LoopBlocksDFS</a> that provides a standard <a href="#a4099996149ec5036176fcb6bcaeba2ac">begin()</a>/end() interface for the DFS reverse post-order traversal of blocks in a loop body. <a href="#details">More...</a></p>
 

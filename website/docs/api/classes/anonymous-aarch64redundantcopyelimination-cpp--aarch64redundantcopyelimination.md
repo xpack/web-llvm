@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64RedundantCopyElimination` Class Reference
+# `AArch64RedundantCopyElimination` Class
 
 
 

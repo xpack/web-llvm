@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsOs16` Class Reference
+# `MipsOs16` Class
 
 
 

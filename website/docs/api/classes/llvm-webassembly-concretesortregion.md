@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcreteSortRegion` Class Template Reference
+# `ConcreteSortRegion` Class Template
 
 
 

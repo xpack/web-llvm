@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmLexer.h` File Reference
+# `MCAsmLexer.h` File
 
 
 

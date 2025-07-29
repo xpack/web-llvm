@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyAnalysis.h` File Reference
+# `StackSafetyAnalysis.h` File
 
 
 

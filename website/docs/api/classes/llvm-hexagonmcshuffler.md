@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCShuffler` Class Reference
+# `HexagonMCShuffler` Class
 
 
 

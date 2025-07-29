@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressRange` Class Reference
+# `AddressRange` Class
 
 <p>A class that represents an address range. <a href="#details">More...</a></p>
 

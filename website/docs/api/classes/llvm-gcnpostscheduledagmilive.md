@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNPostScheduleDAGMILive` Class Reference
+# `GCNPostScheduleDAGMILive` Class
 
 
 

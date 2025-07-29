@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgLabelInstrMap` Class Reference
+# `DbgLabelInstrMap` Class
 
 <p>For each inlined instance of a source-level label, keep the corresponding DBG_LABEL instruction. <a href="#details">More...</a></p>
 

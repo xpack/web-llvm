@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordInitializer` Class Reference
+# `RecordInitializer` Class
 
 
 

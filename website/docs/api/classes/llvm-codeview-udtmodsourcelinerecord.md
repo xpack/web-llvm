@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UdtModSourceLineRecord` Class Reference
+# `UdtModSourceLineRecord` Class
 
 
 

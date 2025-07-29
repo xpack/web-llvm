@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFFrameLowering` Class Reference
+# `BPFFrameLowering` Class
 
 
 

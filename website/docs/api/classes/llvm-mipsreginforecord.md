@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsRegInfoRecord` Class Reference
+# `MipsRegInfoRecord` Class
 
 
 

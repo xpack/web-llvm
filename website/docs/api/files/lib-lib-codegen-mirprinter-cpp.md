@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRPrinter.cpp` File Reference
+# `MIRPrinter.cpp` File
 
 
 

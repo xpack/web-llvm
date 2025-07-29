@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoFolder` Class Reference
+# `NoFolder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/nofolder">NoFolder</a> - Create "constants" (actually, instructions) with no folding. <a href="#details">More...</a></p>
 

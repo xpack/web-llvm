@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZLongBranch` Class Reference
+# `SystemZLongBranch` Class
 
 
 

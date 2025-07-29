@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInst` Class Reference
+# `MCInst` Class
 
 <p>Instances of this class represent a single low-level machine instruction. <a href="#details">More...</a></p>
 

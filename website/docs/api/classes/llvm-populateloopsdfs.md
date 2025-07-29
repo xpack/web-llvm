@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PopulateLoopsDFS` Class Template Reference
+# `PopulateLoopsDFS` Class Template
 
 <p>Populate all loop data in a stable order during a single forward DFS. <a href="#details">More...</a></p>
 

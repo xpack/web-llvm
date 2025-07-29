@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCContract` Class Reference
+# `ObjCARCContract` Class
 
 <p>Late ARC optimizations. <a href="#details">More...</a></p>
 

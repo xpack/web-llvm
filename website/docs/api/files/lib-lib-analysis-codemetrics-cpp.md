@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeMetrics.cpp` File Reference
+# `CodeMetrics.cpp` File
 
 
 

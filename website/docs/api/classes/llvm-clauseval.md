@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClauseVal` Class Reference
+# `ClauseVal` Class
 
 
 

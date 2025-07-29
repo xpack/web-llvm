@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeEmitter.h` File Reference
+# `CodeEmitter.h` File
 
 <p>A utility class used to compute instruction encodings. <a href="#details">More...</a></p>
 

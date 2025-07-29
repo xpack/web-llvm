@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyIfConverterPass` Class Reference
+# `EarlyIfConverterPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRBuilderDefaultInserter` Class Reference
+# `IRBuilderDefaultInserter` Class
 
 <p>This provides the default implementation of the <a href="/web-llvm/docs/api/classes/llvm/irbuilder">IRBuilder</a> 'InsertHelper' method that is called whenever an instruction is created by <a href="/web-llvm/docs/api/classes/llvm/irbuilder">IRBuilder</a> and needs to be inserted. <a href="#details">More...</a></p>
 

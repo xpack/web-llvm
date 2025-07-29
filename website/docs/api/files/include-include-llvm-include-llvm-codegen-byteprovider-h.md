@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByteProvider.h` File Reference
+# `ByteProvider.h` File
 
 
 

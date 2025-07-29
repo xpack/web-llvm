@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OnDiskHashTable.h` File Reference
+# `OnDiskHashTable.h` File
 
 <p>Defines facilities for reading and writing on-disk hash tables. <a href="#details">More...</a></p>
 

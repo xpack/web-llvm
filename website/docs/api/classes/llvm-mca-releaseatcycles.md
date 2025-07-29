@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReleaseAtCycles` Class Reference
+# `ReleaseAtCycles` Class
 
 <p>This class represents the number of cycles per resource (fractions of cycles). <a href="#details">More...</a></p>
 

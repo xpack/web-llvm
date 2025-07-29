@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizationRemarkEmitter.cpp` File Reference
+# `OptimizationRemarkEmitter.cpp` File
 
 
 

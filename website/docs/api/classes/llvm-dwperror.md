@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWPError` Class Reference
+# `DWPError` Class
 
 
 

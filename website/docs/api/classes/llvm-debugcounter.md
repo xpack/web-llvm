@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugCounter` Class Reference
+# `DebugCounter` Class
 
 
 

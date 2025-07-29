@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaMCAsmInfo` Class Reference
+# `XtensaMCAsmInfo` Class
 
 
 

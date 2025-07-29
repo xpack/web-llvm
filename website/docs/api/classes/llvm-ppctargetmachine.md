@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTargetMachine` Class Reference
+# `PPCTargetMachine` Class
 
 <p>Common code between 32-bit and 64-bit PowerPC targets. <a href="#details">More...</a></p>
 

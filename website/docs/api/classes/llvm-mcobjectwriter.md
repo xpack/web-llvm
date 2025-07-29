@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCObjectWriter` Class Reference
+# `MCObjectWriter` Class
 
 <p>Defines the object file and target independent interfaces used by the assembler backend to write native file format object files. <a href="#details">More...</a></p>
 

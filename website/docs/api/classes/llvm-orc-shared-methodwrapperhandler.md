@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MethodWrapperHandler` Class Template Reference
+# `MethodWrapperHandler` Class Template
 
 <p>A function object that takes an <a href="/web-llvm/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> as its first argument, casts that address to a ClassT*, then calls the given method on that pointer passing in the remaining function arguments. <a href="#details">More...</a></p>
 

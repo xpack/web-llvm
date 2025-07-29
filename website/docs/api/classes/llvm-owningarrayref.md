@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OwningArrayRef` Class Template Reference
+# `OwningArrayRef` Class Template
 
 <p>This is a <a href="/web-llvm/docs/api/classes/llvm/mutablearrayref">MutableArrayRef</a> that owns its array. <a href="#details">More...</a></p>
 

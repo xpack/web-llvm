@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfStreamer` Class Reference
+# `DwarfStreamer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/user">User</a> of <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarfstreamer">DwarfStreamer</a> should call initialization code for <a href="/web-llvm/docs/api/classes/llvm/asmprinter">AsmPrinter</a>: <a href="#details">More...</a></p>
 

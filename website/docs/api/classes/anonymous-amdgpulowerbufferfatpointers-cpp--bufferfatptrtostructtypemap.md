@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BufferFatPtrToStructTypeMap` Class Reference
+# `BufferFatPtrToStructTypeMap` Class
 
 <p>Remap ptr addrspace(7) to {ptr addrspace(8), i32} (the resource and offset parts of the pointer) so that we can easily rewrite operations on these values that aren't loading them from or storing them to memory. <a href="#details">More...</a></p>
 

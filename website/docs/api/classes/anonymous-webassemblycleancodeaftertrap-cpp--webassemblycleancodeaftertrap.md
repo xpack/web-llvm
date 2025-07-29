@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyCleanCodeAfterTrap` Class Reference
+# `WebAssemblyCleanCodeAfterTrap` Class
 
 
 

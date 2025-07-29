@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRNormalizer` Class Reference
+# `IRNormalizer` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-irnormalizer-cpp-/irnormalizer">IRNormalizer</a> aims to transform LLVM IR into normal form. <a href="#details">More...</a></p>
 

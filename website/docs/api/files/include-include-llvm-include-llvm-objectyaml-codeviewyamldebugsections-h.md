@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewYAMLDebugSections.h` File Reference
+# `CodeViewYAMLDebugSections.h` File
 
 
 

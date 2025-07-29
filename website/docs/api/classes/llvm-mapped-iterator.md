@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mapped_iterator` Class Template Reference
+# `mapped_iterator` Class Template
 
 
 

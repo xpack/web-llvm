@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressRangesMap` Class Reference
+# `AddressRangesMap` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/addressrangesmap">AddressRangesMap</a> class maps values to the address ranges. <a href="#details">More...</a></p>
 

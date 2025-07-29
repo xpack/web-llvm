@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegDefsUses` Class Reference
+# `RegDefsUses` Class
 
 
 

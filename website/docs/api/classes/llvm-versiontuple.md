@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionTuple` Class Reference
+# `VersionTuple` Class
 
 <p>Represents a version number in the form major[.minor[.subminor[.build]]]. <a href="#details">More...</a></p>
 

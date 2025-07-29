@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVGenRegisterBankInfo` Class Reference
+# `SPIRVGenRegisterBankInfo` Class
 
 
 

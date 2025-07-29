@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectFactory` Class Reference
+# `ObjectFactory` Class
 
 
 

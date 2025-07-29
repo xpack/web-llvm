@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSymbolRVASubsection.cpp` File Reference
+# `DebugSymbolRVASubsection.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcMCCodeEmitter` Class Reference
+# `SparcMCCodeEmitter` Class
 
 
 

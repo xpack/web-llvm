@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Update` Class Template Reference
+# `Update` Class Template
 
 
 

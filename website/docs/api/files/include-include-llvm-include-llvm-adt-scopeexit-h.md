@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopeExit.h` File Reference
+# `ScopeExit.h` File
 
 <p>This file defines the make_scope_exit function, which executes user-defined cleanup logic at scope exit. <a href="#details">More...</a></p>
 

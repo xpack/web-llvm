@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILTargetObjectFile` Class Reference
+# `DXILTargetObjectFile` Class
 
 
 

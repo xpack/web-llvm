@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSONScopedPrinter` Class Reference
+# `JSONScopedPrinter` Class
 
 
 

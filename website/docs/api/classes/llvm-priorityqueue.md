@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PriorityQueue` Class Template Reference
+# `PriorityQueue` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/priorityqueue">PriorityQueue</a> - This class behaves like std::priority_queue and provides a few additional convenience functions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachO.h` File Reference
+# `MachO.h` File
 
 
 

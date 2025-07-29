@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRCEPass` Class Reference
+# `IRCEPass` Class
 
 
 

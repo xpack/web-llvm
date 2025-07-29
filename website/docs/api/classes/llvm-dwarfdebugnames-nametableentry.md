@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameTableEntry` Class Reference
+# `NameTableEntry` Class
 
 <p>A single entry in the Name Table (DWARF v5 sect. <a href="#details">More...</a></p>
 

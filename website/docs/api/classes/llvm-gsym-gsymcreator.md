@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GsymCreator` Class Reference
+# `GsymCreator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gsym/gsymcreator">GsymCreator</a> is used to emit GSYM data to a stand alone file or section within a file. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComplexDeinterleaving` Class Reference
+# `ComplexDeinterleaving` Class
 
 
 

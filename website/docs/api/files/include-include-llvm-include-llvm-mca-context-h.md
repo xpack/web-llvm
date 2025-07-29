@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Context.h` File Reference
+# `Context.h` File
 
 <p>This file defines a class for holding ownership of various simulated hardware units. <a href="#details">More...</a></p>
 

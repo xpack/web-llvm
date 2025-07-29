@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegOptimizer` Class Reference
+# `LiveRegOptimizer` Class
 
 
 

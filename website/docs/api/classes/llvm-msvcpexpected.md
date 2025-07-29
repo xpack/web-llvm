@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSVCPExpected` Class Template Reference
+# `MSVCPExpected` Class Template
 
 
 

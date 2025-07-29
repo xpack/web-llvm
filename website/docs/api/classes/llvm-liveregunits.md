@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegUnits` Class Reference
+# `LiveRegUnits` Class
 
 <p>A set of register units used to track register liveness. <a href="#details">More...</a></p>
 

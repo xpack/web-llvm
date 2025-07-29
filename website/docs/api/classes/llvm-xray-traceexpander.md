@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TraceExpander` Class Reference
+# `TraceExpander` Class
 
 
 

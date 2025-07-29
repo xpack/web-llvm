@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItaniumDemangle.h` File Reference
+# `ItaniumDemangle.h` File
 
 
 

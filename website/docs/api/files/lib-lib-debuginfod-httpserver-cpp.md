@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPServer.cpp` File Reference
+# `HTTPServer.cpp` File
 
 <p>This file defines the methods of the <a href="/web-llvm/docs/api/classes/llvm/httpserver">HTTPServer</a> class and the streamFile function. <a href="#details">More...</a></p>
 

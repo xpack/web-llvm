@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPScalarIVStepsRecipe` Class Reference
+# `VPScalarIVStepsRecipe` Class
 
 <p>A recipe for handling phi nodes of integer and floating-point inductions, producing their scalar values. <a href="#details">More...</a></p>
 

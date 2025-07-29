@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPeel.h` File Reference
+# `LoopPeel.h` File
 
 
 

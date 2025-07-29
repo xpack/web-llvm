@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatepointOpers` Class Reference
+# `StatepointOpers` Class
 
 <p>MI-level Statepoint operands. <a href="#details">More...</a></p>
 

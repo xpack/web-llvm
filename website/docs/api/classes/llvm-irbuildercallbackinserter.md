@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRBuilderCallbackInserter` Class Reference
+# `IRBuilderCallbackInserter` Class
 
 <p>Provides an 'InsertHelper' that calls a user-provided callback after performing the default insertion. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumSectionContribs` Class Reference
+# `DIAEnumSectionContribs` Class
 
 
 

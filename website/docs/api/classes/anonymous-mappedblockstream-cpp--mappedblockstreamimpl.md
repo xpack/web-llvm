@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappedBlockStreamImpl` Class Template Reference
+# `MappedBlockStreamImpl` Class Template
 
 
 

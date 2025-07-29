@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPGatherSDNode` Class Reference
+# `VPGatherSDNode` Class
 
 <p>This class is used to represent an VP_GATHER node. <a href="#details">More...</a></p>
 

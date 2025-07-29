@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonOwningSymbolStringPtr` Class Reference
+# `NonOwningSymbolStringPtr` Class
 
 <p>Non-owning <a href="/web-llvm/docs/api/classes/llvm/orc/symbolstringpool">SymbolStringPool</a> entry pointer. <a href="#details">More...</a></p>
 

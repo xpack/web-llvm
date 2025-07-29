@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCELFObjectTargetWriter` Class Reference
+# `MCELFObjectTargetWriter` Class
 
 
 

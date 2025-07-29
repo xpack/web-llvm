@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEFrameLowering` Class Reference
+# `VEFrameLowering` Class
 
 
 

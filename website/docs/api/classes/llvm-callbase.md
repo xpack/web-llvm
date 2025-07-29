@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallBase` Class Reference
+# `CallBase` Class
 
 <p>Base class for all callable instructions (<a href="/web-llvm/docs/api/classes/llvm/invokeinst">InvokeInst</a> and <a href="/web-llvm/docs/api/classes/llvm/callinst">CallInst</a>) Holds everything related to calling a function. <a href="#details">More...</a></p>
 

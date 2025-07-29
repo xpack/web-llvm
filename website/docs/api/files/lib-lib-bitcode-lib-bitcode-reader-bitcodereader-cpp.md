@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeReader.cpp` File Reference
+# `BitcodeReader.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSONWriter` Class Reference
+# `JSONWriter` Class
 
 
 

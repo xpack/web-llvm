@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugAssignmentTrackingAnalysis` Class Reference
+# `DebugAssignmentTrackingAnalysis` Class
 
 
 

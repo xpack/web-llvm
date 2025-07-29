@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMatchesMono` Class Template Reference
+# `ValueMatchesMono` Class Template
 
 
 

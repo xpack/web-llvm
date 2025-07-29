@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommutingState` Class Reference
+# `CommutingState` Class
 
 <p>State to keep track of whether commuting is in flight or whether it's been tried for the current instruction and didn't work. <a href="#details">More...</a></p>
 

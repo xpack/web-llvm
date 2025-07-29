@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraph` Class Reference
+# `CallGraph` Class
 
 <p>The basic data container for the call graph of a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/module">Module</a></span> of IR. <a href="#details">More...</a></p>
 

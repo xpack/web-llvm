@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ILPInitialScheduleStage` Class Reference
+# `ILPInitialScheduleStage` Class
 
 
 

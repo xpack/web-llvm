@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSelectionDAGInfo` Class Reference
+# `AMDGPUSelectionDAGInfo` Class
 
 
 

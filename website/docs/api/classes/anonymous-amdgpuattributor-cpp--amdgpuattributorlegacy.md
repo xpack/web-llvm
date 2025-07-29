@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAttributorLegacy` Class Reference
+# `AMDGPUAttributorLegacy` Class
 
 
 

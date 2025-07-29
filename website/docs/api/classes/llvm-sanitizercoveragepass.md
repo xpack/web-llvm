@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerCoveragePass` Class Reference
+# `SanitizerCoveragePass` Class
 
 <p>This is the ModuleSanitizerCoverage pass used in the new pass manager. <a href="#details">More...</a></p>
 

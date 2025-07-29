@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePrinting` Class Reference
+# `TypePrinting` Class
 
 
 

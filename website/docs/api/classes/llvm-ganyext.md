@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GAnyExt` Class Reference
+# `GAnyExt` Class
 
 <p>Represents an any ext. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseBitVectorIterator` Class Reference
+# `SparseBitVectorIterator` Class
 
 
 

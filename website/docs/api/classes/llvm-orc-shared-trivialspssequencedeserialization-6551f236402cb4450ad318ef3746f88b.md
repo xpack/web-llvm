@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrivialSPSSequenceDeserialization` Class Template Reference
+# `TrivialSPSSequenceDeserialization` Class Template
 
 <p>Trivial <a href="/web-llvm/docs/api/classes/llvm/orc/shared/spssequence">SPSSequence&lt;char&gt;</a> -&gt; std::string deserialization. <a href="#details">More...</a></p>
 

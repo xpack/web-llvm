@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeSet` Class Reference
+# `NodeSet` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/nodeset">NodeSet</a> contains a set of <a href="/web-llvm/docs/api/classes/llvm/sunit">SUnit</a> DAG nodes with additional information that assigns a priority to the set. <a href="#details">More...</a></p>
 

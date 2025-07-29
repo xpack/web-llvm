@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuilderTy` Class Reference
+# `BuilderTy` Class
 
 
 

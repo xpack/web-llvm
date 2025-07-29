@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotionHelper` Class Reference
+# `TypePromotionHelper` Class
 
 <p>Hepler class to perform type promotion. <a href="#details">More...</a></p>
 

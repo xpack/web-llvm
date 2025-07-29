@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFSymbolTableBuilder` Class Template Reference
+# `ELFSymbolTableBuilder` Class Template
 
 
 

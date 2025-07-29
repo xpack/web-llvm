@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCtxProfFlatteningPass` Class Reference
+# `PGOCtxProfFlatteningPass` Class
 
 
 

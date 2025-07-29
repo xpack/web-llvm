@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleInfoCOFF` Class Reference
+# `MachineModuleInfoCOFF` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfocoff">MachineModuleInfoCOFF</a> - This is a <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfoimpl">MachineModuleInfoImpl</a> implementation for <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> targets. <a href="#details">More...</a></p>
 

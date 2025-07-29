@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerControlFlowPass` Class Reference
+# `SILowerControlFlowPass` Class
 
 
 

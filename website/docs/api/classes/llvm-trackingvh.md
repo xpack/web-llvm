@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrackingVH` Class Template Reference
+# `TrackingVH` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> handle that tracks a <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> across RAUW. <a href="#details">More...</a></p>
 

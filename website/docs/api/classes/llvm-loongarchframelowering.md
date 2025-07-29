@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchFrameLowering` Class Reference
+# `LoongArchFrameLowering` Class
 
 
 

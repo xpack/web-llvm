@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemoryFileSystem` Class Reference
+# `InMemoryFileSystem` Class
 
 <p>An in-memory file system. <a href="#details">More...</a></p>
 

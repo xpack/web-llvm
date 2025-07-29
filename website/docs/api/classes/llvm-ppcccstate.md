@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCCCState` Class Reference
+# `PPCCCState` Class
 
 
 

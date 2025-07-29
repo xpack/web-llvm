@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarBitInit` Class Reference
+# `VarBitInit` Class
 
 <p>Opcode{0} - Represent access to one bit of a variable or field. <a href="#details">More...</a></p>
 

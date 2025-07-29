@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingConfig` Class Reference
+# `MappingConfig` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FinalizeMachineBundles` Class Reference
+# `FinalizeMachineBundles` Class
 
 
 

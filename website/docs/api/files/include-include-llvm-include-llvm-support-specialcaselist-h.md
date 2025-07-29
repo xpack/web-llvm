@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecialCaseList.h` File Reference
+# `SpecialCaseList.h` File
 
 
 

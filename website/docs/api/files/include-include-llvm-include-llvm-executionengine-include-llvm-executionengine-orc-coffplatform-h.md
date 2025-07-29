@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFPlatform.h` File Reference
+# `COFFPlatform.h` File
 
 
 

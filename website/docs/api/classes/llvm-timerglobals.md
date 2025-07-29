@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimerGlobals` Class Reference
+# `TimerGlobals` Class
 
 
 

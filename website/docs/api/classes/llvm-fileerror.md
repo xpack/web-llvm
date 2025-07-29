@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileError` Class Reference
+# `FileError` Class
 
 <p>This class wraps a filename and another <a href="/web-llvm/docs/api/classes/llvm/error">Error</a>. <a href="#details">More...</a></p>
 

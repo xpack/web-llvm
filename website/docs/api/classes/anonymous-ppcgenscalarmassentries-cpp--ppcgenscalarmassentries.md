@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCGenScalarMASSEntries` Class Reference
+# `PPCGenScalarMASSEntries` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PackedVector` Class Template Reference
+# `PackedVector` Class Template
 
 <p>Store a vector of values using a specific number of bits for each value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GeneratedRTChecks` Class Reference
+# `GeneratedRTChecks` Class
 
 <p>Helper struct to manage generating runtime checks for vectorization. <a href="#details">More...</a></p>
 

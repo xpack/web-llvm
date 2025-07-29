@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfError` Class Reference
+# `InstrProfError` Class
 
 
 

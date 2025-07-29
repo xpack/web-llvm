@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoreCLRGC` Class Reference
+# `CoreCLRGC` Class
 
 <p>A GCStrategy for the CoreCLR Runtime. <a href="#details">More...</a></p>
 

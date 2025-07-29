@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Model` Class Template Reference
+# `Model` Class Template
 
 <p>A private class template which derives from <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/aaresults/concept">Concept</a></span> and wraps some other type. <a href="#details">More...</a></p>
 

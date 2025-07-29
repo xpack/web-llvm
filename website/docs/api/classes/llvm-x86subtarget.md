@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86Subtarget` Class Reference
+# `X86Subtarget` Class
 
 
 

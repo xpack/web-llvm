@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPConstants.h` File Reference
+# `OMPConstants.h` File
 
 <p>This file defines constans and helpers used when dealing with OpenMP. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrEmitter.h` File Reference
+# `InstrEmitter.h` File
 
 
 

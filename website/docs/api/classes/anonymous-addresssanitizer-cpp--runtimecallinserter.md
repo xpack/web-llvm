@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeCallInserter` Class Reference
+# `RuntimeCallInserter` Class
 
 <p>Helper RAII class to post-process inserted asan runtime calls during a pass on a single <a href="/web-llvm/docs/api/classes/llvm/function">Function</a>. <a href="#details">More...</a></p>
 

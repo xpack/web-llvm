@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationAccessor` Class Reference
+# `LocationAccessor` Class
 
 <p>Accessor for location records. <a href="#details">More...</a></p>
 

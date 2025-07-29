@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GnuDebugLinkSection` Class Reference
+# `GnuDebugLinkSection` Class
 
 
 

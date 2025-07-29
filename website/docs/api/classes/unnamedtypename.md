@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnnamedTypeName` Class Reference
+# `UnnamedTypeName` Class
 
 
 

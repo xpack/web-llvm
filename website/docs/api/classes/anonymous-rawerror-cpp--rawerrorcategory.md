@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawErrorCategory` Class Reference
+# `RawErrorCategory` Class
 
 
 

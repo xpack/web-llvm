@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSEConfigBase.h` File Reference
+# `CSEConfigBase.h` File
 
 
 

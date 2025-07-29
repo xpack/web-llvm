@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawBufferExtType` Class Reference
+# `RawBufferExtType` Class
 
 <p>The dx.RawBuffer target extension type. <a href="#details">More...</a></p>
 

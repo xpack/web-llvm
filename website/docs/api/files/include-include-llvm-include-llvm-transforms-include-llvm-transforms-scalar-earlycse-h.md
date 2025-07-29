@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyCSE.h` File Reference
+# `EarlyCSE.h` File
 
 <p>This file provides the interface for a simple, fast CSE pass. <a href="#details">More...</a></p>
 

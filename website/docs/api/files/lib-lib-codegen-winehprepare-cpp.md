@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinEHPrepare.cpp` File Reference
+# `WinEHPrepare.cpp` File
 
 
 

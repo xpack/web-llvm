@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SjLjEHPreparePass` Class Reference
+# `SjLjEHPreparePass` Class
 
 
 

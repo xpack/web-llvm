@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnifyFunctionExitNodesPass` Class Reference
+# `UnifyFunctionExitNodesPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfWriter.h` File Reference
+# `InstrProfWriter.h` File
 
 
 

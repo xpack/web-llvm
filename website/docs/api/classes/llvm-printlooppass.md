@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintLoopPass` Class Reference
+# `PrintLoopPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> for printing a loop's contents as textual IR. <a href="#details">More...</a></p>
 

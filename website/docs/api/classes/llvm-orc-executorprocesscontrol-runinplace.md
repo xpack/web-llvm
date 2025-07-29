@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RunInPlace` Class Reference
+# `RunInPlace` Class
 
 <p>Constructs an <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol/incomingwfrhandler">IncomingWFRHandler</a> from a function object that is callable as void(shared::WrapperFunctionResult). <a href="#details">More...</a></p>
 

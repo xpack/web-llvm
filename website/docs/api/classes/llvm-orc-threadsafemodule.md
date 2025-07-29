@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeModule` Class Reference
+# `ThreadSafeModule` Class
 
 <p>An LLVM <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> together with a shared <a href="/web-llvm/docs/api/classes/llvm/orc/threadsafecontext">ThreadSafeContext</a>. <a href="#details">More...</a></p>
 

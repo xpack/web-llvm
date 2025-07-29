@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryTaggingSupport.h` File Reference
+# `MemoryTaggingSupport.h` File
 
 
 

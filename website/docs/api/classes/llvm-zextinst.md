@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ZExtInst` Class Reference
+# `ZExtInst` Class
 
 <p>This class represents zero extension of integer types. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerExpectIntrinsic.h` File Reference
+# `LowerExpectIntrinsic.h` File
 
 <p>The header file for the LowerExpectIntrinsic pass as used by the new pass manager. <a href="#details">More...</a></p>
 

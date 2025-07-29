@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionInfoImpl.h` File Reference
+# `RegionInfoImpl.h` File
 
 
 

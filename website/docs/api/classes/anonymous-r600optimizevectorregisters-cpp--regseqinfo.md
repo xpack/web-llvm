@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegSeqInfo` Class Reference
+# `RegSeqInfo` Class
 
 
 

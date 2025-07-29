@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeferredReplacement` Class Reference
+# `DeferredReplacement` Class
 
 <p>This struct is used to defer RAUWs and <span class="doxyComputerOutput">eraseFromParent</span> s. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocPriorityAdvisorAnalysis` Class Reference
+# `RegAllocPriorityAdvisorAnalysis` Class
 
 
 

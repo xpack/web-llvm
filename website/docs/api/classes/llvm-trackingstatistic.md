@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrackingStatistic` Class Reference
+# `TrackingStatistic` Class
 
 
 

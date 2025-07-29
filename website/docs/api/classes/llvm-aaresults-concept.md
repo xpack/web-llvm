@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Concept` Class Reference
+# `Concept` Class
 
 <p>A private abstract base class describing the concept of an individual alias analysis implementation. <a href="#details">More...</a></p>
 

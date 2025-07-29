@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLowOverheadLoops` Class Reference
+# `ARMLowOverheadLoops` Class
 
 
 

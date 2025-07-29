@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTableList` Class Template Reference
+# `SymbolTableList` Class Template
 
 <p>List that automatically updates parent links and symbol tables. <a href="#details">More...</a></p>
 

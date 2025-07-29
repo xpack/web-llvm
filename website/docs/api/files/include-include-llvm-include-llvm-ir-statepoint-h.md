@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Statepoint.h` File Reference
+# `Statepoint.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgListRecord` Class Reference
+# `ArgListRecord` Class
 
 
 

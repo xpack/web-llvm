@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLJITBuilder` Class Reference
+# `LLJITBuilder` Class
 
 <p>Constructs <a href="/web-llvm/docs/api/classes/llvm/orc/lljit">LLJIT</a> instances. <a href="#details">More...</a></p>
 

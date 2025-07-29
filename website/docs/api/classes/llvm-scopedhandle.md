@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedHandle` Class Template Reference
+# `ScopedHandle` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegBankLegalizeHelper` Class Reference
+# `RegBankLegalizeHelper` Class
 
 
 

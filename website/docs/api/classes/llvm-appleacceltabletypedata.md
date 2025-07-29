@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppleAccelTableTypeData` Class Reference
+# `AppleAccelTableTypeData` Class
 
 <p>Accelerator table data implementation for Apple type accelerator tables. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TVIdxBuilder` Class Reference
+# `TVIdxBuilder` Class
 
 <p>Compute TestVector Indices "TVIdx" from the Conds graph. <a href="#details">More...</a></p>
 

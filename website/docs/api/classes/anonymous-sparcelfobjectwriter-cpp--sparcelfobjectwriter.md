@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcELFObjectWriter` Class Reference
+# `SparcELFObjectWriter` Class
 
 
 

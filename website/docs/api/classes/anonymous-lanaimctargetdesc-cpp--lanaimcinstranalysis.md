@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCInstrAnalysis` Class Reference
+# `LanaiMCInstrAnalysis` Class
 
 
 

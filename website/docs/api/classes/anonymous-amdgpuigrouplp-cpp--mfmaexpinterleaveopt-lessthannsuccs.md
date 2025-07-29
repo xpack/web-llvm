@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LessThanNSuccs` Class Reference
+# `LessThanNSuccs` Class
 
 <p>Whether or not the instruction has less than <span class="doxyComputerOutput">Size</span> immediate successors. <a href="#details">More...</a></p>
 

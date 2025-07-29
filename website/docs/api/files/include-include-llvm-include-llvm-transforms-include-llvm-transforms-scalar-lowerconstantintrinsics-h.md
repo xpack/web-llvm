@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerConstantIntrinsics.h` File Reference
+# `LowerConstantIntrinsics.h` File
 
 <p>The header file for the LowerConstantIntrinsics pass as used by the new pass manager. <a href="#details">More...</a></p>
 

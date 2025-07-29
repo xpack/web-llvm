@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewErrorCategory` Class Reference
+# `CodeViewErrorCategory` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManager` Class Template Reference
+# `PassManager` Class Template
 
 <p>Manages a sequence of passes over a particular unit of IR. <a href="#details">More...</a></p>
 

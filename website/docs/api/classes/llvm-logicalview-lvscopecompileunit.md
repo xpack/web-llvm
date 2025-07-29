@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScopeCompileUnit` Class Reference
+# `LVScopeCompileUnit` Class
 
 
 

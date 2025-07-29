@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Lint` Class Reference
+# `Lint` Class
 
 
 

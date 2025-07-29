@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Linker` Class Reference
+# `Linker` Class
 
 <p>This class provides the core functionality of linking in LLVM. <a href="#details">More...</a></p>
 

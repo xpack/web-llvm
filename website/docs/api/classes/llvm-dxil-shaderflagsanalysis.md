@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShaderFlagsAnalysis` Class Reference
+# `ShaderFlagsAnalysis` Class
 
 
 

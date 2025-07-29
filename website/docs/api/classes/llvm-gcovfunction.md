@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVFunction` Class Reference
+# `GCOVFunction` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gcovfunction">GCOVFunction</a> - Collects function information. <a href="#details">More...</a></p>
 

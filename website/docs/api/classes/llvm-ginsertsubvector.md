@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GInsertSubvector` Class Reference
+# `GInsertSubvector` Class
 
 <p>Represents a insert subvector. <a href="#details">More...</a></p>
 

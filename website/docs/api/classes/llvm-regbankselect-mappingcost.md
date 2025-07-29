@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingCost` Class Reference
+# `MappingCost` Class
 
 <p>Helper class used to represent the cost for mapping an instruction. <a href="#details">More...</a></p>
 

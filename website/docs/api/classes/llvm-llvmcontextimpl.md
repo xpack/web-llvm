@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMContextImpl` Class Reference
+# `LLVMContextImpl` Class
 
 
 

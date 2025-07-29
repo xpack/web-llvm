@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ELFMCAsmInfo` Class Reference
+# `X86ELFMCAsmInfo` Class
 
 
 

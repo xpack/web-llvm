@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBlockBase` Class Reference
+# `VPBlockBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> is the building block of the Hierarchical Control-Flow Graph. <a href="#details">More...</a></p>
 

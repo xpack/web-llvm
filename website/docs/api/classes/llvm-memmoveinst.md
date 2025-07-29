@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemMoveInst` Class Reference
+# `MemMoveInst` Class
 
 <p>This class wraps the llvm.memmove intrinsic. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgVariableValue` Class Reference
+# `DbgVariableValue` Class
 
 <p>Describes a debug variable value by location number and expression along with some flags about the original usage of the location. <a href="#details">More...</a></p>
 

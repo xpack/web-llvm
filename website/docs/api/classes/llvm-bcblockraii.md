@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCBlockRAII` Class Reference
+# `BCBlockRAII` Class
 
 <p>RAII object to pair entering and exiting a sub-block. <a href="#details">More...</a></p>
 

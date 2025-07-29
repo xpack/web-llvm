@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectCallPromoter` Class Reference
+# `IndirectCallPromoter` Class
 
 
 

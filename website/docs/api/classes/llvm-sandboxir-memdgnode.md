@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemDGNode` Class Reference
+# `MemDGNode` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/sandboxir/dependencygraph">DependencyGraph</a> <a href="/web-llvm/docs/api/classes/node">Node</a> for instructions that may read/write memory, or have some ordering constraints, like with stacksave/stackrestore and alloca/inalloca. <a href="#details">More...</a></p>
 

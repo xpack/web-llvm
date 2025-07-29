@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRInstPrinter` Class Reference
+# `AVRInstPrinter` Class
 
 <p>Prints <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> instructions to a textual stream. <a href="#details">More...</a></p>
 

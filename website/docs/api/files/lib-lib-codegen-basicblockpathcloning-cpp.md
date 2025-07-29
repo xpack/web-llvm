@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockPathCloning.cpp` File Reference
+# `BasicBlockPathCloning.cpp` File
 
 <p><a href="/web-llvm/docs/api/classes/llvm/basicblockpathcloning">BasicBlockPathCloning</a> implementation. <a href="#details">More...</a></p>
 

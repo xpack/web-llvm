@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrappedSuccIterator` Class Reference
+# `WrappedSuccIterator` Class
 
 
 

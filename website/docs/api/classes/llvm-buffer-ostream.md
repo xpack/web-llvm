@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `buffer_ostream` Class Reference
+# `buffer_ostream` Class
 
 
 

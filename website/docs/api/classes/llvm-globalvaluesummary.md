@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalValueSummary` Class Reference
+# `GlobalValueSummary` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/function">Function</a> and variable summary information to aid decisions and implementation of importing. <a href="#details">More...</a></p>
 

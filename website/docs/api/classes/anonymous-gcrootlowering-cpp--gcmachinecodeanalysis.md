@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCMachineCodeAnalysis` Class Reference
+# `GCMachineCodeAnalysis` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-gcrootlowering-cpp-/gcmachinecodeanalysis">GCMachineCodeAnalysis</a> - This is a target-independent pass over the machine function representation to identify safe points for the garbage collector in the machine code. <a href="#details">More...</a></p>
 

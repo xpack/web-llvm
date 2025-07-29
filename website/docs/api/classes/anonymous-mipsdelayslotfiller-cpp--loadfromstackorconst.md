@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadFromStackOrConst` Class Reference
+# `LoadFromStackOrConst` Class
 
 <p>This subclass accepts loads from stacks and constant loads. <a href="#details">More...</a></p>
 

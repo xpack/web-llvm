@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SegmentBuilder` Class Reference
+# `SegmentBuilder` Class
 
 
 

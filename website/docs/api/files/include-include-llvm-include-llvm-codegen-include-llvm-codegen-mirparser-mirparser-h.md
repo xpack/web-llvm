@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRParser.h` File Reference
+# `MIRParser.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegColoring` Class Reference
+# `WebAssemblyRegColoring` Class
 
 
 

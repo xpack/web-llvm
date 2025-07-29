@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileCount` Class Reference
+# `ProfileCount` Class
 
 <p>Class to represent profile counts. <a href="#details">More...</a></p>
 

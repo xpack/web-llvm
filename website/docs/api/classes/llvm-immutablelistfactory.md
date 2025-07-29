@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableListFactory` Class Template Reference
+# `ImmutableListFactory` Class Template
 
 
 

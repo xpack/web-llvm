@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeAllocator.h` File Reference
+# `ThreadSafeAllocator.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoOptimizationFailure` Class Reference
+# `DiagnosticInfoOptimizationFailure` Class
 
 <p>Diagnostic information for optimization failures. <a href="#details">More...</a></p>
 

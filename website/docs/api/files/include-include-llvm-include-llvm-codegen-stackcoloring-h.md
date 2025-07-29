@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackColoring.h` File Reference
+# `StackColoring.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCPInstVisitor` Class Reference
+# `SCCPInstVisitor` Class
 
 <p>Helper class for <a href="/web-llvm/docs/api/classes/llvm/sccpsolver">SCCPSolver</a>. <a href="#details">More...</a></p>
 

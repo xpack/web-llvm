@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMarkLastScratchLoad` Class Reference
+# `AMDGPUMarkLastScratchLoad` Class
 
 
 

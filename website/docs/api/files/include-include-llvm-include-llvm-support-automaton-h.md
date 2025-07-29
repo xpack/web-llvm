@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Automaton.h` File Reference
+# `Automaton.h` File
 
 
 

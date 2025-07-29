@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericDomTreeConstruction.h` File Reference
+# `GenericDomTreeConstruction.h` File
 
 <p>Generic dominator tree construction - this file provides routines to construct immediate dominator information for a flow-graph based on the Semi-NCA algorithm described in this dissertation: <a href="#details">More...</a></p>
 

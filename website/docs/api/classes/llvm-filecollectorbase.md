@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCollectorBase` Class Reference
+# `FileCollectorBase` Class
 
 
 

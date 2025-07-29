@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVTargetStreamer` Class Reference
+# `SPIRVTargetStreamer` Class
 
 
 

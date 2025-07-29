@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRangeShrink.cpp` File Reference
+# `LiveRangeShrink.cpp` File
 
 <p>===------------------------------------------------------------------—===// <a href="#details">More...</a></p>
 

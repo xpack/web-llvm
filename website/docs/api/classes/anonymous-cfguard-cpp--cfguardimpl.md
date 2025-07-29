@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGuardImpl` Class Reference
+# `CFGuardImpl` Class
 
 <p>Adds Control Flow Guard (CFG) checks on indirect function calls/invokes. <a href="#details">More...</a></p>
 

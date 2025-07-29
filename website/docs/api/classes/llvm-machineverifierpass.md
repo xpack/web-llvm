@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineVerifierPass` Class Reference
+# `MachineVerifierPass` Class
 
 
 

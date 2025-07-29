@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVReport` Class Reference
+# `LVReport` Class
 
 
 

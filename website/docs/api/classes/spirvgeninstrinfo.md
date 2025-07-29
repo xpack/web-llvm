@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVGenInstrInfo` Class Reference
+# `SPIRVGenInstrInfo` Class
 
 
 

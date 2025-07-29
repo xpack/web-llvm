@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructType` Class Reference
+# `StructType` Class
 
 <p>Class to represent struct types. <a href="#details">More...</a></p>
 

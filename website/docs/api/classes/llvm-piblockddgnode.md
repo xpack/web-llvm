@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PiBlockDDGNode` Class Reference
+# `PiBlockDDGNode` Class
 
 <p>Subclass of <a href="/web-llvm/docs/api/classes/llvm/ddgnode">DDGNode</a> representing a pi-block. <a href="#details">More...</a></p>
 

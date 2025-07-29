@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmEHFuncInfo.h` File Reference
+# `WasmEHFuncInfo.h` File
 
 
 

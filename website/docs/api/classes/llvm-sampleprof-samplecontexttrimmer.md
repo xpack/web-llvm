@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleContextTrimmer` Class Reference
+# `SampleContextTrimmer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sampleprof/samplecontexttrimmer">SampleContextTrimmer</a> impelements helper functions to trim, merge cold context profiles. <a href="#details">More...</a></p>
 

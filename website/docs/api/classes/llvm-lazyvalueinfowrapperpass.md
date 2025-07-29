@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueInfoWrapperPass` Class Reference
+# `LazyValueInfoWrapperPass` Class
 
 <p>Wrapper around <a href="/web-llvm/docs/api/classes/llvm/lazyvalueinfo">LazyValueInfo</a>. <a href="#details">More...</a></p>
 

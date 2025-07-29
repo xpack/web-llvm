@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVSignExtendExpr` Class Reference
+# `SCEVSignExtendExpr` Class
 
 <p>This class represents a sign extension of a small integer value to a larger integer value. <a href="#details">More...</a></p>
 

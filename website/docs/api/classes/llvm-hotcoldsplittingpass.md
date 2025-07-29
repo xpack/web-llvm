@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotColdSplittingPass` Class Reference
+# `HotColdSplittingPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to outline cold regions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectingFileSystemParser` Class Reference
+# `RedirectingFileSystemParser` Class
 
 <p>A helper class to hold the common YAML parsing state. <a href="#details">More...</a></p>
 

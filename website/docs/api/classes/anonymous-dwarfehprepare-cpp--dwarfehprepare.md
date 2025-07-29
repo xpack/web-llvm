@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfEHPrepare` Class Reference
+# `DwarfEHPrepare` Class
 
 
 

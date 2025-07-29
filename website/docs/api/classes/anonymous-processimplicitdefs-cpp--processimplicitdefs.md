@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProcessImplicitDefs` Class Reference
+# `ProcessImplicitDefs` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/process">Process</a> IMPLICIT_DEF instructions and make sure there is one implicit_def for each use. <a href="#details">More...</a></p>
 

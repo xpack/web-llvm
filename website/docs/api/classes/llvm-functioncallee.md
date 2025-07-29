@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionCallee` Class Reference
+# `FunctionCallee` Class
 
 <p>A handy container for a FunctionType+Callee-pointer pair, which can be passed around as a single entity. <a href="#details">More...</a></p>
 

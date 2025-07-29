@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnsatisfiedSymbolDependencies` Class Reference
+# `UnsatisfiedSymbolDependencies` Class
 
 <p>Used to report failure due to unsatisfiable symbol dependencies. <a href="#details">More...</a></p>
 

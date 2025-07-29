@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64InstructionSelector` Class Reference
+# `AArch64InstructionSelector` Class
 
 
 

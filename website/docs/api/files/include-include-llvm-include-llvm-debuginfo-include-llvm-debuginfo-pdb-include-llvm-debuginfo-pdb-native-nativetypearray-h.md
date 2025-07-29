@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeArray.h` File Reference
+# `NativeTypeArray.h` File
 
 
 

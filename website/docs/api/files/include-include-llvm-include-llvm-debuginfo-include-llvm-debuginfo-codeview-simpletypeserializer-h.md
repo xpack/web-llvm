@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleTypeSerializer.h` File Reference
+# `SimpleTypeSerializer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrBuilder.h` File Reference
+# `InstrBuilder.h` File
 
 <p>A builder class for instructions that are statically analyzed by llvm-mca. <a href="#details">More...</a></p>
 

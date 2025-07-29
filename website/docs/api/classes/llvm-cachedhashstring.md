@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedHashString` Class Reference
+# `CachedHashString` Class
 
 <p>A container which contains a string, which it owns, plus a precomputed hash. <a href="#details">More...</a></p>
 

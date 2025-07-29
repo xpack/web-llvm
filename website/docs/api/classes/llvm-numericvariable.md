@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumericVariable` Class Reference
+# `NumericVariable` Class
 
 <p>Class representing a numeric variable and its associated current value. <a href="#details">More...</a></p>
 

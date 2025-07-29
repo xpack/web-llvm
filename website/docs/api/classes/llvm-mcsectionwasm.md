@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionWasm` Class Reference
+# `MCSectionWasm` Class
 
 <p>This represents a section on wasm. <a href="#details">More...</a></p>
 

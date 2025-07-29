@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleCaptureAnalysis` Class Reference
+# `SimpleCaptureAnalysis` Class
 
 <p>Context-free <a href="/web-llvm/docs/api/structs/llvm/captureanalysis">CaptureAnalysis</a> provider, which computes and caches whether an object is captured in the function at all, but does not distinguish whether it was captured before or after the context instruction. <a href="#details">More...</a></p>
 

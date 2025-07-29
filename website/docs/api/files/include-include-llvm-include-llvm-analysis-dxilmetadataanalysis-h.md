@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILMetadataAnalysis.h` File Reference
+# `DXILMetadataAnalysis.h` File
 
 
 

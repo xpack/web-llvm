@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetVector` Class Template Reference
+# `SetVector` Class Template
 
 <p>A vector that has set insertion semantics. <a href="#details">More...</a></p>
 

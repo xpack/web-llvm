@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericDomTree.h` File Reference
+# `GenericDomTree.h` File
 
 <p>This file defines a set of templates that efficiently compute a dominator tree over a generic graph. <a href="#details">More...</a></p>
 

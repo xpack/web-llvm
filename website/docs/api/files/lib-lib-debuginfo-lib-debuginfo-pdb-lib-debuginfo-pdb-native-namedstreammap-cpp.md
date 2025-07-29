@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NamedStreamMap.cpp` File Reference
+# `NamedStreamMap.cpp` File
 
 
 

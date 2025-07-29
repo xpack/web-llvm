@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringInit` Class Reference
+# `StringInit` Class
 
 <p>"foo" - Represent an initialization by a string value. <a href="#details">More...</a></p>
 

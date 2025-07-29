@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Node` Class Reference
+# `Node` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetbase/node">Node</a> - This class is used to maintain the singly linked bucket list in a folding set. <a href="#details">More...</a></p>
 

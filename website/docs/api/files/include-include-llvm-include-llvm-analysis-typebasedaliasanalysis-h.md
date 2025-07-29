@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeBasedAliasAnalysis.h` File Reference
+# `TypeBasedAliasAnalysis.h` File
 
 <p>This is the interface for a metadata-based TBAA. <a href="#details">More...</a></p>
 

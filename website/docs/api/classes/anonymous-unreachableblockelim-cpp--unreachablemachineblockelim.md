@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnreachableMachineBlockElim` Class Reference
+# `UnreachableMachineBlockElim` Class
 
 
 

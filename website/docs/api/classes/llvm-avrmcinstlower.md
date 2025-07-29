@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRMCInstLower` Class Reference
+# `AVRMCInstLower` Class
 
 <p>Lowers <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a></span> objects into <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a></span> objects. <a href="#details">More...</a></p>
 

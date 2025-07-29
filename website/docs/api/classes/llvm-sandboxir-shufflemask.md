@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleMask` Class Reference
+# `ShuffleMask` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600GenInstrInfo` Class Reference
+# `R600GenInstrInfo` Class
 
 
 

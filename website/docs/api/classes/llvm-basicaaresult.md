@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicAAResult` Class Reference
+# `BasicAAResult` Class
 
 <p>This is the <a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a> result object for the basic, local, and stateless alias analysis. <a href="#details">More...</a></p>
 

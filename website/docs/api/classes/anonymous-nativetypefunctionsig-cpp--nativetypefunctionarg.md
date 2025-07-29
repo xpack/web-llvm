@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeFunctionArg` Class Reference
+# `NativeTypeFunctionArg` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicMemSetInst` Class Reference
+# `AtomicMemSetInst` Class
 
 <p>This class represents atomic memset intrinsic. <a href="#details">More...</a></p>
 

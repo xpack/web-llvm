@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextualFoldingSet` Class Template Reference
+# `ContextualFoldingSet` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/contextualfoldingset">ContextualFoldingSet</a> - This template class is a further refinement of <a href="/web-llvm/docs/api/classes/llvm/foldingset">FoldingSet</a> which provides a context argument when calling Profile on its nodes. <a href="#details">More...</a></p>
 

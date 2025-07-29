@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelSwitchLowering` Class Reference
+# `GISelSwitchLowering` Class
 
 <p>Switch analysis and optimization. <a href="#details">More...</a></p>
 

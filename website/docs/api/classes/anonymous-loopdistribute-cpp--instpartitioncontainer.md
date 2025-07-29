@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstPartitionContainer` Class Reference
+# `InstPartitionContainer` Class
 
 <p>Holds the set of Partitions. <a href="#details">More...</a></p>
 

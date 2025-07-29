@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEMCCodeEmitter` Class Reference
+# `VEMCCodeEmitter` Class
 
 
 

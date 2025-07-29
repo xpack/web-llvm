@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefInit` Class Reference
+# `DefInit` Class
 
 <p>AL - Represent a reference to a 'def' in the description. <a href="#details">More...</a></p>
 

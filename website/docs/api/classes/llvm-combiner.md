@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Combiner` Class Reference
+# `Combiner` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/combiner">Combiner</a> implementation. <a href="#details">More...</a></p>
 

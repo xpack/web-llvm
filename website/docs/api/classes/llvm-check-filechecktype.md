@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCheckType` Class Reference
+# `FileCheckType` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UsesReplacer` Class Reference
+# `UsesReplacer` Class
 
 <p>Replace the uses of an instruction by another instruction. <a href="#details">More...</a></p>
 

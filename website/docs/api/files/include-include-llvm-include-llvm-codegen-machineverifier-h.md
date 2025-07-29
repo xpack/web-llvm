@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineVerifier.h` File Reference
+# `MachineVerifier.h` File
 
 
 

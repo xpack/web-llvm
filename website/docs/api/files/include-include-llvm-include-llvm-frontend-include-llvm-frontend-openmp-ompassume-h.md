@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPAssume.h` File Reference
+# `OMPAssume.h` File
 
 <p>This file provides helper functions and classes to deal with OpenMP assumptions, e.g., as used by <span class="doxyComputerOutput">[begin/end] assumes</span> and <span class="doxyComputerOutput">assume</span>. <a href="#details">More...</a></p>
 

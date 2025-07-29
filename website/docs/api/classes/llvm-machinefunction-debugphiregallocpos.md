@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugPHIRegallocPos` Class Reference
+# `DebugPHIRegallocPos` Class
 
 <p>Location of a PHI instruction that is also a debug-info variable value, for the duration of register allocation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSequence` Class Template Reference
+# `SPSSequence` Class Template
 
 <p>SPS tag type for sequences. <a href="#details">More...</a></p>
 

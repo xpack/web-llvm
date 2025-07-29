@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplificationTracker` Class Reference
+# `SimplificationTracker` Class
 
 <p>Keep track of simplification of Phi nodes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSTuple` Class Template Reference
+# `SPSTuple` Class Template
 
 <p>SPS tag type for tuples. <a href="#details">More...</a></p>
 

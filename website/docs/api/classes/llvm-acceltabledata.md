@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelTableData` Class Reference
+# `AccelTableData` Class
 
 <p>Interface which the different types of accelerator table data have to conform. <a href="#details">More...</a></p>
 

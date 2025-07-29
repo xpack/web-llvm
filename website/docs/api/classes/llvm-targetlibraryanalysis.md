@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLibraryAnalysis` Class Reference
+# `TargetLibraryAnalysis` Class
 
 <p>Analysis pass providing the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a></span>. <a href="#details">More...</a></p>
 

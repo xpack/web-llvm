@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericConvergenceVerifier.h` File Reference
+# `GenericConvergenceVerifier.h` File
 
 <p>A verifier for the static rules of convergence control tokens that works with both LLVM IR and MIR. <a href="#details">More...</a></p>
 

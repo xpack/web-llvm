@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassTimingInfo` Class Reference
+# `PassTimingInfo` Class
 
 <p>Provides an interface for collecting pass timing information. <a href="#details">More...</a></p>
 

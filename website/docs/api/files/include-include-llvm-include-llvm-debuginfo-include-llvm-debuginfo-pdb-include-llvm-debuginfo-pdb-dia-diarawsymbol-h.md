@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIARawSymbol.h` File Reference
+# `DIARawSymbol.h` File
 
 
 

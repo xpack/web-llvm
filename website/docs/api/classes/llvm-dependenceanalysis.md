@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependenceAnalysis` Class Reference
+# `DependenceAnalysis` Class
 
 <p>AnalysisPass to compute dependence information in a function. <a href="#details">More...</a></p>
 

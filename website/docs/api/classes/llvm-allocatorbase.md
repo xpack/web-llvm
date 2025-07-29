@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocatorBase` Class Template Reference
+# `AllocatorBase` Class Template
 
 <p>CRTP base class providing obvious overloads for the core <span class="doxyComputerOutput"><a href="#a3bfc5b8ce6ce70645e6f4662af9eef50">Allocate()</a></span> methods of LLVM-style allocators. <a href="#details">More...</a></p>
 

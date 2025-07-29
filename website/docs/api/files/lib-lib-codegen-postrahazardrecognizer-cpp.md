@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostRAHazardRecognizer.cpp` File Reference
+# `PostRAHazardRecognizer.cpp` File
 
 <p>This runs the hazard recognizer and emits noops when necessary. <a href="#details">More...</a></p>
 

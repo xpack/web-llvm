@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRELFStreamer` Class Reference
+# `AVRELFStreamer` Class
 
 <p>A target streamer for an <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> object file. <a href="#details">More...</a></p>
 

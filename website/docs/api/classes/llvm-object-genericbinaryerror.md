@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericBinaryError` Class Reference
+# `GenericBinaryError` Class
 
 <p>Generic binary error. <a href="#details">More...</a></p>
 

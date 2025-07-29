@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadAndStorePromoter` Class Reference
+# `LoadAndStorePromoter` Class
 
 <p>Helper class for promoting a collection of loads and stores into SSA Form using the <a href="/web-llvm/docs/api/classes/llvm/ssaupdater">SSAUpdater</a>. <a href="#details">More...</a></p>
 

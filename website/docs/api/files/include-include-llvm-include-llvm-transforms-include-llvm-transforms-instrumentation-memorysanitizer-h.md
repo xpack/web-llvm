@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySanitizer.h` File Reference
+# `MemorySanitizer.h` File
 
 
 

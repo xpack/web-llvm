@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemProfiler` Class Reference
+# `MemProfiler` Class
 
 <p>Instrument the code in module to profile memory accesses. <a href="#details">More...</a></p>
 

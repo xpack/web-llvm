@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXFloatMCExpr` Class Reference
+# `NVPTXFloatMCExpr` Class
 
 
 

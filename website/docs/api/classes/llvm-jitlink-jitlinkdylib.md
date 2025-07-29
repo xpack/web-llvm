@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkDylib` Class Reference
+# `JITLinkDylib` Class
 
 
 

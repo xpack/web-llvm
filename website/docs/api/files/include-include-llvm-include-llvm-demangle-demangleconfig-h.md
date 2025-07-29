@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DemangleConfig.h` File Reference
+# `DemangleConfig.h` File
 
 
 

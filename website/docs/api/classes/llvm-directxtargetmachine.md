@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXTargetMachine` Class Reference
+# `DirectXTargetMachine` Class
 
 
 

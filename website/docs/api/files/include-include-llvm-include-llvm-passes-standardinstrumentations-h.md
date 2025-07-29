@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StandardInstrumentations.h` File Reference
+# `StandardInstrumentations.h` File
 
 <p>This header defines a class that provides bookkeeping for all standard (i.e in-tree) pass instrumentations. <a href="#details">More...</a></p>
 

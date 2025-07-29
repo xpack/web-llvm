@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAttributeParser` Class Reference
+# `ARMAttributeParser` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocIdx` Class Reference
+# `LocIdx` Class
 
 <p>Handle-class for a particular "location". <a href="#details">More...</a></p>
 

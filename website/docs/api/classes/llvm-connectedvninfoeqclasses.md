@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConnectedVNInfoEqClasses` Class Reference
+# `ConnectedVNInfoEqClasses` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/connectedvninfoeqclasses">ConnectedVNInfoEqClasses</a> - Helper class that can divide VNInfos in a <a href="/web-llvm/docs/api/classes/llvm/liveinterval">LiveInterval</a> into equivalence clases of connected components. <a href="#details">More...</a></p>
 

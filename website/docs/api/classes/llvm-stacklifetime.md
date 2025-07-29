@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackLifetime` Class Reference
+# `StackLifetime` Class
 
 <p>Compute live ranges of allocas. <a href="#details">More...</a></p>
 

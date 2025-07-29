@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thumb1FrameLowering` Class Reference
+# `Thumb1FrameLowering` Class
 
 
 

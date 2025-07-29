@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplayInlineAdvisor.h` File Reference
+# `ReplayInlineAdvisor.h` File
 
 
 

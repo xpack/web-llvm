@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstructionSelector` Class Reference
+# `X86InstructionSelector` Class
 
 
 

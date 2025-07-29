@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TempFile` Class Reference
+# `TempFile` Class
 
 <p>Represents a temporary file. <a href="#details">More...</a></p>
 

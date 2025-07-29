@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGLexer` Class Reference
+# `TGLexer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/tglexer">TGLexer</a> - <a href="/web-llvm/docs/api/namespaces/llvm/tablegen">TableGen</a> Lexer class. <a href="#details">More...</a></p>
 

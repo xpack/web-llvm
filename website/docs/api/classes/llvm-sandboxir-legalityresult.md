@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalityResult` Class Reference
+# `LegalityResult` Class
 
 <p>The legality outcome is represented by a class rather than an enum class because in some cases the legality checks are expensive and look for a particular instruction that can be passed along to the vectorizer to avoid repeating the same expensive computation. <a href="#details">More...</a></p>
 

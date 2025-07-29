@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InputArgList` Class Reference
+# `InputArgList` Class
 
 
 

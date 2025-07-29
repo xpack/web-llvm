@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameCookieSym` Class Reference
+# `FrameCookieSym` Class
 
 
 

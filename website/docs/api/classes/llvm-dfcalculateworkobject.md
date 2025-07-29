@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DFCalculateWorkObject` Class Template Reference
+# `DFCalculateWorkObject` Class Template
 
 
 

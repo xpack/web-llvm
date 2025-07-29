@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `i386.cpp` File Reference
+# `i386.cpp` File
 
 
 

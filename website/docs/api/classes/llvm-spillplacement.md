@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpillPlacement` Class Reference
+# `SpillPlacement` Class
 
 
 

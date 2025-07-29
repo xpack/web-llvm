@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCtxProfLoweringPass` Class Reference
+# `PGOCtxProfLoweringPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DagRecTy` Class Reference
+# `DagRecTy` Class
 
 <p>'dag' - Represent a dag fragment <a href="#details">More...</a></p>
 

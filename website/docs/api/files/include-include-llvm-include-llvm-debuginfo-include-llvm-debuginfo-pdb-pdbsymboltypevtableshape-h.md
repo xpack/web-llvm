@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeVTableShape.h` File Reference
+# `PDBSymbolTypeVTableShape.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLinkerImpl` Class Reference
+# `DWARFLinkerImpl` Class
 
 <p>This class links debug info. <a href="#details">More...</a></p>
 

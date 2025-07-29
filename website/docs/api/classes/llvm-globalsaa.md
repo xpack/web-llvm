@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsAA` Class Reference
+# `GlobalsAA` Class
 
 <p>Analysis pass providing a never-invalidated alias analysis result. <a href="#details">More...</a></p>
 

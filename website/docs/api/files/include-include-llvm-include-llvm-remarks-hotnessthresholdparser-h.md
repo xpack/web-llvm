@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotnessThresholdParser.h` File Reference
+# `HotnessThresholdParser.h` File
 
 <p>This file implements a simple parser to decode commandline option for remarks hotness threshold that supports both int and a special 'auto' value. <a href="#details">More...</a></p>
 

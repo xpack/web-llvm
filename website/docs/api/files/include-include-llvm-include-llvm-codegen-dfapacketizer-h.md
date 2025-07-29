@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DFAPacketizer.h` File Reference
+# `DFAPacketizer.h` File
 
 
 

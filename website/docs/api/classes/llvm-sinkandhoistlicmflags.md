@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SinkAndHoistLICMFlags` Class Reference
+# `SinkAndHoistLICMFlags` Class
 
 <p>Flags controlling how much is checked when sinking or hoisting instructions. <a href="#details">More...</a></p>
 

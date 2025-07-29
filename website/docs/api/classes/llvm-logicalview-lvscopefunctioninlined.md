@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScopeFunctionInlined` Class Reference
+# `LVScopeFunctionInlined` Class
 
 
 

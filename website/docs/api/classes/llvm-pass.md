@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Pass` Class Reference
+# `Pass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> interface - Implemented by all 'passes'. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVUnionPredicate` Class Reference
+# `SCEVUnionPredicate` Class
 
 <p>This class represents a composition of other <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> predicates, and is the class that most clients will interact with. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SingleLinkedListIterator` Class Template Reference
+# `SingleLinkedListIterator` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterBank.h` File Reference
+# `RegisterBank.h` File
 
 
 

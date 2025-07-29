@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DITemplateParameter` Class Reference
+# `DITemplateParameter` Class
 
 <p>Base class for template parameters. <a href="#details">More...</a></p>
 

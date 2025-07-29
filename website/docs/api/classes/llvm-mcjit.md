@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCJIT` Class Reference
+# `MCJIT` Class
 
 
 

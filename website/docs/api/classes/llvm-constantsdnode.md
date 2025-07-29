@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantSDNode` Class Reference
+# `ConstantSDNode` Class
 
 
 

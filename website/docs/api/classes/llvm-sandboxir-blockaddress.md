@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockAddress` Class Reference
+# `BlockAddress` Class
 
 
 

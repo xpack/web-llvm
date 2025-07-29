@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RGPassManager` Class Reference
+# `RGPassManager` Class
 
 <p>The pass manager to schedule RegionPasses. <a href="#details">More...</a></p>
 

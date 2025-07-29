@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGBuilder` Class Reference
+# `DDGBuilder` Class
 
 <p>Concrete implementation of a pure data dependence graph builder. <a href="#details">More...</a></p>
 

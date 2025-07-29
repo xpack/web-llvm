@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedStrategyStub` Class Reference
+# `SchedStrategyStub` Class
 
 
 

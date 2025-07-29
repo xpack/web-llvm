@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64DeadRegisterDefinitions` Class Reference
+# `AArch64DeadRegisterDefinitions` Class
 
 
 

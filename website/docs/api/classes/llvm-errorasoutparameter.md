@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorAsOutParameter` Class Reference
+# `ErrorAsOutParameter` Class
 
 <p>Helper for Errors used as out-parameters. <a href="#details">More...</a></p>
 

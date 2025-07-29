@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeImpl.h` File Reference
+# `AttributeImpl.h` File
 
 <p>This file defines various helper methods and classes used by LLVMContextImpl for creating and managing attributes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegReloadCache` Class Reference
+# `RegReloadCache` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNUserSGPRUsageInfo` Class Reference
+# `GCNUserSGPRUsageInfo` Class
 
 
 

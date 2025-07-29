@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Record.h` File Reference
+# `Record.h` File
 
 <p>Implements the TAPI Record Types. <a href="#details">More...</a></p>
 

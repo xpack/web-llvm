@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCGOFFStreamer` Class Reference
+# `MCGOFFStreamer` Class
 
 
 

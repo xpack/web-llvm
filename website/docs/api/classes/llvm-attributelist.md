@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeList` Class Reference
+# `AttributeList` Class
 
 <p>This class holds the attributes for a function, its return value, and its parameters. <a href="#details">More...</a></p>
 

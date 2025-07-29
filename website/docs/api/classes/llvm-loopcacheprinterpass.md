@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopCachePrinterPass` Class Reference
+# `LoopCachePrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/cachecost">CacheCost</a></span> results. <a href="#details">More...</a></p>
 

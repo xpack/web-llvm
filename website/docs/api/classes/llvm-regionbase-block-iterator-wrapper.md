@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `block_iterator_wrapper` Class Template Reference
+# `block_iterator_wrapper` Class Template
 
 
 

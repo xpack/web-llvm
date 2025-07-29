@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InitUndef` Class Reference
+# `InitUndef` Class
 
 
 

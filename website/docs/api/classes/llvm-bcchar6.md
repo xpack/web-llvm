@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCChar6` Class Reference
+# `BCChar6` Class
 
 <p>Represents a character encoded in LLVM's Char6 encoding. <a href="#details">More...</a></p>
 

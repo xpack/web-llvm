@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopConstrainer` Class Reference
+# `LoopConstrainer` Class
 
 <p>This class is used to constrain loops to run within a given iteration space. <a href="#details">More...</a></p>
 

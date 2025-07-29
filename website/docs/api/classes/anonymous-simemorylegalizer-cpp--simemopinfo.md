@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMemOpInfo` Class Reference
+# `SIMemOpInfo` Class
 
 
 

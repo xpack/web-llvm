@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataSym` Class Reference
+# `DataSym` Class
 
 
 

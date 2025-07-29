@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicExpandImpl` Class Reference
+# `AtomicExpandImpl` Class
 
 
 

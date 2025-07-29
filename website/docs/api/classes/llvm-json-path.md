@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Path` Class Reference
+# `Path` Class
 
 <p>A "cursor" marking a position within a <a href="/web-llvm/docs/api/classes/llvm/json/value">Value</a>. <a href="#details">More...</a></p>
 

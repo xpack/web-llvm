@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAUpdaterTraits` Class Template Reference
+# `SSAUpdaterTraits` Class Template
 
 
 

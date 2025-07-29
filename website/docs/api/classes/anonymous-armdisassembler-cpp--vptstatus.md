@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPTStatus` Class Reference
+# `VPTStatus` Class
 
 
 

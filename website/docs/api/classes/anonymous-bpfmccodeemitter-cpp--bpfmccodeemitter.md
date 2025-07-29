@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMCCodeEmitter` Class Reference
+# `BPFMCCodeEmitter` Class
 
 
 

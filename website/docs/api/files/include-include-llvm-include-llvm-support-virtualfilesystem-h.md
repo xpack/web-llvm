@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtualFileSystem.h` File Reference
+# `VirtualFileSystem.h` File
 
 <p>Defines the virtual file system interface vfs::FileSystem. <a href="#details">More...</a></p>
 

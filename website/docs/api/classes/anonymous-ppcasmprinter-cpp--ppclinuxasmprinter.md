@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCLinuxAsmPrinter` Class Reference
+# `PPCLinuxAsmPrinter` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-ppcasmprinter-cpp-/ppclinuxasmprinter">PPCLinuxAsmPrinter</a> - PowerPC assembly printer, customized for Linux. <a href="#details">More...</a></p>
 

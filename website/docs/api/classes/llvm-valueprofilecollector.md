@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueProfileCollector` Class Reference
+# `ValueProfileCollector` Class
 
 <p>Utility analysis that determines what values are worth profiling. <a href="#details">More...</a></p>
 

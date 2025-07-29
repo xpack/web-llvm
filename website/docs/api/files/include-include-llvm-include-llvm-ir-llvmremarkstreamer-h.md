@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMRemarkStreamer.h` File Reference
+# `LLVMRemarkStreamer.h` File
 
 
 

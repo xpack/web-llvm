@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ConditionOptimizer` Class Reference
+# `AArch64ConditionOptimizer` Class
 
 
 

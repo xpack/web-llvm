@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteRope` Class Reference
+# `RewriteRope` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/rewriterope">RewriteRope</a> - A powerful string class. <a href="#details">More...</a></p>
 

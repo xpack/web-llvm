@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkGraphLayer` Class Reference
+# `LinkGraphLayer` Class
 
 
 

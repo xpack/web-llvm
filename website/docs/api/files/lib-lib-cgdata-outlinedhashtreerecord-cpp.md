@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlinedHashTreeRecord.cpp` File Reference
+# `OutlinedHashTreeRecord.cpp` File
 
 
 

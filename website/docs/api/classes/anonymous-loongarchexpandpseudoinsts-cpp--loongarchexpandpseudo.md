@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchExpandPseudo` Class Reference
+# `LoongArchExpandPseudo` Class
 
 
 

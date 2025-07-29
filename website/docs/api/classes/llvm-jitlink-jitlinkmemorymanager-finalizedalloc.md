@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FinalizedAlloc` Class Reference
+# `FinalizedAlloc` Class
 
 <p>Represents a finalized allocation. <a href="#details">More...</a></p>
 

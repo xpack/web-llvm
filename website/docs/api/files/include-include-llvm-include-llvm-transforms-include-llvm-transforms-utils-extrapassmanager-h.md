@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraPassManager.h` File Reference
+# `ExtraPassManager.h` File
 
 <p>This file provides a pass manager that only runs its passes if the provided marker analysis has been preserved, together with a class to define such a marker analysis. <a href="#details">More...</a></p>
 

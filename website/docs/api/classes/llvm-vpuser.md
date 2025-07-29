@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPUser` Class Reference
+# `VPUser` Class
 
 <p>This class augments <a href="/web-llvm/docs/api/classes/llvm/vpvalue">VPValue</a> with operands which provide the inverse def-use edges from <a href="/web-llvm/docs/api/classes/llvm/vpvalue">VPValue</a>'s users to their defs. <a href="#details">More...</a></p>
 

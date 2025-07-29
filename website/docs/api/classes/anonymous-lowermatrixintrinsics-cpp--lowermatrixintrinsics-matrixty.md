@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixTy` Class Reference
+# `MatrixTy` Class
 
 <p>Wrapper class representing a matrix as a set of vectors, either in row or column major layout. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptTable` Class Reference
+# `OptTable` Class
 
 <p>Provide access to the <a href="/web-llvm/docs/api/classes/llvm/opt/option">Option</a> info table. <a href="#details">More...</a></p>
 

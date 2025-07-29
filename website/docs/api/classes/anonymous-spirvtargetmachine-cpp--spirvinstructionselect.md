@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVInstructionSelect` Class Reference
+# `SPIRVInstructionSelect` Class
 
 
 

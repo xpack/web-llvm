@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OcamlGCPrinter.cpp` File Reference
+# `OcamlGCPrinter.cpp` File
 
 
 

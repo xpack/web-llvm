@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHPersonalities.h` File Reference
+# `EHPersonalities.h` File
 
 
 

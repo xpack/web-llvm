@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalAlias.h` File Reference
+# `GlobalAlias.h` File
 
 
 

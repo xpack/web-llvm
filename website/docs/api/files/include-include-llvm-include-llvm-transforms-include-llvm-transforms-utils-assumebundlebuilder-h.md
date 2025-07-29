@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumeBundleBuilder.h` File Reference
+# `AssumeBundleBuilder.h` File
 
 
 

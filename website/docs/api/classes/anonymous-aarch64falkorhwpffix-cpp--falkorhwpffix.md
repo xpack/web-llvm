@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FalkorHWPFFix` Class Reference
+# `FalkorHWPFFix` Class
 
 
 

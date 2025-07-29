@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MoveAutoInitPass` Class Reference
+# `MoveAutoInitPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFAcceleratorTable` Class Reference
+# `DWARFAcceleratorTable` Class
 
 <p>The accelerator tables are designed to allow efficient random access (using a symbol name as a key) into debug info by providing an index of the debug info DIEs. <a href="#details">More...</a></p>
 

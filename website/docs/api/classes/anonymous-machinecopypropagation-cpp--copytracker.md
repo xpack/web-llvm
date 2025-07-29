@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyTracker` Class Reference
+# `CopyTracker` Class
 
 
 

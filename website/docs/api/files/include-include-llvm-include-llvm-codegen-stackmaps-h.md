@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackMaps.h` File Reference
+# `StackMaps.h` File
 
 
 

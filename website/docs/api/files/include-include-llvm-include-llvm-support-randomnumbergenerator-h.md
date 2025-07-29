@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RandomNumberGenerator.h` File Reference
+# `RandomNumberGenerator.h` File
 
 
 

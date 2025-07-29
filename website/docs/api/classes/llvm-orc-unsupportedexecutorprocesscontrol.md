@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnsupportedExecutorProcessControl` Class Reference
+# `UnsupportedExecutorProcessControl` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> instance that asserts if any of its methods are used. <a href="#details">More...</a></p>
 

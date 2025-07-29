@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFRecordSectionSplitter.cpp` File Reference
+# `DWARFRecordSectionSplitter.cpp` File
 
 
 

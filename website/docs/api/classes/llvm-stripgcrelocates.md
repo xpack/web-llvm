@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripGCRelocates` Class Reference
+# `StripGCRelocates` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrapperFunctionAsyncHandlerHelper` Class Template Reference
+# `WrapperFunctionAsyncHandlerHelper` Class Template
 
 
 

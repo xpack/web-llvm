@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCMCAsmInfo` Class Reference
+# `ARCMCAsmInfo` Class
 
 
 

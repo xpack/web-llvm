@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Symbol` Class Reference
+# `Symbol` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/jitlink/symbol">Symbol</a> representation. <a href="#details">More...</a></p>
 

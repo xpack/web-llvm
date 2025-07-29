@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallBitVector` Class Reference
+# `SmallBitVector` Class
 
 <p>This is a 'bitvector' (really, a variable-sized bit array), optimized for the case when the array is small. <a href="#details">More...</a></p>
 

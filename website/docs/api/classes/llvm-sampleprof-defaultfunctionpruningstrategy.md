@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultFunctionPruningStrategy` Class Reference
+# `DefaultFunctionPruningStrategy` Class
 
 
 

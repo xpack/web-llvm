@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolVisitorCallbacks.h` File Reference
+# `SymbolVisitorCallbacks.h` File
 
 
 

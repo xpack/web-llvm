@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIMatchTableExecutorImpl.h` File Reference
+# `GIMatchTableExecutorImpl.h` File
 
 
 

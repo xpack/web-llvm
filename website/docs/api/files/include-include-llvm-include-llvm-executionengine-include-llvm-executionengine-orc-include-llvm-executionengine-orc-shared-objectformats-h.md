@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectFormats.h` File Reference
+# `ObjectFormats.h` File
 
 
 

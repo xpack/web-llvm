@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AvoidTrailingCallPass` Class Reference
+# `X86AvoidTrailingCallPass` Class
 
 
 

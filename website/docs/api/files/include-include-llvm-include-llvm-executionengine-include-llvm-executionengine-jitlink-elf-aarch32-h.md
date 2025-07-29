@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELF_aarch32.h` File Reference
+# `ELF_aarch32.h` File
 
 
 

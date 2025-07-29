@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AcceleratorRecordsSaver` Class Reference
+# `AcceleratorRecordsSaver` Class
 
 <p>This class helps to store information for accelerator entries. <a href="#details">More...</a></p>
 

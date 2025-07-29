@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SyntheticTypeNameBuilder` Class Reference
+# `SyntheticTypeNameBuilder` Class
 
 <p>The helper class to build type name based on <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> properties. <a href="#details">More...</a></p>
 

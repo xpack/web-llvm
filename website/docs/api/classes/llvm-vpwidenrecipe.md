@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenRecipe` Class Reference
+# `VPWidenRecipe` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpwidenrecipe">VPWidenRecipe</a> is a recipe for producing a widened instruction using the opcode and operands of the recipe. <a href="#details">More...</a></p>
 

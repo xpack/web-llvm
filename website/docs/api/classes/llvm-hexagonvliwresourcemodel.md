@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVLIWResourceModel` Class Reference
+# `HexagonVLIWResourceModel` Class
 
 
 

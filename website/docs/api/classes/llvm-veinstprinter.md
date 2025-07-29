@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEInstPrinter` Class Reference
+# `VEInstPrinter` Class
 
 
 

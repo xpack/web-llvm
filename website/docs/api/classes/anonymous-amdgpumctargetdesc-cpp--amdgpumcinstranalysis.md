@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCInstrAnalysis` Class Reference
+# `AMDGPUMCInstrAnalysis` Class
 
 
 

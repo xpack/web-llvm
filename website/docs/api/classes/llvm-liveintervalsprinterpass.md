@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveIntervalsPrinterPass` Class Reference
+# `LiveIntervalsPrinterPass` Class
 
 
 

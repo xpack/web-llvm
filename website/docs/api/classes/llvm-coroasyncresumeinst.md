@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAsyncResumeInst` Class Reference
+# `CoroAsyncResumeInst` Class
 
 <p>This represents the llvm.coro.async.resume instruction. <a href="#details">More...</a></p>
 

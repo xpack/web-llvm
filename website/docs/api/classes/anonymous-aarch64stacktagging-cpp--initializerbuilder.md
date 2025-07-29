@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InitializerBuilder` Class Reference
+# `InitializerBuilder` Class
 
 
 

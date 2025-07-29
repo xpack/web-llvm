@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItaniumCXAAtExitSupport` Class Reference
+# `ItaniumCXAAtExitSupport` Class
 
 <p>An interface for Itanium __cxa_atexit interposer implementations. <a href="#details">More...</a></p>
 

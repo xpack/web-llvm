@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JMCInstrumenterPass` Class Reference
+# `JMCInstrumenterPass` Class
 
 
 

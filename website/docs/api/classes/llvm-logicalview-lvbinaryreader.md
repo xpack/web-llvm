@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVBinaryReader` Class Reference
+# `LVBinaryReader` Class
 
 
 

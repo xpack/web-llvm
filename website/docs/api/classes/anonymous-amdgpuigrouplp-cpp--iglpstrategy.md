@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IGLPStrategy` Class Reference
+# `IGLPStrategy` Class
 
 
 

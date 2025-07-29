@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConstantPool` Class Reference
+# `MachineConstantPool` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/machineconstantpool">MachineConstantPool</a> class keeps track of constants referenced by a function which must be spilled to memory. <a href="#details">More...</a></p>
 

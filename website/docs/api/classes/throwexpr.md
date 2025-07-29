@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThrowExpr` Class Reference
+# `ThrowExpr` Class
 
 
 

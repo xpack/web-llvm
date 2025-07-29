@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlobAllocator` Class Reference
+# `BlobAllocator` Class
 
 <p>A helper class to manage the placement of various structures into the final minidump binary. <a href="#details">More...</a></p>
 

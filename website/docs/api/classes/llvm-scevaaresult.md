@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVAAResult` Class Reference
+# `SCEVAAResult` Class
 
 <p>A simple alias analysis implementation that uses <a href="/web-llvm/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> to answer queries. <a href="#details">More...</a></p>
 

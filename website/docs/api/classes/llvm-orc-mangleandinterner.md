@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MangleAndInterner` Class Reference
+# `MangleAndInterner` Class
 
 <p>Mangles symbol names then uniques them in the context of an <a href="/web-llvm/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a>. <a href="#details">More...</a></p>
 

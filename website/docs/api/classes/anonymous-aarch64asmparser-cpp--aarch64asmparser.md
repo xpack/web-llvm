@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64AsmParser` Class Reference
+# `AArch64AsmParser` Class
 
 
 

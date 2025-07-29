@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCECmpBlock` Class Reference
+# `BCECmpBlock` Class
 
 
 

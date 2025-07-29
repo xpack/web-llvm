@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePool.h` File Reference
+# `TypePool.h` File
 
 
 

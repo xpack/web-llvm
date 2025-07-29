@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyWasmObjectWriter` Class Reference
+# `WebAssemblyWasmObjectWriter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAIIDelegateInstaller` Class Reference
+# `RAIIDelegateInstaller` Class
 
 <p>A simple RAII based Delegate installer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmBackendWinCOFF` Class Reference
+# `ARMAsmBackendWinCOFF` Class
 
 
 

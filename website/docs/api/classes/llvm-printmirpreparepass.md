@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintMIRPreparePass` Class Reference
+# `PrintMIRPreparePass` Class
 
 
 

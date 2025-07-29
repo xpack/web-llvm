@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchTargetMachine` Class Reference
+# `LoongArchTargetMachine` Class
 
 
 

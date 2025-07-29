@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GExtOp` Class Reference
+# `GExtOp` Class
 
 <p>Represents an integer-like extending operation. <a href="#details">More...</a></p>
 

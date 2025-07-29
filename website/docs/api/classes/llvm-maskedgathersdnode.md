@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaskedGatherSDNode` Class Reference
+# `MaskedGatherSDNode` Class
 
 <p>This class is used to represent an MGATHER node. <a href="#details">More...</a></p>
 

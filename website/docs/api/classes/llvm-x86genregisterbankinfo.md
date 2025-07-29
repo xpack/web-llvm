@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86GenRegisterBankInfo` Class Reference
+# `X86GenRegisterBankInfo` Class
 
 
 

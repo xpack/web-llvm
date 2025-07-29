@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVScopeFormalPack` Class Reference
+# `LVScopeFormalPack` Class
 
 
 

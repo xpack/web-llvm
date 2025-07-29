@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDAGSwitchLowering` Class Reference
+# `SDAGSwitchLowering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOTBuilder` Class Reference
+# `GOTBuilder` Class
 
 <p>Populate a Global Offset Table from edges that request it. <a href="#details">More...</a></p>
 

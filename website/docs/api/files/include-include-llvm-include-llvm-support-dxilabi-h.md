@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILABI.h` File Reference
+# `DXILABI.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCFrameLowering` Class Reference
+# `PPCFrameLowering` Class
 
 
 

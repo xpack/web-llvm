@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncPGOInstrumentation` Class Template Reference
+# `FuncPGOInstrumentation` Class Template
 
 
 

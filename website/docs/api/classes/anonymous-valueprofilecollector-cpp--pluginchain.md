@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PluginChain` Class Template Reference
+# `PluginChain` Class Template
 
 <p>A plugin-based class that takes an arbitrary number of Plugin types. <a href="#details">More...</a></p>
 

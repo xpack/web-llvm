@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMachineFunctionInfo` Class Reference
+# `LoongArchMachineFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loongarchmachinefunctioninfo">LoongArchMachineFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/structs/llvm/machinefunctioninfo">MachineFunctionInfo</a> and contains private LoongArch-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

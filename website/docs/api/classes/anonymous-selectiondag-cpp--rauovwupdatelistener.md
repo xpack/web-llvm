@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAUOVWUpdateListener` Class Reference
+# `RAUOVWUpdateListener` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-selectiondag-cpp-/rauovwupdatelistener">RAUOVWUpdateListener</a> - Helper for ReplaceAllUsesOfValuesWith - When the node pointed to by a <a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/usememo">UseMemo</a> is deleted, set the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> to nullptr to indicate that the node already has been taken care of recursively. <a href="#details">More...</a></p>
 

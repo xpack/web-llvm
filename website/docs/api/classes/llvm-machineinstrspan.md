@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstrSpan` Class Reference
+# `MachineInstrSpan` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineinstrspan">MachineInstrSpan</a> provides an interface to get an iteration range containing the instruction it was initialized with, along with all those instructions inserted prior to or following that instruction at some point after the <a href="/web-llvm/docs/api/classes/llvm/machineinstrspan">MachineInstrSpan</a> is constructed. <a href="#details">More...</a></p>
 

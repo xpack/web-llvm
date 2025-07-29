@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleTypeSerializer` Class Reference
+# `SimpleTypeSerializer` Class
 
 
 

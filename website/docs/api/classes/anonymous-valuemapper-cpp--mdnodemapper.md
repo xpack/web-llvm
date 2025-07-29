@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeMapper` Class Reference
+# `MDNodeMapper` Class
 
 
 

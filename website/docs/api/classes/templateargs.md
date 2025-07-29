@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TemplateArgs` Class Reference
+# `TemplateArgs` Class
 
 
 

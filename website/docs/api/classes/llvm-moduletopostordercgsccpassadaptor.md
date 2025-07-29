@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleToPostOrderCGSCCPassAdaptor` Class Reference
+# `ModuleToPostOrderCGSCCPassAdaptor` Class
 
 <p>The core module pass which does a post-order walk of the SCCs and runs a CGSCC pass over each one. <a href="#details">More...</a></p>
 

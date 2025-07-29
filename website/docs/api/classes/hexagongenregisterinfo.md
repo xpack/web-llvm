@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonGenRegisterInfo` Class Reference
+# `HexagonGenRegisterInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600OpenCLImageTypeLoweringPass` Class Reference
+# `R600OpenCLImageTypeLoweringPass` Class
 
 
 

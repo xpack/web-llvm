@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPostRABundler` Class Reference
+# `SIPostRABundler` Class
 
 
 

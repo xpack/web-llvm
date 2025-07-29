@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectiveEmitter.h` File Reference
+# `DirectiveEmitter.h` File
 
 
 

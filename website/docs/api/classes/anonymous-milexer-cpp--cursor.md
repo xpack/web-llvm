@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cursor` Class Reference
+# `Cursor` Class
 
 <p>This class provides a way to iterate and get characters from the source string. <a href="#details">More...</a></p>
 

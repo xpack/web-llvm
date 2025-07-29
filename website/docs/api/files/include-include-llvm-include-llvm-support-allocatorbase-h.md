@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocatorBase.h` File Reference
+# `AllocatorBase.h` File
 
 <p>This file defines MallocAllocator. <a href="#details">More...</a></p>
 

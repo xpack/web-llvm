@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OStream` Class Reference
+# `OStream` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/json/ostream">json::OStream</a> allows writing well-formed JSON without materializing all structures as <a href="/web-llvm/docs/api/classes/llvm/json/value">json::Value</a> ahead of time. <a href="#details">More...</a></p>
 

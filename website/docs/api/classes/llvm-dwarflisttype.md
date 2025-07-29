@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFListType` Class Template Reference
+# `DWARFListType` Class Template
 
 <p>A base class for lists of entries that are extracted from a particular section, such as range lists or location lists. <a href="#details">More...</a></p>
 

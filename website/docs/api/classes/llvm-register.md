@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Register` Class Reference
+# `Register` Class
 
 <p>Wrapper class representing virtual and physical registers. <a href="#details">More...</a></p>
 

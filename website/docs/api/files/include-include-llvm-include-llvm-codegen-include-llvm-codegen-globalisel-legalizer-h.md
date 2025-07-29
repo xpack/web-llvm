@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Legalizer.h` File Reference
+# `Legalizer.h` File
 
 
 

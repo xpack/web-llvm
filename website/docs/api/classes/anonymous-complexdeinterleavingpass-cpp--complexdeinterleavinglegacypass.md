@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComplexDeinterleavingLegacyPass` Class Reference
+# `ComplexDeinterleavingLegacyPass` Class
 
 
 

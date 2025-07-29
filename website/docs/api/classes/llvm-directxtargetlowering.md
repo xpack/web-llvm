@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXTargetLowering` Class Reference
+# `DirectXTargetLowering` Class
 
 
 

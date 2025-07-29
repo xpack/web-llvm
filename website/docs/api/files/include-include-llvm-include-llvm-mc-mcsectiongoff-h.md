@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionGOFF.h` File Reference
+# `MCSectionGOFF.h` File
 
 <p>This file declares the MCSectionGOFF class, which contains all of the necessary machine code sections for the GOFF file format. <a href="#details">More...</a></p>
 

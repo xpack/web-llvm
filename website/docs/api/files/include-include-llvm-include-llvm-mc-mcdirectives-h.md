@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDirectives.h` File Reference
+# `MCDirectives.h` File
 
 
 

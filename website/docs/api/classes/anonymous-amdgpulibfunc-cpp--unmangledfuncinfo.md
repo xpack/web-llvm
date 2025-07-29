@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnmangledFuncInfo` Class Reference
+# `UnmangledFuncInfo` Class
 
 
 

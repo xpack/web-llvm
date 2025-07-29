@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicTTIImplBase` Class Template Reference
+# `BasicTTIImplBase` Class Template
 
 <p>Base class which can be used to help build a TTI implementation. <a href="#details">More...</a></p>
 

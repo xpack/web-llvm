@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGDeadness` Class Reference
+# `CFGDeadness` Class
 
 <p>This CFG Deadness finds dead blocks and edges. <a href="#details">More...</a></p>
 

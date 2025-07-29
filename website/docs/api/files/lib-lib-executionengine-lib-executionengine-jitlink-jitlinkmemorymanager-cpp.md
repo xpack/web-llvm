@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkMemoryManager.cpp` File Reference
+# `JITLinkMemoryManager.cpp` File
 
 
 

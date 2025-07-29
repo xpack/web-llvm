@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYConstantPoolJT` Class Reference
+# `CSKYConstantPoolJT` Class
 
 <p>CSKY-specific constantpool value of a jump table. <a href="#details">More...</a></p>
 

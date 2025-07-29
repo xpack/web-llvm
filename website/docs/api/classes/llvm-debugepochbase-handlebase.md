@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HandleBase` Class Reference
+# `HandleBase` Class
 
 
 

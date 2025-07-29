@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Object.h` File Reference
+# `Object.h` File
 
 
 

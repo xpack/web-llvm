@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILUpgrade.h` File Reference
+# `DXILUpgrade.h` File
 
 
 

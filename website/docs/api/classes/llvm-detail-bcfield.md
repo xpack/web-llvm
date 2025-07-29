@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCField` Class Template Reference
+# `BCField` Class Template
 
 <p>Convenience base for all kinds of bitcode abbreviation fields. <a href="#details">More...</a></p>
 

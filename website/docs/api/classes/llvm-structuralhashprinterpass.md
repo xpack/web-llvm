@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructuralHashPrinterPass` Class Reference
+# `StructuralHashPrinterPass` Class
 
 <p>Printer pass for StructuralHashes. <a href="#details">More...</a></p>
 

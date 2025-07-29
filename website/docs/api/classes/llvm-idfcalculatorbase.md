@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IDFCalculatorBase` Class Template Reference
+# `IDFCalculatorBase` Class Template
 
 <p>Determine the iterated dominance frontier, given a set of defining blocks, and optionally, a set of live-in blocks. <a href="#details">More...</a></p>
 

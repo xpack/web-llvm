@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Twine` Class Reference
+# `Twine` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/twine">Twine</a> - A lightweight data structure for efficiently representing the concatenation of temporary values as strings. <a href="#details">More...</a></p>
 

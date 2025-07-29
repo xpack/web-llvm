@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInsertDelayAlu` Class Reference
+# `AMDGPUInsertDelayAlu` Class
 
 
 

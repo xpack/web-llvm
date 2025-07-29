@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JamCRC` Class Reference
+# `JamCRC` Class
 
 
 

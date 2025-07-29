@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkRedirectableSymbolManager.h` File Reference
+# `JITLinkRedirectableSymbolManager.h` File
 
 
 

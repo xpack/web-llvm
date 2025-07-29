@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExternalSymbolSDNode` Class Reference
+# `ExternalSymbolSDNode` Class
 
 
 

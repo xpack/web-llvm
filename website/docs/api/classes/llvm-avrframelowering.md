@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRFrameLowering` Class Reference
+# `AVRFrameLowering` Class
 
 <p>Utilities for creating function call frames. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPass` Class Reference
+# `RegionPass` Class
 
 <p>A pass that runs on a sandbox::Region. <a href="#details">More...</a></p>
 

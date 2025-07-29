@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicTTIImpl.h` File Reference
+# `BasicTTIImpl.h` File
 
 <p>This file provides a helper that implements much of the TTI interface in terms of the target-independent code generator and TargetLowering interfaces. <a href="#details">More...</a></p>
 

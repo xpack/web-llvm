@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantAggregate` Class Reference
+# `ConstantAggregate` Class
 
 <p>Base class for aggregate constants (with operands). <a href="#details">More...</a></p>
 

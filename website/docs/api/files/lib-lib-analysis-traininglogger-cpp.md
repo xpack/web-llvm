@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrainingLogger.cpp` File Reference
+# `TrainingLogger.cpp` File
 
 
 

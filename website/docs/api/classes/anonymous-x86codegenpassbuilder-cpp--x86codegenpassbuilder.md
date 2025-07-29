@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86CodeGenPassBuilder` Class Reference
+# `X86CodeGenPassBuilder` Class
 
 
 

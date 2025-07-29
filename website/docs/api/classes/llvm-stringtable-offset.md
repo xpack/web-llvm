@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Offset` Class Reference
+# `Offset` Class
 
 
 

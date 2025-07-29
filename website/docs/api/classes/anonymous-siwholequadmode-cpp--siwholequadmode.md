@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIWholeQuadMode` Class Reference
+# `SIWholeQuadMode` Class
 
 
 

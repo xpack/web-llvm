@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430ELFObjectWriter` Class Reference
+# `MSP430ELFObjectWriter` Class
 
 
 

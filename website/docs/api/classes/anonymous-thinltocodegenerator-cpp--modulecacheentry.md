@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleCacheEntry` Class Reference
+# `ModuleCacheEntry` Class
 
 <p>Manage caching for a single <a href="/web-llvm/docs/api/classes/llvm/module">Module</a>. <a href="#details">More...</a></p>
 

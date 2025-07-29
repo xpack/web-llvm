@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCAsmParser` Class Reference
+# `PPCAsmParser` Class
 
 
 

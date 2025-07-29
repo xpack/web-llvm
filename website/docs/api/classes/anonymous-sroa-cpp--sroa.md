@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SROA` Class Reference
+# `SROA` Class
 
 <p>An optimization pass providing Scalar Replacement of Aggregates. <a href="#details">More...</a></p>
 

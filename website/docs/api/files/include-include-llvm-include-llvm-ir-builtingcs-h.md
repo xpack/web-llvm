@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuiltinGCs.h` File Reference
+# `BuiltinGCs.h` File
 
 
 

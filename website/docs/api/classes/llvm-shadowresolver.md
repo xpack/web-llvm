@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowResolver` Class Reference
+# `ShadowResolver` Class
 
 <p>Delegate resolving to a sub-resolver, but shadow some variable names. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenGEPRecipe` Class Reference
+# `VPWidenGEPRecipe` Class
 
 <p>A recipe for handling GEP instructions. <a href="#details">More...</a></p>
 

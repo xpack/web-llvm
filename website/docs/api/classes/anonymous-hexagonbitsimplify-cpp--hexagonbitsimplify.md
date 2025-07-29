@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBitSimplify` Class Reference
+# `HexagonBitSimplify` Class
 
 
 

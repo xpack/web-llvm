@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGParser` Class Reference
+# `TGParser` Class
 
 
 

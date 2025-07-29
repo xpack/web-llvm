@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FloatingPointMode.h` File Reference
+# `FloatingPointMode.h` File
 
 <p>Utilities for dealing with flags related to floating point properties and mode controls. <a href="#details">More...</a></p>
 

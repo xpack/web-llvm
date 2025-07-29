@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPIntrinsic` Class Reference
+# `VPIntrinsic` Class
 
 <p>This is the common base class for vector predication intrinsics. <a href="#details">More...</a></p>
 

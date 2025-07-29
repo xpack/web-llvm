@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEGenInstrInfo` Class Reference
+# `VEGenInstrInfo` Class
 
 
 

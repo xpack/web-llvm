@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegUseTracker` Class Reference
+# `RegUseTracker` Class
 
 <p>Map register candidates to information about how they are used. <a href="#details">More...</a></p>
 

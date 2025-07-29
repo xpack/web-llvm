@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryOperator` Class Reference
+# `BinaryOperator` Class
 
 
 

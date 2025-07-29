@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugifyCustomPassManager` Class Reference
+# `DebugifyCustomPassManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/debugifycustompassmanager">DebugifyCustomPassManager</a> wraps each pass with the debugify passes if needed. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleLazyReexportsSpeculator` Class Reference
+# `SimpleLazyReexportsSpeculator` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFF.h` File Reference
+# `XCOFF.h` File
 
 
 

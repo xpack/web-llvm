@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PublicSym32` Class Reference
+# `PublicSym32` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSA.h` File Reference
+# `MemorySSA.h` File
 
 <p>This file exposes an interface to building/using memory SSA to walk memory instructions using a use/def graph. <a href="#details">More...</a></p>
 

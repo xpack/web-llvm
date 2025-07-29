@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeView` Class Template Reference
+# `EdgeView` Class Template
 
 <p>A class for ranging over all the edges in the graph. <a href="#details">More...</a></p>
 

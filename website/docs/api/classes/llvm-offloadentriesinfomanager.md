@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadEntriesInfoManager` Class Reference
+# `OffloadEntriesInfoManager` Class
 
 <p>Class that manages information about offload code regions and data. <a href="#details">More...</a></p>
 

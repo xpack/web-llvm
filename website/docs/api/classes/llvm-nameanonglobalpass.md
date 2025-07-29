@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameAnonGlobalPass` Class Reference
+# `NameAnonGlobalPass` Class
 
 <p>Simple pass that provides a name to every anonymous globals. <a href="#details">More...</a></p>
 

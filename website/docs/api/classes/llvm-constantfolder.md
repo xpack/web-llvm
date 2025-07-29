@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantFolder` Class Reference
+# `ConstantFolder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/constantfolder">ConstantFolder</a> - Create constants with minimum, target independent, folding. <a href="#details">More...</a></p>
 

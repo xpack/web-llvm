@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionType` Class Reference
+# `FunctionType` Class
 
 <p>Class to represent function types. <a href="#details">More...</a></p>
 

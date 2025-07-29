@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiValues` Class Reference
+# `PhiValues` Class
 
 <p>Class for calculating and caching the underlying values of phis in a function. <a href="#details">More...</a></p>
 

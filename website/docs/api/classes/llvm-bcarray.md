@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCArray` Class Template Reference
+# `BCArray` Class Template
 
 <p>Represents an array of some other type. <a href="#details">More...</a></p>
 

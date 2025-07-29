@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSOptional` Class Template Reference
+# `SPSOptional` Class Template
 
 <p>SPS tag type for optionals. <a href="#details">More...</a></p>
 

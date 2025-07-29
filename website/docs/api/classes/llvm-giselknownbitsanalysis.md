@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelKnownBitsAnalysis` Class Reference
+# `GISelKnownBitsAnalysis` Class
 
 <p>To use KnownBitsInfo analysis in a pass, KnownBitsInfo &amp;Info = <a href="/web-llvm/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">getAnalysis&lt;GISelKnownBitsInfoAnalysis&gt;()</a>.get(MF); Add to observer if the Info is caching. <a href="#details">More...</a></p>
 

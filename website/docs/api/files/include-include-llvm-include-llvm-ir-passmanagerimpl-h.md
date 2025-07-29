@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManagerImpl.h` File Reference
+# `PassManagerImpl.h` File
 
 <p>Provides implementations for PassManager and AnalysisManager template methods. <a href="#details">More...</a></p>
 

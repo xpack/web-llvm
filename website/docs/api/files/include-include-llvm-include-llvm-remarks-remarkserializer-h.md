@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkSerializer.h` File Reference
+# `RemarkSerializer.h` File
 
 
 

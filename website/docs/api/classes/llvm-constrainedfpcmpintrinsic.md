@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstrainedFPCmpIntrinsic` Class Reference
+# `ConstrainedFPCmpIntrinsic` Class
 
 <p>Constrained floating point compare intrinsics. <a href="#details">More...</a></p>
 

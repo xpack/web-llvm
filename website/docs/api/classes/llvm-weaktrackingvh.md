@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeakTrackingVH` Class Reference
+# `WeakTrackingVH` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> handle that is nullable, but tries to track the <a href="/web-llvm/docs/api/classes/llvm/value">Value</a>. <a href="#details">More...</a></p>
 

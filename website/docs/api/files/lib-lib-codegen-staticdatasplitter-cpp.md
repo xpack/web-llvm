@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StaticDataSplitter.cpp` File Reference
+# `StaticDataSplitter.cpp` File
 
 
 

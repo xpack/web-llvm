@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopUnrollAndJamPass` Class Reference
+# `LoopUnrollAndJamPass` Class
 
 <p>A simple loop rotation transformation. <a href="#details">More...</a></p>
 

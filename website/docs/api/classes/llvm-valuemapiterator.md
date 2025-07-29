@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMapIterator` Class Template Reference
+# `ValueMapIterator` Class Template
 
 
 

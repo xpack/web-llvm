@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegAliasIteratorImpl` Class Reference
+# `MCRegAliasIteratorImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcregaliasiterator">MCRegAliasIterator</a> enumerates all registers aliasing Reg. <a href="#details">More...</a></p>
 

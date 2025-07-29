@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFRelocationRef` Class Reference
+# `ELFRelocationRef` Class
 
 
 

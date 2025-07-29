@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenPointerInductionRecipe` Class Reference
+# `VPWidenPointerInductionRecipe` Class
 
 
 

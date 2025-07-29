@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PadAdapter` Class Template Reference
+# `PadAdapter` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Tag` Class Reference
+# `Tag` Class
 
 <p>Merges a tag into the raw address value: P' = P | (TagValue &lt;&lt; TagOffset). <a href="#details">More...</a></p>
 

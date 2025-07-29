@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmParser` Class Reference
+# `WebAssemblyAsmParser` Class
 
 
 

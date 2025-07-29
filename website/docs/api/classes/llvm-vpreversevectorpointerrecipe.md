@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPReverseVectorPointerRecipe` Class Reference
+# `VPReverseVectorPointerRecipe` Class
 
 <p>A recipe to compute the pointers for widened memory accesses of IndexTy in reverse order. <a href="#details">More...</a></p>
 

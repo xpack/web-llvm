@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalTypeMember` Class Reference
+# `GlobalTypeMember` Class
 
 <p>A POD-like structure that we use to store a global reference together with its metadata types. <a href="#details">More...</a></p>
 

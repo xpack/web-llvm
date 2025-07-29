@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoffGroupSym` Class Reference
+# `CoffGroupSym` Class
 
 
 

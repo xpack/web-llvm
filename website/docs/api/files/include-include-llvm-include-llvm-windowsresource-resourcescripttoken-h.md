@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceScriptToken.h` File Reference
+# `ResourceScriptToken.h` File
 
 
 

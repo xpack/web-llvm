@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMapError` Class Reference
+# `CoverageMapError` Class
 
 
 

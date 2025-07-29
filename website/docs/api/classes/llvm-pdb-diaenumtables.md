@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumTables` Class Reference
+# `DIAEnumTables` Class
 
 
 

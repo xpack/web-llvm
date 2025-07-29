@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist.h` File Reference
+# `ilist.h` File
 
 <p>This file defines classes to implement an intrusive doubly linked list class (i.e. <a href="#details">More...</a></p>
 

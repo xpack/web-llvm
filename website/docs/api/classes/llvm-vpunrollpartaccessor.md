@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPUnrollPartAccessor` Class Template Reference
+# `VPUnrollPartAccessor` Class Template
 
 <p>Helper to access the operand that contains the unroll part for this recipe after unrolling. <a href="#details">More...</a></p>
 

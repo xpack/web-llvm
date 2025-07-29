@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiAnalyzer` Class Reference
+# `PhiAnalyzer` Class
 
 
 

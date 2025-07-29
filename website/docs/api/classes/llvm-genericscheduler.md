@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericScheduler` Class Reference
+# `GenericScheduler` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/genericscheduler">GenericScheduler</a> shrinks the unscheduled zone using heuristics to balance the schedule. <a href="#details">More...</a></p>
 

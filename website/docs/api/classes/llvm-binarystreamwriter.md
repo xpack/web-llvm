@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStreamWriter` Class Reference
+# `BinaryStreamWriter` Class
 
 <p>Provides write only access to a subclass of <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/writablebinarystream">WritableBinaryStream</a></span>. <a href="#details">More...</a></p>
 

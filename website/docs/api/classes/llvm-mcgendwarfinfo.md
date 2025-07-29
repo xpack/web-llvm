@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCGenDwarfInfo` Class Reference
+# `MCGenDwarfInfo` Class
 
 
 

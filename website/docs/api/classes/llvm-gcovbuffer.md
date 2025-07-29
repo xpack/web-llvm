@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVBuffer` Class Reference
+# `GCOVBuffer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gcovbuffer">GCOVBuffer</a> - A wrapper around <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> to provide <a href="/web-llvm/docs/api/namespaces/llvm/gcov">GCOV</a> specific read operations. <a href="#details">More...</a></p>
 

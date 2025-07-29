@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleAAQueryInfo` Class Reference
+# `SimpleAAQueryInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/aaqueryinfo">AAQueryInfo</a> that uses <a href="/web-llvm/docs/api/classes/llvm/simplecaptureanalysis">SimpleCaptureAnalysis</a>. <a href="#details">More...</a></p>
 

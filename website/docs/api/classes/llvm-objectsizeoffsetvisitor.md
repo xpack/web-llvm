@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectSizeOffsetVisitor` Class Reference
+# `ObjectSizeOffsetVisitor` Class
 
 <p>Evaluate the size and offset of an object pointed to by a Value* statically. <a href="#details">More...</a></p>
 

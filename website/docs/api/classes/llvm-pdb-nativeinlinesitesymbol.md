@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeInlineSiteSymbol` Class Reference
+# `NativeInlineSiteSymbol` Class
 
 
 

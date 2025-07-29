@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LintPass` Class Reference
+# `LintPass` Class
 
 
 

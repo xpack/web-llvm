@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DLLImportDefinitionGenerator` Class Reference
+# `DLLImportDefinitionGenerator` Class
 
 <p>A utility class to create <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> dllimport GOT symbols (__imp_*) and PLT stubs. <a href="#details">More...</a></p>
 

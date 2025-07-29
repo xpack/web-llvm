@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugVariableMap` Class Reference
+# `DebugVariableMap` Class
 
 <p>Mapping from <a href="/web-llvm/docs/api/classes/llvm/debugvariable">DebugVariable</a> to/from a unique identifying number. <a href="#details">More...</a></p>
 

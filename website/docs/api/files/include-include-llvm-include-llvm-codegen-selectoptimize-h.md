@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectOptimize.h` File Reference
+# `SelectOptimize.h` File
 
 <p>This file contains the declaration of the SelectOptimizePass class, its corresponding pass name is <span class="doxyComputerOutput">select-optimize</span>. <a href="#details">More...</a></p>
 

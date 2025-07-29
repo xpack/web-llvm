@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaterializationUnit` Class Reference
+# `MaterializationUnit` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/orc/materializationunit">MaterializationUnit</a> represents a set of symbol definitions that can be materialized as a group, or individually discarded (when overriding definitions are encountered). <a href="#details">More...</a></p>
 

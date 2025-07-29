@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSRUse` Class Reference
+# `LSRUse` Class
 
 <p>This class holds the state that LSR keeps for each use in <a href="/web-llvm/docs/api/classes/llvm/ivusers">IVUsers</a>, as well as uses invented by LSR itself. <a href="#details">More...</a></p>
 

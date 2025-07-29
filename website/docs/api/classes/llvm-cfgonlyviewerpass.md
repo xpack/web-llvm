@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGOnlyViewerPass` Class Reference
+# `CFGOnlyViewerPass` Class
 
 
 

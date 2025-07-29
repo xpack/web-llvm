@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceTracker` Class Reference
+# `ResourceTracker` Class
 
 <p>API to remove / transfer ownership of JIT resources. <a href="#details">More...</a></p>
 

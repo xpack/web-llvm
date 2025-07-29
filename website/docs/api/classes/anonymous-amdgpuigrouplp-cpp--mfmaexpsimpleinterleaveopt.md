@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MFMAExpSimpleInterleaveOpt` Class Reference
+# `MFMAExpSimpleInterleaveOpt` Class
 
 
 

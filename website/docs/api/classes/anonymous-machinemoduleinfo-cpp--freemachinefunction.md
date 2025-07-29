@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreeMachineFunction` Class Reference
+# `FreeMachineFunction` Class
 
 <p>This pass frees the <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> object associated with a <a href="/web-llvm/docs/api/classes/llvm/function">Function</a>. <a href="#details">More...</a></p>
 

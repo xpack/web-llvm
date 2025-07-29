@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIInliningInfo` Class Reference
+# `DIInliningInfo` Class
 
 <p>A format-neutral container for inlined code description. <a href="#details">More...</a></p>
 

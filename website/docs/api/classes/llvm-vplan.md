@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlan` Class Reference
+# `VPlan` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> models a candidate for vectorization, encoding various decisions take to produce efficient output IR, including which branches, basic-blocks and output IR instructions to generate, and their cost. <a href="#details">More...</a></p>
 

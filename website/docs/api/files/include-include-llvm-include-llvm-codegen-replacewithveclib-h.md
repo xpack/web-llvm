@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplaceWithVeclib.h` File Reference
+# `ReplaceWithVeclib.h` File
 
 
 

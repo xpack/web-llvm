@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PipelinerLoopInfo` Class Reference
+# `AArch64PipelinerLoopInfo` Class
 
 
 

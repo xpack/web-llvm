@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPExtInst` Class Reference
+# `FPExtInst` Class
 
 
 

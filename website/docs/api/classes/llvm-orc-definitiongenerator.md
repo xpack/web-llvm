@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefinitionGenerator` Class Reference
+# `DefinitionGenerator` Class
 
 <p>Definition generators can be attached to JITDylibs to generate new definitions for otherwise unresolved symbols during lookup. <a href="#details">More...</a></p>
 

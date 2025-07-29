@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelRewriter` Class Reference
+# `KernelRewriter` Class
 
 <p>Rewrites the kernel block in-place to adhere to the given schedule. <a href="#details">More...</a></p>
 

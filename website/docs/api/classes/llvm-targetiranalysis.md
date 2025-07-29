@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetIRAnalysis` Class Reference
+# `TargetIRAnalysis` Class
 
 <p>Analysis pass providing the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a></span>. <a href="#details">More...</a></p>
 

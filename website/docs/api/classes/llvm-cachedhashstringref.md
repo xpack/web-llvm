@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedHashStringRef` Class Reference
+# `CachedHashStringRef` Class
 
 <p>A container which contains a <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> plus a precomputed hash. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalCXXRuntimeOverridesBase` Class Reference
+# `LocalCXXRuntimeOverridesBase` Class
 
 <p>Support class for static dtor execution. <a href="#details">More...</a></p>
 

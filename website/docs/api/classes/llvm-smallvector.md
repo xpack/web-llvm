@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVector` Class Template Reference
+# `SmallVector` Class Template
 
 <p>This is a 'vector' (really, a variable-sized array), optimized for the case when the array is small. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPredicationPass` Class Reference
+# `LoopPredicationPass` Class
 
 <p>Performs <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Predication <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

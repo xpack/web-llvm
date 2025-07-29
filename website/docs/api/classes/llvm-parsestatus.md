@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParseStatus` Class Reference
+# `ParseStatus` Class
 
 <p>Ternary parse status returned by various parse* methods. <a href="#details">More...</a></p>
 

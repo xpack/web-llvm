@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPResponseHandler` Class Reference
+# `HTTPResponseHandler` Class
 
 <p>A handler for state updates occurring while an <a href="/web-llvm/docs/api/structs/llvm/httprequest">HTTPRequest</a> is performed. <a href="#details">More...</a></p>
 

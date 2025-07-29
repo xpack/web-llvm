@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynSym` Class Template Reference
+# `DynSym` Class Template
 
 
 

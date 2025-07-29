@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFSymbolRef` Class Reference
+# `XCOFFSymbolRef` Class
 
 
 

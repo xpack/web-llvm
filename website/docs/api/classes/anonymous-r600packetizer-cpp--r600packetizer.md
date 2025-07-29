@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600Packetizer` Class Reference
+# `R600Packetizer` Class
 
 
 

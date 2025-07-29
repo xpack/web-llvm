@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Capacity.h` File Reference
+# `Capacity.h` File
 
 
 

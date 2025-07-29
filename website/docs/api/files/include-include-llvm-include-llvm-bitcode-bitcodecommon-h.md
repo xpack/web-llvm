@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeCommon.h` File Reference
+# `BitcodeCommon.h` File
 
 
 

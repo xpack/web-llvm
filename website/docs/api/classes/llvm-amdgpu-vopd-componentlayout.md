@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComponentLayout` Class Reference
+# `ComponentLayout` Class
 
 
 

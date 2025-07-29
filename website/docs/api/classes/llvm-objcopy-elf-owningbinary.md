@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OwningBinary` Class Template Reference
+# `OwningBinary` Class Template
 
 
 

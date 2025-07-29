@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAlignInst` Class Reference
+# `CoroAlignInst` Class
 
 <p>This represents the llvm.coro.align instruction. <a href="#details">More...</a></p>
 

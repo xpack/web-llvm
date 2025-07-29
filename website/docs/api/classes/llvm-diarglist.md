@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIArgList` Class Reference
+# `DIArgList` Class
 
 <p>List of <a href="/web-llvm/docs/api/classes/llvm/valueasmetadata">ValueAsMetadata</a>, to be used as an argument to a dbg.value intrinsic. <a href="#details">More...</a></p>
 

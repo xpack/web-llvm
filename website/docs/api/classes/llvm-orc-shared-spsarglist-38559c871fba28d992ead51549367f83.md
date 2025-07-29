@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSArgList` Class Template Reference
+# `SPSArgList` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLoopInfoWrapperPass` Class Reference
+# `MachineLoopInfoWrapperPass` Class
 
 
 

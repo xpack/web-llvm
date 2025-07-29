@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugHandlerBase` Class Reference
+# `DebugHandlerBase` Class
 
 <p>Base class for debug information backends. <a href="#details">More...</a></p>
 

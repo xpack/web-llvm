@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeItr` Class Reference
+# `NodeItr` Class
 
 
 

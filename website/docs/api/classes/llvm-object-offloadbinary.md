@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadBinary` Class Reference
+# `OffloadBinary` Class
 
 <p>A simple binary serialization of an offloading file. <a href="#details">More...</a></p>
 

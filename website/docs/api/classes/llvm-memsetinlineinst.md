@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemSetInlineInst` Class Reference
+# `MemSetInlineInst` Class
 
 <p>This class wraps the llvm.memset.inline intrinsic. <a href="#details">More...</a></p>
 

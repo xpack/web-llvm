@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineRegion` Class Reference
+# `MachineRegion` Class
 
 
 

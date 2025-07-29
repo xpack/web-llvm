@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDependenceWrapperPass` Class Reference
+# `MemoryDependenceWrapperPass` Class
 
 <p>A wrapper analysis pass for the legacy pass manager that exposes a <span class="doxyComputerOutput">MemoryDepnedenceResults</span> instance. <a href="#details">More...</a></p>
 

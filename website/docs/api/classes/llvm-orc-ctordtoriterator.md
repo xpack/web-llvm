@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CtorDtorIterator` Class Reference
+# `CtorDtorIterator` Class
 
 <p>This iterator provides a convenient way to iterate over the elements of an llvm.global_ctors/llvm.global_dtors instance. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicOrdering.h` File Reference
+# `AtomicOrdering.h` File
 
 <p>Atomic ordering constants. <a href="#details">More...</a></p>
 

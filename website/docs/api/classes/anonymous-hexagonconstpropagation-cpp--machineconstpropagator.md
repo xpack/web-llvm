@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConstPropagator` Class Reference
+# `MachineConstPropagator` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphAnalysis` Class Reference
+# `CallGraphAnalysis` Class
 
 <p>An analysis pass to compute the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/callgraph">CallGraph</a></span> for a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/module">Module</a></span>. <a href="#details">More...</a></p>
 

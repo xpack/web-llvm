@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Lint.h` File Reference
+# `Lint.h` File
 
 
 

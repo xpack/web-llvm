@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizationRemarkAnalysisAliasing` Class Reference
+# `OptimizationRemarkAnalysisAliasing` Class
 
 <p>Diagnostic information for optimization analysis remarks related to pointer aliasing. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectCache` Class Reference
+# `ObjectCache` Class
 
 <p>This is the base <a href="/web-llvm/docs/api/classes/llvm/objectcache">ObjectCache</a> type which can be provided to an <a href="/web-llvm/docs/api/classes/llvm/executionengine">ExecutionEngine</a> for the purpose of avoiding compilation for Modules that have already been compiled and an object file is available. <a href="#details">More...</a></p>
 

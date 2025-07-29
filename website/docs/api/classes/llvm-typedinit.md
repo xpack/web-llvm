@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedInit` Class Reference
+# `TypedInit` Class
 
 <p>This is the common superclass of types that have a specific, explicit type, stored in ValueTy. <a href="#details">More...</a></p>
 

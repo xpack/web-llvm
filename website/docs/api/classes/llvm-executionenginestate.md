@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutionEngineState` Class Reference
+# `ExecutionEngineState` Class
 
 <p>Helper class for helping synchronize access to the global address map table. <a href="#details">More...</a></p>
 

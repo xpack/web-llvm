@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegSequenceRewriter` Class Reference
+# `RegSequenceRewriter` Class
 
 <p>Specialized rewriter for REG_SEQUENCE instruction. <a href="#details">More...</a></p>
 

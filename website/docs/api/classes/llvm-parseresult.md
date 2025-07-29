@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParseResult` Class Reference
+# `ParseResult` Class
 
 <p>This class represents success/failure for parsing-like operations that find it important to chain together failable operations with <span class="doxyComputerOutput">||</span>. <a href="#details">More...</a></p>
 

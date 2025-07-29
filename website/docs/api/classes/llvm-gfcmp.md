@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GFCmp` Class Reference
+# `GFCmp` Class
 
 <p>Represent a G_FCMP. <a href="#details">More...</a></p>
 

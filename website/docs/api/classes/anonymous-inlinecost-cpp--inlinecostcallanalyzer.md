@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCostCallAnalyzer` Class Reference
+# `InlineCostCallAnalyzer` Class
 
 <p>FIXME: if it is necessary to derive from <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/inlinecostcallanalyzer">InlineCostCallAnalyzer</a>, note the FIXME in onLoweredCall, when instantiating an <a href="/web-llvm/docs/api/classes/anonymous-inlinecost-cpp-/inlinecostcallanalyzer">InlineCostCallAnalyzer</a>. <a href="#details">More...</a></p>
 

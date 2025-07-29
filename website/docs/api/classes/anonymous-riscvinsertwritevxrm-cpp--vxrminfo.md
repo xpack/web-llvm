@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VXRMInfo` Class Reference
+# `VXRMInfo` Class
 
 
 

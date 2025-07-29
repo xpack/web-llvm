@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVLineAssembler` Class Reference
+# `LVLineAssembler` Class
 
 
 

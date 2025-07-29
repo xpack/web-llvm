@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBErrorCategory` Class Reference
+# `PDBErrorCategory` Class
 
 
 

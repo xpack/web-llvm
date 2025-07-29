@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MsgPackReader.cpp` File Reference
+# `MsgPackReader.cpp` File
 
 <p>This file implements a MessagePack reader. <a href="#details">More...</a></p>
 

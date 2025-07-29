@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Math.h` File Reference
+# `Math.h` File
 
 
 

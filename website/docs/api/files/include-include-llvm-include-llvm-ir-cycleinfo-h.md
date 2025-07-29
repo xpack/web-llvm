@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleInfo.h` File Reference
+# `CycleInfo.h` File
 
 <p>This file declares the LLVM IR specialization of the GenericCycle templates. <a href="#details">More...</a></p>
 

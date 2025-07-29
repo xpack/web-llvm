@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SLSHardening` Class Reference
+# `AArch64SLSHardening` Class
 
 
 

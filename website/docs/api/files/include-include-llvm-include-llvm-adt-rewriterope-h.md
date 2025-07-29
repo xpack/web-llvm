@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteRope.h` File Reference
+# `RewriteRope.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixIrreducible.h` File Reference
+# `FixIrreducible.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDistribute.h` File Reference
+# `LoopDistribute.h` File
 
 
 

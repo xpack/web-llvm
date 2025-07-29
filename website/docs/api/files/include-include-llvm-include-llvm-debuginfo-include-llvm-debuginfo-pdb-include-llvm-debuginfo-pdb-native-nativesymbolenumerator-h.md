@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeSymbolEnumerator.h` File Reference
+# `NativeSymbolEnumerator.h` File
 
 
 

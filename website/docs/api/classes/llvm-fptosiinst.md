@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPToSIInst` Class Reference
+# `FPToSIInst` Class
 
 <p>This class represents a cast from floating point to signed integer. <a href="#details">More...</a></p>
 

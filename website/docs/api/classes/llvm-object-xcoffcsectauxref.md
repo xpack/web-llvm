@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFCsectAuxRef` Class Reference
+# `XCOFFCsectAuxRef` Class
 
 
 

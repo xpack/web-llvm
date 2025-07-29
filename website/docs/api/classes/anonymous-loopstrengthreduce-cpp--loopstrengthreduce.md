@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopStrengthReduce` Class Reference
+# `LoopStrengthReduce` Class
 
 
 

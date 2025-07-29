@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FloatLiteralImpl` Class Template Reference
+# `FloatLiteralImpl` Class Template
 
 
 

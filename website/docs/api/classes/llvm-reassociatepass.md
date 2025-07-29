@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReassociatePass` Class Reference
+# `ReassociatePass` Class
 
 <p>Reassociate commutative expressions. <a href="#details">More...</a></p>
 

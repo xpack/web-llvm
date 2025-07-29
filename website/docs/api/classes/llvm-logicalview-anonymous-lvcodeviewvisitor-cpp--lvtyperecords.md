@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVTypeRecords` Class Reference
+# `LVTypeRecords` Class
 
 
 

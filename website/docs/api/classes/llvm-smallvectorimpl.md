@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorImpl` Class Template Reference
+# `SmallVectorImpl` Class Template
 
 <p>This class consists of common code factored out of the <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> class to reduce code duplication based on the <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> 'N' template parameter. <a href="#details">More...</a></p>
 

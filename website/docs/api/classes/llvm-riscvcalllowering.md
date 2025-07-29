@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVCallLowering` Class Reference
+# `RISCVCallLowering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFExpression` Class Reference
+# `DWARFExpression` Class
 
 
 

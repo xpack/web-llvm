@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryError` Class Reference
+# `BinaryError` Class
 
 <p>Base class for all errors indicating malformed binary files. <a href="#details">More...</a></p>
 

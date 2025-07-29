@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebuginfodCollection` Class Reference
+# `DebuginfodCollection` Class
 
 <p>Tracks a collection of debuginfod artifacts on the local filesystem. <a href="#details">More...</a></p>
 

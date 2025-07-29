@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LastRunTrackingAnalysis` Class Reference
+# `LastRunTrackingAnalysis` Class
 
 <p>A function/module analysis which provides an empty <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/lastruntrackinginfo">LastRunTrackingInfo</a></span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `basic_collection_iterator` Class Template Reference
+# `basic_collection_iterator` Class Template
 
 <p>This is an iterator abstraction over YAML collections shared by both sequences and maps. <a href="#details">More...</a></p>
 

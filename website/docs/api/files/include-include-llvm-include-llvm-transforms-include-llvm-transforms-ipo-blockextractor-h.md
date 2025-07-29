@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockExtractor.h` File Reference
+# `BlockExtractor.h` File
 
 
 

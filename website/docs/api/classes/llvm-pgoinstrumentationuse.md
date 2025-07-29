@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOInstrumentationUse` Class Reference
+# `PGOInstrumentationUse` Class
 
 <p>The profile annotation (profile-instr-use) pass for IR based PGO. <a href="#details">More...</a></p>
 

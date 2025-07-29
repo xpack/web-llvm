@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizeofParamPackExpr` Class Reference
+# `SizeofParamPackExpr` Class
 
 
 

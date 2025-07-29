@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeProfilingPassesHandler` Class Reference
+# `TimeProfilingPassesHandler` Class
 
 <p>This class implements –time-trace functionality for new pass manager. <a href="#details">More...</a></p>
 

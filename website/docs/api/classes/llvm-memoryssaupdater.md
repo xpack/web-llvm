@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSAUpdater` Class Reference
+# `MemorySSAUpdater` Class
 
 
 

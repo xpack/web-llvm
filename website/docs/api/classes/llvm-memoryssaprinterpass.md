@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySSAPrinterPass` Class Reference
+# `MemorySSAPrinterPass` Class
 
 <p>Printer pass for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/memoryssa">MemorySSA</a></span>. <a href="#details">More...</a></p>
 

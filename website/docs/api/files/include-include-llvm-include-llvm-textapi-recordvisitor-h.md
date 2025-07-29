@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordVisitor.h` File Reference
+# `RecordVisitor.h` File
 
 
 

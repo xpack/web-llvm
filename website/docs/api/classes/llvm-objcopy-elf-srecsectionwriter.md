@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SRECSectionWriter` Class Reference
+# `SRECSectionWriter` Class
 
 
 

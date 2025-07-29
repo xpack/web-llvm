@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPAllSuccessorsIterator` Class Template Reference
+# `VPAllSuccessorsIterator` Class Template
 
 <p>Iterator to traverse all successors of a <a href="/web-llvm/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> node. <a href="#details">More...</a></p>
 

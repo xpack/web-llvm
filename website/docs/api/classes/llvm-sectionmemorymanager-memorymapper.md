@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryMapper` Class Reference
+# `MemoryMapper` Class
 
 <p>Implementations of this interface are used by <a href="/web-llvm/docs/api/classes/llvm/sectionmemorymanager">SectionMemoryManager</a> to request pages from the operating system. <a href="#details">More...</a></p>
 

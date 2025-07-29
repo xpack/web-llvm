@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequencyInfo.cpp` File Reference
+# `BlockFrequencyInfo.cpp` File
 
 
 

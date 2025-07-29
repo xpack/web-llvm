@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGSCCToFunctionPassAdaptor` Class Reference
+# `CGSCCToFunctionPassAdaptor` Class
 
 <p>Adaptor that maps from a SCC to its functions. <a href="#details">More...</a></p>
 

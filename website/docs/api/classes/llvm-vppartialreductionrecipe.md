@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPPartialReductionRecipe` Class Reference
+# `VPPartialReductionRecipe` Class
 
 <p>A recipe for forming partial reductions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionImporter` Class Reference
+# `FunctionImporter` Class
 
 <p>The function importer is automatically importing function from other modules based on the provided summary informations. <a href="#details">More...</a></p>
 

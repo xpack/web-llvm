@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadAndLinkDynLibrary` Class Reference
+# `LoadAndLinkDynLibrary` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64AdvSIMDScalar` Class Reference
+# `AArch64AdvSIMDScalar` Class
 
 
 

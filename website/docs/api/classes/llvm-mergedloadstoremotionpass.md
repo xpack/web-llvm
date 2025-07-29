@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedLoadStoreMotionPass` Class Reference
+# `MergedLoadStoreMotionPass` Class
 
 
 

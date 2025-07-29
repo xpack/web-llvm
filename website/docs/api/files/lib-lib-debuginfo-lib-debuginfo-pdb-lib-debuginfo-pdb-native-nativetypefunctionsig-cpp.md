@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeFunctionSig.cpp` File Reference
+# `NativeTypeFunctionSig.cpp` File
 
 
 

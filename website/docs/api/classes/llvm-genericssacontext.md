@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSSAContext` Class Template Reference
+# `GenericSSAContext` Class Template
 
 
 

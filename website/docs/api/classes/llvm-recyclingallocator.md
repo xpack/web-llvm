@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecyclingAllocator` Class Template Reference
+# `RecyclingAllocator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/recyclingallocator">RecyclingAllocator</a> - This class wraps an Allocator, adding the functionality of recycling deleted objects. <a href="#details">More...</a></p>
 

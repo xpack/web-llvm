@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyMemIntrinsic` Class Reference
+# `AnyMemIntrinsic` Class
 
 
 

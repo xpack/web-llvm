@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicLowering` Class Reference
+# `IntrinsicLowering` Class
 
 
 

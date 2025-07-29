@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Substitution` Class Reference
+# `Substitution` Class
 
 <p>Class representing a substitution to perform in the RegExStr string. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_StreamOperator` Class Template Reference
+# `has_StreamOperator` Class Template
 
 
 

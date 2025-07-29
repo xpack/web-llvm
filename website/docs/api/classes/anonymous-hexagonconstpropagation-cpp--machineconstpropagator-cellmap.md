@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CellMap` Class Reference
+# `CellMap` Class
 
 
 

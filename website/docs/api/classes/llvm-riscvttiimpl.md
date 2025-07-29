@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTTIImpl` Class Reference
+# `RISCVTTIImpl` Class
 
 
 

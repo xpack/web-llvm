@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFFile` Class Reference
+# `DWARFFile` Class
 
 <p>This class represents DWARF information for source file and it's address map. <a href="#details">More...</a></p>
 

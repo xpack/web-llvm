@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `scc_member_iterator` Class Template Reference
+# `scc_member_iterator` Class Template
 
 <p>Sort the nodes of a directed SCC in the decreasing order of the edge weights. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionSimplify.cpp` File Reference
+# `InstructionSimplify.cpp` File
 
 
 

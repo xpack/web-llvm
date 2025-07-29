@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseSet` Class Template Reference
+# `SparseSet` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sparseset">SparseSet</a> - Fast set implementation for objects that can be identified by small unsigned keys. <a href="#details">More...</a></p>
 

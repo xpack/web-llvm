@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsFrameLowering` Class Reference
+# `MipsFrameLowering` Class
 
 
 

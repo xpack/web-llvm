@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InterleavedAccessGroup` Class Reference
+# `X86InterleavedAccessGroup` Class
 
 <p>This class holds necessary information to represent an interleaved access group and supports utilities to lower the group into X86-specific instructions/intrinsics. <a href="#details">More...</a></p>
 

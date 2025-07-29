@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIModeRegister` Class Reference
+# `SIModeRegister` Class
 
 
 

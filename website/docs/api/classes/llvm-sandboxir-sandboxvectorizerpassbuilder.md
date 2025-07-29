@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SandboxVectorizerPassBuilder` Class Reference
+# `SandboxVectorizerPassBuilder` Class
 
 
 

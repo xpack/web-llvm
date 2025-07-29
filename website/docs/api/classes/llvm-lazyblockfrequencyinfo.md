@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyBlockFrequencyInfo` Class Template Reference
+# `LazyBlockFrequencyInfo` Class Template
 
 <p>Wraps a BFI to allow lazy computation of the block frequencies. <a href="#details">More...</a></p>
 

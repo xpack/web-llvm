@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachORebaseEntry` Class Reference
+# `MachORebaseEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/machorebaseentry">MachORebaseEntry</a> encapsulates the current state in the decompression of rebasing opcodes. <a href="#details">More...</a></p>
 

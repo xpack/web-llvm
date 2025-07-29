@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertPHIStrategy` Class Reference
+# `InsertPHIStrategy` Class
 
 <p>Strategy to insert PHI Nodes at the head of each basic block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReversePostOrderTraversal` Class Template Reference
+# `ReversePostOrderTraversal` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfiledCallGraph` Class Reference
+# `ProfiledCallGraph` Class
 
 
 

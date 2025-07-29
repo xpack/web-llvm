@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExternC.h` File Reference
+# `ExternC.h` File
 
 
 

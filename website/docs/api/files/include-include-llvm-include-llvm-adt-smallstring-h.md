@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallString.h` File Reference
+# `SmallString.h` File
 
 <p>This file defines the SmallString class. <a href="#details">More...</a></p>
 

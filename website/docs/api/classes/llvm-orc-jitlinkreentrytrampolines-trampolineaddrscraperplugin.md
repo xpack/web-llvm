@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrampolineAddrScraperPlugin` Class Reference
+# `TrampolineAddrScraperPlugin` Class
 
 
 

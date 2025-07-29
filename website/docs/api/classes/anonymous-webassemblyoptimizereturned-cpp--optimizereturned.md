@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizeReturned` Class Reference
+# `OptimizeReturned` Class
 
 
 

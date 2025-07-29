@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEGenerator` Class Reference
+# `DIEGenerator` Class
 
 <p>This class is a helper to create output <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> tree. <a href="#details">More...</a></p>
 

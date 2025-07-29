@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLIWMachineScheduler` Class Reference
+# `VLIWMachineScheduler` Class
 
 <p>Extend the standard <a href="/web-llvm/docs/api/classes/llvm/scheduledagmilive">ScheduleDAGMILive</a> to provide more context and override the top-level <a href="#ad25e72e64bc7ed157b69c60e85b4061e">schedule()</a> driver. <a href="#details">More...</a></p>
 

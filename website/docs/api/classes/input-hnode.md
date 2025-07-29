@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HNode` Class Reference
+# `HNode` Class
 
 
 

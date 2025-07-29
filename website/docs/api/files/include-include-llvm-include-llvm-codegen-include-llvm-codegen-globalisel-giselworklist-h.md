@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelWorkList.h` File Reference
+# `GISelWorkList.h` File
 
 
 

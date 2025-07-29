@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCIterator.h` File Reference
+# `SCCIterator.h` File
 
 <p>This builds on the <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h">llvm/ADT/GraphTraits.h</a> file to find the strongly connected components (SCCs) of a graph in O(N+E) time using Tarjan's DFS algorithm. <a href="#details">More...</a></p>
 

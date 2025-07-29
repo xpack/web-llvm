@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileMap` Class Reference
+# `SampleProfileMap` Class
 
 <p>This class provides operator overloads to the map container using <a href="/web-llvm/docs/api/classes/llvm/md5">MD5</a> as the key type, so that existing code can still work in most cases using <a href="/web-llvm/docs/api/classes/llvm/sampleprof/samplecontext">SampleContext</a> as key. <a href="#details">More...</a></p>
 

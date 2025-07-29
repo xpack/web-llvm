@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `po_iterator_storage` Class Template Reference
+# `po_iterator_storage` Class Template
 
 <p>Specialize <a href="/web-llvm/docs/api/classes/llvm/po-iterator-storage">po_iterator_storage</a> to record postorder numbers. <a href="#details">More...</a></p>
 

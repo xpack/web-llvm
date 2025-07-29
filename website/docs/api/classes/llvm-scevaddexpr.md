@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVAddExpr` Class Reference
+# `SCEVAddExpr` Class
 
 <p>This node represents an addition of some number of SCEVs. <a href="#details">More...</a></p>
 

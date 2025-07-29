@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleHazardRecognizer` Class Reference
+# `ScheduleHazardRecognizer` Class
 
 <p>HazardRecognizer - This determines whether or not an instruction can be issued this cycle, and whether or not a noop needs to be inserted to handle the hazard. <a href="#details">More...</a></p>
 

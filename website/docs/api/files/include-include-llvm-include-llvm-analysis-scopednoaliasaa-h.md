@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedNoAliasAA.h` File Reference
+# `ScopedNoAliasAA.h` File
 
 <p>This is the interface for a metadata-based scoped no-alias analysis. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GInsertVectorElement` Class Reference
+# `GInsertVectorElement` Class
 
 <p>Represents an insert vector element. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64CondBrTuning` Class Reference
+# `AArch64CondBrTuning` Class
 
 
 

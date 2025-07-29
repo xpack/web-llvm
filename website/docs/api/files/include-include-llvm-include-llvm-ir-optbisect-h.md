@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptBisect.h` File Reference
+# `OptBisect.h` File
 
 <p>This file declares the interface for bisecting optimizations. <a href="#details">More...</a></p>
 

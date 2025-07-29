@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocEvictionAdvisor` Class Reference
+# `RegAllocEvictionAdvisor` Class
 
 
 

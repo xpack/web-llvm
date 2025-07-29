@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPerfHintAnalysisLegacy` Class Reference
+# `AMDGPUPerfHintAnalysisLegacy` Class
 
 
 

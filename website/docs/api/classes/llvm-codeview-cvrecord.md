@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVRecord` Class Template Reference
+# `CVRecord` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/codeview/cvrecord">CVRecord</a> is a fat pointer (base + size pair) to a symbol or type record. <a href="#details">More...</a></p>
 

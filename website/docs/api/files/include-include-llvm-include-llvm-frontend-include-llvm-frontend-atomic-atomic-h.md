@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Atomic.h` File Reference
+# `Atomic.h` File
 
 
 

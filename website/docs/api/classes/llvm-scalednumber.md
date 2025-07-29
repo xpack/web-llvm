@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScaledNumber` Class Template Reference
+# `ScaledNumber` Class Template
 
 <p>Simple representation of a scaled number. <a href="#details">More...</a></p>
 

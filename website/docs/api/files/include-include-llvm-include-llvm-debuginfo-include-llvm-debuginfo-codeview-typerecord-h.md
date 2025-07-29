@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeRecord.h` File Reference
+# `TypeRecord.h` File
 
 
 

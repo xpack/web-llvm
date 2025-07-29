@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VAArgInst` Class Reference
+# `VAArgInst` Class
 
 <p>This class represents the va_arg llvm instruction, which returns an argument of the specified type given a va_list and increments that list. <a href="#details">More...</a></p>
 

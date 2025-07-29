@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleExecutorMemoryManager` Class Reference
+# `SimpleExecutorMemoryManager` Class
 
 <p>Simple page-based allocator. <a href="#details">More...</a></p>
 

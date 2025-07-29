@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsAOpInit` Class Reference
+# `IsAOpInit` Class
 
 <p>!isa&lt;type&gt;(expr) - Dynamically determine the type of an expression. <a href="#details">More...</a></p>
 

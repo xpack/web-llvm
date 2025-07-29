@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OwnedDataSection` Class Reference
+# `OwnedDataSection` Class
 
 
 

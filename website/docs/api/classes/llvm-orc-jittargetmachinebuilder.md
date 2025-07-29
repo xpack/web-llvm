@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITTargetMachineBuilder` Class Reference
+# `JITTargetMachineBuilder` Class
 
 <p>A utility class for building TargetMachines for JITs. <a href="#details">More...</a></p>
 

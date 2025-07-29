@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNRPTracker` Class Reference
+# `GCNRPTracker` Class
 
 
 

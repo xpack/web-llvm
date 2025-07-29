@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `arch_iterator` Class Template Reference
+# `arch_iterator` Class Template
 
 
 

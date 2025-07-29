@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HipStdParAcceleratorCodeSelectionPass` Class Reference
+# `HipStdParAcceleratorCodeSelectionPass` Class
 
 
 

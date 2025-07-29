@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGAnalyses` Class Reference
+# `CFGAnalyses` Class
 
 <p>Represents analyses that only rely on functions' control flow. <a href="#details">More...</a></p>
 

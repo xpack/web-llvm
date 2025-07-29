@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UDTLayoutBase` Class Reference
+# `UDTLayoutBase` Class
 
 
 

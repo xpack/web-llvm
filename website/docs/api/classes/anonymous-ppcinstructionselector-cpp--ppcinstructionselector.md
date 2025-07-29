@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCInstructionSelector` Class Reference
+# `PPCInstructionSelector` Class
 
 
 

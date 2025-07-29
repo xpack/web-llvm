@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegReductionPriorityQueue` Class Template Reference
+# `RegReductionPriorityQueue` Class Template
 
 
 

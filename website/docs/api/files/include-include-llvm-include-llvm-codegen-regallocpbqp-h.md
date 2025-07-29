@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocPBQP.h` File Reference
+# `RegAllocPBQP.h` File
 
 
 

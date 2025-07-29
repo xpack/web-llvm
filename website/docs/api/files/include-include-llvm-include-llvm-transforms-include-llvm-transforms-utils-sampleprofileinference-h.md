@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileInference.h` File Reference
+# `SampleProfileInference.h` File
 
 <p>This file provides the interface for the profile inference algorithm, profi. <a href="#details">More...</a></p>
 

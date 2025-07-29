@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430TargetLowering` Class Reference
+# `MSP430TargetLowering` Class
 
 
 

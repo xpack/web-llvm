@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericDomTreeUpdater` Class Template Reference
+# `GenericDomTreeUpdater` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolLookupSet` Class Reference
+# `SymbolLookupSet` Class
 
 <p>A set of symbols to look up, each associated with a <a href="/web-llvm/docs/api/namespaces/llvm/orc/#a69e9511c04540297d2cff38f4645a9ab">SymbolLookupFlags</a> value. <a href="#details">More...</a></p>
 

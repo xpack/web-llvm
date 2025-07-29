@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiModuleDescriptor` Class Reference
+# `DbiModuleDescriptor` Class
 
 
 

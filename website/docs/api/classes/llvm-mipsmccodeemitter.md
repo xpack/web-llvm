@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMCCodeEmitter` Class Reference
+# `MipsMCCodeEmitter` Class
 
 
 

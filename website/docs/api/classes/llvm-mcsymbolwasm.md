@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolWasm` Class Reference
+# `MCSymbolWasm` Class
 
 
 

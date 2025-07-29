@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVExpandPseudo` Class Reference
+# `RISCVExpandPseudo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringRef.h` File Reference
+# `StringRef.h` File
 
 
 

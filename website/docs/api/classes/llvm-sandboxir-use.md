@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Use` Class Reference
+# `Use` Class
 
 <p>Represents a Def-use/Use-def edge in SandboxIR. <a href="#details">More...</a></p>
 

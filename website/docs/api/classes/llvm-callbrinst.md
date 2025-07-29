@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallBrInst` Class Reference
+# `CallBrInst` Class
 
 <p>CallBr instruction, tracking function calls that may not return control but instead transfer it to a third location. <a href="#details">More...</a></p>
 

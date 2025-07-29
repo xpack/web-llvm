@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoMicrosoft` Class Reference
+# `MCAsmInfoMicrosoft` Class
 
 
 

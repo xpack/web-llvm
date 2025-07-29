@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfile.h` File Reference
+# `SampleProfile.h` File
 
 <p>This file provides the interface for the sampled PGO loader pass. <a href="#details">More...</a></p>
 

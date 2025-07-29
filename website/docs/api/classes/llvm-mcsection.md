@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSection` Class Reference
+# `MCSection` Class
 
 <p>Instances of this class represent a uniqued identifier for a section in the current translation unit. <a href="#details">More...</a></p>
 

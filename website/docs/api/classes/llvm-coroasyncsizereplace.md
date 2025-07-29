@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAsyncSizeReplace` Class Reference
+# `CoroAsyncSizeReplace` Class
 
 <p>This represents the llvm.coro.async.size.replace instruction. <a href="#details">More...</a></p>
 

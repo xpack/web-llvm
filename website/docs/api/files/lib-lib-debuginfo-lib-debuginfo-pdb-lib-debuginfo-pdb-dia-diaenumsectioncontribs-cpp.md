@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumSectionContribs.cpp` File Reference
+# `DIAEnumSectionContribs.cpp` File
 
 
 

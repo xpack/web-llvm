@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsyncCallResultHelper` Class Template Reference
+# `AsyncCallResultHelper` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeConstant` Class Reference
+# `BitcodeConstant` Class
 
 <p>This represents a constant expression or constant aggregate using a custom structure internal to the bitcode reader. <a href="#details">More...</a></p>
 

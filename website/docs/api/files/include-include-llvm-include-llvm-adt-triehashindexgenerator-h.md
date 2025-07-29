@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrieHashIndexGenerator.h` File Reference
+# `TrieHashIndexGenerator.h` File
 
 
 

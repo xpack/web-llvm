@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedOrScalableQuantity` Class Template Reference
+# `FixedOrScalableQuantity` Class Template
 
 
 

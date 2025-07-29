@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStringPoolEntryUnsafe` Class Reference
+# `SymbolStringPoolEntryUnsafe` Class
 
 <p>Provides unsafe access to ownership operations on <a href="/web-llvm/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a>. <a href="#details">More...</a></p>
 

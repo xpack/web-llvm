@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanVerifier` Class Reference
+# `VPlanVerifier` Class
 
 
 

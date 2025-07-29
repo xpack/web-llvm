@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InjectTLIMappings` Class Reference
+# `InjectTLIMappings` Class
 
 
 

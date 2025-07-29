@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorMessageMatches` Class Reference
+# `ErrorMessageMatches` Class
 
 
 

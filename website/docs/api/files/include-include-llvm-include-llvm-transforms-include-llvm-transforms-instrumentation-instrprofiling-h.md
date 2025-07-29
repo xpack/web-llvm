@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfiling.h` File Reference
+# `InstrProfiling.h` File
 
 <p>This file provides the interface for LLVM's PGO Instrumentation lowering pass. <a href="#details">More...</a></p>
 

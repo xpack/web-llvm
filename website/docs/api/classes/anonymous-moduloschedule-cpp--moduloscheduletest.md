@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuloScheduleTest` Class Reference
+# `ModuloScheduleTest` Class
 
 
 

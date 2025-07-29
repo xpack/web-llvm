@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClobberWalkerBase` Class Reference
+# `ClobberWalkerBase` Class
 
 
 

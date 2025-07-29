@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoIROptimization` Class Reference
+# `DiagnosticInfoIROptimization` Class
 
 <p>Common features for diagnostics dealing with optimization remarks that are used by IR passes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseHandleImpl` Class Template Reference
+# `CaseHandleImpl` Class Template
 
 <p>A handle to a particular switch case. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scheduler` Class Reference
+# `Scheduler` Class
 
 <p>The list scheduler. <a href="#details">More...</a></p>
 

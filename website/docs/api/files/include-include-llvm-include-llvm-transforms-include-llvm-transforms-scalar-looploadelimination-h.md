@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopLoadElimination.h` File Reference
+# `LoopLoadElimination.h` File
 
 <p>This header defines the LoopLoadEliminationPass object. <a href="#details">More...</a></p>
 

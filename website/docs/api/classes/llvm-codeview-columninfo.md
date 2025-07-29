@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ColumnInfo` Class Reference
+# `ColumnInfo` Class
 
 
 

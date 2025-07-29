@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DemandedBitsPrinterPass` Class Reference
+# `DemandedBitsPrinterPass` Class
 
 <p>Printer pass for <a href="/web-llvm/docs/api/classes/llvm/demandedbits">DemandedBits</a>. <a href="#details">More...</a></p>
 

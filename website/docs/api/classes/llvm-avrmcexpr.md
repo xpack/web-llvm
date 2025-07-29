@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRMCExpr` Class Reference
+# `AVRMCExpr` Class
 
 <p>A expression in <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> machine code. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfReaderNullRemapper` Class Reference
+# `InstrProfReaderNullRemapper` Class
 
 <p>A remapper that does not apply any remappings. <a href="#details">More...</a></p>
 

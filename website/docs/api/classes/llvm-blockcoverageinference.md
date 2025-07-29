@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockCoverageInference` Class Reference
+# `BlockCoverageInference` Class
 
 
 

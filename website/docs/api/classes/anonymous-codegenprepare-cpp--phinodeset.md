@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiNodeSet` Class Reference
+# `PhiNodeSet` Class
 
 <p>Keeps a set of PHINodes. <a href="#details">More...</a></p>
 

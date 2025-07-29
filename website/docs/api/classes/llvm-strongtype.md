@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrongType` Class Template Reference
+# `StrongType` Class Template
 
 <p>Helper for making strong types. <a href="#details">More...</a></p>
 

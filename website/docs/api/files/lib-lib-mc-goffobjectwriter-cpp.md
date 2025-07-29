@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFObjectWriter.cpp` File Reference
+# `GOFFObjectWriter.cpp` File
 
 
 

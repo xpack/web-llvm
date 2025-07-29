@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonTypeTemplateParamDecl` Class Reference
+# `NonTypeTemplateParamDecl` Class
 
 <p>A non-type template parameter declaration, 'int N'. <a href="#details">More...</a></p>
 

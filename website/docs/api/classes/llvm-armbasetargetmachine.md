@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBaseTargetMachine` Class Reference
+# `ARMBaseTargetMachine` Class
 
 
 

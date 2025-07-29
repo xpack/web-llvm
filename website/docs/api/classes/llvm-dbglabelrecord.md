@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgLabelRecord` Class Reference
+# `DbgLabelRecord` Class
 
 <p>Records a position in IR for a source label (<a href="/web-llvm/docs/api/classes/llvm/dilabel">DILabel</a>). <a href="#details">More...</a></p>
 

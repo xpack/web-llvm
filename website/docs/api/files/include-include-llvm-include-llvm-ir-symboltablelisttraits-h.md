@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTableListTraits.h` File Reference
+# `SymbolTableListTraits.h` File
 
 
 

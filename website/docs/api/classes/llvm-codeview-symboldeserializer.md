@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolDeserializer` Class Reference
+# `SymbolDeserializer` Class
 
 
 

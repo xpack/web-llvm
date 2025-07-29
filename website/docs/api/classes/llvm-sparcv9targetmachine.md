@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcV9TargetMachine` Class Reference
+# `SparcV9TargetMachine` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/sparc">Sparc</a> 64-bit target machine. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kGenSubtargetInfo` Class Reference
+# `M68kGenSubtargetInfo` Class
 
 
 

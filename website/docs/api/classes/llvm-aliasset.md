@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasSet` Class Reference
+# `AliasSet` Class
 
 
 

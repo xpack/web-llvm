@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoMIRParser` Class Reference
+# `DiagnosticInfoMIRParser` Class
 
 <p>Diagnostic information for machine IR parser. <a href="#details">More...</a></p>
 

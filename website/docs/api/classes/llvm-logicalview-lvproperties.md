@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVProperties` Class Template Reference
+# `LVProperties` Class Template
 
 
 

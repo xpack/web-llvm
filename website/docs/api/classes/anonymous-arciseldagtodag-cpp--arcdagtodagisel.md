@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCDAGToDAGISel` Class Reference
+# `ARCDAGToDAGISel` Class
 
 
 

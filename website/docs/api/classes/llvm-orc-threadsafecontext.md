@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeContext` Class Reference
+# `ThreadSafeContext` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> together with an associated mutex that can be used to lock the context to prevent concurrent access by other threads. <a href="#details">More...</a></p>
 

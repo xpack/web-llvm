@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedDFSImpl` Class Reference
+# `SchedDFSImpl` Class
 
 <p>Internal state used to compute <a href="/web-llvm/docs/api/classes/llvm/scheddfsresult">SchedDFSResult</a>. <a href="#details">More...</a></p>
 

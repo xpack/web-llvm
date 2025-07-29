@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DominanceFrontier.h` File Reference
+# `DominanceFrontier.h` File
 
 
 

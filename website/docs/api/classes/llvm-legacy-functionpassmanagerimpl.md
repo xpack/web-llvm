@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPassManagerImpl` Class Reference
+# `FunctionPassManagerImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/legacy/functionpassmanagerimpl">FunctionPassManagerImpl</a> manages FPPassManagers. <a href="#details">More...</a></p>
 

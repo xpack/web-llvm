@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebuginfodLog` Class Reference
+# `DebuginfodLog` Class
 
 
 

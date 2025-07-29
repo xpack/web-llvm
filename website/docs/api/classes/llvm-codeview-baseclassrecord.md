@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseClassRecord` Class Reference
+# `BaseClassRecord` Class
 
 
 

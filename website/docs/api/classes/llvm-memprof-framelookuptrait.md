@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameLookupTrait` Class Reference
+# `FrameLookupTrait` Class
 
 
 

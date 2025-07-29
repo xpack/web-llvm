@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Annotations` Class Reference
+# `Annotations` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/annotations">Annotations</a> lets you mark points and ranges inside source code, for tests: <a href="#details">More...</a></p>
 

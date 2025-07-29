@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadLocalDataSym` Class Reference
+# `ThreadLocalDataSym` Class
 
 
 

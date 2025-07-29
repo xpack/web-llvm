@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeFunctionSig.cpp` File Reference
+# `PDBSymbolTypeFunctionSig.cpp` File
 
 
 

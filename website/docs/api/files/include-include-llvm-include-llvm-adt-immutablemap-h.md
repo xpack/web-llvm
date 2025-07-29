@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableMap.h` File Reference
+# `ImmutableMap.h` File
 
 <p>This file defines the ImmutableMap class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVStructurizer` Class Reference
+# `SPIRVStructurizer` Class
 
 
 

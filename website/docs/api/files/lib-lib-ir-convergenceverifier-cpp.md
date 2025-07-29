@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConvergenceVerifier.cpp` File Reference
+# `ConvergenceVerifier.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImplType` Class Reference
+# `ImplType` Class
 
 
 

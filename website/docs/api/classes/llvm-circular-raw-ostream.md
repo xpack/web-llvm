@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `circular_raw_ostream` Class Reference
+# `circular_raw_ostream` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/circular-raw-ostream">circular_raw_ostream</a> - A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> which <em>can</em> save its data to a circular buffer, or can pass it through directly to an underlying stream if specified with a buffer of zero. <a href="#details">More...</a></p>
 

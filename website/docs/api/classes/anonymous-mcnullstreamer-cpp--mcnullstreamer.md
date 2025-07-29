@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCNullStreamer` Class Reference
+# `MCNullStreamer` Class
 
 
 

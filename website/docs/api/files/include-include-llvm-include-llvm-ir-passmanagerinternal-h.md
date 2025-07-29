@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManagerInternal.h` File Reference
+# `PassManagerInternal.h` File
 
 <p>This header provides internal APIs and implementation details used by the pass management interfaces exposed in PassManager.h. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Localizer.h` File Reference
+# `Localizer.h` File
 
 
 

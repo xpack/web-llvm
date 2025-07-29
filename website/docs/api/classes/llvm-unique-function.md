@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `unique_function` Class Template Reference
+# `unique_function` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/unique-function">unique_function</a> is a type-erasing functor similar to std::function. <a href="#details">More...</a></p>
 

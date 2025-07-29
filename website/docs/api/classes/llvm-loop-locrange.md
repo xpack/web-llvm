@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocRange` Class Reference
+# `LocRange` Class
 
 <p>A range representing the start and end location of a loop. <a href="#details">More...</a></p>
 

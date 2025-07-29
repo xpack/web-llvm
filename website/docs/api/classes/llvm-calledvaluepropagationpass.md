@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalledValuePropagationPass` Class Reference
+# `CalledValuePropagationPass` Class
 
 
 

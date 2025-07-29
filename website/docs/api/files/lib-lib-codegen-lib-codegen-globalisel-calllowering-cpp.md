@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallLowering.cpp` File Reference
+# `CallLowering.cpp` File
 
 <p>This file implements some simple delegations needed for call lowering. <a href="#details">More...</a></p>
 

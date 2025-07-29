@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfSymtab` Class Reference
+# `InstrProfSymtab` Class
 
 <p>A symbol table used for function [IR]PGO name look-up with keys (such as pointers, md5hash values) to the function. <a href="#details">More...</a></p>
 

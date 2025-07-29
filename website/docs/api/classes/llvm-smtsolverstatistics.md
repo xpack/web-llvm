@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMTSolverStatistics` Class Reference
+# `SMTSolverStatistics` Class
 
 
 

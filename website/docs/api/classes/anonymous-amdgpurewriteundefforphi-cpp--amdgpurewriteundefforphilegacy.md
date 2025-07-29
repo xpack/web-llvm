@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURewriteUndefForPHILegacy` Class Reference
+# `AMDGPURewriteUndefForPHILegacy` Class
 
 
 

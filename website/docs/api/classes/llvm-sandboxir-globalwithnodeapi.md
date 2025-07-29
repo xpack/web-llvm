@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalWithNodeAPI` Class Template Reference
+# `GlobalWithNodeAPI` Class Template
 
 <p>Provides API functions, like <a href="#a6ca3df0dddca4fe048a4bdb535362010">getIterator()</a> and <a href="#ac80dadfb9db2288710b8d145fe27ad84">getReverseIterator()</a> to <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalifunc">GlobalIFunc</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function">Function</a>, <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalvariable">GlobalVariable</a> and <a href="/web-llvm/docs/api/classes/llvm/sandboxir/globalalias">GlobalAlias</a>. <a href="#details">More...</a></p>
 

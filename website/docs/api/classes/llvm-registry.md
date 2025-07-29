@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Registry` Class Template Reference
+# `Registry` Class Template
 
 <p>A global registry used in conjunction with static constructors to make pluggable components (like targets or garbage collectors) "just work" when linked with an executable. <a href="#details">More...</a></p>
 

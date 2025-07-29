@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMUnwindEmitter` Class Reference
+# `ARMUnwindEmitter` Class
 
 
 

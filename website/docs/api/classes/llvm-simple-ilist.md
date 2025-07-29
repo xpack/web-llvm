@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `simple_ilist` Class Template Reference
+# `simple_ilist` Class Template
 
 <p>A simple intrusive list implementation. <a href="#details">More...</a></p>
 

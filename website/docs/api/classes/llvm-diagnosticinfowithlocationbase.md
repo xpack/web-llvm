@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoWithLocationBase` Class Reference
+# `DiagnosticInfoWithLocationBase` Class
 
 <p>Common features for diagnostics with an associated location. <a href="#details">More...</a></p>
 

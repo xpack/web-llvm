@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionInfoAnalysis` Class Reference
+# `RegionInfoAnalysis` Class
 
 <p>Analysis pass that exposes the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/regioninfo">RegionInfo</a></span> for a function. <a href="#details">More...</a></p>
 

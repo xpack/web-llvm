@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFLinkGraphBuilder_loongarch` Class Template Reference
+# `ELFLinkGraphBuilder_loongarch` Class Template
 
 
 

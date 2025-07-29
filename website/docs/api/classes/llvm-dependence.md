@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Dependence` Class Reference
+# `Dependence` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dependence">Dependence</a> - This class represents a dependence between two memory memory references in a function. <a href="#details">More...</a></p>
 

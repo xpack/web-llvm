@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverflowingBinaryOperator` Class Reference
+# `OverflowingBinaryOperator` Class
 
 <p>Utility class for integer operators which may exhibit overflow - Add, Sub, Mul, and Shl. <a href="#details">More...</a></p>
 

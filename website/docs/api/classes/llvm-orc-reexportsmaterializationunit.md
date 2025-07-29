@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReExportsMaterializationUnit` Class Reference
+# `ReExportsMaterializationUnit` Class
 
 <p>A materialization unit for symbol aliases. <a href="#details">More...</a></p>
 

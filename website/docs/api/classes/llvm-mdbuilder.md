@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDBuilder` Class Reference
+# `MDBuilder` Class
 
 
 

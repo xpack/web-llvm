@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOutliner.h` File Reference
+# `MachineOutliner.h` File
 
 <p>Contains all data structures shared between the outliner implemented in <a href="/web-llvm/docs/api/files/lib/lib/codegen/machineoutliner-cpp">MachineOutliner.cpp</a> and target implementations of the outliner. <a href="#details">More...</a></p>
 

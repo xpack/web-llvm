@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBaseLoadStoreSDNode` Class Reference
+# `VPBaseLoadStoreSDNode` Class
 
 <p>This base class is used to represent VP_LOAD, VP_STORE, EXPERIMENTAL_VP_STRIDED_LOAD and EXPERIMENTAL_VP_STRIDED_STORE nodes. <a href="#details">More...</a></p>
 

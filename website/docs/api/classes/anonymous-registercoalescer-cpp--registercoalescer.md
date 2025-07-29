@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterCoalescer` Class Reference
+# `RegisterCoalescer` Class
 
 
 

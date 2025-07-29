@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVEmitIntrinsics` Class Reference
+# `SPIRVEmitIntrinsics` Class
 
 
 

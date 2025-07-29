@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRCanonicalizer` Class Reference
+# `MIRCanonicalizer` Class
 
 
 

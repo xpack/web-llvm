@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractValueInst` Class Reference
+# `ExtractValueInst` Class
 
 
 

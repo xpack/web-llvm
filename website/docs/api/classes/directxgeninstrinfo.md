@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXGenInstrInfo` Class Reference
+# `DirectXGenInstrInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyCoroEndInst` Class Reference
+# `AnyCoroEndInst` Class
 
 
 

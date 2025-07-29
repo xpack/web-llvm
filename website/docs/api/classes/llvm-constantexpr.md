@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantExpr` Class Reference
+# `ConstantExpr` Class
 
 <p>A constant value that is initialized with an expression using other constant values. <a href="#details">More...</a></p>
 

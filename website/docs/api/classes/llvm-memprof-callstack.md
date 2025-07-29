@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStack` Class Template Reference
+# `CallStack` Class Template
 
 <p>Helper class to iterate through stack ids in both metadata (memprof MIB and callsite) and the corresponding ThinLTO summary data structures (<a href="/web-llvm/docs/api/structs/llvm/callsiteinfo">CallsiteInfo</a> and <a href="/web-llvm/docs/api/structs/llvm/mibinfo">MIBInfo</a>). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyMemTransferInst` Class Reference
+# `AnyMemTransferInst` Class
 
 
 

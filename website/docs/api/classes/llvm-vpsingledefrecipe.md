@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPSingleDefRecipe` Class Reference
+# `VPSingleDefRecipe` Class
 
 <p>VPSingleDef is a base class for recipes for modeling a sequence of one or more output IR that define a single result <a href="/web-llvm/docs/api/classes/llvm/vpvalue">VPValue</a>. <a href="#details">More...</a></p>
 

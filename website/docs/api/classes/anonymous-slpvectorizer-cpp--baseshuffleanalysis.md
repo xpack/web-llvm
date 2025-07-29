@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseShuffleAnalysis` Class Reference
+# `BaseShuffleAnalysis` Class
 
 <p>The base class for shuffle instruction emission and shuffle cost estimation. <a href="#details">More...</a></p>
 

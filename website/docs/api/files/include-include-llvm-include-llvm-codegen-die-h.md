@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIE.h` File Reference
+# `DIE.h` File
 
 
 

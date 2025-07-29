@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EndOfFileError` Class Reference
+# `EndOfFileError` Class
 
 
 

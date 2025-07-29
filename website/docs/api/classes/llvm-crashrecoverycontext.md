@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrashRecoveryContext` Class Reference
+# `CrashRecoveryContext` Class
 
 <p>Crash recovery helper object. <a href="#details">More...</a></p>
 

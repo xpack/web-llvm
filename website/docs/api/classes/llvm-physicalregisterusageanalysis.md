@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhysicalRegisterUsageAnalysis` Class Reference
+# `PhysicalRegisterUsageAnalysis` Class
 
 
 

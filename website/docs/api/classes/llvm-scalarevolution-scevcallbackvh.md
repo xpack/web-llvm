@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVCallbackVH` Class Reference
+# `SCEVCallbackVH` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/callbackvh">CallbackVH</a> to arrange for <a href="/web-llvm/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> to be notified whenever a <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> is deleted. <a href="#details">More...</a></p>
 

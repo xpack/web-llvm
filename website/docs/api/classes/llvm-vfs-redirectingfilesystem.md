@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectingFileSystem` Class Reference
+# `RedirectingFileSystem` Class
 
 <p>A virtual file system parsed from a YAML file. <a href="#details">More...</a></p>
 

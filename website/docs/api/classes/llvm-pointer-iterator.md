@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pointer_iterator` Class Template Reference
+# `pointer_iterator` Class Template
 
 
 

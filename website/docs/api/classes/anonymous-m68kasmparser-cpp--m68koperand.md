@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kOperand` Class Reference
+# `M68kOperand` Class
 
 <p>An parsed <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> assembly operand. <a href="#details">More...</a></p>
 

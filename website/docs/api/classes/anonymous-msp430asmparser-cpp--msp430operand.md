@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430Operand` Class Reference
+# `MSP430Operand` Class
 
 <p>A parsed <a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a> assembly operand. <a href="#details">More...</a></p>
 

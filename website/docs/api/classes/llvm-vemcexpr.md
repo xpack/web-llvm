@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEMCExpr` Class Reference
+# `VEMCExpr` Class
 
 
 

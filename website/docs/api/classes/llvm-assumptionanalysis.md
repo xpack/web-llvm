@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumptionAnalysis` Class Reference
+# `AssumptionAnalysis` Class
 
 <p>A function analysis which provides an <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/assumptioncache">AssumptionCache</a></span>. <a href="#details">More...</a></p>
 

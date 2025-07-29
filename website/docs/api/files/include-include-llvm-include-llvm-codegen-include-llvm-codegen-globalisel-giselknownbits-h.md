@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelKnownBits.h` File Reference
+# `GISelKnownBits.h` File
 
 <p>Provides analysis for querying information about KnownBits during GISel passes. <a href="#details">More...</a></p>
 

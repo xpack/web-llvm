@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVSymbolDumper` Class Reference
+# `CVSymbolDumper` Class
 
 <p>Dumper for CodeView symbol streams found in <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> object files and PDB files. <a href="#details">More...</a></p>
 

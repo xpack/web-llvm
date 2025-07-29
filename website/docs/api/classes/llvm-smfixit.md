@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMFixIt` Class Reference
+# `SMFixIt` Class
 
 <p>Represents a single fixit, a replacement of one range of text with another. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsnInfo` Class Reference
+# `InsnInfo` Class
 
 
 

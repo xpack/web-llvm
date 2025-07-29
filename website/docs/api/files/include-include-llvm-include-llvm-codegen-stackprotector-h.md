@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackProtector.h` File Reference
+# `StackProtector.h` File
 
 
 

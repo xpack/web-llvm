@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCDAGToDAGISelLegacy` Class Reference
+# `PPCDAGToDAGISelLegacy` Class
 
 
 

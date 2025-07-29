@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMappingWriter.h` File Reference
+# `CoverageMappingWriter.h` File
 
 
 

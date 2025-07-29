@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Chrono.h` File Reference
+# `Chrono.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TwoAddressInstructionLegacyPass` Class Reference
+# `TwoAddressInstructionLegacyPass` Class
 
 
 

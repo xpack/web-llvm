@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSuperRegIterator` Class Reference
+# `MCSuperRegIterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcsuperregiterator">MCSuperRegIterator</a> enumerates all super-registers of Reg. <a href="#details">More...</a></p>
 

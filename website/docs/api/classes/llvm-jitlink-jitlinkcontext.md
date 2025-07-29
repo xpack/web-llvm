@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkContext` Class Reference
+# `JITLinkContext` Class
 
 <p>Holds context for a single jitLink invocation. <a href="#details">More...</a></p>
 

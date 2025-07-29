@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInterchangeTransform` Class Reference
+# `LoopInterchangeTransform` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-loopinterchange-cpp-/loopinterchangetransform">LoopInterchangeTransform</a> interchanges the loop. <a href="#details">More...</a></p>
 

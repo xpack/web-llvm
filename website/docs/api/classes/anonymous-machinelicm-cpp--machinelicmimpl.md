@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLICMImpl` Class Reference
+# `MachineLICMImpl` Class
 
 
 

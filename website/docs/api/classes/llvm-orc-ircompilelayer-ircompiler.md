@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRCompiler` Class Reference
+# `IRCompiler` Class
 
 
 

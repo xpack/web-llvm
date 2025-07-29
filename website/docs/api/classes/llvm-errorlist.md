@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorList` Class Reference
+# `ErrorList` Class
 
 <p>Special <a href="/web-llvm/docs/api/classes/llvm/errorinfo">ErrorInfo</a> subclass representing a list of ErrorInfos. <a href="#details">More...</a></p>
 

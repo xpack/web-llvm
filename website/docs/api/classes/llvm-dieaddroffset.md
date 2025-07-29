@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEAddrOffset` Class Reference
+# `DIEAddrOffset` Class
 
 <p>A BaseTypeRef <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

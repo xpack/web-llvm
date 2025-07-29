@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPassManager` Class Reference
+# `RegionPassManager` Class
 
 
 

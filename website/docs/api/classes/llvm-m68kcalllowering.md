@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kCallLowering` Class Reference
+# `M68kCallLowering` Class
 
 
 

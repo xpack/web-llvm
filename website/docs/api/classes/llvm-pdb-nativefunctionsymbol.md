@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeFunctionSymbol` Class Reference
+# `NativeFunctionSymbol` Class
 
 
 

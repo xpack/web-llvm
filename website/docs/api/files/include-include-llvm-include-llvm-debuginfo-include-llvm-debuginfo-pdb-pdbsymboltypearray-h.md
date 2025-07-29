@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeArray.h` File Reference
+# `PDBSymbolTypeArray.h` File
 
 
 

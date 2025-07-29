@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertValueInst` Class Reference
+# `InsertValueInst` Class
 
 
 

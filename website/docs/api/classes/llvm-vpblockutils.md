@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBlockUtils` Class Reference
+# `VPBlockUtils` Class
 
 <p>Class that provides utilities for VPBlockBases in <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemIntrinsicSDNode` Class Reference
+# `MemIntrinsicSDNode` Class
 
 <p>This <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> is used for target intrinsics that touch memory and need an associated <a href="/web-llvm/docs/api/classes/llvm/machinememoperand">MachineMemOperand</a>. <a href="#details">More...</a></p>
 

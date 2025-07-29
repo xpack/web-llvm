@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstrDesc.cpp` File Reference
+# `MCInstrDesc.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CounterExpressionBuilder` Class Reference
+# `CounterExpressionBuilder` Class
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/coverage/counter">Counter</a> expression builder is used to construct the counter expressions. <a href="#details">More...</a></p>
 

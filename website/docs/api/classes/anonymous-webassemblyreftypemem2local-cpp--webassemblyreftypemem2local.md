@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRefTypeMem2Local` Class Reference
+# `WebAssemblyRefTypeMem2Local` Class
 
 
 

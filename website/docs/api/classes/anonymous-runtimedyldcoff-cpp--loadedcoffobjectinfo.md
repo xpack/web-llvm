@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadedCOFFObjectInfo` Class Reference
+# `LoadedCOFFObjectInfo` Class
 
 
 

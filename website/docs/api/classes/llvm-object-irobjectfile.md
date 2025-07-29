@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRObjectFile` Class Reference
+# `IRObjectFile` Class
 
 
 

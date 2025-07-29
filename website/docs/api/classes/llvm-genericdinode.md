@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericDINode` Class Reference
+# `GenericDINode` Class
 
 <p>Generic tagged DWARF-like metadata node. <a href="#details">More...</a></p>
 

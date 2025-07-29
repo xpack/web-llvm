@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Memory` Class Reference
+# `Memory` Class
 
 <p>This class provides various memory handling functions that manipulate <a href="/web-llvm/docs/api/classes/llvm/sys/memoryblock">MemoryBlock</a> instances. <a href="#details">More...</a></p>
 

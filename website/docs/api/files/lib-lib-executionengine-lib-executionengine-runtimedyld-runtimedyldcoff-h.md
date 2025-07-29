@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldCOFF.h` File Reference
+# `RuntimeDyldCOFF.h` File
 
 
 

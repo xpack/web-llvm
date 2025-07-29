@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineConsumer` Class Reference
+# `LineConsumer` Class
 
 
 

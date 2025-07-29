@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmbedBitcodePass.h` File Reference
+# `EmbedBitcodePass.h` File
 
 <p>This file provides a pass which clones the current module and runs the provided pass pipeline on the clone. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryClauseInitialScheduleStage` Class Reference
+# `MemoryClauseInitialScheduleStage` Class
 
 
 

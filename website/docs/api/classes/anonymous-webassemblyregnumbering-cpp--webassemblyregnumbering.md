@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegNumbering` Class Reference
+# `WebAssemblyRegNumbering` Class
 
 
 

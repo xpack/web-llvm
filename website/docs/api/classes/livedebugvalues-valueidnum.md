@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueIDNum` Class Reference
+# `ValueIDNum` Class
 
 <p>Unique identifier for a value defined by an instruction, as a value type. <a href="#details">More...</a></p>
 

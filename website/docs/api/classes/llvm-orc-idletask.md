@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IdleTask` Class Reference
+# `IdleTask` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/idletask">IdleTask</a> can be used as the basis for low-priority tasks, e.g. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPReductionEVLRecipe` Class Reference
+# `VPReductionEVLRecipe` Class
 
 <p>A recipe to represent inloop reduction operations with vector-predication intrinsics, performing a reduction on a vector operand with the explicit vector length (EVL) into a scalar value, and adding the result to a chain. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVSMaxExpr` Class Reference
+# `SCEVSMaxExpr` Class
 
 <p>This class represents a signed maximum selection. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pointer` Class Reference
+# `pointer` Class
 
 
 

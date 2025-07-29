@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceManager` Class Reference
+# `ResourceManager` Class
 
 <p>Listens for <a href="/web-llvm/docs/api/classes/llvm/orc/resourcetracker">ResourceTracker</a> operations. <a href="#details">More...</a></p>
 

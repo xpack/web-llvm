@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectSizeOffsetEvaluator` Class Reference
+# `ObjectSizeOffsetEvaluator` Class
 
 <p>Evaluate the size and offset of an object pointed to by a Value*. <a href="#details">More...</a></p>
 

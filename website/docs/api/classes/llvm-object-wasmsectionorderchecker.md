@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmSectionOrderChecker` Class Reference
+# `WasmSectionOrderChecker` Class
 
 
 

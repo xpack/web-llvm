@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSymbolizer` Class Reference
+# `AMDGPUSymbolizer` Class
 
 
 

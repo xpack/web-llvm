@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoMisExpect` Class Reference
+# `DiagnosticInfoMisExpect` Class
 
 <p>Diagnostic information for MisExpect analysis. <a href="#details">More...</a></p>
 

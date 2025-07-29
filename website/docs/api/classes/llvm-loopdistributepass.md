@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDistributePass` Class Reference
+# `LoopDistributePass` Class
 
 
 

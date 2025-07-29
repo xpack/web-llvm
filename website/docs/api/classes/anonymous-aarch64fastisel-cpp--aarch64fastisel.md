@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64FastISel` Class Reference
+# `AArch64FastISel` Class
 
 
 

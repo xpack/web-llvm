@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InfoStream.h` File Reference
+# `InfoStream.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicExpandPass` Class Reference
+# `AtomicExpandPass` Class
 
 
 

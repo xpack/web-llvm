@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringToOffsetTable.h` File Reference
+# `StringToOffsetTable.h` File
 
 
 

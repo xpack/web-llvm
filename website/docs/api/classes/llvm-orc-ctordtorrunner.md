@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CtorDtorRunner` Class Reference
+# `CtorDtorRunner` Class
 
 
 

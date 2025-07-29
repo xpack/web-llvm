@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchNode` Class Template Reference
+# `BranchNode` Class Template
 
 
 

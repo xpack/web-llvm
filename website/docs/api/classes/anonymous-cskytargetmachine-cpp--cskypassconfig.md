@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYPassConfig` Class Reference
+# `CSKYPassConfig` Class
 
 
 

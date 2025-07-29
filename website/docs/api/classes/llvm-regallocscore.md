@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocScore` Class Reference
+# `RegAllocScore` Class
 
 <p>Regalloc score. <a href="#details">More...</a></p>
 

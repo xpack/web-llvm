@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegisterInfo.cpp` File Reference
+# `MCRegisterInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DominanceFrontierBase` Class Template Reference
+# `DominanceFrontierBase` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dominancefrontierbase">DominanceFrontierBase</a> - Common base class for computing forward and inverse dominance frontiers for a function. <a href="#details">More...</a></p>
 

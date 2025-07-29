@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAUpdater.h` File Reference
+# `SSAUpdater.h` File
 
 
 

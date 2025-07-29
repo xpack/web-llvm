@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertPointGuard` Class Reference
+# `InsertPointGuard` Class
 
 
 

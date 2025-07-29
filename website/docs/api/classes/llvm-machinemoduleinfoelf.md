@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleInfoELF` Class Reference
+# `MachineModuleInfoELF` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfoelf">MachineModuleInfoELF</a> - This is a <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfoimpl">MachineModuleInfoImpl</a> implementation for <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> targets. <a href="#details">More...</a></p>
 

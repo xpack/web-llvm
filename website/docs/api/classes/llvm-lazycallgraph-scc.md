@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCC` Class Reference
+# `SCC` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph/scc">SCC</a> of the call graph. <a href="#details">More...</a></p>
 

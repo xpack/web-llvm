@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Slice` Class Reference
+# `Slice` Class
 
 <p>A used slice of an alloca. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShapeT` Class Reference
+# `ShapeT` Class
 
 
 

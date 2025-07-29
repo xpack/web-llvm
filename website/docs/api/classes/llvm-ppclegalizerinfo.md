@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCLegalizerInfo` Class Reference
+# `PPCLegalizerInfo` Class
 
 <p>This class provides the information for the PowerPC target legalizer for GlobalISel. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemoryBuffer` Class Reference
+# `InMemoryBuffer` Class
 
 
 

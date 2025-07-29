@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBSectionContrib` Class Reference
+# `IPDBSectionContrib` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbsectioncontrib">IPDBSectionContrib</a> defines an interface used to represent section contributions whose information are stored in the PDB. <a href="#details">More...</a></p>
 

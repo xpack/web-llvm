@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCVIResource` Class Reference
+# `HexagonCVIResource` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSymbolMapper` Class Reference
+# `IRSymbolMapper` Class
 
 <p>Maps IR global values to their linker symbol names / flags. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Internalize.h` File Reference
+# `Internalize.h` File
 
 
 

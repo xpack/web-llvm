@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGProfilePass` Class Reference
+# `CGProfilePass` Class
 
 
 

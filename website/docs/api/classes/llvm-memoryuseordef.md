@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryUseOrDef` Class Reference
+# `MemoryUseOrDef` Class
 
 <p>Class that has the common methods + fields of memory uses/defs. <a href="#details">More...</a></p>
 

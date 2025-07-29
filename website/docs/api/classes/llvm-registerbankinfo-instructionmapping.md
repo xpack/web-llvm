@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionMapping` Class Reference
+# `InstructionMapping` Class
 
 <p>Helper class that represents how the value of an instruction may be mapped and what is the related cost of such mapping. <a href="#details">More...</a></p>
 

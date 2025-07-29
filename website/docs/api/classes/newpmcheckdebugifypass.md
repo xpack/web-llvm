@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewPMCheckDebugifyPass` Class Reference
+# `NewPMCheckDebugifyPass` Class
 
 
 

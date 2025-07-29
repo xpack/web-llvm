@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericCycleInfo` Class Template Reference
+# `GenericCycleInfo` Class Template
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/#a60dc5ae8be8d73033ce099677e645b9b">Cycle</a> information for a function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSlotColoring` Class Reference
+# `StackSlotColoring` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EquivalenceClasses.h` File Reference
+# `EquivalenceClasses.h` File
 
 <p>Generic implementation of equivalence classes through the use Tarjan's efficient union-find algorithm. <a href="#details">More...</a></p>
 

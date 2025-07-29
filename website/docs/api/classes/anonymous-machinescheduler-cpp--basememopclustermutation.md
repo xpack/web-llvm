@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseMemOpClusterMutation` Class Reference
+# `BaseMemOpClusterMutation` Class
 
 <p>Post-process the DAG to create cluster edges between neighboring loads or between neighboring stores. <a href="#details">More...</a></p>
 

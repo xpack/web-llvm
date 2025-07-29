@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Recycler` Class Template Reference
+# `Recycler` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/recycler">Recycler</a> - This class manages a linked-list of deallocated nodes and facilitates reusing deallocated memory in place of allocating new memory. <a href="#details">More...</a></p>
 

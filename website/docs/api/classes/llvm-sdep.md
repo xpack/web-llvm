@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDep` Class Reference
+# `SDep` Class
 
 <p>Scheduling dependency. <a href="#details">More...</a></p>
 

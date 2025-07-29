@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSlotColoring.cpp` File Reference
+# `StackSlotColoring.cpp` File
 
 
 

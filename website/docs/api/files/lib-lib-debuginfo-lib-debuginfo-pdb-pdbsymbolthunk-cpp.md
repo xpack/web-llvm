@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolThunk.cpp` File Reference
+# `PDBSymbolThunk.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WidenIV` Class Reference
+# `WidenIV` Class
 
 
 

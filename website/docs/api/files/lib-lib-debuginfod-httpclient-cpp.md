@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPClient.cpp` File Reference
+# `HTTPClient.cpp` File
 
 <p>This file defines the implementation of the <a href="/web-llvm/docs/api/classes/llvm/httpclient">HTTPClient</a> library for issuing HTTP requests and handling the responses. <a href="#details">More...</a></p>
 

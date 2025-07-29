@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateAssume` Class Reference
+# `PredicateAssume` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVStringPool.h` File Reference
+# `LVStringPool.h` File
 
 
 

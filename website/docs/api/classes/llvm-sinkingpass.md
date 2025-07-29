@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SinkingPass` Class Reference
+# `SinkingPass` Class
 
 <p>Move instructions into successor blocks when possible. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetireControlUnit.h` File Reference
+# `RetireControlUnit.h` File
 
 <p>This file simulates the hardware responsible for retiring instructions. <a href="#details">More...</a></p>
 

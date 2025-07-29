@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_FlowTraits` Class Template Reference
+# `has_FlowTraits` Class Template
 
 
 

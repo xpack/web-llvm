@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanonicalizeFreezeInLoopsImpl` Class Reference
+# `CanonicalizeFreezeInLoopsImpl` Class
 
 
 

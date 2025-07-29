@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GFConstant` Class Reference
+# `GFConstant` Class
 
 <p>An floating-point-like constant. <a href="#details">More...</a></p>
 

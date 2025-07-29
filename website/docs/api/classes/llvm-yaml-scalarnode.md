@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarNode` Class Reference
+# `ScalarNode` Class
 
 <p>A scalar node is an opaque datum that can be presented as a series of zero or more Unicode scalar values. <a href="#details">More...</a></p>
 

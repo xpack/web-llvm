@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugInfoEntry` Class Reference
+# `DWARFDebugInfoEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfdebuginfoentry">DWARFDebugInfoEntry</a> - A <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> with only the minimum required data. <a href="#details">More...</a></p>
 

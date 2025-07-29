@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocFastImpl` Class Reference
+# `RegAllocFastImpl` Class
 
 
 

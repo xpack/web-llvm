@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Localizer.cpp` File Reference
+# `Localizer.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/localizer">Localizer</a> class. <a href="#details">More...</a></p>
 

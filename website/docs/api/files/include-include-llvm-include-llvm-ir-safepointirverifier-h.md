@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafepointIRVerifier.h` File Reference
+# `SafepointIRVerifier.h` File
 
 
 

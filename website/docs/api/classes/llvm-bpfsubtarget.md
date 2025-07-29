@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFSubtarget` Class Reference
+# `BPFSubtarget` Class
 
 
 

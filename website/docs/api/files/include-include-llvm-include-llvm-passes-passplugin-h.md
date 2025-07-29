@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassPlugin.h` File Reference
+# `PassPlugin.h` File
 
 
 

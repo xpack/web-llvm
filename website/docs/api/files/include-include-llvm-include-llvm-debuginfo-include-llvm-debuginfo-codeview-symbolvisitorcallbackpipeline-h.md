@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolVisitorCallbackPipeline.h` File Reference
+# `SymbolVisitorCallbackPipeline.h` File
 
 
 

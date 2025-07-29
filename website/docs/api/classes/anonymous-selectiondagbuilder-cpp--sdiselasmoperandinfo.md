@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDISelAsmOperandInfo` Class Reference
+# `SDISelAsmOperandInfo` Class
 
 <p>AsmOperandInfo - This contains information for each constraint that we are lowering. <a href="#details">More...</a></p>
 

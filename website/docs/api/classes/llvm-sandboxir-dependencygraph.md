@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependencyGraph` Class Reference
+# `DependencyGraph` Class
 
 
 

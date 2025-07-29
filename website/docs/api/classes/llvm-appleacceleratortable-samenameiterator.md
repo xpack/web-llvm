@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SameNameIterator` Class Reference
+# `SameNameIterator` Class
 
 <p>An iterator for Entries all having the same string as key. <a href="#details">More...</a></p>
 

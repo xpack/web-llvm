@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SROA.h` File Reference
+# `SROA.h` File
 
 <p>This file provides the interface for LLVM's Scalar Replacement of Aggregates pass. <a href="#details">More...</a></p>
 

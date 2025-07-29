@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DotSuffix` Class Reference
+# `DotSuffix` Class
 
 
 

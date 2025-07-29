@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GDBRegistrationListener.cpp` File Reference
+# `GDBRegistrationListener.cpp` File
 
 
 

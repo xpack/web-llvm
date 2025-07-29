@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewGVNPass` Class Reference
+# `NewGVNPass` Class
 
 
 

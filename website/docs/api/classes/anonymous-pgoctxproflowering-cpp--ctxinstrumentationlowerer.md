@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CtxInstrumentationLowerer` Class Reference
+# `CtxInstrumentationLowerer` Class
 
 
 

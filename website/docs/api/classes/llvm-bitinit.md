@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitInit` Class Reference
+# `BitInit` Class
 
 <p>'true'/'false' - Represent a concrete initializer for a bit. <a href="#details">More...</a></p>
 

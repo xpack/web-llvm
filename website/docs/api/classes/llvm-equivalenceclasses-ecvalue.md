@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ECValue` Class Reference
+# `ECValue` Class
 
 <p>ECValue - The <a href="/web-llvm/docs/api/classes/llvm/equivalenceclasses">EquivalenceClasses</a> data structure is just a set of these. <a href="#details">More...</a></p>
 

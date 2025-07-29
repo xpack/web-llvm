@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintInstructionCount` Class Reference
+# `PrintInstructionCount` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/sandboxir/region">Region</a> pass that prints the instruction count for the region to stdout. <a href="#details">More...</a></p>
 

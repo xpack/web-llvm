@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DGNode` Class Template Reference
+# `DGNode` Class Template
 
 <p>Represent a node in the directed graph. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveRedundantDebugValues` Class Reference
+# `RemoveRedundantDebugValues` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFAbstractMemberAccess` Class Reference
+# `BPFAbstractMemberAccess` Class
 
 
 

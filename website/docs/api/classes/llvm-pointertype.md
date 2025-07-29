@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerType` Class Reference
+# `PointerType` Class
 
 <p>Class to represent pointers. <a href="#details">More...</a></p>
 

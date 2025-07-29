@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CongruenceClass` Class Reference
+# `CongruenceClass` Class
 
 
 

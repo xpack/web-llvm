@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptLevelChanger` Class Reference
+# `OptLevelChanger` Class
 
 <p>This class is used by <a href="/web-llvm/docs/api/classes/llvm/selectiondagisel">SelectionDAGISel</a> to temporarily override the optimization level on a per-function basis. <a href="#details">More...</a></p>
 

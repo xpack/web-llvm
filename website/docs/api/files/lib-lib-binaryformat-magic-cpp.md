@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Magic.cpp` File Reference
+# `Magic.cpp` File
 
 
 

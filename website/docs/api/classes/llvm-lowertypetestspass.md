@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerTypeTestsPass` Class Reference
+# `LowerTypeTestsPass` Class
 
 
 

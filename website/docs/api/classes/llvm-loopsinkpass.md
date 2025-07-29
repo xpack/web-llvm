@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSinkPass` Class Reference
+# `LoopSinkPass` Class
 
 <p>A pass that does profile-guided sinking of instructions into loops. <a href="#details">More...</a></p>
 

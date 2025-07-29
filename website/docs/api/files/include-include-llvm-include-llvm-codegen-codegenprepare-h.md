@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenPrepare.h` File Reference
+# `CodeGenPrepare.h` File
 
 <p>Defines an IR pass for CodeGen Prepare. <a href="#details">More...</a></p>
 

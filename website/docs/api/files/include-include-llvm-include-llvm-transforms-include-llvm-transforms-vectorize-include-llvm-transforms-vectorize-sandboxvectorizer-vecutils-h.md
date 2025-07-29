@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VecUtils.h` File Reference
+# `VecUtils.h` File
 
 
 

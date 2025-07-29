@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTTIImpl` Class Reference
+# `ARMTTIImpl` Class
 
 
 

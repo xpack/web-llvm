@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallBitVector.h` File Reference
+# `SmallBitVector.h` File
 
 <p>This file implements the SmallBitVector class. <a href="#details">More...</a></p>
 

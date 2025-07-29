@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasResult` Class Reference
+# `AliasResult` Class
 
 <p>The possible results of an alias query. <a href="#details">More...</a></p>
 

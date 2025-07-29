@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TransformedType` Class Reference
+# `TransformedType` Class
 
 
 

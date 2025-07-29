@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeAnalyzer.h` File Reference
+# `BitcodeAnalyzer.h` File
 
 
 

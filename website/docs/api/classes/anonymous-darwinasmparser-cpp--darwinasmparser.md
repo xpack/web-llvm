@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DarwinAsmParser` Class Reference
+# `DarwinAsmParser` Class
 
 <p>Implementation of directive handling which is shared across all Darwin targets. <a href="#details">More...</a></p>
 

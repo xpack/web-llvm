@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatAdapters.h` File Reference
+# `FormatAdapters.h` File
 
 
 

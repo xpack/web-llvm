@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitVector.h` File Reference
+# `BitVector.h` File
 
 <p>This file implements the BitVector class. <a href="#details">More...</a></p>
 

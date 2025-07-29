@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMCCodeEmitter` Class Reference
+# `SystemZMCCodeEmitter` Class
 
 
 

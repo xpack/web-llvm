@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PressureDiff` Class Reference
+# `PressureDiff` Class
 
 <p>List of PressureChanges in order of increasing, unique PSetID. <a href="#details">More...</a></p>
 

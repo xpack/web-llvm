@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSchedule.h` File Reference
+# `MCSchedule.h` File
 
 
 

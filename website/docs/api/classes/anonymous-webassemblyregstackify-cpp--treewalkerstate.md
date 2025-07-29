@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TreeWalkerState` Class Reference
+# `TreeWalkerState` Class
 
 <p>A stack for walking the tree of instructions being built, visiting the MachineOperands in DFS order. <a href="#details">More...</a></p>
 

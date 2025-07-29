@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantUniqueMap` Class Template Reference
+# `ConstantUniqueMap` Class Template
 
 
 

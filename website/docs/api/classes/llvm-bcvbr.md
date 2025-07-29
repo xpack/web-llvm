@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCVBR` Class Template Reference
+# `BCVBR` Class Template
 
 <p>Represents a variable-width value in a bitcode record. <a href="#details">More...</a></p>
 

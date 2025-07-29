@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandsHider` Class Reference
+# `OperandsHider` Class
 
 <p>Hide the operands of an instruction. <a href="#details">More...</a></p>
 

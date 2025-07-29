@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILexicalBlock` Class Reference
+# `DILexicalBlock` Class
 
 <p>Debug lexical block. <a href="#details">More...</a></p>
 

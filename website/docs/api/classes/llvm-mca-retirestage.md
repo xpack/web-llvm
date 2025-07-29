@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetireStage` Class Reference
+# `RetireStage` Class
 
 
 

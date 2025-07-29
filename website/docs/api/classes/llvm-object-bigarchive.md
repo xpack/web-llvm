@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BigArchive` Class Reference
+# `BigArchive` Class
 
 
 

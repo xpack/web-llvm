@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLocIterator` Class Reference
+# `MLocIterator` Class
 
 <p>Iterator for locations and the values they contain. <a href="#details">More...</a></p>
 

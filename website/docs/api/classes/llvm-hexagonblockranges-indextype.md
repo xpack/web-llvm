@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexType` Class Reference
+# `IndexType` Class
 
 
 

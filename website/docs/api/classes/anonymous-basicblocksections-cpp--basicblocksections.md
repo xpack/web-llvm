@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockSections` Class Reference
+# `BasicBlockSections` Class
 
 
 

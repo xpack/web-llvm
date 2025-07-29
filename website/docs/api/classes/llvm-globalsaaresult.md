@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsAAResult` Class Reference
+# `GlobalsAAResult` Class
 
 <p>An alias analysis result set for globals. <a href="#details">More...</a></p>
 

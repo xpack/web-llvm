@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITLinkError` Class Reference
+# `JITLinkError` Class
 
 <p>Base class for errors originating in JIT linker, e.g. <a href="#details">More...</a></p>
 

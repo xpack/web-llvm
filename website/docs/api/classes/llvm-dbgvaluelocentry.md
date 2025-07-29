@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgValueLocEntry` Class Reference
+# `DbgValueLocEntry` Class
 
 <p>A single location or constant within a variable location description, with either a single entry (with an optional <a href="/web-llvm/docs/api/classes/llvm/diexpression">DIExpression</a>) used for a DBG_VALUE, or a list of entries used for a DBG_VALUE_LIST. <a href="#details">More...</a></p>
 

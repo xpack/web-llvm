@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintFunctionPass` Class Reference
+# `PrintFunctionPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> (for the new pass manager) for printing a <a href="/web-llvm/docs/api/classes/llvm/function">Function</a> as LLVM's text IR assembly. <a href="#details">More...</a></p>
 

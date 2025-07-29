@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Array` Class Reference
+# `Array` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/json/array">Array</a> is a JSON array, which contains heterogeneous JSON values. <a href="#details">More...</a></p>
 

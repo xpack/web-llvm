@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLabel` Class Reference
+# `MCLabel` Class
 
 <p>Instances of this class represent a label name in the MC file, and <a href="/web-llvm/docs/api/classes/llvm/mclabel">MCLabel</a> are created and uniqued by the <a href="/web-llvm/docs/api/classes/llvm/mccontext">MCContext</a> class. <a href="#details">More...</a></p>
 

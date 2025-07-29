@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbeBase` Class Reference
+# `MCPseudoProbeBase` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotIndexesWrapperPass` Class Reference
+# `SlotIndexesWrapperPass` Class
 
 
 

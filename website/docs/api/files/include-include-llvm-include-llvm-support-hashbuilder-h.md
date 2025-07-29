@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashBuilder.h` File Reference
+# `HashBuilder.h` File
 
 
 

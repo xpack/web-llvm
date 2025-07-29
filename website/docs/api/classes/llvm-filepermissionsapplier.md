@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FilePermissionsApplier` Class Reference
+# `FilePermissionsApplier` Class
 
 <p>FilePermssionsApplier helps to copy permissions from an input file to an output one. <a href="#details">More...</a></p>
 

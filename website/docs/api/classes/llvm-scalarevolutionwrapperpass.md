@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEvolutionWrapperPass` Class Reference
+# `ScalarEvolutionWrapperPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldMachOCRTPBase` Class Template Reference
+# `RuntimeDyldMachOCRTPBase` Class Template
 
 <p>RuntimeDyldMachOTarget - Templated base class for generic <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> linker algorithms and data structures. <a href="#details">More...</a></p>
 

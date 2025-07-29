@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFGenSubtargetInfo` Class Reference
+# `BPFGenSubtargetInfo` Class
 
 
 

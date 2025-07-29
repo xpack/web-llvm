@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatVariadicDetails.h` File Reference
+# `FormatVariadicDetails.h` File
 
 
 

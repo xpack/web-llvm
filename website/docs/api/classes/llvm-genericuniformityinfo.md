@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericUniformityInfo` Class Template Reference
+# `GenericUniformityInfo` Class Template
 
 
 

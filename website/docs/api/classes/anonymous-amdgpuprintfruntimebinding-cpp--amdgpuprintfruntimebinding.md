@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPrintfRuntimeBinding` Class Reference
+# `AMDGPUPrintfRuntimeBinding` Class
 
 
 

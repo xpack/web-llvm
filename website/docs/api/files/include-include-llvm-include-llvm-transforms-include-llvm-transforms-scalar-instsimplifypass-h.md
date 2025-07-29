@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstSimplifyPass.h` File Reference
+# `InstSimplifyPass.h` File
 
 <p>Defines passes for running instruction simplification across chunks of IR. <a href="#details">More...</a></p>
 

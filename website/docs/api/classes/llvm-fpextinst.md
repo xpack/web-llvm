@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPExtInst` Class Reference
+# `FPExtInst` Class
 
 <p>This class represents an extension of floating point types. <a href="#details">More...</a></p>
 

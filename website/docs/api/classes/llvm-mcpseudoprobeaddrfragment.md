@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbeAddrFragment` Class Reference
+# `MCPseudoProbeAddrFragment` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAllocaFreeInst` Class Reference
+# `CoroAllocaFreeInst` Class
 
 <p>This represents the llvm.coro.alloca.free instruction. <a href="#details">More...</a></p>
 

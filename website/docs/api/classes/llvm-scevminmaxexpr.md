@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVMinMaxExpr` Class Reference
+# `SCEVMinMaxExpr` Class
 
 <p>This node is the base class min/max selections. <a href="#details">More...</a></p>
 

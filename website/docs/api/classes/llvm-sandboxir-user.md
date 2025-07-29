@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `User` Class Reference
+# `User` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/sandboxir/user">sandboxir::User</a> has operands. <a href="#details">More...</a></p>
 
@@ -665,7 +665,7 @@ class llvm::sandboxir::User { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend unsigned undefined</td>
+<td class="doxyMemberName">friend unsigned</td>
 </tr>
 </table>
 </td>

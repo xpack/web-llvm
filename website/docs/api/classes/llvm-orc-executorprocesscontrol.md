@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutorProcessControl` Class Reference
+# `ExecutorProcessControl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> supports interaction with a JIT target process. <a href="#details">More...</a></p>
 

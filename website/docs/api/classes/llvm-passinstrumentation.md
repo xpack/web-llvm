@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInstrumentation` Class Reference
+# `PassInstrumentation` Class
 
 <p>This class provides instrumentation entry points for the <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Manager, doing calls to callbacks registered in <a href="/web-llvm/docs/api/classes/llvm/passinstrumentationcallbacks">PassInstrumentationCallbacks</a>. <a href="#details">More...</a></p>
 

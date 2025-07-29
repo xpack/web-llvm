@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCLowerMASSVEntries` Class Reference
+# `PPCLowerMASSVEntries` Class
 
 
 

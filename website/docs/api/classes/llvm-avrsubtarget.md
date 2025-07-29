@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRSubtarget` Class Reference
+# `AVRSubtarget` Class
 
 <p>A specific <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> target MCU. <a href="#details">More...</a></p>
 

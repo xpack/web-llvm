@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Class Reference
+# `Entry` Class
 
 <p>Apple-specific implementation of an Accelerator <a href="/web-llvm/docs/api/classes/llvm/appleacceleratortable/entry">Entry</a>. <a href="#details">More...</a></p>
 

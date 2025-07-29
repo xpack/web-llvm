@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostRAMachineSinking` Class Reference
+# `PostRAMachineSinking` Class
 
 
 

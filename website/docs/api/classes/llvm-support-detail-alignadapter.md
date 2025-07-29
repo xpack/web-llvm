@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignAdapter` Class Template Reference
+# `AlignAdapter` Class Template
 
 
 

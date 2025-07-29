@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenIntrinsicRecipe` Class Reference
+# `VPWidenIntrinsicRecipe` Class
 
 <p>A recipe for widening vector intrinsics. <a href="#details">More...</a></p>
 

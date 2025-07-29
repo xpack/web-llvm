@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompactUnwindManager` Class Template Reference
+# `CompactUnwindManager` Class Template
 
 <p>Architecture specific implementation of <a href="/web-llvm/docs/api/classes/llvm/jitlink/compactunwindmanager">CompactUnwindManager</a>. <a href="#details">More...</a></p>
 

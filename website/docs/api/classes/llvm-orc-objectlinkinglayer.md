@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectLinkingLayer` Class Reference
+# `ObjectLinkingLayer` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/orc/objectlayer">ObjectLayer</a> implementation built on JITLink. <a href="#details">More...</a></p>
 

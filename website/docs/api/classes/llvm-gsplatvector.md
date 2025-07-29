@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSplatVector` Class Reference
+# `GSplatVector` Class
 
 <p>Represents a splat vector. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GMemOperation` Class Reference
+# `GMemOperation` Class
 
 <p>Provides common memory operand functionality. <a href="#details">More...</a></p>
 

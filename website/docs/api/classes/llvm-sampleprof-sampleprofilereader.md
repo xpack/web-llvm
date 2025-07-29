@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileReader` Class Reference
+# `SampleProfileReader` Class
 
 <p>Sample-based profile reader. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandPseudo` Class Reference
+# `ExpandPseudo` Class
 
 <p>Helper class to expand pseudos. <a href="#details">More...</a></p>
 

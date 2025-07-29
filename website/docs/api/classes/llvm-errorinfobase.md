@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorInfoBase` Class Reference
+# `ErrorInfoBase` Class
 
 <p>Base class for error info classes. <a href="#details">More...</a></p>
 

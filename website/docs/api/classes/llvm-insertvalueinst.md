@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertValueInst` Class Reference
+# `InsertValueInst` Class
 
 <p>This instruction inserts a struct field of array element value into an aggregate value. <a href="#details">More...</a></p>
 

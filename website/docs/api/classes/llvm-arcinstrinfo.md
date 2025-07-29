@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCInstrInfo` Class Reference
+# `ARCInstrInfo` Class
 
 
 

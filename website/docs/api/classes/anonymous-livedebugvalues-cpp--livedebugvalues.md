@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveDebugValues` Class Reference
+# `LiveDebugValues` Class
 
 <p>Generic <a href="/web-llvm/docs/api/classes/anonymous-livedebugvalues-cpp-/livedebugvalues">LiveDebugValues</a> pass. <a href="#details">More...</a></p>
 

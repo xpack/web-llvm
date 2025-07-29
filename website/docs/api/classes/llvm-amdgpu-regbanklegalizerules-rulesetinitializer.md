@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuleSetInitializer` Class Reference
+# `RuleSetInitializer` Class
 
 
 

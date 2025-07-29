@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependenceAnalysisWrapperPass` Class Reference
+# `DependenceAnalysisWrapperPass` Class
 
 <p>Legacy pass manager pass to access dependence information. <a href="#details">More...</a></p>
 

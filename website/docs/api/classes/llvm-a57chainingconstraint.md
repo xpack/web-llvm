@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `A57ChainingConstraint` Class Reference
+# `A57ChainingConstraint` Class
 
 <p>Add the accumulator chaining constraint to a <a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> graph. <a href="#details">More...</a></p>
 

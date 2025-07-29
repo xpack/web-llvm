@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSUnit.h` File Reference
+# `LSUnit.h` File
 
 <p>A Load/Store unit class that models load/store queues and that implements a simple weak memory consistency model. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFAArch64AsmBackend` Class Reference
+# `COFFAArch64AsmBackend` Class
 
 
 

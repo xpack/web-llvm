@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphViewer` Class Reference
+# `CallGraphViewer` Class
 
 
 

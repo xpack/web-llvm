@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYMCAsmInfo` Class Reference
+# `CSKYMCAsmInfo` Class
 
 
 

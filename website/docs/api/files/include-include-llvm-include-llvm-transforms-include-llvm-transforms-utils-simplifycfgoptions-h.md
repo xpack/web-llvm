@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyCFGOptions.h` File Reference
+# `SimplifyCFGOptions.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListRecTy` Class Reference
+# `ListRecTy` Class
 
 <p>'list&lt;Ty&gt;' - Represent a list of element values, all of which must be of the specified type. <a href="#details">More...</a></p>
 
@@ -222,7 +222,7 @@ class llvm::ListRecTy { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/listrecty">ListRecTy</a> * undefined</td>
+<td class="doxyMemberName">friend <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/web-llvm/docs/api/classes/llvm/listrecty">ListRecTy</a> *</td>
 </tr>
 </table>
 </td>

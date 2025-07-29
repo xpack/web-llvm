@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonDAGToDAGISel` Class Reference
+# `HexagonDAGToDAGISel` Class
 
 
 

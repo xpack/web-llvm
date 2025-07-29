@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugLoc` Class Reference
+# `DWARFDebugLoc` Class
 
 
 

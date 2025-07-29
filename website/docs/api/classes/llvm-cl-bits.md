@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bits` Class Template Reference
+# `bits` Class Template
 
 
 

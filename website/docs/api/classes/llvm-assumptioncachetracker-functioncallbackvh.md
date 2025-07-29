@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionCallbackVH` Class Reference
+# `FunctionCallbackVH` Class
 
 <p>A callback value handle applied to function objects, which we use to delete our cache of intrinsics for a function when it is deleted. <a href="#details">More...</a></p>
 

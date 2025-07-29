@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareLoopsPass` Class Reference
+# `HardwareLoopsPass` Class
 
 
 

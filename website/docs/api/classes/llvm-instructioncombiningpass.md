@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionCombiningPass` Class Reference
+# `InstructionCombiningPass` Class
 
 <p>The legacy pass manager's instcombine pass. <a href="#details">More...</a></p>
 

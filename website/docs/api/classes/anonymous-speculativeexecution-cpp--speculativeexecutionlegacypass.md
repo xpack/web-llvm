@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpeculativeExecutionLegacyPass` Class Reference
+# `SpeculativeExecutionLegacyPass` Class
 
 
 

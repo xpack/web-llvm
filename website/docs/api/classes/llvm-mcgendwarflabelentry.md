@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCGenDwarfLabelEntry` Class Reference
+# `MCGenDwarfLabelEntry` Class
 
 
 

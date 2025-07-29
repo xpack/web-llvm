@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleLoopUnswitchPass` Class Reference
+# `SimpleLoopUnswitchPass` Class
 
 <p>This pass transforms loops that contain branches or switches on loop- invariant conditions to have multiple loops. <a href="#details">More...</a></p>
 

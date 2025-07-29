@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineRegisterInfo` Class Reference
+# `MachineRegisterInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> - Keep track of information for virtual and physical registers, including vreg register classes, use/def chains for registers, etc. <a href="#details">More...</a></p>
 

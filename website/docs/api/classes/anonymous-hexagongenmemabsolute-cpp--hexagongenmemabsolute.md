@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonGenMemAbsolute` Class Reference
+# `HexagonGenMemAbsolute` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyPropagation` Class Reference
+# `CopyPropagation` Class
 
 
 

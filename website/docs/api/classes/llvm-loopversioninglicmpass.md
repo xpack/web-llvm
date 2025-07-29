@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVersioningLICMPass` Class Reference
+# `LoopVersioningLICMPass` Class
 
 
 

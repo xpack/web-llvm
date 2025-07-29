@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ENDRecord` Class Reference
+# `ENDRecord` Class
 
 
 

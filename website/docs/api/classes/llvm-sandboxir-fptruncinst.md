@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPTruncInst` Class Reference
+# `FPTruncInst` Class
 
 
 

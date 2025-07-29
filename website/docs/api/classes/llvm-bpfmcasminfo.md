@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMCAsmInfo` Class Reference
+# `BPFMCAsmInfo` Class
 
 
 

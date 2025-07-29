@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyMachineBlockFrequencyInfo.h` File Reference
+# `LazyMachineBlockFrequencyInfo.h` File
 
 <p>===- <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/lazymachineblockfrequencyinfo-h">LazyMachineBlockFrequencyInfo.h</a> - Lazy Block Frequency -*- C++ -*–===// <a href="#details">More...</a></p>
 

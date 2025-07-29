@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVPrepareFunctions` Class Reference
+# `SPIRVPrepareFunctions` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonSplitConst32AndConst64` Class Reference
+# `HexagonSplitConst32AndConst64` Class
 
 
 

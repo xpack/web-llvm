@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlotMapVector` Class Template Reference
+# `BlotMapVector` Class Template
 
 <p>An associative container with fast insertion-order (deterministic) iteration over its elements. <a href="#details">More...</a></p>
 

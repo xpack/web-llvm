@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfExpression` Class Reference
+# `DwarfExpression` Class
 
 <p>Base class containing the logic for constructing DWARF expressions independently of whether they are emitted into a <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> or into a .debug_loc entry. <a href="#details">More...</a></p>
 

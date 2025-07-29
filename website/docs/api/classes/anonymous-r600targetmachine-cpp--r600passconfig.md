@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600PassConfig` Class Reference
+# `R600PassConfig` Class
 
 
 

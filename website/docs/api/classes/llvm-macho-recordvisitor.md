@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordVisitor` Class Reference
+# `RecordVisitor` Class
 
 <p>Base class for any usage of traversing over collected <a href="/web-llvm/docs/api/namespaces/llvm/macho/#ab5b5510db9083f228e5929bf5ad0f717">Records</a>. <a href="#details">More...</a></p>
 

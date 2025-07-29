@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NullPass` Class Reference
+# `NullPass` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/sandboxir/region">Region</a> pass that does nothing, for use as a placeholder in tests. <a href="#details">More...</a></p>
 

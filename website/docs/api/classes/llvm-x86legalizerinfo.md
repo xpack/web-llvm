@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LegalizerInfo` Class Reference
+# `X86LegalizerInfo` Class
 
 
 

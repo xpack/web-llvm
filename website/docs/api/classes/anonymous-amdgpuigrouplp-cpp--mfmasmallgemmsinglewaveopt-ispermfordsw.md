@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsPermForDSW` Class Reference
+# `IsPermForDSW` Class
 
 
 

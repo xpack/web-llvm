@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVReader` Class Reference
+# `LVReader` Class
 
 <p>The logical reader owns of all the logical elements created during the debug information parsing. <a href="#details">More...</a></p>
 

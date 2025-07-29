@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectLinkingLayer.h` File Reference
+# `ObjectLinkingLayer.h` File
 
 
 

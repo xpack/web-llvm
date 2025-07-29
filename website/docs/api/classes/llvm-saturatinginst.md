@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SaturatingInst` Class Reference
+# `SaturatingInst` Class
 
 <p>Represents a saturating add/sub intrinsic. <a href="#details">More...</a></p>
 

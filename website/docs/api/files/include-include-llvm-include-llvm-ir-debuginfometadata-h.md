@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugInfoMetadata.h` File Reference
+# `DebugInfoMetadata.h` File
 
 
 

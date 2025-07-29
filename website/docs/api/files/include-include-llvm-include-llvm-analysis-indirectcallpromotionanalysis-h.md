@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectCallPromotionAnalysis.h` File Reference
+# `IndirectCallPromotionAnalysis.h` File
 
 <p>Interface to identify indirect call promotion candidates. <a href="#details">More...</a></p>
 

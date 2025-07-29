@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubRange` Class Reference
+# `SubRange` Class
 
 <p>A live range for subregisters. <a href="#details">More...</a></p>
 

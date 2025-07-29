@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PagedVector` Class Template Reference
+# `PagedVector` Class Template
 
 <p>A vector that allocates memory in pages. <a href="#details">More...</a></p>
 

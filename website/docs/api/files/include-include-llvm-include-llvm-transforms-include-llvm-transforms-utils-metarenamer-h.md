@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetaRenamer.h` File Reference
+# `MetaRenamer.h` File
 
 
 

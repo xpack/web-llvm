@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCTargetOptions.h` File Reference
+# `MCTargetOptions.h` File
 
 
 

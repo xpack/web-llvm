@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeparateConstOffsetFromGEPPass` Class Reference
+# `SeparateConstOffsetFromGEPPass` Class
 
 
 

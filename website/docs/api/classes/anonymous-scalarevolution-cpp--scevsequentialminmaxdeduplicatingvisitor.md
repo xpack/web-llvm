@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVSequentialMinMaxDeduplicatingVisitor` Class Reference
+# `SCEVSequentialMinMaxDeduplicatingVisitor` Class
 
 
 

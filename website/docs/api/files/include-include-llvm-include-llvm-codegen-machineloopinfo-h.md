@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLoopInfo.h` File Reference
+# `MachineLoopInfo.h` File
 
 
 

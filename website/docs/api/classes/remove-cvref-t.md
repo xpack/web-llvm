@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `remove_cvref_t` Class Reference
+# `remove_cvref_t` Class
 
 
 

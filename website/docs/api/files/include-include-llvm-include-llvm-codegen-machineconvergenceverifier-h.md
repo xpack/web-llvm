@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConvergenceVerifier.h` File Reference
+# `MachineConvergenceVerifier.h` File
 
 <p>This file declares the MIR specialization of the GenericConvergenceVerifier template. <a href="#details">More...</a></p>
 

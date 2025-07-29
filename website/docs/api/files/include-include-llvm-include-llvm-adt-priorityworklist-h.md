@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PriorityWorklist.h` File Reference
+# `PriorityWorklist.h` File
 
 <p>This file provides a priority worklist. <a href="#details">More...</a></p>
 

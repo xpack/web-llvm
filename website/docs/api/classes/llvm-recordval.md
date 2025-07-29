@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordVal` Class Reference
+# `RecordVal` Class
 
 <p>This class represents a field in a record, including its name, type, value, and source location. <a href="#details">More...</a></p>
 

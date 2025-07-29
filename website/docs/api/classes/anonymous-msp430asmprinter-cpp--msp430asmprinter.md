@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430AsmPrinter` Class Reference
+# `MSP430AsmPrinter` Class
 
 
 

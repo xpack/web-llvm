@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TensorSpec` Class Reference
+# `TensorSpec` Class
 
 
 

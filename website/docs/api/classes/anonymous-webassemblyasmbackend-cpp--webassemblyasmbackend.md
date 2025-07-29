@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmBackend` Class Reference
+# `WebAssemblyAsmBackend` Class
 
 
 

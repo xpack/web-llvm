@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDominatorTreePrinterPass` Class Reference
+# `PostDominatorTreePrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a></span>. <a href="#details">More...</a></p>
 

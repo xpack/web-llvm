@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GICmp` Class Reference
+# `GICmp` Class
 
 <p>Represent a G_ICMP. <a href="#details">More...</a></p>
 

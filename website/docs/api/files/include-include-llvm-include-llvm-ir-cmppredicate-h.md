@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpPredicate.h` File Reference
+# `CmpPredicate.h` File
 
 
 

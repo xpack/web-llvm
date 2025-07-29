@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPropertiesAnalysis` Class Reference
+# `FunctionPropertiesAnalysis` Class
 
 
 

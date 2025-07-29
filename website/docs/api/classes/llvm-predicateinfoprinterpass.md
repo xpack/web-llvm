@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateInfoPrinterPass` Class Reference
+# `PredicateInfoPrinterPass` Class
 
 <p>Printer pass for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/predicateinfo">PredicateInfo</a></span>. <a href="#details">More...</a></p>
 

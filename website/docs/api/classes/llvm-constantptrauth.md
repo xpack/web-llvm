@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPtrAuth` Class Reference
+# `ConstantPtrAuth` Class
 
 <p>A signed pointer, in the ptrauth sense. <a href="#details">More...</a></p>
 

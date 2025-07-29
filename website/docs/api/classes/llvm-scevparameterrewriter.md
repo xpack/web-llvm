@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVParameterRewriter` Class Reference
+# `SCEVParameterRewriter` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/scevparameterrewriter">SCEVParameterRewriter</a> takes a scalar evolution expression and updates the <a href="/web-llvm/docs/api/classes/llvm/scevunknown">SCEVUnknown</a> components following the Map (<a href="/web-llvm/docs/api/classes/llvm/value">Value</a> -&gt; <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a>). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPTBlock` Class Reference
+# `VPTBlock` Class
 
 
 

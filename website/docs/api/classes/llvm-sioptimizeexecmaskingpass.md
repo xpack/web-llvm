@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIOptimizeExecMaskingPass` Class Reference
+# `SIOptimizeExecMaskingPass` Class
 
 
 

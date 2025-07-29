@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTuneSupportPlugin.cpp` File Reference
+# `VTuneSupportPlugin.cpp` File
 
 
 

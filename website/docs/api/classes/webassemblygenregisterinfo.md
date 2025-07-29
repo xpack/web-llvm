@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyGenRegisterInfo` Class Reference
+# `WebAssemblyGenRegisterInfo` Class
 
 
 

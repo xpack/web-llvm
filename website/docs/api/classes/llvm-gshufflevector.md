@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GShuffleVector` Class Reference
+# `GShuffleVector` Class
 
 <p>Represents a G_SHUFFLE_VECTOR. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MasmParser.cpp` File Reference
+# `MasmParser.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCDispatchGroupSBHazardRecognizer` Class Reference
+# `PPCDispatchGroupSBHazardRecognizer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ppcdispatchgroupsbhazardrecognizer">PPCDispatchGroupSBHazardRecognizer</a> - This class implements a scoreboard-based hazard recognizer for <a href="/web-llvm/docs/api/namespaces/llvm/ppc">PPC</a> ooo processors with dispatch-group hazards. <a href="#details">More...</a></p>
 

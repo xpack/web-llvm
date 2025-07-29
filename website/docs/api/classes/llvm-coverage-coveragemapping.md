@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMapping` Class Reference
+# `CoverageMapping` Class
 
 <p>The mapping of profile information to coverage data. <a href="#details">More...</a></p>
 

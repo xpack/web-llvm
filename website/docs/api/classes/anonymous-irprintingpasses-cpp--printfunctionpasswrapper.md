@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintFunctionPassWrapper` Class Reference
+# `PrintFunctionPassWrapper` Class
 
 
 

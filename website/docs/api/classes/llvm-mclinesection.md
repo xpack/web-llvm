@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLineSection` Class Reference
+# `MCLineSection` Class
 
 <p>Instances of this class represent the line information for a compile unit where machine instructions have been assembled after seeing .loc directives. <a href="#details">More...</a></p>
 

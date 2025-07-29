@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Output` Class Reference
+# `Output` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/yaml/output">Output</a> class is used to generate a yaml document from in-memory structs and vectors. <a href="#details">More...</a></p>
 

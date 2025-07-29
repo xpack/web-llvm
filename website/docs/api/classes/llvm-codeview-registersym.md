@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterSym` Class Reference
+# `RegisterSym` Class
 
 
 

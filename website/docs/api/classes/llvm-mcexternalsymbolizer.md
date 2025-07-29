@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCExternalSymbolizer` Class Reference
+# `MCExternalSymbolizer` Class
 
 <p>Symbolize using user-provided, C API, callbacks. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineColumnExtractor` Class Reference
+# `LineColumnExtractor` Class
 
 
 

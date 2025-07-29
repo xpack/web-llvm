@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TemplateTemplateParamDecl` Class Reference
+# `TemplateTemplateParamDecl` Class
 
 <p>A template template parameter declaration, 'template&lt;typename T&gt; typename N'. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFAsmParser` Class Reference
+# `XCOFFAsmParser` Class
 
 
 

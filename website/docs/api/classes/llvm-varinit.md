@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarInit` Class Reference
+# `VarInit` Class
 
 <p>'Opcode' - Represent a reference to an entire variable object. <a href="#details">More...</a></p>
 

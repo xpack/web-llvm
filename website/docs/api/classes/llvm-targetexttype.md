@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetExtType` Class Reference
+# `TargetExtType` Class
 
 <p>Class to represent target extensions types, which are generally unintrospectable from target-independent optimizations. <a href="#details">More...</a></p>
 

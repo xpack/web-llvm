@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLTOCodeGenerator.cpp` File Reference
+# `ThinLTOCodeGenerator.cpp` File
 
 
 

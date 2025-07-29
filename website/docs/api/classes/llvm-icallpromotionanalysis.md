@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICallPromotionAnalysis` Class Reference
+# `ICallPromotionAnalysis` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelInfoReader` Class Reference
+# `KernelInfoReader` Class
 
 <p>Reads the <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> specific per-kernel-metadata from an image. <a href="#details">More...</a></p>
 

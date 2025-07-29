@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryBuilder` Class Reference
+# `ProfileSummaryBuilder` Class
 
 
 

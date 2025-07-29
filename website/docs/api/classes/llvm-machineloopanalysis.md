@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLoopAnalysis` Class Reference
+# `MachineLoopAnalysis` Class
 
 <p>Analysis pass that exposes the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a></span> for a machine function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddDiscriminators.h` File Reference
+# `AddDiscriminators.h` File
 
 
 

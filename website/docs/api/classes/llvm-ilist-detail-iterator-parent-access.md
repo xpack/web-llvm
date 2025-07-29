@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_parent_access` Class Template Reference
+# `iterator_parent_access` Class Template
 
 <p>Mixin class used to add a <em>getNodeParent()</em> function to iterators iff the list uses <em><a href="/web-llvm/docs/api/structs/llvm/ilist-parent">ilist_parent</a></em>, calling through to the node's <em><a href="/web-llvm/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#a1b8850f1ed44c12bc3501175a71c251c">getParent()</a></em>. <a href="#details">More...</a></p>
 

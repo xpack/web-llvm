@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPass` Class Reference
+# `FunctionPass` Class
 
 <p>A pass that runs on a sandbox::Function. <a href="#details">More...</a></p>
 

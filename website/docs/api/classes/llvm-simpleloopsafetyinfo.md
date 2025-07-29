@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleLoopSafetyInfo` Class Reference
+# `SimpleLoopSafetyInfo` Class
 
 <p>Simple and conservative implementation of <a href="/web-llvm/docs/api/classes/llvm/loopsafetyinfo">LoopSafetyInfo</a> that can give false-positive answers to its queries in order to avoid complicated analysis. <a href="#details">More...</a></p>
 

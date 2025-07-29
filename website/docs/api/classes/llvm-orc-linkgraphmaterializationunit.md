@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkGraphMaterializationUnit` Class Reference
+# `LinkGraphMaterializationUnit` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/materializationunit">MaterializationUnit</a> for wrapping LinkGraphs. <a href="#details">More...</a></p>
 

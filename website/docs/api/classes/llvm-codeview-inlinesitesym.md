@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineSiteSym` Class Reference
+# `InlineSiteSym` Class
 
 
 

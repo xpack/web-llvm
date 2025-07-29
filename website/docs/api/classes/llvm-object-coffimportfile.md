@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFImportFile` Class Reference
+# `COFFImportFile` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachODebugObjectSynthesizer` Class Template Reference
+# `MachODebugObjectSynthesizer` Class Template
 
 
 

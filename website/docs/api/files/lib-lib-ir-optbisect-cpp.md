@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptBisect.cpp` File Reference
+# `OptBisect.cpp` File
 
 <p>This file implements support for a bisecting optimizations based on a command line option. <a href="#details">More...</a></p>
 

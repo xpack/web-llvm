@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UncoalescableRewriter` Class Reference
+# `UncoalescableRewriter` Class
 
 <p>Helper class to rewrite uncoalescable copy like instructions into new COPY (coalescable friendly) instructions. <a href="#details">More...</a></p>
 

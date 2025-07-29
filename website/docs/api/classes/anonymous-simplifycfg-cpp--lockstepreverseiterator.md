@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LockstepReverseIterator` Class Reference
+# `LockstepReverseIterator` Class
 
 
 

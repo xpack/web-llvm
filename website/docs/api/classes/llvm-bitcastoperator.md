@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitCastOperator` Class Reference
+# `BitCastOperator` Class
 
 
 

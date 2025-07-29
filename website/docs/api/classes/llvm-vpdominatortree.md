@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPDominatorTree` Class Reference
+# `VPDominatorTree` Class
 
 <p>Template specialization of the standard LLVM dominator tree utility for VPBlockBases. <a href="#details">More...</a></p>
 

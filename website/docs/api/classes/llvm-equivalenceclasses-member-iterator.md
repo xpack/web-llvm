@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `member_iterator` Class Reference
+# `member_iterator` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlowAdjuster` Class Reference
+# `FlowAdjuster` Class
 
 <p>A post-processing adjustment of the control flow. <a href="#details">More...</a></p>
 

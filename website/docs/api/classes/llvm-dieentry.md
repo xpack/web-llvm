@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEEntry` Class Reference
+# `DIEEntry` Class
 
 <p>A pointer to another debug information entry. <a href="#details">More...</a></p>
 

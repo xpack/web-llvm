@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Item` Class Reference
+# `Item` Class
 
 <p>A single item in the hash table. <a href="#details">More...</a></p>
 

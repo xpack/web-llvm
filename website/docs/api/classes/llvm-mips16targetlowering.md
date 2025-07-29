@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16TargetLowering` Class Reference
+# `Mips16TargetLowering` Class
 
 
 

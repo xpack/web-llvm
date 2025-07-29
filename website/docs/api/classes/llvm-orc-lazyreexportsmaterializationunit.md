@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyReexportsMaterializationUnit` Class Reference
+# `LazyReexportsMaterializationUnit` Class
 
 <p>A materialization unit that builds lazy re-exports. <a href="#details">More...</a></p>
 

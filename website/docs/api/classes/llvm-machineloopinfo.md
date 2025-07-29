@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLoopInfo` Class Reference
+# `MachineLoopInfo` Class
 
 
 

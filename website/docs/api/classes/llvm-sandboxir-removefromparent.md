@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveFromParent` Class Reference
+# `RemoveFromParent` Class
 
 
 

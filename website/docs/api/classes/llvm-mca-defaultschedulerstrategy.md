@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultSchedulerStrategy` Class Reference
+# `DefaultSchedulerStrategy` Class
 
 <p>Default instruction selection strategy used by class <a href="/web-llvm/docs/api/classes/llvm/mca/scheduler">Scheduler</a>. <a href="#details">More...</a></p>
 

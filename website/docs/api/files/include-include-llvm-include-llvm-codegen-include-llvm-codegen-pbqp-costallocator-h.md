@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostAllocator.h` File Reference
+# `CostAllocator.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMap.h` File Reference
+# `StringMap.h` File
 
 
 

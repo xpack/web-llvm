@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerEmbeddedInt.h` File Reference
+# `PointerEmbeddedInt.h` File
 
 
 

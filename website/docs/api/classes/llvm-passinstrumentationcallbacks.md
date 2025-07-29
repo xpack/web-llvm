@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInstrumentationCallbacks` Class Reference
+# `PassInstrumentationCallbacks` Class
 
 <p>This class manages callbacks registration, as well as provides a way for <a href="/web-llvm/docs/api/classes/llvm/passinstrumentation">PassInstrumentation</a> to pass control to the registered callbacks. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSEMIRBuilder.cpp` File Reference
+# `CSEMIRBuilder.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/csemirbuilder">CSEMIRBuilder</a> class which CSEs as it builds instructions. <a href="#details">More...</a></p>
 

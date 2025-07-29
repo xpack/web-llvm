@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCCodeEmitter` Class Reference
+# `WebAssemblyMCCodeEmitter` Class
 
 
 

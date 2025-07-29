@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PMTopLevelManager` Class Reference
+# `PMTopLevelManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pmtoplevelmanager">PMTopLevelManager</a> manages LastUser info and collects common APIs used by top level pass managers. <a href="#details">More...</a></p>
 

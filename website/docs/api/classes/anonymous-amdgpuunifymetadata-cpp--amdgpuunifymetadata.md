@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUnifyMetadata` Class Reference
+# `AMDGPUUnifyMetadata` Class
 
 <p>Unify multiple OpenCL metadata due to linking. <a href="#details">More...</a></p>
 

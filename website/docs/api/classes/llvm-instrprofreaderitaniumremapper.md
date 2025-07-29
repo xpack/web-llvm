@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfReaderItaniumRemapper` Class Template Reference
+# `InstrProfReaderItaniumRemapper` Class Template
 
 <p>A remapper that applies remappings based on a symbol remapping file. <a href="#details">More...</a></p>
 

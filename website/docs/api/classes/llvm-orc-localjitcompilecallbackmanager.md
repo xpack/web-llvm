@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalJITCompileCallbackManager` Class Template Reference
+# `LocalJITCompileCallbackManager` Class Template
 
 <p>Manage compile callbacks for in-process JITs. <a href="#details">More...</a></p>
 

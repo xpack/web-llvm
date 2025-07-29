@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APFixedPoint` Class Reference
+# `APFixedPoint` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/apfixedpoint">APFixedPoint</a> class works similarly to APInt/APSInt in that it is a functional replacement for a scaled integer. <a href="#details">More...</a></p>
 

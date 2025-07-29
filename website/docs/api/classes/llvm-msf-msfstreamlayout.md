@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSFStreamLayout` Class Reference
+# `MSFStreamLayout` Class
 
 <p>Describes the layout of a stream in an MSF layout. <a href="#details">More...</a></p>
 

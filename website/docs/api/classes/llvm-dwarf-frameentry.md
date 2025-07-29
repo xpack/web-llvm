@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameEntry` Class Reference
+# `FrameEntry` Class
 
 <p>An entry in either debug_frame or eh_frame. <a href="#details">More...</a></p>
 

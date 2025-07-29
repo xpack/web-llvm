@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleavedAccessInfo` Class Reference
+# `InterleavedAccessInfo` Class
 
 <p>Drive the analysis of interleaved memory accesses in the loop. <a href="#details">More...</a></p>
 

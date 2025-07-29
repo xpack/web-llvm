@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineSpiller` Class Reference
+# `InlineSpiller` Class
 
 
 

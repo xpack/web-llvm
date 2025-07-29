@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveVariablesPrinterPass` Class Reference
+# `LiveVariablesPrinterPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCObjectStreamer` Class Reference
+# `MCObjectStreamer` Class
 
 <p>Streaming object file generation interface. <a href="#details">More...</a></p>
 

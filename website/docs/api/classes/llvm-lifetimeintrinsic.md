@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LifetimeIntrinsic` Class Reference
+# `LifetimeIntrinsic` Class
 
 <p>This is the common base class for lifetime intrinsics. <a href="#details">More...</a></p>
 

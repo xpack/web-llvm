@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConversionOperatorType` Class Reference
+# `ConversionOperatorType` Class
 
 
 

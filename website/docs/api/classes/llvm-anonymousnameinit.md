@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnonymousNameInit` Class Reference
+# `AnonymousNameInit` Class
 
 <p>"anonymous_n" - Represent an anonymous record name <a href="#details">More...</a></p>
 

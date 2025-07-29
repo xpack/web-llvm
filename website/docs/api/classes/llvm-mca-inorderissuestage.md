@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InOrderIssueStage` Class Reference
+# `InOrderIssueStage` Class
 
 
 

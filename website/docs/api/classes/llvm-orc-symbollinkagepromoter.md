@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolLinkagePromoter` Class Reference
+# `SymbolLinkagePromoter` Class
 
 <p>Promotes private symbols to global hidden, and renames to prevent clashes with other promoted symbols. <a href="#details">More...</a></p>
 

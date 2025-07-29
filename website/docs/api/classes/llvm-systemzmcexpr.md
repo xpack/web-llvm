@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMCExpr` Class Reference
+# `SystemZMCExpr` Class
 
 
 

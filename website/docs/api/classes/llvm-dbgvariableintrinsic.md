@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgVariableIntrinsic` Class Reference
+# `DbgVariableIntrinsic` Class
 
 <p>This is the common base class for debug info intrinsics for variables. <a href="#details">More...</a></p>
 

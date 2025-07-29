@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalStackSlotPass` Class Reference
+# `LocalStackSlotPass` Class
 
 
 

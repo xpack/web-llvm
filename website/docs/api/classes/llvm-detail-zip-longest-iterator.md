@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zip_longest_iterator` Class Template Reference
+# `zip_longest_iterator` Class Template
 
 
 

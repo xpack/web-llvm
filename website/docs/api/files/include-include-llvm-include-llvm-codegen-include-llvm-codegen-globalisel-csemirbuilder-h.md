@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSEMIRBuilder.h` File Reference
+# `CSEMIRBuilder.h` File
 
 <p>This file implements a version of MachineIRBuilder which CSEs insts within a MachineBasicBlock. <a href="#details">More...</a></p>
 

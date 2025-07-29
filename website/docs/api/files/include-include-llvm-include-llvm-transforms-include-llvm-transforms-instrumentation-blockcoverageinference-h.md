@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockCoverageInference.h` File Reference
+# `BlockCoverageInference.h` File
 
 <p>This file finds the minimum set of blocks on a CFG that must be instrumented to infer execution coverage for the whole graph. <a href="#details">More...</a></p>
 

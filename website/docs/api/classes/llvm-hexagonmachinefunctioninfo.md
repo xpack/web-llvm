@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMachineFunctionInfo` Class Reference
+# `HexagonMachineFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a> target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

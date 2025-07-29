@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchDeadRegisterDefinitions` Class Reference
+# `LoongArchDeadRegisterDefinitions` Class
 
 
 

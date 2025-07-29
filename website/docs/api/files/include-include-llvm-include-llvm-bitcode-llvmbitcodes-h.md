@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMBitCodes.h` File Reference
+# `LLVMBitCodes.h` File
 
 
 

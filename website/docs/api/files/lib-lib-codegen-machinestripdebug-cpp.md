@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineStripDebug.cpp` File Reference
+# `MachineStripDebug.cpp` File
 
 
 

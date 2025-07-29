@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryStream` Class Reference
+# `BinaryStream` Class
 
 <p>An interface for accessing data in a stream-like format, but which discourages copying. <a href="#details">More...</a></p>
 

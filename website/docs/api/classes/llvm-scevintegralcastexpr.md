@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVIntegralCastExpr` Class Reference
+# `SCEVIntegralCastExpr` Class
 
 <p>This is the base class for unary integral cast operator classes. <a href="#details">More...</a></p>
 

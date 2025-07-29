@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoalescingBitVector.h` File Reference
+# `CoalescingBitVector.h` File
 
 <p>A bitvector that uses an IntervalMap to coalesce adjacent elements into intervals. <a href="#details">More...</a></p>
 

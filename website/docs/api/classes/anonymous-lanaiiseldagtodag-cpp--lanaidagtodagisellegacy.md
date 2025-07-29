@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiDAGToDAGISelLegacy` Class Reference
+# `LanaiDAGToDAGISelLegacy` Class
 
 
 

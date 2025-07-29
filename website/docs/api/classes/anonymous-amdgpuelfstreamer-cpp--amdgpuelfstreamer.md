@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUELFStreamer` Class Reference
+# `AMDGPUELFStreamer` Class
 
 
 

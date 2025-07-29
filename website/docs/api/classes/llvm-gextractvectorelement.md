@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GExtractVectorElement` Class Reference
+# `GExtractVectorElement` Class
 
 <p>Represents an extract vector element. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LayoutItemBase` Class Reference
+# `LayoutItemBase` Class
 
 
 

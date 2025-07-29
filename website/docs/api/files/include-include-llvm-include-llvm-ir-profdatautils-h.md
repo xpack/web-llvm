@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfDataUtils.h` File Reference
+# `ProfDataUtils.h` File
 
 <p>This file contains the declarations for profiling metadata utility functions. <a href="#details">More...</a></p>
 

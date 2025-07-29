@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectTransformLayer.h` File Reference
+# `ObjectTransformLayer.h` File
 
 
 

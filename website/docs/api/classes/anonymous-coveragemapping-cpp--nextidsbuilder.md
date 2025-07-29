@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NextIDsBuilder` Class Reference
+# `NextIDsBuilder` Class
 
 <p>Construct this-&gt;NextIDs with Branches for TVIdxBuilder to use it before MCDCRecordProcessor(). <a href="#details">More...</a></p>
 

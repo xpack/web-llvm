@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsPipeExp` Class Reference
+# `IsPipeExp` Class
 
 <p>Whether or not the instruction is a transitive predecessor of an MFMA instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitGraph` Class Reference
+# `SplitGraph` Class
 
 <p>AMDGPUSplitModule's view of the source <a href="/web-llvm/docs/api/classes/llvm/module">Module</a>, as a graph of all components that can be split into different modules. <a href="#details">More...</a></p>
 

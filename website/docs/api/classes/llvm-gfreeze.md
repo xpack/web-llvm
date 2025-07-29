@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GFreeze` Class Reference
+# `GFreeze` Class
 
 <p>Represents a freeze. <a href="#details">More...</a></p>
 

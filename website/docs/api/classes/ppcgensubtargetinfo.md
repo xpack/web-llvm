@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCGenSubtargetInfo` Class Reference
+# `PPCGenSubtargetInfo` Class
 
 
 

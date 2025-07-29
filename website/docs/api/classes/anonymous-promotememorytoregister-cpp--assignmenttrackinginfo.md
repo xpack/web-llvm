@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignmentTrackingInfo` Class Reference
+# `AssignmentTrackingInfo` Class
 
 <p>Helper for updating assignment tracking debug info when promoting allocas. <a href="#details">More...</a></p>
 

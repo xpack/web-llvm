@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuildVectorSDNode` Class Reference
+# `BuildVectorSDNode` Class
 
 <p>A "pseudo-class" with methods for operating on BUILD_VECTORs. <a href="#details">More...</a></p>
 

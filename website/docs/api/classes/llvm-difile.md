@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIFile` Class Reference
+# `DIFile` Class
 
 <p>File. <a href="#details">More...</a></p>
 

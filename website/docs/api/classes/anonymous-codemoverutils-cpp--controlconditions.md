@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ControlConditions` Class Reference
+# `ControlConditions` Class
 
 <p>Represent a set of control conditions required to execute ToBB from FromBB. <a href="#details">More...</a></p>
 

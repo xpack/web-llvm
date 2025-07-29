@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockAddress` Class Reference
+# `BlockAddress` Class
 
 <p>The address of a basic block. <a href="#details">More...</a></p>
 

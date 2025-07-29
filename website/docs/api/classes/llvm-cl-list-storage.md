@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `list_storage` Class Template Reference
+# `list_storage` Class Template
 
 
 

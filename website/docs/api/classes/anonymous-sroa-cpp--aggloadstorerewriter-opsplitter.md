@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpSplitter` Class Template Reference
+# `OpSplitter` Class Template
 
 <p>Generic recursive split emission class. <a href="#details">More...</a></p>
 

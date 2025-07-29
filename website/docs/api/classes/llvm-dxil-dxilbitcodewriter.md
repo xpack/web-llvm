@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILBitcodeWriter` Class Reference
+# `DXILBitcodeWriter` Class
 
 
 

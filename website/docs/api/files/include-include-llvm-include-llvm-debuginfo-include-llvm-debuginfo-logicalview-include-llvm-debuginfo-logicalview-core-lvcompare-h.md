@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVCompare.h` File Reference
+# `LVCompare.h` File
 
 
 

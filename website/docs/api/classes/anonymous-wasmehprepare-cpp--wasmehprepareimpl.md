@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmEHPrepareImpl` Class Reference
+# `WasmEHPrepareImpl` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplayInlineAdvisor` Class Reference
+# `ReplayInlineAdvisor` Class
 
 <p>Replay inline advisor that uses optimization remarks from inlining of previous build to guide current inlining. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonUnitAuction` Class Reference
+# `HexagonUnitAuction` Class
 
 
 

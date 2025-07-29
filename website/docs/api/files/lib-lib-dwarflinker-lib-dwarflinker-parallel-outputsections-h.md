@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputSections.h` File Reference
+# `OutputSections.h` File
 
 
 

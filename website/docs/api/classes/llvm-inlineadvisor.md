@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAdvisor` Class Reference
+# `InlineAdvisor` Class
 
 <p>Interface for deciding whether to inline a call site or not. <a href="#details">More...</a></p>
 

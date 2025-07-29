@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoGOFF.h` File Reference
+# `MCAsmInfoGOFF.h` File
 
 <p>This file defines certain target specific asm properties for GOFF (z/OS) based targets. <a href="#details">More...</a></p>
 

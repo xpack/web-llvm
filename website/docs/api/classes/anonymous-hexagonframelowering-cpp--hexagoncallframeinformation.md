@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCallFrameInformation` Class Reference
+# `HexagonCallFrameInformation` Class
 
 
 

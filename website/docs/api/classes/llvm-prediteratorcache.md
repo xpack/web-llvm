@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredIteratorCache` Class Reference
+# `PredIteratorCache` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/prediteratorcache">PredIteratorCache</a> - This class is an extremely trivial cache for predecessor iterator queries. <a href="#details">More...</a></p>
 

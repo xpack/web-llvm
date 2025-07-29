@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinBackendProc` Class Reference
+# `ThinBackendProc` Class
 
 <p>This class defines the interface to the ThinLTO backend. <a href="#details">More...</a></p>
 

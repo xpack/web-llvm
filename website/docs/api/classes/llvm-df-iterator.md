@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `df_iterator` Class Template Reference
+# `df_iterator` Class Template
 
 
 

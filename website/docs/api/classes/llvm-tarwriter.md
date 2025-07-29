@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TarWriter` Class Reference
+# `TarWriter` Class
 
 
 

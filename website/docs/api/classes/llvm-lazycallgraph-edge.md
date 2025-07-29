@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Edge` Class Reference
+# `Edge` Class
 
 <p>A class used to represent edges in the call graph. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressesMap` Class Reference
+# `AddressesMap` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/addressesmap">AddressesMap</a> represents information about valid addresses used by debug information. <a href="#details">More...</a></p>
 

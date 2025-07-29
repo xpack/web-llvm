@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCSelectionDAGInfo` Class Reference
+# `PPCSelectionDAGInfo` Class
 
 
 

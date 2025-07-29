@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreservedAnalysisChecker` Class Reference
+# `PreservedAnalysisChecker` Class
 
 <p>A checker object that makes it easy to query for whether an analysis or some set covering it is preserved. <a href="#details">More...</a></p>
 

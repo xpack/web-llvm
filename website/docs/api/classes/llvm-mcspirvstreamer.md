@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSPIRVStreamer` Class Reference
+# `MCSPIRVStreamer` Class
 
 
 

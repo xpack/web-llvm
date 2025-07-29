@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveVariables.h` File Reference
+# `LiveVariables.h` File
 
 
 

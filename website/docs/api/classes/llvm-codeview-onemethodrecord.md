@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OneMethodRecord` Class Reference
+# `OneMethodRecord` Class
 
 
 

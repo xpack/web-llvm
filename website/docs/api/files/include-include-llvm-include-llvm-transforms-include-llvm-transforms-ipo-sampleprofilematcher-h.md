@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileMatcher.h` File Reference
+# `SampleProfileMatcher.h` File
 
 <p>This file provides the interface for SampleProfileMatcher. <a href="#details">More...</a></p>
 

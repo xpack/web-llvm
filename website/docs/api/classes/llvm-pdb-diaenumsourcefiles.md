@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumSourceFiles` Class Reference
+# `DIAEnumSourceFiles` Class
 
 
 

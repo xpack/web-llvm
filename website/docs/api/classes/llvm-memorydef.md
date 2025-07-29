@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDef` Class Reference
+# `MemoryDef` Class
 
 <p>Represents a read-write access to memory, whether it is a must-alias, or a may-alias. <a href="#details">More...</a></p>
 

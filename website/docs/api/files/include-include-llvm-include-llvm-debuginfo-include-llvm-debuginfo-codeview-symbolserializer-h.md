@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolSerializer.h` File Reference
+# `SymbolSerializer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetLowering` Class Reference
+# `XCoreTargetLowering` Class
 
 
 

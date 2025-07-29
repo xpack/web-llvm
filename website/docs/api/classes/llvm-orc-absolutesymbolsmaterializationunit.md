@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbsoluteSymbolsMaterializationUnit` Class Reference
+# `AbsoluteSymbolsMaterializationUnit` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/orc/materializationunit">MaterializationUnit</a> implementation for pre-existing absolute symbols. <a href="#details">More...</a></p>
 

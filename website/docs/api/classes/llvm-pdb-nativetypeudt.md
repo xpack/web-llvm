@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeUDT` Class Reference
+# `NativeTypeUDT` Class
 
 
 

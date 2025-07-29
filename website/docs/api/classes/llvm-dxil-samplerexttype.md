@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SamplerExtType` Class Reference
+# `SamplerExtType` Class
 
 <p>The dx.Sampler target extension type. <a href="#details">More...</a></p>
 

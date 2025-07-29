@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DemandedBitsAnalysis` Class Reference
+# `DemandedBitsAnalysis` Class
 
 <p>An analysis that produces <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/demandedbits">DemandedBits</a></span> for a function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InvokeStateChangeIterator` Class Reference
+# `InvokeStateChangeIterator` Class
 
 <p>Iterator that reports all the invoke state changes in a range of machine basic blocks. <a href="#details">More...</a></p>
 

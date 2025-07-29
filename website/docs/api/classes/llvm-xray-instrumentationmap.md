@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrumentationMap` Class Reference
+# `InstrumentationMap` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/xray/instrumentationmap">InstrumentationMap</a> represents the computed function id's and indicated function addresses from an object file (or a YAML file). <a href="#details">More...</a></p>
 

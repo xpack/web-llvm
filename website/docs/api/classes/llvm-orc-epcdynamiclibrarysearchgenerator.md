@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCDynamicLibrarySearchGenerator` Class Reference
+# `EPCDynamicLibrarySearchGenerator` Class
 
 
 

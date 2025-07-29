@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonSubtarget` Class Reference
+# `HexagonSubtarget` Class
 
 
 

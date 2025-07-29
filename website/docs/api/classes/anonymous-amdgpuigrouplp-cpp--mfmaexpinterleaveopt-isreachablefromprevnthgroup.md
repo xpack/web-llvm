@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsReachableFromPrevNthGroup` Class Reference
+# `IsReachableFromPrevNthGroup` Class
 
 <p>Whether or not the instruction is a transitive successor of any instruction the the <a href="/web-llvm/docs/api/classes/anonymous-amdgpuigrouplp-cpp-/schedgroup">SchedGroup</a> <span class="doxyComputerOutput">Distance</span> steps before. <a href="#details">More...</a></p>
 

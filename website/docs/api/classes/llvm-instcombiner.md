@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombiner` Class Reference
+# `InstCombiner` Class
 
 <p>The core instruction combiner logic. <a href="#details">More...</a></p>
 

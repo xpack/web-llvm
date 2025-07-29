@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMPassBuilderOptions` Class Reference
+# `LLVMPassBuilderOptions` Class
 
 <p>Helper struct for holding a set of builder options for LLVMRunPasses. <a href="#details">More...</a></p>
 

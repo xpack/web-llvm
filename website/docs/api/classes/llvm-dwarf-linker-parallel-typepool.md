@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePool` Class Reference
+# `TypePool` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/typepool">TypePool</a> keeps type descriptors which contain partially cloned <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> correspinding to each type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SinkInstructionStrategy` Class Reference
+# `SinkInstructionStrategy` Class
 
 <p>Strategy to select a random instruction and add a new sink (user) to it to increate data dependency. <a href="#details">More...</a></p>
 

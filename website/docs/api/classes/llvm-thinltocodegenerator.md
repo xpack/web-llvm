@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLTOCodeGenerator` Class Reference
+# `ThinLTOCodeGenerator` Class
 
 <p>This class define an interface similar to the <a href="/web-llvm/docs/api/structs/llvm/ltocodegenerator">LTOCodeGenerator</a>, but adapted for ThinLTO processing. <a href="#details">More...</a></p>
 

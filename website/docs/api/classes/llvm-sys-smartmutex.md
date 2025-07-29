@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmartMutex` Class Template Reference
+# `SmartMutex` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/smartmutex">SmartMutex</a> - A mutex with a compile time constant parameter that indicates whether this mutex should become a no-op when we're not running in multithreaded mode. <a href="#details">More...</a></p>
 

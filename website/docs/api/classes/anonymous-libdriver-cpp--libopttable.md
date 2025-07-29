@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LibOptTable` Class Reference
+# `LibOptTable` Class
 
 
 

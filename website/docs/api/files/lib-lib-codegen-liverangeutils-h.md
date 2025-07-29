@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRangeUtils.h` File Reference
+# `LiveRangeUtils.h` File
 
 <p>This file contains helper functions to modify live ranges. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileConverter` Class Reference
+# `ProfileConverter` Class
 
 <p>Helper class for profile conversion. <a href="#details">More...</a></p>
 

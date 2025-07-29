@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Vectorizer` Class Reference
+# `Vectorizer` Class
 
 
 

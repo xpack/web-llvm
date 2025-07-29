@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructLayout` Class Reference
+# `StructLayout` Class
 
 <p>Used to lazily calculate structure layout information for a target machine, based on the <a href="/web-llvm/docs/api/classes/llvm/datalayout">DataLayout</a> structure. <a href="#details">More...</a></p>
 

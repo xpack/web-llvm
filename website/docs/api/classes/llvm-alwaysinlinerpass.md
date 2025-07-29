@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlwaysInlinerPass` Class Reference
+# `AlwaysInlinerPass` Class
 
 <p>Inlines functions marked as "always_inline". <a href="#details">More...</a></p>
 

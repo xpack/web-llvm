@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TestAndEraseFromMap` Class Template Reference
+# `TestAndEraseFromMap` Class Template
 
 <p>A wrapper predicate designed for use with std::remove_if. <a href="#details">More...</a></p>
 

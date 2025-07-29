@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotIndex` Class Reference
+# `SlotIndex` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/slotindex">SlotIndex</a> - An opaque wrapper around machine indexes. <a href="#details">More...</a></p>
 

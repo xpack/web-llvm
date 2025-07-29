@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCMetadataPrinter.h` File Reference
+# `GCMetadataPrinter.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZElimCompare` Class Reference
+# `SystemZElimCompare` Class
 
 
 

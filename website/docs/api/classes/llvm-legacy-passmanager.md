@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManager` Class Reference
+# `PassManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/legacy/passmanager">PassManager</a> manages ModulePassManagers. <a href="#details">More...</a></p>
 

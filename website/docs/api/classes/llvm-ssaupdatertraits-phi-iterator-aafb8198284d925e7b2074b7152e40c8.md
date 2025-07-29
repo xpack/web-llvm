@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHI_iterator` Class Template Reference
+# `PHI_iterator` Class Template
 
 <p>Iterator for PHI operands. <a href="#details">More...</a></p>
 

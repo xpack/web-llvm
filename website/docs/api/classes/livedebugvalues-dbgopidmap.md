@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgOpIDMap` Class Reference
+# `DbgOpIDMap` Class
 
 <p>Class storing the complete set of values that are observed by DbgValues within the current function. <a href="#details">More...</a></p>
 

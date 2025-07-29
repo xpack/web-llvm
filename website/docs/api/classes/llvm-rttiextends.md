@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RTTIExtends` Class Template Reference
+# `RTTIExtends` Class Template
 
 <p>Inheritance utility for extensible RTTI. <a href="#details">More...</a></p>
 

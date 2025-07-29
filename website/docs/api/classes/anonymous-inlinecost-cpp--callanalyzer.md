@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallAnalyzer` Class Reference
+# `CallAnalyzer` Class
 
 <p>Carry out call site analysis, in order to evaluate inlinability. <a href="#details">More...</a></p>
 

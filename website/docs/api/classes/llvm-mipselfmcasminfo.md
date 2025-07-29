@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsELFMCAsmInfo` Class Reference
+# `MipsELFMCAsmInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TLSInfoTableManager_ELF_x86_64` Class Reference
+# `TLSInfoTableManager_ELF_x86_64` Class
 
 
 

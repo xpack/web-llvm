@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILOpLoweringLegacy` Class Reference
+# `DXILOpLoweringLegacy` Class
 
 
 

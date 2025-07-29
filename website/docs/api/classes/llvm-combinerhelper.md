@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerHelper` Class Reference
+# `CombinerHelper` Class
 
 
 

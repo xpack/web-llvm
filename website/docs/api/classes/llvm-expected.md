@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Expected` Class Template Reference
+# `Expected` Class Template
 
 <p>Tagged union holding either a T or a <a href="/web-llvm/docs/api/classes/llvm/error">Error</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TransferTracker` Class Reference
+# `TransferTracker` Class
 
 <p>Tracker for converting machine value locations and variable values into variable locations (the output of <a href="/web-llvm/docs/api/namespaces/livedebugvalues">LiveDebugValues</a>), recorded as DBG_VALUEs specifying block live-in locations and transfers within blocks. <a href="#details">More...</a></p>
 

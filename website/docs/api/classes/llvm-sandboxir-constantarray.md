@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantArray` Class Reference
+# `ConstantArray` Class
 
 
 

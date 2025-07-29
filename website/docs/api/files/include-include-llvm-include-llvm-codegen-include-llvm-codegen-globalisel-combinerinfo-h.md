@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerInfo.h` File Reference
+# `CombinerInfo.h` File
 
 <p>Option class for Targets to specify which operations are combined how and when. <a href="#details">More...</a></p>
 

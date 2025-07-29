@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PriorityInlineOrder` Class Template Reference
+# `PriorityInlineOrder` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Polynomial` Class Reference
+# `Polynomial` Class
 
 <p>First Order <a href="/web-llvm/docs/api/classes/anonymous-interleavedloadcombinepass-cpp-/polynomial">Polynomial</a> on an n-Bit Integer <a href="/web-llvm/docs/api/classes/llvm/value">Value</a>. <a href="#details">More...</a></p>
 

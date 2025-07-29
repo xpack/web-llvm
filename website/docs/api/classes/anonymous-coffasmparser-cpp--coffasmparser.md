@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFAsmParser` Class Reference
+# `COFFAsmParser` Class
 
 
 

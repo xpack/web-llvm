@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfReader` Class Reference
+# `InstrProfReader` Class
 
 <p>Base class and interface for reading profiling data of any known instrprof format. <a href="#details">More...</a></p>
 

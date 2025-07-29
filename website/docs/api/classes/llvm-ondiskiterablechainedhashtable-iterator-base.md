@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_base` Class Reference
+# `iterator_base` Class
 
 <p>Iterates over all of the keys in the table. <a href="#details">More...</a></p>
 

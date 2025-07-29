@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64StorePairSuppress` Class Reference
+# `AArch64StorePairSuppress` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFIFixup.h` File Reference
+# `CFIFixup.h` File
 
 <p>Contains definition of the base CFIFixup pass. <a href="#details">More...</a></p>
 

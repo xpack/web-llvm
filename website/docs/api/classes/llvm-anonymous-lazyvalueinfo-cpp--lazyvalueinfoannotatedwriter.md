@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyValueInfoAnnotatedWriter` Class Reference
+# `LazyValueInfoAnnotatedWriter` Class
 
 <p>An assembly annotator class to print LazyValueCache information in comments. <a href="#details">More...</a></p>
 

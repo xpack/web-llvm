@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBoundSplitPass` Class Reference
+# `LoopBoundSplitPass` Class
 
 <p>This pass transforms loops that contain a conditional branch with induction variable. <a href="#details">More...</a></p>
 

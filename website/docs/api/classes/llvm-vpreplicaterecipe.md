@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPReplicateRecipe` Class Reference
+# `VPReplicateRecipe` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpreplicaterecipe">VPReplicateRecipe</a> replicates a given instruction producing multiple scalar copies of the original scalar type, one per lane, instead of producing a single copy of widened type for all lanes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZXPLINK64Registers` Class Reference
+# `SystemZXPLINK64Registers` Class
 
 <p>XPLINK64 calling convention specific use registers Particular to z/OS when in 64 bit mode. <a href="#details">More...</a></p>
 

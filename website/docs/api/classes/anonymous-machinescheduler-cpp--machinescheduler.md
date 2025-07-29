@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineScheduler` Class Reference
+# `MachineScheduler` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-machinescheduler-cpp-/machinescheduler">MachineScheduler</a> runs after coalescing and before register allocation. <a href="#details">More...</a></p>
 

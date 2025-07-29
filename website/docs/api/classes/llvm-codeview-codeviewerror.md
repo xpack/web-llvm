@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewError` Class Reference
+# `CodeViewError` Class
 
 <p>Base class for errors originating when parsing raw PDB files. <a href="#details">More...</a></p>
 

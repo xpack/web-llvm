@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Watchdog` Class Reference
+# `Watchdog` Class
 
 <p>This class provides an abstraction for a timeout around an operation that must complete in a given amount of time. <a href="#details">More...</a></p>
 

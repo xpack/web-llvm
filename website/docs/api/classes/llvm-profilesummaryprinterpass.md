@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryPrinterPass` Class Reference
+# `ProfileSummaryPrinterPass` Class
 
 <p>Printer pass that uses <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/profilesummaryanalysis">ProfileSummaryAnalysis</a></span>. <a href="#details">More...</a></p>
 

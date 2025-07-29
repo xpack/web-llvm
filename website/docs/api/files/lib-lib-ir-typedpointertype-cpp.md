@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypedPointerType.cpp` File Reference
+# `TypedPointerType.cpp` File
 
 
 

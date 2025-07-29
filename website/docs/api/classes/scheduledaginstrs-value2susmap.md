@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Value2SUsMap` Class Reference
+# `Value2SUsMap` Class
 
 
 

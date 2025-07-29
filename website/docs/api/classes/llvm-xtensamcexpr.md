@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaMCExpr` Class Reference
+# `XtensaMCExpr` Class
 
 
 

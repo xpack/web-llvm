@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMDisasmContext` Class Reference
+# `LLVMDisasmContext` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIToFPInst` Class Reference
+# `SIToFPInst` Class
 
 <p>This class represents a cast from signed integer to floating point. <a href="#details">More...</a></p>
 

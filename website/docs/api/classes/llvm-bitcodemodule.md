@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeModule` Class Reference
+# `BitcodeModule` Class
 
 <p>Represents a module in a bitcode file. <a href="#details">More...</a></p>
 

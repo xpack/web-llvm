@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgVariableFragmentInfo.h` File Reference
+# `DbgVariableFragmentInfo.h` File
 
 
 

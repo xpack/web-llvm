@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarStreamArrayIterator` Class Template Reference
+# `VarStreamArrayIterator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/varstreamarray">VarStreamArray</a> represents an array of variable length records backed by a stream. <a href="#details">More...</a></p>
 

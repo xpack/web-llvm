@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DetailedRecordsEmitter` Class Reference
+# `DetailedRecordsEmitter` Class
 
 
 

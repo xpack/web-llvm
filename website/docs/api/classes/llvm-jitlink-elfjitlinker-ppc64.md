@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFJITLinker_ppc64` Class Template Reference
+# `ELFJITLinker_ppc64` Class Template
 
 
 

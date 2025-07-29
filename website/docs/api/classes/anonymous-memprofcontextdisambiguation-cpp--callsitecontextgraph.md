@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallsiteContextGraph` Class Template Reference
+# `CallsiteContextGraph` Class Template
 
 <p>CRTP base for graphs built from either IR or ThinLTO summary index. <a href="#details">More...</a></p>
 

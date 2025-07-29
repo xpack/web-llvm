@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchTargetELFStreamer` Class Reference
+# `LoongArchTargetELFStreamer` Class
 
 
 

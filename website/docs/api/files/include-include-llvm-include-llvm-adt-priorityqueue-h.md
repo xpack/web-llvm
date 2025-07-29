@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PriorityQueue.h` File Reference
+# `PriorityQueue.h` File
 
 <p>This file defines the PriorityQueue class. <a href="#details">More...</a></p>
 

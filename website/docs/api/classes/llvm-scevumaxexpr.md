@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVUMaxExpr` Class Reference
+# `SCEVUMaxExpr` Class
 
 <p>This class represents an unsigned maximum selection. <a href="#details">More...</a></p>
 

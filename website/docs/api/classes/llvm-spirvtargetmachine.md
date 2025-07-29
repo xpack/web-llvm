@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVTargetMachine` Class Reference
+# `SPIRVTargetMachine` Class
 
 
 

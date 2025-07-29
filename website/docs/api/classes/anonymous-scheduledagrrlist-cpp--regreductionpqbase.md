@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegReductionPQBase` Class Reference
+# `RegReductionPQBase` Class
 
 
 

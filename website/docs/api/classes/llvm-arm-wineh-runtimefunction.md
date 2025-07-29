@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeFunction` Class Reference
+# `RuntimeFunction` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/arm/wineh/runtimefunction">RuntimeFunction</a> - An entry in the table of procedure data (.pdata) <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbe.h` File Reference
+# `MCPseudoProbe.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryProfileInfo.h` File Reference
+# `MemoryProfileInfo.h` File
 
 
 

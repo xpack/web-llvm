@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionVarLocsBuilder` Class Reference
+# `FunctionVarLocsBuilder` Class
 
 <p>Helper class to build FunctionVarLocs, since that class isn't easy to modify. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuildIDFetcher` Class Reference
+# `BuildIDFetcher` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/buildidfetcher">BuildIDFetcher</a> searches local cache directories for debug info. <a href="#details">More...</a></p>
 

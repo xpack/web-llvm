@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrNCmpInliner` Class Reference
+# `StrNCmpInliner` Class
 
 
 

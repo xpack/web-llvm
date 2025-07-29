@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLVFSWriter` Class Reference
+# `YAMLVFSWriter` Class
 
 
 

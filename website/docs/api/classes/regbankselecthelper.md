@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegBankSelectHelper` Class Reference
+# `RegBankSelectHelper` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeUDT.h` File Reference
+# `NativeTypeUDT.h` File
 
 
 

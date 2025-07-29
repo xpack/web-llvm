@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXContainerGlobals` Class Reference
+# `DXContainerGlobals` Class
 
 
 

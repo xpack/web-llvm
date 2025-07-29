@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OwningModuleContainer` Class Reference
+# `OwningModuleContainer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataScalarizerVisitor` Class Reference
+# `DataScalarizerVisitor` Class
 
 
 

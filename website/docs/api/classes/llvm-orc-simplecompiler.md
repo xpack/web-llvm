@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleCompiler` Class Reference
+# `SimpleCompiler` Class
 
 <p>Simple compile functor: Takes a single IR module and returns an <a href="/web-llvm/docs/api/classes/llvm/objectfile">ObjectFile</a>. <a href="#details">More...</a></p>
 

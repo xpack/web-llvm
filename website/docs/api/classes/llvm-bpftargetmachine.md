@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFTargetMachine` Class Reference
+# `BPFTargetMachine` Class
 
 
 

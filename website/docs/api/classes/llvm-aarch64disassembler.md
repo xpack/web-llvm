@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64Disassembler` Class Reference
+# `AArch64Disassembler` Class
 
 
 

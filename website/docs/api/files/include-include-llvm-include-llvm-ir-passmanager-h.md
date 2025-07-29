@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManager.h` File Reference
+# `PassManager.h` File
 
 <p>This header defines various interfaces for pass management in LLVM. <a href="#details">More...</a></p>
 

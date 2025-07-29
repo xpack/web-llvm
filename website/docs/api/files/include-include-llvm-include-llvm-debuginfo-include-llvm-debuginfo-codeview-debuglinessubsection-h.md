@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLinesSubsection.h` File Reference
+# `DebugLinesSubsection.h` File
 
 
 

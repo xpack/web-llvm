@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedGroup` Class Reference
+# `SchedGroup` Class
 
 
 

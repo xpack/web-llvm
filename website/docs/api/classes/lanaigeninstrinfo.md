@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiGenInstrInfo` Class Reference
+# `LanaiGenInstrInfo` Class
 
 
 

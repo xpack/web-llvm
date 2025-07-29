@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXFrameLowering` Class Reference
+# `NVPTXFrameLowering` Class
 
 
 

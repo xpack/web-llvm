@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Symbolize.cpp` File Reference
+# `Symbolize.cpp` File
 
 
 

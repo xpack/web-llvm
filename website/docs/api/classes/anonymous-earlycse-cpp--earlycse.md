@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyCSE` Class Reference
+# `EarlyCSE` Class
 
 <p>A simple and fast domtree-based CSE pass. <a href="#details">More...</a></p>
 

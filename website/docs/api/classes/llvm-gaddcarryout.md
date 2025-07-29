@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GAddCarryOut` Class Reference
+# `GAddCarryOut` Class
 
 <p>Represents overflowing add operations. <a href="#details">More...</a></p>
 

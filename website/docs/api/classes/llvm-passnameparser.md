@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassNameParser` Class Reference
+# `PassNameParser` Class
 
 
 

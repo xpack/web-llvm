@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProcessThinBackend` Class Reference
+# `InProcessThinBackend` Class
 
 
 

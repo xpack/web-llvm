@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoreContainers.h` File Reference
+# `CoreContainers.h` File
 
 
 

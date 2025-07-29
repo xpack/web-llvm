@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CollectDescr` Class Reference
+# `CollectDescr` Class
 
 <p>Describes how to collect the values needed by each lane. <a href="#details">More...</a></p>
 

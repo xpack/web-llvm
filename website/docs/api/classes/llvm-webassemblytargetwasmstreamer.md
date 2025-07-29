@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetWasmStreamer` Class Reference
+# `WebAssemblyTargetWasmStreamer` Class
 
 <p>This part is for Wasm object output. <a href="#details">More...</a></p>
 

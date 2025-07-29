@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSOutputBuffer` Class Reference
+# `SPSOutputBuffer` Class
 
 <p>Output char buffer with overflow check. <a href="#details">More...</a></p>
 

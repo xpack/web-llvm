@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUDAGToDAGISel` Class Reference
+# `AMDGPUDAGToDAGISel` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

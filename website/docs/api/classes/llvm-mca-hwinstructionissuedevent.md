@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWInstructionIssuedEvent` Class Reference
+# `HWInstructionIssuedEvent` Class
 
 
 

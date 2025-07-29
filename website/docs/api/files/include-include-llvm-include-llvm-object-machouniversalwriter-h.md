@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOUniversalWriter.h` File Reference
+# `MachOUniversalWriter.h` File
 
 
 

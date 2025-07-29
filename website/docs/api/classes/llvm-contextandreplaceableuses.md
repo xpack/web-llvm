@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextAndReplaceableUses` Class Reference
+# `ContextAndReplaceableUses` Class
 
 <p>Pointer to the context, with optional RAUW support. <a href="#details">More...</a></p>
 

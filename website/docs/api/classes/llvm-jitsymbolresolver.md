@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITSymbolResolver` Class Reference
+# `JITSymbolResolver` Class
 
 <p>Symbol resolution interface. <a href="#details">More...</a></p>
 

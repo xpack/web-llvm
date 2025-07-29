@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GMul` Class Reference
+# `GMul` Class
 
 <p>Represents an integer multiplication. <a href="#details">More...</a></p>
 

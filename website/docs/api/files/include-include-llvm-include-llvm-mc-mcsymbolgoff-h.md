@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolGOFF.h` File Reference
+# `MCSymbolGOFF.h` File
 
 <p>This file contains the MCSymbolGOFF class. <a href="#details">More...</a></p>
 

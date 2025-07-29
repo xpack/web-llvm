@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerModuleLDSLegacy` Class Reference
+# `AMDGPULowerModuleLDSLegacy` Class
 
 
 

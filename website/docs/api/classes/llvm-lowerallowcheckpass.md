@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerAllowCheckPass` Class Reference
+# `LowerAllowCheckPass` Class
 
 
 

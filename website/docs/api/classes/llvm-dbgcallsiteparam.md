@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgCallSiteParam` Class Reference
+# `DbgCallSiteParam` Class
 
 <p>Used for tracking debug info about call site parameters. <a href="#details">More...</a></p>
 

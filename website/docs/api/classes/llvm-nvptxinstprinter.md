@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXInstPrinter` Class Reference
+# `NVPTXInstPrinter` Class
 
 
 

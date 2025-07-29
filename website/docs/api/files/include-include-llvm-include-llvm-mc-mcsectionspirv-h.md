@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionSPIRV.h` File Reference
+# `MCSectionSPIRV.h` File
 
 
 

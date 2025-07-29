@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXReplaceImageHandles` Class Reference
+# `NVPTXReplaceImageHandles` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Argument` Class Reference
+# `Argument` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sandboxir/argument">Argument</a> of a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/function">sandboxir::Function</a>. <a href="#details">More...</a></p>
 

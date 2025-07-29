@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAsmLowering.h` File Reference
+# `InlineAsmLowering.h` File
 
 <p>This file describes how to lower LLVM inline asm to machine code INLINEASM. <a href="#details">More...</a></p>
 

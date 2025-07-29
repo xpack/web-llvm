@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrettyStackTraceEntry` Class Reference
+# `PrettyStackTraceEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/prettystacktraceentry">PrettyStackTraceEntry</a> - This class is used to represent a frame of the "pretty" stack trace that is dumped when a program crashes. <a href="#details">More...</a></p>
 

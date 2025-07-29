@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MicrosoftDemangle.cpp` File Reference
+# `MicrosoftDemangle.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiNodeSetIterator` Class Reference
+# `PhiNodeSetIterator` Class
 
 <p>An iterator for <a href="/web-llvm/docs/api/classes/anonymous-codegenprepare-cpp-/phinodeset">PhiNodeSet</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructuralHash.h` File Reference
+# `StructuralHash.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfCorrelatorImpl` Class Template Reference
+# `InstrProfCorrelatorImpl` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelatorimpl">InstrProfCorrelatorImpl</a> - A child of <a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelator">InstrProfCorrelator</a> with a template pointer type so that the ProfileData vector can be materialized. <a href="#details">More...</a></p>
 

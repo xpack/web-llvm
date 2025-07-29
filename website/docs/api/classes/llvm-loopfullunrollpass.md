@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopFullUnrollPass` Class Reference
+# `LoopFullUnrollPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> unroll pass that only does full loop unrolling and peeling. <a href="#details">More...</a></p>
 

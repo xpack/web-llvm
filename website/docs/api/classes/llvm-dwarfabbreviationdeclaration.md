@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFAbbreviationDeclaration` Class Reference
+# `DWARFAbbreviationDeclaration` Class
 
 
 

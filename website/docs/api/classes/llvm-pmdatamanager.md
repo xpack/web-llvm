@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PMDataManager` Class Reference
+# `PMDataManager` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> provides the common place to manage the analysis data used by pass managers. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombiningDirIterImpl` Class Reference
+# `CombiningDirIterImpl` Class
 
 <p>Combines and deduplicates directory entries across multiple file systems. <a href="#details">More...</a></p>
 

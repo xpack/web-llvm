@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IGroupLPDAGMutation` Class Reference
+# `IGroupLPDAGMutation` Class
 
 
 

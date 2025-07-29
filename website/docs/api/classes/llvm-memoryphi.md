@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryPhi` Class Reference
+# `MemoryPhi` Class
 
 <p>Represents phi nodes for memory accesses. <a href="#details">More...</a></p>
 

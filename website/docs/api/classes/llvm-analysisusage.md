@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisUsage` Class Reference
+# `AnalysisUsage` Class
 
 <p>Represent the analysis usage information of a pass. <a href="#details">More...</a></p>
 

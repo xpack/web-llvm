@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandVectorPredication.cpp` File Reference
+# `ExpandVectorPredication.cpp` File
 
 
 

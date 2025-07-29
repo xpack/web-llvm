@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterSDNode` Class Reference
+# `RegisterSDNode` Class
 
 
 

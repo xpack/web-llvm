@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhysicalRegisterUsageInfoWrapperLegacy` Class Reference
+# `PhysicalRegisterUsageInfoWrapperLegacy` Class
 
 
 

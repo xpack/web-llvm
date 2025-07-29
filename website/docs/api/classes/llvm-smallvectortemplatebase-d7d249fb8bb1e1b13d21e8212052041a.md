@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorTemplateBase` Class Template Reference
+# `SmallVectorTemplateBase` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatebase">SmallVectorTemplateBase</a>&lt;TriviallyCopyable = true&gt; - This is where we put method implementations that are designed to work with trivially copyable T's. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_ostream` Class Reference
+# `raw_ostream` Class
 
 <p>This class implements an extremely fast bulk output stream that can <em>only</em> output to a stream. <a href="#details">More...</a></p>
 

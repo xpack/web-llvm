@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AACallEdgeIterator` Class Reference
+# `AACallEdgeIterator` Class
 
 <p>An Iterator for call edges, creates <a href="/web-llvm/docs/api/structs/llvm/aacalledges">AACallEdges</a> attributes in a lazy way. <a href="#details">More...</a></p>
 

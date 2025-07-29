@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryIndexYAML.h` File Reference
+# `ModuleSummaryIndexYAML.h` File
 
 
 

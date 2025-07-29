@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerEmuTLS` Class Reference
+# `LowerEmuTLS` Class
 
 
 

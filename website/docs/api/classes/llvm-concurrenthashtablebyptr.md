@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcurrentHashTableByPtr` Class Template Reference
+# `ConcurrentHashTableByPtr` Class Template
 
 
 

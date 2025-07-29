@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LICMPass` Class Reference
+# `LICMPass` Class
 
 <p>Performs <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Invariant Code Motion <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

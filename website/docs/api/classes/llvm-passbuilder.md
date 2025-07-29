@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassBuilder` Class Reference
+# `PassBuilder` Class
 
 <p>This class provides access to building LLVM's passes. <a href="#details">More...</a></p>
 

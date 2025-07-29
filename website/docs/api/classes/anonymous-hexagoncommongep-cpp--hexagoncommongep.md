@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonCommonGEP` Class Reference
+# `HexagonCommonGEP` Class
 
 
 

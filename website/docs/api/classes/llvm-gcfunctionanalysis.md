@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCFunctionAnalysis` Class Reference
+# `GCFunctionAnalysis` Class
 
 <p>An analysis pass which caches information about the <a href="/web-llvm/docs/api/classes/llvm/function">Function</a>. <a href="#details">More...</a></p>
 

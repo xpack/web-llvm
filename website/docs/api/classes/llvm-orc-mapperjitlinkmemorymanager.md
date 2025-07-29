@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapperJITLinkMemoryManager` Class Reference
+# `MapperJITLinkMemoryManager` Class
 
 
 

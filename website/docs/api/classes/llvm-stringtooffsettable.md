@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringToOffsetTable` Class Reference
+# `StringToOffsetTable` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringtooffsettable">StringToOffsetTable</a> - This class uniques a bunch of nul-terminated strings and keeps track of their offset in a massive contiguous string allocation. <a href="#details">More...</a></p>
 

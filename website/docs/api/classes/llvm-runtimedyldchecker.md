@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldChecker` Class Reference
+# `RuntimeDyldChecker` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a> invariant checker for verifying that <a href="/web-llvm/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a> has correctly applied relocations. <a href="#details">More...</a></p>
 

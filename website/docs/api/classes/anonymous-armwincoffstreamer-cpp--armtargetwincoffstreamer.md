@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTargetWinCOFFStreamer` Class Reference
+# `ARMTargetWinCOFFStreamer` Class
 
 
 

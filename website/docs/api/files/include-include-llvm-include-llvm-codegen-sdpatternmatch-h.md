@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDPatternMatch.h` File Reference
+# `SDPatternMatch.h` File
 
 <p>Contains matchers for matching SelectionDAG nodes and values. <a href="#details">More...</a></p>
 

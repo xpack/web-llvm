@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedStreamArrayIterator` Class Template Reference
+# `FixedStreamArrayIterator` Class Template
 
 
 

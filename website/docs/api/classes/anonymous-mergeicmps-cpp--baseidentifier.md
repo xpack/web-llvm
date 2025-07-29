@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseIdentifier` Class Reference
+# `BaseIdentifier` Class
 
 
 

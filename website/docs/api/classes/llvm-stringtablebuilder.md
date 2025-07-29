@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTableBuilder` Class Reference
+# `StringTableBuilder` Class
 
 <p>Utility for building string tables with deduplicated suffixes. <a href="#details">More...</a></p>
 

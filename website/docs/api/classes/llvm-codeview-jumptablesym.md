@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JumpTableSym` Class Reference
+# `JumpTableSym` Class
 
 
 

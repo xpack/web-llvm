@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBFrameData` Class Reference
+# `IPDBFrameData` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbframedata">IPDBFrameData</a> defines an interface used to represent a frame data of some code block. <a href="#details">More...</a></p>
 

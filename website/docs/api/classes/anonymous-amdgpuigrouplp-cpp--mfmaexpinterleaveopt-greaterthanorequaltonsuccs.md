@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GreaterThanOrEqualToNSuccs` Class Reference
+# `GreaterThanOrEqualToNSuccs` Class
 
 <p>Whether or not the instruction has greater than or equal to <span class="doxyComputerOutput">Size</span> immediate successors. <a href="#details">More...</a></p>
 

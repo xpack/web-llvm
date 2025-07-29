@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CheckedArithmetic.h` File Reference
+# `CheckedArithmetic.h` File
 
 
 

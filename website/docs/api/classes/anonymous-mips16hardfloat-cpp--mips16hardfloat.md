@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16HardFloat` Class Reference
+# `Mips16HardFloat` Class
 
 
 

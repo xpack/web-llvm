@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JoinVals` Class Reference
+# `JoinVals` Class
 
 <p>Track information about values in a single virtual register about to be joined. <a href="#details">More...</a></p>
 

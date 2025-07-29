@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IDFCalculator` Class Template Reference
+# `IDFCalculator` Class Template
 
 
 

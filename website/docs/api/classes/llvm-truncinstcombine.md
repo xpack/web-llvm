@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TruncInstCombine` Class Reference
+# `TruncInstCombine` Class
 
 
 

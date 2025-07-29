@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopNestAnalysis` Class Reference
+# `LoopNestAnalysis` Class
 
 <p>This analysis provides information for a loop nest. <a href="#details">More...</a></p>
 

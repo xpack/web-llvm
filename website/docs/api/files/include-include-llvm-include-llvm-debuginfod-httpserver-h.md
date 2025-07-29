@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPServer.h` File Reference
+# `HTTPServer.h` File
 
 <p>This file contains the declarations of the HTTPServer and HTTPServerRequest classes, the HTTPResponse, and StreamingHTTPResponse structs, and the streamFile function. <a href="#details">More...</a></p>
 

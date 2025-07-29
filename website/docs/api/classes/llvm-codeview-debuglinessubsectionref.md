@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLinesSubsectionRef` Class Reference
+# `DebugLinesSubsectionRef` Class
 
 
 

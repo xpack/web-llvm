@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVInstrumentManager` Class Reference
+# `RISCVInstrumentManager` Class
 
 
 

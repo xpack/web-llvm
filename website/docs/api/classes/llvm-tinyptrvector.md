@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TinyPtrVector` Class Template Reference
+# `TinyPtrVector` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/tinyptrvector">TinyPtrVector</a> - This class is specialized for cases where there are normally 0 or 1 element in a vector, but is general enough to go beyond that when required. <a href="#details">More...</a></p>
 

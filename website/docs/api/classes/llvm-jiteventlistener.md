@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITEventListener` Class Reference
+# `JITEventListener` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/jiteventlistener">JITEventListener</a> - Abstract interface for use by the JIT to notify clients about significant events during compilation. <a href="#details">More...</a></p>
 

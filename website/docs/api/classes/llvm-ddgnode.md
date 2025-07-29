@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGNode` Class Reference
+# `DDGNode` Class
 
 <p>Data <a href="/web-llvm/docs/api/classes/llvm/dependence">Dependence</a> Graph <a href="/web-llvm/docs/api/classes/node">Node</a> The graph can represent the following types of nodes: <a href="#details">More...</a></p>
 

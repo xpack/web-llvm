@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerBase` Class Reference
+# `PointerBase` Class
 
 <p>Result of a lookup. <a href="#details">More...</a></p>
 

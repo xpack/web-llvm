@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummary.h` File Reference
+# `ProfileSummary.h` File
 
 
 

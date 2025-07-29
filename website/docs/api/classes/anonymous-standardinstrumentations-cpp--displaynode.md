@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DisplayNode` Class Reference
+# `DisplayNode` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MFMASmallGemmOpt` Class Reference
+# `MFMASmallGemmOpt` Class
 
 
 

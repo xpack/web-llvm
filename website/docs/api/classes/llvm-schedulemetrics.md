@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleMetrics` Class Reference
+# `ScheduleMetrics` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonAsmPrinter` Class Reference
+# `HexagonAsmPrinter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Constant` Class Reference
+# `Constant` Class
 
 <p>This is an important base class in LLVM. <a href="#details">More...</a></p>
 

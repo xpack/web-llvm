@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RealtimeSanitizer.h` File Reference
+# `RealtimeSanitizer.h` File
 
 
 

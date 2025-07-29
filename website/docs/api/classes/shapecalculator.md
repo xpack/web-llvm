@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShapeCalculator` Class Reference
+# `ShapeCalculator` Class
 
 
 

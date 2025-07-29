@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPGridValues.h` File Reference
+# `OMPGridValues.h` File
 
 <p>Provides definitions for Target specific Grid Values. <a href="#details">More...</a></p>
 

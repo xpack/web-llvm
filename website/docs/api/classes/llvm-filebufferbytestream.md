@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileBufferByteStream` Class Reference
+# `FileBufferByteStream` Class
 
 <p>An implementation of <a href="/web-llvm/docs/api/classes/llvm/writablebinarystream">WritableBinaryStream</a> backed by an llvm <a href="/web-llvm/docs/api/classes/llvm/fileoutputbuffer">FileOutputBuffer</a>. <a href="#details">More...</a></p>
 

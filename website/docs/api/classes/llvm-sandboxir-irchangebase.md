@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRChangeBase` Class Reference
+# `IRChangeBase` Class
 
 <p>The base class for IR Change classes. <a href="#details">More...</a></p>
 

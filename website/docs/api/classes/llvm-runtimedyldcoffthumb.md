@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldCOFFThumb` Class Reference
+# `RuntimeDyldCOFFThumb` Class
 
 
 

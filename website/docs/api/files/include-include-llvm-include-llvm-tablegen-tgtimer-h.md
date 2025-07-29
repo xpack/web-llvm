@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGTimer.h` File Reference
+# `TGTimer.h` File
 
 
 

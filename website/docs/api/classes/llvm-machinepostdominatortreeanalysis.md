@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePostDominatorTreeAnalysis` Class Reference
+# `MachinePostDominatorTreeAnalysis` Class
 
 
 

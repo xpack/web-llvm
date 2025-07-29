@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSubtargetInfo` Class Reference
+# `MCSubtargetInfo` Class
 
 <p>Generic base class for all target subtargets. <a href="#details">More...</a></p>
 

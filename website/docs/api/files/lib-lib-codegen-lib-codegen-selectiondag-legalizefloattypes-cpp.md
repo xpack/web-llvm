@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeFloatTypes.cpp` File Reference
+# `LegalizeFloatTypes.cpp` File
 
 
 

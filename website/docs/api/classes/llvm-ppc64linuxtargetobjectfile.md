@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPC64LinuxTargetObjectFile` Class Reference
+# `PPC64LinuxTargetObjectFile` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ppc64linuxtargetobjectfile">PPC64LinuxTargetObjectFile</a> - This implementation is used for 64-bit PowerPC Linux. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeWriterPass.cpp` File Reference
+# `BitcodeWriterPass.cpp` File
 
 
 

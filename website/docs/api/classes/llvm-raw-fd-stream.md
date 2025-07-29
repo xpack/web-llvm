@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_fd_stream` Class Reference
+# `raw_fd_stream` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a> of a file for reading/writing/seeking. <a href="#details">More...</a></p>
 

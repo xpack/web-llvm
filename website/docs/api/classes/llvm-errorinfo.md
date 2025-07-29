@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorInfo` Class Template Reference
+# `ErrorInfo` Class Template
 
 <p>Base class for user error types. <a href="#details">More...</a></p>
 

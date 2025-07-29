@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuloScheduleExpander` Class Reference
+# `ModuloScheduleExpander` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/moduloscheduleexpander">ModuloScheduleExpander</a> takes a <a href="/web-llvm/docs/api/classes/llvm/moduloschedule">ModuloSchedule</a> and expands it in-place, rewriting the old loop and inserting prologs and epilogs as required. <a href="#details">More...</a></p>
 

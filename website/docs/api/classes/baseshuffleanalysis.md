@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseShuffleAnalysis` Class Reference
+# `BaseShuffleAnalysis` Class
 
 
 

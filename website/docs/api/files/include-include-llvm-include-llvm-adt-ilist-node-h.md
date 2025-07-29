@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_node.h` File Reference
+# `ilist_node.h` File
 
 <p>This file defines the ilist_node class template, which is a convenient base class for creating classes that can be used with ilists. <a href="#details">More...</a></p>
 

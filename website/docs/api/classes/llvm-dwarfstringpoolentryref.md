@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfStringPoolEntryRef` Class Reference
+# `DwarfStringPoolEntryRef` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfstringpoolentryref">DwarfStringPoolEntryRef</a>: Dwarf string pool entry reference. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Class Reference
+# `Entry` Class
 
 <p>An abstract class representing a single entry in the accelerator tables. <a href="#details">More...</a></p>
 

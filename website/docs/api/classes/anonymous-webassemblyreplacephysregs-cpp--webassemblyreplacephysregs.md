@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyReplacePhysRegs` Class Reference
+# `WebAssemblyReplacePhysRegs` Class
 
 
 

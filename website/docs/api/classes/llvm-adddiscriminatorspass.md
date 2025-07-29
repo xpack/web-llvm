@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddDiscriminatorsPass` Class Reference
+# `AddDiscriminatorsPass` Class
 
 
 

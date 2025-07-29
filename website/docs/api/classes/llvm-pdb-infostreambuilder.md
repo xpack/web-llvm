@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InfoStreamBuilder` Class Reference
+# `InfoStreamBuilder` Class
 
 
 

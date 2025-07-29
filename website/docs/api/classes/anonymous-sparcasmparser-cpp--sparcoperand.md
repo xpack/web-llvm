@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcOperand` Class Reference
+# `SparcOperand` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-sparcasmparser-cpp-/sparcoperand">SparcOperand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/sparc">Sparc</a> machine instruction. <a href="#details">More...</a></p>
 

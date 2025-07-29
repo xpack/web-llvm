@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicLibrary.h` File Reference
+# `DynamicLibrary.h` File
 
 
 

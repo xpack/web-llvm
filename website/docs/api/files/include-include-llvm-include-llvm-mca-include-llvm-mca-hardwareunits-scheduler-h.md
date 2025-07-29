@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scheduler.h` File Reference
+# `Scheduler.h` File
 
 <p>A scheduler for Processor Resource Units and Processor Resource Groups. <a href="#details">More...</a></p>
 

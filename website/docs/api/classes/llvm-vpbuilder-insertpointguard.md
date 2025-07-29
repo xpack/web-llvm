@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertPointGuard` Class Reference
+# `InsertPointGuard` Class
 
 <p>RAII object that stores the current insertion point and restores it when the object is destroyed. <a href="#details">More...</a></p>
 

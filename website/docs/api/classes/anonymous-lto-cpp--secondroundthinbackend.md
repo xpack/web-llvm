@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SecondRoundThinBackend` Class Reference
+# `SecondRoundThinBackend` Class
 
 <p>This backend operates in the second round of a two-codegen round process. <a href="#details">More...</a></p>
 

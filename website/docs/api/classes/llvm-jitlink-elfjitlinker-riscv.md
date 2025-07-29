@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFJITLinker_riscv` Class Reference
+# `ELFJITLinker_riscv` Class
 
 
 

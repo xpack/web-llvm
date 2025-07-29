@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVELFTargetObjectFile` Class Reference
+# `RISCVELFTargetObjectFile` Class
 
 <p>This implementation is used for RISC-V <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> targets. <a href="#details">More...</a></p>
 

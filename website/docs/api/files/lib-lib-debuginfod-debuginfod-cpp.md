@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Debuginfod.cpp` File Reference
+# `Debuginfod.cpp` File
 
 <p>This file contains several definitions for the debuginfod client and server. <a href="#details">More...</a></p>
 

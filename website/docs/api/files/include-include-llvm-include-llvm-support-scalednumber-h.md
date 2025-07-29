@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScaledNumber.h` File Reference
+# `ScaledNumber.h` File
 
 
 

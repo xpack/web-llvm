@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineJumpTableInfo` Class Reference
+# `MachineJumpTableInfo` Class
 
 
 

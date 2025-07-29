@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DivergenceLoweringHelper` Class Reference
+# `DivergenceLoweringHelper` Class
 
 
 

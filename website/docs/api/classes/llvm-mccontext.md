@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCContext` Class Reference
+# `MCContext` Class
 
 <p>Context object for machine code objects. <a href="#details">More...</a></p>
 

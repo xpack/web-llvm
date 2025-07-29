@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AggressiveAntiDepBreaker.h` File Reference
+# `AggressiveAntiDepBreaker.h` File
 
 
 

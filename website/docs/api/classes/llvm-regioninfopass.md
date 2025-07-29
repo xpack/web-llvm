@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionInfoPass` Class Reference
+# `RegionInfoPass` Class
 
 
 

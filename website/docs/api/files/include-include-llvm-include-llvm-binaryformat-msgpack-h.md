@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MsgPack.h` File Reference
+# `MsgPack.h` File
 
 <p>This file contains constants used for implementing MessagePack support. <a href="#details">More...</a></p>
 

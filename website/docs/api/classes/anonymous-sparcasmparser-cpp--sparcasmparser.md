@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcAsmParser` Class Reference
+# `SparcAsmParser` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIScheduler` Class Reference
+# `SIScheduler` Class
 
 
 

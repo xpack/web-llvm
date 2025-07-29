@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Result` Class Reference
+# `Result` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/outeranalysismanagerproxy/result">Result</a> proxy object for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/outeranalysismanagerproxy">OuterAnalysisManagerProxy</a></span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCostFeaturesAnalyzer` Class Reference
+# `InlineCostFeaturesAnalyzer` Class
 
 
 

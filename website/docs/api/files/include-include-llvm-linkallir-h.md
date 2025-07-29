@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkAllIR.h` File Reference
+# `LinkAllIR.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolCompiland` Class Reference
+# `PDBSymbolCompiland` Class
 
 
 

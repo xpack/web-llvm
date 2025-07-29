@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchFolder` Class Reference
+# `BranchFolder` Class
 
 
 

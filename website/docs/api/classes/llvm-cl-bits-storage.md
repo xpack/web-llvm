@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bits_storage` Class Template Reference
+# `bits_storage` Class Template
 
 
 

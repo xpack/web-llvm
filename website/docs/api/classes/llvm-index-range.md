@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `index_range` Class Reference
+# `index_range` Class
 
 <p>Increasing range of <span class="doxyComputerOutput">size_t</span> indices. <a href="#details">More...</a></p>
 

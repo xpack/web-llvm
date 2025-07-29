@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryUse` Class Reference
+# `MemoryUse` Class
 
 <p>Represents read-only accesses to memory. <a href="#details">More...</a></p>
 

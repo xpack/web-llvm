@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadPoolStrategy` Class Reference
+# `ThreadPoolStrategy` Class
 
 <p>This tells how a thread pool will be used. <a href="#details">More...</a></p>
 

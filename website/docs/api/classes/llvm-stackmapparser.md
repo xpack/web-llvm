@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackMapParser` Class Template Reference
+# `StackMapParser` Class Template
 
 <p>A parser for the latest stackmap format. At the moment, latest=V3. <a href="#details">More...</a></p>
 

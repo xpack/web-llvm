@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemProfilerPass` Class Reference
+# `MemProfilerPass` Class
 
 <p>Public interface to the memory profiler pass for instrumenting code to profile memory accesses. <a href="#details">More...</a></p>
 

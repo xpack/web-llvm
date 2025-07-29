@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXContainerObjectWriter` Class Reference
+# `DXContainerObjectWriter` Class
 
 
 

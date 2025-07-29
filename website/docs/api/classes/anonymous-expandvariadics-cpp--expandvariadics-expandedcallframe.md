@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandedCallFrame` Class Reference
+# `ExpandedCallFrame` Class
 
 
 

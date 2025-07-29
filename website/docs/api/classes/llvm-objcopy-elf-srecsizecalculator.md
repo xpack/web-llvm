@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SRECSizeCalculator` Class Reference
+# `SRECSizeCalculator` Class
 
 
 

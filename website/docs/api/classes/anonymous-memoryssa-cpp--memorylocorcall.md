@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryLocOrCall` Class Reference
+# `MemoryLocOrCall` Class
 
 <p>Our current alias analysis API differentiates heavily between calls and non-calls, and functions called on one usually assert on the other. <a href="#details">More...</a></p>
 

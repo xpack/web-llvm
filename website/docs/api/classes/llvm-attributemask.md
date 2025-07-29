@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeMask` Class Reference
+# `AttributeMask` Class
 
 <p>This class stores enough information to efficiently remove some attributes from an existing <a href="/web-llvm/docs/api/classes/llvm/attrbuilder">AttrBuilder</a>, <a href="/web-llvm/docs/api/classes/llvm/attributeset">AttributeSet</a> or <a href="/web-llvm/docs/api/classes/llvm/attributelist">AttributeList</a>. <a href="#details">More...</a></p>
 

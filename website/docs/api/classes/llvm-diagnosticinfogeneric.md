@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoGeneric` Class Reference
+# `DiagnosticInfoGeneric` Class
 
 
 

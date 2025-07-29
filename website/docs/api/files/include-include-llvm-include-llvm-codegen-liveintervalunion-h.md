@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveIntervalUnion.h` File Reference
+# `LiveIntervalUnion.h` File
 
 
 

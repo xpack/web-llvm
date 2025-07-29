@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVUsersPrinterPass` Class Reference
+# `IVUsersPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/ivusers">IVUsers</a></span> for a loop. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntAttributeImpl` Class Reference
+# `IntAttributeImpl` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorDiagnostic` Class Reference
+# `ErrorDiagnostic` Class
 
 <p>Class to represent an error holding a diagnostic with location information used when printing it. <a href="#details">More...</a></p>
 

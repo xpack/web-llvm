@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCOpt` Class Reference
+# `ObjCARCOpt` Class
 
 <p>The main ARC optimization pass. <a href="#details">More...</a></p>
 

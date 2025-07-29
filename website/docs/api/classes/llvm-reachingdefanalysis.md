@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReachingDefAnalysis` Class Reference
+# `ReachingDefAnalysis` Class
 
 <p>This class provides the reaching def analysis. <a href="#details">More...</a></p>
 

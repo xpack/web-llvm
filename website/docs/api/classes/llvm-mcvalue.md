@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCValue` Class Reference
+# `MCValue` Class
 
 <p>This represents an "assembler immediate". <a href="#details">More...</a></p>
 

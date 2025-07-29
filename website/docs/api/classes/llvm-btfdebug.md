@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFDebug` Class Reference
+# `BTFDebug` Class
 
 <p>Collect and emit <a href="/web-llvm/docs/api/namespaces/llvm/btf">BTF</a> information. <a href="#details">More...</a></p>
 

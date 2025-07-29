@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMEAttrs` Class Reference
+# `SMEAttrs` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smeattrs">SMEAttrs</a> is a utility class to parse the SME ACLE attributes on functions. <a href="#details">More...</a></p>
 

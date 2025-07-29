@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MarkupParser` Class Reference
+# `MarkupParser` Class
 
 <p>Parses a log containing symbolizer markup into a sequence of nodes. <a href="#details">More...</a></p>
 

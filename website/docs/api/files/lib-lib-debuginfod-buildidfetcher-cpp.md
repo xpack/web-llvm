@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuildIDFetcher.cpp` File Reference
+# `BuildIDFetcher.cpp` File
 
 <p>This file defines a DIFetcher implementation for obtaining debug info from debuginfod. <a href="#details">More...</a></p>
 

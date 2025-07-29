@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationLegality.h` File Reference
+# `LoopVectorizationLegality.h` File
 
 <p>This file defines the LoopVectorizationLegality class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFTypeUnit` Class Reference
+# `DWARFTypeUnit` Class
 
 
 

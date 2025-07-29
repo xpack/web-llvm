@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMOptimizeBarriersPass` Class Reference
+# `ARMOptimizeBarriersPass` Class
 
 
 

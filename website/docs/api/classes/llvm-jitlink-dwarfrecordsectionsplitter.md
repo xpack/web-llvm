@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFRecordSectionSplitter` Class Reference
+# `DWARFRecordSectionSplitter` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> pass that splits blocks in a section that follows the DWARF <a href="/web-llvm/docs/api/classes/llvm/record">Record</a> format into sub-blocks where each header gets its own block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `nodes_iterator` Class Template Reference
+# `nodes_iterator` Class Template
 
 <p>For the node iterator we just need to turn the <a href="/web-llvm/docs/api/structs/llvm/graphtraits-860e5f7a11c435b145d274344a0415db/#a7ceeff5a65c10abe289db52446ac088a">TreeEntry</a> iterator into a TreeEntry* iterator so that it dereferences to <a href="/web-llvm/docs/api/structs/llvm/graphtraits-860e5f7a11c435b145d274344a0415db/#a55cdb660a488b62f949a57dc65f5296e">NodeRef</a>. <a href="#details">More...</a></p>
 

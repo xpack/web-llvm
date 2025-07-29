@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReservoirSampler` Class Template Reference
+# `ReservoirSampler` Class Template
 
 <p>Randomly selects an item by sampling into a set with an unknown number of elements, which may each be weighted to be more likely choices. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeVisitorCallbacks` Class Reference
+# `TypeVisitorCallbacks` Class
 
 
 

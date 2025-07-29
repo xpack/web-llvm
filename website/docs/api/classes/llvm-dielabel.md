@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIELabel` Class Reference
+# `DIELabel` Class
 
 <p>A label <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

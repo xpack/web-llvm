@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugInfoPreservationPlugin` Class Reference
+# `DebugInfoPreservationPlugin` Class
 
 
 

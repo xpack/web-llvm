@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotIndexes.h` File Reference
+# `SlotIndexes.h` File
 
 
 

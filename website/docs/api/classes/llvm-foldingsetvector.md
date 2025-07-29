@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetVector` Class Template Reference
+# `FoldingSetVector` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetvector">FoldingSetVector</a> - This template class combines a <a href="/web-llvm/docs/api/classes/llvm/foldingset">FoldingSet</a> and a vector to provide the interface of <a href="/web-llvm/docs/api/classes/llvm/foldingset">FoldingSet</a> but with deterministic iteration order based on the insertion order. <a href="#details">More...</a></p>
 

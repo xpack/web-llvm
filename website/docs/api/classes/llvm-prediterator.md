@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredIterator` Class Template Reference
+# `PredIterator` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostModelPrinterPass` Class Reference
+# `CostModelPrinterPass` Class
 
 <p>Printer pass for cost modeling results. <a href="#details">More...</a></p>
 

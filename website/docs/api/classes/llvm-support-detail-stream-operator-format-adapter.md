@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `stream_operator_format_adapter` Class Template Reference
+# `stream_operator_format_adapter` Class Template
 
 
 

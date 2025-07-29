@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiffListIterator` Class Reference
+# `DiffListIterator` Class
 
 <p>Iterator class that can traverse the differentially encoded values in DiffLists. <a href="#details">More...</a></p>
 

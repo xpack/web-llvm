@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIRemoveIncoming` Class Reference
+# `PHIRemoveIncoming` Class
 
 
 

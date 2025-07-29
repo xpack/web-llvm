@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineUniformityInfoPrinterPass` Class Reference
+# `MachineUniformityInfoPrinterPass` Class
 
 
 

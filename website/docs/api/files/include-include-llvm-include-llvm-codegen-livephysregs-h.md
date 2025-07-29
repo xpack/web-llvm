@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LivePhysRegs.h` File Reference
+# `LivePhysRegs.h` File
 
 <p>This file implements the LivePhysRegs utility for tracking liveness of physical registers. <a href="#details">More...</a></p>
 

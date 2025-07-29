@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Class Reference
+# `Entry` Class
 
 <p>DWARF v5-specific implementation of an Accelerator <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugnames/entry">Entry</a>. <a href="#details">More...</a></p>
 

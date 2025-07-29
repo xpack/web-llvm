@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBankConflictHazardRecognizer` Class Reference
+# `ARMBankConflictHazardRecognizer` Class
 
 
 

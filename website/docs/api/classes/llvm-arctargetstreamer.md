@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCTargetStreamer` Class Reference
+# `ARCTargetStreamer` Class
 
 
 

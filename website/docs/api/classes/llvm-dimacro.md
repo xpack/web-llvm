@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIMacro` Class Reference
+# `DIMacro` Class
 
 <p>Macro. <a href="#details">More...</a></p>
 

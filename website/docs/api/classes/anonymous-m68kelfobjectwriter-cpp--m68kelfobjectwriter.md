@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kELFObjectWriter` Class Reference
+# `M68kELFObjectWriter` Class
 
 
 

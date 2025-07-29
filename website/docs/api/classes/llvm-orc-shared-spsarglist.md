@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSArgList` Class Template Reference
+# `SPSArgList` Class Template
 
 <p>A utility class for serializing to a blob from a variadic list. <a href="#details">More...</a></p>
 

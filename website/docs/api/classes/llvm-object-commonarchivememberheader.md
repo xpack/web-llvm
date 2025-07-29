@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonArchiveMemberHeader` Class Template Reference
+# `CommonArchiveMemberHeader` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrefixInfo` Class Reference
+# `PrefixInfo` Class
 
 
 

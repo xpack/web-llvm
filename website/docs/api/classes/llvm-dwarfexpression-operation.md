@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Operation` Class Reference
+# `Operation` Class
 
 <p>This class represents an <a href="/web-llvm/docs/api/classes/llvm/dwarfexpression/operation">Operation</a> in the <a href="/web-llvm/docs/api/classes/llvm/expression">Expression</a>. <a href="#details">More...</a></p>
 

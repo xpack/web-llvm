@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindOpcodeAssembler` Class Reference
+# `UnwindOpcodeAssembler` Class
 
 
 

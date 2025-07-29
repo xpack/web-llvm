@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallBase` Class Reference
+# `CallBase` Class
 
 
 

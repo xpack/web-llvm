@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandReductionsPass` Class Reference
+# `ExpandReductionsPass` Class
 
 
 

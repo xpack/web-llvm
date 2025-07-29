@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMOperand` Class Reference
+# `ARMOperand` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-armasmparser-cpp-/armoperand">ARMOperand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> machine operand. <a href="#details">More...</a></p>
 

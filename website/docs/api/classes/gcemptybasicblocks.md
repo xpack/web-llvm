@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCEmptyBasicBlocks` Class Reference
+# `GCEmptyBasicBlocks` Class
 
 
 

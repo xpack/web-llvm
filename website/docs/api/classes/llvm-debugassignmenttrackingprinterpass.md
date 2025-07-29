@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugAssignmentTrackingPrinterPass` Class Reference
+# `DebugAssignmentTrackingPrinterPass` Class
 
 
 

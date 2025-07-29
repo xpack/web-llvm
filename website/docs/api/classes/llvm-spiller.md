@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Spiller` Class Reference
+# `Spiller` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/spiller">Spiller</a> interface. <a href="#details">More...</a></p>
 

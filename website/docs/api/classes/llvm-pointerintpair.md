@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerIntPair` Class Template Reference
+# `PointerIntPair` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pointerintpair">PointerIntPair</a> - This class implements a pair of a pointer and small integer. <a href="#details">More...</a></p>
 

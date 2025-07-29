@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreFunctionInfo` Class Reference
+# `XCoreFunctionInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xcorefunctioninfo">XCoreFunctionInfo</a> - This class is derived from <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> private <a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a> target-specific information for each <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

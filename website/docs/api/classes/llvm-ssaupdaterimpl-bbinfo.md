@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBInfo` Class Reference
+# `BBInfo` Class
 
 <p>BBInfo - Per-basic block information used internally by <a href="/web-llvm/docs/api/classes/llvm/ssaupdaterimpl">SSAUpdaterImpl</a>. <a href="#details">More...</a></p>
 

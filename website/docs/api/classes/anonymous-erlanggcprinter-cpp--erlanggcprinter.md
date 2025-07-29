@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErlangGCPrinter` Class Reference
+# `ErlangGCPrinter` Class
 
 
 

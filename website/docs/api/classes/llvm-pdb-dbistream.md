@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiStream` Class Reference
+# `DbiStream` Class
 
 
 

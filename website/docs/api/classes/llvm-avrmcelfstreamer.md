@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRMCELFStreamer` Class Reference
+# `AVRMCELFStreamer` Class
 
 
 

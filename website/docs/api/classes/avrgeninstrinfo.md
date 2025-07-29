@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRGenInstrInfo` Class Reference
+# `AVRGenInstrInfo` Class
 
 
 

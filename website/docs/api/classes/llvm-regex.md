@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Regex` Class Reference
+# `Regex` Class
 
 
 

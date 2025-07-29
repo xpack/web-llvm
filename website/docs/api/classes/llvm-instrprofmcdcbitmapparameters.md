@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfMCDCBitmapParameters` Class Reference
+# `InstrProfMCDCBitmapParameters` Class
 
 <p>This represents the llvm.instrprof.mcdc.parameters intrinsic. <a href="#details">More...</a></p>
 

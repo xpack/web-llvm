@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VGPRRegisterRegAlloc` Class Reference
+# `VGPRRegisterRegAlloc` Class
 
 
 

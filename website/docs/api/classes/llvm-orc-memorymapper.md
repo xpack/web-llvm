@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryMapper` Class Reference
+# `MemoryMapper` Class
 
 <p>Manages mapping, content transfer and protections for JIT memory. <a href="#details">More...</a></p>
 

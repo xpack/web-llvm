@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Module.h` File Reference
+# `Module.h` File
 
 <p>Module.h This file contains the declarations for the Module class. <a href="#details">More...</a></p>
 

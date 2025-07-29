@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueLatticeElement` Class Reference
+# `ValueLatticeElement` Class
 
 <p>This class represents lattice values for constants. <a href="#details">More...</a></p>
 

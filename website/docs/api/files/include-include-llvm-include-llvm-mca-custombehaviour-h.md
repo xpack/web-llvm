@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomBehaviour.h` File Reference
+# `CustomBehaviour.h` File
 
 <p>This file defines the base class CustomBehaviour which can be inherited from by specific targets (ex. <a href="#details">More...</a></p>
 

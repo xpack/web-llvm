@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `debug_compile_units_iterator` Class Reference
+# `debug_compile_units_iterator` Class
 
 <p>An iterator for DICompileUnits that skips those marked NoDebug. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByteProvider` Class Template Reference
+# `ByteProvider` Class Template
 
 <p>Represents known origin of an individual byte in combine pattern. <a href="#details">More...</a></p>
 

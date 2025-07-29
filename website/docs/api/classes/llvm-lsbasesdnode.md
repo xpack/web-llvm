@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSBaseSDNode` Class Reference
+# `LSBaseSDNode` Class
 
 <p>Base class for <a href="/web-llvm/docs/api/classes/llvm/loadsdnode">LoadSDNode</a> and <a href="/web-llvm/docs/api/classes/llvm/storesdnode">StoreSDNode</a>. <a href="#details">More...</a></p>
 

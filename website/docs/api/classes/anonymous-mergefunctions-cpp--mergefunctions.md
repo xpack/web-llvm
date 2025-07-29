@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeFunctions` Class Reference
+# `MergeFunctions` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-mergefunctions-cpp-/mergefunctions">MergeFunctions</a> finds functions which will generate identical machine code, by considering all pointer types to be equivalent. <a href="#details">More...</a></p>
 

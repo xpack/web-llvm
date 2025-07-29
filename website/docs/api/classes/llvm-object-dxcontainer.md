@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXContainer` Class Reference
+# `DXContainer` Class
 
 
 

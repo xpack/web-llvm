@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NsanMemOpFn` Class Reference
+# `NsanMemOpFn` Class
 
 
 

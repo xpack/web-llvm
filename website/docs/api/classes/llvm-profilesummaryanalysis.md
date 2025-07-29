@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryAnalysis` Class Reference
+# `ProfileSummaryAnalysis` Class
 
 <p>An analysis pass based on the new PM to deliver <a href="/web-llvm/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>. <a href="#details">More...</a></p>
 

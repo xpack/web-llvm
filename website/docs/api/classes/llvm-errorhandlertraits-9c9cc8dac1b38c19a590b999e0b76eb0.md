@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorHandlerTraits` Class Template Reference
+# `ErrorHandlerTraits` Class Template
 
 <p>Specialization for functions of the form '<a href="/web-llvm/docs/api/classes/llvm/error">Error</a> (std::unique_ptr&lt;ErrT&gt;)'. <a href="#details">More...</a></p>
 

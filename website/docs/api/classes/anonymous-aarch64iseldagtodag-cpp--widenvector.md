@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WidenVector` Class Reference
+# `WidenVector` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-aarch64iseldagtodag-cpp-/widenvector">WidenVector</a> - Given a value in the V64 register class, produce the equivalent value in the V128 register class. <a href="#details">More...</a></p>
 

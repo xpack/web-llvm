@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCExpr` Class Reference
+# `LanaiMCExpr` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Spiller.h` File Reference
+# `Spiller.h` File
 
 
 

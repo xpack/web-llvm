@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmYAML.h` File Reference
+# `WasmYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of wasm binaries. <a href="#details">More...</a></p>
 

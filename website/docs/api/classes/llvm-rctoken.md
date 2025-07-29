@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RCToken` Class Reference
+# `RCToken` Class
 
 
 

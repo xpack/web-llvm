@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILocalScope` Class Reference
+# `DILocalScope` Class
 
 <p>A scope for locals. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaptureInfo` Class Reference
+# `CaptureInfo` Class
 
 <p>Represents which components of the pointer may be captured in which location. <a href="#details">More...</a></p>
 

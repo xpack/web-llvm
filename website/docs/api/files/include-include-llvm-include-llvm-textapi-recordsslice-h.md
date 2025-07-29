@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordsSlice.h` File Reference
+# `RecordsSlice.h` File
 
 <p>Implements the TAPI Record Collection Type. <a href="#details">More...</a></p>
 

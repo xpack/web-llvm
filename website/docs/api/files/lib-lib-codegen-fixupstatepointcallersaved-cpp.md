@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupStatepointCallerSaved.cpp` File Reference
+# `FixupStatepointCallerSaved.cpp` File
 
 <p>Statepoint instruction in deopt parameters contains values which are meaningful to the runtime and should be able to be read at the moment the call returns. <a href="#details">More...</a></p>
 

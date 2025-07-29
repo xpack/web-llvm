@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PMStack` Class Reference
+# `PMStack` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pmstack">PMStack</a> - This class implements a stack data structure of <a href="/web-llvm/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> pointers. <a href="#details">More...</a></p>
 

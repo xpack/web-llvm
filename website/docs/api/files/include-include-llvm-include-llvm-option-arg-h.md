@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Arg.h` File Reference
+# `Arg.h` File
 
 <p>Defines the llvm::Arg class for parsed arguments. <a href="#details">More...</a></p>
 

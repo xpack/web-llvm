@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZCCState` Class Reference
+# `SystemZCCState` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBRawSymbol` Class Reference
+# `IPDBRawSymbol` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbrawsymbol">IPDBRawSymbol</a> defines an interface used to represent an arbitrary symbol. <a href="#details">More...</a></p>
 

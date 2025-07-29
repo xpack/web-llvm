@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeDyldError` Class Reference
+# `RuntimeDyldError` Class
 
 <p>Base class for errors originating in <a href="/web-llvm/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a>, e.g. <a href="#details">More...</a></p>
 

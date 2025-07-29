@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVELFObjectWriter` Class Reference
+# `RISCVELFObjectWriter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShaderFlagsAnalysisPrinter` Class Reference
+# `ShaderFlagsAnalysisPrinter` Class
 
 <p>Printer pass for <a href="/web-llvm/docs/api/classes/llvm/dxil/shaderflagsanalysis">ShaderFlagsAnalysis</a> results. <a href="#details">More...</a></p>
 

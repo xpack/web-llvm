@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelTable` Class Template Reference
+# `AccelTable` Class Template
 
 <p>This class holds an abstract representation of an Accelerator Table, consisting of a sequence of buckets, each bucket containint a sequence of <a href="/web-llvm/docs/api/structs/llvm/acceltablebase/hashdata">HashData</a> entries. <a href="#details">More...</a></p>
 

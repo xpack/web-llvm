@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypePromotionTransaction` Class Reference
+# `TypePromotionTransaction` Class
 
 <p>This class provides transaction based operation on the IR. <a href="#details">More...</a></p>
 

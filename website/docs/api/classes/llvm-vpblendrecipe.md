@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBlendRecipe` Class Reference
+# `VPBlendRecipe` Class
 
 <p>A recipe for vectorizing a phi-node as a sequence of mask-based select instructions. <a href="#details">More...</a></p>
 

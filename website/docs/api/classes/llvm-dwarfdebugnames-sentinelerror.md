@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SentinelError` Class Reference
+# `SentinelError` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/error">Error</a> returned by <a href="/web-llvm/docs/api/classes/llvm/dwarfdebugnames/nameindex/#a8475a510867f94e8f55f39ed0697d833">NameIndex::getEntry</a> to report it has reached the end of the entry list. <a href="#details">More...</a></p>
 

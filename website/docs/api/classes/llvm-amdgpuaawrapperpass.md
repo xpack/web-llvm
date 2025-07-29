@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAAWrapperPass` Class Reference
+# `AMDGPUAAWrapperPass` Class
 
 <p>Legacy wrapper pass to provide the <a href="/web-llvm/docs/api/classes/llvm/amdgpuaaresult">AMDGPUAAResult</a> object. <a href="#details">More...</a></p>
 

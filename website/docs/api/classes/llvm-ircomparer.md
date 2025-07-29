@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRComparer` Class Template Reference
+# `IRComparer` Class Template
 
 
 

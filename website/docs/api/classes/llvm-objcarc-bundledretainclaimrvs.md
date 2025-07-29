@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BundledRetainClaimRVs` Class Reference
+# `BundledRetainClaimRVs` Class
 
 
 

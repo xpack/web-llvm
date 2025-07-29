@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSetterWithIdx` Class Template Reference
+# `GenericSetterWithIdx` Class Template
 
 <p>Similar to <a href="/web-llvm/docs/api/classes/llvm/sandboxir/genericsetter">GenericSetter</a> but the setters/getters have an index as their first argument. <a href="#details">More...</a></p>
 

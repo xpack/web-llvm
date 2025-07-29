@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryEffectsBase` Class Template Reference
+# `MemoryEffectsBase` Class Template
 
 
 

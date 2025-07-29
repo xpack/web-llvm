@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractRanges.cpp` File Reference
+# `ExtractRanges.cpp` File
 
 
 

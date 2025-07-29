@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVCodeViewReader` Class Reference
+# `LVCodeViewReader` Class
 
 
 

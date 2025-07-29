@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccessAnalysis` Class Reference
+# `AccessAnalysis` Class
 
 <p>Analyses memory accesses in a loop. <a href="#details">More...</a></p>
 

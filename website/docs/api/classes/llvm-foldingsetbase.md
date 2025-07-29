@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetBase` Class Reference
+# `FoldingSetBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingsetbase">FoldingSetBase</a> - Implements the folding set functionality. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineConstantPoolValue` Class Reference
+# `MachineConstantPoolValue` Class
 
 <p>Abstract base class for all machine specific constantpool value subclasses. <a href="#details">More...</a></p>
 

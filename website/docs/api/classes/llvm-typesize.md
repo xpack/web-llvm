@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSize` Class Reference
+# `TypeSize` Class
 
 
 

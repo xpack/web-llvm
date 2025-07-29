@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FenceInst` Class Reference
+# `FenceInst` Class
 
 <p>An instruction for ordering other memory operations. <a href="#details">More...</a></p>
 

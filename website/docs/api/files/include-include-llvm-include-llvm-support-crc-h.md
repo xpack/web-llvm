@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CRC.h` File Reference
+# `CRC.h` File
 
 
 

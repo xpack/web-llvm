@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIAddIncoming` Class Reference
+# `PHIAddIncoming` Class
 
 
 

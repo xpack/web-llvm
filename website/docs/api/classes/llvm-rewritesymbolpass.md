@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteSymbolPass` Class Reference
+# `RewriteSymbolPass` Class
 
 
 

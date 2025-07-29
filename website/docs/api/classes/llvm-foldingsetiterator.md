@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetIterator` Class Template Reference
+# `FoldingSetIterator` Class Template
 
 
 

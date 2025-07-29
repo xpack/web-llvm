@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerifyInstrumentation` Class Reference
+# `VerifyInstrumentation` Class
 
 
 

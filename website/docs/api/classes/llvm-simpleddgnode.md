@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleDDGNode` Class Reference
+# `SimpleDDGNode` Class
 
 <p>Subclass of <a href="/web-llvm/docs/api/classes/llvm/ddgnode">DDGNode</a> representing single or multi-instruction nodes. <a href="#details">More...</a></p>
 

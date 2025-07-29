@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Expression` Class Reference
+# `Expression` Class
 
 <p>Class representing an expression and its matching format. <a href="#details">More...</a></p>
 

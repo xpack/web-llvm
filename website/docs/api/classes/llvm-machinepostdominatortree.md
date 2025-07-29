@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePostDominatorTree` Class Reference
+# `MachinePostDominatorTree` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinepostdominatortree">MachinePostDominatorTree</a> - an analysis pass wrapper for <a href="/web-llvm/docs/api/classes/llvm/dominatortree">DominatorTree</a> used to compute the post-dominator tree for MachineFunctions. <a href="#details">More...</a></p>
 

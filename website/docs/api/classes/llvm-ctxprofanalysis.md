@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CtxProfAnalysis` Class Reference
+# `CtxProfAnalysis` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMParallelDSP` Class Reference
+# `ARMParallelDSP` Class
 
 
 

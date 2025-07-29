@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptBisect` Class Reference
+# `OptBisect` Class
 
 <p>This class implements a mechanism to disable passes and individual optimizations at compile time based on a command line option (-opt-bisect-limit) in order to perform a bisecting search for optimization-related problems. <a href="#details">More...</a></p>
 

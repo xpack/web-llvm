@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectCreate.h` File Reference
+# `SectCreate.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRFormatter` Class Reference
+# `MIRFormatter` Class
 
 <p>MIRFormater - Interface to format MIR operand based on target. <a href="#details">More...</a></p>
 

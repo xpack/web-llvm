@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrInsertPoint` Class Reference
+# `InstrInsertPoint` Class
 
 <p>Insertion point before or after an instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Metadata` Class Reference
+# `Metadata` Class
 
 <p>Root of the metadata hierarchy. <a href="#details">More...</a></p>
 

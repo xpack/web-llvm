@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFListTableBase` Class Template Reference
+# `DWARFListTableBase` Class Template
 
 <p>A class representing a table of lists as specified in the DWARF v5 standard for location lists and range lists. <a href="#details">More...</a></p>
 

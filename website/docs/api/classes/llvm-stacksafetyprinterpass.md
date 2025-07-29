@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSafetyPrinterPass` Class Reference
+# `StackSafetyPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/stacksafetyanalysis">StackSafetyAnalysis</a></span> results. <a href="#details">More...</a></p>
 

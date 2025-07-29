@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MustExecuteAnnotatedWriter` Class Reference
+# `MustExecuteAnnotatedWriter` Class
 
 <p>An assembly annotator class to print must execute information in comments. <a href="#details">More...</a></p>
 

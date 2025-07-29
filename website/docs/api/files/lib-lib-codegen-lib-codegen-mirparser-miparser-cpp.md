@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIParser.cpp` File Reference
+# `MIParser.cpp` File
 
 
 

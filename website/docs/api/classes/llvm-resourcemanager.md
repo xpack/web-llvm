@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceManager` Class Reference
+# `ResourceManager` Class
 
 
 

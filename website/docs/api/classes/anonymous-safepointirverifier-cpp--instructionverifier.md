@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionVerifier` Class Reference
+# `InstructionVerifier` Class
 
 <p>It is a visitor for <a href="/web-llvm/docs/api/classes/anonymous-safepointirverifier-cpp-/gcptrtracker/#aaaee927f8ed0e14bcb32091411cffe66">GCPtrTracker::verifyFunction</a>. <a href="#details">More...</a></p>
 

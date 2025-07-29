@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemsetRanges` Class Reference
+# `MemsetRanges` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOReader` Class Reference
+# `MachOReader` Class
 
 
 

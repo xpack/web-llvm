@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineTraceMetricsWrapperPass` Class Reference
+# `MachineTraceMetricsWrapperPass` Class
 
 
 

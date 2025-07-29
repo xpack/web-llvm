@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgValueProperties` Class Reference
+# `DbgValueProperties` Class
 
 <p>Meta qualifiers for a value. <a href="#details">More...</a></p>
 

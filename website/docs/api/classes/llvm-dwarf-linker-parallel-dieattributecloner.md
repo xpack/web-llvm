@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEAttributeCloner` Class Reference
+# `DIEAttributeCloner` Class
 
 <p>This class creates clones of input <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> attributes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinarySectionWriter` Class Reference
+# `BinarySectionWriter` Class
 
 
 

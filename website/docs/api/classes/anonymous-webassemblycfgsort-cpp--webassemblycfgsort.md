@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyCFGSort` Class Reference
+# `WebAssemblyCFGSort` Class
 
 
 

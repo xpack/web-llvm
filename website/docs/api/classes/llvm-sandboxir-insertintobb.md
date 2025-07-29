@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertIntoBB` Class Reference
+# `InsertIntoBB` Class
 
 
 

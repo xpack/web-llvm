@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEAbbrevSet` Class Reference
+# `DIEAbbrevSet` Class
 
 <p>Helps unique <a href="/web-llvm/docs/api/classes/llvm/dieabbrev">DIEAbbrev</a> objects and assigns abbreviation numbers. <a href="#details">More...</a></p>
 

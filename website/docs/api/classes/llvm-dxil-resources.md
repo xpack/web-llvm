@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Resources` Class Reference
+# `Resources` Class
 
 
 

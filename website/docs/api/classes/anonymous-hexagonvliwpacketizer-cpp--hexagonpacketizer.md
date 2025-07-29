@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonPacketizer` Class Reference
+# `HexagonPacketizer` Class
 
 
 

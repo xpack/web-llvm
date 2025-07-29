@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubsumingPositionIterator` Class Reference
+# `SubsumingPositionIterator` Class
 
 <p>A visitor class for IR positions. <a href="#details">More...</a></p>
 

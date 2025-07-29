@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocaInst` Class Reference
+# `AllocaInst` Class
 
 
 

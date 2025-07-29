@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCMCExpr` Class Reference
+# `PPCMCExpr` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextNode` Class Reference
+# `ContextNode` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Timer` Class Reference
+# `Timer` Class
 
 <p>This class is used to track the amount of time spent between invocations of its <a href="#aa8c887576ec3b0d68c10ebf4097c367c">startTimer()</a>/stopTimer() methods. <a href="#details">More...</a></p>
 

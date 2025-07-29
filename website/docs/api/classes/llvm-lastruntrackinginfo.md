@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LastRunTrackingInfo` Class Reference
+# `LastRunTrackingInfo` Class
 
 <p>This class is used to track the last run of a set of module/function passes. <a href="#details">More...</a></p>
 

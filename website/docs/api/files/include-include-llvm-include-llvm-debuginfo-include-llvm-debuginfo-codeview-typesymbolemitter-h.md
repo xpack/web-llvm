@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSymbolEmitter.h` File Reference
+# `TypeSymbolEmitter.h` File
 
 
 

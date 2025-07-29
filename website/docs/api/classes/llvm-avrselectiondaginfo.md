@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRSelectionDAGInfo` Class Reference
+# `AVRSelectionDAGInfo` Class
 
 <p>Holds information about the <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> instruction selection DAG. <a href="#details">More...</a></p>
 

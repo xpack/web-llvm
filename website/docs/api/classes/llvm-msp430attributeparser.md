@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430AttributeParser` Class Reference
+# `MSP430AttributeParser` Class
 
 
 

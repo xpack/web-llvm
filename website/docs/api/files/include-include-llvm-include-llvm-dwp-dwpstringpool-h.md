@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWPStringPool.h` File Reference
+# `DWPStringPool.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DroppedVariableStats` Class Reference
+# `DroppedVariableStats` Class
 
 <p>A base class to collect and print dropped debug information variable statistics. <a href="#details">More...</a></p>
 

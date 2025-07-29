@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerUnion.h` File Reference
+# `PointerUnion.h` File
 
 <p>This file defines the PointerUnion class, which is a discriminated union of pointer types. <a href="#details">More...</a></p>
 

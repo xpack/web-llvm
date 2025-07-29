@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPClient` Class Reference
+# `HTTPClient` Class
 
 <p>A reusable client that can perform HTTPRequests through a network socket. <a href="#details">More...</a></p>
 

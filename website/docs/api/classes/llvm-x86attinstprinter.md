@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ATTInstPrinter` Class Reference
+# `X86ATTInstPrinter` Class
 
 
 

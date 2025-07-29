@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicMemTransferInst` Class Reference
+# `AtomicMemTransferInst` Class
 
 
 

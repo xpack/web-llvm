@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Value` Class Reference
+# `Value` Class
 
 <p>A SandboxIR <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> has users. This is the base class. <a href="#details">More...</a></p>
 

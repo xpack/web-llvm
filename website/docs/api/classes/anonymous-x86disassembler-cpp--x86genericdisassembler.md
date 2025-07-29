@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86GenericDisassembler` Class Reference
+# `X86GenericDisassembler` Class
 
 <p>Generic disassembler for all <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> platforms. <a href="#details">More...</a></p>
 

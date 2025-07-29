@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCAnalysisUtils.h` File Reference
+# `ObjCARCAnalysisUtils.h` File
 
 <p>This file defines common analysis utilities used by the ObjC ARC Optimizer. <a href="#details">More...</a></p>
 

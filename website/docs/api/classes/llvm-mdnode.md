@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNode` Class Reference
+# `MDNode` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a> node. <a href="#details">More...</a></p>
 

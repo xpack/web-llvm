@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceProcessor.h` File Reference
+# `ResourceProcessor.h` File
 
 
 

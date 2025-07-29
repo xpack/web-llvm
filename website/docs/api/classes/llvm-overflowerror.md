@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverflowError` Class Reference
+# `OverflowError` Class
 
 <p>Class to represent an overflow error that might result when manipulating a value. <a href="#details">More...</a></p>
 

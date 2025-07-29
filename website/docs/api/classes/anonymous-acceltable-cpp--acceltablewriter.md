@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelTableWriter` Class Reference
+# `AccelTableWriter` Class
 
 <p>Base class for writing out Accelerator tables. <a href="#details">More...</a></p>
 

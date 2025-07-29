@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectingFSDirIterImpl` Class Reference
+# `RedirectingFSDirIterImpl` Class
 
 <p>Directory iterator implementation for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfilesystem">RedirectingFileSystem</a>'s</span> directory entries. <a href="#details">More...</a></p>
 

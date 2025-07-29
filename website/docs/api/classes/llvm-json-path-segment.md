@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Segment` Class Reference
+# `Segment` Class
 
 <p>One element in a JSON path: an object field (.foo) or array index [27]. <a href="#details">More...</a></p>
 

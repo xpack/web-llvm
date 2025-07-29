@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArchiveYAML.h` File Reference
+# `ArchiveYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of archives. <a href="#details">More...</a></p>
 

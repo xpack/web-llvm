@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86SelectionDAGInfo` Class Reference
+# `X86SelectionDAGInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VecUtils` Class Reference
+# `VecUtils` Class
 
 
 

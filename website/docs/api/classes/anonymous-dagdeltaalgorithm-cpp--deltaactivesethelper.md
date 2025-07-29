@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeltaActiveSetHelper` Class Reference
+# `DeltaActiveSetHelper` Class
 
 <p>Helper object for minimizing an active set of changes. <a href="#details">More...</a></p>
 

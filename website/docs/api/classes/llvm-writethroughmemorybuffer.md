@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteThroughMemoryBuffer` Class Reference
+# `WriteThroughMemoryBuffer` Class
 
 <p>This class is an extension of <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a>, which allows write access to the underlying contents and committing those changes to the original source. <a href="#details">More...</a></p>
 

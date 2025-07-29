@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPostLegalizerCombinerImpl` Class Reference
+# `AMDGPUPostLegalizerCombinerImpl` Class
 
 
 

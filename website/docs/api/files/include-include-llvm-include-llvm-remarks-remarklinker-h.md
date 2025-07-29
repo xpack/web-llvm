@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkLinker.h` File Reference
+# `RemarkLinker.h` File
 
 
 

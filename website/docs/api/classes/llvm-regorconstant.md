@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegOrConstant` Class Reference
+# `RegOrConstant` Class
 
 <p>Represents a value which can be a <a href="/web-llvm/docs/api/classes/llvm/register">Register</a> or a constant. <a href="#details">More...</a></p>
 

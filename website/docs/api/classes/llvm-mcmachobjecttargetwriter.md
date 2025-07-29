@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCMachObjectTargetWriter` Class Reference
+# `MCMachObjectTargetWriter` Class
 
 
 

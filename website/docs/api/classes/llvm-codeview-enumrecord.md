@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumRecord` Class Reference
+# `EnumRecord` Class
 
 
 

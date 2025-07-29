@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCLOHContainer` Class Reference
+# `MCLOHContainer` Class
 
 
 

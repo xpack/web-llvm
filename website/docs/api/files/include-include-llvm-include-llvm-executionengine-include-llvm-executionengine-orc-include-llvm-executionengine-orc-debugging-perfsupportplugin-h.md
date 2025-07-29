@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfSupportPlugin.h` File Reference
+# `PerfSupportPlugin.h` File
 
 
 

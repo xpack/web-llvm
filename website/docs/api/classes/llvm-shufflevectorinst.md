@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleVectorInst` Class Reference
+# `ShuffleVectorInst` Class
 
 <p>This instruction constructs a fixed permutation of two input vectors. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineIRBuilder` Class Reference
+# `MachineIRBuilder` Class
 
 <p>Helper class to build <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a>. <a href="#details">More...</a></p>
 

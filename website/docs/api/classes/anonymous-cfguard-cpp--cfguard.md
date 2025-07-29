@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGuard` Class Reference
+# `CFGuard` Class
 
 
 

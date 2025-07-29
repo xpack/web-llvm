@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphDOTPrinter` Class Reference
+# `CallGraphDOTPrinter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileWriterText` Class Reference
+# `SampleProfileWriterText` Class
 
 <p>Sample-based profile writer (text format). <a href="#details">More...</a></p>
 

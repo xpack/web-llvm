@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryOpIntrinsic` Class Reference
+# `BinaryOpIntrinsic` Class
 
 <p>This class represents an intrinsic that is based on a binary operation. <a href="#details">More...</a></p>
 

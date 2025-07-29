@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GDBJITDebugInfoRegistrationPlugin` Class Reference
+# `GDBJITDebugInfoRegistrationPlugin` Class
 
 <p>For each object containing debug info, installs JITLink passes to synthesize a debug object and then register it via the GDB JIT-registration interface. <a href="#details">More...</a></p>
 

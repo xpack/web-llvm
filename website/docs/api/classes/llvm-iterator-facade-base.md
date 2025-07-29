@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_facade_base` Class Template Reference
+# `iterator_facade_base` Class Template
 
 <p>CRTP base class which implements the entire standard iterator facade in terms of a minimal subset of the interface. <a href="#details">More...</a></p>
 

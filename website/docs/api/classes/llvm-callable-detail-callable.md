@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Callable` Class Template Reference
+# `Callable` Class Template
 
 <p>Templated storage wrapper for a callable. <a href="#details">More...</a></p>
 

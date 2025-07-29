@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXExternalAAWrapper` Class Reference
+# `NVPTXExternalAAWrapper` Class
 
 
 

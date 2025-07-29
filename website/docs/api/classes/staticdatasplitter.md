@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StaticDataSplitter` Class Reference
+# `StaticDataSplitter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelChangeObserver.cpp` File Reference
+# `GISelChangeObserver.cpp` File
 
 
 

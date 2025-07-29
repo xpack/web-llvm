@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerKernelAttributes` Class Reference
+# `AMDGPULowerKernelAttributes` Class
 
 
 

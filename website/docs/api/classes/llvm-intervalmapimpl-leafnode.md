@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeafNode` Class Template Reference
+# `LeafNode` Class Template
 
 
 

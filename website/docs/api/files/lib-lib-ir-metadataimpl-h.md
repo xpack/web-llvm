@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataImpl.h` File Reference
+# `MetadataImpl.h` File
 
 
 

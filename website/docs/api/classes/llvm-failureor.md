@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FailureOr` Class Template Reference
+# `FailureOr` Class Template
 
 <p>This class provides support for representing a failure result, or a valid value of type <span class="doxyComputerOutput">T</span>. <a href="#details">More...</a></p>
 

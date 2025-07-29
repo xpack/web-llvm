@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PODSmallVector` Class Template Reference
+# `PODSmallVector` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrailingObjectsBase` Class Reference
+# `TrailingObjectsBase` Class
 
 <p>The base class for TrailingObjects* classes. <a href="#details">More...</a></p>
 

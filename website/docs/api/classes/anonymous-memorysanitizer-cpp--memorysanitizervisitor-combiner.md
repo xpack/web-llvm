@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Combiner` Class Template Reference
+# `Combiner` Class Template
 
 <p>Default propagation of shadow and/or origin. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeTypes.cpp` File Reference
+# `LegalizeTypes.cpp` File
 
 
 

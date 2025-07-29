@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfSharedStructs.h` File Reference
+# `PerfSharedStructs.h` File
 
 
 

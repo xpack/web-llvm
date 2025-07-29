@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicIRLayerMaterializationUnit` Class Reference
+# `BasicIRLayerMaterializationUnit` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/materializationunit">MaterializationUnit</a> that materializes modules by calling the 'emit' method on the given <a href="/web-llvm/docs/api/classes/llvm/orc/irlayer">IRLayer</a>. <a href="#details">More...</a></p>
 

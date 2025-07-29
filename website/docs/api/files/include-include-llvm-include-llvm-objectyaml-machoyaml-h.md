@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOYAML.h` File Reference
+# `MachOYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of Mach-O. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAtomicOptimizer` Class Reference
+# `AMDGPUAtomicOptimizer` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicInfo` Class Reference
+# `AtomicInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterFile` Class Reference
+# `RegisterFile` Class
 
 <p>Manages hardware register files, and tracks register definitions for register renaming purposes. <a href="#details">More...</a></p>
 

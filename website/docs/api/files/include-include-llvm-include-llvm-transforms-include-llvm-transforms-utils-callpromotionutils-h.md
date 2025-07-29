@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallPromotionUtils.h` File Reference
+# `CallPromotionUtils.h` File
 
 
 

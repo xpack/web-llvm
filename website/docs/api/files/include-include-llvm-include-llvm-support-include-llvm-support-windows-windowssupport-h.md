@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsSupport.h` File Reference
+# `WindowsSupport.h` File
 
 
 

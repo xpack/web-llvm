@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Model` Class Template Reference
+# `Model` Class Template
 
 <p>The template model for the base class which wraps a concrete implementation in a type erased interface. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnloopUpdater` Class Reference
+# `UnloopUpdater` Class
 
 <p>Find the new parent loop for all blocks within the "unloop" whose last backedges has just been removed. <a href="#details">More...</a></p>
 

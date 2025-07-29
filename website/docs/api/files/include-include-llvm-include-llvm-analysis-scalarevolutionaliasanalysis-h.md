@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEvolutionAliasAnalysis.h` File Reference
+# `ScalarEvolutionAliasAnalysis.h` File
 
 <p>This is the interface for a SCEV-based alias analysis. <a href="#details">More...</a></p>
 

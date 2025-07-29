@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BreakCriticalEdges.h` File Reference
+# `BreakCriticalEdges.h` File
 
 
 

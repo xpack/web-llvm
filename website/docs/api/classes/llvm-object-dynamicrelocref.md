@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicRelocRef` Class Reference
+# `DynamicRelocRef` Class
 
 
 

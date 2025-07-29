@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoCFIValue` Class Reference
+# `NoCFIValue` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `edit_distance.h` File Reference
+# `edit_distance.h` File
 
 <p>This file defines a Levenshtein distance function that works for any two sequences, with each element of each sequence being analogous to a character in a string. <a href="#details">More...</a></p>
 

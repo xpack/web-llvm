@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfInstrProfCorrelator` Class Template Reference
+# `DwarfInstrProfCorrelator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dwarfinstrprofcorrelator">DwarfInstrProfCorrelator</a> - A child of <a href="/web-llvm/docs/api/classes/llvm/instrprofcorrelatorimpl">InstrProfCorrelatorImpl</a> that takes DWARF debug info as input to correlate profiles. <a href="#details">More...</a></p>
 

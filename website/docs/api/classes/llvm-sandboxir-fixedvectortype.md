@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedVectorType` Class Reference
+# `FixedVectorType` Class
 
 
 

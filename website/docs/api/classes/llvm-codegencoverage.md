@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenCoverage` Class Reference
+# `CodeGenCoverage` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoInferenceModelRunner` Class Reference
+# `NoInferenceModelRunner` Class
 
 <p>A pseudo model runner. <a href="#details">More...</a></p>
 

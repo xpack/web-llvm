@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumSymbols` Class Reference
+# `DIAEnumSymbols` Class
 
 
 

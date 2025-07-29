@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRAsmPrinter` Class Reference
+# `AVRAsmPrinter` Class
 
 <p>An <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> assembly code printer. <a href="#details">More...</a></p>
 

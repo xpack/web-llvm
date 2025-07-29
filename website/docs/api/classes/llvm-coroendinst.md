@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroEndInst` Class Reference
+# `CoroEndInst` Class
 
 <p>This represents the llvm.coro.end instruction. <a href="#details">More...</a></p>
 

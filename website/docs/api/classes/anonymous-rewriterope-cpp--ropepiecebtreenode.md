@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RopePieceBTreeNode` Class Reference
+# `RopePieceBTreeNode` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreenode">RopePieceBTreeNode</a> - Common base class of <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreeleaf">RopePieceBTreeLeaf</a> and <a href="/web-llvm/docs/api/classes/anonymous-rewriterope-cpp-/ropepiecebtreeinterior">RopePieceBTreeInterior</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonRelocatableStringpool` Class Reference
+# `NonRelocatableStringpool` Class
 
 <p>A string table that doesn't need relocations. <a href="#details">More...</a></p>
 

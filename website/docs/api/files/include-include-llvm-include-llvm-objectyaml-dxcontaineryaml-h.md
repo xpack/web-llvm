@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXContainerYAML.h` File Reference
+# `DXContainerYAML.h` File
 
 <p>This file declares classes for handling the YAML representation of DXContainer. <a href="#details">More...</a></p>
 

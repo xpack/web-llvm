@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowStackGC` Class Reference
+# `ShadowStackGC` Class
 
 <p>A GC strategy for uncooperative targets. <a href="#details">More...</a></p>
 

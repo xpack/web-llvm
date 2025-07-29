@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugValueUser` Class Reference
+# `DebugValueUser` Class
 
 <p>Base class for tracking ValueAsMetadata/DIArgLists with user lookups and Owner callbacks outside of <a href="/web-llvm/docs/api/classes/llvm/valueasmetadata">ValueAsMetadata</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MaskedGatherScatterSDNode` Class Reference
+# `X86MaskedGatherScatterSDNode` Class
 
 
 

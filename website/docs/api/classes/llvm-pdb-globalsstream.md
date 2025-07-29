@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsStream` Class Reference
+# `GlobalsStream` Class
 
 
 

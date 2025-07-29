@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAG.cpp` File Reference
+# `ScheduleDAG.cpp` File
 
 
 

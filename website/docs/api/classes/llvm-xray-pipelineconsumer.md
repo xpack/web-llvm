@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelineConsumer` Class Reference
+# `PipelineConsumer` Class
 
 
 

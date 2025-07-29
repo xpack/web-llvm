@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionSamples` Class Reference
+# `FunctionSamples` Class
 
 <p>Representation of the samples collected for a function. <a href="#details">More...</a></p>
 

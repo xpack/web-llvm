@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MultiFormatConfig.h` File Reference
+# `MultiFormatConfig.h` File
 
 
 

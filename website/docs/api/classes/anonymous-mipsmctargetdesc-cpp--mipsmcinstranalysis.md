@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMCInstrAnalysis` Class Reference
+# `MipsMCInstrAnalysis` Class
 
 
 

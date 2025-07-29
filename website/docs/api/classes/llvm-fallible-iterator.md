@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fallible_iterator` Class Template Reference
+# `fallible_iterator` Class Template
 
 <p>A wrapper class for fallible iterators. <a href="#details">More...</a></p>
 

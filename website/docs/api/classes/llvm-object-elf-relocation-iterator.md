@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `elf_relocation_iterator` Class Reference
+# `elf_relocation_iterator` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiIncomingAnalysis` Class Reference
+# `PhiIncomingAnalysis` Class
 
 <p>Helper class that determines the relationship between incoming values of a phi in the control flow graph to determine where an incoming value can simply be taken as a scalar lane mask as-is, and where it needs to be merged with another, previously defined lane mask. <a href="#details">More...</a></p>
 

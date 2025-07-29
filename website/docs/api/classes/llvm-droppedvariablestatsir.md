@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DroppedVariableStatsIR` Class Reference
+# `DroppedVariableStatsIR` Class
 
 <p>A class to collect and print dropped debug information due to LLVM IR optimization passes. <a href="#details">More...</a></p>
 

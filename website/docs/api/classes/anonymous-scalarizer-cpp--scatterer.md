@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scatterer` Class Reference
+# `Scatterer` Class
 
 
 

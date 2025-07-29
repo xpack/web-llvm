@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionInfoBase` Class Template Reference
+# `RegionInfoBase` Class Template
 
 <p>Analysis that detects all canonical Regions. <a href="#details">More...</a></p>
 

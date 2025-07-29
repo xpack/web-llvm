@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBuffer` Class Reference
+# `MemoryBuffer` Class
 
 <p>This interface provides simple read-only access to a block of memory, and provides simple methods for reading files and standard input into a memory buffer. <a href="#details">More...</a></p>
 

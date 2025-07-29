@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PossiblyNonNegInst` Class Reference
+# `PossiblyNonNegInst` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> that can have a nneg flag (zext/uitofp). <a href="#details">More...</a></p>
 

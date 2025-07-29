@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatchStateUpdater` Class Reference
+# `MatchStateUpdater` Class
 
 <p>\A DAG update listener to keep the matching state (i.e. <a href="#details">More...</a></p>
 

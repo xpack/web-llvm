@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `jitprofiling.c` File Reference
+# `jitprofiling.c` File
 
 
 

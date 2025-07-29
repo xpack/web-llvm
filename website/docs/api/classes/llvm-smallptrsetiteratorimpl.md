@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPtrSetIteratorImpl` Class Reference
+# `SmallPtrSetIteratorImpl` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallptrsetiteratorimpl">SmallPtrSetIteratorImpl</a> - This is the common base class shared between all instances of <a href="/web-llvm/docs/api/classes/llvm/smallptrsetiterator">SmallPtrSetIterator</a>. <a href="#details">More...</a></p>
 

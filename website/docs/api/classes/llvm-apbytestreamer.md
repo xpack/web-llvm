@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APByteStreamer` Class Reference
+# `APByteStreamer` Class
 
 
 

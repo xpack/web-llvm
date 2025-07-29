@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiteralOperator` Class Reference
+# `LiteralOperator` Class
 
 
 

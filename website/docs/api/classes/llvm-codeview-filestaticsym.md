@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileStaticSym` Class Reference
+# `FileStaticSym` Class
 
 
 

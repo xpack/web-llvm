@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamWriter.h` File Reference
+# `BitstreamWriter.h` File
 
 
 

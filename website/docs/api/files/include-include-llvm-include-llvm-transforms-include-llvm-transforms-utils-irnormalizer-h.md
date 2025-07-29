@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRNormalizer.h` File Reference
+# `IRNormalizer.h` File
 
 
 

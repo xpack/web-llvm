@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractSubregRewriter` Class Reference
+# `ExtractSubregRewriter` Class
 
 <p>Specialized rewriter for EXTRACT_SUBREG instruction. <a href="#details">More...</a></p>
 

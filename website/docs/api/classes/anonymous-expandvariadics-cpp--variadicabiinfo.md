@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariadicABIInfo` Class Reference
+# `VariadicABIInfo` Class
 
 
 

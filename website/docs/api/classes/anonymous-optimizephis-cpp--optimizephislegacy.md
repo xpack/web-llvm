@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizePHIsLegacy` Class Reference
+# `OptimizePHIsLegacy` Class
 
 
 

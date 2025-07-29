@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerMatrixIntrinsics.h` File Reference
+# `LowerMatrixIntrinsics.h` File
 
 
 

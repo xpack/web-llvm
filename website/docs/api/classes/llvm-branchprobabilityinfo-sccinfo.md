@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SccInfo` Class Reference
+# `SccInfo` Class
 
 
 

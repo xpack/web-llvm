@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryByteStream` Class Reference
+# `BinaryByteStream` Class
 
 <p>An implementation of <a href="/web-llvm/docs/api/classes/llvm/binarystream">BinaryStream</a> which holds its entire data set in a single contiguous buffer. <a href="#details">More...</a></p>
 

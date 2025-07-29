@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArchitectureSet` Class Reference
+# `ArchitectureSet` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoRegAllocFailure` Class Reference
+# `DiagnosticInfoRegAllocFailure` Class
 
 
 

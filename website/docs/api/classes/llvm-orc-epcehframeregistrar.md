@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCEHFrameRegistrar` Class Reference
+# `EPCEHFrameRegistrar` Class
 
 <p>Register/Deregisters EH frames in a remote process via a <a href="/web-llvm/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> instance. <a href="#details">More...</a></p>
 

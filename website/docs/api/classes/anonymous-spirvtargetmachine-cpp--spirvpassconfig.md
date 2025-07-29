@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVPassConfig` Class Reference
+# `SPIRVPassConfig` Class
 
 
 

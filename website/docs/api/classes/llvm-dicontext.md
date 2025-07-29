@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIContext` Class Reference
+# `DIContext` Class
 
 
 

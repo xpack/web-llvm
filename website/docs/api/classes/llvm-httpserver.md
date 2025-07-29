@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPServer` Class Reference
+# `HTTPServer` Class
 
 <p>An HTTP server which can listen on a single TCP/IP port for HTTP requests and delgate them to the appropriate registered handler. <a href="#details">More...</a></p>
 

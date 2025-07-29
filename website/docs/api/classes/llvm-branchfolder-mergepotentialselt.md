@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergePotentialsElt` Class Reference
+# `MergePotentialsElt` Class
 
 
 

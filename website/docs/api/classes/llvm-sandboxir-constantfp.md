@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantFP` Class Reference
+# `ConstantFP` Class
 
 
 

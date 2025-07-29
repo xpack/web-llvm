@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowStackGCLowering` Class Reference
+# `ShadowStackGCLowering` Class
 
 
 

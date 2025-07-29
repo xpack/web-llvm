@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceManager.h` File Reference
+# `ResourceManager.h` File
 
 <p>The classes here represent processor resource units and their management strategy. <a href="#details">More...</a></p>
 

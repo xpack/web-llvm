@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptPassGateInstrumentation` Class Reference
+# `OptPassGateInstrumentation` Class
 
 
 

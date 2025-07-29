@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GuardWideningImpl` Class Reference
+# `GuardWideningImpl` Class
 
 
 

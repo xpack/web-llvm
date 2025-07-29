@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcGenRegisterInfo` Class Reference
+# `SparcGenRegisterInfo` Class
 
 
 

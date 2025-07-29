@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreDisassembler` Class Reference
+# `XCoreDisassembler` Class
 
 <p>A disassembler class for <a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyTailDuplicateLegacy` Class Reference
+# `EarlyTailDuplicateLegacy` Class
 
 
 

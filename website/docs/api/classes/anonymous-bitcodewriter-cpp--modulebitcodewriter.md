@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleBitcodeWriter` Class Reference
+# `ModuleBitcodeWriter` Class
 
 <p>Class to manage the bitcode writing for a module. <a href="#details">More...</a></p>
 

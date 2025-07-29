@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAttributorPass` Class Reference
+# `AMDGPUAttributorPass` Class
 
 
 

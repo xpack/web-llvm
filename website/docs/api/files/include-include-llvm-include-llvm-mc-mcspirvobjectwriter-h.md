@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSPIRVObjectWriter.h` File Reference
+# `MCSPIRVObjectWriter.h` File
 
 
 

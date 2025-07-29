@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeFuncProto` Class Reference
+# `BTFTypeFuncProto` Class
 
 <p>Handle function pointer. <a href="#details">More...</a></p>
 

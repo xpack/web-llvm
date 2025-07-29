@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AntiDepBreaker` Class Reference
+# `AntiDepBreaker` Class
 
 <p>This class works in conjunction with the post-RA scheduler to rename registers to break register anti-dependencies (WAR hazards). <a href="#details">More...</a></p>
 

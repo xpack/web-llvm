@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedHashString.h` File Reference
+# `CachedHashString.h` File
 
 <p>This file defines CachedHashString and CachedHashStringRef. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedInstrProfReader` Class Reference
+# `IndexedInstrProfReader` Class
 
 <p>Reader for the indexed binary instrprof format. <a href="#details">More...</a></p>
 

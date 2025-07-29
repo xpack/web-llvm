@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportListsTy` Class Reference
+# `ImportListsTy` Class
 
 
 

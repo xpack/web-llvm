@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPReductionRecipe` Class Reference
+# `VPReductionRecipe` Class
 
 <p>A recipe to represent inloop reduction operations, performing a reduction on a vector operand into a scalar value, and adding the result to a chain. <a href="#details">More...</a></p>
 

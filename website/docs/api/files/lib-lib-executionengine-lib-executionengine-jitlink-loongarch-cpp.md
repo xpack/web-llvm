@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `loongarch.cpp` File Reference
+# `loongarch.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInstImpl` Class Template Reference
+# `CastInstImpl` Class Template
 
 
 

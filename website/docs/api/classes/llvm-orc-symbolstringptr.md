@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStringPtr` Class Reference
+# `SymbolStringPtr` Class
 
 <p>Pointer to a pooled string representing a symbol name. <a href="#details">More...</a></p>
 

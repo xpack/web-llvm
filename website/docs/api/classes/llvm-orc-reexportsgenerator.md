@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReexportsGenerator` Class Reference
+# `ReexportsGenerator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/reexportsgenerator">ReexportsGenerator</a> can be used with <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib/#ae89dfebe97fc65907c1b9194aafe1ade">JITDylib::addGenerator</a> to automatically re-export a subset of the source <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib">JITDylib</a>'s symbols in the target. <a href="#details">More...</a></p>
 

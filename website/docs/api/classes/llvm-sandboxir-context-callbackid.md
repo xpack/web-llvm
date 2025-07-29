@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallbackID` Class Reference
+# `CallbackID` Class
 
 <p>An <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> for a registered callback. <a href="#details">More...</a></p>
 

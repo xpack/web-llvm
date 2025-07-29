@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LogBuilderConsumer` Class Reference
+# `LogBuilderConsumer` Class
 
 
 

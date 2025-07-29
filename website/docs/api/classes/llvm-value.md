@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Value` Class Reference
+# `Value` Class
 
 <p>LLVM <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> Representation. <a href="#details">More...</a></p>
 

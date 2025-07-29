@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicMatchContext` Class Reference
+# `BasicMatchContext` Class
 
 <p>MatchContext can repurpose existing patterns to behave differently under a certain context. <a href="#details">More...</a></p>
 

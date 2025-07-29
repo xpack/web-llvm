@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64Operand` Class Reference
+# `AArch64Operand` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-aarch64asmparser-cpp-/aarch64operand">AArch64Operand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> machine instruction. <a href="#details">More...</a></p>
 

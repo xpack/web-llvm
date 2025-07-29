@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionDXContainer` Class Reference
+# `MCSectionDXContainer` Class
 
 
 

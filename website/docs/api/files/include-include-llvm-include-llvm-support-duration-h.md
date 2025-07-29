@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Duration.h` File Reference
+# `Duration.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMap` Class Template Reference
+# `DenseMap` Class Template
 
 
 

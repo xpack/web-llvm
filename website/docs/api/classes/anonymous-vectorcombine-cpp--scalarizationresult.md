@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarizationResult` Class Reference
+# `ScalarizationResult` Class
 
 <p>Helper class to indicate whether a vector index can be safely scalarized and if a freeze needs to be inserted. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBInfo` Class Reference
+# `BBInfo` Class
 
 
 

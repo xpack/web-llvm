@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Node` Class Reference
+# `Node` Class
 
 <p>Abstract base class for all Nodes. <a href="#details">More...</a></p>
 

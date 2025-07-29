@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TraitsT` Class Reference
+# `TraitsT` Class
 
 
 

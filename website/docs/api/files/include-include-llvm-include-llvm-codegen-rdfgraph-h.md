@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RDFGraph.h` File Reference
+# `RDFGraph.h` File
 
 
 

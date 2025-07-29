@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProcedureRecord` Class Reference
+# `ProcedureRecord` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFAsmParser` Class Reference
+# `BPFAsmParser` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ZExtBuilder` Class Reference
+# `ZExtBuilder` Class
 
 <p>Build a zero extension instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuloScheduleExpanderMVE` Class Reference
+# `ModuloScheduleExpanderMVE` Class
 
 <p>Expand the kernel using modulo variable expansion algorithm (MVE). <a href="#details">More...</a></p>
 

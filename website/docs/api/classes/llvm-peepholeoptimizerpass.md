@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PeepholeOptimizerPass` Class Reference
+# `PeepholeOptimizerPass` Class
 
 
 

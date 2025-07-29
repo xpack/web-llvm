@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstrBundleIterator` Class Template Reference
+# `MachineInstrBundleIterator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> iterator that automatically skips over MIs that are inside bundles (i.e. <a href="#details">More...</a></p>
 

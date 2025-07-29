@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadEntryInfoTargetRegion` Class Reference
+# `OffloadEntryInfoTargetRegion` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/target">Target</a> region entries info. <a href="#details">More...</a></p>
 

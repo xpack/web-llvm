@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCPreRASchedStrategy` Class Reference
+# `PPCPreRASchedStrategy` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a> implementation for PowerPC pre RA scheduling. <a href="#details">More...</a></p>
 

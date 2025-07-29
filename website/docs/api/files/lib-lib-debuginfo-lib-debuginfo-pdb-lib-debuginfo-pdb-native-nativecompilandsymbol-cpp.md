@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeCompilandSymbol.cpp` File Reference
+# `NativeCompilandSymbol.cpp` File
 
 
 

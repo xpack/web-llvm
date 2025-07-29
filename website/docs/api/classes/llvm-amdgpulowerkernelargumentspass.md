@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerKernelArgumentsPass` Class Reference
+# `AMDGPULowerKernelArgumentsPass` Class
 
 
 

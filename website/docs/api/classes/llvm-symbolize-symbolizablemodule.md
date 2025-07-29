@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolizableModule` Class Reference
+# `SymbolizableModule` Class
 
 
 

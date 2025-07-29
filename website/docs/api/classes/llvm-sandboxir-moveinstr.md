@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MoveInstr` Class Reference
+# `MoveInstr` Class
 
 
 

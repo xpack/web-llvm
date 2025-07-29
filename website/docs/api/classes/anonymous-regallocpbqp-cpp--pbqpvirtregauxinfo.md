@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PBQPVirtRegAuxInfo` Class Reference
+# `PBQPVirtRegAuxInfo` Class
 
 <p>PBQP-specific implementation of weight normalization. <a href="#details">More...</a></p>
 

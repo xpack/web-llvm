@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFSHandler.h` File Reference
+# `IFSHandler.h` File
 
 <p>This file declares an interface for reading and writing .ifs (text-based InterFace Stub) files. <a href="#details">More...</a></p>
 

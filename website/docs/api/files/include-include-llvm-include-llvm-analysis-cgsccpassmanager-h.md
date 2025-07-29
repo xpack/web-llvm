@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGSCCPassManager.h` File Reference
+# `CGSCCPassManager.h` File
 
 <p>This header provides classes for managing passes over SCCs of the call graph. <a href="#details">More...</a></p>
 

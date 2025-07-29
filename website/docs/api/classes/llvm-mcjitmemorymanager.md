@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCJITMemoryManager` Class Reference
+# `MCJITMemoryManager` Class
 
 
 

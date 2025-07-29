@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicRelocationSection` Class Reference
+# `DynamicRelocationSection` Class
 
 
 

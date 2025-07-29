@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `upward_defs_iterator` Class Reference
+# `upward_defs_iterator` Class
 
 <p>Provide an iterator that walks defs, giving both the memory access, and the current pointer location, updating the pointer location as it changes due to phi node translation. <a href="#details">More...</a></p>
 

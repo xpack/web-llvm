@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Option` Class Reference
+# `Option` Class
 
 
 

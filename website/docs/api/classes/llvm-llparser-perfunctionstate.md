@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerFunctionState` Class Reference
+# `PerFunctionState` Class
 
 
 

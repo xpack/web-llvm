@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalQualifiedName` Class Reference
+# `GlobalQualifiedName` Class
 
 
 

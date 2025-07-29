@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteState` Class Reference
+# `WriteState` Class
 
 <p>Tracks uses of a register definition (e.g. <a href="#details">More...</a></p>
 

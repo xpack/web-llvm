@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVUsersAnalysis` Class Reference
+# `IVUsersAnalysis` Class
 
 <p>Analysis pass that exposes the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/ivusers">IVUsers</a></span> for a loop. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionImportGlobalProcessing` Class Reference
+# `FunctionImportGlobalProcessing` Class
 
 <p>Class to handle necessary <a href="/web-llvm/docs/api/classes/llvm/globalvalue">GlobalValue</a> changes required by ThinLTO function importing, including linkage changes and any necessary renaming. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRNamerPass.cpp` File Reference
+# `MIRNamerPass.cpp` File
 
 
 

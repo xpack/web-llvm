@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Plugin` Class Reference
+# `Plugin` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/linkgraphlinkinglayer/plugin">Plugin</a> instances can be added to the <a href="/web-llvm/docs/api/classes/llvm/orc/objectlinkinglayer">ObjectLinkingLayer</a> to receive callbacks when code is loaded or emitted, and when JITLink is being configured. <a href="#details">More...</a></p>
 

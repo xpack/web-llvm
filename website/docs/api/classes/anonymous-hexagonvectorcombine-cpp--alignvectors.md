@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignVectors` Class Reference
+# `AlignVectors` Class
 
 
 

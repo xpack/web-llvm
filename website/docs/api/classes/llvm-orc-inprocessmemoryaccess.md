@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProcessMemoryAccess` Class Reference
+# `InProcessMemoryAccess` Class
 
 
 

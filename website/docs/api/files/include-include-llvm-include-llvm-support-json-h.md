@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSON.h` File Reference
+# `JSON.h` File
 
 <p>This file supports working with JSON data. <a href="#details">More...</a></p>
 

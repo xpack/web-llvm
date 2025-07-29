@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicInst.h` File Reference
+# `IntrinsicInst.h` File
 
 
 

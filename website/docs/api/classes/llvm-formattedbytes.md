@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormattedBytes` Class Reference
+# `FormattedBytes` Class
 
 
 

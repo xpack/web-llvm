@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPeepholeSDWAPass` Class Reference
+# `SIPeepholeSDWAPass` Class
 
 
 

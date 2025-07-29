@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSwitch` Class Template Reference
+# `TypeSwitch` Class Template
 
 <p>Specialization of <a href="/web-llvm/docs/api/classes/llvm/typeswitch">TypeSwitch</a> for void returning callables. <a href="#details">More...</a></p>
 

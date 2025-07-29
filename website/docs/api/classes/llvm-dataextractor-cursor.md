@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cursor` Class Reference
+# `Cursor` Class
 
 <p>A class representing a position in a <a href="/web-llvm/docs/api/classes/llvm/dataextractor">DataExtractor</a>, as well as any error encountered during extraction. <a href="#details">More...</a></p>
 

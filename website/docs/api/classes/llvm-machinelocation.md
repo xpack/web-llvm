@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLocation` Class Reference
+# `MachineLocation` Class
 
 
 

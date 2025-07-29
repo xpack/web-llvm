@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegSortData` Class Reference
+# `RegSortData` Class
 
 <p>This class holds data which is used to order reuse candidates. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOLinkGraphBuilder_arm64` Class Reference
+# `MachOLinkGraphBuilder_arm64` Class
 
 
 

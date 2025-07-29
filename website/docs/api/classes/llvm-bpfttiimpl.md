@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFTTIImpl` Class Reference
+# `BPFTTIImpl` Class
 
 
 

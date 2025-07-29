@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYConstantPoolMBB` Class Reference
+# `CSKYConstantPoolMBB` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/cskyconstantpoolmbb">CSKYConstantPoolMBB</a> - CSKY-specific constantpool value of a machine basic block. <a href="#details">More...</a></p>
 

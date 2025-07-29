@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTargetLowering` Class Reference
+# `HexagonTargetLowering` Class
 
 
 

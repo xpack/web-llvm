@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedDFSResult` Class Reference
+# `SchedDFSResult` Class
 
 <p>Compute the values of each DAG node for various metrics during DFS. <a href="#details">More...</a></p>
 

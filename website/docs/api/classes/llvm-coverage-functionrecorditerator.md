@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionRecordIterator` Class Reference
+# `FunctionRecordIterator` Class
 
 <p>Iterator over Functions, optionally filtered to a single file. <a href="#details">More...</a></p>
 

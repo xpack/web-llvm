@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphDOTPrinterPass` Class Reference
+# `CallGraphDOTPrinterPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> for printing the call graph to a dot file. <a href="#details">More...</a></p>
 

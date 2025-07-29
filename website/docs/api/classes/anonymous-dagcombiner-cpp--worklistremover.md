@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorklistRemover` Class Reference
+# `WorklistRemover` Class
 
 <p>This class is a DAGUpdateListener that removes any deleted nodes from the worklist. <a href="#details">More...</a></p>
 

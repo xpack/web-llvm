@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameMatcher` Class Reference
+# `NameMatcher` Class
 
 
 

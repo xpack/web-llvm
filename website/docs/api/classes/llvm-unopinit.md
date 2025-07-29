@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnOpInit` Class Reference
+# `UnOpInit` Class
 
 <p>!op (X) - Transform an init. <a href="#details">More...</a></p>
 

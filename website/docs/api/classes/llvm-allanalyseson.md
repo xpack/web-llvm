@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllAnalysesOn` Class Template Reference
+# `AllAnalysesOn` Class Template
 
 <p>This templated class represents "all analyses that operate over \&lt;a
 particular IR unit\&gt;" (e.g. <a href="#details">More...</a></p>

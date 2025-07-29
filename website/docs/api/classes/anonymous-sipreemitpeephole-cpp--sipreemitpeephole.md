@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPreEmitPeephole` Class Reference
+# `SIPreEmitPeephole` Class
 
 
 

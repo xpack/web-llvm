@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaConstantPoolConstant` Class Reference
+# `XtensaConstantPoolConstant` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xtensaconstantpoolconstant">XtensaConstantPoolConstant</a> - Xtensa-specific constant pool values for Constants (for example BlockAddresses). <a href="#details">More...</a></p>
 

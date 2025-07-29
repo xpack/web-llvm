@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mangler` Class Reference
+# `Mangler` Class
 
 
 

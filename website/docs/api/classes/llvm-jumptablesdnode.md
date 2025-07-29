@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JumpTableSDNode` Class Reference
+# `JumpTableSDNode` Class
 
 
 

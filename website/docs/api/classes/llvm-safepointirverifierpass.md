@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafepointIRVerifierPass` Class Reference
+# `SafepointIRVerifierPass` Class
 
 <p>Create an instance of the safepoint verifier pass which can be added to a pass pipeline to check for relocation bugs. <a href="#details">More...</a></p>
 

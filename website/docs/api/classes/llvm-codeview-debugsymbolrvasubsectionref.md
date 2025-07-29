@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSymbolRVASubsectionRef` Class Reference
+# `DebugSymbolRVASubsectionRef` Class
 
 
 

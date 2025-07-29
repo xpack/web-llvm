@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAIIMFObsDelInstaller` Class Reference
+# `RAIIMFObsDelInstaller` Class
 
 <p>Class to install both of the above. <a href="#details">More...</a></p>
 

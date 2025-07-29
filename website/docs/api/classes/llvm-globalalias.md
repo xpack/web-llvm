@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalAlias` Class Reference
+# `GlobalAlias` Class
 
 
 

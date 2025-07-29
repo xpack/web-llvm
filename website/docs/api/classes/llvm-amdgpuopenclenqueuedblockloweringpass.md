@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUOpenCLEnqueuedBlockLoweringPass` Class Reference
+# `AMDGPUOpenCLEnqueuedBlockLoweringPass` Class
 
 
 

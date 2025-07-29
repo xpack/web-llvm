@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DllOptTable` Class Reference
+# `DllOptTable` Class
 
 
 

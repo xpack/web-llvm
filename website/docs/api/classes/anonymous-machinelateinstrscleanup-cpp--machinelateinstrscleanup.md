@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLateInstrsCleanup` Class Reference
+# `MachineLateInstrsCleanup` Class
 
 
 

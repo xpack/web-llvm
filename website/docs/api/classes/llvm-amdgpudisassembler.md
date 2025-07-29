@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUDisassembler` Class Reference
+# `AMDGPUDisassembler` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintIRInstrumentation` Class Reference
+# `PrintIRInstrumentation` Class
 
 <p>Instrumentation to print IR before/after passes. <a href="#details">More...</a></p>
 

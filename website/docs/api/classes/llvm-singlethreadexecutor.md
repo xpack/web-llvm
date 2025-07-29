@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SingleThreadExecutor` Class Reference
+# `SingleThreadExecutor` Class
 
 <p>A non-threaded implementation. <a href="#details">More...</a></p>
 

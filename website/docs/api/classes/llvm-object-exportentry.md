@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExportEntry` Class Reference
+# `ExportEntry` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/object/exportentry">ExportEntry</a> encapsulates the current-state-of-the-walk used when doing a non-recursive walk of the trie data structure. <a href="#details">More...</a></p>
 

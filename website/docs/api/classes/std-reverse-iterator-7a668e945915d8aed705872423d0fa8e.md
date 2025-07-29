@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reverse_iterator` Class Template Reference
+# `reverse_iterator` Class Template
 
 
 

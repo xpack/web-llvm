@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FastISel` Class Reference
+# `X86FastISel` Class
 
 
 

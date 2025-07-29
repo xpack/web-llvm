@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindRow` Class Reference
+# `UnwindRow` Class
 
 <p>A class that represents a single row in the unwind table that is decoded by parsing the DWARF Call Frame Information opcodes. <a href="#details">More...</a></p>
 

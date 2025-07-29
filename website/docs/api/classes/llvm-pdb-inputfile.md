@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InputFile` Class Reference
+# `InputFile` Class
 
 
 

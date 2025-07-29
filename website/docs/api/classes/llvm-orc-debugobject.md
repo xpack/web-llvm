@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugObject` Class Reference
+# `DebugObject` Class
 
 <p>The plugin creates a debug object from when JITLink starts processing the corresponding <a href="/web-llvm/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a>. <a href="#details">More...</a></p>
 

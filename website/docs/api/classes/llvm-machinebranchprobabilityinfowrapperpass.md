@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBranchProbabilityInfoWrapperPass` Class Reference
+# `MachineBranchProbabilityInfoWrapperPass` Class
 
 
 

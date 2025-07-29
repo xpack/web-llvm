@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPValue` Class Reference
+# `VPValue` Class
 
 
 

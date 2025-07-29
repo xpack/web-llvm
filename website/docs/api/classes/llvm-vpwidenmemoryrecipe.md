@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenMemoryRecipe` Class Reference
+# `VPWidenMemoryRecipe` Class
 
 <p>A common base class for widening memory operations. <a href="#details">More...</a></p>
 

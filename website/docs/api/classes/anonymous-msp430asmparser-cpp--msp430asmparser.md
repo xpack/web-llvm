@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430AsmParser` Class Reference
+# `MSP430AsmParser` Class
 
 <p>Parses <a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a> assembly from a stream. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SandboxVectorizer.h` File Reference
+# `SandboxVectorizer.h` File
 
 
 

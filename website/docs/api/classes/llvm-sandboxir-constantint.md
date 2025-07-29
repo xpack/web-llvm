@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantInt` Class Reference
+# `ConstantInt` Class
 
 
 

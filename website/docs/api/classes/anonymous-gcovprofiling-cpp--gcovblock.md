@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVBlock` Class Reference
+# `GCOVBlock` Class
 
 
 

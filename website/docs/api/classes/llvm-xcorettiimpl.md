@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTTIImpl` Class Reference
+# `XCoreTTIImpl` Class
 
 
 

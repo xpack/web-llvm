@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseSet` Class Reference
+# `UseSet` Class
 
 <p>Tracks the change of the source <a href="/web-llvm/docs/api/classes/llvm/sandboxir/value">Value</a> of a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/use">sandboxir::Use</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfMCDCBitmapInstBase` Class Reference
+# `InstrProfMCDCBitmapInstBase` Class
 
 <p>A base class for instrprof mcdc intrinsics that require global bitmap bytes. <a href="#details">More...</a></p>
 

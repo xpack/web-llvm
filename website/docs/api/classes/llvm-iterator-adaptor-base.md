@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator_adaptor_base` Class Template Reference
+# `iterator_adaptor_base` Class Template
 
 <p>CRTP base class for adapting an iterator to a different type. <a href="#details">More...</a></p>
 

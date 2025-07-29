@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableList.h` File Reference
+# `ImmutableList.h` File
 
 <p>This file defines the ImmutableList class. <a href="#details">More...</a></p>
 

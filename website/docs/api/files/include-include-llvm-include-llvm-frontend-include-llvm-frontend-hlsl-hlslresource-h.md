@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HLSLResource.h` File Reference
+# `HLSLResource.h` File
 
 
 

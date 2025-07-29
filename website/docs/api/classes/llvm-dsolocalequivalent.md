@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DSOLocalEquivalent` Class Reference
+# `DSOLocalEquivalent` Class
 
 <p>Wrapper for a function that represents a value that functionally represents the original function. <a href="#details">More...</a></p>
 

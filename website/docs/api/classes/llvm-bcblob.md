@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCBlob` Class Reference
+# `BCBlob` Class
 
 <p>Represents an untyped blob of bytes. <a href="#details">More...</a></p>
 

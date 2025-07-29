@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVGlobalRegistry` Class Reference
+# `SPIRVGlobalRegistry` Class
 
 
 

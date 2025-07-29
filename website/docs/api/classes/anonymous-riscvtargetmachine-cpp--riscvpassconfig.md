@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVPassConfig` Class Reference
+# `RISCVPassConfig` Class
 
 
 

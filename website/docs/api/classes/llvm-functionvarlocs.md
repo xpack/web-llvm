@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionVarLocs` Class Reference
+# `FunctionVarLocs` Class
 
 <p>Data structure describing the variable locations in a function. <a href="#details">More...</a></p>
 

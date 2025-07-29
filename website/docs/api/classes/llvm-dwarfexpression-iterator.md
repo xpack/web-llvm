@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iterator` Class Reference
+# `iterator` Class
 
 <p>An iterator to go through the expression operations. <a href="#details">More...</a></p>
 

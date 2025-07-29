@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatisticInfo` Class Reference
+# `StatisticInfo` Class
 
 <p>This class is used in a <a href="/web-llvm/docs/api/classes/llvm/managedstatic">ManagedStatic</a> so that it is created on demand (when the first statistic is bumped) and destroyed only when llvm_shutdown is called. <a href="#details">More...</a></p>
 
@@ -292,7 +292,7 @@ class anonymous{Statistic.cpp}::StatisticInfo { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend void undefined</td>
+<td class="doxyMemberName">friend void</td>
 </tr>
 </table>
 </td>

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCELFObjectWriter` Class Reference
+# `PPCELFObjectWriter` Class
 
 
 

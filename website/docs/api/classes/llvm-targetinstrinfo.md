@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetInstrInfo` Class Reference
+# `TargetInstrInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> - Interface to description of machine instruction set. <a href="#details">More...</a></p>
 

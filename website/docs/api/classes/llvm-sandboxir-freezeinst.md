@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreezeInst` Class Reference
+# `FreezeInst` Class
 
 
 

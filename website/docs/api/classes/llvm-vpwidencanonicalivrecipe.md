@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenCanonicalIVRecipe` Class Reference
+# `VPWidenCanonicalIVRecipe` Class
 
 <p>A Recipe for widening the canonical induction variable of the vector loop. <a href="#details">More...</a></p>
 

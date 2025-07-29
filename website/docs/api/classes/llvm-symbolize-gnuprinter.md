@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GNUPrinter` Class Reference
+# `GNUPrinter` Class
 
 
 

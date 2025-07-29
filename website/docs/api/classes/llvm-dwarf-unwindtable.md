@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindTable` Class Reference
+# `UnwindTable` Class
 
 <p>A class that contains all <a href="/web-llvm/docs/api/classes/llvm/dwarf/unwindrow">UnwindRow</a> objects for an <a href="/web-llvm/docs/api/classes/llvm/dwarf/fde">FDE</a> or a single unwind row for a <a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a>. <a href="#details">More...</a></p>
 

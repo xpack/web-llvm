@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterCoalescer.h` File Reference
+# `RegisterCoalescer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IO` Class Reference
+# `IO` Class
 
 
 

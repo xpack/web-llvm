@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLocTracker` Class Reference
+# `MLocTracker` Class
 
 <p>Tracker for what values are in machine locations. <a href="#details">More...</a></p>
 

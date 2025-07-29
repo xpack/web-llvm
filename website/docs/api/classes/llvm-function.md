@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Function` Class Reference
+# `Function` Class
 
 
 
@@ -3743,7 +3743,7 @@ go" of all references that they are maintaining. <a href="#a768878e5a19c5ccdf0ad
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend <a href="/web-llvm/docs/api/classes/llvm/iplist">iplist</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> &gt;<a href="#a19595c245bd2e3eefa93ce22db5ad15f">::iterator</a> undefined</td>
+<td class="doxyMemberName">friend <a href="/web-llvm/docs/api/classes/llvm/iplist">iplist</a>&lt; <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> &gt;<a href="#a19595c245bd2e3eefa93ce22db5ad15f">::iterator</a></td>
 </tr>
 </table>
 </td>
@@ -3770,7 +3770,7 @@ go" of all references that they are maintaining. <a href="#a768878e5a19c5ccdf0ad
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend void undefined</td>
+<td class="doxyMemberName">friend void</td>
 </tr>
 </table>
 </td>

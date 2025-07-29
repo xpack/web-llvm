@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MILOHDirective` Class Reference
+# `MILOHDirective` Class
 
 
 

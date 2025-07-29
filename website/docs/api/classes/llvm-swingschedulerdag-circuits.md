@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Circuits` Class Reference
+# `Circuits` Class
 
 <p>Helper class to implement Johnson's circuit finding algorithm. <a href="#details">More...</a></p>
 

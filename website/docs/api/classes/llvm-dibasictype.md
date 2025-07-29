@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIBasicType` Class Reference
+# `DIBasicType` Class
 
 <p>Basic type, like 'int' or 'float'. <a href="#details">More...</a></p>
 

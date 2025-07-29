@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBuffer.h` File Reference
+# `MemoryBuffer.h` File
 
 
 

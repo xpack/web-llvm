@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPIRInstruction` Class Reference
+# `VPIRInstruction` Class
 
 <p>A recipe to wrap on original IR instruction not to be modified during execution, execept for PHIs. <a href="#details">More...</a></p>
 

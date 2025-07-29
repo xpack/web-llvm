@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVUsersWrapperPass` Class Reference
+# `IVUsersWrapperPass` Class
 
 
 

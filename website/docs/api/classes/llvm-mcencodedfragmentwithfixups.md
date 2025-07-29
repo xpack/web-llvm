@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCEncodedFragmentWithFixups` Class Template Reference
+# `MCEncodedFragmentWithFixups` Class Template
 
 <p>Interface implemented by fragments that contain encoded instructions and/or data and also have fixups registered. <a href="#details">More...</a></p>
 

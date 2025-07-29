@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DISubprogram` Class Reference
+# `DISubprogram` Class
 
 <p>Subprogram description. <a href="#details">More...</a></p>
 

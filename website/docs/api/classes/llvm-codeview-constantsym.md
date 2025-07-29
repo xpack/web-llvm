@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantSym` Class Reference
+# `ConstantSym` Class
 
 
 

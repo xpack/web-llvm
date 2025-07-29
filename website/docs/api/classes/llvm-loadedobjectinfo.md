@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadedObjectInfo` Class Reference
+# `LoadedObjectInfo` Class
 
 <p>An inferface for inquiring the load address of a loaded object file to be used by the <a href="/web-llvm/docs/api/classes/llvm/dicontext">DIContext</a> implementations when applying relocations on the fly. <a href="#details">More...</a></p>
 

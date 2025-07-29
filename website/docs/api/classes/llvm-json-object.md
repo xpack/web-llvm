@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Object` Class Reference
+# `Object` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/json/object">Object</a> is a JSON object, which maps strings to heterogenous JSON values. <a href="#details">More...</a></p>
 

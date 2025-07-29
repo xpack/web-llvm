@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntry.h` File Reference
+# `StringMapEntry.h` File
 
 <p>This file defines the StringMapEntry class - it is intended to be a low dependency implementation detail of StringMap that is more suitable for inclusion in public headers than StringMap.h itself is. <a href="#details">More...</a></p>
 

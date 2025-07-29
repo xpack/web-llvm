@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRTransformLayer` Class Reference
+# `IRTransformLayer` Class
 
 <p>A layer that applies a transform to emitted modules. <a href="#details">More...</a></p>
 

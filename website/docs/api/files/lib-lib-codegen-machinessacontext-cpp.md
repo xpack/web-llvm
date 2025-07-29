@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSSAContext.cpp` File Reference
+# `MachineSSAContext.cpp` File
 
 <p>This file defines a specialization of the <a href="/web-llvm/docs/api/classes/llvm/genericssacontext">GenericSSAContext&lt;X&gt;</a> template class for Machine IR. <a href="#details">More...</a></p>
 

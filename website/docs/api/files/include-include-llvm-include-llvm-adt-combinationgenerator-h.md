@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinationGenerator.h` File Reference
+# `CombinationGenerator.h` File
 
 <p>Combination generator. <a href="#details">More...</a></p>
 

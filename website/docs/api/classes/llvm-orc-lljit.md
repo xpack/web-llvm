@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLJIT` Class Reference
+# `LLJIT` Class
 
 <p>A pre-fabricated ORC JIT stack that can serve as an alternative to <a href="/web-llvm/docs/api/classes/llvm/mcjit">MCJIT</a>. <a href="#details">More...</a></p>
 

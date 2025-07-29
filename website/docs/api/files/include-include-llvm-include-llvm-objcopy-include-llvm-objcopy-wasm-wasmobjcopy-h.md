@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmObjcopy.h` File Reference
+# `WasmObjcopy.h` File
 
 
 

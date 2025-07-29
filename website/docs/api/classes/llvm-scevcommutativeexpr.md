@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVCommutativeExpr` Class Reference
+# `SCEVCommutativeExpr` Class
 
 <p>This node is the base class for n'ary commutative operators. <a href="#details">More...</a></p>
 

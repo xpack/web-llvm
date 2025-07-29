@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicLaneMaskAnalyzer` Class Reference
+# `IntrinsicLaneMaskAnalyzer` Class
 
 
 

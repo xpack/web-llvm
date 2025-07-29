@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionAttrs.h` File Reference
+# `FunctionAttrs.h` File
 
 <p>Provides passes for computing function attributes based on interprocedural analyses. <a href="#details">More...</a></p>
 

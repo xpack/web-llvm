@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BatchAAResults` Class Reference
+# `BatchAAResults` Class
 
 <p>This class is a wrapper over an <a href="/web-llvm/docs/api/classes/llvm/aaresults">AAResults</a>, and it is intended to be used only when there are no IR changes inbetween queries. <a href="#details">More...</a></p>
 

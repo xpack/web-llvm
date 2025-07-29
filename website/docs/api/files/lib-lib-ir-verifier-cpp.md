@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Verifier.cpp` File Reference
+# `Verifier.cpp` File
 
 
 

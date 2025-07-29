@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalityAnalysis` Class Reference
+# `LegalityAnalysis` Class
 
 <p>Performs the legality analysis and returns a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/legalityresult">LegalityResult</a> object. <a href="#details">More...</a></p>
 

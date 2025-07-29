@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Context` Class Reference
+# `Context` Class
 
 
 

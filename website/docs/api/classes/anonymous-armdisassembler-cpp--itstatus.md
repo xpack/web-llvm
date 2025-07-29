@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ITStatus` Class Reference
+# `ITStatus` Class
 
 
 

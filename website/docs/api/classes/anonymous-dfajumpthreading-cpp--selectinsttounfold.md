@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectInstToUnfold` Class Reference
+# `SelectInstToUnfold` Class
 
 
 

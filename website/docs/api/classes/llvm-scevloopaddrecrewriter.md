@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVLoopAddRecRewriter` Class Reference
+# `SCEVLoopAddRecRewriter` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/scevloopaddrecrewriter">SCEVLoopAddRecRewriter</a> takes a scalar evolution expression and applies the Map (<a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> -&gt; <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a>) to all AddRecExprs. <a href="#details">More...</a></p>
 

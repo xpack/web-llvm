@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSyncDependenceAnalysis` Class Template Reference
+# `GenericSyncDependenceAnalysis` Class Template
 
 <p>Locate join blocks for disjoint paths starting at a divergent branch. <a href="#details">More...</a></p>
 

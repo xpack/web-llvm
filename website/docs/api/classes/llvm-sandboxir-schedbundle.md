@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedBundle` Class Reference
+# `SchedBundle` Class
 
 <p>The nodes that need to be scheduled back-to-back in a single scheduling cycle form a <a href="/web-llvm/docs/api/classes/llvm/sandboxir/schedbundle">SchedBundle</a>. <a href="#details">More...</a></p>
 

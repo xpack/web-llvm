@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueHandle.h` File Reference
+# `ValueHandle.h` File
 
 
 

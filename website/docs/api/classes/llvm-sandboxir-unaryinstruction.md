@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnaryInstruction` Class Reference
+# `UnaryInstruction` Class
 
 <p>An abstract class, parent of unary instructions. <a href="#details">More...</a></p>
 

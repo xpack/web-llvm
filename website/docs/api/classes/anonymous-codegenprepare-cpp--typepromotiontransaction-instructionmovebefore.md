@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionMoveBefore` Class Reference
+# `InstructionMoveBefore` Class
 
 <p>Move an instruction before another. <a href="#details">More...</a></p>
 

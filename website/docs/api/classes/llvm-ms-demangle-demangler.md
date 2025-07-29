@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Demangler` Class Reference
+# `Demangler` Class
 
 
 

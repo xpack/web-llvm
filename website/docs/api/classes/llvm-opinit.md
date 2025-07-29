@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpInit` Class Reference
+# `OpInit` Class
 
 <p>Base class for operators. <a href="#details">More...</a></p>
 

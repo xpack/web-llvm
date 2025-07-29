@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBlocksTraversal` Class Reference
+# `LoopBlocksTraversal` Class
 
 <p>Traverse the blocks in a loop using a depth-first search. <a href="#details">More...</a></p>
 

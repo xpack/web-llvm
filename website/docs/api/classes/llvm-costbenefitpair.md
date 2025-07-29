@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostBenefitPair` Class Reference
+# `CostBenefitPair` Class
 
 
 

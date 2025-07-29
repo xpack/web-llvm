@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuildInfoSym` Class Reference
+# `BuildInfoSym` Class
 
 
 

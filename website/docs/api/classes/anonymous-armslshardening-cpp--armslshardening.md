@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMSLSHardening` Class Reference
+# `ARMSLSHardening` Class
 
 
 

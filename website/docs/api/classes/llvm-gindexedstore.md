@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GIndexedStore` Class Reference
+# `GIndexedStore` Class
 
 <p>Represents indexed stores. <a href="#details">More...</a></p>
 

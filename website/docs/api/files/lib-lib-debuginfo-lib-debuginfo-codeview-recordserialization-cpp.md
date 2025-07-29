@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordSerialization.cpp` File Reference
+# `RecordSerialization.cpp` File
 
 
 

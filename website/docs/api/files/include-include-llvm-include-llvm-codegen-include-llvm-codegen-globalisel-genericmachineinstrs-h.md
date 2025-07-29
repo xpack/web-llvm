@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericMachineInstrs.h` File Reference
+# `GenericMachineInstrs.h` File
 
 <p>Declares convenience wrapper classes for interpreting MachineInstr instances as specific generic operations. <a href="#details">More...</a></p>
 

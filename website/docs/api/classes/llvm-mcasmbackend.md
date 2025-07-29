@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmBackend` Class Reference
+# `MCAsmBackend` Class
 
 <p>Generic interface to target specific assembler backends. <a href="#details">More...</a></p>
 

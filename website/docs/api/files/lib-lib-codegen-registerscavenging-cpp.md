@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterScavenging.cpp` File Reference
+# `RegisterScavenging.cpp` File
 
 <p>This file implements the machine register scavenger. <a href="#details">More...</a></p>
 

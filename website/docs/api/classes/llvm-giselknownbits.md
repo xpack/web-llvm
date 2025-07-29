@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelKnownBits` Class Reference
+# `GISelKnownBits` Class
 
 
 

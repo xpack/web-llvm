@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MD5` Class Reference
+# `MD5` Class
 
 
 

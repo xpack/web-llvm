@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86DynAllocaExpander` Class Reference
+# `X86DynAllocaExpander` Class
 
 
 

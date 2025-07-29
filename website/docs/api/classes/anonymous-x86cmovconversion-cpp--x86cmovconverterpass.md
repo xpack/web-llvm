@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86CmovConverterPass` Class Reference
+# `X86CmovConverterPass` Class
 
 <p>Converts <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> cmov instructions into branches when profitable. <a href="#details">More...</a></p>
 

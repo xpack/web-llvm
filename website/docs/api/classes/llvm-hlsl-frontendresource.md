@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrontendResource` Class Reference
+# `FrontendResource` Class
 
 
 

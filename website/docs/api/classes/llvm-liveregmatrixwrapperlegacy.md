@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegMatrixWrapperLegacy` Class Reference
+# `LiveRegMatrixWrapperLegacy` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ABISupportImpl` Class Template Reference
+# `ABISupportImpl` Class Template
 
 
 

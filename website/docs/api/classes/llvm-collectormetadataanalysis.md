@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CollectorMetadataAnalysis` Class Reference
+# `CollectorMetadataAnalysis` Class
 
 <p>An analysis pass which caches information about the entire <a href="/web-llvm/docs/api/classes/llvm/module">Module</a>. <a href="#details">More...</a></p>
 

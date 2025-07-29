@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NamedMDNode` Class Reference
+# `NamedMDNode` Class
 
 <p>A tuple of MDNodes. <a href="#details">More...</a></p>
 

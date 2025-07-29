@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeListImpl` Class Reference
+# `AttributeListImpl` Class
 
 <p>This class represents a set of attributes that apply to the function, return type, and parameters. <a href="#details">More...</a></p>
 

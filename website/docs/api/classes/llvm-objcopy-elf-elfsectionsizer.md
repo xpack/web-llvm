@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFSectionSizer` Class Template Reference
+# `ELFSectionSizer` Class Template
 
 
 

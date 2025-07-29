@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaConstantPoolMBB` Class Reference
+# `XtensaConstantPoolMBB` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xtensaconstantpoolmbb">XtensaConstantPoolMBB</a> - Xtensa-specific constantpool value of a machine basic block. <a href="#details">More...</a></p>
 

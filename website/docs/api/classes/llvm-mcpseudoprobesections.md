@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbeSections` Class Reference
+# `MCPseudoProbeSections` Class
 
 <p>Instances of this class represent the pseudo probes inserted into a compile unit. <a href="#details">More...</a></p>
 

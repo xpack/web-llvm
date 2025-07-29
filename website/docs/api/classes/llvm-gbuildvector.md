@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GBuildVector` Class Reference
+# `GBuildVector` Class
 
 <p>Represents a G_BUILD_VECTOR. <a href="#details">More...</a></p>
 

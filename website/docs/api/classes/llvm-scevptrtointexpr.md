@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVPtrToIntExpr` Class Reference
+# `SCEVPtrToIntExpr` Class
 
 <p>This class represents a cast from a pointer to a pointer-sized integer value. <a href="#details">More...</a></p>
 

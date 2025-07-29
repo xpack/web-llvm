@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmbedDXILPass` Class Reference
+# `EmbedDXILPass` Class
 
 
 

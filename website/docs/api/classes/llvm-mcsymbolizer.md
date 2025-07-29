@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolizer` Class Reference
+# `MCSymbolizer` Class
 
 <p>Symbolize and annotate disassembled instructions. <a href="#details">More...</a></p>
 

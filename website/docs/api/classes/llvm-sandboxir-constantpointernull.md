@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPointerNull` Class Reference
+# `ConstantPointerNull` Class
 
 
 

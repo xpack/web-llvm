@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCGenericMemoryAccess` Class Reference
+# `EPCGenericMemoryAccess` Class
 
 
 

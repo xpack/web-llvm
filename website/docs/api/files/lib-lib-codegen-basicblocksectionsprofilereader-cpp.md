@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockSectionsProfileReader.cpp` File Reference
+# `BasicBlockSectionsProfileReader.cpp` File
 
 
 

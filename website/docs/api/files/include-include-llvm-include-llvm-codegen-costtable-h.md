@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostTable.h` File Reference
+# `CostTable.h` File
 
 <p>Cost tables and simple lookup functions. <a href="#details">More...</a></p>
 

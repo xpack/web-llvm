@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSDNode` Class Reference
+# `MachineSDNode` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/sdnode">SDNode</a> that represents everything that will be needed to construct a <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a>. <a href="#details">More...</a></p>
 

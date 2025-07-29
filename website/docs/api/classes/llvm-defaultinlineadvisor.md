@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultInlineAdvisor` Class Reference
+# `DefaultInlineAdvisor` Class
 
 <p>The default (manual heuristics) implementation of the <a href="/web-llvm/docs/api/classes/llvm/inlineadvisor">InlineAdvisor</a>. <a href="#details">More...</a></p>
 

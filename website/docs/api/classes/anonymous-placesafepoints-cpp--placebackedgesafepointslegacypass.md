@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PlaceBackedgeSafepointsLegacyPass` Class Reference
+# `PlaceBackedgeSafepointsLegacyPass` Class
 
 <p>An analysis pass whose purpose is to identify each of the backedges in the function which require a safepoint poll to be inserted. <a href="#details">More...</a></p>
 

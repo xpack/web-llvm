@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectionDAGBuilder` Class Reference
+# `SelectionDAGBuilder` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/selectiondagbuilder">SelectionDAGBuilder</a> - This is the common target-independent lowering implementation that is parameterized by a <a href="/web-llvm/docs/api/classes/llvm/targetlowering">TargetLowering</a> object. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNMaxMemoryClauseSchedStrategy` Class Reference
+# `GCNMaxMemoryClauseSchedStrategy` Class
 
 <p>The goal of this scheduling strategy is to maximize memory clause for a single wave. <a href="#details">More...</a></p>
 

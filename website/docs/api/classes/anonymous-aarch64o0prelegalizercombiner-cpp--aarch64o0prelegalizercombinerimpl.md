@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64O0PreLegalizerCombinerImpl` Class Reference
+# `AArch64O0PreLegalizerCombinerImpl` Class
 
 
 

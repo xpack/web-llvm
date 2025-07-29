@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoResourceLimit` Class Reference
+# `DiagnosticInfoResourceLimit` Class
 
 <p>Diagnostic information for stack size etc. <a href="#details">More...</a></p>
 

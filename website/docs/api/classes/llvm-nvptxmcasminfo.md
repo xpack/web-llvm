@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXMCAsmInfo` Class Reference
+# `NVPTXMCAsmInfo` Class
 
 
 

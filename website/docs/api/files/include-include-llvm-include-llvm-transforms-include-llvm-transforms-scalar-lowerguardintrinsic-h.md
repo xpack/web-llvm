@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerGuardIntrinsic.h` File Reference
+# `LowerGuardIntrinsic.h` File
 
 
 

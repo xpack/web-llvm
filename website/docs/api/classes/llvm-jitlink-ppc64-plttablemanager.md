@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PLTTableManager` Class Template Reference
+# `PLTTableManager` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TagStoreEdit` Class Reference
+# `TagStoreEdit` Class
 
 
 

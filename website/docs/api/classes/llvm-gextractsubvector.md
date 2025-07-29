@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GExtractSubvector` Class Reference
+# `GExtractSubvector` Class
 
 <p>Represents an extract subvector. <a href="#details">More...</a></p>
 

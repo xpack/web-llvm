@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSlotTracker.h` File Reference
+# `ModuleSlotTracker.h` File
 
 
 

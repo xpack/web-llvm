@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookupResult.h` File Reference
+# `LookupResult.h` File
 
 
 

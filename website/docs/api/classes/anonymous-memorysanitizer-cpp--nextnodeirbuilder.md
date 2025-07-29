@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NextNodeIRBuilder` Class Reference
+# `NextNodeIRBuilder` Class
 
 <p>Helper class to attach debug information of the given instruction onto new instructions inserted after. <a href="#details">More...</a></p>
 

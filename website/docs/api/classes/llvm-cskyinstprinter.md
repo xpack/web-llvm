@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYInstPrinter` Class Reference
+# `CSKYInstPrinter` Class
 
 
 

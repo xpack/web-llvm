@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVMemoryBlock` Class Reference
+# `GVMemoryBlock` Class
 
 <p>Helper class which uses a value handler to automatically deletes the memory block when the <a href="/web-llvm/docs/api/classes/llvm/globalvariable">GlobalVariable</a> is destroyed. <a href="#details">More...</a></p>
 

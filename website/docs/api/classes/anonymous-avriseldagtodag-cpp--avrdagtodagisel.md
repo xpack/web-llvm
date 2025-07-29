@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRDAGToDAGISel` Class Reference
+# `AVRDAGToDAGISel` Class
 
 <p>Lowers LLVM IR (in DAG form) to <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> MC instructions (in DAG form). <a href="#details">More...</a></p>
 

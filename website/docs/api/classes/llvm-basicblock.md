@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlock` Class Reference
+# `BasicBlock` Class
 
 <p>LLVM Basic Block Representation. <a href="#details">More...</a></p>
 
@@ -2464,7 +2464,7 @@ class llvm::BasicBlock { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend <a href="#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> undefined</td>
+<td class="doxyMemberName">friend <a href="#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a></td>
 </tr>
 </table>
 </td>
@@ -2647,7 +2647,7 @@ class llvm::BasicBlock { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">friend void undefined</td>
+<td class="doxyMemberName">friend void</td>
 </tr>
 </table>
 </td>

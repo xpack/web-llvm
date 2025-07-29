@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalTrampolinePool` Class Template Reference
+# `LocalTrampolinePool` Class Template
 
 <p>A trampoline pool for trampolines within the current process. <a href="#details">More...</a></p>
 

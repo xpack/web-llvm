@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFJITLinker_aarch64` Class Reference
+# `ELFJITLinker_aarch64` Class
 
 
 

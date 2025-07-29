@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCSubtarget` Class Reference
+# `PPCSubtarget` Class
 
 
 

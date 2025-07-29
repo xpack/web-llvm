@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataVerifier` Class Reference
+# `MetadataVerifier` Class
 
 <p>Verifier for <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> HSA metadata. <a href="#details">More...</a></p>
 

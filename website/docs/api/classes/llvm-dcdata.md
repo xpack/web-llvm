@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DCData` Class Reference
+# `DCData` Class
 
 
 

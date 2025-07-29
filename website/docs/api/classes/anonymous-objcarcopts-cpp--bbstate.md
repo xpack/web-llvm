@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBState` Class Reference
+# `BBState` Class
 
 <p>Per-BasicBlock state. <a href="#details">More...</a></p>
 

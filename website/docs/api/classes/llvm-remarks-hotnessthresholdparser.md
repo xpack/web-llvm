@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotnessThresholdParser` Class Reference
+# `HotnessThresholdParser` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVConstant` Class Reference
+# `SCEVConstant` Class
 
 <p>This class represents a constant integer value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandLargeDivRemPass` Class Reference
+# `ExpandLargeDivRemPass` Class
 
 
 

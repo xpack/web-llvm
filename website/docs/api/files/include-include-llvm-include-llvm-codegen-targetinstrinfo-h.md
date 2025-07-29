@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetInstrInfo.h` File Reference
+# `TargetInstrInfo.h` File
 
 
 

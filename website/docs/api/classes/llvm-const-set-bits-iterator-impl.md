@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `const_set_bits_iterator_impl` Class Template Reference
+# `const_set_bits_iterator_impl` Class Template
 
 <p>ForwardIterator for the bits that are set. <a href="#details">More...</a></p>
 

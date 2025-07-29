@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `defusechain_iterator` Class Template Reference
+# `defusechain_iterator` Class Template
 
 <p>reg_begin/reg_end - Provide iteration support to walk over all definitions and uses of a register within the <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> that corresponds to this <a href="/web-llvm/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> object. <a href="#details">More...</a></p>
 

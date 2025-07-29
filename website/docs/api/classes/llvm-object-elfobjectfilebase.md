@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFObjectFileBase` Class Reference
+# `ELFObjectFileBase` Class
 
 
 

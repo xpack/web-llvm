@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolStream.cpp` File Reference
+# `SymbolStream.cpp` File
 
 
 

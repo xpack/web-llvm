@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassConfigImpl` Class Reference
+# `PassConfigImpl` Class
 
 
 

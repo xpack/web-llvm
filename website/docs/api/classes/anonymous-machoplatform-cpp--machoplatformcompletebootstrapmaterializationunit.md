@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOPlatformCompleteBootstrapMaterializationUnit` Class Reference
+# `MachOPlatformCompleteBootstrapMaterializationUnit` Class
 
 
 

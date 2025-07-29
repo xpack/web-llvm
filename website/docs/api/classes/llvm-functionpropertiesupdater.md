@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPropertiesUpdater` Class Reference
+# `FunctionPropertiesUpdater` Class
 
 <p>Correctly update <a href="/web-llvm/docs/api/classes/llvm/functionpropertiesinfo">FunctionPropertiesInfo</a> post-inlining. <a href="#details">More...</a></p>
 

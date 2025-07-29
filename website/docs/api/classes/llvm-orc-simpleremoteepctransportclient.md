@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleRemoteEPCTransportClient` Class Reference
+# `SimpleRemoteEPCTransportClient` Class
 
 
 

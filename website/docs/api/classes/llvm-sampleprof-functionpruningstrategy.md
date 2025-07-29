@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPruningStrategy` Class Reference
+# `FunctionPruningStrategy` Class
 
 <p>When writing a profile with size limit, user may want to use a different strategy to reduce function count other than dropping functions with fewest samples first. <a href="#details">More...</a></p>
 

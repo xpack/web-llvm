@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionSpecializer` Class Reference
+# `FunctionSpecializer` Class
 
 
 

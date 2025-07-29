@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoWasm` Class Reference
+# `MCAsmInfoWasm` Class
 
 
 

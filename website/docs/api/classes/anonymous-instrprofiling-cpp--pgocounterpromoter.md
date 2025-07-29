@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOCounterPromoter` Class Reference
+# `PGOCounterPromoter` Class
 
 <p>A helper class to do register promotion for all profile counter updates in a loop. <a href="#details">More...</a></p>
 

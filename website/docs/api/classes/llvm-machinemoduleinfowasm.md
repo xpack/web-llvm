@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleInfoWasm` Class Reference
+# `MachineModuleInfoWasm` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfowasm">MachineModuleInfoWasm</a> - This is a <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfoimpl">MachineModuleInfoImpl</a> implementation for Wasm targets. <a href="#details">More...</a></p>
 

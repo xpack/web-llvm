@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFConfig.h` File Reference
+# `ELFConfig.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCExpandPseudos` Class Reference
+# `ARCExpandPseudos` Class
 
 
 

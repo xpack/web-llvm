@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSwitch` Class Template Reference
+# `TypeSwitch` Class Template
 
 <p>This class implements a switch-like dispatch statement for a value of 'T' using dyn_cast functionality. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelExprStateMachine` Class Reference
+# `IntelExprStateMachine` Class
 
 
 

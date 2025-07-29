@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDie` Class Reference
+# `DWARFDie` Class
 
 <p>Utility class that carries the DWARF compile/type unit and the debug info entry in an object. <a href="#details">More...</a></p>
 

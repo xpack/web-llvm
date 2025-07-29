@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfFile` Class Reference
+# `DwarfFile` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NaryReassociateLegacyPass` Class Reference
+# `NaryReassociateLegacyPass` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkGraphLinkingLayer.h` File Reference
+# `LinkGraphLinkingLayer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeRequirement` Class Reference
+# `TypeRequirement` Class
 
 
 

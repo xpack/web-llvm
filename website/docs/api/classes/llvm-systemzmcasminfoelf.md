@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMCAsmInfoELF` Class Reference
+# `SystemZMCAsmInfoELF` Class
 
 
 

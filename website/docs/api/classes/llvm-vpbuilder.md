@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPBuilder` Class Reference
+# `VPBuilder` Class
 
 <p>VPlan-based builder utility analogous to <a href="/web-llvm/docs/api/classes/llvm/irbuilder">IRBuilder</a>. <a href="#details">More...</a></p>
 

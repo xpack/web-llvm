@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCEmptyBasicBlocks.cpp` File Reference
+# `GCEmptyBasicBlocks.cpp` File
 
 <p>This file contains the implementation of empty blocks garbage collection pass. <a href="#details">More...</a></p>
 

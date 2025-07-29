@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFastISel` Class Reference
+# `WebAssemblyFastISel` Class
 
 
 

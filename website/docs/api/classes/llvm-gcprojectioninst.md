@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCProjectionInst` Class Reference
+# `GCProjectionInst` Class
 
 <p>Common base class for representing values projected from a statepoint. <a href="#details">More...</a></p>
 

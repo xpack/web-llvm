@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMRemarkStreamer` Class Reference
+# `LLVMRemarkStreamer` Class
 
 <p>Streamer for LLVM remarks which has logic for dealing with <a href="/web-llvm/docs/api/classes/llvm/diagnosticinfo">DiagnosticInfo</a> objects. <a href="#details">More...</a></p>
 

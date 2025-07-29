@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeIdSet` Class Reference
+# `EdgeIdSet` Class
 
 
 

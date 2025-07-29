@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LivePhysRegs` Class Reference
+# `LivePhysRegs` Class
 
 <p>A set of physical registers with utility functions to track liveness when walking backward/forward through a basic block. <a href="#details">More...</a></p>
 

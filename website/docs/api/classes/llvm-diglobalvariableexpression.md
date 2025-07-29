@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIGlobalVariableExpression` Class Reference
+# `DIGlobalVariableExpression` Class
 
 <p>A pair of <a href="/web-llvm/docs/api/classes/llvm/diglobalvariable">DIGlobalVariable</a> and <a href="/web-llvm/docs/api/classes/llvm/diexpression">DIExpression</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressRanges` Class Reference
+# `AddressRanges` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/addressranges">AddressRanges</a> class helps normalize address range collections. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDCDecisionRecorder` Class Reference
+# `MCDCDecisionRecorder` Class
 
 <p>Collect Decisions, Branchs, and Expansions and associate them. <a href="#details">More...</a></p>
 

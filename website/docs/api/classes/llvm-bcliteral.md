@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCLiteral` Class Template Reference
+# `BCLiteral` Class Template
 
 <p>Represents a literal operand in a bitcode record. <a href="#details">More...</a></p>
 

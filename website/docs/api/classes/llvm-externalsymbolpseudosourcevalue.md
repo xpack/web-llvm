@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExternalSymbolPseudoSourceValue` Class Reference
+# `ExternalSymbolPseudoSourceValue` Class
 
 <p>A specialized pseudo source value for holding external symbol values. <a href="#details">More...</a></p>
 

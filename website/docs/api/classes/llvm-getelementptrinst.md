@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetElementPtrInst` Class Reference
+# `GetElementPtrInst` Class
 
 <p>an instruction for type-safe pointer arithmetic to access elements of arrays and structs <a href="#details">More...</a></p>
 

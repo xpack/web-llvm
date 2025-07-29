@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSet` Class Template Reference
+# `FoldingSet` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/foldingset">FoldingSet</a> - This template class is used to instantiate a specialized implementation of the folding set to the node class T. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InitLLVM` Class Reference
+# `InitLLVM` Class
 
 
 

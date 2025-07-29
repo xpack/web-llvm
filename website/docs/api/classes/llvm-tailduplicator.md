@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailDuplicator` Class Reference
+# `TailDuplicator` Class
 
 <p>Utility class to perform tail duplication. <a href="#details">More...</a></p>
 

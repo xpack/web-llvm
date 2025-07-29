@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstVisitor` Class Template Reference
+# `InstVisitor` Class Template
 
 <p>Base class for instruction visitors. <a href="#details">More...</a></p>
 

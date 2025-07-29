@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareLoops.h` File Reference
+# `HardwareLoops.h` File
 
 <p>Defines an IR pass for the creation of hardware loops. <a href="#details">More...</a></p>
 

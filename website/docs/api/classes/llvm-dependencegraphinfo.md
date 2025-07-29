@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependenceGraphInfo` Class Template Reference
+# `DependenceGraphInfo` Class Template
 
 <p>Encapsulate some common data and functionality needed for different variations of data dependence graphs. <a href="#details">More...</a></p>
 

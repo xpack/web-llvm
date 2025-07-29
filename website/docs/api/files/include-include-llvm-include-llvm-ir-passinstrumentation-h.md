@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInstrumentation.h` File Reference
+# `PassInstrumentation.h` File
 
 <p>This file defines the Pass Instrumentation classes that provide instrumentation points into the pass execution by PassManager. <a href="#details">More...</a></p>
 

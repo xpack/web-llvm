@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBlock` Class Reference
+# `LoopBlock` Class
 
 <p>Helper class to keep basic block along with its loop data information. <a href="#details">More...</a></p>
 

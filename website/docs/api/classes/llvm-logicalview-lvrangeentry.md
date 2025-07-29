@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVRangeEntry` Class Reference
+# `LVRangeEntry` Class
 
 
 

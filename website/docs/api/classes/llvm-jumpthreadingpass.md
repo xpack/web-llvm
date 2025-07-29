@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JumpThreadingPass` Class Reference
+# `JumpThreadingPass` Class
 
 <p>This pass performs 'jump threading', which looks at blocks that have multiple predecessors and multiple successors. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalObject.h` File Reference
+# `GlobalObject.h` File
 
 
 

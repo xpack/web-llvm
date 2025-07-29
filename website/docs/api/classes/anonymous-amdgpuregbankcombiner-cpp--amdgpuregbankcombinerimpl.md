@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegBankCombinerImpl` Class Reference
+# `AMDGPURegBankCombinerImpl` Class
 
 
 

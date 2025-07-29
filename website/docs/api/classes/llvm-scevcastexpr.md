@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVCastExpr` Class Reference
+# `SCEVCastExpr` Class
 
 <p>This is the base class for unary cast operator classes. <a href="#details">More...</a></p>
 

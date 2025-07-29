@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLibraryInfo` Class Reference
+# `TargetLibraryInfo` Class
 
 <p>Provides information about what library functions are available for the current target. <a href="#details">More...</a></p>
 

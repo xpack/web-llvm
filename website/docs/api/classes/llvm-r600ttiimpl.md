@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TTIImpl` Class Reference
+# `R600TTIImpl` Class
 
 
 

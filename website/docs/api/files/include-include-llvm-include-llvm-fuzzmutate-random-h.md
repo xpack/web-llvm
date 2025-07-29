@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Random.h` File Reference
+# `Random.h` File
 
 
 

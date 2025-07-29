@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLinkerBase` Class Reference
+# `DWARFLinkerBase` Class
 
 <p>The base interface for <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/dwarflinker">DWARFLinker</a> implementations. <a href="#details">More...</a></p>
 

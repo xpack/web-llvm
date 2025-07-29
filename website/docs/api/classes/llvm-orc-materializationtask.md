@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaterializationTask` Class Reference
+# `MaterializationTask` Class
 
 <p>A materialization task. <a href="#details">More...</a></p>
 

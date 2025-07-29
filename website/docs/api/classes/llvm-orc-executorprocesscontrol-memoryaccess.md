@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryAccess` Class Reference
+# `MemoryAccess` Class
 
 <p>APIs for manipulating memory in the target process. <a href="#details">More...</a></p>
 

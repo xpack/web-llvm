@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnifyLoopExitsPass` Class Reference
+# `UnifyLoopExitsPass` Class
 
 
 

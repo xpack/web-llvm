@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ELFObjectWriter` Class Reference
+# `X86ELFObjectWriter` Class
 
 
 

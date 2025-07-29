@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIASourceFile` Class Reference
+# `DIASourceFile` Class
 
 
 

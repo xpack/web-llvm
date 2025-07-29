@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WholeProgramDevirt.h` File Reference
+# `WholeProgramDevirt.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugAddrTable` Class Reference
+# `DWARFDebugAddrTable` Class
 
 <p>A class representing an address table as specified in DWARF v5. <a href="#details">More...</a></p>
 

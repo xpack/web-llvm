@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirIterator` Class Reference
+# `DirIterator` Class
 
 <p>Adaptor from InMemoryDir::iterator to <a href="/web-llvm/docs/api/classes/llvm/vfs/directory-iterator">directory_iterator</a>. <a href="#details">More...</a></p>
 

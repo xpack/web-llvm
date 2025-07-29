@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphWrapperPass` Class Reference
+# `CallGraphWrapperPass` Class
 
 <p>The <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/modulepass">ModulePass</a></span> which wraps up a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/callgraph">CallGraph</a></span> and the logic to build it. <a href="#details">More...</a></p>
 

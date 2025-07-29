@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPRegionBlock` Class Reference
+# `VPRegionBlock` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vpregionblock">VPRegionBlock</a> represents a collection of VPBasicBlocks and VPRegionBlocks which form a Single-Entry-Single-Exiting subgraph of the output IR CFG. <a href="#details">More...</a></p>
 

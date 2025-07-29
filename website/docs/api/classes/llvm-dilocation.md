@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILocation` Class Reference
+# `DILocation` Class
 
 <p>Debug location. <a href="#details">More...</a></p>
 

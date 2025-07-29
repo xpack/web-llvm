@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcDisassembler` Class Reference
+# `SparcDisassembler` Class
 
 <p>A disassembler class for <a href="/web-llvm/docs/api/namespaces/llvm/sparc">Sparc</a>. <a href="#details">More...</a></p>
 

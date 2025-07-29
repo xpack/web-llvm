@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseSetImpl` Class Template Reference
+# `DenseSetImpl` Class Template
 
 <p>Base class for <a href="/web-llvm/docs/api/classes/llvm/denseset">DenseSet</a> and DenseSmallSet. <a href="#details">More...</a></p>
 

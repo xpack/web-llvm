@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NearMissInfo` Class Reference
+# `NearMissInfo` Class
 
 
 

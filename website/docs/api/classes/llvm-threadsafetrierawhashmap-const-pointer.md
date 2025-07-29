@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `const_pointer` Class Reference
+# `const_pointer` Class
 
 
 

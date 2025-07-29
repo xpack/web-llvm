@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemOpKey` Class Reference
+# `MemOpKey` Class
 
 <p>A key based on instruction's memory operands. <a href="#details">More...</a></p>
 

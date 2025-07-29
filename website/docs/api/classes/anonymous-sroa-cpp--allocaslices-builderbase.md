@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuilderBase` Class Template Reference
+# `BuilderBase` Class Template
 
 
 

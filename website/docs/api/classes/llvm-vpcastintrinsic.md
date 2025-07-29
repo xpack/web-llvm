@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPCastIntrinsic` Class Reference
+# `VPCastIntrinsic` Class
 
 
 

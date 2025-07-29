@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniformityAnalysis.cpp` File Reference
+# `UniformityAnalysis.cpp` File
 
 
 

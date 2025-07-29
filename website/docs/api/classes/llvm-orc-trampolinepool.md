@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrampolinePool` Class Reference
+# `TrampolinePool` Class
 
 <p>Base class for pools of compiler re-entry trampolines. <a href="#details">More...</a></p>
 

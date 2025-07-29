@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULibFuncImpl` Class Reference
+# `AMDGPULibFuncImpl` Class
 
 
 

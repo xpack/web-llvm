@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnreachableInst` Class Reference
+# `UnreachableInst` Class
 
 
 

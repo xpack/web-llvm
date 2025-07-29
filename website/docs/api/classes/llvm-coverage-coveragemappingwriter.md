@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMappingWriter` Class Reference
+# `CoverageMappingWriter` Class
 
 <p>Writer for instrumentation based coverage mapping data. <a href="#details">More...</a></p>
 

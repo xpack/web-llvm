@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingNode` Class Reference
+# `MappingNode` Class
 
 <p>Represents a YAML map created from either a block map for a flow map. <a href="#details">More...</a></p>
 

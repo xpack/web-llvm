@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DICompositeType` Class Reference
+# `DICompositeType` Class
 
 <p>Composite types. <a href="#details">More...</a></p>
 

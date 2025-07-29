@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `int_op_inserter` Class Reference
+# `int_op_inserter` Class
 
 
 

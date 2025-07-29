@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFLinkGraphBuilderBase` Class Reference
+# `ELFLinkGraphBuilderBase` Class
 
 <p>Common link-graph building code shared between all ELFFiles. <a href="#details">More...</a></p>
 

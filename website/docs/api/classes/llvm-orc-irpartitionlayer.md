@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRPartitionLayer` Class Reference
+# `IRPartitionLayer` Class
 
 <p>A layer that breaks up IR modules into smaller submodules that only contains looked up symbols. <a href="#details">More...</a></p>
 

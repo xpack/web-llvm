@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TernOpInit` Class Reference
+# `TernOpInit` Class
 
 <p>!op (X, Y, Z) - Combine two inits. <a href="#details">More...</a></p>
 

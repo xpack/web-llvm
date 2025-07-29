@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Stream` Class Reference
+# `Stream` Class
 
 <p>This class represents a YAML stream potentially containing multiple documents. <a href="#details">More...</a></p>
 

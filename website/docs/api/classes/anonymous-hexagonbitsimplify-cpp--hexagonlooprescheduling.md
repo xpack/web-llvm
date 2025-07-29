@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoopRescheduling` Class Reference
+# `HexagonLoopRescheduling` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonRDFOpt` Class Reference
+# `HexagonRDFOpt` Class
 
 
 

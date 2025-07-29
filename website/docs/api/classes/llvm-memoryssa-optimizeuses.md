@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizeUses` Class Reference
+# `OptimizeUses` Class
 
 <p>This class is a batch walker of all <a href="/web-llvm/docs/api/classes/llvm/memoryuse">MemoryUse</a>'s in the program, and points their defining access at the thing that actually clobbers them. <a href="#details">More...</a></p>
 

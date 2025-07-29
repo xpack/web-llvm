@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPGatherScatterSDNode` Class Reference
+# `VPGatherScatterSDNode` Class
 
 <p>This is a base class used to represent VP_GATHER and VP_SCATTER nodes. <a href="#details">More...</a></p>
 

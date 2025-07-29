@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelJITEventsWrapper` Class Reference
+# `IntelJITEventsWrapper` Class
 
 
 

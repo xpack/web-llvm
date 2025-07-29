@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalNode` Class Reference
+# `IntervalNode` Class
 
 
 

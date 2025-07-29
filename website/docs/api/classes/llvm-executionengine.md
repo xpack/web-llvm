@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutionEngine` Class Reference
+# `ExecutionEngine` Class
 
 <p>Abstract interface for implementation execution of LLVM modules, designed to support both interpreter and just-in-time (JIT) compiler implementations. <a href="#details">More...</a></p>
 

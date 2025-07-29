@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectionDAGISelLegacy` Class Reference
+# `SelectionDAGISelLegacy` Class
 
 
 

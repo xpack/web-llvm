@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericOptTable` Class Reference
+# `GenericOptTable` Class
 
 <p>Specialization of <a href="/web-llvm/docs/api/classes/llvm/opt/opttable">OptTable</a>. <a href="#details">More...</a></p>
 

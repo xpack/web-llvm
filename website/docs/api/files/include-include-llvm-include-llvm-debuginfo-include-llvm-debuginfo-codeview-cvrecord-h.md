@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVRecord.h` File Reference
+# `CVRecord.h` File
 
 
 

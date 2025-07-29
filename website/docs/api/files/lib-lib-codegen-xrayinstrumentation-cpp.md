@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XRayInstrumentation.cpp` File Reference
+# `XRayInstrumentation.cpp` File
 
 
 

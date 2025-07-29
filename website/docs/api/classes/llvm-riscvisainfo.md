@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVISAInfo` Class Reference
+# `RISCVISAInfo` Class
 
 
 

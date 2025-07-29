@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleExecutorDylibManager.h` File Reference
+# `SimpleExecutorDylibManager.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCVLoc` Class Reference
+# `MCCVLoc` Class
 
 <p>Instances of this class represent the information from a .cv_loc directive. <a href="#details">More...</a></p>
 

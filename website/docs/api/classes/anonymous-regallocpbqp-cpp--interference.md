@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Interference` Class Reference
+# `Interference` Class
 
 <p>Add interference edges between overlapping vregs. <a href="#details">More...</a></p>
 

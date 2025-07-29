@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmInfoDarwin.cpp` File Reference
+# `MCAsmInfoDarwin.cpp` File
 
 
 

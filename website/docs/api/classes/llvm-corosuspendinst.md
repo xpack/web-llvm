@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSuspendInst` Class Reference
+# `CoroSuspendInst` Class
 
 <p>This represents the llvm.coro.suspend instruction. <a href="#details">More...</a></p>
 

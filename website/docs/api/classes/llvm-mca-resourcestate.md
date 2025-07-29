@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceState` Class Reference
+# `ResourceState` Class
 
 <p>A processor resource descriptor. <a href="#details">More...</a></p>
 

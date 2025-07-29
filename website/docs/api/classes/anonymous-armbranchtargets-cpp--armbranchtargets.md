@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBranchTargets` Class Reference
+# `ARMBranchTargets` Class
 
 
 

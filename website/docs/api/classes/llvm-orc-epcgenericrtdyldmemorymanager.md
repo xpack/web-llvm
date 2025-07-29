@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCGenericRTDyldMemoryManager` Class Reference
+# `EPCGenericRTDyldMemoryManager` Class
 
 <p>Remote-mapped RuntimeDyld-compatible memory manager. <a href="#details">More...</a></p>
 

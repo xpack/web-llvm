@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleImportsManager` Class Reference
+# `ModuleImportsManager` Class
 
 <p>Determine the list of imports and exports for each module. <a href="#details">More...</a></p>
 

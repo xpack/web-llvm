@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSIStreamBuilder` Class Reference
+# `GSIStreamBuilder` Class
 
 
 

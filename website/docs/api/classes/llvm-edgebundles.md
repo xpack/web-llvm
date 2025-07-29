@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeBundles` Class Reference
+# `EdgeBundles` Class
 
 
 

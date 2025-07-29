@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopFlattenPass` Class Reference
+# `LoopFlattenPass` Class
 
 
 

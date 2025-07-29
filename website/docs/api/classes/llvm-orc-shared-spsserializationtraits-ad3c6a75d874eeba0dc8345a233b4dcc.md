@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializationTraits` Class Template Reference
+# `SPSSerializationTraits` Class Template
 
 <p>Serialization for <a href="/web-llvm/docs/api/classes/llvm/stringmap">StringMap&lt;ValueT&gt;</a>s. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMCInstLower` Class Reference
+# `SystemZMCInstLower` Class
 
 
 

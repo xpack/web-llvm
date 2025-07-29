@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueLattice.h` File Reference
+# `ValueLattice.h` File
 
 
 

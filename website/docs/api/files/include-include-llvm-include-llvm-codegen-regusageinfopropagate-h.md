@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegUsageInfoPropagate.h` File Reference
+# `RegUsageInfoPropagate.h` File
 
 
 

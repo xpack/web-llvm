@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFrameInfo.h` File Reference
+# `MachineFrameInfo.h` File
 
 
 

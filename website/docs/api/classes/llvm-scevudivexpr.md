@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVUDivExpr` Class Reference
+# `SCEVUDivExpr` Class
 
 <p>This class represents a binary unsigned division operation. <a href="#details">More...</a></p>
 

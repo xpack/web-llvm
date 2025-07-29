@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeTableCollection` Class Reference
+# `TypeTableCollection` Class
 
 
 

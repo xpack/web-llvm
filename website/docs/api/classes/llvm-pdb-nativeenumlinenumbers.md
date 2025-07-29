@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeEnumLineNumbers` Class Reference
+# `NativeEnumLineNumbers` Class
 
 
 

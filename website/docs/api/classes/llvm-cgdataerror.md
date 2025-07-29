@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGDataError` Class Reference
+# `CGDataError` Class
 
 
 

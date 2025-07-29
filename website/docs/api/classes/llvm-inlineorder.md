@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineOrder` Class Template Reference
+# `InlineOrder` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBFileBuilder` Class Reference
+# `PDBFileBuilder` Class
 
 
 

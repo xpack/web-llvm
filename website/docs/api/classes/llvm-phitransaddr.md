@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHITransAddr` Class Reference
+# `PHITransAddr` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/phitransaddr">PHITransAddr</a> - An address value which tracks and handles phi translation. <a href="#details">More...</a></p>
 

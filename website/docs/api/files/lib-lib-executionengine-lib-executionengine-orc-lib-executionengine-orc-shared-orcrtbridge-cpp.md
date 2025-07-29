@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcRTBridge.cpp` File Reference
+# `OrcRTBridge.cpp` File
 
 
 

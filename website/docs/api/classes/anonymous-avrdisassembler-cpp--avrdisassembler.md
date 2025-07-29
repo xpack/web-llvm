@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRDisassembler` Class Reference
+# `AVRDisassembler` Class
 
 <p>A disassembler class for <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a>. <a href="#details">More...</a></p>
 

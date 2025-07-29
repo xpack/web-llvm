@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocPBQP` Class Reference
+# `RegAllocPBQP` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/pbqp">PBQP</a> based allocators solve the register allocation problem by mapping register allocation problems to Partitioned <a href="/web-llvm/docs/api/namespaces/llvm/#a965a7b0afb2678973d155a103b9f55b5">Boolean</a> Quadratic Programming problems. <a href="#details">More...</a></p>
 

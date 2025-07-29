@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalISel.cpp` File Reference
+# `GlobalISel.cpp` File
 
 
 

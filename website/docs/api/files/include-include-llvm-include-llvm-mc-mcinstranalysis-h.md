@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstrAnalysis.h` File Reference
+# `MCInstrAnalysis.h` File
 
 
 

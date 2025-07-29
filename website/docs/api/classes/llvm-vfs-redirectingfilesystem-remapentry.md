@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemapEntry` Class Reference
+# `RemapEntry` Class
 
 <p>A file or directory in the vfs that is mapped to a file or directory in the external filesystem. <a href="#details">More...</a></p>
 

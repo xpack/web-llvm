@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeExtractor.h` File Reference
+# `CodeExtractor.h` File
 
 
 

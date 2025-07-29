@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRSimilarityAnalysisPrinterPass` Class Reference
+# `IRSimilarityAnalysisPrinterPass` Class
 
 <p>Printer pass that uses <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/irsimilarityanalysis">IRSimilarityAnalysis</a></span>. <a href="#details">More...</a></p>
 

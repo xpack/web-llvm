@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLT` Class Reference
+# `LLT` Class
 
 
 

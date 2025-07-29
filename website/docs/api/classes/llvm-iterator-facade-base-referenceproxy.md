@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReferenceProxy` Class Reference
+# `ReferenceProxy` Class
 
 <p>A proxy object for computing a reference via indirecting a copy of an iterator. <a href="#details">More...</a></p>
 

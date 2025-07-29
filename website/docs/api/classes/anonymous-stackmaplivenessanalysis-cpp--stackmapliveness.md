@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackMapLiveness` Class Reference
+# `StackMapLiveness` Class
 
 <p>This pass calculates the liveness information for each basic block in a function and attaches the register live-out information to a patchpoint intrinsic if present. <a href="#details">More...</a></p>
 

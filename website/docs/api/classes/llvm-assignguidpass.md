@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignGUIDPass` Class Reference
+# `AssignGUIDPass` Class
 
 <p>Assign a GUID to functions as metadata. <a href="#details">More...</a></p>
 

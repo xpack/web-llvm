@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIScope` Class Reference
+# `DIScope` Class
 
 <p>Base class for scope-like contexts. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringExtras.h` File Reference
+# `StringExtras.h` File
 
 <p>This file contains some functions that are useful when dealing with strings. <a href="#details">More...</a></p>
 

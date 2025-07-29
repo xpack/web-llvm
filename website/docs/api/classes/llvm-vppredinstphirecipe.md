@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPPredInstPHIRecipe` Class Reference
+# `VPPredInstPHIRecipe` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a> is a recipe for generating the phi nodes needed when control converges back from a Branch-on-Mask. <a href="#details">More...</a></p>
 

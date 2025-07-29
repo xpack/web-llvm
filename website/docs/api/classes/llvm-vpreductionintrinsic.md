@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPReductionIntrinsic` Class Reference
+# `VPReductionIntrinsic` Class
 
 <p>This represents vector predication reduction intrinsics. <a href="#details">More...</a></p>
 

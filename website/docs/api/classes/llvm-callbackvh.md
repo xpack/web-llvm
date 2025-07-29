@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallbackVH` Class Reference
+# `CallbackVH` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> handle with callbacks on RAUW and destruction. <a href="#details">More...</a></p>
 

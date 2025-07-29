@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIHandler` Class Reference
+# `PHIHandler` Class
 
 <p>Allows to correctly handle operands of the phi nodes based on the <span class="doxyComputerOutput">Main</span> <a href="/web-llvm/docs/api/classes/llvm/phinode">PHINode</a> order of incoming basic blocks/values. <a href="#details">More...</a></p>
 

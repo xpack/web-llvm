@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugifyEachInstrumentation` Class Reference
+# `DebugifyEachInstrumentation` Class
 
 
 

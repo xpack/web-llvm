@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRReader.h` File Reference
+# `IRReader.h` File
 
 
 

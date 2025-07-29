@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeArray` Class Reference
+# `NodeArray` Class
 
 
 

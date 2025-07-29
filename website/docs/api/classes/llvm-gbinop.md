@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GBinOp` Class Reference
+# `GBinOp` Class
 
 <p>Represents a binary operation, i.e, x = y op z. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TSCWrapRecord` Class Reference
+# `TSCWrapRecord` Class
 
 
 

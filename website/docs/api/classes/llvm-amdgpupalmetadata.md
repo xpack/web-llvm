@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPALMetadata` Class Reference
+# `AMDGPUPALMetadata` Class
 
 
 

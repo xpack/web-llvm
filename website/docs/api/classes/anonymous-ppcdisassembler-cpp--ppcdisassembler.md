@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCDisassembler` Class Reference
+# `PPCDisassembler` Class
 
 
 

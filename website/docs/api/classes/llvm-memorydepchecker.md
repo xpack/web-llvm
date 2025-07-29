@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDepChecker` Class Reference
+# `MemoryDepChecker` Class
 
 <p>Checks memory dependences among accesses to the same underlying object to determine whether there vectorization is legal or not (and at which vectorization factor). <a href="#details">More...</a></p>
 

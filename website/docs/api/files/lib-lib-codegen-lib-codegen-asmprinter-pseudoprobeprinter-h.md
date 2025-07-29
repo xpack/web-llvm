@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoProbePrinter.h` File Reference
+# `PseudoProbePrinter.h` File
 
 
 

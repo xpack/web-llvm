@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PeelingModuloScheduleExpander` Class Reference
+# `PeelingModuloScheduleExpander` Class
 
 <p>A reimplementation of <a href="/web-llvm/docs/api/classes/llvm/moduloscheduleexpander">ModuloScheduleExpander</a>. <a href="#details">More...</a></p>
 

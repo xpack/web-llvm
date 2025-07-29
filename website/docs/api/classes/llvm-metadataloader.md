@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataLoader` Class Reference
+# `MetadataLoader` Class
 
 <p>Helper class that handles loading Metadatas and keeping them available. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetSubtargetInfo` Class Reference
+# `TargetSubtargetInfo` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo">TargetSubtargetInfo</a> - Generic base class for all target subtargets. <a href="#details">More...</a></p>
 

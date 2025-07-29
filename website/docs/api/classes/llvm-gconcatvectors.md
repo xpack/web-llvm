@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GConcatVectors` Class Reference
+# `GConcatVectors` Class
 
 <p>Represents a G_CONCAT_VECTORS. <a href="#details">More...</a></p>
 

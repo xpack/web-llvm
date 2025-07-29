@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassTimingInfo.h` File Reference
+# `PassTimingInfo.h` File
 
 <p>This header defines classes/functions to handle pass execution timing information with interfaces for both pass managers. <a href="#details">More...</a></p>
 

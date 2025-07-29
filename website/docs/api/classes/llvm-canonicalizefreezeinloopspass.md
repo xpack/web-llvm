@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanonicalizeFreezeInLoopsPass` Class Reference
+# `CanonicalizeFreezeInLoopsPass` Class
 
 <p>A pass that canonicalizes freeze instructions in a loop. <a href="#details">More...</a></p>
 

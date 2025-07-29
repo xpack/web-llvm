@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDDbgLabel` Class Reference
+# `SDDbgLabel` Class
 
 <p>Holds the information from a dbg_label node through SDISel. <a href="#details">More...</a></p>
 

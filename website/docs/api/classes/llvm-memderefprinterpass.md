@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemDerefPrinterPass` Class Reference
+# `MemDerefPrinterPass` Class
 
 
 

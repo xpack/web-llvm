@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeTrieRawHashMap` Class Template Reference
+# `ThreadSafeTrieRawHashMap` Class Template
 
 <p>Lock-free thread-safe hash-mapped trie. <a href="#details">More...</a></p>
 

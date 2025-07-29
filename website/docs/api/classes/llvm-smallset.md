@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallSet` Class Template Reference
+# `SmallSet` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallset">SmallSet</a> - This maintains a set of unique values, optimizing for the case when the set is small (less than N). <a href="#details">More...</a></p>
 

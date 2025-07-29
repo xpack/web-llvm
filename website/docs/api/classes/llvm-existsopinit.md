@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExistsOpInit` Class Reference
+# `ExistsOpInit` Class
 
 <p>!exists&lt;type&gt;(expr) - Dynamically determine if a record of <span class="doxyComputerOutput">type</span> named <span class="doxyComputerOutput">expr</span> exists. <a href="#details">More...</a></p>
 

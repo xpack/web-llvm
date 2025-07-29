@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StraightLineStrengthReduceLegacyPass` Class Reference
+# `StraightLineStrengthReduceLegacyPass` Class
 
 
 

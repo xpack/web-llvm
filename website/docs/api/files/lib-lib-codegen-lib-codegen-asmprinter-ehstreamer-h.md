@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHStreamer.h` File Reference
+# `EHStreamer.h` File
 
 
 

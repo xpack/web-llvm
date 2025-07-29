@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TemplateArgumentPack` Class Reference
+# `TemplateArgumentPack` Class
 
 <p>A variadic template argument. <a href="#details">More...</a></p>
 

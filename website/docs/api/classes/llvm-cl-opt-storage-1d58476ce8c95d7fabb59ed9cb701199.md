@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `opt_storage` Class Template Reference
+# `opt_storage` Class Template
 
 
 

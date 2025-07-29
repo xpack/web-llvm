@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreFrameLowering` Class Reference
+# `XCoreFrameLowering` Class
 
 
 

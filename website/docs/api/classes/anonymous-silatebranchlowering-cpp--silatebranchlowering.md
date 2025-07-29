@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILateBranchLowering` Class Reference
+# `SILateBranchLowering` Class
 
 
 

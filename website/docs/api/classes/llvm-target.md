@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Target` Class Reference
+# `Target` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/target">Target</a> - Wrapper for <a href="/web-llvm/docs/api/classes/llvm/target">Target</a> specific information. <a href="#details">More...</a></p>
 

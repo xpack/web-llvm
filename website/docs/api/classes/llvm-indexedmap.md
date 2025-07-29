@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedMap` Class Template Reference
+# `IndexedMap` Class Template
 
 
 

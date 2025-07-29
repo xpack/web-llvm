@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegister` Class Reference
+# `MCRegister` Class
 
 <p>Wrapper class representing physical registers. Should be passed by value. <a href="#details">More...</a></p>
 

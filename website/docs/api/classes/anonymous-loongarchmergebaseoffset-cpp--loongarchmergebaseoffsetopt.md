@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMergeBaseOffsetOpt` Class Reference
+# `LoongArchMergeBaseOffsetOpt` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineTraceMetricsAnalysis` Class Reference
+# `MachineTraceMetricsAnalysis` Class
 
 
 

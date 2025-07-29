@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreISelIntrinsicLoweringLegacyPass` Class Reference
+# `PreISelIntrinsicLoweringLegacyPass` Class
 
 
 

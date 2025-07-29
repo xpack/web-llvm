@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_socket_stream.h` File Reference
+# `raw_socket_stream.h` File
 
 
 

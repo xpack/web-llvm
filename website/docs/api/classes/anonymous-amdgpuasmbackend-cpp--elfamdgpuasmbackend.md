@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFAMDGPUAsmBackend` Class Reference
+# `ELFAMDGPUAsmBackend` Class
 
 
 

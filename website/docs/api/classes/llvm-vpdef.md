@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPDef` Class Reference
+# `VPDef` Class
 
 <p>This class augments a recipe with a set of VPValues defined by the recipe. <a href="#details">More...</a></p>
 

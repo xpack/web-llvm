@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetPassConfig.h` File Reference
+# `TargetPassConfig.h` File
 
 <p>Target-Independent Code Generator Pass Configuration Options pass. <a href="#details">More...</a></p>
 

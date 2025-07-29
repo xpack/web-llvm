@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TOCTableManager` Class Template Reference
+# `TOCTableManager` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeAllocator` Class Template Reference
+# `ThreadSafeAllocator` Class Template
 
 <p>Thread-safe allocator adaptor. <a href="#details">More...</a></p>
 

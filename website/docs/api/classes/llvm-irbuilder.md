@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRBuilder` Class Template Reference
+# `IRBuilder` Class Template
 
 <p>This provides a uniform API for creating instructions and inserting them into a basic block: either at the end of a <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a>, or at a specific iterator location in a block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCOrgFragment` Class Reference
+# `MCOrgFragment` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVUsers` Class Reference
+# `IVUsers` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FinalizeISelPass` Class Reference
+# `FinalizeISelPass` Class
 
 
 

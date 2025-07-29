@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePassRegistryNode` Class Template Reference
+# `MachinePassRegistryNode` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinepassregistrynode">MachinePassRegistryNode</a> - Machine pass node stored in registration list. <a href="#details">More...</a></p>
 

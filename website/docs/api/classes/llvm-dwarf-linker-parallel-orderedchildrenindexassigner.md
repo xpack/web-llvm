@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrderedChildrenIndexAssigner` Class Reference
+# `OrderedChildrenIndexAssigner` Class
 
 <p>This class helps to assign indexes for <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> children. <a href="#details">More...</a></p>
 

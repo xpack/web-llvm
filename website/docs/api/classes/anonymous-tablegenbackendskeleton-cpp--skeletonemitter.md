@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SkeletonEmitter` Class Reference
+# `SkeletonEmitter` Class
 
 
 

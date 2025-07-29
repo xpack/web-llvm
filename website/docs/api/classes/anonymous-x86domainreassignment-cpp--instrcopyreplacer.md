@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrCOPYReplacer` Class Reference
+# `InstrCOPYReplacer` Class
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> Converter for replacing COPY instructions. <a href="#details">More...</a></p>
 

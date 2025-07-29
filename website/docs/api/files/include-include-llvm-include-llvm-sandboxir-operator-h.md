@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Operator.h` File Reference
+# `Operator.h` File
 
 
 

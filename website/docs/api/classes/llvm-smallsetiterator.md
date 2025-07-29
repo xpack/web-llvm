@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallSetIterator` Class Template Reference
+# `SmallSetIterator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/smallsetiterator">SmallSetIterator</a> - This class implements a <a href="/web-llvm/docs/api/classes/llvm/smallvectorimpl">const_iterator</a> for <a href="/web-llvm/docs/api/classes/llvm/smallset">SmallSet</a> by delegating to the underlying <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> or Set iterators. <a href="#details">More...</a></p>
 

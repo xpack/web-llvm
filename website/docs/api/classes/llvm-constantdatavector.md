@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantDataVector` Class Reference
+# `ConstantDataVector` Class
 
 <p>A vector constant whose element type is a simple 1/2/4/8-byte integer or float/double, and whose elements are just simple data values (i.e. <a href="#details">More...</a></p>
 

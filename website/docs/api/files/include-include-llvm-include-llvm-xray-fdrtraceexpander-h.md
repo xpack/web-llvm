@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDRTraceExpander.h` File Reference
+# `FDRTraceExpander.h` File
 
 
 

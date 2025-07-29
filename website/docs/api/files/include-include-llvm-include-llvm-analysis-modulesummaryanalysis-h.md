@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryAnalysis.h` File Reference
+# `ModuleSummaryAnalysis.h` File
 
 <p>This is the interface to build a ModuleSummaryIndex for a module. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpPredicate` Class Reference
+# `CmpPredicate` Class
 
 <p>An abstraction over a floating-point predicate, and a pack of an integer predicate with samesign information. <a href="#details">More...</a></p>
 

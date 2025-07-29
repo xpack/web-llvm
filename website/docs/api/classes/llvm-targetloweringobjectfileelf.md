@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLoweringObjectFileELF` Class Reference
+# `TargetLoweringObjectFileELF` Class
 
 
 

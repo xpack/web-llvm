@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeStruct` Class Reference
+# `BTFTypeStruct` Class
 
 <p>Handle struct/union type. <a href="#details">More...</a></p>
 

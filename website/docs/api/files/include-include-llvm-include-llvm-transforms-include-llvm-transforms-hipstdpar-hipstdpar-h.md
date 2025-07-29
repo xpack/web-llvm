@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HipStdPar.h` File Reference
+# `HipStdPar.h` File
 
 <p>AcceleratorCodeSelection - Identify all functions reachable from a kernel, removing those that are unreachable. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchELFStreamer` Class Reference
+# `LoongArchELFStreamer` Class
 
 
 

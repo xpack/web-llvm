@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEvolutionPrinterPass` Class Reference
+# `ScalarEvolutionPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/scalarevolutionanalysis">ScalarEvolutionAnalysis</a></span> results. <a href="#details">More...</a></p>
 

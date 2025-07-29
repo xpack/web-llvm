@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFGdbIndex` Class Reference
+# `DWARFGdbIndex` Class
 
 
 

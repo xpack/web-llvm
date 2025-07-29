@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAEnumFrameData` Class Reference
+# `DIAEnumFrameData` Class
 
 
 

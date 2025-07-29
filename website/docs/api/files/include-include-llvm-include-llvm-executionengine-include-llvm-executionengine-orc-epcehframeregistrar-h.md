@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EPCEHFrameRegistrar.h` File Reference
+# `EPCEHFrameRegistrar.h` File
 
 
 

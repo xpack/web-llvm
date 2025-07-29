@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BalancedPartitioning` Class Reference
+# `BalancedPartitioning` Class
 
 
 

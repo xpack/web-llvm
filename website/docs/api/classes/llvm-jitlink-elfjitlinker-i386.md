@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFJITLinker_i386` Class Reference
+# `ELFJITLinker_i386` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVUnknown` Class Reference
+# `SCEVUnknown` Class
 
 <p>This means that we are dealing with an entirely unknown <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> value, and only represent it as its LLVM <a href="/web-llvm/docs/api/classes/llvm/value">Value</a>. <a href="#details">More...</a></p>
 

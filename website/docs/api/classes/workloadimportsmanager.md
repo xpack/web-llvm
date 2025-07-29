@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorkloadImportsManager` Class Reference
+# `WorkloadImportsManager` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/moduleimportsmanager">ModuleImportsManager</a> that operates based on a workload definition (see -thinlto-workload-def). <a href="#details">More...</a></p>
 

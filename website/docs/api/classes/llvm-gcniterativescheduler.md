@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNIterativeScheduler` Class Reference
+# `GCNIterativeScheduler` Class
 
 
 

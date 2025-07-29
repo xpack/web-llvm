@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSPLayoutAnalysis` Class Reference
+# `SSPLayoutAnalysis` Class
 
 
 

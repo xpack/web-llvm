@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoolCostAllocator` Class Template Reference
+# `PoolCostAllocator` Class Template
 
 
 

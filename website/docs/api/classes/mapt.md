@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapT` Class Reference
+# `MapT` Class
 
 
 

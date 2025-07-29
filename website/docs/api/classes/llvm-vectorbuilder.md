@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorBuilder` Class Reference
+# `VectorBuilder` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TestingFormatWriter` Class Reference
+# `TestingFormatWriter` Class
 
 <p>Writer for the coverage mapping testing format. <a href="#details">More...</a></p>
 

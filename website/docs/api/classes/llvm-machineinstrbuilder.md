@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstrBuilder` Class Reference
+# `MachineInstrBuilder` Class
 
 
 

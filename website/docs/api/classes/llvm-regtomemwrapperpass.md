@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegToMemWrapperPass` Class Reference
+# `RegToMemWrapperPass` Class
 
 
 

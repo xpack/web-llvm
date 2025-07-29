@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DtorName` Class Reference
+# `DtorName` Class
 
 
 

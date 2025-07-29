@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicCostAttributes` Class Reference
+# `IntrinsicCostAttributes` Class
 
 
 

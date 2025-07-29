@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DarwinX86AsmBackend` Class Reference
+# `DarwinX86AsmBackend` Class
 
 
 

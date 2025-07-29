@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressProbesMap` Class Reference
+# `AddressProbesMap` Class
 
 
 

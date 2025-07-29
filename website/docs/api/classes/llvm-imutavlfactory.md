@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutAVLFactory` Class Template Reference
+# `ImutAVLFactory` Class Template
 
 
 

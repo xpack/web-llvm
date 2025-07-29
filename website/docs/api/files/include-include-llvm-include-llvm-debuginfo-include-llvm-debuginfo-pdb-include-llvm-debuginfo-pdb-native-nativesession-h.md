@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeSession.h` File Reference
+# `NativeSession.h` File
 
 
 

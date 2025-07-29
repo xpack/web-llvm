@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionPrecedenceTracking` Class Reference
+# `InstructionPrecedenceTracking` Class
 
 
 

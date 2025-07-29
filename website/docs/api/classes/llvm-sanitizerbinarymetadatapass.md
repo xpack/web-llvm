@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerBinaryMetadataPass` Class Reference
+# `SanitizerBinaryMetadataPass` Class
 
 <p>Public interface to the SanitizerBinaryMetadata module pass for emitting metadata for binary analysis sanitizers. <a href="#details">More...</a></p>
 

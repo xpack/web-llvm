@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GLoad` Class Reference
+# `GLoad` Class
 
 <p>Represents a G_LOAD. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShouldNotRunFunctionPassesAnalysis` Class Reference
+# `ShouldNotRunFunctionPassesAnalysis` Class
 
 
 

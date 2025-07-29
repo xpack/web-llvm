@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Interval` Class Template Reference
+# `Interval` Class Template
 
 
 

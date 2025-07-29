@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAUpdaterTraits` Class Template Reference
+# `SSAUpdaterTraits` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ssaupdatertraits-4e613f36227a2a352217431a8f1958cd">SSAUpdaterTraits&lt;MachineSSAUpdater&gt;</a> - Traits for the <a href="/web-llvm/docs/api/classes/llvm/ssaupdaterimpl">SSAUpdaterImpl</a> template, specialized for <a href="/web-llvm/docs/api/classes/llvm/machinessaupdater">MachineSSAUpdater</a>. <a href="#details">More...</a></p>
 

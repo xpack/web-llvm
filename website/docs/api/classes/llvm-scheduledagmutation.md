@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleDAGMutation` Class Reference
+# `ScheduleDAGMutation` Class
 
 <p>Mutate the DAG as a postpass after normal DAG building. <a href="#details">More...</a></p>
 

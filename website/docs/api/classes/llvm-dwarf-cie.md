@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CIE` Class Reference
+# `CIE` Class
 
 <p>DWARF Common Information Entry (<a href="/web-llvm/docs/api/classes/llvm/dwarf/cie">CIE</a>) <a href="#details">More...</a></p>
 

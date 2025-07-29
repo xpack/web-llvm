@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCFunctionInfo` Class Reference
+# `GCFunctionInfo` Class
 
 <p>Garbage collection metadata for a single function. <a href="#details">More...</a></p>
 

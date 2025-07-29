@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchDisassembler` Class Reference
+# `LoongArchDisassembler` Class
 
 
 

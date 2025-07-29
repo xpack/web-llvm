@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFixIrreducibleControlFlow` Class Reference
+# `WebAssemblyFixIrreducibleControlFlow` Class
 
 
 

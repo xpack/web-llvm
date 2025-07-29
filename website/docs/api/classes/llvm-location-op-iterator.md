@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `location_op_iterator` Class Reference
+# `location_op_iterator` Class
 
 
 

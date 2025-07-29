@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicSymbolTableSection` Class Reference
+# `DynamicSymbolTableSection` Class
 
 
 

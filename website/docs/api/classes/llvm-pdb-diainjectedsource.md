@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIAInjectedSource` Class Reference
+# `DIAInjectedSource` Class
 
 
 

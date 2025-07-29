@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionSelect` Class Reference
+# `InstructionSelect` Class
 
 <p>This pass is responsible for selecting generic machine instructions to target-specific instructions. <a href="#details">More...</a></p>
 

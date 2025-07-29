@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnablesNthMFMA` Class Reference
+# `EnablesNthMFMA` Class
 
 <p>Whether or not the instruction is a transitive predecessor of the <span class="doxyComputerOutput">Number</span> th MFMA of the MFMAs occuring after a TRANS instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueMachineInstr` Class Reference
+# `UniqueMachineInstr` Class
 
 <p>A class that wraps MachineInstrs and derives from <a href="/web-llvm/docs/api/namespaces/llvm/#a368e3de8ea854f34bc97c21a64d6a164">FoldingSetNode</a> in order to be uniqued in a CSEMap. <a href="#details">More...</a></p>
 

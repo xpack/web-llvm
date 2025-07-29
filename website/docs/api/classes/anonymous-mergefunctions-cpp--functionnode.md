@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionNode` Class Reference
+# `FunctionNode` Class
 
 
 

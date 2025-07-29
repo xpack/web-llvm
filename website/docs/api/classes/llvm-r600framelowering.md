@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600FrameLowering` Class Reference
+# `R600FrameLowering` Class
 
 
 

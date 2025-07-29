@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopCacheAnalysis.cpp` File Reference
+# `LoopCacheAnalysis.cpp` File
 
 <p>This file defines the implementation for the loop cache analysis. <a href="#details">More...</a></p>
 

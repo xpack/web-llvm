@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVWrapPredicate` Class Reference
+# `SCEVWrapPredicate` Class
 
 <p>This class represents an assumption made on an AddRec expression. <a href="#details">More...</a></p>
 

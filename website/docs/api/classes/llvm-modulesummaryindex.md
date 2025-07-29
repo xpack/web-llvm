@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryIndex` Class Reference
+# `ModuleSummaryIndex` Class
 
 <p>Class to hold module path string table and global value map, and encapsulate methods for operating on them. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsPostLegalizerCombinerImpl` Class Reference
+# `MipsPostLegalizerCombinerImpl` Class
 
 
 

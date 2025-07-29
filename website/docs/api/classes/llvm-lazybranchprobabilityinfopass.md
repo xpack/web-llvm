@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyBranchProbabilityInfoPass` Class Reference
+# `LazyBranchProbabilityInfoPass` Class
 
 <p>This is an alternative analysis pass to <a href="/web-llvm/docs/api/classes/llvm/branchprobabilityinfowrapperpass">BranchProbabilityInfoWrapperPass</a>. <a href="#details">More...</a></p>
 

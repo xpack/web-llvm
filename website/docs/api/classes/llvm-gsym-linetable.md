@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineTable` Class Reference
+# `LineTable` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/gsym/linetable">LineTable</a> class contains deserialized versions of line tables for each function's address ranges. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `scope_exit` Class Template Reference
+# `scope_exit` Class Template
 
 
 

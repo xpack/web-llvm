@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectedGraph` Class Template Reference
+# `DirectedGraph` Class Template
 
 <p>Directed graph. <a href="#details">More...</a></p>
 

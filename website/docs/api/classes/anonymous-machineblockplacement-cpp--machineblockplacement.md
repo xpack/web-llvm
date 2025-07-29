@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBlockPlacement` Class Reference
+# `MachineBlockPlacement` Class
 
 
 

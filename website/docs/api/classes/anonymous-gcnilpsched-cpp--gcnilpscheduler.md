@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNILPScheduler` Class Reference
+# `GCNILPScheduler` Class
 
 
 

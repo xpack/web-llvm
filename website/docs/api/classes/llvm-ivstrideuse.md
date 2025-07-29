@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVStrideUse` Class Reference
+# `IVStrideUse` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ivstrideuse">IVStrideUse</a> - Keep track of one use of a strided induction variable. <a href="#details">More...</a></p>
 

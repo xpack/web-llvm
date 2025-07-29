@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassManagerBase` Class Reference
+# `PassManagerBase` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/legacy/passmanagerbase">PassManagerBase</a> - An abstract interface to allow code to add passes to a pass manager without having to hard-code what kind of pass manager it is. <a href="#details">More...</a></p>
 

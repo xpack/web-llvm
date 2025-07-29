@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoIgnoringInvalidDebugMetadata` Class Reference
+# `DiagnosticInfoIgnoringInvalidDebugMetadata` Class
 
 <p>Diagnostic information for stripping invalid debug metadata. <a href="#details">More...</a></p>
 

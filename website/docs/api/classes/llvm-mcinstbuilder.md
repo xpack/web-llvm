@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCInstBuilder` Class Reference
+# `MCInstBuilder` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEAbbrevData` Class Reference
+# `DIEAbbrevData` Class
 
 <p>Dwarf abbreviation data, describes one attribute of a Dwarf abbreviation. <a href="#details">More...</a></p>
 

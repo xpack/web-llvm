@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinePrinter` Class Reference
+# `LinePrinter` Class
 
 
 

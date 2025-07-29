@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXPassConfig` Class Reference
+# `DirectXPassConfig` Class
 
 
 

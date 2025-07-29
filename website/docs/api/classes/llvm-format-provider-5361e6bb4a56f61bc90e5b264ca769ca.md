@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_provider` Class Template Reference
+# `format_provider` Class Template
 
 <p>Implementation of <a href="/web-llvm/docs/api/structs/llvm/format-provider">format_provider&lt;T&gt;</a> for ranges. <a href="#details">More...</a></p>
 

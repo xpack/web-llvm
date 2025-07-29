@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PriorityWorklist` Class Template Reference
+# `PriorityWorklist` Class Template
 
 <p>A FILO worklist that prioritizes on re-insertion without duplication. <a href="#details">More...</a></p>
 

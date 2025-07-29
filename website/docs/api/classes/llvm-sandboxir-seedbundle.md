@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeedBundle` Class Reference
+# `SeedBundle` Class
 
 <p>A set of candidate Instructions for vectorizing together. <a href="#details">More...</a></p>
 

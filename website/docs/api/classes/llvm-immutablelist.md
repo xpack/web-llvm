@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableList` Class Template Reference
+# `ImmutableList` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/immutablelist">ImmutableList</a> - This class represents an immutable (functional) list. <a href="#details">More...</a></p>
 

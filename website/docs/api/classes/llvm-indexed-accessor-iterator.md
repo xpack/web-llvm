@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `indexed_accessor_iterator` Class Template Reference
+# `indexed_accessor_iterator` Class Template
 
 <p>A utility class used to implement an iterator that contains some base object and an index. <a href="#details">More...</a></p>
 

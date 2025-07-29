@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantRange` Class Reference
+# `ConstantRange` Class
 
 <p>This class represents a range of values. <a href="#details">More...</a></p>
 

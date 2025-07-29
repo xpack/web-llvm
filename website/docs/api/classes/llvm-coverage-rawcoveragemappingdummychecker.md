@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawCoverageMappingDummyChecker` Class Reference
+# `RawCoverageMappingDummyChecker` Class
 
 <p>Checks if the given coverage mapping data is exported for an unused function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleInfo` Class Reference
+# `MachineModuleInfo` Class
 
 <p>This class contains meta information specific to a module. <a href="#details">More...</a></p>
 

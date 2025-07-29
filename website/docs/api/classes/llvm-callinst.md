@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallInst` Class Reference
+# `CallInst` Class
 
 <p>This class represents a function call, abstracting a target machine's calling convention. <a href="#details">More...</a></p>
 

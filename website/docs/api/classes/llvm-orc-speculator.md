@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Speculator` Class Reference
+# `Speculator` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoopSavedModelImpl` Class Reference
+# `NoopSavedModelImpl` Class
 
 <p>A mock class satisfying the interface expected by <a href="/web-llvm/docs/api/classes/llvm/releasemodemodelrunner">ReleaseModeModelRunner</a> for its <span class="doxyComputerOutput">TGen</span> parameter. <a href="#details">More...</a></p>
 

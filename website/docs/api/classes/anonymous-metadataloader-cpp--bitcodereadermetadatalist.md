@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeReaderMetadataList` Class Reference
+# `BitcodeReaderMetadataList` Class
 
 
 

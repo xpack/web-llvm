@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleHazardRecognizer.h` File Reference
+# `ScheduleHazardRecognizer.h` File
 
 
 

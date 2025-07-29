@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineInfo.h` File Reference
+# `InlineInfo.h` File
 
 
 

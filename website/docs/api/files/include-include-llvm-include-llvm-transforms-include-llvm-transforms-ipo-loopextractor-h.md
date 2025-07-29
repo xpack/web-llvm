@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopExtractor.h` File Reference
+# `LoopExtractor.h` File
 
 
 

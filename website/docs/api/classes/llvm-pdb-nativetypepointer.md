@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypePointer` Class Reference
+# `NativeTypePointer` Class
 
 
 

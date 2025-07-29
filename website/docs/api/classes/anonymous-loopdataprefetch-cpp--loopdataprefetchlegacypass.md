@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDataPrefetchLegacyPass` Class Reference
+# `LoopDataPrefetchLegacyPass` Class
 
 <p>Legacy class for inserting loop data prefetches. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsFastISel` Class Reference
+# `MipsFastISel` Class
 
 
 

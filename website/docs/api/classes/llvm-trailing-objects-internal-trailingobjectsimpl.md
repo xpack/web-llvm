@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrailingObjectsImpl` Class Template Reference
+# `TrailingObjectsImpl` Class Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEHash.h` File Reference
+# `DIEHash.h` File
 
 
 

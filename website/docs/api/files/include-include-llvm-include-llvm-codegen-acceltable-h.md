@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelTable.h` File Reference
+# `AccelTable.h` File
 
 <p>This file contains support for writing accelerator tables. <a href="#details">More...</a></p>
 

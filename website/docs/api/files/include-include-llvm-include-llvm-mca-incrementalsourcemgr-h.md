@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncrementalSourceMgr.h` File Reference
+# `IncrementalSourceMgr.h` File
 
 <p>This file contains IncrementalSourceMgr, an implementation of SourceMgr that allows users to add new instructions incrementally / dynamically. <a href="#details">More...</a></p>
 

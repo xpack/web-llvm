@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPDBInjectedSource` Class Reference
+# `IPDBInjectedSource` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pdb/ipdbinjectedsource">IPDBInjectedSource</a> defines an interface used to represent source files which were injected directly into the PDB file during the compilation process. <a href="#details">More...</a></p>
 

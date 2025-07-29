@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniformityInfoPrinterPass` Class Reference
+# `UniformityInfoPrinterPass` Class
 
 <p>Printer pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#a00a2f5a62b5d5d5b6b0e143c4d30041f">UniformityInfo</a></span>. <a href="#details">More...</a></p>
 

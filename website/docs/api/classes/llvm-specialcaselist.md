@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecialCaseList` Class Reference
+# `SpecialCaseList` Class
 
 <p>This is a utility class used to parse user-provided text files with "special case lists" for code sanitizers. <a href="#details">More...</a></p>
 

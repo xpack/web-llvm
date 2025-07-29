@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWAddressSanitizerPass` Class Reference
+# `HWAddressSanitizerPass` Class
 
 <p>This is a public interface to the hardware address sanitizer pass for instrumenting code to check for various memory errors at runtime, similar to AddressSanitizer but based on partial hardware assistance. <a href="#details">More...</a></p>
 

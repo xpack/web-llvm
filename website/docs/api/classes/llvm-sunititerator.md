@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SUnitIterator` Class Reference
+# `SUnitIterator` Class
 
 
 

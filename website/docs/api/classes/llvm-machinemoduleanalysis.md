@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleAnalysis` Class Reference
+# `MachineModuleAnalysis` Class
 
 <p>An analysis that produces <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a></span> for a module. <a href="#details">More...</a></p>
 

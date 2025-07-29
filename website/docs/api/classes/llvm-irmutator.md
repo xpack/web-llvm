@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRMutator` Class Reference
+# `IRMutator` Class
 
 <p>Entry point for configuring and running IR mutations. <a href="#details">More...</a></p>
 

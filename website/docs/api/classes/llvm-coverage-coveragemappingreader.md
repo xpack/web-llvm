@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMappingReader` Class Reference
+# `CoverageMappingReader` Class
 
 
 

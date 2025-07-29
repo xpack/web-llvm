@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerIntrinsics` Class Reference
+# `LowerIntrinsics` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-gcrootlowering-cpp-/lowerintrinsics">LowerIntrinsics</a> - This pass rewrites calls to the llvm.gcread or llvm.gcwrite intrinsics, replacing them with simple loads and stores as directed by the <a href="/web-llvm/docs/api/classes/llvm/gcstrategy">GCStrategy</a>. <a href="#details">More...</a></p>
 

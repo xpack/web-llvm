@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstIterator` Class Template Reference
+# `InstIterator` Class Template
 
 
 

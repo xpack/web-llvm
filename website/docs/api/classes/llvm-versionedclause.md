@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionedClause` Class Reference
+# `VersionedClause` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMSubtarget` Class Reference
+# `ARMSubtarget` Class
 
 
 

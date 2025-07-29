@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveVariables` Class Reference
+# `LiveVariables` Class
 
 
 

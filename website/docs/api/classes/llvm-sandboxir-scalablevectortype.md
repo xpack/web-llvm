@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalableVectorType` Class Reference
+# `ScalableVectorType` Class
 
 
 

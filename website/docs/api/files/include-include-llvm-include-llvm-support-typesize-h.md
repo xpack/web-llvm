@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSize.h` File Reference
+# `TypeSize.h` File
 
 
 

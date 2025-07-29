@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmPrinter` Class Reference
+# `AsmPrinter` Class
 
 <p>This class is intended to be used as a driving class for all asm writers. <a href="#details">More...</a></p>
 

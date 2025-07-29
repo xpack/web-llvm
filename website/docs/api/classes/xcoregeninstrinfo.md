@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreGenInstrInfo` Class Reference
+# `XCoreGenInstrInfo` Class
 
 
 

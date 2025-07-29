@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Compression.h` File Reference
+# `Compression.h` File
 
 
 

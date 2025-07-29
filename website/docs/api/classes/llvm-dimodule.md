@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIModule` Class Reference
+# `DIModule` Class
 
 <p>Represents a module in the programming language, for example, a Clang module, or a Fortran module. <a href="#details">More...</a></p>
 

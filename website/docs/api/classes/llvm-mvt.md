@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MVT` Class Reference
+# `MVT` Class
 
 <p>Machine <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> <a href="/web-llvm/docs/api/classes/llvm/type">Type</a>. <a href="#details">More...</a></p>
 

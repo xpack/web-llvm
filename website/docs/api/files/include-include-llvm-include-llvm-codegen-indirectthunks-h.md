@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectThunks.h` File Reference
+# `IndirectThunks.h` File
 
 <p>Contains a base ThunkInserter class that simplifies injection of MI thunks as well as a default implementation of MachineFunctionPass wrapping several <span class="doxyComputerOutput">ThunkInserter</span>s for targets to extend. <a href="#details">More...</a></p>
 

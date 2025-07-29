@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetLowering` Class Reference
+# `WebAssemblyTargetLowering` Class
 
 
 

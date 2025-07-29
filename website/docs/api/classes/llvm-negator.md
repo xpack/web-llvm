@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Negator` Class Reference
+# `Negator` Class
 
 
 

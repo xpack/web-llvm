@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReversePostOrderFunctionAttrsPass` Class Reference
+# `ReversePostOrderFunctionAttrsPass` Class
 
 <p>A pass to do RPO deduction and propagation of function attributes. <a href="#details">More...</a></p>
 

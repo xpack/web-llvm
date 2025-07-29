@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondBranchWeights` Class Reference
+# `CondBranchWeights` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCCodeEmitter` Class Reference
+# `AMDGPUMCCodeEmitter` Class
 
 
 

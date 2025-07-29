@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstGeneration` Class Reference
+# `ConstGeneration` Class
 
 
 

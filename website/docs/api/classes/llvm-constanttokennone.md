@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantTokenNone` Class Reference
+# `ConstantTokenNone` Class
 
 <p>A constant token which is empty. <a href="#details">More...</a></p>
 

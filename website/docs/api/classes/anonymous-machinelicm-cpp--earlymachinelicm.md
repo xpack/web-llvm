@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlyMachineLICM` Class Reference
+# `EarlyMachineLICM` Class
 
 
 

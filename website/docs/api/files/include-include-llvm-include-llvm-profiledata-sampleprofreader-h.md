@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfReader.h` File Reference
+# `SampleProfReader.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsManifestMerger` Class Reference
+# `WindowsManifestMerger` Class
 
 
 

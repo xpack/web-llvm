@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPServerRequest` Class Reference
+# `HTTPServerRequest` Class
 
 
 

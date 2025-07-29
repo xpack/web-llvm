@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgValueLoc` Class Reference
+# `DbgValueLoc` Class
 
 <p>The location of a single variable, composed of an expression and 0 or more DbgValueLocEntries. <a href="#details">More...</a></p>
 

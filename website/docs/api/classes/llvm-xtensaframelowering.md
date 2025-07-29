@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaFrameLowering` Class Reference
+# `XtensaFrameLowering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Directive` Class Reference
+# `Directive` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorMatchesMono` Class Template Reference
+# `ErrorMatchesMono` Class Template
 
 
 

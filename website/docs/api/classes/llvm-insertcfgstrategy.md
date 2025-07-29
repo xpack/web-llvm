@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertCFGStrategy` Class Reference
+# `InsertCFGStrategy` Class
 
 <p>Strategy to split a random block and insert a random CFG in between. <a href="#details">More...</a></p>
 

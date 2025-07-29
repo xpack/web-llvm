@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCXCOFFObjectWriter` Class Reference
+# `PPCXCOFFObjectWriter` Class
 
 
 

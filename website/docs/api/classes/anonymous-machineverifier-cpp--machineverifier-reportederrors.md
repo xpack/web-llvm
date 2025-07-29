@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReportedErrors` Class Reference
+# `ReportedErrors` Class
 
 <p>A class to track the number of reported error and to guarantee that only one error is reported at one time. <a href="#details">More...</a></p>
 

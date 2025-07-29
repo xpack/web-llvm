@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteBuffer` Class Reference
+# `RewriteBuffer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/rewritebuffer">RewriteBuffer</a> - As code is rewritten, SourceBuffer's from the original input with modifications get a new <a href="/web-llvm/docs/api/classes/llvm/rewritebuffer">RewriteBuffer</a> associated with them. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCTargetMachine` Class Reference
+# `ARCTargetMachine` Class
 
 
 

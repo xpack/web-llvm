@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FoldTablesUtils.h` File Reference
+# `X86FoldTablesUtils.h` File
 
 
 

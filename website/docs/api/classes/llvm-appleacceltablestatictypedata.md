@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppleAccelTableStaticTypeData` Class Reference
+# `AppleAccelTableStaticTypeData` Class
 
 <p>Accelerator table data implementation for type accelerator tables with a <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> offset but no actual <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> pointer. <a href="#details">More...</a></p>
 

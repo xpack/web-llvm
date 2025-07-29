@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddMachinePass` Class Reference
+# `AddMachinePass` Class
 
 
 

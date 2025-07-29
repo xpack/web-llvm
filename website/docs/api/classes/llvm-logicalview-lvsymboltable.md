@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVSymbolTable` Class Reference
+# `LVSymbolTable` Class
 
 
 

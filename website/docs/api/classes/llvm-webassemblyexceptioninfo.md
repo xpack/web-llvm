@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyExceptionInfo` Class Reference
+# `WebAssemblyExceptionInfo` Class
 
 
 

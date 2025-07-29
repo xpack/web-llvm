@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppleAccelTableOffsetData` Class Reference
+# `AppleAccelTableOffsetData` Class
 
 <p>Accelerator table data implementation for simple Apple accelerator tables with just a <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> reference. <a href="#details">More...</a></p>
 

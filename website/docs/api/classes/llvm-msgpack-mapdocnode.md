@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapDocNode` Class Reference
+# `MapDocNode` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/msgpack/docnode">DocNode</a> that is a map. <a href="#details">More...</a></p>
 

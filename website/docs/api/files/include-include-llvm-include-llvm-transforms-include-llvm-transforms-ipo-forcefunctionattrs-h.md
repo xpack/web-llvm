@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceFunctionAttrs.h` File Reference
+# `ForceFunctionAttrs.h` File
 
 <p>Super simple passes to force specific function attrs from the commandline into the IR for debugging purposes. <a href="#details">More...</a></p>
 

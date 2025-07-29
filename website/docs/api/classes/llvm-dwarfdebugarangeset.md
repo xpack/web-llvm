@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugArangeSet` Class Reference
+# `DWARFDebugArangeSet` Class
 
 
 

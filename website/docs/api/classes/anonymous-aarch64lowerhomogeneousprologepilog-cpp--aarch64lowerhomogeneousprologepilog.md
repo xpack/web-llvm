@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64LowerHomogeneousPrologEpilog` Class Reference
+# `AArch64LowerHomogeneousPrologEpilog` Class
 
 
 

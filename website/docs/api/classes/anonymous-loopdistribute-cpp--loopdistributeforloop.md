@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDistributeForLoop` Class Reference
+# `LoopDistributeForLoop` Class
 
 <p>The actual class performing the per-loop work. <a href="#details">More...</a></p>
 

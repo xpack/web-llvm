@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareUnit.h` File Reference
+# `HardwareUnit.h` File
 
 <p>This file defines a base class for describing a simulated hardware unit. <a href="#details">More...</a></p>
 

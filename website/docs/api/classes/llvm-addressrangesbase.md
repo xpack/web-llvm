@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressRangesBase` Class Template Reference
+# `AddressRangesBase` Class Template
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/addressrangesbase">AddressRangesBase</a> class presents the base functionality for the normalized address ranges collection. <a href="#details">More...</a></p>
 

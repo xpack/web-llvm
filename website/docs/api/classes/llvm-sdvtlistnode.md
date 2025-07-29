@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDVTListNode` Class Reference
+# `SDVTListNode` Class
 
 
 

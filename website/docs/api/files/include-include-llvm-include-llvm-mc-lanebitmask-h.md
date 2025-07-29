@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LaneBitmask.h` File Reference
+# `LaneBitmask.h` File
 
 <p>A common definition of LaneBitmask for use in TableGen and CodeGen. <a href="#details">More...</a></p>
 

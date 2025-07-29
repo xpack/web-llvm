@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SROALegacyPass` Class Reference
+# `SROALegacyPass` Class
 
 <p>A legacy pass for the legacy pass manager that wraps the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/anonymous-sroa-cpp-/sroa">SROA</a></span> pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedFileStream` Class Reference
+# `CachedFileStream` Class
 
 <p>This class wraps an output stream for a file. <a href="#details">More...</a></p>
 

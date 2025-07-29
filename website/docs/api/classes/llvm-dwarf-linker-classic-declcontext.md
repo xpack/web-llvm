@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeclContext` Class Reference
+# `DeclContext` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/declcontext">DeclContext</a> is a named program scope that is used for ODR uniquing of types. <a href="#details">More...</a></p>
 

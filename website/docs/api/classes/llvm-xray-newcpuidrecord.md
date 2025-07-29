@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewCPUIDRecord` Class Reference
+# `NewCPUIDRecord` Class
 
 
 

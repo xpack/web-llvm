@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `V2SCopyInfo` Class Reference
+# `V2SCopyInfo` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZELFRegisters` Class Reference
+# `SystemZELFRegisters` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> calling convention specific use registers Particular when on zLinux in 64 bit mode. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPEnv.h` File Reference
+# `FPEnv.h` File
 
 <p>This file contains the declarations of entities that describe floating point environment and related functions. <a href="#details">More...</a></p>
 

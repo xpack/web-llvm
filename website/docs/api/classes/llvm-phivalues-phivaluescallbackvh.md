@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiValuesCallbackVH` Class Reference
+# `PhiValuesCallbackVH` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/callbackvh">CallbackVH</a> to notify <a href="/web-llvm/docs/api/classes/llvm/phivalues">PhiValues</a> when a value is deleted or replaced, so that the cached information for that value can be cleared to avoid dangling pointers to invalid values. <a href="#details">More...</a></p>
 

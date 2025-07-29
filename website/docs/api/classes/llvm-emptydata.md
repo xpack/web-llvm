@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmptyData` Class Reference
+# `EmptyData` Class
 
 
 

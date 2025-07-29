@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDVector` Class Template Reference
+# `MDVector` Class Template
 
 
 

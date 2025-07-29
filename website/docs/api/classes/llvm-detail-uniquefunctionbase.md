@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueFunctionBase` Class Template Reference
+# `UniqueFunctionBase` Class Template
 
 
 

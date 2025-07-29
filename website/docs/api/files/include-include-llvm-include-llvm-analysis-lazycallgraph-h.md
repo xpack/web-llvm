@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyCallGraph.h` File Reference
+# `LazyCallGraph.h` File
 
 <p>Implements a lazy call graph analysis and related passes for the new pass manager. <a href="#details">More...</a></p>
 

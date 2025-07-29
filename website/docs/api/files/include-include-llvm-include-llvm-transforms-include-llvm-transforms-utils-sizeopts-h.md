@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizeOpts.h` File Reference
+# `SizeOpts.h` File
 
 
 

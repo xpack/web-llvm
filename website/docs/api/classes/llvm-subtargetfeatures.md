@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubtargetFeatures` Class Reference
+# `SubtargetFeatures` Class
 
 <p>Manages the enabling and disabling of subtarget specific features. <a href="#details">More...</a></p>
 

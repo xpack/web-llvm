@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `function_ref` Class Template Reference
+# `function_ref` Class Template
 
 <p>An efficient, type-erasing, non-owning reference to a callable. <a href="#details">More...</a></p>
 

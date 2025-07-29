@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFReader` Class Reference
+# `COFFReader` Class
 
 
 

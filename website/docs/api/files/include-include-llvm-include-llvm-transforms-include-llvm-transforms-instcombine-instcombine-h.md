@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombine.h` File Reference
+# `InstCombine.h` File
 
 <p>This file provides the primary interface to the instcombine pass. <a href="#details">More...</a></p>
 

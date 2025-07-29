@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackColoringLegacy` Class Reference
+# `StackColoringLegacy` Class
 
 
 

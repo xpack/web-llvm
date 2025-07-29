@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GUIDProbeFunctionMap` Class Reference
+# `GUIDProbeFunctionMap` Class
 
 
 

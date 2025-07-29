@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeExtractor` Class Reference
+# `CodeExtractor` Class
 
 <p>Utility class for extracting code into a new function. <a href="#details">More...</a></p>
 

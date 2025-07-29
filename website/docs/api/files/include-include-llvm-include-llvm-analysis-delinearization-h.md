@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Delinearization.h` File Reference
+# `Delinearization.h` File
 
 
 

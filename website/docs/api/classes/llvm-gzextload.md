@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GZExtLoad` Class Reference
+# `GZExtLoad` Class
 
 <p>Represents a G_ZEXTLOAD. <a href="#details">More...</a></p>
 

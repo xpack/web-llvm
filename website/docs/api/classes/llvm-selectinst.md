@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectInst` Class Reference
+# `SelectInst` Class
 
 <p>This class represents the LLVM 'select' instruction. <a href="#details">More...</a></p>
 

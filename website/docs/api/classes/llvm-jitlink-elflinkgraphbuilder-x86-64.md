@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFLinkGraphBuilder_x86_64` Class Reference
+# `ELFLinkGraphBuilder_x86_64` Class
 
 
 

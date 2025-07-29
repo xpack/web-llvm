@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64RegisterBankInfo` Class Reference
+# `AArch64RegisterBankInfo` Class
 
 <p>This class provides the information for the target register banks. <a href="#details">More...</a></p>
 

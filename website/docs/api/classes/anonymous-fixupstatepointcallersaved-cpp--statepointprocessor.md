@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatepointProcessor` Class Reference
+# `StatepointProcessor` Class
 
 
 

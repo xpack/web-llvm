@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockFrequencyInfoWrapperPass` Class Reference
+# `BlockFrequencyInfoWrapperPass` Class
 
 <p>Legacy analysis pass which computes <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a></span>. <a href="#details">More...</a></p>
 

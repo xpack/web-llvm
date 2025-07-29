@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDGDotPrinterPass` Class Reference
+# `DDGDotPrinterPass` Class
 
 
 

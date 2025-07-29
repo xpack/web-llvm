@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantAccessor` Class Reference
+# `ConstantAccessor` Class
 
 <p>Accessor for constants. <a href="#details">More...</a></p>
 

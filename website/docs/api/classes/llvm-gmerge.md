@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GMerge` Class Reference
+# `GMerge` Class
 
 <p>Represents a G_MERGE_VALUES. <a href="#details">More...</a></p>
 

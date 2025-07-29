@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WithColor` Class Reference
+# `WithColor` Class
 
 <p>An RAII object that temporarily switches an output stream to a specific color. <a href="#details">More...</a></p>
 

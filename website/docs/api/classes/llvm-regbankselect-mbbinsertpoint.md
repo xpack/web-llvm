@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBBInsertPoint` Class Reference
+# `MBBInsertPoint` Class
 
 <p>Insertion point at the beginning or end of a basic block. <a href="#details">More...</a></p>
 

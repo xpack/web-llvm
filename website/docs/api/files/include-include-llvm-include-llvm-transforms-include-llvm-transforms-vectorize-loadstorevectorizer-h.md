@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadStoreVectorizer.h` File Reference
+# `LoadStoreVectorizer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86IndirectThunks` Class Reference
+# `X86IndirectThunks` Class
 
 
 

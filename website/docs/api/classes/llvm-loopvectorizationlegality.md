@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationLegality` Class Reference
+# `LoopVectorizationLegality` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loopvectorizationlegality">LoopVectorizationLegality</a> checks if it is legal to vectorize a loop, and to what vectorization factor. <a href="#details">More...</a></p>
 

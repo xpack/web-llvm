@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCAAResult` Class Reference
+# `ObjCARCAAResult` Class
 
 <p>This is a simple alias analysis implementation that uses knowledge of ARC constructs to answer queries. <a href="#details">More...</a></p>
 

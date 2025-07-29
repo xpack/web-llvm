@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparsePropagation.h` File Reference
+# `SparsePropagation.h` File
 
 
 

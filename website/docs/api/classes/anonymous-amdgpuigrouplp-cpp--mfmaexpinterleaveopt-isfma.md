@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsFMA` Class Reference
+# `IsFMA` Class
 
 
 

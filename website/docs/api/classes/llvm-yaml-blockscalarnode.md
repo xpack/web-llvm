@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockScalarNode` Class Reference
+# `BlockScalarNode` Class
 
 <p>A block scalar node is an opaque datum that can be presented as a series of zero or more Unicode scalar values. <a href="#details">More...</a></p>
 

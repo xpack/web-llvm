@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARF5AccelTableData` Class Reference
+# `DWARF5AccelTableData` Class
 
 <p>The Data class implementation for DWARF v5 accelerator table. <a href="#details">More...</a></p>
 

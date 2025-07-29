@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugSubsection.cpp` File Reference
+# `DebugSubsection.cpp` File
 
 
 

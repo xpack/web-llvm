@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMOverrideBypasses` Class Reference
+# `ARMOverrideBypasses` Class
 
 <p>Post-process the DAG to create cluster edges between instrs that may be fused by the processor into a single operation. <a href="#details">More...</a></p>
 

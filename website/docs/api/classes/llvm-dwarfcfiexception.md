@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfCFIException` Class Reference
+# `DwarfCFIException` Class
 
 
 

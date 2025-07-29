@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVROperand` Class Reference
+# `AVROperand` Class
 
 <p>An parsed <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> assembly operand. <a href="#details">More...</a></p>
 

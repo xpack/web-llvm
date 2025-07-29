@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Extensions.cpp` File Reference
+# `Extensions.cpp` File
 
 
 

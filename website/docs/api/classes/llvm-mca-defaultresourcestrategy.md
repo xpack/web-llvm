@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultResourceStrategy` Class Reference
+# `DefaultResourceStrategy` Class
 
 <p>Default resource allocation strategy used by processor resource groups and processor resources with multiple units. <a href="#details">More...</a></p>
 

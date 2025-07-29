@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `partition_iterator` Class Reference
+# `partition_iterator` Class
 
 <p>An iterator over partitions of the alloca's slices. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegUnitMaskIterator` Class Reference
+# `MCRegUnitMaskIterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/mcregunitmaskiterator">MCRegUnitMaskIterator</a> enumerates a list of register units and their associated lane masks for Reg. <a href="#details">More...</a></p>
 

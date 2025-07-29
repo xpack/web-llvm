@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPtrSet.h` File Reference
+# `SmallPtrSet.h` File
 
 <p>This file defines the SmallPtrSet class. <a href="#details">More...</a></p>
 

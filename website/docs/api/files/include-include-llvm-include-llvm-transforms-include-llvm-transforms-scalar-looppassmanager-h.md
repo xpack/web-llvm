@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopPassManager.h` File Reference
+# `LoopPassManager.h` File
 
 <p>This header provides classes for managing a pipeline of passes over loops in LLVM IR. <a href="#details">More...</a></p>
 

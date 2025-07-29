@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `directory_iterator` Class Reference
+# `directory_iterator` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a> - Iterates through the entries in path. <a href="#details">More...</a></p>
 

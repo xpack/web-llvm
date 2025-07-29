@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalTypeTableBuilder.cpp` File Reference
+# `GlobalTypeTableBuilder.cpp` File
 
 
 

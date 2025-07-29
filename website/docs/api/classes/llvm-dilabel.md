@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILabel` Class Reference
+# `DILabel` Class
 
 <p>Label. <a href="#details">More...</a></p>
 

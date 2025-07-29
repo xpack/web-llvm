@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIMetadata` Class Reference
+# `MIMetadata` Class
 
 <p>Set of metadata that should be preserved when using <a href="/web-llvm/docs/api/namespaces/llvm/#a17e04afcf0c5efeb0eb6a9a45287b5e4">BuildMI()</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineTable.cpp` File Reference
+# `LineTable.cpp` File
 
 
 

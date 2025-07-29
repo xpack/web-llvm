@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCRecordLayout` Class Template Reference
+# `BCRecordLayout` Class Template
 
 <p>A record with a fixed record code. <a href="#details">More...</a></p>
 

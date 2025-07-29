@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfReaderRemapper` Class Reference
+# `InstrProfReaderRemapper` Class
 
 <p>Name matcher supporting fuzzy matching of symbol names to names in profiles. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocaSliceRewriter` Class Reference
+# `AllocaSliceRewriter` Class
 
 <p>Visitor to rewrite instructions using p particular slice of an alloca to use a new alloca. <a href="#details">More...</a></p>
 

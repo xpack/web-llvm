@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDXContainerTargetWriter` Class Reference
+# `MCDXContainerTargetWriter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64DAGToDAGISelLegacy` Class Reference
+# `AArch64DAGToDAGISelLegacy` Class
 
 
 

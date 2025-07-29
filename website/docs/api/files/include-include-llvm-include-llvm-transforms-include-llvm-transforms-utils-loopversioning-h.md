@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVersioning.h` File Reference
+# `LoopVersioning.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPriorityWorklist` Class Template Reference
+# `SmallPriorityWorklist` Class Template
 
 <p>A version of <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/priorityworklist">PriorityWorklist</a></span> that selects small size optimized data structures for the vector and map. <a href="#details">More...</a></p>
 

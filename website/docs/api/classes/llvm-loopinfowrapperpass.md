@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInfoWrapperPass` Class Reference
+# `LoopInfoWrapperPass` Class
 
 <p>The legacy pass manager's analysis pass to compute loop information. <a href="#details">More...</a></p>
 

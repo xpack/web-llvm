@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DOTGraphTraitsPass.h` File Reference
+# `DOTGraphTraitsPass.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMTAPI.h` File Reference
+# `SMTAPI.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBlocks` Class Reference
+# `LoopBlocks` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Segment` Class Reference
+# `Segment` Class
 
 <p>The Alignment, ContentSize and ZeroFillSize of each segment will be pre-filled from the Graph. <a href="#details">More...</a></p>
 

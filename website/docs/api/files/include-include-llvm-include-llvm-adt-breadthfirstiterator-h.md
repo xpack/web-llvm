@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BreadthFirstIterator.h` File Reference
+# `BreadthFirstIterator.h` File
 
 <p>This file builds on the <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h">ADT/GraphTraits.h</a> file to build a generic breadth first graph iterator. <a href="#details">More...</a></p>
 

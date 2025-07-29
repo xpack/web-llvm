@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgLabel` Class Reference
+# `DbgLabel` Class
 
 <p>This class is used to track label information. <a href="#details">More...</a></p>
 

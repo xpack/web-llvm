@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `po_iterator_storage` Class Template Reference
+# `po_iterator_storage` Class Template
 
 
 

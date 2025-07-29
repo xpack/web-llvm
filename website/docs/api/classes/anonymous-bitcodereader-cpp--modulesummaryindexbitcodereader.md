@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSummaryIndexBitcodeReader` Class Reference
+# `ModuleSummaryIndexBitcodeReader` Class
 
 <p>Class to manage reading and parsing function summary index bitcode files/sections. <a href="#details">More...</a></p>
 

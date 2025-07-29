@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InMemoryFileAdaptor` Class Reference
+# `InMemoryFileAdaptor` Class
 
 <p>Adapt a <a href="/web-llvm/docs/api/classes/llvm/vfs/detail/inmemoryfile">InMemoryFile</a> for VFS' <a href="/web-llvm/docs/api/classes/llvm/vfs/file">File</a> interface. <a href="#details">More...</a></p>
 

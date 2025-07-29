@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectOptimizeImpl` Class Reference
+# `SelectOptimizeImpl` Class
 
 
 

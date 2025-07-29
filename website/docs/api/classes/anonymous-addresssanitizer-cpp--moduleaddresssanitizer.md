@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleAddressSanitizer` Class Reference
+# `ModuleAddressSanitizer` Class
 
 
 

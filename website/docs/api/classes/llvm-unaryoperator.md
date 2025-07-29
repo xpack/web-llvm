@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnaryOperator` Class Reference
+# `UnaryOperator` Class
 
 
 

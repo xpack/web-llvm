@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrEmitter` Class Reference
+# `InstrEmitter` Class
 
 
 

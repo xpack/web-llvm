@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedSizeStorageOwner` Class Reference
+# `FixedSizeStorageOwner` Class
 
 <p>A type that acts as the owner for an object placed into fixed storage. <a href="#details">More...</a></p>
 

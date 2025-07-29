@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelLookupTableConverter.h` File Reference
+# `RelLookupTableConverter.h` File
 
 <p>This file implements relative lookup table converter that converts lookup tables to relative lookup tables to make them PIC-friendly. <a href="#details">More...</a></p>
 

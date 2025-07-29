@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReadyQueue` Class Reference
+# `ReadyQueue` Class
 
 <p>Helpers for implementing custom <a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a> classes. <a href="#details">More...</a></p>
 

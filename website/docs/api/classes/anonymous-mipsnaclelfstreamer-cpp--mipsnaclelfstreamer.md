@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsNaClELFStreamer` Class Reference
+# `MipsNaClELFStreamer` Class
 
 <p>Extend the generic MCELFStreamer class so that it can mask dangerous instructions. <a href="#details">More...</a></p>
 

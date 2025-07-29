@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcreteSymbolEnumerator` Class Template Reference
+# `ConcreteSymbolEnumerator` Class Template
 
 
 

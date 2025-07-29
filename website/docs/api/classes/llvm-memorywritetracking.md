@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryWriteTracking` Class Reference
+# `MemoryWriteTracking` Class
 
 
 

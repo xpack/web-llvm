@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WithOverflowInst` Class Reference
+# `WithOverflowInst` Class
 
 <p>Represents an op.with.overflow intrinsic. <a href="#details">More...</a></p>
 

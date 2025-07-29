@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMetadataVerifier.cpp` File Reference
+# `AMDGPUMetadataVerifier.cpp` File
 
 <p>Implements a verifier for AMDGPU HSA metadata. <a href="#details">More...</a></p>
 

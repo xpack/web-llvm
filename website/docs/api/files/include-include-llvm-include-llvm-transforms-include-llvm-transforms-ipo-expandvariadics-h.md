@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandVariadics.h` File Reference
+# `ExpandVariadics.h` File
 
 
 

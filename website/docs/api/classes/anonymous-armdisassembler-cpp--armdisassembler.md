@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMDisassembler` Class Reference
+# `ARMDisassembler` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> disassembler for all <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> platforms. <a href="#details">More...</a></p>
 

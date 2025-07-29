@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFAsmParser` Class Reference
+# `ELFAsmParser` Class
 
 
 

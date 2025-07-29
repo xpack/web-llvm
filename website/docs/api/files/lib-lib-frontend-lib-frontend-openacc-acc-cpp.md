@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ACC.cpp` File Reference
+# `ACC.cpp` File
 
 
 

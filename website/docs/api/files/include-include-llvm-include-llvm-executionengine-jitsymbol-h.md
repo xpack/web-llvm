@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITSymbol.h` File Reference
+# `JITSymbol.h` File
 
 
 

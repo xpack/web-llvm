@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BracedExpr` Class Reference
+# `BracedExpr` Class
 
 
 

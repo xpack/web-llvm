@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Triple` Class Reference
+# `Triple` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/triple">Triple</a> - Helper class for working with autoconf configuration names. <a href="#details">More...</a></p>
 

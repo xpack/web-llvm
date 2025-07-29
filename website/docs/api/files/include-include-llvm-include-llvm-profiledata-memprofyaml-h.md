@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemProfYAML.h` File Reference
+# `MemProfYAML.h` File
 
 
 

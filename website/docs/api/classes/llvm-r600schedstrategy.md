@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600SchedStrategy` Class Reference
+# `R600SchedStrategy` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFKindVar` Class Reference
+# `BTFKindVar` Class
 
 <p>Handle variable instances. <a href="#details">More...</a></p>
 

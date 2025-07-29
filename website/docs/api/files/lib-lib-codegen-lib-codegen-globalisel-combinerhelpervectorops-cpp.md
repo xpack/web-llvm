@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerHelperVectorOps.cpp` File Reference
+# `CombinerHelperVectorOps.cpp` File
 
 
 

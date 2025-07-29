@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFTracebackTable` Class Reference
+# `XCOFFTracebackTable` Class
 
 <p>This class provides methods to extract traceback table data from a buffer. <a href="#details">More...</a></p>
 

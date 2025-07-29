@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNDPPCombinePass` Class Reference
+# `GCNDPPCombinePass` Class
 
 
 

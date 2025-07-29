@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAsyncContextDeallocInst` Class Reference
+# `CoroAsyncContextDeallocInst` Class
 
 <p>This represents the llvm.coro.context.dealloc instruction. <a href="#details">More...</a></p>
 

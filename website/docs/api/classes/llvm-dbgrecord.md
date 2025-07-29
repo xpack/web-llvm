@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgRecord` Class Reference
+# `DbgRecord` Class
 
 <p>Base class for non-instruction debug metadata records that have positions within IR. <a href="#details">More...</a></p>
 

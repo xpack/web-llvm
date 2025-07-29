@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrUseVisitor.h` File Reference
+# `PtrUseVisitor.h` File
 
 <p>This file provides a collection of visitors which walk the (instruction) uses of a pointer. <a href="#details">More...</a></p>
 

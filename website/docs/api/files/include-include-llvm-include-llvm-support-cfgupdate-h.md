@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGUpdate.h` File Reference
+# `CFGUpdate.h` File
 
 
 

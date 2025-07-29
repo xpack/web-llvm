@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordResolver` Class Reference
+# `RecordResolver` Class
 
 <p>Resolve all variables from a record except for unset variables. <a href="#details">More...</a></p>
 

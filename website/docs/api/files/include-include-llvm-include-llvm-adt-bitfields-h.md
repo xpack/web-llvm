@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Bitfields.h` File Reference
+# `Bitfields.h` File
 
 <p>This file implements methods to test, set and extract typed bits from packed unsigned integers. <a href="#details">More...</a></p>
 

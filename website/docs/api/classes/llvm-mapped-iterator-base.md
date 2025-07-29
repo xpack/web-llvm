@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mapped_iterator_base` Class Template Reference
+# `mapped_iterator_base` Class Template
 
 <p>A base type of mapped iterator, that is useful for building derived iterators that do not need/want to store the map function (as in <a href="/web-llvm/docs/api/classes/llvm/mapped-iterator">mapped_iterator</a>). <a href="#details">More...</a></p>
 

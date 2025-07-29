@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerAtomicPass.h` File Reference
+# `LowerAtomicPass.h` File
 
 
 

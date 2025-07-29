@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeBitSet` Class Reference
+# `AttributeBitSet` Class
 
 
 

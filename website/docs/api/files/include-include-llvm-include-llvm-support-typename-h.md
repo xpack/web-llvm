@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeName.h` File Reference
+# `TypeName.h` File
 
 
 

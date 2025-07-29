@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmPrinter` Class Reference
+# `WebAssemblyAsmPrinter` Class
 
 
 

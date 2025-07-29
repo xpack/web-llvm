@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileOutputBuffer` Class Reference
+# `FileOutputBuffer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/fileoutputbuffer">FileOutputBuffer</a> - This interface provides simple way to create an in-memory buffer which will be written to a file. <a href="#details">More...</a></p>
 

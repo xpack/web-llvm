@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRTranslator.h` File Reference
+# `IRTranslator.h` File
 
 <p>This file declares the IRTranslator pass. <a href="#details">More...</a></p>
 

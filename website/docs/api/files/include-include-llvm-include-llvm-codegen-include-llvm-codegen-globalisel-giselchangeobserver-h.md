@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelChangeObserver.h` File Reference
+# `GISelChangeObserver.h` File
 
 <p>This contains common code to allow clients to notify changes to machine instr. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RealFile` Class Reference
+# `RealFile` Class
 
 <p>Wrapper around a raw file descriptor. <a href="#details">More...</a></p>
 

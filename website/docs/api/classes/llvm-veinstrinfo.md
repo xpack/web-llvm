@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEInstrInfo` Class Reference
+# `VEInstrInfo` Class
 
 
 

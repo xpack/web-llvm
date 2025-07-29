@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOPlatformPlugin` Class Reference
+# `MachOPlatformPlugin` Class
 
 
 

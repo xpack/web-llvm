@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsDisassembler` Class Reference
+# `MipsDisassembler` Class
 
 
 

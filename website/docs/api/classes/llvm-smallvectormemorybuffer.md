@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorMemoryBuffer` Class Reference
+# `SmallVectorMemoryBuffer` Class
 
 <p>SmallVector-backed <a href="/web-llvm/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> instance. <a href="#details">More...</a></p>
 

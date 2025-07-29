@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSinking` Class Reference
+# `MachineSinking` Class
 
 
 

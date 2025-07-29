@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSUnitBase` Class Reference
+# `LSUnitBase` Class
 
 <p>Abstract base interface for LS (load/store) units in llvm-mca. <a href="#details">More...</a></p>
 

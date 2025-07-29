@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Parallel.h` File Reference
+# `Parallel.h` File
 
 
 

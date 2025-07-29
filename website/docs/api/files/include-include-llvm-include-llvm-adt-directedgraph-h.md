@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectedGraph.h` File Reference
+# `DirectedGraph.h` File
 
 <p>This file defines the interface and a base class implementation for a directed graph. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ILPScheduler` Class Reference
+# `ILPScheduler` Class
 
 <p>Schedule based on the ILP metric. <a href="#details">More...</a></p>
 

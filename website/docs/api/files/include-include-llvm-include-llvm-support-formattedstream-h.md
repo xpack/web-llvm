@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormattedStream.h` File Reference
+# `FormattedStream.h` File
 
 
 

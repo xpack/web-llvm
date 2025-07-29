@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatCommon.h` File Reference
+# `FormatCommon.h` File
 
 
 

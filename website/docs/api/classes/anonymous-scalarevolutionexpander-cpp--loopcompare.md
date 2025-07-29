@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopCompare` Class Reference
+# `LoopCompare` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-scalarevolutionexpander-cpp-/loopcompare">LoopCompare</a> - Compare loops by PickMostRelevantLoop. <a href="#details">More...</a></p>
 

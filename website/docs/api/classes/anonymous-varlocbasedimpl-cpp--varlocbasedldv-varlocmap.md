@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarLocMap` Class Reference
+# `VarLocMap` Class
 
 <p>VarLocMap is used for two things: 1) Assigning <a href="/web-llvm/docs/api/namespaces/anonymous-varlocbasedimpl-cpp-/#a1a71406009b70e55de914dc6374ce484">LocIndices</a> to a VarLoc. <a href="#details">More...</a></p>
 

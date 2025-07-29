@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVLines` Class Reference
+# `GCOVLines` Class
 
 
 

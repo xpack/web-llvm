@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDDbgValue` Class Reference
+# `SDDbgValue` Class
 
 <p>Holds the information from a dbg_value node through SDISel. <a href="#details">More...</a></p>
 

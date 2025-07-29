@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `call_iterator` Class Reference
+# `call_iterator` Class
 
 <p>An iterator over specifically call edges. <a href="#details">More...</a></p>
 

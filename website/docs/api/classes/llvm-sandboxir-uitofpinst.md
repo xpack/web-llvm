@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UIToFPInst` Class Reference
+# `UIToFPInst` Class
 
 
 

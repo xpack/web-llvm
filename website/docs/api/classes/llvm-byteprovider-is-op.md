@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_op` Class Template Reference
+# `is_op` Class Template
 
 
 

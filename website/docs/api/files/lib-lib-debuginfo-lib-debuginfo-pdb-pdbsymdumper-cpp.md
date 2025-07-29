@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymDumper.cpp` File Reference
+# `PDBSymDumper.cpp` File
 
 
 

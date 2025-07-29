@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIImportedEntity` Class Reference
+# `DIImportedEntity` Class
 
 <p>An imported module (C++ using directive or similar). <a href="#details">More...</a></p>
 

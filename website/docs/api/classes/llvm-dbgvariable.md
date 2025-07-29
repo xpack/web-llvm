@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgVariable` Class Reference
+# `DbgVariable` Class
 
 <p>This class is used to track local variable information. <a href="#details">More...</a></p>
 

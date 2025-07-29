@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOV.h` File Reference
+# `GCOV.h` File
 
 
 

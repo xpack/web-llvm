@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYMCExpr` Class Reference
+# `CSKYMCExpr` Class
 
 
 

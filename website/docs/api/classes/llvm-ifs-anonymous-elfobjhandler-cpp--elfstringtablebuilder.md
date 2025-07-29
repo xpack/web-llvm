@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFStringTableBuilder` Class Reference
+# `ELFStringTableBuilder` Class
 
 
 

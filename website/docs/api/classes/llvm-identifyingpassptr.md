@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IdentifyingPassPtr` Class Reference
+# `IdentifyingPassPtr` Class
 
 <p>Discriminated union of <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> ID types. <a href="#details">More...</a></p>
 

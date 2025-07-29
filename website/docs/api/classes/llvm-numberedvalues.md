@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumberedValues` Class Template Reference
+# `NumberedValues` Class Template
 
 <p>Mapping from value <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> to value, which also remembers what the next unused <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> is. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VECustomDAG` Class Reference
+# `VECustomDAG` Class
 
 
 

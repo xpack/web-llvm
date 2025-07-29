@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILocationVerifier` Class Reference
+# `DILocationVerifier` Class
 
 <p>Verify that every instruction created has the same <a href="/web-llvm/docs/api/classes/llvm/dilocation">DILocation</a> as the instruction being translated. <a href="#details">More...</a></p>
 

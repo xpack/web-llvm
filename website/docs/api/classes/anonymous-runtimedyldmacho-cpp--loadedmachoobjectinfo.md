@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadedMachOObjectInfo` Class Reference
+# `LoadedMachOObjectInfo` Class
 
 
 

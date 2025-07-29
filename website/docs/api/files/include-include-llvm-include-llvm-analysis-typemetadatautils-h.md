@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeMetadataUtils.h` File Reference
+# `TypeMetadataUtils.h` File
 
 
 

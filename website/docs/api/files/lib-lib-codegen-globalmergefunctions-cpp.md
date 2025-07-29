@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalMergeFunctions.cpp` File Reference
+# `GlobalMergeFunctions.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLInlineAdvisor.cpp` File Reference
+# `MLInlineAdvisor.cpp` File
 
 
 

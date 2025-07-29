@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeSymbolEnumerator` Class Reference
+# `NativeSymbolEnumerator` Class
 
 
 

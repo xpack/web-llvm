@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartitioningIRMaterializationUnit` Class Reference
+# `PartitioningIRMaterializationUnit` Class
 
 
 

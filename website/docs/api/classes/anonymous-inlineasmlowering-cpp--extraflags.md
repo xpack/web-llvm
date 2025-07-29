@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraFlags` Class Reference
+# `ExtraFlags` Class
 
 
 

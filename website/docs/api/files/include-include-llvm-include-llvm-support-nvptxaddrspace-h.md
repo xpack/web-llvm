@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAddrSpace.h` File Reference
+# `NVPTXAddrSpace.h` File
 
 <p>NVPTX address space definition. <a href="#details">More...</a></p>
 

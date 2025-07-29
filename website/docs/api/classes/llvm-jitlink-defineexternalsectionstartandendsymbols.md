@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefineExternalSectionStartAndEndSymbols` Class Template Reference
+# `DefineExternalSectionStartAndEndSymbols` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> implementation for the createDefineExternalSectionStartAndEndSymbols function. <a href="#details">More...</a></p>
 

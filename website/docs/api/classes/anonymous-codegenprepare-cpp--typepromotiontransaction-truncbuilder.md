@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TruncBuilder` Class Reference
+# `TruncBuilder` Class
 
 <p>Build a truncate instruction. <a href="#details">More...</a></p>
 

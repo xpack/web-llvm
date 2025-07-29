@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelCSEAnalysisWrapper` Class Reference
+# `GISelCSEAnalysisWrapper` Class
 
 <p>Simple wrapper that does the following. <a href="#details">More...</a></p>
 

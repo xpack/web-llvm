@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DLangDemangle.cpp` File Reference
+# `DLangDemangle.cpp` File
 
 <p>This file defines a demangler for the D programming language as specified in the ABI specification, available at: <a href="https://dlang.org/spec/abi.html#name_mangling">https://dlang.org/spec/abi.html#name_mangling</a>. <a href="#details">More...</a></p>
 

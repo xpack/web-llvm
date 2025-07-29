@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Intrinsics.cpp` File Reference
+# `Intrinsics.cpp` File
 
 
 

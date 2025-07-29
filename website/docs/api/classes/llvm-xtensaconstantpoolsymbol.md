@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaConstantPoolSymbol` Class Reference
+# `XtensaConstantPoolSymbol` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xtensaconstantpoolsymbol">XtensaConstantPoolSymbol</a> - Xtensa-specific constantpool values for external symbols. <a href="#details">More...</a></p>
 

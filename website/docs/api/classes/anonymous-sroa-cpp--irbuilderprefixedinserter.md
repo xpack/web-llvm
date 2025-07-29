@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRBuilderPrefixedInserter` Class Reference
+# `IRBuilderPrefixedInserter` Class
 
 <p>A custom <a href="/web-llvm/docs/api/classes/llvm/irbuilder">IRBuilder</a> inserter which prefixes all names, but only in Assert builds. <a href="#details">More...</a></p>
 

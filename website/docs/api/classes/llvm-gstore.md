@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GStore` Class Reference
+# `GStore` Class
 
 <p>Represents a G_STORE. <a href="#details">More...</a></p>
 

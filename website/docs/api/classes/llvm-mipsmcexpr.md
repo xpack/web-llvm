@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMCExpr` Class Reference
+# `MipsMCExpr` Class
 
 
 

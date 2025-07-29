@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDXContainerWriter.cpp` File Reference
+# `MCDXContainerWriter.cpp` File
 
 
 

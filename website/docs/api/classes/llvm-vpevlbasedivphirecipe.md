@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPEVLBasedIVPHIRecipe` Class Reference
+# `VPEVLBasedIVPHIRecipe` Class
 
 <p>A recipe for generating the phi node for the current index of elements, adjusted in accordance with EVL value. <a href="#details">More...</a></p>
 

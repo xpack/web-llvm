@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIAnnotateControlFlowPass` Class Reference
+# `SIAnnotateControlFlowPass` Class
 
 
 

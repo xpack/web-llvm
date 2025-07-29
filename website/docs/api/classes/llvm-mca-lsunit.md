@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSUnit` Class Reference
+# `LSUnit` Class
 
 <p>Default Load/Store Unit (LS Unit) for simulated processors. <a href="#details">More...</a></p>
 

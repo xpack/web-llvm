@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsIncomingValueHandler` Class Reference
+# `MipsIncomingValueHandler` Class
 
 
 

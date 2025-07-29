@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalsStream.cpp` File Reference
+# `GlobalsStream.cpp` File
 
 
 

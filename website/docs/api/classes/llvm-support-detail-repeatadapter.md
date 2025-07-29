@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RepeatAdapter` Class Template Reference
+# `RepeatAdapter` Class Template
 
 
 

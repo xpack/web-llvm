@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedFunctionsInfo.h` File Reference
+# `MergedFunctionsInfo.h` File
 
 
 

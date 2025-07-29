@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerGlobalDtors.h` File Reference
+# `LowerGlobalDtors.h` File
 
 
 

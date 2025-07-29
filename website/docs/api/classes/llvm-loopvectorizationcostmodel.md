@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationCostModel` Class Reference
+# `LoopVectorizationCostModel` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loopvectorizationcostmodel">LoopVectorizationCostModel</a> - estimates the expected speedups due to vectorization. <a href="#details">More...</a></p>
 

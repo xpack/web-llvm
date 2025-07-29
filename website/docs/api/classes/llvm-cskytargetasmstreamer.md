@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYTargetAsmStreamer` Class Reference
+# `CSKYTargetAsmStreamer` Class
 
 
 

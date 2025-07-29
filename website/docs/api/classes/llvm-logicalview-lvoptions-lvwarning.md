@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVWarning` Class Reference
+# `LVWarning` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterBankInfo.cpp` File Reference
+# `RegisterBankInfo.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo">RegisterBankInfo</a> class. <a href="#details">More...</a></p>
 

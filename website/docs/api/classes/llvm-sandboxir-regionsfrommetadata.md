@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionsFromMetadata` Class Reference
+# `RegionsFromMetadata` Class
 
 
 

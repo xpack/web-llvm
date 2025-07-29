@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfoMIROptimization` Class Reference
+# `DiagnosticInfoMIROptimization` Class
 
 <p>Common features for diagnostics dealing with optimization remarks that are used by machine passes. <a href="#details">More...</a></p>
 

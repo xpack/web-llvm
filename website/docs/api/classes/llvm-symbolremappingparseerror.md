@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRemappingParseError` Class Reference
+# `SymbolRemappingParseError` Class
 
 
 

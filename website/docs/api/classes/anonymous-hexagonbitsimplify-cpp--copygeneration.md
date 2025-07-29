@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyGeneration` Class Reference
+# `CopyGeneration` Class
 
 
 

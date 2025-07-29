@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Plugin` Class Reference
+# `Plugin` Class
 
 
 

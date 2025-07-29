@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileReaderItaniumRemapper` Class Reference
+# `SampleProfileReaderItaniumRemapper` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sampleprof/sampleprofilereaderitaniumremapper">SampleProfileReaderItaniumRemapper</a> remaps the profile data from a sample profile data reader, by applying a provided set of equivalences between components of the symbol names in the profile. <a href="#details">More...</a></p>
 

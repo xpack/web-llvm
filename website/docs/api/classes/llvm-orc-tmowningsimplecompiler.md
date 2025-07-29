@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TMOwningSimpleCompiler` Class Reference
+# `TMOwningSimpleCompiler` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/orc/simplecompiler">SimpleCompiler</a> that owns its <a href="/web-llvm/docs/api/classes/llvm/targetmachine">TargetMachine</a>. <a href="#details">More...</a></p>
 

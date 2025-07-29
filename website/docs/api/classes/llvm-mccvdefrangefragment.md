@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCVDefRangeFragment` Class Reference
+# `MCCVDefRangeFragment` Class
 
 <p>Fragment representing the .cv_def_range directive. <a href="#details">More...</a></p>
 

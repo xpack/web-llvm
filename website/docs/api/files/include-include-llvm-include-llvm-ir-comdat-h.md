@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Comdat.h` File Reference
+# `Comdat.h` File
 
 <p>This file contains the declaration of the Comdat class, which represents a single COMDAT in LLVM. <a href="#details">More...</a></p>
 

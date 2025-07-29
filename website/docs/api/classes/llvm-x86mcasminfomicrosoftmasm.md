@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MCAsmInfoMicrosoftMASM` Class Reference
+# `X86MCAsmInfoMicrosoftMASM` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIPrinter` Class Reference
+# `MIPrinter` Class
 
 <p>This class prints out the machine instructions using the MIR serialization format. <a href="#details">More...</a></p>
 

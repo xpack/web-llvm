@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTableEntry` Class Reference
+# `SymbolTableEntry` Class
 
 <p>Symbol info for <a href="/web-llvm/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a>. <a href="#details">More...</a></p>
 

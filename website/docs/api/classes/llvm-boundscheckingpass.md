@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BoundsCheckingPass` Class Reference
+# `BoundsCheckingPass` Class
 
 <p>A pass to instrument code and perform run-time bounds checking on loads, stores, and other memory intrinsics. <a href="#details">More...</a></p>
 

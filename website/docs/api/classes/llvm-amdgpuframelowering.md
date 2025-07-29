@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUFrameLowering` Class Reference
+# `AMDGPUFrameLowering` Class
 
 <p>Information about the stack frame layout on the <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> targets. <a href="#details">More...</a></p>
 

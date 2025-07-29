@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateBase` Class Reference
+# `PredicateBase` Class
 
 
 

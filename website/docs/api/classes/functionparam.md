@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionParam` Class Reference
+# `FunctionParam` Class
 
 
 

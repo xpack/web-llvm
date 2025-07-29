@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrcGenericABI` Class Reference
+# `OrcGenericABI` Class
 
 <p>Generic ORC ABI support. <a href="#details">More...</a></p>
 

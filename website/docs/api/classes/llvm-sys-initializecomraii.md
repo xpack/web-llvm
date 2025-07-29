@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InitializeCOMRAII` Class Reference
+# `InitializeCOMRAII` Class
 
 
 

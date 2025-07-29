@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeWriterBase` Class Reference
+# `BitcodeWriterBase` Class
 
 <p>Abstract class to manage the bitcode writing, subclassed for each bitcode file type. <a href="#details">More...</a></p>
 

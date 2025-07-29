@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FeedbackTextureExtType` Class Reference
+# `FeedbackTextureExtType` Class
 
 <p>The dx.FeedbackTexture target extension type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalValuePseudoSourceValue` Class Reference
+# `GlobalValuePseudoSourceValue` Class
 
 <p>A specialized pseudo source value for holding <a href="/web-llvm/docs/api/classes/llvm/globalvalue">GlobalValue</a> values. <a href="#details">More...</a></p>
 

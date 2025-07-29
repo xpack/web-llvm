@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverflowingBinaryOperator` Class Reference
+# `OverflowingBinaryOperator` Class
 
 
 

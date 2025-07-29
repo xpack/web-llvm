@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SequenceNode` Class Reference
+# `SequenceNode` Class
 
 <p>Represents a YAML sequence created from either a block sequence for a flow sequence. <a href="#details">More...</a></p>
 

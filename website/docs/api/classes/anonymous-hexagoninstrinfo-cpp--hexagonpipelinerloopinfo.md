@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonPipelinerLoopInfo` Class Reference
+# `HexagonPipelinerLoopInfo` Class
 
 
 

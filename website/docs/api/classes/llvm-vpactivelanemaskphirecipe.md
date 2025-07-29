@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPActiveLaneMaskPHIRecipe` Class Reference
+# `VPActiveLaneMaskPHIRecipe` Class
 
 <p>A recipe for generating the active lane mask for the vector loop that is used to predicate the vector operations. <a href="#details">More...</a></p>
 

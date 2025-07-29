@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrItineraryData` Class Reference
+# `InstrItineraryData` Class
 
 <p>Itinerary data supplied by a subtarget to be used by a target. <a href="#details">More...</a></p>
 

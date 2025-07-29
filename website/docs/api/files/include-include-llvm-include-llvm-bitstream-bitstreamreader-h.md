@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamReader.h` File Reference
+# `BitstreamReader.h` File
 
 
 

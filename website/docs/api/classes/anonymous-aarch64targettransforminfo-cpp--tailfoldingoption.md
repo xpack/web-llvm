@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailFoldingOption` Class Reference
+# `TailFoldingOption` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSplitModulePass` Class Reference
+# `AMDGPUSplitModulePass` Class
 
 <p>Splits the module M into N linkable partitions. <a href="#details">More...</a></p>
 

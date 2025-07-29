@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFObjInMemory` Class Reference
+# `DWARFObjInMemory` Class
 
 
 

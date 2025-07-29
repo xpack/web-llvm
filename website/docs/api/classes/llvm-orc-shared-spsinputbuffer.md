@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSInputBuffer` Class Reference
+# `SPSInputBuffer` Class
 
 <p><a href="/web-llvm/docs/api/classes/input">Input</a> char buffer with underflow check. <a href="#details">More...</a></p>
 

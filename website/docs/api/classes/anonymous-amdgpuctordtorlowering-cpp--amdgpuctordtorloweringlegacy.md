@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCtorDtorLoweringLegacy` Class Reference
+# `AMDGPUCtorDtorLoweringLegacy` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAUpdater` Class Reference
+# `SSAUpdater` Class
 
 <p>Helper class for SSA formation on a set of values defined in multiple blocks. <a href="#details">More...</a></p>
 

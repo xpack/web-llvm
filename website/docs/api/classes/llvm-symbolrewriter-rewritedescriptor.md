@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteDescriptor` Class Reference
+# `RewriteDescriptor` Class
 
 <p>The basic entity representing a rewrite operation. <a href="#details">More...</a></p>
 

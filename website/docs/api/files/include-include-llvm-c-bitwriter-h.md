@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitWriter.h` File Reference
+# `BitWriter.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCDisassembler` Class Reference
+# `ARCDisassembler` Class
 
 <p>A disassembler class for ARC. <a href="#details">More...</a></p>
 

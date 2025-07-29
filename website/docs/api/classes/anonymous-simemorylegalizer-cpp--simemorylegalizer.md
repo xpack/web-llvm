@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMemoryLegalizer` Class Reference
+# `SIMemoryLegalizer` Class
 
 
 

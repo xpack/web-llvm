@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAAResult` Class Reference
+# `NVPTXAAResult` Class
 
 
 

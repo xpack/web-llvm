@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractElementInst` Class Reference
+# `ExtractElementInst` Class
 
 <p>This instruction extracts a single (scalar) element from a <a href="/web-llvm/docs/api/classes/llvm/vectortype">VectorType</a> value. <a href="#details">More...</a></p>
 

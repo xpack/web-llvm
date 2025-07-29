@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockData` Class Reference
+# `BlockData` Class
 
 
 

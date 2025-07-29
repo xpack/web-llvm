@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueHandleBase` Class Reference
+# `ValueHandleBase` Class
 
 <p>This is the common base class of value handles. <a href="#details">More...</a></p>
 

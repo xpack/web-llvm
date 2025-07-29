@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLLazyJITBuilderSetters` Class Template Reference
+# `LLLazyJITBuilderSetters` Class Template
 
 
 

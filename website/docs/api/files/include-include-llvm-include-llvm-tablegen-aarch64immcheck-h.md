@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ImmCheck.h` File Reference
+# `AArch64ImmCheck.h` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/immcheck">ImmCheck</a> class which supports the range-checking of immediate values supplied to AArch64 SVE/SME and NEON intrinsics. <a href="#details">More...</a></p>
 

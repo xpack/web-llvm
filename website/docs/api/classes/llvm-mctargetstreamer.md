@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCTargetStreamer` Class Reference
+# `MCTargetStreamer` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/target">Target</a> specific streamer interface. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInstrumentation.cpp` File Reference
+# `PassInstrumentation.cpp` File
 
 <p>This file provides the implementation of PassInstrumentation class. <a href="#details">More...</a></p>
 

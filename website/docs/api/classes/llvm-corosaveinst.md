@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSaveInst` Class Reference
+# `CoroSaveInst` Class
 
 <p>This represents the llvm.coro.save instruction. <a href="#details">More...</a></p>
 

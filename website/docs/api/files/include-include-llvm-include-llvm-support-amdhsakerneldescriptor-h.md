@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDHSAKernelDescriptor.h` File Reference
+# `AMDHSAKernelDescriptor.h` File
 
 <p>AMDHSA kernel descriptor definitions. <a href="#details">More...</a></p>
 

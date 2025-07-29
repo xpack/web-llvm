@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenMPOptPass` Class Reference
+# `OpenMPOptPass` Class
 
 <p>OpenMP optimizations pass. <a href="#details">More...</a></p>
 

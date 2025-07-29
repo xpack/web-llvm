@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRelocationInfo` Class Reference
+# `MCRelocationInfo` Class
 
 <p>Create MCExprs from relocations found in an object file. <a href="#details">More...</a></p>
 

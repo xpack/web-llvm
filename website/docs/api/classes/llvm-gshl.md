@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GShl` Class Reference
+# `GShl` Class
 
 <p>Represents a shift left. <a href="#details">More...</a></p>
 

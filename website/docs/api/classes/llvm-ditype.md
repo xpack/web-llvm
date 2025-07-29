@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIType` Class Reference
+# `DIType` Class
 
 <p>Base class for types. <a href="#details">More...</a></p>
 

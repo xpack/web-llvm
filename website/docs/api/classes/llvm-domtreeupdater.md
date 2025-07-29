@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomTreeUpdater` Class Reference
+# `DomTreeUpdater` Class
 
 
 

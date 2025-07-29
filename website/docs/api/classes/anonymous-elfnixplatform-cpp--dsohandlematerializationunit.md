@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DSOHandleMaterializationUnit` Class Reference
+# `DSOHandleMaterializationUnit` Class
 
 
 

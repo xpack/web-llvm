@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedVectorType` Class Reference
+# `FixedVectorType` Class
 
 <p>Class to represent fixed width SIMD vectors. <a href="#details">More...</a></p>
 

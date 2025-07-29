@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcurrentIRCompiler` Class Reference
+# `ConcurrentIRCompiler` Class
 
 <p>A thread-safe version of <a href="/web-llvm/docs/api/classes/llvm/orc/simplecompiler">SimpleCompiler</a>. <a href="#details">More...</a></p>
 

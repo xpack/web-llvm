@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDVSSAUpdater` Class Reference
+# `LDVSSAUpdater` Class
 
 <p>Utility class for the <a href="/web-llvm/docs/api/classes/llvm/ssaupdater">SSAUpdater</a> interface: tracks blocks, PHIs and values while <a href="/web-llvm/docs/api/classes/llvm/ssaupdater">SSAUpdater</a> is exploring the CFG. <a href="#details">More...</a></p>
 

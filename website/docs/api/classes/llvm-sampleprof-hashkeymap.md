@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashKeyMap` Class Template Reference
+# `HashKeyMap` Class Template
 
 <p>This class is a wrapper to associative container <a href="/web-llvm/docs/api/classes/mapt">MapT&lt;KeyT, ValueT&gt;</a> using the hash value of the original key as the new key. <a href="#details">More...</a></p>
 

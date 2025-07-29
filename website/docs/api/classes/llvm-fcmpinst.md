@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FCmpInst` Class Reference
+# `FCmpInst` Class
 
 <p>This instruction compares its operands according to the predicate given to the constructor. <a href="#details">More...</a></p>
 

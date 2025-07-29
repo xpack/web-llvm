@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractDependenceGraphBuilder` Class Template Reference
+# `AbstractDependenceGraphBuilder` Class Template
 
 <p>This abstract builder class defines a set of high-level steps for creating DDG-like graphs. <a href="#details">More...</a></p>
 

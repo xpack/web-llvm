@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WindowsResourceProcessor` Class Reference
+# `WindowsResourceProcessor` Class
 
 
 

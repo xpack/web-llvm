@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITTargetMachineBuilderPrinter` Class Reference
+# `JITTargetMachineBuilderPrinter` Class
 
 
 

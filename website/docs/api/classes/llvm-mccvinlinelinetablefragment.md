@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCVInlineLineTableFragment` Class Reference
+# `MCCVInlineLineTableFragment` Class
 
 <p>Fragment representing the binary annotations produced by the .cv_inline_linetable directive. <a href="#details">More...</a></p>
 

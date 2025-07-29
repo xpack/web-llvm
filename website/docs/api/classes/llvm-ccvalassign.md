@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CCValAssign` Class Reference
+# `CCValAssign` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/ccvalassign">CCValAssign</a> - Represent assignment of one arg/retval to a location. <a href="#details">More...</a></p>
 

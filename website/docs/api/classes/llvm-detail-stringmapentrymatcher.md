@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMapEntryMatcher` Class Template Reference
+# `StringMapEntryMatcher` Class Template
 
 
 

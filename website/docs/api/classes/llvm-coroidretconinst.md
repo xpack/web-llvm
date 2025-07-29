@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroIdRetconInst` Class Reference
+# `CoroIdRetconInst` Class
 
 <p>This represents the llvm.coro.id.retcon instruction. <a href="#details">More...</a></p>
 

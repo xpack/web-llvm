@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSuspendRetconInst` Class Reference
+# `CoroSuspendRetconInst` Class
 
 <p>This represents the llvm.coro.suspend.retcon instruction. <a href="#details">More...</a></p>
 

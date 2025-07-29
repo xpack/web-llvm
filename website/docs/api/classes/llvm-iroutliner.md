@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IROutliner` Class Reference
+# `IROutliner` Class
 
 <p>This class is a pass that identifies similarity in a <a href="/web-llvm/docs/api/classes/llvm/module">Module</a>, extracts instances of the similarity, and then consolidating the similar regions in an effort to reduce code size. <a href="#details">More...</a></p>
 

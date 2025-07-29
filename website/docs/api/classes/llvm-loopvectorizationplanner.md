@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationPlanner` Class Reference
+# `LoopVectorizationPlanner` Class
 
 <p>Planner drives the vectorization process after having passed Legality checks. <a href="#details">More...</a></p>
 

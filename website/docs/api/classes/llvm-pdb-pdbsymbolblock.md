@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolBlock` Class Reference
+# `PDBSymbolBlock` Class
 
 
 

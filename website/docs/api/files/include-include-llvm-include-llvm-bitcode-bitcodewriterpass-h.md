@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeWriterPass.h` File Reference
+# `BitcodeWriterPass.h` File
 
 <p>This file provides a bitcode writing pass. <a href="#details">More...</a></p>
 

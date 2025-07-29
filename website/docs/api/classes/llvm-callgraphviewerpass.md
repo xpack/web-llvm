@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphViewerPass` Class Reference
+# `CallGraphViewerPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> for viewing the call graph. <a href="#details">More...</a></p>
 

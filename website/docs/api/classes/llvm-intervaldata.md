@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalData` Class Template Reference
+# `IntervalData` Class Template
 
 <p>An interval data composed by a <em>Left</em> and <em>Right</em> points and an associated <em><a href="/web-llvm/docs/api/classes/llvm/value">Value</a></em>. <a href="#details">More...</a></p>
 

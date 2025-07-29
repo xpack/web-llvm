@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCDAGToDAGISel` Class Reference
+# `PPCDAGToDAGISel` Class
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-ppciseldagtodag-cpp-/ppcdagtodagisel">PPCDAGToDAGISel</a> - <a href="/web-llvm/docs/api/namespaces/llvm/ppc">PPC</a> specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/ppc">PPC</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncomingWFRHandler` Class Reference
+# `IncomingWFRHandler` Class
 
 <p>A handler or incoming WrapperFunctionResults – either return values from callWrapper* calls, or incoming JIT-dispatch requests. <a href="#details">More...</a></p>
 

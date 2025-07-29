@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOLinkGraphBuilder.cpp` File Reference
+# `MachOLinkGraphBuilder.cpp` File
 
 
 

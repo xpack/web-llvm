@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BDVState` Class Reference
+# `BDVState` Class
 
 <p>Models the state of a single base defining value in the findBasePointer algorithm for determining where a new instruction is needed to propagate the base of this BDV. <a href="#details">More...</a></p>
 

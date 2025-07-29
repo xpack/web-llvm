@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOPlatform.cpp` File Reference
+# `MachOPlatform.cpp` File
 
 
 

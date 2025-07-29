@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIFrameLowering` Class Reference
+# `SIFrameLowering` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHFrameEdgeFixer` Class Reference
+# `EHFrameEdgeFixer` Class
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> pass that adds missing FDE-to-CIE, FDE-to-PC and FDE-to-LSDA edges. <a href="#details">More...</a></p>
 

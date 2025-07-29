@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallArgRecord` Class Reference
+# `CallArgRecord` Class
 
 
 

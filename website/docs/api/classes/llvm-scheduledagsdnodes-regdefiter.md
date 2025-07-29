@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegDefIter` Class Reference
+# `RegDefIter` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/scheduledagsdnodes/regdefiter">RegDefIter</a> - In place iteration over the values defined by an <a href="/web-llvm/docs/api/classes/llvm/sunit">SUnit</a>. <a href="#details">More...</a></p>
 

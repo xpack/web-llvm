@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLJITBuilderState` Class Reference
+# `LLJITBuilderState` Class
 
 
 

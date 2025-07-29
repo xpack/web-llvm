@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICFLoopSafetyInfo` Class Reference
+# `ICFLoopSafetyInfo` Class
 
 <p>This implementation of <a href="/web-llvm/docs/api/classes/llvm/loopsafetyinfo">LoopSafetyInfo</a> use <a href="/web-llvm/docs/api/classes/llvm/implicitcontrolflowtracking">ImplicitControlFlowTracking</a> to give precise answers on "may throw" queries. <a href="#details">More...</a></p>
 

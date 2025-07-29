@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APFloat.h` File Reference
+# `APFloat.h` File
 
 <p>This file declares a class to represent arbitrary precision floating point values and provide a variety of arithmetic operations on them. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReachingDef` Class Reference
+# `ReachingDef` Class
 
 <p>Thin wrapper around "int" used to store reaching definitions, using an encoding that makes it compatible with <a href="/web-llvm/docs/api/classes/llvm/tinyptrvector">TinyPtrVector</a>. <a href="#details">More...</a></p>
 

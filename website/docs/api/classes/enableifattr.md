@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnableIfAttr` Class Reference
+# `EnableIfAttr` Class
 
 
 

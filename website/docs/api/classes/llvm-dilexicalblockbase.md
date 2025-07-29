@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILexicalBlockBase` Class Reference
+# `DILexicalBlockBase` Class
 
 
 

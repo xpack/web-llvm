@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AlignBranchKind` Class Reference
+# `X86AlignBranchKind` Class
 
 <p>A wrapper for holding a mask of the values from <a href="/web-llvm/docs/api/namespaces/llvm/x86/#a1fe75f600f6eea354189c898829a9465">X86::AlignBranchBoundaryKind</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVDisassembler` Class Reference
+# `RISCVDisassembler` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SkipSelfWalker` Class Reference
+# `SkipSelfWalker` Class
 
 
 

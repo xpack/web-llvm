@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfEmitterImpl` Class Reference
+# `DwarfEmitterImpl` Class
 
 <p>This class emits DWARF data to the output stream. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BoUpSLP` Class Reference
+# `BoUpSLP` Class
 
 <p>Bottom Up SLP Vectorizer. <a href="#details">More...</a></p>
 

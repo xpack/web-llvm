@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizationRemarkEmitterWrapperPass` Class Reference
+# `OptimizationRemarkEmitterWrapperPass` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> legacy analysis pass. <a href="#details">More...</a></p>
 

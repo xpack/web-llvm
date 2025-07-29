@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVProfilerPass` Class Reference
+# `GCOVProfilerPass` Class
 
 <p>The gcov-style instrumentation pass. <a href="#details">More...</a></p>
 

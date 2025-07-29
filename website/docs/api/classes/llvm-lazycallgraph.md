@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyCallGraph` Class Reference
+# `LazyCallGraph` Class
 
 <p>A lazily constructed view of the call graph of a module. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDataPrefetchPass` Class Reference
+# `LoopDataPrefetchPass` Class
 
 <p>An optimization pass inserting data prefetches in loops. <a href="#details">More...</a></p>
 

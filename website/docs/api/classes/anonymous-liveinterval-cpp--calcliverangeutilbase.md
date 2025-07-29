@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalcLiveRangeUtilBase` Class Template Reference
+# `CalcLiveRangeUtilBase` Class Template
 
 
 

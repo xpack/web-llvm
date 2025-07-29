@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticInfo` Class Reference
+# `DiagnosticInfo` Class
 
 <p>This is the base abstract class for diagnostic reporting in the backend. <a href="#details">More...</a></p>
 

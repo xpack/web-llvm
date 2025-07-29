@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatepointLoweringState` Class Reference
+# `StatepointLoweringState` Class
 
 <p>This class tracks both per-statepoint and per-selectiondag information. <a href="#details">More...</a></p>
 

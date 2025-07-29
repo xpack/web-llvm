@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAllocEvictionAdvisor.h` File Reference
+# `RegAllocEvictionAdvisor.h` File
 
 
 

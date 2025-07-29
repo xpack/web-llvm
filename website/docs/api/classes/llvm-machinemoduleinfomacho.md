@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineModuleInfoMachO` Class Reference
+# `MachineModuleInfoMachO` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfomacho">MachineModuleInfoMachO</a> - This is a <a href="/web-llvm/docs/api/classes/llvm/machinemoduleinfoimpl">MachineModuleInfoImpl</a> implementation for <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> targets. <a href="#details">More...</a></p>
 

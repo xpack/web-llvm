@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSafeTrieRawHashMapBase` Class Reference
+# `ThreadSafeTrieRawHashMapBase` Class
 
 <p>TrieRawHashMap - is a lock-free thread-safe trie that is can be used to store/index data based on a hash value. <a href="#details">More...</a></p>
 

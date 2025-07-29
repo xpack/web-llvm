@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APSInt.h` File Reference
+# `APSInt.h` File
 
 <p>This file implements the APSInt class, which is a simple class that represents an arbitrary sized integer that knows its signedness. <a href="#details">More...</a></p>
 

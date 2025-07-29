@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILUpgradePass` Class Reference
+# `DXILUpgradePass` Class
 
 <p>Upgrade DXIL-style metadata into their LLVM representations. <a href="#details">More...</a></p>
 

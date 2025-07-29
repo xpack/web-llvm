@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTTIImpl` Class Reference
+# `PPCTTIImpl` Class
 
 
 

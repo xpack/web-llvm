@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSubtargetInfo.h` File Reference
+# `MCSubtargetInfo.h` File
 
 
 

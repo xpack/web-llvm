@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMnemonicSets` Class Reference
+# `ARMMnemonicSets` Class
 
 
 

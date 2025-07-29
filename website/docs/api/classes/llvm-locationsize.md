@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationSize` Class Reference
+# `LocationSize` Class
 
 
 

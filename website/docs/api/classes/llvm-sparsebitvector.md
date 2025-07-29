@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseBitVector` Class Template Reference
+# `SparseBitVector` Class Template
 
 
 

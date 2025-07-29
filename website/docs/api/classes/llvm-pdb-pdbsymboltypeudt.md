@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBSymbolTypeUDT` Class Reference
+# `PDBSymbolTypeUDT` Class
 
 
 

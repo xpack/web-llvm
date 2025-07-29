@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationAndQuality` Class Reference
+# `LocationAndQuality` Class
 
 
 

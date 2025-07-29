@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430PassConfig` Class Reference
+# `MSP430PassConfig` Class
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a> Code Generator <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> Configuration Options. <a href="#details">More...</a></p>
 

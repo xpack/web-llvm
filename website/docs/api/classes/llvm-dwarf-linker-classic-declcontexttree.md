@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeclContextTree` Class Reference
+# `DeclContextTree` Class
 
 <p>This class gives a tree-like API to the <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a> that stores the <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/declcontext">DeclContext</a> objects. <a href="#details">More...</a></p>
 

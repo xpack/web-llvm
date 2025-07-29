@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `View.h` File Reference
+# `View.h` File
 
 <p>This file defines the main interface for Views. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddrSpaceCastSDNode` Class Reference
+# `AddrSpaceCastSDNode` Class
 
 
 

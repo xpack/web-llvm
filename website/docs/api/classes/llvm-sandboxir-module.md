@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Module` Class Reference
+# `Module` Class
 
 <p>In SandboxIR the <a href="/web-llvm/docs/api/classes/llvm/sandboxir/module">Module</a> is mainly used to access the list of global objects. <a href="#details">More...</a></p>
 

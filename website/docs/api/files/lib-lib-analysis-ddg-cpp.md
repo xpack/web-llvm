@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DDG.cpp` File Reference
+# `DDG.cpp` File
 
 
 

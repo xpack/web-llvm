@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFISaveRegisterEmitter` Class Reference
+# `CFISaveRegisterEmitter` Class
 
 
 

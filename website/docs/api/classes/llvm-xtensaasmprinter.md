@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaAsmPrinter` Class Reference
+# `XtensaAsmPrinter` Class
 
 
 

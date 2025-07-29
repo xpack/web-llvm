@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasScopeTracker` Class Reference
+# `AliasScopeTracker` Class
 
 
 

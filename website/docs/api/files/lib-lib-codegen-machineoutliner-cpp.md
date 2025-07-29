@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOutliner.cpp` File Reference
+# `MachineOutliner.cpp` File
 
 <p>Replaces repeated sequences of instructions with function calls. <a href="#details">More...</a></p>
 

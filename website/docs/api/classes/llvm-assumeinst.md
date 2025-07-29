@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumeInst` Class Reference
+# `AssumeInst` Class
 
 <p>This represents the llvm.assume intrinsic. <a href="#details">More...</a></p>
 

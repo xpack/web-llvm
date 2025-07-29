@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerThreadAllocator` Class Template Reference
+# `PerThreadAllocator` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/parallel/perthreadallocator">PerThreadAllocator</a> is used in conjunction with ThreadPoolExecutor to allow per-thread allocations. <a href="#details">More...</a></p>
 

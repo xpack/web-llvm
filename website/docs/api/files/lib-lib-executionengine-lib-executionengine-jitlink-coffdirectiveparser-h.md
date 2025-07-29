@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFDirectiveParser.h` File Reference
+# `COFFDirectiveParser.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVStripConvergentIntrinsics` Class Reference
+# `SPIRVStripConvergentIntrinsics` Class
 
 
 

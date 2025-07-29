@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchGenRegisterInfo` Class Reference
+# `LoongArchGenRegisterInfo` Class
 
 
 

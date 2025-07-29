@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolDumper.cpp` File Reference
+# `SymbolDumper.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanPrinter` Class Reference
+# `VPlanPrinter` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/vplanprinter">VPlanPrinter</a> prints a given <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> to a given output stream. <a href="#details">More...</a></p>
 

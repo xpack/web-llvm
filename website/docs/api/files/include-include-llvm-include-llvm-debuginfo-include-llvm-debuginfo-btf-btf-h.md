@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTF.h` File Reference
+# `BTF.h` File
 
 <p>This file contains the layout of .BTF and .BTF.ext ELF sections. <a href="#details">More...</a></p>
 

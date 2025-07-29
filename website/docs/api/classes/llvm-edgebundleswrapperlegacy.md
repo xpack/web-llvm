@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeBundlesWrapperLegacy` Class Reference
+# `EdgeBundlesWrapperLegacy` Class
 
 
 

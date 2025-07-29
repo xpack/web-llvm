@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DICompileUnit` Class Reference
+# `DICompileUnit` Class
 
 <p>Compile unit. <a href="#details">More...</a></p>
 

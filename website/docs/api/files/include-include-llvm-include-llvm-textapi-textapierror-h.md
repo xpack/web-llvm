@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextAPIError.h` File Reference
+# `TextAPIError.h` File
 
 <p>Define TAPI specific error codes. <a href="#details">More...</a></p>
 

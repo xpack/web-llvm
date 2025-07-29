@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMIRFormatter` Class Reference
+# `AMDGPUMIRFormatter` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyBranchProbabilityInfo` Class Reference
+# `LazyBranchProbabilityInfo` Class
 
 <p>Wraps a BPI to allow lazy computation of the branch probabilities. <a href="#details">More...</a></p>
 

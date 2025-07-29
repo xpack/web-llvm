@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEAsmPrinter` Class Reference
+# `VEAsmPrinter` Class
 
 
 

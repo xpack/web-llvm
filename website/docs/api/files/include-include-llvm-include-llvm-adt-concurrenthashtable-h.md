@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConcurrentHashtable.h` File Reference
+# `ConcurrentHashtable.h` File
 
 
 

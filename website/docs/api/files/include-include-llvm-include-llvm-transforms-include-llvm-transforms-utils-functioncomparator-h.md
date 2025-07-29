@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionComparator.h` File Reference
+# `FunctionComparator.h` File
 
 
 

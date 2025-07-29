@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantInt` Class Reference
+# `ConstantInt` Class
 
 <p>This is the shared class of boolean and integer constants. <a href="#details">More...</a></p>
 

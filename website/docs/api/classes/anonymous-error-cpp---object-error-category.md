@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `_object_error_category` Class Reference
+# `_object_error_category` Class
 
 
 

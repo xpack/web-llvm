@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PSetIterator` Class Reference
+# `PSetIterator` Class
 
 <p>Iterate over the pressure sets affected by the given physical or virtual register. <a href="#details">More...</a></p>
 

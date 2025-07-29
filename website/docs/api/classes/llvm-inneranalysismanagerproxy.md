@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InnerAnalysisManagerProxy` Class Template Reference
+# `InnerAnalysisManagerProxy` Class Template
 
 <p>An analysis over an "outer" IR unit that provides access to an analysis manager over an "inner" IR unit. <a href="#details">More...</a></p>
 

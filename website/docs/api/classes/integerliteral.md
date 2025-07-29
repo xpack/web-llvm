@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntegerLiteral` Class Reference
+# `IntegerLiteral` Class
 
 
 

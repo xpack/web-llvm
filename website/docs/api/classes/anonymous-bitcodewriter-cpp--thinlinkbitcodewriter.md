@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLinkBitcodeWriter` Class Reference
+# `ThinLinkBitcodeWriter` Class
 
 <p>Class to manage the bitcode writing for a thin link bitcode file. <a href="#details">More...</a></p>
 

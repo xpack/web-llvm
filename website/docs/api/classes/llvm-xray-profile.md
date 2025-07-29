@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Profile` Class Reference
+# `Profile` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/xray/profile">Profile</a> instances are thread-compatible. <a href="#details">More...</a></p>
 

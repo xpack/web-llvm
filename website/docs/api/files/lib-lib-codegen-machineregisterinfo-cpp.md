@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineRegisterInfo.cpp` File Reference
+# `MachineRegisterInfo.cpp` File
 
 
 

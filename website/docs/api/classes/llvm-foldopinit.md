@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldOpInit` Class Reference
+# `FoldOpInit` Class
 
 <p>!foldl (a, b, expr, start, lst) - Fold over a list. <a href="#details">More...</a></p>
 

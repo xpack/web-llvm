@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordProducer` Class Reference
+# `RecordProducer` Class
 
 
 

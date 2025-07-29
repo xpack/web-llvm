@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonConfig.h` File Reference
+# `CommonConfig.h` File
 
 
 

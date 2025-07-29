@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILTranslateMetadataLegacy` Class Reference
+# `DXILTranslateMetadataLegacy` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Bitset.h` File Reference
+# `Bitset.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractArchiveMemberHeader` Class Reference
+# `AbstractArchiveMemberHeader` Class
 
 
 

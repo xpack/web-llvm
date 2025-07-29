@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectKey` Class Reference
+# `ObjectKey` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/json/objectkey">ObjectKey</a> is a used to capture keys in <a href="/web-llvm/docs/api/classes/llvm/json/object">Object</a>. <a href="#details">More...</a></p>
 

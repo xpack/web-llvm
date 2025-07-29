@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionTableRef` Class Reference
+# `SectionTableRef` Class
 
 
 

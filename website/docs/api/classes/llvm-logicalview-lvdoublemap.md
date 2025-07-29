@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVDoubleMap` Class Template Reference
+# `LVDoubleMap` Class Template
 
 
 

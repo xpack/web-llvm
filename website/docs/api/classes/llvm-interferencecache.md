@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterferenceCache` Class Reference
+# `InterferenceCache` Class
 
 
 

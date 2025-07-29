@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCFixup` Class Reference
+# `MCFixup` Class
 
 <p>Encode information on a single operation to perform on a byte sequence (e.g., an encoded instruction) which requires assemble- or run- time patching. <a href="#details">More...</a></p>
 

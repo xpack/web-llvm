@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameWithHex64` Class Template Reference
+# `FrameWithHex64` Class Template
 
 
 

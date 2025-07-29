@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Class Reference
+# `Entry` Class
 
 <p>Entry - A cache entry containing interference information for all aliases of PhysReg in all basic blocks. <a href="#details">More...</a></p>
 

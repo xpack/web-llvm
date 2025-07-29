@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LazyCallGraphDOTPrinterPass` Class Reference
+# `LazyCallGraphDOTPrinterPass` Class
 
 <p>A pass which prints the call graph as a <a href="/web-llvm/docs/api/namespaces/llvm/dot">DOT</a> file to a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/raw-ostream">raw_ostream</a></span>. <a href="#details">More...</a></p>
 

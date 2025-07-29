@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizationArtifactCombiner` Class Reference
+# `LegalizationArtifactCombiner` Class
 
 
 

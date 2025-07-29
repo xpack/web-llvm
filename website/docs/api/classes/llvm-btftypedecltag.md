@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFTypeDeclTag` Class Reference
+# `BTFTypeDeclTag` Class
 
 <p>Handle decl tags. <a href="#details">More...</a></p>
 

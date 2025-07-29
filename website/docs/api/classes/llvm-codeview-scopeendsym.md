@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopeEndSym` Class Reference
+# `ScopeEndSym` Class
 
 
 

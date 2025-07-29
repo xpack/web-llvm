@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeTypeArray` Class Reference
+# `NativeTypeArray` Class
 
 
 

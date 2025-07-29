@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionRange` Class Reference
+# `SectionRange` Class
 
 <p>Represents a section address range via a pair of <a href="/web-llvm/docs/api/classes/llvm/jitlink/block">Block</a> pointers to the first and last Blocks in the section. <a href="#details">More...</a></p>
 

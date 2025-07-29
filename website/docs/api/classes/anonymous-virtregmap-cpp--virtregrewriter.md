@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegRewriter` Class Reference
+# `VirtRegRewriter` Class
 
 
 

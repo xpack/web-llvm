@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVectorCombine` Class Reference
+# `HexagonVectorCombine` Class
 
 
 

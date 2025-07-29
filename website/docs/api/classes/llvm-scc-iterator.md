@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `scc_iterator` Class Template Reference
+# `scc_iterator` Class Template
 
 <p>Enumerate the SCCs of a directed graph in reverse topological order of the SCC DAG. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionFilter` Class Reference
+# `SectionFilter` Class
 
 <p>Creates an iterator range of SectionFilterIterators for a given Object and predicate. <a href="#details">More...</a></p>
 

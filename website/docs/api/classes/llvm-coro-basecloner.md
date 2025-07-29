@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseCloner` Class Reference
+# `BaseCloner` Class
 
 
 

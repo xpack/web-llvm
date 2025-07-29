@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetOperations.h` File Reference
+# `SetOperations.h` File
 
 <p>This file defines generic set operations that may be used on set's of different types, and different element types. <a href="#details">More...</a></p>
 

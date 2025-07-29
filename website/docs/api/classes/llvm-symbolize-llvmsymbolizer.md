@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMSymbolizer` Class Reference
+# `LLVMSymbolizer` Class
 
 
 

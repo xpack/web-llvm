@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashBuilder` Class Template Reference
+# `HashBuilder` Class Template
 
 <p>Interface to help hash various types through a hasher type. <a href="#details">More...</a></p>
 

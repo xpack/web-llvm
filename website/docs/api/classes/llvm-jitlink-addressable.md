@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Addressable` Class Reference
+# `Addressable` Class
 
 <p>Base class for <a href="/web-llvm/docs/api/classes/llvm/jitlink/addressable">Addressable</a> entities (externals, absolutes, blocks). <a href="#details">More...</a></p>
 

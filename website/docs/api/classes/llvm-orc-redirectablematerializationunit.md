@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RedirectableMaterializationUnit` Class Reference
+# `RedirectableMaterializationUnit` Class
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/redirectablematerializationunit">RedirectableMaterializationUnit</a> materializes redirectable symbol by invoking <a href="/web-llvm/docs/api/classes/llvm/orc/redirectablesymbolmanager/#adeba1076cb445206426dd27c5158c16c">RedirectableSymbolManager::emitRedirectableSymbols</a>. <a href="#details">More...</a></p>
 

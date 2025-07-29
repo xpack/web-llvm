@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Use.h` File Reference
+# `Use.h` File
 
 <p>This defines the Use class. <a href="#details">More...</a></p>
 

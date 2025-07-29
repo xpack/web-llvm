@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFUnitVector` Class Reference
+# `DWARFUnitVector` Class
 
 <p>Describe a collection of units. <a href="#details">More...</a></p>
 

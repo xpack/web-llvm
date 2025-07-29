@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfDebug` Class Reference
+# `DwarfDebug` Class
 
 <p>Collects and handles dwarf debug information. <a href="#details">More...</a></p>
 

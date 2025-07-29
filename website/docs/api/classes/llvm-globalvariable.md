@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalVariable` Class Reference
+# `GlobalVariable` Class
 
 
 

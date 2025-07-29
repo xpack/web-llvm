@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetLowering` Class Reference
+# `AMDGPUTargetLowering` Class
 
 
 

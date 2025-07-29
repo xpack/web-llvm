@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringSet.h` File Reference
+# `StringSet.h` File
 
 <p>StringSet - A set-like wrapper for the StringMap. <a href="#details">More...</a></p>
 

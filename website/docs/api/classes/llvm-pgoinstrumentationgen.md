@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOInstrumentationGen` Class Reference
+# `PGOInstrumentationGen` Class
 
 <p>The instrumentation (profile-instr-gen) pass for IR based PGO. <a href="#details">More...</a></p>
 

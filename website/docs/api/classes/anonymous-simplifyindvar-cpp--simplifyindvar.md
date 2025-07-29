@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyIndvar` Class Reference
+# `SimplifyIndvar` Class
 
 <p>This is a utility for simplifying induction variables based on <a href="/web-llvm/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a>. <a href="#details">More...</a></p>
 

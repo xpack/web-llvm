@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListContinuationRecord` Class Reference
+# `ListContinuationRecord` Class
 
 <p>LF_INDEX - Used to chain two large LF_FIELDLIST or LF_METHODLIST records together. <a href="#details">More...</a></p>
 

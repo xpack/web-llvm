@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OProfileJITEventListener` Class Reference
+# `OProfileJITEventListener` Class
 
 
 

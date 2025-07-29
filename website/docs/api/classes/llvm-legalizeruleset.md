@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalizeRuleSet` Class Reference
+# `LegalizeRuleSet` Class
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPMatchContext` Class Reference
+# `VPMatchContext` Class
 
 
 

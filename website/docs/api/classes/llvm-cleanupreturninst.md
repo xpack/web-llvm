@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CleanupReturnInst` Class Reference
+# `CleanupReturnInst` Class
 
 
 

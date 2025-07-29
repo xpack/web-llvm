@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolSDNode` Class Reference
+# `MCSymbolSDNode` Class
 
 
 

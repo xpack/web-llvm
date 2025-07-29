@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadEntryInfo` Class Reference
+# `OffloadEntryInfo` Class
 
 <p>Base class of the entries info. <a href="#details">More...</a></p>
 

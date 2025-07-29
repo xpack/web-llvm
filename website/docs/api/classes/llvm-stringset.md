@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringSet` Class Template Reference
+# `StringSet` Class Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/stringset">StringSet</a> - A wrapper for <a href="/web-llvm/docs/api/classes/llvm/stringmap">StringMap</a> that provides set-like functionality. <a href="#details">More...</a></p>
 

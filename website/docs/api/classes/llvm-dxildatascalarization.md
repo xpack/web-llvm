@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILDataScalarization` Class Reference
+# `DXILDataScalarization` Class
 
 <p>A pass that transforms Vectors to Arrays. <a href="#details">More...</a></p>
 

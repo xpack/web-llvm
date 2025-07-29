@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Symbol.h` File Reference
+# `Symbol.h` File
 
 
 

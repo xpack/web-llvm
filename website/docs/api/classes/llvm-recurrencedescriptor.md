@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecurrenceDescriptor` Class Reference
+# `RecurrenceDescriptor` Class
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/recurrencedescriptor">RecurrenceDescriptor</a> is used to identify recurrences variables in a loop. <a href="#details">More...</a></p>
 

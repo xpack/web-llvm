@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetTransformInfoImplCRTPBase` Class Template Reference
+# `TargetTransformInfoImplCRTPBase` Class Template
 
 <p>CRTP base class for use as a mix-in that aids implementing a TargetTransformInfo-compatible class. <a href="#details">More...</a></p>
 
