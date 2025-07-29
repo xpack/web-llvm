@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DWARFDebugLoc.cpp}` Namespace Reference
+# `anonymous{DWARFDebugLoc.cpp}` Namespace
 
 
 

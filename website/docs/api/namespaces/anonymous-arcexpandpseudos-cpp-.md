@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCExpandPseudos.cpp}` Namespace Reference
+# `anonymous{ARCExpandPseudos.cpp}` Namespace
 
 
 

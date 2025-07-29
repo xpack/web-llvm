@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfLineTableHeader` Struct Reference
+# `MCDwarfLineTableHeader` Struct
 
 
 

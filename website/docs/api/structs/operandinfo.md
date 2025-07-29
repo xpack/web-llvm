@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandInfo` Struct Reference
+# `OperandInfo` Struct
 
 <p>Represents the EMUL and EEW of a <a href="/web-llvm/docs/api/classes/llvm/machineoperand">MachineOperand</a>. <a href="#details">More...</a></p>
 

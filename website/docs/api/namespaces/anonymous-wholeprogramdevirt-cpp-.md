@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WholeProgramDevirt.cpp}` Namespace Reference
+# `anonymous{WholeProgramDevirt.cpp}` Namespace
 
 
 

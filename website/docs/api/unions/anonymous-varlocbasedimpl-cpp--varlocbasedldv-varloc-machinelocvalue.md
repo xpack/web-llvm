@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLocValue` Union Reference
+# `MachineLocValue` Union
 
 <p>The value location. <a href="#details">More...</a></p>
 

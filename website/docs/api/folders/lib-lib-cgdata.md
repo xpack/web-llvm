@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/CGData` Folder Reference
+# `lib/CGData` Folder
 
 
 

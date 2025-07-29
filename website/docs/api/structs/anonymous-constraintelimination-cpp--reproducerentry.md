@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReproducerEntry` Struct Reference
+# `ReproducerEntry` Struct
 
 <p>Helper to keep track of a condition and if it should be treated as negated for reproducer construction. <a href="#details">More...</a></p>
 

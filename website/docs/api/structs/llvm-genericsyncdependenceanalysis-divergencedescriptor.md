@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DivergenceDescriptor` Struct Reference
+# `DivergenceDescriptor` Struct
 
 <p>Information discovered by the sync dependence analysis for each divergent branch. <a href="#details">More...</a></p>
 

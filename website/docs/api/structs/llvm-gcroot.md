@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCRoot` Struct Reference
+# `GCRoot` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/gcroot">GCRoot</a> - <a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a> for a pointer to an object managed by the garbage collector. <a href="#details">More...</a></p>
 

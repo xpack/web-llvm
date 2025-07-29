@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockNamePrinter` Struct Reference
+# `BlockNamePrinter` Struct
 
 
 

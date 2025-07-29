@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringExtras.cpp` File Reference
+# `StringExtras.cpp` File
 
 
 

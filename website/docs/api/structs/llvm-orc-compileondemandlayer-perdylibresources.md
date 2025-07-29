@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerDylibResources` Struct Reference
+# `PerDylibResources` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerGlobalDtors.cpp` File Reference
+# `LowerGlobalDtors.cpp` File
 
 <p>Lower @llvm.global_dtors. <a href="#details">More...</a></p>
 

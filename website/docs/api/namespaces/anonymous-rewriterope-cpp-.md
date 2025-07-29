@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RewriteRope.cpp}` Namespace Reference
+# `anonymous{RewriteRope.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/llvm/rewriterope">RewriteRope</a> is a "strong" string class, designed to make insertions and deletions in the middle of the string nearly constant time (really, they are O(log N), but with a very low constant factor). <a href="#details">More...</a></p>
 

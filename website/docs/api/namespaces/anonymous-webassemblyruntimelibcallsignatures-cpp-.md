@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyRuntimeLibcallSignatures.cpp}` Namespace Reference
+# `anonymous{WebAssemblyRuntimeLibcallSignatures.cpp}` Namespace
 
 
 

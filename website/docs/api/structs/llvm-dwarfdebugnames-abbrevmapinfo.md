@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbbrevMapInfo` Struct Reference
+# `AbbrevMapInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> for struct <a href="/web-llvm/docs/api/structs/llvm/dwarfdebugnames/abbrev">Abbrev</a>. <a href="#details">More...</a></p>
 

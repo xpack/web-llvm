@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmFeatureEntry` Struct Reference
+# `WasmFeatureEntry` Struct
 
 
 

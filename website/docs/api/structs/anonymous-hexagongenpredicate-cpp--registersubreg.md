@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterSubReg` Struct Reference
+# `RegisterSubReg` Struct
 
 
 

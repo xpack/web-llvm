@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXLowerAggrCopies.h` File Reference
+# `NVPTXLowerAggrCopies.h` File
 
 
 

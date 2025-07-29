@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCAsmInfo.cpp` File Reference
+# `LanaiMCAsmInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `apint_match` Struct Reference
+# `apint_match` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitTestCase` Struct Reference
+# `BitTestCase` Struct
 
 
 

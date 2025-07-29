@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SLPVectorizer.cpp}` Namespace Reference
+# `anonymous{SLPVectorizer.cpp}` Namespace
 
 
 

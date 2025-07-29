@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MeshPSVInfo` Struct Reference
+# `MeshPSVInfo` Struct
 
 
 

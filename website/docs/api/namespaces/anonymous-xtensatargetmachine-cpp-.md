@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XtensaTargetMachine.cpp}` Namespace Reference
+# `anonymous{XtensaTargetMachine.cpp}` Namespace
 
 
 

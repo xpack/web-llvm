@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kISelDAGToDAG.cpp` File Reference
+# `M68kISelDAGToDAG.cpp` File
 
 <p>This file defines an instruction selector for the M68K target. <a href="#details">More...</a></p>
 

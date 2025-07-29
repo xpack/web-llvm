@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Transfer` Struct Reference
+# `Transfer` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> of all changes in variable locations at a block position. <a href="#details">More...</a></p>
 

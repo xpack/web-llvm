@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `umin_pred_ty` Struct Reference
+# `umin_pred_ty` Struct
 
 <p>Helper class for identifying unsigned min predicates. <a href="#details">More...</a></p>
 

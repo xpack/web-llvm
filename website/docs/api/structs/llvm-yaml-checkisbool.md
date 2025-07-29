@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CheckIsBool` Struct Template Reference
+# `CheckIsBool` Struct Template
 
 
 

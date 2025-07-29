@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchTargetTransformInfo.cpp` File Reference
+# `LoongArchTargetTransformInfo.cpp` File
 
 <p>This file implements a <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> analysis pass specific to the <a href="/web-llvm/docs/api/namespaces/llvm/loongarch">LoongArch</a> target machine. <a href="#details">More...</a></p>
 

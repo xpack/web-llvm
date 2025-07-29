@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Module Providers Reference
+# Module Providers
 
 
 

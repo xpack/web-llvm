@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoCaptureReturned` Struct Reference
+# `AANoCaptureReturned` Struct
 
 <p>NoCapture attribute for function return value. <a href="#details">More...</a></p>
 

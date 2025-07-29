@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameWithTemplateArgs` Struct Reference
+# `NameWithTemplateArgs` Struct
 
 
 

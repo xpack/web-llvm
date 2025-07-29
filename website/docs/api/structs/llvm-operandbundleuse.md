@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandBundleUse` Struct Reference
+# `OperandBundleUse` Struct
 
 <p>A lightweight accessor for an operand bundle meant to be passed around by value. <a href="#details">More...</a></p>
 

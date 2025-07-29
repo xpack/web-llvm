@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPLegalization` Struct Reference
+# `VPLegalization` Struct
 
 
 

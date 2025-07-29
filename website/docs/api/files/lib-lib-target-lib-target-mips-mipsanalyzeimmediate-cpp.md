@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsAnalyzeImmediate.cpp` File Reference
+# `MipsAnalyzeImmediate.cpp` File
 
 
 

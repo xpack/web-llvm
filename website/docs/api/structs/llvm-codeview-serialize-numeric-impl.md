@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `serialize_numeric_impl` Struct Template Reference
+# `serialize_numeric_impl` Struct Template
 
 
 

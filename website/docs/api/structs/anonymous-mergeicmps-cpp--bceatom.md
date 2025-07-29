@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCEAtom` Struct Reference
+# `BCEAtom` Struct
 
 
 

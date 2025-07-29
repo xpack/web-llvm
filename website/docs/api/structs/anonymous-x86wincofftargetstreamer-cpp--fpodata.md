@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPOData` Struct Reference
+# `FPOData` Struct
 
 
 

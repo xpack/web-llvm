@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BankedRegOp` Struct Reference
+# `BankedRegOp` Struct
 
 
 

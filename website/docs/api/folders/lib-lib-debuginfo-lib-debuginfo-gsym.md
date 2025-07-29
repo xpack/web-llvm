@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/GSYM` Folder Reference
+# `lib/DebugInfo/GSYM` Folder
 
 
 

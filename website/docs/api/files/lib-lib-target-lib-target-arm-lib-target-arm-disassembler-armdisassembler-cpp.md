@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMDisassembler.cpp` File Reference
+# `ARMDisassembler.cpp` File
 
 
 

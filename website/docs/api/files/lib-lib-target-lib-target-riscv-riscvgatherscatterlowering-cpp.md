@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVGatherScatterLowering.cpp` File Reference
+# `RISCVGatherScatterLowering.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVVIntrinsicsTable` Namespace Reference
+# `RISCVVIntrinsicsTable` Namespace
 
 
 

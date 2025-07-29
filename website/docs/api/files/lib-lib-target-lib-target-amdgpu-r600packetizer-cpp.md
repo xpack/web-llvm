@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600Packetizer.cpp` File Reference
+# `R600Packetizer.cpp` File
 
 <p>This pass implements instructions packetization for <a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a>. <a href="#details">More...</a></p>
 

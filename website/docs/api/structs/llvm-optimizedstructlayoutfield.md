@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizedStructLayoutField` Struct Reference
+# `OptimizedStructLayoutField` Struct
 
 <p>A field in a structure. <a href="#details">More...</a></p>
 

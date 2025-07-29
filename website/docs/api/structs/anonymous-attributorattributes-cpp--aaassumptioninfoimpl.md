@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAssumptionInfoImpl` Struct Reference
+# `AAAssumptionInfoImpl` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ObjCopy/MachO` Folder Reference
+# `lib/ObjCopy/MachO` Folder
 
 
 

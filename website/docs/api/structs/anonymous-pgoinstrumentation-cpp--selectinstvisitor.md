@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectInstVisitor` Struct Reference
+# `SelectInstVisitor` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> Visitor class to visit select instructions. <a href="#details">More...</a></p>
 

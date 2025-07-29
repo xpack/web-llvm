@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedRegion` Struct Reference
+# `SchedRegion` Struct
 
 
 

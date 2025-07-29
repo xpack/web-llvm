@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CriticalDependency` Struct Reference
+# `CriticalDependency` Struct
 
 <p>A critical data dependency descriptor. <a href="#details">More...</a></p>
 

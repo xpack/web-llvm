@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassThroughInfo` Struct Reference
+# `PassThroughInfo` Struct
 
 
 

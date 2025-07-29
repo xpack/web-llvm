@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HeaderBlockContent` Struct Reference
+# `HeaderBlockContent` Struct
 
 
 

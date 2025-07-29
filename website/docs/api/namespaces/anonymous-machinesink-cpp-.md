@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineSink.cpp}` Namespace Reference
+# `anonymous{MachineSink.cpp}` Namespace
 
 
 

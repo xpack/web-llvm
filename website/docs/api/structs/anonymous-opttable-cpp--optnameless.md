@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptNameLess` Struct Reference
+# `OptNameLess` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedSizeString` Struct Template Reference
+# `FixedSizeString` Struct Template
 
 <p>A type which only accepts strings of a fixed size for yaml conversion. <a href="#details">More...</a></p>
 

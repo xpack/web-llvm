@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CodeViewError.cpp}` Namespace Reference
+# `anonymous{CodeViewError.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetRegistry.cpp` File Reference
+# `TargetRegistry.cpp` File
 
 
 

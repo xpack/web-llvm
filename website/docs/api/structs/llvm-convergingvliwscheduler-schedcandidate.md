@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedCandidate` Struct Reference
+# `SchedCandidate` Struct
 
 <p>Store the state used by <a href="/web-llvm/docs/api/classes/llvm/convergingvliwscheduler">ConvergingVLIWScheduler</a> heuristics, required for the lifetime of one invocation of <a href="/web-llvm/docs/api/classes/llvm/convergingvliwscheduler/#a3bee087d8d270d2eb8823dc5b9dd4e0e">pickNode()</a>. <a href="#details">More...</a></p>
 

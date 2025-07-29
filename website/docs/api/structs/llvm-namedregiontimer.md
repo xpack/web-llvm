@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NamedRegionTimer` Struct Reference
+# `NamedRegionTimer` Struct
 
 <p>This class is basically a combination of <a href="/web-llvm/docs/api/classes/llvm/timeregion">TimeRegion</a> and <a href="/web-llvm/docs/api/classes/llvm/timer">Timer</a>. <a href="#details">More...</a></p>
 

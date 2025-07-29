@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVConvergenceRegionAnalysis.cpp` File Reference
+# `SPIRVConvergenceRegionAnalysis.cpp` File
 
 
 

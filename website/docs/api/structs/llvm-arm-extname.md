@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtName` Struct Reference
+# `ExtName` Struct
 
 
 

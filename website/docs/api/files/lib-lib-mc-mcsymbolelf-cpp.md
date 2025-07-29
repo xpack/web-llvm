@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolELF.cpp` File Reference
+# `MCSymbolELF.cpp` File
 
 
 

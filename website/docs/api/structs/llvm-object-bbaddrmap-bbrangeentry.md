@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBRangeEntry` Struct Reference
+# `BBRangeEntry` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCParserUtils` Namespace Reference
+# `MCParserUtils` Namespace
 
 
 

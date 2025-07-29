@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ShuffleDecodeConstantPool.h` File Reference
+# `X86ShuffleDecodeConstantPool.h` File
 
 
 

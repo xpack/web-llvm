@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVIThunkInserter` Struct Reference
+# `LVIThunkInserter` Struct
 
 
 

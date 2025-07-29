@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PeepholeOptimizer.cpp}` Namespace Reference
+# `anonymous{PeepholeOptimizer.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/LineEditor` Folder Reference
+# `lib/LineEditor` Folder
 
 
 

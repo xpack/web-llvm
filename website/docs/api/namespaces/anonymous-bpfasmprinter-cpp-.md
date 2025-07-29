@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFAsmPrinter.cpp}` Namespace Reference
+# `anonymous{BPFAsmPrinter.cpp}` Namespace
 
 
 

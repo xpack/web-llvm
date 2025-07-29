@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICallAnalysisData` Struct Reference
+# `ICallAnalysisData` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `json` Namespace Reference
+# `json` Namespace
 
 
 

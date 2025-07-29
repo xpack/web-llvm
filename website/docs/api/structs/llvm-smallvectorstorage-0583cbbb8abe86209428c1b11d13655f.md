@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorStorage` Struct Template Reference
+# `SmallVectorStorage` Struct Template
 
 <p>We need the storage to be properly aligned even for small-size of 0 so that the pointer math in <em><a href="/web-llvm/docs/api/classes/llvm/smallvectortemplatecommon/#aff209a96323a14068980fd74f1fa53df">SmallVectorTemplateCommon::getFirstEl()</a></em> is well-defined. <a href="#details">More...</a></p>
 

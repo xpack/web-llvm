@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBodyFilter` Struct Reference
+# `LoopBodyFilter` Struct
 
 
 

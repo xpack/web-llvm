@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CoverageMappingReader.cpp}` Namespace Reference
+# `anonymous{CoverageMappingReader.cpp}` Namespace
 
 
 

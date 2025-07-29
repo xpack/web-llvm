@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TableGenBackendSkeleton.cpp}` Namespace Reference
+# `anonymous{TableGenBackendSkeleton.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockInfo` Struct Reference
+# `BasicBlockInfo` Struct
 
 
 

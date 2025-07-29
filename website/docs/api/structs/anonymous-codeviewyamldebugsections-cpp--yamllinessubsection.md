@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLLinesSubsection` Struct Reference
+# `YAMLLinesSubsection` Struct
 
 
 

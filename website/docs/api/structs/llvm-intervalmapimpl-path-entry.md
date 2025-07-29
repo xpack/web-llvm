@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Struct Reference
+# `Entry` Struct
 
 <p>Entry - Each step in the path is a node pointer and an offset into that node. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAllocaHoisting.cpp` File Reference
+# `NVPTXAllocaHoisting.cpp` File
 
 
 

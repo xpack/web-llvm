@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `blake3_sse41.c` File Reference
+# `blake3_sse41.c` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SVEVecLenSpecifier` Namespace Reference
+# `AArch64SVEVecLenSpecifier` Namespace
 
 
 

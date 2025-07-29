@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueIsPresent` Struct Template Reference
+# `ValueIsPresent` Struct Template
 
 
 

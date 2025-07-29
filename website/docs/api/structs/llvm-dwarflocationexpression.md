@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLocationExpression` Struct Reference
+# `DWARFLocationExpression` Struct
 
 <p>Represents a single DWARF expression, whose value is location-dependent. <a href="#details">More...</a></p>
 

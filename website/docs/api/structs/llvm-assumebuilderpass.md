@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumeBuilderPass` Struct Reference
+# `AssumeBuilderPass` Struct
 
 <p>This pass will try to build an llvm.assume for every instruction in the function. <a href="#details">More...</a></p>
 

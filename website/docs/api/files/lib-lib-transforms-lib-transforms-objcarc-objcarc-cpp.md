@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARC.cpp` File Reference
+# `ObjCARC.cpp` File
 
 
 

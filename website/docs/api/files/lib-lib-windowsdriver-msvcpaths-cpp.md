@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSVCPaths.cpp` File Reference
+# `MSVCPaths.cpp` File
 
 
 

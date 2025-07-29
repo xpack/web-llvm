@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeAddr` Struct Template Reference
+# `NodeAddr` Struct Template
 
 
 

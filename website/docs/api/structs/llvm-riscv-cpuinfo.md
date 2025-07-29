@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CPUInfo` Struct Reference
+# `CPUInfo` Struct
 
 
 

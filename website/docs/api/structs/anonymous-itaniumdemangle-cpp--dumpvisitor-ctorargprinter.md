@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CtorArgPrinter` Struct Reference
+# `CtorArgPrinter` Struct
 
 
 

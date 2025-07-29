@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TargetInfo.h` File Reference
+# `AArch64TargetInfo.h` File
 
 
 

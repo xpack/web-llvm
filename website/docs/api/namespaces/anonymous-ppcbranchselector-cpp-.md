@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCBranchSelector.cpp}` Namespace Reference
+# `anonymous{PPCBranchSelector.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadCommandInfo` Struct Reference
+# `LoadCommandInfo` Struct
 
 
 

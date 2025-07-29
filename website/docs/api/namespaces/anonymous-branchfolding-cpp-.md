@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BranchFolding.cpp}` Namespace Reference
+# `anonymous{BranchFolding.cpp}` Namespace
 
 
 

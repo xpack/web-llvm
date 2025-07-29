@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizeOffsetWeakTrackingVH` Struct Reference
+# `SizeOffsetWeakTrackingVH` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/sizeoffsetweaktrackingvh">SizeOffsetWeakTrackingVH</a> - Used by <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/objectsizeoffsetevaluator">ObjectSizeOffsetEvaluator</a></span> in a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a></span>. <a href="#details">More...</a></p>
 

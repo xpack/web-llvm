@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntegerRangeState` Struct Reference
+# `IntegerRangeState` Struct
 
 <p>State for an integer range. <a href="#details">More...</a></p>
 

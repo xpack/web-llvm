@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUHSAMetadataStreamer.h` File Reference
+# `AMDGPUHSAMetadataStreamer.h` File
 
 <p>AMDGPU HSA Metadata Streamer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/MC/MCDisassembler` Folder Reference
+# `include/llvm/MC/MCDisassembler` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Fallback` Struct Reference
+# `Fallback` Struct
 
 
 

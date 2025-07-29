@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Object` Struct Reference
+# `Object` Struct
 
 <p>MessagePack object, represented as a tagged union of C++ types. <a href="#details">More...</a></p>
 

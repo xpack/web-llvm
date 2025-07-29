@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `heap_size_class_t` Struct Reference
+# `heap_size_class_t` Struct
 
 
 

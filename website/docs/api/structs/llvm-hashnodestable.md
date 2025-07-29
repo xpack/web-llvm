@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashNodeStable` Struct Reference
+# `HashNodeStable` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/hashnodestable">HashNodeStable</a> is the serialized, stable, and compact representation of a <a href="/web-llvm/docs/api/structs/llvm/hashnode">HashNode</a>. <a href="#details">More...</a></p>
 

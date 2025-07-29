@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Compare` Struct Reference
+# `Compare` Struct
 
 <p>Comparator for sorting the functions set. <a href="#details">More...</a></p>
 

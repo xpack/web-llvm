@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenLoadRecipe` Struct Reference
+# `VPWidenLoadRecipe` Struct
 
 <p>A recipe for widening load operations, using the address to load from and an optional mask. <a href="#details">More...</a></p>
 

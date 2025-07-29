@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HalfWords` Struct Reference
+# `HalfWords` Struct
 
 <p>Immutable pair of halfwords, Hi and Lo, with overflow check. <a href="#details">More...</a></p>
 

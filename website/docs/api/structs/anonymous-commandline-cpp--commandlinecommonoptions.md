@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommandLineCommonOptions` Struct Reference
+# `CommandLineCommonOptions` Struct
 
 
 

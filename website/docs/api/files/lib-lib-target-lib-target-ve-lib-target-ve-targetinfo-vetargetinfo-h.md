@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetInfo.h` File Reference
+# `VETargetInfo.h` File
 
 
 

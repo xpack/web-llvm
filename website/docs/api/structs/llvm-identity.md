@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `identity` Struct Template Reference
+# `identity` Struct Template
 
 
 

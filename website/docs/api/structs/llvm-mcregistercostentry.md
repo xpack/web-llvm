@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegisterCostEntry` Struct Reference
+# `MCRegisterCostEntry` Struct
 
 <p>Specify the cost of a register definition in terms of number of physical register allocated at register renaming stage. <a href="#details">More...</a></p>
 

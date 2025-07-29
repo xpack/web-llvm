@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SymbolRewriter.cpp}` Namespace Reference
+# `anonymous{SymbolRewriter.cpp}` Namespace
 
 
 

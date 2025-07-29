@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kLegalizerInfo.h` File Reference
+# `M68kLegalizerInfo.h` File
 
 <p>This file declares the targeting of the MachineLegalizer class for M68k. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFParam` Struct Reference
+# `BTFParam` Struct
 
 <p>BTF_KIND_FUNC_PROTO are followed by multiple "struct BTFParam". <a href="#details">More...</a></p>
 

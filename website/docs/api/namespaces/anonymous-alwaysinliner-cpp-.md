@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AlwaysInliner.cpp}` Namespace Reference
+# `anonymous{AlwaysInliner.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDRTraceWriter.cpp` File Reference
+# `FDRTraceWriter.cpp` File
 
 
 

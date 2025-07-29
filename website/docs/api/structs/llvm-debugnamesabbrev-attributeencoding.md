@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeEncoding` Struct Reference
+# `AttributeEncoding` Struct
 
 
 

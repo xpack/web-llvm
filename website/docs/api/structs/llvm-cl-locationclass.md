@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationClass` Struct Template Reference
+# `LocationClass` Struct Template
 
 
 

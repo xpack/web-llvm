@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssignmentInfo` Struct Reference
+# `AssignmentInfo` Struct
 
 <p>Describes properties of a store that has a static size and offset into a some base storage. <a href="#details">More...</a></p>
 

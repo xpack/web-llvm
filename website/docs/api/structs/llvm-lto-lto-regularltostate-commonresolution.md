@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonResolution` Struct Reference
+# `CommonResolution` Struct
 
 
 

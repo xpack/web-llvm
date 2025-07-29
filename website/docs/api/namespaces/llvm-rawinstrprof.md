@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawInstrProf` Namespace Reference
+# `RawInstrProf` Namespace
 
 
 

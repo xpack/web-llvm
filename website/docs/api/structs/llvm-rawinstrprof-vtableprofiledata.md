@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTableProfileData` Struct Template Reference
+# `VTableProfileData` Struct Template
 
 
 

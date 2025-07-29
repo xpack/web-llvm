@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFrameLowering.h` File Reference
+# `WebAssemblyFrameLowering.h` File
 
 <p>This class implements WebAssembly-specific bits of TargetFrameLowering class. <a href="#details">More...</a></p>
 

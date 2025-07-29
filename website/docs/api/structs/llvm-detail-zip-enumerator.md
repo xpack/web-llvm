@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zip_enumerator` Struct Template Reference
+# `zip_enumerator` Struct Template
 
 <p>Zippy iterator that uses the second iterator for comparisons. <a href="#details">More...</a></p>
 

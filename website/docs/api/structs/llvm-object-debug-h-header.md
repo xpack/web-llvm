@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `debug_h_header` Struct Reference
+# `debug_h_header` Struct
 
 
 

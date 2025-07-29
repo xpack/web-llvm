@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUFrameLowering.h` File Reference
+# `AMDGPUFrameLowering.h` File
 
 <p>Interface to describe a layout of a stack frame on an AMDGPU target. <a href="#details">More...</a></p>
 

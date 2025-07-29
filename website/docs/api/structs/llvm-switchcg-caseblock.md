@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseBlock` Struct Reference
+# `CaseBlock` Struct
 
 <p>This structure is used to communicate between <a href="/web-llvm/docs/api/classes/llvm/selectiondagbuilder">SelectionDAGBuilder</a> and SDISel for the code generation of additional basic blocks needed by multi-case switch statements. <a href="#details">More...</a></p>
 

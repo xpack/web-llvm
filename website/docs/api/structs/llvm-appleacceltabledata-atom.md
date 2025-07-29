@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Atom` Struct Reference
+# `Atom` Struct
 
 <p>An <a href="/web-llvm/docs/api/structs/llvm/appleacceltabledata/atom">Atom</a> defines the form of the data in an Apple accelerator table. <a href="#details">More...</a></p>
 

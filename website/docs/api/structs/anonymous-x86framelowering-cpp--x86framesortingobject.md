@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FrameSortingObject` Struct Reference
+# `X86FrameSortingObject` Struct
 
 
 

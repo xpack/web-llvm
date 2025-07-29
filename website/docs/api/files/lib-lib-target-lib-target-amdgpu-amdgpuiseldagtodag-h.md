@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUISelDAGToDAG.h` File Reference
+# `AMDGPUISelDAGToDAG.h` File
 
 <p>Defines an instruction selector for the AMDGPU target. <a href="#details">More...</a></p>
 

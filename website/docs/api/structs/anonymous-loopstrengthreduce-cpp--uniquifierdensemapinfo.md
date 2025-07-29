@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniquifierDenseMapInfo` Struct Reference
+# `UniquifierDenseMapInfo` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> implementation for holding DenseMaps and DenseSets of sorted SmallVectors of const SCEV*. <a href="#details">More...</a></p>
 

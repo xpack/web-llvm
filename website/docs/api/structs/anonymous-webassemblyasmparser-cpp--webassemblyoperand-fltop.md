@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FltOp` Struct Reference
+# `FltOp` Struct
 
 
 

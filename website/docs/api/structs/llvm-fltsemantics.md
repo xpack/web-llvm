@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fltSemantics` Struct Reference
+# `fltSemantics` Struct
 
 
 

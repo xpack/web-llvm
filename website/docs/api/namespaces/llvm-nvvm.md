@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `nvvm` Namespace Reference
+# `nvvm` Namespace
 
 
 

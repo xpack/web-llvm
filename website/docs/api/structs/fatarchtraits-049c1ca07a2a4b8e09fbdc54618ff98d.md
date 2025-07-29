@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FatArchTraits` Struct Template Reference
+# `FatArchTraits` Struct Template
 
 
 

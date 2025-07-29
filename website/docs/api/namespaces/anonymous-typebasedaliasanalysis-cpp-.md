@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TypeBasedAliasAnalysis.cpp}` Namespace Reference
+# `anonymous{TypeBasedAliasAnalysis.cpp}` Namespace
 
 
 

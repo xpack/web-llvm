@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineGadgetGraph` Struct Reference
+# `MachineGadgetGraph` Struct
 
 
 

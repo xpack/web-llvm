@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarExprLoc` Struct Reference
+# `VarExprLoc` Struct
 
 
 

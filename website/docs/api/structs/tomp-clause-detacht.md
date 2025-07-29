@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DetachT` Struct Template Reference
+# `DetachT` Struct Template
 
 
 

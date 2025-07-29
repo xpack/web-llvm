@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ipo_iterator` Struct Template Reference
+# `ipo_iterator` Struct Template
 
 
 

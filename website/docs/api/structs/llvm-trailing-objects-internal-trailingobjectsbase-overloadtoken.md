@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverloadToken` Struct Template Reference
+# `OverloadToken` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/trailing-objects-internal/trailingobjectsbase/overloadtoken">OverloadToken</a>'s purpose is to allow specifying function overloads for different types, without actually taking the types as parameters. <a href="#details">More...</a></p>
 

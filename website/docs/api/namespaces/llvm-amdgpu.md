@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPU` Namespace Reference
+# `AMDGPU` Namespace
 
 
 

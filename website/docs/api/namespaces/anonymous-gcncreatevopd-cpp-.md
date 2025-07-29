@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNCreateVOPD.cpp}` Namespace Reference
+# `anonymous{GCNCreateVOPD.cpp}` Namespace
 
 
 

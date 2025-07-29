@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopICmp` Struct Reference
+# `LoopICmp` Struct
 
 <p>Represents an induction variable check: icmp Pred, &lt;induction variable&gt;, &lt;loop invariant limit&gt; <a href="#details">More...</a></p>
 

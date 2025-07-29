@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineShifts.cpp` File Reference
+# `InstCombineShifts.cpp` File
 
 
 

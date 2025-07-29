@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetInfo` Struct Reference
+# `FoldingSetInfo` Struct
 
 <p>Functions provided by the derived class to compute folding properties. <a href="#details">More...</a></p>
 

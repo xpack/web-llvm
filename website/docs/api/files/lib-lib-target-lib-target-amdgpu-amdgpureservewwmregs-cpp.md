@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUReserveWWMRegs.cpp` File Reference
+# `AMDGPUReserveWWMRegs.cpp` File
 
 <p>This pass should be invoked at the end of wwm-regalloc pipeline. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleValue` Struct Reference
+# `SimpleValue` Struct
 
 <p>Struct representing the available values in the scoped hash table. <a href="#details">More...</a></p>
 

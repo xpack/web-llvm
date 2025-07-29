@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `add_lvalue_reference_if_not_pointer` Struct Template Reference
+# `add_lvalue_reference_if_not_pointer` Struct Template
 
 
 

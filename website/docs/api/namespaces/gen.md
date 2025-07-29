@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `gen` Namespace Reference
+# `gen` Namespace
 
 <p>-inline-oz-test-model <a href="#details">More...</a></p>
 

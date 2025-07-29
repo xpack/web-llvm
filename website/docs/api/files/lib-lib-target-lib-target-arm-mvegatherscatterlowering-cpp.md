@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MVEGatherScatterLowering.cpp` File Reference
+# `MVEGatherScatterLowering.cpp` File
 
 
 

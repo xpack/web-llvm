@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MissedOpInfo` Struct Reference
+# `MissedOpInfo` Struct
 
 
 

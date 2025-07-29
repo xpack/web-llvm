@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZInstPrinterCommon.h` File Reference
+# `SystemZInstPrinterCommon.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringBlockVal` Struct Reference
+# `StringBlockVal` Struct
 
 <p>Helper struct for multiline string block literals. <a href="#details">More...</a></p>
 

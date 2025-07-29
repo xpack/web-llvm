@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/Vectorize/SandboxVectorizer/Passes` Folder Reference
+# `lib/Transforms/Vectorize/SandboxVectorizer/Passes` Folder
 
 
 

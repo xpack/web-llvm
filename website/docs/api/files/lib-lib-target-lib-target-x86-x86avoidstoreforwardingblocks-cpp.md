@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AvoidStoreForwardingBlocks.cpp` File Reference
+# `X86AvoidStoreForwardingBlocks.cpp` File
 
 
 

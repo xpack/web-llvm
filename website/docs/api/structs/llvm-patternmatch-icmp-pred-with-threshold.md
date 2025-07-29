@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `icmp_pred_with_threshold` Struct Reference
+# `icmp_pred_with_threshold` Struct
 
 
 

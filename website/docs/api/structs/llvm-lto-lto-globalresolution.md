@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalResolution` Struct Reference
+# `GlobalResolution` Struct
 
 
 

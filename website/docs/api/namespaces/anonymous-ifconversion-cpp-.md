@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IfConversion.cpp}` Namespace Reference
+# `anonymous{IfConversion.cpp}` Namespace
 
 
 

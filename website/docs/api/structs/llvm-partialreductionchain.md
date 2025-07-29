@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialReductionChain` Struct Reference
+# `PartialReductionChain` Struct
 
 <p>A chain of instructions that form a partial reduction. <a href="#details">More...</a></p>
 

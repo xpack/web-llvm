@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintFP` Struct Reference
+# `PrintFP` Struct
 
 
 

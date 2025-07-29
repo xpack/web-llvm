@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaInstPrinter.cpp` File Reference
+# `XtensaInstPrinter.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `sub_client_command` Struct Reference
+# `sub_client_command` Struct
 
 
 

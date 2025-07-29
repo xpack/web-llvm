@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kISelAddressMode` Struct Reference
+# `M68kISelAddressMode` Struct
 
 
 

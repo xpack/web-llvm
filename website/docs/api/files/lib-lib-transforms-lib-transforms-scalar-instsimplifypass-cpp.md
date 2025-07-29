@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstSimplifyPass.cpp` File Reference
+# `InstSimplifyPass.cpp` File
 
 
 

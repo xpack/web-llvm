@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_parent` Struct Template Reference
+# `ilist_parent` Struct Template
 
 <p>Option to add a pointer to this list's owner in every node. <a href="#details">More...</a></p>
 

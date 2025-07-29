@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTI` Struct Reference
+# `BTI` Struct
 
 
 

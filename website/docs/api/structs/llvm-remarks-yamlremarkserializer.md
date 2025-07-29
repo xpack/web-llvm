@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLRemarkSerializer` Struct Reference
+# `YAMLRemarkSerializer` Struct
 
 <p>Serialize the remarks to YAML. <a href="#details">More...</a></p>
 

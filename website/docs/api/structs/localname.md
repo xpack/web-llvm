@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalName` Struct Reference
+# `LocalName` Struct
 
 
 

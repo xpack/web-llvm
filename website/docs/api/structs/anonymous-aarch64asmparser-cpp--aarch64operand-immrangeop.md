@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmRangeOp` Struct Reference
+# `ImmRangeOp` Struct
 
 
 

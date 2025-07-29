@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadOps` Struct Reference
+# `LoadOps` Struct
 
 <p>This is used by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/aggressiveinstcombine/aggressiveinstcombine-cpp/#a8f64e8576d57bb362e730214c7e6fae9">foldLoadsRecursive()</a> to capture a Root Load node which is of type or(load, load) and recursively build the wide load. <a href="#details">More...</a></p>
 

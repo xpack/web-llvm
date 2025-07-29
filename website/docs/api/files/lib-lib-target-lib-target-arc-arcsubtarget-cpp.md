@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCSubtarget.cpp` File Reference
+# `ARCSubtarget.cpp` File
 
 
 

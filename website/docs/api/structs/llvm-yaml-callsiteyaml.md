@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallSiteYAML` Struct Reference
+# `CallSiteYAML` Struct
 
 
 

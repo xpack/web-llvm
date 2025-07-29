@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RealtimeSanitizerPass` Struct Reference
+# `RealtimeSanitizerPass` Struct
 
 <p>Create ctor and init functions. <a href="#details">More...</a></p>
 

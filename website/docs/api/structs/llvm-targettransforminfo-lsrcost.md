@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSRCost` Struct Reference
+# `LSRCost` Struct
 
 
 

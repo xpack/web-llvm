@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NaryReassociate.cpp}` Namespace Reference
+# `anonymous{NaryReassociate.cpp}` Namespace
 
 
 

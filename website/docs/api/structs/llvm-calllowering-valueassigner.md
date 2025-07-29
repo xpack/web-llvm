@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueAssigner` Struct Reference
+# `ValueAssigner` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/argument">Argument</a> handling is mostly uniform between the four places that make these decisions: function formal arguments, call instruction args, call instruction returns and function returns. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVAsmBackend.cpp` File Reference
+# `SPIRVAsmBackend.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SimpleLoopUnswitch.cpp}` Namespace Reference
+# `anonymous{SimpleLoopUnswitch.cpp}` Namespace
 
 
 

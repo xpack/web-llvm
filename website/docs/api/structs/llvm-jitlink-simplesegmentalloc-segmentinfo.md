@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SegmentInfo` Struct Reference
+# `SegmentInfo` Struct
 
 <p>Describes the segment working memory and executor address. <a href="#details">More...</a></p>
 

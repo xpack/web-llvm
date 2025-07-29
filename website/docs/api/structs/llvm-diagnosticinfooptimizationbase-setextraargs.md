@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `setExtraArgs` Struct Reference
+# `setExtraArgs` Struct
 
 <p>When an instance of this is inserted into the stream, the arguments following will not appear in the remark printed in the compiler output (-Rpass) but only in the optimization record file (-fsave-optimization-record). <a href="#details">More...</a></p>
 

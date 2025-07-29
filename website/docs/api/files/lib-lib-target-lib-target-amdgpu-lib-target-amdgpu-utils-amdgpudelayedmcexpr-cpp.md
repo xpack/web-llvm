@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUDelayedMCExpr.cpp` File Reference
+# `AMDGPUDelayedMCExpr.cpp` File
 
 
 

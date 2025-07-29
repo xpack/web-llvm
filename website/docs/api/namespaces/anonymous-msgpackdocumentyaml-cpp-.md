@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MsgPackDocumentYAML.cpp}` Namespace Reference
+# `anonymous{MsgPackDocumentYAML.cpp}` Namespace
 
 
 

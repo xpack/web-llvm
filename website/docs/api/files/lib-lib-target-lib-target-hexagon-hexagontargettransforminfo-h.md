@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTargetTransformInfo.h` File Reference
+# `HexagonTargetTransformInfo.h` File
 
 <p>This file implements a TargetTransformInfo analysis pass specific to the Hexagon target machine. <a href="#details">More...</a></p>
 

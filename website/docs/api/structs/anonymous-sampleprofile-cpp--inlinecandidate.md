@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCandidate` Struct Reference
+# `InlineCandidate` Struct
 
 
 

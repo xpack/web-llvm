@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVectorLoopCarriedReusePass` Struct Reference
+# `HexagonVectorLoopCarriedReusePass` Struct
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a> Vector <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Carried Reuse <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a>. <a href="#details">More...</a></p>
 

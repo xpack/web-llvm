@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultFoldingSetTrait` Struct Template Reference
+# `DefaultFoldingSetTrait` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/defaultfoldingsettrait">DefaultFoldingSetTrait</a> - This class provides default implementations for <a href="/web-llvm/docs/api/structs/llvm/foldingsettrait">FoldingSetTrait</a> implementations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelInputOffsets` Namespace Reference
+# `KernelInputOffsets` Namespace
 
 
 

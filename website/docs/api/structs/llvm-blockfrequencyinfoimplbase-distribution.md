@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Distribution` Struct Reference
+# `Distribution` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/blockfrequencyinfoimplbase/distribution">Distribution</a> of unscaled probability weight. <a href="#details">More...</a></p>
 

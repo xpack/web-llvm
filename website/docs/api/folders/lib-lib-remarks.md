@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Remarks` Folder Reference
+# `lib/Remarks` Folder
 
 
 

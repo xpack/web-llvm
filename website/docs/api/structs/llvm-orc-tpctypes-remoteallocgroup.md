@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoteAllocGroup` Struct Reference
+# `RemoteAllocGroup` Struct
 
 
 

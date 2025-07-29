@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOUseBBInfo` Struct Reference
+# `PGOUseBBInfo` Struct
 
 
 

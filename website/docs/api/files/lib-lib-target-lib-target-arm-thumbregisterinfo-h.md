@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThumbRegisterInfo.h` File Reference
+# `ThumbRegisterInfo.h` File
 
 
 

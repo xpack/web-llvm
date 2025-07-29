@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `custom_checkfn` Struct Template Reference
+# `custom_checkfn` Struct Template
 
 
 

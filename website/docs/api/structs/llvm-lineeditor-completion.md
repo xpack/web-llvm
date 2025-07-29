@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Completion` Struct Reference
+# `Completion` Struct
 
 <p>A possible completion at a given cursor position. <a href="#details">More...</a></p>
 

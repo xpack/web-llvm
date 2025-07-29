@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCAsmPrinter.cpp}` Namespace Reference
+# `anonymous{ARCAsmPrinter.cpp}` Namespace
 
 
 

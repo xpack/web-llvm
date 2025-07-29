@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyArgumentMove.cpp` File Reference
+# `WebAssemblyArgumentMove.cpp` File
 
 <p>This file moves ARGUMENT instructions after <a href="/web-llvm/docs/api/classes/llvm/scheduledag">ScheduleDAG</a> scheduling. <a href="#details">More...</a></p>
 

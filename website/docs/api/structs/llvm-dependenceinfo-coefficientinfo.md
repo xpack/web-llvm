@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoefficientInfo` Struct Reference
+# `CoefficientInfo` Struct
 
 
 

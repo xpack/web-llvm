@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatepointLoweringInfo` Struct Reference
+# `StatepointLoweringInfo` Struct
 
 <p>Describes a gc.statepoint or a gc.statepoint like thing for the purposes of lowering into a STATEPOINT node. <a href="#details">More...</a></p>
 

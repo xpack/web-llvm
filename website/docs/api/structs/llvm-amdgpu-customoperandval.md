@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomOperandVal` Struct Reference
+# `CustomOperandVal` Struct
 
 
 

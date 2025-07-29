@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitPart` Struct Reference
+# `BitPart` Struct
 
 <p>A potential constituent of a bitreverse or bswap expression. <a href="#details">More...</a></p>
 

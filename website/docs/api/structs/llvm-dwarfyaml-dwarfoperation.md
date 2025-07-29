@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFOperation` Struct Reference
+# `DWARFOperation` Struct
 
 
 

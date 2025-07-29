@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumIdentifier` Struct Reference
+# `EnumIdentifier` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InductiveRangeCheckElimination.cpp}` Namespace Reference
+# `anonymous{InductiveRangeCheckElimination.cpp}` Namespace
 
 
 

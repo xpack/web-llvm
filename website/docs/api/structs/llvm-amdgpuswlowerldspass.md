@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSwLowerLDSPass` Struct Reference
+# `AMDGPUSwLowerLDSPass` Struct
 
 
 

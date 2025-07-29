@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetTrait` Struct Template Reference
+# `FoldingSetTrait` Struct Template
 
 <p>Specialize <a href="/web-llvm/docs/api/structs/llvm/foldingsettrait">FoldingSetTrait</a> for <a href="/web-llvm/docs/api/classes/llvm/sdvtlistnode">SDVTListNode</a> to avoid computing temp <a href="/web-llvm/docs/api/classes/llvm/foldingsetnodeid">FoldingSetNodeID</a> and hash value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CSKYTargetMachine.cpp}` Namespace Reference
+# `anonymous{CSKYTargetMachine.cpp}` Namespace
 
 
 

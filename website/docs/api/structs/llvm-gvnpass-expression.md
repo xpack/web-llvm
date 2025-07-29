@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Expression` Struct Reference
+# `Expression` Struct
 
 
 

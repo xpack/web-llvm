@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/WebAssembly/Disassembler` Folder Reference
+# `lib/Target/WebAssembly/Disassembler` Folder
 
 
 

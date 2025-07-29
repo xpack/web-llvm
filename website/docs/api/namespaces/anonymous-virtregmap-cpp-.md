@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VirtRegMap.cpp}` Namespace Reference
+# `anonymous{VirtRegMap.cpp}` Namespace
 
 
 

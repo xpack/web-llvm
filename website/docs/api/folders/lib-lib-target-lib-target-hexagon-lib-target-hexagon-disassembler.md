@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Hexagon/Disassembler` Folder Reference
+# `lib/Target/Hexagon/Disassembler` Folder
 
 
 

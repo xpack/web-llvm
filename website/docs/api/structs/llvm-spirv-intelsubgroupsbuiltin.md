@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelSubgroupsBuiltin` Struct Reference
+# `IntelSubgroupsBuiltin` Struct
 
 
 

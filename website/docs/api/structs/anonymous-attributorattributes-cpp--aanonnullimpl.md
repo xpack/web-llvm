@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANonNullImpl` Struct Reference
+# `AANonNullImpl` Struct
 
 
 

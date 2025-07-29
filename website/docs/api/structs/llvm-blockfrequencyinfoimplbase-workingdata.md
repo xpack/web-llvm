@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorkingData` Struct Reference
+# `WorkingData` Struct
 
 <p>Index of loop information. <a href="#details">More...</a></p>
 

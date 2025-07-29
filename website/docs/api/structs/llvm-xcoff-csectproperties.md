@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CsectProperties` Struct Reference
+# `CsectProperties` Struct
 
 
 

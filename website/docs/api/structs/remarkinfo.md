@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkInfo` Struct Reference
+# `RemarkInfo` Struct
 
 
 

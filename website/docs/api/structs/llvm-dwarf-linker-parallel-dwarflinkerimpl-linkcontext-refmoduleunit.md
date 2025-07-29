@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RefModuleUnit` Struct Reference
+# `RefModuleUnit` Struct
 
 <p>Keep information for referenced clang module: already loaded DWARF info of the clang module and a <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">CompileUnit</a> of the module. <a href="#details">More...</a></p>
 

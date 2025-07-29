@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFunctionInfo` Struct Reference
+# `WebAssemblyFunctionInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `delay_import_directory_table_entry` Struct Reference
+# `delay_import_directory_table_entry` Struct
 
 
 

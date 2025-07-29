@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreISD` Namespace Reference
+# `XCoreISD` Namespace
 
 
 

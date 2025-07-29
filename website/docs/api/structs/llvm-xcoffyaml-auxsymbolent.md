@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AuxSymbolEnt` Struct Reference
+# `AuxSymbolEnt` Struct
 
 
 

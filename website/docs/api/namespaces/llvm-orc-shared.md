@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `shared` Namespace Reference
+# `shared` Namespace
 
 
 

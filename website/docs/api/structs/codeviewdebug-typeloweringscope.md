@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeLoweringScope` Struct Reference
+# `TypeLoweringScope` Struct
 
 
 

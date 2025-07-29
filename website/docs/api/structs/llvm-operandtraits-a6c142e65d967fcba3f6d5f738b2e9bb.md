@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandTraits` Struct Template Reference
+# `OperandTraits` Struct Template
 
 
 

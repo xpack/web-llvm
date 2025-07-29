@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClauseT` Struct Template Reference
+# `ClauseT` Struct Template
 
 
 

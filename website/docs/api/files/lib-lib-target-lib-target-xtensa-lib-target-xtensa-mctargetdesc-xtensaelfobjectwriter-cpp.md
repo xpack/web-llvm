@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaELFObjectWriter.cpp` File Reference
+# `XtensaELFObjectWriter.cpp` File
 
 
 

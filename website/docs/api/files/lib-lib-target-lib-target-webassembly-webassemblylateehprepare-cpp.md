@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyLateEHPrepare.cpp` File Reference
+# `WebAssemblyLateEHPrepare.cpp` File
 
 <p>Does various transformations for exception handling. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandedMatch` Struct Reference
+# `ExpandedMatch` Struct
 
 
 

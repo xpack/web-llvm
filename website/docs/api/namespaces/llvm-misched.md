@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MISched` Namespace Reference
+# `MISched` Namespace
 
 
 

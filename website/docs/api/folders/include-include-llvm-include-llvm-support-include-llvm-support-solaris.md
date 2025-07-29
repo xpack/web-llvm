@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Support/Solaris` Folder Reference
+# `include/llvm/Support/Solaris` Folder
 
 
 

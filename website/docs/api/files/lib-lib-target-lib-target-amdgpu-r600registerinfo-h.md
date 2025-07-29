@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600RegisterInfo.h` File Reference
+# `R600RegisterInfo.h` File
 
 <p>Interface definition for R600RegisterInfo. <a href="#details">More...</a></p>
 

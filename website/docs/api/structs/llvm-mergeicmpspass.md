@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeICmpsPass` Struct Reference
+# `MergeICmpsPass` Struct
 
 
 

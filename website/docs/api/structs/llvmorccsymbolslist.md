@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCSymbolsList` Struct Reference
+# `LLVMOrcCSymbolsList` Struct
 
 <p>Represents a list of <a href="/web-llvm/docs/api/groups/llvmcexecutionengineorc/#gab64e9fc4c88c012a3d9f6f609877f449">LLVMOrcSymbolStringPoolEntryRef</a> and the associated length. <a href="#details">More...</a></p>
 

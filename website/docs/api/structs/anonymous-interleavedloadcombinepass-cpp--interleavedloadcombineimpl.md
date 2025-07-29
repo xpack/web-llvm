@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleavedLoadCombineImpl` Struct Reference
+# `InterleavedLoadCombineImpl` Struct
 
 
 

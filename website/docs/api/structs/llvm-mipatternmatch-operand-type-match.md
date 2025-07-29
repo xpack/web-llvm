@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `operand_type_match` Struct Reference
+# `operand_type_match` Struct
 
 
 

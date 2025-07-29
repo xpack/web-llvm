@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PendingMCFixup` Struct Reference
+# `PendingMCFixup` Struct
 
 
 

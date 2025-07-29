@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAlwaysInlinePass` Struct Reference
+# `AMDGPUAlwaysInlinePass` Struct
 
 
 

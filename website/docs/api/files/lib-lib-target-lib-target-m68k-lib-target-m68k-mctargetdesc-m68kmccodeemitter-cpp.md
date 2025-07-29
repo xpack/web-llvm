@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCCodeEmitter.cpp` File Reference
+# `M68kMCCodeEmitter.cpp` File
 
 <p>This file contains defintions for <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> code emitter. <a href="#details">More...</a></p>
 

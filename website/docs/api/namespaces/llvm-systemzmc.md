@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMC` Namespace Reference
+# `SystemZMC` Namespace
 
 
 

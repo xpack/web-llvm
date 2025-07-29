@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/XCore/Disassembler` Folder Reference
+# `lib/Target/XCore/Disassembler` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ErlangGCPrinter.cpp}` Namespace Reference
+# `anonymous{ErlangGCPrinter.cpp}` Namespace
 
 
 

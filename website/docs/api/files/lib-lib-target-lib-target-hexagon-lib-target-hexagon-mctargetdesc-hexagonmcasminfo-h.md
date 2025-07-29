@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCAsmInfo.h` File Reference
+# `HexagonMCAsmInfo.h` File
 
 
 

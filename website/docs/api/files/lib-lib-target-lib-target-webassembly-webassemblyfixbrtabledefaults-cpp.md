@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFixBrTableDefaults.cpp` File Reference
+# `WebAssemblyFixBrTableDefaults.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WasmEHPrepare.cpp}` Namespace Reference
+# `anonymous{WasmEHPrepare.cpp}` Namespace
 
 
 

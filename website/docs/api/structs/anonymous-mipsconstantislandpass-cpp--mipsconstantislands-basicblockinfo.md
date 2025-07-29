@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockInfo` Struct Reference
+# `BasicBlockInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/basicblockinfo">BasicBlockInfo</a> - Information about the offset and size of a single basic block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUUnifyMetadata.cpp}` Namespace Reference
+# `anonymous{AMDGPUUnifyMetadata.cpp}` Namespace
 
 
 

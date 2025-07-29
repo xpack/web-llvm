@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignT` Struct Template Reference
+# `AlignT` Struct Template
 
 
 

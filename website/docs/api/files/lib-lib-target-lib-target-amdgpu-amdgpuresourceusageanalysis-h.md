@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUResourceUsageAnalysis.h` File Reference
+# `AMDGPUResourceUsageAnalysis.h` File
 
 <p>Analyzes how many registers and other resources are used by functions. <a href="#details">More...</a></p>
 

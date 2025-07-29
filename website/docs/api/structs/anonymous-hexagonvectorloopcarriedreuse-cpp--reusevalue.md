@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReuseValue` Struct Reference
+# `ReuseValue` Struct
 
 
 

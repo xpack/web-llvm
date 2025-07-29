@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ConstantFolding.cpp}` Namespace Reference
+# `anonymous{ConstantFolding.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFixIrreducibleControlFlow.cpp` File Reference
+# `WebAssemblyFixIrreducibleControlFlow.cpp` File
 
 <p>This file implements a pass that removes irreducible control flow. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVTargetTransformInfo.h` File Reference
+# `SPIRVTargetTransformInfo.h` File
 
 
 

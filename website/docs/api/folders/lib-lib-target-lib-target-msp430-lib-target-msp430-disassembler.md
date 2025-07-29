@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/MSP430/Disassembler` Folder Reference
+# `lib/Target/MSP430/Disassembler` Folder
 
 
 

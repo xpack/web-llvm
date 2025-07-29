@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAICVTrackerCallSiteReturned` Struct Reference
+# `AAICVTrackerCallSiteReturned` Struct
 
 
 

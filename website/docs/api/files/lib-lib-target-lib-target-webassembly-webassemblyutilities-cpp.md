@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyUtilities.cpp` File Reference
+# `WebAssemblyUtilities.cpp` File
 
 <p>This file implements several utility functions for <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a>. <a href="#details">More...</a></p>
 

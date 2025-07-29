@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyLateEHPrepare.cpp}` Namespace Reference
+# `anonymous{WebAssemblyLateEHPrepare.cpp}` Namespace
 
 
 

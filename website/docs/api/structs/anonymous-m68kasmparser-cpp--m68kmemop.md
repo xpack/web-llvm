@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMemOp` Struct Reference
+# `M68kMemOp` Struct
 
 
 

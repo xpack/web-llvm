@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShlOp` Struct Reference
+# `ShlOp` Struct
 
 
 

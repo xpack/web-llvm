@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `uses_stream_operator` Struct Template Reference
+# `uses_stream_operator` Struct Template
 
 
 

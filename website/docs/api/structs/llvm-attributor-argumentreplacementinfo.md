@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentReplacementInfo` Struct Reference
+# `ArgumentReplacementInfo` Struct
 
 <p>Helper struct used in the communication between an abstract attribute (<a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a>) that wants to change the signature of a function and the <a href="/web-llvm/docs/api/structs/llvm/attributor">Attributor</a> which applies the changes. <a href="#details">More...</a></p>
 

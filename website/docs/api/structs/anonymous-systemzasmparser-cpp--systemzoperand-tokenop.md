@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TokenOp` Struct Reference
+# `TokenOp` Struct
 
 
 

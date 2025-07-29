@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DiagnosticHandler.cpp}` Namespace Reference
+# `anonymous{DiagnosticHandler.cpp}` Namespace
 
 
 

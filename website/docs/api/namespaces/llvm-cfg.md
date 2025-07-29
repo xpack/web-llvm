@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cfg` Namespace Reference
+# `cfg` Namespace
 
 
 

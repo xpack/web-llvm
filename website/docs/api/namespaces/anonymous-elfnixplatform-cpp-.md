@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ELFNixPlatform.cpp}` Namespace Reference
+# `anonymous{ELFNixPlatform.cpp}` Namespace
 
 
 

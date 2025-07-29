@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYMCTargetDesc.cpp` File Reference
+# `CSKYMCTargetDesc.cpp` File
 
 
 

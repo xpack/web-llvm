@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `rank` Struct Template Reference
+# `rank` Struct Template
 
 <p>Utility type to build an inheritance chain that makes it easy to rank overload candidates. <a href="#details">More...</a></p>
 

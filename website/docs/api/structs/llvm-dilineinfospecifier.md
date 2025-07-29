@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILineInfoSpecifier` Struct Reference
+# `DILineInfoSpecifier` Struct
 
 <p>Controls which fields of <a href="/web-llvm/docs/api/structs/llvm/dilineinfo">DILineInfo</a> container should be filled with data. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryExtents` Struct Reference
+# `MemoryExtents` Struct
 
 
 

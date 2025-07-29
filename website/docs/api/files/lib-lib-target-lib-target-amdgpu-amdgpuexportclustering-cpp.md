@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUExportClustering.cpp` File Reference
+# `AMDGPUExportClustering.cpp` File
 
 
 

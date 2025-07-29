@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ProcessImplicitDefs.cpp}` Namespace Reference
+# `anonymous{ProcessImplicitDefs.cpp}` Namespace
 
 
 

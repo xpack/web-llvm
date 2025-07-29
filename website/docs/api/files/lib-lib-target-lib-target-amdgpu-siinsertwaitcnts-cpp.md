@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInsertWaitcnts.cpp` File Reference
+# `SIInsertWaitcnts.cpp` File
 
 <p>Insert wait instructions for memory reads and writes. <a href="#details">More...</a></p>
 

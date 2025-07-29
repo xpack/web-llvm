@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RepeatedSubstringIterator` Struct Reference
+# `RepeatedSubstringIterator` Struct
 
 <p>Iterator for finding all repeated substrings in the suffix tree. <a href="#details">More...</a></p>
 

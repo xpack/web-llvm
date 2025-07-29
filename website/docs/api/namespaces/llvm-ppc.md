@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPC` Namespace Reference
+# `PPC` Namespace
 
 <p>Define some predicates that are used for node matching. <a href="#details">More...</a></p>
 

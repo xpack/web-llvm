@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VCCOp` Struct Reference
+# `VCCOp` Struct
 
 
 

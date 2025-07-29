@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiNode` Struct Reference
+# `PhiNode` Struct
 
 
 

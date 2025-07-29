@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeakExternalRequest` Struct Reference
+# `WeakExternalRequest` Struct
 
 
 

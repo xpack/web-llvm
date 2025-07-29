@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LOHInfo` Struct Reference
+# `LOHInfo` Struct
 
 <p>State tracked per register. <a href="#details">More...</a></p>
 

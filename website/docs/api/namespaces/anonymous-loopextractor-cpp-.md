@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopExtractor.cpp}` Namespace Reference
+# `anonymous{LoopExtractor.cpp}` Namespace
 
 
 

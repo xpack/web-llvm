@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAIsDead` Struct Reference
+# `AAIsDead` Struct
 
 <p>An abstract interface for liveness abstract attribute. <a href="#details">More...</a></p>
 

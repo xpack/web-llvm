@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DFAJumpThreading.cpp}` Namespace Reference
+# `anonymous{DFAJumpThreading.cpp}` Namespace
 
 
 

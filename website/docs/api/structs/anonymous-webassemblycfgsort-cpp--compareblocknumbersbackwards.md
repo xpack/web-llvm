@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompareBlockNumbersBackwards` Struct Reference
+# `CompareBlockNumbersBackwards` Struct
 
 <p>Sort blocks by their number in the opposite order.. <a href="#details">More...</a></p>
 

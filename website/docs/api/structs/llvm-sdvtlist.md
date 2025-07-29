@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDVTList` Struct Reference
+# `SDVTList` Struct
 
 <p>This represents a list of <a href="/web-llvm/docs/api/namespaces/llvm/#ad18871060ac1b051c7322cc6ad71e11c">ValueType</a>'s that has been intern'd by a <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a>. <a href="#details">More...</a></p>
 

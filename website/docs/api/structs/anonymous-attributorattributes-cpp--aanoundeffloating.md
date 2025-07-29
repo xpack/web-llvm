@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoUndefFloating` Struct Reference
+# `AANoUndefFloating` Struct
 
 
 

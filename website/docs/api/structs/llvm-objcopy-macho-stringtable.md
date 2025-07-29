@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTable` Struct Reference
+# `StringTable` Struct
 
 <p>The location of the string table inside the binary is described by LC_SYMTAB load command. <a href="#details">More...</a></p>
 

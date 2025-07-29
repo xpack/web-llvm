@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MCSymbolELF.cpp}` Namespace Reference
+# `anonymous{MCSymbolELF.cpp}` Namespace
 
 
 

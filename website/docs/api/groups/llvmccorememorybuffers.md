@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Memory Buffers Reference
+# Memory Buffers
 
 
 

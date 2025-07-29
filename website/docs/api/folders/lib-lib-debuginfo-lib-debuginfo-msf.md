@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/MSF` Folder Reference
+# `lib/DebugInfo/MSF` Folder
 
 
 

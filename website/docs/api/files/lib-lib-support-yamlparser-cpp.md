@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLParser.cpp` File Reference
+# `YAMLParser.cpp` File
 
 
 

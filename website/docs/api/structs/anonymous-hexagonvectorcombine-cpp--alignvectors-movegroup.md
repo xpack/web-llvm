@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MoveGroup` Struct Reference
+# `MoveGroup` Struct
 
 
 

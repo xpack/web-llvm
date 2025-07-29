@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/SystemZ/Disassembler` Folder Reference
+# `lib/Target/SystemZ/Disassembler` Folder
 
 
 

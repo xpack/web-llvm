@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kFrameLowering.h` File Reference
+# `M68kFrameLowering.h` File
 
 <p>This file contains the M68k declaration of TargetFrameLowering class. <a href="#details">More...</a></p>
 

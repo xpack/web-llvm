@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetRegistry` Struct Reference
+# `TargetRegistry` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/targetregistry">TargetRegistry</a> - Generic interface to target specific features. <a href="#details">More...</a></p>
 

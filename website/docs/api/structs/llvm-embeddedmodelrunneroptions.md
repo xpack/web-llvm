@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmbeddedModelRunnerOptions` Struct Reference
+# `EmbeddedModelRunnerOptions` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/releasemodemodelrunner">ReleaseModeModelRunner</a> - production mode implementation of the <a href="/web-llvm/docs/api/classes/llvm/mlmodelrunner">MLModelRunner</a>. <a href="#details">More...</a></p>
 

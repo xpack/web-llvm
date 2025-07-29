@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FirstIndexOfType` Struct Template Reference
+# `FirstIndexOfType` Struct Template
 
 <p>Find the first index where a type appears in a list of types. <a href="#details">More...</a></p>
 

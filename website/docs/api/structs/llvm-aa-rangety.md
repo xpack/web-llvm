@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeTy` Struct Reference
+# `RangeTy` Struct
 
 <p>Helper to represent an access offset and size, with logic to deal with uncertainty and check for overlapping accesses. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegBankLLTMapping` Struct Reference
+# `RegBankLLTMapping` Struct
 
 
 

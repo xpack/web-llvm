@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPerfHintAnalysisPass` Struct Reference
+# `AMDGPUPerfHintAnalysisPass` Struct
 
 
 

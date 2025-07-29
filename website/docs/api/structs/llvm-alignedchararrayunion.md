@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignedCharArrayUnion` Struct Template Reference
+# `AlignedCharArrayUnion` Struct Template
 
 <p>A suitably aligned and sized character array member which can hold elements of any type. <a href="#details">More...</a></p>
 

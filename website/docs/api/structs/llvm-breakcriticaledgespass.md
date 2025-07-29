@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BreakCriticalEdgesPass` Struct Reference
+# `BreakCriticalEdgesPass` Struct
 
 
 

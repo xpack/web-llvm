@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonCopyHoisting.cpp}` Namespace Reference
+# `anonymous{HexagonCopyHoisting.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_maxsignedvalue` Struct Reference
+# `is_maxsignedvalue` Struct
 
 
 

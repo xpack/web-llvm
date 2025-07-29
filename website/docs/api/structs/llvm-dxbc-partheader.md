@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartHeader` Struct Reference
+# `PartHeader` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/use">Use</a> this type to describe the size and type of a DXIL container part. <a href="#details">More...</a></p>
 

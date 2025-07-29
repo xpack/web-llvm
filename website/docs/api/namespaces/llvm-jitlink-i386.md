@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `i386` Namespace Reference
+# `i386` Namespace
 
 
 

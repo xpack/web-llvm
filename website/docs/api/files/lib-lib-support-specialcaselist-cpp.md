@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecialCaseList.cpp` File Reference
+# `SpecialCaseList.cpp` File
 
 
 

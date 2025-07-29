@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPValueAndVReg` Struct Reference
+# `FPValueAndVReg` Struct
 
 
 

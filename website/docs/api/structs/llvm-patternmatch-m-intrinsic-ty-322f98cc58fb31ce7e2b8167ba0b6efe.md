@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `m_Intrinsic_Ty` Struct Template Reference
+# `m_Intrinsic_Ty` Struct Template
 
 
 

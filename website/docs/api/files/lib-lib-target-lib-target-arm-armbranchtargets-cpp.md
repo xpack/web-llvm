@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBranchTargets.cpp` File Reference
+# `ARMBranchTargets.cpp` File
 
 
 

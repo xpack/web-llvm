@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_provider` Struct Template Reference
+# `format_provider` Struct Template
 
 <p>Dwarf constants <a href="/web-llvm/docs/api/structs/llvm/format-provider">format_provider</a>. <a href="#details">More...</a></p>
 

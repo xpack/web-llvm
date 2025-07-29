@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiU_struct` Struct Reference
+# `PhiU_struct` Struct
 
 
 

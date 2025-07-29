@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinidumpYAML` Namespace Reference
+# `MinidumpYAML` Namespace
 
 
 

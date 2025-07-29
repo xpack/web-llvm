@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/MC/MCDisassembler` Folder Reference
+# `lib/MC/MCDisassembler` Folder
 
 
 

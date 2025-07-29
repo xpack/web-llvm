@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaMCAsmInfo.h` File Reference
+# `XtensaMCAsmInfo.h` File
 
 
 

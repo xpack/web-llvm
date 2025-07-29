@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallTargetComparator` Struct Reference
+# `CallTargetComparator` Struct
 
 
 

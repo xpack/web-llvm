@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExactFPImm` Struct Reference
+# `ExactFPImm` Struct
 
 
 

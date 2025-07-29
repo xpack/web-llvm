@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVVectorPeephole.cpp` File Reference
+# `RISCVVectorPeephole.cpp` File
 
 
 

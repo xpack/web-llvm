@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SVEPRFM` Struct Reference
+# `SVEPRFM` Struct
 
 
 

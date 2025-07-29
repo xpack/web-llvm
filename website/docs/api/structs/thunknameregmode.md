@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThunkNameRegMode` Struct Reference
+# `ThunkNameRegMode` Struct
 
 
 

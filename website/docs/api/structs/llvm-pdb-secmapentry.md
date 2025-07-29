@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SecMapEntry` Struct Reference
+# `SecMapEntry` Struct
 
 
 

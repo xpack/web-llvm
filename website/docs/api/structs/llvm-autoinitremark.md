@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AutoInitRemark` Struct Reference
+# `AutoInitRemark` Struct
 
 <p>Special case for -ftrivial-auto-var-init remarks. <a href="#details">More...</a></p>
 

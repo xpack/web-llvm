@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPRequest` Struct Reference
+# `HTTPRequest` Struct
 
 <p>A stateless description of an outbound HTTP request. <a href="#details">More...</a></p>
 

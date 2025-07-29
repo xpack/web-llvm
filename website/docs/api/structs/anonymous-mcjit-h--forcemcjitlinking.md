@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceMCJITLinking` Struct Reference
+# `ForceMCJITLinking` Struct
 
 
 

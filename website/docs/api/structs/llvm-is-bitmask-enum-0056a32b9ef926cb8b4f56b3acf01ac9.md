@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_bitmask_enum` Struct Template Reference
+# `is_bitmask_enum` Struct Template
 
 
 

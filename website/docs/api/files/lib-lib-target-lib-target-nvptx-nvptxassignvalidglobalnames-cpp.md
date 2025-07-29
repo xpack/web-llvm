@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAssignValidGlobalNames.cpp` File Reference
+# `NVPTXAssignValidGlobalNames.cpp` File
 
 
 

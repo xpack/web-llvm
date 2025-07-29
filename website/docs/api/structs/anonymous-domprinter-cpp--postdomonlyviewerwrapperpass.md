@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDomOnlyViewerWrapperPass` Struct Reference
+# `PostDomOnlyViewerWrapperPass` Struct
 
 
 

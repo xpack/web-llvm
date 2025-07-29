@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_GnuHash_Impl` Struct Template Reference
+# `Elf_GnuHash_Impl` Struct Template
 
 
 

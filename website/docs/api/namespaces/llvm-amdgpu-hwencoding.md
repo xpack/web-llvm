@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWEncoding` Namespace Reference
+# `HWEncoding` Namespace
 
 
 

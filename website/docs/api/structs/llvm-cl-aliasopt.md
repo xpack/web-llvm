@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `aliasopt` Struct Reference
+# `aliasopt` Struct
 
 
 

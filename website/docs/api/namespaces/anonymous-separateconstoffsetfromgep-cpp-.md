@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SeparateConstOffsetFromGEP.cpp}` Namespace Reference
+# `anonymous{SeparateConstOffsetFromGEP.cpp}` Namespace
 
 
 

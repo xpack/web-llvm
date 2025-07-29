@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeFunctionInfo` Struct Reference
+# `RuntimeFunctionInfo` Struct
 
 <p>Generic information that describes a runtime function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordStreamer.cpp` File Reference
+# `RecordStreamer.cpp` File
 
 
 

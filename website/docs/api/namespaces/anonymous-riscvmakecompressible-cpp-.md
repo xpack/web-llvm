@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVMakeCompressible.cpp}` Namespace Reference
+# `anonymous{RISCVMakeCompressible.cpp}` Namespace
 
 
 

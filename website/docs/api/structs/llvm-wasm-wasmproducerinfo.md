@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmProducerInfo` Struct Reference
+# `WasmProducerInfo` Struct
 
 
 

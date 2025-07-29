@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kCCState` Struct Reference
+# `M68kCCState` Struct
 
 <p>Custom state to propagate llvm type info to register CC assigner. <a href="#details">More...</a></p>
 

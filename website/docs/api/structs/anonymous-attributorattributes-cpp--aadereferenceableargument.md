@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADereferenceableArgument` Struct Reference
+# `AADereferenceableArgument` Struct
 
 <p>Dereferenceable attribute for an argument. <a href="#details">More...</a></p>
 

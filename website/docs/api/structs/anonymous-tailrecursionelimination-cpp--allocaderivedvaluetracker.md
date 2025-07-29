@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocaDerivedValueTracker` Struct Reference
+# `AllocaDerivedValueTracker` Struct
 
 
 

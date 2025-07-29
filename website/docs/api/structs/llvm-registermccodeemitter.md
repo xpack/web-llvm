@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCCodeEmitter` Struct Template Reference
+# `RegisterMCCodeEmitter` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermccodeemitter">RegisterMCCodeEmitter</a> - Helper template for registering a target specific machine code emitter, for use in the target initialization function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NogroupT` Struct Template Reference
+# `NogroupT` Struct Template
 
 
 

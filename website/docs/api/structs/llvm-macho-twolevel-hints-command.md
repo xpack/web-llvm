@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `twolevel_hints_command` Struct Reference
+# `twolevel_hints_command` Struct
 
 
 

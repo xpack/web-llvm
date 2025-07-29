@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAHeapToShared` Struct Reference
+# `AAHeapToShared` Struct
 
 <p>Try to replace memory allocation calls called by a single thread with a static buffer of shared memory. <a href="#details">More...</a></p>
 

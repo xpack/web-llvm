@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ElfMappingSymbolInfo` Struct Reference
+# `ElfMappingSymbolInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopLoadElimination.cpp}` Namespace Reference
+# `anonymous{LoopLoadElimination.cpp}` Namespace
 
 
 

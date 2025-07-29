@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocatorNode` Struct Reference
+# `AllocatorNode` Struct
 
 
 

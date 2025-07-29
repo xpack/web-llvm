@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonFUnits` Namespace Reference
+# `HexagonFUnits` Namespace
 
 
 

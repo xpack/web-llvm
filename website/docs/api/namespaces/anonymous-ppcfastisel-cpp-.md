@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCFastISel.cpp}` Namespace Reference
+# `anonymous{PPCFastISel.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBankedReg` Namespace Reference
+# `ARMBankedReg` Namespace
 
 
 

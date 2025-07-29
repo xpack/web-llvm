@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineEntry` Struct Reference
+# `LineEntry` Struct
 
 <p>Line entries are used to encode the line tables in <a href="/web-llvm/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> objects. <a href="#details">More...</a></p>
 

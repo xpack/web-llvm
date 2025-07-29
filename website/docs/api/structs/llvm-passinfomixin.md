@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassInfoMixin` Struct Template Reference
+# `PassInfoMixin` Struct Template
 
 <p>A CRTP mix-in to automatically provide informational APIs needed for passes. <a href="#details">More...</a></p>
 

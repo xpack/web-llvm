@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFPreserveStaticOffset.cpp}` Namespace Reference
+# `anonymous{BPFPreserveStaticOffset.cpp}` Namespace
 
 
 

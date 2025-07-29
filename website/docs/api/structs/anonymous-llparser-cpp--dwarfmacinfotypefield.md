@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfMacinfoTypeField` Struct Reference
+# `DwarfMacinfoTypeField` Struct
 
 
 

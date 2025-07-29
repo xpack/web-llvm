@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RewriteStatepointsForGC.cpp}` Namespace Reference
+# `anonymous{RewriteStatepointsForGC.cpp}` Namespace
 
 
 

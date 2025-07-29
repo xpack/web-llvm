@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TupleDecIntegerRangeState` Struct Reference
+# `TupleDecIntegerRangeState` Struct
 
 
 

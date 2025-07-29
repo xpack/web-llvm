@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitModuleTimer` Struct Reference
+# `SplitModuleTimer` Struct
 
 
 

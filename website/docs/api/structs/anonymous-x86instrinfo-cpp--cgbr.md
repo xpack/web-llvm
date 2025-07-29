@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGBR` Struct Reference
+# `CGBR` Struct
 
 <p>Create Global Base Reg pass. <a href="#details">More...</a></p>
 

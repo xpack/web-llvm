@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveRefCntPtrInfo` Struct Template Reference
+# `IntrusiveRefCntPtrInfo` Struct Template
 
 
 

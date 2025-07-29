@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCMCInstLower.cpp` File Reference
+# `ARCMCInstLower.cpp` File
 
 <p>This file contains code to lower ARC MachineInstrs to their corresponding <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a> records. <a href="#details">More...</a></p>
 

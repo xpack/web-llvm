@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfReaderIndexBase` Struct Reference
+# `InstrProfReaderIndexBase` Struct
 
 
 

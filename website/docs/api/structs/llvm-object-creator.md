@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `object_creator` Struct Template Reference
+# `object_creator` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/object-creator">object_creator</a> - Helper method for <a href="/web-llvm/docs/api/classes/llvm/managedstatic">ManagedStatic</a>. <a href="#details">More...</a></p>
 

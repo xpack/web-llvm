@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBlockRanges.h` File Reference
+# `HexagonBlockRanges.h` File
 
 
 

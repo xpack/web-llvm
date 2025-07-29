@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_variant` Struct Template Reference
+# `is_variant` Struct Template
 
 
 

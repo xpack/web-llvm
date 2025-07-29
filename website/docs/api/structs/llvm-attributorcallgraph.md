@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributorCallGraph` Struct Reference
+# `AttributorCallGraph` Struct
 
 
 

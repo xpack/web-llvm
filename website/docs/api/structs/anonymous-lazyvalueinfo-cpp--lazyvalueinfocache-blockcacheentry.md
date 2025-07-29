@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockCacheEntry` Struct Reference
+# `BlockCacheEntry` Struct
 
 <p>This is all of the cached information for one basic block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalOutlinedFunction` Struct Reference
+# `GlobalOutlinedFunction` Struct
 
 <p>The information necessary to create an outlined function that is matched globally. <a href="#details">More...</a></p>
 

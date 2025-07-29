@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmInitFunc` Struct Reference
+# `WasmInitFunc` Struct
 
 
 

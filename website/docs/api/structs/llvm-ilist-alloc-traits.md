@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_alloc_traits` Struct Template Reference
+# `ilist_alloc_traits` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/use">Use</a> delete by default for iplist and ilist. <a href="#details">More...</a></p>
 

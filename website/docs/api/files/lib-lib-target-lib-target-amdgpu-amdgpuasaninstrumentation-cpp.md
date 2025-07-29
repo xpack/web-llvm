@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsanInstrumentation.cpp` File Reference
+# `AMDGPUAsanInstrumentation.cpp` File
 
 
 

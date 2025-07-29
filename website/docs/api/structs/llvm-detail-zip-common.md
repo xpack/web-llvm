@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zip_common` Struct Template Reference
+# `zip_common` Struct Template
 
 
 

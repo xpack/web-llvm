@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BarrierOp` Struct Reference
+# `BarrierOp` Struct
 
 
 

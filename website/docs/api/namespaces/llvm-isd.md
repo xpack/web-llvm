@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ISD` Namespace Reference
+# `ISD` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/isd">ISD</a> namespace - This namespace contains an enum which represents all of the <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> node types and value types. <a href="#details">More...</a></p>
 

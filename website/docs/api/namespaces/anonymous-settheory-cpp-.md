@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SetTheory.cpp}` Namespace Reference
+# `anonymous{SetTheory.cpp}` Namespace
 
 
 

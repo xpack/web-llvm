@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DemandedFields` Struct Reference
+# `DemandedFields` Struct
 
 <p>Which subfields of VL or VTYPE have values we need to preserve? <a href="#details">More...</a></p>
 

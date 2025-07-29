@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyCleanCodeAfterTrap.cpp` File Reference
+# `WebAssemblyCleanCodeAfterTrap.cpp` File
 
 <p>This file remove instruction after trap. <a href="#details">More...</a></p>
 

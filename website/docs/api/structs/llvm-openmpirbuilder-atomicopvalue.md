@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicOpValue` Struct Reference
+# `AtomicOpValue` Struct
 
 <p>a struct to pack relevant information while generating atomic Ops <a href="#details">More...</a></p>
 

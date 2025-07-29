@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMBBToSBBB` Struct Reference
+# `LLVMBBToSBBB` Struct
 
 
 

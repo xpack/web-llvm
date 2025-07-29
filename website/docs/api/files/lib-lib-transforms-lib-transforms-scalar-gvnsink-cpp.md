@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNSink.cpp` File Reference
+# `GVNSink.cpp` File
 
 <p>This pass attempts to sink instructions into successors, reducing static instruction count and enabling if-conversion. <a href="#details">More...</a></p>
 

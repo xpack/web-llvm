@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopStandardAnalysisResults` Struct Reference
+# `LoopStandardAnalysisResults` Struct
 
 <p>The adaptor from a function pass to a loop pass computes these analyses and makes them available to the loop passes "for free". <a href="#details">More...</a></p>
 

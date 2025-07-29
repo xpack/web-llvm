@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HasCachedHash` Struct Template Reference
+# `HasCachedHash` Struct Template
 
 
 

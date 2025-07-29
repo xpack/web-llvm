@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThumbRegisterInfo.cpp` File Reference
+# `ThumbRegisterInfo.cpp` File
 
 
 

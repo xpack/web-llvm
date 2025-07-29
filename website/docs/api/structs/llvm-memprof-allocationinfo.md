@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocationInfo` Struct Reference
+# `AllocationInfo` Struct
 
 
 

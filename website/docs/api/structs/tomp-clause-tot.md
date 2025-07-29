@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ToT` Struct Template Reference
+# `ToT` Struct Template
 
 
 

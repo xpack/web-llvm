@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SHA256.cpp` File Reference
+# `SHA256.cpp` File
 
 
 

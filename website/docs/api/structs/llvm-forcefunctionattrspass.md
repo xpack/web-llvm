@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceFunctionAttrsPass` Struct Reference
+# `ForceFunctionAttrsPass` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> which forces specific function attributes into the IR, primarily as a debugging tool. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SysCRImmOp` Struct Reference
+# `SysCRImmOp` Struct
 
 
 

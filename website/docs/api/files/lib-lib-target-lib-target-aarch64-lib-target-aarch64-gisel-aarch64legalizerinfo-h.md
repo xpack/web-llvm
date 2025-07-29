@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64LegalizerInfo.h` File Reference
+# `AArch64LegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for AArch64. <a href="#details">More...</a></p>
 

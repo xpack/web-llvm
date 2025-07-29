@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Option` Folder Reference
+# `lib/Option` Folder
 
 
 

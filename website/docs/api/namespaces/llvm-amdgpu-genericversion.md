@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericVersion` Namespace Reference
+# `GenericVersion` Namespace
 
 <p>Generic target versions emitted by this version of LLVM. <a href="#details">More...</a></p>
 

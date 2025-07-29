@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionAllocGroup` Struct Reference
+# `SectionAllocGroup` Struct
 
 
 

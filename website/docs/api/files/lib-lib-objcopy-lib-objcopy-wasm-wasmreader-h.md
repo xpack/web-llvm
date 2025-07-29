@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmReader.h` File Reference
+# `WasmReader.h` File
 
 
 

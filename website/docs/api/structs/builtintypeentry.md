@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuiltinTypeEntry` Struct Reference
+# `BuiltinTypeEntry` Struct
 
 
 

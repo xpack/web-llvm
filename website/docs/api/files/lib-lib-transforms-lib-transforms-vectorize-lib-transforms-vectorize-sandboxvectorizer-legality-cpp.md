@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Legality.cpp` File Reference
+# `Legality.cpp` File
 
 
 

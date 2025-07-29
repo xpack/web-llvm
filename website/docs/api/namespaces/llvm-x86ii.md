@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86II` Namespace Reference
+# `X86II` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/x86ii">X86II</a> - This namespace holds all of the target specific flags that instruction info tracks. <a href="#details">More...</a></p>
 

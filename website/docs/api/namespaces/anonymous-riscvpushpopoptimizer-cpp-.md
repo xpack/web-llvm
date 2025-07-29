@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVPushPopOptimizer.cpp}` Namespace Reference
+# `anonymous{RISCVPushPopOptimizer.cpp}` Namespace
 
 
 

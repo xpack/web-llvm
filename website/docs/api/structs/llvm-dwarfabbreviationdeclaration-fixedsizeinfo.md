@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedSizeInfo` Struct Reference
+# `FixedSizeInfo` Struct
 
 <p>A helper structure that can quickly determine the size in bytes of an abbreviation declaration. <a href="#details">More...</a></p>
 

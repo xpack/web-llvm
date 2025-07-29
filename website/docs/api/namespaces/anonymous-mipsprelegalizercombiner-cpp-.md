@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsPreLegalizerCombiner.cpp}` Namespace Reference
+# `anonymous{MipsPreLegalizerCombiner.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIdLowering` Struct Reference
+# `TypeIdLowering` Struct
 
 <p>This structure describes how to lower type tests for a particular type identifier. <a href="#details">More...</a></p>
 

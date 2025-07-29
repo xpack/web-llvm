@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreeMemBlock` Struct Reference
+# `FreeMemBlock` Struct
 
 
 

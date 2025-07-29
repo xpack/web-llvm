@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ExecutionEngine/PerfJITEvents` Folder Reference
+# `lib/ExecutionEngine/PerfJITEvents` Folder
 
 
 

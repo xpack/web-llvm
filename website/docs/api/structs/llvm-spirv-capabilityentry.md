@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CapabilityEntry` Struct Reference
+# `CapabilityEntry` Struct
 
 
 

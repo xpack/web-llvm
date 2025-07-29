@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{XCoreISelDAGToDAG.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-xcoreiseldagtodag-cpp-/xcoredagtodagisel">XCoreDAGToDAGISel</a> - <a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a> specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

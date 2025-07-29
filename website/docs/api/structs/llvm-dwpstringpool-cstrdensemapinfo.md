@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CStrDenseMapInfo` Struct Reference
+# `CStrDenseMapInfo` Struct
 
 
 

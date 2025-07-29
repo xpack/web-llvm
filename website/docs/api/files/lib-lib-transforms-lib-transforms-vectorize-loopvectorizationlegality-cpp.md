@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationLegality.cpp` File Reference
+# `LoopVectorizationLegality.cpp` File
 
 
 

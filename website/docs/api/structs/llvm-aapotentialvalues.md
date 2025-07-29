@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPotentialValues` Struct Reference
+# `AAPotentialValues` Struct
 
 
 

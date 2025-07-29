@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FirstIndexOfType` Struct Template Reference
+# `FirstIndexOfType` Struct Template
 
 
 

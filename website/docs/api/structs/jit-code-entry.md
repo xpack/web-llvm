@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `jit_code_entry` Struct Reference
+# `jit_code_entry` Struct
 
 
 

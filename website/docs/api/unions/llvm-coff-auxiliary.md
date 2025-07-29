@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Auxiliary` Union Reference
+# `Auxiliary` Union
 
 
 

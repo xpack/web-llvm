@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Argument` Struct Reference
+# `Argument` Struct
 
 <p>Used in the streaming interface as the general argument type. <a href="#details">More...</a></p>
 

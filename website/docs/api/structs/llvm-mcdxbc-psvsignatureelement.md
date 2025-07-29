@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PSVSignatureElement` Struct Reference
+# `PSVSignatureElement` Struct
 
 
 

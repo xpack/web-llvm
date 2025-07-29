@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Nonce` Struct Template Reference
+# `Nonce` Struct Template
 
 
 

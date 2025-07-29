@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNIterativeScheduler.cpp}` Namespace Reference
+# `anonymous{GCNIterativeScheduler.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cmp` Struct Reference
+# `Cmp` Struct
 
 
 

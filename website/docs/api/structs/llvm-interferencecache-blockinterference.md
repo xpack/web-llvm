@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockInterference` Struct Reference
+# `BlockInterference` Struct
 
 <p>BlockInterference - information about the interference in a single basic block. <a href="#details">More...</a></p>
 

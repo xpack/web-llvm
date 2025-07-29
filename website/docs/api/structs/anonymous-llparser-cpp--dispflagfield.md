@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DISPFlagField` Struct Reference
+# `DISPFlagField` Struct
 
 
 

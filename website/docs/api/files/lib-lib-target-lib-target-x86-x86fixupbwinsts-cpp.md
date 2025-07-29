@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FixupBWInsts.cpp` File Reference
+# `X86FixupBWInsts.cpp` File
 
 <p>This file defines the pass that looks through the machine instructions late in the compilation, and finds byte or word instructions that can be profitably replaced with 32 bit instructions that give equivalent results for the bits of the results that are used. <a href="#details">More...</a></p>
 

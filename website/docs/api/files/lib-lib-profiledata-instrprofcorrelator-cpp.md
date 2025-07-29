@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfCorrelator.cpp` File Reference
+# `InstrProfCorrelator.cpp` File
 
 
 

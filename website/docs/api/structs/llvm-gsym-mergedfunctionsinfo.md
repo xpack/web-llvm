@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedFunctionsInfo` Struct Reference
+# `MergedFunctionsInfo` Struct
 
 
 

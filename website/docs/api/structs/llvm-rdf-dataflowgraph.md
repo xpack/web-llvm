@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataFlowGraph` Struct Reference
+# `DataFlowGraph` Struct
 
 
 

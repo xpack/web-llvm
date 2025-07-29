@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANonNullFloating` Struct Reference
+# `AANonNullFloating` Struct
 
 <p>NonNull attribute for a floating value. <a href="#details">More...</a></p>
 

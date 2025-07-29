@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scalar.cpp` File Reference
+# `Scalar.cpp` File
 
 
 

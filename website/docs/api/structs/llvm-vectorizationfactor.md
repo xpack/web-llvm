@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorizationFactor` Struct Reference
+# `VectorizationFactor` Struct
 
 <p>TODO: The following <a href="/web-llvm/docs/api/structs/llvm/vectorizationfactor">VectorizationFactor</a> was pulled out of <a href="/web-llvm/docs/api/classes/llvm/loopvectorizationcostmodel">LoopVectorizationCostModel</a> class. <a href="#details">More...</a></p>
 

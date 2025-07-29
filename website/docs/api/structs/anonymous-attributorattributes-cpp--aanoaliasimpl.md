@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoAliasImpl` Struct Reference
+# `AANoAliasImpl` Struct
 
 
 

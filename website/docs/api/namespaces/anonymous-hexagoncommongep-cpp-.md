@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonCommonGEP.cpp}` Namespace Reference
+# `anonymous{HexagonCommonGEP.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmbedBitcodePass.cpp` File Reference
+# `EmbedBitcodePass.cpp` File
 
 
 

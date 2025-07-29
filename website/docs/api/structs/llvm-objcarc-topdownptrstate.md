@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TopDownPtrState` Struct Reference
+# `TopDownPtrState` Struct
 
 
 

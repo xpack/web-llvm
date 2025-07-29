@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterUsage` Struct Reference
+# `RegisterUsage` Struct
 
 <p>A struct that represents some properties of the register usage of a loop. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubtargetFeatureKV` Struct Reference
+# `SubtargetFeatureKV` Struct
 
 <p>Used to provide key value pairs for feature and CPU bit flags. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JumpT` Struct Reference
+# `JumpT` Struct
 
 <p>An arc in the graph, typically corresponding to a jump between two nodes. <a href="#details">More...</a></p>
 

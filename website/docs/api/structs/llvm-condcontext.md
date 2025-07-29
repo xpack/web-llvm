@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondContext` Struct Reference
+# `CondContext` Struct
 
 <p>Evaluate query assuming this condition holds. <a href="#details">More...</a></p>
 

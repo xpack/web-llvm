@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyToPhiMutation` Struct Reference
+# `CopyToPhiMutation` Struct
 
 
 

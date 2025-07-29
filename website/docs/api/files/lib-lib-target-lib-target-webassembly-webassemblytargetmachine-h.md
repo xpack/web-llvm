@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetMachine.h` File Reference
+# `WebAssemblyTargetMachine.h` File
 
 <p>This file declares the WebAssembly-specific subclass of TargetMachine. <a href="#details">More...</a></p>
 

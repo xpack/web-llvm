@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Prologue` Struct Reference
+# `Prologue` Struct
 
 
 

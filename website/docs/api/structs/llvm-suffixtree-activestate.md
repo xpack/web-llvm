@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ActiveState` Struct Reference
+# `ActiveState` Struct
 
 <p>Helper struct which keeps track of the next insertion point in Ukkonen's algorithm. <a href="#details">More...</a></p>
 

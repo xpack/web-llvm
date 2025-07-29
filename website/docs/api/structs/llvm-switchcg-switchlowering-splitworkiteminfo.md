@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SplitWorkItemInfo` Struct Reference
+# `SplitWorkItemInfo` Struct
 
 
 

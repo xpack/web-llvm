@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintIMap` Struct Reference
+# `PrintIMap` Struct
 
 
 

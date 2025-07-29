@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf64_Sym` Struct Reference
+# `Elf64_Sym` Struct
 
 
 

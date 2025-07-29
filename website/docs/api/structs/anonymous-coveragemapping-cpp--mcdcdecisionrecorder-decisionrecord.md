@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecisionRecord` Struct Reference
+# `DecisionRecord` Struct
 
 <p>This holds the DecisionRegion and MCDCBranches under it. <a href="#details">More...</a></p>
 

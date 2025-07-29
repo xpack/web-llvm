@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64_AM` Namespace Reference
+# `AArch64_AM` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/aarch64-am">AArch64_AM</a> - <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> Addressing Mode Stuff. <a href="#details">More...</a></p>
 

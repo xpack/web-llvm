@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFrameInfo` Struct Reference
+# `MachineFrameInfo` Struct
 
 <p>Serializable representation of <a href="/web-llvm/docs/api/structs/llvm/yaml/machineframeinfo">MachineFrameInfo</a>. <a href="#details">More...</a></p>
 

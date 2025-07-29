@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86IndirectThunks.cpp` File Reference
+# `X86IndirectThunks.cpp` File
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> that injects an MI thunk that is used to lower indirect calls in a way that prevents speculation on some x86 processors and can be used to mitigate security vulnerabilities due to targeted speculative execution and side channels such as CVE-2017-5715. <a href="#details">More...</a></p>
 

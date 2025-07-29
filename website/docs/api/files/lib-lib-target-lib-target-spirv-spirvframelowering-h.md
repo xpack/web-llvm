@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVFrameLowering.h` File Reference
+# `SPIRVFrameLowering.h` File
 
 
 

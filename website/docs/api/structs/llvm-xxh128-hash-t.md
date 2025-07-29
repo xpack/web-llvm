@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XXH128_hash_t` Struct Reference
+# `XXH128_hash_t` Struct
 
 <p>The return value from 128-bit hashes. <a href="#details">More...</a></p>
 

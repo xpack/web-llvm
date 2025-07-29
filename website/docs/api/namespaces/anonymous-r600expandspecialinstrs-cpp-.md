@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{R600ExpandSpecialInstrs.cpp}` Namespace Reference
+# `anonymous{R600ExpandSpecialInstrs.cpp}` Namespace
 
 
 

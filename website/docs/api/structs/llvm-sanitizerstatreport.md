@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerStatReport` Struct Reference
+# `SanitizerStatReport` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `sub_framework_command` Struct Reference
+# `sub_framework_command` Struct
 
 
 

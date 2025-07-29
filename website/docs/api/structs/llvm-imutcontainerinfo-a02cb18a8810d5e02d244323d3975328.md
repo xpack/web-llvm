@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutContainerInfo` Struct Template Reference
+# `ImutContainerInfo` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/imutcontainerinfo">ImutContainerInfo</a> - Specialization for pointer values to treat pointers as references to unique objects. <a href="#details">More...</a></p>
 

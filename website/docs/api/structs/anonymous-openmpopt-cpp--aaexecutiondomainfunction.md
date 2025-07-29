@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAExecutionDomainFunction` Struct Reference
+# `AAExecutionDomainFunction` Struct
 
 
 

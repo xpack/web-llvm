@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `macho_load_command` Union Reference
+# `macho_load_command` Union
 
 
 

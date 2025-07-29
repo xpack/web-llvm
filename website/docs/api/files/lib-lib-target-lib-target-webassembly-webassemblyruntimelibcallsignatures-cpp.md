@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRuntimeLibcallSignatures.cpp` File Reference
+# `WebAssemblyRuntimeLibcallSignatures.cpp` File
 
 <p>This file contains signature information for runtime libcalls. <a href="#details">More...</a></p>
 

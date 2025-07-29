@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SRecord` Struct Reference
+# `SRecord` Struct
 
 
 

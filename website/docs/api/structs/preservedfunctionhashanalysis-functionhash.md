@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionHash` Struct Reference
+# `FunctionHash` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NAuxTokenType` Struct Reference
+# `NAuxTokenType` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyprivateT` Struct Template Reference
+# `CopyprivateT` Struct Template
 
 
 

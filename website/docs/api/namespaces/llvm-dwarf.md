@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dwarf` Namespace Reference
+# `dwarf` Namespace
 
 <p>Calculates the starting offsets for various sections within the .debug_names section. <a href="#details">More...</a></p>
 

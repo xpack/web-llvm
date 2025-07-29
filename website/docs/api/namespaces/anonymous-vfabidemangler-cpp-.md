@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VFABIDemangler.cpp}` Namespace Reference
+# `anonymous{VFABIDemangler.cpp}` Namespace
 
 
 

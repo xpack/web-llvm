@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonLoopAlign.cpp}` Namespace Reference
+# `anonymous{HexagonLoopAlign.cpp}` Namespace
 
 
 

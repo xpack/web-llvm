@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsmUtils.h` File Reference
+# `AMDGPUAsmUtils.h` File
 
 
 

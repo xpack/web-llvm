@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUSplitModule.cpp}` Namespace Reference
+# `anonymous{AMDGPUSplitModule.cpp}` Namespace
 
 
 

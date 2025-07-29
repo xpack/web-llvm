@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFEmitter.cpp` File Reference
+# `ELFEmitter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> component of yaml2obj. <a href="#details">More...</a></p>
 

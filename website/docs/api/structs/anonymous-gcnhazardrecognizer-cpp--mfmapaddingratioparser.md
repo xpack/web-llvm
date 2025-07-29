@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MFMAPaddingRatioParser` Struct Reference
+# `MFMAPaddingRatioParser` Struct
 
 
 

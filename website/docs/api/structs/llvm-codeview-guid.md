@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GUID` Struct Reference
+# `GUID` Struct
 
 <p>This represents the '<a href="/web-llvm/docs/api/structs/llvm/codeview/guid">GUID</a>' type from windows.h. <a href="#details">More...</a></p>
 

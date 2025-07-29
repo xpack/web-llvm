@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetIndexLocation` Struct Reference
+# `TargetIndexLocation` Struct
 
 <p>This struct describes target specific location. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeverityT` Struct Template Reference
+# `SeverityT` Struct Template
 
 
 

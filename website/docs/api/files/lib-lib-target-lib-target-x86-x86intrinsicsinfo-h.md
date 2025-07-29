@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86IntrinsicsInfo.h` File Reference
+# `X86IntrinsicsInfo.h` File
 
 
 

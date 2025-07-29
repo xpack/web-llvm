@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFYAML` Namespace Reference
+# `COFFYAML` Namespace
 
 
 

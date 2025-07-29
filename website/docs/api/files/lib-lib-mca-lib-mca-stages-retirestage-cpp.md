@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetireStage.cpp` File Reference
+# `RetireStage.cpp` File
 
 <p>This file defines the retire stage of an instruction pipeline. <a href="#details">More...</a></p>
 

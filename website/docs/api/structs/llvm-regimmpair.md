@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegImmPair` Struct Reference
+# `RegImmPair` Struct
 
 <p>Used to describe a register and immediate addition. <a href="#details">More...</a></p>
 

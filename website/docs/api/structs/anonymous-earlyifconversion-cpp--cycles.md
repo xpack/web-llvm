@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cycles` Struct Reference
+# `Cycles` Struct
 
 <p>Helper class to simplify emission of cycle counts into optimization remarks. <a href="#details">More...</a></p>
 

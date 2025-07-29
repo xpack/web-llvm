@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByteSizeStorage` Struct Reference
+# `ByteSizeStorage` Struct
 
 <p>The following field is used for ByteSize for non-implicit_const attributes and as value for implicit_const ones, indicated by Form == DW_FORM_implicit_const. <a href="#details">More...</a></p>
 

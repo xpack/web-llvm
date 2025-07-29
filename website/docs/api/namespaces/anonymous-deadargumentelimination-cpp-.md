@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DeadArgumentElimination.cpp}` Namespace Reference
+# `anonymous{DeadArgumentElimination.cpp}` Namespace
 
 
 

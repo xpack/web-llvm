@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSplitModule.h` File Reference
+# `AMDGPUSplitModule.h` File
 
 
 

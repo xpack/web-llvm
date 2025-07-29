@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachOObjectFile.cpp}` Namespace Reference
+# `anonymous{MachOObjectFile.cpp}` Namespace
 
 
 

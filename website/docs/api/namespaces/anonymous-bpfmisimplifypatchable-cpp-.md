@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFMISimplifyPatchable.cpp}` Namespace Reference
+# `anonymous{BPFMISimplifyPatchable.cpp}` Namespace
 
 
 

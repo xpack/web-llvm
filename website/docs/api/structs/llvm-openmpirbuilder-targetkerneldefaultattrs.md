@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetKernelDefaultAttrs` Struct Reference
+# `TargetKernelDefaultAttrs` Struct
 
 <p>Container to pass the default attributes with which a kernel must be launched, used to set kernel attributes and populate associated static structures. <a href="#details">More...</a></p>
 

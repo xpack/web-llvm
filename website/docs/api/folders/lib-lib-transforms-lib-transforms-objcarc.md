@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/ObjCARC` Folder Reference
+# `lib/Transforms/ObjCARC` Folder
 
 
 

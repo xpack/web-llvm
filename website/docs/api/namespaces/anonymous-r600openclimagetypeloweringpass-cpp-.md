@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{R600OpenCLImageTypeLoweringPass.cpp}` Namespace Reference
+# `anonymous{R600OpenCLImageTypeLoweringPass.cpp}` Namespace
 
 
 

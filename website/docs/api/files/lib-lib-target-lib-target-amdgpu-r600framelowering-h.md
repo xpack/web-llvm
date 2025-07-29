@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600FrameLowering.h` File Reference
+# `R600FrameLowering.h` File
 
 
 

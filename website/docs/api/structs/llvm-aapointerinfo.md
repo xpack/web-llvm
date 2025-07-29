@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPointerInfo` Struct Reference
+# `AAPointerInfo` Struct
 
 <p>An abstract interface for struct information. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVTargetMachine.cpp}` Namespace Reference
+# `anonymous{SPIRVTargetMachine.cpp}` Namespace
 
 
 

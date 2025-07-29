@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURemoveIncompatibleFunctions.cpp` File Reference
+# `AMDGPURemoveIncompatibleFunctions.cpp` File
 
 <p>This pass replaces all uses of functions that use GPU features incompatible with the current GPU with null then deletes the function. <a href="#details">More...</a></p>
 

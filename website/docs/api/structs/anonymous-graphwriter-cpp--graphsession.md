@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphSession` Struct Reference
+# `GraphSession` Struct
 
 
 

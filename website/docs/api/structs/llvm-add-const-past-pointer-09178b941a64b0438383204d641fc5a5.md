@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `add_const_past_pointer` Struct Template Reference
+# `add_const_past_pointer` Struct Template
 
 
 

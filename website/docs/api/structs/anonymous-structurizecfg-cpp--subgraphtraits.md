@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubGraphTraits` Struct Reference
+# `SubGraphTraits` Struct
 
 
 

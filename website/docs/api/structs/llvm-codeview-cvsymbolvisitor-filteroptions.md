@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FilterOptions` Struct Reference
+# `FilterOptions` Struct
 
 
 

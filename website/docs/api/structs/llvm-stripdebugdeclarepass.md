@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripDebugDeclarePass` Struct Reference
+# `StripDebugDeclarePass` Struct
 
 
 

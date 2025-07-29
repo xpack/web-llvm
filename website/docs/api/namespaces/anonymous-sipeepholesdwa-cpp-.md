@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIPeepholeSDWA.cpp}` Namespace Reference
+# `anonymous{SIPeepholeSDWA.cpp}` Namespace
 
 
 

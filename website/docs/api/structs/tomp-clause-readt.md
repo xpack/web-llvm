@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReadT` Struct Template Reference
+# `ReadT` Struct Template
 
 
 

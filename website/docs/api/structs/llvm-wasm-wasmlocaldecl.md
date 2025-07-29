@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmLocalDecl` Struct Reference
+# `WasmLocalDecl` Struct
 
 
 

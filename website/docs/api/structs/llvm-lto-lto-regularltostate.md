@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegularLTOState` Struct Reference
+# `RegularLTOState` Struct
 
 
 

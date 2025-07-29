@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGLexer.h` File Reference
+# `TGLexer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMode` Struct Reference
+# `SIMode` Struct
 
 
 

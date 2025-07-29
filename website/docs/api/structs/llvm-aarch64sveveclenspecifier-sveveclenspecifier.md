@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SVEVECLENSPECIFIER` Struct Reference
+# `SVEVECLENSPECIFIER` Struct
 
 
 

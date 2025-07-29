@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UsedNZCV` Struct Reference
+# `UsedNZCV` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResolvedDbgOp` Struct Reference
+# `ResolvedDbgOp` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/livedebugvalues/dbgop">DbgOp</a> whose <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> (if any) has resolved to an actual location, <a href="/web-llvm/docs/api/classes/livedebugvalues/locidx">LocIdx</a>. <a href="#details">More...</a></p>
 

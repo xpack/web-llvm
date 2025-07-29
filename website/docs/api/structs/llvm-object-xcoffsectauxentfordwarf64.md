@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFSectAuxEntForDWARF64` Struct Reference
+# `XCOFFSectAuxEntForDWARF64` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_socket_stream.cpp` File Reference
+# `raw_socket_stream.cpp` File
 
 
 

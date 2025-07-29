@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OcamlGCPrinter.cpp}` Namespace Reference
+# `anonymous{OcamlGCPrinter.cpp}` Namespace
 
 
 

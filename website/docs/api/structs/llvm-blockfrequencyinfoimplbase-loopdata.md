@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopData` Struct Reference
+# `LoopData` Struct
 
 <p>Data about a loop. <a href="#details">More...</a></p>
 

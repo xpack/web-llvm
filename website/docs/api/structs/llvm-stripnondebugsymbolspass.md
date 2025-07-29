@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripNonDebugSymbolsPass` Struct Reference
+# `StripNonDebugSymbolsPass` Struct
 
 
 

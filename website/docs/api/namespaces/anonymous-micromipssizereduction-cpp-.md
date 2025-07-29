@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MicroMipsSizeReduction.cpp}` Namespace Reference
+# `anonymous{MicroMipsSizeReduction.cpp}` Namespace
 
 
 

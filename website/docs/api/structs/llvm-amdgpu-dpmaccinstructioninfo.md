@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DPMACCInstructionInfo` Struct Reference
+# `DPMACCInstructionInfo` Struct
 
 
 

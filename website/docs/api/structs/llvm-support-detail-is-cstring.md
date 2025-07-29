@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_cstring` Struct Template Reference
+# `is_cstring` Struct Template
 
 
 

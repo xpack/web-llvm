@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16Libcall` Struct Reference
+# `Mips16Libcall` Struct
 
 
 

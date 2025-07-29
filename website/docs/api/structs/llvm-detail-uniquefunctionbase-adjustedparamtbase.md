@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AdjustedParamTBase` Struct Template Reference
+# `AdjustedParamTBase` Struct Template
 
 
 

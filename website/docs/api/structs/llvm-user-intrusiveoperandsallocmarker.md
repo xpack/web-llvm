@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveOperandsAllocMarker` Struct Reference
+# `IntrusiveOperandsAllocMarker` Struct
 
 <p>Indicates this <a href="/web-llvm/docs/api/classes/llvm/user">User</a> has operands co-allocated. <a href="#details">More...</a></p>
 

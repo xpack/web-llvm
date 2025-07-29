@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixLoop` Struct Reference
+# `MatrixLoop` Struct
 
 <p>Properties of a single loop used when generating the tiled loop nest. <a href="#details">More...</a></p>
 

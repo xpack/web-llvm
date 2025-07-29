@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffsetInfo` Struct Reference
+# `OffsetInfo` Struct
 
 <p>A helper containing a list of offsets computed for a <a href="/web-llvm/docs/api/classes/llvm/use">Use</a>. <a href="#details">More...</a></p>
 

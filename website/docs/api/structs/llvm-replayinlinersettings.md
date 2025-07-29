@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplayInlinerSettings` Struct Reference
+# `ReplayInlinerSettings` Struct
 
 <p>Replay Inliner Setup. <a href="#details">More...</a></p>
 

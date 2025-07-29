@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsBranchExpansion.cpp` File Reference
+# `MipsBranchExpansion.cpp` File
 
 <p>This pass do two things: <a href="#details">More...</a></p>
 

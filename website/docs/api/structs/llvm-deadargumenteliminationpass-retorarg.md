@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetOrArg` Struct Reference
+# `RetOrArg` Struct
 
 <p>Struct that represents (part of) either a return value or a function argument. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefsetRecord` Struct Reference
+# `DefsetRecord` Struct
 
 
 

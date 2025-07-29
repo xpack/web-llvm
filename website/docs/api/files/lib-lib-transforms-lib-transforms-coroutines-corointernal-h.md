@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroInternal.h` File Reference
+# `CoroInternal.h` File
 
 
 

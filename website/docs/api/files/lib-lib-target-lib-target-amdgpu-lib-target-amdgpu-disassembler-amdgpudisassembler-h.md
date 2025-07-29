@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUDisassembler.h` File Reference
+# `AMDGPUDisassembler.h` File
 
 <p>This file contains declaration for AMDGPU ISA disassembler. <a href="#details">More...</a></p>
 

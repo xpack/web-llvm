@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DocumentListTraits` Struct Template Reference
+# `DocumentListTraits` Struct Template
 
 <p>This class should be specialized by any type that needs to be converted to/from a list of YAML documents. <a href="#details">More...</a></p>
 

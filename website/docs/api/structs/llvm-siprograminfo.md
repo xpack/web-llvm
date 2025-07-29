@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIProgramInfo` Struct Reference
+# `SIProgramInfo` Struct
 
 <p>Track resource usage for kernels / entry functions. <a href="#details">More...</a></p>
 

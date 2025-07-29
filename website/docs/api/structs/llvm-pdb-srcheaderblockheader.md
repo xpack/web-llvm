@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SrcHeaderBlockHeader` Struct Reference
+# `SrcHeaderBlockHeader` Struct
 
 <p>The header preceding the /src/headerblock stream. <a href="#details">More...</a></p>
 

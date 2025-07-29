@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMatcher.cpp` File Reference
+# `StringMatcher.cpp` File
 
 
 

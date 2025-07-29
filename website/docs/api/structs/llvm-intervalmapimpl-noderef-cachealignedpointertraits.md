@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CacheAlignedPointerTraits` Struct Reference
+# `CacheAlignedPointerTraits` Struct
 
 
 

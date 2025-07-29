@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeafRecordBase` Struct Reference
+# `LeafRecordBase` Struct
 
 
 

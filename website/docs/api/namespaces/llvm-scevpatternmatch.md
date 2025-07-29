@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVPatternMatch` Namespace Reference
+# `SCEVPatternMatch` Namespace
 
 
 

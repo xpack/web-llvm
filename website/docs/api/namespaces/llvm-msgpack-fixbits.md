@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixBits` Namespace Reference
+# `FixBits` Namespace
 
 <p>Most significant bits used to identify "Fix" variants in MessagePack. <a href="#details">More...</a></p>
 

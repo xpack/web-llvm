@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NType` Struct Template Reference
+# `NType` Struct Template
 
 
 

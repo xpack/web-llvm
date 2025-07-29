@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RenamePassData` Struct Reference
+# `RenamePassData` Struct
 
 
 

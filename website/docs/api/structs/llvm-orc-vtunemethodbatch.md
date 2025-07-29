@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTuneMethodBatch` Struct Reference
+# `VTuneMethodBatch` Struct
 
 
 

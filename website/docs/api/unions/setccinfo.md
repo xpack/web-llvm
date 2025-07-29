@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetCCInfo` Union Reference
+# `SetCCInfo` Union
 
 <p>Helper structure to keep track of SetCC information. <a href="#details">More...</a></p>
 

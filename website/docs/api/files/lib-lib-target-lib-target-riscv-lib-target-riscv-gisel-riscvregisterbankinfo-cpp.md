@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVRegisterBankInfo.cpp` File Reference
+# `RISCVRegisterBankInfo.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo">RegisterBankInfo</a> class for RISC-V. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCTLSDynamicCall.cpp}` Namespace Reference
+# `anonymous{PPCTLSDynamicCall.cpp}` Namespace
 
 
 

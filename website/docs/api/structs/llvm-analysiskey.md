@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisKey` Struct Reference
+# `AnalysisKey` Struct
 
 <p>A special type used by analysis passes to provide an address that identifies that particular analysis pass type. <a href="#details">More...</a></p>
 

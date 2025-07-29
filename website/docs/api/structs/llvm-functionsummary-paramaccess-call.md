@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Call` Struct Reference
+# `Call` Struct
 
 <p>Describes the use of a value in a call instruction, specifying the call's target, the value's parameter number, and the possible range of offsets from the beginning of the value that are passed. <a href="#details">More...</a></p>
 

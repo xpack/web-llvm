@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BranchParameters` Struct Reference
+# `BranchParameters` Struct
 
 
 

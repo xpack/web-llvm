@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{AMDGPUMCCodeEmitter.cpp}` Namespace
 
 
 

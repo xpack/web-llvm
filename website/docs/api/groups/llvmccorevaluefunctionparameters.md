@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Function Parameters Reference
+# Function Parameters
 
 <p>Functions in this group relate to arguments/parameters on functions. <a href="#details">More...</a></p>
 

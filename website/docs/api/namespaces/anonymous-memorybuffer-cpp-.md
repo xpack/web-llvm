@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MemoryBuffer.cpp}` Namespace Reference
+# `anonymous{MemoryBuffer.cpp}` Namespace
 
 
 

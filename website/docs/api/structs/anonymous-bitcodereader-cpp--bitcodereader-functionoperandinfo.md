@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionOperandInfo` Struct Reference
+# `FunctionOperandInfo` Struct
 
 
 

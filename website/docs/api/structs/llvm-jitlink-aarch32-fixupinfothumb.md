@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoThumb` Struct Reference
+# `FixupInfoThumb` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/jitlink/aarch32/fixupinfo">FixupInfo</a> check for Thumb32 edge kinds work on a pair of 16-bit halfwords. <a href="#details">More...</a></p>
 

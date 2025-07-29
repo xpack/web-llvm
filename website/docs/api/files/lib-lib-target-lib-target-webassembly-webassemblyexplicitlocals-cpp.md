@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyExplicitLocals.cpp` File Reference
+# `WebAssemblyExplicitLocals.cpp` File
 
 <p>This file converts any remaining registers into <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> locals. <a href="#details">More...</a></p>
 

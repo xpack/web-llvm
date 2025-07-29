@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PALMD` Namespace Reference
+# `PALMD` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_chained_fixups_header` Struct Reference
+# `dyld_chained_fixups_header` Struct
 
 <p>Structs for dyld chained fixups. <a href="#details">More...</a></p>
 

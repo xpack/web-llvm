@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ExpandVectorPredication.cpp}` Namespace Reference
+# `anonymous{ExpandVectorPredication.cpp}` Namespace
 
 
 

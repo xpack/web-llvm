@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIValPos` Struct Reference
+# `PHIValPos` Struct
 
 <p>Position and VReg of a PHI instruction during coalescing. <a href="#details">More...</a></p>
 

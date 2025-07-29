@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DWARFUnitIndex.cpp}` Namespace Reference
+# `anonymous{DWARFUnitIndex.cpp}` Namespace
 
 
 

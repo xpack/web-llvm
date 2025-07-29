@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/BPF/TargetInfo` Folder Reference
+# `lib/Target/BPF/TargetInfo` Folder
 
 
 

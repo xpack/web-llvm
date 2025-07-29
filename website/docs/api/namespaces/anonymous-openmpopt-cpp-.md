@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OpenMPOpt.cpp}` Namespace Reference
+# `anonymous{OpenMPOpt.cpp}` Namespace
 
 
 

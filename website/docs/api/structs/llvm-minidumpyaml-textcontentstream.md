@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextContentStream` Struct Reference
+# `TextContentStream` Struct
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a>, which is printed using YAML block notation. <a href="#details">More...</a></p>
 

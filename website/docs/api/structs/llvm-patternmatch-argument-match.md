@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Argument_match` Struct Template Reference
+# `Argument_match` Struct Template
 
 
 

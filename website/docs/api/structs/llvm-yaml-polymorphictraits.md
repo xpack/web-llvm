@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PolymorphicTraits` Struct Template Reference
+# `PolymorphicTraits` Struct Template
 
 <p>This class should be specialized by any type that can be represented as a scalar, map, or sequence, decided dynamically. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsFastISel.cpp}` Namespace Reference
+# `anonymous{MipsFastISel.cpp}` Namespace
 
 
 

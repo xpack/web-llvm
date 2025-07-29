@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrLess` Struct Reference
+# `InstrLess` Struct
 
 
 

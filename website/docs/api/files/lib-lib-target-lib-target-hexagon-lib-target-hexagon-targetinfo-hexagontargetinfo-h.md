@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonTargetInfo.h` File Reference
+# `HexagonTargetInfo.h` File
 
 
 

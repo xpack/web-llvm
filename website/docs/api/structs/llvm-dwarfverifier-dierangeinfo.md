@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DieRangeInfo` Struct Reference
+# `DieRangeInfo` Struct
 
 <p>A class that keeps the address range information for a single <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

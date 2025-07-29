@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAttributor.cpp` File Reference
+# `AMDGPUAttributor.cpp` File
 
 
 

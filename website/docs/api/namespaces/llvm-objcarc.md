@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `objcarc` Namespace Reference
+# `objcarc` Namespace
 
 
 

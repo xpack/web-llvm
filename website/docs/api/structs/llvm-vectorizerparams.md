@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorizerParams` Struct Reference
+# `VectorizerParams` Struct
 
 <p>Collection of parameters shared beetween the <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Vectorizer and the <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Access Analysis. <a href="#details">More...</a></p>
 

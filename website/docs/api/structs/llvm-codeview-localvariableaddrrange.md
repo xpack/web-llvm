@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalVariableAddrRange` Struct Reference
+# `LocalVariableAddrRange` Struct
 
 
 

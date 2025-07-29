@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{StackMapLivenessAnalysis.cpp}` Namespace Reference
+# `anonymous{StackMapLivenessAnalysis.cpp}` Namespace
 
 
 

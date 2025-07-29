@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmGlobal` Struct Reference
+# `WasmGlobal` Struct
 
 
 

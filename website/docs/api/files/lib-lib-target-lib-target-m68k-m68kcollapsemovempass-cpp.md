@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kCollapseMOVEMPass.cpp` File Reference
+# `M68kCollapseMOVEMPass.cpp` File
 
 <p><span class="doxyComputerOutput">MOVEM</span> is an instruction that moves multiple registers a time according to the given mask. <a href="#details">More...</a></p>
 

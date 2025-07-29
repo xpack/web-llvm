@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormalArgHandler` Struct Reference
+# `FormalArgHandler` Struct
 
 
 

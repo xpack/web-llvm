@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PAEvalPass` Struct Reference
+# `PAEvalPass` Struct
 
 
 

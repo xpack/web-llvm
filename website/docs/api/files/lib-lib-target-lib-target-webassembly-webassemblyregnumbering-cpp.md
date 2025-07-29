@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegNumbering.cpp` File Reference
+# `WebAssemblyRegNumbering.cpp` File
 
 <p>This file implements a pass which assigns <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> register numbers for CodeGen virtual registers. <a href="#details">More...</a></p>
 

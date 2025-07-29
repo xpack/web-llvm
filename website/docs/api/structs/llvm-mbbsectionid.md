@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBBSectionID` Struct Reference
+# `MBBSectionID` Struct
 
 
 

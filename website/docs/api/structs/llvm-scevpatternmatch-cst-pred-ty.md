@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cst_pred_ty` Struct Template Reference
+# `cst_pred_ty` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemIntrinsicInfo` Struct Reference
+# `MemIntrinsicInfo` Struct
 
 <p>Information about a load/store intrinsic defined by the target. <a href="#details">More...</a></p>
 

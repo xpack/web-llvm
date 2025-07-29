@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchFieldIndex` Struct Reference
+# `SwitchFieldIndex` Struct
 
 
 

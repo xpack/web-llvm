@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTOLLVMContext` Struct Reference
+# `LTOLLVMContext` Struct
 
 <p>A derived class of <a href="/web-llvm/docs/api/classes/llvm/llvmcontext">LLVMContext</a> that initializes itself according to a given <a href="/web-llvm/docs/api/structs/llvm/lto/config">Config</a> object. <a href="#details">More...</a></p>
 

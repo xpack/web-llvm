@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InputArg` Struct Reference
+# `InputArg` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/isd/inputarg">InputArg</a> - This struct carries flags and type information about a single incoming (formal) argument or incoming (from the perspective of the caller) return value virtual register. <a href="#details">More...</a></p>
 

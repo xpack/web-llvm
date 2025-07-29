@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMJITSymbolFlags` Struct Reference
+# `LLVMJITSymbolFlags` Struct
 
 <p>Represents the linkage flags for a symbol definition. <a href="#details">More...</a></p>
 

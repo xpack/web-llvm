@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionOutliningInfo` Struct Reference
+# `FunctionOutliningInfo` Struct
 
 
 

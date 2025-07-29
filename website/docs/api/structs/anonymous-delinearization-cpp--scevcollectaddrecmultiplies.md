@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVCollectAddRecMultiplies` Struct Reference
+# `SCEVCollectAddRecMultiplies` Struct
 
 
 

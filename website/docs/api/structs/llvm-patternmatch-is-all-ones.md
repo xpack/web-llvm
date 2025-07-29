@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_all_ones` Struct Reference
+# `is_all_ones` Struct
 
 
 

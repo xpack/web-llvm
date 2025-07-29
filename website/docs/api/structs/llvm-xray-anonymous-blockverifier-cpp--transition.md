@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Transition` Struct Reference
+# `Transition` Struct
 
 
 

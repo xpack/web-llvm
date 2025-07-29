@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUInsertDelayAlu.cpp}` Namespace Reference
+# `anonymous{AMDGPUInsertDelayAlu.cpp}` Namespace
 
 
 

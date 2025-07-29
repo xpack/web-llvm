@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Win64EH` Namespace Reference
+# `Win64EH` Namespace
 
 
 

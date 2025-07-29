@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Align` Struct Reference
+# `Align` Struct
 
 <p>This struct is a compact representation of a valid (non-zero power of two) alignment. <a href="#details">More...</a></p>
 

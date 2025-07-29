@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `m_ZeroMask` Struct Reference
+# `m_ZeroMask` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUPreLegalizerCombiner.cpp}` Namespace Reference
+# `anonymous{AMDGPUPreLegalizerCombiner.cpp}` Namespace
 
 
 

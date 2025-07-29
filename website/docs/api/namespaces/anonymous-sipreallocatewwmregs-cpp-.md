@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIPreAllocateWWMRegs.cpp}` Namespace Reference
+# `anonymous{SIPreAllocateWWMRegs.cpp}` Namespace
 
 
 

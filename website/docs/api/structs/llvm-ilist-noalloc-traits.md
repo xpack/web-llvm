@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_noalloc_traits` Struct Template Reference
+# `ilist_noalloc_traits` Struct Template
 
 <p>Custom traits to do nothing on deletion. <a href="#details">More...</a></p>
 

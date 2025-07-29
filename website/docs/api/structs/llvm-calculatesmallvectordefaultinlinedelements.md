@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalculateSmallVectorDefaultInlinedElements` Struct Template Reference
+# `CalculateSmallVectorDefaultInlinedElements` Struct Template
 
 <p>Helper class for calculating the default number of inline elements for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a>&lt;T&gt;</span>. <a href="#details">More...</a></p>
 

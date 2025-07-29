@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MILexer.cpp}` Namespace Reference
+# `anonymous{MILexer.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyFixIrreducibleControlFlow.cpp}` Namespace Reference
+# `anonymous{WebAssemblyFixIrreducibleControlFlow.cpp}` Namespace
 
 
 

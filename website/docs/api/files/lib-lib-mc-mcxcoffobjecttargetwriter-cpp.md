@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCXCOFFObjectTargetWriter.cpp` File Reference
+# `MCXCOFFObjectTargetWriter.cpp` File
 
 
 

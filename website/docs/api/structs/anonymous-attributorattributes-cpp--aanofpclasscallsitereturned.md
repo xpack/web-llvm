@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFPClassCallSiteReturned` Struct Reference
+# `AANoFPClassCallSiteReturned` Struct
 
 
 

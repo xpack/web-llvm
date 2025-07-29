@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCSymbolFlagsMapPair` Struct Reference
+# `LLVMOrcCSymbolFlagsMapPair` Struct
 
 <p>Represents a pair of a symbol name and <a href="/web-llvm/docs/api/structs/llvmjitsymbolflags">LLVMJITSymbolFlags</a>. <a href="#details">More...</a></p>
 

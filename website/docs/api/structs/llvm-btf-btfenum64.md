@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFEnum64` Struct Reference
+# `BTFEnum64` Struct
 
 <p>BTF_KIND_ENUM64 is followed by multiple "struct BTFEnum64". <a href="#details">More...</a></p>
 

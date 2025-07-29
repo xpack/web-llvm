@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocFnsTy` Struct Reference
+# `AllocFnsTy` Struct
 
 
 

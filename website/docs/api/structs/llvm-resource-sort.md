@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `resource_sort` Struct Reference
+# `resource_sort` Struct
 
 <p>Sorting functions for the Available queue. <a href="#details">More...</a></p>
 

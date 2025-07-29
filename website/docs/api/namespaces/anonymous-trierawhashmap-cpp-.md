@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TrieRawHashMap.cpp}` Namespace Reference
+# `anonymous{TrieRawHashMap.cpp}` Namespace
 
 
 

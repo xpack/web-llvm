@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `float_literal_impl` Namespace Reference
+# `float_literal_impl` Namespace
 
 
 

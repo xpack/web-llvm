@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `binaryformat` Namespace Reference
+# `binaryformat` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyDefaultAnalysisGraphTraits` Struct Template Reference
+# `LegacyDefaultAnalysisGraphTraits` Struct Template
 
 <p>Default traits class for extracting a graph from an analysis pass. <a href="#details">More...</a></p>
 

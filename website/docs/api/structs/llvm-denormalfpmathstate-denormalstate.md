@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenormalState` Struct Reference
+# `DenormalState` Struct
 
 
 

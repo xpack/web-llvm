@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `uses_missing_provider` Struct Template Reference
+# `uses_missing_provider` Struct Template
 
 
 

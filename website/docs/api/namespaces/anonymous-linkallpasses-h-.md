@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LinkAllPasses.h}` Namespace Reference
+# `anonymous{LinkAllPasses.h}` Namespace
 
 
 

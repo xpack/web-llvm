@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAKernelInfoFunction` Struct Reference
+# `AAKernelInfoFunction` Struct
 
 <p>The function kernel info abstract attribute, basically, what can we say about a function with regards to the <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/kernelinfostate">KernelInfoState</a>. <a href="#details">More...</a></p>
 

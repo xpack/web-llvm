@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILProgram` Struct Reference
+# `DXILProgram` Struct
 
 
 

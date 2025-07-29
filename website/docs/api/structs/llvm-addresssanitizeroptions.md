@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressSanitizerOptions` Struct Reference
+# `AddressSanitizerOptions` Struct
 
 
 

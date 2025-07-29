@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonDepITypes.h` File Reference
+# `HexagonDepITypes.h` File
 
 
 

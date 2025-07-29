@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MCJIT.h}` Namespace Reference
+# `anonymous{MCJIT.h}` Namespace
 
 
 

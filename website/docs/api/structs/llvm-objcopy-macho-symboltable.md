@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTable` Struct Reference
+# `SymbolTable` Struct
 
 <p>The location of the symbol table inside the binary is described by LC_SYMTAB load command. <a href="#details">More...</a></p>
 

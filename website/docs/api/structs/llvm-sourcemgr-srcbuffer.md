@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SrcBuffer` Struct Reference
+# `SrcBuffer` Struct
 
 
 

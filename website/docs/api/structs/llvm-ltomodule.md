@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTOModule` Struct Reference
+# `LTOModule` Struct
 
 <p>C++ class which implements the opaque <a href="/web-llvm/docs/api/groups/llvmclto/#ga3ce415fd9e8109d4835461c6de1b9d82">lto_module_t</a> type. <a href="#details">More...</a></p>
 

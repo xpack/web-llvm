@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArch` Namespace Reference
+# `LoongArch` Namespace
 
 
 

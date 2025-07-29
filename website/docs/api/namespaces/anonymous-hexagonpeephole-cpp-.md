@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonPeephole.cpp}` Namespace Reference
+# `anonymous{HexagonPeephole.cpp}` Namespace
 
 
 

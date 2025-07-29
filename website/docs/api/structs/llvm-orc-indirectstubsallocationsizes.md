@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectStubsAllocationSizes` Struct Reference
+# `IndirectStubsAllocationSizes` Struct
 
 
 

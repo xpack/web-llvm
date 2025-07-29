@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcDisassembler.cpp` File Reference
+# `SparcDisassembler.cpp` File
 
 
 

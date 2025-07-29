@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanRecipes.cpp` File Reference
+# `VPlanRecipes.cpp` File
 
 <p>This file contains implementations for different <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> recipes. <a href="#details">More...</a></p>
 

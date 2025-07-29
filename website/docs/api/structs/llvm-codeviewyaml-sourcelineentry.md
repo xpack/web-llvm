@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceLineEntry` Struct Reference
+# `SourceLineEntry` Struct
 
 
 

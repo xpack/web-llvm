@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `explicitness` Struct Template Reference
+# `explicitness` Struct Template
 
 <p>Helper trait for recording whether an option is specified explicitly. <a href="#details">More...</a></p>
 

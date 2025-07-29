@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubRangeInfo` Struct Reference
+# `SubRangeInfo` Struct
 
 
 

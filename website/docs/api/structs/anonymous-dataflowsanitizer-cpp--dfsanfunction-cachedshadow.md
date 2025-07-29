@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedShadow` Struct Reference
+# `CachedShadow` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintMB` Struct Reference
+# `PrintMB` Struct
 
 
 

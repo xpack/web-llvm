@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZAsmParser.cpp}` Namespace Reference
+# `anonymous{SystemZAsmParser.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmYAML` Namespace Reference
+# `WasmYAML` Namespace
 
 
 

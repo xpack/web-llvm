@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCLoopInstrFormPrep.cpp}` Namespace Reference
+# `anonymous{PPCLoopInstrFormPrep.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVRegisterInfo.cpp` File Reference
+# `RISCVRegisterInfo.cpp` File
 
 
 

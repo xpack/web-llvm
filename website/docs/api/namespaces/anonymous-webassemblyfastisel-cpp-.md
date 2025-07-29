@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyFastISel.cpp}` Namespace Reference
+# `anonymous{WebAssemblyFastISel.cpp}` Namespace
 
 
 

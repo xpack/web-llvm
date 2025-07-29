@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebuginfodLogEntry` Struct Reference
+# `DebuginfodLogEntry` Struct
 
 
 

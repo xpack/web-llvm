@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `codegenoptions` Namespace Reference
+# `codegenoptions` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineOutliner` Struct Reference
+# `MachineOutliner` Struct
 
 <p>An interprocedural pass which finds repeated sequences of instructions and replaces them with calls to functions. <a href="#details">More...</a></p>
 

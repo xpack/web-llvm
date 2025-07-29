@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalityPredicates` Namespace Reference
+# `LegalityPredicates` Namespace
 
 
 

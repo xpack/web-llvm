@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySortRegion.cpp` File Reference
+# `WebAssemblySortRegion.cpp` File
 
 
 

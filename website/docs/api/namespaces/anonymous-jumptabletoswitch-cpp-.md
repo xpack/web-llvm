@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JumpTableToSwitch.cpp}` Namespace Reference
+# `anonymous{JumpTableToSwitch.cpp}` Namespace
 
 
 

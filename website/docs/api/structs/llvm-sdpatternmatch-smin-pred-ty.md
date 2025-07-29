@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `smin_pred_ty` Struct Reference
+# `smin_pred_ty` Struct
 
 
 

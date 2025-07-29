@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `interactive_host` Namespace Reference
+# `interactive_host` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BalancedPartitioning.cpp` File Reference
+# `BalancedPartitioning.cpp` File
 
 
 

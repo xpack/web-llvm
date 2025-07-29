@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComplexDeinterleavingCompositeNode` Struct Reference
+# `ComplexDeinterleavingCompositeNode` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryExitInstrumenterPass` Struct Reference
+# `EntryExitInstrumenterPass` Struct
 
 
 

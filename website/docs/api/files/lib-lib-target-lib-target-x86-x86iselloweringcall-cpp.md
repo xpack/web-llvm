@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ISelLoweringCall.cpp` File Reference
+# `X86ISelLoweringCall.cpp` File
 
 <p>This file implements the lowering of LLVM calls to DAG nodes. <a href="#details">More...</a></p>
 

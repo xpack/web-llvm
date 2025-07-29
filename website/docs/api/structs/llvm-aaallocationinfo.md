@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAllocationInfo` Struct Reference
+# `AAAllocationInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadedSlice` Struct Reference
+# `LoadedSlice` Struct
 
 <p>Helper structure used to slice a load in smaller loads. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCOI` Namespace Reference
+# `MCOI` Namespace
 
 
 

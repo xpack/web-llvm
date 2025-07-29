@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTuneInfo` Struct Reference
+# `RISCVTuneInfo` Struct
 
 
 

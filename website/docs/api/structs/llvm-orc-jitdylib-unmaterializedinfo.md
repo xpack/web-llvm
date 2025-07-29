@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnmaterializedInfo` Struct Reference
+# `UnmaterializedInfo` Struct
 
 
 

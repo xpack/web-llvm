@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SelectionDAGISel.cpp}` Namespace Reference
+# `anonymous{SelectionDAGISel.cpp}` Namespace
 
 
 

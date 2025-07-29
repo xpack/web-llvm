@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisGetter` Struct Reference
+# `AnalysisGetter` Struct
 
 <p>Wrapper for <a href="/web-llvm/docs/api/namespaces/llvm/#adce09a5a0de0e3177eb00e932734af2f">FunctionAnalysisManager</a>. <a href="#details">More...</a></p>
 

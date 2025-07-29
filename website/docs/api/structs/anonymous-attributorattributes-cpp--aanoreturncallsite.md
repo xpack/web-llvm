@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoReturnCallSite` Struct Reference
+# `AANoReturnCallSite` Struct
 
 <p>NoReturn attribute deduction for a call sites. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetMachine.cpp` File Reference
+# `WebAssemblyTargetMachine.cpp` File
 
 <p>This file defines the WebAssembly-specific subclass of <a href="/web-llvm/docs/api/classes/llvm/targetmachine">TargetMachine</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VGPRIndexMode` Namespace Reference
+# `VGPRIndexMode` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InstSimplifyPass.cpp}` Namespace Reference
+# `anonymous{InstSimplifyPass.cpp}` Namespace
 
 
 

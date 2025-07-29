@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VcallThunkIdentifierNode` Struct Reference
+# `VcallThunkIdentifierNode` Struct
 
 
 

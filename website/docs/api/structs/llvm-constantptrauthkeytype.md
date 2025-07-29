@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPtrAuthKeyType` Struct Reference
+# `ConstantPtrAuthKeyType` Struct
 
 
 

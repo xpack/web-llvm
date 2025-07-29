@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_negated_power2_or_zero` Struct Reference
+# `is_negated_power2_or_zero` Struct
 
 
 

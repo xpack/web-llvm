@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AvailableValueInBlock` Struct Reference
+# `AvailableValueInBlock` Struct
 
 <p>Represents an <a href="/web-llvm/docs/api/structs/llvm/gvn/availablevalue">AvailableValue</a> which can be rematerialized at the end of the associated <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a>. <a href="#details">More...</a></p>
 

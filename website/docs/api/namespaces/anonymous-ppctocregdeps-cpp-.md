@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCTOCRegDeps.cpp}` Namespace Reference
+# `anonymous{PPCTOCRegDeps.cpp}` Namespace
 
 
 

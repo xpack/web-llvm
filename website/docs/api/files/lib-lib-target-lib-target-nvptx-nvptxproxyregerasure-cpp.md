@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXProxyRegErasure.cpp` File Reference
+# `NVPTXProxyRegErasure.cpp` File
 
 
 

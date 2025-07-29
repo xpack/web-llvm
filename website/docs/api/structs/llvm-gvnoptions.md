@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNOptions` Struct Reference
+# `GVNOptions` Struct
 
 <p>A set of parameters to control various transforms performed by GVN pass. <a href="#details">More...</a></p>
 

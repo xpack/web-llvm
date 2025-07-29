@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VReg2SUnit` Struct Reference
+# `VReg2SUnit` Struct
 
 <p>An individual mapping from virtual register number to <a href="/web-llvm/docs/api/classes/llvm/sunit">SUnit</a>. <a href="#details">More...</a></p>
 

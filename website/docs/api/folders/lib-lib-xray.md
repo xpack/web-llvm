@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/XRay` Folder Reference
+# `lib/XRay` Folder
 
 
 

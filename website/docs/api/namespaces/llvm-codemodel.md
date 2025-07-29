@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeModel` Namespace Reference
+# `CodeModel` Namespace
 
 
 

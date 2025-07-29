@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kII` Namespace Reference
+# `M68kII` Namespace
 
 <p>This namespace holds all of the target specific flags that instruction info tracks. <a href="#details">More...</a></p>
 

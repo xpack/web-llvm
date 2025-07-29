@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kLegalizerInfo` Struct Reference
+# `M68kLegalizerInfo` Struct
 
 
 

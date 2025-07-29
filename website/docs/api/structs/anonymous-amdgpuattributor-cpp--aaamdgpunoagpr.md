@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAMDGPUNoAGPR` Struct Reference
+# `AAAMDGPUNoAGPR` Struct
 
 
 

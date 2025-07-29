@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecialOpcodeDelta` Struct Reference
+# `SpecialOpcodeDelta` Struct
 
 
 

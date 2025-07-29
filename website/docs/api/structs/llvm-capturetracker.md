@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaptureTracker` Struct Reference
+# `CaptureTracker` Struct
 
 <p>This callback is used in conjunction with PointerMayBeCaptured. <a href="#details">More...</a></p>
 

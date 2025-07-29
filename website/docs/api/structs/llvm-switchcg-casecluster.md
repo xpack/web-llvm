@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseCluster` Struct Reference
+# `CaseCluster` Struct
 
 <p>A cluster of case labels. <a href="#details">More...</a></p>
 

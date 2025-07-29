@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNILPSched.cpp}` Namespace Reference
+# `anonymous{GCNILPSched.cpp}` Namespace
 
 
 

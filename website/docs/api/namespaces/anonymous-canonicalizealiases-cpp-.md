@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CanonicalizeAliases.cpp}` Namespace Reference
+# `anonymous{CanonicalizeAliases.cpp}` Namespace
 
 
 

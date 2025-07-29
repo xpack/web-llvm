@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ActionEntry` Struct Reference
+# `ActionEntry` Struct
 
 <p>Structure describing an entry in the actions table. <a href="#details">More...</a></p>
 

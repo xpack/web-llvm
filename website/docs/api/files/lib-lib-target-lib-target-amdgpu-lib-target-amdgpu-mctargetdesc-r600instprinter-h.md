@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600InstPrinter.h` File Reference
+# `R600InstPrinter.h` File
 
 
 

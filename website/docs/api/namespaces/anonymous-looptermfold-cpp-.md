@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopTermFold.cpp}` Namespace Reference
+# `anonymous{LoopTermFold.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializableError` Struct Reference
+# `SPSSerializableError` Struct
 
 <p>Helper type for serializing Errors. <a href="#details">More...</a></p>
 

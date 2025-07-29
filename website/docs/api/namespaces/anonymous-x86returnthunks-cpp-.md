@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{X86ReturnThunks.cpp}` Namespace Reference
+# `anonymous{X86ReturnThunks.cpp}` Namespace
 
 
 

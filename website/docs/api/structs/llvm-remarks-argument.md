@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Argument` Struct Reference
+# `Argument` Struct
 
 <p>A key-value pair with a debug location that is used to display the remarks at the right place in the source. <a href="#details">More...</a></p>
 

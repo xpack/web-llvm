@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPrivatizablePtrCallSiteArgument` Struct Reference
+# `AAPrivatizablePtrCallSiteArgument` Struct
 
 
 

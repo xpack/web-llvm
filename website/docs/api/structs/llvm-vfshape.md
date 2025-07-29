@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFShape` Struct Reference
+# `VFShape` Struct
 
 <p>Contains the information about the kind of vectorization available. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_finite` Struct Reference
+# `is_finite` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `use_pointer_formatter` Struct Template Reference
+# `use_pointer_formatter` Struct Template
 
 
 

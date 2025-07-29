@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallSiteEntry` Struct Reference
+# `CallSiteEntry` Struct
 
 <p>Structure describing an entry in the call-site table. <a href="#details">More...</a></p>
 

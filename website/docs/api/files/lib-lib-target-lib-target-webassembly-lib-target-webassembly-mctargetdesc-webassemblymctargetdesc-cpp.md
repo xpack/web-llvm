@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCTargetDesc.cpp` File Reference
+# `WebAssemblyMCTargetDesc.cpp` File
 
 <p>This file provides WebAssembly-specific target descriptions. <a href="#details">More...</a></p>
 

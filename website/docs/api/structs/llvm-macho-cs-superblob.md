@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CS_SuperBlob` Struct Reference
+# `CS_SuperBlob` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInterFnReachability` Struct Reference
+# `AAInterFnReachability` Struct
 
 <p>An abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> for computing reachability between functions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerifierLegacyPass` Struct Reference
+# `VerifierLegacyPass` Struct
 
 
 

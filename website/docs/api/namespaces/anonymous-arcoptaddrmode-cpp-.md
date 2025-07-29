@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCOptAddrMode.cpp}` Namespace Reference
+# `anonymous{ARCOptAddrMode.cpp}` Namespace
 
 
 

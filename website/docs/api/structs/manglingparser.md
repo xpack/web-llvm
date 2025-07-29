@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ManglingParser` Struct Template Reference
+# `ManglingParser` Struct Template
 
 
 

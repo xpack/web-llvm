@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsmPrinter.h` File Reference
+# `AMDGPUAsmPrinter.h` File
 
 <p>AMDGPU Assembly printer class. <a href="#details">More...</a></p>
 

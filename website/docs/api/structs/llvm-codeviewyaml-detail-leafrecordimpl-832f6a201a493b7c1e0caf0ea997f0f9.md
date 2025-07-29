@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeafRecordImpl` Struct Template Reference
+# `LeafRecordImpl` Struct Template
 
 
 

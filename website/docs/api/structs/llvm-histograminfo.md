@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HistogramInfo` Struct Reference
+# `HistogramInfo` Struct
 
 <p>This holds details about a histogram operation – a load -&gt; update -&gt; store sequence where each lane in a vector might be updating the same element as another lane. <a href="#details">More...</a></p>
 

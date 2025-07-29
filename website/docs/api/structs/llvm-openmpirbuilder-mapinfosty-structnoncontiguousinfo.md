@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructNonContiguousInfo` Struct Reference
+# `StructNonContiguousInfo` Struct
 
 
 

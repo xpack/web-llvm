@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkingSection` Struct Reference
+# `LinkingSection` Struct
 
 
 

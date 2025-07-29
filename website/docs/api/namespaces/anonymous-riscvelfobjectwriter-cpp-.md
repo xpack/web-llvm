@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{RISCVELFObjectWriter.cpp}` Namespace
 
 
 

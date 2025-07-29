@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Stage.cpp` File Reference
+# `Stage.cpp` File
 
 <p>This file defines a stage. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFWriter` Struct Reference
+# `ELFWriter` Struct
 
 
 

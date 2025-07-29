@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationList` Struct Reference
+# `LocationList` Struct
 
 <p>A list of locations that contain one variable. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelInfo` Namespace Reference
+# `KernelInfo` Namespace
 
 
 

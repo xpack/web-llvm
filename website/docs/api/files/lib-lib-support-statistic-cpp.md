@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Statistic.cpp` File Reference
+# `Statistic.cpp` File
 
 
 

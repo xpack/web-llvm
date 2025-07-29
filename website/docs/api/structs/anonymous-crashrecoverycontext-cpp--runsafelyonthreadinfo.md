@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RunSafelyOnThreadInfo` Struct Reference
+# `RunSafelyOnThreadInfo` Struct
 
 
 

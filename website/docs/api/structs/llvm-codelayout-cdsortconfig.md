@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CDSortConfig` Struct Reference
+# `CDSortConfig` Struct
 
 <p>Algorithm-specific params for Cache-Directed Sort. <a href="#details">More...</a></p>
 

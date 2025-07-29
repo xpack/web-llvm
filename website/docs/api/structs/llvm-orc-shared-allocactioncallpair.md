@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocActionCallPair` Struct Reference
+# `AllocActionCallPair` Struct
 
 <p>A pair of WrapperFunctionCalls, one to be run at finalization time, one to be run at deallocation time. <a href="#details">More...</a></p>
 

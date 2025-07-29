@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInstrInfo.h` File Reference
+# `SIInstrInfo.h` File
 
 <p>Interface definition for SIInstrInfo. <a href="#details">More...</a></p>
 

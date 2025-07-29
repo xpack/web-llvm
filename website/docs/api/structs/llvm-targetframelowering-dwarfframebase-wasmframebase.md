@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmFrameBase` Struct Reference
+# `WasmFrameBase` Struct
 
 
 

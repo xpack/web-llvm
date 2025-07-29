@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WinCOFFObjectWriter.cpp}` Namespace Reference
+# `anonymous{WinCOFFObjectWriter.cpp}` Namespace
 
 
 

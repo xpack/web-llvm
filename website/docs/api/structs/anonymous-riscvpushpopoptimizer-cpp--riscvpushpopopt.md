@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVPushPopOpt` Struct Reference
+# `RISCVPushPopOpt` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600OpenCLImageTypeLoweringPass.cpp` File Reference
+# `R600OpenCLImageTypeLoweringPass.cpp` File
 
 <p>This pass resolves calls to OpenCL image attribute, image resource <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> and sampler resource <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> getter functions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareUnit.cpp` File Reference
+# `HardwareUnit.cpp` File
 
 <p>This file defines the anchor for the base class that describes simulated hardware units. <a href="#details">More...</a></p>
 

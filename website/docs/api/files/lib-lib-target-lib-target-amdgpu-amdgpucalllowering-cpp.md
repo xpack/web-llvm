@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCallLowering.cpp` File Reference
+# `AMDGPUCallLowering.cpp` File
 
 <p>This file implements the lowering of LLVM calls to machine code calls for GlobalISel. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchAsmParser.cpp}` Namespace Reference
+# `anonymous{LoongArchAsmParser.cpp}` Namespace
 
 
 

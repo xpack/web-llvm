@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOBBInfo` Struct Reference
+# `PGOBBInfo` Struct
 
 <p>This class stores the auxiliary information for each BB in the MST. <a href="#details">More...</a></p>
 

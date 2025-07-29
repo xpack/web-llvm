@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpStage` Struct Reference
+# `OpStage` Struct
 
 
 

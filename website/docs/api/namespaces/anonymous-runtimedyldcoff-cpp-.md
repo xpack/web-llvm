@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RuntimeDyldCOFF.cpp}` Namespace Reference
+# `anonymous{RuntimeDyldCOFF.cpp}` Namespace
 
 
 

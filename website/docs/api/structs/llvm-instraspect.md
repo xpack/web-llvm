@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrAspect` Struct Reference
+# `InstrAspect` Struct
 
 <p>Legalization is decided based on an instruction's opcode, which type slot we're considering, and what the existing type is. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceLocation` Struct Reference
+# `SourceLocation` Struct
 
 
 

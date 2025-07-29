@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVO0PreLegalizerCombiner.cpp}` Namespace Reference
+# `anonymous{RISCVO0PreLegalizerCombiner.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenSelectRecipe` Struct Reference
+# `VPWidenSelectRecipe` Struct
 
 <p>A recipe for widening select instructions. <a href="#details">More...</a></p>
 

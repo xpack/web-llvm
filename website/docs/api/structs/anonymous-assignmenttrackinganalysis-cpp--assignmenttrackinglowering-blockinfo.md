@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockInfo` Struct Reference
+# `BlockInfo` Struct
 
 <p>Represents the stack and debug assignments in a block. <a href="#details">More...</a></p>
 

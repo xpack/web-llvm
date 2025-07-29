@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PowerPCTargetInfo.cpp` File Reference
+# `PowerPCTargetInfo.cpp` File
 
 
 

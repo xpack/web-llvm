@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionAttrs.cpp` File Reference
+# `FunctionAttrs.cpp` File
 
 <p>This file implements interprocedural passes which walk the call-graph deducing and/or propagating function attributes. <a href="#details">More...</a></p>
 

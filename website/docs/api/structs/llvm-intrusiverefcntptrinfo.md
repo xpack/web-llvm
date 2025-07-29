@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveRefCntPtrInfo` Struct Template Reference
+# `IntrusiveRefCntPtrInfo` Struct Template
 
 <p>Class you can specialize to provide custom retain/release functionality for a type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModRMDecision` Struct Reference
+# `ModRMDecision` Struct
 
 
 

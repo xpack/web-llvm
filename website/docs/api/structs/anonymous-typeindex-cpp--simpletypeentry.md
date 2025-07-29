@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleTypeEntry` Struct Reference
+# `SimpleTypeEntry` Struct
 
 
 

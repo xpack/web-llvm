@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PrologEpilogInserter.cpp}` Namespace Reference
+# `anonymous{PrologEpilogInserter.cpp}` Namespace
 
 
 

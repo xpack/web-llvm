@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RPRFM` Struct Reference
+# `RPRFM` Struct
 
 
 

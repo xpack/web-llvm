@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarTraits` Struct Template Reference
+# `ScalarTraits` Struct Template
 
 <p>This class should be specialized by type that requires custom conversion to/from a yaml scalar. <a href="#details">More...</a></p>
 

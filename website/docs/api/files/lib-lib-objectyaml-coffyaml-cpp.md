@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFYAML.cpp` File Reference
+# `COFFYAML.cpp` File
 
 
 

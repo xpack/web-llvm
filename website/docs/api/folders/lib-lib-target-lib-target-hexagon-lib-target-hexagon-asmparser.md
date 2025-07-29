@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Hexagon/AsmParser` Folder Reference
+# `lib/Target/Hexagon/AsmParser` Folder
 
 
 

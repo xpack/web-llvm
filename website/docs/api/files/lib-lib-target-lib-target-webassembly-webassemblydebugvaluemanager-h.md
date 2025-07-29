@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDebugValueManager.h` File Reference
+# `WebAssemblyDebugValueManager.h` File
 
 <p>This file contains the declaration of the WebAssembly-specific manager for DebugValues associated with the specific MachineInstr. <a href="#details">More...</a></p>
 

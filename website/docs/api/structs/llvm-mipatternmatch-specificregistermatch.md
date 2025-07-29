@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecificRegisterMatch` Struct Reference
+# `SpecificRegisterMatch` Struct
 
 <p>} <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NSectionCharacteristics` Struct Reference
+# `NSectionCharacteristics` Struct
 
 
 

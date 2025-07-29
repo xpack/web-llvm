@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `symbolize` Namespace Reference
+# `symbolize` Namespace
 
 
 

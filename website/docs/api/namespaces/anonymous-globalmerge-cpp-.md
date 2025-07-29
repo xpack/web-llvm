@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GlobalMerge.cpp}` Namespace Reference
+# `anonymous{GlobalMerge.cpp}` Namespace
 
 
 

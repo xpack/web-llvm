@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAUnderlyingObjectsCallSiteReturned` Struct Reference
+# `AAUnderlyingObjectsCallSiteReturned` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThunkSignatureNode` Struct Reference
+# `ThunkSignatureNode` Struct
 
 
 

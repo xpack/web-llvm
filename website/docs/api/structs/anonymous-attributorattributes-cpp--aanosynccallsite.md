@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoSyncCallSite` Struct Reference
+# `AANoSyncCallSite` Struct
 
 <p>NoSync attribute deduction for a call sites. <a href="#details">More...</a></p>
 

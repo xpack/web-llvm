@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LazyObjectLinkingLayer.cpp}` Namespace Reference
+# `anonymous{LazyObjectLinkingLayer.cpp}` Namespace
 
 
 

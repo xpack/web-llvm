@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hybrid_ls_rr_sort` Struct Reference
+# `hybrid_ls_rr_sort` Struct
 
 
 

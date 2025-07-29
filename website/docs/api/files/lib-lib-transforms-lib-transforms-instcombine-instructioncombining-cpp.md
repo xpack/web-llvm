@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionCombining.cpp` File Reference
+# `InstructionCombining.cpp` File
 
 
 

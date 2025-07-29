@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAValueSimplifyCallSiteReturned` Struct Reference
+# `AAValueSimplifyCallSiteReturned` Struct
 
 
 

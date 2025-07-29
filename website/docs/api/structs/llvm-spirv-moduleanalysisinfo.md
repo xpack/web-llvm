@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleAnalysisInfo` Struct Reference
+# `ModuleAnalysisInfo` Struct
 
 
 

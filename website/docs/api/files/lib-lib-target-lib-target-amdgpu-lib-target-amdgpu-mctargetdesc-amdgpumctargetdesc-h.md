@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCTargetDesc.h` File Reference
+# `AMDGPUMCTargetDesc.h` File
 
 <p>Provides AMDGPU specific target descriptions. <a href="#details">More...</a></p>
 

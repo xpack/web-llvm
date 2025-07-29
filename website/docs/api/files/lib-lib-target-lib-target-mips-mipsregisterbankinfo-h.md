@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsRegisterBankInfo.h` File Reference
+# `MipsRegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for Mips. <a href="#details">More...</a></p>
 

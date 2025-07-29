@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddDiscriminators.cpp` File Reference
+# `AddDiscriminators.cpp` File
 
 
 

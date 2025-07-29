@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCInstrAnalysisFn` Struct Reference
+# `RegisterMCInstrAnalysisFn` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermcinstranalysisfn">RegisterMCInstrAnalysisFn</a> - Helper template for registering a target instruction analyzer implementation. <a href="#details">More...</a></p>
 

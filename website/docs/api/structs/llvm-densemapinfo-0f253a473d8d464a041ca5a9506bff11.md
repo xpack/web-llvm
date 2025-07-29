@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMapInfo` Struct Template Reference
+# `DenseMapInfo` Struct Template
 
 <p>Provide <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> for <a href="/web-llvm/docs/api/classes/llvm/apsint">APSInt</a>, using the <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> for <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>. <a href="#details">More...</a></p>
 

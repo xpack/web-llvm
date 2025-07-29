@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadLimitT` Struct Template Reference
+# `ThreadLimitT` Struct Template
 
 
 

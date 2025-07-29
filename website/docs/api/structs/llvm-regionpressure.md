@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPressure` Struct Reference
+# `RegionPressure` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registerpressure">RegisterPressure</a> computed within a region of instructions delimited by TopPos and BottomPos. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeEmitter.cpp` File Reference
+# `CodeEmitter.cpp` File
 
 
 

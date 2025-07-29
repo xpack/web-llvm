@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TileConfig` Struct Reference
+# `X86TileConfig` Struct
 
 
 

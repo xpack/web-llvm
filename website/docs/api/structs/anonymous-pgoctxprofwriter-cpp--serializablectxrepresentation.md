@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SerializableCtxRepresentation` Struct Reference
+# `SerializableCtxRepresentation` Struct
 
 <p>Representation of the context node suitable for yaml serialization / deserialization. <a href="#details">More...</a></p>
 

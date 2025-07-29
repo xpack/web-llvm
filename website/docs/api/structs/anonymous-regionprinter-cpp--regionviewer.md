@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionViewer` Struct Reference
+# `RegionViewer` Struct
 
 
 

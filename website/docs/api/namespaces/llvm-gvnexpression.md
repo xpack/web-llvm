@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNExpression` Namespace Reference
+# `GVNExpression` Namespace
 
 
 

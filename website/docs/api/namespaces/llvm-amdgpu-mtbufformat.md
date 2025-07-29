@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MTBUFFormat` Namespace Reference
+# `MTBUFFormat` Namespace
 
 
 

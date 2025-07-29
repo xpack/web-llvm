@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverlapFuncFilters` Struct Reference
+# `OverlapFuncFilters` Struct
 
 
 

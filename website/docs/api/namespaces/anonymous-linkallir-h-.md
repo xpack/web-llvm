@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LinkAllIR.h}` Namespace Reference
+# `anonymous{LinkAllIR.h}` Namespace
 
 
 

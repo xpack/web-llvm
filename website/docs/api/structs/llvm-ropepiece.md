@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RopePiece` Struct Reference
+# `RopePiece` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/ropepiece">RopePiece</a> - This class represents a view into a <a href="/web-llvm/docs/api/structs/llvm/roperefcountstring">RopeRefCountString</a> object. <a href="#details">More...</a></p>
 

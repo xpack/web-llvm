@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kLegalizerInfo.cpp` File Reference
+# `M68kLegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a>. <a href="#details">More...</a></p>
 

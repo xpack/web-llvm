@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IfT` Struct Template Reference
+# `IfT` Struct Template
 
 
 

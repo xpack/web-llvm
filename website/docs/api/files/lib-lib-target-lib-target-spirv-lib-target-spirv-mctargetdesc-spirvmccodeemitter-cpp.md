@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMCCodeEmitter.cpp` File Reference
+# `SPIRVMCCodeEmitter.cpp` File
 
 
 

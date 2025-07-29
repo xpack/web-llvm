@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCBoolRetToInt.cpp}` Namespace Reference
+# `anonymous{PPCBoolRetToInt.cpp}` Namespace
 
 
 

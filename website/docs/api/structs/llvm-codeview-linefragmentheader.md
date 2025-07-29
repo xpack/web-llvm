@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineFragmentHeader` Struct Reference
+# `LineFragmentHeader` Struct
 
 
 

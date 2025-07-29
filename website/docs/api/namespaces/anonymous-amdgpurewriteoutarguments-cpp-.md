@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPURewriteOutArguments.cpp}` Namespace Reference
+# `anonymous{AMDGPURewriteOutArguments.cpp}` Namespace
 
 
 

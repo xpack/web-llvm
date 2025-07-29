@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitTracker.cpp` File Reference
+# `BitTracker.cpp` File
 
 
 

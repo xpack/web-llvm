@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGPassBuilderOption` Struct Reference
+# `CGPassBuilderOption` Struct
 
 
 

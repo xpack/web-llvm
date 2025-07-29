@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CovMapFunctionRecordV1` Struct Template Reference
+# `CovMapFunctionRecordV1` Struct Template
 
 
 

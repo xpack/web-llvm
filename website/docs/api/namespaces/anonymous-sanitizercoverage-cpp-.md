@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SanitizerCoverage.cpp}` Namespace Reference
+# `anonymous{SanitizerCoverage.cpp}` Namespace
 
 
 

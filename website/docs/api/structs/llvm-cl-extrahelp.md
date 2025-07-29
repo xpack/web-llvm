@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `extrahelp` Struct Reference
+# `extrahelp` Struct
 
 
 

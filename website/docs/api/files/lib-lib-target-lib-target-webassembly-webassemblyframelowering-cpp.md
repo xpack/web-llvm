@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFrameLowering.cpp` File Reference
+# `WebAssemblyFrameLowering.cpp` File
 
 <p>This file contains the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> implementation of <a href="/web-llvm/docs/api/classes/llvm/targetframelowering">TargetFrameLowering</a> class. <a href="#details">More...</a></p>
 

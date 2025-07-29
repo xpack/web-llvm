@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `create_adapters` Struct Reference
+# `create_adapters` Struct
 
 
 

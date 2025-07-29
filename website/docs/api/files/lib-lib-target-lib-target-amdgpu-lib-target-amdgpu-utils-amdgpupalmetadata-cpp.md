@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPALMetadata.cpp` File Reference
+# `AMDGPUPALMetadata.cpp` File
 
 <p>This class has methods called by <a href="/web-llvm/docs/api/classes/llvm/amdgpuasmprinter">AMDGPUAsmPrinter</a> to accumulate and print the PAL metadata. <a href="#details">More...</a></p>
 

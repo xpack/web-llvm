@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFPClassFloating` Struct Reference
+# `AANoFPClassFloating` Struct
 
 
 

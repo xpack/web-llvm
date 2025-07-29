@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JDBootstrapState` Struct Reference
+# `JDBootstrapState` Struct
 
 
 

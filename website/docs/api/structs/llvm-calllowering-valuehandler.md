@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueHandler` Struct Reference
+# `ValueHandler` Struct
 
 
 

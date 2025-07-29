@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialInlinerImpl` Struct Reference
+# `PartialInlinerImpl` Struct
 
 
 

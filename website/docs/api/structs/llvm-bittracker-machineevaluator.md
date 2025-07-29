@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineEvaluator` Struct Reference
+# `MachineEvaluator` Struct
 
 
 

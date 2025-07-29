@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXInstrInfo.h` File Reference
+# `DirectXInstrInfo.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SVEIntrinsicOpts` Struct Reference
+# `SVEIntrinsicOpts` Struct
 
 
 

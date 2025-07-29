@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PluginLoader.cpp}` Namespace Reference
+# `anonymous{PluginLoader.cpp}` Namespace
 
 
 

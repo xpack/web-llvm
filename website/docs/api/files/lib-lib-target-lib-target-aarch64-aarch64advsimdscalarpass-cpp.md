@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64AdvSIMDScalarPass.cpp` File Reference
+# `AArch64AdvSIMDScalarPass.cpp` File
 
 
 

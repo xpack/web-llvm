@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Intrinsic` Namespace Reference
+# `Intrinsic` Namespace
 
 <p>This namespace contains an enum with a value for every intrinsic/builtin function known by LLVM. <a href="#details">More...</a></p>
 

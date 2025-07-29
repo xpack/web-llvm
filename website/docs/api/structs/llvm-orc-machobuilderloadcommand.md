@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOBuilderLoadCommand` Struct Template Reference
+# `MachOBuilderLoadCommand` Struct Template
 
 
 

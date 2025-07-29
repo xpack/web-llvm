@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripDeadPrototypes.cpp` File Reference
+# `StripDeadPrototypes.cpp` File
 
 
 

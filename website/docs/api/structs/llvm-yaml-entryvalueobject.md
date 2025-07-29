@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryValueObject` Struct Reference
+# `EntryValueObject` Struct
 
 <p>Serializable representation of the <a href="/web-llvm/docs/api/classes/llvm/mcregister">MCRegister</a> variant of <a href="/web-llvm/docs/api/classes/llvm/machinefunction/variabledbginfo">MachineFunction::VariableDbgInfo</a>. <a href="#details">More...</a></p>
 

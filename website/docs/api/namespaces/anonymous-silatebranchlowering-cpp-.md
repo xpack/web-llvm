@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SILateBranchLowering.cpp}` Namespace Reference
+# `anonymous{SILateBranchLowering.cpp}` Namespace
 
 
 

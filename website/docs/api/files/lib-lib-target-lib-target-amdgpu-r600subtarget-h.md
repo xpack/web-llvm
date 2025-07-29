@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600Subtarget.h` File Reference
+# `R600Subtarget.h` File
 
 <p>AMDGPU R600 specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

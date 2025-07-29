@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WholeProgramDevirtResolution` Struct Reference
+# `WholeProgramDevirtResolution` Struct
 
 
 

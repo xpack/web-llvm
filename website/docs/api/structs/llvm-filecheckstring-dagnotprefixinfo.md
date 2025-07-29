@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DagNotPrefixInfo` Struct Reference
+# `DagNotPrefixInfo` Struct
 
 <p>Hold the information about the DAG/NOT strings in the program, which are not explicitly stored otherwise. <a href="#details">More...</a></p>
 

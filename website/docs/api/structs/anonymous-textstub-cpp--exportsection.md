@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExportSection` Struct Reference
+# `ExportSection` Struct
 
 
 

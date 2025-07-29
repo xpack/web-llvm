@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVUtils.h` File Reference
+# `SPIRVUtils.h` File
 
 
 

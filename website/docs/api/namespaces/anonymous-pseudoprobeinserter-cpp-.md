@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PseudoProbeInserter.cpp}` Namespace Reference
+# `anonymous{PseudoProbeInserter.cpp}` Namespace
 
 
 

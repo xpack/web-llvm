@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Compressor` Struct Template Reference
+# `Compressor` Struct Template
 
 
 

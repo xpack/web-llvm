@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredInfoPair` Struct Reference
+# `PredInfoPair` Struct
 
 
 

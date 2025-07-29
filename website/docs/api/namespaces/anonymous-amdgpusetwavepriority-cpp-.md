@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUSetWavePriority.cpp}` Namespace Reference
+# `anonymous{AMDGPUSetWavePriority.cpp}` Namespace
 
 
 

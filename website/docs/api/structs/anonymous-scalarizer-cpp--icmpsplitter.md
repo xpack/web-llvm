@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICmpSplitter` Struct Reference
+# `ICmpSplitter` Struct
 
 
 

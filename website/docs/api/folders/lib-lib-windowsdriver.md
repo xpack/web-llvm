@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/WindowsDriver` Folder Reference
+# `lib/WindowsDriver` Folder
 
 
 

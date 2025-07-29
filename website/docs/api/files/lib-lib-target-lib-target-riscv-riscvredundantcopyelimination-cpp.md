@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVRedundantCopyElimination.cpp` File Reference
+# `RISCVRedundantCopyElimination.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinarySubstreamRef` Struct Reference
+# `BinarySubstreamRef` Struct
 
 
 

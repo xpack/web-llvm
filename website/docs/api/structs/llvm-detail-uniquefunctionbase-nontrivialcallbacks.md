@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonTrivialCallbacks` Struct Reference
+# `NonTrivialCallbacks` Struct
 
 <p>A struct we use to aggregate three callbacks when we need full set of operations. <a href="#details">More...</a></p>
 

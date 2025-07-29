@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFYAML` Namespace Reference
+# `GOFFYAML` Namespace
 
 
 

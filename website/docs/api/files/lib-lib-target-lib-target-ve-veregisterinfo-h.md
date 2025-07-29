@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VERegisterInfo.h` File Reference
+# `VERegisterInfo.h` File
 
 
 

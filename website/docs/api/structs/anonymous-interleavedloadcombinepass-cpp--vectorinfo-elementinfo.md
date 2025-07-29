@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ElementInfo` Struct Reference
+# `ElementInfo` Struct
 
 <p>Information of a Vector Element. <a href="#details">More...</a></p>
 

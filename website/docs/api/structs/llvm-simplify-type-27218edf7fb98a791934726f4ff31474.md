@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `simplify_type` Struct Template Reference
+# `simplify_type` Struct Template
 
 <p>Allow clients to treat uses just like values when using casting operators. <a href="#details">More...</a></p>
 

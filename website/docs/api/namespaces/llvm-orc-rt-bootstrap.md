@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `rt_bootstrap` Namespace Reference
+# `rt_bootstrap` Namespace
 
 
 

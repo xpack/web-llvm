@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dos_header` Struct Reference
+# `dos_header` Struct
 
 <p>The DOS compatible header at the front of all PE/COFF executables. <a href="#details">More...</a></p>
 

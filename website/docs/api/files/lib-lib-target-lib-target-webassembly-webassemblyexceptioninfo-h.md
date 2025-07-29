@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyExceptionInfo.h` File Reference
+# `WebAssemblyExceptionInfo.h` File
 
 <p>This file implements WebAssemblyException information analysis. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIMGOffsetMappingInfo` Struct Reference
+# `MIMGOffsetMappingInfo` Struct
 
 
 

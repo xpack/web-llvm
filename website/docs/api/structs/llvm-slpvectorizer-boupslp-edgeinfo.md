@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeInfo` Struct Reference
+# `EdgeInfo` Struct
 
 <p>This structure holds any data we need about the edges being traversed during buildTree_rec(). <a href="#details">More...</a></p>
 

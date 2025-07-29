@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVBinaryExpr_match` Struct Template Reference
+# `SCEVBinaryExpr_match` Struct Template
 
 <p>Match a binary <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a>. <a href="#details">More...</a></p>
 

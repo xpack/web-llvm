@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LiveDebugVariables.cpp}` Namespace Reference
+# `anonymous{LiveDebugVariables.cpp}` Namespace
 
 
 

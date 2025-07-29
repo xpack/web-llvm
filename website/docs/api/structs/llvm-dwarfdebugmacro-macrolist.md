@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MacroList` Struct Reference
+# `MacroList` Struct
 
 
 

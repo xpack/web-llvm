@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFRegisterInfo` Struct Reference
+# `BPFRegisterInfo` Struct
 
 
 

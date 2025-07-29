@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameInfo` Struct Reference
+# `FrameInfo` Struct
 
 
 

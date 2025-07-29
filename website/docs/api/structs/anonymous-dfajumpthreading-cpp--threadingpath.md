@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadingPath` Struct Reference
+# `ThreadingPath` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-dfajumpthreading-cpp-/threadingpath">ThreadingPath</a> is a path in the control flow of a loop that can be threaded by cloning necessary basic blocks and replacing conditional branches with unconditional ones. <a href="#details">More...</a></p>
 

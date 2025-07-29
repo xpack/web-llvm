@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{YAMLParser.cpp}` Namespace Reference
+# `anonymous{YAMLParser.cpp}` Namespace
 
 
 

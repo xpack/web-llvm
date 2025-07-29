@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlineRegionInfo` Struct Reference
+# `OutlineRegionInfo` Struct
 
 
 

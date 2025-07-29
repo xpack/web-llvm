@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PTXCmpMode` Namespace Reference
+# `PTXCmpMode` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcmpmode">PTXCmpMode</a> - Comparison mode enumeration. <a href="#details">More...</a></p>
 

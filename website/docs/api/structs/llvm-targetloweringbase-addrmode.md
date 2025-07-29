@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddrMode` Struct Reference
+# `AddrMode` Struct
 
 <p>This represents an addressing mode of: BaseGV + BaseOffs + BaseReg + Scale*ScaleReg + ScalableOffset*vscale If BaseGV is null, there is no BaseGV. <a href="#details">More...</a></p>
 

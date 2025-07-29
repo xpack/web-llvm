@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpClass_match` Struct Template Reference
+# `CmpClass_match` Struct Template
 
 
 

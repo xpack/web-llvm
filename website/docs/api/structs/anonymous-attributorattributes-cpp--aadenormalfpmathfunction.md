@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADenormalFPMathFunction` Struct Reference
+# `AADenormalFPMathFunction` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedInstrProf` Namespace Reference
+# `IndexedInstrProf` Namespace
 
 
 

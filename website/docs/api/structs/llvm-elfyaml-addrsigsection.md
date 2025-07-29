@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddrsigSection` Struct Reference
+# `AddrsigSection` Struct
 
 
 

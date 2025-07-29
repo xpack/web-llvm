@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PendingAssignment` Struct Reference
+# `PendingAssignment` Struct
 
 
 

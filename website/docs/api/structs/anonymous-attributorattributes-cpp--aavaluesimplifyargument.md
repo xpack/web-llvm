@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAValueSimplifyArgument` Struct Reference
+# `AAValueSimplifyArgument` Struct
 
 
 

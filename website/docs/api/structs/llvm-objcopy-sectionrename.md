@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionRename` Struct Reference
+# `SectionRename` Struct
 
 
 

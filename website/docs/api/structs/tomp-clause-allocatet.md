@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocateT` Struct Template Reference
+# `AllocateT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ScalarEvolution.cpp}` Namespace Reference
+# `anonymous{ScalarEvolution.cpp}` Namespace
 
 
 

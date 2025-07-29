@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMParallelDSP.cpp` File Reference
+# `ARMParallelDSP.cpp` File
 
 <p>Armv6 introduced instructions to perform 32-bit SIMD operations. <a href="#details">More...</a></p>
 

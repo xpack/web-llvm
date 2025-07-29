@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZDisassembler.cpp}` Namespace Reference
+# `anonymous{SystemZDisassembler.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFDebugNamesOffsets` Struct Reference
+# `DWARFDebugNamesOffsets` Struct
 
 <p>Offsets for the start of various important tables from the start of the section. <a href="#details">More...</a></p>
 

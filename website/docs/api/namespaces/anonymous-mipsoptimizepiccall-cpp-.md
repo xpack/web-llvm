@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsOptimizePICCall.cpp}` Namespace Reference
+# `anonymous{MipsOptimizePICCall.cpp}` Namespace
 
 
 

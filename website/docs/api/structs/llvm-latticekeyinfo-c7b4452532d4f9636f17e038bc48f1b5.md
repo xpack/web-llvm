@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LatticeKeyInfo` Struct Template Reference
+# `LatticeKeyInfo` Struct Template
 
 <p>A specialization of <a href="/web-llvm/docs/api/structs/llvm/latticekeyinfo">LatticeKeyInfo</a> for CVPLatticeKeys. <a href="#details">More...</a></p>
 

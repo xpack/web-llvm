@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtractSecondType` Struct Template Reference
+# `ExtractSecondType` Struct Template
 
 
 

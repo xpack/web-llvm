@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LowerAtomicPass.cpp}` Namespace Reference
+# `anonymous{LowerAtomicPass.cpp}` Namespace
 
 
 

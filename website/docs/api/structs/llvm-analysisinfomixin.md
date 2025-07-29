@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisInfoMixin` Struct Template Reference
+# `AnalysisInfoMixin` Struct Template
 
 <p>A CRTP mix-in that provides informational APIs needed for analysis passes. <a href="#details">More...</a></p>
 

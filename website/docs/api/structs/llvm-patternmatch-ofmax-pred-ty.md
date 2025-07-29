@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ofmax_pred_ty` Struct Reference
+# `ofmax_pred_ty` Struct
 
 <p>Helper class for identifying ordered max predicates. <a href="#details">More...</a></p>
 

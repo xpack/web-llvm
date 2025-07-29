@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_CGProfile_Impl` Struct Template Reference
+# `Elf_CGProfile_Impl` Struct Template
 
 
 

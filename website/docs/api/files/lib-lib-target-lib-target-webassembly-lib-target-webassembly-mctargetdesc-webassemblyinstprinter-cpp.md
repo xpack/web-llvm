@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyInstPrinter.cpp` File Reference
+# `WebAssemblyInstPrinter.cpp` File
 
 <p>Print <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a> instructions to wasm format. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySection` Struct Reference
+# `MemorySection` Struct
 
 
 

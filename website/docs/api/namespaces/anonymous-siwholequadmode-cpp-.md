@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIWholeQuadMode.cpp}` Namespace Reference
+# `anonymous{SIWholeQuadMode.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetStreamer.h` File Reference
+# `NVPTXTargetStreamer.h` File
 
 
 

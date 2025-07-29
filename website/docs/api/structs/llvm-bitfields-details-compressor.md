@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Compressor` Struct Template Reference
+# `Compressor` Struct Template
 
 <p><span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/compressor">Compressor</a></span> is used to manipulate the bits of a (possibly signed) integer type so it can be packed and unpacked into a <span class="doxyComputerOutput">bits</span> sized integer, <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/compressor">Compressor</a></span> is specialized on signed-ness so no runtime cost is incurred. <a href="#details">More...</a></p>
 

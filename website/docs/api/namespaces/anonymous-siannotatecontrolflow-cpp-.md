@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIAnnotateControlFlow.cpp}` Namespace Reference
+# `anonymous{SIAnnotateControlFlow.cpp}` Namespace
 
 
 

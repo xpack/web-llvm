@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPCC` Namespace Reference
+# `SPCC` Namespace
 
 
 

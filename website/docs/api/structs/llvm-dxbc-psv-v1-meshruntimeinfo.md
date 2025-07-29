@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MeshRuntimeInfo` Struct Reference
+# `MeshRuntimeInfo` Struct
 
 
 

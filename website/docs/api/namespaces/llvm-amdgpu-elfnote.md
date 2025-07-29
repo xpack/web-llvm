@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ElfNote` Namespace Reference
+# `ElfNote` Namespace
 
 
 

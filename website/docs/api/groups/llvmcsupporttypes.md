@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Types and Enumerations Reference
+# Types and Enumerations
 
 
 

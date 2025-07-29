@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RootData` Struct Reference
+# `RootData` Struct
 
 
 

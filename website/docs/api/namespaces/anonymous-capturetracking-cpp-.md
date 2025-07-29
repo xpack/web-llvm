@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CaptureTracking.cpp}` Namespace Reference
+# `anonymous{CaptureTracking.cpp}` Namespace
 
 
 

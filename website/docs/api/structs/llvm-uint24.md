@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Uint24` Struct Reference
+# `Uint24` Struct
 
 <p>An auxiliary type to facilitate extraction of 3-byte entities. <a href="#details">More...</a></p>
 

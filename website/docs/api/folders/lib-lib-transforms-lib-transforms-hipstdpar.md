@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/HipStdPar` Folder Reference
+# `lib/Transforms/HipStdPar` Folder
 
 
 

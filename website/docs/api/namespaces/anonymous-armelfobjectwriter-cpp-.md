@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{ARMELFObjectWriter.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocValueType` Struct Template Reference
+# `AllocValueType` Struct Template
 
 
 

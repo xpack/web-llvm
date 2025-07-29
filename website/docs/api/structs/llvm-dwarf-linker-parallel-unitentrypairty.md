@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnitEntryPairTy` Struct Reference
+# `UnitEntryPairTy` Struct
 
 <p>This is a helper structure which keeps a debug info entry with it's containing compilation unit. <a href="#details">More...</a></p>
 

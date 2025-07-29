@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetMachine.cpp` File Reference
+# `M68kTargetMachine.cpp` File
 
 <p>This file contains implementation for <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> target machine. <a href="#details">More...</a></p>
 

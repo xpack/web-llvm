@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/CodeGenTypes` Folder Reference
+# `lib/CodeGenTypes` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURemoveIncompatibleFunctions.h` File Reference
+# `AMDGPURemoveIncompatibleFunctions.h` File
 
 
 

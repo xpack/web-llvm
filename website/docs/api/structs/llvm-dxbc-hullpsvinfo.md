@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HullPSVInfo` Struct Reference
+# `HullPSVInfo` Struct
 
 
 

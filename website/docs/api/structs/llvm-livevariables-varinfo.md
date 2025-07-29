@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarInfo` Struct Reference
+# `VarInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/livevariables/varinfo">VarInfo</a> - This represents the regions where a virtual register is live in the program. <a href="#details">More...</a></p>
 

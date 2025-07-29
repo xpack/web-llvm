@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeId` Struct Template Reference
+# `TypeId` Struct Template
 
 
 

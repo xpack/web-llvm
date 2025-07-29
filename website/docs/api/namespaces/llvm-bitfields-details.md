@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bitfields_details` Namespace Reference
+# `bitfields_details` Namespace
 
 
 

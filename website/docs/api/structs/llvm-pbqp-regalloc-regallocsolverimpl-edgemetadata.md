@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeMetadata` Struct Reference
+# `EdgeMetadata` Struct
 
 
 

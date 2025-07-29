@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewrittenRangeInfo` Struct Reference
+# `RewrittenRangeInfo` Struct
 
 
 

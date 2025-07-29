@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MCTargetDesc.cpp` File Reference
+# `R600MCTargetDesc.cpp` File
 
 <p>This file provides <a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a> specific target descriptions. <a href="#details">More...</a></p>
 

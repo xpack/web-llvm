@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtensionDependency` Struct Reference
+# `ExtensionDependency` Struct
 
 
 

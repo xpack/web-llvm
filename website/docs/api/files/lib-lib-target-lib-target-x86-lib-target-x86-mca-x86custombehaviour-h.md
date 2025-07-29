@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86CustomBehaviour.h` File Reference
+# `X86CustomBehaviour.h` File
 
 <p>This file defines the X86CustomBehaviour class which inherits from CustomBehaviour. <a href="#details">More...</a></p>
 

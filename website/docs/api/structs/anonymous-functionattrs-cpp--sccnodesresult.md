@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCNodesResult` Struct Reference
+# `SCCNodesResult` Struct
 
 
 

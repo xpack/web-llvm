@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16IntrinsicHelperType` Struct Reference
+# `Mips16IntrinsicHelperType` Struct
 
 
 

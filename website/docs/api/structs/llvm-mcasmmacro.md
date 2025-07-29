@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCAsmMacro` Struct Reference
+# `MCAsmMacro` Struct
 
 
 

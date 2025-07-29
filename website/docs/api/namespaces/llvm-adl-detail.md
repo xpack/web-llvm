@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `adl_detail` Namespace Reference
+# `adl_detail` Namespace
 
 
 

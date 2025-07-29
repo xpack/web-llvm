@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUOpenCLEnqueuedBlockLowering.cpp}` Namespace Reference
+# `anonymous{AMDGPUOpenCLEnqueuedBlockLowering.cpp}` Namespace
 
 
 

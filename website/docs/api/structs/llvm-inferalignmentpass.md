@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferAlignmentPass` Struct Reference
+# `InferAlignmentPass` Struct
 
 
 

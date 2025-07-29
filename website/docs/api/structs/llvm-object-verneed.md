@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerNeed` Struct Reference
+# `VerNeed` Struct
 
 
 

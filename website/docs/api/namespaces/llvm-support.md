@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `support` Namespace Reference
+# `support` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExternalAAWrapperPass` Struct Reference
+# `ExternalAAWrapperPass` Struct
 
 <p>A wrapper pass for external alias analyses. <a href="#details">More...</a></p>
 

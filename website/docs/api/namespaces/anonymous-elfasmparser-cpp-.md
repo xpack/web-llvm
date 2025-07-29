@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ELFAsmParser.cpp}` Namespace Reference
+# `anonymous{ELFAsmParser.cpp}` Namespace
 
 
 

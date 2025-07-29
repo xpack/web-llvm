@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFSectionMap` Struct Reference
+# `DWARFSectionMap` Struct
 
 
 

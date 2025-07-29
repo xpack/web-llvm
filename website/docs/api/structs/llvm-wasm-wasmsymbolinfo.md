@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmSymbolInfo` Struct Reference
+# `WasmSymbolInfo` Struct
 
 
 

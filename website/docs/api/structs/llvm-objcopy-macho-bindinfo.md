@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BindInfo` Struct Reference
+# `BindInfo` Struct
 
 <p>The location of the bind info inside the binary is described by LC_DYLD_INFO load command. <a href="#details">More...</a></p>
 

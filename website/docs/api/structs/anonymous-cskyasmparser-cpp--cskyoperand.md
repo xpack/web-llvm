@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYOperand` Struct Reference
+# `CSKYOperand` Struct
 
 <p>Instances of this class represent a parsed machine instruction. <a href="#details">More...</a></p>
 

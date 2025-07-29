@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_section` Struct Reference
+# `coff_section` Struct
 
 
 

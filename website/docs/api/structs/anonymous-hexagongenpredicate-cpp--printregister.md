@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintRegister` Struct Reference
+# `PrintRegister` Struct
 
 
 

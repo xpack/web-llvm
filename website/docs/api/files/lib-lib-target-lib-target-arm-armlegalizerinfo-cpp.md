@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLegalizerInfo.cpp` File Reference
+# `ARMLegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a>. <a href="#details">More...</a></p>
 

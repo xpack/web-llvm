@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `aarch32` Namespace Reference
+# `aarch32` Namespace
 
 
 

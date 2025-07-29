@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignedMapPointerTraits` Struct Reference
+# `AlignedMapPointerTraits` Struct
 
 <p>Pointer traits for our aligned map. <a href="#details">More...</a></p>
 

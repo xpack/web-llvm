@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TargetTransformInfo.h` File Reference
+# `AArch64TargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the AArch64 target machine. <a href="#details">More...</a></p>
 

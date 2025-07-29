@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionPatch` Struct Reference
+# `SectionPatch` Struct
 
 <p>There are fields(sizes, offsets) which should be updated after sections are generated. <a href="#details">More...</a></p>
 

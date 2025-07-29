@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionEnumValue` Struct Reference
+# `OptionEnumValue` Struct
 
 
 

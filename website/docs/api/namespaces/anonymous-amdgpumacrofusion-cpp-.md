@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUMacroFusion.cpp}` Namespace Reference
+# `anonymous{AMDGPUMacroFusion.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicFloatingBuiltin` Struct Reference
+# `AtomicFloatingBuiltin` Struct
 
 
 

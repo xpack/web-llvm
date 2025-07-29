@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVTargetObjectFile.h` File Reference
+# `SPIRVTargetObjectFile.h` File
 
 
 

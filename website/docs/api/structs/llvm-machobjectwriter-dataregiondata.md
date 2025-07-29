@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataRegionData` Struct Reference
+# `DataRegionData` Struct
 
 
 

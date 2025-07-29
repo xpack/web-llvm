@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredState` Struct Reference
+# `PredState` Struct
 
 <p>Manages the predicate state traced through the program. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewInMemoryNodeInfo` Struct Reference
+# `NewInMemoryNodeInfo` Struct
 
 
 

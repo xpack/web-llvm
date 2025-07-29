@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `regcomp.c` File Reference
+# `regcomp.c` File
 
 
 

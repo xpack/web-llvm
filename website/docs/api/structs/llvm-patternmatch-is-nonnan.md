@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_nonnan` Struct Reference
+# `is_nonnan` Struct
 
 
 

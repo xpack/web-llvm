@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVRegisterBankInfo.h` File Reference
+# `SPIRVRegisterBankInfo.h` File
 
 
 

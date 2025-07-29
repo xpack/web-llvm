@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LowerGlobalDtors.cpp}` Namespace Reference
+# `anonymous{LowerGlobalDtors.cpp}` Namespace
 
 
 

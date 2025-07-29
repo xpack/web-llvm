@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `thread` Struct Reference
+# `thread` Struct
 
 
 

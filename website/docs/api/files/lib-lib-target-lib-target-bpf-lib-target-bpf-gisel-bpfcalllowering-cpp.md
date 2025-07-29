@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFCallLowering.cpp` File Reference
+# `BPFCallLowering.cpp` File
 
 <p>This file implements the lowering of LLVM calls to machine code calls for GlobalISel. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULateCodeGenPrepare.cpp` File Reference
+# `AMDGPULateCodeGenPrepare.cpp` File
 
 <p>This pass does misc. <a href="#details">More...</a></p>
 

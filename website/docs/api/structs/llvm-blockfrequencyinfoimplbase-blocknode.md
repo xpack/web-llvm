@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockNode` Struct Reference
+# `BlockNode` Struct
 
 <p>Representative of a block. <a href="#details">More...</a></p>
 

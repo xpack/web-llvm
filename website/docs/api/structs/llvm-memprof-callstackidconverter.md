@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStackIdConverter` Struct Template Reference
+# `CallStackIdConverter` Struct Template
 
 
 

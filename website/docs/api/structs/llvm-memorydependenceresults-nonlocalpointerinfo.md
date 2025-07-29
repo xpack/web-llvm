@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonLocalPointerInfo` Struct Reference
+# `NonLocalPointerInfo` Struct
 
 <p>This record is the information kept for each (value, is load) pair. <a href="#details">More...</a></p>
 

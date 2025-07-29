@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUELFStreamer.cpp}` Namespace Reference
+# `anonymous{AMDGPUELFStreamer.cpp}` Namespace
 
 
 

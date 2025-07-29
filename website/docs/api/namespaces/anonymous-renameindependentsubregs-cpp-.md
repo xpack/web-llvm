@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RenameIndependentSubregs.cpp}` Namespace Reference
+# `anonymous{RenameIndependentSubregs.cpp}` Namespace
 
 
 

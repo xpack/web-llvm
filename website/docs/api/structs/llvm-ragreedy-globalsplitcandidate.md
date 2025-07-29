@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalSplitCandidate` Struct Reference
+# `GlobalSplitCandidate` Struct
 
 <p>Global live range splitting candidate info. <a href="#details">More...</a></p>
 

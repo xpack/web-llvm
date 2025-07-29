@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineInstrBundle.cpp}` Namespace Reference
+# `anonymous{MachineInstrBundle.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockAndTailDupResult` Struct Reference
+# `BlockAndTailDupResult` Struct
 
 <p>Pair struct containing basic block and taildup profitability. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChecksumKindField` Struct Reference
+# `ChecksumKindField` Struct
 
 
 

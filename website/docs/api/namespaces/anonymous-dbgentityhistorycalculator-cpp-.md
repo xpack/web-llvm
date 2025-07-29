@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DbgEntityHistoryCalculator.cpp}` Namespace Reference
+# `anonymous{DbgEntityHistoryCalculator.cpp}` Namespace
 
 
 

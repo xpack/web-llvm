@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemAddress` Struct Reference
+# `MemAddress` Struct
 
 
 

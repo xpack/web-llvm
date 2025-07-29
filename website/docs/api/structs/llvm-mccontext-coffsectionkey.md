@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFSectionKey` Struct Reference
+# `COFFSectionKey` Struct
 
 
 

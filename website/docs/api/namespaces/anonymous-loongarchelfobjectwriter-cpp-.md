@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{LoongArchELFObjectWriter.cpp}` Namespace
 
 
 

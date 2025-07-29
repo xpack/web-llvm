@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariantMatchInfo` Struct Reference
+# `VariantMatchInfo` Struct
 
 <p>Variant match information describes the required traits and how they are scored (via the ScoresMap). <a href="#details">More...</a></p>
 

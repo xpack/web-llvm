@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `select_uint_t` Struct Template Reference
+# `select_uint_t` Struct Template
 
 
 

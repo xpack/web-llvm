@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StdMapStringCustomMappingTraitsImpl` Struct Template Reference
+# `StdMapStringCustomMappingTraitsImpl` Struct Template
 
 <p>Implementation of <a href="/web-llvm/docs/api/structs/llvm/yaml/custommappingtraits">CustomMappingTraits</a> for std::map&lt;std::string, T&gt;. <a href="#details">More...</a></p>
 

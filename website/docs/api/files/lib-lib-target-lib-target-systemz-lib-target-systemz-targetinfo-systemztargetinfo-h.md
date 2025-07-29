@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZTargetInfo.h` File Reference
+# `SystemZTargetInfo.h` File
 
 
 

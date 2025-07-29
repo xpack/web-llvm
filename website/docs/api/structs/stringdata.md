@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringData` Struct Reference
+# `StringData` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf32_Rel` Struct Reference
+# `Elf32_Rel` Struct
 
 
 

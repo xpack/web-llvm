@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonBitTracker.cpp}` Namespace Reference
+# `anonymous{HexagonBitTracker.cpp}` Namespace
 
 
 

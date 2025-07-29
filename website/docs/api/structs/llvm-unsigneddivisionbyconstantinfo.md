@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnsignedDivisionByConstantInfo` Struct Reference
+# `UnsignedDivisionByConstantInfo` Struct
 
 <p>Magic data for optimising unsigned division by a constant. <a href="#details">More...</a></p>
 

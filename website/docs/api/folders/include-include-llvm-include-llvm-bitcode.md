@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Bitcode` Folder Reference
+# `include/llvm/Bitcode` Folder
 
 
 

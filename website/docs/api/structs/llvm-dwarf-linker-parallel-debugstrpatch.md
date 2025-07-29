@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugStrPatch` Struct Reference
+# `DebugStrPatch` Struct
 
 <p>This structure is used to update strings offsets into .debug_str. <a href="#details">More...</a></p>
 

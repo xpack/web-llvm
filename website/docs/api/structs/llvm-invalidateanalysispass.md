@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InvalidateAnalysisPass` Struct Template Reference
+# `InvalidateAnalysisPass` Struct Template
 
 <p>A no-op pass template which simply forces a specific analysis result to be invalidated. <a href="#details">More...</a></p>
 

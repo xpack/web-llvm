@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Composite Constants Reference
+# Composite Constants
 
 <p>Functions in this group operate on composite constants. <a href="#details">More...</a></p>
 

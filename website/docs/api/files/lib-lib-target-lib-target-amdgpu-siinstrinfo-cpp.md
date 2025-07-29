@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInstrInfo.cpp` File Reference
+# `SIInstrInfo.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a> Implementation of <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a>. <a href="#details">More...</a></p>
 

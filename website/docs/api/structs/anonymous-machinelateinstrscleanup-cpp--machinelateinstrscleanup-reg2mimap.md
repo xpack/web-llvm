@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Reg2MIMap` Struct Reference
+# `Reg2MIMap` Struct
 
 
 

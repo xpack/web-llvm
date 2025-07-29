@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ImplicitNullChecks.cpp}` Namespace Reference
+# `anonymous{ImplicitNullChecks.cpp}` Namespace
 
 
 

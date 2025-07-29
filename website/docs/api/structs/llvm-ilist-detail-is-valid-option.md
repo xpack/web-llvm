@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_valid_option` Struct Template Reference
+# `is_valid_option` Struct Template
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/check">Check</a> whether an option is valid. <a href="#details">More...</a></p>
 

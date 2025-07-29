@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `initializer` Struct Template Reference
+# `initializer` Struct Template
 
 
 

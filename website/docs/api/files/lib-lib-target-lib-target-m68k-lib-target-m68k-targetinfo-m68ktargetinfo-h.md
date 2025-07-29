@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetInfo.h` File Reference
+# `M68kTargetInfo.h` File
 
 
 

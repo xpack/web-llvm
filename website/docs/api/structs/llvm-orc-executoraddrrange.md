@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutorAddrRange` Struct Reference
+# `ExecutorAddrRange` Struct
 
 <p>Represents an address range in the exceutor process. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtAddrMode` Struct Reference
+# `ExtAddrMode` Struct
 
 <p>Used to describe addressing mode similar to <a href="/web-llvm/docs/api/structs/llvm/extaddrmode">ExtAddrMode</a> in CodeGenPrepare. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExponentialBackoff.cpp` File Reference
+# `ExponentialBackoff.cpp` File
 
 
 

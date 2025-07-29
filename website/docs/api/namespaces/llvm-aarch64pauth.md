@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PAuth` Namespace Reference
+# `AArch64PAuth` Namespace
 
 
 

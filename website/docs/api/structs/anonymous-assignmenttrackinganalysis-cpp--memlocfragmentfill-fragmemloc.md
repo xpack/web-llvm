@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FragMemLoc` Struct Reference
+# `FragMemLoc` Struct
 
 
 

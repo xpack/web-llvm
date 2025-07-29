@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEAsmParser.cpp` File Reference
+# `VEAsmParser.cpp` File
 
 
 

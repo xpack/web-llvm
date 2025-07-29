@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MacroHeader` Struct Reference
+# `MacroHeader` Struct
 
 
 

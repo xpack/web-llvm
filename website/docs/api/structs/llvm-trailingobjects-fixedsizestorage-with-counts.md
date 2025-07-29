@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `with_counts` Struct Template Reference
+# `with_counts` Struct Template
 
 
 

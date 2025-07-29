@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexType` Struct Template Reference
+# `HexType` Struct Template
 
 <p>Return the appropriate yaml Hex type for a given endian-aware type. <a href="#details">More...</a></p>
 

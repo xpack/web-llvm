@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEMCAsmInfo.cpp` File Reference
+# `VEMCAsmInfo.cpp` File
 
 
 

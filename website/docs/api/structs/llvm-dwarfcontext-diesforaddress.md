@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEsForAddress` Struct Reference
+# `DIEsForAddress` Struct
 
 <p>Wraps the returned DIEs for a given address. <a href="#details">More...</a></p>
 

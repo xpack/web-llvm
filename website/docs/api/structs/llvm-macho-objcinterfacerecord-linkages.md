@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Linkages` Struct Reference
+# `Linkages` Struct
 
 <p>Linkage level for each symbol represented in <a href="/web-llvm/docs/api/classes/llvm/macho/objcinterfacerecord">ObjCInterfaceRecord</a>. <a href="#details">More...</a></p>
 

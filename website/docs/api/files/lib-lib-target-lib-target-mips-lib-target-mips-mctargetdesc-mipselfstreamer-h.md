@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsELFStreamer.h` File Reference
+# `MipsELFStreamer.h` File
 
 
 

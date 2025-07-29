@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HungoffOperandTraits` Struct Reference
+# `HungoffOperandTraits` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/hungoffoperandtraits">HungoffOperandTraits</a> - determine the allocation regime of the <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> array when it is not a prefix to the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> object, but allocated at an unrelated heap address. <a href="#details">More...</a></p>
 

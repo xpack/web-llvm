@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SparcTargetMachine.cpp}` Namespace Reference
+# `anonymous{SparcTargetMachine.cpp}` Namespace
 
 
 

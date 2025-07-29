@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonFrameSortingComparator` Struct Reference
+# `HexagonFrameSortingComparator` Struct
 
 
 

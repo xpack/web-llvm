@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SparcISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{SparcISelDAGToDAG.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-sparciseldagtodag-cpp-/sparcdagtodagisel">SparcDAGToDAGISel</a> - SPARC specific code to select SPARC machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

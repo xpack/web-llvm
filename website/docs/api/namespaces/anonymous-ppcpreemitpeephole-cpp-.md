@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCPreEmitPeephole.cpp}` Namespace Reference
+# `anonymous{PPCPreEmitPeephole.cpp}` Namespace
 
 
 

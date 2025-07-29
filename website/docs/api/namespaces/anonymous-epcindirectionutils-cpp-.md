@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{EPCIndirectionUtils.cpp}` Namespace Reference
+# `anonymous{EPCIndirectionUtils.cpp}` Namespace
 
 
 

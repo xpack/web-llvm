@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FinalizationInfo` Struct Reference
+# `FinalizationInfo` Struct
 
 
 

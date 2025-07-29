@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCPtrLivenessData` Struct Reference
+# `GCPtrLivenessData` Struct
 
 
 

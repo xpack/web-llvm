@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `x86_thread_state_t` Struct Reference
+# `x86_thread_state_t` Struct
 
 
 

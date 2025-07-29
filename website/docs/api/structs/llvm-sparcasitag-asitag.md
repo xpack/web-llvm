@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ASITag` Struct Reference
+# `ASITag` Struct
 
 
 

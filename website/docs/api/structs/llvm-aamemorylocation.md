@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryLocation` Struct Reference
+# `AAMemoryLocation` Struct
 
 <p>An abstract interface for all memory location attributes (readnone/argmemonly/inaccessiblememonly/inaccessibleorargmemonly). <a href="#details">More...</a></p>
 

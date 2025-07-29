@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVExpandAtomicPseudoInsts.cpp` File Reference
+# `RISCVExpandAtomicPseudoInsts.cpp` File
 
 
 

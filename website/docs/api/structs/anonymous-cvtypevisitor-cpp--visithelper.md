@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VisitHelper` Struct Reference
+# `VisitHelper` Struct
 
 
 

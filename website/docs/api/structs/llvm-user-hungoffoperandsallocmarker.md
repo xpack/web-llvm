@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HungOffOperandsAllocMarker` Struct Reference
+# `HungOffOperandsAllocMarker` Struct
 
 <p>Indicates this <a href="/web-llvm/docs/api/classes/llvm/user">User</a> has operands "hung off" in another allocation. <a href="#details">More...</a></p>
 

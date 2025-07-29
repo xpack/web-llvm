@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFBlockAuxEnt32` Struct Reference
+# `XCOFFBlockAuxEnt32` Struct
 
 
 

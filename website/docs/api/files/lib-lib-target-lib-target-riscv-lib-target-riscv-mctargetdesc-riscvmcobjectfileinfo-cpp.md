@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMCObjectFileInfo.cpp` File Reference
+# `RISCVMCObjectFileInfo.cpp` File
 
 
 

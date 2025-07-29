@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_tls_directory` Struct Template Reference
+# `coff_tls_directory` Struct Template
 
 
 

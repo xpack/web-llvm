@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{FDRRecordProducer.cpp}` Namespace Reference
+# `anonymous{FDRRecordProducer.cpp}` Namespace
 
 
 

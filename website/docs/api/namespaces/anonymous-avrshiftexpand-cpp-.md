@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AVRShiftExpand.cpp}` Namespace Reference
+# `anonymous{AVRShiftExpand.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Exception` Struct Reference
+# `Exception` Struct
 
 
 

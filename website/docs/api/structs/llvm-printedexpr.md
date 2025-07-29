@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintedExpr` Struct Reference
+# `PrintedExpr` Struct
 
 <p>A user-facing string representation of a DWARF expression. <a href="#details">More...</a></p>
 

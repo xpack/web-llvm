@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OtherwiseT` Struct Template Reference
+# `OtherwiseT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILFinalizeLinkage.cpp` File Reference
+# `DXILFinalizeLinkage.cpp` File
 
 
 

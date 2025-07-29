@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferFunctionAttrsPass` Struct Reference
+# `InferFunctionAttrsPass` Struct
 
 <p>A pass which infers function attributes from the names and signatures of function declarations in a module. <a href="#details">More...</a></p>
 

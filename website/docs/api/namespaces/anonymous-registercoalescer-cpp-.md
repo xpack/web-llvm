@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RegisterCoalescer.cpp}` Namespace Reference
+# `anonymous{RegisterCoalescer.cpp}` Namespace
 
 
 

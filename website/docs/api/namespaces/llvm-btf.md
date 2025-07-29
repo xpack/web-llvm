@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTF` Namespace Reference
+# `BTF` Namespace
 
 
 

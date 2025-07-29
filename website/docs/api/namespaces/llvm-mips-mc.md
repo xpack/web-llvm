@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIPS_MC` Namespace Reference
+# `MIPS_MC` Namespace
 
 
 

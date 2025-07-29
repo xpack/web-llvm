@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InterleavedLoadCombinePass.cpp}` Namespace Reference
+# `anonymous{InterleavedLoadCombinePass.cpp}` Namespace
 
 
 

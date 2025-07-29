@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixMin` Namespace Reference
+# `FixMin` Namespace
 
 <p>The minimum value or size encodable in "Fix" variants of formats. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowTagCheckInfo` Struct Reference
+# `ShadowTagCheckInfo` Struct
 
 
 

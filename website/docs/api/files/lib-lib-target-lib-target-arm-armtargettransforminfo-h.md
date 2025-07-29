@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTargetTransformInfo.h` File Reference
+# `ARMTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the ARM target machine. <a href="#details">More...</a></p>
 

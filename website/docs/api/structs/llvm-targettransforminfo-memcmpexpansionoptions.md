@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemCmpExpansionOptions` Struct Reference
+# `MemCmpExpansionOptions` Struct
 
 <p>Returns options for expansion of memcmp. IsZeroCmp is. <a href="#details">More...</a></p>
 

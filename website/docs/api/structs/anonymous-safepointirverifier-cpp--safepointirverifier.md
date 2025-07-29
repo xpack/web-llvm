@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafepointIRVerifier` Struct Reference
+# `SafepointIRVerifier` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedCGData` Namespace Reference
+# `IndexedCGData` Namespace
 
 
 

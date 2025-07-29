@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Demangle` Folder Reference
+# `lib/Demangle` Folder
 
 
 

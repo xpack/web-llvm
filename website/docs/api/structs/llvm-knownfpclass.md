@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KnownFPClass` Struct Reference
+# `KnownFPClass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfOptions` Struct Reference
+# `InstrProfOptions` Struct
 
 <p>Options for the frontend instrumentation based profiling pass. <a href="#details">More...</a></p>
 

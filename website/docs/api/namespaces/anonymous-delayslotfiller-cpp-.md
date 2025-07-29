@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DelaySlotFiller.cpp}` Namespace Reference
+# `anonymous{DelaySlotFiller.cpp}` Namespace
 
 
 

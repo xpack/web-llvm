@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRELFStreamer.h` File Reference
+# `AVRELFStreamer.h` File
 
 
 

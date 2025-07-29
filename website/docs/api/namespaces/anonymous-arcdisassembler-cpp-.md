@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCDisassembler.cpp}` Namespace Reference
+# `anonymous{ARCDisassembler.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `tomp` Namespace Reference
+# `tomp` Namespace
 
 
 

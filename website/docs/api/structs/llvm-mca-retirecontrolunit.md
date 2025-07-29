@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetireControlUnit` Struct Reference
+# `RetireControlUnit` Struct
 
 <p>This class tracks which instructions are in-flight (i.e., dispatched but not retired) in the OoO backend. <a href="#details">More...</a></p>
 

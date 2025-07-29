@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyLegalizeActionStep` Struct Reference
+# `LegacyLegalizeActionStep` Struct
 
 <p>The result of a query. <a href="#details">More...</a></p>
 

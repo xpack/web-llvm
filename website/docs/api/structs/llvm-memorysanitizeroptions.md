@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySanitizerOptions` Struct Reference
+# `MemorySanitizerOptions` Struct
 
 
 

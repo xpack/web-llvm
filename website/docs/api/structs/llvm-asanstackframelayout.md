@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ASanStackFrameLayout` Struct Reference
+# `ASanStackFrameLayout` Struct
 
 
 

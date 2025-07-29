@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMInstPrinter.cpp` File Reference
+# `ARMInstPrinter.cpp` File
 
 
 

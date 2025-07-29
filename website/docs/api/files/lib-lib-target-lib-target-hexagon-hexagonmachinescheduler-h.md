@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMachineScheduler.h` File Reference
+# `HexagonMachineScheduler.h` File
 
 
 

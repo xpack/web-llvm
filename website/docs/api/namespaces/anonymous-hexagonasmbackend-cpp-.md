@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonAsmBackend.cpp}` Namespace Reference
+# `anonymous{HexagonAsmBackend.cpp}` Namespace
 
 
 

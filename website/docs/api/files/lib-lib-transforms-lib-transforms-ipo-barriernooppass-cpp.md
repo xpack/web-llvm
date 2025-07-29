@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BarrierNoopPass.cpp` File Reference
+# `BarrierNoopPass.cpp` File
 
 
 

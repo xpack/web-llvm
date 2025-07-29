@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FRMOp` Struct Reference
+# `FRMOp` Struct
 
 
 

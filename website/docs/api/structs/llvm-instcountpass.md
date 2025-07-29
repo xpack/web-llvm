@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCountPass` Struct Reference
+# `InstCountPass` Struct
 
 
 

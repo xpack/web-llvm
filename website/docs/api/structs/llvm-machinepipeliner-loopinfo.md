@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInfo` Struct Reference
+# `LoopInfo` Struct
 
 <p>Cache the target analysis information about the loop. <a href="#details">More...</a></p>
 

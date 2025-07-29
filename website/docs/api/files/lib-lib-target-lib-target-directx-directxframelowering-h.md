@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXFrameLowering.h` File Reference
+# `DirectXFrameLowering.h` File
 
 
 

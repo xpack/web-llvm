@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Chrono.cpp` File Reference
+# `Chrono.cpp` File
 
 
 

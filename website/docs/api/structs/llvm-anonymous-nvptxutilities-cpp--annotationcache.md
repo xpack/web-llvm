@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnnotationCache` Struct Reference
+# `AnnotationCache` Struct
 
 
 

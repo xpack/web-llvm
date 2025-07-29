@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncInfo` Struct Reference
+# `FuncInfo` Struct
 
 <p>Represents a function clone via FuncTy pointer and clone number pair. <a href="#details">More...</a></p>
 

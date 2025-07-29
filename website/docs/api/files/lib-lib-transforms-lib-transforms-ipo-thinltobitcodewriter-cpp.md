@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLTOBitcodeWriter.cpp` File Reference
+# `ThinLTOBitcodeWriter.cpp` File
 
 
 

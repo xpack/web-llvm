@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedModuleAndIndex` Struct Reference
+# `ParsedModuleAndIndex` Struct
 
 <p>Holds the <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> and <a href="/web-llvm/docs/api/classes/llvm/modulesummaryindex">ModuleSummaryIndex</a> returned by the interfaces that parse both. <a href="#details">More...</a></p>
 

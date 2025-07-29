@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetObjectFile.h` File Reference
+# `AMDGPUTargetObjectFile.h` File
 
 <p>This file declares the AMDGPU-specific subclass of TargetLoweringObjectFile. <a href="#details">More...</a></p>
 

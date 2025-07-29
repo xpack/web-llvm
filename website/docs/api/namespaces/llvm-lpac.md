@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LPAC` Namespace Reference
+# `LPAC` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCInstructionSelector.cpp` File Reference
+# `PPCInstructionSelector.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/instructionselector">InstructionSelector</a> class for PowerPC. <a href="#details">More...</a></p>
 

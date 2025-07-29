@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCInstLower.h` File Reference
+# `WebAssemblyMCInstLower.h` File
 
 <p>This file declares the class to lower WebAssembly MachineInstrs to their corresponding MCInst records. <a href="#details">More...</a></p>
 

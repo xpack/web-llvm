@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XtensaELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{XtensaELFObjectWriter.cpp}` Namespace
 
 
 

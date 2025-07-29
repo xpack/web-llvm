@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILDataScalarization.cpp` File Reference
+# `DXILDataScalarization.cpp` File
 
 
 

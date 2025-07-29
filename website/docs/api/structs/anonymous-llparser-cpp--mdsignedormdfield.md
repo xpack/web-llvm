@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDSignedOrMDField` Struct Reference
+# `MDSignedOrMDField` Struct
 
 
 

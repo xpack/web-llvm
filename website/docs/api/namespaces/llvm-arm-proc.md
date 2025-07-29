@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARM_PROC` Namespace Reference
+# `ARM_PROC` Namespace
 
 
 

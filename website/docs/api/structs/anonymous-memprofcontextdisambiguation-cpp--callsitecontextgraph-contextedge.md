@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextEdge` Struct Reference
+# `ContextEdge` Struct
 
 <p>Edge in the Callsite Context Graph from a <a href="/web-llvm/docs/api/structs/anonymous-memprofcontextdisambiguation-cpp-/callsitecontextgraph/contextnode">ContextNode</a> N to a caller or callee. <a href="#details">More...</a></p>
 

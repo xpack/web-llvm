@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShaderFeatureFlags` Struct Reference
+# `ShaderFeatureFlags` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRAttribute` Struct Template Reference
+# `IRAttribute` Struct Template
 
 <p>Helper class that provides common functionality to manifest IR attributes. <a href="#details">More...</a></p>
 

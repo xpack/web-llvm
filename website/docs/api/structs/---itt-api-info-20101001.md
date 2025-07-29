@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `___itt_api_info_20101001` Struct Reference
+# `___itt_api_info_20101001` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGDataPatchItem` Struct Reference
+# `CGDataPatchItem` Struct
 
 <p>A struct to define how the data stream should be patched. <a href="#details">More...</a></p>
 

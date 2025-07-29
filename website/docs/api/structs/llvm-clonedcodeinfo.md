@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClonedCodeInfo` Struct Reference
+# `ClonedCodeInfo` Struct
 
 <p>This struct can be used to capture information about code being cloned, while it is being cloned. <a href="#details">More...</a></p>
 

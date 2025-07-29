@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonHardwareLoops.cpp` File Reference
+# `HexagonHardwareLoops.cpp` File
 
 
 

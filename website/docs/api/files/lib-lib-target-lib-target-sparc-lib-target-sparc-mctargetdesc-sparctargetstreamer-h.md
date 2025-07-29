@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcTargetStreamer.h` File Reference
+# `SparcTargetStreamer.h` File
 
 
 

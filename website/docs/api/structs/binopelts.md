@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinopElts` Struct Reference
+# `BinopElts` Struct
 
 <p>These are the ingredients in an alternate form binary operator as described below. <a href="#details">More...</a></p>
 

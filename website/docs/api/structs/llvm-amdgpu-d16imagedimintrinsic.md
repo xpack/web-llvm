@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `D16ImageDimIntrinsic` Struct Reference
+# `D16ImageDimIntrinsic` Struct
 
 
 

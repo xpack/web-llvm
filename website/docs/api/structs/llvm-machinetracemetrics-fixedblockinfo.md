@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedBlockInfo` Struct Reference
+# `FixedBlockInfo` Struct
 
 <p>Per-basic block information that doesn't depend on the trace through the block. <a href="#details">More...</a></p>
 

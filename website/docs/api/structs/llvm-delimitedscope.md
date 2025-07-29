@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DelimitedScope` Struct Reference
+# `DelimitedScope` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TaskReductionT` Struct Template Reference
+# `TaskReductionT` Struct Template
 
 
 

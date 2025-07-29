@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonDCE` Struct Reference
+# `HexagonDCE` Struct
 
 
 

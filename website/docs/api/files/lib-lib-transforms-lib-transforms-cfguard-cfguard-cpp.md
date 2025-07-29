@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGuard.cpp` File Reference
+# `CFGuard.cpp` File
 
 <p>This file contains the IR transform to add Microsoft's Control Flow Guard checks on Windows targets. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariableGEPIndex` Struct Reference
+# `VariableGEPIndex` Struct
 
 
 

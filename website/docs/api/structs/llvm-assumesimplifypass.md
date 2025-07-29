@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumeSimplifyPass` Struct Reference
+# `AssumeSimplifyPass` Struct
 
 <p>This pass attempts to minimize the number of assume without loosing any information. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Match` Struct Reference
+# `Match` Struct
 
 
 

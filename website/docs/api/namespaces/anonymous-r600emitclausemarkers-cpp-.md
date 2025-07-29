@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{R600EmitClauseMarkers.cpp}` Namespace Reference
+# `anonymous{R600EmitClauseMarkers.cpp}` Namespace
 
 
 

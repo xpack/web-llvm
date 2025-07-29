@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InlineCost.cpp}` Namespace Reference
+# `anonymous{InlineCost.cpp}` Namespace
 
 
 

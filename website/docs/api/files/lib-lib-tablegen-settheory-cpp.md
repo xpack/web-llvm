@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetTheory.cpp` File Reference
+# `SetTheory.cpp` File
 
 
 

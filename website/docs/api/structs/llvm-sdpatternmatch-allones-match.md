@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllOnes_match` Struct Reference
+# `AllOnes_match` Struct
 
 
 

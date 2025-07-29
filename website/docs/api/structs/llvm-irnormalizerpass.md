@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRNormalizerPass` Struct Reference
+# `IRNormalizerPass` Struct
 
 <p>IRNormalizer aims to transform LLVM IR into normal form. <a href="#details">More...</a></p>
 

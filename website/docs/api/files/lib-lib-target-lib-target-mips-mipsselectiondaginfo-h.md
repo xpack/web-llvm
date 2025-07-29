@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsSelectionDAGInfo.h` File Reference
+# `MipsSelectionDAGInfo.h` File
 
 
 

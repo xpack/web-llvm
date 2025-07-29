@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Linker` Folder Reference
+# `lib/Linker` Folder
 
 
 

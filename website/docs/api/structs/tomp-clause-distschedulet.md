@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DistScheduleT` Struct Template Reference
+# `DistScheduleT` Struct Template
 
 
 

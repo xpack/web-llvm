@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleSymbol` Struct Reference
+# `SimpleSymbol` Struct
 
 <p>Lightweight struct for passing around symbol information. <a href="#details">More...</a></p>
 

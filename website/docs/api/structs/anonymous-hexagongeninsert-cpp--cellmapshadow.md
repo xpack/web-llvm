@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CellMapShadow` Struct Reference
+# `CellMapShadow` Struct
 
 
 

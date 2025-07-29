@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAddressSpaceFloating` Struct Reference
+# `AAAddressSpaceFloating` Struct
 
 
 

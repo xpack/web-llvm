@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnarySplitter` Struct Reference
+# `UnarySplitter` Struct
 
 
 

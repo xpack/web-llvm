@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinBackend` Struct Reference
+# `ThinBackend` Struct
 
 <p>This type defines the behavior following the thin-link phase during ThinLTO. <a href="#details">More...</a></p>
 

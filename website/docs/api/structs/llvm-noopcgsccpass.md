@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpCGSCCPass` Struct Reference
+# `NoOpCGSCCPass` Struct
 
 <p>No-op CGSCC pass which does nothing. <a href="#details">More...</a></p>
 

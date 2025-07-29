@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionCompare` Struct Reference
+# `SectionCompare` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OProfileWrapper.cpp}` Namespace Reference
+# `anonymous{OProfileWrapper.cpp}` Namespace
 
 
 

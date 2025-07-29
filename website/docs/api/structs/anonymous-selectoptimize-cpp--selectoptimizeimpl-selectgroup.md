@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SelectGroup` Struct Reference
+# `SelectGroup` Struct
 
 
 

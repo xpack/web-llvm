@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnifiedSharedMemoryT` Struct Template Reference
+# `UnifiedSharedMemoryT` Struct Template
 
 
 

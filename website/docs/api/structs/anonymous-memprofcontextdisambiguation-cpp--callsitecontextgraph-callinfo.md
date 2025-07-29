@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallInfo` Struct Reference
+# `CallInfo` Struct
 
 <p>Represents a callsite clone via CallTy and clone number pair. <a href="#details">More...</a></p>
 

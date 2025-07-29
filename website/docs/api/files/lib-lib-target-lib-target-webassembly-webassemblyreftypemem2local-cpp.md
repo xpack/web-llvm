@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRefTypeMem2Local.cpp` File Reference
+# `WebAssemblyRefTypeMem2Local.cpp` File
 
 <p>Assign reference type allocas to local addrspace (addrspace(1)) so that their loads and stores can be lowered to local.gets/local.sets. <a href="#details">More...</a></p>
 

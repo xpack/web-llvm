@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCBSel` Struct Reference
+# `PPCBSel` Struct
 
 
 

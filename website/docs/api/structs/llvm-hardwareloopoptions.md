@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareLoopOptions` Struct Reference
+# `HardwareLoopOptions` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRef` Struct Reference
+# `MIRef` Struct
 
 
 

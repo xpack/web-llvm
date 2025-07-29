@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNNSAReassign.cpp` File Reference
+# `GCNNSAReassign.cpp` File
 
 <p>Try to reassign registers on GFX10+ from non-sequential to sequential in NSA image instructions. <a href="#details">More...</a></p>
 

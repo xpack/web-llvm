@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomTreeNodeTraits` Struct Template Reference
+# `DomTreeNodeTraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsWinCOFFStreamer.cpp` File Reference
+# `MipsWinCOFFStreamer.cpp` File
 
 
 

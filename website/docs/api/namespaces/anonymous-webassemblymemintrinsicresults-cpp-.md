@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyMemIntrinsicResults.cpp}` Namespace Reference
+# `anonymous{WebAssemblyMemIntrinsicResults.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFPClassImpl` Struct Reference
+# `AANoFPClassImpl` Struct
 
 <p>---------------------— NoFPClass <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> ----------------------------— <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointersChainInfo` Struct Reference
+# `PointersChainInfo` Struct
 
 <p>Describe known properties for a set of pointers. <a href="#details">More...</a></p>
 

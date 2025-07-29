@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAUnderlyingObjects` Struct Reference
+# `AAUnderlyingObjects` Struct
 
 <p>An abstract attribute for getting all assumption underlying objects. <a href="#details">More...</a></p>
 

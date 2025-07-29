@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HeaderOptions` Struct Reference
+# `HeaderOptions` Struct
 
 <p>Configuration for the mach-o header of a <a href="/web-llvm/docs/api/classes/llvm/orc/jitdylib">JITDylib</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIScheduleBlockResult` Struct Reference
+# `SIScheduleBlockResult` Struct
 
 
 

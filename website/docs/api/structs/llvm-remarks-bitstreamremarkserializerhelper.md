@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamRemarkSerializerHelper` Struct Reference
+# `BitstreamRemarkSerializerHelper` Struct
 
 <p>Serialize the remarks to LLVM bitstream. <a href="#details">More...</a></p>
 

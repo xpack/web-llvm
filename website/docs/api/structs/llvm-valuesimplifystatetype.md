@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueSimplifyStateType` Struct Reference
+# `ValueSimplifyStateType` Struct
 
 
 

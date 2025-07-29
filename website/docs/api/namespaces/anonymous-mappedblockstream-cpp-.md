@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MappedBlockStream.cpp}` Namespace Reference
+# `anonymous{MappedBlockStream.cpp}` Namespace
 
 
 

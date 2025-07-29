@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineVerifier.cpp}` Namespace Reference
+# `anonymous{MachineVerifier.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegFlag` Namespace Reference
+# `VirtRegFlag` Namespace
 
 
 

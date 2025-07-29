@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShouldRunExtraVectorPasses` Struct Reference
+# `ShouldRunExtraVectorPasses` Struct
 
 <p>A marker analysis to determine if extra passes should be run after loop vectorization. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDAPSIntField` Struct Reference
+# `MDAPSIntField` Struct
 
 
 

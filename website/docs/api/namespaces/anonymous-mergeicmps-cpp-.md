@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MergeICmps.cpp}` Namespace Reference
+# `anonymous{MergeICmps.cpp}` Namespace
 
 
 

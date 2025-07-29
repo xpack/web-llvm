@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFEmitter.cpp` File Reference
+# `COFFEmitter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> component of yaml2obj. <a href="#details">More...</a></p>
 

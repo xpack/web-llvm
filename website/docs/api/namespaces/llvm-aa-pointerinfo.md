@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerInfo` Namespace Reference
+# `PointerInfo` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachinePointerInfo` Struct Reference
+# `MachinePointerInfo` Struct
 
 <p>This class contains a discriminated union of information about pointers in memory operands, relating them back to LLVM IR or to virtual locations (such as frame indices) that are exposed during codegen. <a href="#details">More...</a></p>
 

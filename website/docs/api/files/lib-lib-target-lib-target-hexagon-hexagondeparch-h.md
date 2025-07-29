@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonDepArch.h` File Reference
+# `HexagonDepArch.h` File
 
 
 

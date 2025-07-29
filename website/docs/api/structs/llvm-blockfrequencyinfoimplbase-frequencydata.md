@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrequencyData` Struct Reference
+# `FrequencyData` Struct
 
 <p>Stats about a block itself. <a href="#details">More...</a></p>
 

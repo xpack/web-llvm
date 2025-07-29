@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandSpecifier` Struct Reference
+# `OperandSpecifier` Struct
 
 <p>The specification for how to extract and interpret one operand. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_aux_weak_external` Struct Reference
+# `coff_aux_weak_external` Struct
 
 
 

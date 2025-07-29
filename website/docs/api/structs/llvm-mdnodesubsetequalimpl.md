@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeSubsetEqualImpl` Struct Template Reference
+# `MDNodeSubsetEqualImpl` Struct Template
 
 <p>Configuration point for <a href="/web-llvm/docs/api/structs/llvm/mdnodeinfo/#a476686fcf71f6633092fbe016ff34fc4">MDNodeInfo::isEqual()</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HeaderData` Struct Reference
+# `HeaderData` Struct
 
 <p>The HeaderData describes the structure of an Apple accelerator table through a list of Atoms. <a href="#details">More...</a></p>
 

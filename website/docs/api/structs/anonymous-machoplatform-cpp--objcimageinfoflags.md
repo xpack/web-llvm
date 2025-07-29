@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCImageInfoFlags` Struct Reference
+# `ObjCImageInfoFlags` Struct
 
 
 

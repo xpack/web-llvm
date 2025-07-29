@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HelloWorld.cpp` File Reference
+# `HelloWorld.cpp` File
 
 
 

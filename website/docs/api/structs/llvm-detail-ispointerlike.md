@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsPointerLike` Struct Template Reference
+# `IsPointerLike` Struct Template
 
 
 

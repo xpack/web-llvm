@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMFastISel.cpp}` Namespace Reference
+# `anonymous{ARMFastISel.cpp}` Namespace
 
 
 

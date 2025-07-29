@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{StackColoring.cpp}` Namespace Reference
+# `anonymous{StackColoring.cpp}` Namespace
 
 
 

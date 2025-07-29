@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVStructurizer.cpp}` Namespace Reference
+# `anonymous{SPIRVStructurizer.cpp}` Namespace
 
 
 

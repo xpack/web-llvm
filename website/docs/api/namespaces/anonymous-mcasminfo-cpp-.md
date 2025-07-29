@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MCAsmInfo.cpp}` Namespace Reference
+# `anonymous{MCAsmInfo.cpp}` Namespace
 
 
 

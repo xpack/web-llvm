@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ThinLTOCodeGenerator.cpp}` Namespace Reference
+# `anonymous{ThinLTOCodeGenerator.cpp}` Namespace
 
 
 

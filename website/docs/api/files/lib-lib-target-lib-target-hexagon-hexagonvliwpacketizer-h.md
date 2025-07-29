@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVLIWPacketizer.h` File Reference
+# `HexagonVLIWPacketizer.h` File
 
 
 

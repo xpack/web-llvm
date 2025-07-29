@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InstCombineAtomicRMW.cpp}` Namespace Reference
+# `anonymous{InstCombineAtomicRMW.cpp}` Namespace
 
 
 

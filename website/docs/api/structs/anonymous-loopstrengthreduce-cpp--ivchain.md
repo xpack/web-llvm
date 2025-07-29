@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVChain` Struct Reference
+# `IVChain` Struct
 
 
 

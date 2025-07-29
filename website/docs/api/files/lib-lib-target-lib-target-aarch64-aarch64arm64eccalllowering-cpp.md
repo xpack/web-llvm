@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64Arm64ECCallLowering.cpp` File Reference
+# `AArch64Arm64ECCallLowering.cpp` File
 
 <p>This file contains the IR transform to lower external or indirect calls for the ARM64EC calling convention. <a href="#details">More...</a></p>
 

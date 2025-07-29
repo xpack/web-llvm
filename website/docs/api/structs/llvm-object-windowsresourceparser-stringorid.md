@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringOrID` Struct Reference
+# `StringOrID` Struct
 
 
 

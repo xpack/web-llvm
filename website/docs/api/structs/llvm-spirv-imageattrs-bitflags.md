@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitFlags` Struct Reference
+# `BitFlags` Struct
 
 
 

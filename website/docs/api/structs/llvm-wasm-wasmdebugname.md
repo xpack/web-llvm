@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmDebugName` Struct Reference
+# `WasmDebugName` Struct
 
 
 

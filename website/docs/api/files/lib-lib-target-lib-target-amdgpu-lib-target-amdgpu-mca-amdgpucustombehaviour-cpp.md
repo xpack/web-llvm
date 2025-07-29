@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCustomBehaviour.cpp` File Reference
+# `AMDGPUCustomBehaviour.cpp` File
 
 <p>This file implements methods from the <a href="/web-llvm/docs/api/classes/llvm/mca/amdgpucustombehaviour">AMDGPUCustomBehaviour</a> class. <a href="#details">More...</a></p>
 

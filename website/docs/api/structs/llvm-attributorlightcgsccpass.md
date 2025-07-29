@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributorLightCGSCCPass` Struct Reference
+# `AttributorLightCGSCCPass` Struct
 
 <p>A more lightweight version of the <a href="/web-llvm/docs/api/structs/llvm/attributor">Attributor</a> which only runs attribute inference but no simplifications. <a href="#details">More...</a></p>
 

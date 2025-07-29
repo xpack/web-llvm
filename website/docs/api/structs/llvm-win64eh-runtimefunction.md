@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeFunction` Struct Reference
+# `RuntimeFunction` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/win64eh/runtimefunction">RuntimeFunction</a> - An entry in the table of functions with unwind info. <a href="#details">More...</a></p>
 

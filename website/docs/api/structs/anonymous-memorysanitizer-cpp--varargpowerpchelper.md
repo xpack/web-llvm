@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarArgPowerPCHelper` Struct Reference
+# `VarArgPowerPCHelper` Struct
 
 <p>PowerPC-specific implementation of <a href="/web-llvm/docs/api/structs/anonymous-memorysanitizer-cpp-/vararghelper">VarArgHelper</a>. <a href="#details">More...</a></p>
 

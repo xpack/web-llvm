@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InvalidateAllAnalysesPass` Struct Reference
+# `InvalidateAllAnalysesPass` Struct
 
 <p>A utility pass that does nothing, but preserves no analyses. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUInstCombineIntrinsic.cpp}` Namespace Reference
+# `anonymous{AMDGPUInstCombineIntrinsic.cpp}` Namespace
 
 
 

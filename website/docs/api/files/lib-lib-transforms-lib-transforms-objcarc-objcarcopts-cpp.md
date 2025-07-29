@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCOpts.cpp` File Reference
+# `ObjCARCOpts.cpp` File
 
 <p>This file defines ObjC ARC optimizations. <a href="#details">More...</a></p>
 

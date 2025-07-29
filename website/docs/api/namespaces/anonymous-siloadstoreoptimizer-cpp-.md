@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SILoadStoreOptimizer.cpp}` Namespace Reference
+# `anonymous{SILoadStoreOptimizer.cpp}` Namespace
 
 
 

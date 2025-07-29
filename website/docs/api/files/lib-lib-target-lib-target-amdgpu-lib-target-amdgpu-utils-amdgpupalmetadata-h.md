@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPALMetadata.h` File Reference
+# `AMDGPUPALMetadata.h` File
 
 <p>PAL metadata handling. <a href="#details">More...</a></p>
 

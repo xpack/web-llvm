@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VisitedBBInfo` Struct Reference
+# `VisitedBBInfo` Struct
 
 
 

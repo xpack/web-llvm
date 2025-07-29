@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Print` Struct Reference
+# `Print` Struct
 
 <p>Helper for printing DanglingDebugInfo. <a href="#details">More...</a></p>
 

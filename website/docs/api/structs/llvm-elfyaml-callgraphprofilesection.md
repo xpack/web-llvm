@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphProfileSection` Struct Reference
+# `CallGraphProfileSection` Struct
 
 
 

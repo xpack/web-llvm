@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapInfosTy` Struct Reference
+# `MapInfosTy` Struct
 
 <p>This structure contains combined information generated for mappable clauses, including base pointers, pointers, sizes, map types, user-defined mappers, and non-contiguous information. <a href="#details">More...</a></p>
 

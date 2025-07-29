@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataCountSection` Struct Reference
+# `DataCountSection` Struct
 
 
 

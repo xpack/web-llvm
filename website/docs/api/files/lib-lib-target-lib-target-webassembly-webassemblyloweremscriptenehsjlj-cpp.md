@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyLowerEmscriptenEHSjLj.cpp` File Reference
+# `WebAssemblyLowerEmscriptenEHSjLj.cpp` File
 
 <p>This file lowers exception-related instructions and setjmp/longjmp function calls to use Emscripten's library functions. <a href="#details">More...</a></p>
 

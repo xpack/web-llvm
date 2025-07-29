@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SparcAsmPrinter.cpp}` Namespace Reference
+# `anonymous{SparcAsmPrinter.cpp}` Namespace
 
 
 

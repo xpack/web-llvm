@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetIntBinOp` Struct Reference
+# `SetIntBinOp` Struct
 
 
 

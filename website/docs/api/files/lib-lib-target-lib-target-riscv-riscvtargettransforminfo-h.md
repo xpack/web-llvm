@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTargetTransformInfo.h` File Reference
+# `RISCVTargetTransformInfo.h` File
 
 <p>This file defines a TargetTransformInfo::Concept conforming object specific to the RISC-V target machine. <a href="#details">More...</a></p>
 

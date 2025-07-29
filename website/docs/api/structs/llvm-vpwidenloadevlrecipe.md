@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenLoadEVLRecipe` Struct Reference
+# `VPWidenLoadEVLRecipe` Struct
 
 <p>A recipe for widening load operations with vector-predication intrinsics, using the address to load from, the explicit vector length and an optional mask. <a href="#details">More...</a></p>
 

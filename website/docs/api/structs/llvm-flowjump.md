@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlowJump` Struct Reference
+# `FlowJump` Struct
 
 <p>A wrapper of a jump between two basic blocks. <a href="#details">More...</a></p>
 

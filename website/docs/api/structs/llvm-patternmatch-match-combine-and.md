@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `match_combine_and` Struct Template Reference
+# `match_combine_and` Struct Template
 
 
 

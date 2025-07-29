@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsLegalizerInfo.cpp` File Reference
+# `MipsLegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a>. <a href="#details">More...</a></p>
 

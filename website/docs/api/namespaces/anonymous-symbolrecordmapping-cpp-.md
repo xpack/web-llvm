@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SymbolRecordMapping.cpp}` Namespace Reference
+# `anonymous{SymbolRecordMapping.cpp}` Namespace
 
 
 

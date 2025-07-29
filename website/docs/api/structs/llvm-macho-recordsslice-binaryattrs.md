@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryAttrs` Struct Reference
+# `BinaryAttrs` Struct
 
 
 

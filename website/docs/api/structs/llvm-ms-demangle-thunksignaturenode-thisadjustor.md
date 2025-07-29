@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThisAdjustor` Struct Reference
+# `ThisAdjustor` Struct
 
 
 

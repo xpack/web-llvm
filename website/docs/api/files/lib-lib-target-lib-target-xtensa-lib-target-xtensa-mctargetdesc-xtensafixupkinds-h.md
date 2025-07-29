@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaFixupKinds.h` File Reference
+# `XtensaFixupKinds.h` File
 
 
 

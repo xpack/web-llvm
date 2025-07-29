@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LessRecordFieldName` Struct Reference
+# `LessRecordFieldName` Struct
 
 <p>Sorting predicate to sort record pointers by their Name field. <a href="#details">More...</a></p>
 

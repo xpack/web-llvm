@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDWA` Namespace Reference
+# `SDWA` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCPoint` Struct Reference
+# `GCPoint` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/gcpoint">GCPoint</a> - <a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a> for a collector-safe point in machine code. <a href="#details">More...</a></p>
 

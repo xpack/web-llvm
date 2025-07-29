@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarBitSetTraits` Struct Template Reference
+# `ScalarBitSetTraits` Struct Template
 
 <p>This class should be specialized by any integer type that is a union of bit values and the YAML representation is a flow sequence of strings. <a href="#details">More...</a></p>
 

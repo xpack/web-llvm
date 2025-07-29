@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMCCodeEmitter.cpp` File Reference
+# `ARMMCCodeEmitter.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeListEntry` Struct Reference
+# `RangeListEntry` Struct
 
 
 

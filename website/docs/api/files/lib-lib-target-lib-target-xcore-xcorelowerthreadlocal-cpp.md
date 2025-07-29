@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreLowerThreadLocal.cpp` File Reference
+# `XCoreLowerThreadLocal.cpp` File
 
 <p>This file contains a pass that lowers thread local variables on the <a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a>. <a href="#details">More...</a></p>
 

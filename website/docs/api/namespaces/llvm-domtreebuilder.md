@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomTreeBuilder` Namespace Reference
+# `DomTreeBuilder` Namespace
 
 
 

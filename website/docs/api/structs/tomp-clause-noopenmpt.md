@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpenmpT` Struct Template Reference
+# `NoOpenmpT` Struct Template
 
 
 

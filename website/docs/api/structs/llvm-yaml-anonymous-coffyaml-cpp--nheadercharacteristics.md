@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NHeaderCharacteristics` Struct Reference
+# `NHeaderCharacteristics` Struct
 
 
 

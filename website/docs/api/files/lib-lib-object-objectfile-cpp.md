@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectFile.cpp` File Reference
+# `ObjectFile.cpp` File
 
 
 

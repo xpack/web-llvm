@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineBlockPlacement.cpp}` Namespace Reference
+# `anonymous{MachineBlockPlacement.cpp}` Namespace
 
 
 

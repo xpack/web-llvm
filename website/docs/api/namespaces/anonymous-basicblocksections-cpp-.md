@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BasicBlockSections.cpp}` Namespace Reference
+# `anonymous{BasicBlockSections.cpp}` Namespace
 
 
 

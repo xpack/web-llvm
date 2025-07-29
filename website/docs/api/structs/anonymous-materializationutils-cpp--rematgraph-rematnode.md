@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RematNode` Struct Reference
+# `RematNode` Struct
 
 
 

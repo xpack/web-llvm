@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemTransferInfo` Struct Reference
+# `MemTransferInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompareT` Struct Template Reference
+# `CompareT` Struct Template
 
 
 

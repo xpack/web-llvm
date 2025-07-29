@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `densemap` Namespace Reference
+# `densemap` Namespace
 
 
 

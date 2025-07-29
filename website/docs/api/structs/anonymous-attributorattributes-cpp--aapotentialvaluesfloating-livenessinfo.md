@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LivenessInfo` Struct Reference
+# `LivenessInfo` Struct
 
 <p>Helper struct to remember which <a href="/web-llvm/docs/api/structs/llvm/aaisdead">AAIsDead</a> instances we actually used. <a href="#details">More...</a></p>
 

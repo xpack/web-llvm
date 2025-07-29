@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerExpectIntrinsicPass` Struct Reference
+# `LowerExpectIntrinsicPass` Struct
 
 
 

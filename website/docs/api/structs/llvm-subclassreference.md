@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubClassReference` Struct Reference
+# `SubClassReference` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCDependenceMapPair` Struct Reference
+# `LLVMOrcCDependenceMapPair` Struct
 
 <p>Represents a pair of a JITDylib and <a href="/web-llvm/docs/api/structs/llvmorccsymbolslist">LLVMOrcCSymbolsList</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMCCodeEmitter.h` File Reference
+# `MipsMCCodeEmitter.h` File
 
 
 

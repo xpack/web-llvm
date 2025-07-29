@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64BuildAttrs` Namespace Reference
+# `AArch64BuildAttrs` Namespace
 
 
 

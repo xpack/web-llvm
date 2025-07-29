@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalStaticGuardIdentifierNode` Struct Reference
+# `LocalStaticGuardIdentifierNode` Struct
 
 
 

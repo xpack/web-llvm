@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/DirectX/MCTargetDesc` Folder Reference
+# `lib/Target/DirectX/MCTargetDesc` Folder
 
 
 

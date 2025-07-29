@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChainEdge` Struct Reference
+# `ChainEdge` Struct
 
 <p>An edge in the graph representing jumps between two chains. <a href="#details">More...</a></p>
 

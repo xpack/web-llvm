@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoolOffsetsAndData` Struct Reference
+# `PoolOffsetsAndData` Struct
 
 
 

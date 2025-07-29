@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Symbol` Struct Reference
+# `Symbol` Struct
 
 <p>The purpose of this struct is to only expose the symbol information that an <a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a> client should need in order to do symbol resolution. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependData` Struct Reference
+# `DependData` Struct
 
 <p>A struct to pack the relevant information for an OpenMP depend clause. <a href="#details">More...</a></p>
 

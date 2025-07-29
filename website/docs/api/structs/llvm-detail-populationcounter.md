@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PopulationCounter` Struct Template Reference
+# `PopulationCounter` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrderT` Struct Template Reference
+# `OrderT` Struct Template
 
 
 

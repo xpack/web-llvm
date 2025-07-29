@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `at` Namespace Reference
+# `at` Namespace
 
 <p>Assignment Tracking (at). <a href="#details">More...</a></p>
 

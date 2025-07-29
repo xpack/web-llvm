@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugLocPatch` Struct Reference
+# `DebugLocPatch` Struct
 
 <p>This structure is used to update location list offset into .debug_loc/.debug_loclists. <a href="#details">More...</a></p>
 

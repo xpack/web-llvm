@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpilledReg` Struct Reference
+# `SpilledReg` Struct
 
 
 

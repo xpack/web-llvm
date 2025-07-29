@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GloballyHashedType` Struct Reference
+# `GloballyHashedType` Struct
 
 <p>A globally hashed type represents a hash value that is sufficient to uniquely identify a record across multiple type streams or type sequences. <a href="#details">More...</a></p>
 

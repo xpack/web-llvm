@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreeOps_match` Struct Template Reference
+# `ThreeOps_match` Struct Template
 
 <p>Matches instructions with Opcode and three operands. <a href="#details">More...</a></p>
 

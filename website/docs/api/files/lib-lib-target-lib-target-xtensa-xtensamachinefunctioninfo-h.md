@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaMachineFunctionInfo.h` File Reference
+# `XtensaMachineFunctionInfo.h` File
 
 
 

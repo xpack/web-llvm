@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrieContent` Struct Reference
+# `TrieContent` Struct
 
 
 

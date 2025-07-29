@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOOptions` Struct Reference
+# `PGOOptions` Struct
 
 <p>A struct capturing PGO tunables. <a href="#details">More...</a></p>
 

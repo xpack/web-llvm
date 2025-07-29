@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsTargetStreamer.cpp` File Reference
+# `MipsTargetStreamer.cpp` File
 
 
 

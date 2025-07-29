@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegAlloc` Namespace Reference
+# `RegAlloc` Namespace
 
 
 

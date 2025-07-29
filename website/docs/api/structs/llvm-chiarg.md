@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CHIArg` Struct Reference
+# `CHIArg` Struct
 
 
 

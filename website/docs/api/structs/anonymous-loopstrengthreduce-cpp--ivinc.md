@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVInc` Struct Reference
+# `IVInc` Struct
 
 <p>An individual increment in a Chain of IV increments. <a href="#details">More...</a></p>
 

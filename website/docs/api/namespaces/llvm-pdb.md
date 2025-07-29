@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pdb` Namespace Reference
+# `pdb` Namespace
 
 
 

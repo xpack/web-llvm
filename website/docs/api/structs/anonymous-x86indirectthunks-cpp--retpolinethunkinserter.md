@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetpolineThunkInserter` Struct Reference
+# `RetpolineThunkInserter` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PostCoalescer` Struct Reference
+# `AArch64PostCoalescer` Struct
 
 
 

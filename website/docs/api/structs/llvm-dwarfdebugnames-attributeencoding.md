@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeEncoding` Struct Reference
+# `AttributeEncoding` Struct
 
 <p>Index attribute and its encoding. <a href="#details">More...</a></p>
 

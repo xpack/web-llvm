@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegBankSelect.cpp` File Reference
+# `AMDGPURegBankSelect.cpp` File
 
 
 

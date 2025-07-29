@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bfi_detail` Namespace Reference
+# `bfi_detail` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ident_command` Struct Reference
+# `ident_command` Struct
 
 
 

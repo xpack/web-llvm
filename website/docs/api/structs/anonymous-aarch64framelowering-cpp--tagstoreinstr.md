@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TagStoreInstr` Struct Reference
+# `TagStoreInstr` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADenormalFPMath` Struct Reference
+# `AADenormalFPMath` Struct
 
 <p>An abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> for specializing "dynamic" components of "denormal-fp-math" and "denormal-fp-math-f32" to a known denormal mode. <a href="#details">More...</a></p>
 

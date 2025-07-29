@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{XCoreMCTargetDesc.cpp}` Namespace
 
 
 

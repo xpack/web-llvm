@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMEPeepholeOpt` Struct Reference
+# `SMEPeepholeOpt` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Remat` Struct Reference
+# `Remat` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/liverangeedit/remat">Remat</a> - Information needed to rematerialize at a specific location. <a href="#details">More...</a></p>
 

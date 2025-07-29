@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineNumberEntry` Struct Reference
+# `LineNumberEntry` Struct
 
 
 

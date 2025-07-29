@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCMCTargetDesc.cpp` File Reference
+# `ARCMCTargetDesc.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIMGG16MappingInfo` Struct Reference
+# `MIMGG16MappingInfo` Struct
 
 
 

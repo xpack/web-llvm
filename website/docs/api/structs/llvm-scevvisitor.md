@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVVisitor` Struct Template Reference
+# `SCEVVisitor` Struct Template
 
 <p>This class defines a simple visitor class that may be used for various <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> analysis purposes. <a href="#details">More...</a></p>
 

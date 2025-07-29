@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameAnonGlobals.cpp` File Reference
+# `NameAnonGlobals.cpp` File
 
 
 

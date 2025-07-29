@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinOpPred_match` Struct Template Reference
+# `BinOpPred_match` Struct Template
 
 
 

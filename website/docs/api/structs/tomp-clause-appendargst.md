@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppendArgsT` Struct Template Reference
+# `AppendArgsT` Struct Template
 
 
 

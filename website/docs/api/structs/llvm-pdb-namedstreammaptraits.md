@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NamedStreamMapTraits` Struct Reference
+# `NamedStreamMapTraits` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOpInfo1` Struct Reference
+# `LLVMOpInfo1` Struct
 
 
 

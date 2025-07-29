@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreeList` Struct Reference
+# `FreeList` Struct
 
 
 

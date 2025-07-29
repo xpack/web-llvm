@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetStreamer.cpp` File Reference
+# `AMDGPUTargetStreamer.cpp` File
 
 
 

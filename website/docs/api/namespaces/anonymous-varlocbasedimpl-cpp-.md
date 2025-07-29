@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VarLocBasedImpl.cpp}` Namespace Reference
+# `anonymous{VarLocBasedImpl.cpp}` Namespace
 
 
 

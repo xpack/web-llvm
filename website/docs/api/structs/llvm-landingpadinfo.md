@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LandingPadInfo` Struct Reference
+# `LandingPadInfo` Struct
 
 <p>This structure is used to retain landing pad info for the current function. <a href="#details">More...</a></p>
 

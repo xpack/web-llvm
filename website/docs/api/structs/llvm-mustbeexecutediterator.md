@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MustBeExecutedIterator` Struct Reference
+# `MustBeExecutedIterator` Struct
 
 <p>Must be executed iterators visit stretches of instructions that are guaranteed to be executed together, potentially with other instruction executed in-between. <a href="#details">More...</a></p>
 

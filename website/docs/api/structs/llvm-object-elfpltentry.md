@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFPltEntry` Struct Reference
+# `ELFPltEntry` Struct
 
 
 

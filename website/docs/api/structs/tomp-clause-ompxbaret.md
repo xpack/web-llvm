@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OmpxBareT` Struct Template Reference
+# `OmpxBareT` Struct Template
 
 
 

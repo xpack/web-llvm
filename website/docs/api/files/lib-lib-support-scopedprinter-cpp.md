@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedPrinter.cpp` File Reference
+# `ScopedPrinter.cpp` File
 
 
 

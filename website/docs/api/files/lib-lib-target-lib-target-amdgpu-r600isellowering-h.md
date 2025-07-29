@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ISelLowering.h` File Reference
+# `R600ISelLowering.h` File
 
 <p>R600 DAG Lowering interface definition. <a href="#details">More...</a></p>
 

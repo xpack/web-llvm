@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAS` Namespace Reference
+# `AMDGPUAS` Namespace
 
 <p>OpenCL uses address spaces to differentiate between various memory regions on the hardware. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerLikeTypeTraits` Struct Template Reference
+# `PointerLikeTypeTraits` Struct Template
 
 <p>Provide a default specialization for function pointers that assumes 4-byte alignment. <a href="#details">More...</a></p>
 

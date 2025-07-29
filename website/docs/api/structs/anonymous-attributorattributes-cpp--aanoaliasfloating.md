@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoAliasFloating` Struct Reference
+# `AANoAliasFloating` Struct
 
 <p>NoAlias attribute for a floating value. <a href="#details">More...</a></p>
 

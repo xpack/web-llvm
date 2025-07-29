@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IrreducibleGraph` Struct Reference
+# `IrreducibleGraph` Struct
 
 <p>Graph of irreducible control flow. <a href="#details">More...</a></p>
 

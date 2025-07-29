@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Frontend/OpenMP` Folder Reference
+# `include/llvm/Frontend/OpenMP` Folder
 
 
 

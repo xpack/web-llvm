@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The User value Reference
+# User value
 
 <p>Function in this group pertain to <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#ga113ce952344691b8304a43a314f8be17">LLVMValueRef</a> instances that descent from <a href="/web-llvm/docs/api/classes/llvm/user">llvm::User</a>. <a href="#details">More...</a></p>
 

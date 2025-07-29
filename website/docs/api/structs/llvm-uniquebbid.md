@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueBBID` Struct Reference
+# `UniqueBBID` Struct
 
 
 

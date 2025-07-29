@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Epilog` Struct Reference
+# `Epilog` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiMCTargetDesc.h` File Reference
+# `LanaiMCTargetDesc.h` File
 
 
 

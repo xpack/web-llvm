@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextualFoldingSetTrait` Struct Template Reference
+# `ContextualFoldingSetTrait` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/contextualfoldingsettrait">ContextualFoldingSetTrait</a> - Like <a href="/web-llvm/docs/api/structs/llvm/foldingsettrait">FoldingSetTrait</a>, but for ContextualFoldingSets. <a href="#details">More...</a></p>
 

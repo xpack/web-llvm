@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrappingIterator` Struct Template Reference
+# `WrappingIterator` Struct Template
 
 
 

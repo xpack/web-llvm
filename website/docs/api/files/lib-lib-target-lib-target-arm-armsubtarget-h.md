@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMSubtarget.h` File Reference
+# `ARMSubtarget.h` File
 
 
 

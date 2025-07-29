@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeFunctions.cpp` File Reference
+# `MergeFunctions.cpp` File
 
 
 

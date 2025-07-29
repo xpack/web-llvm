@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllAccessTag` Struct Reference
+# `AllAccessTag` Struct
 
 
 

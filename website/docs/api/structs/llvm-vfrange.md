@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFRange` Struct Reference
+# `VFRange` Struct
 
 <p>A range of powers-of-2 vectorization factors with fixed start and adjustable end. <a href="#details">More...</a></p>
 

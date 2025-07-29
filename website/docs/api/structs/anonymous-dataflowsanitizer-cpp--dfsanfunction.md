@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DFSanFunction` Struct Reference
+# `DFSanFunction` Struct
 
 
 

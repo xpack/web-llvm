@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgUseChecker` Struct Reference
+# `ArgUseChecker` Struct
 
 
 

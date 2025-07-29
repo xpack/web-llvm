@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PassTimingInfo.cpp}` Namespace Reference
+# `anonymous{PassTimingInfo.cpp}` Namespace
 
 
 

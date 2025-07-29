@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorHolder` Struct Reference
+# `ErrorHolder` Struct
 
 
 

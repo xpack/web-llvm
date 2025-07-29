@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyNullifyDebugValueLists.cpp` File Reference
+# `WebAssemblyNullifyDebugValueLists.cpp` File
 
 <p>Nullify DBG_VALUE_LISTs instructions as a temporary measure before we implement DBG_VALUE_LIST handling in <a href="/web-llvm/docs/api/classes/llvm/webassemblydebugvaluemanager">WebAssemblyDebugValueManager</a>. <a href="#details">More...</a></p>
 

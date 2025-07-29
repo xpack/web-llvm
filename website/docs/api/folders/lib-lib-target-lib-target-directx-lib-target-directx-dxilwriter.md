@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/DirectX/DXILWriter` Folder Reference
+# `lib/Target/DirectX/DXILWriter` Folder
 
 
 

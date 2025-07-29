@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_dynamic_relocation32_v2` Struct Reference
+# `coff_dynamic_relocation32_v2` Struct
 
 
 

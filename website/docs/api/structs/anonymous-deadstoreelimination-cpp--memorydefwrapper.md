@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDefWrapper` Struct Reference
+# `MemoryDefWrapper` Struct
 
 
 

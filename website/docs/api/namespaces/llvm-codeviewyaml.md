@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeViewYAML` Namespace Reference
+# `CodeViewYAML` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDomPrinter` Struct Reference
+# `PostDomPrinter` Struct
 
 
 

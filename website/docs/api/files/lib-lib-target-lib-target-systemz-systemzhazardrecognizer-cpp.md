@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZHazardRecognizer.cpp` File Reference
+# `SystemZHazardRecognizer.cpp` File
 
 
 

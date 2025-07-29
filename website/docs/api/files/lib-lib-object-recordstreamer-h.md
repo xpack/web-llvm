@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordStreamer.h` File Reference
+# `RecordStreamer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bind_ty` Struct Template Reference
+# `bind_ty` Struct Template
 
 
 

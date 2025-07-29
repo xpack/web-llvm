@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiRegisterInfo` Struct Reference
+# `LanaiRegisterInfo` Struct
 
 
 

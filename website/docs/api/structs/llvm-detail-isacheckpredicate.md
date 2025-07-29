@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsaCheckPredicate` Struct Template Reference
+# `IsaCheckPredicate` Struct Template
 
 
 

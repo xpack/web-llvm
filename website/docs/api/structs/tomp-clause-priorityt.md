@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PriorityT` Struct Template Reference
+# `PriorityT` Struct Template
 
 
 

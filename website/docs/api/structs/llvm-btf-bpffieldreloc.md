@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFFieldReloc` Struct Reference
+# `BPFFieldReloc` Struct
 
 <p>Specifying one offset relocation. <a href="#details">More...</a></p>
 

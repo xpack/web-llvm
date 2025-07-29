@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncomingCall` Struct Reference
+# `IncomingCall` Struct
 
 
 

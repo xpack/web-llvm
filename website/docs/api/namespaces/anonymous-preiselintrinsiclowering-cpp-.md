@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PreISelIntrinsicLowering.cpp}` Namespace Reference
+# `anonymous{PreISelIntrinsicLowering.cpp}` Namespace
 
 
 

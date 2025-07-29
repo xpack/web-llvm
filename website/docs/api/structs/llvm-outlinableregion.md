@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlinableRegion` Struct Reference
+# `OutlinableRegion` Struct
 
 <p>The <a href="/web-llvm/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> holds all the information for a specific region, or sequence of instructions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOBBEntry` Struct Reference
+# `PGOBBEntry` Struct
 
 <p>Extra basic block data with fields for block frequency and branch probability. <a href="#details">More...</a></p>
 

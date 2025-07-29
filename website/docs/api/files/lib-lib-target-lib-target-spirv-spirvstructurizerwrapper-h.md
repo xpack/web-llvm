@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVStructurizerWrapper.h` File Reference
+# `SPIRVStructurizerWrapper.h` File
 
 
 

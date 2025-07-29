@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParamAccess` Struct Reference
+# `ParamAccess` Struct
 
 <p>Describes the uses of a parameter by the function. <a href="#details">More...</a></p>
 

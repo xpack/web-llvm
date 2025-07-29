@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fwd_or_bidi_tag_impl` Struct Template Reference
+# `fwd_or_bidi_tag_impl` Struct Template
 
 
 

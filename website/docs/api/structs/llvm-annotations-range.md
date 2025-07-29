@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Range` Struct Reference
+# `Range` Struct
 
 <p>Two offsets pointing to a continuous substring. <a href="#details">More...</a></p>
 

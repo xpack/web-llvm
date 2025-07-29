@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTX` Struct Reference
+# `NVPTX` Struct
 
 
 

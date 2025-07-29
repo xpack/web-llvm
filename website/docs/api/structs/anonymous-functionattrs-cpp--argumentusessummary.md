@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentUsesSummary` Struct Reference
+# `ArgumentUsesSummary` Struct
 
 <p>A struct to summarize the argument use info in a function. <a href="#details">More...</a></p>
 

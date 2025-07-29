@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NormalizedMips64RelType` Struct Reference
+# `NormalizedMips64RelType` Struct
 
 
 

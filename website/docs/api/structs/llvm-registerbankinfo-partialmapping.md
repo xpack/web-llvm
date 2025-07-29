@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialMapping` Struct Reference
+# `PartialMapping` Struct
 
 <p>Helper struct that represents how a value is partially mapped into a register. <a href="#details">More...</a></p>
 

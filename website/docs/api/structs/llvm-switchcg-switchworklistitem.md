@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchWorkListItem` Struct Reference
+# `SwitchWorkListItem` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/TargetParser` Folder Reference
+# `lib/TargetParser` Folder
 
 
 

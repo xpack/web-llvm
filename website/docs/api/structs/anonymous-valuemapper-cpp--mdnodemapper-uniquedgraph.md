@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniquedGraph` Struct Reference
+# `UniquedGraph` Struct
 
 <p>A graph of uniqued nodes. <a href="#details">More...</a></p>
 

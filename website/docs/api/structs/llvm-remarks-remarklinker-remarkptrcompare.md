@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkPtrCompare` Struct Reference
+# `RemarkPtrCompare` Struct
 
 <p>Compare through the pointers. <a href="#details">More...</a></p>
 

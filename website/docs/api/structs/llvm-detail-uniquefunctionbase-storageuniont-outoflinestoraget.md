@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutOfLineStorageT` Struct Reference
+# `OutOfLineStorageT` Struct
 
 
 

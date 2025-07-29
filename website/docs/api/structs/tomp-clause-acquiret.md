@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AcquireT` Struct Template Reference
+# `AcquireT` Struct Template
 
 
 

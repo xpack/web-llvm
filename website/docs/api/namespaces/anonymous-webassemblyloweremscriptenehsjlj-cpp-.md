@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyLowerEmscriptenEHSjLj.cpp}` Namespace Reference
+# `anonymous{WebAssemblyLowerEmscriptenEHSjLj.cpp}` Namespace
 
 
 

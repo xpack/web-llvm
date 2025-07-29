@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMask.cpp` File Reference
+# `HexagonMask.cpp` File
 
 
 

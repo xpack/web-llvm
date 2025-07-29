@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstrInfo.h` File Reference
+# `M68kInstrInfo.h` File
 
 <p>This file contains the M68k implementation of the TargetInstrInfo class. <a href="#details">More...</a></p>
 

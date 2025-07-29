@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UpdateT` Struct Template Reference
+# `UpdateT` Struct Template
 
 
 

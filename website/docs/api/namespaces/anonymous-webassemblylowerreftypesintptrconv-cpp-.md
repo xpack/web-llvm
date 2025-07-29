@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyLowerRefTypesIntPtrConv.cpp}` Namespace Reference
+# `anonymous{WebAssemblyLowerRefTypesIntPtrConv.cpp}` Namespace
 
 
 

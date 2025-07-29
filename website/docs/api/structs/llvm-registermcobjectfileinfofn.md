@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCObjectFileInfoFn` Struct Reference
+# `RegisterMCObjectFileInfoFn` Struct
 
 <p>Helper template for registering a target object file info implementation. <a href="#details">More...</a></p>
 

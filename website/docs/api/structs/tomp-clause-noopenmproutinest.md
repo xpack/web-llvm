@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpenmpRoutinesT` Struct Template Reference
+# `NoOpenmpRoutinesT` Struct Template
 
 
 

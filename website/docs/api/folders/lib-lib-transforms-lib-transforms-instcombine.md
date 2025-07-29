@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/InstCombine` Folder Reference
+# `lib/Transforms/InstCombine` Folder
 
 
 

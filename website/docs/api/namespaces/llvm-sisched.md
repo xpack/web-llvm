@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SISched` Namespace Reference
+# `SISched` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreInstrInfo.h` File Reference
+# `XCoreInstrInfo.h` File
 
 
 

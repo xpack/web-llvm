@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackLevel` Struct Reference
+# `StackLevel` Struct
 
 
 

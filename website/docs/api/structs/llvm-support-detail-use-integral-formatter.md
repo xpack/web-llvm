@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `use_integral_formatter` Struct Template Reference
+# `use_integral_formatter` Struct Template
 
 
 

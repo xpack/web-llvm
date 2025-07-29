@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseSetEmpty` Struct Reference
+# `DenseSetEmpty` Struct
 
 
 

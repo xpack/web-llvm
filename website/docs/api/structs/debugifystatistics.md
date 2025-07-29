@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugifyStatistics` Struct Reference
+# `DebugifyStatistics` Struct
 
 <p>Track how much <span class="doxyComputerOutput">debugify</span> information (in the <span class="doxyComputerOutput">synthetic</span> mode only) has been lost. <a href="#details">More...</a></p>
 

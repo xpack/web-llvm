@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `loongarch` Namespace Reference
+# `loongarch` Namespace
 
 
 

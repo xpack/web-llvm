@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HSAMD` Namespace Reference
+# `HSAMD` Namespace
 
 
 

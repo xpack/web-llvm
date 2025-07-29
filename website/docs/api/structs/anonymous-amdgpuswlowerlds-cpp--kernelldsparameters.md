@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelLDSParameters` Struct Reference
+# `KernelLDSParameters` Struct
 
 
 

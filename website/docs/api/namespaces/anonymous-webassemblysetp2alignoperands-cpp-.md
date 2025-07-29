@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblySetP2AlignOperands.cpp}` Namespace Reference
+# `anonymous{WebAssemblySetP2AlignOperands.cpp}` Namespace
 
 
 

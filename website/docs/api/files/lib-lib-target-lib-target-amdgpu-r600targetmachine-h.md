@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TargetMachine.h` File Reference
+# `R600TargetMachine.h` File
 
 <p>The AMDGPU TargetMachine interface definition for hw codegen targets. <a href="#details">More...</a></p>
 

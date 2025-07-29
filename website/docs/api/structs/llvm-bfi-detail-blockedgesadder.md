@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockEdgesAdder` Struct Template Reference
+# `BlockEdgesAdder` Struct Template
 
 
 

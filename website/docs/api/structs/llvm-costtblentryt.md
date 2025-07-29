@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostTblEntryT` Struct Template Reference
+# `CostTblEntryT` Struct Template
 
 <p>Cost Table Entry. <a href="#details">More...</a></p>
 

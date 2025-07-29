@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BitcodeReader.cpp}` Namespace Reference
+# `anonymous{BitcodeReader.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBlockRanges` Struct Reference
+# `HexagonBlockRanges` Struct
 
 
 

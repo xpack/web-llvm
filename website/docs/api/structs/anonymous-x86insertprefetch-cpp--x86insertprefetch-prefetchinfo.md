@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrefetchInfo` Struct Reference
+# `PrefetchInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DisableLIRP` Struct Reference
+# `DisableLIRP` Struct
 
 <p>Options to disable <a href="/web-llvm/docs/api/classes/llvm/loop">Loop</a> Idiom Recognize, which can be shared with other passes. <a href="#details">More...</a></p>
 

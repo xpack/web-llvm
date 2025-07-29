@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFDisassembler.cpp}` Namespace Reference
+# `anonymous{BPFDisassembler.cpp}` Namespace
 
 
 

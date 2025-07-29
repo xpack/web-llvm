@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430InstrInfo.h` File Reference
+# `MSP430InstrInfo.h` File
 
 
 

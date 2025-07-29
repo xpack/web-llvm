@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashData` Struct Reference
+# `HashData` Struct
 
 <p>Represents a group of entries with identical name (and hence, hash value). <a href="#details">More...</a></p>
 

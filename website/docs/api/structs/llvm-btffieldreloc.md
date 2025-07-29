@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFFieldReloc` Struct Reference
+# `BTFFieldReloc` Struct
 
 <p>Represent one field relocation. <a href="#details">More...</a></p>
 

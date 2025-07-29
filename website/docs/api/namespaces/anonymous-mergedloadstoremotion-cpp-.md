@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MergedLoadStoreMotion.cpp}` Namespace Reference
+# `anonymous{MergedLoadStoreMotion.cpp}` Namespace
 
 
 

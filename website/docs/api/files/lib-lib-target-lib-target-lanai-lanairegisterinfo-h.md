@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiRegisterInfo.h` File Reference
+# `LanaiRegisterInfo.h` File
 
 
 

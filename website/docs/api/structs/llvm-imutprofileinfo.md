@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutProfileInfo` Struct Template Reference
+# `ImutProfileInfo` Struct Template
 
 <p>Generic profile template. <a href="#details">More...</a></p>
 

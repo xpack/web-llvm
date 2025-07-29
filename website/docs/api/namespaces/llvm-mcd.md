@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCD` Namespace Reference
+# `MCD` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ClauseMergePass.cpp` File Reference
+# `R600ClauseMergePass.cpp` File
 
 <p>R600EmitClauseMarker pass emits CFAlu instruction in a conservative manner. <a href="#details">More...</a></p>
 

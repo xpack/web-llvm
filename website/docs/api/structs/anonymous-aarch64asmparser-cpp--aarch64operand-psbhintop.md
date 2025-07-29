@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PSBHintOp` Struct Reference
+# `PSBHintOp` Struct
 
 
 

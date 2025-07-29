@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `v0` Namespace Reference
+# `v0` Namespace
 
 
 

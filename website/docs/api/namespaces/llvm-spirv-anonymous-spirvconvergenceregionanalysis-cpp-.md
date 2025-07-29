@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVConvergenceRegionAnalysis.cpp}` Namespace Reference
+# `anonymous{SPIRVConvergenceRegionAnalysis.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DepCtr` Namespace Reference
+# `DepCtr` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXPeephole.cpp` File Reference
+# `NVPTXPeephole.cpp` File
 
 
 

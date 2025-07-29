@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ppc64` Namespace Reference
+# `ppc64` Namespace
 
 
 

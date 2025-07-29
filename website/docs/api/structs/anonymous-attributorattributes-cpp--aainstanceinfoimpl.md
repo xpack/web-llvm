@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInstanceInfoImpl` Struct Reference
+# `AAInstanceInfoImpl` Struct
 
 <p>A class to hold the state of for no-capture attributes. <a href="#details">More...</a></p>
 

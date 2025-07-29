@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAtomicOptimizerPass` Struct Reference
+# `AMDGPUAtomicOptimizerPass` Struct
 
 
 

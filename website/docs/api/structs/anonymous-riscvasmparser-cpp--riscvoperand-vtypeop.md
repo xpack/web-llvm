@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTypeOp` Struct Reference
+# `VTypeOp` Struct
 
 
 

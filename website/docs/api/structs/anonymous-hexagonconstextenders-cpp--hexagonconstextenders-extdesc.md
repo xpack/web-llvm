@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtDesc` Struct Reference
+# `ExtDesc` Struct
 
 
 

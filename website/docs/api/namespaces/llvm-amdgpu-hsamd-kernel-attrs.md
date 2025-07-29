@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Attrs` Namespace Reference
+# `Attrs` Namespace
 
 
 

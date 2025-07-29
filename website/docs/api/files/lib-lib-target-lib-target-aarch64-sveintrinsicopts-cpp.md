@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SVEIntrinsicOpts.cpp` File Reference
+# `SVEIntrinsicOpts.cpp` File
 
 
 

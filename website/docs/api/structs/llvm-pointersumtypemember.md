@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerSumTypeMember` Struct Template Reference
+# `PointerSumTypeMember` Struct Template
 
 <p>A compile time pair of an integer tag and the pointer-like type which it indexes within a sum type. <a href="#details">More...</a></p>
 

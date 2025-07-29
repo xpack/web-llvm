@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConfigManager.cpp` File Reference
+# `ConfigManager.cpp` File
 
 
 

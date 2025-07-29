@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateConstraint` Struct Reference
+# `PredicateConstraint` Struct
 
 <p>Constraint for a predicate of the form "cmp Pred Op, OtherOp", where <a href="/web-llvm/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a> is the value the constraint applies to (the ssa.copy result). <a href="#details">More...</a></p>
 

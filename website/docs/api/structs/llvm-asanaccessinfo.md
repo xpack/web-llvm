@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ASanAccessInfo` Struct Reference
+# `ASanAccessInfo` Struct
 
 
 

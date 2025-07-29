@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetObjectFile.cpp` File Reference
+# `AMDGPUTargetObjectFile.cpp` File
 
 
 

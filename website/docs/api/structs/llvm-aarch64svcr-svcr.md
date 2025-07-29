@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SVCR` Struct Reference
+# `SVCR` Struct
 
 
 

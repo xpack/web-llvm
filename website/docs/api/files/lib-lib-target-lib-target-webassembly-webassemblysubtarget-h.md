@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySubtarget.h` File Reference
+# `WebAssemblySubtarget.h` File
 
 <p>This file declares the WebAssembly-specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

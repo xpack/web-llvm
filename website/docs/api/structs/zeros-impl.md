@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zeros_impl` Struct Template Reference
+# `zeros_impl` Struct Template
 
 
 

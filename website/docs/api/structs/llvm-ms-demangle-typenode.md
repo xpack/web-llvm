@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeNode` Struct Reference
+# `TypeNode` Struct
 
 
 

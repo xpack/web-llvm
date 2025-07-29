@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `consthoist` Namespace Reference
+# `consthoist` Namespace
 
 <p>A private "module" namespace for types and utilities used by ConstantHoisting. <a href="#details">More...</a></p>
 

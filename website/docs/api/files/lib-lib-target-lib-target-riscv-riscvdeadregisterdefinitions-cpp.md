@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVDeadRegisterDefinitions.cpp` File Reference
+# `RISCVDeadRegisterDefinitions.cpp` File
 
 
 

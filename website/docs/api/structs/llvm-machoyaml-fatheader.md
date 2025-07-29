@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FatHeader` Struct Reference
+# `FatHeader` Struct
 
 
 

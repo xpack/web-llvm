@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMetadata.h` File Reference
+# `SPIRVMetadata.h` File
 
 
 

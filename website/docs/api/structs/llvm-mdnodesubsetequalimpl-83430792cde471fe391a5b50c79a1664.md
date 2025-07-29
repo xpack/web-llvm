@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeSubsetEqualImpl` Struct Template Reference
+# `MDNodeSubsetEqualImpl` Struct Template
 
 
 

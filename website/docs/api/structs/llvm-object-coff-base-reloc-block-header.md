@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_base_reloc_block_header` Struct Reference
+# `coff_base_reloc_block_header` Struct
 
 
 

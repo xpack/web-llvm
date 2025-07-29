@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{SystemZMCCodeEmitter.cpp}` Namespace
 
 
 

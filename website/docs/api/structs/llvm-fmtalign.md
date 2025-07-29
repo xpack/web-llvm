@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FmtAlign` Struct Reference
+# `FmtAlign` Struct
 
 <p>Helper class to format to a <span class="doxyComputerOutput">Width</span> wide field, with alignment <span class="doxyComputerOutput">Where</span> within that field. <a href="#details">More...</a></p>
 

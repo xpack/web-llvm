@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fp_status_t` Struct Reference
+# `fp_status_t` Struct
 
 
 

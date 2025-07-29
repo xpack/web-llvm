@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFG` Struct Reference
+# `CFG` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGSimplifyPass` Struct Reference
+# `CFGSimplifyPass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfiledCallGraphEdge` Struct Reference
+# `ProfiledCallGraphEdge` Struct
 
 
 

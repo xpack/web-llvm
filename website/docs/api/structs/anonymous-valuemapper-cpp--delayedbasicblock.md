@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DelayedBasicBlock` Struct Reference
+# `DelayedBasicBlock` Struct
 
 <p>A basic block used in a <a href="/web-llvm/docs/api/classes/llvm/blockaddress">BlockAddress</a> whose function body is not yet materialized. <a href="#details">More...</a></p>
 

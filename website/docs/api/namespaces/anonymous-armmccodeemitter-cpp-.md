@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{ARMMCCodeEmitter.cpp}` Namespace
 
 
 

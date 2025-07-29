@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ISelLowering.cpp` File Reference
+# `R600ISelLowering.cpp` File
 
 <p>Custom DAG lowering for <a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a>. <a href="#details">More...</a></p>
 

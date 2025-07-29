@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NWindowsSubsystem` Struct Reference
+# `NWindowsSubsystem` Struct
 
 
 

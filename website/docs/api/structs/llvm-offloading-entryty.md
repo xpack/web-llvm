@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryTy` Struct Reference
+# `EntryTy` Struct
 
 <p>This is the record of an object that just be registered with the offloading runtime. <a href="#details">More...</a></p>
 

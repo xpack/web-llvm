@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/ARC` Folder Reference
+# `lib/Target/ARC` Folder
 
 
 

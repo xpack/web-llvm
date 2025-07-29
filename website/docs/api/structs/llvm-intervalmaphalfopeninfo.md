@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalMapHalfOpenInfo` Struct Template Reference
+# `IntervalMapHalfOpenInfo` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinidumpEmitter.cpp` File Reference
+# `MinidumpEmitter.cpp` File
 
 
 

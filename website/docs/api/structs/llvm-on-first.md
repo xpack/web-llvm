@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `on_first` Struct Template Reference
+# `on_first` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/function">Function</a> object to apply a binary function to the first component of a std::pair. <a href="#details">More...</a></p>
 

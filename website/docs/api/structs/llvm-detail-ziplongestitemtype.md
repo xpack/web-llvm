@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ZipLongestItemType` Struct Template Reference
+# `ZipLongestItemType` Struct Template
 
 
 

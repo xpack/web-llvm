@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetTransformInfo.cpp` File Reference
+# `NVPTXTargetTransformInfo.cpp` File
 
 
 

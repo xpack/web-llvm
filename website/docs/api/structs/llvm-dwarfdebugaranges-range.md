@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Range` Struct Reference
+# `Range` Struct
 
 
 

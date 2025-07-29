@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmWriter.cpp` File Reference
+# `WasmWriter.cpp` File
 
 
 

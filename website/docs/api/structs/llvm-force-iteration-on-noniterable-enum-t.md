@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `force_iteration_on_noniterable_enum_t` Struct Reference
+# `force_iteration_on_noniterable_enum_t` Struct
 
 
 

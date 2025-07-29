@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsInstructionSelector.cpp` File Reference
+# `MipsInstructionSelector.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/instructionselector">InstructionSelector</a> class for <a href="/web-llvm/docs/api/namespaces/llvm/mips">Mips</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86_MC` Namespace Reference
+# `X86_MC` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpLoopPass` Struct Reference
+# `NoOpLoopPass` Struct
 
 <p>No-op loop pass which does nothing. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{LoongArchMCCodeEmitter.cpp}` Namespace
 
 
 

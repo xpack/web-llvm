@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BTFParser.cpp}` Namespace Reference
+# `anonymous{BTFParser.cpp}` Namespace
 
 
 

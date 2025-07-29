@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DWARFAcceleratorTable.cpp}` Namespace Reference
+# `anonymous{DWARFAcceleratorTable.cpp}` Namespace
 
 
 

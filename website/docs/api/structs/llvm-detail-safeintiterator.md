@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafeIntIterator` Struct Template Reference
+# `SafeIntIterator` Struct Template
 
 
 

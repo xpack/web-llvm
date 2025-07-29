@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExactFlagsTy` Struct Reference
+# `ExactFlagsTy` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Sparc` Namespace Reference
+# `Sparc` Namespace
 
 
 

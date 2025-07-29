@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EVTArray` Struct Reference
+# `EVTArray` Struct
 
 
 

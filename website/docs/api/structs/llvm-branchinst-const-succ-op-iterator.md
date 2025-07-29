@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `const_succ_op_iterator` Struct Reference
+# `const_succ_op_iterator` Struct
 
 <p>The const version of <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/branchinst/succ-op-iterator">succ_op_iterator</a></span>. <a href="#details">More...</a></p>
 

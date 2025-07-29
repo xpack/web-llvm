@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIDefines.h` File Reference
+# `SIDefines.h` File
 
 
 

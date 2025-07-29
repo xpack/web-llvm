@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Shdr_Base` Struct Template Reference
+# `Elf_Shdr_Base` Struct Template
 
 
 

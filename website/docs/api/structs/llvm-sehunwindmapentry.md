@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SEHUnwindMapEntry` Struct Reference
+# `SEHUnwindMapEntry` Struct
 
 <p>Similar to <a href="/web-llvm/docs/api/structs/llvm/cxxunwindmapentry">CxxUnwindMapEntry</a>, but supports SEH filters. <a href="#details">More...</a></p>
 

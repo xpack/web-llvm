@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CWrapperFunctionResult` Struct Reference
+# `CWrapperFunctionResult` Struct
 
 
 

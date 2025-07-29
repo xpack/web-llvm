@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarizeMaskedMemIntrinPass` Struct Reference
+# `ScalarizeMaskedMemIntrinPass` Struct
 
 
 

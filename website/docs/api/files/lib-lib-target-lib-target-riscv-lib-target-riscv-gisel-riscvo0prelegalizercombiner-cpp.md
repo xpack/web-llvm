@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVO0PreLegalizerCombiner.cpp` File Reference
+# `RISCVO0PreLegalizerCombiner.cpp` File
 
 
 

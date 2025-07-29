@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MissingTrait` Struct Template Reference
+# `MissingTrait` Struct Template
 
 
 

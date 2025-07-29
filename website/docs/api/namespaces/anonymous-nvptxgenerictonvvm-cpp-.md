@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXGenericToNVVM.cpp}` Namespace Reference
+# `anonymous{NVPTXGenericToNVVM.cpp}` Namespace
 
 
 

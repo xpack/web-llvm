@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `undef_match` Struct Reference
+# `undef_match` Struct
 
 
 

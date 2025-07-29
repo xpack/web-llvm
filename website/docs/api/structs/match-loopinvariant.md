@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `match_LoopInvariant` Struct Template Reference
+# `match_LoopInvariant` Struct Template
 
 <p>Match loop-invariant value. <a href="#details">More...</a></p>
 

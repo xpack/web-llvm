@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProvenanceAnalysis.cpp` File Reference
+# `ProvenanceAnalysis.cpp` File
 
 <p>This file defines a special form of Alias Analysis called “Provenance Analysis”. <a href="#details">More...</a></p>
 

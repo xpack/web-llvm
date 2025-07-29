@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmCustomSection` Struct Reference
+# `WasmCustomSection` Struct
 
 
 

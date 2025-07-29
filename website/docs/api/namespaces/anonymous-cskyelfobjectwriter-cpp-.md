@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CSKYELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{CSKYELFObjectWriter.cpp}` Namespace
 
 
 

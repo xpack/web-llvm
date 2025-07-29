@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmTy` Struct Reference
+# `ImmTy` Struct
 
 
 

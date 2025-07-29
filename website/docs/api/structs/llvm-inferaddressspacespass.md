@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferAddressSpacesPass` Struct Reference
+# `InferAddressSpacesPass` Struct
 
 
 

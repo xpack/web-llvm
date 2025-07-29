@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClampI64ToI16MatchInfo` Struct Reference
+# `ClampI64ToI16MatchInfo` Struct
 
 
 

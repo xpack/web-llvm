@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerMatrixIntrinsics.cpp` File Reference
+# `LowerMatrixIntrinsics.cpp` File
 
 
 

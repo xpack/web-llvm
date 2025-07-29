@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/PDB/DIA` Folder Reference
+# `lib/DebugInfo/PDB/DIA` Folder
 
 
 

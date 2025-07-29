@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUAsmParser.cpp}` Namespace Reference
+# `anonymous{AMDGPUAsmParser.cpp}` Namespace
 
 
 

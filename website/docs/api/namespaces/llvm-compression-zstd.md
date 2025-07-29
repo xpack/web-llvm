@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zstd` Namespace Reference
+# `zstd` Namespace
 
 
 

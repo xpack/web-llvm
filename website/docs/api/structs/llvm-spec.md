@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Spec` Struct Reference
+# `Spec` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUImageIntrinsicOptimizer.cpp` File Reference
+# `AMDGPUImageIntrinsicOptimizer.cpp` File
 
 
 

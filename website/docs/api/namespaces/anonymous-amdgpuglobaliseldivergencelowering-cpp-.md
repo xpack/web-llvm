@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUGlobalISelDivergenceLowering.cpp}` Namespace Reference
+# `anonymous{AMDGPUGlobalISelDivergenceLowering.cpp}` Namespace
 
 
 

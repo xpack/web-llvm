@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ICstOrSplatMatch` Struct Template Reference
+# `ICstOrSplatMatch` Struct Template
 
 
 

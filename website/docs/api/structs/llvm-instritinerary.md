@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrItinerary` Struct Reference
+# `InstrItinerary` Struct
 
 <p>An itinerary represents the scheduling information for an instruction. <a href="#details">More...</a></p>
 

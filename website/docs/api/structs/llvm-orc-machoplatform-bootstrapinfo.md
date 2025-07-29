@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BootstrapInfo` Struct Reference
+# `BootstrapInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLCoffSymbolRVASubsection` Struct Reference
+# `YAMLCoffSymbolRVASubsection` Struct
 
 
 

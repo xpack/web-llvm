@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ArchiveWriter.cpp}` Namespace Reference
+# `anonymous{ArchiveWriter.cpp}` Namespace
 
 
 

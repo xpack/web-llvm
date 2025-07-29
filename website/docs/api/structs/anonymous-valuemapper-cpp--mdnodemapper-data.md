@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Data` Struct Reference
+# `Data` Struct
 
 <p>Data about a node in <em>UniquedGraph</em>. <a href="#details">More...</a></p>
 

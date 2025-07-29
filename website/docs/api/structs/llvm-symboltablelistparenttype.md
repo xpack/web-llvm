@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolTableListParentType` Struct Template Reference
+# `SymbolTableListParentType` Struct Template
 
 <p>Template metafunction to get the parent type for a symbol table list. <a href="#details">More...</a></p>
 

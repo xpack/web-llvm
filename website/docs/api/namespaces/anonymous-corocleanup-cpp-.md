@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CoroCleanup.cpp}` Namespace Reference
+# `anonymous{CoroCleanup.cpp}` Namespace
 
 
 

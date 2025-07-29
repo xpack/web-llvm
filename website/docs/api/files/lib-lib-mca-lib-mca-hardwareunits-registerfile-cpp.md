@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterFile.cpp` File Reference
+# `RegisterFile.cpp` File
 
 <p>This file defines a register mapping file class. <a href="#details">More...</a></p>
 

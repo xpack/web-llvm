@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThumbRegisterInfo` Struct Reference
+# `ThumbRegisterInfo` Struct
 
 
 

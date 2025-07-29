@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmbeddedBuf` Struct Reference
+# `EmbeddedBuf` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalLayoutBuilder` Struct Reference
+# `GlobalLayoutBuilder` Struct
 
 <p>This class implements a layout algorithm for globals referenced by bit sets that tries to keep members of small bit sets together. <a href="#details">More...</a></p>
 

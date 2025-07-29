@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSizeEntry` Struct Reference
+# `StackSizeEntry` Struct
 
 
 

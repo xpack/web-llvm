@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetFirstType` Struct Template Reference
+# `GetFirstType` Struct Template
 
 <p>Find the first type in a list of types. <a href="#details">More...</a></p>
 

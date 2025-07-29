@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocIndex` Struct Reference
+# `LocIndex` Struct
 
 <p>A type-checked pair of {<a href="/web-llvm/docs/api/classes/llvm/register">Register</a> Location (or 0), Index}, used to index into a VarLocMap. <a href="#details">More...</a></p>
 

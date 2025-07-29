@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVEmitIntrinsics.cpp` File Reference
+# `SPIRVEmitIntrinsics.cpp` File
 
 
 

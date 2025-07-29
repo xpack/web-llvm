@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMRegisterBankInfo.h` File Reference
+# `ARMRegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for ARM. <a href="#details">More...</a></p>
 

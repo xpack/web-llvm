@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerWrite` Struct Reference
+# `PointerWrite` Struct
 
 <p>Describes a write to a pointer. <a href="#details">More...</a></p>
 

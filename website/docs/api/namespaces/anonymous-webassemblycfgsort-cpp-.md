@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyCFGSort.cpp}` Namespace Reference
+# `anonymous{WebAssemblyCFGSort.cpp}` Namespace
 
 
 

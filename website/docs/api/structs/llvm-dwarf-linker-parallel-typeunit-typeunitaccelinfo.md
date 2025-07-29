@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeUnitAccelInfo` Struct Reference
+# `TypeUnitAccelInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/dwarf-linker/parallel/typeunit/typeunitaccelinfo">TypeUnitAccelInfo</a> extends AccelInfo structure with type specific fileds. <a href="#details">More...</a></p>
 

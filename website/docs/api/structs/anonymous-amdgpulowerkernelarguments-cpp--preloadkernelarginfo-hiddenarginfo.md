@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HiddenArgInfo` Struct Reference
+# `HiddenArgInfo` Struct
 
 
 

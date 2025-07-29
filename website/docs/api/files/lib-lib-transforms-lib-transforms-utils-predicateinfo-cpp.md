@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateInfo.cpp` File Reference
+# `PredicateInfo.cpp` File
 
 
 

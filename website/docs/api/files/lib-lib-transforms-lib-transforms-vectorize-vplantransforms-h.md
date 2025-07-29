@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanTransforms.h` File Reference
+# `VPlanTransforms.h` File
 
 <p>This file provides utility VPlan to VPlan transformations. <a href="#details">More...</a></p>
 

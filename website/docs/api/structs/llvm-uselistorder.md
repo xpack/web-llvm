@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseListOrder` Struct Reference
+# `UseListOrder` Struct
 
 <p>Structure to hold a use-list order. <a href="#details">More...</a></p>
 

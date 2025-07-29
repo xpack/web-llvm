@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMCTargetDesc.cpp` File Reference
+# `LoongArchMCTargetDesc.cpp` File
 
 
 

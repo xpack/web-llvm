@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrStage` Struct Reference
+# `InstrStage` Struct
 
 <p>These values represent a non-pipelined step in the execution of an instruction. <a href="#details">More...</a></p>
 

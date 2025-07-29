@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/XRay` Folder Reference
+# `include/llvm/XRay` Folder
 
 
 

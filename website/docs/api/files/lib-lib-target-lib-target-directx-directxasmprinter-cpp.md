@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXAsmPrinter.cpp` File Reference
+# `DirectXAsmPrinter.cpp` File
 
 
 

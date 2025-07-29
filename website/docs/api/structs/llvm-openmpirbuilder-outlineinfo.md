@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlineInfo` Struct Reference
+# `OutlineInfo` Struct
 
 <p>Helper that contains information about regions we need to outline during finalization. <a href="#details">More...</a></p>
 

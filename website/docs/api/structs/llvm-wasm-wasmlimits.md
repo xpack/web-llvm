@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmLimits` Struct Reference
+# `WasmLimits` Struct
 
 
 

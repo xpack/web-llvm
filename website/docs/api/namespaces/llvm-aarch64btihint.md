@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64BTIHint` Namespace Reference
+# `AArch64BTIHint` Namespace
 
 
 

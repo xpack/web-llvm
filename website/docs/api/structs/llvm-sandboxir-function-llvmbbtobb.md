@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMBBToBB` Struct Reference
+# `LLVMBBToBB` Struct
 
 <p>Helper for <a href="/web-llvm/docs/api/classes/llvm/mapped-iterator">mapped_iterator</a>. <a href="#details">More...</a></p>
 

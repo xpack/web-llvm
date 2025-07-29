@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitMask` Struct Reference
+# `BitMask` Struct
 
 
 

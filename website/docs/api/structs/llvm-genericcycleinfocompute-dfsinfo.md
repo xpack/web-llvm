@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DFSInfo` Struct Reference
+# `DFSInfo` Struct
 
 
 

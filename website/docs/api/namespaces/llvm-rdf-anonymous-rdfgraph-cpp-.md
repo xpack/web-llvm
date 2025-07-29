@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RDFGraph.cpp}` Namespace Reference
+# `anonymous{RDFGraph.cpp}` Namespace
 
 
 

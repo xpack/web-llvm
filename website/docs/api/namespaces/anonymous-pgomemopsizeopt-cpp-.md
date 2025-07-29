@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PGOMemOPSizeOpt.cpp}` Namespace Reference
+# `anonymous{PGOMemOPSizeOpt.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocInfo` Struct Reference
+# `AllocInfo` Struct
 
 <p>Information about how a <a href="/web-llvm/docs/api/classes/llvm/user">User</a> object was allocated, to be passed into the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> constructor. <a href="#details">More...</a></p>
 

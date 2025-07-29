@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCCallLowering.h` File Reference
+# `PPCCallLowering.h` File
 
 <p>This file describes how to lower LLVM calls to machine code calls. <a href="#details">More...</a></p>
 

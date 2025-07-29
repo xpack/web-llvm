@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MakeLibCallOptions` Struct Reference
+# `MakeLibCallOptions` Struct
 
 <p>This structure is used to pass arguments to makeLibCall function. <a href="#details">More...</a></p>
 

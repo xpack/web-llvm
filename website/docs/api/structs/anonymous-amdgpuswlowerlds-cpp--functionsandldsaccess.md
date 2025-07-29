@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionsAndLDSAccess` Struct Reference
+# `FunctionsAndLDSAccess` Struct
 
 
 

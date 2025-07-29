@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNPreRAOptimizations.cpp` File Reference
+# `GCNPreRAOptimizations.cpp` File
 
 <p>This pass combines split register tuple initialization into a single pseudo: <a href="#details">More...</a></p>
 

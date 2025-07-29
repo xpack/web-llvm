@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetTransformInfo.h` File Reference
+# `XCoreTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the XCore target machine. <a href="#details">More...</a></p>
 

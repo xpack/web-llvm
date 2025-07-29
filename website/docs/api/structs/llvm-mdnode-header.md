@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Header` Struct Reference
+# `Header` Struct
 
 <p>The header that is coallocated with an <a href="/web-llvm/docs/api/classes/llvm/mdnode">MDNode</a> along with its "small" operands. <a href="#details">More...</a></p>
 

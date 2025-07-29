@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitRef` Struct Reference
+# `BitRef` Struct
 
 
 

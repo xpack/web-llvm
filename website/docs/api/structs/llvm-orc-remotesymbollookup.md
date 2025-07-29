@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoteSymbolLookup` Struct Reference
+# `RemoteSymbolLookup` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAlignImpl` Struct Reference
+# `AAAlignImpl` Struct
 
 
 

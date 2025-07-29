@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMFrameLowering.cpp}` Namespace Reference
+# `anonymous{ARMFrameLowering.cpp}` Namespace
 
 
 

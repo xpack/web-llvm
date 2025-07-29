@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolResolution` Struct Reference
+# `SymbolResolution` Struct
 
 <p>The resolution for a symbol. <a href="#details">More...</a></p>
 

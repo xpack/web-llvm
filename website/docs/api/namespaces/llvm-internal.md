@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `internal` Namespace Reference
+# `internal` Namespace
 
 
 

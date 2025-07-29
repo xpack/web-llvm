@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Recipe_match` Struct Template Reference
+# `Recipe_match` Struct Template
 
 
 

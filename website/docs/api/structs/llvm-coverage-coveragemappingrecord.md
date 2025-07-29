@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMappingRecord` Struct Reference
+# `CoverageMappingRecord` Struct
 
 <p>Coverage mapping information for a single function. <a href="#details">More...</a></p>
 

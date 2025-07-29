@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPerfHintAnalysis.h` File Reference
+# `AMDGPUPerfHintAnalysis.h` File
 
 <p>Analyzes if a function potentially memory bound and if a kernel kernel may benefit from limiting number of waves to reduce cache thrashing. <a href="#details">More...</a></p>
 

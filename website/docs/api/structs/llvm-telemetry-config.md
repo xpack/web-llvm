@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Config` Struct Reference
+# `Config` Struct
 
 <p>Configuration for the <a href="/web-llvm/docs/api/classes/llvm/telemetry/manager">Manager</a> class. <a href="#details">More...</a></p>
 

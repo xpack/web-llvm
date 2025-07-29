@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cast_retty_wrap` Struct Template Reference
+# `cast_retty_wrap` Struct Template
 
 
 

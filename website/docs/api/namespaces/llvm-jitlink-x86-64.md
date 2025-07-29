@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `x86_64` Namespace Reference
+# `x86_64` Namespace
 
 
 

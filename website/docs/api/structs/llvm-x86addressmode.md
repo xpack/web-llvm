@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AddressMode` Struct Reference
+# `X86AddressMode` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/x86addressmode">X86AddressMode</a> - This struct holds a generalized full x86 address mode. <a href="#details">More...</a></p>
 

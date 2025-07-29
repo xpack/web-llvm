@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Transforms/IPO` Folder Reference
+# `include/llvm/Transforms/IPO` Folder
 
 
 

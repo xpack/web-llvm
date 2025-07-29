@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LdStNInstrDesc` Struct Reference
+# `LdStNInstrDesc` Struct
 
 
 

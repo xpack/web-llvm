@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstrFoldTables.cpp` File Reference
+# `X86InstrFoldTables.cpp` File
 
 
 

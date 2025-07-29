@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLXRayTrace` Struct Reference
+# `YAMLXRayTrace` Struct
 
 
 

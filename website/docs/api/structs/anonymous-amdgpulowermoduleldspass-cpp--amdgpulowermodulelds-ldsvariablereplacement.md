@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDSVariableReplacement` Struct Reference
+# `LDSVariableReplacement` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitSetInfo` Struct Reference
+# `BitSetInfo` Struct
 
 
 

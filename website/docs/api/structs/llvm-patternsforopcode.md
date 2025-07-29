@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PatternsForOpcode` Struct Reference
+# `PatternsForOpcode` Struct
 
 <p>Map from opcode to pattern list by binary search. <a href="#details">More...</a></p>
 

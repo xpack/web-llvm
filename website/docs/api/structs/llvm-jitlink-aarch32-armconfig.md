@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArmConfig` Struct Reference
+# `ArmConfig` Struct
 
 <p>JITLink sub-arch configuration for Arm CPU models. <a href="#details">More...</a></p>
 

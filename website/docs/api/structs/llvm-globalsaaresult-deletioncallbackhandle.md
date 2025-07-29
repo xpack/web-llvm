@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeletionCallbackHandle` Struct Reference
+# `DeletionCallbackHandle` Struct
 
 <p>Handle to clear this analysis on deletion of values. <a href="#details">More...</a></p>
 

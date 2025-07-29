@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ZippyIteratorTuple` Struct Template Reference
+# `ZippyIteratorTuple` Struct Template
 
 <p>Helper to obtain the iterator types for the tuple storage within <span class="doxyComputerOutput">zippy</span>. <a href="#details">More...</a></p>
 

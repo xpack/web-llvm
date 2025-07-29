@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResolvedDbgValue` Struct Reference
+# `ResolvedDbgValue` Struct
 
 <p>Stores the resolved operands (machine locations and constants) and qualifying meta-information needed to construct a concrete DBG_VALUE-like instruction. <a href="#details">More...</a></p>
 

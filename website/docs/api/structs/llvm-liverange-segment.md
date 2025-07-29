@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Segment` Struct Reference
+# `Segment` Struct
 
 <p>This represents a simple continuous liveness interval for a value. <a href="#details">More...</a></p>
 

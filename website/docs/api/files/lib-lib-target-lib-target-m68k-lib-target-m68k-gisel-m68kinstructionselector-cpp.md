@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstructionSelector.cpp` File Reference
+# `M68kInstructionSelector.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/instructionselector">InstructionSelector</a> class for <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a>. <a href="#details">More...</a></p>
 

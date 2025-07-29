@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeOrdering` Struct Reference
+# `NodeOrdering` Struct
 
 
 

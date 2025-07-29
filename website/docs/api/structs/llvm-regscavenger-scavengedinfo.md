@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScavengedInfo` Struct Reference
+# `ScavengedInfo` Struct
 
 <p>Information on scavenged registers (held in a spill slot). <a href="#details">More...</a></p>
 

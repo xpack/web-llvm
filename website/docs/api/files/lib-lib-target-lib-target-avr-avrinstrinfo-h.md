@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRInstrInfo.h` File Reference
+# `AVRInstrInfo.h` File
 
 
 

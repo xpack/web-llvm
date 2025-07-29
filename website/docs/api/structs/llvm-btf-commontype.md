@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonType` Struct Reference
+# `CommonType` Struct
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/btf">BTF</a> common type definition. <a href="#details">More...</a></p>
 

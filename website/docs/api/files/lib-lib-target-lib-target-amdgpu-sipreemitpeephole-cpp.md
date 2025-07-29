@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPreEmitPeephole.cpp` File Reference
+# `SIPreEmitPeephole.cpp` File
 
 <p>This pass performs the peephole optimizations before code emission. <a href="#details">More...</a></p>
 

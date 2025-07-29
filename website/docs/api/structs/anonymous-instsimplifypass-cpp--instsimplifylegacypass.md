@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstSimplifyLegacyPass` Struct Reference
+# `InstSimplifyLegacyPass` Struct
 
 
 

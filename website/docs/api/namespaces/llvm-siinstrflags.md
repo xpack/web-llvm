@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInstrFlags` Namespace Reference
+# `SIInstrFlags` Namespace
 
 
 

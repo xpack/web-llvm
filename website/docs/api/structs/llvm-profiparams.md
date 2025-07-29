@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfiParams` Struct Reference
+# `ProfiParams` Struct
 
 <p>Various thresholds and options controlling the behavior of the profile inference algorithm. <a href="#details">More...</a></p>
 

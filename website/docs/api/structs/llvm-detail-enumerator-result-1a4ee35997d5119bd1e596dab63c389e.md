@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `enumerator_result` Struct Template Reference
+# `enumerator_result` Struct Template
 
 
 

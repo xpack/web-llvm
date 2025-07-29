@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarizeMaskedMemIntrin.cpp` File Reference
+# `ScalarizeMaskedMemIntrin.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVObjectTargetWriter.cpp}` Namespace Reference
+# `anonymous{SPIRVObjectTargetWriter.cpp}` Namespace
 
 
 

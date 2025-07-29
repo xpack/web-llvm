@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarArgHelper` Struct Reference
+# `VarArgHelper` Struct
 
 <p>A helper class that handles instrumentation of VarArg functions on a particular platform. <a href="#details">More...</a></p>
 

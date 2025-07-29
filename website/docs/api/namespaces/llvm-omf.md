@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMF` Namespace Reference
+# `OMF` Namespace
 
 
 

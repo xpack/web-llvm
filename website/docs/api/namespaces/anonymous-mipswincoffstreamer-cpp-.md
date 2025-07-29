@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsWinCOFFStreamer.cpp}` Namespace Reference
+# `anonymous{MipsWinCOFFStreamer.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSanitizer.cpp` File Reference
+# `TypeSanitizer.cpp` File
 
 
 

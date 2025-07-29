@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fixups` Namespace Reference
+# `fixups` Namespace
 
 
 

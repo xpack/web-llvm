@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WasmObjectWriter.cpp}` Namespace Reference
+# `anonymous{WasmObjectWriter.cpp}` Namespace
 
 
 

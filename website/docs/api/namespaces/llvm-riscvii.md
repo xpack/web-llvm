@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVII` Namespace Reference
+# `RISCVII` Namespace
 
 
 

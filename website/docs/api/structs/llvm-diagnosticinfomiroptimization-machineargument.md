@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineArgument` Struct Reference
+# `MachineArgument` Struct
 
 <p>MI-specific kinds of diagnostic Arguments. <a href="#details">More...</a></p>
 

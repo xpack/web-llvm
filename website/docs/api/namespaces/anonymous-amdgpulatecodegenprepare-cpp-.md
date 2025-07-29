@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPULateCodeGenPrepare.cpp}` Namespace Reference
+# `anonymous{AMDGPULateCodeGenPrepare.cpp}` Namespace
 
 
 

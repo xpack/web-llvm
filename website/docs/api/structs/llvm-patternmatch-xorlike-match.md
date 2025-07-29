@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XorLike_match` Struct Template Reference
+# `XorLike_match` Struct Template
 
 
 

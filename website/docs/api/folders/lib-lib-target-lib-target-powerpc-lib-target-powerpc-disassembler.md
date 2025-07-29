@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/PowerPC/Disassembler` Folder Reference
+# `lib/Target/PowerPC/Disassembler` Folder
 
 
 

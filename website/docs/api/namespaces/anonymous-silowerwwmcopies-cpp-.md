@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SILowerWWMCopies.cpp}` Namespace Reference
+# `anonymous{SILowerWWMCopies.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSimplifyLibCallsPass` Struct Reference
+# `AMDGPUSimplifyLibCallsPass` Struct
 
 
 

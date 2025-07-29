@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kOutgoingArgHandler` Struct Reference
+# `M68kOutgoingArgHandler` Struct
 
 
 

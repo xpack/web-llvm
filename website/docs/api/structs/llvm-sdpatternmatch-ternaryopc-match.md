@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TernaryOpc_match` Struct Template Reference
+# `TernaryOpc_match` Struct Template
 
 
 

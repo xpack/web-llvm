@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CreateSeed` Struct Reference
+# `CreateSeed` Struct
 
 
 

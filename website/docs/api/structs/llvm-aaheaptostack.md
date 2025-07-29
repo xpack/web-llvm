@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAHeapToStack` Struct Reference
+# `AAHeapToStack` Struct
 
 
 

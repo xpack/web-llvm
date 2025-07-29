@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{X86LowerAMXType.cpp}` Namespace Reference
+# `anonymous{X86LowerAMXType.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CachePruning.cpp}` Namespace Reference
+# `anonymous{CachePruning.cpp}` Namespace
 
 
 

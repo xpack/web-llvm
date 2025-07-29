@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniqueTag` Struct Reference
+# `UniqueTag` Struct
 
 <p>It's very easy to introduce bugs by passing the wrong string pool. <a href="#details">More...</a></p>
 

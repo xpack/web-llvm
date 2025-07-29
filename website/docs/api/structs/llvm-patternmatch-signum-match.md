@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Signum_match` Struct Template Reference
+# `Signum_match` Struct Template
 
 
 

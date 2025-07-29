@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEMCTargetDesc.cpp` File Reference
+# `VEMCTargetDesc.cpp` File
 
 
 

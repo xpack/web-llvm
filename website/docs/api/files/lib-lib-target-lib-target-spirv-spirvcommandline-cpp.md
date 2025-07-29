@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVCommandLine.cpp` File Reference
+# `SPIRVCommandLine.cpp` File
 
 
 

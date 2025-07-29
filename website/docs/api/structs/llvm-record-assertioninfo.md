@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssertionInfo` Struct Reference
+# `AssertionInfo` Struct
 
 
 

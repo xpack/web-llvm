@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/NVPTX/TargetInfo` Folder Reference
+# `lib/Target/NVPTX/TargetInfo` Folder
 
 
 

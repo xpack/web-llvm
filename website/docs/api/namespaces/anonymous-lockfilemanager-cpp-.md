@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LockFileManager.cpp}` Namespace Reference
+# `anonymous{LockFileManager.cpp}` Namespace
 
 
 

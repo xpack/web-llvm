@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCCodeEmitter.h` File Reference
+# `M68kMCCodeEmitter.h` File
 
 <p>This file contains the declarations for the code emitter which are useful outside of the emitter itself. <a href="#details">More...</a></p>
 

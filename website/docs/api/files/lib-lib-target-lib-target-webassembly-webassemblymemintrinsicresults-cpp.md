@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMemIntrinsicResults.cpp` File Reference
+# `WebAssemblyMemIntrinsicResults.cpp` File
 
 <p>This file implements an optimization pass using memory intrinsic results. <a href="#details">More...</a></p>
 

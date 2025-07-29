@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreInstPrinter.h` File Reference
+# `XCoreInstPrinter.h` File
 
 <p>This file contains the declaration of the XCoreInstPrinter class, which is used to print XCore MCInst to a .s file. <a href="#details">More...</a></p>
 

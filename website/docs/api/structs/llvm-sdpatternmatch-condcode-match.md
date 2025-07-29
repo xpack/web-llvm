@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondCode_match` Struct Reference
+# `CondCode_match` Struct
 
 
 

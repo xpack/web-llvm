@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetInfo.cpp` File Reference
+# `WebAssemblyTargetInfo.cpp` File
 
 <p>This file registers the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> target. <a href="#details">More...</a></p>
 

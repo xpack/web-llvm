@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineAndOrXor.cpp` File Reference
+# `InstCombineAndOrXor.cpp` File
 
 
 

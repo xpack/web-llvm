@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILTranslateMetadata.cpp` File Reference
+# `DXILTranslateMetadata.cpp` File
 
 
 

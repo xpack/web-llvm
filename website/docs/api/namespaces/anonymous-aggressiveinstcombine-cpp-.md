@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AggressiveInstCombine.cpp}` Namespace Reference
+# `anonymous{AggressiveInstCombine.cpp}` Namespace
 
 <p>This is used by <a href="/web-llvm/docs/api/files/lib/lib/transforms/lib/transforms/aggressiveinstcombine/aggressiveinstcombine-cpp/#a32ffe3fd425265e0290c803c36cc1612">foldAnyOrAllBitsSet()</a> to capture a source value (Root) and the bit indexes (Mask) needed by a masked compare. <a href="#details">More...</a></p>
 

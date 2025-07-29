@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMemoryLegalizer.cpp` File Reference
+# `SIMemoryLegalizer.cpp` File
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> legalizer - implements memory model. <a href="#details">More...</a></p>
 

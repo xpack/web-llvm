@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopFuse.cpp}` Namespace Reference
+# `anonymous{LoopFuse.cpp}` Namespace
 
 
 

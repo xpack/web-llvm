@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCCodeEmitter.h` File Reference
+# `HexagonMCCodeEmitter.h` File
 
 <p>Definition for classes that emit Hexagon machine code from MCInsts. <a href="#details">More...</a></p>
 

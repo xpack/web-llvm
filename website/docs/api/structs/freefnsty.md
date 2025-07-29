@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreeFnsTy` Struct Reference
+# `FreeFnsTy` Struct
 
 
 

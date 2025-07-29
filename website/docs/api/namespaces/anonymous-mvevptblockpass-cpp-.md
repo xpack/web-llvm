@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MVEVPTBlockPass.cpp}` Namespace Reference
+# `anonymous{MVEVPTBlockPass.cpp}` Namespace
 
 
 

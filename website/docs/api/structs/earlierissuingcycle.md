@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarlierIssuingCycle` Struct Reference
+# `EarlierIssuingCycle` Struct
 
 
 

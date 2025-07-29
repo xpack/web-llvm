@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Dyn_Base` Struct Template Reference
+# `Elf_Dyn_Base` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/object/elf-dyn-base">Elf_Dyn_Base</a>: This structure matches the form of entries in the dynamic table section (.dynamic) look like. <a href="#details">More...</a></p>
 

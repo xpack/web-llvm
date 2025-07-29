@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPathAndClusterInfo` Struct Reference
+# `FunctionPathAndClusterInfo` Struct
 
 
 

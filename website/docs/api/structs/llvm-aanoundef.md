@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoUndef` Struct Reference
+# `AANoUndef` Struct
 
 <p>An abstract interface for all noundef attributes. <a href="#details">More...</a></p>
 

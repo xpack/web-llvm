@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCReduceCRLogicals.cpp}` Namespace Reference
+# `anonymous{PPCReduceCRLogicals.cpp}` Namespace
 
 
 

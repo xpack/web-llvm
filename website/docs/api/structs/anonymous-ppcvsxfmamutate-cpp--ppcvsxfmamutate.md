@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCVSXFMAMutate` Struct Reference
+# `PPCVSXFMAMutate` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PermNetwork` Struct Reference
+# `PermNetwork` Struct
 
 
 

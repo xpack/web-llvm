@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WideIVInfo` Struct Reference
+# `WideIVInfo` Struct
 
 <p>Collect information about induction variables that are used by sign/zero extend operations. <a href="#details">More...</a></p>
 

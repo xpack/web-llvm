@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{StraightLineStrengthReduce.cpp}` Namespace Reference
+# `anonymous{StraightLineStrengthReduce.cpp}` Namespace
 
 
 

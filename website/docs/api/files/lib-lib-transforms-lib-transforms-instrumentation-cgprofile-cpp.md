@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGProfile.cpp` File Reference
+# `CGProfile.cpp` File
 
 
 

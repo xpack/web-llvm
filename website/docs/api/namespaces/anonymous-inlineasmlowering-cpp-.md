@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InlineAsmLowering.cpp}` Namespace Reference
+# `anonymous{InlineAsmLowering.cpp}` Namespace
 
 
 

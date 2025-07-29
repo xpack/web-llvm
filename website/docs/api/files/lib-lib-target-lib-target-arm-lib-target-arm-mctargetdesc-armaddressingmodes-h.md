@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAddressingModes.h` File Reference
+# `ARMAddressingModes.h` File
 
 
 

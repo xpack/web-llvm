@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEInfo` Struct Reference
+# `DIEInfo` Struct
 
 <p>Information gathered about a <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> in the object file. <a href="#details">More...</a></p>
 

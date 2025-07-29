@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAddressSpace` Struct Reference
+# `AAAddressSpace` Struct
 
 <p>An abstract interface for address space information. <a href="#details">More...</a></p>
 

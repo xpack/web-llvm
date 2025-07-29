@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCOperand` Struct Reference
+# `PPCOperand` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-ppcasmparser-cpp-/ppcoperand">PPCOperand</a> - Instances of this class represent a parsed PowerPC machine instruction. <a href="#details">More...</a></p>
 

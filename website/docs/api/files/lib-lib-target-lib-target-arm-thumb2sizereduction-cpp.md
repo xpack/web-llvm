@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thumb2SizeReduction.cpp` File Reference
+# `Thumb2SizeReduction.cpp` File
 
 
 

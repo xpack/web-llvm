@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `remarks` Namespace Reference
+# `remarks` Namespace
 
 
 

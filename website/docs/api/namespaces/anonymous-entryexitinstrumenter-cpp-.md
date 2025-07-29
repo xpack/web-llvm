@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{EntryExitInstrumenter.cpp}` Namespace Reference
+# `anonymous{EntryExitInstrumenter.cpp}` Namespace
 
 
 

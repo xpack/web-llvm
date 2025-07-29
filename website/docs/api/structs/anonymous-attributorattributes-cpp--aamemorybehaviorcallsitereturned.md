@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryBehaviorCallSiteReturned` Struct Reference
+# `AAMemoryBehaviorCallSiteReturned` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> behavior attribute for a call site return position. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlowFunction` Struct Reference
+# `FlowFunction` Struct
 
 <p>A wrapper of binary function with basic blocks and jumps. <a href="#details">More...</a></p>
 

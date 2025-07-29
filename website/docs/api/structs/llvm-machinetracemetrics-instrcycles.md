@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrCycles` Struct Reference
+# `InstrCycles` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/machinetracemetrics/instrcycles">InstrCycles</a> represents the cycle height and depth of an instruction in a trace. <a href="#details">More...</a></p>
 

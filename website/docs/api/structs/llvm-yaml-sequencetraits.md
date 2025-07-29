@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SequenceTraits` Struct Template Reference
+# `SequenceTraits` Struct Template
 
 <p>This class should be specialized by any type that needs to be converted to/from a YAML sequence. <a href="#details">More...</a></p>
 

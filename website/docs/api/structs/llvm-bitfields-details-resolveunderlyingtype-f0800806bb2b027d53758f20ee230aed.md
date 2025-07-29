@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResolveUnderlyingType` Struct Template Reference
+# `ResolveUnderlyingType` Struct Template
 
 
 

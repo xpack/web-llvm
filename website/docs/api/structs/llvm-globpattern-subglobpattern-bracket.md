@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Bracket` Struct Reference
+# `Bracket` Struct
 
 
 

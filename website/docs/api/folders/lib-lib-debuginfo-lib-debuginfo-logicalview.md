@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/LogicalView` Folder Reference
+# `lib/DebugInfo/LogicalView` Folder
 
 
 

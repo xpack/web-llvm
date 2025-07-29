@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_zero_int` Struct Reference
+# `is_zero_int` Struct
 
 
 

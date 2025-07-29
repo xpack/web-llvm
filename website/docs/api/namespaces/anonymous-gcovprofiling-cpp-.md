@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCOVProfiling.cpp}` Namespace Reference
+# `anonymous{GCOVProfiling.cpp}` Namespace
 
 
 

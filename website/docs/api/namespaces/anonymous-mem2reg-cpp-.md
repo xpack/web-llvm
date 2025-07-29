@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Mem2Reg.cpp}` Namespace Reference
+# `anonymous{Mem2Reg.cpp}` Namespace
 
 
 

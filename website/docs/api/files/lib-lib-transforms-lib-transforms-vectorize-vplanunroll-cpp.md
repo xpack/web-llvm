@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanUnroll.cpp` File Reference
+# `VPlanUnroll.cpp` File
 
 <p>This file implements explicit unrolling for VPlans. <a href="#details">More...</a></p>
 

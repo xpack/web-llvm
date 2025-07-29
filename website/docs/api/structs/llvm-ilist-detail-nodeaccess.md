@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeAccess` Struct Reference
+# `NodeAccess` Struct
 
 <p>An access class for <a href="/web-llvm/docs/api/classes/llvm/ilist-node">ilist_node</a> private API. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineTraceMetrics.cpp}` Namespace Reference
+# `anonymous{MachineTraceMetrics.cpp}` Namespace
 
 
 

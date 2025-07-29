@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmittedUnit` Struct Reference
+# `EmittedUnit` Struct
 
 <p>Keep track of emitted CUs and their Unique <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>. <a href="#details">More...</a></p>
 

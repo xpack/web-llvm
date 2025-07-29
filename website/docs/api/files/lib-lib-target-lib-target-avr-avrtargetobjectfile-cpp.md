@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRTargetObjectFile.cpp` File Reference
+# `AVRTargetObjectFile.cpp` File
 
 
 

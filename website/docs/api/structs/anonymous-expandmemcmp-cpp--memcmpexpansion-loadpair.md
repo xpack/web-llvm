@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadPair` Struct Reference
+# `LoadPair` Struct
 
 
 

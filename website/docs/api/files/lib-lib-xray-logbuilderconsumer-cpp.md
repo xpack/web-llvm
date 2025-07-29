@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LogBuilderConsumer.cpp` File Reference
+# `LogBuilderConsumer.cpp` File
 
 
 

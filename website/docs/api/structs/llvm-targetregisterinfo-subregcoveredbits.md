@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubRegCoveredBits` Struct Reference
+# `SubRegCoveredBits` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/targetregisterinfo/subregcoveredbits">SubRegCoveredBits</a> - Emitted by tablegen: bit range covered by a subreg index, -1 in any being invalid. <a href="#details">More...</a></p>
 

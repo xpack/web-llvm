@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SLPVectorizer.cpp` File Reference
+# `SLPVectorizer.cpp` File
 
 
 

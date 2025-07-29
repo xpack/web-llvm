@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiFlags` Struct Reference
+# `DbiFlags` Struct
 
 <p>Some of the values are stored in bitfields. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNHazardRecognizer.h` File Reference
+# `GCNHazardRecognizer.h` File
 
 
 

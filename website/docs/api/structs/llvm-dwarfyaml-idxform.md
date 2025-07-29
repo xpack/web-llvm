@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IdxForm` Struct Reference
+# `IdxForm` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackFrameLayoutAnalysisPass` Struct Reference
+# `StackFrameLayoutAnalysisPass` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-stackframelayoutanalysispass-cpp-/stackframelayoutanalysispass">StackFrameLayoutAnalysisPass</a> - This is a pass to dump the stack frame of a <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

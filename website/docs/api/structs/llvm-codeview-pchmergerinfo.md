@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PCHMergerInfo` Struct Reference
+# `PCHMergerInfo` Struct
 
 <p>Used to forward information about PCH.OBJ (precompiled) files, when applicable. <a href="#details">More...</a></p>
 

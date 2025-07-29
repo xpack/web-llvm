@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorStorage` Struct Template Reference
+# `SmallVectorStorage` Struct Template
 
 <p>Storage for the <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector</a> elements. <a href="#details">More...</a></p>
 

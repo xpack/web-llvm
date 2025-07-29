@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Lanai/Disassembler` Folder Reference
+# `lib/Target/Lanai/Disassembler` Folder
 
 
 

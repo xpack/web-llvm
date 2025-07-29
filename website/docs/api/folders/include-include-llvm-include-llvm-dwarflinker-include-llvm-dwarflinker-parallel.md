@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/DWARFLinker/Parallel` Folder Reference
+# `include/llvm/DWARFLinker/Parallel` Folder
 
 
 

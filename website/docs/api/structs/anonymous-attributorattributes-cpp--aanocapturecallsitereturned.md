@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoCaptureCallSiteReturned` Struct Reference
+# `AANoCaptureCallSiteReturned` Struct
 
 <p>NoCapture attribute deduction for a call site return value. <a href="#details">More...</a></p>
 

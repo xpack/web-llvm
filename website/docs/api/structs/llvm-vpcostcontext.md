@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPCostContext` Struct Reference
+# `VPCostContext` Struct
 
 <p>Struct to hold various analysis needed for cost computations. <a href="#details">More...</a></p>
 

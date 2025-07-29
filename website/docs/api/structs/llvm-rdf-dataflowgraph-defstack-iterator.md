@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Iterator` Struct Reference
+# `Iterator` Struct
 
 
 

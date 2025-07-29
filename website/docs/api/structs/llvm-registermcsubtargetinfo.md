@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCSubtargetInfo` Struct Template Reference
+# `RegisterMCSubtargetInfo` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermcsubtargetinfo">RegisterMCSubtargetInfo</a> - Helper template for registering a target subtarget info implementation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIPatternMatch` Namespace Reference
+# `MIPatternMatch` Namespace
 
 
 

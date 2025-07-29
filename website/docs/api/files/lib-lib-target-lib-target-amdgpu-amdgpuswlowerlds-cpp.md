@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSwLowerLDS.cpp` File Reference
+# `AMDGPUSwLowerLDS.cpp` File
 
 
 

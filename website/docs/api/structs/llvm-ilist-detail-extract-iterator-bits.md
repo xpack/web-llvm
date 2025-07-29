@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `extract_iterator_bits` Struct Template Reference
+# `extract_iterator_bits` Struct Template
 
 <p>Extract iterator bits option. <a href="#details">More...</a></p>
 

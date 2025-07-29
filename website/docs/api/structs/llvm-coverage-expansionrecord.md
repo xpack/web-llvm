@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpansionRecord` Struct Reference
+# `ExpansionRecord` Struct
 
 <p>Coverage information for a macro expansion or #included file. <a href="#details">More...</a></p>
 

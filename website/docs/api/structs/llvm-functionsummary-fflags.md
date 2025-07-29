@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FFlags` Struct Reference
+# `FFlags` Struct
 
 <p>Flags specific to function summaries. <a href="#details">More...</a></p>
 

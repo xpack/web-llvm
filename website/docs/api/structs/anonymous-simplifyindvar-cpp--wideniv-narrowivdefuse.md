@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NarrowIVDefUse` Struct Reference
+# `NarrowIVDefUse` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> a link in the Narrow IV def-use chain along with the WideIV that computes the same value as the Narrow IV def. <a href="#details">More...</a></p>
 

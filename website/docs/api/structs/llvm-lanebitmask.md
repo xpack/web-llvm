@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LaneBitmask` Struct Reference
+# `LaneBitmask` Struct
 
 
 

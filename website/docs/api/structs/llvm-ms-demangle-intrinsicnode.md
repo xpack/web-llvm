@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicNode` Struct Reference
+# `IntrinsicNode` Struct
 
 
 

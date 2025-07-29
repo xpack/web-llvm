@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `less_first` Struct Reference
+# `less_first` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/function">Function</a> object to check whether the first component of a container supported by std::get (like std::pair and std::tuple) compares less than the first component of another container. <a href="#details">More...</a></p>
 

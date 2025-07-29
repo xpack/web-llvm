@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryBuffer.cpp` File Reference
+# `MemoryBuffer.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VReg2SUnitOperIdx` Struct Reference
+# `VReg2SUnitOperIdx` Struct
 
 <p>Mapping from virtual register to <a href="/web-llvm/docs/api/classes/llvm/sunit">SUnit</a> including an operand index. <a href="#details">More...</a></p>
 

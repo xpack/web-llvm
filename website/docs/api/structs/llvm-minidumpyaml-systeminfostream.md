@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemInfoStream` Struct Reference
+# `SystemInfoStream` Struct
 
 <p>SystemInfo minidump stream. <a href="#details">More...</a></p>
 

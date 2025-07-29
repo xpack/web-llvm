@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The GEPs Reference
+# GEPs
 
 <p>Functions in this group only apply to instructions that map to <a href="/web-llvm/docs/api/classes/llvm/getelementptrinst">llvm::GetElementPtrInst</a> instances. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DebugCounter.cpp}` Namespace Reference
+# `anonymous{DebugCounter.cpp}` Namespace
 
 
 

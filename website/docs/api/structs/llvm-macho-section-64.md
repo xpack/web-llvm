@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `section_64` Struct Reference
+# `section_64` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmWriterContext` Struct Reference
+# `AsmWriterContext` Struct
 
 <p>Common instances used by most of the printer functions. <a href="#details">More...</a></p>
 

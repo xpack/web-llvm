@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SequenceTraits` Struct Template Reference
+# `SequenceTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a> is not really compatible with the YAMLTraits. <a href="#details">More...</a></p>
 

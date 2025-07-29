@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WritableArmRelocation` Struct Reference
+# `WritableArmRelocation` Struct
 
 
 

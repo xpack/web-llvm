@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkStringTable.cpp` File Reference
+# `RemarkStringTable.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNDPPCombine.cpp}` Namespace Reference
+# `anonymous{GCNDPPCombine.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCExtraProcessorInfo` Struct Reference
+# `MCExtraProcessorInfo` Struct
 
 <p>Provide extra details about the machine processor. <a href="#details">More...</a></p>
 

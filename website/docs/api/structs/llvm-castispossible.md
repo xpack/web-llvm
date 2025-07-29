@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastIsPossible` Struct Template Reference
+# `CastIsPossible` Struct Template
 
 <p>This struct provides a way to check if a given cast is possible. <a href="#details">More...</a></p>
 

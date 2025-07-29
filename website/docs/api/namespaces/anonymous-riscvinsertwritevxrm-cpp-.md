@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVInsertWriteVXRM.cpp}` Namespace Reference
+# `anonymous{RISCVInsertWriteVXRM.cpp}` Namespace
 
 
 

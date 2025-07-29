@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstPrinter.cpp` File Reference
+# `AMDGPUInstPrinter.cpp` File
 
 
 

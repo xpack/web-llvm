@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinMaxSinkInfo` Struct Reference
+# `MinMaxSinkInfo` Struct
 
 
 

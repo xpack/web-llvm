@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantPoolEntry` Struct Reference
+# `ConstantPoolEntry` Struct
 
 
 

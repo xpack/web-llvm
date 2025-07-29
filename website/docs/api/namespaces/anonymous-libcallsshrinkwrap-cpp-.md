@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LibCallsShrinkWrap.cpp}` Namespace Reference
+# `anonymous{LibCallsShrinkWrap.cpp}` Namespace
 
 
 

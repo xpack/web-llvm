@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ContinuationRecordBuilder.cpp}` Namespace Reference
+# `anonymous{ContinuationRecordBuilder.cpp}` Namespace
 
 
 

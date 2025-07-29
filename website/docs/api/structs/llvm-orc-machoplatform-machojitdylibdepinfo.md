@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOJITDylibDepInfo` Struct Reference
+# `MachOJITDylibDepInfo` Struct
 
 
 

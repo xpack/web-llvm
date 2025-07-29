@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteT` Struct Template Reference
+# `WriteT` Struct Template
 
 
 

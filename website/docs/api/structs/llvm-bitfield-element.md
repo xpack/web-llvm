@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Element` Struct Template Reference
+# `Element` Struct Template
 
 <p>Describes an element of a <a href="/web-llvm/docs/api/structs/llvm/bitfield">Bitfield</a>. <a href="#details">More...</a></p>
 

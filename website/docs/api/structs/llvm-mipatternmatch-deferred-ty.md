@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `deferred_ty` Struct Template Reference
+# `deferred_ty` Struct Template
 
 
 

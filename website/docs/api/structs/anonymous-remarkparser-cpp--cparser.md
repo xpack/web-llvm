@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CParser` Struct Reference
+# `CParser` Struct
 
 
 

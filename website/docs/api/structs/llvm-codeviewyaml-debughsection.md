@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugHSection` Struct Reference
+# `DebugHSection` Struct
 
 
 

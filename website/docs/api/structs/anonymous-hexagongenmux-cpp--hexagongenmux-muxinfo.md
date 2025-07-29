@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MuxInfo` Struct Reference
+# `MuxInfo` Struct
 
 
 

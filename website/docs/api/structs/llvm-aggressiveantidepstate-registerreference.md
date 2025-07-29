@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterReference` Struct Reference
+# `RegisterReference` Struct
 
 <p>Information about a register reference within a liverange. <a href="#details">More...</a></p>
 

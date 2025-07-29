@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CryptContextTraits` Struct Reference
+# `CryptContextTraits` Struct
 
 
 

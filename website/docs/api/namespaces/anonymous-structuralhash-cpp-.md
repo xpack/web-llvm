@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{StructuralHash.cpp}` Namespace Reference
+# `anonymous{StructuralHash.cpp}` Namespace
 
 
 

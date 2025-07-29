@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CloneFunction.cpp}` Namespace Reference
+# `anonymous{CloneFunction.cpp}` Namespace
 
 
 

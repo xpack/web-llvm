@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemOp` Struct Reference
+# `MemOp` Struct
 
 
 

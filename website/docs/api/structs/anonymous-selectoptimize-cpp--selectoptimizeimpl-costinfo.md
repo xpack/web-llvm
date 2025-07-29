@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CostInfo` Struct Reference
+# `CostInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampledInstrumentationConfig` Struct Reference
+# `SampledInstrumentationConfig` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEAttrs` Struct Reference
+# `DIEAttrs` Struct
 
 
 

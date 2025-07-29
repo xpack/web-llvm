@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinResHeaderPrefix` Struct Reference
+# `WinResHeaderPrefix` Struct
 
 
 

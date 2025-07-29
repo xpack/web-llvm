@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleMask` Struct Reference
+# `ShuffleMask` Struct
 
 
 

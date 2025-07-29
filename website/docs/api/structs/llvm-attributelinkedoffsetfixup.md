@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeLinkedOffsetFixup` Struct Reference
+# `AttributeLinkedOffsetFixup` Struct
 
 
 

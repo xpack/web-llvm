@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RepeatedSubstring` Struct Reference
+# `RepeatedSubstring` Struct
 
 <p>A repeated substring in the tree. <a href="#details">More...</a></p>
 

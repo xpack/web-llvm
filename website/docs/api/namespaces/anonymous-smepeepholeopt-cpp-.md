@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SMEPeepholeOpt.cpp}` Namespace Reference
+# `anonymous{SMEPeepholeOpt.cpp}` Namespace
 
 
 

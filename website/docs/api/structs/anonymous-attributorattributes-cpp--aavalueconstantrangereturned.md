@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAValueConstantRangeReturned` Struct Reference
+# `AAValueConstantRangeReturned` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_PolymorphicTraits` Struct Template Reference
+# `has_PolymorphicTraits` Struct Template
 
 
 

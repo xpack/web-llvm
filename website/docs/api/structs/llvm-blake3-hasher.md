@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `llvm_blake3_hasher` Struct Reference
+# `llvm_blake3_hasher` Struct
 
 
 

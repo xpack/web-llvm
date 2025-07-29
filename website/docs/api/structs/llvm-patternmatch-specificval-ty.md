@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specificval_ty` Struct Reference
+# `specificval_ty` Struct
 
 <p>Match a specified Value*. <a href="#details">More...</a></p>
 

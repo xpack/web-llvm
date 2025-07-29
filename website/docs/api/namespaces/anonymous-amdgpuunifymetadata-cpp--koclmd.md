@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `kOCLMD` Namespace Reference
+# `kOCLMD` Namespace
 
 
 

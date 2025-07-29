@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTOCRegDeps` Struct Reference
+# `PPCTOCRegDeps` Struct
 
 
 

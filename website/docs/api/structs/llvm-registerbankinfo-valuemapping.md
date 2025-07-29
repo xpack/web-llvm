@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMapping` Struct Reference
+# `ValueMapping` Struct
 
 <p>Helper struct that represents how a value is mapped through different register banks. <a href="#details">More...</a></p>
 

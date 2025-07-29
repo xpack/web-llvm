@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoaderSectionRelocationEntry32` Struct Reference
+# `LoaderSectionRelocationEntry32` Struct
 
 
 

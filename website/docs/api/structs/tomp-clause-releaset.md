@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReleaseT` Struct Template Reference
+# `ReleaseT` Struct Template
 
 
 

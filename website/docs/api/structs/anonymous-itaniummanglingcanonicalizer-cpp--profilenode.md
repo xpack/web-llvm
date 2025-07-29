@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileNode` Struct Reference
+# `ProfileNode` Struct
 
 
 

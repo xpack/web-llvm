@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/CSKY/AsmParser` Folder Reference
+# `lib/Target/CSKY/AsmParser` Folder
 
 
 

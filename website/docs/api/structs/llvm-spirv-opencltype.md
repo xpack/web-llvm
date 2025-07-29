@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenCLType` Struct Reference
+# `OpenCLType` Struct
 
 
 

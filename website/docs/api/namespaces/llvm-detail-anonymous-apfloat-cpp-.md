@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{APFloat.cpp}` Namespace Reference
+# `anonymous{APFloat.cpp}` Namespace
 
 
 

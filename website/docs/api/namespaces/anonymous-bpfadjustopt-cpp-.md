@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFAdjustOpt.cpp}` Namespace Reference
+# `anonymous{BPFAdjustOpt.cpp}` Namespace
 
 
 

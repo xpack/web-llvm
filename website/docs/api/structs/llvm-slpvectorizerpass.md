@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SLPVectorizerPass` Struct Reference
+# `SLPVectorizerPass` Struct
 
 
 

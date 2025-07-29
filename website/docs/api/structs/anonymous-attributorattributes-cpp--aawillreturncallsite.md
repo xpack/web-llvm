@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAWillReturnCallSite` Struct Reference
+# `AAWillReturnCallSite` Struct
 
 <p>WillReturn attribute deduction for a call sites. <a href="#details">More...</a></p>
 

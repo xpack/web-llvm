@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCCodeEmitter.cpp` File Reference
+# `AMDGPUMCCodeEmitter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> code emitter produces machine code that can be executed directly on the GPU device. <a href="#details">More...</a></p>
 

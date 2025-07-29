@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlinerCosts` Struct Reference
+# `OutlinerCosts` Struct
 
 
 

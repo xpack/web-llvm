@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProf.cpp` File Reference
+# `SampleProf.cpp` File
 
 
 

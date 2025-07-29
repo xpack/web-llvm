@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumericalStabilitySanitizerPass` Struct Reference
+# `NumericalStabilitySanitizerPass` Struct
 
 <p>A function pass for nsan instrumentation. <a href="#details">More...</a></p>
 

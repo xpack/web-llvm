@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonGenExtract.cpp` File Reference
+# `HexagonGenExtract.cpp` File
 
 
 

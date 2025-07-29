@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenStoreEVLRecipe` Struct Reference
+# `VPWidenStoreEVLRecipe` Struct
 
 <p>A recipe for widening store operations with vector-predication intrinsics, using the value to store, the address to store to, the explicit vector length and an optional mask. <a href="#details">More...</a></p>
 

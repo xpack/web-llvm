@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataState` Struct Reference
+# `DataState` Struct
 
 
 

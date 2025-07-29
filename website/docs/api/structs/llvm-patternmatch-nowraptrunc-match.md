@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoWrapTrunc_match` Struct Template Reference
+# `NoWrapTrunc_match` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDIndex` Struct Reference
+# `MDIndex` Struct
 
 <p>Index of information about a piece of metadata. <a href="#details">More...</a></p>
 

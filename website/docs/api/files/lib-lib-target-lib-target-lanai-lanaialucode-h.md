@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiAluCode.h` File Reference
+# `LanaiAluCode.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TGLexer.cpp}` Namespace Reference
+# `anonymous{TGLexer.cpp}` Namespace
 
 
 

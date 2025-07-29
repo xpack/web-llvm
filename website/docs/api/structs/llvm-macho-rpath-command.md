@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `rpath_command` Struct Reference
+# `rpath_command` Struct
 
 
 

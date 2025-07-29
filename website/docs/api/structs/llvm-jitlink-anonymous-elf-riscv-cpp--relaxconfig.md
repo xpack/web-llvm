@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelaxConfig` Struct Reference
+# `RelaxConfig` Struct
 
 
 

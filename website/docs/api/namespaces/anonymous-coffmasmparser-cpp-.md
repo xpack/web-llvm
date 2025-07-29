@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{COFFMasmParser.cpp}` Namespace Reference
+# `anonymous{COFFMasmParser.cpp}` Namespace
 
 
 

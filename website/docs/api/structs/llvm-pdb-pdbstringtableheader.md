@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDBStringTableHeader` Struct Reference
+# `PDBStringTableHeader` Struct
 
 <p>The header preceding the /names stream. <a href="#details">More...</a></p>
 

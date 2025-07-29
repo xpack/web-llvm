@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubRegInfo` Struct Reference
+# `SubRegInfo` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/value">Value</a> type for SubRegMap below. <a href="#details">More...</a></p>
 

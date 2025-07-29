@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugNameAbbreviation` Struct Reference
+# `DebugNameAbbreviation` Struct
 
 
 

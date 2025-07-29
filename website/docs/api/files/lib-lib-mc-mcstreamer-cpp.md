@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCStreamer.cpp` File Reference
+# `MCStreamer.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFSymbolInfoTy` Struct Reference
+# `XCOFFSymbolInfoTy` Struct
 
 
 

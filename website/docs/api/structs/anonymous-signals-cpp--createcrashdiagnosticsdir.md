@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CreateCrashDiagnosticsDir` Struct Reference
+# `CreateCrashDiagnosticsDir` Struct
 
 
 

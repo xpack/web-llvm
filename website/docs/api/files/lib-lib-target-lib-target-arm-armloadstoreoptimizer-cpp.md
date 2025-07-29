@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLoadStoreOptimizer.cpp` File Reference
+# `ARMLoadStoreOptimizer.cpp` File
 
 
 

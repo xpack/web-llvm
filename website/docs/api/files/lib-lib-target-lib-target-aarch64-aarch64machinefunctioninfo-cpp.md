@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MachineFunctionInfo.cpp` File Reference
+# `AArch64MachineFunctionInfo.cpp` File
 
 <p>This file implements AArch64-specific per-machine-function information. <a href="#details">More...</a></p>
 

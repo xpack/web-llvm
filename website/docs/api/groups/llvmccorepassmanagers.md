@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Pass Managers Reference
+# Pass Managers
 
 
 

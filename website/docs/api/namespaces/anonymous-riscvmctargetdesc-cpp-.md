@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{RISCVMCTargetDesc.cpp}` Namespace
 
 
 

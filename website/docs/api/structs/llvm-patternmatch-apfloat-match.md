@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `apfloat_match` Struct Reference
+# `apfloat_match` Struct
 
 
 

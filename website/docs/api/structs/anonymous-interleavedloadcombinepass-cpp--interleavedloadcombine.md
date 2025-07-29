@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterleavedLoadCombine` Struct Reference
+# `InterleavedLoadCombine` Struct
 
 <p>This pass combines interleaved loads into a pattern detectable by <a href="/web-llvm/docs/api/classes/llvm/interleavedaccesspass">InterleavedAccessPass</a>. <a href="#details">More...</a></p>
 

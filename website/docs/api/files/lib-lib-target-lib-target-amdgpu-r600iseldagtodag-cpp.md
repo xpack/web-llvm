@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ISelDAGToDAG.cpp` File Reference
+# `R600ISelDAGToDAG.cpp` File
 
 <p>Defines an instruction selector for the <a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a> subtarget. <a href="#details">More...</a></p>
 

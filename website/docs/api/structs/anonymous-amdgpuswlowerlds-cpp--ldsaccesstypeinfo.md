@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDSAccessTypeInfo` Struct Reference
+# `LDSAccessTypeInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanHCFGBuilder.cpp` File Reference
+# `VPlanHCFGBuilder.cpp` File
 
 <p>This file implements the construction of a VPlan-based Hierarchical CFG (H-CFG) for an incoming IR. <a href="#details">More...</a></p>
 

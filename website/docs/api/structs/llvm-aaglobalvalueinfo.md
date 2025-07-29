@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAGlobalValueInfo` Struct Reference
+# `AAGlobalValueInfo` Struct
 
 <p>An abstract interface for <a href="/web-llvm/docs/api/classes/llvm/globalvalue">llvm::GlobalValue</a> information interference. <a href="#details">More...</a></p>
 

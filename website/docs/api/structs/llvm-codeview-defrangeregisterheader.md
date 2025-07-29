@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefRangeRegisterHeader` Struct Reference
+# `DefRangeRegisterHeader` Struct
 
 
 

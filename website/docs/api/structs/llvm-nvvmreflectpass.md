@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVVMReflectPass` Struct Reference
+# `NVVMReflectPass` Struct
 
 
 

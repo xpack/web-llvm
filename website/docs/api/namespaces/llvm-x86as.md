@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AS` Namespace Reference
+# `X86AS` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLStrTabRemarkSerializer` Struct Reference
+# `YAMLStrTabRemarkSerializer` Struct
 
 <p>Serialize the remarks to YAML using a string table. <a href="#details">More...</a></p>
 

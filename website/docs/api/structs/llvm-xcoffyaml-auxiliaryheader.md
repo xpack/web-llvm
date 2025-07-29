@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AuxiliaryHeader` Struct Reference
+# `AuxiliaryHeader` Struct
 
 
 

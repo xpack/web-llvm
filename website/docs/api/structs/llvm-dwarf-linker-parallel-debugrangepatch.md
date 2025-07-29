@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugRangePatch` Struct Reference
+# `DebugRangePatch` Struct
 
 <p>This structure is used to update range list offset into .debug_ranges/.debug_rnglists. <a href="#details">More...</a></p>
 

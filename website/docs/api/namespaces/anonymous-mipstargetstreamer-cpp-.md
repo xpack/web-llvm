@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsTargetStreamer.cpp}` Namespace Reference
+# `anonymous{MipsTargetStreamer.cpp}` Namespace
 
 
 

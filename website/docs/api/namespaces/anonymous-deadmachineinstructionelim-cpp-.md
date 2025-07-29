@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DeadMachineInstructionElim.cpp}` Namespace Reference
+# `anonymous{DeadMachineInstructionElim.cpp}` Namespace
 
 
 

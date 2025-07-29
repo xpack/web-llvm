@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFShortExport` Struct Reference
+# `COFFShortExport` Struct
 
 
 

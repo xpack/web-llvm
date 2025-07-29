@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Exp` Namespace Reference
+# `Exp` Namespace
 
 
 

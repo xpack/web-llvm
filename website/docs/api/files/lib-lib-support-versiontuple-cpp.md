@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionTuple.cpp` File Reference
+# `VersionTuple.cpp` File
 
 
 

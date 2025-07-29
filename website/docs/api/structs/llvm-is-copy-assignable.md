@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_copy_assignable` Struct Template Reference
+# `is_copy_assignable` Struct Template
 
 
 

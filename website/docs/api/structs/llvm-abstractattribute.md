@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractAttribute` Struct Reference
+# `AbstractAttribute` Struct
 
 <p>Base struct for all "concrete attribute" deductions. <a href="#details">More...</a></p>
 

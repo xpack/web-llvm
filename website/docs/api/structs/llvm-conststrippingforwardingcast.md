@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstStrippingForwardingCast` Struct Template Reference
+# `ConstStrippingForwardingCast` Struct Template
 
 <p>Provides a cast trait that strips <span class="doxyComputerOutput">const</span> from types to make it easier to implement a const-version of a non-const cast. <a href="#details">More...</a></p>
 

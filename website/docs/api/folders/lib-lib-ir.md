@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/IR` Folder Reference
+# `lib/IR` Folder
 
 
 

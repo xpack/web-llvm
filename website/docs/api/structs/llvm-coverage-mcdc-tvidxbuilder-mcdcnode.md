@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDCNode` Struct Reference
+# `MCDCNode` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecomputeGlobalsAAPass` Struct Reference
+# `RecomputeGlobalsAAPass` Struct
 
 
 

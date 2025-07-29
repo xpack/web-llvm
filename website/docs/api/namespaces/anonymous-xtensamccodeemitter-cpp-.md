@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XtensaMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{XtensaMCCodeEmitter.cpp}` Namespace
 
 
 

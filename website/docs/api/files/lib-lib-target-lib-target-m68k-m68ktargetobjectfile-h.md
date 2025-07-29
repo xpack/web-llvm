@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetObjectFile.h` File Reference
+# `M68kTargetObjectFile.h` File
 
 <p>This file contains declarations for M68k ELF object file lowering. <a href="#details">More...</a></p>
 

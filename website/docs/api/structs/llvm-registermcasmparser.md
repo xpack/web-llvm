@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCAsmParser` Struct Template Reference
+# `RegisterMCAsmParser` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermcasmparser">RegisterMCAsmParser</a> - Helper template for registering a target specific assembly parser, for use in the target machine initialization function. <a href="#details">More...</a></p>
 

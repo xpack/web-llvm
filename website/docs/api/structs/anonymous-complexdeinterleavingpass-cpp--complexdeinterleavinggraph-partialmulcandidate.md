@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialMulCandidate` Struct Reference
+# `PartialMulCandidate` Struct
 
 
 

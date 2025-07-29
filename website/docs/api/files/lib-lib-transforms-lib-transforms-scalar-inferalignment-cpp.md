@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferAlignment.cpp` File Reference
+# `InferAlignment.cpp` File
 
 
 

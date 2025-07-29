@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HasDereference` Struct Template Reference
+# `HasDereference` Struct Template
 
 
 

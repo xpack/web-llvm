@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RandomIRBuilder` Struct Reference
+# `RandomIRBuilder` Struct
 
 
 

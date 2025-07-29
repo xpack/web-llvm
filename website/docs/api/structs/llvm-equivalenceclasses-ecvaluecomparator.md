@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ECValueComparator` Struct Reference
+# `ECValueComparator` Struct
 
 <p>A wrapper of the comparator, to be passed to the set. <a href="#details">More...</a></p>
 

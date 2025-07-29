@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/DebugInfo/PDB/Native` Folder Reference
+# `include/llvm/DebugInfo/PDB/Native` Folder
 
 
 

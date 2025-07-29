@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IfcvtToken` Struct Reference
+# `IfcvtToken` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> information about pending if-conversions to attempt: BBI - Corresponding BBInfo. <a href="#details">More...</a></p>
 

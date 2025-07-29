@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `zlib` Namespace Reference
+# `zlib` Namespace
 
 
 

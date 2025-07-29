@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterAggr` Struct Reference
+# `RegisterAggr` Struct
 
 
 

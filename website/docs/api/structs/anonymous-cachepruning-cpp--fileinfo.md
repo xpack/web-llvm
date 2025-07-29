@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileInfo` Struct Reference
+# `FileInfo` Struct
 
 
 

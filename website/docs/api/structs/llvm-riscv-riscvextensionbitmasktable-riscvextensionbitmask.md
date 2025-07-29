@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVExtensionBitmask` Struct Reference
+# `RISCVExtensionBitmask` Struct
 
 
 

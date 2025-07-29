@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeLibcallsInfo` Struct Reference
+# `RuntimeLibcallsInfo` Struct
 
 <p>A simple container for information about the supported runtime calls. <a href="#details">More...</a></p>
 

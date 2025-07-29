@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstVCall` Struct Reference
+# `ConstVCall` Struct
 
 <p>A specification for a virtual function call with all constant integer arguments. <a href="#details">More...</a></p>
 

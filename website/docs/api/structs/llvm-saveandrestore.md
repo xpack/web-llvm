@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SaveAndRestore` Struct Template Reference
+# `SaveAndRestore` Struct Template
 
 <p>A utility class that uses RAII to save and restore the value of a variable. <a href="#details">More...</a></p>
 

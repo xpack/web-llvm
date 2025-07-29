@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMergeRegionExitTargets.cpp` File Reference
+# `SPIRVMergeRegionExitTargets.cpp` File
 
 
 

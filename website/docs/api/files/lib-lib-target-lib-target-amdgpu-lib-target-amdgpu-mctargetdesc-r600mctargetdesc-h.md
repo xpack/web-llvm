@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MCTargetDesc.h` File Reference
+# `R600MCTargetDesc.h` File
 
 <p>Provides R600 specific target descriptions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StmtNode` Struct Reference
+# `StmtNode` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlattenInfo` Struct Reference
+# `FlattenInfo` Struct
 
 
 

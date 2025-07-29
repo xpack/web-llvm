@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Metadata` Struct Reference
+# `Metadata` Struct
 
 <p>In-memory representation of kernel debug properties metadata. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CSKYMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{CSKYMCTargetDesc.cpp}` Namespace
 
 
 

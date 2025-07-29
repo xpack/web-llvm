@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInfo` Struct Reference
+# `MachineInfo` Struct
 
 
 

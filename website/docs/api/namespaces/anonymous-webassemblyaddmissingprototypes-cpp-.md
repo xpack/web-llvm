@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyAddMissingPrototypes.cpp}` Namespace Reference
+# `anonymous{WebAssemblyAddMissingPrototypes.cpp}` Namespace
 
 
 

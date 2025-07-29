@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Attributor` Struct Reference
+# `Attributor` Struct
 
 <p>The fixpoint analysis framework that orchestrates the attribute deduction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CWrapperFunctionResultDataUnion` Union Reference
+# `CWrapperFunctionResultDataUnion` Union
 
 
 

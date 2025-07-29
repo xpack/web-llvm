@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `chpe_code_range_entry` Struct Reference
+# `chpe_code_range_entry` Struct
 
 
 

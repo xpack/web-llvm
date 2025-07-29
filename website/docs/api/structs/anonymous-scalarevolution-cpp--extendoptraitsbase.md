@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtendOpTraitsBase` Struct Reference
+# `ExtendOpTraitsBase` Struct
 
 
 

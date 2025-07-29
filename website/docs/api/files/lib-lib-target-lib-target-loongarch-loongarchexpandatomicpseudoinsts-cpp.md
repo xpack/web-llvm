@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchExpandAtomicPseudoInsts.cpp` File Reference
+# `LoongArchExpandAtomicPseudoInsts.cpp` File
 
 
 

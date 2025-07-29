@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIProgramInfo.h` File Reference
+# `SIProgramInfo.h` File
 
 <p>Defines struct to track resource usage and hardware flags for kernels and entry functions. <a href="#details">More...</a></p>
 

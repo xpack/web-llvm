@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachOPlatform.cpp}` Namespace Reference
+# `anonymous{MachOPlatform.cpp}` Namespace
 
 
 

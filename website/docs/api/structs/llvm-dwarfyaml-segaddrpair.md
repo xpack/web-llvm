@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SegAddrPair` Struct Reference
+# `SegAddrPair` Struct
 
 
 

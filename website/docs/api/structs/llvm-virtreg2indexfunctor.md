@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtReg2IndexFunctor` Struct Reference
+# `VirtReg2IndexFunctor` Struct
 
 
 

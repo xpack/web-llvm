@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/IRPrinter` Folder Reference
+# `include/llvm/IRPrinter` Folder
 
 
 

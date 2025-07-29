@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZElimCompare.cpp}` Namespace Reference
+# `anonymous{SystemZElimCompare.cpp}` Namespace
 
 
 

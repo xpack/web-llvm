@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChainT` Struct Reference
+# `ChainT` Struct
 
 <p>A chain (ordered sequence) of nodes in the graph. <a href="#details">More...</a></p>
 

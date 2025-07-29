@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMemoryUtils.cpp` File Reference
+# `AMDGPUMemoryUtils.cpp` File
 
 
 

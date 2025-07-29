@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCollector.cpp` File Reference
+# `FileCollector.cpp` File
 
 
 

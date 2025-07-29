@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalISel` Namespace Reference
+# `GlobalISel` Namespace
 
 
 

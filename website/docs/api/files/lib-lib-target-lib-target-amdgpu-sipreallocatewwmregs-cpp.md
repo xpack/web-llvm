@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPreAllocateWWMRegs.cpp` File Reference
+# `SIPreAllocateWWMRegs.cpp` File
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to pre-allocated WWM registers. <a href="#details">More...</a></p>
 

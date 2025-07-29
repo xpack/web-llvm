@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXRegisterInfo.h` File Reference
+# `NVPTXRegisterInfo.h` File
 
 
 

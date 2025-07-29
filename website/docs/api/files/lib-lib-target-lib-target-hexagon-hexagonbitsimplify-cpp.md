@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBitSimplify.cpp` File Reference
+# `HexagonBitSimplify.cpp` File
 
 
 

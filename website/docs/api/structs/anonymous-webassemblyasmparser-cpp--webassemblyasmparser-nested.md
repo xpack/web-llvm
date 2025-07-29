@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Nested` Struct Reference
+# `Nested` Struct
 
 
 

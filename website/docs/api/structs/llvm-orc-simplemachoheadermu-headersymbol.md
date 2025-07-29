@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HeaderSymbol` Struct Reference
+# `HeaderSymbol` Struct
 
 
 

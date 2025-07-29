@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InbranchT` Struct Template Reference
+# `InbranchT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemlocStackInfo` Struct Reference
+# `MemlocStackInfo` Struct
 
 <p>This represents where a given memorylocation is in the stack. <a href="#details">More...</a></p>
 

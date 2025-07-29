@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cclass` Struct Reference
+# `cclass` Struct
 
 
 

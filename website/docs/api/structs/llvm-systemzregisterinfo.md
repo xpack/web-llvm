@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZRegisterInfo` Struct Reference
+# `SystemZRegisterInfo` Struct
 
 
 

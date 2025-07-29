@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCCPSolver.cpp` File Reference
+# `SCCPSolver.cpp` File
 
 
 

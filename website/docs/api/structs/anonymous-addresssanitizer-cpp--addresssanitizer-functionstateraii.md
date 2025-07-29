@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionStateRAII` Struct Reference
+# `FunctionStateRAII` Struct
 
 <p>Helper to cleanup per-function state. <a href="#details">More...</a></p>
 

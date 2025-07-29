@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZGOFFObjectWriter.cpp` File Reference
+# `SystemZGOFFObjectWriter.cpp` File
 
 
 

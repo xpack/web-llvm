@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFSTarget` Struct Reference
+# `IFSTarget` Struct
 
 
 

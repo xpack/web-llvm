@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specific_intval64` Struct Template Reference
+# `specific_intval64` Struct Template
 
 
 

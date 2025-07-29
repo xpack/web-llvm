@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetQueue` Struct Template Reference
+# `SetQueue` Struct Template
 
 
 

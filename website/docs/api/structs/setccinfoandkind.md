@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetCCInfoAndKind` Struct Reference
+# `SetCCInfoAndKind` Struct
 
 <p>Helper structure to be able to read SetCC information. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86Disassembler` Namespace Reference
+# `X86Disassembler` Namespace
 
 
 

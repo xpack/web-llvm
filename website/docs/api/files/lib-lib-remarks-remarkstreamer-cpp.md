@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkStreamer.cpp` File Reference
+# `RemarkStreamer.cpp` File
 
 
 

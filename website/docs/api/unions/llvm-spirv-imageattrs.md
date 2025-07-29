@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImageAttrs` Union Reference
+# `ImageAttrs` Union
 
 
 

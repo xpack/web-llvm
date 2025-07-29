@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChainElem` Struct Reference
+# `ChainElem` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameIndexExpr` Struct Reference
+# `FrameIndexExpr` Struct
 
 <p>Proxy for one MMI entry. <a href="#details">More...</a></p>
 

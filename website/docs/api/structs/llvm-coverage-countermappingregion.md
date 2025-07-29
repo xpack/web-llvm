@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CounterMappingRegion` Struct Reference
+# `CounterMappingRegion` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/coverage/counter">Counter</a> mapping region associates a source range with a specific counter. <a href="#details">More...</a></p>
 

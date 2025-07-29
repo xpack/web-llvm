@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VNCoercion` Namespace Reference
+# `VNCoercion` Namespace
 
 
 

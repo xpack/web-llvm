@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PadRange` Struct Reference
+# `PadRange` Struct
 
 <p>Structure holding a try-range and the associated landing pad. <a href="#details">More...</a></p>
 

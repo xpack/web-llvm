@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddSubFlagsOpcodePair` Struct Reference
+# `AddSubFlagsOpcodePair` Struct
 
 <p>Map pseudo instructions that imply an 'S' bit onto real opcodes. <a href="#details">More...</a></p>
 

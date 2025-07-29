@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcPrefetchTag` Namespace Reference
+# `SparcPrefetchTag` Namespace
 
 
 

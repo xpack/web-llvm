@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTargetParser.cpp` File Reference
+# `PPCTargetParser.cpp` File
 
 
 

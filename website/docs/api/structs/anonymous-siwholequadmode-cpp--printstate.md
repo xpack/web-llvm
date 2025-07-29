@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintState` Struct Reference
+# `PrintState` Struct
 
 
 

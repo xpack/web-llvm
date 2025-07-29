@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewritePhi` Struct Reference
+# `RewritePhi` Struct
 
 
 

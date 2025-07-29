@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `smin_pred_ty` Struct Reference
+# `smin_pred_ty` Struct
 
 <p>Helper class for identifying signed min predicates. <a href="#details">More...</a></p>
 

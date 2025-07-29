@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnonStructTypeKeyInfo` Struct Reference
+# `AnonStructTypeKeyInfo` Struct
 
 
 

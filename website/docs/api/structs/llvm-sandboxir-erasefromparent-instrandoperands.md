@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrAndOperands` Struct Reference
+# `InstrAndOperands` Struct
 
 <p>Contains all the data we need to restore an "erased" (i.e., detached) instruction: the instruction itself and its operands in order. <a href="#details">More...</a></p>
 

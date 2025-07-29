@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DivRemPairsPass` Struct Reference
+# `DivRemPairsPass` Struct
 
 <p>Hoist/decompose integer division and remainder instructions to enable CFG improvements and better codegen. <a href="#details">More...</a></p>
 

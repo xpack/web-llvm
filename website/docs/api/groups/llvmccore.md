@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Core Reference
+# Core
 
 <p>This modules provide an interface to libLLVMCore, which implements the LLVM intermediate representation as well as other related types and utilities. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonCopyToCombine.cpp}` Namespace Reference
+# `anonymous{HexagonCopyToCombine.cpp}` Namespace
 
 
 

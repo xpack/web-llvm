@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DivRemPairWorklistEntry` Struct Reference
+# `DivRemPairWorklistEntry` Struct
 
 <p>A thin wrapper to store two values that we matched as div-rem pair. <a href="#details">More...</a></p>
 

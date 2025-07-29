@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonOptimizeSZextends.cpp` File Reference
+# `HexagonOptimizeSZextends.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64CollectLOH` Struct Reference
+# `AArch64CollectLOH` Struct
 
 
 

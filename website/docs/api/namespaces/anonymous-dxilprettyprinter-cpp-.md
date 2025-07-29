@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILPrettyPrinter.cpp}` Namespace Reference
+# `anonymous{DXILPrettyPrinter.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AppendingGVTy` Struct Reference
+# `AppendingGVTy` Struct
 
 
 

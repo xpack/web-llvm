@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Support/SystemZ` Folder Reference
+# `include/llvm/Support/SystemZ` Folder
 
 
 

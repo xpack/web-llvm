@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JSON.cpp}` Namespace Reference
+# `anonymous{JSON.cpp}` Namespace
 
 
 

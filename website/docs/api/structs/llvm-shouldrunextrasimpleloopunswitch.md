@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShouldRunExtraSimpleLoopUnswitch` Struct Reference
+# `ShouldRunExtraSimpleLoopUnswitch` Struct
 
 <p>A marker analysis to determine if SimpleLoopUnswitch should run again on a given loop. <a href="#details">More...</a></p>
 

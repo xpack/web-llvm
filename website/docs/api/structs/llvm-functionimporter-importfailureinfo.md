@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportFailureInfo` Struct Reference
+# `ImportFailureInfo` Struct
 
 <p>Information optionally tracked for candidates the importer decided not to import. <a href="#details">More...</a></p>
 

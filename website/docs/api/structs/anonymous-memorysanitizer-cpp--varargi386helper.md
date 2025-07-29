@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarArgI386Helper` Struct Reference
+# `VarArgI386Helper` Struct
 
 <p>i386-specific implementation of <a href="/web-llvm/docs/api/structs/anonymous-memorysanitizer-cpp-/vararghelper">VarArgHelper</a>. <a href="#details">More...</a></p>
 

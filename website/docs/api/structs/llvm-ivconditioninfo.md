@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IVConditionInfo` Struct Reference
+# `IVConditionInfo` Struct
 
 <p>Struct to hold information about a partially invariant condition. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CPUInfo` Union Reference
+# `CPUInfo` Union
 
 <p>Detailed information about the processor of the system that generated this minidump. <a href="#details">More...</a></p>
 

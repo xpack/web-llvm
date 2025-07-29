@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPointerInfoImpl` Struct Reference
+# `AAPointerInfoImpl` Struct
 
 
 

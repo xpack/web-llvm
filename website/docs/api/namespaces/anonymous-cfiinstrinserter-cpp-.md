@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CFIInstrInserter.cpp}` Namespace Reference
+# `anonymous{CFIInstrInserter.cpp}` Namespace
 
 
 

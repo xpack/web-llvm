@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SjLjEHPrepare.cpp}` Namespace Reference
+# `anonymous{SjLjEHPrepare.cpp}` Namespace
 
 
 

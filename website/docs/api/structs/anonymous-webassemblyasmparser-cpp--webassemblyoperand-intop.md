@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntOp` Struct Reference
+# `IntOp` Struct
 
 
 

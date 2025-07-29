@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIOptimizeVGPRLiveRange.cpp` File Reference
+# `SIOptimizeVGPRLiveRange.cpp` File
 
 <p>This pass tries to remove unnecessary VGPR live ranges in divergent if-else structures and waterfall loops. <a href="#details">More...</a></p>
 

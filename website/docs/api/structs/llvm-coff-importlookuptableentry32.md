@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportLookupTableEntry32` Struct Reference
+# `ImportLookupTableEntry32` Struct
 
 <p>The PE32 Import Lookup Table. <a href="#details">More...</a></p>
 

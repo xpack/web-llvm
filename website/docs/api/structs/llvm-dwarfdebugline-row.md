@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Row` Struct Reference
+# `Row` Struct
 
 <p>Standard .debug_line state machine structure. <a href="#details">More...</a></p>
 

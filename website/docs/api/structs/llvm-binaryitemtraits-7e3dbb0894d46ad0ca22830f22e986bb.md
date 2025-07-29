@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryItemTraits` Struct Template Reference
+# `BinaryItemTraits` Struct Template
 
 
 

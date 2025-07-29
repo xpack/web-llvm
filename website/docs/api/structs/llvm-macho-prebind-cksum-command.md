@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `prebind_cksum_command` Struct Reference
+# `prebind_cksum_command` Struct
 
 
 

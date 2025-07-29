@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specific_intval` Struct Template Reference
+# `specific_intval` Struct Template
 
 <p>Match a specified integer value or vector of all elements of that value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstraintInfo` Struct Reference
+# `ConstraintInfo` Struct
 
 
 

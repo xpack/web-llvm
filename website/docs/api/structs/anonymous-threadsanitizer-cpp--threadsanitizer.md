@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSanitizer` Struct Reference
+# `ThreadSanitizer` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-threadsanitizer-cpp-/threadsanitizer">ThreadSanitizer</a>: instrument the code in module to find races. <a href="#details">More...</a></p>
 

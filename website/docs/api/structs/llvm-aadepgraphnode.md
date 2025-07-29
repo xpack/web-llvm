@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADepGraphNode` Struct Reference
+# `AADepGraphNode` Struct
 
 <p>} <a href="#details">More...</a></p>
 

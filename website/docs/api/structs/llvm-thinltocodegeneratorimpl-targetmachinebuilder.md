@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetMachineBuilder` Struct Reference
+# `TargetMachineBuilder` Struct
 
 <p>Helper to gather options relevant to the target machine creation. <a href="#details">More...</a></p>
 

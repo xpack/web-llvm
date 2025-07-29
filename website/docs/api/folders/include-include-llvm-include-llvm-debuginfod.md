@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Debuginfod` Folder Reference
+# `include/llvm/Debuginfod` Folder
 
 
 

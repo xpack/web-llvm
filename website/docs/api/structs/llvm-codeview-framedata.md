@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameData` Struct Reference
+# `FrameData` Struct
 
 <p>Data in the SUBSEC_FRAMEDATA subection. <a href="#details">More...</a></p>
 

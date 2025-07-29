@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600OptimizeVectorRegisters.cpp` File Reference
+# `R600OptimizeVectorRegisters.cpp` File
 
 <p>This pass merges inputs of swizzeable instructions into vector sharing common data and/or have enough undef subreg using swizzle abilities. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstrInfo.cpp` File Reference
+# `X86InstrInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticHandler` Struct Reference
+# `DiagnosticHandler` Struct
 
 <p>This is the base class for diagnostic handling in LLVM. <a href="#details">More...</a></p>
 

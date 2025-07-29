@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaterializingInfo` Struct Reference
+# `MaterializingInfo` Struct
 
 
 

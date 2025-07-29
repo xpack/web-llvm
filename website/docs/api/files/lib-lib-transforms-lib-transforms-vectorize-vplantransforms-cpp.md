@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanTransforms.cpp` File Reference
+# `VPlanTransforms.cpp` File
 
 <p>This file implements a set of utility <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> to <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a> transformations. <a href="#details">More...</a></p>
 

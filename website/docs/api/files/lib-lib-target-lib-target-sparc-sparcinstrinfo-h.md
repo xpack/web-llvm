@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcInstrInfo.h` File Reference
+# `SparcInstrInfo.h` File
 
 
 

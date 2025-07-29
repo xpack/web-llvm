@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineLoadStoreAlloca.cpp` File Reference
+# `InstCombineLoadStoreAlloca.cpp` File
 
 
 

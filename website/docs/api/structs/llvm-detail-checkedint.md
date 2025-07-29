@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CheckedInt` Struct Reference
+# `CheckedInt` Struct
 
 
 

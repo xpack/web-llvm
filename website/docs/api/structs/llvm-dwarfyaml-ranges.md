@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Ranges` Struct Reference
+# `Ranges` Struct
 
 <p>Class that describes a single range list inside the .debug_ranges section. <a href="#details">More...</a></p>
 

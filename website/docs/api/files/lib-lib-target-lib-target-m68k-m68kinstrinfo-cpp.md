@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstrInfo.cpp` File Reference
+# `M68kInstrInfo.cpp` File
 
 <p>This file contains the <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> declaration of the <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `brc_match` Struct Template Reference
+# `brc_match` Struct Template
 
 
 

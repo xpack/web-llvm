@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InternalControlVarInfo` Struct Reference
+# `InternalControlVarInfo` Struct
 
 <p>Generic information that describes an internal control variable. <a href="#details">More...</a></p>
 

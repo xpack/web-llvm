@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerBufferFatPointers.cpp` File Reference
+# `AMDGPULowerBufferFatPointers.cpp` File
 
 
 

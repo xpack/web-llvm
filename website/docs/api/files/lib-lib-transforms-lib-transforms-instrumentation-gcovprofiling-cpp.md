@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVProfiling.cpp` File Reference
+# `GCOVProfiling.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjectSizeOpts` Struct Reference
+# `ObjectSizeOpts` Struct
 
 <p>Various options to control the behavior of getObjectSize. <a href="#details">More...</a></p>
 

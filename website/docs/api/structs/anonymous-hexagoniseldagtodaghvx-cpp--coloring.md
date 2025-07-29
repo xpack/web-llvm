@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Coloring` Struct Reference
+# `Coloring` Struct
 
 
 

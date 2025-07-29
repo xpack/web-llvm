@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RebaseOpcode` Struct Reference
+# `RebaseOpcode` Struct
 
 
 

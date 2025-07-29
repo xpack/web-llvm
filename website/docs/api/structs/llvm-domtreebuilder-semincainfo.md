@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SemiNCAInfo` Struct Template Reference
+# `SemiNCAInfo` Struct Template
 
 
 

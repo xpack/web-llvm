@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmPrinter.h` File Reference
+# `ARMAsmPrinter.h` File
 
 
 

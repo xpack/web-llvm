@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDTreeAsmWriterContext` Struct Reference
+# `MDTreeAsmWriterContext` Struct
 
 
 

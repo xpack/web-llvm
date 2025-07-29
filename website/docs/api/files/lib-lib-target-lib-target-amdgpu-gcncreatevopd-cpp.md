@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNCreateVOPD.cpp` File Reference
+# `GCNCreateVOPD.cpp` File
 
 <p>Combine VALU pairs into VOPD instructions Only works on wave32 Has register requirements, we reject creating VOPD if the requirements are not met. <a href="#details">More...</a></p>
 

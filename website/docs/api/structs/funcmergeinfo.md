@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncMergeInfo` Struct Reference
+# `FuncMergeInfo` Struct
 
 <p>Tuple to hold function info to process merging. <a href="#details">More...</a></p>
 

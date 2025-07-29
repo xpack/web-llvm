@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64PromoteConstant.cpp}` Namespace Reference
+# `anonymous{AArch64PromoteConstant.cpp}` Namespace
 
 
 

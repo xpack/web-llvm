@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeBuiltin` Struct Reference
+# `NativeBuiltin` Struct
 
 
 

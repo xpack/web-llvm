@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockNode` Struct Reference
+# `BlockNode` Struct
 
 
 

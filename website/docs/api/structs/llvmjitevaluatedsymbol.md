@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMJITEvaluatedSymbol` Struct Reference
+# `LLVMJITEvaluatedSymbol` Struct
 
 <p>Represents an evaluated symbol address and flags. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARM_MB` Namespace Reference
+# `ARM_MB` Namespace
 
 
 

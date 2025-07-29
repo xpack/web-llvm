@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantIntOrdering` Struct Reference
+# `ConstantIntOrdering` Struct
 
 <p>This class implements a stable ordering of constant integers that does not depend on their address. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BlockExtractor.cpp}` Namespace Reference
+# `anonymous{BlockExtractor.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVVMIntrRangePass` Struct Reference
+# `NVVMIntrRangePass` Struct
 
 
 

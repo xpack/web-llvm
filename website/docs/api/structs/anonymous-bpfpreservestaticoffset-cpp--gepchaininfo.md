@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GEPChainInfo` Struct Reference
+# `GEPChainInfo` Struct
 
 
 

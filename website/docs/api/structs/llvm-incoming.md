@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Incoming` Struct Reference
+# `Incoming` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/incoming">Incoming</a> for lane maks phi as machine instruction, incoming register <span class="doxyComputerOutput">Reg</span> and incoming block <span class="doxyComputerOutput">Block</span> are taken from machine instruction. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RotImmOp` Struct Reference
+# `RotImmOp` Struct
 
 
 

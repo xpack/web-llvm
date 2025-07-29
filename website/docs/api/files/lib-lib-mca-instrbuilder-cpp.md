@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrBuilder.cpp` File Reference
+# `InstrBuilder.cpp` File
 
 <p>This file implements the InstrBuilder interface. <a href="#details">More...</a></p>
 

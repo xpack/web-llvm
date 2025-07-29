@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVPostRAExpandPseudoInsts.cpp}` Namespace Reference
+# `anonymous{RISCVPostRAExpandPseudoInsts.cpp}` Namespace
 
 
 

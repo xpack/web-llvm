@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCInstLower.h` File Reference
+# `M68kMCInstLower.h` File
 
 <p>This file contains code to lower M68k MachineInstrs to their corresponding MCInst records. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Allocator.cpp` File Reference
+# `Allocator.cpp` File
 
 
 

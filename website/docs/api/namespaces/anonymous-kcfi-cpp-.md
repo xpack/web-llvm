@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{KCFI.cpp}` Namespace Reference
+# `anonymous{KCFI.cpp}` Namespace
 
 
 

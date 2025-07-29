@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NativeTypeEnum.cpp}` Namespace Reference
+# `anonymous{NativeTypeEnum.cpp}` Namespace
 
 
 

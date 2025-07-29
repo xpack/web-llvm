@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMLatencyMutations.cpp}` Namespace Reference
+# `anonymous{ARMLatencyMutations.cpp}` Namespace
 
 
 

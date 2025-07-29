@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ElementWiseBitCast_match` Struct Template Reference
+# `ElementWiseBitCast_match` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ProfileData/Coverage` Folder Reference
+# `lib/ProfileData/Coverage` Folder
 
 
 

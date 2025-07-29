@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Mips_ABIFlags` Struct Template Reference
+# `Elf_Mips_ABIFlags` Struct Template
 
 
 

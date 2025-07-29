@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallReturnHandler` Struct Reference
+# `CallReturnHandler` Struct
 
 
 

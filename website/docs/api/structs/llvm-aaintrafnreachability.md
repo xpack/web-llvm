@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAIntraFnReachability` Struct Reference
+# `AAIntraFnReachability` Struct
 
 <p>An abstract interface to determine reachability of point A to B. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_sentinel_tracking` Struct Template Reference
+# `ilist_sentinel_tracking` Struct Template
 
 <p>Option to choose whether to track sentinels. <a href="#details">More...</a></p>
 

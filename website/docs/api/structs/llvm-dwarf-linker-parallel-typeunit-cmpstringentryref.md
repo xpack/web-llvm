@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CmpStringEntryRef` Struct Reference
+# `CmpStringEntryRef` Struct
 
 
 

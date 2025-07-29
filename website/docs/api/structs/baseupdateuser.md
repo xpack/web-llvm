@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseUpdateUser` Struct Reference
+# `BaseUpdateUser` Struct
 
 
 

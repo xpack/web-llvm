@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwappedData` Struct Reference
+# `SwappedData` Struct
 
 <p>When the GSYM file's endianness doesn't match the host system then we must decode all data structures that need to be swapped into local storage and set point the <a href="/web-llvm/docs/api/classes/llvm/arrayref">ArrayRef</a> objects above to these swapped copies. <a href="#details">More...</a></p>
 

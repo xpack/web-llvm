@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `msgpack` Namespace Reference
+# `msgpack` Namespace
 
 
 

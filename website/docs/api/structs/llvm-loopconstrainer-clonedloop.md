@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ClonedLoop` Struct Reference
+# `ClonedLoop` Struct
 
 
 

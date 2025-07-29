@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetStreamer.h` File Reference
+# `XCoreTargetStreamer.h` File
 
 
 

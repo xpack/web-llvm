@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFEmitter.cpp` File Reference
+# `XCOFFEmitter.cpp` File
 
 <p>The xcoff component of yaml2obj. <a href="#details">More...</a></p>
 

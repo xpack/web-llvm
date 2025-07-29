@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mcdwarf` Namespace Reference
+# `mcdwarf` Namespace
 
 
 

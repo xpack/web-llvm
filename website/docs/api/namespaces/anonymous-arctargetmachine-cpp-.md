@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCTargetMachine.cpp}` Namespace Reference
+# `anonymous{ARCTargetMachine.cpp}` Namespace
 
 
 

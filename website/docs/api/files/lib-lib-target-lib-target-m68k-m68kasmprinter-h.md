@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kAsmPrinter.h` File Reference
+# `M68kAsmPrinter.h` File
 
 <p>This file contains M68k assembler printer declarations. <a href="#details">More...</a></p>
 

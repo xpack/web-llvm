@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsExpandPseudo.cpp}` Namespace Reference
+# `anonymous{MipsExpandPseudo.cpp}` Namespace
 
 
 

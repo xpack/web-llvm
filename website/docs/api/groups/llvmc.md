@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The LLVM-C: C interface to LLVM Reference
+# LLVM-C: C interface to LLVM
 
 <p>This module exposes parts of the LLVM library as a C API. <a href="#details">More...</a></p>
 

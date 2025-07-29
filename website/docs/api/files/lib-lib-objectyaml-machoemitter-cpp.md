@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOEmitter.cpp` File Reference
+# `MachOEmitter.cpp` File
 
 <p>The Mach component of yaml2obj. <a href="#details">More...</a></p>
 

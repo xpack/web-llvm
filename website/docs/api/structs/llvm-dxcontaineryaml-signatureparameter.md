@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SignatureParameter` Struct Reference
+# `SignatureParameter` Struct
 
 
 

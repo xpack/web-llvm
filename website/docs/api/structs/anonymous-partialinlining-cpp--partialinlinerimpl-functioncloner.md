@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionCloner` Struct Reference
+# `FunctionCloner` Struct
 
 
 

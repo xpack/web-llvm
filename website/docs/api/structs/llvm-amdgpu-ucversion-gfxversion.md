@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GFXVersion` Struct Reference
+# `GFXVersion` Struct
 
 
 

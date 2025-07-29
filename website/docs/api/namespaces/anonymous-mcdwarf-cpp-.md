@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MCDwarf.cpp}` Namespace Reference
+# `anonymous{MCDwarf.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMCInstLower.cpp` File Reference
+# `SPIRVMCInstLower.cpp` File
 
 
 

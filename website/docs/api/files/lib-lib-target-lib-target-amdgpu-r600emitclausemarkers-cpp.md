@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600EmitClauseMarkers.cpp` File Reference
+# `R600EmitClauseMarkers.cpp` File
 
 <p>Add CF_ALU. <a href="#details">More...</a></p>
 

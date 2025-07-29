@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNRegPressurePrinter` Struct Reference
+# `GCNRegPressurePrinter` Struct
 
 
 

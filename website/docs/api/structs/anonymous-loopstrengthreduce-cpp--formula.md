@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Formula` Struct Reference
+# `Formula` Struct
 
 <p>This class holds information that describes a formula for computing satisfying a use. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ObjCopy/COFF` Folder Reference
+# `lib/ObjCopy/COFF` Folder
 
 
 

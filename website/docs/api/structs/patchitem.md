@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PatchItem` Struct Reference
+# `PatchItem` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFGState` Struct Reference
+# `CFGState` Struct
 
 <p>Hold state information used when constructing the CFG of the output IR, traversing the VPBasicBlocks and generating corresponding IR BasicBlocks. <a href="#details">More...</a></p>
 

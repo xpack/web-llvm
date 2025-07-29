@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSSAHelpers` Namespace Reference
+# `MSSAHelpers` Namespace
 
 
 

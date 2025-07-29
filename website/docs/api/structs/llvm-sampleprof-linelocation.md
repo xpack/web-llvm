@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineLocation` Struct Reference
+# `LineLocation` Struct
 
 <p>Represents the relative location of an instruction. <a href="#details">More...</a></p>
 

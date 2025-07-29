@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Decomposition` Struct Reference
+# `Decomposition` Struct
 
 <p>Represents an Offset + Coefficient1 * Variable1 + ... decomposition. <a href="#details">More...</a></p>
 

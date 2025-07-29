@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CPUser` Struct Reference
+# `CPUser` Struct
 
 <p>CPUser - One user of a constant pool, keeping the machine instruction pointer, the constant pool being referenced, and the max displacement allowed from the instruction to the CP. <a href="#details">More...</a></p>
 

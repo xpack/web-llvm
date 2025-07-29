@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNRegPressure.cpp` File Reference
+# `GCNRegPressure.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> class. <a href="#details">More...</a></p>
 

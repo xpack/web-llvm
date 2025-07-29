@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFArray` Struct Reference
+# `BTFArray` Struct
 
 <p>BTF_KIND_ARRAY is followed by one "struct BTFArray". <a href="#details">More...</a></p>
 

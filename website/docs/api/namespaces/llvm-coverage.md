@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coverage` Namespace Reference
+# `coverage` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaTargetInfo.h` File Reference
+# `XtensaTargetInfo.h` File
 
 
 

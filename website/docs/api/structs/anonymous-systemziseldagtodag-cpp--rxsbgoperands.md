@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RxSBGOperands` Struct Reference
+# `RxSBGOperands` Struct
 
 
 

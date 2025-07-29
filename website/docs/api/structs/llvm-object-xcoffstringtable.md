@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFStringTable` Struct Reference
+# `XCOFFStringTable` Struct
 
 
 

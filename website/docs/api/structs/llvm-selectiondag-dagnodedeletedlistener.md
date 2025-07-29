@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGNodeDeletedListener` Struct Reference
+# `DAGNodeDeletedListener` Struct
 
 
 

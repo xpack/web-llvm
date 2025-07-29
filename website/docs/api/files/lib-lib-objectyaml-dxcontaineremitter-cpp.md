@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXContainerEmitter.cpp` File Reference
+# `DXContainerEmitter.cpp` File
 
 <p>Binary emitter for yaml to DXContainer binary. <a href="#details">More...</a></p>
 

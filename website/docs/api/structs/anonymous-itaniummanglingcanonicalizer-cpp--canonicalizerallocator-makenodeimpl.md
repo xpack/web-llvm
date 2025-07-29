@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MakeNodeImpl` Struct Template Reference
+# `MakeNodeImpl` Struct Template
 
 <p>Helper to allow makeNode to be partially-specialized on T. <a href="#details">More...</a></p>
 

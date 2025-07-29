@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WalkDirection` Struct Reference
+# `WalkDirection` Struct
 
 
 

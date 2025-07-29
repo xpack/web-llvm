@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LineEditor.cpp}` Namespace Reference
+# `anonymous{LineEditor.cpp}` Namespace
 
 
 

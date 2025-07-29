@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueEqualityComparisonCase` Struct Reference
+# `ValueEqualityComparisonCase` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-simplifycfg-cpp-/valueequalitycomparisoncase">ValueEqualityComparisonCase</a> - Represents a case of a switch. <a href="#details">More...</a></p>
 

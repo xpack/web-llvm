@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyQuery` Struct Reference
+# `SimplifyQuery` Struct
 
 
 

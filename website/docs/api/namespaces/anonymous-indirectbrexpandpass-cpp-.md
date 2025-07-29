@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IndirectBrExpandPass.cpp}` Namespace Reference
+# `anonymous{IndirectBrExpandPass.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCTargetDesc.cpp` File Reference
+# `M68kMCTargetDesc.cpp` File
 
 <p>This file provides <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> target specific descriptions. <a href="#details">More...</a></p>
 

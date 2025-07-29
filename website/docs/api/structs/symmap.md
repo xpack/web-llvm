@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymMap` Struct Reference
+# `SymMap` Struct
 
 
 

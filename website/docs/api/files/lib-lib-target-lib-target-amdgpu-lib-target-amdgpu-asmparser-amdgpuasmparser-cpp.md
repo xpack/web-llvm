@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsmParser.cpp` File Reference
+# `AMDGPUAsmParser.cpp` File
 
 
 

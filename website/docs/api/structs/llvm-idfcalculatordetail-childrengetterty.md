@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChildrenGetterTy` Struct Template Reference
+# `ChildrenGetterTy` Struct Template
 
 <p>Generic utility class used for getting the children of a basic block. <a href="#details">More...</a></p>
 

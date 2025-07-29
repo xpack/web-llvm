@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataRegion` Struct Template Reference
+# `DataRegion` Struct Template
 
 
 

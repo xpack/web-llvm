@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPIPassTrait` Struct Template Reference
+# `BPIPassTrait` Struct Template
 
 <p>Simple trait class that provides a mapping between BPI passes and the corresponding BPInfo. <a href="#details">More...</a></p>
 

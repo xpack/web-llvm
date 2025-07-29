@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/Instrumentation` Folder Reference
+# `lib/Transforms/Instrumentation` Folder
 
 
 

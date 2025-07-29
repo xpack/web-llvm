@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `trivial_helper` Union Template Reference
+# `trivial_helper` Union Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerMemIntrinsics.cpp` File Reference
+# `LowerMemIntrinsics.cpp` File
 
 
 

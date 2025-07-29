@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstInfoType` Struct Reference
+# `InstInfoType` Struct
 
 <p>Information about Instructions. <a href="#details">More...</a></p>
 

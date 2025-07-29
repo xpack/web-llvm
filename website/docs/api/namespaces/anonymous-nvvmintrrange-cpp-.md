@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVVMIntrRange.cpp}` Namespace Reference
+# `anonymous{NVVMIntrRange.cpp}` Namespace
 
 
 

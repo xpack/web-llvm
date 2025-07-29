@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecimateOp` Struct Reference
+# `DecimateOp` Struct
 
 
 

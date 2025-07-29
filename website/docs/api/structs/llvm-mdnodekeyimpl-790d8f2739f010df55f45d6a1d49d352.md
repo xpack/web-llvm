@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeKeyImpl` Struct Template Reference
+# `MDNodeKeyImpl` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> for <a href="/web-llvm/docs/api/classes/llvm/genericdinode">GenericDINode</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetObjectFile.h` File Reference
+# `WebAssemblyTargetObjectFile.h` File
 
 <p>This file declares the WebAssembly-specific subclass of TargetLoweringObjectFile. <a href="#details">More...</a></p>
 

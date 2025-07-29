@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{WebAssemblyISelDAGToDAG.cpp}` Namespace
 
 <p>WebAssembly-specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

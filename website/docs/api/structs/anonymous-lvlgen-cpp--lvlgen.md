@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVLGen` Struct Reference
+# `LVLGen` Struct
 
 
 

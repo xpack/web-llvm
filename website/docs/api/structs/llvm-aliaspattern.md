@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasPattern` Struct Reference
+# `AliasPattern` Struct
 
 <p>Data for each alias pattern. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Contexts Reference
+# Contexts
 
 <p>Contexts are execution states for the core LLVM IR system. <a href="#details">More...</a></p>
 

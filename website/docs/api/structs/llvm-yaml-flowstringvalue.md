@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlowStringValue` Struct Reference
+# `FlowStringValue` Struct
 
 
 

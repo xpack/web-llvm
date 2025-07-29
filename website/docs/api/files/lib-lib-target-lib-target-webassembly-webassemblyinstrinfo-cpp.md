@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyInstrInfo.cpp` File Reference
+# `WebAssemblyInstrInfo.cpp` File
 
 <p>This file contains the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> implementation of the <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> class. <a href="#details">More...</a></p>
 

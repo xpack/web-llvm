@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrivateT` Struct Template Reference
+# `PrivateT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameStat` Struct Reference
+# `FrameStat` Struct
 
 
 

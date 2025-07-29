@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ExpandPostRAPseudos.cpp}` Namespace Reference
+# `anonymous{ExpandPostRAPseudos.cpp}` Namespace
 
 
 

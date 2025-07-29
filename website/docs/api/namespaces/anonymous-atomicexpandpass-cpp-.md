@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AtomicExpandPass.cpp}` Namespace Reference
+# `anonymous{AtomicExpandPass.cpp}` Namespace
 
 
 

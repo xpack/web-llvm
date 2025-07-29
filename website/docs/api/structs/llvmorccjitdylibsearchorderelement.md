@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCJITDylibSearchOrderElement` Struct Reference
+# `LLVMOrcCJITDylibSearchOrderElement` Struct
 
 <p>An element type for a JITDylib search order. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUPreloadKernArgProlog.cpp}` Namespace Reference
+# `anonymous{AMDGPUPreloadKernArgProlog.cpp}` Namespace
 
 
 

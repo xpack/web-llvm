@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedModule` Struct Reference
+# `ParsedModule` Struct
 
 <p>A structure containing all data belonging to a single minidump module. <a href="#details">More...</a></p>
 

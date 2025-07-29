@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAddressSpaceReturned` Struct Reference
+# `AAAddressSpaceReturned` Struct
 
 
 

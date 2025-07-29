@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAtomicLower.h` File Reference
+# `NVPTXAtomicLower.h` File
 
 
 

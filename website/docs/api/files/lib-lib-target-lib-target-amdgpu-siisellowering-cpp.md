@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIISelLowering.cpp` File Reference
+# `SIISelLowering.cpp` File
 
 <p>Custom DAG lowering for <a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a>. <a href="#details">More...</a></p>
 

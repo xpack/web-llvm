@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Setup` Struct Reference
+# `Setup` Struct
 
 <p>A setup object containing callbacks to construct a memory manager and memory access object. <a href="#details">More...</a></p>
 

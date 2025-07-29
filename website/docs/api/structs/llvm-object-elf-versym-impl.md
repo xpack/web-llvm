@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Versym_Impl` Struct Template Reference
+# `Elf_Versym_Impl` Struct Template
 
 <p>Elf_Versym: This is the structure of entries in the SHT_GNU_versym section (.gnu.version). <a href="#details">More...</a></p>
 

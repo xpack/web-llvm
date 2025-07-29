@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cstval_pred_ty` Struct Template Reference
+# `cstval_pred_ty` Struct Template
 
 <p>This helper class is used to match constant scalars, vector splats, and fixed width vectors that satisfy a specified predicate. <a href="#details">More...</a></p>
 

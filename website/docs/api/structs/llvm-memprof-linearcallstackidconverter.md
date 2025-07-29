@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinearCallStackIdConverter` Struct Reference
+# `LinearCallStackIdConverter` Struct
 
 
 

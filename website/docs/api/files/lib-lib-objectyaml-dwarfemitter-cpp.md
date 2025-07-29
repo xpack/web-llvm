@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFEmitter.cpp` File Reference
+# `DWARFEmitter.cpp` File
 
 <p>The DWARF component of yaml2obj. <a href="#details">More...</a></p>
 

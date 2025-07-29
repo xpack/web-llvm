@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmPrinter.cpp` File Reference
+# `ARMAsmPrinter.cpp` File
 
 
 

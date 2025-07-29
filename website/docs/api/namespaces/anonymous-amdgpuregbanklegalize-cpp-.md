@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPURegBankLegalize.cpp}` Namespace Reference
+# `anonymous{AMDGPURegBankLegalize.cpp}` Namespace
 
 
 

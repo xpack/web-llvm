@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IntelJITEventListener.cpp}` Namespace Reference
+# `anonymous{IntelJITEventListener.cpp}` Namespace
 
 
 

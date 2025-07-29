@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVVectorPeephole.cpp}` Namespace Reference
+# `anonymous{RISCVVectorPeephole.cpp}` Namespace
 
 
 

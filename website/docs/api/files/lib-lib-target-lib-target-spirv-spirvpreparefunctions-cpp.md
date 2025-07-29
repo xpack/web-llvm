@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVPrepareFunctions.cpp` File Reference
+# `SPIRVPrepareFunctions.cpp` File
 
 
 

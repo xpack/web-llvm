@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImplicitArg` Namespace Reference
+# `ImplicitArg` Namespace
 
 
 

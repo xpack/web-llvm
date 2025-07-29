@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArrayTypeNode` Struct Reference
+# `ArrayTypeNode` Struct
 
 
 

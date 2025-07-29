@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceFlags` Struct Reference
+# `ResourceFlags` Struct
 
 
 

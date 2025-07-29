@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMachineScheduler.h` File Reference
+# `SIMachineScheduler.h` File
 
 <p>SI Machine Scheduler interface. <a href="#details">More...</a></p>
 

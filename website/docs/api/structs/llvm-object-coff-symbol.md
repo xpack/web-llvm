@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_symbol` Struct Template Reference
+# `coff_symbol` Struct Template
 
 
 

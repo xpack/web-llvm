@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachO64LE` Struct Reference
+# `MachO64LE` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitTestBlock` Struct Reference
+# `BitTestBlock` Struct
 
 
 

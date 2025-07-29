@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumTeamsT` Struct Template Reference
+# `NumTeamsT` Struct Template
 
 
 

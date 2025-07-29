@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LooseMatchingResult` Struct Reference
+# `LooseMatchingResult` Struct
 
 
 

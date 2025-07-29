@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PoisonFlags` Struct Reference
+# `PoisonFlags` Struct
 
 
 

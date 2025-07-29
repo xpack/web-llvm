@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentInitInfo` Struct Reference
+# `ArgumentInitInfo` Struct
 
 
 

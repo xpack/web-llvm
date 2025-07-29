@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `prebound_dylib_command` Struct Reference
+# `prebound_dylib_command` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KeyOrderSizeTAndImmediate` Struct Reference
+# `KeyOrderSizeTAndImmediate` Struct
 
 
 

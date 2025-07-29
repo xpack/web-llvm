@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CountedRegion` Struct Reference
+# `CountedRegion` Struct
 
 <p>Associates a source range with an execution count. <a href="#details">More...</a></p>
 

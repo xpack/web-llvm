@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RematGraph` Struct Reference
+# `RematGraph` Struct
 
 
 

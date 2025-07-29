@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SGPRSpillBuilder` Struct Reference
+# `SGPRSpillBuilder` Struct
 
 
 

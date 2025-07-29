@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Hexagon/TargetInfo` Folder Reference
+# `lib/Target/Hexagon/TargetInfo` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaxMin_match` Struct Template Reference
+# `MaxMin_match` Struct Template
 
 
 

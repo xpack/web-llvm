@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XtensaDisassembler.cpp}` Namespace Reference
+# `anonymous{XtensaDisassembler.cpp}` Namespace
 
 
 

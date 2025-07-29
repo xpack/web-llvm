@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedScavengeOrSpill` Struct Reference
+# `ScopedScavengeOrSpill` Struct
 
 <p>RAII helper class for scavenging or spilling a register. <a href="#details">More...</a></p>
 

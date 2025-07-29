@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFastISel.cpp` File Reference
+# `WebAssemblyFastISel.cpp` File
 
 <p>This file defines the WebAssembly-specific support for the <a href="/web-llvm/docs/api/classes/llvm/fastisel">FastISel</a> class. <a href="#details">More...</a></p>
 

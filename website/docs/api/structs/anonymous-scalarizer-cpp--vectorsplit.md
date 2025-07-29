@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorSplit` Struct Reference
+# `VectorSplit` Struct
 
 
 

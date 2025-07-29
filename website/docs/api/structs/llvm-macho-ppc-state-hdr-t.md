@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ppc_state_hdr_t` Struct Reference
+# `ppc_state_hdr_t` Struct
 
 
 

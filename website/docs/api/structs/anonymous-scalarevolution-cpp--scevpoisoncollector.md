@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVPoisonCollector` Struct Reference
+# `SCEVPoisonCollector` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinidumpYAML.cpp` File Reference
+# `MinidumpYAML.cpp` File
 
 
 

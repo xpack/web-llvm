@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptTable.cpp` File Reference
+# `OptTable.cpp` File
 
 
 

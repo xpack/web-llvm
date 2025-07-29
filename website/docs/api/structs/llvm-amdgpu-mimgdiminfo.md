@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIMGDimInfo` Struct Reference
+# `MIMGDimInfo` Struct
 
 
 

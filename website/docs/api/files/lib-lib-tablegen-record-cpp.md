@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Record.cpp` File Reference
+# `Record.cpp` File
 
 
 

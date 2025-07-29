@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIToken` Struct Reference
+# `MIToken` Struct
 
 <p>A token produced by the machine instruction lexer. <a href="#details">More...</a></p>
 

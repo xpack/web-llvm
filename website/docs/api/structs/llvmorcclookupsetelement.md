@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCLookupSetElement` Struct Reference
+# `LLVMOrcCLookupSetElement` Struct
 
 <p>An element type for a symbol lookup set. <a href="#details">More...</a></p>
 

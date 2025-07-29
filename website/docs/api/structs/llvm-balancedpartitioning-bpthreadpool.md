@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPThreadPool` Struct Reference
+# `BPThreadPool` Struct
 
 <p>A special ThreadPool that allows for spawning new tasks after blocking on wait(). <a href="#details">More...</a></p>
 

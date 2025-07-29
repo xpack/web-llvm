@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterEncoding` Struct Reference
+# `RegisterEncoding` Struct
 
 
 

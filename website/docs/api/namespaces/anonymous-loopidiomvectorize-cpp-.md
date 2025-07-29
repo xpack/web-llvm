@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopIdiomVectorize.cpp}` Namespace Reference
+# `anonymous{LoopIdiomVectorize.cpp}` Namespace
 
 
 

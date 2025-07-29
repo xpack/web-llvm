@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVBuiltins.cpp` File Reference
+# `SPIRVBuiltins.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonHazardRecognizer.cpp` File Reference
+# `HexagonHazardRecognizer.cpp` File
 
 
 

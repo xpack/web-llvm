@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDPatternMatch` Namespace Reference
+# `SDPatternMatch` Namespace
 
 
 

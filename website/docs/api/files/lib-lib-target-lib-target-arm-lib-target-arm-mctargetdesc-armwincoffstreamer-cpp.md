@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMWinCOFFStreamer.cpp` File Reference
+# `ARMWinCOFFStreamer.cpp` File
 
 
 

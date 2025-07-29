@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PluginLoader.cpp` File Reference
+# `PluginLoader.cpp` File
 
 
 

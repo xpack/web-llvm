@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefsOnlyTag` Struct Reference
+# `DefsOnlyTag` Struct
 
 
 

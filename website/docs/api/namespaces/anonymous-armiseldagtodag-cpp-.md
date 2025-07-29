@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{ARMISelDAGToDAG.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-armiseldagtodag-cpp-/armdagtodagisel">ARMDAGToDAGISel</a> - <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

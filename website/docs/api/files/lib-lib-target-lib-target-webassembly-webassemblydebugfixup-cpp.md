@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDebugFixup.cpp` File Reference
+# `WebAssemblyDebugFixup.cpp` File
 
 <p>Several prior passes may "stackify" registers, here we ensure any references in such registers in debug_value instructions become stack relative also. <a href="#details">More...</a></p>
 

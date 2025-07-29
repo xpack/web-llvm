@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SimpleRemoteEPCUtils.cpp}` Namespace Reference
+# `anonymous{SimpleRemoteEPCUtils.cpp}` Namespace
 
 
 

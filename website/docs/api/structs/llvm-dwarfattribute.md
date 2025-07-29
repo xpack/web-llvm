@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFAttribute` Struct Reference
+# `DWARFAttribute` Struct
 
 <p>Encapsulates a DWARF attribute value and all of the data required to describe the attribute value. <a href="#details">More...</a></p>
 

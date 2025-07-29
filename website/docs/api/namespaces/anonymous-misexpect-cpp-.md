@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MisExpect.cpp}` Namespace Reference
+# `anonymous{MisExpect.cpp}` Namespace
 
 
 

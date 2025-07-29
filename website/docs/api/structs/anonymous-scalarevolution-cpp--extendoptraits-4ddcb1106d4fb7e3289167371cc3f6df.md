@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtendOpTraits` Struct Template Reference
+# `ExtendOpTraits` Struct Template
 
 
 

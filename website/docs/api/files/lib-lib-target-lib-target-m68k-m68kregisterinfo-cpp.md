@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kRegisterInfo.cpp` File Reference
+# `M68kRegisterInfo.cpp` File
 
 <p>This file contains the CPU0 implementation of the <a href="/web-llvm/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> class. <a href="#details">More...</a></p>
 

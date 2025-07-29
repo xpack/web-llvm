@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmSignature` Struct Reference
+# `WasmSignature` Struct
 
 
 

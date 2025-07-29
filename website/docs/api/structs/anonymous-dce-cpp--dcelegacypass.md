@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DCELegacyPass` Struct Reference
+# `DCELegacyPass` Struct
 
 
 

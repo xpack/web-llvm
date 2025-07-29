@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareLoopInfo` Struct Reference
+# `HardwareLoopInfo` Struct
 
 <p>Attributes of a target dependent hardware loop. <a href="#details">More...</a></p>
 

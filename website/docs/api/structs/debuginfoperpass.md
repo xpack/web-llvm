@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugInfoPerPass` Struct Reference
+# `DebugInfoPerPass` Struct
 
 <p>Used to track the Debug Info Metadata information. <a href="#details">More...</a></p>
 

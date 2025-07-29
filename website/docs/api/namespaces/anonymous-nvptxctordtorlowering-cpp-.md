@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXCtorDtorLowering.cpp}` Namespace Reference
+# `anonymous{NVPTXCtorDtorLowering.cpp}` Namespace
 
 
 

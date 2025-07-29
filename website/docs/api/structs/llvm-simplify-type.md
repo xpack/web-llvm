@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `simplify_type` Struct Template Reference
+# `simplify_type` Struct Template
 
 <p>Define a template that can be specialized by smart pointers to reflect the fact that they are automatically dereferenced, and are not involved with the template selection process... the default implementation is a noop. <a href="#details">More...</a></p>
 

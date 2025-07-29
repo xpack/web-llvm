@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryEntry` Struct Reference
+# `ProfileSummaryEntry` Struct
 
 
 

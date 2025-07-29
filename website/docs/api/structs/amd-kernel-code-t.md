@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `amd_kernel_code_t` Struct Reference
+# `amd_kernel_code_t` Struct
 
 <p>AMD Kernel Code Object (<a href="/web-llvm/docs/api/structs/amd-kernel-code-t">amd_kernel_code_t</a>). <a href="#details">More...</a></p>
 

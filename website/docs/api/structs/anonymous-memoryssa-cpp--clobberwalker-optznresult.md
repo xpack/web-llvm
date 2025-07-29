@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptznResult` Struct Reference
+# `OptznResult` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolSize.cpp` File Reference
+# `SymbolSize.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GroupSection` Struct Reference
+# `GroupSection` Struct
 
 
 

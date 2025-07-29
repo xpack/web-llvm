@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CandidateInfo` Struct Reference
+# `CandidateInfo` Struct
 
 <p>Keep track of information about hoisting candidates. <a href="#details">More...</a></p>
 

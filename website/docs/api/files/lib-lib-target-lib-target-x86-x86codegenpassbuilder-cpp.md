@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86CodeGenPassBuilder.cpp` File Reference
+# `X86CodeGenPassBuilder.cpp` File
 
 <p>This file contains <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> CodeGen pipeline builder. <a href="#details">More...</a></p>
 

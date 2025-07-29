@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaTargetStreamer.cpp` File Reference
+# `XtensaTargetStreamer.cpp` File
 
 
 

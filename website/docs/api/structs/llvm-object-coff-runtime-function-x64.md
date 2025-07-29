@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_runtime_function_x64` Struct Reference
+# `coff_runtime_function_x64` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXUtilities.cpp` File Reference
+# `NVPTXUtilities.cpp` File
 
 
 

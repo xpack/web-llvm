@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantComparesGatherer` Struct Reference
+# `ConstantComparesGatherer` Struct
 
 <p>Given a chain of or (||) or and (&amp;&amp;) comparison of a value against a constant, this will try to recover the information required for a switch structure. <a href="#details">More...</a></p>
 

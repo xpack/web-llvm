@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchInstPrinter.cpp` File Reference
+# `LoongArchInstPrinter.cpp` File
 
 
 

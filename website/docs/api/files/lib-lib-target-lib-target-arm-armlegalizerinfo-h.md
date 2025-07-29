@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLegalizerInfo.h` File Reference
+# `ARMLegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for ARM. <a href="#details">More...</a></p>
 

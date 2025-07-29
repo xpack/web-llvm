@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalMergeOptions` Struct Reference
+# `GlobalMergeOptions` Struct
 
 
 

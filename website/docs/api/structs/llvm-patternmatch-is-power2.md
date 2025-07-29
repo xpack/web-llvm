@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_power2` Struct Reference
+# `is_power2` Struct
 
 
 

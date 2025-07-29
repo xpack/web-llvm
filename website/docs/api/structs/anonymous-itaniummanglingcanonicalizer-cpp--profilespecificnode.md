@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSpecificNode` Struct Template Reference
+# `ProfileSpecificNode` Struct Template
 
 
 

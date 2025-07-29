@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNSchedStrategy.h` File Reference
+# `GCNSchedStrategy.h` File
 
 
 

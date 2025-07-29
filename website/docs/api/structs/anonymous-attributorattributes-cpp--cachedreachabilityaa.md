@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachedReachabilityAA` Struct Template Reference
+# `CachedReachabilityAA` Struct Template
 
 
 

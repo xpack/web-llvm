@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RebaseInfo` Struct Reference
+# `RebaseInfo` Struct
 
 <p>The location of the rebase info inside the binary is described by LC_DYLD_INFO load command. <a href="#details">More...</a></p>
 

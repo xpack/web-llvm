@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmitterState` Struct Reference
+# `EmitterState` Struct
 
 
 

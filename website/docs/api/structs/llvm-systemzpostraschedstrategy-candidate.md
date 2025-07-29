@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Candidate` Struct Reference
+# `Candidate` Struct
 
 <p>A candidate during instruction evaluation. <a href="#details">More...</a></p>
 

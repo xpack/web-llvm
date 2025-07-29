@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpTgt` Struct Reference
+# `ExpTgt` Struct
 
 
 

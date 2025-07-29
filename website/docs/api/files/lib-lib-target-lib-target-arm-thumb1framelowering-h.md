@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thumb1FrameLowering.h` File Reference
+# `Thumb1FrameLowering.h` File
 
 
 

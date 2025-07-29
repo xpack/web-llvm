@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVCustomBehaviour.cpp` File Reference
+# `RISCVCustomBehaviour.cpp` File
 
 <p>This file implements methods from the RISCVCustomBehaviour class. <a href="#details">More...</a></p>
 

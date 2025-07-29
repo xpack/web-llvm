@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerWWMCopies.cpp` File Reference
+# `SILowerWWMCopies.cpp` File
 
 <p>Lowering the WWM_COPY instructions for various register classes. <a href="#details">More...</a></p>
 

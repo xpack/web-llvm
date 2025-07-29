@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `gen-regalloc-eviction-test-model` Namespace Reference
+# `gen-regalloc-eviction-test-model` Namespace
 
 
 

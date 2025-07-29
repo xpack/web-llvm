@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64CondBrTuning.cpp` File Reference
+# `AArch64CondBrTuning.cpp` File
 
 <p>This file contains a pass that transforms CBZ/CBNZ/TBZ/TBNZ instructions into a conditional branch (B.cond), when the NZCV flags can be set for "free". <a href="#details">More...</a></p>
 

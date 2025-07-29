@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The MC layer objects constructed by the streamer Reference
+# MC layer objects constructed by the streamer
 
 
 

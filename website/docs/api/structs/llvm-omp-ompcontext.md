@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPContext` Struct Reference
+# `OMPContext` Struct
 
 <p>The context for a source location is made up of active property traits, e.g., device={kind(host)}, and constructs traits which describe the nesting in OpenMP constructs at the location. <a href="#details">More...</a></p>
 

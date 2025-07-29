@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BankConflictMutation` Struct Reference
+# `BankConflictMutation` Struct
 
 
 

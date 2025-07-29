@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Impl` Struct Template Reference
+# `Impl` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/bitfields-details/impl">Impl</a> is where Bifield description and Storage are put together to interact with values. <a href="#details">More...</a></p>
 

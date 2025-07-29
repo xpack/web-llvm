@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PathSegment` Struct Reference
+# `PathSegment` Struct
 
 <p>A simple linked-list of traversed states that can have a shared tail. <a href="#details">More...</a></p>
 

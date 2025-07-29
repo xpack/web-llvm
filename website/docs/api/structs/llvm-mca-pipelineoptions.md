@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelineOptions` Struct Reference
+# `PipelineOptions` Struct
 
 <p>This is a convenience struct to hold the parameters necessary for creating the pre-built "default" out-of-order pipeline. <a href="#details">More...</a></p>
 

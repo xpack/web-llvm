@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VSFixedFileInfo` Struct Reference
+# `VSFixedFileInfo` Struct
 
 
 

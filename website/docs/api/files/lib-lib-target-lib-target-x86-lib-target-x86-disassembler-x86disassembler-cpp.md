@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86Disassembler.cpp` File Reference
+# `X86Disassembler.cpp` File
 
 
 

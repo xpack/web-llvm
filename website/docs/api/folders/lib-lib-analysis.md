@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Analysis` Folder Reference
+# `lib/Analysis` Folder
 
 
 

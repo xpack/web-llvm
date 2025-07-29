@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryBeImpl` Struct Template Reference
+# `BinaryBeImpl` Struct Template
 
 
 

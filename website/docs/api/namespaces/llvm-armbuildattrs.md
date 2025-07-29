@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMBuildAttrs` Namespace Reference
+# `ARMBuildAttrs` Namespace
 
 
 

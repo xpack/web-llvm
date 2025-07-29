@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowMapping` Struct Reference
+# `ShadowMapping` Struct
 
 <p>This struct defines the shadow mapping using the rule: shadow = (mem &gt;&gt; Scale) ADD-or-OR Offset. <a href="#details">More...</a></p>
 

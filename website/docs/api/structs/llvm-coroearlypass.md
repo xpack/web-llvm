@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroEarlyPass` Struct Reference
+# `CoroEarlyPass` Struct
 
 
 

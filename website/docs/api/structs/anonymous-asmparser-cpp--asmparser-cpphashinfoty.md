@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CppHashInfoTy` Struct Reference
+# `CppHashInfoTy` Struct
 
 <p>The values from the last parsed cpp hash file line comment if any. <a href="#details">More...</a></p>
 

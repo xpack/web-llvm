@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips` Namespace Reference
+# `Mips` Namespace
 
 
 

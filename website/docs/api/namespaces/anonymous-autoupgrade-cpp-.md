@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AutoUpgrade.cpp}` Namespace Reference
+# `anonymous{AutoUpgrade.cpp}` Namespace
 
 
 

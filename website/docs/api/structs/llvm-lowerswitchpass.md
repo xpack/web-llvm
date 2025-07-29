@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerSwitchPass` Struct Reference
+# `LowerSwitchPass` Struct
 
 
 

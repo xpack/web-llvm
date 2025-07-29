@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchCoroutineSplitter` Struct Reference
+# `SwitchCoroutineSplitter` Struct
 
 
 

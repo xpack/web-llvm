@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JSONSymbol` Struct Reference
+# `JSONSymbol` Struct
 
 
 

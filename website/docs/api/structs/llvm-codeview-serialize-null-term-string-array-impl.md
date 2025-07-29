@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `serialize_null_term_string_array_impl` Struct Reference
+# `serialize_null_term_string_array_impl` Struct
 
 
 

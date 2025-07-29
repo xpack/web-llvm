@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUGlobalISelUtils.h` File Reference
+# `AMDGPUGlobalISelUtils.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SymbolizableObjectFile.cpp}` Namespace Reference
+# `anonymous{SymbolizableObjectFile.cpp}` Namespace
 
 
 

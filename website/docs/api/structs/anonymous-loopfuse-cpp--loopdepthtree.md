@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopDepthTree` Struct Reference
+# `LoopDepthTree` Struct
 
 <p>Collect all loops in function at the same nest level, starting at the outermost level. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsExported` Struct Reference
+# `IsExported` Struct
 
 
 

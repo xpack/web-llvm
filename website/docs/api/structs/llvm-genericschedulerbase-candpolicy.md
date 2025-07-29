@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CandPolicy` Struct Reference
+# `CandPolicy` Struct
 
 <p>Policy for scheduling the next instruction in the candidate's zone. <a href="#details">More...</a></p>
 

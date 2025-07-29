@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFRecord` Struct Reference
+# `IFRecord` Struct
 
 
 

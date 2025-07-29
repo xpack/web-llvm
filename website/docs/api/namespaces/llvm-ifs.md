@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ifs` Namespace Reference
+# `ifs` Namespace
 
 
 

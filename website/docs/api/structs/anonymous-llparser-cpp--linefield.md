@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineField` Struct Reference
+# `LineField` Struct
 
 
 

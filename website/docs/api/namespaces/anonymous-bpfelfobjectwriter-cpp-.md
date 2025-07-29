@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{BPFELFObjectWriter.cpp}` Namespace
 
 
 

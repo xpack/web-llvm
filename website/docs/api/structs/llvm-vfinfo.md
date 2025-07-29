@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFInfo` Struct Reference
+# `VFInfo` Struct
 
 <p>Holds the <a href="/web-llvm/docs/api/structs/llvm/vfshape">VFShape</a> for a specific scalar to vector function mapping. <a href="#details">More...</a></p>
 

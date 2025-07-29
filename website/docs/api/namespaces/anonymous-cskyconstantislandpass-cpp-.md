@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CSKYConstantIslandPass.cpp}` Namespace Reference
+# `anonymous{CSKYConstantIslandPass.cpp}` Namespace
 
 
 

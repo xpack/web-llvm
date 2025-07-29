@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveOutInfo` Struct Reference
+# `LiveOutInfo` Struct
 
 
 

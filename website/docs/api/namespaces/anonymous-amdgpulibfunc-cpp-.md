@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPULibFunc.cpp}` Namespace Reference
+# `anonymous{AMDGPULibFunc.cpp}` Namespace
 
 
 

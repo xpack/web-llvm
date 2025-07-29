@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MCAsmInfoDarwin` Struct Reference
+# `AArch64MCAsmInfoDarwin` Struct
 
 
 

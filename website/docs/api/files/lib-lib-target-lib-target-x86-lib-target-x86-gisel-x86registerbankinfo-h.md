@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86RegisterBankInfo.h` File Reference
+# `X86RegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for X86. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPImmOp` Struct Reference
+# `FPImmOp` Struct
 
 
 

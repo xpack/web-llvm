@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFLineInfo` Struct Reference
+# `BTFLineInfo` Struct
 
 <p>Represent one line info. <a href="#details">More...</a></p>
 

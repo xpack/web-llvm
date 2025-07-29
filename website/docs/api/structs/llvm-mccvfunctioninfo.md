@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCCVFunctionInfo` Struct Reference
+# `MCCVFunctionInfo` Struct
 
 <p>Information describing a function or inlined call site introduced by .cv_func_id or .cv_inline_site_id. <a href="#details">More...</a></p>
 

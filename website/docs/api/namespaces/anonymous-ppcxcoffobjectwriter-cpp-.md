@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCXCOFFObjectWriter.cpp}` Namespace Reference
+# `anonymous{PPCXCOFFObjectWriter.cpp}` Namespace
 
 
 

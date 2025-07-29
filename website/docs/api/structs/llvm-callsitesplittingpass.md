@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallSiteSplittingPass` Struct Reference
+# `CallSiteSplittingPass` Struct
 
 
 

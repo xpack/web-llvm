@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{BPFMCTargetDesc.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SimplifyCFGPass.cpp}` Namespace Reference
+# `anonymous{SimplifyCFGPass.cpp}` Namespace
 
 
 

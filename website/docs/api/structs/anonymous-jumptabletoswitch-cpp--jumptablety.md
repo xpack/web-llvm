@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JumpTableTy` Struct Reference
+# `JumpTableTy` Struct
 
 
 

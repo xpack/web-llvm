@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPSSerializableExpected` Struct Template Reference
+# `SPSSerializableExpected` Struct Template
 
 <p>Helper type for serializing <a href="/web-llvm/docs/api/classes/llvm/expected">Expected&lt;T&gt;</a>s. <a href="#details">More...</a></p>
 

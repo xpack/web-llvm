@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOBBEntry` Struct Reference
+# `PGOBBEntry` Struct
 
 
 

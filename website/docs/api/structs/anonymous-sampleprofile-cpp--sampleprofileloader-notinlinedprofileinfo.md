@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NotInlinedProfileInfo` Struct Reference
+# `NotInlinedProfileInfo` Struct
 
 
 

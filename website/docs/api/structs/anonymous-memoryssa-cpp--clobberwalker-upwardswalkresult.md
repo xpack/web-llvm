@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UpwardsWalkResult` Struct Reference
+# `UpwardsWalkResult` Struct
 
 <p>Result of calling walkToPhiOrClobber. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhysicalRegisterInfo` Struct Reference
+# `PhysicalRegisterInfo` Struct
 
 
 

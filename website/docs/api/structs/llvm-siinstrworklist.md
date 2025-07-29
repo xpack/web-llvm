@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInstrWorklist` Struct Reference
+# `SIInstrWorklist` Struct
 
 <p>Utility to store machine instructions worklist. <a href="#details">More...</a></p>
 

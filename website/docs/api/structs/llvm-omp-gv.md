@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GV` Struct Reference
+# `GV` Struct
 
 <p>Defines various target-specific GPU grid values that must be consistent between host RTL (plugin), device RTL, and clang. <a href="#details">More...</a></p>
 

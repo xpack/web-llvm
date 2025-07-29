@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFSymbolEntry32` Struct Reference
+# `XCOFFSymbolEntry32` Struct
 
 
 

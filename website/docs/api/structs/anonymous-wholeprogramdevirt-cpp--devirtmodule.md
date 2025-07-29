@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DevirtModule` Struct Reference
+# `DevirtModule` Struct
 
 
 

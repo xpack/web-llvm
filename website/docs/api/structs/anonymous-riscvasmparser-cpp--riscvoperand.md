@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVOperand` Struct Reference
+# `RISCVOperand` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-riscvasmparser-cpp-/riscvoperand">RISCVOperand</a> - Instances of this class represent a parsed machine instruction. <a href="#details">More...</a></p>
 

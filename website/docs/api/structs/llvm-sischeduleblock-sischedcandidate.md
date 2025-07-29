@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SISchedCandidate` Struct Reference
+# `SISchedCandidate` Struct
 
 
 

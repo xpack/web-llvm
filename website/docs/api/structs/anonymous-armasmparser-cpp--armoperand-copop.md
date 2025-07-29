@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopOp` Struct Reference
+# `CopOp` Struct
 
 
 

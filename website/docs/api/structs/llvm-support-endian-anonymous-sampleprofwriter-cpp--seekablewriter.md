@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeekableWriter` Struct Reference
+# `SeekableWriter` Struct
 
 
 

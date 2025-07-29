@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Factor` Struct Reference
+# `Factor` Struct
 
 <p>Utility class representing a base and exponent pair which form one factor of some product. <a href="#details">More...</a></p>
 

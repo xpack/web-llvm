@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineTableOpcode` Struct Reference
+# `LineTableOpcode` Struct
 
 
 

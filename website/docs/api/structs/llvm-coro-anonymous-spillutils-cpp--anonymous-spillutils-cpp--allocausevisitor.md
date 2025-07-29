@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocaUseVisitor` Struct Reference
+# `AllocaUseVisitor` Struct
 
 
 

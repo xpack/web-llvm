@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueProfileCollector.cpp` File Reference
+# `ValueProfileCollector.cpp` File
 
 
 

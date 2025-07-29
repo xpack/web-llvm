@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasOrIFuncTy` Struct Reference
+# `AliasOrIFuncTy` Struct
 
 
 

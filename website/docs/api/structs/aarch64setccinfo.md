@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SetCCInfo` Struct Reference
+# `AArch64SetCCInfo` Struct
 
 <p>Helper structure to keep track of a SET_CC lowered into <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> code. <a href="#details">More...</a></p>
 

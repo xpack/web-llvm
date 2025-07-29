@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RlistOp` Struct Reference
+# `RlistOp` Struct
 
 
 

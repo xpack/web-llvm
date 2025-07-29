@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `setIsVerbose` Struct Reference
+# `setIsVerbose` Struct
 
 <p>Used to set IsVerbose via the stream interface. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreISelLowering.cpp}` Namespace Reference
+# `anonymous{XCoreISelLowering.cpp}` Namespace
 
 
 

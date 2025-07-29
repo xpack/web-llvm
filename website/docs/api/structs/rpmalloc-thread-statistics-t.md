@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `rpmalloc_thread_statistics_t` Struct Reference
+# `rpmalloc_thread_statistics_t` Struct
 
 
 

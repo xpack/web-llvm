@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoclistEntry` Struct Reference
+# `LoclistEntry` Struct
 
 
 

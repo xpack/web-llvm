@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EffectiveOperands` Struct Template Reference
+# `EffectiveOperands` Struct Template
 
 <p>Provide number of operands that are not chain or glue, as well as the first index of such operand. <a href="#details">More...</a></p>
 

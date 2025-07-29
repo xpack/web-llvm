@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinearFrameIdConverter` Struct Reference
+# `LinearFrameIdConverter` Struct
 
 
 

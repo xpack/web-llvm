@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalledAs` Struct Template Reference
+# `CalledAs` Struct Template
 
 
 

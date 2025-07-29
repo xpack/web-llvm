@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMachineModuleInfo.h` File Reference
+# `AMDGPUMachineModuleInfo.h` File
 
 <p>AMDGPU Machine Module Info. <a href="#details">More...</a></p>
 

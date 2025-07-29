@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetOpcode` Namespace Reference
+# `TargetOpcode` Namespace
 
 <p>Invariant opcodes: All instruction sets have these as their low opcodes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Other Types Reference
+# Other Types
 
 
 

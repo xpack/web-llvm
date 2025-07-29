@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopStructure` Struct Reference
+# `LoopStructure` Struct
 
 
 

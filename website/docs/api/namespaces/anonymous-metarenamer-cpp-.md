@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MetaRenamer.cpp}` Namespace Reference
+# `anonymous{MetaRenamer.cpp}` Namespace
 
 
 

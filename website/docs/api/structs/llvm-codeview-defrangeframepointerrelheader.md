@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefRangeFramePointerRelHeader` Struct Reference
+# `DefRangeFramePointerRelHeader` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopPassManager.h}` Namespace Reference
+# `anonymous{LoopPassManager.h}` Namespace
 
 
 

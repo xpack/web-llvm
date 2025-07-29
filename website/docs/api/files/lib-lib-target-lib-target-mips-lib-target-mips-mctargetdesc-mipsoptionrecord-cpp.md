@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsOptionRecord.cpp` File Reference
+# `MipsOptionRecord.cpp` File
 
 
 

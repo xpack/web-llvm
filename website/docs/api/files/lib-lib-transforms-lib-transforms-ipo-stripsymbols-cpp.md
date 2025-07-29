@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripSymbols.cpp` File Reference
+# `StripSymbols.cpp` File
 
 
 

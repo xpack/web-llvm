@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `x86_state_hdr_t` Struct Reference
+# `x86_state_hdr_t` Struct
 
 
 

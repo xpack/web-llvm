@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MVETailPredication.cpp` File Reference
+# `MVETailPredication.cpp` File
 
 <p>Armv8.1m introduced MVE, M-Profile Vector <a href="/web-llvm/docs/api/structs/extension">Extension</a>, and low-overhead branches to help accelerate DSP applications. <a href="#details">More...</a></p>
 

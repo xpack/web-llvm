@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIProgramInfo.cpp` File Reference
+# `SIProgramInfo.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/structs/llvm/siprograminfo">SIProgramInfo</a> tracks resource usage and hardware flags for kernels and entry functions. <a href="#details">More...</a></p>
 

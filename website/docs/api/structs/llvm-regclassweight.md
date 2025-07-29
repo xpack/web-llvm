@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegClassWeight` Struct Reference
+# `RegClassWeight` Struct
 
 <p>Each <a href="/web-llvm/docs/api/classes/llvm/targetregisterclass">TargetRegisterClass</a> has a per register weight, and weight limit which must be less than the limits of its pressure sets. <a href="#details">More...</a></p>
 

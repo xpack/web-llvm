@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RttiBaseClassDescriptorNode` Struct Reference
+# `RttiBaseClassDescriptorNode` Struct
 
 
 

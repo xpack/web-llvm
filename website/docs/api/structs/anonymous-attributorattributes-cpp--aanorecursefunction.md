@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoRecurseFunction` Struct Reference
+# `AANoRecurseFunction` Struct
 
 
 

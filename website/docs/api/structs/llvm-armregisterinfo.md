@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMRegisterInfo` Struct Reference
+# `ARMRegisterInfo` Struct
 
 
 

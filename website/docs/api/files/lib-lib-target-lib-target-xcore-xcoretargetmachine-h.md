@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetMachine.h` File Reference
+# `XCoreTargetMachine.h` File
 
 
 

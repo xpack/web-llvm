@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedSizeStorage` Struct Template Reference
+# `FixedSizeStorage` Struct Template
 
 <p>A type where its <a href="/web-llvm/docs/api/structs/llvm/trailingobjects/fixedsizestorage/with-counts">with_counts</a> template member has a ::type member suitable for use as uninitialized storage for an object with the given trailing object counts. <a href="#details">More...</a></p>
 

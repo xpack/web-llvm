@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffsetResult` Struct Reference
+# `OffsetResult` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMCAsmInfo.h` File Reference
+# `LoongArchMCAsmInfo.h` File
 
 
 

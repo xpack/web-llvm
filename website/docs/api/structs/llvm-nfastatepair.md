@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NfaStatePair` Struct Reference
+# `NfaStatePair` Struct
 
 <p>Forward define the pair type used by the automata transition info tables. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallMutation` Struct Reference
+# `CallMutation` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLowOverheadLoops.cpp` File Reference
+# `ARMLowOverheadLoops.cpp` File
 
 <p>Finalize v8.1-m low-overhead loops by converting the associated pseudo instructions into machine operations. <a href="#details">More...</a></p>
 

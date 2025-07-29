@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AUFoldingSetNode` Struct Reference
+# `AUFoldingSetNode` Struct
 
 <p>A wrapper around <a href="/web-llvm/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> for the purpose of uniqueing. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Verdaux_Impl` Struct Template Reference
+# `Elf_Verdaux_Impl` Struct Template
 
 <p>Elf_Verdaux: This is the structure of auxiliary data in the SHT_GNU_verdef section (.gnu.version_d). <a href="#details">More...</a></p>
 

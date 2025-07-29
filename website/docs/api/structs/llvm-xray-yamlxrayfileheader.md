@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLXRayFileHeader` Struct Reference
+# `YAMLXRayFileHeader` Struct
 
 
 

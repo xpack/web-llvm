@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCstAndRegMatch` Struct Reference
+# `GCstAndRegMatch` Struct
 
 
 

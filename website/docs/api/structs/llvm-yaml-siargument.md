@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIArgument` Struct Reference
+# `SIArgument` Struct
 
 
 

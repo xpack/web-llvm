@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedMachineStackObject` Struct Reference
+# `FixedMachineStackObject` Struct
 
 <p>Serializable representation of the fixed stack object from the <a href="/web-llvm/docs/api/structs/llvm/yaml/machineframeinfo">MachineFrameInfo</a> class. <a href="#details">More...</a></p>
 

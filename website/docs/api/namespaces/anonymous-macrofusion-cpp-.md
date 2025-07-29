@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MacroFusion.cpp}` Namespace Reference
+# `anonymous{MacroFusion.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpInfoTy` Struct Reference
+# `OpInfoTy` Struct
 
 <p>Contains estimates of the number of operations (loads, stores, compute) required to lower a matrix operation. <a href="#details">More...</a></p>
 

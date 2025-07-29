@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoadWidening` Struct Reference
+# `HexagonLoadWidening` Struct
 
 
 

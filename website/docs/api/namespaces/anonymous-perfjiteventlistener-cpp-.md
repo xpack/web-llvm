@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PerfJITEventListener.cpp}` Namespace Reference
+# `anonymous{PerfJITEventListener.cpp}` Namespace
 
 
 

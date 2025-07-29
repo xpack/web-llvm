@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PointerTypeAnalysis.cpp}` Namespace Reference
+# `anonymous{PointerTypeAnalysis.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisResultModel` Struct Template Reference
+# `AnalysisResultModel` Struct Template
 
 <p>Wrapper to model the analysis result concept. <a href="#details">More...</a></p>
 

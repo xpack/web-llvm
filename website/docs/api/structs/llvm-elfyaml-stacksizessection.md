@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackSizesSection` Struct Reference
+# `StackSizesSection` Struct
 
 
 

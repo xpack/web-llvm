@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVersioningLICM` Struct Reference
+# `LoopVersioningLICM` Struct
 
 
 

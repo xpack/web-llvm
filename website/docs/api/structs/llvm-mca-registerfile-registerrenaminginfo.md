@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterRenamingInfo` Struct Reference
+# `RegisterRenamingInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchOptWInstrs.cpp}` Namespace Reference
+# `anonymous{LoongArchOptWInstrs.cpp}` Namespace
 
 
 

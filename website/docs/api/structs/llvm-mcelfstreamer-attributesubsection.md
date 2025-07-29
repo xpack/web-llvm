@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeSubSection` Struct Reference
+# `AttributeSubSection` Struct
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> object attributes subsection support. <a href="#details">More...</a></p>
 

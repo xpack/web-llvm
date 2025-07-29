@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MakeGuardsExplicitPass` Struct Reference
+# `MakeGuardsExplicitPass` Struct
 
 
 

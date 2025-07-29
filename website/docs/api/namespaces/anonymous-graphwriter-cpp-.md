@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GraphWriter.cpp}` Namespace Reference
+# `anonymous{GraphWriter.cpp}` Namespace
 
 
 

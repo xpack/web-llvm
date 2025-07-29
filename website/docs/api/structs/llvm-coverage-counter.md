@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Counter` Struct Reference
+# `Counter` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/coverage/counter">Counter</a> is an abstract value that describes how to compute the execution count for a region of code using the collected profile count data. <a href="#details">More...</a></p>
 

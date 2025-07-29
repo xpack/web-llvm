@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64A57FPLoadBalancing.cpp}` Namespace Reference
+# `anonymous{AArch64A57FPLoadBalancing.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeProps` Namespace Reference
+# `CodeProps` Namespace
 
 
 

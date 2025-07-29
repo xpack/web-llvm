@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Frontend/Offloading` Folder Reference
+# `lib/Frontend/Offloading` Folder
 
 
 

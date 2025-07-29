@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAKernelInfoCallSite` Struct Reference
+# `AAKernelInfoCallSite` Struct
 
 <p>The call site kernel info abstract attribute, basically, what can we say about a call site with regards to the <a href="/web-llvm/docs/api/structs/anonymous-openmpopt-cpp-/kernelinfostate">KernelInfoState</a>. <a href="#details">More...</a></p>
 

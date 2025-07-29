@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmTypeCheck.cpp` File Reference
+# `WebAssemblyAsmTypeCheck.cpp` File
 
 <p>This file is part of the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> Assembler. <a href="#details">More...</a></p>
 

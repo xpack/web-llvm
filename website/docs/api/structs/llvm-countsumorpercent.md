@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CountSumOrPercent` Struct Reference
+# `CountSumOrPercent` Struct
 
 
 

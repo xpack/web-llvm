@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Operands_match` Struct Template Reference
+# `Operands_match` Struct Template
 
 
 

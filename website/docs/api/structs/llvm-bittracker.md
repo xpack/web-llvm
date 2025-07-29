@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitTracker` Struct Reference
+# `BitTracker` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShiftOfShiftedLogic` Struct Reference
+# `ShiftOfShiftedLogic` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InferAddressSpaces.cpp}` Namespace Reference
+# `anonymous{InferAddressSpaces.cpp}` Namespace
 
 
 

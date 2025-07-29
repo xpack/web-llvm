@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueProfData` Struct Reference
+# `ValueProfData` Struct
 
 <p>Per-function header/control data structure for value profiling data in indexed format. <a href="#details">More...</a></p>
 

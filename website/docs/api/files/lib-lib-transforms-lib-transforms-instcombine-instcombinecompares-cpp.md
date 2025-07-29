@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineCompares.cpp` File Reference
+# `InstCombineCompares.cpp` File
 
 
 

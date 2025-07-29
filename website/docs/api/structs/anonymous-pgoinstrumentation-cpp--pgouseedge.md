@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOUseEdge` Struct Reference
+# `PGOUseEdge` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseInfo` Struct Template Reference
+# `UseInfo` Struct Template
 
 <p>Describe uses of address (alloca or parameter) inside of the function. <a href="#details">More...</a></p>
 

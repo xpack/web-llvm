@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StorageBase` Struct Reference
+# `StorageBase` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Sparc/MCTargetDesc` Folder Reference
+# `lib/Target/Sparc/MCTargetDesc` Folder
 
 
 

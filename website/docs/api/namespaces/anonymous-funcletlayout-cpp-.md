@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{FuncletLayout.cpp}` Namespace Reference
+# `anonymous{FuncletLayout.cpp}` Namespace
 
 
 

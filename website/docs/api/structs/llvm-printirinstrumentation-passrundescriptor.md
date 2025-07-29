@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassRunDescriptor` Struct Reference
+# `PassRunDescriptor` Struct
 
 
 

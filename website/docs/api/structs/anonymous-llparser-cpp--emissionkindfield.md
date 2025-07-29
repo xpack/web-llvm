@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmissionKindField` Struct Reference
+# `EmissionKindField` Struct
 
 
 

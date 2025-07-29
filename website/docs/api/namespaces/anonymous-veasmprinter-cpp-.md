@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VEAsmPrinter.cpp}` Namespace Reference
+# `anonymous{VEAsmPrinter.cpp}` Namespace
 
 
 

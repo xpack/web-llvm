@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChainedFixupsSegment` Struct Reference
+# `ChainedFixupsSegment` Struct
 
 
 

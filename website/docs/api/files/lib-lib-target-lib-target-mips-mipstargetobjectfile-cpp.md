@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsTargetObjectFile.cpp` File Reference
+# `MipsTargetObjectFile.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InstCombinePHI.cpp}` Namespace Reference
+# `anonymous{InstCombinePHI.cpp}` Namespace
 
 
 

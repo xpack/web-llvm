@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugDieRefPatch` Struct Reference
+# `DebugDieRefPatch` Struct
 
 <p>This structure is used to update reference to the <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

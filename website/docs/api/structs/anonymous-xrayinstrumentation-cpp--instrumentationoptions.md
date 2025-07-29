@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrumentationOptions` Struct Reference
+# `InstrumentationOptions` Struct
 
 
 

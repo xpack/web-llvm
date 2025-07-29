@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMacroFusion.h` File Reference
+# `AMDGPUMacroFusion.h` File
 
 
 

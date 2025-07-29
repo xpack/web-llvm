@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SILowerSGPRSpills.cpp}` Namespace Reference
+# `anonymous{SILowerSGPRSpills.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PatchLocation` Struct Reference
+# `PatchLocation` Struct
 
 
 

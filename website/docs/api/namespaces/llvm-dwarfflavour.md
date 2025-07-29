@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFFlavour` Namespace Reference
+# `DWARFFlavour` Namespace
 
 <p>Flavour of dwarf regnumbers. <a href="#details">More...</a></p>
 

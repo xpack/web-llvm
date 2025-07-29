@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnrolledInstStateKeyInfo` Struct Reference
+# `UnrolledInstStateKeyInfo` Struct
 
 <p>Hashing and equality testing for a set of the instruction states. <a href="#details">More...</a></p>
 

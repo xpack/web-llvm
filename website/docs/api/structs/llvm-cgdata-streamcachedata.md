@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StreamCacheData` Struct Reference
+# `StreamCacheData` Struct
 
 
 

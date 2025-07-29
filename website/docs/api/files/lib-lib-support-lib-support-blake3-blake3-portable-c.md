@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `blake3_portable.c` File Reference
+# `blake3_portable.c` File
 
 
 

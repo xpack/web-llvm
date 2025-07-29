@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultDoCastIfPossible` Struct Template Reference
+# `DefaultDoCastIfPossible` Struct Template
 
 <p>This cast trait just provides the default implementation of doCastIfPossible to make <a href="/web-llvm/docs/api/structs/llvm/castinfo">CastInfo</a> specializations more declarative. <a href="#details">More...</a></p>
 

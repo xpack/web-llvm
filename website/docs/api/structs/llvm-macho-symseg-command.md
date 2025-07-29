@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `symseg_command` Struct Reference
+# `symseg_command` Struct
 
 
 

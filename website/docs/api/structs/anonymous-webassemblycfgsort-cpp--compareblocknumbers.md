@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompareBlockNumbers` Struct Reference
+# `CompareBlockNumbers` Struct
 
 <p>Sort blocks by their number. <a href="#details">More...</a></p>
 

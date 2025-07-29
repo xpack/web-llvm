@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportStatistics` Struct Reference
+# `ImportStatistics` Struct
 
 
 

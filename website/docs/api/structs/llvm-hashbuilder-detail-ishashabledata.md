@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsHashableData` Struct Template Reference
+# `IsHashableData` Struct Template
 
 <p>Trait to indicate whether a type's bits can be hashed directly (after endianness correction). <a href="#details">More...</a></p>
 

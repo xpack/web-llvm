@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TempBuffer` Struct Reference
+# `TempBuffer` Struct
 
 
 

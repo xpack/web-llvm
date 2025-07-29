@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreFTAOElim` Struct Reference
+# `XCoreFTAOElim` Struct
 
 
 

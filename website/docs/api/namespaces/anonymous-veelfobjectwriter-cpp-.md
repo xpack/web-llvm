@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VEELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{VEELFObjectWriter.cpp}` Namespace
 
 
 

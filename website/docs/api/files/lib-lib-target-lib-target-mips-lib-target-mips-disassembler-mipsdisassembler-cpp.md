@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsDisassembler.cpp` File Reference
+# `MipsDisassembler.cpp` File
 
 
 

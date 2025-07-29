@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNSinkPass` Struct Reference
+# `GVNSinkPass` Struct
 
 <p>Uses an "inverted" value numbering to decide the similarity of expressions and sinks similar expressions into successors. <a href="#details">More...</a></p>
 

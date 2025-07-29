@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonPacketSummary` Struct Reference
+# `HexagonPacketSummary` Struct
 
 
 

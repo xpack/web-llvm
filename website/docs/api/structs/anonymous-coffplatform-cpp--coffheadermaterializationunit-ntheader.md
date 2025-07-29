@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NTHeader` Struct Reference
+# `NTHeader` Struct
 
 
 

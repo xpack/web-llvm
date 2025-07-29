@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerifierSupport` Struct Reference
+# `VerifierSupport` Struct
 
 
 

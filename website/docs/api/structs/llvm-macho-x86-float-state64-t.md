@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `x86_float_state64_t` Struct Reference
+# `x86_float_state64_t` Struct
 
 
 

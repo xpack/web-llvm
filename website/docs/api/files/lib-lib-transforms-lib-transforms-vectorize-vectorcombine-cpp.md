@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorCombine.cpp` File Reference
+# `VectorCombine.cpp` File
 
 
 

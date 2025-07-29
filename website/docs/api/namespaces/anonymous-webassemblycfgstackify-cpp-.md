@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyCFGStackify.cpp}` Namespace Reference
+# `anonymous{WebAssemblyCFGStackify.cpp}` Namespace
 
 
 

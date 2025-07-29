@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructorIdentifierNode` Struct Reference
+# `StructorIdentifierNode` Struct
 
 
 

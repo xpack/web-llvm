@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockPosition` Struct Reference
+# `BlockPosition` Struct
 
 
 

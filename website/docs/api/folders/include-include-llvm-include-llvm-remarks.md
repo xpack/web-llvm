@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Remarks` Folder Reference
+# `include/llvm/Remarks` Folder
 
 
 

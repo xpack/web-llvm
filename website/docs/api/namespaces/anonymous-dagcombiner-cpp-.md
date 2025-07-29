@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DAGCombiner.cpp}` Namespace Reference
+# `anonymous{DAGCombiner.cpp}` Namespace
 
 
 

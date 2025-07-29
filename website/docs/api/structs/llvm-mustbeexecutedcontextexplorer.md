@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MustBeExecutedContextExplorer` Struct Reference
+# `MustBeExecutedContextExplorer` Struct
 
 <p>A "must be executed context" for a given program point PP is the set of instructions, potentially before and after PP, that are executed always when PP is reached. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopeContext` Struct Reference
+# `ScopeContext` Struct
 
 
 

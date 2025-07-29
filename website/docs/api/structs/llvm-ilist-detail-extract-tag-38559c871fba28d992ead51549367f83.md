@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `extract_tag` Struct Template Reference
+# `extract_tag` Struct Template
 
 
 

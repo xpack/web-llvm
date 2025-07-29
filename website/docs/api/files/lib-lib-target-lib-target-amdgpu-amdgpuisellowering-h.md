@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUISelLowering.h` File Reference
+# `AMDGPUISelLowering.h` File
 
 <p>Interface definition of the TargetLowering class that is common to all AMD GPUs. <a href="#details">More...</a></p>
 

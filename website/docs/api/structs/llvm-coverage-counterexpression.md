@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CounterExpression` Struct Reference
+# `CounterExpression` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/coverage/counter">Counter</a> expression is a value that represents an arithmetic operation with two counters. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVFormalArgHandler` Struct Reference
+# `RISCVFormalArgHandler` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BindT` Struct Template Reference
+# `BindT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoopIdiomRecognition.h` File Reference
+# `HexagonLoopIdiomRecognition.h` File
 
 
 

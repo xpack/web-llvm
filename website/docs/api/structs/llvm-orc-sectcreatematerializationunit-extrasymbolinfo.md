@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtraSymbolInfo` Struct Reference
+# `ExtraSymbolInfo` Struct
 
 
 

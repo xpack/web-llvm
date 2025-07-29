@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVCallLowering.h` File Reference
+# `RISCVCallLowering.h` File
 
 <p>This file describes how to lower LLVM calls to machine code calls. <a href="#details">More...</a></p>
 

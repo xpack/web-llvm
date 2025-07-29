@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopStrengthReduce.cpp}` Namespace Reference
+# `anonymous{LoopStrengthReduce.cpp}` Namespace
 
 
 

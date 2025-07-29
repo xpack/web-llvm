@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependencyAnalysis.cpp` File Reference
+# `DependencyAnalysis.cpp` File
 
 <p>This file defines special dependency analysis routines used in Objective C ARC Optimizations. <a href="#details">More...</a></p>
 

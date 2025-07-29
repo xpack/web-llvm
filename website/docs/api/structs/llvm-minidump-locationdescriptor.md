@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationDescriptor` Struct Reference
+# `LocationDescriptor` Struct
 
 <p>Specifies the location (and size) of various objects in the minidump file. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOAnalysisMapEntry` Struct Reference
+# `PGOAnalysisMapEntry` Struct
 
 
 

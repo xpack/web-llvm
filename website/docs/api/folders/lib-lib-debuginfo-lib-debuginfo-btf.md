@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/BTF` Folder Reference
+# `lib/DebugInfo/BTF` Folder
 
 
 

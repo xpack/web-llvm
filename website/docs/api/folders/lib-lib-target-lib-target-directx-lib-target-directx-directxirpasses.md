@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/DirectX/DirectXIRPasses` Folder Reference
+# `lib/Target/DirectX/DirectXIRPasses` Folder
 
 
 

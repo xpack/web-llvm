@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Modules Reference
+# Modules
 
 <p>Modules represent the top-level structure in an LLVM program. <a href="#details">More...</a></p>
 

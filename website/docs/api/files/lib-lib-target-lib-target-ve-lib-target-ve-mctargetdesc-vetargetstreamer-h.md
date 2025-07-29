@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetStreamer.h` File Reference
+# `VETargetStreamer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `file_magic` Struct Reference
+# `file_magic` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/file-magic">file_magic</a> - An "enum class" enumeration of file types based on magic (the first N bytes of the file). <a href="#details">More...</a></p>
 

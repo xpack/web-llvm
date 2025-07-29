@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The General APIs Reference
+# General APIs
 
 <p>Functions in this section work on all <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#ga113ce952344691b8304a43a314f8be17">LLVMValueRef</a> instances, regardless of their sub-type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ArgumentPromotion.cpp}` Namespace Reference
+# `anonymous{ArgumentPromotion.cpp}` Namespace
 
 
 

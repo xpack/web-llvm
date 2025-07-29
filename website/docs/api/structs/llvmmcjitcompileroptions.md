@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMMCJITCompilerOptions` Struct Reference
+# `LLVMMCJITCompilerOptions` Struct
 
 
 

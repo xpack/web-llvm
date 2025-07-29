@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/ADT` Folder Reference
+# `include/llvm/ADT` Folder
 
 
 

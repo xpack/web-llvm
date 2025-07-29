@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LCSSAWrapperPass` Struct Reference
+# `LCSSAWrapperPass` Struct
 
 
 

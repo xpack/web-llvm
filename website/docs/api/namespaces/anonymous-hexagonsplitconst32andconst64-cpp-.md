@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonSplitConst32AndConst64.cpp}` Namespace Reference
+# `anonymous{HexagonSplitConst32AndConst64.cpp}` Namespace
 
 
 

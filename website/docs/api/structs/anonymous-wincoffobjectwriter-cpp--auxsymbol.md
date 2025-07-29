@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AuxSymbol` Struct Reference
+# `AuxSymbol` Struct
 
 
 

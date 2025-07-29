@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNPreRAOptimizations.cpp}` Namespace Reference
+# `anonymous{GCNPreRAOptimizations.cpp}` Namespace
 
 
 

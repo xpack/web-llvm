@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPURewriteUndefForPHI.cpp}` Namespace Reference
+# `anonymous{AMDGPURewriteUndefForPHI.cpp}` Namespace
 
 
 

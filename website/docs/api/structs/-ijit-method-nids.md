@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `_iJIT_Method_NIDS` Struct Reference
+# `_iJIT_Method_NIDS` Struct
 
 
 

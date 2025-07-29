@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterPressure` Struct Reference
+# `RegisterPressure` Struct
 
 <p>Base class for register pressure results. <a href="#details">More...</a></p>
 

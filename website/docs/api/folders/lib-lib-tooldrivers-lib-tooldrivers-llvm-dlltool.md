@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ToolDrivers/llvm-dlltool` Folder Reference
+# `lib/ToolDrivers/llvm-dlltool` Folder
 
 
 

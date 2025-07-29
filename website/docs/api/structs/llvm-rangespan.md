@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeSpan` Struct Reference
+# `RangeSpan` Struct
 
 
 

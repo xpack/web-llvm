@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AccelTable.cpp}` Namespace Reference
+# `anonymous{AccelTable.cpp}` Namespace
 
 
 

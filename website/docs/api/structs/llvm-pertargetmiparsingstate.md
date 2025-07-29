@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerTargetMIParsingState` Struct Reference
+# `PerTargetMIParsingState` Struct
 
 
 

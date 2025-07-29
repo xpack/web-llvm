@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_any_zero_fp` Struct Reference
+# `is_any_zero_fp` Struct
 
 
 

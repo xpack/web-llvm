@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopBoundSplit.cpp}` Namespace Reference
+# `anonymous{LoopBoundSplit.cpp}` Namespace
 
 
 

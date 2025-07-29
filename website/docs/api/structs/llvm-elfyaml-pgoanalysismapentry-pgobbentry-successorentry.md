@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuccessorEntry` Struct Reference
+# `SuccessorEntry` Struct
 
 
 

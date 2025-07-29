@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecialTableSymbolNode` Struct Reference
+# `SpecialTableSymbolNode` Struct
 
 
 

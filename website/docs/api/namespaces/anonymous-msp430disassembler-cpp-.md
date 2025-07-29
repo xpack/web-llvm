@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MSP430Disassembler.cpp}` Namespace Reference
+# `anonymous{MSP430Disassembler.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordInitializer.cpp` File Reference
+# `RecordInitializer.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68k.h` File Reference
+# `M68k.h` File
 
 <p>This file contains the entry points for global functions defined in the M68k target library, as used by the LLVM JIT. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TooFewOperandsInfo` Struct Reference
+# `TooFewOperandsInfo` Struct
 
 
 

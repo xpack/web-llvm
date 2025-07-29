@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalSplit.cpp` File Reference
+# `GlobalSplit.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZISD` Namespace Reference
+# `SystemZISD` Namespace
 
 
 

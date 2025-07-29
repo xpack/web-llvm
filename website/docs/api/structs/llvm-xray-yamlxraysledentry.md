@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLXRaySledEntry` Struct Reference
+# `YAMLXRaySledEntry` Struct
 
 
 

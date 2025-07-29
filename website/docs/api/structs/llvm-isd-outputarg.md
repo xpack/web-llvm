@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputArg` Struct Reference
+# `OutputArg` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/isd/outputarg">OutputArg</a> - This struct carries flags and a value for a single outgoing (actual) argument or outgoing (from the perspective of the caller) return value virtual register. <a href="#details">More...</a></p>
 

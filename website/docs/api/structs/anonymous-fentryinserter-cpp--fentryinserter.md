@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FEntryInserter` Struct Reference
+# `FEntryInserter` Struct
 
 
 

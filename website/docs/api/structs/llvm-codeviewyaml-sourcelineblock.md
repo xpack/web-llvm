@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceLineBlock` Struct Reference
+# `SourceLineBlock` Struct
 
 
 

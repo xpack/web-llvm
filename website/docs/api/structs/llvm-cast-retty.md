@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cast_retty` Struct Template Reference
+# `cast_retty` Struct Template
 
 
 

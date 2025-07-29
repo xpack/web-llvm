@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecompEntry` Struct Reference
+# `DecompEntry` Struct
 
 <p>Represents a (Coefficient * Variable) entry after IR decomposition. <a href="#details">More...</a></p>
 

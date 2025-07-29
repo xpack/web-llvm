@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VernAux` Struct Reference
+# `VernAux` Struct
 
 
 

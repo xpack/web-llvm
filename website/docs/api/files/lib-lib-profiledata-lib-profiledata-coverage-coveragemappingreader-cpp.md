@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageMappingReader.cpp` File Reference
+# `CoverageMappingReader.cpp` File
 
 
 

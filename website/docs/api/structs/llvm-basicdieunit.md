@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicDIEUnit` Struct Reference
+# `BasicDIEUnit` Struct
 
 
 

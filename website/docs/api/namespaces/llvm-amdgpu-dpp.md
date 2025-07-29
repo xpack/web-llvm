@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DPP` Namespace Reference
+# `DPP` Namespace
 
 
 

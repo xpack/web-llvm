@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadedObjectInfoHelper` Struct Template Reference
+# `LoadedObjectInfoHelper` Struct Template
 
 
 

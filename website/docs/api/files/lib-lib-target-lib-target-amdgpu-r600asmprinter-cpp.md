@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600AsmPrinter.cpp` File Reference
+# `R600AsmPrinter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/r600asmprinter">R600AsmPrinter</a> is used to print both assembly string and also binary code. <a href="#details">More...</a></p>
 

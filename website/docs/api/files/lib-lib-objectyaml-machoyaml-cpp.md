@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOYAML.cpp` File Reference
+# `MachOYAML.cpp` File
 
 
 

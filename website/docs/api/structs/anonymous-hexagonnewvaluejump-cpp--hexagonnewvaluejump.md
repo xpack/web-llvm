@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonNewValueJump` Struct Reference
+# `HexagonNewValueJump` Struct
 
 
 

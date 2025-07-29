@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TargetMachine.cpp` File Reference
+# `R600TargetMachine.cpp` File
 
 <p>This file contains both AMDGPU-R600 target machine and the CodeGen pass builder. <a href="#details">More...</a></p>
 

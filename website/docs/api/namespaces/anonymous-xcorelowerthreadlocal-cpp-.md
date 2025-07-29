@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreLowerThreadLocal.cpp}` Namespace Reference
+# `anonymous{XCoreLowerThreadLocal.cpp}` Namespace
 
 
 

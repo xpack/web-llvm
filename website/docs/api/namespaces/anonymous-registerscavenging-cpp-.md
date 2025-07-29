@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RegisterScavenging.cpp}` Namespace Reference
+# `anonymous{RegisterScavenging.cpp}` Namespace
 
 
 

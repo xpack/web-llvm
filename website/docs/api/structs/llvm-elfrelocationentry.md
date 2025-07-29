@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFRelocationEntry` Struct Reference
+# `ELFRelocationEntry` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specific_fpval` Struct Reference
+# `specific_fpval` Struct
 
 <p>Match a specified floating point value or vector of all elements of that value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LegalizeVectorOps.cpp}` Namespace Reference
+# `anonymous{LegalizeVectorOps.cpp}` Namespace
 
 
 

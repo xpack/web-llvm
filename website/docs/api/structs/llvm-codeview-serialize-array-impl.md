@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `serialize_array_impl` Struct Template Reference
+# `serialize_array_impl` Struct Template
 
 
 

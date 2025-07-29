@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExceptionDataRecord` Struct Reference
+# `ExceptionDataRecord` Struct
 
 
 

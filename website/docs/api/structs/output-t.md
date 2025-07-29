@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `output_t` Struct Reference
+# `output_t` Struct
 
 
 

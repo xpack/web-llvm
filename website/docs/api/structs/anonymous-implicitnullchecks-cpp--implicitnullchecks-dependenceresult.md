@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependenceResult` Struct Reference
+# `DependenceResult` Struct
 
 <p>A data type for representing the result computed by <span class="doxyComputerOutput">computeDependence</span>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMRemarkSetupErrorInfo` Struct Template Reference
+# `LLVMRemarkSetupErrorInfo` Struct Template
 
 
 

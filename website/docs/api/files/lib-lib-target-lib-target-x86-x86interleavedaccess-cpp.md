@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InterleavedAccess.cpp` File Reference
+# `X86InterleavedAccess.cpp` File
 
 <p>This file contains the <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> implementation of the interleaved accesses optimization generating X86-specific instructions/intrinsics for interleaved access groups. <a href="#details">More...</a></p>
 

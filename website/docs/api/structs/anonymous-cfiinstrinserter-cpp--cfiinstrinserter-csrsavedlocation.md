@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSRSavedLocation` Struct Reference
+# `CSRSavedLocation` Struct
 
 <p>contains the location where CSR register is saved. <a href="#details">More...</a></p>
 

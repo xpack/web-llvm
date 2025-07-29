@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_lowbit_mask_or_zero` Struct Reference
+# `is_lowbit_mask_or_zero` Struct
 
 
 

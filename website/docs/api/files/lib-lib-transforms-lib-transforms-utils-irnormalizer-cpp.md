@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRNormalizer.cpp` File Reference
+# `IRNormalizer.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/anonymous-irnormalizer-cpp-/irnormalizer">IRNormalizer</a> class which aims to transform LLVM Modules into a normal form by reordering and renaming instructions while preserving the same semantics. <a href="#details">More...</a></p>
 

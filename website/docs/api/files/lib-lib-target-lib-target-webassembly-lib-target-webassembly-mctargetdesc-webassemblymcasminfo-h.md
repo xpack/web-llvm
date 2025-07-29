@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCAsmInfo.h` File Reference
+# `WebAssemblyMCAsmInfo.h` File
 
 <p>This file contains the declaration of the WebAssemblyMCAsmInfo class. <a href="#details">More...</a></p>
 

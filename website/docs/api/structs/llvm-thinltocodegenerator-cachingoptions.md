@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachingOptions` Struct Reference
+# `CachingOptions` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `global_cache_t` Struct Reference
+# `global_cache_t` Struct
 
 
 

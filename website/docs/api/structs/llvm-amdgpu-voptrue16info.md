@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOPTrue16Info` Struct Reference
+# `VOPTrue16Info` Struct
 
 
 

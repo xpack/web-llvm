@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffledInsertData` Struct Template Reference
+# `ShuffledInsertData` Struct Template
 
 <p>Data type for handling buildvector sequences with the reused scalars from other tree entries. <a href="#details">More...</a></p>
 

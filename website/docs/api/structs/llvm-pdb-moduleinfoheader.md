@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleInfoHeader` Struct Reference
+# `ModuleInfoHeader` Struct
 
 <p>The header preceding each entry in the <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> Info substream of the DBI stream. <a href="#details">More...</a></p>
 

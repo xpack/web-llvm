@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{SystemZELFObjectWriter.cpp}` Namespace
 
 
 

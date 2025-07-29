@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ValueMapper.cpp}` Namespace Reference
+# `anonymous{ValueMapper.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMInfo` Struct Reference
+# `SMInfo` Struct
 
 
 

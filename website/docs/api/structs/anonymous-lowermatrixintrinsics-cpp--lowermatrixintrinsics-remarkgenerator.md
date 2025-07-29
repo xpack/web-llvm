@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkGenerator` Struct Reference
+# `RemarkGenerator` Struct
 
 <p>Generate remarks for matrix operations in a function. <a href="#details">More...</a></p>
 

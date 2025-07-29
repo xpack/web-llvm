@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_load_config_code_integrity` Struct Reference
+# `coff_load_config_code_integrity` Struct
 
 
 

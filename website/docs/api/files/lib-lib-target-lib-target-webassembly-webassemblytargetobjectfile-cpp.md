@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetObjectFile.cpp` File Reference
+# `WebAssemblyTargetObjectFile.cpp` File
 
 <p>This file defines the functions of the WebAssembly-specific subclass of <a href="/web-llvm/docs/api/classes/llvm/targetloweringobjectfile">TargetLoweringObjectFile</a>. <a href="#details">More...</a></p>
 

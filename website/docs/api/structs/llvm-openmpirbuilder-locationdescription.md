@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocationDescription` Struct Reference
+# `LocationDescription` Struct
 
 <p>Description of a LLVM-IR insertion point (IP) and a debug/source location (filename, line, column, ...). <a href="#details">More...</a></p>
 

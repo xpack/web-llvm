@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassPluginLibraryInfo` Struct Reference
+# `PassPluginLibraryInfo` Struct
 
 <p>Information about the plugin required to load its passes. <a href="#details">More...</a></p>
 

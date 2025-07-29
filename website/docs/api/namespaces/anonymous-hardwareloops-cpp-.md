@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HardwareLoops.cpp}` Namespace Reference
+# `anonymous{HardwareLoops.cpp}` Namespace
 
 
 

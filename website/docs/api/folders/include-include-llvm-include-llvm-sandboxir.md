@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/SandboxIR` Folder Reference
+# `include/llvm/SandboxIR` Folder
 
 
 

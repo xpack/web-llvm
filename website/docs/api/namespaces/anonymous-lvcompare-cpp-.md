@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LVCompare.cpp}` Namespace Reference
+# `anonymous{LVCompare.cpp}` Namespace
 
 
 

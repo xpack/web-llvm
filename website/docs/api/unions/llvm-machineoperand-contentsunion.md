@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContentsUnion` Union Reference
+# `ContentsUnion` Union
 
 <p>Contents union - This contains the payload for the various operand types. <a href="#details">More...</a></p>
 

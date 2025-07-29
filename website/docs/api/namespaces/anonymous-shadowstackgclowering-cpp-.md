@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ShadowStackGCLowering.cpp}` Namespace Reference
+# `anonymous{ShadowStackGCLowering.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsanInstrumentInfo` Struct Reference
+# `AsanInstrumentInfo` Struct
 
 
 

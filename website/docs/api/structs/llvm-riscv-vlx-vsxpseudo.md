@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLX_VSXPseudo` Struct Reference
+# `VLX_VSXPseudo` Struct
 
 
 

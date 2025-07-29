@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefinitionAndSourceRegister` Struct Reference
+# `DefinitionAndSourceRegister` Struct
 
 <p>Simple struct used to hold a <a href="/web-llvm/docs/api/classes/llvm/register">Register</a> value and the instruction which defines it. <a href="#details">More...</a></p>
 

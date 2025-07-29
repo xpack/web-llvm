@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILTranslateMetadata.cpp}` Namespace Reference
+# `anonymous{DXILTranslateMetadata.cpp}` Namespace
 
 
 

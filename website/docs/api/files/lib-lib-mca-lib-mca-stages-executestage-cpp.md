@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecuteStage.cpp` File Reference
+# `ExecuteStage.cpp` File
 
 <p>This file defines the execution stage of an instruction pipeline. <a href="#details">More...</a></p>
 

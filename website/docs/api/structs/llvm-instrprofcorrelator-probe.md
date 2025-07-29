@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Probe` Struct Reference
+# `Probe` Struct
 
 
 

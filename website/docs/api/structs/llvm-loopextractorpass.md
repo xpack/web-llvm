@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopExtractorPass` Struct Reference
+# `LoopExtractorPass` Struct
 
 
 

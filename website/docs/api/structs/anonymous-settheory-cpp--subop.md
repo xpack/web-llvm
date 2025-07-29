@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubOp` Struct Reference
+# `SubOp` Struct
 
 
 

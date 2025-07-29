@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopSimplify` Struct Reference
+# `LoopSimplify` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertionPoint` Struct Reference
+# `InsertionPoint` Struct
 
 
 

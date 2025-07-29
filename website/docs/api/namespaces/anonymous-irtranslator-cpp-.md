@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IRTranslator.cpp}` Namespace Reference
+# `anonymous{IRTranslator.cpp}` Namespace
 
 
 

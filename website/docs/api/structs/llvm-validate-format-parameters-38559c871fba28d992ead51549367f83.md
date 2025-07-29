@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `validate_format_parameters` Struct Template Reference
+# `validate_format_parameters` Struct Template
 
 
 

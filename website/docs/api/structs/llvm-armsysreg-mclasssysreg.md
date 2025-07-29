@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MClassSysReg` Struct Reference
+# `MClassSysReg` Struct
 
 
 

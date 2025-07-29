@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyMCLowerPrePass.cpp}` Namespace Reference
+# `anonymous{WebAssemblyMCLowerPrePass.cpp}` Namespace
 
 
 

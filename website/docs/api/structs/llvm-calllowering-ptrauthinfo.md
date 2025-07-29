@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrAuthInfo` Struct Reference
+# `PtrAuthInfo` Struct
 
 
 

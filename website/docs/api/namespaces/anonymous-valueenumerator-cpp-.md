@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ValueEnumerator.cpp}` Namespace Reference
+# `anonymous{ValueEnumerator.cpp}` Namespace
 
 
 

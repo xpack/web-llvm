@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PromoteMem2Reg` Struct Reference
+# `PromoteMem2Reg` Struct
 
 
 

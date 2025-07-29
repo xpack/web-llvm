@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SUSet` Struct Reference
+# `SUSet` Struct
 
 
 

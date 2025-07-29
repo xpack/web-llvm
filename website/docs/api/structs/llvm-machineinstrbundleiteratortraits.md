@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstrBundleIteratorTraits` Struct Template Reference
+# `MachineInstrBundleIteratorTraits` Struct Template
 
 
 

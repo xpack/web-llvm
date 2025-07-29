@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cloner` Struct Reference
+# `Cloner` Struct
 
 
 

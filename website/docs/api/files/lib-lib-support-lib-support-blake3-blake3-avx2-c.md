@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `blake3_avx2.c` File Reference
+# `blake3_avx2.c` File
 
 
 

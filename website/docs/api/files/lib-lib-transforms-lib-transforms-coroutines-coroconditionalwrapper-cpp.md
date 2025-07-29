@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroConditionalWrapper.cpp` File Reference
+# `CoroConditionalWrapper.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMRegisterInfo.cpp` File Reference
+# `ARMRegisterInfo.cpp` File
 
 
 

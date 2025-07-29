@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `malloc.c` File Reference
+# `malloc.c` File
 
 
 

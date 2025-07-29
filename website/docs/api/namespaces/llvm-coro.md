@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coro` Namespace Reference
+# `coro` Namespace
 
 
 

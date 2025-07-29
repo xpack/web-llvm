@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXProxyRegErasure.cpp}` Namespace Reference
+# `anonymous{NVPTXProxyRegErasure.cpp}` Namespace
 
 
 

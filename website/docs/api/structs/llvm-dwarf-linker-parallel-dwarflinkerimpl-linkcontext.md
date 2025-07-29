@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinkContext` Struct Reference
+# `LinkContext` Struct
 
 <p>Keeps track of data associated with one object during linking. <a href="#details">More...</a></p>
 

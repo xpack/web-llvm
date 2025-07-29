@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributorCGSCCPass` Struct Reference
+# `AttributorCGSCCPass` Struct
 
 
 

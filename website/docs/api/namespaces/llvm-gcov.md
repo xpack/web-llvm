@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOV` Namespace Reference
+# `GCOV` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFileLanguageIdAndTypeIdType` Struct Reference
+# `CFileLanguageIdAndTypeIdType` Struct
 
 
 

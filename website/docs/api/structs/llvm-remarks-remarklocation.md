@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkLocation` Struct Reference
+# `RemarkLocation` Struct
 
 <p>The debug location used to track a remark back to the source file. <a href="#details">More...</a></p>
 

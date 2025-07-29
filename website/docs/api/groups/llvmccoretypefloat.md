@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Floating Point Types Reference
+# Floating Point Types
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveRegUnit` Struct Reference
+# `LiveRegUnit` Struct
 
 
 

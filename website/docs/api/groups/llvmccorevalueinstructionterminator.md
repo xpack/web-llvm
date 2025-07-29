@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Terminators Reference
+# Terminators
 
 <p>Functions in this group only apply to instructions for which LLVMIsATerminatorInst returns true. <a href="#details">More...</a></p>
 

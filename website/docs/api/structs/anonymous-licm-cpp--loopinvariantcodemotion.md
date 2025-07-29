@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInvariantCodeMotion` Struct Reference
+# `LoopInvariantCodeMotion` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `safestack` Namespace Reference
+# `safestack` Namespace
 
 
 

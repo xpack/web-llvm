@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVDuplicatesTracker.h` File Reference
+# `SPIRVDuplicatesTracker.h` File
 
 
 

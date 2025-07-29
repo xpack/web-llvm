@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `make_const_ref` Struct Template Reference
+# `make_const_ref` Struct Template
 
 
 

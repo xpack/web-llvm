@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintNode` Struct Template Reference
+# `PrintNode` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorLoadStoreBuiltin` Struct Reference
+# `VectorLoadStoreBuiltin` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULegalizerInfo.h` File Reference
+# `AMDGPULegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for AMDGPU. <a href="#details">More...</a></p>
 

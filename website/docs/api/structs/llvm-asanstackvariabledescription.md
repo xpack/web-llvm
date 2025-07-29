@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ASanStackVariableDescription` Struct Reference
+# `ASanStackVariableDescription` Struct
 
 
 

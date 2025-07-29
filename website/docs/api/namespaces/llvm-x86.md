@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86` Namespace Reference
+# `X86` Namespace
 
 <p>Define some predicates that are used for node matching. <a href="#details">More...</a></p>
 

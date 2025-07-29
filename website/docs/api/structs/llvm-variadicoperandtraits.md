@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariadicOperandTraits` Struct Template Reference
+# `VariadicOperandTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/variadicoperandtraits">VariadicOperandTraits</a> - determine the allocation regime of the <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> array when it is a prefix to the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> object, and the number of <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> objects is only known at allocation time. <a href="#details">More...</a></p>
 

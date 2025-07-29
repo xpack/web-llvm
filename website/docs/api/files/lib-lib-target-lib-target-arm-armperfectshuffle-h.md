@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMPerfectShuffle.h` File Reference
+# `ARMPerfectShuffle.h` File
 
 
 

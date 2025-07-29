@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIFoldOperands.cpp}` Namespace Reference
+# `anonymous{SIFoldOperands.cpp}` Namespace
 
 
 

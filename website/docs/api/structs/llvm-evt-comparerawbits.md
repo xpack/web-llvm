@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `compareRawBits` Struct Reference
+# `compareRawBits` Struct
 
 <p>A meaningless but well-behaved order, useful for constructing containers. <a href="#details">More...</a></p>
 

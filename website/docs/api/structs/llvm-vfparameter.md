@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFParameter` Struct Reference
+# `VFParameter` Struct
 
 <p>Encapsulates information needed to describe a parameter. <a href="#details">More...</a></p>
 

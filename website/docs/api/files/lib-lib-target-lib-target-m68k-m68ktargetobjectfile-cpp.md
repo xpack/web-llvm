@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetObjectFile.cpp` File Reference
+# `M68kTargetObjectFile.cpp` File
 
 <p>This file contains definitions for <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> <a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> object file lowering. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFRelocation32` Struct Reference
+# `XCOFFRelocation32` Struct
 
 
 

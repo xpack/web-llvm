@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizationPlanner.h` File Reference
+# `LoopVectorizationPlanner.h` File
 
 <p>This file provides a LoopVectorizationPlanner class. <a href="#details">More...</a></p>
 

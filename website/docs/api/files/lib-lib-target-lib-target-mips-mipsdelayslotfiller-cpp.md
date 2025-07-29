@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsDelaySlotFiller.cpp` File Reference
+# `MipsDelaySlotFiller.cpp` File
 
 
 

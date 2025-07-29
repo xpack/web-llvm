@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPrintfRuntimeBindingPass` Struct Reference
+# `AMDGPUPrintfRuntimeBindingPass` Struct
 
 
 

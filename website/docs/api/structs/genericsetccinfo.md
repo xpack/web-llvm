@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSetCCInfo` Struct Reference
+# `GenericSetCCInfo` Struct
 
 <p>Helper structure to keep track of ISD::SET_CC operands. <a href="#details">More...</a></p>
 

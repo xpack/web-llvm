@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueProfRecordClosure` Struct Reference
+# `ValueProfRecordClosure` Struct
 
 
 

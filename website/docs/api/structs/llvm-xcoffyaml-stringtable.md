@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTable` Struct Reference
+# `StringTable` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionalValueCast` Struct Template Reference
+# `OptionalValueCast` Struct Template
 
 <p>This cast trait provides std::optional&lt;T&gt; casting. <a href="#details">More...</a></p>
 

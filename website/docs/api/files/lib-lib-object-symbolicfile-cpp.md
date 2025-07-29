@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolicFile.cpp` File Reference
+# `SymbolicFile.cpp` File
 
 
 

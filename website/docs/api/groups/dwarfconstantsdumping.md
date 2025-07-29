@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Dwarf constants dumping functions Reference
+# Dwarf constants dumping functions
 
 <p>All these functions map their argument's value back to the corresponding enumerator name or return an empty <a href="/web-llvm/docs/api/classes/llvm/stringref">StringRef</a> if the value isn't known. <a href="#details">More...</a></p>
 

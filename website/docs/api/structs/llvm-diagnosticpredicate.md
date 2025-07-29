@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DiagnosticPredicate` Struct Reference
+# `DiagnosticPredicate` Struct
 
 
 

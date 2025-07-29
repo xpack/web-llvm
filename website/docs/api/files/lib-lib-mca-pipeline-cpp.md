@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Pipeline.cpp` File Reference
+# `Pipeline.cpp` File
 
 <p>This file implements an ordered container of stages that simulate the pipeline of a hardware backend. <a href="#details">More...</a></p>
 

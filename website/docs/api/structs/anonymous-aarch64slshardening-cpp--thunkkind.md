@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThunkKind` Struct Reference
+# `ThunkKind` Struct
 
 
 

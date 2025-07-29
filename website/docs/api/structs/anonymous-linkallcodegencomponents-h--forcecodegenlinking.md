@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceCodegenLinking` Struct Reference
+# `ForceCodegenLinking` Struct
 
 
 

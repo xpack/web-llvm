@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnknownSymbolRecord` Struct Reference
+# `UnknownSymbolRecord` Struct
 
 
 

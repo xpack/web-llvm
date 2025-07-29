@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWASanAccessInfo` Namespace Reference
+# `HWASanAccessInfo` Namespace
 
 
 

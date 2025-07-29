@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SVEPredPattern` Namespace Reference
+# `AArch64SVEPredPattern` Namespace
 
 
 

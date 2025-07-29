@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetLoweringOpt` Struct Reference
+# `TargetLoweringOpt` Struct
 
 <p>A convenience struct that encapsulates a DAG, and two SDValues for returning information from <a href="/web-llvm/docs/api/classes/llvm/targetlowering">TargetLowering</a> to its clients that want to combine. <a href="#details">More...</a></p>
 

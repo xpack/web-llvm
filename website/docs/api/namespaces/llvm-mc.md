@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mc` Namespace Reference
+# `mc` Namespace
 
 
 

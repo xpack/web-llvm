@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ELFObjHandler.cpp}` Namespace Reference
+# `anonymous{ELFObjHandler.cpp}` Namespace
 
 
 

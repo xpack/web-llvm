@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUResourceUsageAnalysis` Struct Reference
+# `AMDGPUResourceUsageAnalysis` Struct
 
 
 

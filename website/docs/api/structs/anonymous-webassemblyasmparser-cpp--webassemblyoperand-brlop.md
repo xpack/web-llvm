@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BrLOp` Struct Reference
+# `BrLOp` Struct
 
 
 

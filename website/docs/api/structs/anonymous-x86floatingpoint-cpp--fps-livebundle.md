@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveBundle` Struct Reference
+# `LiveBundle` Struct
 
 
 

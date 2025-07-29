@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeLTOInfo` Struct Reference
+# `BitcodeLTOInfo` Struct
 
 <p>Basic information extracted from a bitcode module to be used for LTO. <a href="#details">More...</a></p>
 

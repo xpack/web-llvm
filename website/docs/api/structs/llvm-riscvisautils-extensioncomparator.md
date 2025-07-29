@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtensionComparator` Struct Reference
+# `ExtensionComparator` Struct
 
 <p>Helper class for <a href="/web-llvm/docs/api/namespaces/llvm/riscvisautils/#a8557faa65915a2ad7c9f4576d736f50b">OrderedExtensionMap</a>. <a href="#details">More...</a></p>
 

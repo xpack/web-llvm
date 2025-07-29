@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXBaseInfo.h` File Reference
+# `NVPTXBaseInfo.h` File
 
 
 

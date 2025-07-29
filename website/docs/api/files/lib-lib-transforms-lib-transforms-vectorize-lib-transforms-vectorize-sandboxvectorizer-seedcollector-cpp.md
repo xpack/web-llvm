@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeedCollector.cpp` File Reference
+# `SeedCollector.cpp` File
 
 
 

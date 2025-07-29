@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GnuHashSection` Struct Reference
+# `GnuHashSection` Struct
 
 
 

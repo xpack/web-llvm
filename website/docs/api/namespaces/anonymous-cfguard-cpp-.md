@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CFGuard.cpp}` Namespace Reference
+# `anonymous{CFGuard.cpp}` Namespace
 
 
 

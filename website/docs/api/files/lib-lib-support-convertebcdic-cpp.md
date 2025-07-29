@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConvertEBCDIC.cpp` File Reference
+# `ConvertEBCDIC.cpp` File
 
 <p>This file provides utility functions for converting between EBCDIC-1047 and UTF-8. <a href="#details">More...</a></p>
 

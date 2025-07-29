@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeletesInserts` Struct Reference
+# `DeletesInserts` Struct
 
 
 

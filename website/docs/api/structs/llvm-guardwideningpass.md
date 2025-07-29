@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GuardWideningPass` Struct Reference
+# `GuardWideningPass` Struct
 
 
 

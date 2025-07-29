@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedMachineOperand` Struct Reference
+# `ParsedMachineOperand` Struct
 
 <p>A wrapper struct around the '<a href="/web-llvm/docs/api/classes/llvm/machineoperand">MachineOperand</a>' struct that includes a source range and other attributes. <a href="#details">More...</a></p>
 

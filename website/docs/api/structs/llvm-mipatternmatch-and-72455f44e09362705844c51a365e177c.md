@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `And` Struct Template Reference
+# `And` Struct Template
 
 
 

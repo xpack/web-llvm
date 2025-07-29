@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FilterT` Struct Template Reference
+# `FilterT` Struct Template
 
 
 

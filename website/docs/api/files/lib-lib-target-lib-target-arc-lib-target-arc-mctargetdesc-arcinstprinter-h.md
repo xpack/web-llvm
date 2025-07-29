@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCInstPrinter.h` File Reference
+# `ARCInstPrinter.h` File
 
 <p>This file contains the declaration of the ARCInstPrinter class, which is used to print ARC MCInst to a .s file. <a href="#details">More...</a></p>
 

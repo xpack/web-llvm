@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapperT` Struct Template Reference
+# `MapperT` Struct Template
 
 
 

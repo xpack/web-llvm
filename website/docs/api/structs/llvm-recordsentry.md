@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordsEntry` Struct Reference
+# `RecordsEntry` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/recordsentry">RecordsEntry</a> - Holds exactly one of a <a href="/web-llvm/docs/api/classes/llvm/record">Record</a>, <a href="/web-llvm/docs/api/structs/llvm/foreachloop">ForeachLoop</a>, or AssertionInfo. <a href="#details">More...</a></p>
 

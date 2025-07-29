@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFDebug.h` File Reference
+# `BTFDebug.h` File
 
 <p>This file contains support for writing BTF debug info. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRV.h` File Reference
+# `SPIRV.h` File
 
 
 

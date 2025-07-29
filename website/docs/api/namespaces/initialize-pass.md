@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `INITIALIZE_PASS` Namespace Reference
+# `INITIALIZE_PASS` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/llvm/targetpassconfig">TargetPassConfig</a>. <a href="#details">More...</a></p>
 

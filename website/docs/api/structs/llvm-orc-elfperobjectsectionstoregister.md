@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFPerObjectSectionsToRegister` Struct Reference
+# `ELFPerObjectSectionsToRegister` Struct
 
 
 

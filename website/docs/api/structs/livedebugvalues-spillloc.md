@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpillLoc` Struct Reference
+# `SpillLoc` Struct
 
 
 

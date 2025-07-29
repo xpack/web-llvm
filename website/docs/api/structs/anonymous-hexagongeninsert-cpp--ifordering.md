@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFOrdering` Struct Reference
+# `IFOrdering` Struct
 
 
 

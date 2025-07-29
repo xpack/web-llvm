@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADereferenceableCallSiteReturned` Struct Reference
+# `AADereferenceableCallSiteReturned` Struct
 
 <p>Dereferenceable attribute deduction for a call site return value. <a href="#details">More...</a></p>
 

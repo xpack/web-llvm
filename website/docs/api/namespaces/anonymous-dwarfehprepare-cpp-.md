@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DwarfEHPrepare.cpp}` Namespace Reference
+# `anonymous{DwarfEHPrepare.cpp}` Namespace
 
 
 

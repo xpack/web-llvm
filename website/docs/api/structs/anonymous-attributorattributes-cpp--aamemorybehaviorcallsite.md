@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryBehaviorCallSite` Struct Reference
+# `AAMemoryBehaviorCallSite` Struct
 
 <p>AAMemoryBehavior attribute for call sites. <a href="#details">More...</a></p>
 

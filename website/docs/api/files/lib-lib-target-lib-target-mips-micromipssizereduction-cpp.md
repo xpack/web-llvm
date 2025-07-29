@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MicroMipsSizeReduction.cpp` File Reference
+# `MicroMipsSizeReduction.cpp` File
 
 <p>This pass is used to reduce the size of instructions where applicable. <a href="#details">More...</a></p>
 

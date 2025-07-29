@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionInfoPassGraphTraits` Struct Reference
+# `RegionInfoPassGraphTraits` Struct
 
 
 

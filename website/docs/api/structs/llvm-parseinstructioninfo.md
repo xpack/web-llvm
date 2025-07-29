@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParseInstructionInfo` Struct Reference
+# `ParseInstructionInfo` Struct
 
 
 

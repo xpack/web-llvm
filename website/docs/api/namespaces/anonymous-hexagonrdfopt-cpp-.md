@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonRDFOpt.cpp}` Namespace Reference
+# `anonymous{HexagonRDFOpt.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BinaryStreamRef.cpp}` Namespace Reference
+# `anonymous{BinaryStreamRef.cpp}` Namespace
 
 
 

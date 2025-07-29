@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{StructurizeCFG.cpp}` Namespace Reference
+# `anonymous{StructurizeCFG.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNIterativeScheduler.h` File Reference
+# `GCNIterativeScheduler.h` File
 
 <p>This file defines the class GCNIterativeScheduler, which uses an iterative approach to find a best schedule for GCN architecture. <a href="#details">More...</a></p>
 

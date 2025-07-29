@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPFirstOrderRecurrencePHIRecipe` Struct Reference
+# `VPFirstOrderRecurrencePHIRecipe` Struct
 
 <p>A recipe for handling first-order recurrence phis. <a href="#details">More...</a></p>
 

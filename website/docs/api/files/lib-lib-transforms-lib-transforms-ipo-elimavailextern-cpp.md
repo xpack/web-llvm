@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ElimAvailExtern.cpp` File Reference
+# `ElimAvailExtern.cpp` File
 
 
 

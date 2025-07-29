@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mmst_reg_t` Struct Reference
+# `mmst_reg_t` Struct
 
 
 

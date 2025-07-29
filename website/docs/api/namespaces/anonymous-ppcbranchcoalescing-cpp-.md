@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCBranchCoalescing.cpp}` Namespace Reference
+# `anonymous{PPCBranchCoalescing.cpp}` Namespace
 
 <p>Improve scheduling by coalescing branches that depend on the same condition. <a href="#details">More...</a></p>
 

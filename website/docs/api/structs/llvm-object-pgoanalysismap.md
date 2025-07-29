@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOAnalysisMap` Struct Reference
+# `PGOAnalysisMap` Struct
 
 <p>A feature extension of <a href="/web-llvm/docs/api/structs/llvm/object/bbaddrmap">BBAddrMap</a> that holds information relevant to PGO. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexNumber` Struct Reference
+# `HexNumber` Struct
 
 
 

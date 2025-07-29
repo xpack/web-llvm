@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Support` Folder Reference
+# `lib/Support` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SafeStack.cpp}` Namespace Reference
+# `anonymous{SafeStack.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Frontend/Atomic` Folder Reference
+# `include/llvm/Frontend/Atomic` Folder
 
 
 

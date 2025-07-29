@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LessPointerAddrSpace` Struct Reference
+# `LessPointerAddrSpace` Struct
 
 <p><a href="/web-llvm/docs/api/classes/predicate">Predicate</a> to sort pointer specs by address space number. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUCtorDtorLowering.cpp}` Namespace Reference
+# `anonymous{AMDGPUCtorDtorLowering.cpp}` Namespace
 
 
 

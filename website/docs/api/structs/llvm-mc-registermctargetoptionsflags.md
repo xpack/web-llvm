@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCTargetOptionsFlags` Struct Reference
+# `RegisterMCTargetOptionsFlags` Struct
 
 <p>Create this object with static storage to register mc-related command line options. <a href="#details">More...</a></p>
 

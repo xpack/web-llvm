@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextNode` Struct Reference
+# `ContextNode` Struct
 
 <p><a href="/web-llvm/docs/api/classes/node">Node</a> in the Callsite Context Graph. <a href="#details">More...</a></p>
 

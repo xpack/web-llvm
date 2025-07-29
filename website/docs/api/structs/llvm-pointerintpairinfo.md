@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerIntPairInfo` Struct Template Reference
+# `PointerIntPairInfo` Struct Template
 
 
 

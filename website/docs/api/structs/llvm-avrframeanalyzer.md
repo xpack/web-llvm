@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRFrameAnalyzer` Struct Reference
+# `AVRFrameAnalyzer` Struct
 
 <p>The frame analyzer pass. <a href="#details">More...</a></p>
 

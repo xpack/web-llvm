@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{A15SDOptimizer.cpp}` Namespace Reference
+# `anonymous{A15SDOptimizer.cpp}` Namespace
 
 
 

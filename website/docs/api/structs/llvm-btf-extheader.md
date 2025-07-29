@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtHeader` Struct Reference
+# `ExtHeader` Struct
 
 <p>The .BTF.ext section header definition. <a href="#details">More...</a></p>
 

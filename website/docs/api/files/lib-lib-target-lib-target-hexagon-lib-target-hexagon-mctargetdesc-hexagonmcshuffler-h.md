@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCShuffler.h` File Reference
+# `HexagonMCShuffler.h` File
 
 
 

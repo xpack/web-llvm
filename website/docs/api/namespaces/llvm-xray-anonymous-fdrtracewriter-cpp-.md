@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{FDRTraceWriter.cpp}` Namespace Reference
+# `anonymous{FDRTraceWriter.cpp}` Namespace
 
 
 

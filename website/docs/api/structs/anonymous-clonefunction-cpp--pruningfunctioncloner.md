@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PruningFunctionCloner` Struct Reference
+# `PruningFunctionCloner` Struct
 
 <p>This is a private class used to implement CloneAndPruneFunctionInto. <a href="#details">More...</a></p>
 

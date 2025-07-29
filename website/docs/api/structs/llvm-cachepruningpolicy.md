@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CachePruningPolicy` Struct Reference
+# `CachePruningPolicy` Struct
 
 <p>Policy for the <a href="/web-llvm/docs/api/namespaces/llvm/#aabba6d27907082520ad2eb977c8e406b">pruneCache()</a> function. <a href="#details">More...</a></p>
 

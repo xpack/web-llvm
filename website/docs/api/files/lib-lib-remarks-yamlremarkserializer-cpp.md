@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLRemarkSerializer.cpp` File Reference
+# `YAMLRemarkSerializer.cpp` File
 
 
 

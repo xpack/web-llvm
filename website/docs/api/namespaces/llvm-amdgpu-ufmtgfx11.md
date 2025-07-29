@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UfmtGFX11` Namespace Reference
+# `UfmtGFX11` Namespace
 
 
 

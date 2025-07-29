@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CounterInfo` Struct Reference
+# `CounterInfo` Struct
 
 
 

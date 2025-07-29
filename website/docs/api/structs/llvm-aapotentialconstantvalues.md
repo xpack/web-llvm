@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPotentialConstantValues` Struct Reference
+# `AAPotentialConstantValues` Struct
 
 <p>An abstract interface for potential values analysis. <a href="#details">More...</a></p>
 

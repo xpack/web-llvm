@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExceptionStream` Struct Reference
+# `ExceptionStream` Struct
 
 
 

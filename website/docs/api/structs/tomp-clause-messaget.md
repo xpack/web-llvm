@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MessageT` Struct Template Reference
+# `MessageT` Struct Template
 
 
 

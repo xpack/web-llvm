@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Dyn_Base` Struct Template Reference
+# `Elf_Dyn_Base` Struct Template
 
 
 

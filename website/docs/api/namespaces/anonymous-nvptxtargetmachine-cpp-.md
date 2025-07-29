@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXTargetMachine.cpp}` Namespace Reference
+# `anonymous{NVPTXTargetMachine.cpp}` Namespace
 
 
 

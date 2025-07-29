@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `const_symbol_iterator` Struct Reference
+# `const_symbol_iterator` Struct
 
 
 

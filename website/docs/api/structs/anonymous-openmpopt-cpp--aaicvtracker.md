@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAICVTracker` Struct Reference
+# `AAICVTracker` Struct
 
 <p>Abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> for tracking ICV values. <a href="#details">More...</a></p>
 

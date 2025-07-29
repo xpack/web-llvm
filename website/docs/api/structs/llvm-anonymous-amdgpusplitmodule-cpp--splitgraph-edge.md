@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Edge` Struct Reference
+# `Edge` Struct
 
 <p>An edge between two nodes. <a href="#details">More...</a></p>
 

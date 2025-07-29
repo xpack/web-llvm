@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Instruction` Struct Reference
+# `Instruction` Struct
 
 <p>An instruction consists of a DWARF CFI opcode and an optional sequence of operands. <a href="#details">More...</a></p>
 

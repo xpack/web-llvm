@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugCounterOwner` Struct Reference
+# `DebugCounterOwner` Struct
 
 
 

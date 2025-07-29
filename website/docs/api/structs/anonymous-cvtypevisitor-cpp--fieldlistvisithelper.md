@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FieldListVisitHelper` Struct Reference
+# `FieldListVisitHelper` Struct
 
 
 

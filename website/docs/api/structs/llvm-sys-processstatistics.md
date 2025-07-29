@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProcessStatistics` Struct Reference
+# `ProcessStatistics` Struct
 
 <p>This struct encapsulates information about a process execution. <a href="#details">More...</a></p>
 

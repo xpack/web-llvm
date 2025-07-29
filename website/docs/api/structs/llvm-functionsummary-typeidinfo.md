@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIdInfo` Struct Reference
+# `TypeIdInfo` Struct
 
 <p>All type identifier related information. <a href="#details">More...</a></p>
 

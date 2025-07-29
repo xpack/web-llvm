@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYRegisterInfo.cpp` File Reference
+# `CSKYRegisterInfo.cpp` File
 
 
 

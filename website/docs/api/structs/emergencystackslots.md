@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmergencyStackSlots` Struct Reference
+# `EmergencyStackSlots` Struct
 
 <p>Emergency stack slots for expanding SPILL_PPR_TO_ZPR_SLOT_PSEUDO and FILL_PPR_FROM_ZPR_SLOT_PSEUDO. <a href="#details">More...</a></p>
 

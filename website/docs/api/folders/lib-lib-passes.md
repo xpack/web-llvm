@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Passes` Folder Reference
+# `lib/Passes` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LessPrimitiveBitWidth` Struct Reference
+# `LessPrimitiveBitWidth` Struct
 
 <p><a href="/web-llvm/docs/api/classes/predicate">Predicate</a> to sort primitive specs by bit width. <a href="#details">More...</a></p>
 

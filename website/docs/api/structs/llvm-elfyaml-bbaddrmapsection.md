@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBAddrMapSection` Struct Reference
+# `BBAddrMapSection` Struct
 
 
 

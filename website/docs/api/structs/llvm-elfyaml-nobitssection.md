@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoBitsSection` Struct Reference
+# `NoBitsSection` Struct
 
 
 

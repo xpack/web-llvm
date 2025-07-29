@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyLICMPass` Struct Reference
+# `LegacyLICMPass` Struct
 
 
 

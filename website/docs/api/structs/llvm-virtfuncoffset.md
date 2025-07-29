@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtFuncOffset` Struct Reference
+# `VirtFuncOffset` Struct
 
 <p>The <a href="/web-llvm/docs/api/structs/llvm/valueinfo">ValueInfo</a> and offset for a function within a vtable definition initializer array. <a href="#details">More...</a></p>
 

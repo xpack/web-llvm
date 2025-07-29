@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Global` Struct Reference
+# `Global` Struct
 
 
 

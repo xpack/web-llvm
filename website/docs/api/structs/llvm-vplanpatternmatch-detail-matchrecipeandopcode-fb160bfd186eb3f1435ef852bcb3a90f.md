@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatchRecipeAndOpcode` Struct Template Reference
+# `MatchRecipeAndOpcode` Struct Template
 
 
 

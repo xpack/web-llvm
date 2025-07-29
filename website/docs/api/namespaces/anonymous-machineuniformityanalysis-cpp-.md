@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineUniformityAnalysis.cpp}` Namespace Reference
+# `anonymous{MachineUniformityAnalysis.cpp}` Namespace
 
 
 

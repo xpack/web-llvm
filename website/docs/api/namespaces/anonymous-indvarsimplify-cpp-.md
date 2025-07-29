@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IndVarSimplify.cpp}` Namespace Reference
+# `anonymous{IndVarSimplify.cpp}` Namespace
 
 
 

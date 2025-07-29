@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionRecord` Struct Reference
+# `FunctionRecord` Struct
 
 <p>Code coverage information for a single function. <a href="#details">More...</a></p>
 

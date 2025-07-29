@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BuildID.cpp` File Reference
+# `BuildID.cpp` File
 
 <p>This file defines a library for handling Build IDs and using them to find debug info. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVOutgoingValueHandler` Struct Reference
+# `RISCVOutgoingValueHandler` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LexicalBlock` Struct Reference
+# `LexicalBlock` Struct
 
 
 

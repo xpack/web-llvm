@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptCreatorT` Struct Reference
+# `OptCreatorT` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbiTagAttr` Struct Reference
+# `AbiTagAttr` Struct
 
 
 

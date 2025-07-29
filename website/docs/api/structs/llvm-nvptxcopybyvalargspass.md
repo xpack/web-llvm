@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXCopyByValArgsPass` Struct Reference
+# `NVPTXCopyByValArgsPass` Struct
 
 
 

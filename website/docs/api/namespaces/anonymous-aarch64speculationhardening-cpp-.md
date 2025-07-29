@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64SpeculationHardening.cpp}` Namespace Reference
+# `anonymous{AArch64SpeculationHardening.cpp}` Namespace
 
 
 

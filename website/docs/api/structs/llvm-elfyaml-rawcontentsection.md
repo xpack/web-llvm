@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawContentSection` Struct Reference
+# `RawContentSection` Struct
 
 
 

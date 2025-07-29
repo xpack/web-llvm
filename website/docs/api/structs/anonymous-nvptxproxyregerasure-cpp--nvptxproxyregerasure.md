@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXProxyRegErasure` Struct Reference
+# `NVPTXProxyRegErasure` Struct
 
 
 

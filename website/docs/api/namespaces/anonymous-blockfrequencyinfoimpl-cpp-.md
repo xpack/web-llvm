@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BlockFrequencyInfoImpl.cpp}` Namespace Reference
+# `anonymous{BlockFrequencyInfoImpl.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizesT` Struct Template Reference
+# `SizesT` Struct Template
 
 
 

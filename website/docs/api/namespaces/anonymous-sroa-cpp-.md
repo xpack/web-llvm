@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SROA.cpp}` Namespace Reference
+# `anonymous{SROA.cpp}` Namespace
 
 <p>Calculate the fragment of a variable to use when slicing a store based on the slice dimensions, existing fragment, and base storage fragment. <a href="#details">More...</a></p>
 

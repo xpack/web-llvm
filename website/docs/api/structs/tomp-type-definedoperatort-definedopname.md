@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefinedOpName` Struct Reference
+# `DefinedOpName` Struct
 
 
 

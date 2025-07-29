@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonTrivialUnswitchCandidate` Struct Reference
+# `NonTrivialUnswitchCandidate` Struct
 
 
 

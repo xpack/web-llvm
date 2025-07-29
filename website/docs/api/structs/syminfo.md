@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymInfo` Struct Reference
+# `SymInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/syminfo">SymInfo</a> contains information about symbol: it's address and section index which is -1LL for absolute symbols. <a href="#details">More...</a></p>
 

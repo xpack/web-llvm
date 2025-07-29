@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FloatSignAsInt` Struct Reference
+# `FloatSignAsInt` Struct
 
 <p>Keeps track of state when getting the sign of a floating-point value as an integer. <a href="#details">More...</a></p>
 

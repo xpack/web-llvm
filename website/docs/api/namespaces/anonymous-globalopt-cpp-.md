@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GlobalOpt.cpp}` Namespace Reference
+# `anonymous{GlobalOpt.cpp}` Namespace
 
 
 

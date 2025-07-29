@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NativeTypeFunctionSig.cpp}` Namespace Reference
+# `anonymous{NativeTypeFunctionSig.cpp}` Namespace
 
 
 

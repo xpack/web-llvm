@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ObjCopy` Folder Reference
+# `lib/ObjCopy` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `po_ext_iterator` Struct Template Reference
+# `po_ext_iterator` Struct Template
 
 
 

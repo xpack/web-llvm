@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Hexagon_MC` Namespace Reference
+# `Hexagon_MC` Namespace
 
 
 

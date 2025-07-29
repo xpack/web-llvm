@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineCycleAnalysis.cpp}` Namespace Reference
+# `anonymous{MachineCycleAnalysis.cpp}` Namespace
 
 
 

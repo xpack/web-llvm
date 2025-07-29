@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoBase` Struct Reference
+# `FixupInfoBase` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/jitlink/aarch32/fixupinfo">FixupInfo</a> base class is required for dynamic lookups. <a href="#details">More...</a></p>
 

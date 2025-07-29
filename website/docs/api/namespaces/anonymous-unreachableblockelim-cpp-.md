@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{UnreachableBlockElim.cpp}` Namespace Reference
+# `anonymous{UnreachableBlockElim.cpp}` Namespace
 
 
 

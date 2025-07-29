@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeadingZerosCounter` Struct Template Reference
+# `LeadingZerosCounter` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GeneralShuffle` Struct Reference
+# `GeneralShuffle` Struct
 
 
 

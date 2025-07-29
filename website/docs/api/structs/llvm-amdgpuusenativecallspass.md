@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUseNativeCallsPass` Struct Reference
+# `AMDGPUUseNativeCallsPass` Struct
 
 
 

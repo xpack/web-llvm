@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64MCTargetDesc.cpp}` Namespace Reference
+# `anonymous{AArch64MCTargetDesc.cpp}` Namespace
 
 
 

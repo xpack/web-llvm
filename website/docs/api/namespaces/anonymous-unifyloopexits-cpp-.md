@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{UnifyLoopExits.cpp}` Namespace Reference
+# `anonymous{UnifyLoopExits.cpp}` Namespace
 
 
 

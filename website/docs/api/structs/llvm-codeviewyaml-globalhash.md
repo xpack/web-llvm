@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalHash` Struct Reference
+# `GlobalHash` Struct
 
 
 

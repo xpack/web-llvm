@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZAddressingMode` Struct Reference
+# `SystemZAddressingMode` Struct
 
 
 

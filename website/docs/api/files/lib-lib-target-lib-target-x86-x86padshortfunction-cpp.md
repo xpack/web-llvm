@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86PadShortFunction.cpp` File Reference
+# `X86PadShortFunction.cpp` File
 
 
 

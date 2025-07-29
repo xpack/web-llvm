@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerAtomic.cpp` File Reference
+# `LowerAtomic.cpp` File
 
 
 

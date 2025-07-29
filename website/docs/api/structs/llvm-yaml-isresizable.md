@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsResizable` Struct Template Reference
+# `IsResizable` Struct Template
 
 
 

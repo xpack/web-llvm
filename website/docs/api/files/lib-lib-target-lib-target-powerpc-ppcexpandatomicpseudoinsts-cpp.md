@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCExpandAtomicPseudoInsts.cpp` File Reference
+# `PPCExpandAtomicPseudoInsts.cpp` File
 
 
 

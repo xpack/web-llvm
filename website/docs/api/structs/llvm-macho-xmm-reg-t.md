@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `xmm_reg_t` Struct Reference
+# `xmm_reg_t` Struct
 
 
 

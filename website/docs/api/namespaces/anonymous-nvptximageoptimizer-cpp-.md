@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXImageOptimizer.cpp}` Namespace Reference
+# `anonymous{NVPTXImageOptimizer.cpp}` Namespace
 
 
 

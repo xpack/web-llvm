@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterJIT` Struct Reference
+# `RegisterJIT` Struct
 
 
 

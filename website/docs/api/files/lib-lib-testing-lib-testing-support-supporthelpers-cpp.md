@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SupportHelpers.cpp` File Reference
+# `SupportHelpers.cpp` File
 
 
 

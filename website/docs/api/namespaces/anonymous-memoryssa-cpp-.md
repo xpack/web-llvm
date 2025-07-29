@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MemorySSA.cpp}` Namespace Reference
+# `anonymous{MemorySSA.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompileUnitPointerTraits` Struct Reference
+# `CompileUnitPointerTraits` Struct
 
 <p>Pointer traits for <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/parallel/compileunit">CompileUnit</a>. <a href="#details">More...</a></p>
 

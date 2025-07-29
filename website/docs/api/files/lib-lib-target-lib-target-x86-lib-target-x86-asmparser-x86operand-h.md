@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86Operand.h` File Reference
+# `X86Operand.h` File
 
 
 

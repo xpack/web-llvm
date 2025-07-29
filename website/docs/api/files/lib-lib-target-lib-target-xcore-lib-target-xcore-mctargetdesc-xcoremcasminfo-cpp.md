@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreMCAsmInfo.cpp` File Reference
+# `XCoreMCAsmInfo.cpp` File
 
 
 

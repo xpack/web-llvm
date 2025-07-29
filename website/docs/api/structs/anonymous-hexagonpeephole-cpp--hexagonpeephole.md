@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonPeephole` Struct Reference
+# `HexagonPeephole` Struct
 
 
 

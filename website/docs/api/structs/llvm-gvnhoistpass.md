@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVNHoistPass` Struct Reference
+# `GVNHoistPass` Struct
 
 <p>A simple and fast domtree-based GVN pass to hoist common expressions from sibling branches. <a href="#details">More...</a></p>
 

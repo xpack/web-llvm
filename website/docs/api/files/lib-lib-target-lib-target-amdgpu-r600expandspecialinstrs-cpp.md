@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ExpandSpecialInstrs.cpp` File Reference
+# `R600ExpandSpecialInstrs.cpp` File
 
 <p>Vector, Reduction, and Cube instructions need to fill the entire instruction group to work correctly. <a href="#details">More...</a></p>
 

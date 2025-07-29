@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonShuffler.cpp}` Namespace Reference
+# `anonymous{HexagonShuffler.cpp}` Namespace
 
 
 

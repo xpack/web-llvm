@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARange` Struct Reference
+# `ARange` Struct
 
 
 

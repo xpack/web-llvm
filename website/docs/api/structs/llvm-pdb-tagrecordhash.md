@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TagRecordHash` Struct Reference
+# `TagRecordHash` Struct
 
 
 

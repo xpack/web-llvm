@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PermutationT` Struct Template Reference
+# `PermutationT` Struct Template
 
 
 

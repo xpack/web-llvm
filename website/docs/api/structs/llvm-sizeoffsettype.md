@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizeOffsetType` Struct Template Reference
+# `SizeOffsetType` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/sizeoffsettype">SizeOffsetType</a> - A base template class for the object size visitors. <a href="#details">More...</a></p>
 

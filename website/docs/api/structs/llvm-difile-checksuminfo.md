@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChecksumInfo` Struct Template Reference
+# `ChecksumInfo` Struct Template
 
 <p>A single checksum, represented by a <em>Kind</em> and a <em><a href="/web-llvm/docs/api/classes/llvm/value">Value</a></em> (a string). <a href="#details">More...</a></p>
 

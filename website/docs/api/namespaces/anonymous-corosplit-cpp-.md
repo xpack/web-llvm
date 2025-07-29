@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CoroSplit.cpp}` Namespace Reference
+# `anonymous{CoroSplit.cpp}` Namespace
 
 
 

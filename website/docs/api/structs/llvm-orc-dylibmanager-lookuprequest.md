@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookupRequest` Struct Reference
+# `LookupRequest` Struct
 
 <p>A pair of a dylib and a set of symbols to be looked up. <a href="#details">More...</a></p>
 

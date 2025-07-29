@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseSetValTraits` Struct Template Reference
+# `SparseSetValTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/sparsesetvaltraits">SparseSetValTraits</a> - Objects in a <a href="/web-llvm/docs/api/classes/llvm/sparseset">SparseSet</a> are identified by keys that can be uniquely converted to a small integer less than the set's universe. <a href="#details">More...</a></p>
 

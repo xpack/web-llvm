@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CheckDebugifyFunctionPass` Struct Reference
+# `CheckDebugifyFunctionPass` Struct
 
 <p>FunctionPass for checking debug info inserted by -debugify-function, used with the legacy module pass manager. <a href="#details">More...</a></p>
 

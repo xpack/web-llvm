@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `regstrlcpy.c` File Reference
+# `regstrlcpy.c` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CountVisits.cpp` File Reference
+# `CountVisits.cpp` File
 
 
 

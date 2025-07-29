@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffsetAndUnitID` Struct Reference
+# `OffsetAndUnitID` Struct
 
 <p>Helper class to identify an entry in <a href="/web-llvm/docs/api/classes/llvm/dwarf5acceltable">DWARF5AccelTable</a> based on their <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> offset and UnitID. <a href="#details">More...</a></p>
 

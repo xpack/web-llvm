@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymtabShndxSection` Struct Reference
+# `SymtabShndxSection` Struct
 
 
 

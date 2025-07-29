@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoweredPHIRecord` Struct Reference
+# `LoweredPHIRecord` Struct
 
 
 

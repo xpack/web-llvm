@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryBehaviorArgument` Struct Reference
+# `AAMemoryBehaviorArgument` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> behavior attribute for function argument. <a href="#details">More...</a></p>
 

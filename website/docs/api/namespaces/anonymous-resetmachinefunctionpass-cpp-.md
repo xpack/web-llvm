@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ResetMachineFunctionPass.cpp}` Namespace Reference
+# `anonymous{ResetMachineFunctionPass.cpp}` Namespace
 
 
 

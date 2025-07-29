@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCBranchFinalize.cpp` File Reference
+# `ARCBranchFinalize.cpp` File
 
 
 

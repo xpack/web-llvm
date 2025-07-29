@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReduceEntryFunArgs` Struct Reference
+# `ReduceEntryFunArgs` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SISrcMods` Namespace Reference
+# `SISrcMods` Namespace
 
 
 

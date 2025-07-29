@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EncodedStringLiteralNode` Struct Reference
+# `EncodedStringLiteralNode` Struct
 
 
 

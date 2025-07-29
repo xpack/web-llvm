@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LatticeKeyInfo` Struct Template Reference
+# `LatticeKeyInfo` Struct Template
 
 <p>A template for translating between LLVM Values and LatticeKeys. <a href="#details">More...</a></p>
 

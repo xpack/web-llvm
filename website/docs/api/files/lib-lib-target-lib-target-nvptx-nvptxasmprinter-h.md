@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAsmPrinter.h` File Reference
+# `NVPTXAsmPrinter.h` File
 
 
 

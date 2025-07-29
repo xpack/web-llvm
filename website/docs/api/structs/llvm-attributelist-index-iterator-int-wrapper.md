@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `int_wrapper` Struct Reference
+# `int_wrapper` Struct
 
 
 

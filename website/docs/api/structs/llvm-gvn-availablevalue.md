@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AvailableValue` Struct Reference
+# `AvailableValue` Struct
 
 <p>Represents a particular available value that we know how to materialize. <a href="#details">More...</a></p>
 

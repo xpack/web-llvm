@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86SpeculativeLoadHardening.cpp` File Reference
+# `X86SpeculativeLoadHardening.cpp` File
 
 <p>Provide a pass which mitigates speculative execution attacks which operate by speculating incorrectly past some predicate (a type check, bounds check, or other condition) to reach a load with invalid inputs and leak the data accessed by that load using a side channel out of the speculative domain. <a href="#details">More...</a></p>
 

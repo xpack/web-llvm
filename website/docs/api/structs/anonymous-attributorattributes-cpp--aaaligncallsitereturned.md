@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAlignCallSiteReturned` Struct Reference
+# `AAAlignCallSiteReturned` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/align">Align</a> attribute deduction for a call site return value. <a href="#details">More...</a></p>
 

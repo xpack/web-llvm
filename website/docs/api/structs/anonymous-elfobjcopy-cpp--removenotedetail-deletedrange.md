@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeletedRange` Struct Reference
+# `DeletedRange` Struct
 
 
 

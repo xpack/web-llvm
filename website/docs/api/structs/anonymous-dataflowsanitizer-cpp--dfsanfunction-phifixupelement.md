@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIFixupElement` Struct Reference
+# `PHIFixupElement` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FCmpSplitter` Struct Reference
+# `FCmpSplitter` Struct
 
 
 

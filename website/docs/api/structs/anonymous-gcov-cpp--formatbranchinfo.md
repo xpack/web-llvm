@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `formatBranchInfo` Struct Reference
+# `formatBranchInfo` Struct
 
 
 

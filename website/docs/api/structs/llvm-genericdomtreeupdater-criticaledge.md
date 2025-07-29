@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CriticalEdge` Struct Reference
+# `CriticalEdge` Struct
 
 <p>Helper structure used to hold all the basic blocks involved in the split of a critical edge. <a href="#details">More...</a></p>
 

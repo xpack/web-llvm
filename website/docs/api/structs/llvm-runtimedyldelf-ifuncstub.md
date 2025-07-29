@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFuncStub` Struct Reference
+# `IFuncStub` Struct
 
 <p>A IFunc stub and its original symbol. <a href="#details">More...</a></p>
 

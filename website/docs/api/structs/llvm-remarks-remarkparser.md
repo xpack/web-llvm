@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkParser` Struct Reference
+# `RemarkParser` Struct
 
 <p>Parser used to parse a raw buffer to <a href="/web-llvm/docs/api/structs/llvm/remarks/remark">remarks::Remark</a> objects. <a href="#details">More...</a></p>
 

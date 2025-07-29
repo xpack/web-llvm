@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInvariantPredicate` Struct Reference
+# `LoopInvariantPredicate` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StandardInstrumentations.cpp` File Reference
+# `StandardInstrumentations.cpp` File
 
 <p>This file defines IR-printing pass instrumentation callbacks as well as <a href="/web-llvm/docs/api/classes/llvm/standardinstrumentations">StandardInstrumentations</a> class that manages standard pass instrumentations. <a href="#details">More...</a></p>
 

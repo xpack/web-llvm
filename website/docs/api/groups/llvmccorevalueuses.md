@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Usage Reference
+# Usage
 
 <p>This module defines functions that allow you to inspect the uses of a <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#ga113ce952344691b8304a43a314f8be17">LLVMValueRef</a>. <a href="#details">More...</a></p>
 

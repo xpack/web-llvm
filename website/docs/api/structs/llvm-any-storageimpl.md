@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StorageImpl` Struct Template Reference
+# `StorageImpl` Struct Template
 
 
 

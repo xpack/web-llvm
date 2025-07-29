@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineInfo` Struct Reference
+# `InlineInfo` Struct
 
 <p>Inline information stores the name of the inline function along with an array of address ranges. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCTargetInfo.h` File Reference
+# `ARCTargetInfo.h` File
 
 
 

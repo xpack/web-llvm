@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMRegisterInfo.h` File Reference
+# `ARMRegisterInfo.h` File
 
 
 

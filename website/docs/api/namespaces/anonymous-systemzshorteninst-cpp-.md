@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZShortenInst.cpp}` Namespace Reference
+# `anonymous{SystemZShortenInst.cpp}` Namespace
 
 
 

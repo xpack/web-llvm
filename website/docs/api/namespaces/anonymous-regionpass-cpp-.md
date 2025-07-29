@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RegionPass.cpp}` Namespace Reference
+# `anonymous{RegionPass.cpp}` Namespace
 
 
 

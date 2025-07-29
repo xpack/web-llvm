@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDB_SourceCompression` Struct Reference
+# `PDB_SourceCompression` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonISD` Namespace Reference
+# `HexagonISD` Namespace
 
 
 

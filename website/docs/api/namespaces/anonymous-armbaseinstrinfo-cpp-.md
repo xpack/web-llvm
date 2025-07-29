@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMBaseInstrInfo.cpp}` Namespace Reference
+# `anonymous{ARMBaseInstrInfo.cpp}` Namespace
 
 
 

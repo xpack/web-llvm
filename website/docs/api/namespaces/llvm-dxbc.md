@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dxbc` Namespace Reference
+# `dxbc` Namespace
 
 
 

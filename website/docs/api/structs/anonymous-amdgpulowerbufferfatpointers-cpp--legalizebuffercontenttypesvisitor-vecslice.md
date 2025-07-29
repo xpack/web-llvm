@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VecSlice` Struct Reference
+# `VecSlice` Struct
 
 
 

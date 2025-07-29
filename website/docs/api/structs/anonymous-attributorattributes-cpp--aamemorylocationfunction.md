@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryLocationFunction` Struct Reference
+# `AAMemoryLocationFunction` Struct
 
 <p>An <a href="/web-llvm/docs/api/namespaces/llvm/aa">AA</a> to represent the memory behavior function attributes. <a href="#details">More...</a></p>
 

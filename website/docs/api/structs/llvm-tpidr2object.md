@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TPIDR2Object` Struct Reference
+# `TPIDR2Object` Struct
 
 
 

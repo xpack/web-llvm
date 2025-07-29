@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfJITRecordPrefix` Struct Reference
+# `PerfJITRecordPrefix` Struct
 
 
 

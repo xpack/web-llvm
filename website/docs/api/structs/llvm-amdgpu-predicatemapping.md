@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateMapping` Struct Reference
+# `PredicateMapping` Struct
 
 
 

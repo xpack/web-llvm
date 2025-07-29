@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphTraits` Struct Template Reference
+# `GraphTraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastedValue` Struct Reference
+# `CastedValue` Struct
 
 <p>Represents zext(sext(trunc(V))). <a href="#details">More...</a></p>
 

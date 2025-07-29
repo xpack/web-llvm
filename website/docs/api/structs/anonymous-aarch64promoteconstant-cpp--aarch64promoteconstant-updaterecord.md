@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UpdateRecord` Struct Reference
+# `UpdateRecord` Struct
 
 
 

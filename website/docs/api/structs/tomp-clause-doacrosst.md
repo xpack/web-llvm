@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DoacrossT` Struct Template Reference
+# `DoacrossT` Struct Template
 
 
 

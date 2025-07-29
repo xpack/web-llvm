@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SameType` Struct Template Reference
+# `SameType` Struct Template
 
 
 

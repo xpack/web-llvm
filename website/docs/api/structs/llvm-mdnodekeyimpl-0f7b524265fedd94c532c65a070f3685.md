@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDNodeKeyImpl` Struct Template Reference
+# `MDNodeKeyImpl` Struct Template
 
 
 

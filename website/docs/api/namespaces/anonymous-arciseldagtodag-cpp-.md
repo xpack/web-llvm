@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{ARCISelDAGToDAG.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-arciseldagtodag-cpp-/arcdagtodagisel">ARCDAGToDAGISel</a> - ARC specific code to select ARC machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

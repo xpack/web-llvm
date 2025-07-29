@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionHeaderTable` Struct Reference
+# `SectionHeaderTable` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FNeg_match` Struct Template Reference
+# `FNeg_match` Struct Template
 
 
 

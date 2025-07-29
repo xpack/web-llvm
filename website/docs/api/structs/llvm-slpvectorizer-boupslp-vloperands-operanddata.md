@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandData` Struct Reference
+# `OperandData` Struct
 
 <p>For each operand we need (i) the value, and (ii) the opcode that it would be attached to if the expression was in a left-linearized form. <a href="#details">More...</a></p>
 

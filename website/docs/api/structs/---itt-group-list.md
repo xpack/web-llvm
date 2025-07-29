@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `___itt_group_list` Struct Reference
+# `___itt_group_list` Struct
 
 
 

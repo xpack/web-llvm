@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUIGroupLP.h` File Reference
+# `AMDGPUIGroupLP.h` File
 
 
 

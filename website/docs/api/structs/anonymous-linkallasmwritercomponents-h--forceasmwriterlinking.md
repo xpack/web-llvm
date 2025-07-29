@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceAsmWriterLinking` Struct Reference
+# `ForceAsmWriterLinking` Struct
 
 
 

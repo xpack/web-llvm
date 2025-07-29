@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_nonnegative` Struct Reference
+# `is_nonnegative` Struct
 
 
 

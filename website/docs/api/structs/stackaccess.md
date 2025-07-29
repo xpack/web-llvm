@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackAccess` Struct Reference
+# `StackAccess` Struct
 
 
 

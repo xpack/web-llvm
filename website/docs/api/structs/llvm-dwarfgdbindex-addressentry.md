@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressEntry` Struct Reference
+# `AddressEntry` Struct
 
 
 

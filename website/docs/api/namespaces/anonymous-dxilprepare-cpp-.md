@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILPrepare.cpp}` Namespace Reference
+# `anonymous{DXILPrepare.cpp}` Namespace
 
 
 

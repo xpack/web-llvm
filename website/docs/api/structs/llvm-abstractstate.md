@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbstractState` Struct Reference
+# `AbstractState` Struct
 
 <p>An interface to query the internal state of an abstract attribute. <a href="#details">More...</a></p>
 

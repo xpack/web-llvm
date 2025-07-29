@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoadStoreWidening.cpp` File Reference
+# `HexagonLoadStoreWidening.cpp` File
 
 
 

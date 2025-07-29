@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericSSATraits` Struct Template Reference
+# `GenericSSATraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopPeel.cpp}` Namespace Reference
+# `anonymous{LoopPeel.cpp}` Namespace
 
 
 

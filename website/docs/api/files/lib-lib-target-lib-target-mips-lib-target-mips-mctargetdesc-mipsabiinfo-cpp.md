@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsABIInfo.cpp` File Reference
+# `MipsABIInfo.cpp` File
 
 
 

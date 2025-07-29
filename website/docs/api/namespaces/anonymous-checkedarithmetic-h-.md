@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CheckedArithmetic.h}` Namespace Reference
+# `anonymous{CheckedArithmetic.h}` Namespace
 
 
 

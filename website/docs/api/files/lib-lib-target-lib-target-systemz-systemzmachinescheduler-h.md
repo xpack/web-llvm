@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZMachineScheduler.h` File Reference
+# `SystemZMachineScheduler.h` File
 
 
 

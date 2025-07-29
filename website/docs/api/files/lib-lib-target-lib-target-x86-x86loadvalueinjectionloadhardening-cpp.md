@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LoadValueInjectionLoadHardening.cpp` File Reference
+# `X86LoadValueInjectionLoadHardening.cpp` File
 
 
 

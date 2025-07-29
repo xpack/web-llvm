@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `re_guts` Struct Reference
+# `re_guts` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DisabledType` Struct Reference
+# `DisabledType` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CFGuardLongjmp.cpp}` Namespace Reference
+# `anonymous{CFGuardLongjmp.cpp}` Namespace
 
 
 

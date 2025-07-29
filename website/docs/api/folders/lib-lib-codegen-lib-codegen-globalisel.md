@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/CodeGen/GlobalISel` Folder Reference
+# `lib/CodeGen/GlobalISel` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Sequence` Struct Reference
+# `Sequence` Struct
 
 <p>Represents a series of contiguous machine instructions. <a href="#details">More...</a></p>
 

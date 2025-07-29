@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StubParser` Namespace Reference
+# `StubParser` Namespace
 
 
 

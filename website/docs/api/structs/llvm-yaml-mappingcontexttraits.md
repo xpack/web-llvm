@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingContextTraits` Struct Template Reference
+# `MappingContextTraits` Struct Template
 
 <p>This class is similar to <a href="/web-llvm/docs/api/structs/llvm/yaml/mappingtraits">MappingTraits&lt;T&gt;</a> but allows you to pass in additional context for each map operation. <a href="#details">More...</a></p>
 

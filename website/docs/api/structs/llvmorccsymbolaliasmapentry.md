@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCSymbolAliasMapEntry` Struct Reference
+# `LLVMOrcCSymbolAliasMapEntry` Struct
 
 <p>Represents a SymbolAliasMapEntry. <a href="#details">More...</a></p>
 

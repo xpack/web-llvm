@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LCOMM` Namespace Reference
+# `LCOMM` Namespace
 
 
 

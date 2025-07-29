@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMFeatures.h` File Reference
+# `ARMFeatures.h` File
 
 
 

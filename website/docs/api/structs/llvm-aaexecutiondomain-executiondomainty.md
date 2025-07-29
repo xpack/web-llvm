@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecutionDomainTy` Struct Reference
+# `ExecutionDomainTy` Struct
 
 <p>Summary about the execution domain of a block or instruction. <a href="#details">More...</a></p>
 

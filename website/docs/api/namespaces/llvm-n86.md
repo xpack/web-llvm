@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `N86` Namespace Reference
+# `N86` Namespace
 
 <p>Native <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> register numbers. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegColoring.cpp` File Reference
+# `WebAssemblyRegColoring.cpp` File
 
 <p>This file implements a virtual register coloring pass. <a href="#details">More...</a></p>
 

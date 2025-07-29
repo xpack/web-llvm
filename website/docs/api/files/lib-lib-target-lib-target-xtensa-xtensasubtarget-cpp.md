@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaSubtarget.cpp` File Reference
+# `XtensaSubtarget.cpp` File
 
 
 

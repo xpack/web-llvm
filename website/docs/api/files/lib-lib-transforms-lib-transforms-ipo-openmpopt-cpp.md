@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenMPOpt.cpp` File Reference
+# `OpenMPOpt.cpp` File
 
 
 

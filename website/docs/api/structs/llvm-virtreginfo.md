@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtRegInfo` Struct Reference
+# `VirtRegInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/virtreginfo">VirtRegInfo</a> - Information about a virtual register used by a set of operands. <a href="#details">More...</a></p>
 

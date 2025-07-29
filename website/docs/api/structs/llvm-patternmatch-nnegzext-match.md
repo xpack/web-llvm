@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NNegZExt_match` Struct Template Reference
+# `NNegZExt_match` Struct Template
 
 
 

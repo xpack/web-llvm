@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsFlowSequenceBase` Struct Template Reference
+# `IsFlowSequenceBase` Struct Template
 
 
 

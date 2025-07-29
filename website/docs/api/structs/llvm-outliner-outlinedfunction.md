@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlinedFunction` Struct Reference
+# `OutlinedFunction` Struct
 
 <p>The information necessary to create an outlined function for some class of candidate. <a href="#details">More...</a></p>
 

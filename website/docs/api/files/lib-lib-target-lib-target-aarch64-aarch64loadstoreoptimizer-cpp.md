@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64LoadStoreOptimizer.cpp` File Reference
+# `AArch64LoadStoreOptimizer.cpp` File
 
 
 

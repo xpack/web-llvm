@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMCAsmInfo.h` File Reference
+# `ARMMCAsmInfo.h` File
 
 
 

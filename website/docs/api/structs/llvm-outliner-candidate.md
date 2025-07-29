@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Candidate` Struct Reference
+# `Candidate` Struct
 
 <p>An individual sequence of instructions to be replaced with a call to an outlined function. <a href="#details">More...</a></p>
 

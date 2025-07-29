@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86BroadcastFoldTable` Struct Reference
+# `X86BroadcastFoldTable` Struct
 
 
 

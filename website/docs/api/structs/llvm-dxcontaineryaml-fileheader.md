@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileHeader` Struct Reference
+# `FileHeader` Struct
 
 
 

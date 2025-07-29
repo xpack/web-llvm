@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVVInversePseudosTable` Namespace Reference
+# `RISCVVInversePseudosTable` Namespace
 
 
 

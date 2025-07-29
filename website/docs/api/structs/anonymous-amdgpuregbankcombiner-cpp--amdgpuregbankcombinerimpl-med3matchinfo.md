@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Med3MatchInfo` Struct Reference
+# `Med3MatchInfo` Struct
 
 
 

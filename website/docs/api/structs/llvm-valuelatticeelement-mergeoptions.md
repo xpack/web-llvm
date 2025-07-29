@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeOptions` Struct Reference
+# `MergeOptions` Struct
 
 <p>Struct to control some aspects related to merging constant ranges. <a href="#details">More...</a></p>
 

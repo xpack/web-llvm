@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirIterState` Struct Reference
+# `DirIterState` Struct
 
 <p>Keeps state for the <a href="/web-llvm/docs/api/classes/llvm/sys/fs/directory-iterator">directory_iterator</a>. <a href="#details">More...</a></p>
 

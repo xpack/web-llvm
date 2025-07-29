@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Threading Reference
+# Threading
 
 <p>Handle the structures needed to make LLVM safe for multithreading. <a href="#details">More...</a></p>
 

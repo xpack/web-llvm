@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedNumOperandTraits` Struct Template Reference
+# `FixedNumOperandTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/fixednumoperandtraits">FixedNumOperandTraits</a> - determine the allocation regime of the <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> array when it is a prefix to the <a href="/web-llvm/docs/api/classes/llvm/user">User</a> object, and the number of <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> objects is known at compile time. <a href="#details">More...</a></p>
 

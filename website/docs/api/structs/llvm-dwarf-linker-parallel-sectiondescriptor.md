@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionDescriptor` Struct Reference
+# `SectionDescriptor` Struct
 
 <p>This structure is used to keep data of the concrete section. <a href="#details">More...</a></p>
 

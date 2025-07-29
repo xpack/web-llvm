@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cl` Namespace Reference
+# `cl` Namespace
 
 <p>This namespace contains all of the command line option processing machinery. <a href="#details">More...</a></p>
 

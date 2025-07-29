@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZMCAsmBackend.cpp}` Namespace Reference
+# `anonymous{SystemZMCAsmBackend.cpp}` Namespace
 
 
 

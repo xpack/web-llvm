@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUPrintfRuntimeBinding.cpp}` Namespace Reference
+# `anonymous{AMDGPUPrintfRuntimeBinding.cpp}` Namespace
 
 
 

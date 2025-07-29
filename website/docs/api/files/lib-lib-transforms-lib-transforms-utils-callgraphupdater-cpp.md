@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphUpdater.cpp` File Reference
+# `CallGraphUpdater.cpp` File
 
 <p>This file provides interfaces used to manipulate a call graph, regardless if it is a "old style" <a href="/web-llvm/docs/api/classes/llvm/callgraph">CallGraph</a> or an "new style" <a href="/web-llvm/docs/api/classes/llvm/lazycallgraph">LazyCallGraph</a>. <a href="#details">More...</a></p>
 

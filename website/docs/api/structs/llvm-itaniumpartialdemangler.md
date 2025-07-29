@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItaniumPartialDemangler` Struct Reference
+# `ItaniumPartialDemangler` Struct
 
 <p>"Partial" demangler. <a href="#details">More...</a></p>
 

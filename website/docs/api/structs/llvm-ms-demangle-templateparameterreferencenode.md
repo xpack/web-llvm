@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TemplateParameterReferenceNode` Struct Reference
+# `TemplateParameterReferenceNode` Struct
 
 
 

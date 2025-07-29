@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EndianAdapter` Struct Template Reference
+# `EndianAdapter` Struct Template
 
 
 

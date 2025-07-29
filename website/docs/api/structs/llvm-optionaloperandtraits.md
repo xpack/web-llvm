@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionalOperandTraits` Struct Template Reference
+# `OptionalOperandTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/optionaloperandtraits">OptionalOperandTraits</a> - when the number of operands may change at runtime. <a href="#details">More...</a></p>
 

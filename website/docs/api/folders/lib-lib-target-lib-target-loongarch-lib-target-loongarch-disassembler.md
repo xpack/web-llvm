@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/LoongArch/Disassembler` Folder Reference
+# `lib/Target/LoongArch/Disassembler` Folder
 
 
 

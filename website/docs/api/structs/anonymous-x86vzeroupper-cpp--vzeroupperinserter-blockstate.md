@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockState` Struct Reference
+# `BlockState` Struct
 
 
 

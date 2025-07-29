@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerControlFlow.cpp` File Reference
+# `SILowerControlFlow.cpp` File
 
 <p>This pass lowers the pseudo control flow instructions to real machine instructions. <a href="#details">More...</a></p>
 

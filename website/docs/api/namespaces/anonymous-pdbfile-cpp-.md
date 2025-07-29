@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PDBFile.cpp}` Namespace Reference
+# `anonymous{PDBFile.cpp}` Namespace
 
 
 

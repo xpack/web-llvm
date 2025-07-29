@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallPtrSet.cpp` File Reference
+# `SmallPtrSet.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOpInfoSymbol1` Struct Reference
+# `LLVMOpInfoSymbol1` Struct
 
 <p>The initial support in LLVM MC for the most general form of a relocatable expression is "AddSymbol - SubtractSymbol + Offset". <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Constants Reference
+# Constants
 
 <p>This section contains APIs for interacting with <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#ga113ce952344691b8304a43a314f8be17">LLVMValueRef</a> that correspond to <a href="/web-llvm/docs/api/classes/llvm/constant">llvm::Constant</a> instances. <a href="#details">More...</a></p>
 

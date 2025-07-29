@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMachineFunctionInfo.cpp` File Reference
+# `HexagonMachineFunctionInfo.cpp` File
 
 
 

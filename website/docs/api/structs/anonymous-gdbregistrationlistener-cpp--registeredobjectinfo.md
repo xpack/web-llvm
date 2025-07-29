@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisteredObjectInfo` Struct Reference
+# `RegisteredObjectInfo` Struct
 
 
 

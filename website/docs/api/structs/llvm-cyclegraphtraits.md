@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleGraphTraits` Struct Template Reference
+# `CycleGraphTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> for iterating over a sub-tree of the CycleT tree. <a href="#details">More...</a></p>
 

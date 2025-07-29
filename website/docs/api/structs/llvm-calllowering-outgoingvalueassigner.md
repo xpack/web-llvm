@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutgoingValueAssigner` Struct Reference
+# `OutgoingValueAssigner` Struct
 
 
 

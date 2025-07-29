@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirIterImpl` Struct Reference
+# `DirIterImpl` Struct
 
 <p>An interface for virtual file systems to provide an iterator over the (non-recursive) contents of a directory. <a href="#details">More...</a></p>
 

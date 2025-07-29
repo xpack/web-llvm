@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPromoteAllocaToVectorPass` Struct Reference
+# `AMDGPUPromoteAllocaToVectorPass` Struct
 
 
 

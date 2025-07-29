@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TargetLoweringObjectFileImpl.cpp}` Namespace Reference
+# `anonymous{TargetLoweringObjectFileImpl.cpp}` Namespace
 
 
 

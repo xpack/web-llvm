@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Header` Struct Reference
+# `Header` Struct
 
 <p>The .<a href="/web-llvm/docs/api/namespaces/llvm/btf">BTF</a> section header definition. <a href="#details">More...</a></p>
 

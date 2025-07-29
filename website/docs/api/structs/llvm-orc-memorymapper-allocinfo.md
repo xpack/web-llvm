@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocInfo` Struct Reference
+# `AllocInfo` Struct
 
 <p>Represents a single allocation containing multiple segments and initialization and deinitialization actions. <a href="#details">More...</a></p>
 

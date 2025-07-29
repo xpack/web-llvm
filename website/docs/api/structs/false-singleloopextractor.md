@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SingleLoopExtractor` Struct Reference
+# `SingleLoopExtractor` Struct
 
 <p><a href="/web-llvm/docs/api/structs/false/singleloopextractor">SingleLoopExtractor</a> - For bugpoint. <a href="#details">More...</a></p>
 

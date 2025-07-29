@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariableProperties` Struct Reference
+# `VariableProperties` Struct
 
 <p>Parsing information about a variable. <a href="#details">More...</a></p>
 

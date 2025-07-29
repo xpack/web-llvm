@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{X86MCInstLower.cpp}` Namespace Reference
+# `anonymous{X86MCInstLower.cpp}` Namespace
 
 
 

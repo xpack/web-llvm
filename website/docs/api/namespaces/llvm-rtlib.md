@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RTLIB` Namespace Reference
+# `RTLIB` Namespace
 
 
 

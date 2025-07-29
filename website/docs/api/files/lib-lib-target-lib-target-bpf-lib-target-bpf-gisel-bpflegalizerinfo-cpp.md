@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFLegalizerInfo.cpp` File Reference
+# `BPFLegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/bpf">BPF</a>. <a href="#details">More...</a></p>
 

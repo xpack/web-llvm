@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `sub_library_command` Struct Reference
+# `sub_library_command` Struct
 
 
 

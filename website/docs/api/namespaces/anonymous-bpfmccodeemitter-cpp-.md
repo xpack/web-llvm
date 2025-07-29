@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{BPFMCCodeEmitter.cpp}` Namespace
 
 
 

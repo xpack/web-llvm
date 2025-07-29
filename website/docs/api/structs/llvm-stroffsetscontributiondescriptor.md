@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrOffsetsContributionDescriptor` Struct Reference
+# `StrOffsetsContributionDescriptor` Struct
 
 <p>Represents base address of the <a href="/web-llvm/docs/api/namespaces/cu">CU</a>. <a href="#details">More...</a></p>
 

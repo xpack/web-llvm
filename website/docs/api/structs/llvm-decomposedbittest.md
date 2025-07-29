@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecomposedBitTest` Struct Reference
+# `DecomposedBitTest` Struct
 
 <p>Represents the operation icmp (X &amp; Mask) pred C, where pred can only be eq or ne. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeafReprInternal` Struct Reference
+# `LeafReprInternal` Struct
 
 
 

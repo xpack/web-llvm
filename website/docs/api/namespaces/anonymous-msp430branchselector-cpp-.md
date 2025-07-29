@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MSP430BranchSelector.cpp}` Namespace Reference
+# `anonymous{MSP430BranchSelector.cpp}` Namespace
 
 
 

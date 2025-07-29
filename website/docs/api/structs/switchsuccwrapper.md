@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchSuccWrapper` Struct Reference
+# `SwitchSuccWrapper` Struct
 
 <p>Checking whether two cases of <a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a> are equal depends on the contents of the <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> and the incoming values of their successor PHINodes. <a href="#details">More...</a></p>
 

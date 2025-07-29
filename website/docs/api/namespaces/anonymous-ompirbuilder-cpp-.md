@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OMPIRBuilder.cpp}` Namespace Reference
+# `anonymous{OMPIRBuilder.cpp}` Namespace
 
 
 

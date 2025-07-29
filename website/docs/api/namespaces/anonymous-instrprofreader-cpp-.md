@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InstrProfReader.cpp}` Namespace Reference
+# `anonymous{InstrProfReader.cpp}` Namespace
 
 
 

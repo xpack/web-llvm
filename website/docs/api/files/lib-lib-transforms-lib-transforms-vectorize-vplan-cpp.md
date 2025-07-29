@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlan.cpp` File Reference
+# `VPlan.cpp` File
 
 <p>This is the LLVM vectorization plan. <a href="#details">More...</a></p>
 

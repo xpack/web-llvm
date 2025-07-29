@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VERegisterInfo.cpp` File Reference
+# `VERegisterInfo.cpp` File
 
 
 

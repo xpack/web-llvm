@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallSiteInfo` Struct Reference
+# `CallSiteInfo` Struct
 
 <p>Serializable representation of <a href="/web-llvm/docs/api/structs/llvm/yaml/callsiteinfo">CallSiteInfo</a>. <a href="#details">More...</a></p>
 

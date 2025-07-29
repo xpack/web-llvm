@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncUnitSorter` Struct Reference
+# `FuncUnitSorter` Struct
 
 
 

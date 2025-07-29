@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueDFS_Compare` Struct Reference
+# `ValueDFS_Compare` Struct
 
 
 

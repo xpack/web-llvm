@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoalescingCandidateInfo` Struct Reference
+# `CoalescingCandidateInfo` Struct
 
 
 

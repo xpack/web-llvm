@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpMachineFunctionPass` Struct Reference
+# `NoOpMachineFunctionPass` Struct
 
 <p>No-op machine function pass which does nothing. <a href="#details">More...</a></p>
 

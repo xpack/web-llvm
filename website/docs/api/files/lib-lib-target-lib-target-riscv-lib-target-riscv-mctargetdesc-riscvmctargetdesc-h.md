@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMCTargetDesc.h` File Reference
+# `RISCVMCTargetDesc.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentGraphNode` Struct Reference
+# `ArgumentGraphNode` Struct
 
 <p>For a given pointer <a href="/web-llvm/docs/api/classes/llvm/argument">Argument</a>, this retains a list of Arguments of functions in the same SCC that the pointer data flows into. <a href="#details">More...</a></p>
 

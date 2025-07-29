@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCOFFEmitter.cpp}` Namespace Reference
+# `anonymous{XCOFFEmitter.cpp}` Namespace
 
 
 

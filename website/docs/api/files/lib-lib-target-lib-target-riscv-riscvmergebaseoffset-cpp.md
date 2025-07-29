@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMergeBaseOffset.cpp` File Reference
+# `RISCVMergeBaseOffset.cpp` File
 
 
 

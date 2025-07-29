@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVPostLegalizerCombiner.cpp}` Namespace Reference
+# `anonymous{RISCVPostLegalizerCombiner.cpp}` Namespace
 
 
 

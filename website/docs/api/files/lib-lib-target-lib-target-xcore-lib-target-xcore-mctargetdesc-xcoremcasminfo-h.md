@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreMCAsmInfo.h` File Reference
+# `XCoreMCAsmInfo.h` File
 
 
 

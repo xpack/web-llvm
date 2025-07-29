@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCore.h` File Reference
+# `XCore.h` File
 
 
 

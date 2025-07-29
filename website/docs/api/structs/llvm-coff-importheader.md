@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportHeader` Struct Reference
+# `ImportHeader` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitGroup` Struct Reference
+# `BitGroup` Struct
 
 
 

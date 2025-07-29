@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The IFuncs Reference
+# IFuncs
 
 <p>Functions in this group relate to indirect functions. <a href="#details">More...</a></p>
 

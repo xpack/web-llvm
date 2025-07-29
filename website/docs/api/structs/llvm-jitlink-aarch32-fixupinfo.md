@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfo` Struct Template Reference
+# `FixupInfo` Struct Template
 
 <p>Collection of named constants per fixup kind. <a href="#details">More...</a></p>
 

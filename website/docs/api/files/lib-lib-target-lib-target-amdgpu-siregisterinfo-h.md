@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIRegisterInfo.h` File Reference
+# `SIRegisterInfo.h` File
 
 <p>Interface definition for SIRegisterInfo. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NontemporalT` Struct Template Reference
+# `NontemporalT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockCoverageInference.cpp` File Reference
+# `BlockCoverageInference.cpp` File
 
 
 

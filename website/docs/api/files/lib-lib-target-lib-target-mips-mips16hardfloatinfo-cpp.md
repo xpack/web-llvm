@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16HardFloatInfo.cpp` File Reference
+# `Mips16HardFloatInfo.cpp` File
 
 
 

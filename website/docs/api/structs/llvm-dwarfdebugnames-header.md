@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Header` Struct Reference
+# `Header` Struct
 
 <p>DWARF v5 Name Index header. <a href="#details">More...</a></p>
 

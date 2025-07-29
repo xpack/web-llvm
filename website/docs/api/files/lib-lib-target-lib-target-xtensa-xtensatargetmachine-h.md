@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaTargetMachine.h` File Reference
+# `XtensaTargetMachine.h` File
 
 
 

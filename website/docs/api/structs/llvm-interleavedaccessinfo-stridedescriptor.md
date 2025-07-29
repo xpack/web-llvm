@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrideDescriptor` Struct Reference
+# `StrideDescriptor` Struct
 
 <p>The descriptor for a strided memory access. <a href="#details">More...</a></p>
 

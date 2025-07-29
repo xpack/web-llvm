@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Crel_Impl` Struct Template Reference
+# `Elf_Crel_Impl` Struct Template
 
 
 

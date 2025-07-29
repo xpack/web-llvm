@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86AvoidTrailingCall.cpp` File Reference
+# `X86AvoidTrailingCall.cpp` File
 
 
 

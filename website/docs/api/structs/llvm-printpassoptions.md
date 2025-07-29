@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintPassOptions` Struct Reference
+# `PrintPassOptions` Struct
 
 
 

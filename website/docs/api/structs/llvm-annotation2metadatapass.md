@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Annotation2MetadataPass` Struct Reference
+# `Annotation2MetadataPass` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to convert @llvm.global.annotations to !annotation metadata. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegisterInfo.h` File Reference
+# `WebAssemblyRegisterInfo.h` File
 
 <p>This file contains the WebAssembly implementation of the WebAssemblyRegisterInfo class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartialT` Struct Template Reference
+# `PartialT` Struct Template
 
 
 

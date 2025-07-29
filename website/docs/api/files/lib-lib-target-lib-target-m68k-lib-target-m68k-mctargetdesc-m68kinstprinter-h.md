@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstPrinter.h` File Reference
+# `M68kInstPrinter.h` File
 
 <p>This file contains declarations for an M68k MCInst printer. <a href="#details">More...</a></p>
 

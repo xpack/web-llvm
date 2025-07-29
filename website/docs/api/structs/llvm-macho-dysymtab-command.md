@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dysymtab_command` Struct Reference
+# `dysymtab_command` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `smax_pred_ty` Struct Reference
+# `smax_pred_ty` Struct
 
 <p>Helper class for identifying signed max predicates. <a href="#details">More...</a></p>
 

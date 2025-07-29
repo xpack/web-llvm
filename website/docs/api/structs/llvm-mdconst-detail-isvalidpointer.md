@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsValidPointer` Struct Template Reference
+# `IsValidPointer` Struct Template
 
 
 

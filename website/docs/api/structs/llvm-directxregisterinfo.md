@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXRegisterInfo` Struct Reference
+# `DirectXRegisterInfo` Struct
 
 
 

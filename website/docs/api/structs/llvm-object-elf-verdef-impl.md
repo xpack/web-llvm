@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Verdef_Impl` Struct Template Reference
+# `Elf_Verdef_Impl` Struct Template
 
 <p>Elf_Verdef: This is the structure of entries in the SHT_GNU_verdef section (.gnu.version_d). <a href="#details">More...</a></p>
 

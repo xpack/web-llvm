@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CS_BlobIndex` Struct Reference
+# `CS_BlobIndex` Struct
 
 
 

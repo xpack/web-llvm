@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_resource_dir_entry` Struct Reference
+# `coff_resource_dir_entry` Struct
 
 
 

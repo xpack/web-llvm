@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CanonicalizeFreezeInLoops.cpp}` Namespace Reference
+# `anonymous{CanonicalizeFreezeInLoops.cpp}` Namespace
 
 
 

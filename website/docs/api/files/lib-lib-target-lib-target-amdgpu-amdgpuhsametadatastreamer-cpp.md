@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUHSAMetadataStreamer.cpp` File Reference
+# `AMDGPUHSAMetadataStreamer.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> HSA <a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a> Streamer. <a href="#details">More...</a></p>
 

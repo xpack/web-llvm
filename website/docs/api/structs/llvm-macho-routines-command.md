@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `routines_command` Struct Reference
+# `routines_command` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OrcError.cpp}` Namespace Reference
+# `anonymous{OrcError.cpp}` Namespace
 
 
 

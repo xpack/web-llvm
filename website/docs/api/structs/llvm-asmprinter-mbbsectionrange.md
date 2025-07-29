@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBBSectionRange` Struct Reference
+# `MBBSectionRange` Struct
 
 <p>Map a basic block section <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> to the begin and end symbols of that section which determine the section's range. <a href="#details">More...</a></p>
 

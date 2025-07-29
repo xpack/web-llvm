@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `unicode` Namespace Reference
+# `unicode` Namespace
 
 
 

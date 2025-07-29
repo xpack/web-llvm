@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMIRFormatter.cpp` File Reference
+# `AMDGPUMIRFormatter.cpp` File
 
 <p>Implementation of <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> overrides of <a href="/web-llvm/docs/api/classes/llvm/mirformatter">MIRFormatter</a>. <a href="#details">More...</a></p>
 

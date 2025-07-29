@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMatInt.h` File Reference
+# `LoongArchMatInt.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantLog2` Struct Template Reference
+# `ConstantLog2` Struct Template
 
 <p>A tiny meta function to compute the log2 of a compile time constant. <a href="#details">More...</a></p>
 

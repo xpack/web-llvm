@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FinalizedAllocInfo` Struct Reference
+# `FinalizedAllocInfo` Struct
 
 
 

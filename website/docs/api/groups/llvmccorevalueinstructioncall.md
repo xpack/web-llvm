@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Call Sites and Invocations Reference
+# Call Sites and Invocations
 
 <p>Functions in this group apply to instructions that refer to call sites and invocations. <a href="#details">More...</a></p>
 

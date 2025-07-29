@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMDNodes` Struct Reference
+# `AAMDNodes` Struct
 
 <p>A collection of metadata nodes that might be associated with a memory access used by the alias-analysis infrastructure. <a href="#details">More...</a></p>
 

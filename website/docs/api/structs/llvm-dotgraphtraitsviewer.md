@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DOTGraphTraitsViewer` Struct Template Reference
+# `DOTGraphTraitsViewer` Struct Template
 
 
 

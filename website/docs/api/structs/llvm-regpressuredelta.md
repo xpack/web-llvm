@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegPressureDelta` Struct Reference
+# `RegPressureDelta` Struct
 
 <p>Store the effects of a change in pressure on things that MI scheduler cares about. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVTargetStreamer.cpp` File Reference
+# `SPIRVTargetStreamer.cpp` File
 
 
 

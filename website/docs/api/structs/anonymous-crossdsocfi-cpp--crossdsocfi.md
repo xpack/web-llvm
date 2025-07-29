@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrossDSOCFI` Struct Reference
+# `CrossDSOCFI` Struct
 
 
 

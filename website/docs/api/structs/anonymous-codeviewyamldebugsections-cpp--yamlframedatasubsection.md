@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLFrameDataSubsection` Struct Reference
+# `YAMLFrameDataSubsection` Struct
 
 
 

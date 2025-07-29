@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllSwitchPaths` Struct Reference
+# `AllSwitchPaths` Struct
 
 
 

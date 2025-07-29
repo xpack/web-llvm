@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVRegisterBankInfo.cpp` File Reference
+# `SPIRVRegisterBankInfo.cpp` File
 
 
 

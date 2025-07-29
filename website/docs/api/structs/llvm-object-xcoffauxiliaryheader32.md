@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFAuxiliaryHeader32` Struct Reference
+# `XCOFFAuxiliaryHeader32` Struct
 
 
 

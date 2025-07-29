@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalPart` Struct Reference
+# `GlobalPart` Struct
 
 <p>Part of the global at a specific offset, which is only accessed through loads and stores with the given type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPULowerKernelAttributes.cpp}` Namespace Reference
+# `anonymous{AMDGPULowerKernelAttributes.cpp}` Namespace
 
 
 

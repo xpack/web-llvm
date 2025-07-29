@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameIdConverter` Struct Template Reference
+# `FrameIdConverter` Struct Template
 
 
 

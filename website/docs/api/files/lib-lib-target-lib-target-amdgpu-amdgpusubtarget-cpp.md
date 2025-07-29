@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSubtarget.cpp` File Reference
+# `AMDGPUSubtarget.cpp` File
 
 <p>Implements the <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

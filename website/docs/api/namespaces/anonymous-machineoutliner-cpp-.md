@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineOutliner.cpp}` Namespace Reference
+# `anonymous{MachineOutliner.cpp}` Namespace
 
 
 

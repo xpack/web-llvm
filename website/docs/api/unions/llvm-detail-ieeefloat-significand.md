@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Significand` Union Reference
+# `Significand` Union
 
 <p>A binary fraction with an explicit integer bit. <a href="#details">More...</a></p>
 

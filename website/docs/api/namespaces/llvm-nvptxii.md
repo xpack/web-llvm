@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXII` Namespace Reference
+# `NVPTXII` Namespace
 
 
 

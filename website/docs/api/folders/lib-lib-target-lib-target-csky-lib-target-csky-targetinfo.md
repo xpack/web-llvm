@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/CSKY/TargetInfo` Folder Reference
+# `lib/Target/CSKY/TargetInfo` Folder
 
 
 

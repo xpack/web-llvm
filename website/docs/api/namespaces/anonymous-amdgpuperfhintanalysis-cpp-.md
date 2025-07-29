@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUPerfHintAnalysis.cpp}` Namespace Reference
+# `anonymous{AMDGPUPerfHintAnalysis.cpp}` Namespace
 
 
 

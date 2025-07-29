@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Function values Reference
+# Function values
 
 <p>Functions in this group operate on <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#ga113ce952344691b8304a43a314f8be17">LLVMValueRef</a> instances that correspond to <a href="/web-llvm/docs/api/classes/llvm/function">llvm::Function</a> instances. <a href="#details">More...</a></p>
 

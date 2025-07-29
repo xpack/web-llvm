@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMAsmParser.cpp` File Reference
+# `ARMAsmParser.cpp` File
 
 
 

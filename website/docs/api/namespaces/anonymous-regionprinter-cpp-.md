@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RegionPrinter.cpp}` Namespace Reference
+# `anonymous{RegionPrinter.cpp}` Namespace
 
 
 

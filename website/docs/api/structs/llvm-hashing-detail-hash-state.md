@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hash_state` Struct Reference
+# `hash_state` Struct
 
 <p>The intermediate state used during hashing. <a href="#details">More...</a></p>
 

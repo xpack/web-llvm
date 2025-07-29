@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoArmBranch` Struct Reference
+# `FixupInfoArmBranch` Struct
 
 
 

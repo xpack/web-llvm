@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameNode` Struct Reference
+# `FrameNode` Struct
 
 
 

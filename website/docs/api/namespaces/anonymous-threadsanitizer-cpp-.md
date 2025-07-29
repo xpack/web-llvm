@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ThreadSanitizer.cpp}` Namespace Reference
+# `anonymous{ThreadSanitizer.cpp}` Namespace
 
 
 

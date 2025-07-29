@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuccessorEntry` Struct Reference
+# `SuccessorEntry` Struct
 
 <p>Single successor of a given basic block that contains the tag and branch probability associated with it. <a href="#details">More...</a></p>
 

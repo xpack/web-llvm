@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_non_zero_not_denormal_fp` Struct Reference
+# `is_non_zero_not_denormal_fp` Struct
 
 
 

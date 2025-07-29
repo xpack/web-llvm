@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcRegisterInfo.cpp` File Reference
+# `SparcRegisterInfo.cpp` File
 
 
 

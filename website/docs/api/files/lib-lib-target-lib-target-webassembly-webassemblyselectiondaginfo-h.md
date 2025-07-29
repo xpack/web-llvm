@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySelectionDAGInfo.h` File Reference
+# `WebAssemblySelectionDAGInfo.h` File
 
 <p>This file defines the WebAssembly subclass for SelectionDAGTargetInfo. <a href="#details">More...</a></p>
 

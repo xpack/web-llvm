@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ZerosImpl` Struct Reference
+# `ZerosImpl` Struct
 
 
 

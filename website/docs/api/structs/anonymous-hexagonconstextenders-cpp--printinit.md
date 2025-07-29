@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintInit` Struct Reference
+# `PrintInit` Struct
 
 
 

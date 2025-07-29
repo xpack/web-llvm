@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineScheduler.cpp}` Namespace Reference
+# `anonymous{MachineScheduler.cpp}` Namespace
 
 <p>A region of an MBB for scheduling. <a href="#details">More...</a></p>
 

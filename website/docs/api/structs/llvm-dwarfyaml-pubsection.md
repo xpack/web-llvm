@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PubSection` Struct Reference
+# `PubSection` Struct
 
 
 

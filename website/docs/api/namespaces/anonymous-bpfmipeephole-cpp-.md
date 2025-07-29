@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFMIPeephole.cpp}` Namespace Reference
+# `anonymous{BPFMIPeephole.cpp}` Namespace
 
 
 

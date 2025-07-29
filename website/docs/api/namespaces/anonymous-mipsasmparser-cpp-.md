@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsAsmParser.cpp}` Namespace Reference
+# `anonymous{MipsAsmParser.cpp}` Namespace
 
 
 

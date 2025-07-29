@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `compute_node_options` Struct Template Reference
+# `compute_node_options` Struct Template
 
 
 

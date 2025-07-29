@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolComparator` Struct Reference
+# `MCSymbolComparator` Struct
 
 
 

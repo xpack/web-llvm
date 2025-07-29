@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FinalT` Struct Template Reference
+# `FinalT` Struct Template
 
 
 

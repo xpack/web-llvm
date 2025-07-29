@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallThroughInfo` Struct Reference
+# `CallThroughInfo` Struct
 
 
 

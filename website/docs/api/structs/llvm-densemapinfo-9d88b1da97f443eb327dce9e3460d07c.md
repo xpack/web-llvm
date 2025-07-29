@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMapInfo` Struct Template Reference
+# `DenseMapInfo` Struct Template
 
 <p>Template specialization for <a href="/web-llvm/docs/api/classes/llvm/sampleprof/functionid">FunctionId</a> so that it can be used in LLVM map containers. <a href="#details">More...</a></p>
 

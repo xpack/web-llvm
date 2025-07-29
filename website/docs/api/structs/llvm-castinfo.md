@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInfo` Struct Template Reference
+# `CastInfo` Struct Template
 
 <p>This struct provides a method for customizing the way a cast is performed. <a href="#details">More...</a></p>
 

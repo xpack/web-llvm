@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `indent` Struct Reference
+# `indent` Struct
 
 
 

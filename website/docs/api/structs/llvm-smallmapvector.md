@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallMapVector` Struct Template Reference
+# `SmallMapVector` Struct Template
 
 <p>A <a href="/web-llvm/docs/api/classes/llvm/mapvector">MapVector</a> that performs no allocations if smaller than a certain size. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchABI` Namespace Reference
+# `LoongArchABI` Namespace
 
 
 

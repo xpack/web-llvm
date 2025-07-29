@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWOFile` Struct Reference
+# `DWOFile` Struct
 
 
 

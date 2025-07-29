@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamRemarkParser.cpp` File Reference
+# `BitstreamRemarkParser.cpp` File
 
 
 

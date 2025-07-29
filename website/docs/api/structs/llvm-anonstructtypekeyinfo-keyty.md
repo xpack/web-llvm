@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KeyTy` Struct Reference
+# `KeyTy` Struct
 
 
 

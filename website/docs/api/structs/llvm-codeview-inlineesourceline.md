@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineeSourceLine` Struct Reference
+# `InlineeSourceLine` Struct
 
 
 

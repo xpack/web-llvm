@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AACalleeToCallSite` Struct Template Reference
+# `AACalleeToCallSite` Struct Template
 
 <p>Helper class for generic replication: function returned -&gt; cs returned. <a href="#details">More...</a></p>
 

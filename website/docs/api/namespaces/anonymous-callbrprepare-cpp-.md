@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CallBrPrepare.cpp}` Namespace Reference
+# `anonymous{CallBrPrepare.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILFlattenArrays.h` File Reference
+# `DXILFlattenArrays.h` File
 
 
 

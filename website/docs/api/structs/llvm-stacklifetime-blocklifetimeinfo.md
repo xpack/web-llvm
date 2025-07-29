@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockLifetimeInfo` Struct Reference
+# `BlockLifetimeInfo` Struct
 
 <p>A class representing liveness information for a single basic block. <a href="#details">More...</a></p>
 

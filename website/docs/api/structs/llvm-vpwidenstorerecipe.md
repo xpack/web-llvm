@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPWidenStoreRecipe` Struct Reference
+# `VPWidenStoreRecipe` Struct
 
 <p>A recipe for widening store operations, using the stored value, the address to store to and an optional mask. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMRemarkSetupFormatError` Struct Reference
+# `LLVMRemarkSetupFormatError` Struct
 
 
 

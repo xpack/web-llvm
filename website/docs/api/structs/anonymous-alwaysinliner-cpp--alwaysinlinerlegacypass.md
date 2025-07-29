@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlwaysInlinerLegacyPass` Struct Reference
+# `AlwaysInlinerLegacyPass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LibDriver.cpp}` Namespace Reference
+# `anonymous{LibDriver.cpp}` Namespace
 
 
 

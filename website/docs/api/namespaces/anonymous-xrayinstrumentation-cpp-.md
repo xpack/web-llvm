@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XRayInstrumentation.cpp}` Namespace Reference
+# `anonymous{XRayInstrumentation.cpp}` Namespace
 
 
 

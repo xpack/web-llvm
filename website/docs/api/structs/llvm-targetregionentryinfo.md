@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetRegionEntryInfo` Struct Reference
+# `TargetRegionEntryInfo` Struct
 
 <p>Data structure to contain the information needed to uniquely identify a target entry. <a href="#details">More...</a></p>
 

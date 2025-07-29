@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocaSlices` Namespace Reference
+# `AllocaSlices` Namespace
 
 
 

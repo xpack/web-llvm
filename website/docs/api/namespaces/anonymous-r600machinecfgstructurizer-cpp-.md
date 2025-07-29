@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{R600MachineCFGStructurizer.cpp}` Namespace Reference
+# `anonymous{R600MachineCFGStructurizer.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfVirtualityField` Struct Reference
+# `DwarfVirtualityField` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LegalizeDAG.cpp}` Namespace Reference
+# `anonymous{LegalizeDAG.cpp}` Namespace
 
 
 

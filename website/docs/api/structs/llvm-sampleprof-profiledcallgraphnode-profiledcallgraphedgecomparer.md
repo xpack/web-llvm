@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfiledCallGraphEdgeComparer` Struct Reference
+# `ProfiledCallGraphEdgeComparer` Struct
 
 
 

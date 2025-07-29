@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeTraceProfilerInstances` Struct Reference
+# `TimeTraceProfilerInstances` Struct
 
 
 

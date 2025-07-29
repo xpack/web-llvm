@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstPrinter.cpp` File Reference
+# `M68kInstPrinter.cpp` File
 
 <p>This file contains definitions for an <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a> printer. <a href="#details">More...</a></p>
 

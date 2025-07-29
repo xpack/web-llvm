@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Weight` Struct Reference
+# `Weight` Struct
 
 <p>Unscaled probability weight. <a href="#details">More...</a></p>
 

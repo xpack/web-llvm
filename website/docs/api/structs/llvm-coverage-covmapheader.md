@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CovMapHeader` Struct Reference
+# `CovMapHeader` Struct
 
 
 

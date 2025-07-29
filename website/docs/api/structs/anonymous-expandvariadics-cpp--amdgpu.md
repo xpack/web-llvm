@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Amdgpu` Struct Reference
+# `Amdgpu` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreMCInstLower.h` File Reference
+# `XCoreMCInstLower.h` File
 
 
 

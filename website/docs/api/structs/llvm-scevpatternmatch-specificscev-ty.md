@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specificscev_ty` Struct Reference
+# `specificscev_ty` Struct
 
 <p>Match a specified const <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> *. <a href="#details">More...</a></p>
 

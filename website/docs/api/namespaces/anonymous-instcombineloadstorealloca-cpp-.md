@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InstCombineLoadStoreAlloca.cpp}` Namespace Reference
+# `anonymous{InstCombineLoadStoreAlloca.cpp}` Namespace
 
 
 

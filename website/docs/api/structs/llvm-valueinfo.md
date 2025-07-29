@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueInfo` Struct Reference
+# `ValueInfo` Struct
 
 <p>Struct that holds a reference to a particular GUID in a global value summary. <a href="#details">More...</a></p>
 

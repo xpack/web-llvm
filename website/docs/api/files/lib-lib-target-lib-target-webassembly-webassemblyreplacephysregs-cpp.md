@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyReplacePhysRegs.cpp` File Reference
+# `WebAssemblyReplacePhysRegs.cpp` File
 
 <p>This file implements a pass that replaces physical registers with virtual registers. <a href="#details">More...</a></p>
 

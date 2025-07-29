@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kTargetMachine.h` File Reference
+# `M68kTargetMachine.h` File
 
 <p>This file declares the M68k specific subclass of TargetMachine. <a href="#details">More...</a></p>
 

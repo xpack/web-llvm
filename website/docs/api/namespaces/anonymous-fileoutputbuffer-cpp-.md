@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{FileOutputBuffer.cpp}` Namespace Reference
+# `anonymous{FileOutputBuffer.cpp}` Namespace
 
 
 

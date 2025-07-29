@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopIterationT` Struct Template Reference
+# `LoopIterationT` Struct Template
 
 
 

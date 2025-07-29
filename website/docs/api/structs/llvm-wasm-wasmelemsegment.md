@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmElemSegment` Struct Reference
+# `WasmElemSegment` Struct
 
 
 

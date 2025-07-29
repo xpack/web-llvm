@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/LineEditor` Folder Reference
+# `include/llvm/LineEditor` Folder
 
 
 

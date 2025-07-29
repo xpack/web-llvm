@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `note_command` Struct Reference
+# `note_command` Struct
 
 
 

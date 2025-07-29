@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDRange` Struct Reference
+# `MDRange` Struct
 
 <p>Range of metadata IDs, as a half-open range. <a href="#details">More...</a></p>
 

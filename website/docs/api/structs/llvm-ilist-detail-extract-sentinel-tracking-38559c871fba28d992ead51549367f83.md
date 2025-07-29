@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `extract_sentinel_tracking` Struct Template Reference
+# `extract_sentinel_tracking` Struct Template
 
 
 

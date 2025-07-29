@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIInfo` Struct Reference
+# `PHIInfo` Struct
 
 <p>Information about each phi in the Tail block. <a href="#details">More...</a></p>
 

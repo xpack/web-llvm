@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAIsDeadCallSite` Struct Reference
+# `AAIsDeadCallSite` Struct
 
 <p>Liveness information for a call sites. <a href="#details">More...</a></p>
 

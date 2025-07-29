@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrDesc` Struct Reference
+# `InstrDesc` Struct
 
 <p>An instruction descriptor. <a href="#details">More...</a></p>
 

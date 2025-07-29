@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoAliasCallSiteReturned` Struct Reference
+# `AANoAliasCallSiteReturned` Struct
 
 <p>NoAlias attribute deduction for a call site return value. <a href="#details">More...</a></p>
 

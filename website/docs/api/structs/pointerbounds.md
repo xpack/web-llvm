@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerBounds` Struct Reference
+# `PointerBounds` Struct
 
 <p>IR Values for the lower and upper bounds of a pointer evolution. <a href="#details">More...</a></p>
 

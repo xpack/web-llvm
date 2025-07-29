@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumTraits` Struct Template Reference
+# `EnumTraits` Struct Template
 
 
 

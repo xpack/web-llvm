@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionSpecifier` Struct Reference
+# `InstructionSpecifier` Struct
 
 <p>The specification for how to extract and interpret a full instruction and its operands. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ThinLTOBitcodeWriter.cpp}` Namespace Reference
+# `anonymous{ThinLTOBitcodeWriter.cpp}` Namespace
 
 
 

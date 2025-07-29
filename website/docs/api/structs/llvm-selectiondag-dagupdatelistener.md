@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGUpdateListener` Struct Reference
+# `DAGUpdateListener` Struct
 
 <p>Clients of various APIs that cause global effects on the DAG can optionally implement this interface. <a href="#details">More...</a></p>
 

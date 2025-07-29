@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FlagsCopyLowering.cpp` File Reference
+# `X86FlagsCopyLowering.cpp` File
 
 <p>Lowers COPY nodes of EFLAGS by directly extracting and preserving individual flag bits. <a href="#details">More...</a></p>
 

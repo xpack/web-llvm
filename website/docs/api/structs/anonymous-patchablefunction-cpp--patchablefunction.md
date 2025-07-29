@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PatchableFunction` Struct Reference
+# `PatchableFunction` Struct
 
 
 

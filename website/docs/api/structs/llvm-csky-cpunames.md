@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CpuNames` Struct Template Reference
+# `CpuNames` Struct Template
 
 
 

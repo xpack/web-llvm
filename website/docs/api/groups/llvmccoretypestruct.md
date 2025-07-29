@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Structure Types Reference
+# Structure Types
 
 <p>These functions relate to <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#gab81b4df33167d47174f9b86a75e3be88">LLVMTypeRef</a> instances. <a href="#details">More...</a></p>
 

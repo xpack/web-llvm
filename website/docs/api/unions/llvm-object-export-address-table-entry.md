@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `export_address_table_entry` Union Reference
+# `export_address_table_entry` Union
 
 
 

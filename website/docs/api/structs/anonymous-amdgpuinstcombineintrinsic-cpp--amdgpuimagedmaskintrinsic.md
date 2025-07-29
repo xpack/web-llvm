@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUImageDMaskIntrinsic` Struct Reference
+# `AMDGPUImageDMaskIntrinsic` Struct
 
 
 

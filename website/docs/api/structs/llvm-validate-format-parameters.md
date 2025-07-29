@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `validate_format_parameters` Struct Template Reference
+# `validate_format_parameters` Struct Template
 
 <p>These are templated helper classes used by the format function that capture the object to be formatted and the format string. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeT` Struct Reference
+# `NodeT` Struct
 
 <p>A node in the graph, typically corresponding to a basic block in the CFG or a function in the call graph. <a href="#details">More...</a></p>
 

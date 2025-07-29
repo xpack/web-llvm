@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySelectionDAGInfo.cpp` File Reference
+# `WebAssemblySelectionDAGInfo.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/webassemblyselectiondaginfo">WebAssemblySelectionDAGInfo</a> class. <a href="#details">More...</a></p>
 

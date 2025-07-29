@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenormalMode` Struct Reference
+# `DenormalMode` Struct
 
 <p>Represent subnormal handling kind for floating point instruction inputs and outputs. <a href="#details">More...</a></p>
 

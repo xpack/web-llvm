@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDominatorTreeWrapperPass` Struct Reference
+# `PostDominatorTreeWrapperPass` Struct
 
 
 

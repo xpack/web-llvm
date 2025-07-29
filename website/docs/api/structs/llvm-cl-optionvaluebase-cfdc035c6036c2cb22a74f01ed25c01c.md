@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionValueBase` Struct Template Reference
+# `OptionValueBase` Struct Template
 
 
 

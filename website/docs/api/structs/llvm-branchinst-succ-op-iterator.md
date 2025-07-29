@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `succ_op_iterator` Struct Reference
+# `succ_op_iterator` Struct
 
 <p>Iterator type that casts an operand to a basic block. <a href="#details">More...</a></p>
 

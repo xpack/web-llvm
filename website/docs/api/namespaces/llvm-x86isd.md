@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ISD` Namespace Reference
+# `X86ISD` Namespace
 
 
 

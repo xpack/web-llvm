@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LabelIdentifier` Struct Reference
+# `LabelIdentifier` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DestroyT` Struct Template Reference
+# `DestroyT` Struct Template
 
 
 

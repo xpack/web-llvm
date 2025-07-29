@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConditionTy` Struct Reference
+# `ConditionTy` Struct
 
 <p>Struct to express a condition of the form Op0 Pred Op1. <a href="#details">More...</a></p>
 

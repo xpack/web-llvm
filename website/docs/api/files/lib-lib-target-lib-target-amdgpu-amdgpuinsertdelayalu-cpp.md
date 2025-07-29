@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInsertDelayAlu.cpp` File Reference
+# `AMDGPUInsertDelayAlu.cpp` File
 
 <p>Insert s_delay_alu instructions to avoid stalls on GFX11+. <a href="#details">More...</a></p>
 

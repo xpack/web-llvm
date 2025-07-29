@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ofmin_pred_ty` Struct Reference
+# `ofmin_pred_ty` Struct
 
 <p>Helper class for identifying ordered min predicates. <a href="#details">More...</a></p>
 

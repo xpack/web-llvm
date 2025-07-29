@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCTargetMachine.cpp}` Namespace Reference
+# `anonymous{PPCTargetMachine.cpp}` Namespace
 
 
 

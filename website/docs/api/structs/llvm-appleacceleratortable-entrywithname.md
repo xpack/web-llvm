@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryWithName` Struct Reference
+# `EntryWithName` Struct
 
 
 

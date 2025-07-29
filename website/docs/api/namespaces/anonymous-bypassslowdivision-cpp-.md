@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BypassSlowDivision.cpp}` Namespace Reference
+# `anonymous{BypassSlowDivision.cpp}` Namespace
 
 
 

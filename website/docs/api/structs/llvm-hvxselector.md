@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HvxSelector` Struct Reference
+# `HvxSelector` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalPressure` Struct Reference
+# `IntervalPressure` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registerpressure">RegisterPressure</a> computed within a region of instructions delimited by TopIdx and BottomIdx. <a href="#details">More...</a></p>
 

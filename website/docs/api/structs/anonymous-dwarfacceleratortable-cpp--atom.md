@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Atom` Struct Reference
+# `Atom` Struct
 
 
 

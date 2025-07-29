@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPseudoProbeFuncDesc` Struct Reference
+# `MCPseudoProbeFuncDesc` Struct
 
 
 

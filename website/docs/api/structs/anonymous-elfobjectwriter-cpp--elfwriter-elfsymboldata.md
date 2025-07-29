@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFSymbolData` Struct Reference
+# `ELFSymbolData` Struct
 
 <p>Helper struct for containing some precomputed information on symbols. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PromoteMemoryToRegister.cpp}` Namespace Reference
+# `anonymous{PromoteMemoryToRegister.cpp}` Namespace
 
 
 

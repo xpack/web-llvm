@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyCFGPass.cpp` File Reference
+# `SimplifyCFGPass.cpp` File
 
 
 

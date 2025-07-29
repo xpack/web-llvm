@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetTrait` Struct Template Reference
+# `FoldingSetTrait` Struct Template
 
 
 

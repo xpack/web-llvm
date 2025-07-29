@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SipHash.cpp}` Namespace Reference
+# `anonymous{SipHash.cpp}` Namespace
 
 
 

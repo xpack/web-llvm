@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ScalarizeMaskedMemIntrin.cpp}` Namespace Reference
+# `anonymous{ScalarizeMaskedMemIntrin.cpp}` Namespace
 
 
 

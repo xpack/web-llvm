@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVModuleAnalysis` Struct Reference
+# `SPIRVModuleAnalysis` Struct
 
 
 

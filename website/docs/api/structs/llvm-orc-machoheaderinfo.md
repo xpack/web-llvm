@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOHeaderInfo` Struct Reference
+# `MachOHeaderInfo` Struct
 
 
 

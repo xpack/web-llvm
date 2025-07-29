@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoaderSectionSymbolEntry64` Struct Reference
+# `LoaderSectionSymbolEntry64` Struct
 
 
 

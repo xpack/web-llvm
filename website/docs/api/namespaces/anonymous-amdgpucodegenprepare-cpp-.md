@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUCodeGenPrepare.cpp}` Namespace Reference
+# `anonymous{AMDGPUCodeGenPrepare.cpp}` Namespace
 
 
 

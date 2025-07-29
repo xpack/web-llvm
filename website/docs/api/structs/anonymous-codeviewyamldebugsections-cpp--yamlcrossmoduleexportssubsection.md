@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLCrossModuleExportsSubsection` Struct Reference
+# `YAMLCrossModuleExportsSubsection` Struct
 
 
 

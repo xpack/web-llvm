@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FindHandleTraits` Struct Reference
+# `FindHandleTraits` Struct
 
 
 

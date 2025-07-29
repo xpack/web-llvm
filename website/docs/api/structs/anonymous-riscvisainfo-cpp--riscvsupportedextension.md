@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVSupportedExtension` Struct Reference
+# `RISCVSupportedExtension` Struct
 
 
 

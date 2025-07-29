@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86DisassemblerDecoder.h` File Reference
+# `X86DisassemblerDecoder.h` File
 
 
 

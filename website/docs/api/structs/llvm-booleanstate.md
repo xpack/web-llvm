@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BooleanState` Struct Reference
+# `BooleanState` Struct
 
 <p>Simple wrapper for a single bit (boolean) state. <a href="#details">More...</a></p>
 

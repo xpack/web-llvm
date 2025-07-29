@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TargetInfo.cpp` File Reference
+# `X86TargetInfo.cpp` File
 
 
 

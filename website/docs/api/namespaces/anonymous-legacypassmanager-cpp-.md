@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LegacyPassManager.cpp}` Namespace Reference
+# `anonymous{LegacyPassManager.cpp}` Namespace
 
 
 

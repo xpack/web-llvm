@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Sequential Types Reference
+# Sequential Types
 
 <p>Sequential types represents "arrays" of types. <a href="#details">More...</a></p>
 

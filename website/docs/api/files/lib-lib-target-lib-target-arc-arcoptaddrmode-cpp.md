@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCOptAddrMode.cpp` File Reference
+# `ARCOptAddrMode.cpp` File
 
 <p>This pass folds LD/ST + ADD pairs into Pre/Post-increment form of load/store instructions. <a href="#details">More...</a></p>
 

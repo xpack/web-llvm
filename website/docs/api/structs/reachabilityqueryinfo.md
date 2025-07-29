@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReachabilityQueryInfo` Struct Template Reference
+# `ReachabilityQueryInfo` Struct Template
 
 <p>----------------—<a href="/web-llvm/docs/api/structs/llvm/aaintrafnreachability">AAIntraFnReachability</a> Attribute-----------------------— <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRII` Namespace Reference
+# `AVRII` Namespace
 
 
 

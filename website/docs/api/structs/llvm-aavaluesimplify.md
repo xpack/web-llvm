@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAValueSimplify` Struct Reference
+# `AAValueSimplify` Struct
 
 <p>An abstract interface for value simplify abstract attribute. <a href="#details">More...</a></p>
 

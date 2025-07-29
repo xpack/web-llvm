@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BlockVerifier.cpp}` Namespace Reference
+# `anonymous{BlockVerifier.cpp}` Namespace
 
 
 

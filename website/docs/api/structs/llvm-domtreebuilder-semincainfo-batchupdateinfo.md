@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BatchUpdateInfo` Struct Reference
+# `BatchUpdateInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `offloading` Namespace Reference
+# `offloading` Namespace
 
 
 

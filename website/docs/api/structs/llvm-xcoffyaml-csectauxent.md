@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CsectAuxEnt` Struct Reference
+# `CsectAuxEnt` Struct
 
 
 

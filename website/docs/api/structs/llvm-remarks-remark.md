@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Remark` Struct Reference
+# `Remark` Struct
 
 <p>A remark type used for both emission and parsing. <a href="#details">More...</a></p>
 

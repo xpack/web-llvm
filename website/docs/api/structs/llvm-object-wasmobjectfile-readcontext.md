@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReadContext` Struct Reference
+# `ReadContext` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Struct Reference
+# `Entry` Struct
 
 <p>A single macro entry within a macro list. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleThreadSanitizerPass` Struct Reference
+# `ModuleThreadSanitizerPass` Struct
 
 <p>A module pass for tsan instrumentation. <a href="#details">More...</a></p>
 

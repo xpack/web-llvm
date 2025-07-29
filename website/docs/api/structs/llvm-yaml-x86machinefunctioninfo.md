@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MachineFunctionInfo` Struct Reference
+# `X86MachineFunctionInfo` Struct
 
 
 

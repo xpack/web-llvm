@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MachineScheduler.cpp` File Reference
+# `R600MachineScheduler.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a> Machine Scheduler interface. <a href="#details">More...</a></p>
 

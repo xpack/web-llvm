@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CoroElide.cpp}` Namespace Reference
+# `anonymous{CoroElide.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MImmOp` Struct Reference
+# `MImmOp` Struct
 
 
 

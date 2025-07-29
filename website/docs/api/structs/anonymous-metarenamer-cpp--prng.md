@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PRNG` Struct Reference
+# `PRNG` Struct
 
 
 

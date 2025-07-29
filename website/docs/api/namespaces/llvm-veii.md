@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEII` Namespace Reference
+# `VEII` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/veii">VEII</a> - This namespace holds all of the Aurora <a href="/web-llvm/docs/api/namespaces/llvm/ve">VE</a> target-specific per-instruction flags. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOpaqueValueMetadataEntry` Struct Reference
+# `LLVMOpaqueValueMetadataEntry` Struct
 
 
 

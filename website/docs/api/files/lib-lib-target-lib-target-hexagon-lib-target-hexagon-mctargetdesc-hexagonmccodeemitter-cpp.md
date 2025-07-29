@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCCodeEmitter.cpp` File Reference
+# `HexagonMCCodeEmitter.cpp` File
 
 
 

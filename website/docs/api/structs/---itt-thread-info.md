@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `___itt_thread_info` Struct Reference
+# `___itt_thread_info` Struct
 
 
 

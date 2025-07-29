@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyWasmObjectWriter.cpp` File Reference
+# `WebAssemblyWasmObjectWriter.cpp` File
 
 <p>This file handles Wasm-specific object emission, converting LLVM's internal fixups into the appropriate relocations. <a href="#details">More...</a></p>
 

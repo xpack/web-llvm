@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Cost` Struct Reference
+# `Cost` Struct
 
 <p>Helper structure used to compute the cost of a slice. <a href="#details">More...</a></p>
 

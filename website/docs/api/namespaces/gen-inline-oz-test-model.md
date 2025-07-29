@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `gen-inline-oz-test-model` Namespace Reference
+# `gen-inline-oz-test-model` Namespace
 
 
 

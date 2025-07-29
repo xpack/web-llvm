@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallValue` Struct Reference
+# `CallValue` Struct
 
 <p>Struct representing the available call values in the scoped hash table. <a href="#details">More...</a></p>
 

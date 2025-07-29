@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XRayInstrumentation` Struct Reference
+# `XRayInstrumentation` Struct
 
 
 

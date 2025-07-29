@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIShrinkInstructions.cpp}` Namespace Reference
+# `anonymous{SIShrinkInstructions.cpp}` Namespace
 
 
 

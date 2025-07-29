@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFunctionPrinterPass` Struct Reference
+# `MachineFunctionPrinterPass` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-machinefunctionprinterpass-cpp-/machinefunctionprinterpass">MachineFunctionPrinterPass</a> - This is a pass to dump the IR of a <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a>. <a href="#details">More...</a></p>
 

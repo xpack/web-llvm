@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFABI` Namespace Reference
+# `VFABI` Namespace
 
 
 

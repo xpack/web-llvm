@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `deref` Struct Template Reference
+# `deref` Struct Template
 
 <p>Binary functor that adapts to any other binary functor after dereferencing operands. <a href="#details">More...</a></p>
 

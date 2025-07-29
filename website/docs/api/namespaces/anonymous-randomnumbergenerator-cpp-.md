@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RandomNumberGenerator.cpp}` Namespace Reference
+# `anonymous{RandomNumberGenerator.cpp}` Namespace
 
 
 

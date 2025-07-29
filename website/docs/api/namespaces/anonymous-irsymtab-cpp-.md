@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IRSymtab.cpp}` Namespace Reference
+# `anonymous{IRSymtab.cpp}` Namespace
 
 
 

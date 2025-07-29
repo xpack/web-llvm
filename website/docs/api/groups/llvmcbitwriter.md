@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Bit Writer Reference
+# Bit Writer
 
 
 

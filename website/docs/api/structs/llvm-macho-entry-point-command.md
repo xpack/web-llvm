@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `entry_point_command` Struct Reference
+# `entry_point_command` Struct
 
 
 

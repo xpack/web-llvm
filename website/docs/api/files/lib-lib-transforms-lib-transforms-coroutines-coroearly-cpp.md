@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroEarly.cpp` File Reference
+# `CoroEarly.cpp` File
 
 
 

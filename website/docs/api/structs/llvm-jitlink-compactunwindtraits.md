@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompactUnwindTraits` Struct Template Reference
+# `CompactUnwindTraits` Struct Template
 
 <p>CRTP base for compact unwind traits classes. <a href="#details">More...</a></p>
 

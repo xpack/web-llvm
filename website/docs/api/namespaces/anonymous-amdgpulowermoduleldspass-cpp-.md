@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPULowerModuleLDSPass.cpp}` Namespace Reference
+# `anonymous{AMDGPULowerModuleLDSPass.cpp}` Namespace
 
 
 

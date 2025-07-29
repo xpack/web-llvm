@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULibFunc.h` File Reference
+# `AMDGPULibFunc.h` File
 
 
 

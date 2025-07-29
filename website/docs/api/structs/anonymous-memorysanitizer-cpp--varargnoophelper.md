@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarArgNoOpHelper` Struct Reference
+# `VarArgNoOpHelper` Struct
 
 <p>A no-op implementation of <a href="/web-llvm/docs/api/structs/anonymous-memorysanitizer-cpp-/vararghelper">VarArgHelper</a>. <a href="#details">More...</a></p>
 

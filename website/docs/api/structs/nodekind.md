@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeKind` Struct Template Reference
+# `NodeKind` Struct Template
 
 <p>Determine the kind of a node from its type. <a href="#details">More...</a></p>
 

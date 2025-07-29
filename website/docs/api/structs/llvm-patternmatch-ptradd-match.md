@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrAdd_match` Struct Template Reference
+# `PtrAdd_match` Struct Template
 
 
 

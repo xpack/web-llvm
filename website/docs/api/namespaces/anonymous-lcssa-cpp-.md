@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LCSSA.cpp}` Namespace Reference
+# `anonymous{LCSSA.cpp}` Namespace
 
 
 

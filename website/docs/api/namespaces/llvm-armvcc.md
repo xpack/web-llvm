@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMVCC` Namespace Reference
+# `ARMVCC` Namespace
 
 
 

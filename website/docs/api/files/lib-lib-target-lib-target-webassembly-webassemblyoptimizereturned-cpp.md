@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyOptimizeReturned.cpp` File Reference
+# `WebAssemblyOptimizeReturned.cpp` File
 
 <p>Optimize calls with "returned" attributes for <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a>. <a href="#details">More...</a></p>
 

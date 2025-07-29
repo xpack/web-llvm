@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContiguousPageBasedLayoutSizes` Struct Reference
+# `ContiguousPageBasedLayoutSizes` Struct
 
 <p>A convenience class that further groups segments based on memory deallocation policy. <a href="#details">More...</a></p>
 

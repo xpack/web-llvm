@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySanitizer.cpp` File Reference
+# `MemorySanitizer.cpp` File
 
 <p>This file is a part of <a href="/web-llvm/docs/api/classes/anonymous-memorysanitizer-cpp-/memorysanitizer">MemorySanitizer</a>, a detector of uninitialized reads. <a href="#details">More...</a></p>
 

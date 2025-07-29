@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExclusiveT` Struct Template Reference
+# `ExclusiveT` Struct Template
 
 
 

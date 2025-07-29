@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64TargetTransformInfo.cpp` File Reference
+# `AArch64TargetTransformInfo.cpp` File
 
 
 

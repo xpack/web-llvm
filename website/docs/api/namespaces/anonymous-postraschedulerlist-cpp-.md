@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PostRASchedulerList.cpp}` Namespace Reference
+# `anonymous{PostRASchedulerList.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorklistEntry` Struct Reference
+# `WorklistEntry` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMLoadStoreOpt` Struct Reference
+# `ARMLoadStoreOpt` Struct
 
 <p>Post- register allocation pass the combine load / store instructions to form ldm / stm instructions. <a href="#details">More...</a></p>
 

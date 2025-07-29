@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenormalFPMathState` Struct Reference
+# `DenormalFPMathState` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/ARM/AsmParser` Folder Reference
+# `lib/Target/ARM/AsmParser` Folder
 
 
 

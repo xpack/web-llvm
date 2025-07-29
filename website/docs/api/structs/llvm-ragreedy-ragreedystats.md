@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAGreedyStats` Struct Reference
+# `RAGreedyStats` Struct
 
 <p>Greedy RA statistic to remark. <a href="#details">More...</a></p>
 

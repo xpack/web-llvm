@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineBranchPredicate` Struct Reference
+# `MachineBranchPredicate` Struct
 
 <p>Represents a predicate at the <a href="/web-llvm/docs/api/classes/llvm/machinefunction">MachineFunction</a> level. <a href="#details">More...</a></p>
 

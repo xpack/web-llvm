@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtomicDefaultMemOrderT` Struct Template Reference
+# `AtomicDefaultMemOrderT` Struct Template
 
 
 

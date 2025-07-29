@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTableFixup` Struct Reference
+# `StringTableFixup` Struct
 
 <p>Represents a string table reference at some offset in the module symbol stream. <a href="#details">More...</a></p>
 

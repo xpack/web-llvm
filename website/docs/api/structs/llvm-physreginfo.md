@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhysRegInfo` Struct Reference
+# `PhysRegInfo` Struct
 
 <p>Information about how a physical register Reg is used by a set of operands. <a href="#details">More...</a></p>
 

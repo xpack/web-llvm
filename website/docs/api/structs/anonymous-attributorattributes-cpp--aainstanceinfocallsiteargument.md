@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInstanceInfoCallSiteArgument` Struct Reference
+# `AAInstanceInfoCallSiteArgument` Struct
 
 <p>InstanceInfo attribute for call site arguments. <a href="#details">More...</a></p>
 

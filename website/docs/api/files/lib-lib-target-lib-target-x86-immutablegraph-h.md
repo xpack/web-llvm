@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmutableGraph.h` File Reference
+# `ImmutableGraph.h` File
 
 <p>Description: ImmutableGraph is a fast DAG implementation that cannot be modified, except by creating a new ImmutableGraph. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBBPriorityInfo` Struct Reference
+# `MBBPriorityInfo` Struct
 
 <p>Information concerning MBB coalescing priority. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarTraits` Struct Template Reference
+# `ScalarTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/use">Use</a> these types instead of uintXX_t in any mapping to have its yaml output formatted as hexadecimal. <a href="#details">More...</a></p>
 

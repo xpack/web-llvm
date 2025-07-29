@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFCheckAndAdjustIR.cpp}` Namespace Reference
+# `anonymous{BPFCheckAndAdjustIR.cpp}` Namespace
 
 
 

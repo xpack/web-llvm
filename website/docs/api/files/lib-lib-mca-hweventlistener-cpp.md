@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWEventListener.cpp` File Reference
+# `HWEventListener.cpp` File
 
 <p>This file defines a vtable anchor for class HWEventListener. <a href="#details">More...</a></p>
 

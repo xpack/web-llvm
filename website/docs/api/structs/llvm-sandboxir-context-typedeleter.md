@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeDeleter` Struct Reference
+# `TypeDeleter` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sandboxir/type">Type</a> has a protected destructor to prohibit the user from managing the lifetime of the <a href="/web-llvm/docs/api/classes/llvm/sandboxir/type">Type</a> objects. <a href="#details">More...</a></p>
 

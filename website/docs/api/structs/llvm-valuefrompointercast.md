@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueFromPointerCast` Struct Template Reference
+# `ValueFromPointerCast` Struct Template
 
 <p>This cast trait provides casting for the specific case of casting to a value-typed object from a pointer-typed object. <a href="#details">More...</a></p>
 

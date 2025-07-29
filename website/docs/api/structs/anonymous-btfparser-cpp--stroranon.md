@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrOrAnon` Struct Reference
+# `StrOrAnon` Struct
 
 
 

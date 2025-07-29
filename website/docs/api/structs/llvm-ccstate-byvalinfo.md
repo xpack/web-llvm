@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByValInfo` Struct Reference
+# `ByValInfo` Struct
 
 
 

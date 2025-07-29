@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FastTileConfig.cpp` File Reference
+# `X86FastTileConfig.cpp` File
 
 
 

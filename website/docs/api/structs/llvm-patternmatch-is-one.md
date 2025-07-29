@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_one` Struct Reference
+# `is_one` Struct
 
 
 

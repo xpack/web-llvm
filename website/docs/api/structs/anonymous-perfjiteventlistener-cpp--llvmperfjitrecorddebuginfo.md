@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMPerfJitRecordDebugInfo` Struct Reference
+# `LLVMPerfJitRecordDebugInfo` Struct
 
 
 

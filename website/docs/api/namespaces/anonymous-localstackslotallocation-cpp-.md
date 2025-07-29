@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LocalStackSlotAllocation.cpp}` Namespace Reference
+# `anonymous{LocalStackSlotAllocation.cpp}` Namespace
 
 
 

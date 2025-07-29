@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFDataSec` Struct Reference
+# `BTFDataSec` Struct
 
 <p>BTF_KIND_DATASEC are followed by multiple "struct BTFDataSecVar". <a href="#details">More...</a></p>
 

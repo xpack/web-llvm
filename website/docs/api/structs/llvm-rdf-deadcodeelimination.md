@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeadCodeElimination` Struct Reference
+# `DeadCodeElimination` Struct
 
 
 

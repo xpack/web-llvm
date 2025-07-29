@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARCContractPass` Struct Reference
+# `ObjCARCContractPass` Struct
 
 
 

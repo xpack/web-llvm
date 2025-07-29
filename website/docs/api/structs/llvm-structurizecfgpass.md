@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructurizeCFGPass` Struct Reference
+# `StructurizeCFGPass` Struct
 
 
 

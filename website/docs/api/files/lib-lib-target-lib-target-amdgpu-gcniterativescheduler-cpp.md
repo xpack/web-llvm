@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNIterativeScheduler.cpp` File Reference
+# `GCNIterativeScheduler.cpp` File
 
 <p>This file implements the class <a href="/web-llvm/docs/api/classes/llvm/gcniterativescheduler">GCNIterativeScheduler</a>. <a href="#details">More...</a></p>
 

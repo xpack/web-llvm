@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnicodeCharRange` Struct Reference
+# `UnicodeCharRange` Struct
 
 <p>Represents a closed range of Unicode code points [Lower, Upper]. <a href="#details">More...</a></p>
 

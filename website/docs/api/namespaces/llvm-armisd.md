@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMISD` Namespace Reference
+# `ARMISD` Namespace
 
 
 

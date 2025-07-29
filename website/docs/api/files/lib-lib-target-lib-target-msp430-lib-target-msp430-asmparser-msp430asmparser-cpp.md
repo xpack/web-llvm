@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430AsmParser.cpp` File Reference
+# `MSP430AsmParser.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterPass` Struct Template Reference
+# `RegisterPass` Struct Template
 
 <p>RegisterPass&lt;t&gt; template - This template class is used to notify the system that a <a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> is available for use, and registers it into the internal database maintained by the <a href="/web-llvm/docs/api/classes/llvm/passmanager">PassManager</a>. <a href="#details">More...</a></p>
 

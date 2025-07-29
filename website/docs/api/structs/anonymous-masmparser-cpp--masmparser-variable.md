@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Variable` Struct Reference
+# `Variable` Struct
 
 <p>maps assembly-time variable names to variables. <a href="#details">More...</a></p>
 

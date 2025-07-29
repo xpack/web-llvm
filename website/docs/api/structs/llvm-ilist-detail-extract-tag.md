@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `extract_tag` Struct Template Reference
+# `extract_tag` Struct Template
 
 <p>Extract custom tag option. <a href="#details">More...</a></p>
 

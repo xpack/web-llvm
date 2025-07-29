@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InterleavedAccessPass.cpp}` Namespace Reference
+# `anonymous{InterleavedAccessPass.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `raw_os_ostream.cpp` File Reference
+# `raw_os_ostream.cpp` File
 
 
 

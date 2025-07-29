@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShaderHash` Struct Reference
+# `ShaderHash` Struct
 
 
 

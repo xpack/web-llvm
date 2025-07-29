@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IndirectionUtils.cpp}` Namespace Reference
+# `anonymous{IndirectionUtils.cpp}` Namespace
 
 
 

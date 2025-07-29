@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADepGraph` Struct Reference
+# `AADepGraph` Struct
 
 <p>The data structure for the dependency graph. <a href="#details">More...</a></p>
 

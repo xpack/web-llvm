@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreferPredicateTy` Namespace Reference
+# `PreferPredicateTy` Namespace
 
 
 

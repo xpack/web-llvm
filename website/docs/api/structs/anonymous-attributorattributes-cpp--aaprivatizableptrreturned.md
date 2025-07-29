@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPrivatizablePtrReturned` Struct Reference
+# `AAPrivatizablePtrReturned` Struct
 
 
 

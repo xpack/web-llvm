@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FragList` Struct Reference
+# `FragList` Struct
 
 
 

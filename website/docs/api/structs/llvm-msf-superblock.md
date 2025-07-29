@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuperBlock` Struct Reference
+# `SuperBlock` Struct
 
 
 

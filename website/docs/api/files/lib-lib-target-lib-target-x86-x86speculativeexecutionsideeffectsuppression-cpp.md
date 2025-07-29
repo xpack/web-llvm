@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86SpeculativeExecutionSideEffectSuppression.cpp` File Reference
+# `X86SpeculativeExecutionSideEffectSuppression.cpp` File
 
 <p>This file contains the <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> implementation of the speculative execution side effect suppression mitigation. <a href="#details">More...</a></p>
 

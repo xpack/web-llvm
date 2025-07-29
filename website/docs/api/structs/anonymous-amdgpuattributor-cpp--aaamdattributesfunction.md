@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAMDAttributesFunction` Struct Reference
+# `AAAMDAttributesFunction` Struct
 
 
 

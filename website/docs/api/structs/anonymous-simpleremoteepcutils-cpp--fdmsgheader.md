@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FDMsgHeader` Struct Reference
+# `FDMsgHeader` Struct
 
 
 

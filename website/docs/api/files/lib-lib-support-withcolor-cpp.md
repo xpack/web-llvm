@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WithColor.cpp` File Reference
+# `WithColor.cpp` File
 
 
 

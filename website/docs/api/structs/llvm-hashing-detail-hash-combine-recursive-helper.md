@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hash_combine_recursive_helper` Struct Reference
+# `hash_combine_recursive_helper` Struct
 
 <p>Helper class to manage the recursive combining of hash_combine arguments. <a href="#details">More...</a></p>
 

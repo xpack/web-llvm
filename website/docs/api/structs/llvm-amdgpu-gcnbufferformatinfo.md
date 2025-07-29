@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GcnBufferFormatInfo` Struct Reference
+# `GcnBufferFormatInfo` Struct
 
 
 

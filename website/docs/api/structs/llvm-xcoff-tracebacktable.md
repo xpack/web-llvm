@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TracebackTable` Struct Reference
+# `TracebackTable` Struct
 
 
 

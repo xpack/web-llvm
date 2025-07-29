@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZCP` Namespace Reference
+# `SystemZCP` Namespace
 
 
 

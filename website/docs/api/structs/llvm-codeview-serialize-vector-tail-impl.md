@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `serialize_vector_tail_impl` Struct Template Reference
+# `serialize_vector_tail_impl` Struct Template
 
 
 

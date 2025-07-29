@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `api_pred_ty` Struct Template Reference
+# `api_pred_ty` Struct Template
 
 <p>This helper class is used to match scalar and vector constants that satisfy a specified predicate, and bind them to an <a href="/web-llvm/docs/api/classes/llvm/apint">APInt</a>. <a href="#details">More...</a></p>
 

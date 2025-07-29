@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RotOp` Struct Reference
+# `RotOp` Struct
 
 
 

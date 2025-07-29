@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameIndexesPerSize` Struct Reference
+# `FrameIndexesPerSize` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFInstructionSelector.cpp}` Namespace Reference
+# `anonymous{BPFInstructionSelector.cpp}` Namespace
 
 
 

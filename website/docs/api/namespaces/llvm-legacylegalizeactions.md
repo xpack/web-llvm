@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyLegalizeActions` Namespace Reference
+# `LegacyLegalizeActions` Namespace
 
 
 

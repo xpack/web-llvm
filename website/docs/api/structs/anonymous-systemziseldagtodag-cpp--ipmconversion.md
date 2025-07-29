@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPMConversion` Struct Reference
+# `IPMConversion` Struct
 
 
 

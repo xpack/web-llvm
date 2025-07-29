@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEInstrInfo.h` File Reference
+# `VEInstrInfo.h` File
 
 
 

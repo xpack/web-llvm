@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeListEntry` Struct Reference
+# `RangeListEntry` Struct
 
 <p>A class representing a single range list entry. <a href="#details">More...</a></p>
 

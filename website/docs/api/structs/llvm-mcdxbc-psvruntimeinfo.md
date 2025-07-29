@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PSVRuntimeInfo` Struct Reference
+# `PSVRuntimeInfo` Struct
 
 
 

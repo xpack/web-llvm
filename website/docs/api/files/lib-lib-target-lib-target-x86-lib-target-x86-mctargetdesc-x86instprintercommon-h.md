@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstPrinterCommon.h` File Reference
+# `X86InstPrinterCommon.h` File
 
 
 

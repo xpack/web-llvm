@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_chained_ptr_64_bind` Struct Reference
+# `dyld_chained_ptr_64_bind` Struct
 
 
 

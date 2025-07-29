@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotColdSplitting.cpp` File Reference
+# `HotColdSplitting.cpp` File
 
 <p>The goal of hot/cold splitting is to improve the memory locality of code. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANonNullCallSiteReturned` Struct Reference
+# `AANonNullCallSiteReturned` Struct
 
 <p>NonNull attribute for a call site return position. <a href="#details">More...</a></p>
 

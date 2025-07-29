@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOEdge` Struct Reference
+# `PGOEdge` Struct
 
 <p>This class implements the CFG edges for the Minimum Spanning Tree (MST) based instrumentation. <a href="#details">More...</a></p>
 

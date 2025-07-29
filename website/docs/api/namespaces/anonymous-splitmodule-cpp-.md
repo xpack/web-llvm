@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SplitModule.cpp}` Namespace Reference
+# `anonymous{SplitModule.cpp}` Namespace
 
 
 

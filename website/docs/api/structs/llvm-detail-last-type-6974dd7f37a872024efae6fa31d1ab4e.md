@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `last_type` Struct Template Reference
+# `last_type` Struct Template
 
 
 

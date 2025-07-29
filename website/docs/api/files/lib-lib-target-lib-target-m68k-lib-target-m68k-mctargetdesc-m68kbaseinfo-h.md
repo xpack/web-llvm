@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kBaseInfo.h` File Reference
+# `M68kBaseInfo.h` File
 
 <p>This file contains small standalone helper functions and enum definitions for the M68k target useful for the compiler back-end and the MC libraries. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstStreamPause` Struct Reference
+# `InstStreamPause` Struct
 
 <p>This is actually not an error but a marker to indicate that the instruction stream is paused. <a href="#details">More...</a></p>
 

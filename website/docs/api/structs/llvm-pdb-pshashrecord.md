@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PSHashRecord` Struct Reference
+# `PSHashRecord` Struct
 
 
 

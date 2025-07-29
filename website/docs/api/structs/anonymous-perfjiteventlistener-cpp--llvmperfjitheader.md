@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMPerfJitHeader` Struct Reference
+# `LLVMPerfJitHeader` Struct
 
 
 

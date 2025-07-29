@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefPath` Struct Reference
+# `DefPath` Struct
 
 <p>Represents a span of contiguous MemoryDefs, potentially ending in a <a href="/web-llvm/docs/api/classes/llvm/memoryphi">MemoryPhi</a>. <a href="#details">More...</a></p>
 

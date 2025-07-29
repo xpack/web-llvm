@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyOptimizeLiveIntervals.cpp` File Reference
+# `WebAssemblyOptimizeLiveIntervals.cpp` File
 
 <p>Optimize <a href="/web-llvm/docs/api/classes/llvm/liveintervals">LiveIntervals</a> for use in a post-RA context. <a href="#details">More...</a></p>
 

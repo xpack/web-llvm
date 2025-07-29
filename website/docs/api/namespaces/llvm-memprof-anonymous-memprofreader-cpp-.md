@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MemProfReader.cpp}` Namespace Reference
+# `anonymous{MemProfReader.cpp}` Namespace
 
 
 

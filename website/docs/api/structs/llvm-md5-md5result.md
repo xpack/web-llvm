@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MD5Result` Struct Reference
+# `MD5Result` Struct
 
 
 

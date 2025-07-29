@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonConfig.cpp` File Reference
+# `CommonConfig.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpectedHolder` Struct Template Reference
+# `ExpectedHolder` Struct Template
 
 
 

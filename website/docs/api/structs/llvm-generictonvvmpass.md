@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericToNVVMPass` Struct Reference
+# `GenericToNVVMPass` Struct
 
 
 

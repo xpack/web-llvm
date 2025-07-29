@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLIWSchedBoundary` Struct Reference
+# `VLIWSchedBoundary` Struct
 
 <p>Each Scheduling boundary is associated with ready queues. <a href="#details">More...</a></p>
 

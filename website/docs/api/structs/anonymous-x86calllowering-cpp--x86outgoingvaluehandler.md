@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86OutgoingValueHandler` Struct Reference
+# `X86OutgoingValueHandler` Struct
 
 
 

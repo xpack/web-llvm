@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Symbol` Struct Reference
+# `Symbol` Struct
 
 <p>This represents a symbol that has been read from a <a href="/web-llvm/docs/api/structs/llvm/irsymtab/storage/symbol">storage::Symbol</a> and possibly a <a href="/web-llvm/docs/api/structs/llvm/irsymtab/storage/uncommon">storage::Uncommon</a>. <a href="#details">More...</a></p>
 

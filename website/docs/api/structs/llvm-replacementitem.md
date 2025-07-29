@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplacementItem` Struct Reference
+# `ReplacementItem` Struct
 
 
 

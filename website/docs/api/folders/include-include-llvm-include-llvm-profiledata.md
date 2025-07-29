@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/ProfileData` Folder Reference
+# `include/llvm/ProfileData` Folder
 
 
 

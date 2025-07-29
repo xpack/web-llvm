@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterAsmPrinter` Struct Template Reference
+# `RegisterAsmPrinter` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registerasmprinter">RegisterAsmPrinter</a> - Helper template for registering a target specific assembly printer, for use in the target machine initialization function. <a href="#details">More...</a></p>
 

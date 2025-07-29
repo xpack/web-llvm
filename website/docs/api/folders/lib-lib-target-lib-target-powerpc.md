@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/PowerPC` Folder Reference
+# `lib/Target/PowerPC` Folder
 
 
 

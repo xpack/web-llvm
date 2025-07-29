@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeInfo` Struct Reference
+# `NodeInfo` Struct
 
 
 

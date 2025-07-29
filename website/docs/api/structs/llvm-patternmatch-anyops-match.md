@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyOps_match` Struct Template Reference
+# `AnyOps_match` Struct Template
 
 <p>Matches instructions with Opcode and any number of operands. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkSerializer` Struct Reference
+# `RemarkSerializer` Struct
 
 <p>This is the base class for a remark serializer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `saved-model-to-tflite` Namespace Reference
+# `saved-model-to-tflite` Namespace
 
 
 

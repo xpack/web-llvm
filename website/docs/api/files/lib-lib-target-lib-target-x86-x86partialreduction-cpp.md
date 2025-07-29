@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86PartialReduction.cpp` File Reference
+# `X86PartialReduction.cpp` File
 
 
 

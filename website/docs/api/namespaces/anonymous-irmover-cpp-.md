@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IRMover.cpp}` Namespace Reference
+# `anonymous{IRMover.cpp}` Namespace
 
 
 

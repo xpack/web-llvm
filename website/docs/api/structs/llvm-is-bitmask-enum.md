@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_bitmask_enum` Struct Template Reference
+# `is_bitmask_enum` Struct Template
 
 <p>Traits class to determine whether an enum has a LLVM_BITMASK_LARGEST_ENUMERATOR enumerator. <a href="#details">More...</a></p>
 

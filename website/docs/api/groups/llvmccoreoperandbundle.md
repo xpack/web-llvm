@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Operand Bundles Reference
+# Operand Bundles
 
 <p>Functions in this group operate on <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#gafe96c433ce9154bebe8fd83e0616d495">LLVMOperandBundleRef</a> instances that correspond to <a href="/web-llvm/docs/api/namespaces/llvm/#aa97c65466bdd34abda6772dd32eb5d19">llvm::OperandBundleDef</a> instances. <a href="#details">More...</a></p>
 

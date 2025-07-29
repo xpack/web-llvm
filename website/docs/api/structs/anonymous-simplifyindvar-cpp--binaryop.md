@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryOp` Struct Reference
+# `BinaryOp` Struct
 
 
 

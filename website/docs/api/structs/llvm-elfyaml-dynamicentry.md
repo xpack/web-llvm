@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DynamicEntry` Struct Reference
+# `DynamicEntry` Struct
 
 
 

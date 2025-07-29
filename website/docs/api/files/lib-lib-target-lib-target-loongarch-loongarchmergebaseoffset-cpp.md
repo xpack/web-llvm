@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMergeBaseOffset.cpp` File Reference
+# `LoongArchMergeBaseOffset.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIMemoryLegalizer.cpp}` Namespace Reference
+# `anonymous{SIMemoryLegalizer.cpp}` Namespace
 
 
 

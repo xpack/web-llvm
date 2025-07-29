@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintLaneMaskShort` Struct Reference
+# `PrintLaneMaskShort` Struct
 
 
 

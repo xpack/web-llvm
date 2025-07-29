@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopDistribute.cpp}` Namespace Reference
+# `anonymous{LoopDistribute.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoReturn` Struct Reference
+# `AANoReturn` Struct
 
 <p>An <a href="/web-llvm/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> for noreturn. <a href="#details">More...</a></p>
 

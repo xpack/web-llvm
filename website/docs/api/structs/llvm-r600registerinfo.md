@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600RegisterInfo` Struct Reference
+# `R600RegisterInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430MCTargetDesc.h` File Reference
+# `MSP430MCTargetDesc.h` File
 
 
 

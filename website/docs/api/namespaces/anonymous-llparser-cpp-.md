@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LLParser.cpp}` Namespace Reference
+# `anonymous{LLParser.cpp}` Namespace
 
 
 

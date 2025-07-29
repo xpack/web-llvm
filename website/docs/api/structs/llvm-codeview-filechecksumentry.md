@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileChecksumEntry` Struct Reference
+# `FileChecksumEntry` Struct
 
 
 

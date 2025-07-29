@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GEPData` Struct Reference
+# `GEPData` Struct
 
 
 

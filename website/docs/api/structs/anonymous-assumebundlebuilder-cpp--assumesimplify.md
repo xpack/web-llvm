@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumeSimplify` Struct Reference
+# `AssumeSimplify` Struct
 
 
 

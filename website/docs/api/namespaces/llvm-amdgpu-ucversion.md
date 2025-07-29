@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UCVersion` Namespace Reference
+# `UCVersion` Namespace
 
 
 

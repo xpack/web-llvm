@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolDenseMapInfo` Struct Reference
+# `SymbolDenseMapInfo` Struct
 
 
 

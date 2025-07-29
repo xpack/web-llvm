@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBodyTraits` Struct Reference
+# `LoopBodyTraits` Struct
 
 
 

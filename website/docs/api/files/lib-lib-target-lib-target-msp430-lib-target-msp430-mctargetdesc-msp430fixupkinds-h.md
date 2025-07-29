@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430FixupKinds.h` File Reference
+# `MSP430FixupKinds.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegisterBankInfo.h` File Reference
+# `AMDGPURegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for AMDGPU. <a href="#details">More...</a></p>
 

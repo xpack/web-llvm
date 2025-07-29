@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrToIntSameSize_match` Struct Template Reference
+# `PtrToIntSameSize_match` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutgoingValueHandler` Struct Reference
+# `OutgoingValueHandler` Struct
 
 <p>Base class for ValueHandlers used for arguments passed to a function call, or for return values. <a href="#details">More...</a></p>
 

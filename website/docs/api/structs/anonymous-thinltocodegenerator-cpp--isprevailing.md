@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsPrevailing` Struct Reference
+# `IsPrevailing` Struct
 
 
 

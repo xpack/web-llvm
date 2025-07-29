@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntPart` Struct Reference
+# `IntPart` Struct
 
 
 

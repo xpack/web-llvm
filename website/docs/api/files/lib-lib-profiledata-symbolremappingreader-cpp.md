@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRemappingReader.cpp` File Reference
+# `SymbolRemappingReader.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamMetaSerializer` Struct Reference
+# `BitstreamMetaSerializer` Struct
 
 <p>Serializer of metadata for bitstream remarks. <a href="#details">More...</a></p>
 

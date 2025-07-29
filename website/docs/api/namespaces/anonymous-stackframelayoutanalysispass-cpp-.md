@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{StackFrameLayoutAnalysisPass.cpp}` Namespace Reference
+# `anonymous{StackFrameLayoutAnalysisPass.cpp}` Namespace
 
 
 

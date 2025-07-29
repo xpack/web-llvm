@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpOverload` Struct Reference
+# `OpOverload` Struct
 
 
 

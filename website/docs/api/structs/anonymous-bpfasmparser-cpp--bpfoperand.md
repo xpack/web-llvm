@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFOperand` Struct Reference
+# `BPFOperand` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-bpfasmparser-cpp-/bpfoperand">BPFOperand</a> - Instances of this class represent a parsed machine instruction. <a href="#details">More...</a></p>
 

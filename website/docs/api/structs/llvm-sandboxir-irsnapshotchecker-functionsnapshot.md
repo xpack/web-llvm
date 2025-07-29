@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionSnapshot` Struct Reference
+# `FunctionSnapshot` Struct
 
 
 

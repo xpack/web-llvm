@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiBuildNo` Struct Reference
+# `DbiBuildNo` Struct
 
 
 

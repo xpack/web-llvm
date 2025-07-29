@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpCodes` Struct Reference
+# `OpCodes` Struct
 
 
 

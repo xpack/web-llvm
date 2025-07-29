@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockRelaxAux` Struct Reference
+# `BlockRelaxAux` Struct
 
 
 

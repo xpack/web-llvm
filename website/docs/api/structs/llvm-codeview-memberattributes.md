@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemberAttributes` Struct Reference
+# `MemberAttributes` Struct
 
 <p>Equvalent to CV_fldattr_t in cvinfo.h. <a href="#details">More...</a></p>
 

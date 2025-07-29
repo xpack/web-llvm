@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSchedContext` Struct Reference
+# `MachineSchedContext` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/machineschedcontext">MachineSchedContext</a> provides enough context from the MachineScheduler pass for the target to instantiate a scheduler. <a href="#details">More...</a></p>
 

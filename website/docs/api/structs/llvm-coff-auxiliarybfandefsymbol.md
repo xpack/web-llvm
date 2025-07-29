@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AuxiliarybfAndefSymbol` Struct Reference
+# `AuxiliarybfAndefSymbol` Struct
 
 
 

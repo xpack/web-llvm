@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Key` Namespace Reference
+# `Key` Namespace
 
 
 

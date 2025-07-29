@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkLinker` Struct Reference
+# `RemarkLinker` Struct
 
 
 

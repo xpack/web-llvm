@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDescriptor` Struct Reference
+# `MemoryDescriptor` Struct
 
 <p>Describes a single memory range (both its VM address and where to find it in the file) of the process from which this minidump file was generated. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mcdxbc` Namespace Reference
+# `mcdxbc` Namespace
 
 
 

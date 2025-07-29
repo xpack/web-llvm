@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVLDef` Struct Reference
+# `AVLDef` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartwordMaskValues` Struct Reference
+# `PartwordMaskValues` Struct
 
 
 

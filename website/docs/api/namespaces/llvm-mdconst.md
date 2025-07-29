@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mdconst` Namespace Reference
+# `mdconst` Namespace
 
 <p>Transitional API for extracting constants from <a href="/web-llvm/docs/api/classes/llvm/metadata">Metadata</a>. <a href="#details">More...</a></p>
 

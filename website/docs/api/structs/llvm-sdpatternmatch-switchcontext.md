@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchContext` Struct Template Reference
+# `SwitchContext` Struct Template
 
 <p>Switch to a different MatchContext for subsequent patterns. <a href="#details">More...</a></p>
 

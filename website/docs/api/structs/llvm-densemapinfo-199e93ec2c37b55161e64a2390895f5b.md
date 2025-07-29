@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMapInfo` Struct Template Reference
+# `DenseMapInfo` Struct Template
 
 <p>Helper for AA::PointerInfo::Access DenseMap/Set usage. <a href="#details">More...</a></p>
 

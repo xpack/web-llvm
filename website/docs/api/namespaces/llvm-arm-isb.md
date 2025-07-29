@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARM_ISB` Namespace Reference
+# `ARM_ISB` Namespace
 
 
 

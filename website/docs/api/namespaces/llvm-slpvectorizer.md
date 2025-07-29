@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `slpvectorizer` Namespace Reference
+# `slpvectorizer` Namespace
 
 <p>A private "module" namespace for types and utilities used by this pass. <a href="#details">More...</a></p>
 

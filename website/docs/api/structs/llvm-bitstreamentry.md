@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamEntry` Struct Reference
+# `BitstreamEntry` Struct
 
 <p>When advancing through a bitstream cursor, each advance can discover a few different kinds of entries: <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_shifted_mask` Struct Reference
+# `is_shifted_mask` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReadDescriptor` Struct Reference
+# `ReadDescriptor` Struct
 
 <p>A register read descriptor. <a href="#details">More...</a></p>
 

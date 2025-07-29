@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ILPOrder` Struct Reference
+# `ILPOrder` Struct
 
 <p>Order nodes by the ILP metric. <a href="#details">More...</a></p>
 

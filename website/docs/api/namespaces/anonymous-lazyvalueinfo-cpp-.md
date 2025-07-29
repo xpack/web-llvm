@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LazyValueInfo.cpp}` Namespace Reference
+# `anonymous{LazyValueInfo.cpp}` Namespace
 
 
 

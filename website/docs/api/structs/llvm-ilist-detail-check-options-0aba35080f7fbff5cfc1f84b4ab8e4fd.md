@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `check_options` Struct Template Reference
+# `check_options` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCID` Namespace Reference
+# `MCID` Namespace
 
 
 

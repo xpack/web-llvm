@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUUnifyDivergentExitNodes.cpp}` Namespace Reference
+# `anonymous{AMDGPUUnifyDivergentExitNodes.cpp}` Namespace
 
 
 

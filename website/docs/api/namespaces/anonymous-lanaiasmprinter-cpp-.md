@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LanaiAsmPrinter.cpp}` Namespace Reference
+# `anonymous{LanaiAsmPrinter.cpp}` Namespace
 
 
 

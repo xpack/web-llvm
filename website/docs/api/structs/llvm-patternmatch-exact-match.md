@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Exact_match` Struct Template Reference
+# `Exact_match` Struct Template
 
 
 

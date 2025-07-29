@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypesAreDistinct` Struct Template Reference
+# `TypesAreDistinct` Struct Template
 
 
 

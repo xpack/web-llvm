@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeMetrics` Struct Reference
+# `CodeMetrics` Struct
 
 <p>Utility to calculate the size and a few similar metrics for a set of basic blocks. <a href="#details">More...</a></p>
 

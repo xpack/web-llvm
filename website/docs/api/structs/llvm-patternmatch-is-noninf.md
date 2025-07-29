@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_noninf` Struct Reference
+# `is_noninf` Struct
 
 
 

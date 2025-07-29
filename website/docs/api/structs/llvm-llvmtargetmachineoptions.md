@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMTargetMachineOptions` Struct Reference
+# `LLVMTargetMachineOptions` Struct
 
 <p>Options for <a href="/web-llvm/docs/api/groups/llvmctarget/#ga9b0b2b1efd30fad999f2b2a7fdbf8492">LLVMCreateTargetMachine()</a>. <a href="#details">More...</a></p>
 

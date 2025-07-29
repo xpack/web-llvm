@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonEvaluator` Struct Reference
+# `HexagonEvaluator` Struct
 
 
 

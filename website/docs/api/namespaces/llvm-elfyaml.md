@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFYAML` Namespace Reference
+# `ELFYAML` Namespace
 
 
 

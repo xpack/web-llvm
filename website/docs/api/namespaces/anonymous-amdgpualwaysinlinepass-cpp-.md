@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUAlwaysInlinePass.cpp}` Namespace Reference
+# `anonymous{AMDGPUAlwaysInlinePass.cpp}` Namespace
 
 
 

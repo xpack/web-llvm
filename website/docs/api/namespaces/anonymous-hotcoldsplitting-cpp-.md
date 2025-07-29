@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HotColdSplitting.cpp}` Namespace Reference
+# `anonymous{HotColdSplitting.cpp}` Namespace
 
 
 

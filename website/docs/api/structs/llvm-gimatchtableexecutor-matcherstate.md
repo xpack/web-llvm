@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatcherState` Struct Reference
+# `MatcherState` Struct
 
 
 

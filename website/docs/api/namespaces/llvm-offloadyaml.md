@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadYAML` Namespace Reference
+# `OffloadYAML` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreMCTargetDesc.cpp` File Reference
+# `XCoreMCTargetDesc.cpp` File
 
 
 

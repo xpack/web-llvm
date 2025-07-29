@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreprocessorControlDesc` Struct Reference
+# `PreprocessorControlDesc` Struct
 
 
 

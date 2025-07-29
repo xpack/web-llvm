@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/MCA/HardwareUnits` Folder Reference
+# `lib/MCA/HardwareUnits` Folder
 
 
 

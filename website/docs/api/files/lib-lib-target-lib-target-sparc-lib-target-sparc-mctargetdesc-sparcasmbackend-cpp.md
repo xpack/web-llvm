@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcAsmBackend.cpp` File Reference
+# `SparcAsmBackend.cpp` File
 
 
 

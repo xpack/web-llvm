@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionTraits` Struct Template Reference
+# `RegionTraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/AMDGPU/Disassembler` Folder Reference
+# `lib/Target/AMDGPU/Disassembler` Folder
 
 
 

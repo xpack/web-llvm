@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumThreadsT` Struct Template Reference
+# `NumThreadsT` Struct Template
 
 
 

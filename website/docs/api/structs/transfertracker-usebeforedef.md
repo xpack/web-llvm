@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseBeforeDef` Struct Reference
+# `UseBeforeDef` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> of a use-before-def: created when a value that's live-in to the current block isn't available in any machine location, but it will be defined in this block. <a href="#details">More...</a></p>
 

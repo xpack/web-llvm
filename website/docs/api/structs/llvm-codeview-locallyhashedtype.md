@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocallyHashedType` Struct Reference
+# `LocallyHashedType` Struct
 
 <p>A locally hashed type represents a straightforward hash code of a serialized record. <a href="#details">More...</a></p>
 

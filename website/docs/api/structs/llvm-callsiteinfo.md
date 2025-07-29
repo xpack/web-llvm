@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallsiteInfo` Struct Reference
+# `CallsiteInfo` Struct
 
 <p>Summary of memprof callsite metadata. <a href="#details">More...</a></p>
 

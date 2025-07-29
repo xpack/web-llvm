@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineeSite` Struct Reference
+# `InlineeSite` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyOptionsTy` Struct Reference
+# `CopyOptionsTy` Struct
 
 
 

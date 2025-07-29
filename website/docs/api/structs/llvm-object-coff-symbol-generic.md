@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_symbol_generic` Struct Reference
+# `coff_symbol_generic` Struct
 
 
 

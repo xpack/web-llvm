@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64LoadStoreOpt` Struct Reference
+# `AArch64LoadStoreOpt` Struct
 
 
 

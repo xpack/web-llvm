@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombineResult` Struct Reference
+# `CombineResult` Struct
 
 <p>Helper structure that holds all the necessary information to materialize a combine that does some extension folding. <a href="#details">More...</a></p>
 

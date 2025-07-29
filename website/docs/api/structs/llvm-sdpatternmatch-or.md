@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Or` Struct Template Reference
+# `Or` Struct Template
 
 
 

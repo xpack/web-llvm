@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCCompound.cpp` File Reference
+# `HexagonMCCompound.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MinMax` Struct Reference
+# `MinMax` Struct
 
 
 

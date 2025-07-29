@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVPostLegalizerCombiner.cpp` File Reference
+# `RISCVPostLegalizerCombiner.cpp` File
 
 <p>Post-legalization combines on generic MachineInstrs. <a href="#details">More...</a></p>
 

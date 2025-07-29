@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAlign` Struct Reference
+# `AAAlign` Struct
 
 <p>An abstract interface for all align attributes. <a href="#details">More...</a></p>
 

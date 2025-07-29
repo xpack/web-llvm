@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `object_deleter` Struct Template Reference
+# `object_deleter` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/object-deleter">object_deleter</a> - Helper method for <a href="/web-llvm/docs/api/classes/llvm/managedstatic">ManagedStatic</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCCC` Namespace Reference
+# `ARCCC` Namespace
 
 
 

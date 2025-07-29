@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIInsertHardClauses.cpp` File Reference
+# `SIInsertHardClauses.cpp` File
 
 <p>Insert s_clause instructions to form hard clauses. <a href="#details">More...</a></p>
 

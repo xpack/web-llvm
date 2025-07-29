@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DeadStoreElimination.cpp}` Namespace Reference
+# `anonymous{DeadStoreElimination.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleRemoteEPCExecutorInfo` Struct Reference
+# `SimpleRemoteEPCExecutorInfo` Struct
 
 
 

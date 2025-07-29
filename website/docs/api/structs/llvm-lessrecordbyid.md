@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LessRecordByID` Struct Reference
+# `LessRecordByID` Struct
 
 <p>Sorting predicate to sort record pointers by their unique <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>. <a href="#details">More...</a></p>
 

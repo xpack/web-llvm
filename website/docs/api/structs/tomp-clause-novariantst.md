@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NovariantsT` Struct Template Reference
+# `NovariantsT` Struct Template
 
 
 

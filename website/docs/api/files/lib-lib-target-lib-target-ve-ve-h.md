@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VE.h` File Reference
+# `VE.h` File
 
 
 

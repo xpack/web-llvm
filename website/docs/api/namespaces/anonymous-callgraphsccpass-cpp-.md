@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CallGraphSCCPass.cpp}` Namespace Reference
+# `anonymous{CallGraphSCCPass.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-callgraphsccpass-cpp-/cgpassmanager">CGPassManager</a> manages FPPassManagers and CallGraphSCCPasses. <a href="#details">More...</a></p>
 

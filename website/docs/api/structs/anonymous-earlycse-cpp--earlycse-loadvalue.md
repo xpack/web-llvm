@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadValue` Struct Reference
+# `LoadValue` Struct
 
 <p>A scoped hash table of the current values of previously encountered memory locations. <a href="#details">More...</a></p>
 

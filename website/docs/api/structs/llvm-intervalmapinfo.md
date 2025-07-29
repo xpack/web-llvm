@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalMapInfo` Struct Template Reference
+# `IntervalMapInfo` Struct Template
 
 
 

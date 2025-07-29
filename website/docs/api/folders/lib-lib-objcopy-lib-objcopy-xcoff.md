@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ObjCopy/XCOFF` Folder Reference
+# `lib/ObjCopy/XCOFF` Folder
 
 
 

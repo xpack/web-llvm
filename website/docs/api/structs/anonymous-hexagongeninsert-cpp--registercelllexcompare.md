@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterCellLexCompare` Struct Reference
+# `RegisterCellLexCompare` Struct
 
 
 

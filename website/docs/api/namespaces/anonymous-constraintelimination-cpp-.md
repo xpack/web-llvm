@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ConstraintElimination.cpp}` Namespace Reference
+# `anonymous{ConstraintElimination.cpp}` Namespace
 
 
 

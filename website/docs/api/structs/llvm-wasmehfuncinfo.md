@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmEHFuncInfo` Struct Reference
+# `WasmEHFuncInfo` Struct
 
 
 

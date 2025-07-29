@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{AMDGPUELFObjectWriter.cpp}` Namespace
 
 
 

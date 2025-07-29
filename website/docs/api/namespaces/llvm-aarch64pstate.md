@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PState` Namespace Reference
+# `AArch64PState` Namespace
 
 
 

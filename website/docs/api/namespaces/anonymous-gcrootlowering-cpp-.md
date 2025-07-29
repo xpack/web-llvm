@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCRootLowering.cpp}` Namespace Reference
+# `anonymous{GCRootLowering.cpp}` Namespace
 
 
 

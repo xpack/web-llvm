@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegBankCombiner.cpp` File Reference
+# `AMDGPURegBankCombiner.cpp` File
 
 
 

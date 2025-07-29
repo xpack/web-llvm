@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `generic_def_path_iterator` Struct Template Reference
+# `generic_def_path_iterator` Struct Template
 
 
 

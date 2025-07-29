@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Access` Struct Reference
+# `Access` Struct
 
 <p>An access description. <a href="#details">More...</a></p>
 

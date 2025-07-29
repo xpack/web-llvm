@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Check` Namespace Reference
+# `Check` Namespace
 
 
 

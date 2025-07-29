@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeConversionCostTblEntryT` Struct Template Reference
+# `TypeConversionCostTblEntryT` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/type">Type</a> Conversion Cost Table. <a href="#details">More...</a></p>
 

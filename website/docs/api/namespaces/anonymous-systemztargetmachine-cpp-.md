@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZTargetMachine.cpp}` Namespace Reference
+# `anonymous{SystemZTargetMachine.cpp}` Namespace
 
 
 

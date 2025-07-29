@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `tpctypes` Namespace Reference
+# `tpctypes` Namespace
 
 
 

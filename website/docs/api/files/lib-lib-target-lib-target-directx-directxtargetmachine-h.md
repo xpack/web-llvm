@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXTargetMachine.h` File Reference
+# `DirectXTargetMachine.h` File
 
 
 

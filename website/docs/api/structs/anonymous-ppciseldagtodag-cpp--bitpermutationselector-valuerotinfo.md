@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueRotInfo` Struct Reference
+# `ValueRotInfo` Struct
 
 
 

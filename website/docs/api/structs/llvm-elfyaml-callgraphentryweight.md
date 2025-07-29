@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallGraphEntryWeight` Struct Reference
+# `CallGraphEntryWeight` Struct
 
 
 

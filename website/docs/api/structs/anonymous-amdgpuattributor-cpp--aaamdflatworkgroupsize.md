@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAMDFlatWorkGroupSize` Struct Reference
+# `AAAMDFlatWorkGroupSize` Struct
 
 <p>Propagate amdgpu-flat-work-group-size attribute. <a href="#details">More...</a></p>
 

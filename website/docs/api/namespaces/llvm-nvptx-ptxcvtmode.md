@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PTXCvtMode` Namespace Reference
+# `PTXCvtMode` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/nvptx/ptxcvtmode">PTXCvtMode</a> - Conversion code enumeration. <a href="#details">More...</a></p>
 

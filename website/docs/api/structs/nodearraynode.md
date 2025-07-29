@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeArrayNode` Struct Reference
+# `NodeArrayNode` Struct
 
 
 

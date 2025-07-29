@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeAbbrev` Struct Reference
+# `AttributeAbbrev` Struct
 
 
 

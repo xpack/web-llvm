@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `accessors` Namespace Reference
+# `accessors` Namespace
 
 <p>This namespace defines accessors shared by different versions of coverage mapping records. <a href="#details">More...</a></p>
 

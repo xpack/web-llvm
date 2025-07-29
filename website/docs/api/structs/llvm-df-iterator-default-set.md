@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `df_iterator_default_set` Struct Template Reference
+# `df_iterator_default_set` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TpiStreamHeader` Struct Reference
+# `TpiStreamHeader` Struct
 
 
 

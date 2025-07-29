@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EpilogueScope` Struct Reference
+# `EpilogueScope` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/arm/wineh/exceptiondatarecord">ExceptionDataRecord</a> - An entry in the table of exception data (.xdata) <a href="#details">More...</a></p>
 

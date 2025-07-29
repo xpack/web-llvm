@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelativeLocMapping` Struct Reference
+# `RelativeLocMapping` Struct
 
 <p>A helper struct to hold the candidate, for a branch instruction, the relative location of a label, and the label itself. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SVCR` Namespace Reference
+# `AArch64SVCR` Namespace
 
 
 

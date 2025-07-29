@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExternalUser` Struct Reference
+# `ExternalUser` Struct
 
 <p>This POD struct describes one external user in the vectorized tree. <a href="#details">More...</a></p>
 

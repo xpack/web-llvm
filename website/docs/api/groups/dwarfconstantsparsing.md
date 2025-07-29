@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Dwarf constants parsing functions Reference
+# Dwarf constants parsing functions
 
 <p>These functions map their strings back to the corresponding enumeration value or return 0 if there is none, except for these exceptions: <a href="#details">More...</a></p>
 

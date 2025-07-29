@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopeVars` Struct Reference
+# `ScopeVars` Struct
 
 <p>The variables of a lexical scope. <a href="#details">More...</a></p>
 

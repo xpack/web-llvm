@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `logicalview` Namespace Reference
+# `logicalview` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAWillReturnFunction` Struct Reference
+# `AAWillReturnFunction` Struct
 
 
 

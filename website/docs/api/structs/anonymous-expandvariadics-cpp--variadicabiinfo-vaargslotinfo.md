@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VAArgSlotInfo` Struct Reference
+# `VAArgSlotInfo` Struct
 
 
 

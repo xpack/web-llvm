@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelArgMD` Struct Reference
+# `KernelArgMD` Struct
 
 
 

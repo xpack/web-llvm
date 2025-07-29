@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `trailing_objects_internal` Namespace Reference
+# `trailing_objects_internal` Namespace
 
 
 

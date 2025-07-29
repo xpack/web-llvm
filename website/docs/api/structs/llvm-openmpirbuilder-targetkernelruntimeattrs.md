@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetKernelRuntimeAttrs` Struct Reference
+# `TargetKernelRuntimeAttrs` Struct
 
 <p>Container to pass LLVM IR runtime values or constants related to the number of teams and threads with which the kernel must be launched, as well as the trip count of the loop, if it is an SPMD or Generic-SPMD kernel. <a href="#details">More...</a></p>
 

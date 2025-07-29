@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `span_t` Struct Reference
+# `span_t` Struct
 
 
 

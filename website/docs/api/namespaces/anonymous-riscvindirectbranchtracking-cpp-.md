@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVIndirectBranchTracking.cpp}` Namespace Reference
+# `anonymous{RISCVIndirectBranchTracking.cpp}` Namespace
 
 
 

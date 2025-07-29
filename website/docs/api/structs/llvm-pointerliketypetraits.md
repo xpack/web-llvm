@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerLikeTypeTraits` Struct Template Reference
+# `PointerLikeTypeTraits` Struct Template
 
 <p>A traits type that is used to handle pointer types and things that are just wrappers for pointers as a uniform entity. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSUnit.cpp` File Reference
+# `LSUnit.cpp` File
 
 <p>A Load-Store Unit for the llvm-mca tool. <a href="#details">More...</a></p>
 

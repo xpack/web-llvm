@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `build_tool_version` Struct Reference
+# `build_tool_version` Struct
 
 
 

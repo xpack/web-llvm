@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `printv` Struct Reference
+# `printv` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AutoIndent` Struct Reference
+# `AutoIndent` Struct
 
 
 

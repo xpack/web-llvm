@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NUses_match` Struct Template Reference
+# `NUses_match` Struct Template
 
 
 

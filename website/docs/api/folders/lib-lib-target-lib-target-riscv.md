@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/RISCV` Folder Reference
+# `lib/Target/RISCV` Folder
 
 
 

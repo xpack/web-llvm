@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFFuncInfo` Struct Reference
+# `BTFFuncInfo` Struct
 
 <p>Represent one func and its type id. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignmentFromAssumptions.cpp` File Reference
+# `AlignmentFromAssumptions.cpp` File
 
 
 

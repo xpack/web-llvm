@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StorageT` Union Reference
+# `StorageT` Union
 
 
 

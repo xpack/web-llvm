@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVAsmPrinter.cpp}` Namespace Reference
+# `anonymous{RISCVAsmPrinter.cpp}` Namespace
 
 
 

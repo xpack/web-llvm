@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixMax` Namespace Reference
+# `FixMax` Namespace
 
 <p>The maximum value or size encodable in "Fix" variants of formats. <a href="#details">More...</a></p>
 

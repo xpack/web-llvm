@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolCU` Struct Reference
+# `SymbolCU` Struct
 
 <p>Helper used to pair up a symbol and its DWARF compile unit. <a href="#details">More...</a></p>
 

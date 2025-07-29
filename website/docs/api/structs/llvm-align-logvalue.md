@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LogValue` Struct Reference
+# `LogValue` Struct
 
 <p>A trivial type to allow construction of constexpr <a href="/web-llvm/docs/api/structs/llvm/align">Align</a>. <a href="#details">More...</a></p>
 

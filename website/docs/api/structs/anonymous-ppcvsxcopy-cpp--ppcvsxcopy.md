@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCVSXCopy` Struct Reference
+# `PPCVSXCopy` Struct
 
 
 

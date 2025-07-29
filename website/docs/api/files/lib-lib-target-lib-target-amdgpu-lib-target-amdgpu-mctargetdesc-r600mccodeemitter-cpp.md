@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MCCodeEmitter.cpp` File Reference
+# `R600MCCodeEmitter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a> code emitter produces machine code that can be executed directly on the GPU device. <a href="#details">More...</a></p>
 

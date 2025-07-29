@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisResultModel` Struct Template Reference
+# `AnalysisResultModel` Struct Template
 
 <p>Specialization of <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/detail/analysisresultmodel">AnalysisResultModel</a></span> which delegates invalidate handling to <span class="doxyComputerOutput">ResultT</span>. <a href="#details">More...</a></p>
 

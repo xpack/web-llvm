@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVExtensionsParser` Struct Reference
+# `SPIRVExtensionsParser` Struct
 
 <p>Command line parser for toggling SPIR-V extensions. <a href="#details">More...</a></p>
 

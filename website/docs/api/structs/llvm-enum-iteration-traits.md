@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `enum_iteration_traits` Struct Template Reference
+# `enum_iteration_traits` Struct Template
 
 
 

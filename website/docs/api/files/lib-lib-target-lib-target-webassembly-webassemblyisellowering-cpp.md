@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyISelLowering.cpp` File Reference
+# `WebAssemblyISelLowering.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/webassemblytargetlowering">WebAssemblyTargetLowering</a> class. <a href="#details">More...</a></p>
 

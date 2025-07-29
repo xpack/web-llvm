@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpRegBankEntry` Struct Template Reference
+# `OpRegBankEntry` Struct Template
 
 
 

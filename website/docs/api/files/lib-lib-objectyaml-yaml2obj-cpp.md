@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `yaml2obj.cpp` File Reference
+# `yaml2obj.cpp` File
 
 
 

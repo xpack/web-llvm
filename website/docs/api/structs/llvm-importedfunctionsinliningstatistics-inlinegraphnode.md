@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineGraphNode` Struct Reference
+# `InlineGraphNode` Struct
 
 <p>InlineGraphNode represents node in graph of inlined functions. <a href="#details">More...</a></p>
 

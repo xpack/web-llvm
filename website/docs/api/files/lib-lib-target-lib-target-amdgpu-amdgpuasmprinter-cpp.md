@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsmPrinter.cpp` File Reference
+# `AMDGPUAsmPrinter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/classes/llvm/amdgpuasmprinter">AMDGPUAsmPrinter</a> is used to print both assembly string and also binary code. <a href="#details">More...</a></p>
 

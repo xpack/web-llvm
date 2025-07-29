@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindCode` Union Reference
+# `UnwindCode` Union
 
 <p><a href="/web-llvm/docs/api/unions/llvm/win64eh/unwindcode">UnwindCode</a> - This union describes a single operation in a function prolog, or part thereof. <a href="#details">More...</a></p>
 

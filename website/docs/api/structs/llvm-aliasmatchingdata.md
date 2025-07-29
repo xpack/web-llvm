@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AliasMatchingData` Struct Reference
+# `AliasMatchingData` Struct
 
 <p>Tablegenerated data structures needed to match alias patterns. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `simplify_type` Struct Template Reference
+# `simplify_type` Struct Template
 
 
 

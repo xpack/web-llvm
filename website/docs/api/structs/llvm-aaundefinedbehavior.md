@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAUndefinedBehavior` Struct Reference
+# `AAUndefinedBehavior` Struct
 
 <p>An abstract attribute for undefined behavior. <a href="#details">More...</a></p>
 

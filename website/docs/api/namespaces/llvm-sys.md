@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `sys` Namespace Reference
+# `sys` Namespace
 
 
 

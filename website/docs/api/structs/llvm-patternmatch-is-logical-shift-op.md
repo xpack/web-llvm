@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_logical_shift_op` Struct Reference
+# `is_logical_shift_op` Struct
 
 
 

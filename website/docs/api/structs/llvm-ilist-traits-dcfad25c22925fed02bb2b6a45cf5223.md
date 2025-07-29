@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_traits` Struct Template Reference
+# `ilist_traits` Struct Template
 
 <p>Const traits should never be instantiated. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TemporalProfTraceTy` Struct Reference
+# `TemporalProfTraceTy` Struct
 
 <p>An ordered list of functions identified by their NameRef found in INSTR_PROF_DATA. <a href="#details">More...</a></p>
 

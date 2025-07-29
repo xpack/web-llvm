@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf64_Nhdr` Struct Reference
+# `Elf64_Nhdr` Struct
 
 
 

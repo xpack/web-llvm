@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MBB2NumberFunctor` Struct Reference
+# `MBB2NumberFunctor` Struct
 
 
 

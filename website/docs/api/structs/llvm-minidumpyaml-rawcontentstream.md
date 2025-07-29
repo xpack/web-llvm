@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RawContentStream` Struct Reference
+# `RawContentStream` Struct
 
 <p>A minidump stream represented as a sequence of hex bytes. <a href="#details">More...</a></p>
 

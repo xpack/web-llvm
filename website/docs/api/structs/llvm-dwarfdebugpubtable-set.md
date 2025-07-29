@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Set` Struct Reference
+# `Set` Struct
 
 <p>Each table consists of sets of variable length entries. <a href="#details">More...</a></p>
 

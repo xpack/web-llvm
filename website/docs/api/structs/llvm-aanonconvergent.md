@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANonConvergent` Struct Reference
+# `AANonConvergent` Struct
 
 <p>An abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> for determining the necessity of the convergent attribute. <a href="#details">More...</a></p>
 

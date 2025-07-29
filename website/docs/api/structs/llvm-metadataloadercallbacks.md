@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetadataLoaderCallbacks` Struct Reference
+# `MetadataLoaderCallbacks` Struct
 
 
 

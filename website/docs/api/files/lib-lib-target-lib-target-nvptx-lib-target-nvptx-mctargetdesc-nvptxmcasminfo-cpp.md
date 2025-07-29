@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXMCAsmInfo.cpp` File Reference
+# `NVPTXMCAsmInfo.cpp` File
 
 
 

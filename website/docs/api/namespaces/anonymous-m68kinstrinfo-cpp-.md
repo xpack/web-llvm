@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{M68kInstrInfo.cpp}` Namespace Reference
+# `anonymous{M68kInstrInfo.cpp}` Namespace
 
 
 

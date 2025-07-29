@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseBitVectorElement` Struct Template Reference
+# `SparseBitVectorElement` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sparsebitvector">SparseBitVector</a> is an implementation of a bitvector that is sparse by only storing the elements that have non-zero bits set. <a href="#details">More...</a></p>
 

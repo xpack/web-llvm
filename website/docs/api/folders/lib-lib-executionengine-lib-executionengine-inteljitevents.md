@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ExecutionEngine/IntelJITEvents` Folder Reference
+# `lib/ExecutionEngine/IntelJITEvents` Folder
 
 
 

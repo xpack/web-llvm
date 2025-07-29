@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ObjCARCOpts.cpp}` Namespace Reference
+# `anonymous{ObjCARCOpts.cpp}` Namespace
 
 
 

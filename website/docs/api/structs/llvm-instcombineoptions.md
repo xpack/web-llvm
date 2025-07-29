@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineOptions` Struct Reference
+# `InstCombineOptions` Struct
 
 
 

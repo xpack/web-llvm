@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUExportClustering.cpp}` Namespace Reference
+# `anonymous{AMDGPUExportClustering.cpp}` Namespace
 
 
 

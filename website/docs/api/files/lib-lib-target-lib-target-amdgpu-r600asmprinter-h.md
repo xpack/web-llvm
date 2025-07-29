@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600AsmPrinter.h` File Reference
+# `R600AsmPrinter.h` File
 
 <p>R600 Assembly printer class. <a href="#details">More...</a></p>
 

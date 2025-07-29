@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegSubRegPair` Struct Reference
+# `RegSubRegPair` Struct
 
 <p>A pair composed of a register and a sub-register index. <a href="#details">More...</a></p>
 

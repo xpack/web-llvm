@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PHIElimination.cpp}` Namespace Reference
+# `anonymous{PHIElimination.cpp}` Namespace
 
 
 

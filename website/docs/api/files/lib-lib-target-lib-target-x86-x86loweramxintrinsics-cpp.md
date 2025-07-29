@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LowerAMXIntrinsics.cpp` File Reference
+# `X86LowerAMXIntrinsics.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IDFCalculatorDetail` Namespace Reference
+# `IDFCalculatorDetail` Namespace
 
 
 

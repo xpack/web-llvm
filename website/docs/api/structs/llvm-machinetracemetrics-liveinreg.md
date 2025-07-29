@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveInReg` Struct Reference
+# `LiveInReg` Struct
 
 <p>A virtual register or regunit required by a basic block or its trace successors. <a href="#details">More...</a></p>
 

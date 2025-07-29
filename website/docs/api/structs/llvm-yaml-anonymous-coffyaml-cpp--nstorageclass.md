@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NStorageClass` Struct Reference
+# `NStorageClass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LastprivateT` Struct Template Reference
+# `LastprivateT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `last_type` Struct Template Reference
+# `last_type` Struct Template
 
 <p>A type trait whose <span class="doxyComputerOutput">type</span> field is the last of its template parameters. <a href="#details">More...</a></p>
 

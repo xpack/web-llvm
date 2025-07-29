@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIArgListInfo` Struct Reference
+# `DIArgListInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> for <a href="/web-llvm/docs/api/classes/llvm/diarglist">DIArgList</a>. <a href="#details">More...</a></p>
 

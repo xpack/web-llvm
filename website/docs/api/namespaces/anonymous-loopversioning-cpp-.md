@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopVersioning.cpp}` Namespace Reference
+# `anonymous{LoopVersioning.cpp}` Namespace
 
 
 

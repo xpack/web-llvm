@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueSelect` Struct Reference
+# `ValueSelect` Struct
 
 <p>Returns incoming <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> *, if the requested type is <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * too, or a default value, otherwise. <a href="#details">More...</a></p>
 

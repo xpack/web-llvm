@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PdbSearchOptions` Struct Reference
+# `PdbSearchOptions` Struct
 
 
 

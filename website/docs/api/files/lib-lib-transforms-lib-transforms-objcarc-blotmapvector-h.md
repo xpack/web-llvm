@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlotMapVector.h` File Reference
+# `BlotMapVector.h` File
 
 
 

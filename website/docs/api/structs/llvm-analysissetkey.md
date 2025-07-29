@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisSetKey` Struct Reference
+# `AnalysisSetKey` Struct
 
 <p>A special type used to provide an address that identifies a set of related analyses. <a href="#details">More...</a></p>
 

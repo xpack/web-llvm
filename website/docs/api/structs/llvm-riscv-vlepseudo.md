@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLEPseudo` Struct Reference
+# `VLEPseudo` Struct
 
 
 

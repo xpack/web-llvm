@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXSubtarget.cpp` File Reference
+# `DirectXSubtarget.cpp` File
 
 <p>This file implements the DirectX-specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

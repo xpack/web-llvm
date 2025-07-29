@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionInfo` Struct Reference
+# `OptionInfo` Struct
 
 
 

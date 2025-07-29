@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SharedLiveDebugValues` Namespace Reference
+# `SharedLiveDebugValues` Namespace
 
 
 

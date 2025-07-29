@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_provider` Struct Template Reference
+# `format_provider` Struct Template
 
 <p>Format provider for <a href="/web-llvm/docs/api/namespaces/llvm/sys/#a52f2c3fdd7f80c1991d8c7079489efff">TimePoint&lt;&gt;</a> <a href="#details">More...</a></p>
 

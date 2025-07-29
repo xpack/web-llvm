@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CombinerInfo` Struct Reference
+# `CombinerInfo` Struct
 
 
 

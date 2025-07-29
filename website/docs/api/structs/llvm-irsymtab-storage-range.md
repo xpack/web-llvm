@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Range` Struct Template Reference
+# `Range` Struct Template
 
 <p>A reference to a range of objects in the symbol table. <a href="#details">More...</a></p>
 

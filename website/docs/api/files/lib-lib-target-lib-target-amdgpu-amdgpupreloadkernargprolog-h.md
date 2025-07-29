@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPreloadKernArgProlog.h` File Reference
+# `AMDGPUPreloadKernArgProlog.h` File
 
 
 

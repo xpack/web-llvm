@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutProfileInteger` Struct Template Reference
+# `ImutProfileInteger` Struct Template
 
 <p>Profile traits for integers. <a href="#details">More...</a></p>
 

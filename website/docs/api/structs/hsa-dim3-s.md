@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hsa_dim3_s` Struct Reference
+# `hsa_dim3_s` Struct
 
 
 

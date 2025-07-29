@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedSaveAliaseesAndUsed` Struct Reference
+# `ScopedSaveAliaseesAndUsed` Struct
 
 
 

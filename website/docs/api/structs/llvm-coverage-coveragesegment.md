@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoverageSegment` Struct Reference
+# `CoverageSegment` Struct
 
 <p>The execution count information starting at a point in a file. <a href="#details">More...</a></p>
 

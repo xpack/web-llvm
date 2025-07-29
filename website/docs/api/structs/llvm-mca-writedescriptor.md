@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriteDescriptor` Struct Reference
+# `WriteDescriptor` Struct
 
 <p>A register write descriptor. <a href="#details">More...</a></p>
 

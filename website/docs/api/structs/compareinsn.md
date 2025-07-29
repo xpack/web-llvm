@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompareInsn` Struct Reference
+# `CompareInsn` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedBranchProtection` Struct Reference
+# `ParsedBranchProtection` Struct
 
 
 

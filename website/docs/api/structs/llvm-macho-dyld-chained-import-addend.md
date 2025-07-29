@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_chained_import_addend` Struct Reference
+# `dyld_chained_import_addend` Struct
 
 
 

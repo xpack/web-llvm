@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Entry` Struct Reference
+# `Entry` Struct
 
 <p>Bookkeeping for a region to help ensure that we don't mix blocks not dominated by the its header among its blocks. <a href="#details">More...</a></p>
 

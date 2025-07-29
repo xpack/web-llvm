@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lto` Namespace Reference
+# `lto` Namespace
 
 
 

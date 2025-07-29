@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSymbolTableValue` Struct Reference
+# `MCSymbolTableValue` Struct
 
 <p>The value for an entry in the symbol table of an <a href="/web-llvm/docs/api/classes/llvm/mccontext">MCContext</a>. <a href="#details">More...</a></p>
 

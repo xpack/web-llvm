@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Polymorphic` Struct Reference
+# `Polymorphic` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncrementalSourceMgr.cpp` File Reference
+# `IncrementalSourceMgr.cpp` File
 
 <p>This file defines some implementations for <a href="/web-llvm/docs/api/classes/llvm/mca/incrementalsourcemgr">IncrementalSourceMgr</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Emitter` Namespace Reference
+# `Emitter` Namespace
 
 
 

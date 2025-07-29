@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCTargetStreamer.h` File Reference
+# `ARCTargetStreamer.h` File
 
 
 

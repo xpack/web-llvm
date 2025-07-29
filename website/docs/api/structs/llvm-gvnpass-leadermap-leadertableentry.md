@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LeaderTableEntry` Struct Reference
+# `LeaderTableEntry` Struct
 
 
 

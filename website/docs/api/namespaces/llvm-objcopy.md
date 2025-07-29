@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `objcopy` Namespace Reference
+# `objcopy` Namespace
 
 
 

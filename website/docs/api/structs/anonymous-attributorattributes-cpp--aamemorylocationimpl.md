@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryLocationImpl` Struct Reference
+# `AAMemoryLocationImpl` Struct
 
 
 

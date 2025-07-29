@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockSplitInfo` Struct Reference
+# `BlockSplitInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonDepMask.h` File Reference
+# `HexagonDepMask.h` File
 
 
 

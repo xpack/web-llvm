@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMRI` Namespace Reference
+# `ARMRI` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/llvm/register">Register</a> allocation hints. <a href="#details">More...</a></p>
 

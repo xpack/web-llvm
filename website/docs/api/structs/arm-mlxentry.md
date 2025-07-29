@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARM_MLxEntry` Struct Reference
+# `ARM_MLxEntry` Struct
 
 <p><a href="/web-llvm/docs/api/structs/arm-mlxentry">ARM_MLxEntry</a> - <a href="/web-llvm/docs/api/classes/llvm/record">Record</a> information about MLA / MLS instructions. <a href="#details">More...</a></p>
 

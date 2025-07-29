@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/WebAssembly/Utils` Folder Reference
+# `lib/Target/WebAssembly/Utils` Folder
 
 
 

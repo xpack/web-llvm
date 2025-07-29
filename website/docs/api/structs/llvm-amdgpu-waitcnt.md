@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Waitcnt` Struct Reference
+# `Waitcnt` Struct
 
 <p>Represents the counter values to wait for in an s_waitcnt instruction. <a href="#details">More...</a></p>
 

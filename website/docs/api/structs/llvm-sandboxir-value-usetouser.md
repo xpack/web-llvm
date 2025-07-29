@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseToUser` Struct Reference
+# `UseToUser` Struct
 
 <p>Helper for <a href="/web-llvm/docs/api/classes/llvm/mapped-iterator">mapped_iterator</a>. <a href="#details">More...</a></p>
 

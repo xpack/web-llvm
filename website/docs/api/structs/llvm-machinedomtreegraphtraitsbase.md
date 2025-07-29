@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineDomTreeGraphTraitsBase` Struct Template Reference
+# `MachineDomTreeGraphTraitsBase` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/dominatortree">DominatorTree</a> <a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> specialization so the <a href="/web-llvm/docs/api/classes/llvm/dominatortree">DominatorTree</a> can be iterable by generic graph iterators. <a href="#details">More...</a></p>
 

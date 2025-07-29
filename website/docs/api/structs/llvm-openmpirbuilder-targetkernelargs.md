@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetKernelArgs` Struct Reference
+# `TargetKernelArgs` Struct
 
 <p>Data structure that contains the needed information to construct the kernel args vector. <a href="#details">More...</a></p>
 

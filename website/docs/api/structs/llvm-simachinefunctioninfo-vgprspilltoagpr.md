@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VGPRSpillToAGPR` Struct Reference
+# `VGPRSpillToAGPR` Struct
 
 
 

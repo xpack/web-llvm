@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HipStdPar.cpp` File Reference
+# `HipStdPar.cpp` File
 
 
 

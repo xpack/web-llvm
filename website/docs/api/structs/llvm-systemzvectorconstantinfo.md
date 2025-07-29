@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZVectorConstantInfo` Struct Reference
+# `SystemZVectorConstantInfo` Struct
 
 
 

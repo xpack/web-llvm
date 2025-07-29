@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopBounds` Struct Reference
+# `LoopBounds` Struct
 
 <p>Below are some utilities to get the loop guard, loop bounds and induction variable, and to check if a given phinode is an auxiliary induction variable, if the loop is guarded, and if the loop is canonical. <a href="#details">More...</a></p>
 

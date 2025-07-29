@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Renamer` Struct Reference
+# `Renamer` Struct
 
 
 

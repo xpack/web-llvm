@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveReg` Struct Reference
+# `LiveReg` Struct
 
 <p>Everything we know about a live virtual register. <a href="#details">More...</a></p>
 

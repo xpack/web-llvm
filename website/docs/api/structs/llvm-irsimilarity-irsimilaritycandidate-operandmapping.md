@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandMapping` Struct Reference
+# `OperandMapping` Struct
 
 
 

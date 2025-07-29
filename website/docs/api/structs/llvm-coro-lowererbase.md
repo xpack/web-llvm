@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowererBase` Struct Reference
+# `LowererBase` Struct
 
 
 

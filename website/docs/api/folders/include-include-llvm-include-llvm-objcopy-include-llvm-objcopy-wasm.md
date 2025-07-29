@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/ObjCopy/wasm` Folder Reference
+# `include/llvm/ObjCopy/wasm` Folder
 
 
 

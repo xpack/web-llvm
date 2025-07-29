@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `elf` Namespace Reference
+# `elf` Namespace
 
 
 

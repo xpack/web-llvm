@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TwoAddressInstructionPass.cpp}` Namespace Reference
+# `anonymous{TwoAddressInstructionPass.cpp}` Namespace
 
 
 

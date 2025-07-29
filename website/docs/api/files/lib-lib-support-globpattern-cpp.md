@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobPattern.cpp` File Reference
+# `GlobPattern.cpp` File
 
 
 

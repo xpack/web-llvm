@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVFenceField` Namespace Reference
+# `RISCVFenceField` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DVEntry` Struct Reference
+# `DVEntry` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/dependence/dventry">Dependence::DVEntry</a> - Each level in the distance/direction vector has a direction (or perhaps a union of several directions), and perhaps a distance. <a href="#details">More...</a></p>
 

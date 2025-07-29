@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AACallEdgesCallSite` Struct Reference
+# `AACallEdgesCallSite` Struct
 
 
 

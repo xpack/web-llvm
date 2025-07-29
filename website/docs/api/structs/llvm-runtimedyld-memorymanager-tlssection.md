@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TLSSection` Struct Reference
+# `TLSSection` Struct
 
 <p>An allocated TLS section. <a href="#details">More...</a></p>
 

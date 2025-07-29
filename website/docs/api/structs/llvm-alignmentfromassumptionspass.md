@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignmentFromAssumptionsPass` Struct Reference
+# `AlignmentFromAssumptionsPass` Struct
 
 
 

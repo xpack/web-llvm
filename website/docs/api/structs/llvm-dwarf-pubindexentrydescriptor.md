@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PubIndexEntryDescriptor` Struct Reference
+# `PubIndexEntryDescriptor` Struct
 
 <p>Describes an entry of the various gnu_pub* debug sections. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/CGData` Folder Reference
+# `include/llvm/CGData` Folder
 
 
 

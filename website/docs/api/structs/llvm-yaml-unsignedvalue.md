@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnsignedValue` Struct Reference
+# `UnsignedValue` Struct
 
 <p>A wrapper around unsigned which contains a source range that's being set during parsing. <a href="#details">More...</a></p>
 

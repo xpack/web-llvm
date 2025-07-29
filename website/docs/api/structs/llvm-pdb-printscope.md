@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintScope` Struct Reference
+# `PrintScope` Struct
 
 
 

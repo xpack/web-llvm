@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86CustomBehaviour.cpp` File Reference
+# `X86CustomBehaviour.cpp` File
 
 <p>This file implements methods from the X86CustomBehaviour class. <a href="#details">More...</a></p>
 

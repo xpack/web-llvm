@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVLandingPadSetup.cpp}` Namespace Reference
+# `anonymous{RISCVLandingPadSetup.cpp}` Namespace
 
 
 

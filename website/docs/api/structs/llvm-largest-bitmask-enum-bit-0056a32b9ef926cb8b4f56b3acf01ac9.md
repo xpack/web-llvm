@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `largest_bitmask_enum_bit` Struct Template Reference
+# `largest_bitmask_enum_bit` Struct Template
 
 
 

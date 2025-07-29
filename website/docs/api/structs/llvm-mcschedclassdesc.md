@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSchedClassDesc` Struct Reference
+# `MCSchedClassDesc` Struct
 
 <p>Summarize the scheduling resources required for an instruction of a particular scheduling class. <a href="#details">More...</a></p>
 

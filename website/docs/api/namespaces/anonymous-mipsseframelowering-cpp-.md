@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsSEFrameLowering.cpp}` Namespace Reference
+# `anonymous{MipsSEFrameLowering.cpp}` Namespace
 
 
 

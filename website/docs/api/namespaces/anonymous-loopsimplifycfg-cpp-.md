@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopSimplifyCFG.cpp}` Namespace Reference
+# `anonymous{LoopSimplifyCFG.cpp}` Namespace
 
 
 

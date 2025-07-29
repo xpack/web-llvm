@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizeResult` Struct Reference
+# `LoopVectorizeResult` Struct
 
 <p>Storage for information about made changes. <a href="#details">More...</a></p>
 

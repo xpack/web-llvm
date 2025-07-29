@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Scalar constants Reference
+# Scalar constants
 
 <p>Functions in this group model <a href="/web-llvm/docs/api/groups/llvmcsupporttypes/#ga113ce952344691b8304a43a314f8be17">LLVMValueRef</a> instances that correspond to constants referring to scalar types. <a href="#details">More...</a></p>
 

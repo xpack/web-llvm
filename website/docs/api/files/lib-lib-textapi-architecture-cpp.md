@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Architecture.cpp` File Reference
+# `Architecture.cpp` File
 
 
 

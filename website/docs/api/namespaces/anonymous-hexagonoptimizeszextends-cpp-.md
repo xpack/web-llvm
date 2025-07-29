@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonOptimizeSZextends.cpp}` Namespace Reference
+# `anonymous{HexagonOptimizeSZextends.cpp}` Namespace
 
 
 

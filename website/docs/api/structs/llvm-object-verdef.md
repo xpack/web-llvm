@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerDef` Struct Reference
+# `VerDef` Struct
 
 
 

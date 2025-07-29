@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDFieldImpl` Struct Template Reference
+# `MDFieldImpl` Struct Template
 
 <p>Structure to represent an optional metadata field. <a href="#details">More...</a></p>
 

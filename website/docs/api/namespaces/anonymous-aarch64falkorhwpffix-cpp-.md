@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64FalkorHWPFFix.cpp}` Namespace Reference
+# `anonymous{AArch64FalkorHWPFFix.cpp}` Namespace
 
 
 

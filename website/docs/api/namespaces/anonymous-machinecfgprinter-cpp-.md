@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineCFGPrinter.cpp}` Namespace Reference
+# `anonymous{MachineCFGPrinter.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCPendingError` Struct Reference
+# `MCPendingError` Struct
 
 
 

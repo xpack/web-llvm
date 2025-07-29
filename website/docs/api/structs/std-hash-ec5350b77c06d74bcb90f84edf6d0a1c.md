@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hash` Struct Template Reference
+# `hash` Struct Template
 
 <p>Template specialization for FunctionId so that it can be used in STL containers. <a href="#details">More...</a></p>
 

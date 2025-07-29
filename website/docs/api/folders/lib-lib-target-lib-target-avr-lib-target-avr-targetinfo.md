@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/AVR/TargetInfo` Folder Reference
+# `lib/Target/AVR/TargetInfo` Folder
 
 
 

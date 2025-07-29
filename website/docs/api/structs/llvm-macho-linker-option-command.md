@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `linker_option_command` Struct Reference
+# `linker_option_command` Struct
 
 
 

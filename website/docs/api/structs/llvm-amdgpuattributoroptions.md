@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAttributorOptions` Struct Reference
+# `AMDGPUAttributorOptions` Struct
 
 
 

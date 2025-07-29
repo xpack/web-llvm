@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SecHdrTableEntry` Struct Reference
+# `SecHdrTableEntry` Struct
 
 
 

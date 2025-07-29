@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAMDSizeRangeAttribute` Struct Reference
+# `AAAMDSizeRangeAttribute` Struct
 
 <p><a href="#a8f316cae99ec57b6e08fd003f7d3d5c2">Base</a> class to derive different size ranges. <a href="#details">More...</a></p>
 

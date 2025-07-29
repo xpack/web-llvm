@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VirtualFileSystem.cpp}` Namespace Reference
+# `anonymous{VirtualFileSystem.cpp}` Namespace
 
 
 

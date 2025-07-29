@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PGOCtxProfReader.cpp}` Namespace Reference
+# `anonymous{PGOCtxProfReader.cpp}` Namespace
 
 
 

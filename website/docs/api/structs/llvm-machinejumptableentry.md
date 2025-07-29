@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineJumpTableEntry` Struct Reference
+# `MachineJumpTableEntry` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/machinejumptableentry">MachineJumpTableEntry</a> - One jump table in the jump table info. <a href="#details">More...</a></p>
 

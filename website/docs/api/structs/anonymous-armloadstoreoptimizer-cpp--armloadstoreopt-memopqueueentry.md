@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemOpQueueEntry` Struct Reference
+# `MemOpQueueEntry` Struct
 
 <p>A set of load/store MachineInstrs with same base register sorted by offset. <a href="#details">More...</a></p>
 

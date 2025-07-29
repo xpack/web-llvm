@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UntiedT` Struct Template Reference
+# `UntiedT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyStructLayout` Struct Reference
+# `LegacyStructLayout` Struct
 
 
 

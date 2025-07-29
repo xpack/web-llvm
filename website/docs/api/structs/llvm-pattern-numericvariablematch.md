@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NumericVariableMatch` Struct Reference
+# `NumericVariableMatch` Struct
 
 <p>Structure representing the definition of a numeric variable in a pattern. <a href="#details">More...</a></p>
 

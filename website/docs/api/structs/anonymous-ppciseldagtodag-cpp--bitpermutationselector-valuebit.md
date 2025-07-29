@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueBit` Struct Reference
+# `ValueBit` Struct
 
 
 

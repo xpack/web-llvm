@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitcodeFileContents` Struct Reference
+# `BitcodeFileContents` Struct
 
 
 

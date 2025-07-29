@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisPassConcept` Struct Template Reference
+# `AnalysisPassConcept` Struct Template
 
 <p>Abstract concept of an analysis pass. <a href="#details">More...</a></p>
 

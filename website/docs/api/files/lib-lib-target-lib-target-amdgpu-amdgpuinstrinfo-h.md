@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstrInfo.h` File Reference
+# `AMDGPUInstrInfo.h` File
 
 <p>Contains the definition of a TargetInstrInfo class that is common to all AMD GPUs. <a href="#details">More...</a></p>
 

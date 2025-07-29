@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsExpandPseudo.cpp` File Reference
+# `MipsExpandPseudo.cpp` File
 
 
 

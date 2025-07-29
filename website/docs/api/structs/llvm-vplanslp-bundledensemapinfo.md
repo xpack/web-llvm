@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BundleDenseMapInfo` Struct Reference
+# `BundleDenseMapInfo` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> implementation for using <a href="/web-llvm/docs/api/classes/llvm/smallvector">SmallVector&lt;VPValue *, 4&gt;</a> as <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a> keys. <a href="#details">More...</a></p>
 

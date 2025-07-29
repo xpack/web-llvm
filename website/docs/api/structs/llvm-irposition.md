@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRPosition` Struct Reference
+# `IRPosition` Struct
 
 <p>Helper to describe and deal with positions in the LLVM-IR. <a href="#details">More...</a></p>
 

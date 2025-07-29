@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExactEqualsExpression` Struct Reference
+# `ExactEqualsExpression` Struct
 
 
 

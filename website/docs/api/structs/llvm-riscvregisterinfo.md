@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVRegisterInfo` Struct Reference
+# `RISCVRegisterInfo` Struct
 
 
 

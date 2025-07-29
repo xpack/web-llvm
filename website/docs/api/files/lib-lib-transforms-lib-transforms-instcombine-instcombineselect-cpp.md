@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineSelect.cpp` File Reference
+# `InstCombineSelect.cpp` File
 
 
 

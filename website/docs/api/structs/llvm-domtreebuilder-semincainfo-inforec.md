@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InfoRec` Struct Reference
+# `InfoRec` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShouldRunExtraPasses` Struct Template Reference
+# `ShouldRunExtraPasses` Struct Template
 
 <p>A marker analysis to determine if extra passes should be run on demand. <a href="#details">More...</a></p>
 

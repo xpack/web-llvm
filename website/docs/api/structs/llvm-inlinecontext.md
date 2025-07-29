@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineContext` Struct Reference
+# `InlineContext` Struct
 
 <p>Provides context on when an inline advisor is constructed in the pipeline (e.g., link phase, inline driver). <a href="#details">More...</a></p>
 

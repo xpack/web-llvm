@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DumpVisitor` Struct Reference
+# `DumpVisitor` Struct
 
 
 

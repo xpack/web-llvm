@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitIntegerState` Struct Template Reference
+# `BitIntegerState` Struct Template
 
 <p>Specialization of the integer state for a bit-wise encoding. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Result` Struct Reference
+# `Result` Struct
 
 
 

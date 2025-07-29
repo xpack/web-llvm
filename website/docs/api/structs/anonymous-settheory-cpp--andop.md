@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AndOp` Struct Reference
+# `AndOp` Struct
 
 
 

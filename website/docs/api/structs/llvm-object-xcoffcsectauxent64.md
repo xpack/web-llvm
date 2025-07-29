@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFCsectAuxEnt64` Struct Reference
+# `XCOFFCsectAuxEnt64` Struct
 
 
 

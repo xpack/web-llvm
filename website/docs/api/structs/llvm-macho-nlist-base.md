@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `nlist_base` Struct Reference
+# `nlist_base` Struct
 
 
 

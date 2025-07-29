@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMOutgoingValueHandler` Struct Reference
+# `ARMOutgoingValueHandler` Struct
 
 <p>Helper class for values going out through an ABI boundary (used for handling function return values and call parameters). <a href="#details">More...</a></p>
 

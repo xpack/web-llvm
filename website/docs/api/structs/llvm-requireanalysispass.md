@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RequireAnalysisPass` Struct Template Reference
+# `RequireAnalysisPass` Struct Template
 
 <p>A utility pass template to force an analysis result to be available. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoCaptureArgument` Struct Reference
+# `AANoCaptureArgument` Struct
 
 <p>NoCapture attribute for function arguments. <a href="#details">More...</a></p>
 

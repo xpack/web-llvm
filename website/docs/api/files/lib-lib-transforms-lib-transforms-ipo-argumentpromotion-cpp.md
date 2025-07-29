@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentPromotion.cpp` File Reference
+# `ArgumentPromotion.cpp` File
 
 
 

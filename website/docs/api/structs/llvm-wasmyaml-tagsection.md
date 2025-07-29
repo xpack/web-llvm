@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TagSection` Struct Reference
+# `TagSection` Struct
 
 
 

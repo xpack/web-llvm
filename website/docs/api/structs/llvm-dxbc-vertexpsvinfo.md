@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VertexPSVInfo` Struct Reference
+# `VertexPSVInfo` Struct
 
 
 

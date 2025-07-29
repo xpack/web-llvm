@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceBindInfo` Struct Reference
+# `ResourceBindInfo` Struct
 
 
 

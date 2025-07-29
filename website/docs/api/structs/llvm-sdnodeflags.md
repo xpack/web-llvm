@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDNodeFlags` Struct Reference
+# `SDNodeFlags` Struct
 
 <p>These are IR-level optimization flags that may be propagated to SDNodes. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyUnaryOp_match` Struct Template Reference
+# `AnyUnaryOp_match` Struct Template
 
 
 

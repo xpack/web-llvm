@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WritableThumbRelocation` Struct Reference
+# `WritableThumbRelocation` Struct
 
 <p>32-bit Thumb instructions are stored as two little-endian halfwords. <a href="#details">More...</a></p>
 

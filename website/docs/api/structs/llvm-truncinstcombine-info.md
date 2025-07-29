@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Info` Struct Reference
+# `Info` Struct
 
 <p>Information per each instruction in the expression graph. <a href="#details">More...</a></p>
 

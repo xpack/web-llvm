@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `omp` Namespace Reference
+# `omp` Namespace
 
 
 

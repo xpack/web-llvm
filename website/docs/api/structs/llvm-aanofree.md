@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFree` Struct Reference
+# `AANoFree` Struct
 
 <p>An <a href="/web-llvm/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> for nofree. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NMachine` Struct Reference
+# `NMachine` Struct
 
 
 

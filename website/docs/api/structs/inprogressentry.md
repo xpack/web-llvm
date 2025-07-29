@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InProgressEntry` Struct Reference
+# `InProgressEntry` Struct
 
 
 

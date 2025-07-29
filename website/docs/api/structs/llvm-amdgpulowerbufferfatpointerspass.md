@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerBufferFatPointersPass` Struct Reference
+# `AMDGPULowerBufferFatPointersPass` Struct
 
 
 

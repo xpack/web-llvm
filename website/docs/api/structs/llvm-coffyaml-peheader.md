@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PEHeader` Struct Reference
+# `PEHeader` Struct
 
 
 

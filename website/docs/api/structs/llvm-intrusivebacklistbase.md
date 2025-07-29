@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrusiveBackListBase` Struct Reference
+# `IntrusiveBackListBase` Struct
 
 
 

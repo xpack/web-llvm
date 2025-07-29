@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetStackID` Namespace Reference
+# `TargetStackID` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VLSEGPseudo` Struct Reference
+# `VLSEGPseudo` Struct
 
 
 

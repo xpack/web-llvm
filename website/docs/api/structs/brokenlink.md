@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BrokenLink` Struct Reference
+# `BrokenLink` Struct
 
 <p>A broken link in the keep chain. <a href="#details">More...</a></p>
 

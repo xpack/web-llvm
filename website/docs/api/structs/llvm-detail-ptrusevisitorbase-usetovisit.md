@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseToVisit` Struct Reference
+# `UseToVisit` Struct
 
 <p>A struct of the data needed to visit a particular use. <a href="#details">More...</a></p>
 

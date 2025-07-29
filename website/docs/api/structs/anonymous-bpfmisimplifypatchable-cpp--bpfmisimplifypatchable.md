@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMISimplifyPatchable` Struct Reference
+# `BPFMISimplifyPatchable` Struct
 
 
 

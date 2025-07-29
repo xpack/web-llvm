@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNRegPressure.h` File Reference
+# `GCNRegPressure.h` File
 
 <p>This file defines the GCNRegPressure class, which tracks registry pressure by bookkeeping number of SGPR/VGPRs used, weights for large SGPR/VGPRs. <a href="#details">More...</a></p>
 

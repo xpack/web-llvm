@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/WebAssembly/MCTargetDesc` Folder Reference
+# `lib/Target/WebAssembly/MCTargetDesc` Folder
 
 
 

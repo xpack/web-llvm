@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMachineFunctionInfo.h` File Reference
+# `HexagonMachineFunctionInfo.h` File
 
 
 

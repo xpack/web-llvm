@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsAtEndT` Struct Reference
+# `IsAtEndT` Struct
 
 <p>Nonce type to select the constructor for the end iterator. <a href="#details">More...</a></p>
 

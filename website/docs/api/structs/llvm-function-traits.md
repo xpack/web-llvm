@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `function_traits` Struct Template Reference
+# `function_traits` Struct Template
 
 <p>This class provides various trait information about a callable object. <a href="#details">More...</a></p>
 

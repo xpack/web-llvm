@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InferenceDescriptor` Struct Reference
+# `InferenceDescriptor` Struct
 
 <p>Describes a request for inference of a single attribute. <a href="#details">More...</a></p>
 

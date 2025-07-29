@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86InstrFMA3Group` Struct Reference
+# `X86InstrFMA3Group` Struct
 
 <p>This class is used to group {132, 213, 231} forms of FMA opcodes together. <a href="#details">More...</a></p>
 

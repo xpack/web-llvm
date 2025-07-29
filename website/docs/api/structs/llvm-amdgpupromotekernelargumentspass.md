@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPromoteKernelArgumentsPass` Struct Reference
+# `AMDGPUPromoteKernelArgumentsPass` Struct
 
 
 

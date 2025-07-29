@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `vputils` Namespace Reference
+# `vputils` Namespace
 
 
 

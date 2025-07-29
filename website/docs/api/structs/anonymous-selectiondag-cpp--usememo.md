@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseMemo` Struct Reference
+# `UseMemo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-selectiondag-cpp-/usememo">UseMemo</a> - This class is used by <a href="/web-llvm/docs/api/classes/llvm/selectiondag/#a2869d5459dca008c1c7a1e824e7faf5e">SelectionDAG::ReplaceAllUsesOfValuesWith</a> to record information about a use. <a href="#details">More...</a></p>
 

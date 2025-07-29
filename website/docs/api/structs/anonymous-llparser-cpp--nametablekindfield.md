@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameTableKindField` Struct Reference
+# `NameTableKindField` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_neg_zero_fp` Struct Reference
+# `is_neg_zero_fp` Struct
 
 
 

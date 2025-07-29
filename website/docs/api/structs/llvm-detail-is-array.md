@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_array` Struct Template Reference
+# `is_array` Struct Template
 
 <p>A type trait whose <span class="doxyComputerOutput">value</span> field is <span class="doxyComputerOutput">true</span> if the given type is a <a href="/web-llvm/docs/api/classes/llvm/bcarray">BCArray</a> (of any element kind). <a href="#details">More...</a></p>
 

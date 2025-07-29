@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInterFnReachabilityFunction` Struct Reference
+# `AAInterFnReachabilityFunction` Struct
 
 <p>----------------—<a href="/web-llvm/docs/api/structs/llvm/aainterfnreachability">AAInterFnReachability</a> Attribute-----------------------— <a href="#details">More...</a></p>
 

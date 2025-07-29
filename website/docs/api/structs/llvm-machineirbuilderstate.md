@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineIRBuilderState` Struct Reference
+# `MachineIRBuilderState` Struct
 
 <p>Class which stores all the state required in a <a href="/web-llvm/docs/api/classes/llvm/machineirbuilder">MachineIRBuilder</a>. <a href="#details">More...</a></p>
 

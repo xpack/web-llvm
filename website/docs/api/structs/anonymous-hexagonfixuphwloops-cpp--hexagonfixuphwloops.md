@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonFixupHwLoops` Struct Reference
+# `HexagonFixupHwLoops` Struct
 
 
 

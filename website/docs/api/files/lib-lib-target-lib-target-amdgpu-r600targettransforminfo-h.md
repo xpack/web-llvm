@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TargetTransformInfo.h` File Reference
+# `R600TargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the R600 target machine. <a href="#details">More...</a></p>
 

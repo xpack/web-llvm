@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeAttrs` Struct Reference
+# `NodeAttrs` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsFastISel.cpp` File Reference
+# `MipsFastISel.cpp` File
 
 <p>This file defines the MIPS-specific support for the <a href="/web-llvm/docs/api/classes/llvm/fastisel">FastISel</a> class. <a href="#details">More...</a></p>
 

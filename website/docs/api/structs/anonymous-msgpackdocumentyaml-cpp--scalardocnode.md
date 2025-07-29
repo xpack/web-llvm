@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarDocNode` Struct Reference
+# `ScalarDocNode` Struct
 
 
 

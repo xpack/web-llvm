@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AffinityT` Struct Template Reference
+# `AffinityT` Struct Template
 
 
 

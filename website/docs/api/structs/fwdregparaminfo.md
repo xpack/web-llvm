@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FwdRegParamInfo` Struct Reference
+# `FwdRegParamInfo` Struct
 
 <p>Represents a parameter whose call site value can be described by applying a debug expression to a register in the forwarded register worklist. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SysAlias` Struct Reference
+# `SysAlias` Struct
 
 
 

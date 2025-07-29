@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchExpandPseudoInsts.cpp}` Namespace Reference
+# `anonymous{LoongArchExpandPseudoInsts.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DictScope` Struct Reference
+# `DictScope` Struct
 
 
 

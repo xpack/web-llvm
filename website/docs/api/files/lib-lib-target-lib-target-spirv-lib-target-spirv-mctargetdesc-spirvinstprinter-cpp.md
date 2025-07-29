@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVInstPrinter.cpp` File Reference
+# `SPIRVInstPrinter.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600.h` File Reference
+# `R600.h` File
 
 
 

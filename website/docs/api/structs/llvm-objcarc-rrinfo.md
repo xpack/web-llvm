@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RRInfo` Struct Reference
+# `RRInfo` Struct
 
 <p>Unidirectional information about either a retain-decrement-use-release sequence or release-use-decrement-retain reverse sequence. <a href="#details">More...</a></p>
 

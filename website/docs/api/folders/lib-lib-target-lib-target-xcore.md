@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/XCore` Folder Reference
+# `lib/Target/XCore` Folder
 
 
 

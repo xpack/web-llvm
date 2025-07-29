@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatchT` Struct Template Reference
+# `MatchT` Struct Template
 
 
 

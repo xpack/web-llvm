@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoArmMov` Struct Reference
+# `FixupInfoArmMov` Struct
 
 
 

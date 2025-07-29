@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVOpcode` Struct Reference
+# `RISCVOpcode` Struct
 
 
 

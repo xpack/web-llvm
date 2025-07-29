@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugValueSubstitution` Struct Reference
+# `DebugValueSubstitution` Struct
 
 <p>Serializable representation of debug value substitutions. <a href="#details">More...</a></p>
 

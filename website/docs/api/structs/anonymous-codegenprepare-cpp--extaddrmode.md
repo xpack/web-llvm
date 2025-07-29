@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtAddrMode` Struct Reference
+# `ExtAddrMode` Struct
 
 <p>This is an extended version of TargetLowering::AddrMode which holds actual Value*'s for register values. <a href="#details">More...</a></p>
 

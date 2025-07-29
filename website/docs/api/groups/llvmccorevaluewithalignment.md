@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Values with alignment Reference
+# Values with alignment
 
 <p>Functions in this group only apply to values with alignment, i.e.</p>
 

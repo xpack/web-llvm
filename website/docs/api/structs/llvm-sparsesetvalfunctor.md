@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparseSetValFunctor` Struct Template Reference
+# `SparseSetValFunctor` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/sparsesetvalfunctor">SparseSetValFunctor</a> - Helper class for selecting <a href="/web-llvm/docs/api/structs/llvm/sparsesetvaltraits">SparseSetValTraits</a>. <a href="#details">More...</a></p>
 

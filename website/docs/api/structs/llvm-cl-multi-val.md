@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `multi_val` Struct Reference
+# `multi_val` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyDebugFixup.cpp}` Namespace Reference
+# `anonymous{WebAssemblyDebugFixup.cpp}` Namespace
 
 
 

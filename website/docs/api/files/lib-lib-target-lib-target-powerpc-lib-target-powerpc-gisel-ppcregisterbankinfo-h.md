@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCRegisterBankInfo.h` File Reference
+# `PPCRegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for PowerPC. <a href="#details">More...</a></p>
 

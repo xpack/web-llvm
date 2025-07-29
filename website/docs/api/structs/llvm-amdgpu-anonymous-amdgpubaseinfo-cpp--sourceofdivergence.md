@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SourceOfDivergence` Struct Reference
+# `SourceOfDivergence` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLinkerOptions` Struct Reference
+# `DWARFLinkerOptions` Struct
 
 <p>linking options <a href="#details">More...</a></p>
 

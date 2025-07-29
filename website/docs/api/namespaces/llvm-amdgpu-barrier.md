@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Barrier` Namespace Reference
+# `Barrier` Namespace
 
 
 

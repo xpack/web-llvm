@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Derived` Struct Reference
+# `Derived` Struct
 
 
 

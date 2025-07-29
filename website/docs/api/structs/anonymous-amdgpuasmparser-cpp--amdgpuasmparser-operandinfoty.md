@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandInfoTy` Struct Reference
+# `OperandInfoTy` Struct
 
 
 

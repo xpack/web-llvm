@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `wasm` Namespace Reference
+# `wasm` Namespace
 
 
 

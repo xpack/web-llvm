@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Token` Struct Reference
+# `Token` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/yaml/token">Token</a> - A single YAML token. <a href="#details">More...</a></p>
 

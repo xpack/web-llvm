@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTuneMethodInfo` Struct Reference
+# `VTuneMethodInfo` Struct
 
 
 

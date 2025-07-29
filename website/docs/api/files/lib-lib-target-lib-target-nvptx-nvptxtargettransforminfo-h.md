@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXTargetTransformInfo.h` File Reference
+# `NVPTXTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the NVPTX target machine. <a href="#details">More...</a></p>
 

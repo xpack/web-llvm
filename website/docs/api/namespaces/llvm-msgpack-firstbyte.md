@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FirstByte` Namespace Reference
+# `FirstByte` Namespace
 
 <p>The first byte identifiers of MessagePack object formats. <a href="#details">More...</a></p>
 

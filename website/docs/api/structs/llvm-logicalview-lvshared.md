@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVShared` Struct Reference
+# `LVShared` Struct
 
 
 

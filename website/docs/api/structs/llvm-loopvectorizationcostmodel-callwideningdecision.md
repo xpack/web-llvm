@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallWideningDecision` Struct Reference
+# `CallWideningDecision` Struct
 
 
 

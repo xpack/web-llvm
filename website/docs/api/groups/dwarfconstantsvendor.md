@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Dwarf "vendor" for constants Reference
+# Dwarf "vendor" for constants
 
 <p>These functions return an identifier describing "who" defined the constant, either the DWARF standard itself or the vendor who defined the extension. <a href="#details">More...</a></p>
 

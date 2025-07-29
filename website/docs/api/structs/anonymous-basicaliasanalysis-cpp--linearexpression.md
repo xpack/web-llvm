@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinearExpression` Struct Reference
+# `LinearExpression` Struct
 
 <p>Represents zext(sext(trunc(V))) * Scale + Offset. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DVIRecoveryRec` Struct Reference
+# `DVIRecoveryRec` Struct
 
 <p>Holds all the required data to salvage a dbg.value using the pre-LSR SCEVs and <a href="/web-llvm/docs/api/classes/llvm/diexpression">DIExpression</a>. <a href="#details">More...</a></p>
 

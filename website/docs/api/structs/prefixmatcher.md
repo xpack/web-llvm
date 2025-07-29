@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrefixMatcher` Struct Reference
+# `PrefixMatcher` Struct
 
 
 

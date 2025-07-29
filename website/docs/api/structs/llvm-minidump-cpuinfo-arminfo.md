@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArmInfo` Struct Reference
+# `ArmInfo` Struct
 
 
 

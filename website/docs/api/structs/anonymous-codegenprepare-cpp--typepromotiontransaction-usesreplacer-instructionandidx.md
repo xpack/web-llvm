@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionAndIdx` Struct Reference
+# `InstructionAndIdx` Struct
 
 <p>Helper structure to keep track of the replaced uses. <a href="#details">More...</a></p>
 

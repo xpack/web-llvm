@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InternalInstruction` Struct Reference
+# `InternalInstruction` Struct
 
 <p>The x86 internal instruction, which is produced by the decoder. <a href="#details">More...</a></p>
 

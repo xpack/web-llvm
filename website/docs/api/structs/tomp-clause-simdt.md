@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimdT` Struct Template Reference
+# `SimdT` Struct Template
 
 
 

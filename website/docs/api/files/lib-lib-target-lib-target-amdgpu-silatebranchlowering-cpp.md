@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILateBranchLowering.cpp` File Reference
+# `SILateBranchLowering.cpp` File
 
 <p>This pass mainly lowers early terminate pseudo instructions. <a href="#details">More...</a></p>
 

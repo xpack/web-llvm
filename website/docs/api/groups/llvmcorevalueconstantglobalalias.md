@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Global Aliases Reference
+# Global Aliases
 
 <p>This group contains function that operate on global alias values. <a href="#details">More...</a></p>
 

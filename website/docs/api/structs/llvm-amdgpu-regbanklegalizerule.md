@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegBankLegalizeRule` Struct Reference
+# `RegBankLegalizeRule` Struct
 
 
 

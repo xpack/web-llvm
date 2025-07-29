@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstrExpressionTrait` Struct Reference
+# `MachineInstrExpressionTrait` Struct
 
 <p>Special <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> traits to compare MachineInstr* by <em>value</em> of the instruction rather than by pointer value. <a href="#details">More...</a></p>
 

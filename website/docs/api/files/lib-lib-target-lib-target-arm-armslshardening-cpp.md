@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMSLSHardening.cpp` File Reference
+# `ARMSLSHardening.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewGVN.cpp` File Reference
+# `NewGVN.cpp` File
 
 <p>This file implements the new LLVM's Global <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> Numbering pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecisionParameters` Struct Reference
+# `DecisionParameters` Struct
 
 
 

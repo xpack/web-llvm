@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexMaskPair` Struct Reference
+# `IndexMaskPair` Struct
 
 
 

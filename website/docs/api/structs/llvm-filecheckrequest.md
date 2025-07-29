@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCheckRequest` Struct Reference
+# `FileCheckRequest` Struct
 
 <p>Contains info about various <a href="/web-llvm/docs/api/classes/llvm/filecheck">FileCheck</a> options. <a href="#details">More...</a></p>
 

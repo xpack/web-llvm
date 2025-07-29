@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCLegalizerInfo.cpp` File Reference
+# `PPCLegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for PowerPC. <a href="#details">More...</a></p>
 

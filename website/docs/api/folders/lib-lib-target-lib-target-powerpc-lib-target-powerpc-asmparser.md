@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/PowerPC/AsmParser` Folder Reference
+# `lib/Target/PowerPC/AsmParser` Folder
 
 
 

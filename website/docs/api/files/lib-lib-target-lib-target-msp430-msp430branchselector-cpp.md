@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430BranchSelector.cpp` File Reference
+# `MSP430BranchSelector.cpp` File
 
 
 

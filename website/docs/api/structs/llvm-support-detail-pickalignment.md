@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PickAlignment` Struct Template Reference
+# `PickAlignment` Struct Template
 
 <p><a href="#a660d2c8851fd5bfb532f9f73be4b1ba1a2fecc59ca732d5877341e57d1c746b6e">value</a> is either alignment, or alignof(T) if alignment is 0. <a href="#details">More...</a></p>
 

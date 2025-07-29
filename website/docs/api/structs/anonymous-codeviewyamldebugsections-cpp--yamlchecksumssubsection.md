@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLChecksumsSubsection` Struct Reference
+# `YAMLChecksumsSubsection` Struct
 
 
 

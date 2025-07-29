@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16HardFloatInfo` Namespace Reference
+# `Mips16HardFloatInfo` Namespace
 
 
 

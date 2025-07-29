@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockExtractorPass` Struct Reference
+# `BlockExtractorPass` Struct
 
 
 

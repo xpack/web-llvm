@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfiling.cpp` File Reference
+# `InstrProfiling.cpp` File
 
 
 

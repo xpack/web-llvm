@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Hash_Impl` Struct Template Reference
+# `Elf_Hash_Impl` Struct Template
 
 
 

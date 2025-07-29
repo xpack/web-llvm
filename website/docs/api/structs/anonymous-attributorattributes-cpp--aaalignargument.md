@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAlignArgument` Struct Reference
+# `AAAlignArgument` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/align">Align</a> attribute for function argument. <a href="#details">More...</a></p>
 

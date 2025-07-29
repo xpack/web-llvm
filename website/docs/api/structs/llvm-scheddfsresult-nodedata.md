@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeData` Struct Reference
+# `NodeData` Struct
 
 <p>Per-SUnit data computed during DFS for various metrics. <a href="#details">More...</a></p>
 

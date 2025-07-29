@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVCustomBehaviour.h` File Reference
+# `RISCVCustomBehaviour.h` File
 
 <p>This file defines the RISCVCustomBehaviour class which inherits from CustomBehaviour. <a href="#details">More...</a></p>
 

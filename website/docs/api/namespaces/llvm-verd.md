@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VERD` Namespace Reference
+# `VERD` Namespace
 
 
 

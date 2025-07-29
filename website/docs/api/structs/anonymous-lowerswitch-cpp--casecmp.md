@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseCmp` Struct Reference
+# `CaseCmp` Struct
 
 <p>The comparison function for sorting the switch case values in the vector. <a href="#details">More...</a></p>
 

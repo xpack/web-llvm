@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCVSXCopy.cpp` File Reference
+# `PPCVSXCopy.cpp` File
 
 
 

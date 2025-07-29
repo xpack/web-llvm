@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SendMsg` Namespace Reference
+# `SendMsg` Namespace
 
 
 

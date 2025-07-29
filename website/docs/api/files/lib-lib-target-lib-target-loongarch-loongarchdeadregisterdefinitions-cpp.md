@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchDeadRegisterDefinitions.cpp` File Reference
+# `LoongArchDeadRegisterDefinitions.cpp` File
 
 
 

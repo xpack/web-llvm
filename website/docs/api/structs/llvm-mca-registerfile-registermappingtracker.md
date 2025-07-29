@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMappingTracker` Struct Reference
+# `RegisterMappingTracker` Struct
 
 
 

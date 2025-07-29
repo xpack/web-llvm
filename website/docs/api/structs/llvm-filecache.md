@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCache` Struct Reference
+# `FileCache` Struct
 
 <p>This type represents a file cache system that manages caching of files. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemsetRange` Struct Reference
+# `MemsetRange` Struct
 
 <p>Represents a range of memset'd bytes with the ByteVal value. <a href="#details">More...</a></p>
 

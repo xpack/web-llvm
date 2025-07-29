@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonVLIWPacketizer.cpp}` Namespace Reference
+# `anonymous{HexagonVLIWPacketizer.cpp}` Namespace
 
 
 

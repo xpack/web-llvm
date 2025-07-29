@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARM_AM` Namespace Reference
+# `ARM_AM` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/arm-am">ARM_AM</a> - <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> Addressing Mode Stuff. <a href="#details">More...</a></p>
 

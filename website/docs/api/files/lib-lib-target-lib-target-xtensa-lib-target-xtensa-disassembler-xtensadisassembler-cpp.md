@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaDisassembler.cpp` File Reference
+# `XtensaDisassembler.cpp` File
 
 
 

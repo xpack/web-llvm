@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMPreAllocLoadStoreOpt` Struct Reference
+# `ARMPreAllocLoadStoreOpt` Struct
 
 <p>Pre- register allocation pass that move load / stores from consecutive locations close to make it more likely they will be combined later. <a href="#details">More...</a></p>
 

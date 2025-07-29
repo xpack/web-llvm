@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXImageOptimizer.cpp` File Reference
+# `NVPTXImageOptimizer.cpp` File
 
 
 

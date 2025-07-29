@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StartSection` Struct Reference
+# `StartSection` Struct
 
 
 

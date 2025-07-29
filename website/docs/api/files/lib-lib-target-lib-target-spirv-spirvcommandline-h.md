@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVCommandLine.h` File Reference
+# `SPIRVCommandLine.h` File
 
 
 

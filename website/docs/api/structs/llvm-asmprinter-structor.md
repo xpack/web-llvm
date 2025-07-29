@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Structor` Struct Reference
+# `Structor` Struct
 
 <p><span class="doxyComputerOutput">llvm.global_ctors</span> and <span class="doxyComputerOutput">llvm.global_dtors</span> are arrays of <a href="/web-llvm/docs/api/structs/llvm/asmprinter/structor">Structor</a> structs. <a href="#details">More...</a></p>
 

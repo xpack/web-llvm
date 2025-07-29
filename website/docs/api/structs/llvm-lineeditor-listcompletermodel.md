@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListCompleterModel` Struct Template Reference
+# `ListCompleterModel` Struct Template
 
 
 

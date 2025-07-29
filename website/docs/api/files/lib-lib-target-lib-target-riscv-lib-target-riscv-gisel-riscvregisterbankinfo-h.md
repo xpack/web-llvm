@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVRegisterBankInfo.h` File Reference
+# `RISCVRegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for RISC-V. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TargetParser.cpp` File Reference
+# `X86TargetParser.cpp` File
 
 
 

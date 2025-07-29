@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/Vectorize` Folder Reference
+# `lib/Transforms/Vectorize` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Object` Struct Reference
+# `Object` Struct
 
 <p>The top level structure representing a minidump object, consisting of a minidump header, and zero or more streams. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonDisassembler.cpp}` Namespace Reference
+# `anonymous{HexagonDisassembler.cpp}` Namespace
 
 
 

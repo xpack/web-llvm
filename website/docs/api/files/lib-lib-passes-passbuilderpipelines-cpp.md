@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassBuilderPipelines.cpp` File Reference
+# `PassBuilderPipelines.cpp` File
 
 <p>This file provides the implementation of the <a href="/web-llvm/docs/api/classes/llvm/passbuilder">PassBuilder</a> based on our static pass registry as well as related functionality. <a href="#details">More...</a></p>
 

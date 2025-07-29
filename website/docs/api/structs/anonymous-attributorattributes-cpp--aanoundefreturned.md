@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoUndefReturned` Struct Reference
+# `AANoUndefReturned` Struct
 
 
 

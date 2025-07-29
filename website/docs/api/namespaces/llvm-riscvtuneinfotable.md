@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTuneInfoTable` Namespace Reference
+# `RISCVTuneInfoTable` Namespace
 
 
 

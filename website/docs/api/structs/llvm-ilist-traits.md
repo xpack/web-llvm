@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_traits` Struct Template Reference
+# `ilist_traits` Struct Template
 
 <p>Template traits for intrusive list. <a href="#details">More...</a></p>
 

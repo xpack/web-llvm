@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `jumpthreading` Namespace Reference
+# `jumpthreading` Namespace
 
 <p>A private "module" namespace for types and utilities used by JumpThreading. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specificval_ty` Struct Reference
+# `specificval_ty` Struct
 
 <p>Match a specified <a href="/web-llvm/docs/api/classes/llvm/vpvalue">VPValue</a>. <a href="#details">More...</a></p>
 

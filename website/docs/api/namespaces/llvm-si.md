@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SI` Namespace Reference
+# `SI` Namespace
 
 
 

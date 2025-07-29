@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseTypeRef` Struct Reference
+# `BaseTypeRef` Struct
 
 
 

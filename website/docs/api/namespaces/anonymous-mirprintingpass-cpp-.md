@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MIRPrintingPass.cpp}` Namespace Reference
+# `anonymous{MIRPrintingPass.cpp}` Namespace
 
 
 

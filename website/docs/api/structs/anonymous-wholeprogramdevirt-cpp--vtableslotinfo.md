@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTableSlotInfo` Struct Reference
+# `VTableSlotInfo` Struct
 
 
 

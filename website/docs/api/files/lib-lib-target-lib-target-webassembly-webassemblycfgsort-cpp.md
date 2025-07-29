@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyCFGSort.cpp` File Reference
+# `WebAssemblyCFGSort.cpp` File
 
 <p>This file implements a CFG sorting pass. <a href="#details">More...</a></p>
 

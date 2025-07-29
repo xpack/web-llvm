@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fwd_or_bidi_tag` Struct Template Reference
+# `fwd_or_bidi_tag` Struct Template
 
 <p>Helper which sets its type member to forward_iterator_tag if the category of <span class="doxyComputerOutput">IterT</span> does not derive from bidirectional_iterator_tag, and to bidirectional_iterator_tag otherwise. <a href="#details">More...</a></p>
 

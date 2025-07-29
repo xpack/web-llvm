@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{RISCVMCCodeEmitter.cpp}` Namespace
 
 
 

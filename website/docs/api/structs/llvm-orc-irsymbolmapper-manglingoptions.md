@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ManglingOptions` Struct Reference
+# `ManglingOptions` Struct
 
 
 

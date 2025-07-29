@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAddMissingPrototypes.cpp` File Reference
+# `WebAssemblyAddMissingPrototypes.cpp` File
 
 <p>Add prototypes to prototypes-less functions. <a href="#details">More...</a></p>
 

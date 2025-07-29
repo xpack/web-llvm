@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MapOneMethodRecord` Struct Reference
+# `MapOneMethodRecord` Struct
 
 
 

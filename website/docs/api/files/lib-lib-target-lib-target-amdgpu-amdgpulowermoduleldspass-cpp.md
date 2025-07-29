@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerModuleLDSPass.cpp` File Reference
+# `AMDGPULowerModuleLDSPass.cpp` File
 
 
 

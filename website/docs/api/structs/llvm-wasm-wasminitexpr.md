@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmInitExpr` Struct Reference
+# `WasmInitExpr` Struct
 
 
 

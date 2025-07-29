@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallbackAndCookie` Struct Reference
+# `CallbackAndCookie` Struct
 
 
 

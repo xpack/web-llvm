@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForwardToPointerCast` Struct Template Reference
+# `ForwardToPointerCast` Struct Template
 
 <p>Provides a cast trait that uses a defined pointer to pointer cast as a base for reference-to-reference casts. <a href="#details">More...</a></p>
 

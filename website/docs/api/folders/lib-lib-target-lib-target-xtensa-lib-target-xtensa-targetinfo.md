@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Xtensa/TargetInfo` Folder Reference
+# `lib/Target/Xtensa/TargetInfo` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCExpr.cpp` File Reference
+# `AMDGPUMCExpr.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfJITRecordBatch` Struct Reference
+# `PerfJITRecordBatch` Struct
 
 
 

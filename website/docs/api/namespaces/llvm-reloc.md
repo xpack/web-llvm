@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Reloc` Namespace Reference
+# `Reloc` Namespace
 
 
 

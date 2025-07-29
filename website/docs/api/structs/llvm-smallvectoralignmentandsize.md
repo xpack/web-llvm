@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVectorAlignmentAndSize` Struct Template Reference
+# `SmallVectorAlignmentAndSize` Struct Template
 
 <p>Figure out the offset of the first element. <a href="#details">More...</a></p>
 

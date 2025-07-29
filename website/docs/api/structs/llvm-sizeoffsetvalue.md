@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizeOffsetValue` Struct Reference
+# `SizeOffsetValue` Struct
 
 
 

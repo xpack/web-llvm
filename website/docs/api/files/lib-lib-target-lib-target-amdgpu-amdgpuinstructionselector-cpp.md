@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstructionSelector.cpp` File Reference
+# `AMDGPUInstructionSelector.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/instructionselector">InstructionSelector</a> class for <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a>. <a href="#details">More...</a></p>
 

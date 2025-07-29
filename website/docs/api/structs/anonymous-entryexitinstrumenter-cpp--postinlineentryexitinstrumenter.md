@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostInlineEntryExitInstrumenter` Struct Reference
+# `PostInlineEntryExitInstrumenter` Struct
 
 
 

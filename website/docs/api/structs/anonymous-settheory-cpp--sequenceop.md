@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SequenceOp` Struct Reference
+# `SequenceOp` Struct
 
 
 

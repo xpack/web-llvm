@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProducerEntry` Struct Reference
+# `ProducerEntry` Struct
 
 
 

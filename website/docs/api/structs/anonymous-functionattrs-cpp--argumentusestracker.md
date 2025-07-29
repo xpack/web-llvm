@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentUsesTracker` Struct Reference
+# `ArgumentUsesTracker` Struct
 
 <p>This tracker checks whether callees are in the SCC, and if so it does not consider that a capture, instead adding it to the "Uses" list and continuing with the analysis. <a href="#details">More...</a></p>
 

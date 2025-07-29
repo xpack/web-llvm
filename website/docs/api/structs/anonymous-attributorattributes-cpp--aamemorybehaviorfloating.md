@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryBehaviorFloating` Struct Reference
+# `AAMemoryBehaviorFloating` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/sys/memory">Memory</a> behavior attribute for a floating value. <a href="#details">More...</a></p>
 

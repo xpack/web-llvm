@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVAsmParser.cpp}` Namespace Reference
+# `anonymous{RISCVAsmParser.cpp}` Namespace
 
 
 

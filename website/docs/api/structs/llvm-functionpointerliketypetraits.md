@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionPointerLikeTypeTraits` Struct Template Reference
+# `FunctionPointerLikeTypeTraits` Struct Template
 
 <p>Provide suitable custom traits struct for function pointers. <a href="#details">More...</a></p>
 

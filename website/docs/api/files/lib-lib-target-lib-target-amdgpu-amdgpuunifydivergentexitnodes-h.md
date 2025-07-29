@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUnifyDivergentExitNodes.h` File Reference
+# `AMDGPUUnifyDivergentExitNodes.h` File
 
 
 

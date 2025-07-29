@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ViewArray` Struct Template Reference
+# `ViewArray` Struct Template
 
 
 

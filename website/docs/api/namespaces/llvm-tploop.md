@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TPLoop` Namespace Reference
+# `TPLoop` Namespace
 
 
 

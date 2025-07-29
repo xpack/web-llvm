@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModifierEntry` Struct Reference
+# `ModifierEntry` Struct
 
 
 

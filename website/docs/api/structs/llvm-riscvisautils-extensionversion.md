@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtensionVersion` Struct Reference
+# `ExtensionVersion` Struct
 
 <p>Represents the major and version number components of a RISC-V extension. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCustomBehaviour.h` File Reference
+# `AMDGPUCustomBehaviour.h` File
 
 <p>This file defines the AMDGPUCustomBehaviour class which inherits from CustomBehaviour. <a href="#details">More...</a></p>
 

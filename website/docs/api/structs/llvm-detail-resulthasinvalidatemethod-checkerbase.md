@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CheckerBase` Struct Reference
+# `CheckerBase` Struct
 
 
 

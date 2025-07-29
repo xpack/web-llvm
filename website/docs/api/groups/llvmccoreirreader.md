@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The IR Reader Reference
+# IR Reader
 
 
 

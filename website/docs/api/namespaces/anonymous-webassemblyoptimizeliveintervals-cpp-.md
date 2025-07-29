@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyOptimizeLiveIntervals.cpp}` Namespace Reference
+# `anonymous{WebAssemblyOptimizeLiveIntervals.cpp}` Namespace
 
 
 

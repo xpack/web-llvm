@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `windows_manifest` Namespace Reference
+# `windows_manifest` Namespace
 
 
 

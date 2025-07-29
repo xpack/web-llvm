@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PTXPrmtMode` Namespace Reference
+# `PTXPrmtMode` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KindAndDocument` Struct Reference
+# `KindAndDocument` Struct
 
 <p>The kind of a <a href="/web-llvm/docs/api/classes/llvm/msgpack/docnode">DocNode</a> and its owning <a href="/web-llvm/docs/api/classes/llvm/msgpack/document">Document</a>. <a href="#details">More...</a></p>
 

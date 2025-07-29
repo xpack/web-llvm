@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `function_traits` Struct Template Reference
+# `function_traits` Struct Template
 
 <p>Overload for non-class function type references. <a href="#details">More...</a></p>
 

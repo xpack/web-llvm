@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/X86/TargetInfo` Folder Reference
+# `lib/Target/X86/TargetInfo` Folder
 
 
 

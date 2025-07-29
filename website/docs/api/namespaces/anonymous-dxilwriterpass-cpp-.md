@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILWriterPass.cpp}` Namespace Reference
+# `anonymous{DXILWriterPass.cpp}` Namespace
 
 
 

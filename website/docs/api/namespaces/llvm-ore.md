@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ore` Namespace Reference
+# `ore` Namespace
 
 <p>Add a small namespace to avoid name clashes with the classes used in the streaming interface. <a href="#details">More...</a></p>
 

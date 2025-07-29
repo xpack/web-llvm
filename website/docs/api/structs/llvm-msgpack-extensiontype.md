@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtensionType` Struct Reference
+# `ExtensionType` Struct
 
 <p><a href="/web-llvm/docs/api/structs/extension">Extension</a> types are composed of a user-defined type <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> and an uninterpreted sequence of bytes. <a href="#details">More...</a></p>
 

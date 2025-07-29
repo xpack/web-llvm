@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameIndexOperand` Struct Reference
+# `FrameIndexOperand` Struct
 
 <p>This structure describes how to print out stack object references. <a href="#details">More...</a></p>
 

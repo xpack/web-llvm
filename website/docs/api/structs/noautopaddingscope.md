@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoAutoPaddingScope` Struct Reference
+# `NoAutoPaddingScope` Struct
 
 <p>A RAII helper which defines a region of instructions which can't have padding added between them for correctness. <a href="#details">More...</a></p>
 

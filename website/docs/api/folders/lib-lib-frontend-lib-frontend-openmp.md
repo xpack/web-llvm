@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Frontend/OpenMP` Folder Reference
+# `lib/Frontend/OpenMP` Folder
 
 
 

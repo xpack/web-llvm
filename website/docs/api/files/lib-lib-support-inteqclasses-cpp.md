@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntEqClasses.cpp` File Reference
+# `IntEqClasses.cpp` File
 
 
 

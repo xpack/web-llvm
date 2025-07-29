@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineLoopUtils.cpp}` Namespace Reference
+# `anonymous{MachineLoopUtils.cpp}` Namespace
 
 
 

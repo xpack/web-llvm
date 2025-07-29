@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerModuleLDSPass` Struct Reference
+# `AMDGPULowerModuleLDSPass` Struct
 
 
 

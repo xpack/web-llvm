@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAArgumentFromCallSiteArguments` Struct Template Reference
+# `AAArgumentFromCallSiteArguments` Struct Template
 
 <p>Helper class for generic deduction: call site argument -&gt; argument position. <a href="#details">More...</a></p>
 

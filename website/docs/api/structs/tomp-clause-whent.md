@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WhenT` Struct Template Reference
+# `WhenT` Struct Template
 
 
 

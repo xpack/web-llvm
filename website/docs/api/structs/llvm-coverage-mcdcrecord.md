@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDCRecord` Struct Reference
+# `MCDCRecord` Struct
 
 <p>MCDC <a href="/web-llvm/docs/api/classes/llvm/record">Record</a> grouping all information together. <a href="#details">More...</a></p>
 

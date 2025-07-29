@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Transforms/Scalar` Folder Reference
+# `lib/Transforms/Scalar` Folder
 
 
 

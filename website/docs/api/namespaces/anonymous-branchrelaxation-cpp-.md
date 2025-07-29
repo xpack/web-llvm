@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BranchRelaxation.cpp}` Namespace Reference
+# `anonymous{BranchRelaxation.cpp}` Namespace
 
 
 

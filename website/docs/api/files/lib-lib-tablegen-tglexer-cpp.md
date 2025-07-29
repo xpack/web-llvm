@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TGLexer.cpp` File Reference
+# `TGLexer.cpp` File
 
 
 

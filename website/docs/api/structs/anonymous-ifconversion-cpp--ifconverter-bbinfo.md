@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBInfo` Struct Reference
+# `BBInfo` Struct
 
 <p>One per <a href="/web-llvm/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>, this is used to cache the result if-conversion feasibility analysis. <a href="#details">More...</a></p>
 

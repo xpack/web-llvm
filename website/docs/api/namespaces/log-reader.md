@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `log_reader` Namespace Reference
+# `log_reader` Namespace
 
 
 

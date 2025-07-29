@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LinkModules.cpp}` Namespace Reference
+# `anonymous{LinkModules.cpp}` Namespace
 
 
 

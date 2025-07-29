@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemOpLink` Struct Reference
+# `MemOpLink` Struct
 
 <p>Holds a pointer to an <a href="/web-llvm/docs/api/classes/llvm/lsbasesdnode">LSBaseSDNode</a> as well as information on where it is located in a sequence of memory operations connected by a chain. <a href="#details">More...</a></p>
 

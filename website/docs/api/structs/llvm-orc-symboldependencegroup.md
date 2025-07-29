@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolDependenceGroup` Struct Reference
+# `SymbolDependenceGroup` Struct
 
 <p>A set of symbols and the their dependencies. <a href="#details">More...</a></p>
 

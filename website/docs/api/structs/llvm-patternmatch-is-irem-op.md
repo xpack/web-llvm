@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_irem_op` Struct Reference
+# `is_irem_op` Struct
 
 
 

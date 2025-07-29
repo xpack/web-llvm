@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetContents` Struct Reference
+# `SetContents` Struct
 
 <p>A wrapper around a set that has semantics for handling unions and intersections with a "universal" set that contains all elements. <a href="#details">More...</a></p>
 

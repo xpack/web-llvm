@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFSStub` Struct Reference
+# `IFSStub` Struct
 
 
 

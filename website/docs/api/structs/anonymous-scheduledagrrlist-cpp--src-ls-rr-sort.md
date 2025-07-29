@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `src_ls_rr_sort` Struct Reference
+# `src_ls_rr_sort` Struct
 
 
 

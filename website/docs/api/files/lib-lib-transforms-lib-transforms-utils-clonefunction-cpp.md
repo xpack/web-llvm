@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CloneFunction.cpp` File Reference
+# `CloneFunction.cpp` File
 
 
 

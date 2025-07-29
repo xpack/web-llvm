@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Integer Types Reference
+# Integer Types
 
 <p>Functions in this section operate on integer types. <a href="#details">More...</a></p>
 

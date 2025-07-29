@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRV` Namespace Reference
+# `SPIRV` Namespace
 
 
 

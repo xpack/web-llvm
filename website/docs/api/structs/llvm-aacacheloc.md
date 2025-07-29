@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AACacheLoc` Struct Reference
+# `AACacheLoc` Struct
 
 <p>Cache key for <a href="/web-llvm/docs/api/classes/llvm/basicaa">BasicAA</a> results. <a href="#details">More...</a></p>
 

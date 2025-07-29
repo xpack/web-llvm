@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRInstructionData` Struct Reference
+# `IRInstructionData` Struct
 
 <p>This provides the utilities for hashing an <a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> to an unsigned integer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kSubtarget.cpp` File Reference
+# `M68kSubtarget.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> specific subclass of <a href="/web-llvm/docs/api/classes/llvm/targetsubtargetinfo">TargetSubtargetInfo</a>. <a href="#details">More...</a></p>
 

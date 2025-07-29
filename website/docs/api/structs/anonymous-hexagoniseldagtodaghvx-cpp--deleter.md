@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Deleter` Struct Reference
+# `Deleter` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MinidumpEmitter.cpp}` Namespace Reference
+# `anonymous{MinidumpEmitter.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DelinearizationPrinterPass` Struct Reference
+# `DelinearizationPrinterPass` Struct
 
 
 

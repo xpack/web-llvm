@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SparcELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{SparcELFObjectWriter.cpp}` Namespace
 
 
 

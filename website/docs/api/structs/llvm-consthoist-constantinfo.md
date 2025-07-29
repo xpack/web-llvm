@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantInfo` Struct Reference
+# `ConstantInfo` Struct
 
 <p>A base constant and all its rebased constants. <a href="#details">More...</a></p>
 

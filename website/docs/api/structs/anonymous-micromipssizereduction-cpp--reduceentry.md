@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReduceEntry` Struct Reference
+# `ReduceEntry` Struct
 
 <p>ReduceTable - A static table with information on mapping from wide opcodes to narrow. <a href="#details">More...</a></p>
 

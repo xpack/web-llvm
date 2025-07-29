@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JMCInstrumenter.cpp}` Namespace Reference
+# `anonymous{JMCInstrumenter.cpp}` Namespace
 
 
 

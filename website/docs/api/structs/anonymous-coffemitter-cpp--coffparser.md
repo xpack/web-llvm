@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFParser` Struct Reference
+# `COFFParser` Struct
 
 <p>This parses a yaml stream that represents a <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> object file. <a href="#details">More...</a></p>
 

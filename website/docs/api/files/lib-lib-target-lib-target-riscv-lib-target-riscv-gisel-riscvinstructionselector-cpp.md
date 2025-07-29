@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVInstructionSelector.cpp` File Reference
+# `RISCVInstructionSelector.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/instructionselector">InstructionSelector</a> class for RISC-V. <a href="#details">More...</a></p>
 

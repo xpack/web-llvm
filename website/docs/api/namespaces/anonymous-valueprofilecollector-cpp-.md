@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ValueProfileCollector.cpp}` Namespace Reference
+# `anonymous{ValueProfileCollector.cpp}` Namespace
 
 
 

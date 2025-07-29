@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadInfo` Struct Reference
+# `LoadInfo` Struct
 
 <p>Bits from load opcodes used to compute HW prefetcher instruction tags. <a href="#details">More...</a></p>
 

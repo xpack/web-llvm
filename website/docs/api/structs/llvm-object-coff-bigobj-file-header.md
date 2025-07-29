@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_bigobj_file_header` Struct Reference
+# `coff_bigobj_file_header` Struct
 
 
 

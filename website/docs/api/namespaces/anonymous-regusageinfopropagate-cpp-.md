@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RegUsageInfoPropagate.cpp}` Namespace Reference
+# `anonymous{RegUsageInfoPropagate.cpp}` Namespace
 
 
 

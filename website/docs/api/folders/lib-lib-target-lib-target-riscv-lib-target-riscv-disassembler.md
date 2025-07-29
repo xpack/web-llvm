@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/RISCV/Disassembler` Folder Reference
+# `lib/Target/RISCV/Disassembler` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `macho` Namespace Reference
+# `macho` Namespace
 
 
 

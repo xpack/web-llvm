@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsConstantIslandPass.cpp}` Namespace Reference
+# `anonymous{MipsConstantIslandPass.cpp}` Namespace
 
 
 

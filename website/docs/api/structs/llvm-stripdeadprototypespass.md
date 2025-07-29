@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripDeadPrototypesPass` Struct Reference
+# `StripDeadPrototypesPass` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to remove unused function declarations. <a href="#details">More...</a></p>
 

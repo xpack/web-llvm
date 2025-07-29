@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/MCA/HardwareUnits` Folder Reference
+# `include/llvm/MCA/HardwareUnits` Folder
 
 
 

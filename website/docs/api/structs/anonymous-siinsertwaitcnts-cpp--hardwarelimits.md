@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HardwareLimits` Struct Reference
+# `HardwareLimits` Struct
 
 
 

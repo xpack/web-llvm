@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Bucket` Struct Reference
+# `Bucket` Struct
 
 <p>A linked list of values in a particular hash bucket. <a href="#details">More...</a></p>
 

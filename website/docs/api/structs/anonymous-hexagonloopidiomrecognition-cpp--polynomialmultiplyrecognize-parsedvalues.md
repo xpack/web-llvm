@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedValues` Struct Reference
+# `ParsedValues` Struct
 
 
 

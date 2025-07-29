@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionTypeKeyInfo` Struct Reference
+# `FunctionTypeKeyInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OmpxDynCgroupMemT` Struct Template Reference
+# `OmpxDynCgroupMemT` Struct Template
 
 
 

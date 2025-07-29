@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockScalarTraits` Struct Template Reference
+# `BlockScalarTraits` Struct Template
 
 <p>This class should be specialized by type that requires custom conversion to/from a YAML literal block scalar. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMCNaCl.h` File Reference
+# `MipsMCNaCl.h` File
 
 
 

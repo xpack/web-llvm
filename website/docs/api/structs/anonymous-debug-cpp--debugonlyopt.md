@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugOnlyOpt` Struct Reference
+# `DebugOnlyOpt` Struct
 
 
 

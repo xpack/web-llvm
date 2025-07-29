@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fp` Namespace Reference
+# `fp` Namespace
 
 
 

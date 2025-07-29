@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ISelAddressMode` Struct Reference
+# `X86ISelAddressMode` Struct
 
 <p>This corresponds to <a href="/web-llvm/docs/api/structs/llvm/x86addressmode">X86AddressMode</a>, but uses <a href="/web-llvm/docs/api/classes/llvm/sdvalue">SDValue</a>'s instead of register numbers for the leaves of the matched tree. <a href="#details">More...</a></p>
 

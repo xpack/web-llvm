@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyPeephole.cpp` File Reference
+# `WebAssemblyPeephole.cpp` File
 
 <p>Late peephole optimizations for <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a>. <a href="#details">More...</a></p>
 

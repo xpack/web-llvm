@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSetWavePriority.cpp` File Reference
+# `AMDGPUSetWavePriority.cpp` File
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to temporarily raise the wave priority beginning the start of the shader function until its last VMEM instructions to allow younger waves to issue their VMEM instructions as well. <a href="#details">More...</a></p>
 

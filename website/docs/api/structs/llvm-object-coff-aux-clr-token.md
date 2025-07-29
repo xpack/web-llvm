@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_aux_clr_token` Struct Reference
+# `coff_aux_clr_token` Struct
 
 
 

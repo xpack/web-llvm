@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SYSTEMZAS` Namespace Reference
+# `SYSTEMZAS` Namespace
 
 
 

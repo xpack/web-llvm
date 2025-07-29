@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassBuilderBindings.cpp` File Reference
+# `PassBuilderBindings.cpp` File
 
 <p>This file defines the C bindings to the new pass manager. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CodeGenData.cpp}` Namespace Reference
+# `anonymous{CodeGenData.cpp}` Namespace
 
 
 

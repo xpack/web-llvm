@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomainPSVInfo` Struct Reference
+# `DomainPSVInfo` Struct
 
 
 

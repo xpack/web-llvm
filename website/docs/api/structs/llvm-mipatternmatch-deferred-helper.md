@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `deferred_helper` Struct Template Reference
+# `deferred_helper` Struct Template
 
 
 

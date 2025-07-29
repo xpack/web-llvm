@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNSubtarget.cpp` File Reference
+# `GCNSubtarget.cpp` File
 
 <p>Implements the GCN specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

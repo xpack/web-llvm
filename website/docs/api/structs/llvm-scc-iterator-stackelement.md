@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackElement` Struct Reference
+# `StackElement` Struct
 
 <p>Element of VisitStack during DFS. <a href="#details">More...</a></p>
 

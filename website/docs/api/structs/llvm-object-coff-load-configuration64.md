@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_load_configuration64` Struct Reference
+# `coff_load_configuration64` Struct
 
 <p>64-bit load config (IMAGE_LOAD_CONFIG_DIRECTORY64) <a href="#details">More...</a></p>
 

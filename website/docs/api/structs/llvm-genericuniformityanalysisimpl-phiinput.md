@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhiInput` Struct Reference
+# `PhiInput` Struct
 
 <p>Value/block pair representing a single phi input. <a href="#details">More...</a></p>
 

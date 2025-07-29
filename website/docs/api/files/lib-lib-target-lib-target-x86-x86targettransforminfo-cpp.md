@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TargetTransformInfo.cpp` File Reference
+# `X86TargetTransformInfo.cpp` File
 
 <p>This file implements a <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> analysis pass specific to the <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> target machine. <a href="#details">More...</a></p>
 

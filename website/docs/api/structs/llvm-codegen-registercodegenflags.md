@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterCodeGenFlags` Struct Reference
+# `RegisterCodeGenFlags` Struct
 
 <p>Create this object with static storage to register codegen-related command line options. <a href="#details">More...</a></p>
 

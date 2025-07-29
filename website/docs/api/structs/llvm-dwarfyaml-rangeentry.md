@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeEntry` Struct Reference
+# `RangeEntry` Struct
 
 <p>Class that describes a range list entry, or a base address selection entry within a range list in the .debug_ranges section. <a href="#details">More...</a></p>
 

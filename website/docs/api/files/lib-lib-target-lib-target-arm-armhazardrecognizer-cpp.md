@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMHazardRecognizer.cpp` File Reference
+# `ARMHazardRecognizer.cpp` File
 
 
 

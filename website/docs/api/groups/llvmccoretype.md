@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Types Reference
+# Types
 
 <p>Types represent the type of a value. <a href="#details">More...</a></p>
 

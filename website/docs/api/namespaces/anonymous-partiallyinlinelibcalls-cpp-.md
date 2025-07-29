@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PartiallyInlineLibCalls.cpp}` Namespace Reference
+# `anonymous{PartiallyInlineLibCalls.cpp}` Namespace
 
 
 

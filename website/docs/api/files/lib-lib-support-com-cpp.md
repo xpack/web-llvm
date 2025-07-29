@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COM.cpp` File Reference
+# `COM.cpp` File
 
 
 

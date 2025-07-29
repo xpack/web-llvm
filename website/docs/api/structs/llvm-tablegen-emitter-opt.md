@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Opt` Struct Reference
+# `Opt` Struct
 
 <p>Creating an <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/tablegen/emitter/opt">Opt</a></span> object registers the command line option <span class="doxyComputerOutput">Name</span> with <a href="/web-llvm/docs/api/namespaces/llvm/tablegen">TableGen</a> backend and associates the callback <span class="doxyComputerOutput">CB</span> with that option. <a href="#details">More...</a></p>
 

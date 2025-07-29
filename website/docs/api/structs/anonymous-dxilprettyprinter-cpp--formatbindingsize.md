@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatBindingSize` Struct Reference
+# `FormatBindingSize` Struct
 
 
 

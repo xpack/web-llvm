@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LinkAllAsmWriterComponents.h}` Namespace Reference
+# `anonymous{LinkAllAsmWriterComponents.h}` Namespace
 
 
 

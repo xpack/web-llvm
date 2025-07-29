@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CalleeInfo` Struct Reference
+# `CalleeInfo` Struct
 
 <p>Class to accumulate and hold information about a callee. <a href="#details">More...</a></p>
 

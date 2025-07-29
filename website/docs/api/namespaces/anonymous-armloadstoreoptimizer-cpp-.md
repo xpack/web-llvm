@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMLoadStoreOptimizer.cpp}` Namespace Reference
+# `anonymous{ARMLoadStoreOptimizer.cpp}` Namespace
 
 
 

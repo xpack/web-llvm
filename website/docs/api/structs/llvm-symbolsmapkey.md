@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolsMapKey` Struct Reference
+# `SymbolsMapKey` Struct
 
 
 

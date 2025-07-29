@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTableHashTraits` Struct Reference
+# `StringTableHashTraits` Struct
 
 
 

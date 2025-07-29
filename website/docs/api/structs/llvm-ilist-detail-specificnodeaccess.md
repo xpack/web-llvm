@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecificNodeAccess` Struct Template Reference
+# `SpecificNodeAccess` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_error_code_enum` Struct Template Reference
+# `is_error_code_enum` Struct Template
 
 
 

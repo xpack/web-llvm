@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TraversedMBBInfo` Struct Reference
+# `TraversedMBBInfo` Struct
 
 
 

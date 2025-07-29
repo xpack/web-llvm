@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BuiltinGCs.cpp}` Namespace Reference
+# `anonymous{BuiltinGCs.cpp}` Namespace
 
 
 

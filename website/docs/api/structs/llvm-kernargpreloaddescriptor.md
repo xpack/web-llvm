@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernArgPreloadDescriptor` Struct Reference
+# `KernArgPreloadDescriptor` Struct
 
 
 

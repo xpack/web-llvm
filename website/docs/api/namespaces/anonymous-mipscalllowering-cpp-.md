@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsCallLowering.cpp}` Namespace Reference
+# `anonymous{MipsCallLowering.cpp}` Namespace
 
 
 

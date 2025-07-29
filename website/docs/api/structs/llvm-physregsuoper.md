@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PhysRegSUOper` Struct Reference
+# `PhysRegSUOper` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> a physical register access. <a href="#details">More...</a></p>
 

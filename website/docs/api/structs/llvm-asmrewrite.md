@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmRewrite` Struct Reference
+# `AsmRewrite` Struct
 
 
 

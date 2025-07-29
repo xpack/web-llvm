@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockState` Struct Reference
+# `BasicBlockState` Struct
 
 <p>State we compute and track per basic block. <a href="#details">More...</a></p>
 

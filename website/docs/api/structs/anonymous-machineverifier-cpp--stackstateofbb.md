@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackStateOfBB` Struct Reference
+# `StackStateOfBB` Struct
 
 
 

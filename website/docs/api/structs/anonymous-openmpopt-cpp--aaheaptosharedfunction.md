@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAHeapToSharedFunction` Struct Reference
+# `AAHeapToSharedFunction` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/Symbolize` Folder Reference
+# `lib/DebugInfo/Symbolize` Folder
 
 
 

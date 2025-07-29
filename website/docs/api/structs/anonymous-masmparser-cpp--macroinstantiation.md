@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MacroInstantiation` Struct Reference
+# `MacroInstantiation` Struct
 
 <p>Helper class for storing information about an active macro instantiation. <a href="#details">More...</a></p>
 

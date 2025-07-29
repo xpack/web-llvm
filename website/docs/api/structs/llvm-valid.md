@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValID` Struct Reference
+# `ValID` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/valid">ValID</a> - Represents a reference of a definition of some sort with no type. <a href="#details">More...</a></p>
 

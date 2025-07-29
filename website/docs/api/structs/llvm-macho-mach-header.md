@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `mach_header` Struct Reference
+# `mach_header` Struct
 
 
 

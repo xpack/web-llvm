@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TelemetryInfo` Struct Reference
+# `TelemetryInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/telemetry/telemetryinfo">TelemetryInfo</a> is the data courier, used to move instrumented data from the tool being monitored to the Telemetry framework. <a href="#details">More...</a></p>
 

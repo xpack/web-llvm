@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Hwreg` Namespace Reference
+# `Hwreg` Namespace
 
 
 

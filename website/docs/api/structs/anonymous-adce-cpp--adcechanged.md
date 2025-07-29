@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ADCEChanged` Struct Reference
+# `ADCEChanged` Struct
 
 
 

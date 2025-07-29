@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInfo` Struct Template Reference
+# `CastInfo` Struct Template
 
 <p>Provide a <a href="/web-llvm/docs/api/structs/llvm/castinfo">CastInfo</a> specialized for std::optional&lt;From&gt;. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `binary_le_impl` Struct Template Reference
+# `binary_le_impl` Struct Template
 
 
 

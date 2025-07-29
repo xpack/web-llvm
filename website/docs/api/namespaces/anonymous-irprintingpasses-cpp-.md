@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IRPrintingPasses.cpp}` Namespace Reference
+# `anonymous{IRPrintingPasses.cpp}` Namespace
 
 
 

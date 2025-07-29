@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectX.h` File Reference
+# `DirectX.h` File
 
 
 

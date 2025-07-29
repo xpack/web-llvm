@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReductionFlags` Struct Reference
+# `ReductionFlags` Struct
 
 <p>Flags describing the kind of vector reduction. <a href="#details">More...</a></p>
 

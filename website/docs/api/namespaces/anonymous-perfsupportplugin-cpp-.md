@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PerfSupportPlugin.cpp}` Namespace Reference
+# `anonymous{PerfSupportPlugin.cpp}` Namespace
 
 
 

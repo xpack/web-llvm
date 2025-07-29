@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecIntegerState` Struct Template Reference
+# `DecIntegerState` Struct Template
 
 <p>Specialization of the integer state for a decreasing value, hence 0 is the best state and ~0u the worst. <a href="#details">More...</a></p>
 

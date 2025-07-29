@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CapturesBefore` Struct Reference
+# `CapturesBefore` Struct
 
 <p>Only find pointer captures which happen before the given instruction. <a href="#details">More...</a></p>
 

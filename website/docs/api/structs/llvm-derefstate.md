@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DerefState` Struct Reference
+# `DerefState` Struct
 
 <p>State for dereferenceable attribute. <a href="#details">More...</a></p>
 

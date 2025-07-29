@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Dyn_Impl` Struct Template Reference
+# `Elf_Dyn_Impl` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/object/elf-dyn-impl">Elf_Dyn_Impl</a>: This inherits from <a href="/web-llvm/docs/api/structs/llvm/object/elf-dyn-base">Elf_Dyn_Base</a>, adding getters. <a href="#details">More...</a></p>
 

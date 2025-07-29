@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsSizeLessThanThresholdT` Struct Template Reference
+# `IsSizeLessThanThresholdT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVTargetTransformInfo.cpp` File Reference
+# `RISCVTargetTransformInfo.cpp` File
 
 
 

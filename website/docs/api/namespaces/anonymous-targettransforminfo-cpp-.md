@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TargetTransformInfo.cpp}` Namespace Reference
+# `anonymous{TargetTransformInfo.cpp}` Namespace
 
 
 

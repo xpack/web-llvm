@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPOInstruction` Struct Reference
+# `FPOInstruction` Struct
 
 <p>Represents a single FPO directive. <a href="#details">More...</a></p>
 

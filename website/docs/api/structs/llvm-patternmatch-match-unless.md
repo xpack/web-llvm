@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `match_unless` Struct Template Reference
+# `match_unless` Struct Template
 
 <p>Inverting matcher. <a href="#details">More...</a></p>
 

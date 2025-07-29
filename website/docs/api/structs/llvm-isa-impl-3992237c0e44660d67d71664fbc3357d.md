@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `isa_impl` Struct Template Reference
+# `isa_impl` Struct Template
 
 
 

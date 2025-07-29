@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComplexDeinterleavingPass` Struct Reference
+# `ComplexDeinterleavingPass` Struct
 
 
 

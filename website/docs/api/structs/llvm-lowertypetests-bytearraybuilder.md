@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByteArrayBuilder` Struct Reference
+# `ByteArrayBuilder` Struct
 
 <p>This class is used to build a byte array containing overlapping bit sets. <a href="#details">More...</a></p>
 

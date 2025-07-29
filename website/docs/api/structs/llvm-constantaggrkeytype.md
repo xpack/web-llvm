@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantAggrKeyType` Struct Template Reference
+# `ConstantAggrKeyType` Struct Template
 
 
 

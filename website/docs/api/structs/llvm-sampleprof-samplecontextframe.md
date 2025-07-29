@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleContextFrame` Struct Reference
+# `SampleContextFrame` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedCallstackIdConveter` Struct Reference
+# `IndexedCallstackIdConveter` Struct
 
 
 

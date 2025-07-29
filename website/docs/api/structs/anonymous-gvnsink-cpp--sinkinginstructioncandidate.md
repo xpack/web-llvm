@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SinkingInstructionCandidate` Struct Reference
+# `SinkingInstructionCandidate` Struct
 
 <p>Candidate solution for sinking. <a href="#details">More...</a></p>
 

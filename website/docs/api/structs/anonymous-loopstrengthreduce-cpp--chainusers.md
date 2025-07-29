@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChainUsers` Struct Reference
+# `ChainUsers` Struct
 
 <p>Helper for CollectChains to track multiple IV increment uses. <a href="#details">More...</a></p>
 

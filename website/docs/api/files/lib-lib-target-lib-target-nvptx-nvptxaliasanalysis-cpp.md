@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAliasAnalysis.cpp` File Reference
+# `NVPTXAliasAnalysis.cpp` File
 
 <p>This is the <a href="/web-llvm/docs/api/namespaces/llvm/nvptx">NVPTX</a> address space based alias analysis pass. <a href="#details">More...</a></p>
 

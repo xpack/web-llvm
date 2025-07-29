@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ELF_riscv.cpp}` Namespace Reference
+# `anonymous{ELF_riscv.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionCost.cpp` File Reference
+# `InstructionCost.cpp` File
 
 <p>This file includes the function definitions for the <a href="/web-llvm/docs/api/classes/llvm/instructioncost">InstructionCost</a> class that is used when calculating the cost of an instruction, or a group of instructions. <a href="#details">More...</a></p>
 

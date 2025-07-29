@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySetP2AlignOperands.cpp` File Reference
+# `WebAssemblySetP2AlignOperands.cpp` File
 
 <p>This file sets the p2align operands on load and store instructions. <a href="#details">More...</a></p>
 

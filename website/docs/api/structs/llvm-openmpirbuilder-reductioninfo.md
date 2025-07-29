@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReductionInfo` Struct Reference
+# `ReductionInfo` Struct
 
 <p>Information about an OpenMP reduction. <a href="#details">More...</a></p>
 

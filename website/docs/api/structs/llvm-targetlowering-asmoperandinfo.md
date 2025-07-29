@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmOperandInfo` Struct Reference
+# `AsmOperandInfo` Struct
 
 <p>This contains information for each constraint that we are lowering. <a href="#details">More...</a></p>
 

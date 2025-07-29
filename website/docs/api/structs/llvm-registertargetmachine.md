@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterTargetMachine` Struct Template Reference
+# `RegisterTargetMachine` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registertargetmachine">RegisterTargetMachine</a> - Helper template for registering a target machine implementation, for use in the target machine initialization function. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffsetsTag` Struct Reference
+# `OffsetsTag` Struct
 
 
 

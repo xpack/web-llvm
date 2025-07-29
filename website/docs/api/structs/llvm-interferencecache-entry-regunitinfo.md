@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegUnitInfo` Struct Reference
+# `RegUnitInfo` Struct
 
 <p>RegUnitInfo - Information tracked about each RegUnit in PhysReg. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineVectorOps.cpp` File Reference
+# `InstCombineVectorOps.cpp` File
 
 
 

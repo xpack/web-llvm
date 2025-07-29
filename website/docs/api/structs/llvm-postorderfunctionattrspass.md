@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostOrderFunctionAttrsPass` Struct Reference
+# `PostOrderFunctionAttrsPass` Struct
 
 <p>Computes function attributes in post-order over the call graph. <a href="#details">More...</a></p>
 

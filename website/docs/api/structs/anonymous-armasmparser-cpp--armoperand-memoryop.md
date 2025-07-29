@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryOp` Struct Reference
+# `MemoryOp` Struct
 
 <p>Combined record for all forms of <a href="/web-llvm/docs/api/namespaces/llvm/arm">ARM</a> address expressions. <a href="#details">More...</a></p>
 

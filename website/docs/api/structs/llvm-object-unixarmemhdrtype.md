@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnixArMemHdrType` Struct Reference
+# `UnixArMemHdrType` Struct
 
 
 

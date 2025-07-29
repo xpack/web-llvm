@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SampleProfileMatcher.cpp` File Reference
+# `SampleProfileMatcher.cpp` File
 
 
 

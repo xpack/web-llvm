@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LinearT` Struct Template Reference
+# `LinearT` Struct Template
 
 
 

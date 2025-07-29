@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BulkPublic` Struct Reference
+# `BulkPublic` Struct
 
 <p>This struct is equivalent to <a href="/web-llvm/docs/api/classes/llvm/codeview/publicsym32">codeview::PublicSym32</a>, but it has been optimized for size to speed up bulk serialization and sorting operations during PDB writing. <a href="#details">More...</a></p>
 

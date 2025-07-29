@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalMapImpl` Namespace Reference
+# `IntervalMapImpl` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/intervalmapimpl">IntervalMapImpl</a> - Namespace used for <a href="/web-llvm/docs/api/classes/llvm/intervalmap">IntervalMap</a> implementation details. <a href="#details">More...</a></p>
 

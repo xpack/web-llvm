@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastPriorityQueue` Struct Reference
+# `FastPriorityQueue` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-scheduledagfast-cpp-/fastpriorityqueue">FastPriorityQueue</a> - A degenerate priority queue that considers all nodes to have the same priority. <a href="#details">More...</a></p>
 

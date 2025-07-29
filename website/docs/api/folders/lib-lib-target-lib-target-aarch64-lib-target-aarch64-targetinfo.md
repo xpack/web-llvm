@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/AArch64/TargetInfo` Folder Reference
+# `lib/Target/AArch64/TargetInfo` Folder
 
 
 

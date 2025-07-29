@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bind_helper` Struct Template Reference
+# `bind_helper` Struct Template
 
 
 

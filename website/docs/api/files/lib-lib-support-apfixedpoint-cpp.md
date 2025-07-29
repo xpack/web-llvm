@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APFixedPoint.cpp` File Reference
+# `APFixedPoint.cpp` File
 
 <p>Defines the implementation for the fixed point number interface. <a href="#details">More...</a></p>
 

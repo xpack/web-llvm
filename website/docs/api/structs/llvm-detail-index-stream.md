@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `index_stream` Struct Reference
+# `index_stream` Struct
 
 <p>Infinite stream of increasing 0-based <span class="doxyComputerOutput">size_t</span> indices. <a href="#details">More...</a></p>
 

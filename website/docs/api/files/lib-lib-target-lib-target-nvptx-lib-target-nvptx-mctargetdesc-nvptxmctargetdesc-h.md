@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXMCTargetDesc.h` File Reference
+# `NVPTXMCTargetDesc.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SafelenT` Struct Template Reference
+# `SafelenT` Struct Template
 
 
 

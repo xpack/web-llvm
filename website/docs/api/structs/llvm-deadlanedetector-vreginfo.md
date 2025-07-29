@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VRegInfo` Struct Reference
+# `VRegInfo` Struct
 
 <p>Contains a bitmask of which lanes of a given virtual register are defined and which ones are actually used. <a href="#details">More...</a></p>
 

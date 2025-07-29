@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RDOp` Struct Reference
+# `RDOp` Struct
 
 
 

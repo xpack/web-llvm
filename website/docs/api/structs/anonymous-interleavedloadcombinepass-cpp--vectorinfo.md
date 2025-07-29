@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorInfo` Struct Reference
+# `VectorInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-interleavedloadcombinepass-cpp-/vectorinfo">VectorInfo</a> stores abstract the following information for each vector element: <a href="#details">More...</a></p>
 

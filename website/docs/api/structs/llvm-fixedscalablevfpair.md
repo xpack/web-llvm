@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedScalableVFPair` Struct Reference
+# `FixedScalableVFPair` Struct
 
 <p>A class that represents two vectorization factors (initialized with 0 by default). <a href="#details">More...</a></p>
 

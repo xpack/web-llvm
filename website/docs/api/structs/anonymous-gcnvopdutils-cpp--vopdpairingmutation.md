@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOPDPairingMutation` Struct Reference
+# `VOPDPairingMutation` Struct
 
 <p>Adapts design from MacroFusion Puts valid candidate instructions back-to-back so they can easily be turned into VOPD instructions Greedily pairs instruction candidates. <a href="#details">More...</a></p>
 

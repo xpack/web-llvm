@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributesInfo` Struct Reference
+# `AttributesInfo` Struct
 
 <p>Information gathered and exchanged between the various clone*Attributes helpers about the attributes of a particular <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a>. <a href="#details">More...</a></p>
 

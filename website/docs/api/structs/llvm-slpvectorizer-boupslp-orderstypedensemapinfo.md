@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OrdersTypeDenseMapInfo` Struct Reference
+# `OrdersTypeDenseMapInfo` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/densemapinfo">DenseMapInfo</a> implementation for holding DenseMaps and DenseSets of sorted SmallVectors of unsigned. <a href="#details">More...</a></p>
 

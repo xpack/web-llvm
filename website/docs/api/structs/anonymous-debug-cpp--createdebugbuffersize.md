@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CreateDebugBufferSize` Struct Reference
+# `CreateDebugBufferSize` Struct
 
 
 

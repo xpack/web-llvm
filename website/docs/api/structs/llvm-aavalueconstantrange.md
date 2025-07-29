@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAValueConstantRange` Struct Reference
+# `AAValueConstantRange` Struct
 
 <p>An abstract interface for range value analysis. <a href="#details">More...</a></p>
 

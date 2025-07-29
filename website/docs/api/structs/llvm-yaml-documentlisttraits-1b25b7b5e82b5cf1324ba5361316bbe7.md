@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DocumentListTraits` Struct Template Reference
+# `DocumentListTraits` Struct Template
 
 
 

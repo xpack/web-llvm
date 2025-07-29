@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDKernelCodeTUtils.h` File Reference
+# `AMDKernelCodeTUtils.h` File
 
 <p>MC layer struct for AMDGPUMCKernelCodeT, provides MCExpr functionality where required. <a href="#details">More...</a></p>
 

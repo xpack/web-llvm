@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyFixBrTableDefaults.cpp}` Namespace Reference
+# `anonymous{WebAssemblyFixBrTableDefaults.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOP3CDPPAsmOnlyInfo` Struct Reference
+# `VOP3CDPPAsmOnlyInfo` Struct
 
 
 

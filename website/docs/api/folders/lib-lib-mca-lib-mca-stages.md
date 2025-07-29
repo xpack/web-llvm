@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/MCA/Stages` Folder Reference
+# `lib/MCA/Stages` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressSanitizer` Struct Reference
+# `AddressSanitizer` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-addresssanitizer-cpp-/addresssanitizer">AddressSanitizer</a>: instrument the code in module to find memory bugs. <a href="#details">More...</a></p>
 

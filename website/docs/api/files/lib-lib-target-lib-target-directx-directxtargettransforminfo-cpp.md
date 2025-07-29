@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXTargetTransformInfo.cpp` File Reference
+# `DirectXTargetTransformInfo.cpp` File
 
 
 

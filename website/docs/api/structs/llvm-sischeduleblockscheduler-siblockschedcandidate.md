@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIBlockSchedCandidate` Struct Reference
+# `SIBlockSchedCandidate` Struct
 
 
 

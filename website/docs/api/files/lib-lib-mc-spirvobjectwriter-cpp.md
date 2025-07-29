@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVObjectWriter.cpp` File Reference
+# `SPIRVObjectWriter.cpp` File
 
 
 

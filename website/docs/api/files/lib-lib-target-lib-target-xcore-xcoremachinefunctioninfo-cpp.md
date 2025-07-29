@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreMachineFunctionInfo.cpp` File Reference
+# `XCoreMachineFunctionInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `linkedit_data_command` Struct Reference
+# `linkedit_data_command` Struct
 
 
 

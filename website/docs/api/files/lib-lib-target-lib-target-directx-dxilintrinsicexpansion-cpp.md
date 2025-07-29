@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILIntrinsicExpansion.cpp` File Reference
+# `DXILIntrinsicExpansion.cpp` File
 
 
 

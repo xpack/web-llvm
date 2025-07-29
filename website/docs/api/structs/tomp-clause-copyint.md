@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CopyinT` Struct Template Reference
+# `CopyinT` Struct Template
 
 
 

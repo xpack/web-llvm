@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyArgumentMove.cpp}` Namespace Reference
+# `anonymous{WebAssemblyArgumentMove.cpp}` Namespace
 
 
 

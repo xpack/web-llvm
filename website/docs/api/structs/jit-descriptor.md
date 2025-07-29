@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `jit_descriptor` Struct Reference
+# `jit_descriptor` Struct
 
 
 

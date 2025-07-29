@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Nhdr_Impl` Struct Template Reference
+# `Elf_Nhdr_Impl` Struct Template
 
 <p>Note header. <a href="#details">More...</a></p>
 

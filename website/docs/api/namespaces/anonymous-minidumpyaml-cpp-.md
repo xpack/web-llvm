@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MinidumpYAML.cpp}` Namespace Reference
+# `anonymous{MinidumpYAML.cpp}` Namespace
 
 
 

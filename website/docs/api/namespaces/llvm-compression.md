@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `compression` Namespace Reference
+# `compression` Namespace
 
 
 

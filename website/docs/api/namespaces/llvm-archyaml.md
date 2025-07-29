@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArchYAML` Namespace Reference
+# `ArchYAML` Namespace
 
 
 

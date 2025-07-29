@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordKeeperImpl` Struct Reference
+# `RecordKeeperImpl` Struct
 
 <p>This class represents the internal implementation of the <a href="/web-llvm/docs/api/classes/llvm/recordkeeper">RecordKeeper</a>. <a href="#details">More...</a></p>
 

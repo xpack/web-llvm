@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `POTWorklistEntry` Struct Reference
+# `POTWorklistEntry` Struct
 
 <p>An entry in the worklist for the post-order traversal. <a href="#details">More...</a></p>
 

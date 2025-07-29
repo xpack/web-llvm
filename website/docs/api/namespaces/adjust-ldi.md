@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ldi` Namespace Reference
+# `ldi` Namespace
 
 <p>Fixups relating to the LDI instruction. <a href="#details">More...</a></p>
 

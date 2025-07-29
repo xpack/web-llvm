@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MAIInstInfo` Struct Reference
+# `MAIInstInfo` Struct
 
 
 

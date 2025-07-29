@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsaVersion` Struct Reference
+# `IsaVersion` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/instruction">Instruction</a> set architecture version. <a href="#details">More...</a></p>
 

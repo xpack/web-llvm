@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAlignFloating` Struct Reference
+# `AAAlignFloating` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/align">Align</a> attribute for a floating value. <a href="#details">More...</a></p>
 

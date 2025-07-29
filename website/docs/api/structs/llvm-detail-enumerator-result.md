@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `enumerator_result` Struct Template Reference
+# `enumerator_result` Struct Template
 
 <p>Tuple-like type for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/detail/zip-enumerator">zip_enumerator</a></span> dereference. <a href="#details">More...</a></p>
 

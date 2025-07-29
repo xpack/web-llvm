@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCOFFObjectWriter.cpp}` Namespace Reference
+# `anonymous{XCOFFObjectWriter.cpp}` Namespace
 
 
 

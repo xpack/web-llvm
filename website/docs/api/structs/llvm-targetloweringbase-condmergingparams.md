@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondMergingParams` Struct Reference
+# `CondMergingParams` Struct
 
 
 

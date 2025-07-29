@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpDescriptor` Struct Reference
+# `OpDescriptor` Struct
 
 <p>A description of some operation we can build while fuzzing IR. <a href="#details">More...</a></p>
 

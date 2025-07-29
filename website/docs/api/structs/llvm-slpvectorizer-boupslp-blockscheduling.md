@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockScheduling` Struct Reference
+# `BlockScheduling` Struct
 
 <p>Contains all scheduling data for a basic block. <a href="#details">More...</a></p>
 

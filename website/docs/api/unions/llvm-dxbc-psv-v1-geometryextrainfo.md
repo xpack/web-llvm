@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GeometryExtraInfo` Union Reference
+# `GeometryExtraInfo` Union
 
 
 

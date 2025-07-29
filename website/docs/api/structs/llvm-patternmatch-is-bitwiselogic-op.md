@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_bitwiselogic_op` Struct Reference
+# `is_bitwiselogic_op` Struct
 
 
 

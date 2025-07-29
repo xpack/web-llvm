@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonGenMux.cpp}` Namespace Reference
+# `anonymous{HexagonGenMux.cpp}` Namespace
 
 
 

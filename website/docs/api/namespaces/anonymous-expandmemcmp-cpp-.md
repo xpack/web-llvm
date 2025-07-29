@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ExpandMemCmp.cpp}` Namespace Reference
+# `anonymous{ExpandMemCmp.cpp}` Namespace
 
 
 

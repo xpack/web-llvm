@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StableFunctionEntry` Struct Reference
+# `StableFunctionEntry` Struct
 
 <p>An efficient form of <a href="/web-llvm/docs/api/structs/llvm/stablefunction">StableFunction</a> for fast look-up. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `xray` Namespace Reference
+# `xray` Namespace
 
 
 

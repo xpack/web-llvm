@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectSymbolTable` Struct Reference
+# `IndirectSymbolTable` Struct
 
 
 

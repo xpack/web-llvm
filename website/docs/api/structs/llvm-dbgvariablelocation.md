@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgVariableLocation` Struct Reference
+# `DbgVariableLocation` Struct
 
 <p>Represents the location at which a variable is stored. <a href="#details">More...</a></p>
 

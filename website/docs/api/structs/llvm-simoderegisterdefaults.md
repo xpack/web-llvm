@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIModeRegisterDefaults` Struct Reference
+# `SIModeRegisterDefaults` Struct
 
 
 

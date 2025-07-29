@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDebugValueManager.cpp` File Reference
+# `WebAssemblyDebugValueManager.cpp` File
 
 <p>This file implements the manager for <a href="/web-llvm/docs/api/classes/llvm/machineinstr">MachineInstr</a> DebugValues. <a href="#details">More...</a></p>
 

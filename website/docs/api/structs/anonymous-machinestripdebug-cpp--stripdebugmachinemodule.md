@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripDebugMachineModule` Struct Reference
+# `StripDebugMachineModule` Struct
 
 
 

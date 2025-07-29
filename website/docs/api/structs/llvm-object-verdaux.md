@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerdAux` Struct Reference
+# `VerdAux` Struct
 
 
 

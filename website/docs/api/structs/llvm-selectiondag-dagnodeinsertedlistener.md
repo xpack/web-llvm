@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGNodeInsertedListener` Struct Reference
+# `DAGNodeInsertedListener` Struct
 
 
 

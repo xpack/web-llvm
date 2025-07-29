@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TailRecursionElimination.cpp}` Namespace Reference
+# `anonymous{TailRecursionElimination.cpp}` Namespace
 
 
 

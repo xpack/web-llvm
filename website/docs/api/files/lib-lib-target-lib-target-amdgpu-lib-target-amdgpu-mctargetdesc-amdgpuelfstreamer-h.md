@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUELFStreamer.h` File Reference
+# `AMDGPUELFStreamer.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MSP430ISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{MSP430ISelDAGToDAG.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-msp430iseldagtodag-cpp-/msp430dagtodagisel">MSP430DAGToDAGISel</a> - <a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a> specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/msp430">MSP430</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtensibleRTTI.cpp` File Reference
+# `ExtensibleRTTI.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAMDWavesPerEU` Struct Reference
+# `AAAMDWavesPerEU` Struct
 
 <p>Propagate amdgpu-waves-per-eu attribute. <a href="#details">More...</a></p>
 

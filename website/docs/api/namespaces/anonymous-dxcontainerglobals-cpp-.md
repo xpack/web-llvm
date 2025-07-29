@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXContainerGlobals.cpp}` Namespace Reference
+# `anonymous{DXContainerGlobals.cpp}` Namespace
 
 
 

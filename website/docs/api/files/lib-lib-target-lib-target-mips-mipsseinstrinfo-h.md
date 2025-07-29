@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsSEInstrInfo.h` File Reference
+# `MipsSEInstrInfo.h` File
 
 
 

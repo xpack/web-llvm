@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_idiv_op` Struct Reference
+# `is_idiv_op` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/ARM` Folder Reference
+# `lib/Target/ARM` Folder
 
 
 

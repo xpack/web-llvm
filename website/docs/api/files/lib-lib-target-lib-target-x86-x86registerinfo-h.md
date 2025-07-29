@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86RegisterInfo.h` File Reference
+# `X86RegisterInfo.h` File
 
 
 

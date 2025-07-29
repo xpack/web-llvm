@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMachineFunctionInfo.h` File Reference
+# `WebAssemblyMachineFunctionInfo.h` File
 
 <p>This file declares WebAssembly-specific per-machine-function information. <a href="#details">More...</a></p>
 

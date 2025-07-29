@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallingConv` Namespace Reference
+# `CallingConv` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/callingconv">CallingConv</a> Namespace - This namespace contains an enum with a value for the well-known calling conventions. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPrivatizablePtr` Struct Reference
+# `AAPrivatizablePtr` Struct
 
 <p>An abstract interface for privatizability. <a href="#details">More...</a></p>
 

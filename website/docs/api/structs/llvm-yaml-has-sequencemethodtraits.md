@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_SequenceMethodTraits` Struct Template Reference
+# `has_SequenceMethodTraits` Struct Template
 
 
 

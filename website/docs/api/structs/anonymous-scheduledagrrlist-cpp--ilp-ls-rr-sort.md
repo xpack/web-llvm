@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilp_ls_rr_sort` Struct Reference
+# `ilp_ls_rr_sort` Struct
 
 
 

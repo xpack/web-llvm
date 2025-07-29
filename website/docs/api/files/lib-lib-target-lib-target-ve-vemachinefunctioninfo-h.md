@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEMachineFunctionInfo.h` File Reference
+# `VEMachineFunctionInfo.h` File
 
 
 

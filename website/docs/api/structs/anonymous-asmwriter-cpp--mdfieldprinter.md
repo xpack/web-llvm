@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDFieldPrinter` Struct Reference
+# `MDFieldPrinter` Struct
 
 
 

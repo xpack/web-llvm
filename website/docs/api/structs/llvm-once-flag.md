@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `once_flag` Struct Reference
+# `once_flag` Struct
 
 <p>The <a href="/web-llvm/docs/api/structs/llvm/once-flag">llvm::once_flag</a> structure. <a href="#details">More...</a></p>
 

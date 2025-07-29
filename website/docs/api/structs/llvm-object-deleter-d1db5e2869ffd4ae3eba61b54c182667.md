@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `object_deleter` Struct Template Reference
+# `object_deleter` Struct Template
 
 
 

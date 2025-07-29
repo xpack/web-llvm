@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{FinalizeISel.cpp}` Namespace Reference
+# `anonymous{FinalizeISel.cpp}` Namespace
 
 
 

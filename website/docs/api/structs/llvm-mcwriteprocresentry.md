@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCWriteProcResEntry` Struct Reference
+# `MCWriteProcResEntry` Struct
 
 <p>Identify one of the processor resource kinds consumed by a particular scheduling class for the specified number of cycles. <a href="#details">More...</a></p>
 

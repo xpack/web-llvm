@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIdOffsetVtableInfo` Struct Reference
+# `TypeIdOffsetVtableInfo` Struct
 
 <p>The following data structures summarize type metadata information. <a href="#details">More...</a></p>
 

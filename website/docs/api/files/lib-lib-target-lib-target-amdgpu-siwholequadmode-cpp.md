@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIWholeQuadMode.cpp` File Reference
+# `SIWholeQuadMode.cpp` File
 
 <p>This pass adds instructions to enable whole quad mode (strict or non-strict) for pixel shaders, and strict whole wavefront mode for all programs. <a href="#details">More...</a></p>
 

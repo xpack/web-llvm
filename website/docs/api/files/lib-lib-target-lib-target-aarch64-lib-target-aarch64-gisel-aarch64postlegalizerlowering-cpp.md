@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PostLegalizerLowering.cpp` File Reference
+# `AArch64PostLegalizerLowering.cpp` File
 
 <p>Post-legalization lowering for instructions. <a href="#details">More...</a></p>
 

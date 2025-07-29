@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInfo` Struct Template Reference
+# `CastInfo` Struct Template
 
 
 

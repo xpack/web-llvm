@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMELFStreamer.cpp}` Namespace Reference
+# `anonymous{ARMELFStreamer.cpp}` Namespace
 
 
 

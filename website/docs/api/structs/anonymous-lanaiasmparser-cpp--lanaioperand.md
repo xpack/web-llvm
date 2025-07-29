@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiOperand` Struct Reference
+# `LanaiOperand` Struct
 
 
 

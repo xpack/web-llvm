@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CoroFrame.cpp}` Namespace Reference
+# `anonymous{CoroFrame.cpp}` Namespace
 
 
 

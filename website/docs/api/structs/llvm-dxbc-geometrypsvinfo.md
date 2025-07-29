@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GeometryPSVInfo` Struct Reference
+# `GeometryPSVInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSanitizerPass` Struct Reference
+# `TypeSanitizerPass` Struct
 
 
 

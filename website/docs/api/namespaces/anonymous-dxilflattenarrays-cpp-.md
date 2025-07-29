@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILFlattenArrays.cpp}` Namespace Reference
+# `anonymous{DXILFlattenArrays.cpp}` Namespace
 
 
 

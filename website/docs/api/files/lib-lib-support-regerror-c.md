@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `regerror.c` File Reference
+# `regerror.c` File
 
 
 

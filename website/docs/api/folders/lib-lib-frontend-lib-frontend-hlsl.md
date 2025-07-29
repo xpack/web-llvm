@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Frontend/HLSL` Folder Reference
+# `lib/Frontend/HLSL` Folder
 
 
 

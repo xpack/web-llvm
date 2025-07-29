@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTypeUtilities.h` File Reference
+# `WebAssemblyTypeUtilities.h` File
 
 <p>This file contains the declaration of the WebAssembly-specific type parsing utility functions. <a href="#details">More...</a></p>
 

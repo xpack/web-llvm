@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNRewritePartialRegUses.cpp}` Namespace Reference
+# `anonymous{GCNRewritePartialRegUses.cpp}` Namespace
 
 
 

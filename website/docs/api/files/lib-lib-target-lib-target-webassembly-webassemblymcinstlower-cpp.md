@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCInstLower.cpp` File Reference
+# `WebAssemblyMCInstLower.cpp` File
 
 <p>This file contains code to lower <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> MachineInstrs to their corresponding <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a> records. <a href="#details">More...</a></p>
 

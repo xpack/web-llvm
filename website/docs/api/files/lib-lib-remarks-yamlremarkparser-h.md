@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLRemarkParser.h` File Reference
+# `YAMLRemarkParser.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccelInfo` Struct Reference
+# `AccelInfo` Struct
 
 <p>This structure keeps fields which would be used for creating accelerator table. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNHazardRecognizer.cpp}` Namespace Reference
+# `anonymous{GCNHazardRecognizer.cpp}` Namespace
 
 
 

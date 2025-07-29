@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Interpreter.cpp}` Namespace Reference
+# `anonymous{Interpreter.cpp}` Namespace
 
 
 

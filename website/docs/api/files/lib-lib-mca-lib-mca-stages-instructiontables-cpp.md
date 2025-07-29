@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionTables.cpp` File Reference
+# `InstructionTables.cpp` File
 
 <p>This file implements the method InstructionTables::execute(). <a href="#details">More...</a></p>
 

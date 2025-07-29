@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86TargetTransformInfo.h` File Reference
+# `X86TargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the X86 target machine. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanonicalizeAliases.cpp` File Reference
+# `CanonicalizeAliases.cpp` File
 
 
 

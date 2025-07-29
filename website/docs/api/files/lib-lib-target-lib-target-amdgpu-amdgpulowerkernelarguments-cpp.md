@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerKernelArguments.cpp` File Reference
+# `AMDGPULowerKernelArguments.cpp` File
 
 
 

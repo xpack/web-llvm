@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UAVInfo` Struct Reference
+# `UAVInfo` Struct
 
 
 

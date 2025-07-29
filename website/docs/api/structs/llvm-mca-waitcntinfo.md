@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WaitCntInfo` Struct Reference
+# `WaitCntInfo` Struct
 
 
 

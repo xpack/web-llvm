@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Directory` Struct Reference
+# `Directory` Struct
 
 <p>Specifies the location and type of a single stream in the minidump file. <a href="#details">More...</a></p>
 

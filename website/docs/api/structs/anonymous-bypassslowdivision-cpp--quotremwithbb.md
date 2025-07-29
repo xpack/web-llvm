@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `QuotRemWithBB` Struct Reference
+# `QuotRemWithBB` Struct
 
 <p>A quotient and remainder, plus a BB from which they logically "originate". <a href="#details">More...</a></p>
 

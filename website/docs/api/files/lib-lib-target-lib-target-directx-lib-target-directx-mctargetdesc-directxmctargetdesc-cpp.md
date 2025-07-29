@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXMCTargetDesc.cpp` File Reference
+# `DirectXMCTargetDesc.cpp` File
 
 <p>This file contains DirectX target initializer. <a href="#details">More...</a></p>
 

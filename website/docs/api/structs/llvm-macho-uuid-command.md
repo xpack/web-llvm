@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `uuid_command` Struct Reference
+# `uuid_command` Struct
 
 
 

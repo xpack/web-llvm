@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/DWARF` Folder Reference
+# `lib/DebugInfo/DWARF` Folder
 
 
 

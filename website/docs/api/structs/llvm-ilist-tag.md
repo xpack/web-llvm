@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_tag` Struct Template Reference
+# `ilist_tag` Struct Template
 
 <p>Option to specify a tag for the node type. <a href="#details">More...</a></p>
 

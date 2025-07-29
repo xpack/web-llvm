@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TextStub.cpp}` Namespace Reference
+# `anonymous{TextStub.cpp}` Namespace
 
 
 

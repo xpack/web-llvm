@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CycleInfoVerifierPass` Struct Reference
+# `CycleInfoVerifierPass` Struct
 
 
 

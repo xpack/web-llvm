@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOPC64DPPInfo` Struct Reference
+# `VOPC64DPPInfo` Struct
 
 
 

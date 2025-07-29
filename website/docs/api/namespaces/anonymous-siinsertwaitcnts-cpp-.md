@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIInsertWaitcnts.cpp}` Namespace Reference
+# `anonymous{SIInsertWaitcnts.cpp}` Namespace
 
 
 

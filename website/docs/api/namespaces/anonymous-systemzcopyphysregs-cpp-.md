@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZCopyPhysRegs.cpp}` Namespace Reference
+# `anonymous{SystemZCopyPhysRegs.cpp}` Namespace
 
 
 

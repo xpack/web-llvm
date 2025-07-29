@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRShiftExpand.cpp` File Reference
+# `AVRShiftExpand.cpp` File
 
 <p>Expand non-8-bit and non-16-bit shift instructions (shl, lshr, ashr) to inline loops, just like avr-gcc. <a href="#details">More...</a></p>
 

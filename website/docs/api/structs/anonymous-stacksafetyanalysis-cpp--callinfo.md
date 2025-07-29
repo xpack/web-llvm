@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallInfo` Struct Template Reference
+# `CallInfo` Struct Template
 
 <p>Describes use of address in as a function call argument. <a href="#details">More...</a></p>
 

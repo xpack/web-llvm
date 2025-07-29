@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TailDuplication.cpp}` Namespace Reference
+# `anonymous{TailDuplication.cpp}` Namespace
 
 
 

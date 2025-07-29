@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Instruction Builders Reference
+# Instruction Builders
 
 <p>An instruction builder represents a point within a basic block and is the exclusive means of building instructions using the C interface. <a href="#details">More...</a></p>
 

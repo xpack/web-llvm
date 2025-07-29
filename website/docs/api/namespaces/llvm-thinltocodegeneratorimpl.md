@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLTOCodeGeneratorImpl` Namespace Reference
+# `ThinLTOCodeGeneratorImpl` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/thinltocodegeneratorimpl">ThinLTOCodeGeneratorImpl</a> - Namespace used for <a href="/web-llvm/docs/api/classes/llvm/thinltocodegenerator">ThinLTOCodeGenerator</a> implementation details. <a href="#details">More...</a></p>
 

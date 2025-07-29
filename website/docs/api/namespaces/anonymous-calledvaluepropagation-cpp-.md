@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CalledValuePropagation.cpp}` Namespace Reference
+# `anonymous{CalledValuePropagation.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_info_command` Struct Reference
+# `dyld_info_command` Struct
 
 
 

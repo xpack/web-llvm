@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SegFinalizeRequest` Struct Reference
+# `SegFinalizeRequest` Struct
 
 
 

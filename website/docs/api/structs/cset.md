@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cset` Struct Reference
+# `cset` Struct
 
 
 

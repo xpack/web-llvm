@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContentSection` Struct Template Reference
+# `ContentSection` Struct Template
 
 
 

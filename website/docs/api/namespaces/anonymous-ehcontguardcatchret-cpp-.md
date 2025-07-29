@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{EHContGuardCatchret.cpp}` Namespace Reference
+# `anonymous{EHContGuardCatchret.cpp}` Namespace
 
 
 

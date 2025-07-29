@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BenesNetwork` Struct Reference
+# `BenesNetwork` Struct
 
 
 

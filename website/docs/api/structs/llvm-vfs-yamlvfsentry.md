@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLVFSEntry` Struct Reference
+# `YAMLVFSEntry` Struct
 
 
 

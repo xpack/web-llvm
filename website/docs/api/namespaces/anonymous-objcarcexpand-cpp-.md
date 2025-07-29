@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ObjCARCExpand.cpp}` Namespace Reference
+# `anonymous{ObjCARCExpand.cpp}` Namespace
 
 
 

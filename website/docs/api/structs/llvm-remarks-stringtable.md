@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTable` Struct Reference
+# `StringTable` Struct
 
 <p>The string table used for serializing remarks. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCKernelDescriptor.h` File Reference
+# `AMDGPUMCKernelDescriptor.h` File
 
 <p>AMDHSA kernel descriptor MCExpr struct for use in MC layer. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lltok` Namespace Reference
+# `lltok` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DepInfo` Struct Reference
+# `DepInfo` Struct
 
 <p>Information about a dependence. <a href="#details">More...</a></p>
 

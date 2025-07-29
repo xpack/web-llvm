@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeGainT` Struct Reference
+# `MergeGainT` Struct
 
 <p>The gain of merging two chains, that is, the Ext-TSP score of the merge together with the corresponding merge 'type' and 'offset'. <a href="#details">More...</a></p>
 

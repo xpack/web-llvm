@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MainSwitch` Struct Reference
+# `MainSwitch` Struct
 
 
 

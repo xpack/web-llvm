@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryLocationWrapper` Struct Reference
+# `MemoryLocationWrapper` Struct
 
 
 

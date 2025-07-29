@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FloatData` Struct Template Reference
+# `FloatData` Struct Template
 
 
 

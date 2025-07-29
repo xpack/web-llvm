@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Comdat` Struct Reference
+# `Comdat` Struct
 
 <p>This is equivalent to an IR comdat. <a href="#details">More...</a></p>
 

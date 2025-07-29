@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Connection` Struct Reference
+# `Connection` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> a connection between subtrees and the connection level. <a href="#details">More...</a></p>
 

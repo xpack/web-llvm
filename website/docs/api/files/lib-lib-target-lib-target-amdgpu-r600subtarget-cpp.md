@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600Subtarget.cpp` File Reference
+# `R600Subtarget.cpp` File
 
 <p>Implements the <a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a> specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

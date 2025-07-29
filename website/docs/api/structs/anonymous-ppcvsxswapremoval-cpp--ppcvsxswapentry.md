@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCVSXSwapEntry` Struct Reference
+# `PPCVSXSwapEntry` Struct
 
 
 

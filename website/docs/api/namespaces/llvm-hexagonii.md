@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonII` Namespace Reference
+# `HexagonII` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/hexagonii">HexagonII</a> - This namespace holds all of the target specific flags that instruction info tracks. <a href="#details">More...</a></p>
 

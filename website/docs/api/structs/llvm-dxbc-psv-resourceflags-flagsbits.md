@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlagsBits` Struct Reference
+# `FlagsBits` Struct
 
 
 

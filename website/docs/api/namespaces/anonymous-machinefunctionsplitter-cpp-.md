@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineFunctionSplitter.cpp}` Namespace Reference
+# `anonymous{MachineFunctionSplitter.cpp}` Namespace
 
 
 

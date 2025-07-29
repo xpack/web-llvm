@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPointerInfoCallSiteReturned` Struct Reference
+# `AAPointerInfoCallSiteReturned` Struct
 
 
 

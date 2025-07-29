@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ExecutionEngine/IntelJITProfiling` Folder Reference
+# `lib/ExecutionEngine/IntelJITProfiling` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostIdxRegOp` Struct Reference
+# `PostIdxRegOp` Struct
 
 
 

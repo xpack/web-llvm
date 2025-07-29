@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_aux_bf_and_ef_symbol` Struct Reference
+# `coff_aux_bf_and_ef_symbol` Struct
 
 
 

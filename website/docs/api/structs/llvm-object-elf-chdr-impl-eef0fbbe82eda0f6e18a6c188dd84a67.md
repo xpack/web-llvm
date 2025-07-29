@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Chdr_Impl` Struct Template Reference
+# `Elf_Chdr_Impl` Struct Template
 
 
 

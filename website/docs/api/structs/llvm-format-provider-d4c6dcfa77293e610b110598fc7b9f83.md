@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_provider` Struct Template Reference
+# `format_provider` Struct Template
 
 
 

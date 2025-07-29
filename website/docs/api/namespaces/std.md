@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `std` Namespace Reference
+# `std` Namespace
 
 <p>Implement std::hash so that hash_code can be used in STL containers. <a href="#details">More...</a></p>
 

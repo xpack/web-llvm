@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Simplifier` Struct Reference
+# `Simplifier` Struct
 
 
 

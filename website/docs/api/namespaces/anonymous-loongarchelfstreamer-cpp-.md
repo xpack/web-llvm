@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchELFStreamer.cpp}` Namespace Reference
+# `anonymous{LoongArchELFStreamer.cpp}` Namespace
 
 
 

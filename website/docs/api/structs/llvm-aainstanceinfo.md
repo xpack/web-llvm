@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInstanceInfo` Struct Reference
+# `AAInstanceInfo` Struct
 
 <p>An abstract interface to track if a value leaves it's defining function instance. <a href="#details">More...</a></p>
 

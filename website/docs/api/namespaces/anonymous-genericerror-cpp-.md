@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GenericError.cpp}` Namespace Reference
+# `anonymous{GenericError.cpp}` Namespace
 
 
 

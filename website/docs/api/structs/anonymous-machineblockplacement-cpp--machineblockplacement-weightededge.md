@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeightedEdge` Struct Reference
+# `WeightedEdge` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/triple">Triple</a> struct containing edge weight and the edge. <a href="#details">More...</a></p>
 

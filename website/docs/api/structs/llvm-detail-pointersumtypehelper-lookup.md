@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Lookup` Struct Template Reference
+# `Lookup` Struct Template
 
 
 

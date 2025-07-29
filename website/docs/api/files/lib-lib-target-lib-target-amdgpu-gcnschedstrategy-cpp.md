@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNSchedStrategy.cpp` File Reference
+# `GCNSchedStrategy.cpp` File
 
 <p>This contains a <a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a> implementation for maximizing wave occupancy on GCN hardware. <a href="#details">More...</a></p>
 

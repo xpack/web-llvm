@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVAPI.cpp}` Namespace Reference
+# `anonymous{SPIRVAPI.cpp}` Namespace
 
 
 

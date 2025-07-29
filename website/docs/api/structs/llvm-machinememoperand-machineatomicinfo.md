@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineAtomicInfo` Struct Reference
+# `MachineAtomicInfo` Struct
 
 <p>Atomic information for this memory operation. <a href="#details">More...</a></p>
 

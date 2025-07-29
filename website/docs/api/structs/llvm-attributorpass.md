@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributorPass` Struct Reference
+# `AttributorPass` Struct
 
 <p>} <a href="#details">More...</a></p>
 

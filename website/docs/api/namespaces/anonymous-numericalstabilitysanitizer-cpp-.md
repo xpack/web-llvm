@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NumericalStabilitySanitizer.cpp}` Namespace Reference
+# `anonymous{NumericalStabilitySanitizer.cpp}` Namespace
 
 
 

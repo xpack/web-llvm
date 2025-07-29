@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VECC` Namespace Reference
+# `VECC` Namespace
 
 
 

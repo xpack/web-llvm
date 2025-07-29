@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FMVInfo` Struct Reference
+# `FMVInfo` Struct
 
 
 

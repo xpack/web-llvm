@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GuardWidening.cpp}` Namespace Reference
+# `anonymous{GuardWidening.cpp}` Namespace
 
 
 

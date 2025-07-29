@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SValue` Struct Reference
+# `SValue` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PortableMemInfoBlock` Struct Reference
+# `PortableMemInfoBlock` Struct
 
 
 

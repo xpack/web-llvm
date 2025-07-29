@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetTransformInfo.cpp` File Reference
+# `WebAssemblyTargetTransformInfo.cpp` File
 
 <p>This file defines the WebAssembly-specific <a href="/web-llvm/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> implementation. <a href="#details">More...</a></p>
 

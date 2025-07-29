@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `afdo_detail` Namespace Reference
+# `afdo_detail` Namespace
 
 
 

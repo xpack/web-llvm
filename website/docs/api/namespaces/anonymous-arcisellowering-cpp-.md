@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARCISelLowering.cpp}` Namespace Reference
+# `anonymous{ARCISelLowering.cpp}` Namespace
 
 
 

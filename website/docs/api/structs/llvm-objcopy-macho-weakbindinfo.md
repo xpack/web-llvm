@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeakBindInfo` Struct Reference
+# `WeakBindInfo` Struct
 
 <p>The location of the weak bind info inside the binary is described by LC_DYLD_INFO load command. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccessAsInstructionInfo` Struct Reference
+# `AccessAsInstructionInfo` Struct
 
 <p>Helper for AA::PointerInfo::Access DenseMap/Set usage ignoring everythign but the instruction. <a href="#details">More...</a></p>
 

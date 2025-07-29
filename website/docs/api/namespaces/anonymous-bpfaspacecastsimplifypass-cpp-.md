@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFASpaceCastSimplifyPass.cpp}` Namespace Reference
+# `anonymous{BPFASpaceCastSimplifyPass.cpp}` Namespace
 
 
 

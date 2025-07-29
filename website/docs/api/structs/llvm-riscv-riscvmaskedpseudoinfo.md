@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMaskedPseudoInfo` Struct Reference
+# `RISCVMaskedPseudoInfo` Struct
 
 
 

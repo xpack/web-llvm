@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpandPostRA` Struct Reference
+# `ExpandPostRA` Struct
 
 
 

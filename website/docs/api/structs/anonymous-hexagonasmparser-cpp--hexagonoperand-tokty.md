@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TokTy` Struct Reference
+# `TokTy` Struct
 
 
 

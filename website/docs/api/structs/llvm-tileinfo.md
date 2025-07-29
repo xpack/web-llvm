@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TileInfo` Struct Reference
+# `TileInfo` Struct
 
 <p>A helper struct to create IR loop nests for tiling in IR of the following form: for ColumnLoop.Index = 0..NumColumns for RowLoop.Index = 0..NumRows for KLoop.Index = 0..NumInner. <a href="#details">More...</a></p>
 

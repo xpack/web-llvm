@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAtomicOptimizer.cpp` File Reference
+# `AMDGPUAtomicOptimizer.cpp` File
 
 <p>This pass optimizes atomic operations by using a single lane of a wavefront to perform the atomic operation, thus reducing contention on that memory location. <a href="#details">More...</a></p>
 

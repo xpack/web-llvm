@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoOpLoopNestPass` Struct Reference
+# `NoOpLoopNestPass` Struct
 
 <p>No-op loop nest pass which does nothing. <a href="#details">More...</a></p>
 

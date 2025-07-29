@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Constant Expressions Reference
+# Constant Expressions
 
 <p>Functions in this group correspond to APIs on <a href="/web-llvm/docs/api/classes/llvm/constantexpr">llvm::ConstantExpr</a>. <a href="#details">More...</a></p>
 

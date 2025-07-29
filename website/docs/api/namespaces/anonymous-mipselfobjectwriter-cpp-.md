@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{MipsELFObjectWriter.cpp}` Namespace
 
 
 

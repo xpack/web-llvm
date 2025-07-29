@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNMinRegStrategy.cpp}` Namespace Reference
+# `anonymous{GCNMinRegStrategy.cpp}` Namespace
 
 
 

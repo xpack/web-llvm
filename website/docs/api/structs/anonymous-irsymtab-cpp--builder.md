@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Builder` Struct Reference
+# `Builder` Struct
 
 <p>Stores the temporary state that is required to build an IR symbol table. <a href="#details">More...</a></p>
 

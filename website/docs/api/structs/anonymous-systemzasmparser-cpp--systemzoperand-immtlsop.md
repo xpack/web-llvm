@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmTLSOp` Struct Reference
+# `ImmTLSOp` Struct
 
 
 

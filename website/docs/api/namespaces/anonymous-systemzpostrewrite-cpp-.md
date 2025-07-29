@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZPostRewrite.cpp}` Namespace Reference
+# `anonymous{SystemZPostRewrite.cpp}` Namespace
 
 
 

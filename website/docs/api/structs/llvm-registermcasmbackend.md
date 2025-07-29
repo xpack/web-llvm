@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCAsmBackend` Struct Template Reference
+# `RegisterMCAsmBackend` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermcasmbackend">RegisterMCAsmBackend</a> - Helper template for registering a target specific assembler backend. <a href="#details">More...</a></p>
 

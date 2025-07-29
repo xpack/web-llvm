@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExitNotTakenInfo` Struct Reference
+# `ExitNotTakenInfo` Struct
 
 <p>Information about the number of times a particular loop exit may be reached before exiting the loop. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `explicitly_convertible` Struct Template Reference
+# `explicitly_convertible` Struct Template
 
 
 

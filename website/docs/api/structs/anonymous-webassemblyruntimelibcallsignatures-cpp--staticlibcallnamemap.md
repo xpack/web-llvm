@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StaticLibcallNameMap` Struct Reference
+# `StaticLibcallNameMap` Struct
 
 
 

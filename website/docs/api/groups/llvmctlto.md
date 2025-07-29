@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The ThinLTO Reference
+# ThinLTO
 
 <p>// endgoup LLVMCLTO <a href="#details">More...</a></p>
 

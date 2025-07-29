@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerBinaryMetadataOptions` Struct Reference
+# `SanitizerBinaryMetadataOptions` Struct
 
 
 

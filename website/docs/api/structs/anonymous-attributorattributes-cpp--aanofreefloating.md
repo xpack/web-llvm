@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFreeFloating` Struct Reference
+# `AANoFreeFloating` Struct
 
 <p>NoFree attribute for floating values. <a href="#details">More...</a></p>
 

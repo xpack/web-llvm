@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XtensaISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{XtensaISelDAGToDAG.cpp}` Namespace
 
 
 

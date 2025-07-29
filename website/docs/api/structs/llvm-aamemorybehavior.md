@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryBehavior` Struct Reference
+# `AAMemoryBehavior` Struct
 
 <p>An abstract interface for memory access kind related attributes (readnone/readonly/writeonly). <a href="#details">More...</a></p>
 

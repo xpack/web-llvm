@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GUIDMemProfRecordPair` Struct Reference
+# `GUIDMemProfRecordPair` Struct
 
 
 

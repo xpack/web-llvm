@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fs` Namespace Reference
+# `fs` Namespace
 
 
 

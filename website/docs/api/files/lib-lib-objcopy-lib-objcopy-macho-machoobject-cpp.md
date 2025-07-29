@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOObject.cpp` File Reference
+# `MachOObject.cpp` File
 
 
 

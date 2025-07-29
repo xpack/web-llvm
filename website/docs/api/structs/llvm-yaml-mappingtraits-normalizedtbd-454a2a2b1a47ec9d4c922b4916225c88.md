@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NormalizedTBD` Struct Template Reference
+# `NormalizedTBD` Struct Template
 
 
 

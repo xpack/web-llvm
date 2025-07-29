@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockScalarTraits` Struct Template Reference
+# `BlockScalarTraits` Struct Template
 
 <p>This struct serializes the LLVM IR module. <a href="#details">More...</a></p>
 

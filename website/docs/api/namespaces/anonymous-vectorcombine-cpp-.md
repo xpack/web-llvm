@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VectorCombine.cpp}` Namespace Reference
+# `anonymous{VectorCombine.cpp}` Namespace
 
 
 

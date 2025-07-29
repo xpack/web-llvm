@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMSLSHardening.cpp}` Namespace Reference
+# `anonymous{ARMSLSHardening.cpp}` Namespace
 
 
 

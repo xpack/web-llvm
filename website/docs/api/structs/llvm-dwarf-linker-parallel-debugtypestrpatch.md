@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugTypeStrPatch` Struct Reference
+# `DebugTypeStrPatch` Struct
 
 
 

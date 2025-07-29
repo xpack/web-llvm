@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StripNonLineTableDebugInfo.cpp` File Reference
+# `StripNonLineTableDebugInfo.cpp` File
 
 
 

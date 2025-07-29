@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerTypeAnalysis` Namespace Reference
+# `PointerTypeAnalysis` Namespace
 
 <p>An analysis to compute the <span class="doxyComputerOutput">PointerTypes</span> for pointers in a <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/module">Module</a></span>. <a href="#details">More...</a></p>
 

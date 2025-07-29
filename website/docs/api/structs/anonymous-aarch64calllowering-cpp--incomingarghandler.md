@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncomingArgHandler` Struct Reference
+# `IncomingArgHandler` Struct
 
 
 

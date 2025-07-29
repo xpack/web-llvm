@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDEitherFieldImpl` Struct Template Reference
+# `MDEitherFieldImpl` Struct Template
 
 <p>Structure to represent an optional metadata field that can be of either type (A or B) and encapsulates the MD&lt;typeofA&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/optimizedstructlayout-cpp/#a5208f2b0568d811c542f8d8097dbc035">Field</a> and MD&lt;typeofB&gt;<a href="/web-llvm/docs/api/files/lib/lib/support/optimizedstructlayout-cpp/#a5208f2b0568d811c542f8d8097dbc035">Field</a> structs, so not to reimplement the specifics for representing each <a href="/web-llvm/docs/api/files/lib/lib/support/optimizedstructlayout-cpp/#a5208f2b0568d811c542f8d8097dbc035">Field</a>. <a href="#details">More...</a></p>
 

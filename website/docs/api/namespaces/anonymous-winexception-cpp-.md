@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WinException.cpp}` Namespace Reference
+# `anonymous{WinException.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FeatureEntry` Struct Reference
+# `FeatureEntry` Struct
 
 
 

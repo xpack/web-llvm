@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfJITDebugInfoRecord` Struct Reference
+# `PerfJITDebugInfoRecord` Struct
 
 
 

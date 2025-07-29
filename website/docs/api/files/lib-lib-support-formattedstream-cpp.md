@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormattedStream.cpp` File Reference
+# `FormattedStream.cpp` File
 
 
 

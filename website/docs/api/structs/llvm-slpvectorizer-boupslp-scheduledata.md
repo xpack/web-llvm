@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleData` Struct Reference
+# `ScheduleData` Struct
 
 <p>Contains all scheduling relevant data for an instruction. <a href="#details">More...</a></p>
 

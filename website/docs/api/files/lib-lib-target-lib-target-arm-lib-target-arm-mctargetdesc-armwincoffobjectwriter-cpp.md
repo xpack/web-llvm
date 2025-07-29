@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMWinCOFFObjectWriter.cpp` File Reference
+# `ARMWinCOFFObjectWriter.cpp` File
 
 
 

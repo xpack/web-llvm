@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfLineTableParams` Struct Reference
+# `MCDwarfLineTableParams` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailPredication` Namespace Reference
+# `TailPredication` Namespace
 
 
 

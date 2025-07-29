@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompUnitEntry` Struct Reference
+# `CompUnitEntry` Struct
 
 
 

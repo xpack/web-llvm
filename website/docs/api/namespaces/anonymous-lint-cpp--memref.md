@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemRef` Namespace Reference
+# `MemRef` Namespace
 
 
 

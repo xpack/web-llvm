@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonConfig` Struct Reference
+# `CommonConfig` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LRStartEndInfo` Struct Reference
+# `LRStartEndInfo` Struct
 
 
 

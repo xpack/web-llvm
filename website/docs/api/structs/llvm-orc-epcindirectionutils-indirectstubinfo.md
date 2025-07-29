@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectStubInfo` Struct Reference
+# `IndirectStubInfo` Struct
 
 
 

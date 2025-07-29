@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineLoc` Struct Reference
+# `MachineLoc` Struct
 
 <p>A single machine location; its Kind is either a register, spill location, or immediate value. <a href="#details">More...</a></p>
 

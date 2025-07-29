@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Scalarizer.cpp}` Namespace Reference
+# `anonymous{Scalarizer.cpp}` Namespace
 
 
 

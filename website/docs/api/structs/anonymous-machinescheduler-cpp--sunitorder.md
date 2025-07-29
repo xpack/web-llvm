@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SUnitOrder` Struct Template Reference
+# `SUnitOrder` Struct Template
 
 <p>Apply a less-than relation on the node order, which corresponds to the instruction order prior to scheduling. <a href="#details">More...</a></p>
 

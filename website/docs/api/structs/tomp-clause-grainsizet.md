@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GrainsizeT` Struct Template Reference
+# `GrainsizeT` Struct Template
 
 
 

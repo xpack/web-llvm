@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileContents` Struct Reference
+# `FileContents` Struct
 
 <p>The contents of the irsymtab in a bitcode file. <a href="#details">More...</a></p>
 

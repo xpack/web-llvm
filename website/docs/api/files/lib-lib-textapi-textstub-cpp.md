@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextStub.cpp` File Reference
+# `TextStub.cpp` File
 
 
 

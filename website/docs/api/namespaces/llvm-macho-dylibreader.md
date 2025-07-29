@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DylibReader` Namespace Reference
+# `DylibReader` Namespace
 
 <p>Defines the <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> Dynamic Library Reader. <a href="#details">More...</a></p>
 

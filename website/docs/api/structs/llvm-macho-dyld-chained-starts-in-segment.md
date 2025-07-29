@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_chained_starts_in_segment` Struct Reference
+# `dyld_chained_starts_in_segment` Struct
 
 
 

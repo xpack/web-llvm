@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchCG` Namespace Reference
+# `SwitchCG` Namespace
 
 
 

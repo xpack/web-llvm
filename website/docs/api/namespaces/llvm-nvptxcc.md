@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXCC` Namespace Reference
+# `NVPTXCC` Namespace
 
 
 

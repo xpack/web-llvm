@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Thumb2SizeReduction.cpp}` Namespace Reference
+# `anonymous{Thumb2SizeReduction.cpp}` Namespace
 
 
 

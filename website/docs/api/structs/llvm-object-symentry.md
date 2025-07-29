@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymEntry` Struct Reference
+# `SymEntry` Struct
 
 
 

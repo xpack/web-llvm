@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackAdjustingInsts` Struct Reference
+# `StackAdjustingInsts` Struct
 
 
 

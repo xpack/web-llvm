@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalStatus` Struct Reference
+# `GlobalStatus` Struct
 
 <p>As we analyze each global or thread-local variable, keep track of some information about it. <a href="#details">More...</a></p>
 

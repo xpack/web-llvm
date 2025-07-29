@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineInternal.h` File Reference
+# `InstCombineInternal.h` File
 
 <p>This file provides internal interfaces used to implement the InstCombine. <a href="#details">More...</a></p>
 

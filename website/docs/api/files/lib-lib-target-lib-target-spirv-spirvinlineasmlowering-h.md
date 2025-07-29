@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVInlineAsmLowering.h` File Reference
+# `SPIRVInlineAsmLowering.h` File
 
 
 

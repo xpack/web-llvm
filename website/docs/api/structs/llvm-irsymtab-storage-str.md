@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Str` Struct Reference
+# `Str` Struct
 
 <p>A reference to a string in the string table. <a href="#details">More...</a></p>
 

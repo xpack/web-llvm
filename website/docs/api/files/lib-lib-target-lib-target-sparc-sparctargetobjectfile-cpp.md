@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcTargetObjectFile.cpp` File Reference
+# `SparcTargetObjectFile.cpp` File
 
 
 

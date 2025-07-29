@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreeNode` Struct Reference
+# `FreeNode` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIUsageRecord` Struct Reference
+# `PHIUsageRecord` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCChecker.cpp` File Reference
+# `HexagonMCChecker.cpp` File
 
 
 

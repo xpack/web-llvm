@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVCallReturnHandler` Struct Reference
+# `RISCVCallReturnHandler` Struct
 
 
 

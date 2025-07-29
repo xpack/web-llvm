@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeightedLeaf` Struct Reference
+# `WeightedLeaf` Struct
 
 
 

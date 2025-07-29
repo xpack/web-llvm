@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntRange` Struct Reference
+# `IntRange` Struct
 
 
 

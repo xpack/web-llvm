@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIMachineScheduler.cpp` File Reference
+# `SIMachineScheduler.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a> Machine Scheduler interface. <a href="#details">More...</a></p>
 

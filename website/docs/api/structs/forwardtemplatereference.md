@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForwardTemplateReference` Struct Reference
+# `ForwardTemplateReference` Struct
 
 <p>A forward-reference to a template argument that was not known at the point where the template parameter name was parsed in a mangling. <a href="#details">More...</a></p>
 

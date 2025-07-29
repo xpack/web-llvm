@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructFieldInfo` Struct Reference
+# `StructFieldInfo` Struct
 
 
 

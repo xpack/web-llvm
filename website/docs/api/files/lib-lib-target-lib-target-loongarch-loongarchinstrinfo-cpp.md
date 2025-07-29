@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchInstrInfo.cpp` File Reference
+# `LoongArchInstrInfo.cpp` File
 
 
 

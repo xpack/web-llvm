@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVIndirectCall` Struct Reference
+# `SPIRVIndirectCall` Struct
 
 
 

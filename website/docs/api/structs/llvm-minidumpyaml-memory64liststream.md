@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Memory64ListStream` Struct Reference
+# `Memory64ListStream` Struct
 
 
 

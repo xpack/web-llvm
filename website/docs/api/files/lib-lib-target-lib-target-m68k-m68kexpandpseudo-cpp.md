@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kExpandPseudo.cpp` File Reference
+# `M68kExpandPseudo.cpp` File
 
 <p>This file contains a pass that expands pseudo instructions into target instructions to allow proper scheduling, if-conversion, other late optimizations, or simply the encoding of the instructions. <a href="#details">More...</a></p>
 

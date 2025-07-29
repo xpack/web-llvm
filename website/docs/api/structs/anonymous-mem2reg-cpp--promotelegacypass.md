@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PromoteLegacyPass` Struct Reference
+# `PromoteLegacyPass` Struct
 
 
 

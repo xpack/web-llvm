@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOIndirectCallVisitor` Struct Reference
+# `PGOIndirectCallVisitor` Struct
 
 
 

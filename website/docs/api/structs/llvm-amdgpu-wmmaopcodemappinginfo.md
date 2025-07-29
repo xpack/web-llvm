@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WMMAOpcodeMappingInfo` Struct Reference
+# `WMMAOpcodeMappingInfo` Struct
 
 
 

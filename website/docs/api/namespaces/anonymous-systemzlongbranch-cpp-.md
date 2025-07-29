@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZLongBranch.cpp}` Namespace Reference
+# `anonymous{SystemZLongBranch.cpp}` Namespace
 
 
 

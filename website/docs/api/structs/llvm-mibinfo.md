@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIBInfo` Struct Reference
+# `MIBInfo` Struct
 
 <p>Summary of a single MIB in a memprof metadata on allocations. <a href="#details">More...</a></p>
 

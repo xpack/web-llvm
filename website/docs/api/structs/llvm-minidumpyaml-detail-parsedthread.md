@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedThread` Struct Reference
+# `ParsedThread` Struct
 
 <p>A structure containing all data belonging to a single minidump thread. <a href="#details">More...</a></p>
 

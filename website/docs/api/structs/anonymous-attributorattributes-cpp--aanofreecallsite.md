@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFreeCallSite` Struct Reference
+# `AANoFreeCallSite` Struct
 
 <p>NoFree attribute deduction for a call sites. <a href="#details">More...</a></p>
 

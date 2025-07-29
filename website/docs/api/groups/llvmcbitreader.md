@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Bit Reader Reference
+# Bit Reader
 
 
 

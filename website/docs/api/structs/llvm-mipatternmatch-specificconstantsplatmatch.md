@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecificConstantSplatMatch` Struct Reference
+# `SpecificConstantSplatMatch` Struct
 
 <p>Matcher for a specific constant splat. <a href="#details">More...</a></p>
 

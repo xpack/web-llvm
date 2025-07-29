@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OffloadBinary.cpp}` Namespace Reference
+# `anonymous{OffloadBinary.cpp}` Namespace
 
 
 

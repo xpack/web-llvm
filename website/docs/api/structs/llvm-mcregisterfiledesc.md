@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegisterFileDesc` Struct Reference
+# `MCRegisterFileDesc` Struct
 
 <p>A register file descriptor. <a href="#details">More...</a></p>
 

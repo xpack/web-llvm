@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Tracker.cpp` File Reference
+# `Tracker.cpp` File
 
 
 

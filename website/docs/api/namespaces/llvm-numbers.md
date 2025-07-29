@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `numbers` Namespace Reference
+# `numbers` Namespace
 
 <p>Mathematical constants. <a href="#details">More...</a></p>
 

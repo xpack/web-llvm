@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerStats.cpp` File Reference
+# `SanitizerStats.cpp` File
 
 
 

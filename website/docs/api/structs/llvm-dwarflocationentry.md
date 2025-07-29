@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFLocationEntry` Struct Reference
+# `DWARFLocationEntry` Struct
 
 <p>A single location within a location list. <a href="#details">More...</a></p>
 

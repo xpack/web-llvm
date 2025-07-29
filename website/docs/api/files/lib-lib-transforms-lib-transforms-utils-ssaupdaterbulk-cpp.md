@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SSAUpdaterBulk.cpp` File Reference
+# `SSAUpdaterBulk.cpp` File
 
 
 

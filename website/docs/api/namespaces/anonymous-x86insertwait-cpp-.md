@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{X86InsertWait.cpp}` Namespace Reference
+# `anonymous{X86InsertWait.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UtilitySignature` Struct Reference
+# `UtilitySignature` Struct
 
 <p>The signature of a particular utility node used for the bisection step, i.e., the number of <span class="doxyComputerOutput">FunctionNodes</span> in each of the two buckets. <a href="#details">More...</a></p>
 

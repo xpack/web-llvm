@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatchRecipeAndOpcode` Struct Template Reference
+# `MatchRecipeAndOpcode` Struct Template
 
 <p>A helper to match an opcode against multiple recipe types. <a href="#details">More...</a></p>
 

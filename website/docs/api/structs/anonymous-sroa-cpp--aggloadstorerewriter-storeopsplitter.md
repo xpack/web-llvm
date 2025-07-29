@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StoreOpSplitter` Struct Reference
+# `StoreOpSplitter` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `format_provider` Struct Template Reference
+# `format_provider` Struct Template
 
 <p>Allow printing <a href="/web-llvm/docs/api/classes/llvm/json/value">json::Value</a> with <a href="/web-llvm/docs/api/namespaces/llvm/#a653cce37b80c03eebe7a00520a8eabb6">formatv()</a>. <a href="#details">More...</a></p>
 

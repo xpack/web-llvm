@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PostRAHazardRecognizer.cpp}` Namespace Reference
+# `anonymous{PostRAHazardRecognizer.cpp}` Namespace
 
 
 

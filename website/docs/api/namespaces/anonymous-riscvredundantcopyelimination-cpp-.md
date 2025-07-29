@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVRedundantCopyElimination.cpp}` Namespace Reference
+# `anonymous{RISCVRedundantCopyElimination.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Checker` Struct Template Reference
+# `Checker` Struct Template
 
 
 

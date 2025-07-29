@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChainedFixupTarget` Struct Reference
+# `ChainedFixupTarget` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/object/chainedfixuptarget">ChainedFixupTarget</a> holds all the information about an external symbol necessary to bind this binary to that symbol. <a href="#details">More...</a></p>
 

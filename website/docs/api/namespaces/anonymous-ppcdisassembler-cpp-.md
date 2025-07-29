@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCDisassembler.cpp}` Namespace Reference
+# `anonymous{PPCDisassembler.cpp}` Namespace
 
 
 

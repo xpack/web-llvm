@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIInsertHardClauses.cpp}` Namespace Reference
+# `anonymous{SIInsertHardClauses.cpp}` Namespace
 
 
 

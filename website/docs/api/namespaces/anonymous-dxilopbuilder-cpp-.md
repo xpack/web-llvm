@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILOpBuilder.cpp}` Namespace Reference
+# `anonymous{DXILOpBuilder.cpp}` Namespace
 
 
 

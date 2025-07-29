@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thread` Struct Reference
+# `Thread` Struct
 
 <p>Describes a single thread in the minidump file. <a href="#details">More...</a></p>
 

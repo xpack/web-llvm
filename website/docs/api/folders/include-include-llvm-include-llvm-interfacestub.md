@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/InterfaceStub` Folder Reference
+# `include/llvm/InterfaceStub` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Global Variables Reference
+# Global Variables
 
 <p>This group contains functions that operate on global variable values. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LineLocation` Struct Reference
+# `LineLocation` Struct
 
 
 

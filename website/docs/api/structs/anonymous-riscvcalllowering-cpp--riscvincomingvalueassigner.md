@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVIncomingValueAssigner` Struct Reference
+# `RISCVIncomingValueAssigner` Struct
 
 
 

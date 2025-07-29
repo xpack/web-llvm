@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitfieldOp` Struct Reference
+# `BitfieldOp` Struct
 
 
 

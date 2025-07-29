@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `queue_sort` Struct Reference
+# `queue_sort` Struct
 
 
 

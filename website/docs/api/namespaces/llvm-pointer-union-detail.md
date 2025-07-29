@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pointer_union_detail` Namespace Reference
+# `pointer_union_detail` Namespace
 
 
 

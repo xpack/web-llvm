@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrivialCallback` Struct Reference
+# `TrivialCallback` Struct
 
 <p>A struct to hold a single trivial callback with sufficient alignment for our bitpacking. <a href="#details">More...</a></p>
 

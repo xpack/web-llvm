@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MatrixTileListOp` Struct Reference
+# `MatrixTileListOp` Struct
 
 
 

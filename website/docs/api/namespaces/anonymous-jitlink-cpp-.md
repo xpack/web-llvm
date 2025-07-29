@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JITLink.cpp}` Namespace Reference
+# `anonymous{JITLink.cpp}` Namespace
 
 
 

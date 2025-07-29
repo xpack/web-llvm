@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IsConstIndexPair` Struct Reference
+# `IsConstIndexPair` Struct
 
 
 

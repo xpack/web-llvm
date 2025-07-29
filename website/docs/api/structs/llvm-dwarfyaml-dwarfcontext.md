@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFContext` Struct Reference
+# `DWARFContext` Struct
 
 <p>Class that contains helpful context information when mapping YAML into DWARF data structures. <a href="#details">More...</a></p>
 

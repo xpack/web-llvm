@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrossModuleExport` Struct Reference
+# `CrossModuleExport` Struct
 
 
 

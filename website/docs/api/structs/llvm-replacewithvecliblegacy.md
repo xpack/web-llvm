@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplaceWithVeclibLegacy` Struct Reference
+# `ReplaceWithVeclibLegacy` Struct
 
 
 

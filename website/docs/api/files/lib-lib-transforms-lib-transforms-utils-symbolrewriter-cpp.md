@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRewriter.cpp` File Reference
+# `SymbolRewriter.cpp` File
 
 
 

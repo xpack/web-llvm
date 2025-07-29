@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumEntry` Struct Template Reference
+# `EnumEntry` Struct Template
 
 
 

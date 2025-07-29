@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MachineFunctionInfo.h` File Reference
+# `R600MachineFunctionInfo.h` File
 
 
 

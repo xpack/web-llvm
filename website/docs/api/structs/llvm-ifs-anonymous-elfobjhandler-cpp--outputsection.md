@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutputSection` Struct Template Reference
+# `OutputSection` Struct Template
 
 
 

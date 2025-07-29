@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GroupUniformBuiltin` Struct Reference
+# `GroupUniformBuiltin` Struct
 
 
 

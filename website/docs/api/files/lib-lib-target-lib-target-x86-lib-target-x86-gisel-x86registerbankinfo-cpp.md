@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86RegisterBankInfo.cpp` File Reference
+# `X86RegisterBankInfo.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo">RegisterBankInfo</a> class for <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a>. <a href="#details">More...</a></p>
 

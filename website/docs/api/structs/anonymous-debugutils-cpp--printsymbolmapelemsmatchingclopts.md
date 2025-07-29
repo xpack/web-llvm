@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintSymbolMapElemsMatchingCLOpts` Struct Reference
+# `PrintSymbolMapElemsMatchingCLOpts` Struct
 
 
 

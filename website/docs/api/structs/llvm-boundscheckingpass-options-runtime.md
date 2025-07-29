@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Runtime` Struct Reference
+# `Runtime` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinResIDs` Struct Reference
+# `WinResIDs` Struct
 
 
 

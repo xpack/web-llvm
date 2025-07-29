@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `applicator` Struct Template Reference
+# `applicator` Struct Template
 
 
 

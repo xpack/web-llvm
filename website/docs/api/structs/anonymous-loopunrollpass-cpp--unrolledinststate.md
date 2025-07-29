@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnrolledInstState` Struct Reference
+# `UnrolledInstState` Struct
 
 <p>A struct to densely store the state of an instruction after unrolling at each iteration. <a href="#details">More...</a></p>
 

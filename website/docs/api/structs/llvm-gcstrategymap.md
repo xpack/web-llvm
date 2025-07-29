@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCStrategyMap` Struct Reference
+# `GCStrategyMap` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CrashRecoveryContext.cpp}` Namespace Reference
+# `anonymous{CrashRecoveryContext.cpp}` Namespace
 
 
 

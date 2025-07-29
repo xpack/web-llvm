@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AttributorAttributes.cpp}` Namespace Reference
+# `anonymous{AttributorAttributes.cpp}` Namespace
 
 <p>--------------------—NoUnwind <a href="/web-llvm/docs/api/classes/llvm/function">Function</a> Attribute-----------------------— <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorListOp` Struct Reference
+# `VectorListOp` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTargetTransformInfo.cpp` File Reference
+# `ARMTargetTransformInfo.cpp` File
 
 
 

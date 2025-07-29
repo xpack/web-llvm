@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RopeRefCountString` Struct Reference
+# `RopeRefCountString` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/roperefcountstring">RopeRefCountString</a> - This struct is allocated with 'new char[]' from the heap, and represents a reference counted chunk of string data. <a href="#details">More...</a></p>
 

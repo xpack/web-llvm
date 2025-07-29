@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrettyStackTrace.cpp` File Reference
+# `PrettyStackTrace.cpp` File
 
 
 

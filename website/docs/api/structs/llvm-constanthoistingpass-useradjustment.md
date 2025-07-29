@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UserAdjustment` Struct Reference
+# `UserAdjustment` Struct
 
 <p>A ConstantUser grouped with the <a href="/web-llvm/docs/api/classes/llvm/type">Type</a> and <a href="/web-llvm/docs/api/classes/llvm/constant">Constant</a> adjustment. <a href="#details">More...</a></p>
 

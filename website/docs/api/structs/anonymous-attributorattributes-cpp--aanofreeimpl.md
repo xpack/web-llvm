@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFreeImpl` Struct Reference
+# `AANoFreeImpl` Struct
 
 
 

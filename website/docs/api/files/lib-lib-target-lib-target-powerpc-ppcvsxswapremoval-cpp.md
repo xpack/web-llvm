@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCVSXSwapRemoval.cpp` File Reference
+# `PPCVSXSwapRemoval.cpp` File
 
 
 

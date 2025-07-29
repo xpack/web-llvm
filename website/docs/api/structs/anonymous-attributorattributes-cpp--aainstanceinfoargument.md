@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInstanceInfoArgument` Struct Reference
+# `AAInstanceInfoArgument` Struct
 
 <p>NoCapture attribute for function arguments. <a href="#details">More...</a></p>
 

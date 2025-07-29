@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVVXRndMode` Namespace Reference
+# `RISCVVXRndMode` Namespace
 
 
 

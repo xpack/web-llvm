@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPURemoveIncompatibleFunctions.cpp}` Namespace Reference
+# `anonymous{AMDGPURemoveIncompatibleFunctions.cpp}` Namespace
 
 
 

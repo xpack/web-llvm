@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOBuilderLoadCommandBase` Struct Reference
+# `MachOBuilderLoadCommandBase` Struct
 
 <p>Base type for <a href="/web-llvm/docs/api/classes/llvm/orc/machobuilder">MachOBuilder</a> load command wrappers. <a href="#details">More...</a></p>
 

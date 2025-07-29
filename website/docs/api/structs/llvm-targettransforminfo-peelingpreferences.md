@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PeelingPreferences` Struct Reference
+# `PeelingPreferences` Struct
 
 
 

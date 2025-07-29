@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinFixupBufferSecurityCheck.cpp` File Reference
+# `X86WinFixupBufferSecurityCheck.cpp` File
 
 
 

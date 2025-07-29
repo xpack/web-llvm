@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `codeview` Namespace Reference
+# `codeview` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMEPeepholeOpt.cpp` File Reference
+# `SMEPeepholeOpt.cpp` File
 
 
 

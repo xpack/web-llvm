@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ShuffleDecode.cpp` File Reference
+# `X86ShuffleDecode.cpp` File
 
 
 

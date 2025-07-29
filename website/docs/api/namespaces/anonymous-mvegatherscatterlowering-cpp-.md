@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MVEGatherScatterLowering.cpp}` Namespace Reference
+# `anonymous{MVEGatherScatterLowering.cpp}` Namespace
 
 
 

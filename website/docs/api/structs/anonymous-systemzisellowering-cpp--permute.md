@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Permute` Struct Reference
+# `Permute` Struct
 
 
 

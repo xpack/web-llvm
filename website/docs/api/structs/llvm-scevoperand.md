@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVOperand` Struct Reference
+# `SCEVOperand` Struct
 
 <p>struct for holding enough information to help calculate the cost of the given <a href="/web-llvm/docs/api/classes/llvm/scev">SCEV</a> when expanded into IR. <a href="#details">More...</a></p>
 

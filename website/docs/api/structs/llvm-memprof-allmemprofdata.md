@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllMemProfData` Struct Reference
+# `AllMemProfData` Struct
 
 
 

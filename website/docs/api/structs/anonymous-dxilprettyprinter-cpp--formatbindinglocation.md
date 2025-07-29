@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatBindingLocation` Struct Reference
+# `FormatBindingLocation` Struct
 
 
 

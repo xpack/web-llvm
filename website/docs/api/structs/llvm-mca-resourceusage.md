@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResourceUsage` Struct Reference
+# `ResourceUsage` Struct
 
 <p>Helper used by class <a href="/web-llvm/docs/api/structs/llvm/mca/instrdesc">InstrDesc</a> to describe how hardware resources are used. <a href="#details">More...</a></p>
 

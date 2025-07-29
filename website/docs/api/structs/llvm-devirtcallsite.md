@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DevirtCallSite` Struct Reference
+# `DevirtCallSite` Struct
 
 <p>A call site that could be devirtualized. <a href="#details">More...</a></p>
 

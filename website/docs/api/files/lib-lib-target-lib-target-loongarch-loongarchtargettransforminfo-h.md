@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchTargetTransformInfo.h` File Reference
+# `LoongArchTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the LoongArch target machine. <a href="#details">More...</a></p>
 

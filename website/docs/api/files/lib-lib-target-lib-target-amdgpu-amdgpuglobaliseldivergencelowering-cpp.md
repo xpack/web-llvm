@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUGlobalISelDivergenceLowering.cpp` File Reference
+# `AMDGPUGlobalISelDivergenceLowering.cpp` File
 
 <p>GlobalISel pass that selects divergent i1 phis as lane mask phis. <a href="#details">More...</a></p>
 

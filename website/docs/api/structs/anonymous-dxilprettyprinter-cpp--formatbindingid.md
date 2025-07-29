@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatBindingID` Struct Reference
+# `FormatBindingID` Struct
 
 
 

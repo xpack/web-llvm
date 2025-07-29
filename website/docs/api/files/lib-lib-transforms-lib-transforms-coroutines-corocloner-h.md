@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroCloner.h` File Reference
+# `CoroCloner.h` File
 
 
 

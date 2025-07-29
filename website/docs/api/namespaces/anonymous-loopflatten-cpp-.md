@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopFlatten.cpp}` Namespace Reference
+# `anonymous{LoopFlatten.cpp}` Namespace
 
 
 

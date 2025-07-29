@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockInfoType` Struct Reference
+# `BlockInfoType` Struct
 
 <p>Information about basic blocks relevant to dead code elimination. <a href="#details">More...</a></p>
 

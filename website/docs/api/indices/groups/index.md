@@ -3,7 +3,7 @@
 # DO NOT EDIT!
 # Automatically generated via doxygen2docusaurus by Doxygen.
 
-title: The Topics Reference
+title: Topics
 slug: /api/groups
 custom_edit_url: null
 keywords:

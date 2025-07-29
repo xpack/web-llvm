@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SubGlobPattern` Struct Reference
+# `SubGlobPattern` Struct
 
 
 

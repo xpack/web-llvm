@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BasicBlockPathCloning.cpp}` Namespace Reference
+# `anonymous{BasicBlockPathCloning.cpp}` Namespace
 
 
 

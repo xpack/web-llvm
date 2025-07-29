@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCInstrInfoFn` Struct Reference
+# `RegisterMCInstrInfoFn` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermcinstrinfofn">RegisterMCInstrInfoFn</a> - Helper template for registering a target instruction info implementation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/MC` Folder Reference
+# `lib/MC` Folder
 
 
 

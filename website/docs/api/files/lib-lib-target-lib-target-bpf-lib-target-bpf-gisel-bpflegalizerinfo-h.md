@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFLegalizerInfo.h` File Reference
+# `BPFLegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for BPF. <a href="#details">More...</a></p>
 

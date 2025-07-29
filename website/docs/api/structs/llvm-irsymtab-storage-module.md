@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Module` Struct Reference
+# `Module` Struct
 
 <p>Describes the range of a particular module's symbols within the symbol table. <a href="#details">More...</a></p>
 

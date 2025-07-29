@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCVSXCopy.cpp}` Namespace Reference
+# `anonymous{PPCVSXCopy.cpp}` Namespace
 
 
 

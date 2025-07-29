@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutProfileInfo` Struct Template Reference
+# `ImutProfileInfo` Struct Template
 
 <p>Profile traits for booleans. <a href="#details">More...</a></p>
 

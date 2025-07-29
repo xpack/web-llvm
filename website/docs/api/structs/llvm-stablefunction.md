@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StableFunction` Struct Reference
+# `StableFunction` Struct
 
 <p>A stable function is a function with a stable hash while tracking the locations of ignored operands and their hashes. <a href="#details">More...</a></p>
 

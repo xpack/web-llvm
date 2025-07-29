@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForcePassLinking` Struct Reference
+# `ForcePassLinking` Struct
 
 
 

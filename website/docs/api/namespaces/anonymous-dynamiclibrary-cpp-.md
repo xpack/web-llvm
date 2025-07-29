@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DynamicLibrary.cpp}` Namespace Reference
+# `anonymous{DynamicLibrary.cpp}` Namespace
 
 
 

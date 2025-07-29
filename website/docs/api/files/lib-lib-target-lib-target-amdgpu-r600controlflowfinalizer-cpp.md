@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600ControlFlowFinalizer.cpp` File Reference
+# `R600ControlFlowFinalizer.cpp` File
 
 <p>This pass compute turns all control flow pseudo instructions into native one computing their address on the fly; it also sets STACK_SIZE info. <a href="#details">More...</a></p>
 

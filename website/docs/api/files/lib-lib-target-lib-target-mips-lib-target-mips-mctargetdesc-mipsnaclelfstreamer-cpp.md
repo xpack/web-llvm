@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsNaClELFStreamer.cpp` File Reference
+# `MipsNaClELFStreamer.cpp` File
 
 
 

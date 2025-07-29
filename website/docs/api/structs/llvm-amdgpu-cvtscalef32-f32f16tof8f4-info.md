@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CvtScaleF32_F32F16ToF8F4_Info` Struct Reference
+# `CvtScaleF32_F32F16ToF8F4_Info` Struct
 
 
 

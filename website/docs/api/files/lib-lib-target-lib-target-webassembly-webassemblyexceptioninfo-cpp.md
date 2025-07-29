@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyExceptionInfo.cpp` File Reference
+# `WebAssemblyExceptionInfo.cpp` File
 
 <p>This file implements <a href="/web-llvm/docs/api/classes/llvm/webassemblyexception">WebAssemblyException</a> information analysis. <a href="#details">More...</a></p>
 

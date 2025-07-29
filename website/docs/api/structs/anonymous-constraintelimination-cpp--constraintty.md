@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstraintTy` Struct Reference
+# `ConstraintTy` Struct
 
 
 

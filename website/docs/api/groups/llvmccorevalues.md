@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Values Reference
+# Values
 
 <p>The bulk of LLVM's object model consists of values, which comprise a very rich type hierarchy. <a href="#details">More...</a></p>
 

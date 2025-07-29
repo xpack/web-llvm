@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadingImage` Struct Reference
+# `OffloadingImage` Struct
 
 <p>The offloading metadata that will be serialized to a memory buffer. <a href="#details">More...</a></p>
 

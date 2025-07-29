@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIEInfo` Struct Reference
+# `DIEInfo` Struct
 
 <p>Information gathered about source DIEs. <a href="#details">More...</a></p>
 

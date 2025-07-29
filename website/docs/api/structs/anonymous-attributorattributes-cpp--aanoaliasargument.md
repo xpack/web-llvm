@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoAliasArgument` Struct Reference
+# `AANoAliasArgument` Struct
 
 <p>NoAlias attribute for an argument. <a href="#details">More...</a></p>
 

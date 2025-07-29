@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowerAllowCheckPass.cpp` File Reference
+# `LowerAllowCheckPass.cpp` File
 
 
 

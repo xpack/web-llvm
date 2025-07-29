@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcMCTargetDesc.h` File Reference
+# `SparcMCTargetDesc.h` File
 
 
 

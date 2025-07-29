@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MCAsmInfoMicrosoftCOFF` Struct Reference
+# `AArch64MCAsmInfoMicrosoftCOFF` Struct
 
 
 

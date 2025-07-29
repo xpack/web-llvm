@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `View.cpp` File Reference
+# `View.cpp` File
 
 <p>This file defines the virtual anchor method in <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/mca/view-h">View.h</a> to pin the vtable. <a href="#details">More...</a></p>
 

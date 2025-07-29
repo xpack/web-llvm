@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopInterchangePass` Struct Reference
+# `LoopInterchangePass` Struct
 
 
 

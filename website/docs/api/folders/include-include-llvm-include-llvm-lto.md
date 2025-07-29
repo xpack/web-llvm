@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/LTO` Folder Reference
+# `include/llvm/LTO` Folder
 
 
 

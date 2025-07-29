@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsII` Namespace Reference
+# `MipsII` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/mipsii">MipsII</a> - This namespace holds all of the target specific flags that instruction info tracks. <a href="#details">More...</a></p>
 

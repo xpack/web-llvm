@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsTargetTransformInfo.h` File Reference
+# `MipsTargetTransformInfo.h` File
 
 
 

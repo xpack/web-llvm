@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600` Namespace Reference
+# `R600` Namespace
 
 
 

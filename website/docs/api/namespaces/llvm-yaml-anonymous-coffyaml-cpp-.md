@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{COFFYAML.cpp}` Namespace Reference
+# `anonymous{COFFYAML.cpp}` Namespace
 
 
 

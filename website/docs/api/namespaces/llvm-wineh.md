@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WinEH` Namespace Reference
+# `WinEH` Namespace
 
 
 

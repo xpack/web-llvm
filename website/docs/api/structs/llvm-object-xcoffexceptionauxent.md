@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFExceptionAuxEnt` Struct Reference
+# `XCOFFExceptionAuxEnt` Struct
 
 
 

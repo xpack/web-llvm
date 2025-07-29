@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantInfo` Struct Template Reference
+# `ConstantInfo` Struct Template
 
 
 

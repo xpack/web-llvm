@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomTreeNodeTraits` Struct Template Reference
+# `DomTreeNodeTraits` Struct Template
 
 <p>Default <a href="/web-llvm/docs/api/namespaces/llvm/#a58b9df85470fc4e2a8066ff6a62e5a34">DomTreeNode</a> traits for NodeT. <a href="#details">More...</a></p>
 

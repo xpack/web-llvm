@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NewArchiveMember` Struct Reference
+# `NewArchiveMember` Struct
 
 
 

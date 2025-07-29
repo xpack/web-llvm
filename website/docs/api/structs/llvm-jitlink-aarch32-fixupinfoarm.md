@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoArm` Struct Reference
+# `FixupInfoArm` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/jitlink/aarch32/fixupinfo">FixupInfo</a> checks for Arm edge kinds work on 32-bit words. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Header` Struct Reference
+# `Header` Struct
 
 <p>The minidump header is the first part of a minidump file. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `node_options` Struct Template Reference
+# `node_options` Struct Template
 
 <p>Traits for options for <em><a href="/web-llvm/docs/api/classes/llvm/ilist-node">ilist_node</a></em>. <a href="#details">More...</a></p>
 

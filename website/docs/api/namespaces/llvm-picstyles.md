@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PICStyles` Namespace Reference
+# `PICStyles` Namespace
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> backend supports a number of different styles of PIC. <a href="#details">More...</a></p>
 

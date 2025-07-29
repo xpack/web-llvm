@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeIndexOffset` Struct Reference
+# `TypeIndexOffset` Struct
 
 
 

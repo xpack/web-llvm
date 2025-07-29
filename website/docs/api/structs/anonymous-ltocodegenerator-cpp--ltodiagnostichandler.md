@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTODiagnosticHandler` Struct Reference
+# `LTODiagnosticHandler` Struct
 
 
 

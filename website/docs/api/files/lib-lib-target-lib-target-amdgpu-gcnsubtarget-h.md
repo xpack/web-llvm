@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNSubtarget.h` File Reference
+# `GCNSubtarget.h` File
 
 <p>AMD GCN specific subclass of TargetSubtarget. <a href="#details">More...</a></p>
 

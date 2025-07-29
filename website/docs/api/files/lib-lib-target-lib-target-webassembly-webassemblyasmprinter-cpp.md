@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmPrinter.cpp` File Reference
+# `WebAssemblyAsmPrinter.cpp` File
 
 <p>This file contains a printer that converts from our internal representation of machine-dependent LLVM code to the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> assembly language. <a href="#details">More...</a></p>
 

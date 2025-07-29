@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `rpmalloc_config_t` Struct Reference
+# `rpmalloc_config_t` Struct
 
 
 

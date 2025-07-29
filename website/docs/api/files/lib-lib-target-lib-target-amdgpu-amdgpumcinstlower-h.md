@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCInstLower.h` File Reference
+# `AMDGPUMCInstLower.h` File
 
 <p>Header of lower <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> MachineInstrs to their corresponding <a href="/web-llvm/docs/api/classes/llvm/mcinst">MCInst</a>. <a href="#details">More...</a></p>
 

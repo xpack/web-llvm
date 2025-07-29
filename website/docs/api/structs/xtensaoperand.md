@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaOperand` Struct Reference
+# `XtensaOperand` Struct
 
 
 

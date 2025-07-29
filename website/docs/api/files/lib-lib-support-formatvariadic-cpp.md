@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatVariadic.cpp` File Reference
+# `FormatVariadic.cpp` File
 
 
 

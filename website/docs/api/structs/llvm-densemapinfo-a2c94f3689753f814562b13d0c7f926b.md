@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMapInfo` Struct Template Reference
+# `DenseMapInfo` Struct Template
 
 <p>Helper that allows RangeTy as a key in a <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadStack` Struct Reference
+# `ThreadStack` Struct
 
 
 

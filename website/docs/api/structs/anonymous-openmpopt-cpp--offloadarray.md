@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffloadArray` Struct Reference
+# `OffloadArray` Struct
 
 <p>Used to map the values physically (in the IR) stored in an offload array, to a vector in memory. <a href="#details">More...</a></p>
 

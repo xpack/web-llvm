@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarLocInfo` Struct Reference
+# `VarLocInfo` Struct
 
 <p>Variable location definition used by <a href="/web-llvm/docs/api/classes/llvm/functionvarlocs">FunctionVarLocs</a>. <a href="#details">More...</a></p>
 

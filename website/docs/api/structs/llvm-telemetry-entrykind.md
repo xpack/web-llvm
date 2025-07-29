@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryKind` Struct Reference
+# `EntryKind` Struct
 
 <p>This struct is used by <a href="/web-llvm/docs/api/structs/llvm/telemetry/telemetryinfo">TelemetryInfo</a> to support isa&lt;&gt;, dyn_cast&lt;&gt; operations. <a href="#details">More...</a></p>
 

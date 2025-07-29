@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallbackInfo` Struct Reference
+# `CallbackInfo` Struct
 
 <p>The encoding of a callback with regards to the underlying instruction. <a href="#details">More...</a></p>
 

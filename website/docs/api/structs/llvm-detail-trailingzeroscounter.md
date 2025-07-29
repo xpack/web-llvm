@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrailingZerosCounter` Struct Template Reference
+# `TrailingZerosCounter` Struct Template
 
 
 

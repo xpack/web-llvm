@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Regex.cpp}` Namespace Reference
+# `anonymous{Regex.cpp}` Namespace
 
 
 

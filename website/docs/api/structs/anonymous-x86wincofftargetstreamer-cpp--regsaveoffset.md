@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegSaveOffset` Struct Reference
+# `RegSaveOffset` Struct
 
 
 

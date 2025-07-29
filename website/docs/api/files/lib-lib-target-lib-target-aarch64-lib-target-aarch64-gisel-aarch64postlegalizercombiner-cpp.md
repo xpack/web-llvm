@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PostLegalizerCombiner.cpp` File Reference
+# `AArch64PostLegalizerCombiner.cpp` File
 
 <p>Post-legalization combines on generic MachineInstrs. <a href="#details">More...</a></p>
 

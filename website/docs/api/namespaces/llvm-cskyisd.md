@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYISD` Namespace Reference
+# `CSKYISD` Namespace
 
 
 

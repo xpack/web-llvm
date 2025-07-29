@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopRotationUtils.cpp}` Namespace Reference
+# `anonymous{LoopRotationUtils.cpp}` Namespace
 
 
 

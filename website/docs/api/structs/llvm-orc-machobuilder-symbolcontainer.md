@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolContainer` Struct Reference
+# `SymbolContainer` Struct
 
 
 

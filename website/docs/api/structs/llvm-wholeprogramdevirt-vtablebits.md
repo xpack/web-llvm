@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VTableBits` Struct Reference
+# `VTableBits` Struct
 
 
 

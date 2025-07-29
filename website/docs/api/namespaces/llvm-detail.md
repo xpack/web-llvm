@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `detail` Namespace Reference
+# `detail` Namespace
 
 <p>These are wrappers over isa* function that allow them to be used in generic algorithms such as <span class="doxyComputerOutput">llvm:all_of</span>, <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/namespaces/llvm/#a7dc3069afa2ce5ea62ac2eb183e51c00">llvm::none_of</a></span>, etc. <a href="#details">More...</a></p>
 

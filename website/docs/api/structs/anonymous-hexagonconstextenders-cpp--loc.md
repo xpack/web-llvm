@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Loc` Struct Reference
+# `Loc` Struct
 
 
 

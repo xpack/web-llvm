@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ExpandReductions.cpp}` Namespace Reference
+# `anonymous{ExpandReductions.cpp}` Namespace
 
 
 

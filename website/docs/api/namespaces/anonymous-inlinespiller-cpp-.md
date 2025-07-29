@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InlineSpiller.cpp}` Namespace Reference
+# `anonymous{InlineSpiller.cpp}` Namespace
 
 
 

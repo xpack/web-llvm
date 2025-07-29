@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFReader.h` File Reference
+# `COFFReader.h` File
 
 
 

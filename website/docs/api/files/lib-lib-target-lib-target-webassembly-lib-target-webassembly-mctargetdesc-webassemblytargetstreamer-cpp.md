@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetStreamer.cpp` File Reference
+# `WebAssemblyTargetStreamer.cpp` File
 
 <p>This file defines WebAssembly-specific target streamer classes. <a href="#details">More...</a></p>
 

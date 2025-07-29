@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUMarkLastScratchLoad.cpp}` Namespace Reference
+# `anonymous{AMDGPUMarkLastScratchLoad.cpp}` Namespace
 
 
 

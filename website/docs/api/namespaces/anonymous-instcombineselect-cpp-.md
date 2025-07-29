@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{InstCombineSelect.cpp}` Namespace Reference
+# `anonymous{InstCombineSelect.cpp}` Namespace
 
 
 

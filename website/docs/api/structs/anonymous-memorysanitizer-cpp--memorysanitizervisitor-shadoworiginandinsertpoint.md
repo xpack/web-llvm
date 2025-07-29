@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShadowOriginAndInsertPoint` Struct Reference
+# `ShadowOriginAndInsertPoint` Struct
 
 
 

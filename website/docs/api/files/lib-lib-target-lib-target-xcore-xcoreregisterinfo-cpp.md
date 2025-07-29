@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreRegisterInfo.cpp` File Reference
+# `XCoreRegisterInfo.cpp` File
 
 
 

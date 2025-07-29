@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineVerifier` Struct Reference
+# `MachineVerifier` Struct
 
 
 

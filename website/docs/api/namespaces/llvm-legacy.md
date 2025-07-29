@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `legacy` Namespace Reference
+# `legacy` Namespace
 
 
 

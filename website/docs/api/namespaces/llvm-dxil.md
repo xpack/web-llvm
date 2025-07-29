@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dxil` Namespace Reference
+# `dxil` Namespace
 
 
 

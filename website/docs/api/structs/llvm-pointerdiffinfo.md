@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerDiffInfo` Struct Reference
+# `PointerDiffInfo` Struct
 
 
 

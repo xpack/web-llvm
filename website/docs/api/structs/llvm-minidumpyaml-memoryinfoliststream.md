@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryInfoListStream` Struct Reference
+# `MemoryInfoListStream` Struct
 
 <p>A structure containing the list of MemoryInfo entries comprising a MemoryInfoList stream. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCAsmInfo.h` File Reference
+# `M68kMCAsmInfo.h` File
 
 <p>This file contains the declarations of the M68k MCAsmInfo properties. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_env_command` Struct Reference
+# `dyld_env_command` Struct
 
 
 

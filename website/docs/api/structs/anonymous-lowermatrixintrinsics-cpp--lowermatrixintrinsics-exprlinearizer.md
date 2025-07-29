@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExprLinearizer` Struct Reference
+# `ExprLinearizer` Struct
 
 <p>Helper to linearize a matrix expression tree into a string. <a href="#details">More...</a></p>
 

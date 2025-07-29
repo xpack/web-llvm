@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAsmVariants` Namespace Reference
+# `AMDGPUAsmVariants` Namespace
 
 
 

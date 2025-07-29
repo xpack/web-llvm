@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hashbuilder_detail` Namespace Reference
+# `hashbuilder_detail` Namespace
 
 
 

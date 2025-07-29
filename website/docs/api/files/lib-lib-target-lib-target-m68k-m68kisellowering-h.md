@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kISelLowering.h` File Reference
+# `M68kISelLowering.h` File
 
 <p>This file defines the interfaces that M68k uses to lower LLVM code into a selection DAG. <a href="#details">More...</a></p>
 

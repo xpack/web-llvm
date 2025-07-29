@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIFunctionResourceInfo` Struct Reference
+# `SIFunctionResourceInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlattenCFGLegacyPass` Struct Reference
+# `FlattenCFGLegacyPass` Struct
 
 
 

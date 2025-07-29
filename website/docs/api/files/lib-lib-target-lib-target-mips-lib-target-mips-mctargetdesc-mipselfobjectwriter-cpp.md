@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsELFObjectWriter.cpp` File Reference
+# `MipsELFObjectWriter.cpp` File
 
 
 

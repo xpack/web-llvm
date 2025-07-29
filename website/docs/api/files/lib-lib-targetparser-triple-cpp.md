@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Triple.cpp` File Reference
+# `Triple.cpp` File
 
 
 

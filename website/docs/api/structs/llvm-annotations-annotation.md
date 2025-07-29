@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Annotation` Struct Reference
+# `Annotation` Struct
 
 <p>Either a Point (Only Start) or a <a href="/web-llvm/docs/api/structs/llvm/annotations/range">Range</a> (Start and End) <a href="#details">More...</a></p>
 

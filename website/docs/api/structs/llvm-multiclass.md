@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MultiClass` Struct Reference
+# `MultiClass` Struct
 
 
 

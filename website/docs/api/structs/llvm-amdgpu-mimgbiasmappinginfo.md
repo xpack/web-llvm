@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIMGBiasMappingInfo` Struct Reference
+# `MIMGBiasMappingInfo` Struct
 
 
 

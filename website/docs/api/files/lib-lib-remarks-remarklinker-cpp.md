@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemarkLinker.cpp` File Reference
+# `RemarkLinker.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Shuffle_match` Struct Template Reference
+# `Shuffle_match` Struct Template
 
 <p>Matches shuffle. <a href="#details">More...</a></p>
 

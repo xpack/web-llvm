@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrBoolAttr` Struct Reference
+# `StrBoolAttr` Struct
 
 
 

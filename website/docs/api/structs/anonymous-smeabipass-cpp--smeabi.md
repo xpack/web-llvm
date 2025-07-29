@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMEABI` Struct Reference
+# `SMEABI` Struct
 
 
 

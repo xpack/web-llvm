@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `def_chain_iterator` Struct Template Reference
+# `def_chain_iterator` Struct Template
 
 <p>Walks the defining accesses of MemoryDefs. <a href="#details">More...</a></p>
 

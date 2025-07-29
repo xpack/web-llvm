@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JMCInstrumenter` Struct Reference
+# `JMCInstrumenter` Struct
 
 
 

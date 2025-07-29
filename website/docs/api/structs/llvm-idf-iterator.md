@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `idf_iterator` Struct Template Reference
+# `idf_iterator` Struct Template
 
 
 

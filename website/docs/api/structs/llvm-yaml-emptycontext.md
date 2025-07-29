@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EmptyContext` Struct Reference
+# `EmptyContext` Struct
 
 
 

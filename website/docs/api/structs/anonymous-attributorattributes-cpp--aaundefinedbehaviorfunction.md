@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAUndefinedBehaviorFunction` Struct Reference
+# `AAUndefinedBehaviorFunction` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOBuilderLoadCommandImplBase` Struct Template Reference
+# `MachOBuilderLoadCommandImplBase` Struct Template
 
 <p><a href="/web-llvm/docs/api/classes/llvm/orc/machobuilder">MachOBuilder</a> load command wrapper type. <a href="#details">More...</a></p>
 

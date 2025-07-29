@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportDirectoryTableEntry` Struct Reference
+# `ImportDirectoryTableEntry` Struct
 
 <p>The Import Directory Table. <a href="#details">More...</a></p>
 

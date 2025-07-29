@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Thumb2ITBlockPass.cpp}` Namespace Reference
+# `anonymous{Thumb2ITBlockPass.cpp}` Namespace
 
 
 

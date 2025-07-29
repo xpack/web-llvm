@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrameIndex` Struct Reference
+# `FrameIndex` Struct
 
 <p>A serializaable representation of a reference to a stack object or fixed stack object. <a href="#details">More...</a></p>
 

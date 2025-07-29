@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Writer` Struct Reference
+# `Writer` Struct
 
 <p>Adapter to write values to a stream in a particular byte order. <a href="#details">More...</a></p>
 

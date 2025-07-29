@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnterT` Struct Template Reference
+# `EnterT` Struct Template
 
 
 

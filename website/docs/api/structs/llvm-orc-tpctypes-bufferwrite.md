@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BufferWrite` Struct Reference
+# `BufferWrite` Struct
 
 <p>Describes a write to a buffer. <a href="#details">More...</a></p>
 

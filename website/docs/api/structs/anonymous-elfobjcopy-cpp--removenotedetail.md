@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveNoteDetail` Struct Reference
+# `RemoveNoteDetail` Struct
 
 
 

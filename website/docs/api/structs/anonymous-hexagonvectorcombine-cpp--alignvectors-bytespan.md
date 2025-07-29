@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ByteSpan` Struct Reference
+# `ByteSpan` Struct
 
 
 

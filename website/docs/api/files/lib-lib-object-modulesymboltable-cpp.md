@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModuleSymbolTable.cpp` File Reference
+# `ModuleSymbolTable.cpp` File
 
 
 

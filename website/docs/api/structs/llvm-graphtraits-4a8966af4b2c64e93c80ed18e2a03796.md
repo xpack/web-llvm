@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphTraits` Struct Template Reference
+# `GraphTraits` Struct Template
 
 <p>Template specializations of <a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> for <a href="/web-llvm/docs/api/namespaces/llvm/#a7c616333a6d182b246652e84d44e1516">VPDomTreeNode</a>. <a href="#details">More...</a></p>
 

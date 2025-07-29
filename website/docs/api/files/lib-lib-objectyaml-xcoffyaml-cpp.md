@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCOFFYAML.cpp` File Reference
+# `XCOFFYAML.cpp` File
 
 
 

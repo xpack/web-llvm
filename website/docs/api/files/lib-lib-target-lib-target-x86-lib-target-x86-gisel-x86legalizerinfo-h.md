@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LegalizerInfo.h` File Reference
+# `X86LegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for X86. <a href="#details">More...</a></p>
 

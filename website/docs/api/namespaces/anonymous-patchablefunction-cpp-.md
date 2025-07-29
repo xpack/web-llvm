@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PatchableFunction.cpp}` Namespace Reference
+# `anonymous{PatchableFunction.cpp}` Namespace
 
 
 

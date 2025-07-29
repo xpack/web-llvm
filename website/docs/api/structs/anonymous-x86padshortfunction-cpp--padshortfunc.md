@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PadShortFunc` Struct Reference
+# `PadShortFunc` Struct
 
 
 

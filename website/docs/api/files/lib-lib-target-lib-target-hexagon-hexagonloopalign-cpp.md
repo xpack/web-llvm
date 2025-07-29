@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoopAlign.cpp` File Reference
+# `HexagonLoopAlign.cpp` File
 
 
 

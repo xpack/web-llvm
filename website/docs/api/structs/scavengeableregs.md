@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScavengeableRegs` Struct Reference
+# `ScavengeableRegs` Struct
 
 <p>Registers available for scavenging (ZPR, PPR3b, GPR). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The InsertValue Reference
+# InsertValue
 
 <p>Functions in this group only apply to instructions that map to llvm::ExtractValue and llvm::InsertValue instances. <a href="#details">More...</a></p>
 

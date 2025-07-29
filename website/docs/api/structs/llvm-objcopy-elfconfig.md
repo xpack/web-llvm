@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFConfig` Struct Reference
+# `ELFConfig` Struct
 
 
 

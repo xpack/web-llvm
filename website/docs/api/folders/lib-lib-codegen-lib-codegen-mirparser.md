@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/CodeGen/MIRParser` Folder Reference
+# `lib/CodeGen/MIRParser` Folder
 
 
 

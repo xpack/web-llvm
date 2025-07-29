@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVCollectTerms` Struct Reference
+# `SCEVCollectTerms` Struct
 
 
 

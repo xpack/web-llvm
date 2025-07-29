@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The CMP;CCMP matching Reference
+# CMP;CCMP matching
 
 <p>These functions deal with the formation of CMP;CCMP;... sequences.</p>
 

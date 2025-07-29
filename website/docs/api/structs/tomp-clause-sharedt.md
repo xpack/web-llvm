@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SharedT` Struct Template Reference
+# `SharedT` Struct Template
 
 
 

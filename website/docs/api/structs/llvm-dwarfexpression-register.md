@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Register` Struct Reference
+# `Register` Struct
 
 <p>Holds information about all subregisters comprising a register location. <a href="#details">More...</a></p>
 

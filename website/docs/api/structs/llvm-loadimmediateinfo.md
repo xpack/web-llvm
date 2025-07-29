@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadImmediateInfo` Struct Reference
+# `LoadImmediateInfo` Struct
 
 
 

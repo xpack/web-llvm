@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFTypePrinter` Struct Template Reference
+# `DWARFTypePrinter` Struct Template
 
 
 

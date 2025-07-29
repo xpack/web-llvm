@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_ScalarBitSetTraits` Struct Template Reference
+# `has_ScalarBitSetTraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetIntrinsicInfo.cpp` File Reference
+# `TargetIntrinsicInfo.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The ThinLTO Cache Control Reference
+# ThinLTO Cache Control
 
 <p>// endgoup LLVMCTLTO <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `COFFModuleDefinition.cpp` File Reference
+# `COFFModuleDefinition.cpp` File
 
 
 

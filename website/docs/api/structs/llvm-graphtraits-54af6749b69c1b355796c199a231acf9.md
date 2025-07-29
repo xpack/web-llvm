@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphTraits` Struct Template Reference
+# `GraphTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> definition to build SCC for the index. <a href="#details">More...</a></p>
 

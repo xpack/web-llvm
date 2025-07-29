@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MTBUFInfo` Struct Reference
+# `MTBUFInfo` Struct
 
 
 

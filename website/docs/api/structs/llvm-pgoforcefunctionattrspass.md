@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PGOForceFunctionAttrsPass` Struct Reference
+# `PGOForceFunctionAttrsPass` Struct
 
 
 

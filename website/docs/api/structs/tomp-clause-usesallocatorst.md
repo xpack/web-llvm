@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UsesAllocatorsT` Struct Template Reference
+# `UsesAllocatorsT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionFlagsUpdate` Struct Reference
+# `SectionFlagsUpdate` Struct
 
 
 

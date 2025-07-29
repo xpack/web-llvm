@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{COFFPlatform.cpp}` Namespace Reference
+# `anonymous{COFFPlatform.cpp}` Namespace
 
 
 

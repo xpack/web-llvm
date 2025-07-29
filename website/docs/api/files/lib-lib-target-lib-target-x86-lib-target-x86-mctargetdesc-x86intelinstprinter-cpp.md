@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86IntelInstPrinter.cpp` File Reference
+# `X86IntelInstPrinter.cpp` File
 
 
 

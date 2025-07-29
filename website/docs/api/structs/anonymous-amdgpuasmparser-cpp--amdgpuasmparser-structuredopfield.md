@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StructuredOpField` Struct Reference
+# `StructuredOpField` Struct
 
 
 

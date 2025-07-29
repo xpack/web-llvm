@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SwitchLoweringStorage` Struct Reference
+# `SwitchLoweringStorage` Struct
 
 
 

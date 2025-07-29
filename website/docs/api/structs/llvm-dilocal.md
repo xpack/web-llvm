@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILocal` Struct Reference
+# `DILocal` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XRayRecord` Struct Reference
+# `XRayRecord` Struct
 
 <p>An <a href="/web-llvm/docs/api/structs/llvm/xray/xrayrecord">XRayRecord</a> is the denormalized view of data associated in a trace. <a href="#details">More...</a></p>
 

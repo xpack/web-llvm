@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SVEPRFM` Namespace Reference
+# `AArch64SVEPRFM` Namespace
 
 
 

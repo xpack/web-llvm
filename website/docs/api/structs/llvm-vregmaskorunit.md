@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VRegMaskOrUnit` Struct Reference
+# `VRegMaskOrUnit` Struct
 
 
 

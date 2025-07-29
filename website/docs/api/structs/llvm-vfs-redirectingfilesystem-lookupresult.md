@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookupResult` Struct Reference
+# `LookupResult` Struct
 
 <p>Represents the result of a path lookup into the <a href="/web-llvm/docs/api/classes/llvm/vfs/redirectingfilesystem">RedirectingFileSystem</a>. <a href="#details">More...</a></p>
 

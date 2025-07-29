@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVGatherScatterLowering.cpp}` Namespace Reference
+# `anonymous{RISCVGatherScatterLowering.cpp}` Namespace
 
 
 

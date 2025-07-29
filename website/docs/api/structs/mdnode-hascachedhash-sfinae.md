@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SFINAE` Struct Template Reference
+# `SFINAE` Struct Template
 
 
 

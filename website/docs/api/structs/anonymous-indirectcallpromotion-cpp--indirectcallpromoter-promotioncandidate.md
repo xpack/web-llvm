@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PromotionCandidate` Struct Reference
+# `PromotionCandidate` Struct
 
 
 

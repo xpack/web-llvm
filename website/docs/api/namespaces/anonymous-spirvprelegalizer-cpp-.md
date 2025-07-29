@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVPreLegalizer.cpp}` Namespace Reference
+# `anonymous{SPIRVPreLegalizer.cpp}` Namespace
 
 
 

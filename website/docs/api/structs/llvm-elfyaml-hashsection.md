@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashSection` Struct Reference
+# `HashSection` Struct
 
 
 

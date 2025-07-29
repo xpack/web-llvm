@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Dwarf version for constants Reference
+# Dwarf version for constants
 
 <p>For constants defined by DWARF, returns the DWARF version when the constant was first defined. <a href="#details">More...</a></p>
 

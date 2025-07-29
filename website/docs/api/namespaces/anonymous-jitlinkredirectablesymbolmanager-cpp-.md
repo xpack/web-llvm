@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JITLinkRedirectableSymbolManager.cpp}` Namespace Reference
+# `anonymous{JITLinkRedirectableSymbolManager.cpp}` Namespace
 
 
 

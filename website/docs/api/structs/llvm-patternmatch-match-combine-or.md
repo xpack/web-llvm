@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `match_combine_or` Struct Template Reference
+# `match_combine_or` Struct Template
 
 <p>Matching combinators. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MaterializationUtils.cpp}` Namespace Reference
+# `anonymous{MaterializationUtils.cpp}` Namespace
 
 
 

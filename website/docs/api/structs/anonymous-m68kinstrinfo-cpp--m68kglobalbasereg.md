@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kGlobalBaseReg` Struct Reference
+# `M68kGlobalBaseReg` Struct
 
 <p>This initializes the PIC global base register. <a href="#details">More...</a></p>
 

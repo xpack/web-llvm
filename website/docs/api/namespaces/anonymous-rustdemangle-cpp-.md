@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RustDemangle.cpp}` Namespace Reference
+# `anonymous{RustDemangle.cpp}` Namespace
 
 
 

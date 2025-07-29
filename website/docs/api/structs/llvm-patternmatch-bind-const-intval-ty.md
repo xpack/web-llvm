@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bind_const_intval_ty` Struct Reference
+# `bind_const_intval_ty` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600RegisterInfo.cpp` File Reference
+# `R600RegisterInfo.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/r600">R600</a> implementation of the <a href="/web-llvm/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> class. <a href="#details">More...</a></p>
 

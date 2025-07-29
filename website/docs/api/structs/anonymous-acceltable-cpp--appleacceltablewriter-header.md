@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Header` Struct Reference
+# `Header` Struct
 
 <p>The fixed header of an Apple Accelerator Table. <a href="#details">More...</a></p>
 

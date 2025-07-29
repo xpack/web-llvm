@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingTraits` Struct Template Reference
+# `MappingTraits` Struct Template
 
 <p>YAML traits for ELFSymbol. <a href="#details">More...</a></p>
 

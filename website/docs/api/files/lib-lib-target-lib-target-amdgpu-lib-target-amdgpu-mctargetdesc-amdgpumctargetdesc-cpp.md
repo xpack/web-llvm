@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCTargetDesc.cpp` File Reference
+# `AMDGPUMCTargetDesc.cpp` File
 
 <p>This file provides <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> specific target descriptions. <a href="#details">More...</a></p>
 

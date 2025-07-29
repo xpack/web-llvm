@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAnnotationElidePass` Struct Reference
+# `CoroAnnotationElidePass` Struct
 
 
 

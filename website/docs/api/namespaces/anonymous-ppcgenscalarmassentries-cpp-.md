@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCGenScalarMASSEntries.cpp}` Namespace Reference
+# `anonymous{PPCGenScalarMASSEntries.cpp}` Namespace
 
 
 

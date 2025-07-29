@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ErrorInfo` Struct Reference
+# `ErrorInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSIHashHeader` Struct Reference
+# `GSIHashHeader` Struct
 
 <p>Header of the hash tables found in the globals and publics sections. <a href="#details">More...</a></p>
 

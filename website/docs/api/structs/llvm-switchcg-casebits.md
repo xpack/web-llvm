@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaseBits` Struct Reference
+# `CaseBits` Struct
 
 
 

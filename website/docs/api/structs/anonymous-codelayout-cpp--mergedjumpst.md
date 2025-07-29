@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedJumpsT` Struct Reference
+# `MergedJumpsT` Struct
 
 <p>A wrapper around two concatenated vectors (chains) of jumps. <a href="#details">More...</a></p>
 

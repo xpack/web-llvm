@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_valid_option` Struct Template Reference
+# `is_valid_option` Struct Template
 
 
 

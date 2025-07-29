@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VariableInfo` Struct Reference
+# `VariableInfo` Struct
 
 
 

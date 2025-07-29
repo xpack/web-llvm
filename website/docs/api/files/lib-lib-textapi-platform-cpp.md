@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Platform.cpp` File Reference
+# `Platform.cpp` File
 
 
 

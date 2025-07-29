@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUSwLowerLDS.cpp}` Namespace Reference
+# `anonymous{AMDGPUSwLowerLDS.cpp}` Namespace
 
 
 

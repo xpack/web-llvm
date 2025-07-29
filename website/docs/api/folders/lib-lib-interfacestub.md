@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/InterfaceStub` Folder Reference
+# `lib/InterfaceStub` Folder
 
 
 

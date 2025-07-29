@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompletionAction` Struct Reference
+# `CompletionAction` Struct
 
 <p>The action to perform upon a completion request. <a href="#details">More...</a></p>
 

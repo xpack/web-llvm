@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUOutgoingValueHandler` Struct Reference
+# `AMDGPUOutgoingValueHandler` Struct
 
 
 

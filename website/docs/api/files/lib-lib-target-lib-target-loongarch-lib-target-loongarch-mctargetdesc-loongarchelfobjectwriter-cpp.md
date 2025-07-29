@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchELFObjectWriter.cpp` File Reference
+# `LoongArchELFObjectWriter.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86EncodingOptimization.cpp` File Reference
+# `X86EncodingOptimization.cpp` File
 
 
 

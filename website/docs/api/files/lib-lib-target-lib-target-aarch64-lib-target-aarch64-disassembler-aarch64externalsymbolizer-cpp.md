@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64ExternalSymbolizer.cpp` File Reference
+# `AArch64ExternalSymbolizer.cpp` File
 
 
 

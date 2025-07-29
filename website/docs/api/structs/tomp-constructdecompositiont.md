@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstructDecompositionT` Struct Template Reference
+# `ConstructDecompositionT` Struct Template
 
 
 

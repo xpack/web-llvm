@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlan.h` File Reference
+# `VPlan.h` File
 
 <p>This file contains the declarations of the Vectorization Plan base classes: <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reverse_sort` Struct Template Reference
+# `reverse_sort` Struct Template
 
 
 

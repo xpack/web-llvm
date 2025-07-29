@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64DB` Namespace Reference
+# `AArch64DB` Namespace
 
 
 

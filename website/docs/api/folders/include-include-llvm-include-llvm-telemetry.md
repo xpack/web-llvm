@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Telemetry` Folder Reference
+# `include/llvm/Telemetry` Folder
 
 
 

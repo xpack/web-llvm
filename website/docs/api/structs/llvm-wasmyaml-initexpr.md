@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InitExpr` Struct Reference
+# `InitExpr` Struct
 
 
 

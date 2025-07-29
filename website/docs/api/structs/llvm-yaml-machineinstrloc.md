@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineInstrLoc` Struct Reference
+# `MachineInstrLoc` Struct
 
 <p>Identifies call instruction location in machine function. <a href="#details">More...</a></p>
 

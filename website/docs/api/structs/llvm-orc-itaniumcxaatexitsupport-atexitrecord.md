@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AtExitRecord` Struct Reference
+# `AtExitRecord` Struct
 
 
 

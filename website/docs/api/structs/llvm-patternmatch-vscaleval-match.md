@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VScaleVal_match` Struct Reference
+# `VScaleVal_match` Struct
 
 <p>Matches patterns for <span class="doxyComputerOutput">vscale</span>. <a href="#details">More...</a></p>
 

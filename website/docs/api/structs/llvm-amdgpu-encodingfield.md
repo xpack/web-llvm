@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EncodingField` Struct Template Reference
+# `EncodingField` Struct Template
 
 
 

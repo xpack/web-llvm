@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitValueOrdering` Struct Reference
+# `BitValueOrdering` Struct
 
 
 

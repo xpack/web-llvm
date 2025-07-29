@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsMulMulBugPass.cpp` File Reference
+# `MipsMulMulBugPass.cpp` File
 
 
 

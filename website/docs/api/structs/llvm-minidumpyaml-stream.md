@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Stream` Struct Reference
+# `Stream` Struct
 
 <p>The base class for all minidump streams. <a href="#details">More...</a></p>
 

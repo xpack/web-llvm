@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXAtomicLower.cpp}` Namespace Reference
+# `anonymous{NVPTXAtomicLower.cpp}` Namespace
 
 
 

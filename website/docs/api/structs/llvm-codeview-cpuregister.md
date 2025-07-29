@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CPURegister` Struct Reference
+# `CPURegister` Struct
 
 
 

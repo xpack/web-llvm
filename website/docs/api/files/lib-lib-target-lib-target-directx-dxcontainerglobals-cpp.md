@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXContainerGlobals.cpp` File Reference
+# `DXContainerGlobals.cpp` File
 
 
 

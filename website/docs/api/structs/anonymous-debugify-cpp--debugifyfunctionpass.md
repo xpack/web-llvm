@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugifyFunctionPass` Struct Reference
+# `DebugifyFunctionPass` Struct
 
 <p>FunctionPass for attaching synthetic debug info to instructions within a single function, used with the legacy module pass manager. <a href="#details">More...</a></p>
 

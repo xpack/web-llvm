@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemZII` Namespace Reference
+# `SystemZII` Namespace
 
 
 

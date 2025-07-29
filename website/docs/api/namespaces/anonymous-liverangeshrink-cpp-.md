@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LiveRangeShrink.cpp}` Namespace Reference
+# `anonymous{LiveRangeShrink.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CVMemberRecord` Struct Reference
+# `CVMemberRecord` Struct
 
 
 

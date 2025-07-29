@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Options` Struct Reference
+# `Options` Struct
 
 <p>A struct for passing gcov options between functions. <a href="#details">More...</a></p>
 

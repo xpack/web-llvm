@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LanaiMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{LanaiMCTargetDesc.cpp}` Namespace
 
 
 

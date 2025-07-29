@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/WindowsManifest` Folder Reference
+# `include/llvm/WindowsManifest` Folder
 
 
 

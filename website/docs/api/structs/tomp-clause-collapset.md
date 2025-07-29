@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CollapseT` Struct Template Reference
+# `CollapseT` Struct Template
 
 
 

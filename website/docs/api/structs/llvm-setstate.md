@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SetState` Struct Template Reference
+# `SetState` Struct Template
 
 <p>Simple state for a set. <a href="#details">More...</a></p>
 

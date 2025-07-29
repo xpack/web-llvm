@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbiStreamHeader` Struct Reference
+# `DbiStreamHeader` Struct
 
 <p>The fixed size header that appears at the beginning of the DBI Stream. <a href="#details">More...</a></p>
 

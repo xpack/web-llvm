@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TSBOptOp` Struct Reference
+# `TSBOptOp` Struct
 
 
 

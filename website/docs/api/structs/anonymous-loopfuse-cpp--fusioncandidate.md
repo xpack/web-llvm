@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FusionCandidate` Struct Reference
+# `FusionCandidate` Struct
 
 <p>This class is used to represent a candidate for loop fusion. <a href="#details">More...</a></p>
 

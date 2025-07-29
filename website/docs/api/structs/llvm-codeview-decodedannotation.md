@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecodedAnnotation` Struct Reference
+# `DecodedAnnotation` Struct
 
 
 

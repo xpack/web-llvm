@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVRegisterInfo` Struct Reference
+# `SPIRVRegisterInfo` Struct
 
 
 

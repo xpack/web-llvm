@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LDTLSCleanup` Struct Reference
+# `LDTLSCleanup` Struct
 
 
 

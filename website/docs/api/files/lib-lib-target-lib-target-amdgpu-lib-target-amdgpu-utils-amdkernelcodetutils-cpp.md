@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDKernelCodeTUtils.cpp` File Reference
+# `AMDKernelCodeTUtils.cpp` File
 
 
 

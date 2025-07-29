@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Bitfield` Struct Reference
+# `Bitfield` Struct
 
 <p>Holds functions to get, set or test bitfields. <a href="#details">More...</a></p>
 

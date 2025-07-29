@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FenceOp` Struct Reference
+# `FenceOp` Struct
 
 
 

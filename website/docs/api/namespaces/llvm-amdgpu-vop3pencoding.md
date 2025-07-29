@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOP3PEncoding` Namespace Reference
+# `VOP3PEncoding` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetRegisterInfoDesc` Struct Reference
+# `TargetRegisterInfoDesc` Struct
 
 <p>Extra information, not in <a href="/web-llvm/docs/api/structs/llvm/mcregisterdesc">MCRegisterDesc</a>, about registers. <a href="#details">More...</a></p>
 

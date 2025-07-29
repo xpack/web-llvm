@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86OutgoingValueAssigner` Struct Reference
+# `X86OutgoingValueAssigner` Struct
 
 
 

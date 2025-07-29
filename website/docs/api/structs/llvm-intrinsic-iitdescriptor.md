@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IITDescriptor` Struct Reference
+# `IITDescriptor` Struct
 
 <p>This is a type descriptor which explains the type requirements of an intrinsic. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachinePipeliner.cpp}` Namespace Reference
+# `anonymous{MachinePipeliner.cpp}` Namespace
 
 
 

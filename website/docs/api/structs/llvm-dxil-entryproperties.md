@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryProperties` Struct Reference
+# `EntryProperties` Struct
 
 
 

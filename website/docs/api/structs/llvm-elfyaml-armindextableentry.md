@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMIndexTableEntry` Struct Reference
+# `ARMIndexTableEntry` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallFlags` Struct Reference
+# `CallFlags` Struct
 
 <p>Structure that collects some common arguments that get passed around between the functions for call lowering. <a href="#details">More...</a></p>
 

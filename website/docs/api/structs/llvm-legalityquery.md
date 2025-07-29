@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegalityQuery` Struct Reference
+# `LegalityQuery` Struct
 
 <p>The <a href="/web-llvm/docs/api/structs/llvm/legalityquery">LegalityQuery</a> object bundles together all the information that's needed to decide whether a given operation is legal or not. <a href="#details">More...</a></p>
 

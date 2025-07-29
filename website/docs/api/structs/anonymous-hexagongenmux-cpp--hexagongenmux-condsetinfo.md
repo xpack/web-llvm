@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CondsetInfo` Struct Reference
+# `CondsetInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMIPeephole` Struct Reference
+# `BPFMIPeephole` Struct
 
 
 

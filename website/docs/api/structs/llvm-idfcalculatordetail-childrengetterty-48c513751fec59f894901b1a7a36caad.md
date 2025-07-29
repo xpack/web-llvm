@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChildrenGetterTy` Struct Template Reference
+# `ChildrenGetterTy` Struct Template
 
 <p>Specialization for <a href="/web-llvm/docs/api/classes/llvm/basicblock">BasicBlock</a> for the optional use of <a href="/web-llvm/docs/api/classes/llvm/graphdiff">GraphDiff</a>. <a href="#details">More...</a></p>
 

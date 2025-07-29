@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AdjustArgsT` Struct Template Reference
+# `AdjustArgsT` Struct Template
 
 
 

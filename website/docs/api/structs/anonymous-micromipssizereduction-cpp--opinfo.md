@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpInfo` Struct Reference
+# `OpInfo` Struct
 
 <p>Information about operands. <a href="#details">More...</a></p>
 

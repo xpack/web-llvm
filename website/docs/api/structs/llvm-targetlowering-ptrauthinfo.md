@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrAuthInfo` Struct Reference
+# `PtrAuthInfo` Struct
 
 <p>This structure contains the information necessary for lowering pointer-authenticating indirect calls. <a href="#details">More...</a></p>
 

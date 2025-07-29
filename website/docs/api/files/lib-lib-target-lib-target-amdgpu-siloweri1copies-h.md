@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SILowerI1Copies.h` File Reference
+# `SILowerI1Copies.h` File
 
 <p>Interface definition of the PhiLoweringHelper class that implements lane mask merging algorithm for divergent i1 phis. <a href="#details">More...</a></p>
 

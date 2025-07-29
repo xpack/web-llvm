@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeTestResolution` Struct Reference
+# `TypeTestResolution` Struct
 
 
 

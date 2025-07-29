@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonOptAddrMode.cpp}` Namespace Reference
+# `anonymous{HexagonOptAddrMode.cpp}` Namespace
 
 
 

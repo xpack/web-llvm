@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GVNSink.cpp}` Namespace Reference
+# `anonymous{GVNSink.cpp}` Namespace
 
 
 

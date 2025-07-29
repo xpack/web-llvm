@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DependenceAnalysisPrinterPass` Struct Reference
+# `DependenceAnalysisPrinterPass` Struct
 
 <p>Printer pass to dump DA results. <a href="#details">More...</a></p>
 

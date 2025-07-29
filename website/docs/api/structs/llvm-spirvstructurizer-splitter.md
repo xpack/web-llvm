@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Splitter` Struct Reference
+# `Splitter` Struct
 
 
 

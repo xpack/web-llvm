@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `gsym` Namespace Reference
+# `gsym` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAssumptionInfoFunction` Struct Reference
+# `AAAssumptionInfoFunction` Struct
 
 <p>Propagates assumption information from parent functions to all of their successors. <a href="#details">More...</a></p>
 

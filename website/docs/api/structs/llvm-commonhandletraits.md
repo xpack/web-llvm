@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CommonHandleTraits` Struct Reference
+# `CommonHandleTraits` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyCleanCodeAfterTrap.cpp}` Namespace Reference
+# `anonymous{WebAssemblyCleanCodeAfterTrap.cpp}` Namespace
 
 
 

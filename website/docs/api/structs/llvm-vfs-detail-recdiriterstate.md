@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecDirIterState` Struct Reference
+# `RecDirIterState` Struct
 
 <p>Keeps state for the <a href="/web-llvm/docs/api/classes/llvm/vfs/recursive-directory-iterator">recursive_directory_iterator</a>. <a href="#details">More...</a></p>
 

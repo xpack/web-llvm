@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIGlobal` Struct Reference
+# `DIGlobal` Struct
 
 <p>Container for description of a global variable. <a href="#details">More...</a></p>
 

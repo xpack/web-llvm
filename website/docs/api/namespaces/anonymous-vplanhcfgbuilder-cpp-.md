@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VPlanHCFGBuilder.cpp}` Namespace Reference
+# `anonymous{VPlanHCFGBuilder.cpp}` Namespace
 
 
 

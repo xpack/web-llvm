@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LogicOp` Struct Reference
+# `LogicOp` Struct
 
 
 

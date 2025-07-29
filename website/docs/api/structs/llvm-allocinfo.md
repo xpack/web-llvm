@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllocInfo` Struct Reference
+# `AllocInfo` Struct
 
 <p>Summary of memprof metadata on allocations. <a href="#details">More...</a></p>
 

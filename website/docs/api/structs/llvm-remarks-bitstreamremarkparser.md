@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamRemarkParser` Struct Reference
+# `BitstreamRemarkParser` Struct
 
 <p>Parses and holds the state of the latest parsed remark. <a href="#details">More...</a></p>
 

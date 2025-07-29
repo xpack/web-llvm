@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcLazyCallThroughManagerRef` Namespace Reference
+# `LLVMOrcLazyCallThroughManagerRef` Namespace
 
 
 

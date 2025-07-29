@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `source_version_command` Struct Reference
+# `source_version_command` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiInstrInfo.cpp` File Reference
+# `LanaiInstrInfo.cpp` File
 
 
 

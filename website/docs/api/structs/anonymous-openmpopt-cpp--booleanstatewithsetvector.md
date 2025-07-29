@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BooleanStateWithSetVector` Struct Template Reference
+# `BooleanStateWithSetVector` Struct Template
 
 
 

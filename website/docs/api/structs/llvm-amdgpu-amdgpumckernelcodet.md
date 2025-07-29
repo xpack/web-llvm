@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCKernelCodeT` Struct Reference
+# `AMDGPUMCKernelCodeT` Struct
 
 
 

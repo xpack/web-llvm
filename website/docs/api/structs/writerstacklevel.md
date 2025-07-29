@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WriterStackLevel` Struct Reference
+# `WriterStackLevel` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListStream` Struct Template Reference
+# `ListStream` Struct Template
 
 <p>A stream representing a list of abstract entries in a minidump stream. <a href="#details">More...</a></p>
 

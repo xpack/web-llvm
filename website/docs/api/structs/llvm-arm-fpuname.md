@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FPUName` Struct Reference
+# `FPUName` Struct
 
 
 

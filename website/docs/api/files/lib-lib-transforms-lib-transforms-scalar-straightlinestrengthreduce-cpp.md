@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StraightLineStrengthReduce.cpp` File Reference
+# `StraightLineStrengthReduce.cpp` File
 
 
 

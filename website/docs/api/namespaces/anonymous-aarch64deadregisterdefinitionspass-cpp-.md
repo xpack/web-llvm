@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64DeadRegisterDefinitionsPass.cpp}` Namespace Reference
+# `anonymous{AArch64DeadRegisterDefinitionsPass.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Comparison` Struct Reference
+# `Comparison` Struct
 
 <p>Kinds of comparisons in the compare instructions. <a href="#details">More...</a></p>
 

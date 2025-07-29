@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UIntWrite` Struct Template Reference
+# `UIntWrite` Struct Template
 
 
 

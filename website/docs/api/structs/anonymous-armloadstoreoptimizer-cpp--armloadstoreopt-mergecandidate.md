@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeCandidate` Struct Reference
+# `MergeCandidate` Struct
 
 <p>A set of MachineInstrs that fulfill (nearly all) conditions to get merged into a LDM/STM. <a href="#details">More...</a></p>
 

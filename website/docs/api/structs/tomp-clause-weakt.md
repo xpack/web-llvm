@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeakT` Struct Template Reference
+# `WeakT` Struct Template
 
 
 

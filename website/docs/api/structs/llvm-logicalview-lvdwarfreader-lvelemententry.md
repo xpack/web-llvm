@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVElementEntry` Struct Reference
+# `LVElementEntry` Struct
 
 
 

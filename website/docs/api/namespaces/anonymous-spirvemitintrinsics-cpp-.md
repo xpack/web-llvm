@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVEmitIntrinsics.cpp}` Namespace Reference
+# `anonymous{SPIRVEmitIntrinsics.cpp}` Namespace
 
 
 

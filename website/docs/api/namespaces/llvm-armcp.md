@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMCP` Namespace Reference
+# `ARMCP` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAML.cpp` File Reference
+# `YAML.cpp` File
 
 
 

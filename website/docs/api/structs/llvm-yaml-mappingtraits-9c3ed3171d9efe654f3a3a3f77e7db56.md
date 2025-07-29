@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingTraits` Struct Template Reference
+# `MappingTraits` Struct Template
 
 <p>Implement this as a mapping for now to get proper quotation for the value. <a href="#details">More...</a></p>
 

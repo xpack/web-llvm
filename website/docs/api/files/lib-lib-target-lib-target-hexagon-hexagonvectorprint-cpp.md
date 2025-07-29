@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVectorPrint.cpp` File Reference
+# `HexagonVectorPrint.cpp` File
 
 
 

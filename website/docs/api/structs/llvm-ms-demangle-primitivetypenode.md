@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrimitiveTypeNode` Struct Reference
+# `PrimitiveTypeNode` Struct
 
 
 

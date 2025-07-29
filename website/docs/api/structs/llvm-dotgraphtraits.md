@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DOTGraphTraits` Struct Template Reference
+# `DOTGraphTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/dotgraphtraits">DOTGraphTraits</a> - Template class that can be specialized to customize how graphs are converted to 'dot' graphs. <a href="#details">More...</a></p>
 

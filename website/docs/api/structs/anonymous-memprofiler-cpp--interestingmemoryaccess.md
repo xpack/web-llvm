@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InterestingMemoryAccess` Struct Reference
+# `InterestingMemoryAccess` Struct
 
 
 

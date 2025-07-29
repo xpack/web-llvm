@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreAsmPrinter.cpp` File Reference
+# `XCoreAsmPrinter.cpp` File
 
 
 

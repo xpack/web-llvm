@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `detector` Struct Template Reference
+# `detector` Struct Template
 
 
 

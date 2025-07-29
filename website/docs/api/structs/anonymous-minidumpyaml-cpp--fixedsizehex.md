@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixedSizeHex` Struct Template Reference
+# `FixedSizeHex` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `apf_pred_ty` Struct Template Reference
+# `apf_pred_ty` Struct Template
 
 <p>This helper class is used to match scalar and vector constants that satisfy a specified predicate, and bind them to an <a href="/web-llvm/docs/api/classes/llvm/apfloat">APFloat</a>. <a href="#details">More...</a></p>
 

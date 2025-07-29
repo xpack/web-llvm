@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueAndVReg` Struct Reference
+# `ValueAndVReg` Struct
 
 <p>Simple struct used to hold a constant integer value and a virtual register. <a href="#details">More...</a></p>
 

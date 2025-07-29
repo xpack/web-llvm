@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncNameSignature` Struct Reference
+# `FuncNameSignature` Struct
 
 
 

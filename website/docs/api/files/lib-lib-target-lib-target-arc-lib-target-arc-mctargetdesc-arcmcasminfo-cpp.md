@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCMCAsmInfo.cpp` File Reference
+# `ARCMCAsmInfo.cpp` File
 
 
 

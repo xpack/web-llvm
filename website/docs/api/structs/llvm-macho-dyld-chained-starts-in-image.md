@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dyld_chained_starts_in_image` Struct Reference
+# `dyld_chained_starts_in_image` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/macho/dyld-chained-starts-in-image">dyld_chained_starts_in_image</a> is embedded in LC_DYLD_CHAINED_FIXUPS payload. <a href="#details">More...</a></p>
 

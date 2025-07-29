@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreISelLowering.cpp` File Reference
+# `XCoreISelLowering.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Description` Struct Reference
+# `Description` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/dwarfexpression/operation/description">Description</a> of the encoding of one expression Op. <a href="#details">More...</a></p>
 

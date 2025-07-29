@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BucketElement` Struct Reference
+# `BucketElement` Struct
 
 
 

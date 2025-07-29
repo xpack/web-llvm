@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Term` Struct Reference
+# `Term` Struct
 
 <p>Represents a term in a counter expression tree. <a href="#details">More...</a></p>
 

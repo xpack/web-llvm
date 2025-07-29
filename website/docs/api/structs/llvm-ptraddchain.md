@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrAddChain` Struct Reference
+# `PtrAddChain` Struct
 
 
 

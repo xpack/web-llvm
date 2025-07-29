@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsRelocationEntry` Struct Reference
+# `MipsRelocationEntry` Struct
 
 <p>Holds additional information needed by the relocation ordering algorithm. <a href="#details">More...</a></p>
 

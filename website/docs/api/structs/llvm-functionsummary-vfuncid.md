@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VFuncId` Struct Reference
+# `VFuncId` Struct
 
 <p>An "identifier" for a virtual function. <a href="#details">More...</a></p>
 

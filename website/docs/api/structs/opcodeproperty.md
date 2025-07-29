@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpCodeProperty` Struct Reference
+# `OpCodeProperty` Struct
 
 
 

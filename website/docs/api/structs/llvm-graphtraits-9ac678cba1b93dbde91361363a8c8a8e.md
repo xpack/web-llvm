@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphTraits` Struct Template Reference
+# `GraphTraits` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/graphtraits">GraphTraits</a> specialization to recursively traverse <a href="/web-llvm/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> nodes, including traversing through VPRegionBlocks. <a href="#details">More...</a></p>
 

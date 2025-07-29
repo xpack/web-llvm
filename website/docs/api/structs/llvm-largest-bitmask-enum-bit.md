@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `largest_bitmask_enum_bit` Struct Template Reference
+# `largest_bitmask_enum_bit` Struct Template
 
 <p>Trait class to determine bitmask enumeration largest bit. <a href="#details">More...</a></p>
 

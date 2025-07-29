@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTOCodeGenerator` Struct Reference
+# `LTOCodeGenerator` Struct
 
 <p>C++ class which implements the opaque <a href="/web-llvm/docs/api/groups/llvmclto/#ga6e1ba6da4277057a20e147d9412a03d7">lto_code_gen_t</a> type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVPrepareFunctions.cpp}` Namespace Reference
+# `anonymous{SPIRVPrepareFunctions.cpp}` Namespace
 
 
 

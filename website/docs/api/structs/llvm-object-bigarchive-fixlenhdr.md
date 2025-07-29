@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixLenHdr` Struct Reference
+# `FixLenHdr` Struct
 
 <p>Fixed-Length Header. <a href="#details">More...</a></p>
 

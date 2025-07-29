@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedMemoryDescriptor` Struct Reference
+# `ParsedMemoryDescriptor` Struct
 
 <p>A structure containing all data describing a single memory region. <a href="#details">More...</a></p>
 

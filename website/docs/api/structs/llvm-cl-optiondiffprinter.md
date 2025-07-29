@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptionDiffPrinter` Struct Template Reference
+# `OptionDiffPrinter` Struct Template
 
 
 

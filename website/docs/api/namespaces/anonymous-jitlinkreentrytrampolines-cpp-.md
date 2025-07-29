@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JITLinkReentryTrampolines.cpp}` Namespace Reference
+# `anonymous{JITLinkReentryTrampolines.cpp}` Namespace
 
 
 

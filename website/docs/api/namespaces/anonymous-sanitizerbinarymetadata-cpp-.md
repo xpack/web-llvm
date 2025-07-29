@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SanitizerBinaryMetadata.cpp}` Namespace Reference
+# `anonymous{SanitizerBinaryMetadata.cpp}` Namespace
 
 
 

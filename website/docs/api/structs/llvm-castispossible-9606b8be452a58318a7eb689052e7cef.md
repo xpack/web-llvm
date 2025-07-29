@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastIsPossible` Struct Template Reference
+# `CastIsPossible` Struct Template
 
 <p>Upcasting (from derived to base) and casting from a type to itself should always be possible. <a href="#details">More...</a></p>
 

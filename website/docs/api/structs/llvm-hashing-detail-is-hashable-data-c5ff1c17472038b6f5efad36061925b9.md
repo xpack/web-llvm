@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_hashable_data` Struct Template Reference
+# `is_hashable_data` Struct Template
 
 
 

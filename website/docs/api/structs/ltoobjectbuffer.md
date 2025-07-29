@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTOObjectBuffer` Struct Reference
+# `LTOObjectBuffer` Struct
 
 <p>Type to wrap a single object returned by ThinLTO. <a href="#details">More...</a></p>
 

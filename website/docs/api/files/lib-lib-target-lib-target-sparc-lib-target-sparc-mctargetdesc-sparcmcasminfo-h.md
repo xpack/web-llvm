@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcMCAsmInfo.h` File Reference
+# `SparcMCAsmInfo.h` File
 
 
 

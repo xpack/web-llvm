@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryBehaviorImpl` Struct Reference
+# `AAMemoryBehaviorImpl` Struct
 
 
 

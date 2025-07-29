@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMustProgress` Struct Reference
+# `AAMustProgress` Struct
 
 <p>An abstract interface for all nonnull attributes. <a href="#details">More...</a></p>
 

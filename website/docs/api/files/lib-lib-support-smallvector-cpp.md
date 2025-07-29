@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SmallVector.cpp` File Reference
+# `SmallVector.cpp` File
 
 
 

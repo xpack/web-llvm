@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniquePtrCast` Struct Template Reference
+# `UniquePtrCast` Struct Template
 
 <p>This cast trait provides std::unique_ptr casting. <a href="#details">More...</a></p>
 

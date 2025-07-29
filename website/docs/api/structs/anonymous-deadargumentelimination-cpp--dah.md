@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAH` Struct Reference
+# `DAH` Struct
 
 <p>The DeadArgumentHacking pass, same as dead argument elimination, but deletes arguments to functions which are external. <a href="#details">More...</a></p>
 

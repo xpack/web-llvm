@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EdgeTarget` Struct Reference
+# `EdgeTarget` Struct
 
 
 

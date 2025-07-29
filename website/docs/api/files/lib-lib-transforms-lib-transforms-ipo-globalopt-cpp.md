@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalOpt.cpp` File Reference
+# `GlobalOpt.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DylinkSection` Struct Reference
+# `DylinkSection` Struct
 
 
 

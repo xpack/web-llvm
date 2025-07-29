@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AESFixupLocation` Struct Reference
+# `AESFixupLocation` Struct
 
 
 

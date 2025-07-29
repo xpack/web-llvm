@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600TargetTransformInfo.cpp` File Reference
+# `R600TargetTransformInfo.cpp` File
 
 
 

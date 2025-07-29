@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Disposer` Struct Reference
+# `Disposer` Struct
 
 
 

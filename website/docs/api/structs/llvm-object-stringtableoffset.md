@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTableOffset` Struct Reference
+# `StringTableOffset` Struct
 
 
 

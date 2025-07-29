@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompleterConcept` Struct Reference
+# `CompleterConcept` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GPUInfo` Struct Reference
+# `GPUInfo` Struct
 
 
 

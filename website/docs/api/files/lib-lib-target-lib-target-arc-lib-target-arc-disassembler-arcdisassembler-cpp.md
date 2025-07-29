@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCDisassembler.cpp` File Reference
+# `ARCDisassembler.cpp` File
 
 <p>This file is part of the ARC Disassembler. <a href="#details">More...</a></p>
 

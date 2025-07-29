@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VectorIndexOp` Struct Reference
+# `VectorIndexOp` Struct
 
 
 

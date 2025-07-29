@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySanitizerVisitor` Struct Reference
+# `MemorySanitizerVisitor` Struct
 
 <p>This class does all the work for a given function. <a href="#details">More...</a></p>
 

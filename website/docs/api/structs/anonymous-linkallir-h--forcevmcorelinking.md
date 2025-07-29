@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceVMCoreLinking` Struct Reference
+# `ForceVMCoreLinking` Struct
 
 
 

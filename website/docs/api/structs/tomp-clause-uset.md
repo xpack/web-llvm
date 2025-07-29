@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseT` Struct Template Reference
+# `UseT` Struct Template
 
 
 

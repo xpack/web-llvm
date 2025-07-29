@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoReturnImpl` Struct Reference
+# `AANoReturnImpl` Struct
 
 
 

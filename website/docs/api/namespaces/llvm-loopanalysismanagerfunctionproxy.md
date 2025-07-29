@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopAnalysisManagerFunctionProxy` Namespace Reference
+# `LoopAnalysisManagerFunctionProxy` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCBranchCoalescing.cpp` File Reference
+# `PPCBranchCoalescing.cpp` File
 
 <p>Coalesce basic blocks guarded by the same branch condition into a single basic block. <a href="#details">More...</a></p>
 

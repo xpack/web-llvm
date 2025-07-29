@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgOp` Struct Reference
+# `DbgOp` Struct
 
 <p>TODO: Might pack better if we changed this to a Struct of Arrays, since <a href="/web-llvm/docs/api/classes/llvm/machineoperand">MachineOperand</a> is width 32, making this struct width 33. <a href="#details">More...</a></p>
 

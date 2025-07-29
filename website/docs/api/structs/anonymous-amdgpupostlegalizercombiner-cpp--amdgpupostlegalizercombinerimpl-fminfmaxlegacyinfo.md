@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FMinFMaxLegacyInfo` Struct Reference
+# `FMinFMaxLegacyInfo` Struct
 
 
 

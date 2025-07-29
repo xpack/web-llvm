@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGSCCUpdateResult` Struct Reference
+# `CGSCCUpdateResult` Struct
 
 <p>Support structure for SCC passes to communicate updates the call graph back to the CGSCC pass manager infrastructure. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HwregSize` Struct Reference
+# `HwregSize` Struct
 
 
 

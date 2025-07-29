@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PseudoInfo` Struct Reference
+# `PseudoInfo` Struct
 
 
 

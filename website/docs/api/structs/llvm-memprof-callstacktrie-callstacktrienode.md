@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStackTrieNode` Struct Reference
+# `CallStackTrieNode` Struct
 
 
 

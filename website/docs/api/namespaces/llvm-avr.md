@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVR` Namespace Reference
+# `AVR` Namespace
 
 <p>Contains the <a href="/web-llvm/docs/api/namespaces/llvm/avr">AVR</a> backend. <a href="#details">More...</a></p>
 

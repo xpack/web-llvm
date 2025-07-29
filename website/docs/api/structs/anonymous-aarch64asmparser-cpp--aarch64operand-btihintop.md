@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTIHintOp` Struct Reference
+# `BTIHintOp` Struct
 
 
 

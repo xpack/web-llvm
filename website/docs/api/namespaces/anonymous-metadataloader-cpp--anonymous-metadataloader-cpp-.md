@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MetadataLoader.cpp}` Namespace Reference
+# `anonymous{MetadataLoader.cpp}` Namespace
 
 
 

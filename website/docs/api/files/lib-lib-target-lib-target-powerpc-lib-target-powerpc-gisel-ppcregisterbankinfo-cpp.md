@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCRegisterBankInfo.cpp` File Reference
+# `PPCRegisterBankInfo.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo">RegisterBankInfo</a> class for PowerPC. <a href="#details">More...</a></p>
 

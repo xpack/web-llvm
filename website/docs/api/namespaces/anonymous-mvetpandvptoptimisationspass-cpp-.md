@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MVETPAndVPTOptimisationsPass.cpp}` Namespace Reference
+# `anonymous{MVETPAndVPTOptimisationsPass.cpp}` Namespace
 
 
 

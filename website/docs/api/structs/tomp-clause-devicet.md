@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeviceT` Struct Template Reference
+# `DeviceT` Struct Template
 
 
 

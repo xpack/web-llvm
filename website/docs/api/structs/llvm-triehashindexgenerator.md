@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TrieHashIndexGenerator` Struct Reference
+# `TrieHashIndexGenerator` Struct
 
 <p>The utility class that helps computing the index of the object inside trie from its hash. <a href="#details">More...</a></p>
 

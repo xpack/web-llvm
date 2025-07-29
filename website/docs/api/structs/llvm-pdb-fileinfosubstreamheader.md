@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileInfoSubstreamHeader` Struct Reference
+# `FileInfoSubstreamHeader` Struct
 
 <p>The header preceding the File Info Substream of the DBI stream. <a href="#details">More...</a></p>
 

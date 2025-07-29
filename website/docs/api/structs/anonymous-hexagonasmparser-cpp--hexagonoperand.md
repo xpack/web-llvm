@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonOperand` Struct Reference
+# `HexagonOperand` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-hexagonasmparser-cpp-/hexagonoperand">HexagonOperand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/hexagon">Hexagon</a> machine instruction. <a href="#details">More...</a></p>
 

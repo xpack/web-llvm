@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFAddressRange` Struct Reference
+# `DWARFAddressRange` Struct
 
 
 

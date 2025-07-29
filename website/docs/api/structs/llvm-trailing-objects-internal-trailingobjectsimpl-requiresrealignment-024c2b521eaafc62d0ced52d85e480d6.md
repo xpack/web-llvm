@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RequiresRealignment` Struct Reference
+# `RequiresRealignment` Struct
 
 
 

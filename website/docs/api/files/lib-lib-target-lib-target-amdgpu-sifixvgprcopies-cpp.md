@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIFixVGPRCopies.cpp` File Reference
+# `SIFixVGPRCopies.cpp` File
 
 <p>Add implicit use of exec to vector register copies. <a href="#details">More...</a></p>
 

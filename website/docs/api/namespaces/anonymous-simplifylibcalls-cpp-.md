@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SimplifyLibCalls.cpp}` Namespace Reference
+# `anonymous{SimplifyLibCalls.cpp}` Namespace
 
 
 

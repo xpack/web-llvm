@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRTraits` Struct Template Reference
+# `IRTraits` Struct Template
 
 
 

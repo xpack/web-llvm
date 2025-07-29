@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopCand` Struct Reference
+# `LoopCand` Struct
 
 
 

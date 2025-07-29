@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetInfo.cpp` File Reference
+# `AMDGPUTargetInfo.cpp` File
 
 
 

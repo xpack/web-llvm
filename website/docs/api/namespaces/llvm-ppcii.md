@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCII` Namespace Reference
+# `PPCII` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/ppcii">PPCII</a> - This namespace holds all of the PowerPC target-specific per-instruction flags. <a href="#details">More...</a></p>
 

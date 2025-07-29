@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86Operand` Struct Reference
+# `X86Operand` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/x86operand">X86Operand</a> - Instances of this class represent a parsed <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a> machine instruction. <a href="#details">More...</a></p>
 

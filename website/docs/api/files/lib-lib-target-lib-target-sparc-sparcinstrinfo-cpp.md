@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcInstrInfo.cpp` File Reference
+# `SparcInstrInfo.cpp` File
 
 
 

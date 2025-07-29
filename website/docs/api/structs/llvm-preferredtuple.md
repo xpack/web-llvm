@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreferredTuple` Struct Reference
+# `PreferredTuple` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonLoopIdiomRecognitionPass` Struct Reference
+# `HexagonLoopIdiomRecognitionPass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFSStubTriple` Struct Reference
+# `IFSStubTriple` Struct
 
 
 

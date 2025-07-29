@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WindowScheduler.cpp}` Namespace Reference
+# `anonymous{WindowScheduler.cpp}` Namespace
 
 
 

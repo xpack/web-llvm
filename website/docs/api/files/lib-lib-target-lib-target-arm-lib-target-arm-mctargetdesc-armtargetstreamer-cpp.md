@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMTargetStreamer.cpp` File Reference
+# `ARMTargetStreamer.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MLxExpansion` Struct Reference
+# `MLxExpansion` Struct
 
 
 

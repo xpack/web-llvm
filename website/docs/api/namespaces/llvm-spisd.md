@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPISD` Namespace Reference
+# `SPISD` Namespace
 
 
 

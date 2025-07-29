@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAUniformWorkGroupSize` Struct Reference
+# `AAUniformWorkGroupSize` Struct
 
 
 

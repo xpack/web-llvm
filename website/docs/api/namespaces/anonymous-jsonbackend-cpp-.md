@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{JSONBackend.cpp}` Namespace Reference
+# `anonymous{JSONBackend.cpp}` Namespace
 
 
 

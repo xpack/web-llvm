@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `add_lvalue_reference_if_not_pointer` Struct Template Reference
+# `add_lvalue_reference_if_not_pointer` Struct Template
 
 <p>If T is a pointer, just return it. If it is not, return T&amp;. <a href="#details">More...</a></p>
 

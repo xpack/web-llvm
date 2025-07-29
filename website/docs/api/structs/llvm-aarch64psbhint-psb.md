@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PSB` Struct Reference
+# `PSB` Struct
 
 
 

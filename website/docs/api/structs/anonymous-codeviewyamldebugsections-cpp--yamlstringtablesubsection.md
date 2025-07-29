@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLStringTableSubsection` Struct Reference
+# `YAMLStringTableSubsection` Struct
 
 
 

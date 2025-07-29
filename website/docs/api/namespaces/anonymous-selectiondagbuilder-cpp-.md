@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SelectionDAGBuilder.cpp}` Namespace Reference
+# `anonymous{SelectionDAGBuilder.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RAWHazard` Struct Reference
+# `RAWHazard` Struct
 
 
 

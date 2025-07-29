@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeTraceProfilerEntry` Struct Reference
+# `TimeTraceProfilerEntry` Struct
 
 <p>Represents an open or completed time section entry to be captured. <a href="#details">More...</a></p>
 

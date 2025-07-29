@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MCAsmStreamer.cpp}` Namespace Reference
+# `anonymous{MCAsmStreamer.cpp}` Namespace
 
 
 

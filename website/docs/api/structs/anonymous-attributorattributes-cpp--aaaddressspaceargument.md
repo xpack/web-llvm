@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAddressSpaceArgument` Struct Reference
+# `AAAddressSpaceArgument` Struct
 
 
 

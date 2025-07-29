@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SyncScope` Namespace Reference
+# `SyncScope` Namespace
 
 
 

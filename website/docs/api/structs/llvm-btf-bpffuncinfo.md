@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFFuncInfo` Struct Reference
+# `BPFFuncInfo` Struct
 
 <p>Specifying one function info. <a href="#details">More...</a></p>
 

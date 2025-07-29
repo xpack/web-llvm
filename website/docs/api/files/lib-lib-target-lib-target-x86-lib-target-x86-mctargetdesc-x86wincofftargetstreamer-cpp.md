@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86WinCOFFTargetStreamer.cpp` File Reference
+# `X86WinCOFFTargetStreamer.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixBitsMask` Namespace Reference
+# `FixBitsMask` Namespace
 
 <p>Mask of bits used to identify "Fix" variants in MessagePack. <a href="#details">More...</a></p>
 

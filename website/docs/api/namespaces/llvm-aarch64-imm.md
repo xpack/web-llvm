@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64_IMM` Namespace Reference
+# `AArch64_IMM` Namespace
 
 
 

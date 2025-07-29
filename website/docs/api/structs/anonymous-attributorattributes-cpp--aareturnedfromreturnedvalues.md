@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAReturnedFromReturnedValues` Struct Template Reference
+# `AAReturnedFromReturnedValues` Struct Template
 
 <p>Helper class for generic deduction: return value -&gt; returned position. <a href="#details">More...</a></p>
 

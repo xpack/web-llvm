@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXAssignValidGlobalNames.cpp}` Namespace Reference
+# `anonymous{NVPTXAssignValidGlobalNames.cpp}` Namespace
 
 
 

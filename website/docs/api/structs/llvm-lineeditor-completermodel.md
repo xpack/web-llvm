@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompleterModel` Struct Template Reference
+# `CompleterModel` Struct Template
 
 
 

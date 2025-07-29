@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsIncomingValueAssigner` Struct Reference
+# `MipsIncomingValueAssigner` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Symbol` Struct Reference
+# `Symbol` Struct
 
 <p>Contains the information needed by linkers for symbol resolution, as well as by the LTO implementation itself. <a href="#details">More...</a></p>
 

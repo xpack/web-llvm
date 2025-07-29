@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HintInfo` Struct Reference
+# `HintInfo` Struct
 
 <p>Model the information carried by one end of a copy. <a href="#details">More...</a></p>
 

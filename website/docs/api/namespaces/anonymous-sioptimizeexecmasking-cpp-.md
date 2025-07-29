@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIOptimizeExecMasking.cpp}` Namespace Reference
+# `anonymous{SIOptimizeExecMasking.cpp}` Namespace
 
 
 

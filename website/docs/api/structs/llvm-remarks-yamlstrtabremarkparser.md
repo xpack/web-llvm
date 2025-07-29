@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLStrTabRemarkParser` Struct Reference
+# `YAMLStrTabRemarkParser` Struct
 
 <p>YAML with a string table to <a href="/web-llvm/docs/api/structs/llvm/remarks/remark">Remark</a> parser. <a href="#details">More...</a></p>
 

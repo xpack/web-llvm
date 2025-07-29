@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarArgGenericHelper` Struct Reference
+# `VarArgGenericHelper` Struct
 
 <p>Implementation of <a href="/web-llvm/docs/api/structs/anonymous-memorysanitizer-cpp-/vararghelper">VarArgHelper</a> that is used for ARM32, MIPS, <a href="/web-llvm/docs/api/namespaces/llvm/riscv">RISCV</a>, LoongArch64. <a href="#details">More...</a></p>
 

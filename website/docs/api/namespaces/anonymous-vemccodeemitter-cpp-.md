@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VEMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{VEMCCodeEmitter.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtendedBuiltin` Struct Reference
+# `ExtendedBuiltin` Struct
 
 
 

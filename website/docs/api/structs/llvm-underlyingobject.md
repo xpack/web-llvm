@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnderlyingObject` Struct Reference
+# `UnderlyingObject` Struct
 
 
 

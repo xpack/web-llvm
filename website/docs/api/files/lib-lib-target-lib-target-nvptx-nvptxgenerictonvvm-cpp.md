@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXGenericToNVVM.cpp` File Reference
+# `NVPTXGenericToNVVM.cpp` File
 
 
 

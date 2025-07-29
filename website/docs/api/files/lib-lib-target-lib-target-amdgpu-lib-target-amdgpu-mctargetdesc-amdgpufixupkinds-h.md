@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUFixupKinds.h` File Reference
+# `AMDGPUFixupKinds.h` File
 
 
 

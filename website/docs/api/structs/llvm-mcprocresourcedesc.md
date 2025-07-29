@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCProcResourceDesc` Struct Reference
+# `MCProcResourceDesc` Struct
 
 <p>Define a kind of processor resource that will be modeled by the scheduler. <a href="#details">More...</a></p>
 

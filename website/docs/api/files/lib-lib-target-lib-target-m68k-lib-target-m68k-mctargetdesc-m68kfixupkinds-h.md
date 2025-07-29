@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kFixupKinds.h` File Reference
+# `M68kFixupKinds.h` File
 
 <p>This file contains M68k specific fixup entries. <a href="#details">More...</a></p>
 

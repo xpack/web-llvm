@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMOptimizeBarriersPass.cpp}` Namespace Reference
+# `anonymous{ARMOptimizeBarriersPass.cpp}` Namespace
 
 
 

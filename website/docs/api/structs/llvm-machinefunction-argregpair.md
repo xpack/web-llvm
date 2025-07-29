@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgRegPair` Struct Reference
+# `ArgRegPair` Struct
 
 <p>Structure used to represent pair of argument number after call lowering and register used to transfer that argument. <a href="#details">More...</a></p>
 

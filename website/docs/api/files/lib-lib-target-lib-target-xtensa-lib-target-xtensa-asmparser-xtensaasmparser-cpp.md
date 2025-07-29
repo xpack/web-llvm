@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaAsmParser.cpp` File Reference
+# `XtensaAsmParser.cpp` File
 
 
 

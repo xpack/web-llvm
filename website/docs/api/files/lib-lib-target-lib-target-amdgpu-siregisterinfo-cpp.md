@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIRegisterInfo.cpp` File Reference
+# `SIRegisterInfo.cpp` File
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/si">SI</a> implementation of the <a href="/web-llvm/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> class. <a href="#details">More...</a></p>
 

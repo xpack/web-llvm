@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreISelDAGToDAG.cpp` File Reference
+# `XCoreISelDAGToDAG.cpp` File
 
 
 

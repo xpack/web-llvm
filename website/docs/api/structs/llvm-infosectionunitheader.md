@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InfoSectionUnitHeader` Struct Reference
+# `InfoSectionUnitHeader` Struct
 
 
 

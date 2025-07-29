@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YamlObjectFile` Struct Reference
+# `YamlObjectFile` Struct
 
 
 

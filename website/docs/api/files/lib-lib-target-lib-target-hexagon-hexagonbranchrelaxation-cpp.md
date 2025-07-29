@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBranchRelaxation.cpp` File Reference
+# `HexagonBranchRelaxation.cpp` File
 
 
 

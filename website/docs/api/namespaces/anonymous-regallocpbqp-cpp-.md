@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RegAllocPBQP.cpp}` Namespace Reference
+# `anonymous{RegAllocPBQP.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXLowerAlloca.cpp` File Reference
+# `NVPTXLowerAlloca.cpp` File
 
 
 

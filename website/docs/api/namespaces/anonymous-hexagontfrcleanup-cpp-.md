@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonTfrCleanup.cpp}` Namespace Reference
+# `anonymous{HexagonTfrCleanup.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Swizzle` Namespace Reference
+# `Swizzle` Namespace
 
 
 

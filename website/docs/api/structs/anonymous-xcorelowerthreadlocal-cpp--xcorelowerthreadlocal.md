@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreLowerThreadLocal` Struct Reference
+# `XCoreLowerThreadLocal` Struct
 
 <p>Lowers thread local variables on the <a href="/web-llvm/docs/api/namespaces/llvm/xcore">XCore</a>. <a href="#details">More...</a></p>
 

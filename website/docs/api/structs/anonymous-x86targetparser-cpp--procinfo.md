@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProcInfo` Struct Reference
+# `ProcInfo` Struct
 
 
 

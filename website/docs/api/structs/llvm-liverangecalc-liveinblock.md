@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiveInBlock` Struct Reference
+# `LiveInBlock` Struct
 
 <p>LiveInBlock - Information about a basic block where a live range is known to be live-in, but the value has not yet been determined. <a href="#details">More...</a></p>
 

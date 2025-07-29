@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `xcoff` Namespace Reference
+# `xcoff` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `scattered_relocation_info` Struct Reference
+# `scattered_relocation_info` Struct
 
 
 

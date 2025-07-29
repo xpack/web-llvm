@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `tlv_descriptor_32` Struct Reference
+# `tlv_descriptor_32` Struct
 
 
 

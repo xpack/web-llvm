@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexFormattedString` Struct Reference
+# `HexFormattedString` Struct
 
 
 

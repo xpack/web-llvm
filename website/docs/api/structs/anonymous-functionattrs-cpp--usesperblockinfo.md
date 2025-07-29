@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UsesPerBlockInfo` Struct Reference
+# `UsesPerBlockInfo` Struct
 
 <p>A struct to wrap the argument use info per block. <a href="#details">More...</a></p>
 

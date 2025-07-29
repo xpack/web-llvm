@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANonConvergentFunction` Struct Reference
+# `AANonConvergentFunction` Struct
 
 
 

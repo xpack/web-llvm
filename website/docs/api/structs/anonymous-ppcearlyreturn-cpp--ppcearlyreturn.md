@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCEarlyReturn` Struct Reference
+# `PPCEarlyReturn` Struct
 
 
 

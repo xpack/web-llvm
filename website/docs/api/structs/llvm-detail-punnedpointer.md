@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PunnedPointer` Struct Template Reference
+# `PunnedPointer` Struct Template
 
 
 

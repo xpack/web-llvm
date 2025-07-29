@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `packed_endian_specific_integral` Struct Template Reference
+# `packed_endian_specific_integral` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Sched` Namespace Reference
+# `Sched` Namespace
 
 
 

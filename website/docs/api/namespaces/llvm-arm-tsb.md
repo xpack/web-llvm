@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARM_TSB` Namespace Reference
+# `ARM_TSB` Namespace
 
 
 

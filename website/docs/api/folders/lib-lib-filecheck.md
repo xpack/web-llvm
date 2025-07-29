@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/FileCheck` Folder Reference
+# `lib/FileCheck` Folder
 
 
 

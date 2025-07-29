@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MCTargetDesc.h` File Reference
+# `AArch64MCTargetDesc.h` File
 
 
 

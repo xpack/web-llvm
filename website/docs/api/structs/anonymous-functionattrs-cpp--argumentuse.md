@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentUse` Struct Reference
+# `ArgumentUse` Struct
 
 <p>A struct of argument use: a <a href="/web-llvm/docs/api/classes/llvm/use">Use</a> and the offset it accesses. <a href="#details">More...</a></p>
 

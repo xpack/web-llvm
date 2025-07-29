@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ctx_profile` Namespace Reference
+# `ctx_profile` Namespace
 
 
 

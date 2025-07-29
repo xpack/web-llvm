@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64RegisterBankInfo.cpp` File Reference
+# `AArch64RegisterBankInfo.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/registerbankinfo">RegisterBankInfo</a> class for <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetMasks` Struct Reference
+# `VETargetMasks` Struct
 
 
 

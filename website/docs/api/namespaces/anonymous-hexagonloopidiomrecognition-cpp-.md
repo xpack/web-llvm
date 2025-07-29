@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonLoopIdiomRecognition.cpp}` Namespace Reference
+# `anonymous{HexagonLoopIdiomRecognition.cpp}` Namespace
 
 
 

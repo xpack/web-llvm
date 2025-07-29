@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AuxiliarySectionDefinition` Struct Reference
+# `AuxiliarySectionDefinition` Struct
 
 
 

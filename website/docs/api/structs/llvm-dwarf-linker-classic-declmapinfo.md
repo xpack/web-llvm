@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DeclMapInfo` Struct Reference
+# `DeclMapInfo` Struct
 
 <p>Info type for the <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a> storing the <a href="/web-llvm/docs/api/classes/llvm/dwarf-linker/classic/declcontext">DeclContext</a> pointers. <a href="#details">More...</a></p>
 

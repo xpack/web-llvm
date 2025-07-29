@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SecLineInfo` Struct Reference
+# `SecLineInfo` Struct
 
 <p>Specifying line info's in one section. <a href="#details">More...</a></p>
 

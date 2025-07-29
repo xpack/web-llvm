@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedLoadStoreMatchInfo` Struct Reference
+# `IndexedLoadStoreMatchInfo` Struct
 
 
 

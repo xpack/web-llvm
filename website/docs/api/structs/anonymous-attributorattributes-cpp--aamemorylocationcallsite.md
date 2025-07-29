@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMemoryLocationCallSite` Struct Reference
+# `AAMemoryLocationCallSite` Struct
 
 <p>AAMemoryLocation attribute for call sites. <a href="#details">More...</a></p>
 

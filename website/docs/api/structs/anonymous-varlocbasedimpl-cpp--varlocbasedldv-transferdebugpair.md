@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TransferDebugPair` Struct Reference
+# `TransferDebugPair` Struct
 
 
 

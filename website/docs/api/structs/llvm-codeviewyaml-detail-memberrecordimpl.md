@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemberRecordImpl` Struct Template Reference
+# `MemberRecordImpl` Struct Template
 
 
 

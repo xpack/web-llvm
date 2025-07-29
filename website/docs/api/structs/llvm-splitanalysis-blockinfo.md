@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockInfo` Struct Reference
+# `BlockInfo` Struct
 
 <p>Additional information about basic blocks where the current variable is live. <a href="#details">More...</a></p>
 

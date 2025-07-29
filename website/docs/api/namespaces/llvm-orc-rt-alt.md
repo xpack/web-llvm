@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `rt_alt` Namespace Reference
+# `rt_alt` Namespace
 
 
 

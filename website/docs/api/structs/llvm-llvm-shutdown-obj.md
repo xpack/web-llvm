@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `llvm_shutdown_obj` Struct Reference
+# `llvm_shutdown_obj` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/llvm-shutdown-obj">llvm_shutdown_obj</a> - This is a simple helper class that calls <a href="/web-llvm/docs/api/namespaces/llvm/#ac27f7fe6f1543ef516aa0998bad20335">llvm_shutdown()</a> when it is destroyed. <a href="#details">More...</a></p>
 

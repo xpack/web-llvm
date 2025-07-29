@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIModeRegister.cpp` File Reference
+# `SIModeRegister.cpp` File
 
 <p>This pass inserts changes to the Mode register settings as required. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Comparison` Struct Reference
+# `Comparison` Struct
 
 
 

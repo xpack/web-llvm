@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{HexagonELFObjectWriter.cpp}` Namespace
 
 
 

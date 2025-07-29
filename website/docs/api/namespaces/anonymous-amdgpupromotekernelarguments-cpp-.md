@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUPromoteKernelArguments.cpp}` Namespace Reference
+# `anonymous{AMDGPUPromoteKernelArguments.cpp}` Namespace
 
 
 

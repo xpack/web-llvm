@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintAll` Struct Template Reference
+# `PrintAll` Struct Template
 
 
 

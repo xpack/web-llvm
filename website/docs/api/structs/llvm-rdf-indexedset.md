@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexedSet` Struct Template Reference
+# `IndexedSet` Struct Template
 
 
 

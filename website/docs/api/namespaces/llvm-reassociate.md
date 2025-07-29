@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reassociate` Namespace Reference
+# `reassociate` Namespace
 
 <p>A private "module" namespace for types and utilities used by Reassociate. <a href="#details">More...</a></p>
 

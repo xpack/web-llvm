@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockCondInfo` Struct Reference
+# `BlockCondInfo` Struct
 
 <p>The information about a block's conditional terminators needed to trace our predicate state through the exiting edges. <a href="#details">More...</a></p>
 

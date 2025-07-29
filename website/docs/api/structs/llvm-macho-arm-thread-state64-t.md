@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `arm_thread_state64_t` Struct Reference
+# `arm_thread_state64_t` Struct
 
 
 

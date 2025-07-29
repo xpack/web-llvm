@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyOptimizeReturned.cpp}` Namespace Reference
+# `anonymous{WebAssemblyOptimizeReturned.cpp}` Namespace
 
 
 

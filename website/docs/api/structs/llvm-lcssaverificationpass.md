@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LCSSAVerificationPass` Struct Reference
+# `LCSSAVerificationPass` Struct
 
 
 

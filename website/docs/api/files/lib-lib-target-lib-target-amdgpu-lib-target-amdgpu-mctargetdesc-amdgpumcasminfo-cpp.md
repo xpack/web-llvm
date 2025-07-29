@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCAsmInfo.cpp` File Reference
+# `AMDGPUMCAsmInfo.cpp` File
 
 
 

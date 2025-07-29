@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorklistItem` Struct Reference
+# `WorklistItem` Struct
 
 <p>This class represents an item in the work list. <a href="#details">More...</a></p>
 

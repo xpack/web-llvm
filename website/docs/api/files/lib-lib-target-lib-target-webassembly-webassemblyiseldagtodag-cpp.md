@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyISelDAGToDAG.cpp` File Reference
+# `WebAssemblyISelDAGToDAG.cpp` File
 
 <p>This file defines an instruction selector for the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> target. <a href="#details">More...</a></p>
 

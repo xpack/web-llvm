@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtualCallSiteInfo` Struct Reference
+# `VirtualCallSiteInfo` Struct
 
 
 

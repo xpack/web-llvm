@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Demangler` Struct Reference
+# `Demangler` Struct
 
 <p>Demangle information structure. <a href="#details">More...</a></p>
 

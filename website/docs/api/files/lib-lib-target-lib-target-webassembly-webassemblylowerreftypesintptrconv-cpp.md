@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyLowerRefTypesIntPtrConv.cpp` File Reference
+# `WebAssemblyLowerRefTypesIntPtrConv.cpp` File
 
 <p>Lowers IntToPtr and PtrToInt instructions on reference types to Trap instructions since they have been allowed to operate on non-integral pointers. <a href="#details">More...</a></p>
 

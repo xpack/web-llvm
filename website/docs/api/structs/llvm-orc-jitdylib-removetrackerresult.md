@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RemoveTrackerResult` Struct Reference
+# `RemoveTrackerResult` Struct
 
 
 

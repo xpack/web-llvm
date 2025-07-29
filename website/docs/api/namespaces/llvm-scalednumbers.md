@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScaledNumbers` Namespace Reference
+# `ScaledNumbers` Namespace
 
 
 

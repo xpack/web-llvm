@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf32_Phdr` Struct Reference
+# `Elf32_Phdr` Struct
 
 
 

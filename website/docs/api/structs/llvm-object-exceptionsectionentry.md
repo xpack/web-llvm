@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExceptionSectionEntry` Struct Template Reference
+# `ExceptionSectionEntry` Struct Template
 
 
 

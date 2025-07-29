@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringRef.cpp` File Reference
+# `StringRef.cpp` File
 
 
 

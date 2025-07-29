@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicData` Struct Reference
+# `IntrinsicData` Struct
 
 
 

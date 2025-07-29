@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VOPModifiers` Struct Reference
+# `VOPModifiers` Struct
 
 
 

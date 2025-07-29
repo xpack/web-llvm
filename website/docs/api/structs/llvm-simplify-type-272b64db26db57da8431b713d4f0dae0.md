@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `simplify_type` Struct Template Reference
+# `simplify_type` Struct Template
 
 <p>Allow casting operators to work directly on SDValues as if they were SDNode*'s. <a href="#details">More...</a></p>
 

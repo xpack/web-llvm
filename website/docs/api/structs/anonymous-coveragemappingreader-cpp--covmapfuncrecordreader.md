@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CovMapFuncRecordReader` Struct Reference
+# `CovMapFuncRecordReader` Struct
 
 <p>The interface to read coverage mapping function records for a module. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PartialInlining.cpp}` Namespace Reference
+# `anonymous{PartialInlining.cpp}` Namespace
 
 
 

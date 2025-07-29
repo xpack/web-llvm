@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomViewer` Struct Reference
+# `DomViewer` Struct
 
 
 

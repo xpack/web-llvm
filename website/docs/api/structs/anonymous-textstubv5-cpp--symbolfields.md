@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolFields` Struct Reference
+# `SymbolFields` Struct
 
 
 

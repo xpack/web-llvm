@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCKernelDescriptor.cpp` File Reference
+# `AMDGPUMCKernelDescriptor.cpp` File
 
 
 

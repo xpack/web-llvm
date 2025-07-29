@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsLegalizerInfo.h` File Reference
+# `MipsLegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for Mips. <a href="#details">More...</a></p>
 

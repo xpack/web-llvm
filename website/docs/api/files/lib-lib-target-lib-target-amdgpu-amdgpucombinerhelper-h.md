@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCombinerHelper.h` File Reference
+# `AMDGPUCombinerHelper.h` File
 
 <p>This contains common combine transformations that may be used in a combine pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `use_double_formatter` Struct Template Reference
+# `use_double_formatter` Struct Template
 
 
 

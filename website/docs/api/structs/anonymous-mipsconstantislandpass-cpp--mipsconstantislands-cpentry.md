@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CPEntry` Struct Reference
+# `CPEntry` Struct
 
 <p>CPEntry - One per constant pool entry, keeping the machine instruction pointer, the constpool index, and the number of CPUser's which reference this entry. <a href="#details">More...</a></p>
 

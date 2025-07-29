@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUEmitPrintf.cpp` File Reference
+# `AMDGPUEmitPrintf.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `gvn` Namespace Reference
+# `gvn` Namespace
 
 <p>A private "module" namespace for types and utilities used by GVN. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DIDumpOptions` Struct Reference
+# `DIDumpOptions` Struct
 
 <p>Container for dump options that control which debug information will be dumped. <a href="#details">More...</a></p>
 

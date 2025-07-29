@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GISelAddressing` Namespace Reference
+# `GISelAddressing` Namespace
 
 
 

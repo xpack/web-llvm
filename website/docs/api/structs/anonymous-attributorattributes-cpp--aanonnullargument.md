@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANonNullArgument` Struct Reference
+# `AANonNullArgument` Struct
 
 <p>NonNull attribute for function argument. <a href="#details">More...</a></p>
 

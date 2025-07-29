@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/TableGen` Folder Reference
+# `include/llvm/TableGen` Folder
 
 
 

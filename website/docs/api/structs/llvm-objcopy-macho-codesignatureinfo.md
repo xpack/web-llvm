@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeSignatureInfo` Struct Reference
+# `CodeSignatureInfo` Struct
 
 <p>When <a href="/web-llvm/docs/api/namespaces/llvm/macho">MachO</a> binaries include a LC_CODE_SIGNATURE load command, the __LINKEDIT data segment will include a section corresponding to the LC_CODE_SIGNATURE load command. <a href="#details">More...</a></p>
 

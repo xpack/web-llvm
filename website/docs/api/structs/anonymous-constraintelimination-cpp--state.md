@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `State` Struct Reference
+# `State` Struct
 
 <p>Keep state required to build worklist. <a href="#details">More...</a></p>
 

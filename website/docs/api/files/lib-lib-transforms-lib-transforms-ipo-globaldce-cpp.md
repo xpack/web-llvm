@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalDCE.cpp` File Reference
+# `GlobalDCE.cpp` File
 
 
 

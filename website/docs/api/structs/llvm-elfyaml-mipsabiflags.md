@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsABIFlags` Struct Reference
+# `MipsABIFlags` Struct
 
 
 

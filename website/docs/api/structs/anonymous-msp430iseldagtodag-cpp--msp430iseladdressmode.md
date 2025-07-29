@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430ISelAddressMode` Struct Reference
+# `MSP430ISelAddressMode` Struct
 
 
 

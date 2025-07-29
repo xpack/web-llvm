@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DC` Struct Reference
+# `DC` Struct
 
 
 

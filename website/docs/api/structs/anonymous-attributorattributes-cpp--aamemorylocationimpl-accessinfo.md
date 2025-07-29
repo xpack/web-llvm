@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AccessInfo` Struct Reference
+# `AccessInfo` Struct
 
 <p>Helper struct to tie together an instruction that has a read or write effect with the pointer it accesses (if any). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecomposedGEP` Struct Reference
+# `DecomposedGEP` Struct
 
 
 

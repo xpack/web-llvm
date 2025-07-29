@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMustProgressCallSite` Struct Reference
+# `AAMustProgressCallSite` Struct
 
 <p>MustProgress attribute deduction for a call sites. <a href="#details">More...</a></p>
 

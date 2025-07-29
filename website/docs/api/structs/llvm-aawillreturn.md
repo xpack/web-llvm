@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAWillReturn` Struct Reference
+# `AAWillReturn` Struct
 
 <p>An abstract attribute for willreturn. <a href="#details">More...</a></p>
 

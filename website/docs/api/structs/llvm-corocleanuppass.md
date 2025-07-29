@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroCleanupPass` Struct Reference
+# `CoroCleanupPass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PlaceSafepoints.cpp}` Namespace Reference
+# `anonymous{PlaceSafepoints.cpp}` Namespace
 
 
 

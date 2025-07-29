@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileEntry` Struct Reference
+# `FileEntry` Struct
 
 <p>Files in GSYM are contained in <a href="/web-llvm/docs/api/structs/llvm/gsym/fileentry">FileEntry</a> structs where we split the directory and basename into two different strings in the string table. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/MC/MCParser` Folder Reference
+# `lib/MC/MCParser` Folder
 
 
 

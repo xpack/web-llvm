@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ufmax_pred_ty` Struct Reference
+# `ufmax_pred_ty` Struct
 
 <p>Helper class for identifying unordered max predicates. <a href="#details">More...</a></p>
 

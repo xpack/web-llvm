@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TaggedScalarTraits` Struct Template Reference
+# `TaggedScalarTraits` Struct Template
 
 <p>YAMLIO for ScalarDocNode. <a href="#details">More...</a></p>
 

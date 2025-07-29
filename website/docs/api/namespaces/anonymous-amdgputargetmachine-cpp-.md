@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUTargetMachine.cpp}` Namespace Reference
+# `anonymous{AMDGPUTargetMachine.cpp}` Namespace
 
 
 

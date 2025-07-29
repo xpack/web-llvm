@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Inverse` Struct Template Reference
+# `Inverse` Struct Template
 
 
 

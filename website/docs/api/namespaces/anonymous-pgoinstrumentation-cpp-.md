@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PGOInstrumentation.cpp}` Namespace Reference
+# `anonymous{PGOInstrumentation.cpp}` Namespace
 
 
 

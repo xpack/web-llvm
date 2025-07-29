@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrimitiveSpec` Struct Reference
+# `PrimitiveSpec` Struct
 
 <p>Primitive type specification. <a href="#details">More...</a></p>
 

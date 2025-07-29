@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StackEntry` Struct Reference
+# `StackEntry` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCEarlyReturn.cpp}` Namespace Reference
+# `anonymous{PPCEarlyReturn.cpp}` Namespace
 
 
 

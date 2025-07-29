@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectiveWithClauses` Struct Template Reference
+# `DirectiveWithClauses` Struct Template
 
 
 

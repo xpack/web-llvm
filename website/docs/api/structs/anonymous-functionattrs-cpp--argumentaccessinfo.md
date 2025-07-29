@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgumentAccessInfo` Struct Reference
+# `ArgumentAccessInfo` Struct
 
 <p>A struct of argument access info. <a href="#details">More...</a></p>
 

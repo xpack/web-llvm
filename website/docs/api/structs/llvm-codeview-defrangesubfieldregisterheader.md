@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefRangeSubfieldRegisterHeader` Struct Reference
+# `DefRangeSubfieldRegisterHeader` Struct
 
 
 

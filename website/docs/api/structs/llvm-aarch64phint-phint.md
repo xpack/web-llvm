@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHint` Struct Reference
+# `PHint` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SrcHeaderBlockEntry` Struct Reference
+# `SrcHeaderBlockEntry` Struct
 
 <p>A single file record entry within the /src/headerblock stream. <a href="#details">More...</a></p>
 

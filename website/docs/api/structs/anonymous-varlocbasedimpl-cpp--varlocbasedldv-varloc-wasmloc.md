@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmLoc` Struct Reference
+# `WasmLoc` Struct
 
 
 

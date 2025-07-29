@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Signals.cpp` File Reference
+# `Signals.cpp` File
 
 
 

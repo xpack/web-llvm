@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfRecord` Struct Reference
+# `InstrProfRecord` Struct
 
 <p>Profiling information for a single function. <a href="#details">More...</a></p>
 

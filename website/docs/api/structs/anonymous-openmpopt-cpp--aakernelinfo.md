@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAKernelInfo` Struct Reference
+# `AAKernelInfo` Struct
 
 
 

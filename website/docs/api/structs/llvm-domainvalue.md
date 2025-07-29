@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomainValue` Struct Reference
+# `DomainValue` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/domainvalue">DomainValue</a> is a bit like <a href="/web-llvm/docs/api/classes/llvm/liveintervals">LiveIntervals</a>' ValNo, but it also keeps track of execution domains. <a href="#details">More...</a></p>
 

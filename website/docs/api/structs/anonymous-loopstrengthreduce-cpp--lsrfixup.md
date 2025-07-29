@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LSRFixup` Struct Reference
+# `LSRFixup` Struct
 
 <p>An operand value in an instruction which is to be replaced with some equivalent, possibly strength-reduced, replacement. <a href="#details">More...</a></p>
 

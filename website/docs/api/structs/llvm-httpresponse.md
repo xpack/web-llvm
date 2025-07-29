@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HTTPResponse` Struct Reference
+# `HTTPResponse` Struct
 
 
 

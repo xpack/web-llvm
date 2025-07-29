@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfFrameBase` Struct Reference
+# `DwarfFrameBase` Struct
 
 
 

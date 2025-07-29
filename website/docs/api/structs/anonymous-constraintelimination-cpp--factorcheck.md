@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FactOrCheck` Struct Reference
+# `FactOrCheck` Struct
 
 <p>Represents either. <a href="#details">More...</a></p>
 

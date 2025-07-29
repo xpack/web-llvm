@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugInfo` Union Reference
+# `DebugInfo` Union
 
 
 

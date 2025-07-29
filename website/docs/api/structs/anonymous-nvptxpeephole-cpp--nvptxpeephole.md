@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXPeephole` Struct Reference
+# `NVPTXPeephole` Struct
 
 
 

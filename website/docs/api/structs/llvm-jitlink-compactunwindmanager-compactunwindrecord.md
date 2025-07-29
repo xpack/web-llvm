@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompactUnwindRecord` Struct Reference
+# `CompactUnwindRecord` Struct
 
 
 

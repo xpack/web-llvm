@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMCResourceInfo.cpp` File Reference
+# `AMDGPUMCResourceInfo.cpp` File
 
 <p>MC infrastructure to propagate the function level resource usage info. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecificConstantMatch` Struct Reference
+# `SpecificConstantMatch` Struct
 
 <p>Matcher for a specific constant value. <a href="#details">More...</a></p>
 

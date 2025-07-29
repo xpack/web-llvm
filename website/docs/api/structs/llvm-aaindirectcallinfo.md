@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAIndirectCallInfo` Struct Reference
+# `AAIndirectCallInfo` Struct
 
 <p>An abstract interface for indirect call information interference. <a href="#details">More...</a></p>
 

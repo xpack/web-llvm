@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMConstantIslandPass.cpp}` Namespace Reference
+# `anonymous{ARMConstantIslandPass.cpp}` Namespace
 
 
 

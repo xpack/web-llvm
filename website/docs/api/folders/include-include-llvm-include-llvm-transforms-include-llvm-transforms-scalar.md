@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Transforms/Scalar` Folder Reference
+# `include/llvm/Transforms/Scalar` Folder
 
 
 

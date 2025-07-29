@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DBnXS` Struct Reference
+# `DBnXS` Struct
 
 
 

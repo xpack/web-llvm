@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RetainedKnowledge` Struct Reference
+# `RetainedKnowledge` Struct
 
 <p>Represent one information held inside an operand bundle of an llvm.assume. <a href="#details">More...</a></p>
 

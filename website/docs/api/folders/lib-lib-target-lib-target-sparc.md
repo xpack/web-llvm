@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Sparc` Folder Reference
+# `lib/Target/Sparc` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeSpec` Struct Reference
+# `AttributeSpec` Struct
 
 
 

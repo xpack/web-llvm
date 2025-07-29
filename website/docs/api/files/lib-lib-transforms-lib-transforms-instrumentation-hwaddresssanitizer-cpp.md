@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HWAddressSanitizer.cpp` File Reference
+# `HWAddressSanitizer.cpp` File
 
 <p>This file is a part of <a href="/web-llvm/docs/api/classes/anonymous-hwaddresssanitizer-cpp-/hwaddresssanitizer">HWAddressSanitizer</a>, an address basic correctness checker based on tagged addressing. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerSumTypeHelper` Struct Template Reference
+# `PointerSumTypeHelper` Struct Template
 
 <p>A helper template for implementing <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/pointersumtype">PointerSumType</a></span>. <a href="#details">More...</a></p>
 

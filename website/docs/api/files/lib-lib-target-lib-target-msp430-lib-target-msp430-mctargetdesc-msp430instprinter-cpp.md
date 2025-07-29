@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430InstPrinter.cpp` File Reference
+# `MSP430InstPrinter.cpp` File
 
 
 

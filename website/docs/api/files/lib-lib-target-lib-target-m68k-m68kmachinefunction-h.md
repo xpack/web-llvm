@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMachineFunction.h` File Reference
+# `M68kMachineFunction.h` File
 
 <p>This file declares the M68k specific subclass of MachineFunctionInfo. <a href="#details">More...</a></p>
 

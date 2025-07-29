@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NameState` Struct Reference
+# `NameState` Struct
 
 <p>Holds some extra information about a &lt;name&gt; that is being parsed. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAnnotateUniformValues.cpp` File Reference
+# `AMDGPUAnnotateUniformValues.cpp` File
 
 <p>This pass adds amdgpu.uniform metadata to IR values so this information can be used during instruction selection. <a href="#details">More...</a></p>
 

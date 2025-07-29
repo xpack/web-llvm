@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DataFlowSanitizer.cpp}` Namespace Reference
+# `anonymous{DataFlowSanitizer.cpp}` Namespace
 
 
 

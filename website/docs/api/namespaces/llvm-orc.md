@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `orc` Namespace Reference
+# `orc` Namespace
 
 
 

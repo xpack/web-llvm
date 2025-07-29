@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoUndefArgument` Struct Reference
+# `AANoUndefArgument` Struct
 
 
 

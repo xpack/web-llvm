@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIModeRegister.cpp}` Namespace Reference
+# `anonymous{SIModeRegister.cpp}` Namespace
 
 
 

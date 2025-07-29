@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVExtract.cpp` File Reference
+# `HexagonVExtract.cpp` File
 
 
 

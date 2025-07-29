@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DebugInfo/CodeView` Folder Reference
+# `lib/DebugInfo/CodeView` Folder
 
 
 

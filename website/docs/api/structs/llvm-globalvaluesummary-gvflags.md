@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVFlags` Struct Reference
+# `GVFlags` Struct
 
 <p>Group flags (Linkage, NotEligibleToImport, etc.) as a bitfield. <a href="#details">More...</a></p>
 

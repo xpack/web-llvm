@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AddressingMode` Struct Reference
+# `AddressingMode` Struct
 
 
 

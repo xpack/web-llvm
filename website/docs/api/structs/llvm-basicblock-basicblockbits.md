@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BasicBlockBits` Struct Reference
+# `BasicBlockBits` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/bitfield">Bitfield</a> to help interpret the bits in Value::SubclassData. <a href="#details">More...</a></p>
 

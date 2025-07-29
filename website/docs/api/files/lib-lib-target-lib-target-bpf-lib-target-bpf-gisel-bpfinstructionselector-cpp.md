@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFInstructionSelector.cpp` File Reference
+# `BPFInstructionSelector.cpp` File
 
 <p>This file implements the targeting of the <a href="/web-llvm/docs/api/classes/llvm/instructionselector">InstructionSelector</a> class for <a href="/web-llvm/docs/api/namespaces/llvm/bpf">BPF</a>. <a href="#details">More...</a></p>
 

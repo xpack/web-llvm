@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CvtF32UByteMatchInfo` Struct Reference
+# `CvtF32UByteMatchInfo` Struct
 
 
 

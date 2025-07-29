@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Uncommon` Struct Reference
+# `Uncommon` Struct
 
 <p>This data structure contains rarely used symbol fields and is optionally referenced by a <a href="/web-llvm/docs/api/structs/llvm/irsymtab/storage/symbol">Symbol</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MipsABIInfo.cpp}` Namespace Reference
+# `anonymous{MipsABIInfo.cpp}` Namespace
 
 
 

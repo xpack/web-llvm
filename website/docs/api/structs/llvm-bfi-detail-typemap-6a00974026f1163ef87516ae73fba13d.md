@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeMap` Struct Template Reference
+# `TypeMap` Struct Template
 
 
 

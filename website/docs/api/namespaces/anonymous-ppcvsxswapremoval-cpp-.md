@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCVSXSwapRemoval.cpp}` Namespace Reference
+# `anonymous{PPCVSXSwapRemoval.cpp}` Namespace
 
 
 

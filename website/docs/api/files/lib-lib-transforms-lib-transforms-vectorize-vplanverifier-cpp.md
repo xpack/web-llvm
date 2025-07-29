@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanVerifier.cpp` File Reference
+# `VPlanVerifier.cpp` File
 
 <p>This file defines the class <a href="/web-llvm/docs/api/classes/anonymous-vplanverifier-cpp-/vplanverifier">VPlanVerifier</a>, which contains utility functions to check the consistency and invariants of a <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a>. <a href="#details">More...</a></p>
 

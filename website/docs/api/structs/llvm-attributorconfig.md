@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributorConfig` Struct Reference
+# `AttributorConfig` Struct
 
 <p>Configuration for the <a href="/web-llvm/docs/api/structs/llvm/attributor">Attributor</a>. <a href="#details">More...</a></p>
 

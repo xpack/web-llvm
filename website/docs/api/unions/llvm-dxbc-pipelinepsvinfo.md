@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelinePSVInfo` Union Reference
+# `PipelinePSVInfo` Union
 
 
 

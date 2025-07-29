@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IteratorHelper` Struct Template Reference
+# `IteratorHelper` Struct Template
 
 
 

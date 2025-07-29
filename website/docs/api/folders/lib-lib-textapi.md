@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/TextAPI` Folder Reference
+# `lib/TextAPI` Folder
 
 
 

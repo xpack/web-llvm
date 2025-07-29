@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArchNames` Struct Template Reference
+# `ArchNames` Struct Template
 
 
 

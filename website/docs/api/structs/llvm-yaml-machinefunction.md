@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineFunction` Struct Reference
+# `MachineFunction` Struct
 
 
 

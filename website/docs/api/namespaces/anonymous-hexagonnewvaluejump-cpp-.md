@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonNewValueJump.cpp}` Namespace Reference
+# `anonymous{HexagonNewValueJump.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMacroFusion.cpp` File Reference
+# `AMDGPUMacroFusion.cpp` File
 
 
 

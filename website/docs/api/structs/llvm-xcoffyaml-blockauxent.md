@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockAuxEnt` Struct Reference
+# `BlockAuxEnt` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResourceAnalysis.cpp` File Reference
+# `DXILResourceAnalysis.cpp` File
 
 
 

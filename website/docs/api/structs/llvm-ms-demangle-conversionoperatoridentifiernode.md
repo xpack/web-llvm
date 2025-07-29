@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConversionOperatorIdentifierNode` Struct Reference
+# `ConversionOperatorIdentifierNode` Struct
 
 
 

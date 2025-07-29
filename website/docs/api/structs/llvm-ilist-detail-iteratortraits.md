@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IteratorTraits` Struct Template Reference
+# `IteratorTraits` Struct Template
 
 <p>Find const-correct node types. <a href="#details">More...</a></p>
 

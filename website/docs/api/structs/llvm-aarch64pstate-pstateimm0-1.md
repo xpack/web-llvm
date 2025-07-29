@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PStateImm0_1` Struct Reference
+# `PStateImm0_1` Struct
 
 
 

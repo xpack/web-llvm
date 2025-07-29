@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantCandidate` Struct Reference
+# `ConstantCandidate` Struct
 
 <p>Keeps track of a constant candidate and its uses. <a href="#details">More...</a></p>
 

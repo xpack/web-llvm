@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LegalizeTypes.cpp}` Namespace Reference
+# `anonymous{LegalizeTypes.cpp}` Namespace
 
 
 

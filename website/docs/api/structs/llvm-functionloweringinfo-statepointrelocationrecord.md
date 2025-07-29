@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatepointRelocationRecord` Struct Reference
+# `StatepointRelocationRecord` Struct
 
 <p>Helper object to track which of three possible relocation mechanisms are used for a particular value being relocated over a statepoint. <a href="#details">More...</a></p>
 

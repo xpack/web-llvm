@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReuseLoadInfo` Struct Reference
+# `ReuseLoadInfo` Struct
 
 
 

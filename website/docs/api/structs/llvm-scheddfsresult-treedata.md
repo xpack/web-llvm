@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TreeData` Struct Reference
+# `TreeData` Struct
 
 <p>Per-Subtree data computed during DFS. <a href="#details">More...</a></p>
 

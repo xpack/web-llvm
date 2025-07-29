@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerfJITCodeUnwindingInfoRecord` Struct Reference
+# `PerfJITCodeUnwindingInfoRecord` Struct
 
 
 

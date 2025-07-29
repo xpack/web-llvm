@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OpenMPOpt` Struct Reference
+# `OpenMPOpt` Struct
 
 
 

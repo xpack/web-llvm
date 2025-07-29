@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SecFuncInfo` Struct Reference
+# `SecFuncInfo` Struct
 
 <p>Specifying function info's in one section. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PluginLoader` Struct Reference
+# `PluginLoader` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WeightInfo` Struct Reference
+# `WeightInfo` Struct
 
 
 

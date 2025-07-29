@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterCellBitCompareSel` Struct Reference
+# `RegisterCellBitCompareSel` Struct
 
 
 

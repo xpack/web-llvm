@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRewriter` Namespace Reference
+# `SymbolRewriter` Namespace
 
 
 

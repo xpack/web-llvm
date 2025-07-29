@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonVectorLoopCarriedReuse.h` File Reference
+# `HexagonVectorLoopCarriedReuse.h` File
 
 
 

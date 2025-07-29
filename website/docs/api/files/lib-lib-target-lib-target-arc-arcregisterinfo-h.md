@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCRegisterInfo.h` File Reference
+# `ARCRegisterInfo.h` File
 
 
 

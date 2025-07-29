@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionStepsMatchInfo` Struct Reference
+# `InstructionStepsMatchInfo` Struct
 
 
 

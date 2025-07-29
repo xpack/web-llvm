@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallStackIterator` Struct Reference
+# `CallStackIterator` Struct
 
 
 

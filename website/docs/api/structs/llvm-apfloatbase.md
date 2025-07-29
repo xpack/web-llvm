@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `APFloatBase` Struct Reference
+# `APFloatBase` Struct
 
 <p>A self-contained host- and target-independent arbitrary-precision floating-point software implementation. <a href="#details">More...</a></p>
 

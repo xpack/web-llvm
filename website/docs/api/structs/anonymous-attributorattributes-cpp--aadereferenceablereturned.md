@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADereferenceableReturned` Struct Reference
+# `AADereferenceableReturned` Struct
 
 <p>Dereferenceable attribute for a return value. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `tuple_element` Struct Template Reference
+# `tuple_element` Struct Template
 
 
 

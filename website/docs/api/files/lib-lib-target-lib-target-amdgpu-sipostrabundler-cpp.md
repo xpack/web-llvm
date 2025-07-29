@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIPostRABundler.cpp` File Reference
+# `SIPostRABundler.cpp` File
 
 <p>This pass creates bundles of memory instructions to protect adjacent loads and stores from being rescheduled apart from each other post-RA. <a href="#details">More...</a></p>
 

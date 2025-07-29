@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeInfo` Struct Reference
+# `MergeInfo` Struct
 
 
 

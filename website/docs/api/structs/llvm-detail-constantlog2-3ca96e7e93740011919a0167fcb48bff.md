@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantLog2` Struct Template Reference
+# `ConstantLog2` Struct Template
 
 
 

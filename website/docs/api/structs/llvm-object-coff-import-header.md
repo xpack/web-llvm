@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `coff_import_header` Struct Reference
+# `coff_import_header` Struct
 
 
 

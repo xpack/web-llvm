@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DecomposedSelect` Struct Reference
+# `DecomposedSelect` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMLowOverheadLoops.cpp}` Namespace Reference
+# `anonymous{ARMLowOverheadLoops.cpp}` Namespace
 
 
 

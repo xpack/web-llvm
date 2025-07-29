@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetExtTypeKeyInfo` Struct Reference
+# `TargetExtTypeKeyInfo` Struct
 
 
 

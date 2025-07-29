@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopIdiomRecognize.cpp` File Reference
+# `LoopIdiomRecognize.cpp` File
 
 
 

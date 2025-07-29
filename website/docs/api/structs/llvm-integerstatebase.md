@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntegerStateBase` Struct Template Reference
+# `IntegerStateBase` Struct Template
 
 <p>Simple state with integers encoding. <a href="#details">More...</a></p>
 

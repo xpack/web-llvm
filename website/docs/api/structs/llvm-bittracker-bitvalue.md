@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitValue` Struct Reference
+# `BitValue` Struct
 
 
 

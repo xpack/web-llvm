@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShiftedImmOp` Struct Reference
+# `ShiftedImmOp` Struct
 
 
 

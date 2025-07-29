@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCRegisterDesc` Struct Reference
+# `MCRegisterDesc` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/mcregisterdesc">MCRegisterDesc</a> - This record contains information about a particular register. <a href="#details">More...</a></p>
 

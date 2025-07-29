@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoadEntry` Struct Reference
+# `LoadEntry` Struct
 
 
 

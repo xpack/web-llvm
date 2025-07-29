@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTargetTransformInfo.cpp` File Reference
+# `PPCTargetTransformInfo.cpp` File
 
 
 

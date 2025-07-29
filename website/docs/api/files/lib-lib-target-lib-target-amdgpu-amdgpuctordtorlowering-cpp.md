@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCtorDtorLowering.cpp` File Reference
+# `AMDGPUCtorDtorLowering.cpp` File
 
 <p>This pass creates a unified init and fini kernel with the required metadata. <a href="#details">More...</a></p>
 

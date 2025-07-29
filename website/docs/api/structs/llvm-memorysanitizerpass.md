@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemorySanitizerPass` Struct Reference
+# `MemorySanitizerPass` Struct
 
 <p>A module pass for msan instrumentation. <a href="#details">More...</a></p>
 

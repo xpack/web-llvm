@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRISD` Namespace Reference
+# `AVRISD` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StartStopInfo` Struct Reference
+# `StartStopInfo` Struct
 
 
 

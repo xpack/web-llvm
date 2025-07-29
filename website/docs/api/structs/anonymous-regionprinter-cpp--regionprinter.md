@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionPrinter` Struct Reference
+# `RegionPrinter` Struct
 
 
 

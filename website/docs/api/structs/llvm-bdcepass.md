@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BDCEPass` Struct Reference
+# `BDCEPass` Struct
 
 
 

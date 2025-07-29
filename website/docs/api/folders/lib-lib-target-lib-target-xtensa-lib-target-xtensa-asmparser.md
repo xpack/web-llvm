@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Xtensa/AsmParser` Folder Reference
+# `lib/Target/Xtensa/AsmParser` Folder
 
 
 

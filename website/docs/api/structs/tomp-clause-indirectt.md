@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectT` Struct Template Reference
+# `IndirectT` Struct Template
 
 
 

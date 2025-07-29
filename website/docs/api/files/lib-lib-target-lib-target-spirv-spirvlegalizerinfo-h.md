@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVLegalizerInfo.h` File Reference
+# `SPIRVLegalizerInfo.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomTypeNode` Struct Reference
+# `CustomTypeNode` Struct
 
 
 

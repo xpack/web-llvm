@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kInstrBuilder.h` File Reference
+# `M68kInstrBuilder.h` File
 
 <p>This file exposes functions that may be used with BuildMI from the <a href="/web-llvm/docs/api/files/include/include/llvm/include/llvm/codegen/machineinstrbuilder-h">MachineInstrBuilder.h</a> file to handle M68k'isms in a clean way. <a href="#details">More...</a></p>
 

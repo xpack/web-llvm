@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryMapParams` Struct Reference
+# `MemoryMapParams` Struct
 
 
 

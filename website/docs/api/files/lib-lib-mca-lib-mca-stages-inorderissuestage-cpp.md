@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InOrderIssueStage.cpp` File Reference
+# `InOrderIssueStage.cpp` File
 
 <p>InOrderIssueStage implements an in-order execution pipeline. <a href="#details">More...</a></p>
 

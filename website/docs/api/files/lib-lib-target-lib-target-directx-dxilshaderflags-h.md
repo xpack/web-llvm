@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILShaderFlags.h` File Reference
+# `DXILShaderFlags.h` File
 
 
 

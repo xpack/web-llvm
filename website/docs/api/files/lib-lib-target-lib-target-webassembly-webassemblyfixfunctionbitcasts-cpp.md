@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyFixFunctionBitcasts.cpp` File Reference
+# `WebAssemblyFixFunctionBitcasts.cpp` File
 
 <p>Fix bitcasted functions. <a href="#details">More...</a></p>
 

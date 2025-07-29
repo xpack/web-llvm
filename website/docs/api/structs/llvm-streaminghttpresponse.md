@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StreamingHTTPResponse` Struct Reference
+# `StreamingHTTPResponse` Struct
 
 <p>Wraps the content provider with HTTP <a href="/web-llvm/docs/api/structs/status">Status</a> code and headers. <a href="#details">More...</a></p>
 

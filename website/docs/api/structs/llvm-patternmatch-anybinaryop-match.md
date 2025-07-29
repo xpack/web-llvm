@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnyBinaryOp_match` Struct Template Reference
+# `AnyBinaryOp_match` Struct Template
 
 
 

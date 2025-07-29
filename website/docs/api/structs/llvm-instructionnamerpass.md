@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionNamerPass` Struct Reference
+# `InstructionNamerPass` Struct
 
 
 

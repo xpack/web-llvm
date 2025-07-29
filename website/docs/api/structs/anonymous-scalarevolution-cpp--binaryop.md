@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryOp` Struct Reference
+# `BinaryOp` Struct
 
 <p>Represents an abstract binary operation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/ARC/Disassembler` Folder Reference
+# `lib/Target/ARC/Disassembler` Folder
 
 
 

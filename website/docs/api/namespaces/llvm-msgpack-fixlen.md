@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixLen` Namespace Reference
+# `FixLen` Namespace
 
 <p>The exact size encodable in "Fix" variants of formats. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmTypeCheck.h` File Reference
+# `WebAssemblyAsmTypeCheck.h` File
 
 <p>This file is part of the WebAssembly Assembler. <a href="#details">More...</a></p>
 

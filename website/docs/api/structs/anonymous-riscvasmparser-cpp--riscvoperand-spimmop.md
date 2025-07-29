@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpimmOp` Struct Reference
+# `SpimmOp` Struct
 
 
 

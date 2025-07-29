@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LockGuard` Struct Reference
+# `LockGuard` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SMSNode` Struct Reference
+# `SMSNode` Struct
 
 <p>The actual data that's stored, as a doubly-linked list implemented via indices into the DenseVector. <a href="#details">More...</a></p>
 

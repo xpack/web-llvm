@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlagEntry` Struct Reference
+# `FlagEntry` Struct
 
 
 

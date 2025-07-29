@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnwindInfo` Struct Reference
+# `UnwindInfo` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/win64eh/unwindinfo">UnwindInfo</a> - An entry in the exception table. <a href="#details">More...</a></p>
 

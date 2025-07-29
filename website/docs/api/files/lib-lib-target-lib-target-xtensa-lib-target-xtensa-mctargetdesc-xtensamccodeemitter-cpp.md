@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaMCCodeEmitter.cpp` File Reference
+# `XtensaMCCodeEmitter.cpp` File
 
 
 

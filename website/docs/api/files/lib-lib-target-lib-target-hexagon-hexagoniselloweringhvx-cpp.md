@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonISelLoweringHVX.cpp` File Reference
+# `HexagonISelLoweringHVX.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExprResult` Struct Reference
+# `ExprResult` Struct
 
 <p>Helper struct return a <a href="/web-llvm/docs/api/classes/llvm/gvnexpression/expression">Expression</a> with an optional extra dependency. <a href="#details">More...</a></p>
 

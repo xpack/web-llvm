@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUBaseInfo.h` File Reference
+# `AMDGPUBaseInfo.h` File
 
 
 

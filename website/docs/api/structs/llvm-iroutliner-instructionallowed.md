@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionAllowed` Struct Reference
+# `InstructionAllowed` Struct
 
 <p>Custom <a href="/web-llvm/docs/api/classes/llvm/instvisitor">InstVisitor</a> to classify different instructions for whether it can be analyzed for similarity. <a href="#details">More...</a></p>
 

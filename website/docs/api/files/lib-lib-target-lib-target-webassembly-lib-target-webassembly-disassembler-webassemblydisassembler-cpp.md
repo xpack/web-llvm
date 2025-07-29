@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyDisassembler.cpp` File Reference
+# `WebAssemblyDisassembler.cpp` File
 
 <p>This file is part of the <a href="/web-llvm/docs/api/namespaces/llvm/webassembly">WebAssembly</a> Disassembler. <a href="#details">More...</a></p>
 

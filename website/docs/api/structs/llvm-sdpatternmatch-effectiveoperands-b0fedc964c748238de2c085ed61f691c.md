@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EffectiveOperands` Struct Template Reference
+# `EffectiveOperands` Struct Template
 
 
 

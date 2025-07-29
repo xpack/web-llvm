@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `cgdata` Namespace Reference
+# `cgdata` Namespace
 
 
 

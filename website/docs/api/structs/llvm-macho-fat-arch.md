@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fat_arch` Struct Reference
+# `fat_arch` Struct
 
 
 

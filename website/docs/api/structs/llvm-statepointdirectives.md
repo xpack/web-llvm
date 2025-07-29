@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StatepointDirectives` Struct Reference
+# `StatepointDirectives` Struct
 
 <p>Call sites that get wrapped by a gc.statepoint (currently only in <a href="/web-llvm/docs/api/structs/llvm/rewritestatepointsforgc">RewriteStatepointsForGC</a> and potentially in other passes in the future) can have attributes that describe properties of gc.statepoint call they will be eventually be wrapped in. <a href="#details">More...</a></p>
 

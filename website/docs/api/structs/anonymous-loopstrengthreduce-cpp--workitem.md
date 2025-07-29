@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WorkItem` Struct Reference
+# `WorkItem` Struct
 
 <p>Helper class for GenerateCrossUseConstantOffsets. <a href="#details">More...</a></p>
 

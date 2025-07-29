@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomMappingTraits` Struct Template Reference
+# `CustomMappingTraits` Struct Template
 
 
 

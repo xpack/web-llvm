@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SCEVCouldNotCompute` Struct Reference
+# `SCEVCouldNotCompute` Struct
 
 <p>An object of this class is returned by queries that could not be answered. <a href="#details">More...</a></p>
 

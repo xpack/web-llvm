@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FieldSeparator` Struct Reference
+# `FieldSeparator` Struct
 
 
 

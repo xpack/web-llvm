@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Telemetry.cpp` File Reference
+# `Telemetry.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{COFFImportFile.cpp}` Namespace Reference
+# `anonymous{COFFImportFile.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULowerKernelAttributesPass` Struct Reference
+# `AMDGPULowerKernelAttributesPass` Struct
 
 
 

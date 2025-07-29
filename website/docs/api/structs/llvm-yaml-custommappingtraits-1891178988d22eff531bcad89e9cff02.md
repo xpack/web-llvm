@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomMappingTraits` Struct Template Reference
+# `CustomMappingTraits` Struct Template
 
 <p>YAMLIO for <a href="/web-llvm/docs/api/classes/llvm/msgpack/mapdocnode">MapDocNode</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUPTNote.h` File Reference
+# `AMDGPUPTNote.h` File
 
 <p>Enums and constants for AMDGPU PT_NOTE sections. <a href="#details">More...</a></p>
 

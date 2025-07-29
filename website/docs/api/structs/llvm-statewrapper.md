@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StateWrapper` Struct Template Reference
+# `StateWrapper` Struct Template
 
 <p>Helper to tie a abstract state implementation to an abstract attribute. <a href="#details">More...</a></p>
 

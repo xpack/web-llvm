@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ControlFlowHub` Struct Reference
+# `ControlFlowHub` Struct
 
 <p>Given a set of branch descriptors [BB, Succ0, Succ1], create a "hub" such that the control flow from each BB to a successor is now split into two edges, one from BB to the hub and another from the hub to the successor. <a href="#details">More...</a></p>
 

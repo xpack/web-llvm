@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedResourceDelta` Struct Reference
+# `SchedResourceDelta` Struct
 
 <p><a href="/web-llvm/docs/api/structs/status">Status</a> of an instruction's critical resource consumption. <a href="#details">More...</a></p>
 

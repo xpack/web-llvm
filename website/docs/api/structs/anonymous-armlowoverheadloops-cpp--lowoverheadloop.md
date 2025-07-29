@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LowOverheadLoop` Struct Reference
+# `LowOverheadLoop` Struct
 
 
 

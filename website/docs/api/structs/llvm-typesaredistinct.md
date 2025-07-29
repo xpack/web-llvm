@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypesAreDistinct` Struct Template Reference
+# `TypesAreDistinct` Struct Template
 
 <p>Determine if all types in Ts are distinct. <a href="#details">More...</a></p>
 

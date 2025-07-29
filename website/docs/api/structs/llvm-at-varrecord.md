@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarRecord` Struct Reference
+# `VarRecord` Struct
 
 <p>Helper struct for trackAssignments, below. <a href="#details">More...</a></p>
 

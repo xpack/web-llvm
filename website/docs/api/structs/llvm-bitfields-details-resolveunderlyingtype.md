@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ResolveUnderlyingType` Struct Template Reference
+# `ResolveUnderlyingType` Struct Template
 
 <p><span class="doxyComputerOutput"><a href="/web-llvm/docs/api/structs/llvm/bitfield">Bitfield</a></span> deals with the following type: <a href="#details">More...</a></p>
 

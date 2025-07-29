@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SPIRVRegularizer.cpp}` Namespace Reference
+# `anonymous{SPIRVRegularizer.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSchedModel` Struct Reference
+# `MCSchedModel` Struct
 
 <p>Machine model for scheduling, bundling, and heuristics. <a href="#details">More...</a></p>
 

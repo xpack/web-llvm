@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The used to link the debug information Reference
+# used to link the debug information
 
 <p>Emit unit's abbreviations. <a href="#details">More...</a></p>
 

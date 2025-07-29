@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCARC.h` File Reference
+# `ObjCARC.h` File
 
 <p>This file defines common definitions/declarations used by the ObjC ARC Optimizer. <a href="#details">More...</a></p>
 

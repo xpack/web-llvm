@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericUniformityAnalysisImplDeleter` Struct Template Reference
+# `GenericUniformityAnalysisImplDeleter` Struct Template
 
 
 

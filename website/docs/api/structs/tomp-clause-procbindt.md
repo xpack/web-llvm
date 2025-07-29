@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProcBindT` Struct Template Reference
+# `ProcBindT` Struct Template
 
 
 

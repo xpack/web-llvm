@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantUser` Struct Reference
+# `ConstantUser` Struct
 
 <p>Keeps track of the user of a constant and the operand index where the constant is used. <a href="#details">More...</a></p>
 

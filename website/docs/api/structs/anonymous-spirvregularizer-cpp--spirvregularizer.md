@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVRegularizer` Struct Reference
+# `SPIRVRegularizer` Struct
 
 
 

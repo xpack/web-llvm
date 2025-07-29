@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CommandLine.cpp}` Namespace Reference
+# `anonymous{CommandLine.cpp}` Namespace
 
 
 

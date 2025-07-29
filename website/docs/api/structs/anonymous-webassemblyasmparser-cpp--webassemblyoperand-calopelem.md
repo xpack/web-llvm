@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaLOpElem` Struct Reference
+# `CaLOpElem` Struct
 
 
 

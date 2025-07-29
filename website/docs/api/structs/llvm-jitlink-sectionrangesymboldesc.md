@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionRangeSymbolDesc` Struct Reference
+# `SectionRangeSymbolDesc` Struct
 
 
 

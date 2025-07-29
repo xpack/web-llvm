@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVMachineFunctionInfo` Struct Reference
+# `RISCVMachineFunctionInfo` Struct
 
 
 

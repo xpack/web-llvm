@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HotColdHintParser` Struct Reference
+# `HotColdHintParser` Struct
 
 
 

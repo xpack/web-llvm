@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ufmin_pred_ty` Struct Reference
+# `ufmin_pred_ty` Struct
 
 <p>Helper class for identifying unordered min predicates. <a href="#details">More...</a></p>
 

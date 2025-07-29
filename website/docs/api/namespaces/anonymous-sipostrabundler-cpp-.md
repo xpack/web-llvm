@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIPostRABundler.cpp}` Namespace Reference
+# `anonymous{SIPostRABundler.cpp}` Namespace
 
 
 

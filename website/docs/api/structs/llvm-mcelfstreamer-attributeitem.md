@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeItem` Struct Reference
+# `AttributeItem` Struct
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/elf">ELF</a> object attributes section emission support. <a href="#details">More...</a></p>
 

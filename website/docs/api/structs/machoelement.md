@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachOElement` Struct Reference
+# `MachOElement` Struct
 
 
 

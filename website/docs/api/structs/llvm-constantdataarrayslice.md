@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstantDataArraySlice` Struct Reference
+# `ConstantDataArraySlice` Struct
 
 <p>Represents offset+length into a <a href="/web-llvm/docs/api/classes/llvm/constantdataarray">ConstantDataArray</a>. <a href="#details">More...</a></p>
 

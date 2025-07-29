@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RISCVMergeBaseOffset.cpp}` Namespace Reference
+# `anonymous{RISCVMergeBaseOffset.cpp}` Namespace
 
 
 

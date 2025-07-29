@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPotentialConstantValuesFloating` Struct Reference
+# `AAPotentialConstantValuesFloating` Struct
 
 
 

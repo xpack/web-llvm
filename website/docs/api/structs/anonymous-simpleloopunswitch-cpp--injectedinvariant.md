@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InjectedInvariant` Struct Reference
+# `InjectedInvariant` Struct
 
 
 

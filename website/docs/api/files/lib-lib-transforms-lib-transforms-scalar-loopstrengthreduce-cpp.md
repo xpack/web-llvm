@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopStrengthReduce.cpp` File Reference
+# `LoopStrengthReduce.cpp` File
 
 
 

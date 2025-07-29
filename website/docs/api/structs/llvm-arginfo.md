@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ArgInfo` Struct Reference
+# `ArgInfo` Struct
 
 <p>Helper struct shared between <a href="/web-llvm/docs/api/classes/llvm/function">Function</a> Specialization and SCCP Solver. <a href="#details">More...</a></p>
 

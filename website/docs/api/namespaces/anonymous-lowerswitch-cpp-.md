@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LowerSwitch.cpp}` Namespace Reference
+# `anonymous{LowerSwitch.cpp}` Namespace
 
 
 

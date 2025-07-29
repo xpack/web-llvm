@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DOSHeader` Struct Reference
+# `DOSHeader` Struct
 
 <p>The DOS compatible header at the front of all PEs. <a href="#details">More...</a></p>
 

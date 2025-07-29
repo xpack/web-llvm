@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CriticalEdgeSplittingOptions` Struct Reference
+# `CriticalEdgeSplittingOptions` Struct
 
 <p>Option class for critical edge splitting. <a href="#details">More...</a></p>
 

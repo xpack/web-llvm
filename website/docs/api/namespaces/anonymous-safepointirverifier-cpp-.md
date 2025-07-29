@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SafepointIRVerifier.cpp}` Namespace Reference
+# `anonymous{SafepointIRVerifier.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/WindowsResource` Folder Reference
+# `include/llvm/WindowsResource` Folder
 
 
 

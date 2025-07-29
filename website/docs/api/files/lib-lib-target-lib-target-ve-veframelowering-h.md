@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VEFrameLowering.h` File Reference
+# `VEFrameLowering.h` File
 
 
 

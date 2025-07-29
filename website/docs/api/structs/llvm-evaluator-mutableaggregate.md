@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MutableAggregate` Struct Reference
+# `MutableAggregate` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixIrreducible` Struct Reference
+# `FixIrreducible` Struct
 
 
 

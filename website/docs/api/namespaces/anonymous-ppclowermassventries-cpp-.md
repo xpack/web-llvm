@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PPCLowerMASSVEntries.cpp}` Namespace Reference
+# `anonymous{PPCLowerMASSVEntries.cpp}` Namespace
 
 
 

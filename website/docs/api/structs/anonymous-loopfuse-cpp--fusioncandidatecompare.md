@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FusionCandidateCompare` Struct Reference
+# `FusionCandidateCompare` Struct
 
 
 

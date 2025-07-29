@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `callback_traits` Struct Template Reference
+# `callback_traits` Struct Template
 
 
 

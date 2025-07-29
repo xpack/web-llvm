@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocAddrEntry` Struct Reference
+# `RelocAddrEntry` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/relocaddrentry">RelocAddrEntry</a> contains relocated value and section index. <a href="#details">More...</a></p>
 

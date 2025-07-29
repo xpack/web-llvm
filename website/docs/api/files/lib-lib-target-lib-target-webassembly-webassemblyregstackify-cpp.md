@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyRegStackify.cpp` File Reference
+# `WebAssemblyRegStackify.cpp` File
 
 <p>This file implements a register stacking pass. <a href="#details">More...</a></p>
 

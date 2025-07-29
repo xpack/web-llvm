@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GDBRegistrationListener.cpp}` Namespace Reference
+# `anonymous{GDBRegistrationListener.cpp}` Namespace
 
 
 

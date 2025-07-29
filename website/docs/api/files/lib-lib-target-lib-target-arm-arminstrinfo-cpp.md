@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMInstrInfo.cpp` File Reference
+# `ARMInstrInfo.cpp` File
 
 
 

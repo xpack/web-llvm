@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassConfiguration` Struct Reference
+# `PassConfiguration` Struct
 
 <p>An <a href="/web-llvm/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> pass configuration, consisting of a list of pre-prune, post-prune, and post-fixup passes. <a href="#details">More...</a></p>
 

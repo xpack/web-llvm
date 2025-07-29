@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `arm_state_hdr_t` Struct Reference
+# `arm_state_hdr_t` Struct
 
 
 

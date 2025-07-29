@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NewGVN.cpp}` Namespace Reference
+# `anonymous{NewGVN.cpp}` Namespace
 
 
 

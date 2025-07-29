@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetCFGOnlyPasses` Struct Reference
+# `GetCFGOnlyPasses` Struct
 
 
 

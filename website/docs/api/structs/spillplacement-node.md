@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Node` Struct Reference
+# `Node` Struct
 
 <p><a href="/web-llvm/docs/api/classes/node">Node</a> - Each edge bundle corresponds to a Hopfield node. <a href="#details">More...</a></p>
 

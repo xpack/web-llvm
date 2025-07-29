@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonConstExtenders.cpp}` Namespace Reference
+# `anonymous{HexagonConstExtenders.cpp}` Namespace
 
 
 

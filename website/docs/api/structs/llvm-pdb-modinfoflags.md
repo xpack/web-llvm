@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ModInfoFlags` Struct Reference
+# `ModInfoFlags` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanVerifier.h` File Reference
+# `VPlanVerifier.h` File
 
 <p>This file declares the class VPlanVerifier, which contains utility functions to check the consistency of a VPlan. <a href="#details">More...</a></p>
 

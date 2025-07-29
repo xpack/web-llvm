@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KernelInfoState` Struct Reference
+# `KernelInfoState` Struct
 
 
 

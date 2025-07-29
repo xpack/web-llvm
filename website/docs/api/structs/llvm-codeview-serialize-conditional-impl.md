@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `serialize_conditional_impl` Struct Template Reference
+# `serialize_conditional_impl` Struct Template
 
 
 

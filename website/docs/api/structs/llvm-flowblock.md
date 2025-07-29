@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlowBlock` Struct Reference
+# `FlowBlock` Struct
 
 <p>A wrapper of a binary basic block. <a href="#details">More...</a></p>
 

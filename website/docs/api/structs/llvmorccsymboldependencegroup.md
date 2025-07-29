@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCSymbolDependenceGroup` Struct Reference
+# `LLVMOrcCSymbolDependenceGroup` Struct
 
 <p>A set of symbols that share dependencies. <a href="#details">More...</a></p>
 

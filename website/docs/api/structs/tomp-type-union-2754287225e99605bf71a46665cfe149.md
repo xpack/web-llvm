@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Union` Struct Template Reference
+# `Union` Struct Template
 
 
 

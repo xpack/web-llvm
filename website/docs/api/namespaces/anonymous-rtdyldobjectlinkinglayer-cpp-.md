@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{RTDyldObjectLinkingLayer.cpp}` Namespace Reference
+# `anonymous{RTDyldObjectLinkingLayer.cpp}` Namespace
 
 
 

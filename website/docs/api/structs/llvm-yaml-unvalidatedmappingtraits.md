@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `unvalidatedMappingTraits` Struct Template Reference
+# `unvalidatedMappingTraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CorrelationData` Struct Reference
+# `CorrelationData` Struct
 
 
 

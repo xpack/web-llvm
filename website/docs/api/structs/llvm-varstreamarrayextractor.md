@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarStreamArrayExtractor` Struct Template Reference
+# `VarStreamArrayExtractor` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/varstreamarrayextractor">VarStreamArrayExtractor</a> is intended to be specialized to provide customized extraction logic. <a href="#details">More...</a></p>
 

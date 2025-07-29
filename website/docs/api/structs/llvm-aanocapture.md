@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoCapture` Struct Reference
+# `AANoCapture` Struct
 
 <p>An abstract interface for all nocapture attributes. <a href="#details">More...</a></p>
 

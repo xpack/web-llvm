@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ppc_thread_state32_t` Struct Reference
+# `ppc_thread_state32_t` Struct
 
 
 

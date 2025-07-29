@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContentTypeTracker` Struct Reference
+# `ContentTypeTracker` Struct
 
 <p>Tracks which optional content types are present in a DWARF file name entry format. <a href="#details">More...</a></p>
 

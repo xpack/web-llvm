@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Scalarizer.cpp` File Reference
+# `Scalarizer.cpp` File
 
 
 

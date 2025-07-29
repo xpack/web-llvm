@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstrInfo.cpp` File Reference
+# `AMDGPUInstrInfo.cpp` File
 
 <p>Implementation of the <a href="/web-llvm/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> class that is common to all AMD GPUs. <a href="#details">More...</a></p>
 

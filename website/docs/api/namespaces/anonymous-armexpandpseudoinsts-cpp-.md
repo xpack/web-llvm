@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMExpandPseudoInsts.cpp}` Namespace Reference
+# `anonymous{ARMExpandPseudoInsts.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64SIMDInstrOpt.cpp` File Reference
+# `AArch64SIMDInstrOpt.cpp` File
 
 
 

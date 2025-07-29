@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FixupInfoThumbMov` Struct Reference
+# `FixupInfoThumbMov` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMIRFormatter.h` File Reference
+# `AMDGPUMIRFormatter.h` File
 
 <p>AMDGPU specific overrides of MIRFormatter. <a href="#details">More...</a></p>
 

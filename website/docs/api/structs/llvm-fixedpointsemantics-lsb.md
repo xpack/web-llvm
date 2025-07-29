@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Lsb` Struct Reference
+# `Lsb` Struct
 
 <p>Used to differentiate between constructors with Width and <a href="/web-llvm/docs/api/structs/llvm/fixedpointsemantics/lsb">Lsb</a> from the default Width and scale. <a href="#details">More...</a></p>
 

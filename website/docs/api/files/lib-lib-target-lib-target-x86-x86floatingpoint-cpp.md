@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FloatingPoint.cpp` File Reference
+# `X86FloatingPoint.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TraceBlockInfo` Struct Reference
+# `TraceBlockInfo` Struct
 
 <p>Per-basic block information that relates to a specific trace through the block. <a href="#details">More...</a></p>
 

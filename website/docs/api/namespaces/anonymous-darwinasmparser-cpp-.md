@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DarwinAsmParser.cpp}` Namespace Reference
+# `anonymous{DarwinAsmParser.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Xtensa/MCTargetDesc` Folder Reference
+# `lib/Target/Xtensa/MCTargetDesc` Folder
 
 
 

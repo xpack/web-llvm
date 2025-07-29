@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetInfo.h` File Reference
+# `WebAssemblyTargetInfo.h` File
 
 <p>This file registers the WebAssembly target. <a href="#details">More...</a></p>
 

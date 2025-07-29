@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86LegalizerInfo.cpp` File Reference
+# `X86LegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/x86">X86</a>. <a href="#details">More...</a></p>
 

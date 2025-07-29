@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThinLTOState` Struct Reference
+# `ThinLTOState` Struct
 
 
 

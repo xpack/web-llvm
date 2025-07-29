@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FP4FP8DstByteSelInfo` Struct Reference
+# `FP4FP8DstByteSelInfo` Struct
 
 
 

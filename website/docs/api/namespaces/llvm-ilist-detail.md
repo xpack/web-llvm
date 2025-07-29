@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_detail` Namespace Reference
+# `ilist_detail` Namespace
 
 
 

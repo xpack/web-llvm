@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SIFixVGPRCopies.cpp}` Namespace Reference
+# `anonymous{SIFixVGPRCopies.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCReduceCRLogicals.cpp` File Reference
+# `PPCReduceCRLogicals.cpp` File
 
 
 

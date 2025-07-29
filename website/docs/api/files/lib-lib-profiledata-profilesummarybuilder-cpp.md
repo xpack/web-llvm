@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileSummaryBuilder.cpp` File Reference
+# `ProfileSummaryBuilder.cpp` File
 
 
 

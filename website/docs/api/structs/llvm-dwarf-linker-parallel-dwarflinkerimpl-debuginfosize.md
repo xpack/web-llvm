@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugInfoSize` Struct Reference
+# `DebugInfoSize` Struct
 
 <p>Hold the input and output of the debug info size in bytes. <a href="#details">More...</a></p>
 

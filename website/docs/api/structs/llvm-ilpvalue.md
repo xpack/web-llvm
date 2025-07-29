@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ILPValue` Struct Reference
+# `ILPValue` Struct
 
 <p>Represent the ILP of the subDAG rooted at a DAG node. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCDwarfFile` Struct Reference
+# `MCDwarfFile` Struct
 
 <p>Instances of this class represent the name of the dwarf .file directive and its associated dwarf file number in the MC file. <a href="#details">More...</a></p>
 

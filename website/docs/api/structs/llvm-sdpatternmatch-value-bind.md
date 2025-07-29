@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Value_bind` Struct Reference
+# `Value_bind` Struct
 
 
 

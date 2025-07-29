@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RelocationResolver.cpp` File Reference
+# `RelocationResolver.cpp` File
 
 
 

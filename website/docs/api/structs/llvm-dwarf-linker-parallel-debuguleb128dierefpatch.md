@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugULEB128DieRefPatch` Struct Reference
+# `DebugULEB128DieRefPatch` Struct
 
 <p>This structure is used to update reference to the <a href="/web-llvm/docs/api/classes/llvm/die">DIE</a> of ULEB128 form. <a href="#details">More...</a></p>
 

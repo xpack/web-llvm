@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LowerEmuTLS.cpp}` Namespace Reference
+# `anonymous{LowerEmuTLS.cpp}` Namespace
 
 
 

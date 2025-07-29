@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScheduleT` Struct Template Reference
+# `ScheduleT` Struct Template
 
 
 

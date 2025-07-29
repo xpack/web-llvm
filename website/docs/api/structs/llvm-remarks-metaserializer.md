@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MetaSerializer` Struct Reference
+# `MetaSerializer` Struct
 
 <p>This is the base class for a remark metadata serializer. <a href="#details">More...</a></p>
 

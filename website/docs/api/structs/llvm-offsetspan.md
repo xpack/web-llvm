@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OffsetSpan` Struct Reference
+# `OffsetSpan` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/offsetspan">OffsetSpan</a> - Used internally by <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/objectsizeoffsetvisitor">ObjectSizeOffsetVisitor</a></span>. <a href="#details">More...</a></p>
 

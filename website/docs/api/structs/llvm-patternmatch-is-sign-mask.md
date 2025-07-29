@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_sign_mask` Struct Reference
+# `is_sign_mask` Struct
 
 
 

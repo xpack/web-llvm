@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZTDC.cpp}` Namespace Reference
+# `anonymous{SystemZTDC.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PublicSym32Header` Struct Reference
+# `PublicSym32Header` Struct
 
 
 

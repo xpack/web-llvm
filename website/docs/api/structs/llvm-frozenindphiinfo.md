@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FrozenIndPHIInfo` Struct Reference
+# `FrozenIndPHIInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XCoreTargetInfo.h` File Reference
+# `XCoreTargetInfo.h` File
 
 
 

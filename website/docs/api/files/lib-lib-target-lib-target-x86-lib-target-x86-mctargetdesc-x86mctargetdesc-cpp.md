@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MCTargetDesc.cpp` File Reference
+# `X86MCTargetDesc.cpp` File
 
 
 

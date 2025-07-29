@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OverlapStats` Struct Reference
+# `OverlapStats` Struct
 
 
 

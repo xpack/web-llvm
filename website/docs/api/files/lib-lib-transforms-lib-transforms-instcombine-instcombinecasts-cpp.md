@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineCasts.cpp` File Reference
+# `InstCombineCasts.cpp` File
 
 
 

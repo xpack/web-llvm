@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreTargetMachine.cpp}` Namespace Reference
+# `anonymous{XCoreTargetMachine.cpp}` Namespace
 
 
 

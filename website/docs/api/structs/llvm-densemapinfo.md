@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DenseMapInfo` Struct Template Reference
+# `DenseMapInfo` Struct Template
 
 <p>An information struct used to provide <a href="/web-llvm/docs/api/classes/llvm/densemap">DenseMap</a> with the various necessary components for a given value type <span class="doxyComputerOutput">T</span>. <a href="#details">More...</a></p>
 

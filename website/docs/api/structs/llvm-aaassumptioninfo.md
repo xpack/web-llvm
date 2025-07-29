@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAssumptionInfo` Struct Reference
+# `AAAssumptionInfo` Struct
 
 <p>An abstract attribute for getting assumption information. <a href="#details">More...</a></p>
 

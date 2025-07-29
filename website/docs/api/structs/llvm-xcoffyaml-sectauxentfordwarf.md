@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectAuxEntForDWARF` Struct Reference
+# `SectAuxEntForDWARF` Struct
 
 
 

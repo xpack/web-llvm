@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsWinCOFFObjectWriter.cpp` File Reference
+# `MipsWinCOFFObjectWriter.cpp` File
 
 
 

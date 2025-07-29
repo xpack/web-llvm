@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DefaultT` Struct Template Reference
+# `DefaultT` Struct Template
 
 
 

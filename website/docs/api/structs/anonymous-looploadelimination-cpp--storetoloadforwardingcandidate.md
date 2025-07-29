@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StoreToLoadForwardingCandidate` Struct Reference
+# `StoreToLoadForwardingCandidate` Struct
 
 <p>Represent a store-to-forwarding candidate. <a href="#details">More...</a></p>
 

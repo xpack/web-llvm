@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNMinRegStrategy.cpp` File Reference
+# `GCNMinRegStrategy.cpp` File
 
 <p>This file defines and implements the class <a href="/web-llvm/docs/api/classes/anonymous-gcnminregstrategy-cpp-/gcnminregscheduler">GCNMinRegScheduler</a>, which implements an experimental, simple scheduler whose main goal is to learn ways about consuming less possible registers for a region. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonLoadStoreWidening.cpp}` Namespace Reference
+# `anonymous{HexagonLoadStoreWidening.cpp}` Namespace
 
 
 

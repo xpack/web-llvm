@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `kernel_descriptor_t` Struct Reference
+# `kernel_descriptor_t` Struct
 
 
 

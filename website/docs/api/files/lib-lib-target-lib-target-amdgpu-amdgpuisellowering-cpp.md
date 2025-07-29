@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUISelLowering.cpp` File Reference
+# `AMDGPUISelLowering.cpp` File
 
 <p>This is the parent <a href="/web-llvm/docs/api/classes/llvm/targetlowering">TargetLowering</a> class for hardware code gen targets. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCSectionWasm.cpp` File Reference
+# `MCSectionWasm.cpp` File
 
 
 

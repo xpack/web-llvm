@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleKey` Struct Reference
+# `SimpleKey` Struct
 
 <p>This struct is used to track simple keys. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanPatternMatch` Namespace Reference
+# `VPlanPatternMatch` Namespace
 
 
 

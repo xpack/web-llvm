@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimplifyCFGOptions` Struct Reference
+# `SimplifyCFGOptions` Struct
 
 
 

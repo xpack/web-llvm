@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The PHI Nodes Reference
+# PHI Nodes
 
 <p>Functions in this group only apply to instructions that map to <a href="/web-llvm/docs/api/classes/llvm/phinode">llvm::PHINode</a> instances. <a href="#details">More...</a></p>
 

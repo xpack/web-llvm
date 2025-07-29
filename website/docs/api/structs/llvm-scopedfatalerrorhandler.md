@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScopedFatalErrorHandler` Struct Reference
+# `ScopedFatalErrorHandler` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/scopedfatalerrorhandler">ScopedFatalErrorHandler</a> - This is a simple helper class which just calls install_fatal_error_handler in its constructor and remove_fatal_error_handler in its destructor. <a href="#details">More...</a></p>
 

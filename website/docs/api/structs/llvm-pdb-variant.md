@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Variant` Struct Reference
+# `Variant` Struct
 
 
 

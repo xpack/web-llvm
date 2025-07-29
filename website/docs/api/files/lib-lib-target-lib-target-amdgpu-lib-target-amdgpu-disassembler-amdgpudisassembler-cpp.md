@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUDisassembler.cpp` File Reference
+# `AMDGPUDisassembler.cpp` File
 
 <p>This file contains definition for <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> ISA disassembler. <a href="#details">More...</a></p>
 

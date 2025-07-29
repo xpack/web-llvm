@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroSplitPass` Struct Reference
+# `CoroSplitPass` Struct
 
 
 

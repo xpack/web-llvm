@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeBase` Struct Reference
+# `NodeBase` Struct
 
 
 

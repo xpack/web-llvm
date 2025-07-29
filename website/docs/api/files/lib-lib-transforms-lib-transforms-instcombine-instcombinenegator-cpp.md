@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineNegator.cpp` File Reference
+# `InstCombineNegator.cpp` File
 
 
 

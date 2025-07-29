@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PipelineElement` Struct Reference
+# `PipelineElement` Struct
 
 <p>A struct to capture parsed pass pipeline names. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineParams` Struct Reference
+# `InlineParams` Struct
 
 <p>Thresholds to tune inline cost analysis. <a href="#details">More...</a></p>
 

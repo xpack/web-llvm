@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRInstructionMapper` Struct Reference
+# `IRInstructionMapper` Struct
 
 <p>Helper struct for converting the Instructions in a <a href="/web-llvm/docs/api/classes/llvm/module">Module</a> into a vector of unsigned integers. <a href="#details">More...</a></p>
 

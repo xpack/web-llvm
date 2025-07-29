@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMCAsmInfo` Struct Template Reference
+# `RegisterMCAsmInfo` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registermcasminfo">RegisterMCAsmInfo</a> - Helper template for registering a target assembly info implementation. <a href="#details">More...</a></p>
 

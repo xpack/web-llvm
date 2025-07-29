@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerSpec` Struct Reference
+# `PointerSpec` Struct
 
 <p>Pointer type specification. <a href="#details">More...</a></p>
 

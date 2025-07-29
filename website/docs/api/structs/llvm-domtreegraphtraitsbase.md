@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DomTreeGraphTraitsBase` Struct Template Reference
+# `DomTreeGraphTraitsBase` Struct Template
 
 
 

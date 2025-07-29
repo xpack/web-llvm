@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ComdatInfo` Struct Reference
+# `ComdatInfo` Struct
 
 
 

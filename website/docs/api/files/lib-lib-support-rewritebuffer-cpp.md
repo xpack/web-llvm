@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteBuffer.cpp` File Reference
+# `RewriteBuffer.cpp` File
 
 
 

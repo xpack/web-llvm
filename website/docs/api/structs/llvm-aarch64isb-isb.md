@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ISB` Struct Reference
+# `ISB` Struct
 
 
 

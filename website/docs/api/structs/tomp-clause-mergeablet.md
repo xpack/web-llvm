@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergeableT` Struct Template Reference
+# `MergeableT` Struct Template
 
 
 

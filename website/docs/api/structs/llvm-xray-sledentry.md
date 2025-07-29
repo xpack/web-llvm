@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SledEntry` Struct Reference
+# `SledEntry` Struct
 
 <p>Represents an XRay instrumentation sled entry from an object file. <a href="#details">More...</a></p>
 

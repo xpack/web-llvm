@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReductionT` Struct Template Reference
+# `ReductionT` Struct Template
 
 
 

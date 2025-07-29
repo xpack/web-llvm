@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeSizer` Struct Template Reference
+# `NodeSizer` Struct Template
 
 
 

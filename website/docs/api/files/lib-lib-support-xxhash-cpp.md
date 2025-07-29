@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `xxhash.cpp` File Reference
+# `xxhash.cpp` File
 
 
 

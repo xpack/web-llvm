@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCAsmInfo.cpp` File Reference
+# `WebAssemblyMCAsmInfo.cpp` File
 
 <p>This file contains the declarations of the <a href="/web-llvm/docs/api/classes/llvm/webassemblymcasminfo">WebAssemblyMCAsmInfo</a> properties. <a href="#details">More...</a></p>
 

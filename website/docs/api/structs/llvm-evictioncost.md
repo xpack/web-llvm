@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EvictionCost` Struct Reference
+# `EvictionCost` Struct
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/#a19921a3ceb99548f498d3df118eda9ed">Cost</a> of evicting interference - used by default advisor, and the eviction chain heuristic in RegAllocGreedy. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSFLayout` Struct Reference
+# `MSFLayout` Struct
 
 
 

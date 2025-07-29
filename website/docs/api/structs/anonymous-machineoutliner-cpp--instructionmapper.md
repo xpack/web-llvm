@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstructionMapper` Struct Reference
+# `InstructionMapper` Struct
 
 <p>Maps <span class="doxyComputerOutput">MachineInstrs</span> to unsigned integers and stores the mappings. <a href="#details">More...</a></p>
 

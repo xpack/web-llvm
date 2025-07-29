@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IncomingValueHandler` Struct Reference
+# `IncomingValueHandler` Struct
 
 <p>Base class for ValueHandlers used for arguments coming into the current function, or for return values received from a call. <a href="#details">More...</a></p>
 

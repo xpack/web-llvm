@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanBeVOPD` Struct Reference
+# `CanBeVOPD` Struct
 
 
 

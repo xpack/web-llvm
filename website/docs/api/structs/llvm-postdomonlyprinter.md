@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PostDomOnlyPrinter` Struct Reference
+# `PostDomOnlyPrinter` Struct
 
 
 

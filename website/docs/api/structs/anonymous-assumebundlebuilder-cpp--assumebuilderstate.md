@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumeBuilderState` Struct Reference
+# `AssumeBuilderState` Struct
 
 <p>This class contain all knowledge that have been gather while building an llvm.assume and the function to manipulate it. <a href="#details">More...</a></p>
 

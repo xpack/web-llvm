@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Vectorize.cpp` File Reference
+# `Vectorize.cpp` File
 
 
 

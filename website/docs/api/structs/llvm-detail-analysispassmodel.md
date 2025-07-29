@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AnalysisPassModel` Struct Template Reference
+# `AnalysisPassModel` Struct Template
 
 <p>Wrapper to model the analysis pass concept. <a href="#details">More...</a></p>
 

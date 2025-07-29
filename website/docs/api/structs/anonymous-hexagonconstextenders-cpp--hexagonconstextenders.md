@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonConstExtenders` Struct Reference
+# `HexagonConstExtenders` Struct
 
 
 

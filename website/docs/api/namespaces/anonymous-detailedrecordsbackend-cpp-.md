@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DetailedRecordsBackend.cpp}` Namespace Reference
+# `anonymous{DetailedRecordsBackend.cpp}` Namespace
 
 
 

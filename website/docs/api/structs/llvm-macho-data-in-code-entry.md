@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `data_in_code_entry` Struct Reference
+# `data_in_code_entry` Struct
 
 
 

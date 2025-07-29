@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TerminatedPath` Struct Reference
+# `TerminatedPath` Struct
 
 <p>Represents a search that terminated after finding a clobber. <a href="#details">More...</a></p>
 

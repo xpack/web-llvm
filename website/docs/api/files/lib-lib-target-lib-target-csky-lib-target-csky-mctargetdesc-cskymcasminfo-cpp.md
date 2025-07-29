@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYMCAsmInfo.cpp` File Reference
+# `CSKYMCAsmInfo.cpp` File
 
 
 

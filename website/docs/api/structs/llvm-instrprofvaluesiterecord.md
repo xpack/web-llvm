@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrProfValueSiteRecord` Struct Reference
+# `InstrProfValueSiteRecord` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SelectOptimize.cpp}` Namespace Reference
+# `anonymous{SelectOptimize.cpp}` Namespace
 
 
 

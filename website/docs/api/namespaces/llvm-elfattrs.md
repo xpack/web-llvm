@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ELFAttrs` Namespace Reference
+# `ELFAttrs` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Timer.cpp}` Namespace Reference
+# `anonymous{Timer.cpp}` Namespace
 
 
 

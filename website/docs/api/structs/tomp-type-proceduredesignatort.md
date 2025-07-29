@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProcedureDesignatorT` Struct Template Reference
+# `ProcedureDesignatorT` Struct Template
 
 
 

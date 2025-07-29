@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Dependence` Struct Reference
+# `Dependence` Struct
 
 <p>Dependece between memory access instructions. <a href="#details">More...</a></p>
 

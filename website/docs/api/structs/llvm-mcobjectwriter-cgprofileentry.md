@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CGProfileEntry` Struct Reference
+# `CGProfileEntry` Struct
 
 
 

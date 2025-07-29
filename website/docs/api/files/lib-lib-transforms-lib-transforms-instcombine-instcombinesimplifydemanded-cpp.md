@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstCombineSimplifyDemanded.cpp` File Reference
+# `InstCombineSimplifyDemanded.cpp` File
 
 
 

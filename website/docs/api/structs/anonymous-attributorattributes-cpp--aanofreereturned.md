@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoFreeReturned` Struct Reference
+# `AANoFreeReturned` Struct
 
 <p>NoFree attribute for function return value. <a href="#details">More...</a></p>
 

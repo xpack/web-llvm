@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAIsDeadCallSiteArgument` Struct Reference
+# `AAIsDeadCallSiteArgument` Struct
 
 
 

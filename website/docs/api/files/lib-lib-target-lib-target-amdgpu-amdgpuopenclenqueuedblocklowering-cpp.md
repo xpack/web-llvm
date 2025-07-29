@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUOpenCLEnqueuedBlockLowering.cpp` File Reference
+# `AMDGPUOpenCLEnqueuedBlockLowering.cpp` File
 
 
 

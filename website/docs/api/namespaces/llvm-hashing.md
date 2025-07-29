@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hashing` Namespace Reference
+# `hashing` Namespace
 
 
 

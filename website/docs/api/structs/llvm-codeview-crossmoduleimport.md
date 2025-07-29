@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrossModuleImport` Struct Reference
+# `CrossModuleImport` Struct
 
 
 

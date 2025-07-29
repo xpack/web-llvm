@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PHIInfo` Struct Reference
+# `PHIInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CustomMappingTraits` Struct Template Reference
+# `CustomMappingTraits` Struct Template
 
 <p>This class should be specialized by any type that needs to be converted to/from a YAML mapping in the case where the names of the keys are not known in advance, e.g. <a href="#details">More...</a></p>
 

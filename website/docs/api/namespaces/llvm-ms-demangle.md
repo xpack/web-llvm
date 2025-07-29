@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ms_demangle` Namespace Reference
+# `ms_demangle` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanPatternMatch.h` File Reference
+# `VPlanPatternMatch.h` File
 
 
 

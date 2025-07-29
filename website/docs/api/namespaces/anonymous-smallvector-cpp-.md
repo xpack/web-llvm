@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SmallVector.cpp}` Namespace Reference
+# `anonymous{SmallVector.cpp}` Namespace
 
 
 

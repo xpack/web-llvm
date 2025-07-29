@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600MachineScheduler.h` File Reference
+# `R600MachineScheduler.h` File
 
 <p>R600 Machine Scheduler interface. <a href="#details">More...</a></p>
 

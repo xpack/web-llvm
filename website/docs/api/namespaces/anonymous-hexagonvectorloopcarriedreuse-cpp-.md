@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonVectorLoopCarriedReuse.cpp}` Namespace Reference
+# `anonymous{HexagonVectorLoopCarriedReuse.cpp}` Namespace
 
 
 

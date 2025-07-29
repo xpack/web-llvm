@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoadStoreVectorizer.cpp}` Namespace Reference
+# `anonymous{LoadStoreVectorizer.cpp}` Namespace
 
 
 

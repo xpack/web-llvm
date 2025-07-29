@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `import_lookup_table_entry` Struct Template Reference
+# `import_lookup_table_entry` Struct Template
 
 
 

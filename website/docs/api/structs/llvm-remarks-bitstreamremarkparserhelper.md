@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitstreamRemarkParserHelper` Struct Reference
+# `BitstreamRemarkParserHelper` Struct
 
 <p>Helper to parse a REMARK_BLOCK for a bitstream remark container. <a href="#details">More...</a></p>
 

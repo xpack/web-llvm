@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Extensions` Folder Reference
+# `lib/Extensions` Folder
 
 
 

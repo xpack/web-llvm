@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SeqCstT` Struct Template Reference
+# `SeqCstT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNDPPCombine.h` File Reference
+# `GCNDPPCombine.h` File
 
 
 

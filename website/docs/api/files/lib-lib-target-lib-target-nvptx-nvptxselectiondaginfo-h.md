@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXSelectionDAGInfo.h` File Reference
+# `NVPTXSelectionDAGInfo.h` File
 
 
 

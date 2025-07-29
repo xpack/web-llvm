@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAMDMaxNumWorkgroups` Struct Reference
+# `AAAMDMaxNumWorkgroups` Struct
 
 <p>Propagate amdgpu-max-num-workgroups attribute. <a href="#details">More...</a></p>
 

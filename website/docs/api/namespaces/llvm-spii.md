@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPII` Namespace Reference
+# `SPII` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/spii">SPII</a> - This namespace holds all of the target specific flags that instruction info tracks. <a href="#details">More...</a></p>
 

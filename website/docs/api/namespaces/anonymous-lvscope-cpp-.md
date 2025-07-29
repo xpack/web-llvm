@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LVScope.cpp}` Namespace Reference
+# `anonymous{LVScope.cpp}` Namespace
 
 
 

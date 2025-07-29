@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolListWrapper` Struct Reference
+# `SymbolListWrapper` Struct
 
 
 

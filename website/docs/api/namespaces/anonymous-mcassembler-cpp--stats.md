@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `stats` Namespace Reference
+# `stats` Namespace
 
 
 

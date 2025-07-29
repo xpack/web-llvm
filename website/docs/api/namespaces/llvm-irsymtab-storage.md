@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `storage` Namespace Reference
+# `storage` Namespace
 
 
 

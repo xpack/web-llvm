@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryValueInfo` Struct Reference
+# `EntryValueInfo` Struct
 
 <p>Represents an entry-value location, or a fragment of one. <a href="#details">More...</a></p>
 

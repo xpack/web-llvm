@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AttributeComparator` Struct Reference
+# `AttributeComparator` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> comparator that only compares attribute keys. <a href="#details">More...</a></p>
 

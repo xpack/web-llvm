@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LifetimeMarkerInfo` Struct Reference
+# `LifetimeMarkerInfo` Struct
 
 
 

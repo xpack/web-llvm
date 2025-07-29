@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ADCEPass` Struct Reference
+# `ADCEPass` Struct
 
 <p>A DCE pass that assumes instructions are dead until proven otherwise. <a href="#details">More...</a></p>
 

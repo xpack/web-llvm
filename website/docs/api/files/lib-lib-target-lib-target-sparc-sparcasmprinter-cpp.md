@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcAsmPrinter.cpp` File Reference
+# `SparcAsmPrinter.cpp` File
 
 
 

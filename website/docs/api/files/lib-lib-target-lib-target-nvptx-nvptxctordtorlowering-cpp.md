@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXCtorDtorLowering.cpp` File Reference
+# `NVPTXCtorDtorLowering.cpp` File
 
 <p>This pass creates a unified init and fini kernel with the required metadata. <a href="#details">More...</a></p>
 

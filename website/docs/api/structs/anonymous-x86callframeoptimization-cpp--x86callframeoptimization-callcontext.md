@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallContext` Struct Reference
+# `CallContext` Struct
 
 
 

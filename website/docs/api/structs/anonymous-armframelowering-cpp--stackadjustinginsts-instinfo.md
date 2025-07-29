@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstInfo` Struct Reference
+# `InstInfo` Struct
 
 
 

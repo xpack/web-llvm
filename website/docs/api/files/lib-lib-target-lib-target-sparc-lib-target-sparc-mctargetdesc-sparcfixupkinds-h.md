@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcFixupKinds.h` File Reference
+# `SparcFixupKinds.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanCFG.h` File Reference
+# `VPlanCFG.h` File
 
 
 

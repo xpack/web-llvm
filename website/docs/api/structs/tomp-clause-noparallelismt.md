@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoParallelismT` Struct Template Reference
+# `NoParallelismT` Struct Template
 
 
 

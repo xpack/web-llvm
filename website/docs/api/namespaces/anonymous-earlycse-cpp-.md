@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{EarlyCSE.cpp}` Namespace Reference
+# `anonymous{EarlyCSE.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroConditionalWrapper` Struct Reference
+# `CoroConditionalWrapper` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMAsmParser.cpp}` Namespace Reference
+# `anonymous{ARMAsmParser.cpp}` Namespace
 
 
 

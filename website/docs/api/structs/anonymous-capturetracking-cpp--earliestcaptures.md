@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EarliestCaptures` Struct Reference
+# `EarliestCaptures` Struct
 
 <p>Find the 'earliest' instruction before which the pointer is known not to be captured. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PathStorage` Struct Reference
+# `PathStorage` Struct
 
 
 

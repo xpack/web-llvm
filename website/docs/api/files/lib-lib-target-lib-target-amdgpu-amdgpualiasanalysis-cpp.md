@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAliasAnalysis.cpp` File Reference
+# `AMDGPUAliasAnalysis.cpp` File
 
 <p>This is the AMGPU address space based alias analysis pass. <a href="#details">More...</a></p>
 

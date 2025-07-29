@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `span_cache_t` Struct Reference
+# `span_cache_t` Struct
 
 
 

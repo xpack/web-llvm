@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionsYAML` Struct Reference
+# `FunctionsYAML` Struct
 
 
 

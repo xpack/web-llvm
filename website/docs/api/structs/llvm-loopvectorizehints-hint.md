@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Hint` Struct Reference
+# `Hint` Struct
 
 <p>Hint - associates name and validation with the hint value. <a href="#details">More...</a></p>
 

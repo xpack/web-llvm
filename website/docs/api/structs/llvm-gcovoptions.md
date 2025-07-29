@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVOptions` Struct Reference
+# `GCOVOptions` Struct
 
 
 

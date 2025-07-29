@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MarkupNode` Struct Reference
+# `MarkupNode` Struct
 
 <p>A node of symbolizer markup. <a href="#details">More...</a></p>
 

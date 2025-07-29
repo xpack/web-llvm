@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PotentialValuesState` Struct Template Reference
+# `PotentialValuesState` Struct Template
 
 <p>A class for a set state. <a href="#details">More...</a></p>
 

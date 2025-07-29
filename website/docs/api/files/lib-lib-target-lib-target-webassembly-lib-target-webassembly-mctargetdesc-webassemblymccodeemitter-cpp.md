@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCCodeEmitter.cpp` File Reference
+# `WebAssemblyMCCodeEmitter.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/anonymous-webassemblymccodeemitter-cpp-/webassemblymccodeemitter">WebAssemblyMCCodeEmitter</a> class. <a href="#details">More...</a></p>
 

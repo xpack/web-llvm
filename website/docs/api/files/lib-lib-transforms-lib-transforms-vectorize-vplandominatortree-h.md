@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanDominatorTree.h` File Reference
+# `VPlanDominatorTree.h` File
 
 <p>This file implements dominator tree analysis for a single level of a VPlan's H-CFG. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCAsmPrinter.cpp` File Reference
+# `ARCAsmPrinter.cpp` File
 
 
 

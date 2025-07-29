@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegsForValue` Struct Reference
+# `RegsForValue` Struct
 
 <p>This struct represents the registers (physical or virtual) that a particular set of values is assigned, and the type information about the value. <a href="#details">More...</a></p>
 

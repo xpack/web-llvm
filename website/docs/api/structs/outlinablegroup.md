@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OutlinableGroup` Struct Reference
+# `OutlinableGroup` Struct
 
 <p>The <a href="/web-llvm/docs/api/structs/outlinablegroup">OutlinableGroup</a> holds all the overarching information for outlining a set of regions that are structurally similar to one another, such as the types of the overall function, the output blocks, the sets of stores needed and a list of the different regions. <a href="#details">More...</a></p>
 

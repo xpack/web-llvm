@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUnifyMetadataPass` Struct Reference
+# `AMDGPUUnifyMetadataPass` Struct
 
 
 

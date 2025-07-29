@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchMergeBaseOffset.cpp}` Namespace Reference
+# `anonymous{LoongArchMergeBaseOffset.cpp}` Namespace
 
 
 

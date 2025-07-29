@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IRInstructionDataTraits` Struct Reference
+# `IRInstructionDataTraits` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/TargetParser` Folder Reference
+# `include/llvm/TargetParser` Folder
 
 
 

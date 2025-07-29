@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/SPIRV` Folder Reference
+# `lib/Target/SPIRV` Folder
 
 
 

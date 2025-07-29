@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PublicSym32Layout` Struct Reference
+# `PublicSym32Layout` Struct
 
 
 

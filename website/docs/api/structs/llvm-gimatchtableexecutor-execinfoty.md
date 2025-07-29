@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExecInfoTy` Struct Template Reference
+# `ExecInfoTy` Struct Template
 
 
 

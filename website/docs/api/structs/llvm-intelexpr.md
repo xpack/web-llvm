@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntelExpr` Struct Reference
+# `IntelExpr` Struct
 
 
 

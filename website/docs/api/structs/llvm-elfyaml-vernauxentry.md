@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VernauxEntry` Struct Reference
+# `VernauxEntry` Struct
 
 
 

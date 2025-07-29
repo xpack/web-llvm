@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalExpr` Struct Reference
+# `GlobalExpr` Struct
 
 <p>A pair of <a href="/web-llvm/docs/api/classes/llvm/globalvariable">GlobalVariable</a> and <a href="/web-llvm/docs/api/classes/llvm/diexpression">DIExpression</a>. <a href="#details">More...</a></p>
 

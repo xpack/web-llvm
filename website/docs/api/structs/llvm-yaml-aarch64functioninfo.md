@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64FunctionInfo` Struct Reference
+# `AArch64FunctionInfo` Struct
 
 
 

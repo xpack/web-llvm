@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CombinerHelper.cpp}` Namespace Reference
+# `anonymous{CombinerHelper.cpp}` Namespace
 
 
 

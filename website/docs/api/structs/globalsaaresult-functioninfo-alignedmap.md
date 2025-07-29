@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlignedMap` Struct Reference
+# `AlignedMap` Struct
 
 <p>Build a wrapper struct that has 8-byte alignment. <a href="#details">More...</a></p>
 

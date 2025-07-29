@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueMapConfig` Struct Template Reference
+# `ValueMapConfig` Struct Template
 
 <p>This class defines the default behavior for configurable aspects of <a href="/web-llvm/docs/api/classes/llvm/valuemap">ValueMap&lt;&gt;</a>. <a href="#details">More...</a></p>
 

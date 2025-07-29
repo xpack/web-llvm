@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFMIChecking.cpp}` Namespace Reference
+# `anonymous{BPFMIChecking.cpp}` Namespace
 
 
 

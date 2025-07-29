@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AlwaysUniform` Struct Reference
+# `AlwaysUniform` Struct
 
 
 

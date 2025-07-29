@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `in_set` Struct Reference
+# `in_set` Struct
 
 
 

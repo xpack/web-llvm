@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineCostAnnotationPrinterPass` Struct Reference
+# `InlineCostAnnotationPrinterPass` Struct
 
 
 

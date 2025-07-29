@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MVETailPredication.cpp}` Namespace Reference
+# `anonymous{MVETailPredication.cpp}` Namespace
 
 
 

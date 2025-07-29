@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXILResourceAccess.cpp}` Namespace Reference
+# `anonymous{DXILResourceAccess.cpp}` Namespace
 
 
 

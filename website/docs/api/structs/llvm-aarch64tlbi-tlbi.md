@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TLBI` Struct Reference
+# `TLBI` Struct
 
 
 

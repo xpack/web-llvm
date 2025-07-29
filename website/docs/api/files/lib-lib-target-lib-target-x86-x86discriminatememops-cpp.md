@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86DiscriminateMemOps.cpp` File Reference
+# `X86DiscriminateMemOps.cpp` File
 
 
 

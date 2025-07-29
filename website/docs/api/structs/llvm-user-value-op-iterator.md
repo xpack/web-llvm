@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `value_op_iterator` Struct Reference
+# `value_op_iterator` Struct
 
 <p>Iterator for directly iterating over the operand Values. <a href="#details">More...</a></p>
 

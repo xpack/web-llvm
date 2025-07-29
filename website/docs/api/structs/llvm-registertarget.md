@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterTarget` Struct Template Reference
+# `RegisterTarget` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/registertarget">RegisterTarget</a> - Helper template for registering a target, for use in the target's initialization function. <a href="#details">More...</a></p>
 

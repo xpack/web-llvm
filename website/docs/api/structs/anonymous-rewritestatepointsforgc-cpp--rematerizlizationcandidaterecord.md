@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RematerizlizationCandidateRecord` Struct Reference
+# `RematerizlizationCandidateRecord` Struct
 
 
 

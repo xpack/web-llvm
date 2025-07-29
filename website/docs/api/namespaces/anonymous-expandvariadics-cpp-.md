@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ExpandVariadics.cpp}` Namespace Reference
+# `anonymous{ExpandVariadics.cpp}` Namespace
 
 
 

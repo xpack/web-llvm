@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMTargetMachine.cpp}` Namespace Reference
+# `anonymous{ARMTargetMachine.cpp}` Namespace
 
 
 

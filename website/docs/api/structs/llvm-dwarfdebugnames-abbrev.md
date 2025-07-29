@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Abbrev` Struct Reference
+# `Abbrev` Struct
 
 <p>Abbreviation describing the encoding of Name Index entries. <a href="#details">More...</a></p>
 

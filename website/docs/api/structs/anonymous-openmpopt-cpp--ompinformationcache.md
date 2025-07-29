@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OMPInformationCache` Struct Reference
+# `OMPInformationCache` Struct
 
 <p>OpenMP specific information. <a href="#details">More...</a></p>
 

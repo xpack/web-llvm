@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/AMDGPU/MCTargetDesc` Folder Reference
+# `lib/Target/AMDGPU/MCTargetDesc` Folder
 
 
 

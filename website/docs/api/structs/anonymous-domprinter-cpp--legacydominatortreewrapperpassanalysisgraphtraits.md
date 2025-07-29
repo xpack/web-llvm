@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LegacyDominatorTreeWrapperPassAnalysisGraphTraits` Struct Reference
+# `LegacyDominatorTreeWrapperPassAnalysisGraphTraits` Struct
 
 
 

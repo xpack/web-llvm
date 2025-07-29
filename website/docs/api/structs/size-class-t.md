@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `size_class_t` Struct Reference
+# `size_class_t` Struct
 
 
 

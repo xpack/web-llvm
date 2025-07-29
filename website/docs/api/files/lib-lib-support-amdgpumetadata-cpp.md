@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUMetadata.cpp` File Reference
+# `AMDGPUMetadata.cpp` File
 
 <p>AMDGPU metadata definitions and in-memory representations. <a href="#details">More...</a></p>
 

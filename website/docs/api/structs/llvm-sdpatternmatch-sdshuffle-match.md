@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SDShuffle_match` Struct Template Reference
+# `SDShuffle_match` Struct Template
 
 <p>Matching while capturing mask. <a href="#details">More...</a></p>
 

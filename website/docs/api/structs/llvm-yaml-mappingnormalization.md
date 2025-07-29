@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappingNormalization` Struct Template Reference
+# `MappingNormalization` Struct Template
 
 
 

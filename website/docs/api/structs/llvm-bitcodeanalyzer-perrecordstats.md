@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerRecordStats` Struct Reference
+# `PerRecordStats` Struct
 
 
 

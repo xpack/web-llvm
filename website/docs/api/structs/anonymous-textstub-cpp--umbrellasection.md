@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UmbrellaSection` Struct Reference
+# `UmbrellaSection` Struct
 
 
 

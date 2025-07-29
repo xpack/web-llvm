@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyOperand` Struct Reference
+# `WebAssemblyOperand` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-webassemblyasmparser-cpp-/webassemblyoperand">WebAssemblyOperand</a> - Instances of this class represent the operands in a parsed Wasm machine instruction. <a href="#details">More...</a></p>
 

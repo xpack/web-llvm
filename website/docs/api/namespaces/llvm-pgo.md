@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pgo` Namespace Reference
+# `pgo` Namespace
 
 
 

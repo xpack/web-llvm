@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXPrologEpilogPass.cpp}` Namespace Reference
+# `anonymous{NVPTXPrologEpilogPass.cpp}` Namespace
 
 
 

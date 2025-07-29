@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemDesc` Struct Reference
+# `MemDesc` Struct
 
 
 

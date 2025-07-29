@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExpressionFormat` Struct Reference
+# `ExpressionFormat` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/type">Type</a> representing the format an expression value should be textualized into for matching. <a href="#details">More...</a></p>
 

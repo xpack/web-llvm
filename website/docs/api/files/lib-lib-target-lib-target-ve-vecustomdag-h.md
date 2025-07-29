@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VECustomDAG.h` File Reference
+# `VECustomDAG.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutAVLValueIterator` Struct Template Reference
+# `ImutAVLValueIterator` Struct Template
 
 <p>Generic iterator that wraps a T::TreeTy::iterator and exposes iterator::getValue() on dereference. <a href="#details">More...</a></p>
 

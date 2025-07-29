@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperatorInfo` Struct Reference
+# `OperatorInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalVariableAddrGap` Struct Reference
+# `LocalVariableAddrGap` Struct
 
 
 

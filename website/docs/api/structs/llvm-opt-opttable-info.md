@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Info` Struct Reference
+# `Info` Struct
 
 <p>Entry for a single option instance in the option data table. <a href="#details">More...</a></p>
 

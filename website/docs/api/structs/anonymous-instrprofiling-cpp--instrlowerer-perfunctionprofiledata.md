@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PerFunctionProfileData` Struct Reference
+# `PerFunctionProfileData` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{IRNormalizer.cpp}` Namespace Reference
+# `anonymous{IRNormalizer.cpp}` Namespace
 
 
 

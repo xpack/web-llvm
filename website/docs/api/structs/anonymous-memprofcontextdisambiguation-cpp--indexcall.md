@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndexCall` Struct Reference
+# `IndexCall` Struct
 
 <p>Represents a call in the summary index graph, which can either be an allocation or an interior callsite node in an allocation's context. <a href="#details">More...</a></p>
 

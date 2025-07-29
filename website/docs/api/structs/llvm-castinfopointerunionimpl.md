@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastInfoPointerUnionImpl` Struct Template Reference
+# `CastInfoPointerUnionImpl` Struct Template
 
 <p>We can't (at least, at this moment with C++14) declare <a href="/web-llvm/docs/api/structs/llvm/castinfo">CastInfo</a> as a friend of <a href="/web-llvm/docs/api/classes/llvm/pointerunion">PointerUnion</a> like this: <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntegerLiteralNode` Struct Reference
+# `IntegerLiteralNode` Struct
 
 
 

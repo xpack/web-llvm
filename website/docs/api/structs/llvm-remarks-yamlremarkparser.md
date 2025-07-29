@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLRemarkParser` Struct Reference
+# `YAMLRemarkParser` Struct
 
 <p>Regular YAML to <a href="/web-llvm/docs/api/structs/llvm/remarks/remark">Remark</a> parser. <a href="#details">More...</a></p>
 

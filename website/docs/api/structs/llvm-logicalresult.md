@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LogicalResult` Struct Reference
+# `LogicalResult` Struct
 
 <p>This class represents an efficient way to signal success or failure. <a href="#details">More...</a></p>
 

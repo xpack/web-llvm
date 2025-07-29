@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineAsmKeyType` Struct Reference
+# `InlineAsmKeyType` Struct
 
 
 

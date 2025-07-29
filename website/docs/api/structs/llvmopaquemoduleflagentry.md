@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOpaqueModuleFlagEntry` Struct Reference
+# `LLVMOpaqueModuleFlagEntry` Struct
 
 
 

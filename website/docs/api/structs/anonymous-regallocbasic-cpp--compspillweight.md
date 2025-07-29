@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompSpillWeight` Struct Reference
+# `CompSpillWeight` Struct
 
 
 

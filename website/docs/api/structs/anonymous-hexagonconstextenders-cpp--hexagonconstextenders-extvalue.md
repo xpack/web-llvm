@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtValue` Struct Reference
+# `ExtValue` Struct
 
 
 

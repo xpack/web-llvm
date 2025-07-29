@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HashNode` Struct Reference
+# `HashNode` Struct
 
 <p>A <a href="/web-llvm/docs/api/structs/llvm/hashnode">HashNode</a> is an entry in an <a href="/web-llvm/docs/api/classes/llvm/outlinedhashtree">OutlinedHashTree</a>, holding a hash value and a collection of Successors (other HashNodes). <a href="#details">More...</a></p>
 

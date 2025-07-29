@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssembly.h` File Reference
+# `WebAssembly.h` File
 
 <p>This file contains the entry points for global functions defined in the LLVM WebAssembly back-end. <a href="#details">More...</a></p>
 

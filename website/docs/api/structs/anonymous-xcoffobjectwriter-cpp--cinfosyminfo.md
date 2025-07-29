@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CInfoSymInfo` Struct Reference
+# `CInfoSymInfo` Struct
 
 
 

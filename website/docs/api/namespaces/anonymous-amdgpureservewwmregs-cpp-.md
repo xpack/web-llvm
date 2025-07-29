@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUReserveWWMRegs.cpp}` Namespace Reference
+# `anonymous{AMDGPUReserveWWMRegs.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SEHHandler` Struct Reference
+# `SEHHandler` Struct
 
 
 

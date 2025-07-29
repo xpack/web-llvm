@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SectionMemoryManager.cpp}` Namespace Reference
+# `anonymous{SectionMemoryManager.cpp}` Namespace
 
 
 

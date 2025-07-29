@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JITDispatchInfo` Struct Reference
+# `JITDispatchInfo` Struct
 
 <p>Contains the address of the dispatch function and context that the ORC runtime can use to call functions in the JIT. <a href="#details">More...</a></p>
 

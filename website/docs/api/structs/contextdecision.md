@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContextDecision` Struct Reference
+# `ContextDecision` Struct
 
 
 

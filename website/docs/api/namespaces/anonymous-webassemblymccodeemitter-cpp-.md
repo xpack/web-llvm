@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyMCCodeEmitter.cpp}` Namespace Reference
+# `anonymous{WebAssemblyMCCodeEmitter.cpp}` Namespace
 
 
 

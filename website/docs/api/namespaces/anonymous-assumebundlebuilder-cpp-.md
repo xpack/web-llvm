@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AssumeBundleBuilder.cpp}` Namespace Reference
+# `anonymous{AssumeBundleBuilder.cpp}` Namespace
 
 
 

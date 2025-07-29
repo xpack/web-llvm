@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{TypeStreamMerger.cpp}` Namespace Reference
+# `anonymous{TypeStreamMerger.cpp}` Namespace
 
 
 

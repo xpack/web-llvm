@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallSiteRange` Struct Reference
+# `CallSiteRange` Struct
 
 <p>Structure describing a contiguous range of call-sites which reside in the same procedure fragment. <a href="#details">More...</a></p>
 

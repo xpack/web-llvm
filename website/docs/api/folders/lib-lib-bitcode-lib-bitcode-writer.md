@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Bitcode/Writer` Folder Reference
+# `lib/Bitcode/Writer` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TSB` Struct Reference
+# `TSB` Struct
 
 
 

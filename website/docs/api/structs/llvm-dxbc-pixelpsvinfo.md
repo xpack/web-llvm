@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PixelPSVInfo` Struct Reference
+# `PixelPSVInfo` Struct
 
 
 

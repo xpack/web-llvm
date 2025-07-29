@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyExplicitLocals.cpp}` Namespace Reference
+# `anonymous{WebAssemblyExplicitLocals.cpp}` Namespace
 
 
 

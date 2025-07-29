@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXInstrInfo` Struct Reference
+# `DirectXInstrInfo` Struct
 
 
 

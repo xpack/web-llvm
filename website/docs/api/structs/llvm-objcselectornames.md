@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ObjCSelectorNames` Struct Reference
+# `ObjCSelectorNames` Struct
 
 
 

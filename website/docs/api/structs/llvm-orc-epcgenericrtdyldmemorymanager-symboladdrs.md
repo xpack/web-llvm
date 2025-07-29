@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolAddrs` Struct Reference
+# `SymbolAddrs` Struct
 
 <p>Symbol addresses for memory access. <a href="#details">More...</a></p>
 

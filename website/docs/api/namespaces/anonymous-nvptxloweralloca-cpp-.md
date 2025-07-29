@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXLowerAlloca.cpp}` Namespace Reference
+# `anonymous{NVPTXLowerAlloca.cpp}` Namespace
 
 
 

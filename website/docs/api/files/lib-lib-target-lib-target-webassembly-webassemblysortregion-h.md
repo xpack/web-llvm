@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblySortRegion.h` File Reference
+# `WebAssemblySortRegion.h` File
 
 <p>This file implements regions used in CFGSort and CFGStackify. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SipHash.cpp` File Reference
+# `SipHash.cpp` File
 
 
 

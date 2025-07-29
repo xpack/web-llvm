@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SystemInfo` Struct Reference
+# `SystemInfo` Struct
 
 <p>The <a href="/web-llvm/docs/api/structs/llvm/minidump/systeminfo">SystemInfo</a> stream, containing various information about the system where this minidump was generated. <a href="#details">More...</a></p>
 

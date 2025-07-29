@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUISelDAGToDAG.cpp` File Reference
+# `AMDGPUISelDAGToDAG.cpp` File
 
 <p>Defines an instruction selector for the <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> target. <a href="#details">More...</a></p>
 

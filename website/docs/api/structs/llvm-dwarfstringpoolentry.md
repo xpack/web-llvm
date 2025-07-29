@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfStringPoolEntry` Struct Reference
+# `DwarfStringPoolEntry` Struct
 
 <p>Data for a string pool entry. <a href="#details">More...</a></p>
 

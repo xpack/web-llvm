@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BinaryAnnotationIterator` Struct Reference
+# `BinaryAnnotationIterator` Struct
 
 
 

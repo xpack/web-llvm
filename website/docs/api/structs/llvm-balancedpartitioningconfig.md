@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BalancedPartitioningConfig` Struct Reference
+# `BalancedPartitioningConfig` Struct
 
 <p>Algorithm parameters; default values are tuned on real-world binaries. <a href="#details">More...</a></p>
 

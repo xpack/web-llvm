@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CreateUseColor` Struct Reference
+# `CreateUseColor` Struct
 
 
 

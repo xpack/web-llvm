@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnrollingPreferences` Struct Reference
+# `UnrollingPreferences` Struct
 
 <p>Parameters that control the generic loop unrolling transformation. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniformT` Struct Template Reference
+# `UniformT` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMMCTargetDesc.h` File Reference
+# `ARMMCTargetDesc.h` File
 
 
 

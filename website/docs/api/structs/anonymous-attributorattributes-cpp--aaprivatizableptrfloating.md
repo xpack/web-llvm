@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAPrivatizablePtrFloating` Struct Reference
+# `AAPrivatizablePtrFloating` Struct
 
 
 

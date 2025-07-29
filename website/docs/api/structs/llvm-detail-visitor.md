@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Visitor` Struct Template Reference
+# `Visitor` Struct Template
 
 
 

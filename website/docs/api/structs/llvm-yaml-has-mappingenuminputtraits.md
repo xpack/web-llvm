@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_MappingEnumInputTraits` Struct Template Reference
+# `has_MappingEnumInputTraits` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AArch64ISelDAGToDAG.cpp}` Namespace Reference
+# `anonymous{AArch64ISelDAGToDAG.cpp}` Namespace
 
 <p><a href="/web-llvm/docs/api/classes/anonymous-aarch64iseldagtodag-cpp-/aarch64dagtodagisel">AArch64DAGToDAGISel</a> - <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> specific code to select <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a> machine instructions for <a href="/web-llvm/docs/api/classes/llvm/selectiondag">SelectionDAG</a> operations. <a href="#details">More...</a></p>
 

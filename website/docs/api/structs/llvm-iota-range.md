@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `iota_range` Struct Template Reference
+# `iota_range` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86MnemonicTables.cpp` File Reference
+# `X86MnemonicTables.cpp` File
 
 
 

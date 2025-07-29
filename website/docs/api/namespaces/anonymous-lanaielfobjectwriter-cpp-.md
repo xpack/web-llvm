@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LanaiELFObjectWriter.cpp}` Namespace Reference
+# `anonymous{LanaiELFObjectWriter.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CIEInformation` Struct Reference
+# `CIEInformation` Struct
 
 
 

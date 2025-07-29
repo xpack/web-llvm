@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UniversalBinary` Struct Reference
+# `UniversalBinary` Struct
 
 
 

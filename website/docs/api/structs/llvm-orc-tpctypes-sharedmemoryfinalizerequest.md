@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SharedMemoryFinalizeRequest` Struct Reference
+# `SharedMemoryFinalizeRequest` Struct
 
 
 

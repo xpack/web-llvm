@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Z3Solver.cpp` File Reference
+# `Z3Solver.cpp` File
 
 
 

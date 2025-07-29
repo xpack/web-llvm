@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IndirectCallPromotion.cpp` File Reference
+# `IndirectCallPromotion.cpp` File
 
 
 

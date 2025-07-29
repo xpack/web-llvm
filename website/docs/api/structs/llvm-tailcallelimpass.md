@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailCallElimPass` Struct Reference
+# `TailCallElimPass` Struct
 
 
 

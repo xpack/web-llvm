@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallbacksHolder` Struct Template Reference
+# `CallbacksHolder` Struct Template
 
 
 

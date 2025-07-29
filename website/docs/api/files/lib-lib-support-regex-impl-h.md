@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `regex_impl.h` File Reference
+# `regex_impl.h` File
 
 
 

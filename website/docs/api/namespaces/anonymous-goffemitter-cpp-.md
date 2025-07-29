@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GOFFEmitter.cpp}` Namespace Reference
+# `anonymous{GOFFEmitter.cpp}` Namespace
 
 
 

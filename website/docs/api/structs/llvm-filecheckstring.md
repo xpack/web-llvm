@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileCheckString` Struct Reference
+# `FileCheckString` Struct
 
 <p>A check that we found in the input file. <a href="#details">More...</a></p>
 

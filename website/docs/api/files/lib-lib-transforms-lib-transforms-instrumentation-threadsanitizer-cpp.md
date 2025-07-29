@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ThreadSanitizer.cpp` File Reference
+# `ThreadSanitizer.cpp` File
 
 
 

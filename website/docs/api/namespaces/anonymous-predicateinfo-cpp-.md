@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PredicateInfo.cpp}` Namespace Reference
+# `anonymous{PredicateInfo.cpp}` Namespace
 
 
 

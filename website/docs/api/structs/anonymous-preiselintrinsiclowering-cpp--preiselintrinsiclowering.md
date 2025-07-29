@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PreISelIntrinsicLowering` Struct Reference
+# `PreISelIntrinsicLowering` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFYAML` Namespace Reference
+# `DWARFYAML` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UseQueueType` Struct Reference
+# `UseQueueType` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DebugProps` Namespace Reference
+# `DebugProps` Namespace
 
 
 

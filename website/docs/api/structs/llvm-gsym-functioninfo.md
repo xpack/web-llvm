@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionInfo` Struct Reference
+# `FunctionInfo` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/function">Function</a> information in GSYM files encodes information for one contiguous address range. <a href="#details">More...</a></p>
 

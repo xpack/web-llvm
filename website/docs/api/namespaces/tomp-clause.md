@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `clause` Namespace Reference
+# `clause` Namespace
 
 
 

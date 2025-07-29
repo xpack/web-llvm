@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Instructions Reference
+# Instructions
 
 <p>Functions in this group relate to the inspection and manipulation of individual instructions. <a href="#details">More...</a></p>
 

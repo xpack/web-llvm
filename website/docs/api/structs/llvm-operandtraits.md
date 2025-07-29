@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandTraits` Struct Template Reference
+# `OperandTraits` Struct Template
 
 <p>Compile-time customization of <a href="/web-llvm/docs/api/classes/llvm/user">User</a> operands. <a href="#details">More...</a></p>
 

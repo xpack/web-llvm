@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/ObjCopy` Folder Reference
+# `include/llvm/ObjCopy` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EnumAttr` Struct Reference
+# `EnumAttr` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64MIPeepholeOpt` Struct Reference
+# `AArch64MIPeepholeOpt` Struct
 
 
 

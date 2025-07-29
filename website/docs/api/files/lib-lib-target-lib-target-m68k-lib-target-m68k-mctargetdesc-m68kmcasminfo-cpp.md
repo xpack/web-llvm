@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMCAsmInfo.cpp` File Reference
+# `M68kMCAsmInfo.cpp` File
 
 <p>This file contains the definitions of the <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> <a href="/web-llvm/docs/api/classes/llvm/mcasminfo">MCAsmInfo</a> properties. <a href="#details">More...</a></p>
 

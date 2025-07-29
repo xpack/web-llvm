@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Element` Struct Reference
+# `Element` Struct
 
 <p>Accessor for an element of the global_ctors/global_dtors array. <a href="#details">More...</a></p>
 

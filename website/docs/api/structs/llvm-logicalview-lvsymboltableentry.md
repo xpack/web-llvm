@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LVSymbolTableEntry` Struct Reference
+# `LVSymbolTableEntry` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarLoc` Struct Reference
+# `VarLoc` Struct
 
 <p>A pair of debug variable and value location. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_iterator_bits` Struct Template Reference
+# `ilist_iterator_bits` Struct Template
 
 <p>Option to add extra bits to the <a href="/web-llvm/docs/api/classes/llvm/ilist-iterator">ilist_iterator</a>. <a href="#details">More...</a></p>
 

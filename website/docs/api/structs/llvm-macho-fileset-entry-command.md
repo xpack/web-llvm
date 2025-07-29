@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `fileset_entry_command` Struct Reference
+# `fileset_entry_command` Struct
 
 
 

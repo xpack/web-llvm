@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips.h` File Reference
+# `Mips.h` File
 
 
 

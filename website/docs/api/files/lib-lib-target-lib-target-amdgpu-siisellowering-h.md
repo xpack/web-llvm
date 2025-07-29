@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIISelLowering.h` File Reference
+# `SIISelLowering.h` File
 
 <p>SI DAG Lowering interface definition. <a href="#details">More...</a></p>
 

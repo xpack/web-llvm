@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUAnnotateUniformValues.cpp}` Namespace Reference
+# `anonymous{AMDGPUAnnotateUniformValues.cpp}` Namespace
 
 
 

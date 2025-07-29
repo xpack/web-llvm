@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GlobalMergeFuncPass` Struct Reference
+# `GlobalMergeFuncPass` Struct
 
 <p>Global function merging pass for new pass manager. <a href="#details">More...</a></p>
 

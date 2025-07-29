@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UUIDv4` Struct Reference
+# `UUIDv4` Struct
 
 
 

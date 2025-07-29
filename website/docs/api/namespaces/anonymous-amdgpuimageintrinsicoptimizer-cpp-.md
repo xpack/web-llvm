@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUImageIntrinsicOptimizer.cpp}` Namespace Reference
+# `anonymous{AMDGPUImageIntrinsicOptimizer.cpp}` Namespace
 
 
 

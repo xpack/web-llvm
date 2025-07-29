@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUSubtarget.h` File Reference
+# `AMDGPUSubtarget.h` File
 
 <p>Base class for AMDGPU specific classes of TargetSubtarget. <a href="#details">More...</a></p>
 

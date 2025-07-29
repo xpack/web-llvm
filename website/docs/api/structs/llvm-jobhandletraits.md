@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `JobHandleTraits` Struct Reference
+# `JobHandleTraits` Struct
 
 
 

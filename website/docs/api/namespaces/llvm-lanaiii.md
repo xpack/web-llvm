@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LanaiII` Namespace Reference
+# `LanaiII` Namespace
 
 
 

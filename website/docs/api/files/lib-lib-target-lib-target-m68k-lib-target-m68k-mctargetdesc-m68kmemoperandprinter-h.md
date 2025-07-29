@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kMemOperandPrinter.h` File Reference
+# `M68kMemOperandPrinter.h` File
 
 <p>This file contains memory operand printing logics shared between AsmPrinter. <a href="#details">More...</a></p>
 

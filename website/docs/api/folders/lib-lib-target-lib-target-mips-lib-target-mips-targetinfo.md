@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Mips/TargetInfo` Folder Reference
+# `lib/Target/Mips/TargetInfo` Folder
 
 
 

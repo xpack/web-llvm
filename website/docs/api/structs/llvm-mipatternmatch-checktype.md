@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CheckType` Struct Reference
+# `CheckType` Struct
 
 
 

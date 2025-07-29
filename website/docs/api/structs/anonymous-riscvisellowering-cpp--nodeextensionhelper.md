@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NodeExtensionHelper` Struct Reference
+# `NodeExtensionHelper` Struct
 
 <p>Helper class for folding sign/zero extensions. <a href="#details">More...</a></p>
 

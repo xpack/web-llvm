@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCHazardRecognizers.cpp` File Reference
+# `PPCHazardRecognizers.cpp` File
 
 
 

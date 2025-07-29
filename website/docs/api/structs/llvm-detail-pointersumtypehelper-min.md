@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Min` Struct Template Reference
+# `Min` Struct Template
 
 
 

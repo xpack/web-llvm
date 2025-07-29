@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ChildIteratorType` Struct Template Reference
+# `ChildIteratorType` Struct Template
 
 <p>Add the VectorizableTree to the index iterator to be able to return <a href="/web-llvm/docs/api/structs/llvm/graphtraits-860e5f7a11c435b145d274344a0415db/#a7ceeff5a65c10abe289db52446ac088a">TreeEntry</a> pointers. <a href="#details">More...</a></p>
 

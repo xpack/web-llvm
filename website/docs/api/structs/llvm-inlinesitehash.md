@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InlineSiteHash` Struct Reference
+# `InlineSiteHash` Struct
 
 
 

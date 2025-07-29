@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GOFFEmitter.cpp` File Reference
+# `GOFFEmitter.cpp` File
 
 <p>The <a href="/web-llvm/docs/api/namespaces/llvm/goff">GOFF</a> component of yaml2obj. <a href="#details">More...</a></p>
 

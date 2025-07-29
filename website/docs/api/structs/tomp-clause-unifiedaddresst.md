@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnifiedAddressT` Struct Template Reference
+# `UnifiedAddressT` Struct Template
 
 
 

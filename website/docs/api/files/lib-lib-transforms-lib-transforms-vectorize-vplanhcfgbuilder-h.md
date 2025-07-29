@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPlanHCFGBuilder.h` File Reference
+# `VPlanHCFGBuilder.h` File
 
 <p>This file defines the VPlanHCFGBuilder class which contains the public interface (buildHierarchicalCFG) to build a VPlan-based Hierarchical CFG (H-CFG) for an incoming IR. <a href="#details">More...</a></p>
 

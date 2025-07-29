@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrInfoQuery` Struct Reference
+# `InstrInfoQuery` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/instrinfoquery">InstrInfoQuery</a> provides an interface to query additional information for instructions like metadata or keywords like nsw, which provides conservative results if the users specified it is safe to use. <a href="#details">More...</a></p>
 

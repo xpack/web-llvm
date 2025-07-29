@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DirectXMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{DirectXMCTargetDesc.cpp}` Namespace
 
 
 

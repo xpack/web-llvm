@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `amdhsa` Namespace Reference
+# `amdhsa` Namespace
 
 
 

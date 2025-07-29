@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64LegalizerInfo.cpp` File Reference
+# `AArch64LegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/aarch64">AArch64</a>. <a href="#details">More...</a></p>
 

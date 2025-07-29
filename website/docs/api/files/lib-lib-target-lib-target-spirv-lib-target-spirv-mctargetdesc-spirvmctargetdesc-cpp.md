@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMCTargetDesc.cpp` File Reference
+# `SPIRVMCTargetDesc.cpp` File
 
 
 

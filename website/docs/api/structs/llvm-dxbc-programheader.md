@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProgramHeader` Struct Reference
+# `ProgramHeader` Struct
 
 
 

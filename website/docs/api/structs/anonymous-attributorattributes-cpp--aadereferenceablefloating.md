@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AADereferenceableFloating` Struct Reference
+# `AADereferenceableFloating` Struct
 
 <p>Dereferenceable attribute for a floating value. <a href="#details">More...</a></p>
 

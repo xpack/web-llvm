@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXMCAsmInfo.h` File Reference
+# `NVPTXMCAsmInfo.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DisjointOr_match` Struct Template Reference
+# `DisjointOr_match` Struct Template
 
 
 

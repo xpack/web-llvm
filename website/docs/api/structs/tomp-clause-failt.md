@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FailT` Struct Template Reference
+# `FailT` Struct Template
 
 
 

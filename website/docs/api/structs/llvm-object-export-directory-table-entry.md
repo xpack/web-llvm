@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `export_directory_table_entry` Struct Reference
+# `export_directory_table_entry` Struct
 
 
 

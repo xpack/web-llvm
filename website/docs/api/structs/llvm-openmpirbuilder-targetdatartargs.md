@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TargetDataRTArgs` Struct Reference
+# `TargetDataRTArgs` Struct
 
 <p>Container for the arguments used to pass data to the runtime library. <a href="#details">More...</a></p>
 

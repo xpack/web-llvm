@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SparcASITag` Namespace Reference
+# `SparcASITag` Namespace
 
 
 

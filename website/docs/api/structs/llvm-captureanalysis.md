@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaptureAnalysis` Struct Reference
+# `CaptureAnalysis` Struct
 
 <p>Virtual base class for providers of capture analysis. <a href="#details">More...</a></p>
 

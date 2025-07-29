@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockVerifier.cpp` File Reference
+# `BlockVerifier.cpp` File
 
 
 

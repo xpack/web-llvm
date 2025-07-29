@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExitLimit` Struct Reference
+# `ExitLimit` Struct
 
 <p>Information about the number of loop iterations for which a loop exit's branch condition evaluates to the not-taken path. <a href="#details">More...</a></p>
 

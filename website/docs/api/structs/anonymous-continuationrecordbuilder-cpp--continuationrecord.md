@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ContinuationRecord` Struct Reference
+# `ContinuationRecord` Struct
 
 
 

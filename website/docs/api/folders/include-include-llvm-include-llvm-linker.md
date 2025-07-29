@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/Linker` Folder Reference
+# `include/llvm/Linker` Folder
 
 
 

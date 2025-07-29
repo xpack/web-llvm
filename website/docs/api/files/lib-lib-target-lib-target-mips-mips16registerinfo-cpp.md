@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Mips16RegisterInfo.cpp` File Reference
+# `Mips16RegisterInfo.cpp` File
 
 
 

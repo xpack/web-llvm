@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExtRoot` Struct Reference
+# `ExtRoot` Struct
 
 
 

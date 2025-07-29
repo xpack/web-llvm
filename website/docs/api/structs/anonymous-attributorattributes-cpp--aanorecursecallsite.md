@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoRecurseCallSite` Struct Reference
+# `AANoRecurseCallSite` Struct
 
 <p>NoRecurse attribute deduction for a call sites. <a href="#details">More...</a></p>
 

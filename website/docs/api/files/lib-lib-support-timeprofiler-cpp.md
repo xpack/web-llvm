@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeProfiler.cpp` File Reference
+# `TimeProfiler.cpp` File
 
 
 

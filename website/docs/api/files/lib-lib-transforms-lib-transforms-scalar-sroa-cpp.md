@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SROA.cpp` File Reference
+# `SROA.cpp` File
 
 <p>This transformation implements the well known scalar replacement of aggregates transformation. <a href="#details">More...</a></p>
 

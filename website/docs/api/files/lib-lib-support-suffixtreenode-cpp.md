@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuffixTreeNode.cpp` File Reference
+# `SuffixTreeNode.cpp` File
 
 
 

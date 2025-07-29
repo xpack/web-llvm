@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ReturnThunks.cpp` File Reference
+# `X86ReturnThunks.cpp` File
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> that replaces ret instructions with a jmp to __x86_return_thunk. <a href="#details">More...</a></p>
 

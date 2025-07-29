@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUCombinerHelper.cpp` File Reference
+# `AMDGPUCombinerHelper.cpp` File
 
 
 

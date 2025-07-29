@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SampleProf.cpp}` Namespace Reference
+# `anonymous{SampleProf.cpp}` Namespace
 
 
 

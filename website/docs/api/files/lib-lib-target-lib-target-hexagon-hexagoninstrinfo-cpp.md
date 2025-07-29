@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonInstrInfo.cpp` File Reference
+# `HexagonInstrInfo.cpp` File
 
 
 

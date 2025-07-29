@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HVXMemLatencyMutation` Struct Reference
+# `HVXMemLatencyMutation` Struct
 
 
 

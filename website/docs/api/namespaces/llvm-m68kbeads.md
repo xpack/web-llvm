@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kBeads` Namespace Reference
+# `M68kBeads` Namespace
 
 
 

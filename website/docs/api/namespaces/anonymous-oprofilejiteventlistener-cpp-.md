@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{OProfileJITEventListener.cpp}` Namespace Reference
+# `anonymous{OProfileJITEventListener.cpp}` Namespace
 
 
 

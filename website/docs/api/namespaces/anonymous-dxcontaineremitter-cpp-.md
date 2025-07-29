@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DXContainerEmitter.cpp}` Namespace Reference
+# `anonymous{DXContainerEmitter.cpp}` Namespace
 
 
 

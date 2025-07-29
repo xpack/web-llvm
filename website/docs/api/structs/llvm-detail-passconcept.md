@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassConcept` Struct Template Reference
+# `PassConcept` Struct Template
 
 <p>Template for the abstract base class used to dispatch polymorphically over pass objects. <a href="#details">More...</a></p>
 

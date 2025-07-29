@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutContainerInfo` Struct Template Reference
+# `ImutContainerInfo` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/imutcontainerinfo">ImutContainerInfo</a> - Generic definition of comparison operations for elements of immutable containers that defaults to using std::equal_to&lt;&gt; and std::less&lt;&gt; to perform comparison of elements. <a href="#details">More...</a></p>
 

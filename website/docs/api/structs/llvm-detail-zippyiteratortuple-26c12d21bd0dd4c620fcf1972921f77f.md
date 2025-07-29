@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ZippyIteratorTuple` Struct Template Reference
+# `ZippyIteratorTuple` Struct Template
 
 <p>Partial specialization for const tuple storage. <a href="#details">More...</a></p>
 

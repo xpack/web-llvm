@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LiveInterval.cpp}` Namespace Reference
+# `anonymous{LiveInterval.cpp}` Namespace
 
 
 

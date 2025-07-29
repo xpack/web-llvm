@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAInstanceInfoFloating` Struct Reference
+# `AAInstanceInfoFloating` Struct
 
 <p>InstanceInfo attribute for floating values. <a href="#details">More...</a></p>
 

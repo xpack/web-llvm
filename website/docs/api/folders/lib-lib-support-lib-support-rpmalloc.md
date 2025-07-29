@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Support/rpmalloc` Folder Reference
+# `lib/Support/rpmalloc` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VerdefSection` Struct Reference
+# `VerdefSection` Struct
 
 
 

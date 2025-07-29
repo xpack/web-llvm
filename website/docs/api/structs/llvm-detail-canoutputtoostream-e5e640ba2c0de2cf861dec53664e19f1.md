@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CanOutputToOStream` Struct Template Reference
+# `CanOutputToOStream` Struct Template
 
 
 

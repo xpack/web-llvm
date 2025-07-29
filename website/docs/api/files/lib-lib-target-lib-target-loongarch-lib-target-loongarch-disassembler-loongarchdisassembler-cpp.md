@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchDisassembler.cpp` File Reference
+# `LoongArchDisassembler.cpp` File
 
 
 

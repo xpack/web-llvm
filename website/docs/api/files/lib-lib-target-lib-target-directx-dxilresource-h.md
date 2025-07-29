@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DXILResource.h` File Reference
+# `DXILResource.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegState` Namespace Reference
+# `RegState` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectionPatternAddressUpdate` Struct Reference
+# `SectionPatternAddressUpdate` Struct
 
 
 

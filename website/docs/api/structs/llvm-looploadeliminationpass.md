@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopLoadEliminationPass` Struct Reference
+# `LoopLoadEliminationPass` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/pass">Pass</a> to forward loads in a loop around the backedge to subsequent iterations. <a href="#details">More...</a></p>
 

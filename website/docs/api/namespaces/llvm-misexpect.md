@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `misexpect` Namespace Reference
+# `misexpect` Namespace
 
 
 

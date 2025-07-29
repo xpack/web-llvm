@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SectAuxEntForStat` Struct Reference
+# `SectAuxEntForStat` Struct
 
 
 

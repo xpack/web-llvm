@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SpillUtils.cpp}` Namespace Reference
+# `anonymous{SpillUtils.cpp}` Namespace
 
 
 

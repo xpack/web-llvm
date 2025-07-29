@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataDep` Struct Reference
+# `DataDep` Struct
 
 
 

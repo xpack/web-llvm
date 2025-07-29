@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DAGDeltaAlgorithm.cpp}` Namespace Reference
+# `anonymous{DAGDeltaAlgorithm.cpp}` Namespace
 
 
 

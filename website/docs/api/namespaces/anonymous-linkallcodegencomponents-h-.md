@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LinkAllCodegenComponents.h}` Namespace Reference
+# `anonymous{LinkAllCodegenComponents.h}` Namespace
 
 
 

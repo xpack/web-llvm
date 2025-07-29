@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86BaseInfo.h` File Reference
+# `X86BaseInfo.h` File
 
 
 

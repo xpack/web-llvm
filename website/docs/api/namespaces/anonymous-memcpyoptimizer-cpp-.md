@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MemCpyOptimizer.cpp}` Namespace Reference
+# `anonymous{MemCpyOptimizer.cpp}` Namespace
 
 
 

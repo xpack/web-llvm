@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MaybeAlign` Struct Reference
+# `MaybeAlign` Struct
 
 <p>This struct is a compact representation of a valid (power of two) or undefined (0) alignment. <a href="#details">More...</a></p>
 

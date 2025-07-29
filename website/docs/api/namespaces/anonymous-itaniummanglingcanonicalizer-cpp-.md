@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ItaniumManglingCanonicalizer.cpp}` Namespace Reference
+# `anonymous{ItaniumManglingCanonicalizer.cpp}` Namespace
 
 
 

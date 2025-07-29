@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VarStreamArrayExtractor` Struct Template Reference
+# `VarStreamArrayExtractor` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GSIHashStreamBuilder` Struct Reference
+# `GSIHashStreamBuilder` Struct
 
 
 

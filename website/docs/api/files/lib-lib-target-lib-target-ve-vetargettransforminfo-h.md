@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VETargetTransformInfo.h` File Reference
+# `VETargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the VE target machine. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineTraceMetricsVerifierPass` Struct Reference
+# `MachineTraceMetricsVerifierPass` Struct
 
 <p>Verifier pass for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/machinetracemetrics">MachineTraceMetrics</a></span>. <a href="#details">More...</a></p>
 

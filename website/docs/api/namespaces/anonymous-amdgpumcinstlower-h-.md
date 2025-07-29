@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUMCInstLower.h}` Namespace Reference
+# `anonymous{AMDGPUMCInstLower.h}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVLegalizerInfo.h` File Reference
+# `RISCVLegalizerInfo.h` File
 
 <p>This file declares the targeting of the Machinelegalizer class for RISC-V. <a href="#details">More...</a></p>
 

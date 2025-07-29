@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NullifyingVector` Struct Template Reference
+# `NullifyingVector` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexType` Struct Template Reference
+# `HexType` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MDUnsignedField` Struct Reference
+# `MDUnsignedField` Struct
 
 
 

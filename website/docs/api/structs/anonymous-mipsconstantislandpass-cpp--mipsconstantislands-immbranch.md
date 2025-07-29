@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImmBranch` Struct Reference
+# `ImmBranch` Struct
 
 <p>ImmBranch - One per immediate branch, keeping the machine instruction pointer, conditional or unconditional, the max displacement, and (if isCond is true) the corresponding unconditional branch opcode. <a href="#details">More...</a></p>
 

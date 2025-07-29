@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIFixSGPRCopies.cpp` File Reference
+# `SIFixSGPRCopies.cpp` File
 
 <p>Copies from VGPR to SGPR registers are illegal and the register coalescer will sometimes generate these illegal copies in situations like this: <a href="#details">More...</a></p>
 

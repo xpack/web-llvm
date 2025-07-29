@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `saved` Namespace Reference
+# `saved` Namespace
 
 <p>-model-to-tflite <a href="#details">More...</a></p>
 

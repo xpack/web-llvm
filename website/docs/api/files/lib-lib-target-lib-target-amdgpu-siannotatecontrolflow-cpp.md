@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIAnnotateControlFlow.cpp` File Reference
+# `SIAnnotateControlFlow.cpp` File
 
 <p>Annotates the control flow with hardware specific intrinsics. <a href="#details">More...</a></p>
 

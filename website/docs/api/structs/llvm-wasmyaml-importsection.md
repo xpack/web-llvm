@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImportSection` Struct Reference
+# `ImportSection` Struct
 
 
 

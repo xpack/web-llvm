@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TextStubCommon.h` File Reference
+# `TextStubCommon.h` File
 
 
 

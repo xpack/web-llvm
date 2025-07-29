@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TypeSanitizer` Struct Reference
+# `TypeSanitizer` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-typesanitizer-cpp-/typesanitizer">TypeSanitizer</a>: instrument the code in module to find type-based aliasing violations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonCFGOptimizer.cpp}` Namespace Reference
+# `anonymous{HexagonCFGOptimizer.cpp}` Namespace
 
 
 

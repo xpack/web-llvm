@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DILineInfo` Struct Reference
+# `DILineInfo` Struct
 
 <p>A format-neutral container for source line information. <a href="#details">More...</a></p>
 

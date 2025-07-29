@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CUInfo` Struct Reference
+# `CUInfo` Struct
 
 
 

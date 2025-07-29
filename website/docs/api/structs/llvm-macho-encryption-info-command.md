@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `encryption_info_command` Struct Reference
+# `encryption_info_command` Struct
 
 
 

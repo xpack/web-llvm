@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VirtualRegisterDefinition` Struct Reference
+# `VirtualRegisterDefinition` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ShuffleVectorPseudo` Struct Reference
+# `ShuffleVectorPseudo` Struct
 
 <p>Represents a pseudo instruction which replaces a G_SHUFFLE_VECTOR. <a href="#details">More...</a></p>
 

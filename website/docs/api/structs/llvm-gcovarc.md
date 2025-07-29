@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCOVArc` Struct Reference
+# `GCOVArc` Struct
 
 
 

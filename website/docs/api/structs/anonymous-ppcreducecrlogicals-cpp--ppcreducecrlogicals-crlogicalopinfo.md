@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CRLogicalOpInfo` Struct Reference
+# `CRLogicalOpInfo` Struct
 
 
 

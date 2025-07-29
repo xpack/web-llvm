@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterAggrMap` Struct Template Reference
+# `RegisterAggrMap` Struct Template
 
 
 

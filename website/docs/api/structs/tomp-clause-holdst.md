@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HoldsT` Struct Template Reference
+# `HoldsT` Struct Template
 
 
 

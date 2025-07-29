@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LinkGraphLayer.cpp}` Namespace Reference
+# `anonymous{LinkGraphLayer.cpp}` Namespace
 
 
 

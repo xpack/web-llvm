@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `has_ScalarEnumerationTraits` Struct Template Reference
+# `has_ScalarEnumerationTraits` Struct Template
 
 
 

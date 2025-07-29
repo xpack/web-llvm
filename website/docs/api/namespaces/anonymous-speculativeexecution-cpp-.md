@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SpeculativeExecution.cpp}` Namespace Reference
+# `anonymous{SpeculativeExecution.cpp}` Namespace
 
 
 

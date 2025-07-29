@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SymbolRecordBase` Struct Reference
+# `SymbolRecordBase` Struct
 
 
 

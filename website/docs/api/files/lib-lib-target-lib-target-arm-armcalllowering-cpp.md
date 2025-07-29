@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMCallLowering.cpp` File Reference
+# `ARMCallLowering.cpp` File
 
 <p>This file implements the lowering of LLVM calls to machine code calls for GlobalISel. <a href="#details">More...</a></p>
 

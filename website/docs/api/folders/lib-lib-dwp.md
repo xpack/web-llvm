@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/DWP` Folder Reference
+# `lib/DWP` Folder
 
 
 

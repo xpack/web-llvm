@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InformationCache` Struct Reference
+# `InformationCache` Struct
 
 <p>Data structure to hold cached (LLVM-IR) information. <a href="#details">More...</a></p>
 

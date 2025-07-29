@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVModuleAnalysis.cpp` File Reference
+# `SPIRVModuleAnalysis.cpp` File
 
 
 

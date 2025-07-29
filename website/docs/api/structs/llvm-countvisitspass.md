@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CountVisitsPass` Struct Reference
+# `CountVisitsPass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RecordLoc` Struct Reference
+# `RecordLoc` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `A15SDOptimizer.cpp` File Reference
+# `A15SDOptimizer.cpp` File
 
 
 

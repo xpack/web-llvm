@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EpilogueLoopVectorizationInfo` Struct Reference
+# `EpilogueLoopVectorizationInfo` Struct
 
 <p>Encapsulate information regarding vectorization of a loop and its epilogue. <a href="#details">More...</a></p>
 

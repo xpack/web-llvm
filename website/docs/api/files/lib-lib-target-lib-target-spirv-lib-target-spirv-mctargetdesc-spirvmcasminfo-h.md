@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVMCAsmInfo.h` File Reference
+# `SPIRVMCAsmInfo.h` File
 
 
 

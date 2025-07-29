@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DAGDeltaAlgorithm.cpp` File Reference
+# `DAGDeltaAlgorithm.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCFixupKindInfo` Struct Reference
+# `MCFixupKindInfo` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/target">Target</a> independent information on a fixup kind. <a href="#details">More...</a></p>
 

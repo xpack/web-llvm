@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXContainerObjectWriter.cpp` File Reference
+# `DirectXContainerObjectWriter.cpp` File
 
 
 

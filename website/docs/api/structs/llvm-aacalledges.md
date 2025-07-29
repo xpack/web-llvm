@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AACallEdges` Struct Reference
+# `AACallEdges` Struct
 
 <p>An abstract state for querying live call edges. <a href="#details">More...</a></p>
 

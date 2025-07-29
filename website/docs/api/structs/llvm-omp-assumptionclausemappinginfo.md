@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AssumptionClauseMappingInfo` Struct Reference
+# `AssumptionClauseMappingInfo` Struct
 
 <p>Helper to describe assume clauses. <a href="#details">More...</a></p>
 

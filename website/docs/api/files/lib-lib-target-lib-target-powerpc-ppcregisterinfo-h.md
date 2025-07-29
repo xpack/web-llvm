@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCRegisterInfo.h` File Reference
+# `PPCRegisterInfo.h` File
 
 
 

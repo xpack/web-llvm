@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ADCE.cpp}` Namespace Reference
+# `anonymous{ADCE.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DWARFListEntryBase` Struct Reference
+# `DWARFListEntryBase` Struct
 
 <p>A base class for DWARF list entries, such as range or location list entries. <a href="#details">More...</a></p>
 

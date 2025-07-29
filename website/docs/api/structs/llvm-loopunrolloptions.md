@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopUnrollOptions` Struct Reference
+# `LoopUnrollOptions` Struct
 
 <p>A set of parameters used to control various transforms performed by the LoopUnroll pass. <a href="#details">More...</a></p>
 

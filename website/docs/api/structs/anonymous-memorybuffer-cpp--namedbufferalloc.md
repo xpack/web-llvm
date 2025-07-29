@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NamedBufferAlloc` Struct Reference
+# `NamedBufferAlloc` Struct
 
 
 

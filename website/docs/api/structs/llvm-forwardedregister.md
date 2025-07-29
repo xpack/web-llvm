@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForwardedRegister` Struct Reference
+# `ForwardedRegister` Struct
 
 <p>Describes a register that needs to be forwarded from the prologue to a musttail call. <a href="#details">More...</a></p>
 

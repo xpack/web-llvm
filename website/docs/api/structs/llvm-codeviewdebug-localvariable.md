@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalVariable` Struct Reference
+# `LocalVariable` Struct
 
 <p>Similar to <a href="/web-llvm/docs/api/classes/llvm/dbgvariable">DbgVariable</a> in <a href="/web-llvm/docs/api/classes/llvm/dwarfdebug">DwarfDebug</a>, but not dwarf-specific. <a href="#details">More...</a></p>
 

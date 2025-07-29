@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Params` Struct Reference
+# `Params` Struct
 
 
 

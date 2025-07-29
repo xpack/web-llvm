@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoongArchDisassembler.cpp}` Namespace Reference
+# `anonymous{LoongArchDisassembler.cpp}` Namespace
 
 
 

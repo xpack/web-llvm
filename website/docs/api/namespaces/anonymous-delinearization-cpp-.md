@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{Delinearization.cpp}` Namespace Reference
+# `anonymous{Delinearization.cpp}` Namespace
 
 
 

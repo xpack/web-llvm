@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PtrAuthData` Struct Reference
+# `PtrAuthData` Struct
 
 <p>Pointer authentication (__ptrauth) metadata. <a href="#details">More...</a></p>
 

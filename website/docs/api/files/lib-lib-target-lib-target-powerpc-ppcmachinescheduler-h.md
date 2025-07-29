@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCMachineScheduler.h` File Reference
+# `PPCMachineScheduler.h` File
 
 
 

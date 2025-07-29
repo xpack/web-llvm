@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86_64MCAsmInfoDarwin` Struct Reference
+# `X86_64MCAsmInfoDarwin` Struct
 
 
 

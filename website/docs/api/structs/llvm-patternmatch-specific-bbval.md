@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `specific_bbval` Struct Reference
+# `specific_bbval` Struct
 
 <p>Match a specified basic block value. <a href="#details">More...</a></p>
 

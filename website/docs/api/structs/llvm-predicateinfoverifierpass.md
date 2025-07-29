@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PredicateInfoVerifierPass` Struct Reference
+# `PredicateInfoVerifierPass` Struct
 
 <p>Verifier pass for <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/predicateinfo">PredicateInfo</a></span>. <a href="#details">More...</a></p>
 

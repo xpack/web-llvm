@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AsmTypeInfo` Struct Reference
+# `AsmTypeInfo` Struct
 
 
 

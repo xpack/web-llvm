@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsnMatchEntry` Struct Reference
+# `InsnMatchEntry` Struct
 
 
 

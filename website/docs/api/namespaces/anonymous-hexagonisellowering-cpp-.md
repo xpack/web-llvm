@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonISelLowering.cpp}` Namespace Reference
+# `anonymous{HexagonISelLowering.cpp}` Namespace
 
 
 

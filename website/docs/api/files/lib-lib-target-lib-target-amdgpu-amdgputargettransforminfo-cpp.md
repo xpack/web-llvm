@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetTransformInfo.cpp` File Reference
+# `AMDGPUTargetTransformInfo.cpp` File
 
 
 

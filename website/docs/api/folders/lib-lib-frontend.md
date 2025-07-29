@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Frontend` Folder Reference
+# `lib/Frontend` Folder
 
 
 

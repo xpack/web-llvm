@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SanitizerCoverageOptions` Struct Reference
+# `SanitizerCoverageOptions` Struct
 
 
 

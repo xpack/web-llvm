@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ItemInfo` Struct Reference
+# `ItemInfo` Struct
 
 <p>Helper struct to tie a value+context pair together with the scope for which this is the simplified version. <a href="#details">More...</a></p>
 

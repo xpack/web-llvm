@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NoTTIImpl` Struct Reference
+# `NoTTIImpl` Struct
 
 <p>No-op implementation of the <a href="/web-llvm/docs/api/classes/llvm/targettransforminfoimplbase/#ab61e0cd12e59bccf0fbe4d4a83f49f84">TTI</a> interface using the utility base classes. <a href="#details">More...</a></p>
 

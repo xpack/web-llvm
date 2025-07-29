@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIOptimizeExecMaskingPreRA.cpp` File Reference
+# `SIOptimizeExecMaskingPreRA.cpp` File
 
 <p>This pass performs exec mask handling peephole optimizations which needs to be done before register allocation to reduce register pressure. <a href="#details">More...</a></p>
 

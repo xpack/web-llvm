@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVSysReg` Namespace Reference
+# `RISCVSysReg` Namespace
 
 
 

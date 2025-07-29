@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `R600_InstFlag` Namespace Reference
+# `R600_InstFlag` Namespace
 
 
 

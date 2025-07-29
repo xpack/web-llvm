@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMIPreEmitChecking` Struct Reference
+# `BPFMIPreEmitChecking` Struct
 
 
 

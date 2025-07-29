@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCReadAdvanceEntry` Struct Reference
+# `MCReadAdvanceEntry` Struct
 
 <p>Specify the number of cycles allowed after instruction issue before a particular use operand reads its registers. <a href="#details">More...</a></p>
 

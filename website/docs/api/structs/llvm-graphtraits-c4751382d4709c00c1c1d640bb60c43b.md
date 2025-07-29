@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GraphTraits` Struct Template Reference
+# `GraphTraits` Struct Template
 
 <p>const versions of the grapth trait specializations for DDG <a href="#details">More...</a></p>
 

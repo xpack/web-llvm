@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReplacementIRBuilder` Struct Reference
+# `ReplacementIRBuilder` Struct
 
 
 

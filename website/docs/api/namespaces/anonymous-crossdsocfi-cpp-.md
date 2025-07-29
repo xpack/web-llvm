@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CrossDSOCFI.cpp}` Namespace Reference
+# `anonymous{CrossDSOCFI.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `windows` Namespace Reference
+# `windows` Namespace
 
 
 

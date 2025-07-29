@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VPlanVerifier.cpp}` Namespace Reference
+# `anonymous{VPlanVerifier.cpp}` Namespace
 
 
 

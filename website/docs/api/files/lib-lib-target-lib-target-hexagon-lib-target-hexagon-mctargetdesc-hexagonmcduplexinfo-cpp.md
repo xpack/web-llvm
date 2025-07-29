@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonMCDuplexInfo.cpp` File Reference
+# `HexagonMCDuplexInfo.cpp` File
 
 
 

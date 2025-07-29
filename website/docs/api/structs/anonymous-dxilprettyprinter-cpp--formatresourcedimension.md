@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormatResourceDimension` Struct Reference
+# `FormatResourceDimension` Struct
 
 
 

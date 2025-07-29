@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZFrameLowering.cpp}` Namespace Reference
+# `anonymous{SystemZFrameLowering.cpp}` Namespace
 
 
 

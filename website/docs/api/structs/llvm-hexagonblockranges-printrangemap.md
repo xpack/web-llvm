@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintRangeMap` Struct Reference
+# `PrintRangeMap` Struct
 
 
 

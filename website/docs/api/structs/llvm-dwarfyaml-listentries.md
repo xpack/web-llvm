@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ListEntries` Struct Template Reference
+# `ListEntries` Struct Template
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `riscv` Namespace Reference
+# `riscv` Namespace
 
 
 

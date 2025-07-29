@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MipsPreLegalizerCombinerInfo` Struct Reference
+# `MipsPreLegalizerCombinerInfo` Struct
 
 
 

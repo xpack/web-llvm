@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForceInterpreterLinking` Struct Reference
+# `ForceInterpreterLinking` Struct
 
 
 

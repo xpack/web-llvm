@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GetClassTypeFromGetter` Struct Template Reference
+# `GetClassTypeFromGetter` Struct Template
 
 <p>Traits for getting the class type from GetterFn type. <a href="#details">More...</a></p>
 

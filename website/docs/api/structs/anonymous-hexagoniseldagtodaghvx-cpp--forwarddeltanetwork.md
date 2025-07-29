@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForwardDeltaNetwork` Struct Reference
+# `ForwardDeltaNetwork` Struct
 
 
 

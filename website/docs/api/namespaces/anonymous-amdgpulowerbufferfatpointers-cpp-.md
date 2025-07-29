@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPULowerBufferFatPointers.cpp}` Namespace Reference
+# `anonymous{AMDGPULowerBufferFatPointers.cpp}` Namespace
 
 
 

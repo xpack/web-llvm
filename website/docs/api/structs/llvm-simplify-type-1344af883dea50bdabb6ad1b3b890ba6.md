@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `simplify_type` Struct Template Reference
+# `simplify_type` Struct Template
 
 <p>Allow ilist_iterators to convert into pointers to a node automatically when used by the dyn_cast, cast, isa mechanisms... <a href="#details">More...</a></p>
 

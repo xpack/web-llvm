@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IPSCCPOptions` Struct Reference
+# `IPSCCPOptions` Struct
 
 <p>A set of parameters to control various transforms performed by IPSCCP pass. <a href="#details">More...</a></p>
 

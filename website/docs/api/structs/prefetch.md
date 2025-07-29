@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Prefetch` Struct Reference
+# `Prefetch` Struct
 
 <p>A record for a potential prefetch made during the initial scan of the loop. <a href="#details">More...</a></p>
 

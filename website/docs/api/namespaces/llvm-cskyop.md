@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYOp` Namespace Reference
+# `CSKYOp` Namespace
 
 
 

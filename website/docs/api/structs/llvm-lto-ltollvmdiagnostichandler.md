@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LTOLLVMDiagnosticHandler` Struct Reference
+# `LTOLLVMDiagnosticHandler` Struct
 
 
 

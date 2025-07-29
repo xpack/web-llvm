@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LookupResult` Struct Reference
+# `LookupResult` Struct
 
 
 

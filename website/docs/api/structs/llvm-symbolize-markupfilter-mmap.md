@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MMap` Struct Reference
+# `MMap` Struct
 
 
 

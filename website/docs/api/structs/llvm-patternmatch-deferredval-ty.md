@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `deferredval_ty` Struct Template Reference
+# `deferredval_ty` Struct Template
 
 <p>Stores a reference to the <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> *, not the <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> * itself, thus can be used in commutative matchers. <a href="#details">More...</a></p>
 

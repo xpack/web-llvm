@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LiteralOperatorIdentifierNode` Struct Reference
+# `LiteralOperatorIdentifierNode` Struct
 
 
 

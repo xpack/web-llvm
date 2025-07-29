@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimdlenT` Struct Template Reference
+# `SimdlenT` Struct Template
 
 
 

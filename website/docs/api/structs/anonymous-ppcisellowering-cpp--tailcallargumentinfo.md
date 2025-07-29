@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TailCallArgumentInfo` Struct Reference
+# `TailCallArgumentInfo` Struct
 
 
 

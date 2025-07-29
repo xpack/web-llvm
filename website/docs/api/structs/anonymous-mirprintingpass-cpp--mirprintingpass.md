@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MIRPrintingPass` Struct Reference
+# `MIRPrintingPass` Struct
 
 <p>This pass prints out the LLVM IR to an output stream using the MIR serialization format. <a href="#details">More...</a></p>
 

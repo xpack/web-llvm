@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AllowReassoc_match` Struct Template Reference
+# `AllowReassoc_match` Struct Template
 
 
 

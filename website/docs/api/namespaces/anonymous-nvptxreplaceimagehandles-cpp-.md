@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{NVPTXReplaceImageHandles.cpp}` Namespace Reference
+# `anonymous{NVPTXReplaceImageHandles.cpp}` Namespace
 
 
 

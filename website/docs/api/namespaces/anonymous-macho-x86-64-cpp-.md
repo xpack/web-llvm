@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachO_x86_64.cpp}` Namespace Reference
+# `anonymous{MachO_x86_64.cpp}` Namespace
 
 
 

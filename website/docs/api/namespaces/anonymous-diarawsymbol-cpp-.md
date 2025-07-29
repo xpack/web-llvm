@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DIARawSymbol.cpp}` Namespace Reference
+# `anonymous{DIARawSymbol.cpp}` Namespace
 
 
 

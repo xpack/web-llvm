@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXMCTargetDesc.h` File Reference
+# `DirectXMCTargetDesc.h` File
 
 <p>This file contains DirectX target interface. <a href="#details">More...</a></p>
 

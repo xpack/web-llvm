@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDKernelCodeTInfo.h` File Reference
+# `AMDKernelCodeTInfo.h` File
 
 
 

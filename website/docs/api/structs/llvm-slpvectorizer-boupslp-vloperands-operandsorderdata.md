@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OperandsOrderData` Struct Reference
+# `OperandsOrderData` Struct
 
 <p>Data structure that helps to reorder operands. <a href="#details">More...</a></p>
 

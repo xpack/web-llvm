@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IrrNode` Struct Reference
+# `IrrNode` Struct
 
 
 

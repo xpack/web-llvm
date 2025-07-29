@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ImutKeyValueInfo` Struct Template Reference
+# `ImutKeyValueInfo` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/imutkeyvalueinfo">ImutKeyValueInfo</a> -Traits class used by <a href="/web-llvm/docs/api/classes/llvm/immutablemap">ImmutableMap</a>. <a href="#details">More...</a></p>
 

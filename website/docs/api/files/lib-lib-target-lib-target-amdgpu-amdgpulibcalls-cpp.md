@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULibCalls.cpp` File Reference
+# `AMDGPULibCalls.cpp` File
 
 <p>This file does AMD library function optimizations. <a href="#details">More...</a></p>
 

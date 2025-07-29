@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LTOCodeGenerator.cpp}` Namespace Reference
+# `anonymous{LTOCodeGenerator.cpp}` Namespace
 
 
 

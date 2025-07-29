@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FormParams` Struct Reference
+# `FormParams` Struct
 
 <p>A helper struct providing information about the byte size of DW_FORM values that vary in size depending on the DWARF version, address byte size, or DWARF32/DWARF64. <a href="#details">More...</a></p>
 

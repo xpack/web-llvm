@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DominatorTreeVerifierPass` Struct Reference
+# `DominatorTreeVerifierPass` Struct
 
 <p>Verifier pass for the <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/dominatortree">DominatorTree</a></span>. <a href="#details">More...</a></p>
 

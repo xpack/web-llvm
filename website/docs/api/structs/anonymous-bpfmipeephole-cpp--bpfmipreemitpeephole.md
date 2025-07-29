@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFMIPreEmitPeephole` Struct Reference
+# `BPFMIPreEmitPeephole` Struct
 
 
 

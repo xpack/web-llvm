@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfStringPoolEntryWithExtString` Struct Reference
+# `DwarfStringPoolEntryWithExtString` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/dwarfstringpoolentry">DwarfStringPoolEntry</a> with string keeping externally. <a href="#details">More...</a></p>
 

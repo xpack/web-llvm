@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pointee_iterator` Struct Template Reference
+# `pointee_iterator` Struct Template
 
 <p>An iterator type that allows iterating over the pointees via some other iterator. <a href="#details">More...</a></p>
 

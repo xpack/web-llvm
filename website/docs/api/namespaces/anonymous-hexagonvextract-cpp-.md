@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{HexagonVExtract.cpp}` Namespace Reference
+# `anonymous{HexagonVExtract.cpp}` Namespace
 
 
 

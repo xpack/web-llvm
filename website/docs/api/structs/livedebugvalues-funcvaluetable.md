@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FuncValueTable` Struct Reference
+# `FuncValueTable` Struct
 
 <p>A collection of ValueTables, one per BB in a function, with convenient accessor methods. <a href="#details">More...</a></p>
 

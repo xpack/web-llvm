@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `bu_ls_rr_sort` Struct Reference
+# `bu_ls_rr_sort` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-scheduledagrrlist-cpp-/bu-ls-rr-sort">bu_ls_rr_sort</a> - Priority function for bottom up register pressure <a href="#details">More...</a></p>
 

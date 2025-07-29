@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BitPatterns` Struct Template Reference
+# `BitPatterns` Struct Template
 
 <p>A struct defining useful bit patterns for n-bits integer types. <a href="#details">More...</a></p>
 

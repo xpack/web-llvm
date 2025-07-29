@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegionsFromMetadata.cpp` File Reference
+# `RegionsFromMetadata.cpp` File
 
 
 

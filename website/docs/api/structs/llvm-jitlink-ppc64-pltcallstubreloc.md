@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PLTCallStubReloc` Struct Reference
+# `PLTCallStubReloc` Struct
 
 
 

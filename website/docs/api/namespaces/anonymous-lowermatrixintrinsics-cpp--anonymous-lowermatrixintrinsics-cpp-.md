@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LowerMatrixIntrinsics.cpp}` Namespace Reference
+# `anonymous{LowerMatrixIntrinsics.cpp}` Namespace
 
 
 

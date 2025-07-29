@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CoroAnnotationElide.cpp` File Reference
+# `CoroAnnotationElide.cpp` File
 
 
 

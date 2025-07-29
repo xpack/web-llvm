@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RCInfo` Struct Reference
+# `RCInfo` Struct
 
 
 

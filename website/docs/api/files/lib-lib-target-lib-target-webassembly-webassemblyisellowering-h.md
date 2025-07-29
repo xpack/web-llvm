@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyISelLowering.h` File Reference
+# `WebAssemblyISelLowering.h` File
 
 <p>This file defines the interfaces that WebAssembly uses to lower LLVM code into a selection DAG. <a href="#details">More...</a></p>
 

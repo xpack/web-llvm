@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSetTrait` Struct Template Reference
+# `FoldingSetTrait` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/foldingsettrait">FoldingSetTrait</a> - This trait class is used to define behavior of how to "profile" (in the <a href="/web-llvm/docs/api/classes/llvm/foldingset">FoldingSet</a> parlance) an object of a given type. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InvokeStateChange` Struct Reference
+# `InvokeStateChange` Struct
 
 
 

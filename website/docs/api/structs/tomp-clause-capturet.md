@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CaptureT` Struct Template Reference
+# `CaptureT` Struct Template
 
 
 

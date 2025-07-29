@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PDB70DebugInfo` Struct Reference
+# `PDB70DebugInfo` Struct
 
 
 

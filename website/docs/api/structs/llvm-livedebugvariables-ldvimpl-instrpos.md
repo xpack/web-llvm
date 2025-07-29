@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InstrPos` Struct Reference
+# `InstrPos` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/record">Record</a> for any debug instructions unlinked from their blocks during regalloc. <a href="#details">More...</a></p>
 

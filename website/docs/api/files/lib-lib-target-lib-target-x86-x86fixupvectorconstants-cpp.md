@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86FixupVectorConstants.cpp` File Reference
+# `X86FixupVectorConstants.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyCFGStackify.cpp` File Reference
+# `WebAssemblyCFGStackify.cpp` File
 
 <p>This file implements a CFG stacking pass. <a href="#details">More...</a></p>
 

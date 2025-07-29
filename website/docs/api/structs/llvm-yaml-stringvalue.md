@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringValue` Struct Reference
+# `StringValue` Struct
 
 <p>A wrapper around std::string which contains a source range that's being set during parsing. <a href="#details">More...</a></p>
 

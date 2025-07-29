@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PrintORL` Struct Reference
+# `PrintORL` Struct
 
 
 

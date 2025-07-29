@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataFlowSanitizer.cpp` File Reference
+# `DataFlowSanitizer.cpp` File
 
 <p>This file is a part of <a href="/web-llvm/docs/api/classes/anonymous-dataflowsanitizer-cpp-/dataflowsanitizer">DataFlowSanitizer</a>, a generalised dynamic data flow analysis. <a href="#details">More...</a></p>
 

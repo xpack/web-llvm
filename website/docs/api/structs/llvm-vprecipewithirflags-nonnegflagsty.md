@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NonNegFlagsTy` Struct Reference
+# `NonNegFlagsTy` Struct
 
 
 

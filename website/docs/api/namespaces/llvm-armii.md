@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMII` Namespace Reference
+# `ARMII` Namespace
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/armii">ARMII</a> - This namespace holds all of the target specific flags that instruction info tracks. <a href="#details">More...</a></p>
 

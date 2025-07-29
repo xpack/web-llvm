@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUInstructionSelector.h` File Reference
+# `AMDGPUInstructionSelector.h` File
 
 <p>This file declares the targeting of the InstructionSelector class for AMDGPU. <a href="#details">More...</a></p>
 

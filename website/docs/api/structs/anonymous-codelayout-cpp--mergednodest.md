@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MergedNodesT` Struct Reference
+# `MergedNodesT` Struct
 
 <p>A wrapper around three concatenated vectors (chains) of nodes; it is used to avoid extra instantiation of the vectors. <a href="#details">More...</a></p>
 

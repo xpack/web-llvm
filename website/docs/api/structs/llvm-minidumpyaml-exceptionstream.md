@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ExceptionStream` Struct Reference
+# `ExceptionStream` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/minidumpyaml/exceptionstream">ExceptionStream</a> minidump stream. <a href="#details">More...</a></p>
 

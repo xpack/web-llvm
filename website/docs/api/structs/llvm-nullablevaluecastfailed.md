@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NullableValueCastFailed` Struct Template Reference
+# `NullableValueCastFailed` Struct Template
 
 <p>All of these cast traits are meant to be implementations for useful casts that users may want to use that are outside the standard behavior. <a href="#details">More...</a></p>
 

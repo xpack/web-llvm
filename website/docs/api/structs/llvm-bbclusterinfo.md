@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BBClusterInfo` Struct Reference
+# `BBClusterInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GSIStreamBuilder.cpp}` Namespace Reference
+# `anonymous{GSIStreamBuilder.cpp}` Namespace
 
 
 

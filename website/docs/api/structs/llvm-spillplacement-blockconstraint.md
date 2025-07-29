@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockConstraint` Struct Reference
+# `BlockConstraint` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/spillplacement/blockconstraint">BlockConstraint</a> - Entry and exit constraints for a basic block. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCRuntimeEntryPoints.h` File Reference
+# `ARCRuntimeEntryPoints.h` File
 
 <p>This file contains a class ARCRuntimeEntryPoints for use in creating/managing references to entry points to the arc objective c runtime. <a href="#details">More...</a></p>
 

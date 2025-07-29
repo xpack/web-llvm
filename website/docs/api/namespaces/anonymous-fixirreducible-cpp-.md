@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{FixIrreducible.cpp}` Namespace Reference
+# `anonymous{FixIrreducible.cpp}` Namespace
 
 
 

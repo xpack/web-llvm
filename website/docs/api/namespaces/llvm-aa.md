@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AA` Namespace Reference
+# `AA` Namespace
 
 <p>Abstract <a href="/web-llvm/docs/api/classes/llvm/attribute">Attribute</a> helper functions. <a href="#details">More...</a></p>
 

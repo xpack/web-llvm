@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `m_SplatOrPoisonMask` Struct Reference
+# `m_SplatOrPoisonMask` Struct
 
 
 

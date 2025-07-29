@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoopVectorizeOptions` Struct Reference
+# `LoopVectorizeOptions` Struct
 
 
 

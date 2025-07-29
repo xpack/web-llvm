@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MCWriteLatencyEntry` Struct Reference
+# `MCWriteLatencyEntry` Struct
 
 <p>Specify the latency in cpu cycles for a particular scheduling class and def index. <a href="#details">More...</a></p>
 

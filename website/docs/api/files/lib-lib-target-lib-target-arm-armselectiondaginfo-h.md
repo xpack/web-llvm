@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARMSelectionDAGInfo.h` File Reference
+# `ARMSelectionDAGInfo.h` File
 
 
 

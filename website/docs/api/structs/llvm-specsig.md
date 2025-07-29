@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SpecSig` Struct Reference
+# `SpecSig` Struct
 
 
 

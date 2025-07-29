@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryOpRemark` Struct Reference
+# `MemoryOpRemark` Struct
 
 
 

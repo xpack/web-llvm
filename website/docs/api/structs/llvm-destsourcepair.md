@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DestSourcePair` Struct Reference
+# `DestSourcePair` Struct
 
 
 

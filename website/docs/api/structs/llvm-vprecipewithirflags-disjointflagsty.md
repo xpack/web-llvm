@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DisjointFlagsTy` Struct Reference
+# `DisjointFlagsTy` Struct
 
 
 

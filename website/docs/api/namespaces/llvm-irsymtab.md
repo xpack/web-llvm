@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `irsymtab` Namespace Reference
+# `irsymtab` Namespace
 
 
 

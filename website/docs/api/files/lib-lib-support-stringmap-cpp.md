@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringMap.cpp` File Reference
+# `StringMap.cpp` File
 
 
 

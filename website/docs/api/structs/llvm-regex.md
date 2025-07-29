@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `llvm_regex` Struct Reference
+# `llvm_regex` Struct
 
 
 

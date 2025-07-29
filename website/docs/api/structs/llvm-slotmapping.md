@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotMapping` Struct Reference
+# `SlotMapping` Struct
 
 <p>This struct contains the mappings from the slot numbers to unnamed metadata nodes, global values and types. <a href="#details">More...</a></p>
 

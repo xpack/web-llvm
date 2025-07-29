@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `YAMLMetaSerializer` Struct Reference
+# `YAMLMetaSerializer` Struct
 
 
 

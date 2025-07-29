@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64PHint` Namespace Reference
+# `AArch64PHint` Namespace
 
 
 

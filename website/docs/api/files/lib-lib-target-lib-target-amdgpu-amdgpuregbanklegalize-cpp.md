@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPURegBankLegalize.cpp` File Reference
+# `AMDGPURegBankLegalize.cpp` File
 
 
 

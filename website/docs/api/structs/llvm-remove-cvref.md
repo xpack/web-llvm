@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `remove_cvref` Struct Template Reference
+# `remove_cvref` Struct Template
 
 
 

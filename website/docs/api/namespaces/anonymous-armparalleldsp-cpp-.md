@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ARMParallelDSP.cpp}` Namespace Reference
+# `anonymous{ARMParallelDSP.cpp}` Namespace
 
 
 

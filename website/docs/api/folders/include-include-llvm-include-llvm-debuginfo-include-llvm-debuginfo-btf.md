@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/DebugInfo/BTF` Folder Reference
+# `include/llvm/DebugInfo/BTF` Folder
 
 
 

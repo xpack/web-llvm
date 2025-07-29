@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LLVMOrcCSymbolMapPair` Struct Reference
+# `LLVMOrcCSymbolMapPair` Struct
 
 <p>Represents a pair of a symbol name and an evaluated symbol. <a href="#details">More...</a></p>
 

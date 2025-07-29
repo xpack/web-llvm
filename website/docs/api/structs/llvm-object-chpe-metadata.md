@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `chpe_metadata` Struct Reference
+# `chpe_metadata` Struct
 
 
 

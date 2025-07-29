@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionOutliningMultiRegionInfo` Struct Reference
+# `FunctionOutliningMultiRegionInfo` Struct
 
 
 

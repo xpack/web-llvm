@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ParsedStringTable` Struct Reference
+# `ParsedStringTable` Struct
 
 <p>In-memory representation of the string table parsed from a buffer (e.g. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Val` Struct Reference
+# `Val` Struct
 
 <p>Per-value info for LI. <a href="#details">More...</a></p>
 

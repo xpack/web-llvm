@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PointerInfo` Struct Reference
+# `PointerInfo` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FileHandleTraits` Struct Reference
+# `FileHandleTraits` Struct
 
 
 

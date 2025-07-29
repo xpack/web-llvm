@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DataLayout.cpp}` Namespace Reference
+# `anonymous{DataLayout.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MSFError.cpp}` Namespace Reference
+# `anonymous{MSFError.cpp}` Namespace
 
 
 

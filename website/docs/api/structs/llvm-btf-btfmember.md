@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BTFMember` Struct Reference
+# `BTFMember` Struct
 
 <p>BTF_KIND_STRUCT and BTF_KIND_UNION are followed by multiple "struct BTFMember". <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SlotWithTag` Struct Reference
+# `SlotWithTag` Struct
 
 
 

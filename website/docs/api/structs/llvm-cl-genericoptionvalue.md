@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GenericOptionValue` Struct Reference
+# `GenericOptionValue` Struct
 
 
 

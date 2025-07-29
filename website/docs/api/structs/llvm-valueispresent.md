@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ValueIsPresent` Struct Template Reference
+# `ValueIsPresent` Struct Template
 
 <p><a href="/web-llvm/docs/api/structs/llvm/valueispresent">ValueIsPresent</a> provides a way to check if a value is, well, present. <a href="#details">More...</a></p>
 

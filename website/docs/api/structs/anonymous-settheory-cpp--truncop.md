@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TruncOp` Struct Reference
+# `TruncOp` Struct
 
 
 

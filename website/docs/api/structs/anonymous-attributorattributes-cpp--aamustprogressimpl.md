@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAMustProgressImpl` Struct Reference
+# `AAMustProgressImpl` Struct
 
 
 

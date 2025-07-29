@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassRegistrationListener` Struct Reference
+# `PassRegistrationListener` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/passregistrationlistener">PassRegistrationListener</a> class - This class is meant to be derived from by clients that are interested in which passes get registered and unregistered at runtime (which can be because of the <a href="/web-llvm/docs/api/structs/llvm/registerpass">RegisterPass</a> constructors being run as the program starts up, or may be because a shared object just got loaded). <a href="#details">More...</a></p>
 

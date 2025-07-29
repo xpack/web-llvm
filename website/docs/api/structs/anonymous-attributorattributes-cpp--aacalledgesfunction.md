@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AACallEdgesFunction` Struct Reference
+# `AACallEdgesFunction` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LetRecord` Struct Reference
+# `LetRecord` Struct
 
 
 

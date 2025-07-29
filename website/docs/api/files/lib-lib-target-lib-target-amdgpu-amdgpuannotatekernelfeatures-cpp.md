@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAnnotateKernelFeatures.cpp` File Reference
+# `AMDGPUAnnotateKernelFeatures.cpp` File
 
 
 

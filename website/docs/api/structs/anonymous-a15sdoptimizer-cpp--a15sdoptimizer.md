@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `A15SDOptimizer` Struct Reference
+# `A15SDOptimizer` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmExport` Struct Reference
+# `WasmExport` Struct
 
 
 

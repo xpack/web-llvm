@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNNSAReassign.cpp}` Namespace Reference
+# `anonymous{GCNNSAReassign.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CorrelatedValuePropagationPass` Struct Reference
+# `CorrelatedValuePropagationPass` Struct
 
 
 

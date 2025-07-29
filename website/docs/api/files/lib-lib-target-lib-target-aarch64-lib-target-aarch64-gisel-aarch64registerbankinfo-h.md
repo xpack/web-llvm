@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AArch64RegisterBankInfo.h` File Reference
+# `AArch64RegisterBankInfo.h` File
 
 <p>This file declares the targeting of the RegisterBankInfo class for AArch64. <a href="#details">More...</a></p>
 

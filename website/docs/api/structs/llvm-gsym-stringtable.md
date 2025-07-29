@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StringTable` Struct Reference
+# `StringTable` Struct
 
 <p>String tables in GSYM files are required to start with an empty string at offset zero. <a href="#details">More...</a></p>
 

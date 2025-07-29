@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PolymorphicTraits` Struct Template Reference
+# `PolymorphicTraits` Struct Template
 
 <p>YAMLIO for <a href="/web-llvm/docs/api/classes/llvm/msgpack/docnode">DocNode</a>. <a href="#details">More...</a></p>
 

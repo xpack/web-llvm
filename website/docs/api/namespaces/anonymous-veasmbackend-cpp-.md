@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VEAsmBackend.cpp}` Namespace Reference
+# `anonymous{VEAsmBackend.cpp}` Namespace
 
 
 

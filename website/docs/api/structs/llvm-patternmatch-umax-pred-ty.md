@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `umax_pred_ty` Struct Reference
+# `umax_pred_ty` Struct
 
 <p>Helper class for identifying unsigned max predicates. <a href="#details">More...</a></p>
 

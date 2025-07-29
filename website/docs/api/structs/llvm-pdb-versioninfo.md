@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VersionInfo` Struct Reference
+# `VersionInfo` Struct
 
 
 

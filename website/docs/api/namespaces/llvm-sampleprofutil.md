@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `sampleprofutil` Namespace Reference
+# `sampleprofutil` Namespace
 
 
 

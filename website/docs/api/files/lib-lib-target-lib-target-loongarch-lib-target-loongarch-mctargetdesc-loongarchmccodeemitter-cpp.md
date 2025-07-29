@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LoongArchMCCodeEmitter.cpp` File Reference
+# `LoongArchMCCodeEmitter.cpp` File
 
 
 

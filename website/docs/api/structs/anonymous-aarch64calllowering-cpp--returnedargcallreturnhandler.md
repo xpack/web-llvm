@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ReturnedArgCallReturnHandler` Struct Reference
+# `ReturnedArgCallReturnHandler` Struct
 
 <p>A special return arg handler for "returned" attribute arg calls. <a href="#details">More...</a></p>
 

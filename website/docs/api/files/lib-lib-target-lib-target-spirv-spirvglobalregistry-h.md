@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SPIRVGlobalRegistry.h` File Reference
+# `SPIRVGlobalRegistry.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCCTRLoopsVerify` Struct Reference
+# `PPCCTRLoopsVerify` Struct
 
 
 

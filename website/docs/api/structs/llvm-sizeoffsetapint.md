@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SizeOffsetAPInt` Struct Reference
+# `SizeOffsetAPInt` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/sizeoffsetapint">SizeOffsetAPInt</a> - Used by <span class="doxyComputerOutput"><a href="/web-llvm/docs/api/classes/llvm/objectsizeoffsetvisitor">ObjectSizeOffsetVisitor</a></span>, which works with <span class="doxyComputerOutput">APInts</span>. <a href="#details">More...</a></p>
 

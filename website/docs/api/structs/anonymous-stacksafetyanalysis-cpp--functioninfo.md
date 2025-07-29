@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FunctionInfo` Struct Template Reference
+# `FunctionInfo` Struct Template
 
 
 

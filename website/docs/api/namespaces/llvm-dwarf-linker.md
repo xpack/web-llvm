@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `dwarf_linker` Namespace Reference
+# `dwarf_linker` Namespace
 
 
 

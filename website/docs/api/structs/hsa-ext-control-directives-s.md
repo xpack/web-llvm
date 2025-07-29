@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `hsa_ext_control_directives_s` Struct Reference
+# `hsa_ext_control_directives_s` Struct
 
 <p>The <a href="/web-llvm/docs/api/files/lib/lib/target/lib/target/amdgpu/amdkernelcodet-h/#aea4f3ae95cc082cd39e20252669439b7">hsa_ext_control_directives_t</a> specifies the values for the HSAIL control directives. <a href="#details">More...</a></p>
 

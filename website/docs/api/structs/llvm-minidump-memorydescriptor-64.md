@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MemoryDescriptor_64` Struct Reference
+# `MemoryDescriptor_64` Struct
 
 
 

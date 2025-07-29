@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Config` Struct Reference
+# `Config` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/lto/lto">LTO</a> configuration. <a href="#details">More...</a></p>
 

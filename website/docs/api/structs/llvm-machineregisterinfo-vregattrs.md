@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VRegAttrs` Struct Reference
+# `VRegAttrs` Struct
 
 <p>All attributes(register class or bank and low-level type) a virtual register can have. <a href="#details">More...</a></p>
 

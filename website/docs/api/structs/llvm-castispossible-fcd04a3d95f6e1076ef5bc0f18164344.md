@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CastIsPossible` Struct Template Reference
+# `CastIsPossible` Struct Template
 
 
 

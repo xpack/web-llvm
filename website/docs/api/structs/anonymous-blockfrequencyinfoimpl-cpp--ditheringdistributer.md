@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DitheringDistributer` Struct Reference
+# `DitheringDistributer` Struct
 
 <p>Dithering mass distributer. <a href="#details">More...</a></p>
 

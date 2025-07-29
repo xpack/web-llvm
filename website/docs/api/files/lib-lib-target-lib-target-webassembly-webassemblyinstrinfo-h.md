@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyInstrInfo.h` File Reference
+# `WebAssemblyInstrInfo.h` File
 
 <p>This file contains the WebAssembly implementation of the TargetInstrInfo class. <a href="#details">More...</a></p>
 

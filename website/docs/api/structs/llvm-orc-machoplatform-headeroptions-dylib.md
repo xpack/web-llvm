@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Dylib` Struct Reference
+# `Dylib` Struct
 
 <p>A dylib for use with a dylib command (e.g. LC_ID_DYLIB, LC_LOAD_DYLIB). <a href="#details">More...</a></p>
 

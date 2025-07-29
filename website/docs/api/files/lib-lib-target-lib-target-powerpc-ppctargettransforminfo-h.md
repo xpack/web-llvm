@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PPCTargetTransformInfo.h` File Reference
+# `PPCTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the PPC target machine. <a href="#details">More...</a></p>
 

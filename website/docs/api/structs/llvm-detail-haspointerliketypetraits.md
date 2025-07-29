@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HasPointerLikeTypeTraits` Struct Template Reference
+# `HasPointerLikeTypeTraits` Struct Template
 
 
 

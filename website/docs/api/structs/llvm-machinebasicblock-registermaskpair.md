@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegisterMaskPair` Struct Reference
+# `RegisterMaskPair` Struct
 
 <p>Pair of physical register and lane mask. <a href="#details">More...</a></p>
 

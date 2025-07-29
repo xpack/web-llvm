@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Subscript` Struct Reference
+# `Subscript` Struct
 
 <p>Subscript - This private struct represents a pair of subscripts from a pair of potentially multi-dimensional array references. <a href="#details">More...</a></p>
 

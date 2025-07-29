@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoCaptureFloating` Struct Reference
+# `AANoCaptureFloating` Struct
 
 <p>NoCapture attribute for floating values. <a href="#details">More...</a></p>
 

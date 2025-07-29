@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Struct32B` Struct Reference
+# `Struct32B` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DataDirectory` Struct Reference
+# `DataDirectory` Struct
 
 
 

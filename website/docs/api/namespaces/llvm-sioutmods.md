@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIOutMods` Namespace Reference
+# `SIOutMods` Namespace
 
 
 

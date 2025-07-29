@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIShrinkInstructions.h` File Reference
+# `SIShrinkInstructions.h` File
 
 
 

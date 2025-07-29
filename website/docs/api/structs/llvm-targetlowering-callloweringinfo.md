@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CallLoweringInfo` Struct Reference
+# `CallLoweringInfo` Struct
 
 <p>This structure contains all information that is necessary for lowering calls. <a href="#details">More...</a></p>
 

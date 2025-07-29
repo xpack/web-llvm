@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `pe32plus_header` Struct Reference
+# `pe32plus_header` Struct
 
 <p>The 64-bit PE header that follows the <a href="/web-llvm/docs/api/namespaces/llvm/coff">COFF</a> header. <a href="#details">More...</a></p>
 

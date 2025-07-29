@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DwarfLLVMRegPair` Struct Reference
+# `DwarfLLVMRegPair` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> - Emitted by tablegen so Dwarf&lt;-&gt;LLVM reg mappings can be performed with a binary search. <a href="#details">More...</a></p>
 

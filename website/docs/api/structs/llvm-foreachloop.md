@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ForeachLoop` Struct Reference
+# `ForeachLoop` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/foreachloop">ForeachLoop</a> - <a href="/web-llvm/docs/api/classes/llvm/record">Record</a> the iteration state associated with a for loop. <a href="#details">More...</a></p>
 

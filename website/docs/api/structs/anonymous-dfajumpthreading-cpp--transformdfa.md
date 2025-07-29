@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TransformDFA` Struct Reference
+# `TransformDFA` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `opt` Namespace Reference
+# `opt` Namespace
 
 
 

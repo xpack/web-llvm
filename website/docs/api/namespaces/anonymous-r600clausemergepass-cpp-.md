@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{R600ClauseMergePass.cpp}` Namespace Reference
+# `anonymous{R600ClauseMergePass.cpp}` Namespace
 
 
 

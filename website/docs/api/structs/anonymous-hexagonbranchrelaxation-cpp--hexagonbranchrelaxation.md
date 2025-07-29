@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `HexagonBranchRelaxation` Struct Reference
+# `HexagonBranchRelaxation` Struct
 
 
 

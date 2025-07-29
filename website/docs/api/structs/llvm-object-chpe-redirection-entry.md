@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `chpe_redirection_entry` Struct Reference
+# `chpe_redirection_entry` Struct
 
 
 

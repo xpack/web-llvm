@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryValue` Struct Reference
+# `EntryValue` Struct
 
 <p><a href="/web-llvm/docs/api/classes/llvm/loc/single">Single</a> location defined by (potentially multiple) <a href="/web-llvm/docs/api/structs/llvm/entryvalueinfo">EntryValueInfo</a>. <a href="#details">More...</a></p>
 

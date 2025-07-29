@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ARCInstrInfo.cpp` File Reference
+# `ARCInstrInfo.cpp` File
 
 
 

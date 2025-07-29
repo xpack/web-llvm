@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `space_info` Struct Reference
+# `space_info` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/sys/fs/space-info">space_info</a> - Self explanatory. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Debuginfod` Folder Reference
+# `lib/Debuginfod` Folder
 
 
 

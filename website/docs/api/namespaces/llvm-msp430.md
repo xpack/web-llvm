@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSP430` Namespace Reference
+# `MSP430` Namespace
 
 
 

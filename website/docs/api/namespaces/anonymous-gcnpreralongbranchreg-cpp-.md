@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GCNPreRALongBranchReg.cpp}` Namespace Reference
+# `anonymous{GCNPreRALongBranchReg.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{MachineCopyPropagation.cpp}` Namespace Reference
+# `anonymous{MachineCopyPropagation.cpp}` Namespace
 
 
 

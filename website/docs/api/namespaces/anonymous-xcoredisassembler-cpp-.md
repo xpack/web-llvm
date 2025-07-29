@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreDisassembler.cpp}` Namespace Reference
+# `anonymous{XCoreDisassembler.cpp}` Namespace
 
 
 

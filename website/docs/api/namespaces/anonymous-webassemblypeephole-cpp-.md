@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{WebAssemblyPeephole.cpp}` Namespace Reference
+# `anonymous{WebAssemblyPeephole.cpp}` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyAsmBackend.cpp` File Reference
+# `WebAssemblyAsmBackend.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/anonymous-webassemblyasmbackend-cpp-/webassemblyasmbackend">WebAssemblyAsmBackend</a> class. <a href="#details">More...</a></p>
 

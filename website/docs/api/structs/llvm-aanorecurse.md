@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoRecurse` Struct Reference
+# `AANoRecurse` Struct
 
 <p>An abstract attribute for norecurse. <a href="#details">More...</a></p>
 

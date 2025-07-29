@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FilenameRange` Struct Reference
+# `FilenameRange` Struct
 
 <p>A range of filename indices. <a href="#details">More...</a></p>
 

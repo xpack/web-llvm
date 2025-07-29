@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AbbrevTable` Struct Reference
+# `AbbrevTable` Struct
 
 
 

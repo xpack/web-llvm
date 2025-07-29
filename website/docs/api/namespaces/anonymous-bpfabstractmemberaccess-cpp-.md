@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BPFAbstractMemberAccess.cpp}` Namespace Reference
+# `anonymous{BPFAbstractMemberAccess.cpp}` Namespace
 
 
 

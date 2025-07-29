@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Vernaux_Impl` Struct Template Reference
+# `Elf_Vernaux_Impl` Struct Template
 
 <p>Elf_Vernaux: This is the structure of auxiliary data in SHT_GNU_verneed section (.gnu.version_r). <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ScalarEnumerationTraits` Struct Template Reference
+# `ScalarEnumerationTraits` Struct Template
 
 <p>This class should be specialized by any integral type that converts to/from a YAML scalar where there is a one-to-one mapping between in-memory values and a string in YAML. <a href="#details">More...</a></p>
 

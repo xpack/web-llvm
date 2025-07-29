@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `is_right_shift_op` Struct Reference
+# `is_right_shift_op` Struct
 
 
 

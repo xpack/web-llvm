@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The controlling options Reference
+# controlling options
 
 <p>These entry points control the ThinLTO cache. <a href="#details">More...</a></p>
 

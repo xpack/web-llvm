@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PubEntry` Struct Reference
+# `PubEntry` Struct
 
 
 

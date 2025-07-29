@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `State` Struct Reference
+# `State` Struct
 
 <p>A type to track pointer/struct usage and accesses for <a href="/web-llvm/docs/api/structs/llvm/aapointerinfo">AAPointerInfo</a>. <a href="#details">More...</a></p>
 

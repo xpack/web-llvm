@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EntryStage.cpp` File Reference
+# `EntryStage.cpp` File
 
 <p>This file defines the Fetch stage of an instruction pipeline. <a href="#details">More...</a></p>
 

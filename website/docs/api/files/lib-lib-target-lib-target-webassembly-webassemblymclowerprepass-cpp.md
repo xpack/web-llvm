@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyMCLowerPrePass.cpp` File Reference
+# `WebAssemblyMCLowerPrePass.cpp` File
 
 <p>Some information in MC lowering / asm printing gets generated as instructions get emitted, but may be necessary at the start, such as for .globaltype declarations. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RangeList` Struct Reference
+# `RangeList` Struct
 
 <p>A container for a list of ranges. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lc_str` Union Reference
+# `lc_str` Union
 
 
 

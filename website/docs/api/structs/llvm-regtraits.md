@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RegTraits` Struct Reference
+# `RegTraits` Struct
 
 
 

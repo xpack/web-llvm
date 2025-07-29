@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `x86` Namespace Reference
+# `x86` Namespace
 
 <p>Helper functions to extract CPU details from CPUID on <a href="/web-llvm/docs/api/namespaces/llvm/sys/detail/x86">x86</a>. <a href="#details">More...</a></p>
 

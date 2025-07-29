@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{VETargetMachine.cpp}` Namespace Reference
+# `anonymous{VETargetMachine.cpp}` Namespace
 
 
 

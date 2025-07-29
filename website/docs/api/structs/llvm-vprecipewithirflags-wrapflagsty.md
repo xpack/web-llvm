@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WrapFlagsTy` Struct Reference
+# `WrapFlagsTy` Struct
 
 
 

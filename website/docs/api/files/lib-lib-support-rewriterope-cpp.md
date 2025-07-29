@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteRope.cpp` File Reference
+# `RewriteRope.cpp` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BaseUpdateTarget` Struct Reference
+# `BaseUpdateTarget` Struct
 
 <p>Load/store instruction that can be merged with a base address update. <a href="#details">More...</a></p>
 

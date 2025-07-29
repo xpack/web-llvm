@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VRegFilter` Struct Reference
+# `VRegFilter` Struct
 
 
 

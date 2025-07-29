@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ProfileData` Struct Template Reference
+# `ProfileData` Struct Template
 
 
 

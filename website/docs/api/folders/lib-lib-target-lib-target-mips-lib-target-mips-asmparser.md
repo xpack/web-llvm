@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/Target/Mips/AsmParser` Folder Reference
+# `lib/Target/Mips/AsmParser` Folder
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kISD` Namespace Reference
+# `M68kISD` Namespace
 
 
 

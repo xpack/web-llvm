@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Elf_Verneed_Impl` Struct Template Reference
+# `Elf_Verneed_Impl` Struct Template
 
 <p>Elf_Verneed: This is the structure of entries in the SHT_GNU_verneed section (.gnu.version_r). <a href="#details">More...</a></p>
 

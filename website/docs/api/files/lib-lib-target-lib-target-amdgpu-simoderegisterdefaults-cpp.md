@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SIModeRegisterDefaults.cpp` File Reference
+# `SIModeRegisterDefaults.cpp` File
 
 
 

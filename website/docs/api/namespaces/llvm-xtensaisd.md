@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XtensaISD` Namespace Reference
+# `XtensaISD` Namespace
 
 
 

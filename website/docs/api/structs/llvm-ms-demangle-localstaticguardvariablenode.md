@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `LocalStaticGuardVariableNode` Struct Reference
+# `LocalStaticGuardVariableNode` Struct
 
 
 

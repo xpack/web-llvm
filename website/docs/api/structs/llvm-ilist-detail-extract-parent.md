@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `extract_parent` Struct Template Reference
+# `extract_parent` Struct Template
 
 <p>Extract node parent option. <a href="#details">More...</a></p>
 

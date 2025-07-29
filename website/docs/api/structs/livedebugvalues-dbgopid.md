@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DbgOpID` Struct Reference
+# `DbgOpID` Struct
 
 <p>An ID used in the <a href="/web-llvm/docs/api/classes/livedebugvalues/dbgopidmap">DbgOpIDMap</a> (below) to lookup a stored <a href="/web-llvm/docs/api/structs/livedebugvalues/dbgop">DbgOp</a>. <a href="#details">More...</a></p>
 

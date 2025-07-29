@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Debug Information Reference
+# Debug Information
 
 <p>This file declares the C API endpoints for generating DWARF Debug Info. <a href="#details">More...</a></p>
 

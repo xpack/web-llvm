@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetTransformInfo.h` File Reference
+# `AMDGPUTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the AMDGPU target machine. <a href="#details">More...</a></p>
 

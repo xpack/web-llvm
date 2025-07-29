@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Distance` Struct Reference
+# `Distance` Struct
 
 
 

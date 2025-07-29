@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SystemZISelLowering.cpp}` Namespace Reference
+# `anonymous{SystemZISelLowering.cpp}` Namespace
 
 
 

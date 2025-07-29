@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SecFieldReloc` Struct Reference
+# `SecFieldReloc` Struct
 
 <p>Specifying offset relocation's in one section. <a href="#details">More...</a></p>
 

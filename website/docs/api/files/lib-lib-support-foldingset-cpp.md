@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FoldingSet.cpp` File Reference
+# `FoldingSet.cpp` File
 
 
 

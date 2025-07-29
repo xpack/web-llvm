@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TimeTraceMetadata` Struct Reference
+# `TimeTraceMetadata` Struct
 
 
 

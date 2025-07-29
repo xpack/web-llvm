@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_alloc_traits` Struct Template Reference
+# `ilist_alloc_traits` Struct Template
 
 
 

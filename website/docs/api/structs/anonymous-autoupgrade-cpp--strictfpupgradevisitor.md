@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `StrictFPUpgradeVisitor` Struct Reference
+# `StrictFPUpgradeVisitor` Struct
 
 
 

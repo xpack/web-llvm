@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BPFLineInfo` Struct Reference
+# `BPFLineInfo` Struct
 
 <p>Specifying one line info. <a href="#details">More...</a></p>
 

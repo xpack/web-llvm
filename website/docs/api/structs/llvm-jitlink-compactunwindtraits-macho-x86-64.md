@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CompactUnwindTraits_MachO_x86_64` Struct Reference
+# `CompactUnwindTraits_MachO_x86_64` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CSKYAttrs` Namespace Reference
+# `CSKYAttrs` Namespace
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `m_Intrinsic_Ty` Struct Template Reference
+# `m_Intrinsic_Ty` Struct Template
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/intrinsic">Intrinsic</a> matches are combinations of <a href="/web-llvm/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> matchers, and argument matchers. <a href="#details">More...</a></p>
 

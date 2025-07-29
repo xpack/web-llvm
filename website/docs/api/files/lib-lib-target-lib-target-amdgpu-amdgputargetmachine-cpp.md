@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUTargetMachine.cpp` File Reference
+# `AMDGPUTargetMachine.cpp` File
 
 <p>This file contains both <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> target machine and the CodeGen pass builder. <a href="#details">More...</a></p>
 

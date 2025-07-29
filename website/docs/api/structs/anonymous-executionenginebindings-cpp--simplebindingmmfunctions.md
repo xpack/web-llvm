@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SimpleBindingMMFunctions` Struct Reference
+# `SimpleBindingMMFunctions` Struct
 
 
 

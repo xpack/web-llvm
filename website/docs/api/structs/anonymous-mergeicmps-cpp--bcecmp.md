@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BCECmp` Struct Reference
+# `BCECmp` Struct
 
 
 

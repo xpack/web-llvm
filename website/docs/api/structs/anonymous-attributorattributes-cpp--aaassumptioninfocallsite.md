@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAAssumptionInfoCallSite` Struct Reference
+# `AAAssumptionInfoCallSite` Struct
 
 <p>Assumption Info defined for call sites. <a href="#details">More...</a></p>
 

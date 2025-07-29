@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{GOFFObjectWriter.cpp}` Namespace Reference
+# `anonymous{GOFFObjectWriter.cpp}` Namespace
 
 
 

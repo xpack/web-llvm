@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{SMEABIPass.cpp}` Namespace Reference
+# `anonymous{SMEABIPass.cpp}` Namespace
 
 
 

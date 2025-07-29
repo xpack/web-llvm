@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EVT` Struct Reference
+# `EVT` Struct
 
 <p>Extended <a href="/web-llvm/docs/api/classes/llvm/value">Value</a> <a href="/web-llvm/docs/api/classes/llvm/type">Type</a>. <a href="#details">More...</a></p>
 

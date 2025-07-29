@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `value_op_iterator` Struct Reference
+# `value_op_iterator` Struct
 
 <p>Iterator for directly iterating over the operand <a href="/web-llvm/docs/api/classes/llvm/sdvalue">SDValue</a>'s. <a href="#details">More...</a></p>
 

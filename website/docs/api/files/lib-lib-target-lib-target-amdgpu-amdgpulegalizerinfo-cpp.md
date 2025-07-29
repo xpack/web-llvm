@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPULegalizerInfo.cpp` File Reference
+# `AMDGPULegalizerInfo.cpp` File
 
 <p>This file implements the targeting of the Machinelegalizer class for <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a>. <a href="#details">More...</a></p>
 

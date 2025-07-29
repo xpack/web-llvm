@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `TransformedFunction` Struct Reference
+# `TransformedFunction` Struct
 
 <p><a href="/web-llvm/docs/api/structs/anonymous-dataflowsanitizer-cpp-/transformedfunction">TransformedFunction</a> is used to express the result of transforming one function type into another. <a href="#details">More...</a></p>
 

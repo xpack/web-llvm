@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ScheduleDAGVLIW.cpp}` Namespace Reference
+# `anonymous{ScheduleDAGVLIW.cpp}` Namespace
 
 
 

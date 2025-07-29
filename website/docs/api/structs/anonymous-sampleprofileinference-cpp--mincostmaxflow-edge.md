@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Edge` Struct Reference
+# `Edge` Struct
 
 <p>An edge in a flow network. <a href="#details">More...</a></p>
 

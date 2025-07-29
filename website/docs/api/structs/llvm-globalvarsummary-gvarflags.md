@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GVarFlags` Struct Reference
+# `GVarFlags` Struct
 
 
 

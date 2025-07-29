@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AVRRegisterInfo.h` File Reference
+# `AVRRegisterInfo.h` File
 
 
 

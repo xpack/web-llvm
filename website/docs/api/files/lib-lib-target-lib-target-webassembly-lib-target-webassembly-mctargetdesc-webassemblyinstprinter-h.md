@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyInstPrinter.h` File Reference
+# `WebAssemblyInstPrinter.h` File
 
 <p>This class prints an WebAssembly MCInst to wasm file syntax. <a href="#details">More...</a></p>
 

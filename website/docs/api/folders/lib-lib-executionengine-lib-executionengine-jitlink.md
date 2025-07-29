@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/ExecutionEngine/JITLink` Folder Reference
+# `lib/ExecutionEngine/JITLink` Folder
 
 
 

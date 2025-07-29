@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NativeFormatting.cpp` File Reference
+# `NativeFormatting.cpp` File
 
 
 

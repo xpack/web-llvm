@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ilist_callback_traits` Struct Template Reference
+# `ilist_callback_traits` Struct Template
 
 <p>Callbacks do nothing by default in iplist and ilist. <a href="#details">More...</a></p>
 

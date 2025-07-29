@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{LoopDataPrefetch.cpp}` Namespace Reference
+# `anonymous{LoopDataPrefetch.cpp}` Namespace
 
 
 

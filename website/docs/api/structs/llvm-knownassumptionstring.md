@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KnownAssumptionString` Struct Reference
+# `KnownAssumptionString` Struct
 
 <p>Helper that allows to insert a new assumption string in the known assumption set by creating a (static) object. <a href="#details">More...</a></p>
 

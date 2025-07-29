@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SHA1.cpp` File Reference
+# `SHA1.cpp` File
 
 
 

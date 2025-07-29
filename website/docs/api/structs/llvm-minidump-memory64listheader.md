@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Memory64ListHeader` Struct Reference
+# `Memory64ListHeader` Struct
 
 
 

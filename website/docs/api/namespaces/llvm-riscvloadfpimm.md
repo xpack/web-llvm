@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RISCVLoadFPImm` Namespace Reference
+# `RISCVLoadFPImm` Namespace
 
 
 

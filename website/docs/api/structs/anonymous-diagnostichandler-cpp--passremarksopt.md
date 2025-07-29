@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassRemarksOpt` Struct Reference
+# `PassRemarksOpt` Struct
 
 <p>Regular expression corresponding to the value given in one of the -pass-remarks* command line flags. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InjectedSourceDescriptor` Struct Reference
+# `InjectedSourceDescriptor` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmObjectHeader` Struct Reference
+# `WasmObjectHeader` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `XRayFileHeader` Struct Reference
+# `XRayFileHeader` Struct
 
 <p>XRay traces all have a header providing some top-matter information useful to help tools determine how to interpret the information available in the trace. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FreeDeleter` Struct Reference
+# `FreeDeleter` Struct
 
 
 

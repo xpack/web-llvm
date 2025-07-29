@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUAlwaysInlinePass.cpp` File Reference
+# `AMDGPUAlwaysInlinePass.cpp` File
 
 <p>This pass marks all internal functions as always_inline and creates duplicates of all other functions and marks the duplicates as always_inline. <a href="#details">More...</a></p>
 

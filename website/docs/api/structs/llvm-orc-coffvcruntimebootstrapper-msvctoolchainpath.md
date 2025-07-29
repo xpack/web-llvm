@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MSVCToolchainPath` Struct Reference
+# `MSVCToolchainPath` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AAIsDeadValueImpl` Struct Reference
+# `AAIsDeadValueImpl` Struct
 
 
 

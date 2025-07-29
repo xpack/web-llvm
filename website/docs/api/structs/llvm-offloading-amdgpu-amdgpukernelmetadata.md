@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUKernelMetaData` Struct Reference
+# `AMDGPUKernelMetaData` Struct
 
 <p>Struct for holding metadata related to <a href="/web-llvm/docs/api/namespaces/llvm/amdgpu">AMDGPU</a> kernels, for more information about the metadata and its meaning see: <a href="https://llvm.org/docs/AMDGPUUsage.html#code-object-v3">https://llvm.org/docs/AMDGPUUsage.html#code-object-v3</a>. <a href="#details">More...</a></p>
 

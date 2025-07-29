@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ToStr` Struct Reference
+# `ToStr` Struct
 
 
 

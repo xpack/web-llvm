@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Basic Block Reference
+# Basic Block
 
 <p>A basic block represents a single entry single exit section of code. <a href="#details">More...</a></p>
 

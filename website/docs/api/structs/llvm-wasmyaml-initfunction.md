@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InitFunction` Struct Reference
+# `InitFunction` Struct
 
 
 

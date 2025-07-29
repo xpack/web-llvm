@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FlattenCFGPass` Struct Reference
+# `FlattenCFGPass` Struct
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Context.cpp` File Reference
+# `Context.cpp` File
 
 <p>This file defines a class for holding ownership of various simulated hardware units. <a href="#details">More...</a></p>
 

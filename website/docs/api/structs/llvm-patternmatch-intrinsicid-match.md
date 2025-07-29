@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntrinsicID_match` Struct Reference
+# `IntrinsicID_match` Struct
 
 <p><a href="/web-llvm/docs/api/namespaces/llvm/intrinsic">Intrinsic</a> matchers. <a href="#details">More...</a></p>
 

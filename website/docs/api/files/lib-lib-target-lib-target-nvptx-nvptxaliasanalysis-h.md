@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `NVPTXAliasAnalysis.h` File Reference
+# `NVPTXAliasAnalysis.h` File
 
 <p>This is the NVPTX address space based alias analysis pass. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BundleOpInfo` Struct Reference
+# `BundleOpInfo` Struct
 
 <p>Used to keep track of an operand bundle. <a href="#details">More...</a></p>
 

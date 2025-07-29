@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AANoUnwindCallSite` Struct Reference
+# `AANoUnwindCallSite` Struct
 
 <p>NoUnwind attribute deduction for a call sites. <a href="#details">More...</a></p>
 

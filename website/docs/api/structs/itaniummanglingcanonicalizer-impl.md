@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Impl` Struct Reference
+# `Impl` Struct
 
 
 

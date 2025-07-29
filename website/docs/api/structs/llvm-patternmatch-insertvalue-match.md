@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InsertValue_match` Struct Template Reference
+# `InsertValue_match` Struct Template
 
 <p>Matcher for a single index InsertValue instruction. <a href="#details">More...</a></p>
 

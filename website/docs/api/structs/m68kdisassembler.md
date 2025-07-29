@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kDisassembler` Struct Reference
+# `M68kDisassembler` Struct
 
 <p>A disassembler class for <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a>. <a href="#details">More...</a></p>
 

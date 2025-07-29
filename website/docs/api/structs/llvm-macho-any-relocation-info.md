@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `any_relocation_info` Struct Reference
+# `any_relocation_info` Struct
 
 
 

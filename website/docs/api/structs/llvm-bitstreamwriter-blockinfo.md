@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `BlockInfo` Struct Reference
+# `BlockInfo` Struct
 
 <p>BlockInfo - This contains information emitted to BLOCKINFO_BLOCK blocks. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CodeGenCoverage.cpp` File Reference
+# `CodeGenCoverage.cpp` File
 
 <p>This file implements the <a href="/web-llvm/docs/api/classes/llvm/codegencoverage">CodeGenCoverage</a> class. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `AMDGPUUnsafeFPAtomicsUpgradeVisitor` Struct Reference
+# `AMDGPUUnsafeFPAtomicsUpgradeVisitor` Struct
 
 <p>Replace "amdgpu-unsafe-fp-atomics" metadata with atomicrmw metadata. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `locale` Namespace Reference
+# `locale` Namespace
 
 
 

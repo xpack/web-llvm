@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MappedValue` Struct Reference
+# `MappedValue` Struct
 
 
 

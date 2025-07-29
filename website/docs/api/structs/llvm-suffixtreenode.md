@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SuffixTreeNode` Struct Reference
+# `SuffixTreeNode` Struct
 
 <p>A node in a suffix tree which represents a substring or suffix. <a href="#details">More...</a></p>
 

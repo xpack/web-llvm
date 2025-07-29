@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WebAssemblyTargetTransformInfo.h` File Reference
+# `WebAssemblyTargetTransformInfo.h` File
 
 <p>This file a TargetTransformInfo::Concept conforming object specific to the WebAssembly target machine. <a href="#details">More...</a></p>
 

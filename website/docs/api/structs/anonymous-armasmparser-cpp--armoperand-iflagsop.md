@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IFlagsOp` Struct Reference
+# `IFlagsOp` Struct
 
 
 

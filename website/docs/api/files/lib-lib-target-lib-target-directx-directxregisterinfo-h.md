@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DirectXRegisterInfo.h` File Reference
+# `DirectXRegisterInfo.h` File
 
 
 

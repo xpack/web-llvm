@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PassModel` Struct Template Reference
+# `PassModel` Struct Template
 
 <p>A template wrapper used to implement the polymorphic API. <a href="#details">More...</a></p>
 

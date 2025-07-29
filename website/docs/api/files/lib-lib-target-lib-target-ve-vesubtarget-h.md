@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VESubtarget.h` File Reference
+# `VESubtarget.h` File
 
 
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{XCoreAsmPrinter.cpp}` Namespace Reference
+# `anonymous{XCoreAsmPrinter.cpp}` Namespace
 
 
 

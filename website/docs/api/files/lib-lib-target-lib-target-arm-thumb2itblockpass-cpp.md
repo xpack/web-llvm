@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `Thumb2ITBlockPass.cpp` File Reference
+# `Thumb2ITBlockPass.cpp` File
 
 
 

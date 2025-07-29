@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{CVTypeVisitor.cpp}` Namespace Reference
+# `anonymous{CVTypeVisitor.cpp}` Namespace
 
 
 

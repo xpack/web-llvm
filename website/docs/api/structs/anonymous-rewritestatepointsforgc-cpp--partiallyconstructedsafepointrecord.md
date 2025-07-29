@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `PartiallyConstructedSafepointRecord` Struct Reference
+# `PartiallyConstructedSafepointRecord` Struct
 
 
 

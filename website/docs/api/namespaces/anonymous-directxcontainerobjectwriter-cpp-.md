@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{DirectXContainerObjectWriter.cpp}` Namespace Reference
+# `anonymous{DirectXContainerObjectWriter.cpp}` Namespace
 
 
 

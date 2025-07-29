@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnitIndexAndEncoding` Struct Reference
+# `UnitIndexAndEncoding` Struct
 
 
 

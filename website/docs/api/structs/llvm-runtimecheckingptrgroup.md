@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RuntimeCheckingPtrGroup` Struct Reference
+# `RuntimeCheckingPtrGroup` Struct
 
 <p>A grouping of pointers. <a href="#details">More...</a></p>
 

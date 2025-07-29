@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `EHFrame` Struct Reference
+# `EHFrame` Struct
 
 
 

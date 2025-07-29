@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CrashRecoveryContextImpl` Struct Reference
+# `CrashRecoveryContextImpl` Struct
 
 
 

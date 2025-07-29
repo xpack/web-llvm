@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `M68kAsmPrinter.cpp` File Reference
+# `M68kAsmPrinter.cpp` File
 
 <p>This file contains a printer that converts from our internal representation of machine-dependent LLVM code to GAS-format <a href="/web-llvm/docs/api/namespaces/llvm/m68k">M68k</a> assembly language. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `RewriteStatepointsForGC` Struct Reference
+# `RewriteStatepointsForGC` Struct
 
 
 

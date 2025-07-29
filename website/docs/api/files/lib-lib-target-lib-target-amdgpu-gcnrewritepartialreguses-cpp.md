@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GCNRewritePartialRegUses.cpp` File Reference
+# `GCNRewritePartialRegUses.cpp` File
 
 <p>RenameIndependentSubregs pass leaves large partially used super registers, for example: undef %0.sub4:VReg_1024 = ... %0.sub5:VReg_1024 = ... %0.sub6:VReg_1024 = ... %0.sub7:VReg_1024 = ... use %0.sub4_sub5_sub6_sub7 use %0.sub6_sub7. <a href="#details">More...</a></p>
 

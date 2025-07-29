@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `SchedRemainder` Struct Reference
+# `SchedRemainder` Struct
 
 <p>Summarize the unscheduled region. <a href="#details">More...</a></p>
 

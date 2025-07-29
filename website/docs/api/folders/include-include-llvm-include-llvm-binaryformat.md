@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include/llvm/BinaryFormat` Folder Reference
+# `include/llvm/BinaryFormat` Folder
 
 
 

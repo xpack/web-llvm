@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `WasmEmitter.cpp` File Reference
+# `WasmEmitter.cpp` File
 
 <p>The Wasm component of yaml2obj. <a href="#details">More...</a></p>
 

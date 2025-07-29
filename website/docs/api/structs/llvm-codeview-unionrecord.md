@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `UnionRecord` Struct Reference
+# `UnionRecord` Struct
 
 
 

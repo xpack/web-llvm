@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `X86ReturnThunks` Struct Reference
+# `X86ReturnThunks` Struct
 
 
 

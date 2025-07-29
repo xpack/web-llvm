@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `GPRRegs` Struct Reference
+# `GPRRegs` Struct
 
 
 

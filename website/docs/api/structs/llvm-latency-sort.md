@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `latency_sort` Struct Reference
+# `latency_sort` Struct
 
 <p>Sorting functions for the Available queue. <a href="#details">More...</a></p>
 

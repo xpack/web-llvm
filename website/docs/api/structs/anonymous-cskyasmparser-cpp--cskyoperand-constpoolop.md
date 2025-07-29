@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ConstpoolOp` Struct Reference
+# `ConstpoolOp` Struct
 
 
 

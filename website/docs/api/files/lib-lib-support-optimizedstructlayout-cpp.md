@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `OptimizedStructLayout.cpp` File Reference
+# `OptimizedStructLayout.cpp` File
 
 
 

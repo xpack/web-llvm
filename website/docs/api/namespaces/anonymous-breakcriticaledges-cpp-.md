@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{BreakCriticalEdges.cpp}` Namespace Reference
+# `anonymous{BreakCriticalEdges.cpp}` Namespace
 
 
 

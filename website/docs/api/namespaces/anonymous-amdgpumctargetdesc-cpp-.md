@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{AMDGPUMCTargetDesc.cpp}` Namespace Reference
+# `anonymous{AMDGPUMCTargetDesc.cpp}` Namespace
 
 
 

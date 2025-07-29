@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `FastMathFlagsTy` Struct Reference
+# `FastMathFlagsTy` Struct
 
 
 

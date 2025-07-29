@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CFStack` Struct Reference
+# `CFStack` Struct
 
 
 

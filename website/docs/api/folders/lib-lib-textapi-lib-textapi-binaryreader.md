@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lib/TextAPI/BinaryReader` Folder Reference
+# `lib/TextAPI/BinaryReader` Folder
 
 
 

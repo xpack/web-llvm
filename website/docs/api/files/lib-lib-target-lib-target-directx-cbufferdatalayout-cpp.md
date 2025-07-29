@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `CBufferDataLayout.cpp` File Reference
+# `CBufferDataLayout.cpp` File
 
 
 

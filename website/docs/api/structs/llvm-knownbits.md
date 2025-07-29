@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `KnownBits` Struct Reference
+# `KnownBits` Struct
 
 
 

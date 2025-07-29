@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `VPTransformState` Struct Reference
+# `VPTransformState` Struct
 
 <p><a href="/web-llvm/docs/api/structs/llvm/vptransformstate">VPTransformState</a> holds information passed down when "executing" a <a href="/web-llvm/docs/api/classes/llvm/vplan">VPlan</a>, needed for generating the output IR. <a href="#details">More...</a></p>
 

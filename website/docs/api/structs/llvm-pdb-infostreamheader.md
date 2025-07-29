@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `InfoStreamHeader` Struct Reference
+# `InfoStreamHeader` Struct
 
 <p>The header preceding the global PDB Stream (Stream 1) <a href="#details">More...</a></p>
 

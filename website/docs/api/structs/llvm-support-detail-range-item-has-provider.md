@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `range_item_has_provider` Struct Template Reference
+# `range_item_has_provider` Struct Template
 
 
 

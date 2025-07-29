@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{PDBSymbolTypeFunctionSig.cpp}` Namespace Reference
+# `anonymous{PDBSymbolTypeFunctionSig.cpp}` Namespace
 
 
 

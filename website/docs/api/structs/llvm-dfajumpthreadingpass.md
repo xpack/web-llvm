@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `DFAJumpThreadingPass` Struct Reference
+# `DFAJumpThreadingPass` Struct
 
 
 

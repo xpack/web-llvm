@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `IntervalSorter` Struct Reference
+# `IntervalSorter` Struct
 
 
 

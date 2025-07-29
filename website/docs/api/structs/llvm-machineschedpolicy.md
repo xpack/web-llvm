@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MachineSchedPolicy` Struct Reference
+# `MachineSchedPolicy` Struct
 
 <p>Define a generic scheduling policy for targets that don't provide their own <a href="/web-llvm/docs/api/classes/llvm/machineschedstrategy">MachineSchedStrategy</a>. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ExternalFunctions.cpp}` Namespace Reference
+# `anonymous{ExternalFunctions.cpp}` Namespace
 
 
 

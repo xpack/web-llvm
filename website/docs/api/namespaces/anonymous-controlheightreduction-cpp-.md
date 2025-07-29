@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `anonymous{ControlHeightReduction.cpp}` Namespace Reference
+# `anonymous{ControlHeightReduction.cpp}` Namespace
 
 
 

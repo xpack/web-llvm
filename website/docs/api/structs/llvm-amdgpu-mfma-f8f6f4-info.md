@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `MFMA_F8F6F4_Info` Struct Reference
+# `MFMA_F8F6F4_Info` Struct
 
 
 
